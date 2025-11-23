@@ -3,7 +3,7 @@
 upload_logos_to_r2.py
 
 Uploads locally downloaded logos to Cloudflare R2 and updates MongoDB.
-Assumes logos are already downloaded in the logos/ directory.
+Assumes compressed logos are already downloaded in the logos-webp/ directory.
 
 Usage:
   # Upload all logos that exist locally but not in R2
@@ -47,7 +47,8 @@ DRY_RUN = os.getenv("DRY_RUN", "false").lower() in ("1", "true", "yes")
 SLEEP_SECONDS = float(os.getenv("SLEEP_SECONDS", "0.6"))
 
 # Local directory where logos are stored
-LOGOS_DIR = Path("./logos")
+# Use logos-webp for WebP files, or logos for original formats
+LOGOS_DIR = Path(os.getenv("LOGOS_DIR", "./logos"))
 # ------------------------------------------
 
 def validate_config():
@@ -91,7 +92,7 @@ def get_r2_client():
         endpoint_url=endpoint
     )
 
-def upload_to_r2(s3_client, local_path, r2_key, content_type="image/png"):
+def upload_to_r2(s3_client, local_path, r2_key, content_type="image/webp"):
     """Upload file to R2."""
     try:
         with open(local_path, "rb") as f:
@@ -122,35 +123,39 @@ def get_content_type(filename):
 def process_organization(db, s3_client, org_doc, dry_run=False, force=False):
     """Upload logo for a single organization."""
     slug = org_doc.get("slug")
-    canonical_id = org_doc.get("canonical_id")
+    doc_id = org_doc.get("_id")
     image_slug = org_doc.get("image_slug")
-    image_url = org_doc.get("image_url")
-    logo_url = image_url or org_doc.get("logoUrl")
     
     if not image_slug:
-        print(f"[skip] {canonical_id}: No image_slug")
+        print(f"[skip] {slug}: No image_slug")
         return False
     
     # Check if already uploaded (unless force)
     if not force and org_doc.get("logo_r2_url"):
-        print(f"[skip] {canonical_id}: Already uploaded to R2")
+        print(f"[skip] {slug}: Already uploaded to R2")
         return True
     
-    # Determine filename
-    ext = Path(urlparse(logo_url).path).suffix.lower() if logo_url else ".png"
-    if not ext:
-        ext = ".png"
-    filename = f"{image_slug}{ext}"
-    local_path = LOGOS_DIR / filename
+    # Find the actual file in LOGOS_DIR
+    # Try common extensions in order of preference
+    possible_extensions = ['.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg']
+    local_path = None
+    filename = None
+    
+    for ext in possible_extensions:
+        test_path = LOGOS_DIR / f"{image_slug}{ext}"
+        if test_path.exists():
+            local_path = test_path
+            filename = f"{image_slug}{ext}"
+            break
     
     # Check if local file exists
-    if not local_path.exists():
-        print(f"[skip] {canonical_id}: Local file not found: {local_path}")
+    if not local_path or not local_path.exists():
+        print(f"[skip] {slug}: Local file not found for image_slug '{image_slug}'")
+        print(f"  Tried extensions: {', '.join(possible_extensions)}")
         print(f"  Run download_logos.py first to download this logo.")
         return False
     
-    print(f"\n[info] Processing: {canonical_id}")
-    print(f"  Slug: {slug}")
+    print(f"\n[info] Processing: {slug}")
     print(f"  Image Slug: {image_slug}")
     print(f"  Local file: {local_path}")
     
@@ -164,7 +169,7 @@ def process_organization(db, s3_client, org_doc, dry_run=False, force=False):
         print(f"  [dry-run] Would upload to R2: {r2_key}")
         if R2_PUBLIC_URL:
             print(f"  [dry-run] Public URL: {R2_PUBLIC_URL}/{r2_key}")
-        print(f"  [dry-run] Would update MongoDB for {canonical_id}")
+        print(f"  [dry-run] Would update MongoDB for {slug}")
         return True
     
     # Upload to R2
@@ -181,10 +186,10 @@ def process_organization(db, s3_client, org_doc, dry_run=False, force=False):
     
     print(f"  Uploaded! Public URL: {public_url}")
     
-    # Update MongoDB
+    # Update MongoDB using _id
     try:
         db.organizations.update_one(
-            {"canonical_id": canonical_id},
+            {"_id": doc_id},
             {
                 "$set": {
                     "logo_local_filename": r2_key,
@@ -193,18 +198,24 @@ def process_organization(db, s3_client, org_doc, dry_run=False, force=False):
                 }
             }
         )
-        print(f"  Updated MongoDB for {canonical_id}")
+        print(f"  Updated MongoDB for {slug}")
     except Exception as e:
         print(f"[error] Failed to update MongoDB: {e}")
         return False
     
-    print(f"[success] Completed: {canonical_id}")
+    print(f"[success] Completed: {slug}")
     return True
 
-def run(test_org=None, org_slugs=None, dry_run=None, force=False):
+def run(test_org=None, org_slugs=None, dry_run=None, force=False, use_webp=False):
     """Main runner."""
+    global LOGOS_DIR
+    
     if dry_run is None:
         dry_run = DRY_RUN
+    
+    # Override LOGOS_DIR if --webp flag is set
+    if use_webp:
+        LOGOS_DIR = Path("./logos-webp")
     
     validate_config()
     
@@ -218,12 +229,13 @@ def run(test_org=None, org_slugs=None, dry_run=None, force=False):
     print(f"[info] Force re-upload = {force}")
     print(f"[info] R2 Bucket = {R2_BUCKET}")
     print(f"[info] Logos directory = {LOGOS_DIR.absolute()}")
+    print(f"[info] Upload WebP = {use_webp}")
     
     # Build query
     if test_org:
         query = {"slug": test_org}
         print(f"\n[info] TEST MODE: Processing org '{test_org}'")
-        orgs = list(db.organizations.find(query).sort("canonical_id", -1).limit(1))
+        orgs = list(db.organizations.find(query).limit(1))
     elif org_slugs:
         query = {"slug": {"$in": org_slugs}}
         print(f"\n[info] Processing {len(org_slugs)} specified orgs")
@@ -234,7 +246,7 @@ def run(test_org=None, org_slugs=None, dry_run=None, force=False):
             query = {"image_slug": {"$exists": True, "$ne": None, "$ne": ""}}
             print("\n[info] Force mode: Processing all orgs with image_slug")
         else:
-            # Normal: only orgs without R2 URL
+            # Normal: only orgs without R2 URL that have image_slug
             query = {
                 "$and": [
                     {
@@ -274,7 +286,7 @@ def run(test_org=None, org_slugs=None, dry_run=None, force=False):
             else:
                 fail_count += 1
         except Exception as e:
-            print(f"[error] Unexpected error processing {org.get('canonical_id', org.get('slug'))}: {e}")
+            print(f"[error] Unexpected error processing {org.get('slug', 'unknown')}: {e}")
             fail_count += 1
         
         # Sleep between orgs
@@ -294,6 +306,7 @@ def parse_args():
     p.add_argument("--orgs", nargs="+", help="Process specific orgs (by slug)")
     p.add_argument("--dry-run", action="store_true", help="Dry run (don't upload)")
     p.add_argument("--force", action="store_true", help="Force re-upload even if already in R2")
+    p.add_argument("--webp", action="store_true", help="Upload WebP versions from logos-webp/ folder")
     return p.parse_args()
 
 if __name__ == "__main__":
@@ -302,6 +315,7 @@ if __name__ == "__main__":
         test_org=args.test_org,
         org_slugs=args.orgs,
         dry_run=args.dry_run,
-        force=args.force
+        force=args.force,
+        use_webp=args.webp
     )
 
