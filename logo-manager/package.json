@@ -1,0 +1,25 @@
+{
+  "name": "gsoc-logo-manager",
+  "version": "1.0.0",
+  "description": "Download and convert GSoC organization logos",
+  "type": "module",
+  "main": "convert-to-webp.js",
+  "scripts": {
+    "convert": "node convert-to-webp.js",
+    "convert:hq": "node convert-to-webp.js --quality=90",
+    "convert:small": "node convert-to-webp.js --resize=800",
+    "convert:force": "node convert-to-webp.js --force"
+  },
+  "keywords": [
+    "gsoc",
+    "logos",
+    "webp",
+    "image-conversion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}
+
