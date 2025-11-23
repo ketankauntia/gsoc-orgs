@@ -1,0 +1,388 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GSoC Organizations Enhanced Schema",
+  "description": "Enhanced schema for Google Summer of Code organizations data",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (UUID or numeric)"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug for the organization (e.g., '52north-spatial')"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full organization name"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO8601 timestamp when record was created"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO8601 timestamp when record was last updated"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Organization's main website URL"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the organization"
+    },
+    "category": {
+      "type": "string",
+      "description": "GSoC category (e.g., 'Science and medicine', 'Programming languages')"
+    },
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to organization's logo/image"
+    },
+    "image_slug": {
+      "type": "string",
+      "description": "SEO-friendly slug for image storage retrieval"
+    },
+    "image_background_color": {
+      "type": "string",
+      "description": "Hex color code for image background (e.g., '#ffffff')"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of topic tags for the organization"
+    },
+    "technologies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of technologies used by the organization"
+    },
+    "total_projects": {
+      "type": "integer",
+      "description": "Total number of projects across all years"
+    },
+    "active_years": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "List of years the organization participated in GSoC"
+    },
+    "first_year": {
+      "type": "integer",
+      "description": "First year of GSoC participation"
+    },
+    "last_year": {
+      "type": "integer",
+      "description": "Most recent year of GSoC participation"
+    },
+    "is_currently_active": {
+      "type": "boolean",
+      "description": "Whether the organization is participating in the current/latest GSoC year"
+    },
+    "contact": {
+      "type": "object",
+      "description": "Contact information for the organization",
+      "properties": {
+        "email": {
+          "type": ["string", "null"],
+          "format": "email",
+          "description": "Primary contact email (without 'mailto:' prefix)"
+        },
+        "mailing_list": {
+          "type": ["string", "null"],
+          "description": "Mailing list URL or email"
+        },
+        "irc_channel": {
+          "type": ["string", "null"],
+          "description": "IRC channel URL or identifier"
+        },
+        "ideas_url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "URL to GSoC project ideas page"
+        },
+        "guide_url": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "URL to contribution guide"
+        }
+      }
+    },
+    "social": {
+      "type": "object",
+      "description": "Social media links (null if not present)",
+      "properties": {
+        "twitter": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Twitter/X profile URL"
+        },
+        "blog": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Organization blog URL"
+        },
+        "github": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "GitHub organization URL"
+        },
+        "gitlab": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "GitLab organization URL"
+        },
+        "facebook": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Facebook page URL"
+        },
+        "linkedin": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "LinkedIn company page URL"
+        },
+        "youtube": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "YouTube channel URL"
+        },
+        "instagram": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Instagram profile URL"
+        },
+        "medium": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Medium publication URL"
+        },
+        "slack": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Slack workspace URL"
+        },
+        "discord": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Discord server URL"
+        },
+        "reddit": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Reddit community URL"
+        },
+        "mastodon": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Mastodon profile URL"
+        },
+        "twitch": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Twitch channel URL"
+        },
+        "stackoverflow": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Stack Overflow tag or team URL"
+        }
+      }
+    },
+    "mentors": {
+      "type": "array",
+      "description": "List of mentors associated with the organization (optional)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Mentor's full name"
+          },
+          "email": {
+            "type": ["string", "null"],
+            "format": "email",
+            "description": "Mentor's email address"
+          },
+          "github": {
+            "type": ["string", "null"],
+            "description": "GitHub username"
+          },
+          "profile_url": {
+            "type": ["string", "null"],
+            "format": "uri",
+            "description": "Profile URL (personal website, LinkedIn, etc.)"
+          },
+          "role": {
+            "type": "string",
+            "description": "Role (e.g., 'Lead Mentor', 'Mentor', 'Admin')"
+          },
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Years they mentored"
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "description": "Aggregated statistics for the organization",
+      "properties": {
+        "projects_by_year": {
+          "type": "object",
+          "description": "Number of projects per year",
+          "patternProperties": {
+            "^[0-9]{4}$": {
+              "type": "integer"
+            }
+          }
+        },
+        "students_by_year": {
+          "type": "object",
+          "description": "Number of students per year",
+          "patternProperties": {
+            "^[0-9]{4}$": {
+              "type": "integer"
+            }
+          }
+        },
+        "total_students": {
+          "type": "integer",
+          "description": "Total number of unique students across all years"
+        },
+        "avg_projects_per_appeared_year": {
+          "type": "number",
+          "description": "Average number of projects per year of participation"
+        }
+      }
+    },
+    "years": {
+      "type": "object",
+      "description": "Year-by-year project data",
+      "patternProperties": {
+        "^[0-9]{4}$": {
+          "type": "object",
+          "properties": {
+            "projects_url": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL to GSoC archive page for this year"
+            },
+            "num_projects": {
+              "type": "integer",
+              "description": "Number of projects in this year"
+            },
+            "projects": {
+              "type": "array",
+              "description": "List of projects for this year",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Unique project identifier"
+                  },
+                  "slug": {
+                    "type": "string",
+                    "description": "URL-friendly project slug"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Project title"
+                  },
+                  "short_description": {
+                    "type": "string",
+                    "description": "Brief project description"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Full project description (may contain HTML)"
+                  },
+                  "student_name": {
+                    "type": "string",
+                    "description": "Name of the student who worked on this project"
+                  },
+                  "student_profile": {
+                    "type": ["string", "null"],
+                    "format": "uri",
+                    "description": "Student's profile URL"
+                  },
+                  "code_url": {
+                    "type": ["string", "null"],
+                    "format": "uri",
+                    "description": "URL to project code/repository"
+                  },
+                  "project_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL to GSoC project page"
+                  },
+                  "proposal_id": {
+                    "type": ["string", "null"],
+                    "description": "GSoC proposal identifier"
+                  },
+                  "difficulty": {
+                    "type": ["string", "null"],
+                    "enum": ["beginner", "easy", "medium", "intermediate", "hard", "advanced", null],
+                    "description": "Project difficulty level"
+                  },
+                  "status": {
+                    "type": ["string", "null"],
+                    "enum": ["in-progress", "completed", "abandoned", "unknown", null],
+                    "description": "Project completion status"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Project-specific tags/keywords"
+                  },
+                  "mentor_names": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Names of mentors for this project"
+                  }
+                },
+                "required": ["title", "student_name", "project_url"]
+              }
+            }
+          },
+          "required": ["projects_url", "num_projects", "projects"]
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "slug",
+    "name",
+    "created_at",
+    "last_updated",
+    "url",
+    "description",
+    "category",
+    "topics",
+    "technologies",
+    "contact",
+    "social",
+    "stats",
+    "years"
+  ]
+}
+
