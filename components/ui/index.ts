@@ -15,6 +15,7 @@ export { CardWrapper } from "./card-wrapper";
 // UI Components (from shadcn)
 export { Button } from "./button";
 export { Badge } from "./badge";
+export { Input } from "./input";
 export {
   Accordion,
   AccordionContent,
