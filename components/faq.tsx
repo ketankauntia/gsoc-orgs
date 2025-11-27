@@ -1,12 +1,11 @@
-// import { Check, PhoneCall } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-// import { Button } from "@/components/ui/button";
+  Section,
+  SectionHeader,
+} from "@/components/ui";
 
 export const gsocFaq = [
   {
@@ -63,42 +62,23 @@ export const gsocFaq = [
 
 
 export const FaqComponent = () => (
-  <div className="w-full py-20 lg:py-40">
-    <div className="mx-auto max-w-6xl px-6 lg:px-12">
-      <div className="grid lg:grid-cols-2 gap-10">
-        <div className="flex gap-10 flex-col">
-          <div className="flex gap-4 flex-col">
-            <div>
-              <Badge variant="outline">FAQ</Badge>
-            </div>
-            <div className="flex gap-2 flex-col">
-              <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-left font-regular">
-                Google Summer of Code Related Queries
-              </h4>
-              <p className="text-lg mt-2 max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground text-left">
-              Understanding GSoC organizations, project ideas, timelines, and proposal requirements can be challenging. This FAQ gives you clear, concise answers to the most common GSoC queries helping you prepare smarter and avoid confusion.
-              </p>
-            </div>
-            {/* <div className="">
-              <Button className="gap-4" variant="outline">
-                Any questions? Reach out <PhoneCall className="w-4 h-4" />
-              </Button>
-            </div> */}
-          </div>
-        </div>
-        <Accordion type="single" collapsible className="w-full">
-          {Array.from({ length: 8 }).map((_, index) => (
-            <AccordionItem key={index} value={"index-" + index}>
-              <AccordionTrigger>
-                {gsocFaq[index].question}
-              </AccordionTrigger>
-              <AccordionContent>
-                {gsocFaq[index].answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+  <Section>
+    <div className="grid lg:grid-cols-2 gap-10">
+      <div className="flex gap-10 flex-col">
+        <SectionHeader
+          badge="FAQ"
+          title="Google Summer of Code Related Queries"
+          description="Understanding GSoC organizations, project ideas, timelines, and proposal requirements can be challenging. This FAQ gives you clear, concise answers to the most common GSoC queries helping you prepare smarter and avoid confusion."
+        />
       </div>
+      <Accordion type="single" collapsible className="w-full">
+        {gsocFaq.map((faq, index) => (
+          <AccordionItem key={index} value={"index-" + index}>
+            <AccordionTrigger>{faq.question}</AccordionTrigger>
+            <AccordionContent>{faq.answer}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
-  </div>
+  </Section>
 );

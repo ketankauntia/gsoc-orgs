@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import {
-Carousel,
-CarouselApi,
-CarouselContent,
-CarouselItem,
-} from "@/components/ui/carousel";
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  Section,
+  Heading,
+} from "@/components/ui";
 
 export const TrendingOrgs = () => {
 const [api, setApi] = useState<CarouselApi>();
@@ -29,31 +31,26 @@ useEffect(() => {
 }, [api, current]);
 
 return (
-    <div className="w-full py-20 lg:py-20">
-    <div className="mx-auto max-w-6xl px-6 lg:px-12">
-        <div className="grid grid-cols-5 gap-10 items-center">
-        <h3 className="text-xl tracking-tighter lg:max-w-xl font-regular text-left">
-            Trending GSoC Organizations
-        </h3>
+    <Section noPadding className="py-20 lg:py-20">
+      <div className="grid grid-cols-5 gap-10 items-center">
+        <Heading variant="small" className="lg:max-w-xl">
+          Trending GSoC Organizations
+        </Heading>
         <div className="relative w-full col-span-4">
-            <div className="bg-linear-to-r from-background via-white/0 to-background z-10 absolute left-0 top-0 right-0 bottom-0 w-full h-full"></div>
-            <Carousel setApi={setApi} className="w-full">
+          <div className="bg-linear-to-r from-background via-white/0 to-background z-10 absolute left-0 top-0 right-0 bottom-0 w-full h-full"></div>
+          <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
-                {Array.from({ length: 25 }).map((_, index) => (
-                <CarouselItem
-                    className="basis-1/4 lg:basis-1/6"
-                    key={index}
-                >
-                    <div className="flex rounded-md aspect-square bg-muted items-center justify-center p-2">
+              {Array.from({ length: 25 }).map((_, index) => (
+                <CarouselItem className="basis-1/4 lg:basis-1/6" key={index}>
+                  <div className="flex rounded-md aspect-square bg-muted items-center justify-center p-2">
                     <span className="text-sm">Logo {index + 1}</span>
-                    </div>
+                  </div>
                 </CarouselItem>
-                ))}
+              ))}
             </CarouselContent>
-            </Carousel>
+          </Carousel>
         </div>
-        </div>
-    </div>
-    </div>
+      </div>
+    </Section>
 );
 };
