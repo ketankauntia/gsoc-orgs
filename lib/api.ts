@@ -3,8 +3,22 @@
  * Centralized API fetching logic for the application
  */
 
-// API Base URL - uses Next.js internal API routes
-export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || '';
+// Get base URL - for server-side, use localhost, for client use relative
+function getBaseUrl() {
+  // Browser should use relative URL
+  if (typeof window !== 'undefined') {
+    return '';
+  }
+  
+  // Server should use absolute URL
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  
+  return `http://localhost:${process.env.PORT || 3000}`;
+}
+
+export const API_BASE = getBaseUrl();
 
 /**
  * Custom API fetch wrapper with error handling
