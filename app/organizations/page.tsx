@@ -10,47 +10,38 @@ import {
   Button,
   Input,
 } from "@/components/ui";
+import { apiFetch, Organization, PaginatedResponse } from "@/lib/api";
 
 /**
  * Organizations Listing Page
  * Route: /organizations
- * 
- * TODO: Add data fetching
- * - Fetch from database or API
- * - Can use Server Components for SSR
- * - Or use client component with useEffect/React Query
+ * Fetches organizations from API
  */
 
-// Placeholder data - Replace with actual data fetching
-const PLACEHOLDER_ORGS = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  name: `Organization ${i + 1}`,
-  slug: `org-${i + 1}`,
-  description: "Building open-source tools and contributing to the developer community worldwide.",
-  tech: ["Python", "JavaScript", "Go"],
-  projects: Math.floor(Math.random() * 20) + 5,
-  difficulty: ["Beginner", "Intermediate", "Advanced"][Math.floor(Math.random() * 3)],
-  logo: null, // TODO: Add logo URLs
-}));
+async function getOrganizations(params: {
+  page?: number;
+  limit?: number;
+  q?: string;
+  category?: string;
+  tech?: string;
+}) {
+  const queryParams = new URLSearchParams();
+  if (params.page) queryParams.set('page', params.page.toString());
+  if (params.limit) queryParams.set('limit', params.limit.toString());
+  if (params.q) queryParams.set('q', params.q);
+  if (params.category) queryParams.set('category', params.category);
+  if (params.tech) queryParams.set('tech', params.tech);
 
-/**
- * TODO: Replace with actual data fetching
- * Example with Server Component (SSR):
- * 
- * async function getOrganizations() {
- *   const res = await fetch('https://api.example.com/organizations', {
- *     cache: 'no-store', // or 'force-cache' for SSG
- *   });
- *   return res.json();
- * }
- * 
- * export default async function OrganizationsPage() {
- *   const organizations = await getOrganizations();
- *   ...
- * }
- */
+  const query = queryParams.toString();
+  return apiFetch<PaginatedResponse<Organization>>(
+    `/api/organizations${query ? `?${query}` : ''}`
+  );
+}
 
-export default function OrganizationsPage() {
+export default async function OrganizationsPage() {
+  // Fetch organizations - default to first page with 12 items
+  const data = await getOrganizations({ page: 1, limit: 12 });
+
   return (
     <div className="space-y-12">
       {/* Page Header */}
@@ -64,7 +55,7 @@ export default function OrganizationsPage() {
 
       {/* Search and Filters Section */}
       <div className="space-y-6">
-        {/* Search Bar */}
+        {/* Search Bar - TODO: Make functional with client component */}
         <div className="relative max-w-2xl mx-auto">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
@@ -99,38 +90,37 @@ export default function OrganizationsPage() {
 
       {/* Organizations Grid */}
       <Suspense fallback={<OrganizationsGridSkeleton />}>
-        <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
-          {PLACEHOLDER_ORGS.map((org) => (
-            <OrganizationCard key={org.id} org={org} />
-          ))}
-        </Grid>
+        <div className="space-y-6">
+          {/* Results count */}
+          <div className="text-center text-muted-foreground">
+            Showing {data.items.length} of {data.total} organizations
+          </div>
+
+          <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
+            {data.items.map((org) => (
+              <OrganizationCard key={org.id} org={org} />
+            ))}
+          </Grid>
+        </div>
       </Suspense>
 
-      {/* Load More / Pagination */}
-      <div className="flex justify-center pt-8">
-        <Button variant="outline" size="lg">
-          Load More Organizations
-        </Button>
-      </div>
+      {/* Load More / Pagination - TODO: Make functional */}
+      {data.page < data.pages && (
+        <div className="flex justify-center pt-8">
+          <Button variant="outline" size="lg">
+            Load More Organizations ({data.total - data.items.length} remaining)
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
 
 /**
  * Organization Card Component
- * TODO: Make this a separate reusable component in components/organizations/
  */
 interface OrganizationCardProps {
-  org: {
-    id: number;
-    name: string;
-    slug: string;
-    description: string;
-    tech: string[];
-    projects: number;
-    difficulty: string;
-    logo: string | null;
-  };
+  org: Organization;
 }
 
 function OrganizationCard({ org }: OrganizationCardProps) {
@@ -138,18 +128,25 @@ function OrganizationCard({ org }: OrganizationCardProps) {
     <CardWrapper hover className="h-full flex flex-col">
       {/* Organization Logo/Icon */}
       <div className="flex items-center gap-4 mb-4">
-        <div className="w-16 h-16 rounded-lg bg-muted flex items-center justify-center">
-          {/* TODO: Replace with actual logo */}
-          <span className="text-2xl font-bold text-muted-foreground">
-            {org.name.charAt(0)}
-          </span>
+        <div className="w-16 h-16 rounded-lg bg-muted flex items-center justify-center overflow-hidden">
+          {org.logo_r2_url ? (
+            <img
+              src={org.logo_r2_url}
+              alt={`${org.name} logo`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-2xl font-bold text-muted-foreground">
+              {org.name.charAt(0)}
+            </span>
+          )}
         </div>
         <div className="flex-1">
           <Heading variant="small" className="line-clamp-1">
             {org.name}
           </Heading>
           <Text variant="small" className="text-muted-foreground">
-            {org.projects} projects
+            {org.total_projects} projects
           </Text>
         </div>
       </div>
@@ -161,30 +158,22 @@ function OrganizationCard({ org }: OrganizationCardProps) {
 
       {/* Technologies */}
       <div className="flex flex-wrap gap-2 mb-4">
-        {org.tech.slice(0, 3).map((tech) => (
+        {org.technologies.slice(0, 3).map((tech) => (
           <Badge key={tech} variant="secondary" className="text-xs">
             {tech}
           </Badge>
         ))}
-        {org.tech.length > 3 && (
+        {org.technologies.length > 3 && (
           <Badge variant="secondary" className="text-xs">
-            +{org.tech.length - 3}
+            +{org.technologies.length - 3}
           </Badge>
         )}
       </div>
 
-      {/* Difficulty Badge */}
+      {/* Footer */}
       <div className="flex items-center justify-between pt-4 border-t">
-        <Badge
-          variant={
-            org.difficulty === "Beginner"
-              ? "default"
-              : org.difficulty === "Intermediate"
-              ? "secondary"
-              : "outline"
-          }
-        >
-          {org.difficulty}
+        <Badge variant={org.is_currently_active ? "default" : "secondary"}>
+          {org.is_currently_active ? "Active" : "Inactive"}
         </Badge>
         <Button variant="ghost" size="sm" asChild>
           <a href={`/organizations/${org.slug}`}>View Details →</a>
@@ -208,4 +197,3 @@ function OrganizationsGridSkeleton() {
     </Grid>
   );
 }
-
