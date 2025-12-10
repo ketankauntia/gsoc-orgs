@@ -6,11 +6,12 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Organizations', href: '#link' },
-    { name: 'Resources', href: '#link' },
-    // { name: 'Blog', href: '#link' },
-    { name: 'About Us', href: '#link' },
-    { name: 'Contact', href: '#link' },
+    { name: 'Organizations', href: '/organizations' },
+    { name: 'Technologies', href: '/tech-stack' },
+    { name: 'Topics', href: '/topics' },
+    // { name: 'Resources', href: '#resources' },
+    // { name: 'About Us', href: '#about' },
+    // { name: 'Contact', href: '#contact' },
 ]
 
 export const Header = () => {
