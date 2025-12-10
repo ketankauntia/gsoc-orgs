@@ -3,8 +3,8 @@ import prisma from '@/lib/prisma'
 
 export async function GET() {
   try {
-    // Quick database connectivity check
-    await prisma.$queryRaw`SELECT 1`
+    // Quick database connectivity check using MongoDB-compatible query
+    await prisma.organizations.count({ take: 1 })
 
     return NextResponse.json({
       status: 'ok',
