@@ -1,0 +1,471 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type OrganizationsContact {
+  email        String?
+  guide_url    String?
+  ideas_url    String?
+  irc_channel  String?
+  mailing_list String?
+}
+
+type OrganizationsOldBackupAppearances {
+  appeared     Boolean
+  chosenCount  Int
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  pitchedCount Json?
+  source_url   String
+  year         Int
+}
+
+type OrganizationsOldBackupSocials {
+  blog         String?
+  email        String?
+  github       String?
+  mailing_list String?
+  other        OrganizationsOldBackupSocialsOther[]
+  twitter      String?
+}
+
+type OrganizationsOldBackupSocialsOther {
+  name String
+  url  String
+}
+
+type OrganizationsSocial {
+  blog          String?
+  discord       String?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  facebook      Json?
+  github        String?
+  gitlab        String?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  instagram     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  linkedin      Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mastodon      Json?
+  medium        String?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  reddit        Json?
+  slack         String?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  stackoverflow Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  twitch        Json?
+  twitter       String?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  youtube       Json?
+}
+
+type OrganizationsStats {
+  avg_projects_per_appeared_year Float
+  projects_by_year               OrganizationsStatsProjectsByYear
+  students_by_year               OrganizationsStatsStudentsByYear
+  total_students                 Int
+}
+
+type OrganizationsStatsProjectsByYear {
+  year_2016 Int? @map("2016")
+  year_2017 Int? @map("2017")
+  year_2018 Int? @map("2018")
+  year_2019 Int? @map("2019")
+  year_2020 Int? @map("2020")
+  year_2021 Int? @map("2021")
+  year_2022 Int? @map("2022")
+  year_2023 Int? @map("2023")
+  year_2024 Int? @map("2024")
+  year_2025 Int? @map("2025")
+}
+
+type OrganizationsStatsStudentsByYear {
+  year_2016 Int? @map("2016")
+  year_2017 Int? @map("2017")
+  year_2018 Int? @map("2018")
+  year_2019 Int? @map("2019")
+  year_2020 Int? @map("2020")
+  year_2021 Int? @map("2021")
+  year_2022 Int? @map("2022")
+  year_2023 Int? @map("2023")
+  year_2024 Int? @map("2024")
+  year_2025 Int? @map("2025")
+}
+
+type OrganizationsYears {
+  year_2016 OrganizationsYears2016? @map("2016")
+  year_2017 OrganizationsYears2017? @map("2017")
+  year_2018 OrganizationsYears2018? @map("2018")
+  year_2019 OrganizationsYears2019? @map("2019")
+  year_2020 OrganizationsYears2020? @map("2020")
+  year_2021 OrganizationsYears2021? @map("2021")
+  year_2022 OrganizationsYears2022? @map("2022")
+  year_2023 OrganizationsYears2023? @map("2023")
+  year_2024 OrganizationsYears2024? @map("2024")
+  year_2025 OrganizationsYears2025? @map("2025")
+}
+
+type OrganizationsYears2016 {
+  num_projects Int
+  projects     OrganizationsYears2016Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2016Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2017 {
+  num_projects Int
+  projects     OrganizationsYears2017Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2017Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2018 {
+  num_projects Int
+  projects     OrganizationsYears2018Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2018Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2019 {
+  num_projects Int
+  projects     OrganizationsYears2019Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2019Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2020 {
+  num_projects Int
+  projects     OrganizationsYears2020Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2020Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String?
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2021 {
+  num_projects Int
+  projects     OrganizationsYears2021Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2021Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String?
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2022 {
+  num_projects Int
+  projects     OrganizationsYears2022Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2022Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2023 {
+  num_projects Int
+  projects     OrganizationsYears2023Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2023Projects {
+  code_url          String?
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  proposal_id       String
+  short_description String
+  slug              String
+  status            String?
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2024 {
+  num_projects Int
+  projects     OrganizationsYears2024Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2024Projects {
+  code_url          String
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  proposal_id       Json?
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+type OrganizationsYears2025 {
+  num_projects Int
+  projects     OrganizationsYears2025Projects[]
+  projects_url String
+}
+
+type OrganizationsYears2025Projects {
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  code_url          Json?
+  description       String
+  difficulty        String?
+  id                String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentor_names      Json?
+  project_url       String
+  proposal_id       String
+  short_description String
+  slug              String
+  status            String
+  student_name      String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  student_profile   Json?
+  tags              String[]
+  title             String
+}
+
+model upload_history {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  new_count      Int
+  original_count Int
+  source_file    String
+  timestamp      DateTime @db.Date
+
+  @@map("_upload_history")
+}
+
+model organizations {
+  id                     String               @id @default(auto()) @map("_id") @db.ObjectId
+  active_years           Int[]
+  category               String
+  contact                OrganizationsContact
+  created_at             String
+  description            String
+  first_year             Int
+  id_                    String               @unique(map: "id_1") @map("id")
+  image_background_color String
+  image_slug             String
+  image_url              String
+  img_r2_filename        String
+  img_r2_url             String
+  img_uploaded_at        DateTime             @db.Date
+  is_currently_active    Boolean
+  last_updated           String
+  last_year              Int
+  logo_local_filename    String?
+  logo_r2_url            String?
+  logo_uploaded_at       DateTime?            @db.Date
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  mentors                Json?
+  name                   String
+  slug                   String               @unique(map: "slug_1")
+  social                 OrganizationsSocial
+  stats                  OrganizationsStats
+  technologies           String[]
+  topics                 String[]
+  total_projects         Int
+  url                    String
+  years                  OrganizationsYears
+
+  @@index([name], map: "name_1")
+  @@index([category], map: "category_1")
+  @@index([is_currently_active], map: "is_currently_active_1")
+  @@index([total_projects(sort: Desc)], map: "total_projects_-1")
+}
+
+model organizations_old_backup {
+  id                    String                              @id @default(auto()) @map("_id") @db.ObjectId
+  appearances           OrganizationsOldBackupAppearances[]
+  canonical_id          String                              @unique(map: "canonical_id_1")
+  categories            String[]
+  contributor_guide_url String
+  created_at            DateTime                            @db.Date
+  description_html      String
+  logoUrl               String
+  logo_bg_color         String?
+  logo_local_filename   String?
+  logo_r2_url           String?
+  logo_uploaded_at      DateTime?                           @db.Date
+  name                  String
+  short_desc            String
+  slug                  String
+  socials               OrganizationsOldBackupSocials
+  tech_stack            String[]
+  topics                String[]
+  updated_at            DateTime                            @db.Date
+  website               String
+  years_appeared        Int[]
+  years_count           Int
+
+  @@index([slug], map: "slug_1")
+  @@index([website], map: "website_1")
+  @@index([years_appeared], map: "years_appeared_1")
+}
+
+model projects {
+  id                     String    @id @default(auto()) @map("_id") @db.ObjectId
+  contributor            String
+  created_at             DateTime  @db.Date
+  date_archived          DateTime? @db.Date
+  date_created           DateTime  @db.Date
+  date_updated           DateTime? @db.Date
+  lastUpdated            DateTime  @db.Date
+  mentors                String[]
+  org_canonical_id       String
+  org_name               String
+  org_slug               String
+  project_abstract_short String
+  project_code_url       String?
+  project_id             String    @unique(map: "project_id_1")
+  project_info_html      String
+  project_title          String
+  year                   Int
+
+  @@index([org_canonical_id], map: "org_canonical_id_1")
+  @@index([year], map: "year_1")
+}
