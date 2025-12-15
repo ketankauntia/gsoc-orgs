@@ -1,0 +1,29 @@
+name: 🐛 Bug Report
+description: Create a report to help us improve
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: What went wrong?
+      description: Describe the bug clearly.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: List steps to reproduce the issue (example below)
+      placeholder: |
+        1. Go to …
+        2. Click …
+        3. Observe …
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+  - type: input
+    attributes:
+      label: Environment
+      description: OS, browser, Node version, etc.
+
