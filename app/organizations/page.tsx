@@ -10,7 +10,8 @@ import {
   Button,
   Input,
 } from "@/components/ui";
-import { apiFetch, Organization, PaginatedResponse } from "@/lib/api";
+import { Organization, PaginatedResponse } from "@/lib/api";
+import prisma from "@/lib/prisma";
 
 /**
  * Organizations Listing Page
@@ -24,18 +25,45 @@ async function getOrganizations(params: {
   q?: string;
   category?: string;
   tech?: string;
-}) {
-  const queryParams = new URLSearchParams();
-  if (params.page) queryParams.set('page', params.page.toString());
-  if (params.limit) queryParams.set('limit', params.limit.toString());
-  if (params.q) queryParams.set('q', params.q);
-  if (params.category) queryParams.set('category', params.category);
-  if (params.tech) queryParams.set('tech', params.tech);
+}): Promise<PaginatedResponse<Organization>> {
+  const page = Math.max(1, params.page ?? 1);
+  const limit = Math.min(100, params.limit ?? 12);
+  const skip = (page - 1) * limit;
 
-  const query = queryParams.toString();
-  return apiFetch<PaginatedResponse<Organization>>(
-    `/api/organizations${query ? `?${query}` : ''}`
-  );
+  const where: any = {};
+
+  if (params.q) {
+    where.OR = [
+      { name: { contains: params.q, mode: "insensitive" } },
+      { description: { contains: params.q, mode: "insensitive" } },
+    ];
+  }
+
+  if (params.category) {
+    where.category = params.category;
+  }
+
+  if (params.tech) {
+    where.technologies = { has: params.tech };
+  }
+
+  const [items, total] = await Promise.all([
+    prisma.organizations.findMany({
+      where,
+      skip,
+      take: limit,
+      orderBy: { name: "asc" },
+    }),
+    prisma.organizations.count({ where }),
+  ]);
+
+  return {
+    page,
+    limit,
+    total,
+    pages: Math.ceil(total / limit),
+    items: items as unknown as Organization[],
+  };
 }
 
 export default async function OrganizationsPage() {
