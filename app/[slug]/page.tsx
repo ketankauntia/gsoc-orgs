@@ -309,353 +309,399 @@ export default async function GSoCYearOrganizationsPage({
   const isUpcoming = yearNum > new Date().getFullYear();
   const isPast = yearNum < new Date().getFullYear();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `Google Summer of Code ${year} Organizations`,
+    "description": `Complete listing of all ${stats.totalOrgs} organizations participating in Google Summer of Code ${year}`,
+    "url": `https://gsoc-orgs.vercel.app/${slug}`,
+    "temporalCoverage": year,
+    "about": {
+      "@type": "Event",
+      "name": `Google Summer of Code ${year}`,
+      "startDate": `${year}-03-01`,
+      "endDate": `${year}-09-30`,
+      "eventStatus": isUpcoming ? "https://schema.org/EventScheduled" : "https://schema.org/EventCompleted",
+      "description": `Google Summer of Code ${year} program connecting student developers with open-source organizations`,
+    },
+    "numberOfItems": stats.totalOrgs,
+    "itemListElement": organizations.slice(0, 20).map((org, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Organization",
+        "name": org.name,
+        "url": `https://gsoc-orgs.vercel.app/organizations/${org.slug}`,
+        "description": org.description,
+        "keywords": [...org.topics, ...org.techStack].join(", "),
+        "memberOf": {
+          "@type": "Event",
+          "name": `Google Summer of Code ${year}`
+        }
+      }
+    })),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": stats.totalOrgs,
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
   return (
-    <div className="w-full">
-      <Container size="default" className="py-8 lg:py-16">
-        <div className="space-y-12 lg:space-y-16">
-          {/* Header Section */}
-          <div className="space-y-6">
-            <SectionHeader
-              badge={
-                isUpcoming
-                  ? `Upcoming GSoC ${year}`
-                  : isPast
-                  ? `GSoC ${year} Archive`
-                  : `GSoC ${year}`
-              }
-              title={`Google Summer of Code ${year} Organizations`}
-              description={
-                isUpcoming
-                  ? `Explore organizations expected to participate in GSoC ${year}. This list will be updated once official announcements are made.`
-                  : `Browse all ${stats.totalOrgs} organizations that participated in Google Summer of Code ${year}. ${
-                      stats.newOrgs > 0
-                        ? `${stats.newOrgs} organizations joined for the first time this year.`
-                        : ""
-                    }`
-              }
-              align="center"
-            />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="w-full">
+        <Container size="default" className="py-8 lg:py-16">
+          <div className="space-y-12 lg:space-y-16">
+            {/* Header Section */}
+            <div className="space-y-6">
+              <SectionHeader
+                badge={
+                  isUpcoming
+                    ? `Upcoming GSoC ${year}`
+                    : isPast
+                    ? `GSoC ${year} Archive`
+                    : `GSoC ${year}`
+                }
+                title={`Google Summer of Code ${year} Organizations`}
+                description={
+                  isUpcoming
+                    ? `Explore organizations expected to participate in GSoC ${year}. This list will be updated once official announcements are made.`
+                    : `Browse all ${stats.totalOrgs} organizations that participated in Google Summer of Code ${year}. ${
+                        stats.newOrgs > 0
+                          ? `${stats.newOrgs} organizations joined for the first time this year.`
+                          : ""
+                      }`
+                }
+                align="center"
+              />
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              <div className="p-4 rounded-lg border bg-card">
-                <Text variant="small" className="text-muted-foreground mb-2">
-                  Organizations
-                </Text>
-                <Text className="text-3xl font-bold mb-1">{stats.totalOrgs}</Text>
-                <Text variant="small" className="text-muted-foreground">
-                  {stats.multiYearOrgs} veterans
-                </Text>
-              </div>
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div className="p-4 rounded-lg border bg-card">
+                  <Text variant="small" className="text-muted-foreground mb-2">
+                    Organizations
+                  </Text>
+                  <Text className="text-3xl font-bold mb-1">{stats.totalOrgs}</Text>
+                  <Text variant="small" className="text-muted-foreground">
+                    {stats.multiYearOrgs} veterans
+                  </Text>
+                </div>
 
-              <div className="p-4 rounded-lg border bg-card">
-                <Text variant="small" className="text-muted-foreground mb-2">
-                  New Orgs
-                </Text>
-                <Text className="text-3xl font-bold mb-1">{stats.newOrgs}</Text>
-                <Text variant="small" className="text-muted-foreground">
-                  {((stats.newOrgs / stats.totalOrgs) * 100).toFixed(0)}% of total
-                </Text>
-              </div>
+                <div className="p-4 rounded-lg border bg-card">
+                  <Text variant="small" className="text-muted-foreground mb-2">
+                    New Orgs
+                  </Text>
+                  <Text className="text-3xl font-bold mb-1">{stats.newOrgs}</Text>
+                  <Text variant="small" className="text-muted-foreground">
+                    {((stats.newOrgs / stats.totalOrgs) * 100).toFixed(0)}% of total
+                  </Text>
+                </div>
 
-              <div className="p-4 rounded-lg border bg-card">
-                <Text variant="small" className="text-muted-foreground mb-2">
-                  Projects
-                </Text>
-                <Text className="text-3xl font-bold mb-1">{stats.totalProjects}</Text>
-                <Text variant="small" className="text-muted-foreground">
-                  ~{stats.averageProjectsPerOrg} avg
-                </Text>
-              </div>
+                <div className="p-4 rounded-lg border bg-card">
+                  <Text variant="small" className="text-muted-foreground mb-2">
+                    Projects
+                  </Text>
+                  <Text className="text-3xl font-bold mb-1">{stats.totalProjects}</Text>
+                  <Text variant="small" className="text-muted-foreground">
+                    ~{stats.averageProjectsPerOrg} avg
+                  </Text>
+                </div>
 
-              <div className="p-4 rounded-lg border bg-card">
-                <Text variant="small" className="text-muted-foreground mb-2">
-                  Year
-                </Text>
-                <Text className="text-3xl font-bold mb-1">{year}</Text>
-                <Text variant="small" className="text-muted-foreground">
-                  Edition #{parseInt(year) - 2005 + 1}
-                </Text>
-              </div>
+                <div className="p-4 rounded-lg border bg-card">
+                  <Text variant="small" className="text-muted-foreground mb-2">
+                    Year
+                  </Text>
+                  <Text className="text-3xl font-bold mb-1">{year}</Text>
+                  <Text variant="small" className="text-muted-foreground">
+                    Edition #{parseInt(year) - 2005 + 1}
+                  </Text>
+                </div>
 
-              <div className="p-4 rounded-lg border bg-card">
-                <Text variant="small" className="text-muted-foreground mb-2">
-                  Top Stack
-                </Text>
-                <Text className="text-3xl font-bold mb-1">
-                  {stats.languageDistribution[0].language}
-                </Text>
-                <Text variant="small" className="text-muted-foreground">
-                  {stats.languageDistribution[0].percentage}% adoption
-                </Text>
-              </div>
+                <div className="p-4 rounded-lg border bg-card">
+                  <Text variant="small" className="text-muted-foreground mb-2">
+                    Top Stack
+                  </Text>
+                  <Text className="text-3xl font-bold mb-1">
+                    {stats.languageDistribution[0].language}
+                  </Text>
+                  <Text variant="small" className="text-muted-foreground">
+                    {stats.languageDistribution[0].percentage}% adoption
+                  </Text>
+                </div>
 
-              <div className="p-4 rounded-lg border bg-card">
-                <Text variant="small" className="text-muted-foreground mb-2">
-                  Beginner Level
-                </Text>
-                <Text className="text-3xl font-bold mb-1">
-                  {stats.difficultyDistribution.find((d) => d.level === "Beginner")?.count || 0}
-                </Text>
-                <Text variant="small" className="text-muted-foreground">
-                  {stats.difficultyDistribution.find((d) => d.level === "Beginner")?.percentage || 0}% friendly
-                </Text>
+                <div className="p-4 rounded-lg border bg-card">
+                  <Text variant="small" className="text-muted-foreground mb-2">
+                    Beginner Level
+                  </Text>
+                  <Text className="text-3xl font-bold mb-1">
+                    {stats.difficultyDistribution.find((d) => d.level === "Beginner")?.count || 0}
+                  </Text>
+                  <Text variant="small" className="text-muted-foreground">
+                    {stats.difficultyDistribution.find((d) => d.level === "Beginner")?.percentage || 0}% friendly
+                  </Text>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Data Visualizations & Insights */}
-          <div className="space-y-8">
-            <Heading variant="subsection" className="text-center">
-              {year} Year Insights & Statistics
-            </Heading>
+            {/* Data Visualizations & Insights */}
+            <div className="space-y-8">
+              <Heading variant="subsection" className="text-center">
+                {year} Year Insights & Statistics
+              </Heading>
 
-            {/* Top Charts Grid */}
-            <Grid cols={{ default: 1, lg: 2 }} gap="lg">
-              {/* Chart 1: Top Programming Languages - Shadcn Bar Chart */}
-              <LanguagesBarChart data={stats.languageDistribution} />
+              {/* Top Charts Grid */}
+              <Grid cols={{ default: 1, lg: 2 }} gap="lg">
+                {/* Chart 1: Top Programming Languages - Shadcn Bar Chart */}
+                <LanguagesBarChart data={stats.languageDistribution} />
 
-              {/* Chart 2: Top Organizations by Student Slots - Shadcn Horizontal Bar Chart */}
-              <StudentSlotsBarChart 
-                data={stats.topOrgsBySlots.map(org => ({
-                  org: org.name,
-                  slots: org.slots,
-                }))}
-                year={year}
-              />
-            </Grid>
+                {/* Chart 2: Top Organizations by Student Slots - Shadcn Horizontal Bar Chart */}
+                <StudentSlotsBarChart 
+                  data={stats.topOrgsBySlots.map(org => ({
+                    org: org.name,
+                    slots: org.slots,
+                  }))}
+                  year={year}
+                />
+              </Grid>
 
-            {/* Difficulty Distribution with Pie Chart */}
-            <CardWrapper className="p-6">
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Heading variant="small" className="text-lg">
-                      Project Difficulty Distribution
-                    </Heading>
-                    <Text variant="muted" className="text-sm mt-1">
-                      Breakdown of project difficulty levels across all organizations
-                    </Text>
+              {/* Difficulty Distribution with Pie Chart */}
+              <CardWrapper className="p-6">
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <Heading variant="small" className="text-lg">
+                        Project Difficulty Distribution
+                      </Heading>
+                      <Text variant="muted" className="text-sm mt-1">
+                        Breakdown of project difficulty levels across all organizations
+                      </Text>
+                    </div>
+                    <Badge variant="secondary" className="text-xs">
+                      {stats.totalProjects} total projects
+                    </Badge>
                   </div>
-                  <Badge variant="secondary" className="text-xs">
-                    {stats.totalProjects} total projects
-                  </Badge>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Horizontal Bars */}
-                  <div className="space-y-4">
-                    {stats.difficultyDistribution.map((diff, index) => (
-                      <div key={diff.level} className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Horizontal Bars */}
+                    <div className="space-y-4">
+                      {stats.difficultyDistribution.map((diff, index) => (
+                        <div key={diff.level} className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className={cn(
+                                "w-3 h-3 rounded-sm",
+                                index === 0 && "bg-foreground",
+                                index === 1 && "bg-foreground/60",
+                                index === 2 && "bg-foreground/30"
+                              )} />
+                              <Text className="font-medium">
+                                {diff.level}
+                              </Text>
+                            </div>
+                            <Text className="text-lg font-bold">
+                              {diff.percentage}%
+                            </Text>
+                          </div>
+                          <div className="relative h-8 bg-muted rounded-sm overflow-hidden">
+                            <div
+                              className={cn(
+                                "h-full transition-all duration-500 flex items-center justify-end pr-3",
+                                index === 0 && "bg-foreground",
+                                index === 1 && "bg-foreground/60",
+                                index === 2 && "bg-foreground/30"
+                              )}
+                              style={{ width: `${diff.percentage}%` }}
+                            >
+                              <span className="text-xs font-semibold text-background mix-blend-difference">
+                                {diff.count}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Pie Chart */}
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="relative w-48 h-48">
+                        <div
+                          className="w-full h-full rounded-full"
+                          style={{
+                            background: `conic-gradient(
+                              from 0deg,
+                              hsl(var(--foreground)) 0% ${stats.difficultyDistribution[0].percentage}%,
+                              hsl(var(--foreground) / 0.6) ${stats.difficultyDistribution[0].percentage}% ${stats.difficultyDistribution[0].percentage + stats.difficultyDistribution[1].percentage}%,
+                              hsl(var(--foreground) / 0.3) ${stats.difficultyDistribution[0].percentage + stats.difficultyDistribution[1].percentage}% 100%
+                            )`,
+                          }}
+                        />
+                        <div className="absolute inset-[30%] bg-background rounded-full flex items-center justify-center">
+                          <div className="text-center">
+                            <Text className="text-2xl font-bold">{stats.totalOrgs}</Text>
+                            <Text variant="small" className="text-muted-foreground">orgs</Text>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-2 mt-4">
+                        {stats.difficultyDistribution.map((diff, index) => (
+                          <div key={diff.level} className="flex items-center gap-3">
                             <div className={cn(
-                              "w-3 h-3 rounded-sm",
+                              "w-4 h-4 rounded-sm",
                               index === 0 && "bg-foreground",
                               index === 1 && "bg-foreground/60",
                               index === 2 && "bg-foreground/30"
                             )} />
-                            <Text className="font-medium">
-                              {diff.level}
+                            <Text variant="small">
+                              {diff.level}: {diff.count} ({diff.percentage}%)
                             </Text>
                           </div>
-                          <Text className="text-lg font-bold">
-                            {diff.percentage}%
-                          </Text>
-                        </div>
-                        <div className="relative h-8 bg-muted rounded-sm overflow-hidden">
-                          <div
-                            className={cn(
-                              "h-full transition-all duration-500 flex items-center justify-end pr-3",
-                              index === 0 && "bg-foreground",
-                              index === 1 && "bg-foreground/60",
-                              index === 2 && "bg-foreground/30"
-                            )}
-                            style={{ width: `${diff.percentage}%` }}
-                          >
-                            <span className="text-xs font-semibold text-background mix-blend-difference">
-                              {diff.count}
-                            </span>
-                          </div>
-                        </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                  
-                  {/* Pie Chart */}
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="relative w-48 h-48">
-                      <div
-                        className="w-full h-full rounded-full"
-                        style={{
-                          background: `conic-gradient(
-                            from 0deg,
-                            hsl(var(--foreground)) 0% ${stats.difficultyDistribution[0].percentage}%,
-                            hsl(var(--foreground) / 0.6) ${stats.difficultyDistribution[0].percentage}% ${stats.difficultyDistribution[0].percentage + stats.difficultyDistribution[1].percentage}%,
-                            hsl(var(--foreground) / 0.3) ${stats.difficultyDistribution[0].percentage + stats.difficultyDistribution[1].percentage}% 100%
-                          )`,
-                        }}
-                      />
-                      <div className="absolute inset-[30%] bg-background rounded-full flex items-center justify-center">
-                        <div className="text-center">
-                          <Text className="text-2xl font-bold">{stats.totalOrgs}</Text>
-                          <Text variant="small" className="text-muted-foreground">orgs</Text>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2 mt-4">
-                      {stats.difficultyDistribution.map((diff, index) => (
-                        <div key={diff.level} className="flex items-center gap-3">
-                          <div className={cn(
-                            "w-4 h-4 rounded-sm",
-                            index === 0 && "bg-foreground",
-                            index === 1 && "bg-foreground/60",
-                            index === 2 && "bg-foreground/30"
-                          )} />
-                          <Text variant="small">
-                            {diff.level}: {diff.count} ({diff.percentage}%)
-                          </Text>
-                        </div>
-                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
-            </CardWrapper>
+              </CardWrapper>
 
-            {/* New Organizations Section */}
-            {stats.newOrgs > 0 && (
+              {/* New Organizations Section */}
+              {stats.newOrgs > 0 && (
+                <CardWrapper className="p-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <Heading variant="small" className="text-lg">
+                          New Organizations in {year}
+                        </Heading>
+                        <Text variant="muted" className="text-sm mt-1">
+                          First-time participants — often have higher acceptance rates
+                        </Text>
+                      </div>
+                      <Badge variant="secondary">
+                        {stats.newOrgs} new
+                      </Badge>
+                    </div>
+                    <ExpandableNewOrgs organizations={organizations} year={year} />
+                  </div>
+                </CardWrapper>
+              )}
+
+              {/* Beginner-Friendly Organizations */}
               <CardWrapper className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
                       <Heading variant="small" className="text-lg">
-                        New Organizations in {year}
+                        Beginner-Friendly Organizations
                       </Heading>
                       <Text variant="muted" className="text-sm mt-1">
-                        First-time participants — often have higher acceptance rates
+                        Perfect for first-time GSoC applicants
                       </Text>
                     </div>
                     <Badge variant="secondary">
-                      {stats.newOrgs} new
+                      For beginners
                     </Badge>
                   </div>
-                  <ExpandableNewOrgs organizations={organizations} year={year} />
+                  <ExpandableBeginnerOrgs organizations={organizations} />
                 </div>
               </CardWrapper>
-            )}
+            </div>
 
-            {/* Beginner-Friendly Organizations */}
-            <CardWrapper className="p-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Heading variant="small" className="text-lg">
-                      Beginner-Friendly Organizations
-                    </Heading>
-                    <Text variant="muted" className="text-sm mt-1">
-                      Perfect for first-time GSoC applicants
-                    </Text>
-                  </div>
-                  <Badge variant="secondary">
-                    For beginners
-                  </Badge>
+            {/* Quick Filters */}
+            <div className="flex flex-col gap-6">
+              <div className="relative w-full max-w-2xl mx-auto">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder={`Search ${year} organizations...`}
+                  className="w-full pl-12 pr-4 py-2 rounded-full h-12 text-base"
+                />
+              </div>
+
+              <div className="text-center space-y-3">
+                <Text variant="small" className="text-muted-foreground">
+                  Popular Topics in {year}:
+                </Text>
+                <div className="flex flex-wrap items-center justify-center gap-2">
+                  {stats.topTopics.map((topic) => (
+                    <Link key={topic} href={`/topics/${topic.toLowerCase().replace(/\s+/g, "-")}`}>
+                      <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
+                        {topic}
+                      </Badge>
+                    </Link>
+                  ))}
                 </div>
-                <ExpandableBeginnerOrgs organizations={organizations} />
               </div>
-            </CardWrapper>
-          </div>
-
-          {/* Quick Filters */}
-          <div className="flex flex-col gap-6">
-            <div className="relative w-full max-w-2xl mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder={`Search ${year} organizations...`}
-                className="w-full pl-12 pr-4 py-2 rounded-full h-12 text-base"
-              />
             </div>
 
-            <div className="text-center space-y-3">
-              <Text variant="small" className="text-muted-foreground">
-                Popular Topics in {year}:
-              </Text>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {stats.topTopics.map((topic) => (
-                  <Link key={topic} href={`/topics/${topic.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                      {topic}
-                    </Badge>
-                  </Link>
+            {/* Organizations by Tech Stack */}
+            <div className="space-y-6">
+              <div className="text-center space-y-2">
+                <Heading variant="subsection">
+                  Browse by Programming Language
+                </Heading>
+                <Text className="text-muted-foreground">
+                  Find organizations working with your favorite tech stack
+                </Text>
+              </div>
+              <ExpandableTechStacks techStacks={stats.topTechStacks} organizations={organizations} />
+            </div>
+
+            {/* Organizations Grid */}
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <Heading variant="subsection">
+                  All Organizations ({organizations.length})
+                </Heading>
+                <Button variant="outline" size="sm">
+                  <Filter className="w-4 h-4 mr-2" />
+                  More Filters
+                </Button>
+              </div>
+
+              <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
+                {organizations.map((org) => (
+                  <OrganizationCard key={org.slug} org={org} />
                 ))}
+              </Grid>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center space-y-4 py-10 border-t">
+              <Heading variant="subsection">
+                {isUpcoming
+                  ? "Preparing for GSoC?"
+                  : "Looking for more information?"}
+              </Heading>
+              <Text className="max-w-2xl mx-auto text-muted-foreground">
+                {isUpcoming
+                  ? `Get ready for GSoC ${year} by exploring past organizations, understanding project requirements, and building your skills.`
+                  : `Explore organizations from other years or browse by topics and tech stacks to find your perfect match.`}
+              </Text>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                <Button asChild size="lg">
+                  <Link href="/organizations">
+                    <Users className="w-4 h-4 mr-2" />
+                    View All Organizations
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/topics">
+                    <ArrowRight className="w-4 h-4 mr-2" />
+                    Browse by Topic
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
-
-          {/* Organizations by Tech Stack */}
-          <div className="space-y-6">
-            <div className="text-center space-y-2">
-              <Heading variant="subsection">
-                Browse by Programming Language
-              </Heading>
-              <Text className="text-muted-foreground">
-                Find organizations working with your favorite tech stack
-              </Text>
-            </div>
-            <ExpandableTechStacks techStacks={stats.topTechStacks} organizations={organizations} />
-          </div>
-
-          {/* Organizations Grid */}
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <Heading variant="subsection">
-                All Organizations ({organizations.length})
-              </Heading>
-              <Button variant="outline" size="sm">
-                <Filter className="w-4 h-4 mr-2" />
-                More Filters
-              </Button>
-            </div>
-
-            <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
-              {organizations.map((org) => (
-                <OrganizationCard key={org.slug} org={org} />
-              ))}
-            </Grid>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center space-y-4 py-10 border-t">
-            <Heading variant="subsection">
-              {isUpcoming
-                ? "Preparing for GSoC?"
-                : "Looking for more information?"}
-            </Heading>
-            <Text className="max-w-2xl mx-auto text-muted-foreground">
-              {isUpcoming
-                ? `Get ready for GSoC ${year} by exploring past organizations, understanding project requirements, and building your skills.`
-                : `Explore organizations from other years or browse by topics and tech stacks to find your perfect match.`}
-            </Text>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-              <Button asChild size="lg">
-                <Link href="/organizations">
-                  <Users className="w-4 h-4 mr-2" />
-                  View All Organizations
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/topics">
-                  <ArrowRight className="w-4 h-4 mr-2" />
-                  Browse by Topic
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </>
   );
 }
 

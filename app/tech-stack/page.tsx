@@ -61,95 +61,123 @@ export default function TechStackPage() {
 
   const trendingStacks = techStacks.slice(0, 6); // Top 6 as trending
 
+  // Generate structured data for SEO
+  const jsonLd = techStacks.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Google Summer of Code Programming Languages & Technologies",
+    "description": "Browse GSoC organizations filtered by programming language and technology stack",
+    "url": "https://gsoc-orgs.vercel.app/tech-stack",
+    "numberOfItems": techStacks.length,
+    "itemListElement": techStacks.slice(0, 20).map((stack, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Thing",
+        "name": stack.name,
+        "url": `https://gsoc-orgs.vercel.app/tech-stack/${stack.slug}`,
+        "description": `${stack.usage_count} GSoC organizations using ${stack.name}`
+      }
+    }))
+  } : null;
+
   return (
-    <div className="space-y-12">
-      {/* Page Header */}
-      <SectionHeader
-        badge="Browse by Technology"
-        title="Programming Languages & Technologies"
-        description="Explore Google Summer of Code organizations and projects filtered by programming language. Find opportunities that match your technical expertise."
-        align="center"
-        className="max-w-3xl mx-auto"
-      />
-
-      {/* Search Bar */}
-      <div className="max-w-2xl mx-auto">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search technologies by name..."
-            className="pl-10 h-12 text-base"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-      </div>
-
-      {/* Error State */}
-      {error && (
-        <CardWrapper className="text-center py-8 bg-destructive/10">
-          <Text className="text-destructive">{error}</Text>
-        </CardWrapper>
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       )}
+      <div className="space-y-12">
+        {/* Page Header */}
+        <SectionHeader
+          badge="Browse by Technology"
+          title="Programming Languages & Technologies"
+          description="Explore Google Summer of Code organizations and projects filtered by programming language. Find opportunities that match your technical expertise."
+          align="center"
+          className="max-w-3xl mx-auto"
+        />
 
-      {/* Loading State */}
-      {loading && (
-        <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <CardWrapper key={i} className="h-48 animate-pulse">
-              <div className="h-full bg-muted/50 rounded-md" />
-            </CardWrapper>
-          ))}
-        </Grid>
-      )}
-
-      {/* Trending Technologies */}
-      {!loading && !searchQuery && trendingStacks.length > 0 && (
-        <section>
-          <div className="flex items-center gap-2 mb-6">
-            <TrendingUp className="w-5 h-5 text-primary" />
-            <Heading variant="subsection">Top Technologies</Heading>
+        {/* Search Bar */}
+        <div className="max-w-2xl mx-auto">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search technologies by name..."
+              className="pl-10 h-12 text-base"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
-          <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="md">
-            {trendingStacks.map((stack, index) => (
-              <TechStackCard key={`trending-${stack.name}-${index}`} stack={stack} />
+        </div>
+
+        {/* Error State */}
+        {error && (
+          <CardWrapper className="text-center py-8 bg-destructive/10">
+            <Text className="text-destructive">{error}</Text>
+          </CardWrapper>
+        )}
+
+        {/* Loading State */}
+        {loading && (
+          <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <CardWrapper key={i} className="h-48 animate-pulse">
+                <div className="h-full bg-muted/50 rounded-md" />
+              </CardWrapper>
             ))}
           </Grid>
-        </section>
-      )}
+        )}
 
-      {/* All Tech Stacks */}
-      {!loading && !error && (
-        <section>
-          <Heading variant="section" className="mb-6">
-            {searchQuery ? "Search Results" : "All Technologies"}
-          </Heading>
-          
-          {techStacks.length === 0 ? (
-            <CardWrapper className="text-center py-12">
-              <Heading variant="small" className="mb-2">
-                No technologies found
-              </Heading>
-              <Text className="text-muted-foreground">
-                Try a different search term
-              </Text>
-            </CardWrapper>
-          ) : (
-            <>
-              <Text variant="small" className="text-muted-foreground mb-6">
-                Showing {techStacks.length} technolog{techStacks.length !== 1 ? "ies" : "y"}
-              </Text>
-              <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
-                {techStacks.map((stack, index) => (
-                  <TechStackCard key={`${stack.name}-${index}`} stack={stack} />
-                ))}
-              </Grid>
-            </>
-          )}
-        </section>
-      )}
-    </div>
+        {/* Trending Technologies */}
+        {!loading && !searchQuery && trendingStacks.length > 0 && (
+          <section>
+            <div className="flex items-center gap-2 mb-6">
+              <TrendingUp className="w-5 h-5 text-primary" />
+              <Heading variant="subsection">Top Technologies</Heading>
+            </div>
+            <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="md">
+              {trendingStacks.map((stack, index) => (
+                <TechStackCard key={`trending-${stack.name}-${index}`} stack={stack} />
+              ))}
+            </Grid>
+          </section>
+        )}
+
+        {/* All Tech Stacks */}
+        {!loading && !error && (
+          <section>
+            <Heading variant="section" className="mb-6">
+              {searchQuery ? "Search Results" : "All Technologies"}
+            </Heading>
+            
+            {techStacks.length === 0 ? (
+              <CardWrapper className="text-center py-12">
+                <Heading variant="small" className="mb-2">
+                  No technologies found
+                </Heading>
+                <Text className="text-muted-foreground">
+                  Try a different search term
+                </Text>
+              </CardWrapper>
+            ) : (
+              <>
+                <Text variant="small" className="text-muted-foreground mb-6">
+                  Showing {techStacks.length} technolog{techStacks.length !== 1 ? "ies" : "y"}
+                </Text>
+                <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
+                  {techStacks.map((stack, index) => (
+                    <TechStackCard key={`${stack.name}-${index}`} stack={stack} />
+                  ))}
+                </Grid>
+              </>
+            )}
+          </section>
+        )}
+      </div>
+    </>
   );
 }
 

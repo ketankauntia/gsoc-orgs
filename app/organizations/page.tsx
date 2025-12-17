@@ -42,80 +42,106 @@ async function getOrganizations(params: {
 }
 
 export default async function OrganizationsPage() {
-  // Fetch organizations - default to first page with 12 items
   const data = await getOrganizations({ page: 1, limit: 12 });
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Google Summer of Code Organizations",
+    description:
+      "Explore all Google Summer of Code participating organizations with detailed information about projects, technologies, and difficulty levels.",
+    url: "https://gsoc-orgs.vercel.app/organizations",
+    numberOfItems: data.total,
+    itemListElement: data.items.map((org, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Organization",
+        name: org.name,
+        url: `https://gsoc-orgs.vercel.app/organizations/${org.slug}`,
+        description: org.description,
+        keywords: org.technologies.join(", "),
+      },
+    })),
+  };
+
   return (
-    <div className="space-y-12">
-      {/* Page Header */}
-      <SectionHeader
-        badge="GSoC 2026"
-        title="All Organizations"
-        description="Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests."
-        align="center"
-        className="max-w-3xl mx-auto"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <div className="space-y-12">
+        {/* Page Header */}
+        <SectionHeader
+          badge="GSoC 2026"
+          title="All Organizations"
+          description="Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests."
+          align="center"
+          className="max-w-3xl mx-auto"
+        />
 
-      {/* Search and Filters Section */}
-      <div className="space-y-6">
-        {/* Search Bar - TODO: Make functional with client component */}
-        <div className="relative max-w-2xl mx-auto">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search organizations by name, technology, or keyword..."
-            className="pl-10 h-12 text-base"
-          />
-        </div>
-
-        {/* Filter Tags - TODO: Make functional with state management */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            All
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Python
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            JavaScript
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Beginner Friendly
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Machine Learning
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Web Development
-          </Badge>
-        </div>
-      </div>
-
-      {/* Organizations Grid */}
-      <Suspense fallback={<OrganizationsGridSkeleton />}>
+        {/* Search and Filters Section */}
         <div className="space-y-6">
-          {/* Results count */}
-          <div className="text-center text-muted-foreground">
-            Showing {data.items.length} of {data.total} organizations
+          {/* Search Bar - TODO: Make functional with client component */}
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search organizations by name, technology, or keyword..."
+              className="pl-10 h-12 text-base"
+            />
           </div>
 
-          <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
-            {data.items.map((org) => (
-              <OrganizationCard key={org.id} org={org} />
-            ))}
-          </Grid>
+          {/* Filter Tags - TODO: Make functional with state management */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+              All
+            </Badge>
+            <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+              Python
+            </Badge>
+            <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+              JavaScript
+            </Badge>
+            <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+              Beginner Friendly
+            </Badge>
+            <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+              Machine Learning
+            </Badge>
+            <Badge variant="outline" className="cursor-pointer hover:bg-accent">
+              Web Development
+            </Badge>
+          </div>
         </div>
-      </Suspense>
 
-      {/* Load More / Pagination - TODO: Make functional */}
-      {data.page < data.pages && (
-        <div className="flex justify-center pt-8">
-          <Button variant="outline" size="lg">
-            Load More Organizations ({data.total - data.items.length} remaining)
-          </Button>
-        </div>
-      )}
-    </div>
+        {/* Organizations Grid */}
+        <Suspense fallback={<OrganizationsGridSkeleton />}>
+          <div className="space-y-6">
+            {/* Results count */}
+            <div className="text-center text-muted-foreground">
+              Showing {data.items.length} of {data.total} organizations
+            </div>
+
+            <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
+              {data.items.map((org) => (
+                <OrganizationCard key={org.id} org={org} />
+              ))}
+            </Grid>
+          </div>
+        </Suspense>
+
+        {/* Load More / Pagination - TODO: Make functional */}
+        {data.page < data.pages && (
+          <div className="flex justify-center pt-8">
+            <Button variant="outline" size="lg">
+              Load More Organizations ({data.total - data.items.length} remaining)
+            </Button>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

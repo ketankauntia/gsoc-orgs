@@ -29,13 +29,38 @@ export async function generateMetadata({
       description: "Explore organizations participating in Google Summer of Code.",
     };
   }
+
+  const yearNum = parseInt(year, 10);
+  const isUpcoming = yearNum > new Date().getFullYear();
+  const isPast = yearNum < new Date().getFullYear();
+  
+  const statusText = isUpcoming ? "Upcoming" : isPast ? "Archive" : "Current";
   
   return {
-    title: `GSoC ${year} Organizations | Google Summer of Code`,
-    description: `Explore all organizations that participated in Google Summer of Code ${year}. Find projects, tech stacks, and difficulty levels.`,
+    title: `GSoC ${year} Organizations | ${statusText} Participating Orgs`,
+    description: `Complete list of Google Summer of Code ${year} organizations. Browse ${statusText.toLowerCase()} participating organizations, filter by programming language, difficulty level, and project topics. Find beginner-friendly open-source projects for GSoC ${year}.`,
+    keywords: [
+      `GSoC ${year}`,
+      `Google Summer of Code ${year}`,
+      `GSoC ${year} organizations`,
+      `GSoC ${year} projects`,
+      `open source ${year}`,
+      `student coding programs ${year}`,
+      `${year} summer internships`,
+      `programming opportunities ${year}`,
+      `beginner projects ${year}`,
+      `Python projects GSoC ${year}`,
+      `JavaScript GSoC ${year}`,
+      `machine learning GSoC ${year}`,
+    ],
     openGraph: {
-      title: `GSoC ${year} Organizations`,
-      description: `Explore all organizations that participated in Google Summer of Code ${year}.`,
+      title: `GSoC ${year} Organizations | Complete List & Statistics`,
+      description: `Explore all Google Summer of Code ${year} participating organizations with detailed insights, tech stacks, and difficulty levels.`,
+      url: `https://gsoc-orgs.vercel.app/${slug}`,
+      images: ["/og.webp"],
+    },
+    alternates: {
+      canonical: `https://gsoc-orgs.vercel.app/${slug}`,
     },
   };
 }
