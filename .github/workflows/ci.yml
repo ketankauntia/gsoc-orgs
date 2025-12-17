@@ -13,14 +13,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # `actions/setup-node` with `cache: pnpm` needs `pnpm` available on PATH
+      # so we install pnpm first.
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-
-      - name: Enable Corepack
-        run: corepack enable
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
