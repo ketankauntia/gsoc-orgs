@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Heading, Text, Button, CardWrapper, Grid, Badge } from "@/components/ui";
-import { apiFetch } from "@/lib/api";
+import { apiFetchServer } from "@/lib/api.server";
 
 /**
  * Tech Stack Detail Page
@@ -28,7 +28,7 @@ interface TechStackDetail {
 
 async function getTechStack(slug: string): Promise<TechStackDetail | null> {
   try {
-    return await apiFetch<TechStackDetail>(`/api/tech-stack/${slug}`);
+    return await apiFetchServer<TechStackDetail>(`/api/tech-stack/${slug}`);
   } catch (error: any) {
     if (error.status === 404) {
       return null;

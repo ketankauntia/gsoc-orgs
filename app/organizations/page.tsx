@@ -12,7 +12,8 @@ import {
   Button,
   Input,
 } from "@/components/ui";
-import { apiFetch, Organization, PaginatedResponse } from "@/lib/api";
+import { Organization, PaginatedResponse } from "@/lib/api";
+import { apiFetchServer } from "@/lib/api.server";
 
 /**
  * Organizations Listing Page
@@ -35,7 +36,7 @@ async function getOrganizations(params: {
   if (params.tech) queryParams.set("tech", params.tech);
 
   const query = queryParams.toString();
-  return apiFetch<PaginatedResponse<Organization>>(
+  return apiFetchServer<PaginatedResponse<Organization>>(
     `/api/organizations${query ? `?${query}` : ""}`
   );
 }

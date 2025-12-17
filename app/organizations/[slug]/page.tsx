@@ -9,7 +9,8 @@ import {
   CardWrapper,
   Grid,
 } from "@/components/ui";
-import { apiFetch, Organization } from "@/lib/api";
+import { Organization } from "@/lib/api";
+import { apiFetchServer } from "@/lib/api.server";
 
 /**
  * Organization Detail Page
@@ -18,7 +19,7 @@ import { apiFetch, Organization } from "@/lib/api";
 
 async function getOrganization(slug: string): Promise<Organization | null> {
   try {
-    return await apiFetch<Organization>(`/api/organizations/${slug}`);
+    return await apiFetchServer<Organization>(`/api/organizations/${slug}`);
   } catch (error: any) {
     if (error.status === 404) {
       return null;
