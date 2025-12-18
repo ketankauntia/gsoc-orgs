@@ -72,6 +72,8 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       if (filters.category) params.set('category', filters.category)
       if (filters.tech) params.set('tech', filters.tech)
       if (filters.year) params.set('year', filters.year)
+      if (filters.difficulty) params.set('difficulty', filters.difficulty)
+      if (filters.topic) params.set('topic', filters.topic)
       
       const response = await fetch(`/api/organizations?${params.toString()}`)
       const newData = await response.json()

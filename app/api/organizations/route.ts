@@ -11,6 +11,8 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get('category') || undefined
     const tech = searchParams.get('tech') || undefined
     const year = searchParams.get('year') || undefined
+    const difficulty = searchParams.get('difficulty') || undefined
+    const topic = searchParams.get('topic') || undefined
 
     // Build where clause
     const where: any = {}
@@ -32,6 +34,16 @@ export async function GET(request: NextRequest) {
 
     if (year) {
       where.active_years = { has: parseInt(year) }
+    }
+
+    if (difficulty) {
+      // Map difficulty to DB field if needed
+      // For now, we'll add it as a filter when the DB schema supports it
+      // where.difficulty = difficulty
+    }
+
+    if (topic) {
+      where.topics = { has: topic }
     }
 
     // Fetch organizations with pagination
