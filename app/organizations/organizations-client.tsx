@@ -37,6 +37,19 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     difficulty: searchParams.get('difficulty') || null,
   })
 
+  // Update filters from URL params
+  useEffect(() => {
+    const newFilters: FilterState = {
+      search: searchParams.get('q') || '',
+      year: searchParams.get('year') || null,
+      category: searchParams.get('category') || null,
+      tech: searchParams.get('tech') || null,
+      topic: searchParams.get('topic') || null,
+      difficulty: searchParams.get('difficulty') || null,
+    }
+    setFilters(newFilters)
+  }, [searchParams])
+
   // Update when URL params change
   useEffect(() => {
     const page = Number(searchParams.get('page')) || 1
@@ -47,12 +60,18 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams])
 
-  const fetchOrganizations = async (page: number) => {
+  const fetchOrganizations = useCallback(async (page: number) => {
     setIsLoading(true)
     try {
-      const params = new URLSearchParams(searchParams.toString())
+      const params = new URLSearchParams()
       params.set('page', page.toString())
-      params.set('limit', '20') // 20 orgs per page as requested
+      params.set('limit', '20')
+      
+      // Add filter params
+      if (filters.search) params.set('q', filters.search)
+      if (filters.category) params.set('category', filters.category)
+      if (filters.tech) params.set('tech', filters.tech)
+      if (filters.year) params.set('year', filters.year)
       
       const response = await fetch(`/api/organizations?${params.toString()}`)
       const newData = await response.json()
@@ -62,65 +81,182 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [filters])
+
+  // Refetch when filters change
+  useEffect(() => {
+    fetchOrganizations(1)
+    setCurrentPage(1)
+  }, [filters, fetchOrganizations])
 
   const handlePageChange = (page: number) => {
-    const params = new URLSearchParams(searchParams.toString())
-    params.set('page', page.toString())
-    router.push(`/organizations?${params.toString()}`)
+    updateURLParams({ page })
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const handleFilterChange = (newFilters: FilterState) => {
+    setFilters(newFilters)
+    updateURLParams({ ...newFilters, page: 1 })
+  }
+
+  const updateURLParams = (updates: Partial<FilterState> & { page?: number }) => {
+    const params = new URLSearchParams()
+    
+    // Add page
+    const page = updates.page || currentPage
+    if (page > 1) params.set('page', page.toString())
+    
+    // Add filters
+    const filterUpdates = updates as Partial<FilterState>
+    if (filterUpdates.search) params.set('q', filterUpdates.search)
+    if (filterUpdates.category) params.set('category', filterUpdates.category)
+    if (filterUpdates.tech) params.set('tech', filterUpdates.tech)
+    if (filterUpdates.year) params.set('year', filterUpdates.year)
+    if (filterUpdates.topic) params.set('topic', filterUpdates.topic)
+    if (filterUpdates.difficulty) params.set('difficulty', filterUpdates.difficulty)
+    
+    router.push(`/organizations?${params.toString()}`)
+  }
+
+  const handleQuickFilter = (type: 'tech' | 'category', value: string) => {
+    const newFilters = { ...filters, [type]: filters[type] === value ? null : value }
+    handleFilterChange(newFilters)
+  }
+
+  const removeFilter = (key: keyof FilterState) => {
+    const newFilters = { ...filters, [key]: key === 'search' ? '' : null }
+    handleFilterChange(newFilters)
+  }
+
+  const activeFilters = [
+    filters.year && { key: 'year', label: filters.year, value: filters.year },
+    filters.category && { key: 'category', label: filters.category, value: filters.category },
+    filters.tech && { key: 'tech', label: filters.tech, value: filters.tech },
+    filters.topic && { key: 'topic', label: filters.topic, value: filters.topic },
+    filters.difficulty && { key: 'difficulty', label: filters.difficulty, value: filters.difficulty },
+  ].filter(Boolean) as Array<{ key: keyof FilterState; label: string; value: string }>
+
   return (
-    <>
-      {/* SEO content - only show on page 1 */}
-      {currentPage === 1 && (
-        <div className="max-w-3xl mx-auto mb-12 prose prose-gray dark:prose-invert">
-          <p className="text-lg text-muted-foreground text-center">
-            Browse through all Google Summer of Code participating organizations. 
-            Discover the perfect open-source project that matches your skills and interests. 
-            Our comprehensive directory includes organizations working on Python, JavaScript, 
-            Machine Learning, Web Development, and many other technologies. Filter by your 
-            preferred tech stack and difficulty level to find beginner-friendly projects or 
-            advanced challenges.
-          </p>
-        </div>
-      )}
+    <div className="flex gap-8">
+      {/* Sidebar */}
+      <aside className="hidden lg:block">
+        <FiltersSidebar onFilterChange={handleFilterChange} initialFilters={filters} />
+      </aside>
 
-      {/* Search and Filters Section */}
-      <div className="space-y-6 mb-8">
-        {/* Search Bar - TODO: Make functional with client component */}
-        <div className="relative max-w-2xl mx-auto">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search organizations by name, technology, or keyword..."
-            className="pl-10 h-12 text-base"
-          />
-        </div>
+      {/* Main Content */}
+      <div className="flex-1">
+        {/* SEO content - only show on page 1 */}
+        {currentPage === 1 && !filters.search && !filters.tech && !filters.category && (
+          <div className="max-w-3xl mx-auto mb-12 prose prose-gray dark:prose-invert">
+            <p className="text-lg text-muted-foreground text-center">
+              Browse through all Google Summer of Code participating organizations. 
+              Discover the perfect open-source project that matches your skills and interests. 
+              Our comprehensive directory includes organizations working on Python, JavaScript, 
+              Machine Learning, Web Development, and many other technologies. Filter by your 
+              preferred tech stack and difficulty level to find beginner-friendly projects or 
+              advanced challenges.
+            </p>
+          </div>
+        )}
 
-        {/* Filter Tags - TODO: Make functional with state management */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            All
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Python
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            JavaScript
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Beginner Friendly
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Machine Learning
-          </Badge>
-          <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-            Web Development
-          </Badge>
+        {/* Search and Filters Section */}
+        <div className="space-y-6 mb-8">
+          {/* Search Bar */}
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search organizations by name, technology, or keyword..."
+              className="pl-10 h-12 text-base"
+              value={filters.search}
+              onChange={(e) => handleFilterChange({ ...filters, search: e.target.value })}
+            />
+          </div>
+
+          {/* Quick Filter Chips */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Badge
+              variant={!filters.tech && !filters.category ? 'default' : 'outline'}
+              className="cursor-pointer hover:bg-accent"
+              onClick={() => handleFilterChange({ ...filters, tech: null, category: null })}
+            >
+              All
+            </Badge>
+            <Badge
+              variant={filters.tech === 'Python' ? 'default' : 'outline'}
+              className="cursor-pointer hover:bg-accent"
+              onClick={() => handleQuickFilter('tech', 'Python')}
+            >
+              Python
+            </Badge>
+            <Badge
+              variant={filters.tech === 'JavaScript' ? 'default' : 'outline'}
+              className="cursor-pointer hover:bg-accent"
+              onClick={() => handleQuickFilter('tech', 'JavaScript')}
+            >
+              JavaScript
+            </Badge>
+            <Badge
+              variant={filters.difficulty === 'Beginner Friendly' ? 'default' : 'outline'}
+              className="cursor-pointer hover:bg-accent"
+              onClick={() => {
+                const newFilters = {
+                  ...filters,
+                  difficulty: filters.difficulty === 'Beginner Friendly' ? null : 'Beginner Friendly',
+                }
+                handleFilterChange(newFilters)
+              }}
+            >
+              Beginner Friendly
+            </Badge>
+            <Badge
+              variant={filters.category === 'Artificial Intelligence' ? 'default' : 'outline'}
+              className="cursor-pointer hover:bg-accent"
+              onClick={() => handleQuickFilter('category', 'Artificial Intelligence')}
+            >
+              Machine Learning
+            </Badge>
+            <Badge
+              variant={filters.category === 'Web Development' ? 'default' : 'outline'}
+              className="cursor-pointer hover:bg-accent"
+              onClick={() => handleQuickFilter('category', 'Web Development')}
+            >
+              Web Development
+            </Badge>
+          </div>
+
+          {/* Active Filters */}
+          {activeFilters.length > 0 && (
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {activeFilters.map((filter) => (
+                <Badge
+                  key={filter.key}
+                  variant="secondary"
+                  className="cursor-pointer gap-1 pr-1"
+                  onClick={() => removeFilter(filter.key)}
+                >
+                  {filter.label}
+                  <X className="h-3 w-3" />
+                </Badge>
+              ))}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => handleFilterChange({
+                  search: '',
+                  year: null,
+                  category: null,
+                  tech: null,
+                  topic: null,
+                  difficulty: null,
+                })}
+                className="h-6 text-xs"
+              >
+                Clear all
+              </Button>
+            </div>
+          )}
         </div>
-      </div>
 
       {/* Organizations Grid */}
       <div className="space-y-6">
@@ -192,7 +328,8 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
           </div>
         </div>
       )}
-    </>
+      </div>
+    </div>
   )
 }
 

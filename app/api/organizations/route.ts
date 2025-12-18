@@ -10,6 +10,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('q') || undefined
     const category = searchParams.get('category') || undefined
     const tech = searchParams.get('tech') || undefined
+    const year = searchParams.get('year') || undefined
 
     // Build where clause
     const where: any = {}
@@ -27,6 +28,10 @@ export async function GET(request: NextRequest) {
 
     if (tech) {
       where.technologies = { has: tech }
+    }
+
+    if (year) {
+      where.active_years = { has: parseInt(year) }
     }
 
     // Fetch organizations with pagination
