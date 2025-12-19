@@ -17,7 +17,7 @@ interface ParticipationChartProps {
   projectsData: Array<{ year: string; projects: number }>;
 }
 
-export function ParticipationChart({ data, projectsData }: ParticipationChartProps) {
+export function ParticipationChart({ projectsData }: ParticipationChartProps) {
   // Use only projects data for this chart to match the wireframe
   const chartData = projectsData.slice(-12).map((d, index) => ({
     ...d,

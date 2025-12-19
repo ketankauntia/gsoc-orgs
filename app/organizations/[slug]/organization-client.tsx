@@ -500,7 +500,6 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                     <ProjectCard
                       key={project.id || index}
                       project={project}
-                      orgSlug={org.slug}
                     />
                   ))
                 ) : (
@@ -658,10 +657,9 @@ interface ProjectCardProps {
     code_url?: string;
     project_url: string;
   };
-  orgSlug: string;
 }
 
-function ProjectCard({ project, orgSlug }: ProjectCardProps) {
+function ProjectCard({ project }: ProjectCardProps) {
   const getDifficultyColor = (difficulty?: string) => {
     switch (difficulty?.toLowerCase()) {
       case 'beginner':
