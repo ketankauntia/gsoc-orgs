@@ -351,24 +351,22 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
 
             {/* GSoC Participation History */}
             <section className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Heading variant="small" className="text-lg">
-                  GSoC Participation History
-                </Heading>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-2xl font-bold text-foreground">{"}"}</span>
-                  <span className="font-medium">{consecutiveYears} years in a row</span>
-                </div>
-              </div>
+              <Heading variant="small" className="text-lg">
+                GSoC Participation History
+              </Heading>
               <div className="flex flex-wrap gap-2">
                 {availableYears.map((year) => (
-                  <Badge
+                  <Link
                     key={year}
-                    variant="outline"
-                    className="px-3 py-1.5 text-sm font-medium"
+                    href={`/gsoc-${year}-organizations`}
                   >
-                    GSoC {year}
-                  </Badge>
+                    <Badge
+                      variant="outline"
+                      className="px-3 py-1.5 text-sm font-medium cursor-pointer hover:bg-accent transition-colors"
+                    >
+                      {year}
+                    </Badge>
+                  </Link>
                 ))}
               </div>
             </section>
@@ -580,16 +578,6 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                   <Calendar className="w-4 h-4" />
                   Participation
                 </Heading>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-sky-500" />
-                    Starters
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-sky-300" />
-                    Projects
-                  </span>
-                </div>
               </div>
               <ParticipationChart data={participationData} projectsData={projectsData} />
             </CardWrapper>
@@ -601,16 +589,6 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                   <Award className="w-4 h-4" />
                   Projects
                 </Heading>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-sky-500" />
-                    Starters
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-sky-300" />
-                    Projects
-                  </span>
-                </div>
               </div>
               <ProjectsChart data={projectsData} />
             </CardWrapper>

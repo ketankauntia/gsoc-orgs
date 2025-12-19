@@ -18,7 +18,7 @@ export const Footer = () => {
           <div className="flex gap-20 flex-row">
             <div className="flex flex-col text-sm max-w-lg leading-relaxed tracking-tight text-background/75 text-left">
               <p>{FOOTER_COPYRIGHT.text}.</p>
-              <p className="mt-1">© {FOOTER_COPYRIGHT.year} {FOOTER_COPYRIGHT.organization}</p>
+              <p className="mt-1">© {FOOTER_COPYRIGHT.year} <Link href={FOOTER_COPYRIGHT.organizationUrl} className="hover:underline">{FOOTER_COPYRIGHT.organization}</Link></p>
             </div>
           </div>
           {/* Social Links */}
