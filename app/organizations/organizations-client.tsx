@@ -378,26 +378,48 @@ function OrganizationCard({ org }: OrganizationCardProps) {
         {org.description}
       </p>
 
-      {/* Bottom Tags */}
-      <div className="flex flex-wrap items-center gap-2">
-        {org.active_years && org.active_years.length > 0 && (
-          <span className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-teal-50 text-teal-700 rounded-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
-            {org.active_years[org.active_years.length - 1]}
-          </span>
-        )}
-        {org.category && (
-          <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-md">
-            {org.category}
-          </span>
-        )}
-        {org.technologies && org.technologies.length > 0 && (
-          <span className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium bg-blue-50 text-blue-700 rounded-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-            {org.technologies[0]}
-          </span>
-        )}
-      </div>
+      {/* Years Section */}
+      {org.active_years && org.active_years.length > 0 && (
+        <div className="mb-3">
+          <div className="flex flex-wrap items-center gap-1.5">
+            {org.active_years
+              .sort((a, b) => b - a)
+              .map((year) => (
+                <span
+                  key={year}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-teal-50 text-teal-700 rounded-md"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+                  {year}
+                </span>
+              ))}
+          </div>
+        </div>
+      )}
+
+      {/* Technologies Section */}
+      {org.technologies && org.technologies.length > 0 && (
+        <div className="mb-3">
+          <p className="text-xs font-medium text-gray-500 mb-1.5">Tech Stack</p>
+          <div className="flex flex-wrap items-center gap-1.5">
+            {org.technologies.slice(0, 6).map((tech) => (
+              <span
+                key={tech}
+                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-700 rounded-md"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                {tech}
+              </span>
+            ))}
+            {org.technologies.length > 6 && (
+              <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-white text-gray-600 border border-gray-200 rounded-md">
+                +{org.technologies.length - 6} more
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
     </a>
   )
 }
