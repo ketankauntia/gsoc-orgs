@@ -7,6 +7,7 @@ export const FOOTER_COPYRIGHT = {
   text: "Built with ❤️ for the Google Summer of Code (GSoC) open source community",
   year: "2026",
   organization: "GSoCOrganizationsGuide",
+  organizationUrl: "/",
 };
 
 export const SOCIAL_LINKS = {

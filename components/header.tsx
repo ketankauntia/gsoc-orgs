@@ -4,6 +4,8 @@ import { Menu, X } from 'lucide-react'
 import { Button } from "@/components/ui"
 import React from 'react'
 import { cn } from '@/lib/utils'
+import { SOCIAL_LINKS } from '@/components/footer-common'
+import { GitHubIcon, TwitterIcon } from '@/components/icons'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -78,7 +80,7 @@ export const Header = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
+                                {/* <Button
                                     disabled
                                     variant="outline"
                                     size="sm"
@@ -90,12 +92,57 @@ export const Header = () => {
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <span>Sign Up</span>
+                                </Button> */}
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    asChild
+                                    className={cn(isScrolled && 'lg:hidden')}>
+                                    <a
+                                        href={SOCIAL_LINKS.github.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={SOCIAL_LINKS.github.label}
+                                    >
+                                        <GitHubIcon className="w-4 h-4" />
+                                        <span>GitHub</span>
+                                    </a>
                                 </Button>
                                 <Button
+                                    variant="outline"
+                                    size="sm"
+                                    asChild
+                                    className={cn(isScrolled && 'lg:hidden')}>
+                                    <a
+                                        href={SOCIAL_LINKS.twitter.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={SOCIAL_LINKS.twitter.label}
+                                    >
+                                        <TwitterIcon className="w-4 h-4" />
+                                        <span>X</span>
+                                    </a>
+                                </Button>
+                                {/* <Button
                                     disabled
                                     size="sm"
                                     className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
                                     <span>Get Started</span>
+                                </Button> */}
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    asChild
+                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                                    <a
+                                        href={SOCIAL_LINKS.github.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={SOCIAL_LINKS.github.label}
+                                    >
+                                        <GitHubIcon className="w-4 h-4" />
+                                        <span>GitHub</span>
+                                    </a>
                                 </Button>
                             </div>
                         </div>
