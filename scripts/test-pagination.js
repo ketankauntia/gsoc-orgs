@@ -83,7 +83,7 @@ async function runTests() {
     } else {
       console.log('⚠️  Server might have issues');
     }
-  } catch (error) {
+  } catch {
     console.log('❌ Cannot connect to server');
     console.log(`   Make sure server is running: pnpm dev`);
     process.exit(1);

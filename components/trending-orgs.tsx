@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -89,9 +90,11 @@ export const TrendingOrgs = () => {
                   <a href={`/organizations/${org.slug}`}>
                     <div className="flex rounded-md aspect-square bg-muted items-center justify-center p-2 hover:bg-accent transition-colors overflow-hidden">
                       {org.img_r2_url ? (
-                        <img
+                        <Image
                           src={org.img_r2_url}
                           alt={org.name}
+                          width={100}
+                          height={100}
                           className="w-full h-full object-cover rounded-md"
                         />
                       ) : (

@@ -25,10 +25,12 @@ export async function GET(
         description: true,
         image_url: true,
         logo_r2_url: true,
+        img_r2_url: true,
         category: true,
         total_projects: true,
         is_currently_active: true,
         technologies: true,
+        active_years: true,
       },
       orderBy: {
         total_projects: 'desc',

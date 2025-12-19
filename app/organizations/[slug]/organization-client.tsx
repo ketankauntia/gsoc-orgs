@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Globe,
   ExternalLink,
@@ -126,21 +127,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
     const yearData = org.years[yearKey as keyof typeof org.years];
     if (!yearData || typeof yearData !== 'object') return [];
     return (yearData as { projects?: Array<{ id: string; title: string; short_description: string; description: string; student_name: string; difficulty?: string; tags: string[]; slug: string; status?: string; code_url?: string; project_url: string }> }).projects || [];
-  }, [org.years, selectedYear]);
-
-  // Calculate consecutive years streak
-  const consecutiveYears = useMemo(() => {
-    const sorted = [...org.active_years].sort((a, b) => b - a);
-    let streak = 1;
-    for (let i = 1; i < sorted.length; i++) {
-      if (sorted[i - 1] - sorted[i] === 1) {
-        streak++;
-      } else {
-        break;
-      }
-    }
-    return streak;
-  }, [org.active_years]);
+  }, [org, selectedYear]);
 
   // Generate FAQ based on organization
   const orgFaq = useMemo(() => [
@@ -271,9 +258,11 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 {/* Logo */}
                 <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-sky-100 flex items-center justify-center shrink-0 border-2 border-sky-200 overflow-hidden shadow-sm">
                   {org.img_r2_url ? (
-                    <img
+                    <Image
                       src={org.img_r2_url}
                       alt={`${org.name} logo`}
+                      width={144}
+                      height={144}
                       className="w-full h-full object-contain p-2"
                     />
                   ) : (
