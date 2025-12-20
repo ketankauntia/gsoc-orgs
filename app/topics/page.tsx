@@ -11,6 +11,7 @@ import {
   Text,
   Badge,
   Input,
+  Button,
 } from "@/components/ui";
 
 /**
@@ -155,7 +156,7 @@ export default function TopicsPage() {
 
   // Separate trending and popular topics
   const trendingTopics = ALL_TOPICS.filter((t) => t.trending);
-  // const popularTopics = ALL_TOPICS.filter((t) => t.popular); // Reserved for future use
+  const popularTopics = ALL_TOPICS.filter((t) => t.popular);
 
   return (
     <div className="space-y-12">

@@ -56,8 +56,7 @@ interface UsePaginatedFetchReturn<T> {
 export function usePaginatedFetch<T>({
   fetchFn,
   initialPage = 1,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  pageSize: _pageSize = 20,
+  pageSize = 20,
   dependencies = [],
 }: UsePaginatedFetchOptions<T>): UsePaginatedFetchReturn<T> {
   const [data, setData] = useState<T[]>([]);
@@ -96,7 +95,6 @@ export function usePaginatedFetch<T>({
   // Initial fetch and refetch on dependencies change
   useEffect(() => {
     fetchData(initialPage, false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchData, initialPage, ...dependencies]);
 
   const loadMore = useCallback(() => {

@@ -34,15 +34,22 @@ const LINE_COLORS = [
 export function StackPopularityChart({ data, availableTechs = [] }: StackPopularityChartProps) {
   const [selectedTechs, setSelectedTechs] = useState<string[]>(() => {
     // Default to top 3 techs
-    const top3 = Object.keys(data || {}).slice(0, 3)
+    const top3 = Object.keys(data).slice(0, 3)
     return top3.length > 0 ? top3 : []
   })
   const [searchQuery, setSearchQuery] = useState("")
   const [showDropdown, setShowDropdown] = useState(false)
 
+  if (!data || Object.keys(data).length === 0) {
+    return (
+      <div className="h-[280px] flex items-center justify-center text-muted-foreground text-sm">
+        No popularity data available
+      </div>
+    );
+  }
+
   // Get all available techs from data if not provided
   const allTechs = useMemo(() => {
-    if (!data || Object.keys(data).length === 0) return []
     if (availableTechs.length > 0) {
       return availableTechs.map(t => ({ name: t.name.toLowerCase(), displayName: t.name }))
     }
@@ -61,14 +68,6 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
       tech.displayName.toLowerCase().includes(query)
     )
   }, [allTechs, searchQuery])
-
-  if (!data || Object.keys(data).length === 0) {
-    return (
-      <div className="h-[280px] flex items-center justify-center text-muted-foreground text-sm">
-        No popularity data available
-      </div>
-    );
-  }
 
   // Filter data to only selected techs
   const filteredData: Record<string, Array<{ year: number; count: number }>> = {}
