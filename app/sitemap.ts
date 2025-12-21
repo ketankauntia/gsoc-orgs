@@ -86,10 +86,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/topics',
   ]
 
-  // Generate year-based routes (2005 to current year + 1)
+  // Generate year-based routes (2005 to current year - 1, excluding future years)
+  // Only include years that have actually completed GSoC
   const currentYear = new Date().getFullYear()
+  const lastCompletedYear = currentYear - 1 // Exclude current year and future years
   const yearRoutes = []
-  for (let year = 2005; year <= currentYear + 1; year++) {
+  for (let year = 2005; year <= lastCompletedYear; year++) {
     yearRoutes.push(`/gsoc-${year}-organizations`)
   }
 
