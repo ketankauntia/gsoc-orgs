@@ -12,6 +12,7 @@ interface SectionHeaderProps {
   className?: string;
   titleClassName?: string;
   descriptionClassName?: string;
+  titleAs?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 
 const alignmentClasses = {
@@ -32,6 +33,7 @@ export const SectionHeader = ({
   className,
   titleClassName,
   descriptionClassName,
+  titleAs = "h2",
 }: SectionHeaderProps) => {
   return (
     <div className={cn("flex flex-col gap-4", alignmentClasses[align], className)}>
@@ -39,7 +41,7 @@ export const SectionHeader = ({
         <Badge variant="outline">{badge}</Badge>
       )}
       <div className="flex flex-col gap-2">
-        <Heading className={cn("max-w-xl", titleClassName)}>{title}</Heading>
+        <Heading as={titleAs} className={cn("max-w-xl", titleClassName)}>{title}</Heading>
         {description && (
           <Text
             variant="muted"

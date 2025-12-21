@@ -128,6 +128,7 @@ export default function TermsAndConditionsPage() {
             <SectionHeader
               badge="Legal"
               title="Terms and Conditions"
+              titleAs="h1"
               description="Last updated: December 2024. Please read these terms carefully before using GSoC Organizations Guide."
               align="center"
               className="max-w-3xl mx-auto"

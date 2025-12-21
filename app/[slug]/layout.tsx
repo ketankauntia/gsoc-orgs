@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import type { Metadata } from "next";
+import { getFullUrl } from "@/lib/constants";
 
 interface LayoutProps {
   children: ReactNode;
@@ -33,9 +34,18 @@ export async function generateMetadata({
   return {
     title: `GSoC ${year} Organizations | Google Summer of Code`,
     description: `Explore all organizations that participated in Google Summer of Code ${year}. Find projects, tech stacks, and difficulty levels.`,
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title: `GSoC ${year} Organizations`,
       description: `Explore all organizations that participated in Google Summer of Code ${year}.`,
+      url: getFullUrl(`/${slug}`),
+      images: ["/og.webp"],
+    },
+    alternates: {
+      canonical: getFullUrl(`/${slug}`),
     },
   };
 }

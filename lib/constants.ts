@@ -3,7 +3,7 @@
  * Centralized configuration for URLs and other constants
  */
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://gsoc-orgs.vercel.app';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.gsocorganizationsguide.com';
 
 /**
  * Generate a full URL for a given path

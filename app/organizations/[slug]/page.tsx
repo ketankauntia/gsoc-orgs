@@ -4,6 +4,7 @@ import { Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationClient } from "./organization-client";
 import { FooterSmall } from "@/components/footer-small";
+import { getFullUrl } from "@/lib/constants";
 
 /**
  * Organization Detail Page
@@ -73,11 +74,18 @@ export async function generateMetadata({
 
   return {
     title: `${org.name} - GSoC Organizations Guide`,
-    description: org.description,
+    description: org.description || `Learn about ${org.name} and their Google Summer of Code projects, technologies, and opportunities.`,
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title: `${org.name} - GSoC Organizations Guide`,
-      description: org.description,
-      images: org.img_r2_url ? [org.img_r2_url] : undefined,
+      description: org.description || `Learn about ${org.name} and their Google Summer of Code projects.`,
+      images: org.img_r2_url ? [org.img_r2_url] : ["/og.webp"],
+    },
+    alternates: {
+      canonical: getFullUrl(`/organizations/${slug}`),
     },
   };
 }

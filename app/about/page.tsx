@@ -73,6 +73,7 @@ export default function AboutPage() {
             <SectionHeader
               badge="About Us"
               title="Empowering Students in Open Source"
+              titleAs="h1"
               description="GSoC Organizations Guide is dedicated to helping students discover and prepare for Google Summer of Code opportunities. We provide comprehensive resources, detailed organization profiles, and tools to help you find your perfect match."
               align="center"
               className="max-w-3xl mx-auto"

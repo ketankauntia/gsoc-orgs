@@ -121,6 +121,7 @@ export default function PrivacyPolicyPage() {
             <SectionHeader
               badge="Legal"
               title="Privacy Policy"
+              titleAs="h1"
               description="Last updated: December 2024. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
               align="center"
               className="max-w-3xl mx-auto"

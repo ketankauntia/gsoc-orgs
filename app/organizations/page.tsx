@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
+import { getFullUrl } from "@/lib/constants";
 
 /**
  * Organizations Listing Page
@@ -38,7 +39,7 @@ export async function generateMetadata({
       : `GSoC Organizations - Page ${page} - Google Summer of Code Organizations Guide`,
     description: "Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests.",
     alternates: {
-      canonical: "https://www.gsocorganizationsguide.com/organizations",
+      canonical: getFullUrl("/organizations"),
     },
     robots: {
       index: true,
@@ -47,7 +48,7 @@ export async function generateMetadata({
     openGraph: {
       title: "All GSoC Organizations",
       description: "Explore all Google Summer of Code participating organizations",
-      url: "https://www.gsocorganizationsguide.com/organizations",
+      url: getFullUrl("/organizations"),
       type: "website",
     },
   };

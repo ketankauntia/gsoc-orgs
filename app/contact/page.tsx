@@ -73,6 +73,7 @@ export default function ContactPage() {
             <SectionHeader
               badge="Contact Us"
               title="Get in Touch"
+              titleAs="h1"
               description="Have questions, suggestions, or feedback? We'd love to hear from you! Reach out to us and we'll get back to you as soon as possible."
               align="center"
               className="max-w-3xl mx-auto"
