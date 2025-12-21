@@ -33,7 +33,8 @@ interface GSoCYearClientProps {
 
 export function GSoCYearClient({
   year,
-  organizations: _organizations, // Unused but kept for future use
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  organizations, // Unused but kept for future use (only used in commented-out code)
   projects,
   highestSelectionsByTech,
   highestSelectionsByOrg,
