@@ -361,16 +361,19 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
           {/* Sidebar Filters as Chips (for year, tech, topic) */}
           {sidebarFilters.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
-              {sidebarFilters.map((filter) => (
-                <span
-                  key={filter.key}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-gray-100 text-gray-700 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
-                  onClick={() => removeFilter(filter.key)}
-                >
-                  {filter.label}
-                  <X className="h-3.5 w-3.5" />
-                </span>
-              ))}
+              {sidebarFilters.map((filter) => {
+                const handleRemove = () => removeFilter(filter.key)
+                return (
+                  <span
+                    key={filter.key}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-gray-100 text-gray-700 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
+                    onClick={handleRemove}
+                  >
+                    {filter.label}
+                    <X className="h-3.5 w-3.5" />
+                  </span>
+                )
+              })}
             </div>
           )}
 
@@ -389,6 +392,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
                   <OrganizationCard key={org.id} org={org} />
                 ))}
               </div>
+              {/* Note: Prefetch is fine here - only 20 items per page */}
             )}
           </div>
 
@@ -409,7 +413,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
                   const pageNum = i + 1
                   return (
                     <Button
-                      key={i}
+                      key={pageNum}
                       variant={pageNum === currentPage ? 'default' : 'outline'}
                       size="sm"
                       onClick={() => handlePageChange(pageNum)}
