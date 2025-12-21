@@ -181,6 +181,8 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
                 <div 
                   className="fixed inset-0 z-10" 
                   onClick={() => setShowDropdown(false)}
+                  aria-hidden="true"
+                  style={{ pointerEvents: 'auto' }}
                 />
                 <div className="absolute z-20 w-full mt-1 bg-background border rounded-md shadow-lg max-h-60 overflow-auto">
                   {filteredTechs

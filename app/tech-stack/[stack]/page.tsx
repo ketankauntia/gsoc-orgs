@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { apiFetchServer } from "@/lib/api.server";
 import { TechStackClient } from "./tech-stack-client";
 
@@ -51,5 +52,9 @@ export default async function TechStackDetailPage({
     notFound();
   }
 
-  return <TechStackClient initialData={data} />;
+  return (
+    <Suspense fallback={<div className="text-center py-20">Loading tech stack...</div>}>
+      <TechStackClient initialData={data} />
+    </Suspense>
+  );
 }

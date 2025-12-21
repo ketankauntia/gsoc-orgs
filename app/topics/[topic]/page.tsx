@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Heading, Text, Button } from "@/components/ui";
 import { TopicPageClient } from "./topic-client";
 
@@ -154,6 +155,10 @@ export default async function TopicPage({ params }: { params: Promise<{ topic: s
   }
 
   // Pass data to client component
-  return <TopicPageClient topic={topic} organizations={MOCK_ORGANIZATIONS} />;
+  return (
+    <Suspense fallback={<div className="text-center py-20">Loading topic...</div>}>
+      <TopicPageClient topic={topic} organizations={MOCK_ORGANIZATIONS} />
+    </Suspense>
+  );
 }
 

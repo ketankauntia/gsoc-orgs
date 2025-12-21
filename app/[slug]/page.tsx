@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
 import {
   Users,
@@ -583,17 +584,21 @@ export default async function GSoCYearOrganizationsPage({
 
 
           {/* New Sections: Highest Selections, Projects, Mentors & Contributors */}
-          <GSoCYearClient
-            year={year}
-            organizations={newOrgs}
-            projects={projects}
-            highestSelectionsByTech={highestSelectionsByTech}
-            highestSelectionsByOrg={highestSelectionsByOrg}
-            mentorsAndContributors={mentorsAndContributors}
-          />
+          <Suspense fallback={<div className="text-center py-20">Loading year data...</div>}>
+            <GSoCYearClient
+              year={year}
+              organizations={newOrgs}
+              projects={projects}
+              highestSelectionsByTech={highestSelectionsByTech}
+              highestSelectionsByOrg={highestSelectionsByOrg}
+              mentorsAndContributors={mentorsAndContributors}
+            />
+          </Suspense>
 
           {/* Organizations Grid - Client Component for Show More/Less */}
-          <AllOrganizationsSection organizations={organizations} year={year} />
+          <Suspense fallback={<div className="text-center py-20">Loading organizations...</div>}>
+            <AllOrganizationsSection organizations={organizations} year={year} />
+          </Suspense>
 
           {/* CTA Section */}
           <div className="text-center space-y-4 py-10 border-t">

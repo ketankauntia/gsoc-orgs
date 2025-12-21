@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { Metadata } from "next";
 import { Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
@@ -104,7 +105,9 @@ export default async function OrganizationDetailPage({
 
   return (
     <>
-      <OrganizationClient organization={org} />
+      <Suspense fallback={<div className="text-center py-20">Loading organization...</div>}>
+        <OrganizationClient organization={org} />
+      </Suspense>
       <FooterSmall />
     </>
   );

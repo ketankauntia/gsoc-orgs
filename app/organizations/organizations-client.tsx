@@ -38,23 +38,26 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   const [currentPage, setCurrentPage] = useState(initialPage)
   const isInitialMount = useRef(true)
   const lastFetchParams = useRef<string>('')
+  const lastUrlString = useRef<string>('')
   
-  // Memoize filters from URL to avoid unnecessary recalculations
+  // Parse searchParams once into primitive values to avoid object recreation
+  // This prevents useSearchParams() from causing unnecessary re-renders
+  const urlSearch = searchParams.get('q') || ''
+  const urlYear = searchParams.get('year') || null
+  const urlCategory = searchParams.get('category') || null
+  const urlTech = searchParams.get('tech') || null
+  const urlTopic = searchParams.get('topic') || null
+  const urlDifficulties = searchParams.get('difficulties') || ''
+  
+  // Memoize filters from URL using primitives to avoid unnecessary recalculations
   const urlFilters = useMemo<FilterState>(() => ({
-    search: searchParams.get('q') || '',
-    year: searchParams.get('year') || null,
-    category: searchParams.get('category') || null,
-    tech: searchParams.get('tech') || null,
-    topic: searchParams.get('topic') || null,
-    difficulties: searchParams.get('difficulties')?.split(',').filter(Boolean) || [],
-  }), [
-    searchParams.get('q'),
-    searchParams.get('year'),
-    searchParams.get('category'),
-    searchParams.get('tech'),
-    searchParams.get('topic'),
-    searchParams.get('difficulties'),
-  ])
+    search: urlSearch,
+    year: urlYear,
+    category: urlCategory,
+    tech: urlTech,
+    topic: urlTopic,
+    difficulties: urlDifficulties ? urlDifficulties.split(',').filter(Boolean) : [],
+  }), [urlSearch, urlYear, urlCategory, urlTech, urlTopic, urlDifficulties])
   
   const [filters, setFilters] = useState<FilterState>(urlFilters)
   const [searchInput, setSearchInput] = useState(urlFilters.search)
@@ -63,12 +66,23 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   const debouncedSearch = useDebounce(searchInput, 300)
 
   // Sync filters from URL only when URL actually changes (not on every render)
+  // Use URL string comparison instead of object comparison
   useEffect(() => {
+    const currentUrlString = searchParams.toString()
+    
     if (isInitialMount.current) {
       isInitialMount.current = false
+      lastUrlString.current = currentUrlString
       setSearchInput(urlFilters.search)
       return
     }
+    
+    // Only update if URL actually changed
+    if (currentUrlString === lastUrlString.current) {
+      return
+    }
+    
+    lastUrlString.current = currentUrlString
     
     // Only update if filters actually changed
     const filtersChanged = 
@@ -83,7 +97,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       setFilters(urlFilters)
       setSearchInput(urlFilters.search)
     }
-  }, [urlFilters, filters])
+  }, [urlSearch, urlYear, urlCategory, urlTech, urlTopic, urlDifficulties, filters, urlFilters])
   
   // Handle debounced search input
   useEffect(() => {
@@ -191,8 +205,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     
     if (!filtersChanged) return
     
-    setFilters(newFilters)
-    
+    // Build URL params first
     const params = new URLSearchParams()
     // Reset to page 1 when filters change
     if (newFilters.search) params.set('q', newFilters.search)
@@ -204,7 +217,12 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       params.set('difficulties', newFilters.difficulties.join(','))
     }
     
-    router.push(`/organizations?${params.toString()}`, { scroll: false })
+    const newUrl = `/organizations?${params.toString()}`
+    
+    // Update state and navigate - use startTransition to prevent blocking
+    setFilters(newFilters)
+    // Use startTransition to make navigation non-blocking
+    router.push(newUrl, { scroll: false })
   }, [filters, router])
 
   const removeFilter = useCallback((key: keyof FilterState) => {
