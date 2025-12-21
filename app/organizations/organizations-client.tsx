@@ -99,6 +99,41 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     }
   }, [urlSearch, urlYear, urlCategory, urlTech, urlTopic, urlDifficulties, filters, urlFilters])
   
+  // handleFilterChange must be declared before useEffect that uses it
+  const handleFilterChange = useCallback((newFilters: FilterState) => {
+    // Prevent unnecessary updates if filters haven't changed
+    const filtersChanged = 
+      filters.search !== newFilters.search ||
+      filters.year !== newFilters.year ||
+      filters.category !== newFilters.category ||
+      filters.tech !== newFilters.tech ||
+      filters.topic !== newFilters.topic ||
+      JSON.stringify(filters.difficulties) !== JSON.stringify(newFilters.difficulties)
+    
+    if (!filtersChanged) return
+    
+    // Build URL params first
+    const params = new URLSearchParams()
+    // Reset to page 1 when filters change
+    if (newFilters.search) params.set('q', newFilters.search)
+    if (newFilters.category) params.set('category', newFilters.category)
+    if (newFilters.tech) params.set('tech', newFilters.tech)
+    if (newFilters.year) params.set('year', newFilters.year)
+    if (newFilters.topic) params.set('topic', newFilters.topic)
+    if (newFilters.difficulties.length > 0) {
+      params.set('difficulties', newFilters.difficulties.join(','))
+    }
+    
+    const newUrl = `/organizations?${params.toString()}`
+    
+    // Update state and navigate - use startTransition to keep UI responsive
+    setFilters(newFilters)
+    // Use startTransition to make navigation non-blocking (especially helpful on low-end devices)
+    startTransition(() => {
+      router.push(newUrl, { scroll: false })
+    })
+  }, [filters, router])
+  
   // Handle debounced search input
   useEffect(() => {
     if (isInitialMount.current) return
@@ -106,8 +141,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     if (debouncedSearch !== filters.search) {
       handleFilterChange({ ...filters, search: debouncedSearch })
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedSearch])
+  }, [debouncedSearch, filters, handleFilterChange])
 
   // Memoize fetch function to avoid recreating on every render
   const fetchOrganizations = useCallback(async (page: number, filterState: FilterState) => {
@@ -195,40 +229,6 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     })
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [currentPage, filters, isLoading, router])
-
-  const handleFilterChange = useCallback((newFilters: FilterState) => {
-    // Prevent unnecessary updates if filters haven't changed
-    const filtersChanged = 
-      filters.search !== newFilters.search ||
-      filters.year !== newFilters.year ||
-      filters.category !== newFilters.category ||
-      filters.tech !== newFilters.tech ||
-      filters.topic !== newFilters.topic ||
-      JSON.stringify(filters.difficulties) !== JSON.stringify(newFilters.difficulties)
-    
-    if (!filtersChanged) return
-    
-    // Build URL params first
-    const params = new URLSearchParams()
-    // Reset to page 1 when filters change
-    if (newFilters.search) params.set('q', newFilters.search)
-    if (newFilters.category) params.set('category', newFilters.category)
-    if (newFilters.tech) params.set('tech', newFilters.tech)
-    if (newFilters.year) params.set('year', newFilters.year)
-    if (newFilters.topic) params.set('topic', newFilters.topic)
-    if (newFilters.difficulties.length > 0) {
-      params.set('difficulties', newFilters.difficulties.join(','))
-    }
-    
-    const newUrl = `/organizations?${params.toString()}`
-    
-    // Update state and navigate - use startTransition to keep UI responsive
-    setFilters(newFilters)
-    // Use startTransition to make navigation non-blocking (especially helpful on low-end devices)
-    startTransition(() => {
-      router.push(newUrl, { scroll: false })
-    })
-  }, [filters, router])
 
   const removeFilter = useCallback((key: keyof FilterState) => {
     const newFilters = { ...filters, [key]: key === 'search' ? '' : (key === 'difficulties' ? [] : null) }
@@ -414,8 +414,8 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
                 {data.items.map((org) => (
                   <OrganizationCard key={org.id} org={org} />
                 ))}
+                {/* Note: Prefetch is fine here - only 20 items per page */}
               </div>
-              {/* Note: Prefetch is fine here - only 20 items per page */}
             )}
           </div>
 
