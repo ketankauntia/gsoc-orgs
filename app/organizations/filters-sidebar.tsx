@@ -10,11 +10,12 @@ interface FiltersSidebarProps {
 
 export interface FilterState {
   search: string
-  year: string | null
-  category: string | null
-  tech: string | null
-  topic: string | null
+  years: string[]
+  categories: string[]
+  techs: string[]
+  topics: string[]
   difficulties: string[]
+  firstTimeOnly: boolean
 }
 
 const YEARS = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
@@ -33,7 +34,7 @@ const CATEGORIES = [
 ]
 const TOPICS = [
   'Machine Learning',
-  'Web Development', 
+  'Web Development',
   'Security',
   'Cloud',
   'Graphics',
@@ -45,11 +46,12 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
   const [filters, setFilters] = useState<FilterState>(
     initialFilters || {
       search: '',
-      year: null,
-      category: null,
-      tech: null,
-      topic: null,
+      years: [],
+      categories: [],
+      techs: [],
+      topics: [],
       difficulties: [],
+      firstTimeOnly: false,
     }
   )
 
@@ -81,8 +83,44 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       .catch(console.error)
   }, [])
 
-  const updateFilter = (key: keyof FilterState, value: string | null) => {
-    const newFilters = { ...filters, [key]: value }
+  const toggleYear = (year: string) => {
+    const newYears = filters.years.includes(year)
+      ? filters.years.filter((y: string) => y !== year)
+      : [...filters.years, year]
+    const newFilters = { ...filters, years: newYears }
+    setFilters(newFilters)
+    onFilterChange(newFilters)
+  }
+
+  const toggleTech = (tech: string) => {
+    const newTechs = filters.techs.includes(tech)
+      ? filters.techs.filter((t: string) => t !== tech)
+      : [...filters.techs, tech]
+    const newFilters = { ...filters, techs: newTechs }
+    setFilters(newFilters)
+    onFilterChange(newFilters)
+  }
+
+  const toggleCategory = (category: string) => {
+    const newCategories = filters.categories.includes(category)
+      ? filters.categories.filter((c: string) => c !== category)
+      : [...filters.categories, category]
+    const newFilters = { ...filters, categories: newCategories }
+    setFilters(newFilters)
+    onFilterChange(newFilters)
+  }
+
+  const toggleTopic = (topic: string) => {
+    const newTopics = filters.topics.includes(topic)
+      ? filters.topics.filter((t: string) => t !== topic)
+      : [...filters.topics, topic]
+    const newFilters = { ...filters, topics: newTopics }
+    setFilters(newFilters)
+    onFilterChange(newFilters)
+  }
+
+  const toggleFirstTime = () => {
+    const newFilters = { ...filters, firstTimeOnly: !filters.firstTimeOnly }
     setFilters(newFilters)
     onFilterChange(newFilters)
   }
@@ -90,11 +128,12 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
   const clearAllFilters = () => {
     const clearedFilters: FilterState = {
       search: '',
-      year: null,
-      category: null,
-      tech: null,
-      topic: null,
+      years: [],
+      categories: [],
+      techs: [],
+      topics: [],
       difficulties: [],
+      firstTimeOnly: false,
     }
     setFilters(clearedFilters)
     onFilterChange(clearedFilters)
@@ -104,12 +143,13 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }))
   }
 
-  const hasActiveFilters = filters.search !== '' || 
-    filters.year !== null || 
-    filters.category !== null || 
-    filters.tech !== null || 
-    filters.topic !== null || 
-    filters.difficulties.length > 0
+  const hasActiveFilters = filters.search !== '' ||
+    filters.years.length > 0 ||
+    filters.categories.length > 0 ||
+    filters.techs.length > 0 ||
+    filters.topics.length > 0 ||
+    filters.difficulties.length > 0 ||
+    filters.firstTimeOnly
 
   const filteredTechs = availableTechs.filter((tech) =>
     tech.name.toLowerCase().includes(techSearch.toLowerCase())
@@ -132,8 +172,8 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-base font-semibold text-gray-900">Filters</h3>
         {hasActiveFilters && (
-          <button 
-            onClick={clearAllFilters} 
+          <button
+            onClick={clearAllFilters}
             className="text-[13px] text-gray-500 hover:text-gray-700 hover:underline"
           >
             Clear all
@@ -155,19 +195,19 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
 
       {/* Shortcuts Section */}
       <div className="mb-4">
-      <div className="pl-1 py-2">
-            
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                checked={false}
-                onChange={() => {}}
-              />
-              <span className="text-sm text-gray-700">First-time organizations</span>
-              <span className="text-xs text-gray-400">(14)</span>
-            </label>
-          </div>
+        <div className="pl-1 py-2">
+
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
+              checked={filters.firstTimeOnly}
+              onChange={toggleFirstTime}
+            />
+            <span className="text-sm text-gray-700">First-time organizations</span>
+            <span className="text-xs text-gray-400">(14)</span>
+          </label>
+        </div>
       </div>
 
       {/* Years Section */}
@@ -191,10 +231,8 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                    checked={filters.year === year.toString()}
-                    onChange={(e) =>
-                      updateFilter('year', e.target.checked ? year.toString() : null)
-                    }
+                    checked={filters.years.includes(year.toString())}
+                    onChange={() => toggleYear(year.toString())}
                   />
                   <span className="text-[13px] text-gray-700">{year}</span>
                 </label>
@@ -254,10 +292,8 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
                     <input
                       type="checkbox"
                       className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                      checked={filters.tech === tech.name}
-                      onChange={(e) =>
-                        updateFilter('tech', e.target.checked ? tech.name : null)
-                      }
+                      checked={filters.techs.includes(tech.name)}
+                      onChange={() => toggleTech(tech.name)}
                     />
                     <span className="text-[13px] text-gray-700">{tech.name}</span>
                   </div>
@@ -286,7 +322,7 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
           </div>
         )}
       </div>
-      
+
       {/* Categories Section */}
       <div className="mb-4 border-t border-gray-100 pt-3">
         <button
@@ -308,10 +344,8 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                    checked={filters.category === category}
-                    onChange={(e) =>
-                      updateFilter('category', e.target.checked ? category : null)
-                    }
+                    checked={filters.categories.includes(category)}
+                    onChange={() => toggleCategory(category)}
                   />
                   <span className="text-[13px] text-gray-700">{category}</span>
                 </label>
@@ -342,10 +376,8 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                    checked={filters.topic === topic}
-                    onChange={(e) =>
-                      updateFilter('topic', e.target.checked ? topic : null)
-                    }
+                    checked={filters.topics.includes(topic)}
+                    onChange={() => toggleTopic(topic)}
                   />
                   <span className="text-[13px] text-gray-700">{topic}</span>
                 </label>
@@ -355,7 +387,7 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
         )}
       </div>
 
-      
+
     </div>
   )
 }
