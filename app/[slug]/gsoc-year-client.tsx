@@ -4,7 +4,6 @@ import { useState, useMemo } from "react";
 import { Search } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from "recharts";
 import { Input, CardWrapper, Heading, Text, Button } from "@/components/ui";
-import { OrganizationCard } from "@/components/organization-card";
 import { ProjectCard } from "@/components/project-card";
 import { Organization } from "@/lib/api";
 
@@ -34,7 +33,8 @@ interface GSoCYearClientProps {
 
 export function GSoCYearClient({
   year,
-  organizations,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  organizations, // Unused but kept for future use (only used in commented-out code)
   projects,
   highestSelectionsByTech,
   highestSelectionsByOrg,
@@ -43,7 +43,6 @@ export function GSoCYearClient({
   const [projectSearch, setProjectSearch] = useState("");
   const [nameSearch, setNameSearch] = useState("");
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [showAllOrgs, setShowAllOrgs] = useState(false);
   const [showAllMentors, setShowAllMentors] = useState(false);
 
   // Filter projects based on search
@@ -75,7 +74,6 @@ export function GSoCYearClient({
   const displayedProjects = showAllProjects
     ? filteredProjects
     : filteredProjects.slice(0, 6);
-  const displayedOrgs = showAllOrgs ? organizations : organizations.slice(0, 6);
 
   return (
     <div className="space-y-12">

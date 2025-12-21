@@ -3,7 +3,7 @@ import { FooterSmall } from "@/components/footer-small";
 import { Container, SectionHeader, Heading, Text, CardWrapper, Grid } from "@/components/ui";
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
-import { Users, Target, Heart, Code, Award, Globe } from "lucide-react";
+import { Users, Target, Heart, Code, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | GSoC Organizations Guide",
@@ -138,15 +138,15 @@ export default function AboutPage() {
                     hundreds of options available.
                   </Text>
                   <Text>
-                    That's where we come in. GSoC Organizations Guide was created to simplify this
-                    process. We've curated comprehensive information about participating
+                    That&apos;s where we come in. GSoC Organizations Guide was created to simplify this
+                    process. We&apos;ve curated comprehensive information about participating
                     organizations, their technologies, project difficulty levels, and more. Our goal
                     is to help you make informed decisions and find opportunities that align with
                     your skills and interests.
                   </Text>
                   <Text>
-                    Whether you're a beginner looking for your first open-source contribution or an
-                    experienced developer seeking challenging projects, we're here to support your
+                    Whether you&apos;re a beginner looking for your first open-source contribution or an
+                    experienced developer seeking challenging projects, we&apos;re here to support your
                     GSoC journey.
                   </Text>
                 </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                   <Heading variant="subsection">Open Source Contributors</Heading>
                 </div>
                 <Text className="text-muted-foreground max-w-2xl mx-auto">
-                  We welcome contributions from the community! If you'd like to help improve the
+                  We welcome contributions from the community! If you&apos;d like to help improve the
                   platform, add new features, or update organization information, check out our
                   repository on GitHub.
                 </Text>
