@@ -394,7 +394,7 @@ export function TechStackClient({ initialData }: { initialData: TechStackDetail 
       {/* CTA */}
       <section className="text-center">
         <Button size="lg" asChild>
-          <Link href="/tech-stack">View All Technologies</Link>
+          <Link href="/tech-stack" prefetch={true}>View All Technologies</Link>
         </Button>
       </section>
     </div>
@@ -422,7 +422,7 @@ function OrganizationCard({ org }: {
   const logoUrl = org.logo_r2_url || org.img_r2_url;
 
   return (
-    <Link href={`/organizations/${org.slug}`}>
+    <Link href={`/organizations/${org.slug}`} prefetch={true}>
       <CardWrapper hover className="h-full flex flex-col">
         {/* Header with Logo */}
         <div className="flex items-start gap-4 mb-3">

@@ -609,13 +609,13 @@ export default async function GSoCYearOrganizationsPage({
             </Text>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
               <Button asChild size="lg">
-                <Link href="/organizations">
+                <Link href="/organizations" prefetch={true}>
                   <Users className="w-4 h-4 mr-2" />
                   View All Organizations
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/topics">
+                <Link href="/topics" prefetch={true}>
                   <ArrowRight className="w-4 h-4 mr-2" />
                   Browse by Topic
                 </Link>

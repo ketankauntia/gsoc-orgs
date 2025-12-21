@@ -329,12 +329,13 @@ export function GSoCYearClient({
                 {(showAllMentors ? filteredMentorsContributors : filteredMentorsContributors.slice(0, 10)).map((mc) => (
                   <tr key={mc.org_slug} className="border-b">
                     <td className="py-3 px-4">
-                      <a
+                      <Link
                         href={`/organizations/${mc.org_slug}`}
+                        prefetch={true}
                         className="text-sm font-medium text-blue-600 hover:underline"
                       >
                         {mc.org_name}
-                      </a>
+                      </Link>
                     </td>
                     <td className="py-3 px-4">
                       <Text className="text-sm">

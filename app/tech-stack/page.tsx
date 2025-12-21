@@ -372,7 +372,7 @@ function TechStackCard({ stack }: { stack: TechStack }) {
   };
 
   return (
-    <Link href={`/tech-stack/${stack.slug}`}>
+    <Link href={`/tech-stack/${stack.slug}`} prefetch={true}>
       <CardWrapper hover className="h-full flex flex-col group">
         <div className="flex items-start gap-4 mb-4">
           <div

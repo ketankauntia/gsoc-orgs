@@ -67,7 +67,7 @@ export const HeroComponent = () => {
         </div>
         <div className="flex flex-row gap-3">
           <Button asChild size="lg" className="gap-4">
-            <Link href="/organizations">
+            <Link href="/organizations" prefetch={true}>
               View All GSoC Orgs <MoveRight className="w-4 h-4" />
             </Link>
           </Button>
