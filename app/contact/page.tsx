@@ -139,7 +139,7 @@ export default function ContactPage() {
                         Data Updates
                       </Heading>
                       <Text variant="small" className="text-muted-foreground">
-                        Found incorrect information? Let us know and we'll update it
+                        Found incorrect information? Let us know and we&apos;ll update it
                       </Text>
                     </div>
                     <div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                     <CheckCircle2 className="w-16 h-16 text-green-500" />
                     <Heading variant="small">Message Sent!</Heading>
                     <Text className="text-muted-foreground text-center">
-                      Thank you for contacting us. We'll get back to you soon.
+                      Thank you for contacting us. We&apos;ll get back to you soon.
                     </Text>
                   </div>
                 ) : (
