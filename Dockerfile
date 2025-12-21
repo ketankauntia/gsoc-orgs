@@ -42,7 +42,7 @@ RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
 
 # Copy only what we need to run
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/next.config.* ./ 2>/dev/null || true
+COPY --from=builder /app/next.config.* ./
 COPY --from=builder /app/public ./public
 
 # Next output
