@@ -4,6 +4,9 @@ import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/componen
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 
+// Force revalidation to ensure footer links stay updated
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata: Metadata = {
   title: "Terms and Conditions | GSoC Organizations Guide",
   description:
