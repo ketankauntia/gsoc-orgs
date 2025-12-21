@@ -100,19 +100,19 @@ export const FOOTER_NAVIGATION_ITEMS = [
     items: [
       {
         title: "About Us",
-        href: "/about-us",
+        href: "/about",
       },
       {
         title: "Contact Us",
-        href: "/contact-us",
+        href: "/contact",
       },
       {
         title: "Privacy Policy",
         href: "/privacy-policy",
       },
       {
-        title: "Terms of Service",
-        href: "/terms-of-service",
+        title: "Terms and Conditions",
+        href: "/terms-and-conditions",
       },
       // {
       //   title: "Blog",
