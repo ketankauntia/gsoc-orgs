@@ -308,6 +308,10 @@ export async function generateStaticParams() {
   return slugs;
 }
 
+// Force revalidation to ensure footer links stay updated
+// This prevents serving stale cached HTML with old links
+export const revalidate = 3600; // Revalidate every hour
+
 // Main Page Component
 export default async function GSoCYearOrganizationsPage({
   params,

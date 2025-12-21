@@ -5,6 +5,9 @@ import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 import { Users, Target, Heart, Code, Globe } from "lucide-react";
 
+// Force revalidation to ensure footer links stay updated
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata: Metadata = {
   title: "About Us | GSoC Organizations Guide",
   description:

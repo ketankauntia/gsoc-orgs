@@ -1,1 +1,23 @@
-pnpm lint-staged && pnpm build
+# Prevent direct commits to main/master branch
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+  echo "❌ Error: You can't commit directly to $branch branch"
+  echo "   Please create a feature branch first:"
+  echo "   git checkout -b feature/your-feature-name"
+  exit 1
+fi
+
+# Run lint-staged (lints and fixes staged files)
+echo "🔍 Running linter on staged files..."
+pnpm lint-staged
+
+# Run TypeScript type checking (catches type errors before build)
+echo "🔍 Running TypeScript type check..."
+pnpm type-check
+
+# Run build check (ensures code compiles before commit)
+echo "🔍 Running build check..."
+pnpm build
+
+echo "✅ All checks passed! Proceeding with commit..."

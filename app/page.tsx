@@ -6,6 +6,9 @@ import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 import { SITE_URL, getFullUrl } from "@/lib/constants";
 
+// Force revalidation to ensure footer links stay updated
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata: Metadata = {
   title: "Home | Explore Google Summer of Code Organizations",
   description:

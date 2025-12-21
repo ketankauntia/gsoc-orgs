@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "type-check": "tsc --noEmit",
+    "validate": "pnpm lint && pnpm type-check && pnpm build",
     "postinstall": "prisma generate",
     "prepare": "husky"
   },

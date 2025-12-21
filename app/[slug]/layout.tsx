@@ -4,6 +4,10 @@ import { FooterSmall } from "@/components/footer-small";
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 
+// Force revalidation to ensure footer links stay updated
+// This prevents serving stale cached HTML with old links
+export const revalidate = 3600; // Revalidate every hour
+
 interface LayoutProps {
   children: ReactNode;
   params: Promise<{ slug: string }>;
