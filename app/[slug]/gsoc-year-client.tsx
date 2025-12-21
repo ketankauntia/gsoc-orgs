@@ -215,7 +215,8 @@ export function GSoCYearClient({
       </section>
 
       {/* All Organizations Section */}
-      <section className="space-y-6">
+      {/* New Organizations section commented out - not correct */}
+      {/* <section className="space-y-6">
         <div className="text-center">
           <Heading variant="subsection">
             New Organizations in GSoC {year}
@@ -241,7 +242,7 @@ export function GSoCYearClient({
             </Button>
           </div>
         )}
-      </section>
+      </section> */}
 
       {/* Projects Section */}
       <section className="space-y-6">
