@@ -33,7 +33,7 @@ interface GSoCYearClientProps {
 
 export function GSoCYearClient({
   year,
-  organizations,
+  organizations: _organizations, // Unused but kept for future use
   projects,
   highestSelectionsByTech,
   highestSelectionsByOrg,
