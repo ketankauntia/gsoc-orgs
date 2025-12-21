@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'html.tailus.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'summerofcode.withgoogle.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev',
+      },
     ],
   },
 };

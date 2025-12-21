@@ -36,9 +36,7 @@ export const SectionHeader = ({
   return (
     <div className={cn("flex flex-col gap-4", alignmentClasses[align], className)}>
       {badge && (
-        <div>
-          <Badge variant="outline">{badge}</Badge>
-        </div>
+        <Badge variant="outline">{badge}</Badge>
       )}
       <div className="flex flex-col gap-2">
         <Heading className={cn("max-w-xl", titleClassName)}>{title}</Heading>

@@ -18,8 +18,6 @@ import {
   ChevronLeft,
   ChevronDown,
   ChevronUp,
-  Code,
-  Eye,
 } from "lucide-react";
 import {
   Heading,
@@ -39,6 +37,7 @@ import { ParticipationChart } from "./charts/participation-chart";
 import { ProjectsChart } from "./charts/projects-chart";
 import { LanguagesChart } from "./charts/languages-chart";
 import { DifficultyChart } from "./charts/difficulty-chart";
+import { ProjectCard } from "@/components/project-card";
 
 // Extended organization type with stats
 interface OrganizationWithStats extends Organization {
@@ -82,27 +81,6 @@ const socialIcons: Record<string, React.ElementType> = {
   discord: MessageCircle,
   blog: BookOpen,
   github: Github,
-};
-
-// Technology icons mapping
-const getTechIcon = (tech: string) => {
-  const techLower = tech.toLowerCase();
-  if (techLower.includes('python')) return '🐍';
-  if (techLower.includes('javascript') || techLower.includes('js')) return '🟨';
-  if (techLower.includes('typescript') || techLower.includes('ts')) return '🔷';
-  if (techLower.includes('java') && !techLower.includes('script')) return '☕';
-  if (techLower.includes('c++') || techLower.includes('cpp')) return '⚙️';
-  if (techLower.includes('rust')) return '🦀';
-  if (techLower.includes('go') || techLower === 'golang') return '🐹';
-  if (techLower.includes('ruby')) return '💎';
-  if (techLower.includes('php')) return '🐘';
-  if (techLower.includes('swift')) return '🍎';
-  if (techLower.includes('kotlin')) return '🟣';
-  if (techLower.includes('react')) return '⚛️';
-  if (techLower.includes('node')) return '🟢';
-  if (techLower.includes('docker')) return '🐳';
-  if (techLower.includes('kubernetes') || techLower.includes('k8s')) return '☸️';
-  return '📦';
 };
 
 export function OrganizationClient({ organization: org }: OrganizationClientProps) {
@@ -486,7 +464,17 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                   yearProjects.map((project, index) => (
                     <ProjectCard
                       key={project.id || index}
-                      project={project}
+                      project={{
+                        id: project.id,
+                        title: project.title,
+                        short_description: project.short_description,
+                        description: project.description,
+                        student_name: project.student_name,
+                        difficulty: project.difficulty,
+                        tags: project.tags,
+                        project_url: project.project_url,
+                        code_url: project.code_url,
+                      }}
                     />
                   ))
                 ) : (
@@ -610,132 +598,3 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
   );
 }
 
-// Project Card Component - Updated to match wireframe
-interface ProjectCardProps {
-  project: {
-    id: string;
-    title: string;
-    short_description: string;
-    description?: string;
-    student_name: string;
-    difficulty?: string;
-    tags?: string[];
-    slug: string;
-    code_url?: string;
-    project_url: string;
-  };
-}
-
-function ProjectCard({ project }: ProjectCardProps) {
-  const getDifficultyColor = (difficulty?: string) => {
-    switch (difficulty?.toLowerCase()) {
-      case 'beginner':
-      case 'easy':
-        return 'bg-emerald-500';
-      case 'intermediate':
-      case 'medium':
-        return 'bg-amber-500';
-      case 'advanced':
-      case 'hard':
-        return 'bg-orange-600';
-      default:
-        return 'bg-gray-400';
-    }
-  };
-
-  // Extract technologies and topics from tags
-  const technologies = project.tags?.filter(tag => 
-    ['python', 'javascript', 'java', 'c++', 'typescript', 'rust', 'go', 'ruby', 'php', 'swift', 'kotlin', 'react', 'node', 'docker', 'loki'].some(t => tag.toLowerCase().includes(t))
-  ) || [];
-  
-  const topics = project.tags?.filter(tag => 
-    !technologies.includes(tag)
-  ).slice(0, 5) || [];
-
-  return (
-    <CardWrapper padding="md" hover className="flex flex-col relative">
-      {/* Difficulty Badge */}
-      {project.difficulty && (
-        <div className="absolute top-4 left-4 flex items-center gap-2">
-          <span className={cn("w-2.5 h-2.5 rounded-full", getDifficultyColor(project.difficulty))} />
-          <span className="text-xs font-medium text-muted-foreground capitalize">
-            {project.difficulty}
-          </span>
-        </div>
-      )}
-
-      <div className="flex-1 space-y-3 pt-6">
-        {/* Title */}
-        <Heading variant="small" className="text-base line-clamp-2 font-semibold">
-          {project.title}
-        </Heading>
-
-        {/* Contributor */}
-        <div className="text-xs text-muted-foreground">
-          <span className="font-medium">Contributor :</span>
-        </div>
-        
-        {/* Mentor placeholder */}
-        <div className="text-xs text-muted-foreground">
-          <span className="font-medium">Mentor :</span> {project.student_name || 'XYZ'}
-        </div>
-
-        {/* Description */}
-        <Text variant="small" className="line-clamp-3 text-foreground/70">
-          {project.short_description || project.description}
-        </Text>
-
-        {/* Technologies */}
-        {technologies.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2">
-            {technologies.slice(0, 3).map((tech, idx) => (
-              <span key={idx} className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-muted rounded-md">
-                {getTechIcon(tech)} {tech}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* Topics */}
-        {topics.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-xs text-muted-foreground">Topics:</span>
-            {topics.map((topic, idx) => (
-              <span key={idx} className="text-xs px-2 py-0.5 border rounded-md">
-                {topic}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Action Buttons */}
-      <div className="pt-4 mt-auto flex gap-2">
-        <Button variant="default" size="sm" asChild className="flex-1 bg-teal-600 hover:bg-teal-700">
-          <a
-            href={project.project_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2"
-          >
-            <Eye className="w-4 h-4" />
-            View Project
-          </a>
-        </Button>
-        {project.code_url && (
-          <Button variant="outline" size="sm" asChild className="flex-1">
-            <a
-              href={project.code_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
-            >
-              <Code className="w-4 h-4" />
-              View Code
-            </a>
-          </Button>
-        )}
-      </div>
-    </CardWrapper>
-  );
-}
