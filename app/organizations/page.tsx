@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
+import { getFullUrl } from "@/lib/constants";
 
 /**
  * Organizations Listing Page
@@ -38,7 +39,7 @@ export async function generateMetadata({
       : `GSoC Organizations - Page ${page} - Google Summer of Code Organizations Guide`,
     description: "Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests.",
     alternates: {
-      canonical: "https://www.gsocorganizationsguide.com/organizations",
+      canonical: getFullUrl("/organizations"),
     },
     robots: {
       index: true,
@@ -47,7 +48,7 @@ export async function generateMetadata({
     openGraph: {
       title: "All GSoC Organizations",
       description: "Explore all Google Summer of Code participating organizations",
-      url: "https://www.gsocorganizationsguide.com/organizations",
+      url: getFullUrl("/organizations"),
       type: "website",
     },
   };
@@ -90,7 +91,14 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
   });
 
   return (
-    <Suspense fallback={<div className="text-center py-20">Loading organizations...</div>}>
+    <Suspense fallback={
+      <div className="min-h-[600px] flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]" />
+          <p className="mt-4 text-muted-foreground">Loading organizations...</p>
+        </div>
+      </div>
+    }>
       <OrganizationsClient initialData={data} initialPage={page} />
     </Suspense>
   );

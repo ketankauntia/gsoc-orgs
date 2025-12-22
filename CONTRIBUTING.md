@@ -1,52 +1,159 @@
-# Contributing to gsoc-orgs
+# Contributing Guide
 
-Thank you for your interest in contributing! We value quality, clarity, and collaboration.
+## Pre-commit Hooks
 
-## Quick Start
+This project uses **Husky** to run pre-commit hooks that **automatically validate** your code before every commit. This ensures CI/CD never fails due to code issues.
 
-- Fork the repository.
-- Create a branch named descriptively: `feature/foo` or `bugfix/bar`.
-- Make changes and commit cleanly.
-- Open a Pull Request (PR) with a clear description.
+### What Runs Automatically on Commit
 
-## Code Standards
+When you commit, the following checks run **automatically**:
 
-- Write readable, maintainable code.
-- Follow the existing code style.
-- Keep PRs small and focused — one logical change per PR.
-- Add tests where applicable.
+1. **Branch Protection** 🛡️
+   - Prevents direct commits to `main` branch
+   - Forces you to work on feature branches
+   - Protects the main branch from accidental commits
 
-## Reporting Bugs
+2. **Linting** (`lint-staged`)
+   - Runs ESLint on staged files
+   - Auto-fixes fixable issues
+   - Prevents lint errors from reaching CI/CD
 
-- Search existing issues first.
-- Create an issue with steps to reproduce and expected vs actual results.
-- Attach screenshots or logs if possible.
+3. **Type Checking** (`tsc --noEmit`)
+   - Validates TypeScript types
+   - Catches type errors that would break the build
+   - Fast check that prevents most build failures
 
-## Feature Requests
+4. **Build Check** (`pnpm build`)
+   - Ensures code compiles successfully
+   - Catches build errors before they reach CI/CD
+   - **Same check that runs in CI/CD**
 
-- Open an issue proposing the feature.
-- Describe use case and motivation clearly.
+**Result:** If your commit succeeds, it will pass CI/CD! ✅
 
-## Pull Requests
+### Manual Validation (Optional)
 
-Before submitting a PR:
+You can also run validation manually before committing:
 
-- Ensure the code builds locally.
-- Run lint and fix warnings/errors.
-- Rebase/merge latest `main`.
-- Provide a clear summary of changes and why they’re needed.
+```bash
+pnpm validate
+```
 
-### After Opening a PR
+This runs the same checks:
+- ✅ Linting (`pnpm lint`)
+- ✅ Type checking (`pnpm type-check`)
+- ✅ Build check (`pnpm build`)
 
-- Respond to review comments in a timely manner.
-- Do not force-push without discussion.
-- Iterate as needed until the PR is approved.
+### Troubleshooting
 
-## Style Guide
+#### Pre-commit hooks not running?
 
-- Use descriptive variable and function names.
-- Keep functions small and single-purpose.
-- Avoid unnecessary changes unrelated to the issue/feature.
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+   This runs `husky` setup automatically via the `prepare` script.
 
-Thanks for helping improve the project!
+2. **Verify hooks are installed:**
+   ```bash
+   git config --get core.hooksPath
+   # Should output: .husky/_
+   ```
 
+3. **Manually install Husky (if needed):**
+   ```bash
+   pnpm exec husky install
+   ```
+
+#### Can't commit to main branch?
+
+The hook prevents direct commits to `main`. Create a feature branch first:
+
+```bash
+git checkout -b feature/your-feature-name
+git commit -m "feat: your changes"
+```
+
+#### Commit fails with type errors?
+
+Fix the TypeScript errors shown in the output. The hook will prevent the commit until all type errors are resolved.
+
+#### Commit fails with lint errors?
+
+Most lint errors are auto-fixed. If some remain, fix them manually and commit again.
+
+#### Commit fails with build errors?
+
+Fix the build errors shown in the output. Common issues:
+- TypeScript type errors
+- Missing imports
+- Syntax errors
+- Missing dependencies
+
+The hook will prevent the commit until the build succeeds.
+
+#### Want to skip hooks (not recommended)?
+
+```bash
+git commit --no-verify -m "your message"
+```
+
+⚠️ **Warning:** This bypasses all checks and may cause CI/CD to fail.
+
+### Commit Message Format
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/).
+
+Examples:
+- `feat: add new organization filter`
+- `fix: resolve navigation double-click issue`
+- `docs: update contributing guide`
+- `refactor: optimize re-renders in organizations page`
+
+The commit-msg hook validates your commit message format automatically.
+
+---
+
+## Development Workflow
+
+1. **Create a branch:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make changes and commit:**
+   ```bash
+   git add .
+   git commit -m "feat: your feature description"
+   ```
+   
+   The pre-commit hook will automatically:
+   - ✅ Check you're not on main branch
+   - ✅ Lint your code
+   - ✅ Check TypeScript types
+   - ✅ Build your code
+   
+   If all checks pass, your commit succeeds! 🎉
+
+3. **Push and create PR:**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+---
+
+## CI/CD Pipeline
+
+The GitHub Actions workflow (`.github/workflows/ci.yml`) runs:
+
+1. ✅ Linting (`pnpm lint`)
+2. ✅ Build (`pnpm build`)
+
+**Good news:** These are the same checks that run in your pre-commit hook! If your commit succeeds locally, CI/CD will pass. ✅
+
+---
+
+## Need Help?
+
+- Check existing issues on GitHub
+- Review the codebase for similar patterns
+- Ask in discussions or create an issue

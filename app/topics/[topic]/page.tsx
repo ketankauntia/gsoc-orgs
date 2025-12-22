@@ -147,13 +147,15 @@ export default async function TopicPage({ params }: { params: Promise<{ topic: s
           The topic you&apos;re looking for doesn&apos;t exist.
         </Text>
         <Button asChild className="mt-6">
-          <Link href="/organizations">View All Organizations</Link>
+          <Link href="/organizations" prefetch={true}>View All Organizations</Link>
         </Button>
       </div>
     );
   }
 
   // Pass data to client component
-  return <TopicPageClient topic={topic} organizations={MOCK_ORGANIZATIONS} />;
+  return (
+    <TopicPageClient topic={topic} organizations={MOCK_ORGANIZATIONS} />
+  );
 }
 

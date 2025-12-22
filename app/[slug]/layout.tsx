@@ -2,6 +2,11 @@ import { ReactNode } from "react";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import type { Metadata } from "next";
+import { getFullUrl } from "@/lib/constants";
+
+// Force revalidation to ensure footer links stay updated
+// This prevents serving stale cached HTML with old links
+export const revalidate = 3600; // Revalidate every hour
 
 interface LayoutProps {
   children: ReactNode;
@@ -33,9 +38,18 @@ export async function generateMetadata({
   return {
     title: `GSoC ${year} Organizations | Google Summer of Code`,
     description: `Explore all organizations that participated in Google Summer of Code ${year}. Find projects, tech stacks, and difficulty levels.`,
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title: `GSoC ${year} Organizations`,
       description: `Explore all organizations that participated in Google Summer of Code ${year}.`,
+      url: getFullUrl(`/${slug}`),
+      images: ["/og.webp"],
+    },
+    alternates: {
+      canonical: getFullUrl(`/${slug}`),
     },
   };
 }

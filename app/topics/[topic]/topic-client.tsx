@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, TrendingUp, Users, Code, Calendar, ArrowRight } from "lucide-react";
@@ -46,20 +46,22 @@ export function TopicPageClient({ topic, organizations }: TopicPageClientProps) 
   const [selectedYear, setSelectedYear] = useState<number | "all">("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>("all");
 
-  // Filter organizations
-  const filteredOrgs = organizations.filter((org) => {
-    const matchesSearch =
-      org.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      org.description.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesYear =
-      selectedYear === "all" || org.yearsActive.includes(selectedYear);
-    
-    const matchesDifficulty =
-      selectedDifficulty === "all" || org.difficulty === selectedDifficulty;
+  // Filter organizations - memoized to prevent unnecessary recalculations
+  const filteredOrgs = useMemo(() => {
+    return organizations.filter((org) => {
+      const matchesSearch =
+        org.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        org.description.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesYear =
+        selectedYear === "all" || org.yearsActive.includes(selectedYear);
+      
+      const matchesDifficulty =
+        selectedDifficulty === "all" || org.difficulty === selectedDifficulty;
 
-    return matchesSearch && matchesYear && matchesDifficulty;
-  });
+      return matchesSearch && matchesYear && matchesDifficulty;
+    });
+  }, [organizations, searchQuery, selectedYear, selectedDifficulty]);
 
   // Calculate stats for charts - using fixed mock data for stable rendering
   const yearCounts = topic.activeYears.map((year, index) => ({
@@ -377,7 +379,7 @@ export function TopicPageClient({ topic, organizations }: TopicPageClientProps) 
                 <div className="flex items-center justify-between pt-4 border-t">
                   <Badge variant="outline">{org.difficulty}</Badge>
                   <Button variant="ghost" size="sm" asChild>
-                    <Link href={`/organizations/${org.slug}`}>
+                    <Link href={`/organizations/${org.slug}`} prefetch={true}>
                       View Details <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                   </Button>
@@ -398,10 +400,10 @@ export function TopicPageClient({ topic, organizations }: TopicPageClientProps) 
         </Text>
         <div className="flex flex-wrap gap-3 justify-center">
           <Button size="lg" asChild>
-            <Link href="/organizations">View All Organizations</Link>
+            <Link href="/organizations" prefetch={true}>View All Organizations</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="/topics">Browse Topics</Link>
+            <Link href="/topics" prefetch={true}>Browse Topics</Link>
           </Button>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
 import {
   Users,
@@ -308,6 +309,10 @@ export async function generateStaticParams() {
   return slugs;
 }
 
+// Force revalidation to ensure footer links stay updated
+// This prevents serving stale cached HTML with old links
+export const revalidate = 3600; // Revalidate every hour
+
 // Main Page Component
 export default async function GSoCYearOrganizationsPage({
   params,
@@ -583,17 +588,35 @@ export default async function GSoCYearOrganizationsPage({
 
 
           {/* New Sections: Highest Selections, Projects, Mentors & Contributors */}
-          <GSoCYearClient
-            year={year}
-            organizations={newOrgs}
-            projects={projects}
-            highestSelectionsByTech={highestSelectionsByTech}
-            highestSelectionsByOrg={highestSelectionsByOrg}
-            mentorsAndContributors={mentorsAndContributors}
-          />
+          <Suspense fallback={
+            <div className="min-h-[800px] flex items-center justify-center">
+              <div className="text-center">
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]" />
+                <p className="mt-4 text-muted-foreground">Loading year data...</p>
+              </div>
+            </div>
+          }>
+            <GSoCYearClient
+              year={year}
+              organizations={newOrgs}
+              projects={projects}
+              highestSelectionsByTech={highestSelectionsByTech}
+              highestSelectionsByOrg={highestSelectionsByOrg}
+              mentorsAndContributors={mentorsAndContributors}
+            />
+          </Suspense>
 
           {/* Organizations Grid - Client Component for Show More/Less */}
-          <AllOrganizationsSection organizations={organizations} year={year} />
+          <Suspense fallback={
+            <div className="min-h-[600px] flex items-center justify-center">
+              <div className="text-center">
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]" />
+                <p className="mt-4 text-muted-foreground">Loading organizations...</p>
+              </div>
+            </div>
+          }>
+            <AllOrganizationsSection organizations={organizations} year={year} />
+          </Suspense>
 
           {/* CTA Section */}
           <div className="text-center space-y-4 py-10 border-t">
@@ -609,13 +632,13 @@ export default async function GSoCYearOrganizationsPage({
             </Text>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
               <Button asChild size="lg">
-                <Link href="/organizations">
+                <Link href="/organizations" prefetch={true}>
                   <Users className="w-4 h-4 mr-2" />
                   View All Organizations
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/topics">
+                <Link href="/topics" prefetch={true}>
                   <ArrowRight className="w-4 h-4 mr-2" />
                   Browse by Topic
                 </Link>

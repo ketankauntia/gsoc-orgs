@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from "recharts";
 import { Input, CardWrapper, Heading, Text, Button } from "@/components/ui";
-import { OrganizationCard } from "@/components/organization-card";
 import { ProjectCard } from "@/components/project-card";
 import { Organization } from "@/lib/api";
 
@@ -34,7 +34,8 @@ interface GSoCYearClientProps {
 
 export function GSoCYearClient({
   year,
-  organizations,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  organizations, // Unused but kept for future use (only used in commented-out code)
   projects,
   highestSelectionsByTech,
   highestSelectionsByOrg,
@@ -43,7 +44,6 @@ export function GSoCYearClient({
   const [projectSearch, setProjectSearch] = useState("");
   const [nameSearch, setNameSearch] = useState("");
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const [showAllOrgs, setShowAllOrgs] = useState(false);
   const [showAllMentors, setShowAllMentors] = useState(false);
 
   // Filter projects based on search
@@ -75,7 +75,6 @@ export function GSoCYearClient({
   const displayedProjects = showAllProjects
     ? filteredProjects
     : filteredProjects.slice(0, 6);
-  const displayedOrgs = showAllOrgs ? organizations : organizations.slice(0, 6);
 
   return (
     <div className="space-y-12">
@@ -331,12 +330,13 @@ export function GSoCYearClient({
                 {(showAllMentors ? filteredMentorsContributors : filteredMentorsContributors.slice(0, 10)).map((mc) => (
                   <tr key={mc.org_slug} className="border-b">
                     <td className="py-3 px-4">
-                      <a
+                      <Link
                         href={`/organizations/${mc.org_slug}`}
+                        prefetch={true}
                         className="text-sm font-medium text-blue-600 hover:underline"
                       >
                         {mc.org_name}
-                      </a>
+                      </Link>
                     </td>
                     <td className="py-3 px-4">
                       <Text className="text-sm">

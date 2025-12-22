@@ -270,7 +270,7 @@ function TopicCard({ topic }: { topic: Topic }) {
   const Icon = topic.icon;
 
   return (
-    <Link href={`/topics/${topic.slug}`}>
+    <Link href={`/topics/${topic.slug}`} prefetch={true}>
       <CardWrapper hover className="h-full flex flex-col group">
         <div className="flex items-start gap-4 mb-4">
           <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">

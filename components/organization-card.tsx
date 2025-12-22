@@ -23,6 +23,7 @@ export function OrganizationCard({
   return (
     <Link 
       href={`/organizations/${org.slug}`}
+      prefetch={true}
       className={`block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all ${className}`}
     >
       {/* Header with Logo */}

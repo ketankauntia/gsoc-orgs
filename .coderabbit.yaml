@@ -1,0 +1,23 @@
+version: 1
+
+reviews:
+  auto_review:
+    enabled: true
+
+    # Run on all PRs to any branch
+    branches:
+      include:
+        - "*"
+
+  # Remove "Review skipped" noise
+  review_status: false
+
+  # Optional: review even draft PRs
+  drafts: true
+
+# Optional but recommended
+language:
+  javascript:
+    enabled: true
+  typescript:
+    enabled: true

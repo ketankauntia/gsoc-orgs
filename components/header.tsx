@@ -58,6 +58,7 @@ export const Header = () => {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
+                                            prefetch={true}
                                             className="hover:text-accent-foreground hover:font-semibold block duration-150">
                                             <span>{item.name}</span>
                                         </Link>
@@ -73,6 +74,7 @@ export const Header = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
+                                                prefetch={true}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
                                             </Link>

@@ -254,13 +254,14 @@ export default async function ProjectDetailPage({
     <div className="space-y-8">
       {/* Breadcrumb Navigation */}
       <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/organizations" className="hover:text-foreground">
+        <Link href="/organizations" className="hover:text-foreground" prefetch={true}>
           Organizations
         </Link>
         <span>/</span>
         <Link
           href={`/organizations/${project.organization.slug}`}
           className="hover:text-foreground"
+          prefetch={true}
         >
           {project.organization.name}
         </Link>
@@ -270,7 +271,7 @@ export default async function ProjectDetailPage({
 
       {/* Back Button */}
       <Button variant="ghost" size="sm" asChild>
-        <Link href={`/organizations/${project.organization.slug}`}>
+        <Link href={`/organizations/${project.organization.slug}`} prefetch={true}>
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Organization
         </Link>

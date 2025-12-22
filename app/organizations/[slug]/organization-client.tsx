@@ -326,6 +326,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                   <Link
                     key={year}
                     href={`/gsoc-${year}-organizations`}
+                    prefetch={true}
                   >
                     <Badge
                       variant="outline"
@@ -346,7 +347,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {visibleTechnologies.map((tech) => (
-                    <Link href={`/tech-stack/${encodeURIComponent(tech.toLowerCase())}`} key={tech}>
+                    <Link href={`/tech-stack/${encodeURIComponent(tech.toLowerCase())}`} key={tech} prefetch={true}>
                       <Badge 
                         variant="secondary" 
                         className="px-3 py-1.5 text-sm cursor-pointer hover:bg-secondary/80 transition-colors"
@@ -383,7 +384,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {visibleTopics.map((topic) => (
-                    <Link href={`/topics/${encodeURIComponent(topic.toLowerCase().replace(/\s+/g, '-'))}`} key={topic}>
+                    <Link href={`/topics/${encodeURIComponent(topic.toLowerCase().replace(/\s+/g, '-'))}`} key={topic} prefetch={true}>
                       <Badge 
                         variant="outline" 
                         className="px-3 py-1.5 text-sm cursor-pointer hover:bg-accent transition-colors"
@@ -522,7 +523,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="flex items-center gap-2">
                       <Text variant="small" className="text-muted-foreground">Category:</Text>
-                      <Link href={`/organizations?category=${encodeURIComponent(org.category)}`}>
+                      <Link href={`/organizations?category=${encodeURIComponent(org.category)}`} prefetch={true}>
                         <Badge variant="default" className="bg-sky-500 hover:bg-sky-600">
                           {org.category}
                         </Badge>

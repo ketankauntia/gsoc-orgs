@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // React Strict Mode is enabled by default in Next.js 13+
+  // This causes double-renders in development (intentional)
+  // If you experience "double-click" issues in dev, test with: pnpm build && pnpm start
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
