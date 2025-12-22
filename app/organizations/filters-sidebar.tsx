@@ -5,7 +5,7 @@ import { Search, ChevronDown, ChevronUp } from 'lucide-react'
 
 interface FiltersSidebarProps {
   onFilterChange: (filters: FilterState) => void
-  initialFilters?: FilterState
+  filters: FilterState
 }
 
 export interface FilterState {
@@ -42,19 +42,7 @@ const TOPICS = [
   'Database',
 ]
 
-export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSidebarProps) {
-  const [filters, setFilters] = useState<FilterState>(
-    initialFilters || {
-      search: '',
-      years: [],
-      categories: [],
-      techs: [],
-      topics: [],
-      difficulties: [],
-      firstTimeOnly: false,
-    }
-  )
-
+export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps) {
   const [sidebarSearch] = useState('')
   const [expandedSections, setExpandedSections] = useState({
     firstTime: true,
@@ -88,7 +76,6 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       ? filters.years.filter((y: string) => y !== year)
       : [...filters.years, year]
     const newFilters = { ...filters, years: newYears }
-    setFilters(newFilters)
     onFilterChange(newFilters)
   }
 
@@ -97,7 +84,6 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       ? filters.techs.filter((t: string) => t !== tech)
       : [...filters.techs, tech]
     const newFilters = { ...filters, techs: newTechs }
-    setFilters(newFilters)
     onFilterChange(newFilters)
   }
 
@@ -106,7 +92,6 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       ? filters.categories.filter((c: string) => c !== category)
       : [...filters.categories, category]
     const newFilters = { ...filters, categories: newCategories }
-    setFilters(newFilters)
     onFilterChange(newFilters)
   }
 
@@ -115,13 +100,11 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       ? filters.topics.filter((t: string) => t !== topic)
       : [...filters.topics, topic]
     const newFilters = { ...filters, topics: newTopics }
-    setFilters(newFilters)
     onFilterChange(newFilters)
   }
 
   const toggleFirstTime = () => {
     const newFilters = { ...filters, firstTimeOnly: !filters.firstTimeOnly }
-    setFilters(newFilters)
     onFilterChange(newFilters)
   }
 
@@ -135,7 +118,6 @@ export function FiltersSidebar({ onFilterChange, initialFilters }: FiltersSideba
       difficulties: [],
       firstTimeOnly: false,
     }
-    setFilters(clearedFilters)
     onFilterChange(clearedFilters)
   }
 
