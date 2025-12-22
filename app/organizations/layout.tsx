@@ -16,7 +16,6 @@ export default function OrganizationsLayout({
     <div className="min-h-screen bg-background">
       {/* Header - Fixed at top */}
       <Header />
-      
       {/* Main content area */}
       {/* pt-20 accounts for fixed header height (80px) */}
       <main className="pt-20 lg:pt-24">

@@ -18,7 +18,6 @@ export default function TopicsLayout({ children }: TopicsLayoutProps) {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header - same across all pages */}
       <Header />
-      
       {/* Main content area with consistent max-width */}
       {/* pt-20 accounts for fixed header height */}
       <main className="flex-1 pt-20 lg:pt-24">

@@ -28,6 +28,9 @@ import {
 import { GSoCYearClient } from "./gsoc-year-client";
 import { AllOrganizationsSection } from "./all-organizations-section";
 
+// This page relies on dynamic request data (e.g. API fetches) and can't be fully pre-rendered
+export const dynamic = 'force-dynamic';
+
 // Fetch organizations for a specific year
 async function fetchOrganizationsByYear(year: string): Promise<Organization[]> {
   try {

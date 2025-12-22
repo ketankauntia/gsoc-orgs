@@ -6,6 +6,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
 import { GitHubIcon, TwitterIcon } from '@/components/icons'
+import { ExperimentalDataBanner } from '@/components/experimental-data-banner'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -29,6 +30,7 @@ export const Header = () => {
     }, [])
     return (
         <header suppressHydrationWarning>
+            <ExperimentalDataBanner />
             <nav
                 data-state={menuState && 'active'}
                 className="fixed z-20 w-full px-2"
