@@ -8,6 +8,9 @@ import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
 import { FiltersSidebar, FilterState } from './filters-sidebar'
 
+const arraysEqual = (a: string[], b: string[]) =>
+  a.length === b.length && a.every((val, idx) => val === b[idx])
+
 // Debounce utility
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value)
@@ -40,24 +43,26 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
   
-  // Parse searchParams once into primitive values to avoid object recreation
-  // This prevents useSearchParams() from causing unnecessary re-renders
-  const urlSearch = searchParams.get('q') || ''
-  const urlYear = searchParams.get('year') || null
-  const urlCategory = searchParams.get('category') || null
-  const urlTech = searchParams.get('tech') || null
-  const urlTopic = searchParams.get('topic') || null
-  const urlDifficulties = searchParams.get('difficulties') || ''
-  
   // Memoize filters from URL using primitives to avoid unnecessary recalculations
-  const urlFilters = useMemo<FilterState>(() => ({
-    search: urlSearch,
-    year: urlYear,
-    category: urlCategory,
-    tech: urlTech,
-    topic: urlTopic,
-    difficulties: urlDifficulties ? urlDifficulties.split(',').filter(Boolean) : [],
-  }), [urlSearch, urlYear, urlCategory, urlTech, urlTopic, urlDifficulties])
+  const urlFilters = useMemo<FilterState>(() => {
+    const urlSearch = searchParams.get('q') || ''
+    const urlYears = searchParams.get('years')?.split(',').filter(Boolean) || []
+    const urlCategories = searchParams.get('categories')?.split(',').filter(Boolean) || []
+    const urlTechs = searchParams.get('techs')?.split(',').filter(Boolean) || []
+    const urlTopics = searchParams.get('topics')?.split(',').filter(Boolean) || []
+    const urlDifficulties = searchParams.get('difficulties') || ''
+    const urlFirstTimeOnly = searchParams.get('firstTimeOnly') === 'true'
+
+    return {
+      search: urlSearch,
+      years: urlYears,
+      categories: urlCategories,
+      techs: urlTechs,
+      topics: urlTopics,
+      difficulties: urlDifficulties ? urlDifficulties.split(',').filter(Boolean) : [],
+      firstTimeOnly: urlFirstTimeOnly,
+    }
+  }, [searchParams])
   
   const [filters, setFilters] = useState<FilterState>(urlFilters)
   const [searchInput, setSearchInput] = useState(urlFilters.search)
@@ -87,28 +92,30 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     // Only update if filters actually changed
     const filtersChanged = 
       filters.search !== urlFilters.search ||
-      filters.year !== urlFilters.year ||
-      filters.category !== urlFilters.category ||
-      filters.tech !== urlFilters.tech ||
-      filters.topic !== urlFilters.topic ||
-      JSON.stringify(filters.difficulties) !== JSON.stringify(urlFilters.difficulties)
+      !arraysEqual(filters.years, urlFilters.years) ||
+      !arraysEqual(filters.categories, urlFilters.categories) ||
+      !arraysEqual(filters.techs, urlFilters.techs) ||
+      !arraysEqual(filters.topics, urlFilters.topics) ||
+      !arraysEqual(filters.difficulties, urlFilters.difficulties) ||
+      filters.firstTimeOnly !== urlFilters.firstTimeOnly
     
     if (filtersChanged) {
       setFilters(urlFilters)
       setSearchInput(urlFilters.search)
     }
-  }, [urlSearch, urlYear, urlCategory, urlTech, urlTopic, urlDifficulties, filters, urlFilters])
+  }, [urlFilters, searchParams, filters])
   
   // handleFilterChange must be declared before useEffect that uses it
   const handleFilterChange = useCallback((newFilters: FilterState) => {
     // Prevent unnecessary updates if filters haven't changed
     const filtersChanged = 
       filters.search !== newFilters.search ||
-      filters.year !== newFilters.year ||
-      filters.category !== newFilters.category ||
-      filters.tech !== newFilters.tech ||
-      filters.topic !== newFilters.topic ||
-      JSON.stringify(filters.difficulties) !== JSON.stringify(newFilters.difficulties)
+      !arraysEqual(filters.years, newFilters.years) ||
+      !arraysEqual(filters.categories, newFilters.categories) ||
+      !arraysEqual(filters.techs, newFilters.techs) ||
+      !arraysEqual(filters.topics, newFilters.topics) ||
+      !arraysEqual(filters.difficulties, newFilters.difficulties) ||
+      filters.firstTimeOnly !== newFilters.firstTimeOnly
     
     if (!filtersChanged) return
     
@@ -116,13 +123,12 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     const params = new URLSearchParams()
     // Reset to page 1 when filters change
     if (newFilters.search) params.set('q', newFilters.search)
-    if (newFilters.category) params.set('category', newFilters.category)
-    if (newFilters.tech) params.set('tech', newFilters.tech)
-    if (newFilters.year) params.set('year', newFilters.year)
-    if (newFilters.topic) params.set('topic', newFilters.topic)
-    if (newFilters.difficulties.length > 0) {
-      params.set('difficulties', newFilters.difficulties.join(','))
-    }
+    if (newFilters.years.length > 0) params.set('years', newFilters.years.join(','))
+    if (newFilters.categories.length > 0) params.set('categories', newFilters.categories.join(','))
+    if (newFilters.techs.length > 0) params.set('techs', newFilters.techs.join(','))
+    if (newFilters.topics.length > 0) params.set('topics', newFilters.topics.join(','))
+    if (newFilters.difficulties.length > 0) params.set('difficulties', newFilters.difficulties.join(','))
+    if (newFilters.firstTimeOnly) params.set('firstTimeOnly', 'true')
     
     const newUrl = `/organizations?${params.toString()}`
     
@@ -151,11 +157,12 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       params.set('page', page.toString())
       params.set('limit', '20')
       if (filterState.search) params.set('q', filterState.search)
-      if (filterState.category) params.set('category', filterState.category)
-      if (filterState.tech) params.set('tech', filterState.tech)
-      if (filterState.year) params.set('year', filterState.year)
+      if (filterState.years.length > 0) params.set('years', filterState.years.join(','))
+      if (filterState.categories.length > 0) params.set('categories', filterState.categories.join(','))
+      if (filterState.techs.length > 0) params.set('techs', filterState.techs.join(','))
+      if (filterState.topics.length > 0) params.set('topics', filterState.topics.join(','))
       if (filterState.difficulties.length > 0) params.set('difficulties', filterState.difficulties.join(','))
-      if (filterState.topic) params.set('topic', filterState.topic)
+      if (filterState.firstTimeOnly) params.set('firstTimeOnly', 'true')
       
       const paramsString = params.toString()
       
@@ -197,10 +204,11 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     fetchOrganizations(page, filters)
   }, [
     filters.search,
-    filters.category,
-    filters.tech,
-    filters.year,
-    filters.topic,
+    filters.years,
+    filters.categories,
+    filters.techs,
+    filters.topics,
+    filters.firstTimeOnly,
     // eslint-disable-next-line react-hooks/exhaustive-deps
     JSON.stringify(filters.difficulties),
     fetchOrganizations,
@@ -212,11 +220,12 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     const params = new URLSearchParams()
     if (page > 1) params.set('page', page.toString())
     if (filters.search) params.set('q', filters.search)
-    if (filters.category) params.set('category', filters.category)
-    if (filters.tech) params.set('tech', filters.tech)
-    if (filters.year) params.set('year', filters.year)
-    if (filters.topic) params.set('topic', filters.topic)
+    if (filters.years.length > 0) params.set('years', filters.years.join(','))
+    if (filters.categories.length > 0) params.set('categories', filters.categories.join(','))
+    if (filters.techs.length > 0) params.set('techs', filters.techs.join(','))
+    if (filters.topics.length > 0) params.set('topics', filters.topics.join(','))
     if (filters.difficulties.length > 0) params.set('difficulties', filters.difficulties.join(','))
+    if (filters.firstTimeOnly) params.set('firstTimeOnly', 'true')
     
     const url = `/organizations?${params.toString()}`
     // Prevent duplicate navigation to same URL
@@ -230,23 +239,36 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [currentPage, filters, isLoading, router])
 
-  const removeFilter = useCallback((key: keyof FilterState) => {
-    const newFilters = { ...filters, [key]: key === 'search' ? '' : (key === 'difficulties' ? [] : null) }
+  const removeFilter = useCallback((key: keyof FilterState, value?: string) => {
+    const newFilters = { ...filters }
+    if (key === 'search') {
+      newFilters.search = ''
+    } else if (key === 'firstTimeOnly') {
+      newFilters.firstTimeOnly = false
+    } else if (Array.isArray(filters[key])) {
+      const existing = filters[key] as string[]
+      const updated = value ? existing.filter((v) => v !== value) : []
+      newFilters[key] = updated as FilterState[typeof key]
+    }
     handleFilterChange(newFilters)
   }, [filters, handleFilterChange])
 
   // Active filters for the "Clear all" button logic
-  const hasActiveFilters = filters.year !== null || 
-    filters.tech !== null || 
-    filters.topic !== null || 
-    filters.difficulties.length > 0
+  const hasActiveFilters = filters.years.length > 0 ||
+    filters.techs.length > 0 ||
+    filters.topics.length > 0 ||
+    filters.categories.length > 0 ||
+    filters.difficulties.length > 0 ||
+    filters.firstTimeOnly
 
   // Sidebar-only filters (those without inline X buttons) to show as chips
   const sidebarFilters = [
-    filters.year && { key: 'year' as const, label: `Year: ${filters.year}`, value: filters.year },
-    filters.tech && { key: 'tech' as const, label: filters.tech, value: filters.tech },
-    filters.topic && { key: 'topic' as const, label: filters.topic, value: filters.topic },
-  ].filter(Boolean) as Array<{ key: 'year' | 'tech' | 'topic'; label: string; value: string }>
+    ...filters.years.map((year: string) => ({ key: 'years' as const, label: `Year: ${year}`, value: year })),
+    ...filters.techs.map((tech: string) => ({ key: 'techs' as const, label: tech, value: tech })),
+    ...filters.topics.map((topic: string) => ({ key: 'topics' as const, label: topic, value: topic })),
+    ...filters.categories.map((cat: string) => ({ key: 'categories' as const, label: cat, value: cat })),
+    filters.firstTimeOnly ? { key: 'firstTimeOnly' as const, label: 'First-time orgs', value: 'true' } : null,
+  ].filter(Boolean) as Array<{ key: 'years' | 'techs' | 'topics' | 'categories' | 'firstTimeOnly'; label: string; value: string }>
 
   // Helper to toggle a difficulty in the array
   const toggleDifficulty = useCallback((difficulty: string) => {
@@ -308,11 +330,19 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
           <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
             <button
               className={`px-3 py-1.5 text-[13px] font-medium rounded-full border transition-colors ${
-                !filters.year && !filters.tech && filters.difficulties.length === 0
+                !hasActiveFilters && filters.difficulties.length === 0 && !filters.search
                   ? 'bg-gray-800 text-white border-gray-800'
                   : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
               }`}
-              onClick={() => handleFilterChange({ ...filters, year: null, tech: null, difficulties: [] })}
+              onClick={() => handleFilterChange({
+                ...filters,
+                years: [],
+                categories: [],
+                techs: [],
+                topics: [],
+                difficulties: [],
+                firstTimeOnly: false,
+              })}
             >
               All
             </button>
@@ -369,11 +399,12 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
                 className="px-2 py-1.5 text-[13px] text-gray-400 hover:text-gray-600"
                 onClick={() => handleFilterChange({
                   search: '',
-                  year: null,
-                  category: null,
-                  tech: null,
-                  topic: null,
+                  years: [],
+                  categories: [],
+                  techs: [],
+                  topics: [],
                   difficulties: [],
+                  firstTimeOnly: false,
                 })}
               >
                 Clear all
@@ -384,19 +415,16 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
           {/* Sidebar Filters as Chips (for year, tech, topic) */}
           {sidebarFilters.length > 0 && (
             <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
-              {sidebarFilters.map((filter) => {
-                const handleRemove = () => removeFilter(filter.key)
-                return (
-                  <span
-                    key={filter.key}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-gray-100 text-gray-700 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
-                    onClick={handleRemove}
-                  >
-                    {filter.label}
-                    <X className="h-3.5 w-3.5" />
-                  </span>
-                )
-              })}
+              {sidebarFilters.map((filter) => (
+                <span
+                  key={`${filter.key}-${filter.value}`}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-gray-100 text-gray-700 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
+                  onClick={() => removeFilter(filter.key, filter.value)}
+                >
+                  {filter.label}
+                  <X className="h-3.5 w-3.5" />
+                </span>
+              ))}
             </div>
           )}
 

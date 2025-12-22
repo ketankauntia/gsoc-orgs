@@ -3,18 +3,19 @@
 import { useState, useEffect } from 'react'
 import { Search, ChevronDown, ChevronUp } from 'lucide-react'
 
+export interface FilterState {
+  search: string
+  years: string[]
+  categories: string[]
+  techs: string[]
+  topics: string[]
+  difficulties: string[]
+  firstTimeOnly: boolean
+}
+
 interface FiltersSidebarProps {
   onFilterChange: (filters: FilterState) => void
   filters: FilterState
-}
-
-export interface FilterState {
-  search: string
-  year: string | null
-  category: string | null
-  tech: string | null
-  topic: string | null
-  difficulties: string[]
 }
 
 const YEARS = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
@@ -71,33 +72,61 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
       .catch(console.error)
   }, [])
 
-  const updateFilter = (key: keyof FilterState, value: string | null) => {
-    const newFilters = { ...filters, [key]: value }
-    onFilterChange(newFilters)
+  const toggleFirstTime = () => {
+    onFilterChange({ ...filters, firstTimeOnly: !filters.firstTimeOnly })
+  }
+
+  const toggleYear = (year: string) => {
+    const years = filters.years.includes(year)
+      ? filters.years.filter((y) => y !== year)
+      : [...filters.years, year]
+    onFilterChange({ ...filters, years })
+  }
+
+  const toggleCategory = (category: string) => {
+    const categories = filters.categories.includes(category)
+      ? filters.categories.filter((c) => c !== category)
+      : [...filters.categories, category]
+    onFilterChange({ ...filters, categories })
+  }
+
+  const toggleTech = (tech: string) => {
+    const techs = filters.techs.includes(tech)
+      ? filters.techs.filter((t) => t !== tech)
+      : [...filters.techs, tech]
+    onFilterChange({ ...filters, techs })
+  }
+
+  const toggleTopic = (topic: string) => {
+    const topics = filters.topics.includes(topic)
+      ? filters.topics.filter((t) => t !== topic)
+      : [...filters.topics, topic]
+    onFilterChange({ ...filters, topics })
   }
 
   const clearAllFilters = () => {
-    const clearedFilters: FilterState = {
+    onFilterChange({
       search: '',
-      year: null,
-      category: null,
-      tech: null,
-      topic: null,
+      years: [],
+      categories: [],
+      techs: [],
+      topics: [],
       difficulties: [],
-    }
-    onFilterChange(clearedFilters)
+      firstTimeOnly: false,
+    })
   }
 
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }))
   }
 
-  const hasActiveFilters = filters.search !== '' || 
-    filters.year !== null || 
-    filters.category !== null || 
-    filters.tech !== null || 
-    filters.topic !== null || 
-    filters.difficulties.length > 0
+  const hasActiveFilters = filters.search !== '' ||
+    filters.years.length > 0 ||
+    filters.categories.length > 0 ||
+    filters.techs.length > 0 ||
+    filters.topics.length > 0 ||
+    filters.difficulties.length > 0 ||
+    filters.firstTimeOnly
 
   const filteredTechs = availableTechs.filter((tech) =>
     tech.name.toLowerCase().includes(techSearch.toLowerCase())
@@ -149,8 +178,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
               <input
                 type="checkbox"
                 className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                checked={false}
-                onChange={() => {}}
+                checked={filters.firstTimeOnly}
+                onChange={toggleFirstTime}
               />
               <span className="text-sm text-gray-700">First-time organizations</span>
               <span className="text-xs text-gray-400">(14)</span>
@@ -179,10 +208,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                    checked={filters.year === year.toString()}
-                    onChange={(e) =>
-                      updateFilter('year', e.target.checked ? year.toString() : null)
-                    }
+                    checked={filters.years.includes(year.toString())}
+                    onChange={() => toggleYear(year.toString())}
                   />
                   <span className="text-[13px] text-gray-700">{year}</span>
                 </label>
@@ -242,10 +269,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                     <input
                       type="checkbox"
                       className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                      checked={filters.tech === tech.name}
-                      onChange={(e) =>
-                        updateFilter('tech', e.target.checked ? tech.name : null)
-                      }
+                    checked={filters.techs.includes(tech.name)}
+                    onChange={() => toggleTech(tech.name)}
                     />
                     <span className="text-[13px] text-gray-700">{tech.name}</span>
                   </div>
@@ -296,10 +321,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                    checked={filters.category === category}
-                    onChange={(e) =>
-                      updateFilter('category', e.target.checked ? category : null)
-                    }
+                    checked={filters.categories.includes(category)}
+                    onChange={() => toggleCategory(category)}
                   />
                   <span className="text-[13px] text-gray-700">{category}</span>
                 </label>
@@ -330,10 +353,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                   <input
                     type="checkbox"
                     className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500"
-                    checked={filters.topic === topic}
-                    onChange={(e) =>
-                      updateFilter('topic', e.target.checked ? topic : null)
-                    }
+                    checked={filters.topics.includes(topic)}
+                    onChange={() => toggleTopic(topic)}
                   />
                   <span className="text-[13px] text-gray-700">{topic}</span>
                 </label>
