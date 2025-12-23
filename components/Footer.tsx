@@ -1,35 +1,88 @@
 import Link from "next/link";
 import { Section, Heading, Text } from "@/components/ui";
-import { SocialLinks } from "@/components/social-links";
-import { FOOTER_NAVIGATION_ITEMS, FOOTER_COPYRIGHT } from "@/components/footer-common";
 
 export const Footer = () => {
+  const navigationItems = [
+    {
+      title: "Quick Links",
+      description: "Discover GSoC opportunities",
+      items: [
+        { title: "GSoC", href: "/" },
+        { title: "Organizations", href: "/organizations" },
+        { title: "GSoC Tech Stack", href: "/tech-stack" },
+        { title: "GSoC Topics", href: "/topics" },
+      ],
+    },
+    {
+      title: "Resources",
+      description: "Learn and prepare for GSoC",
+      items: [
+        {
+          title: "Getting Started",
+          href: "/getting-started",
+        },
+        {
+          title: "Proposal Guide",
+          href: "/proposal-guide",
+        },
+        {
+          title: "Tips & Tricks",
+          href: "/tips",
+        },
+        {
+          title: "FAQs",
+          href: "/faq",
+        },
+      ],
+    },
+    {
+      title: "Community",
+      description: "Connect with GSoC community",
+      items: [
+        {
+          title: "About Us",
+          href: "/about",
+        },
+        {
+          title: "Blog",
+          href: "/blog",
+        },
+        {
+          title: "Success Stories",
+          href: "/stories",
+        },
+        {
+          title: "Contact Us",
+          href: "/contact",
+        },
+      ],
+    },
+  ];
 
   return (
     <Section className="bg-foreground text-background">
-      <div className="grid lg:grid-cols-2 gap-18 items-center">
+      <div className="grid lg:grid-cols-2 gap-10 items-center">
         <div className="flex gap-8 flex-col items-start">
           <div className="flex gap-2 flex-col">
-            <Heading>GSoC Organizations Guide</Heading>
+            <Heading>GSoC Guide</Heading>
             <Text className="max-w-lg text-background/75">
               Your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities.
             </Text>
           </div>
           <div className="flex gap-20 flex-row">
             <div className="flex flex-col text-sm max-w-lg leading-relaxed tracking-tight text-background/75 text-left">
-              <p>{FOOTER_COPYRIGHT.text}.</p>
-              <p className="mt-1">© {FOOTER_COPYRIGHT.year} <Link href={FOOTER_COPYRIGHT.organizationUrl} className="hover:underline">{FOOTER_COPYRIGHT.organization}</Link></p>
+              <p>Built with ❤️ for the</p>
+              <p>open source community</p>
+              <p className="mt-2">© 2025 GSoC Guide</p>
+            </div>
+            <div className="flex flex-col text-sm max-w-lg leading-relaxed tracking-tight text-background/75 text-left">
+              <Link href="/terms" className="hover:text-background transition-colors">Terms of Service</Link>
+              <Link href="/privacy" className="hover:text-background transition-colors">Privacy Policy</Link>
             </div>
           </div>
-          {/* Social Links */}
-          <SocialLinks
-            showLabels={true}
-            className="flex items-center gap-4 text-black"
-            textColor="white"
-          />
         </div>
         <div className="grid lg:grid-cols-3 gap-10 items-start">
-          {FOOTER_NAVIGATION_ITEMS.map((item) => (
+          {navigationItems.map((item) => (
             <div
               key={item.title}
               className="flex text-base gap-1 flex-col items-start"
