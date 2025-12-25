@@ -36,7 +36,7 @@ pnpm dev
 curl http://localhost:3000/api/v1/health
 
 # List organizations
-curl http://localhost:3000/api/v1/organizations?limit=5
+curl http://localhost:3000/api/v1/gsoc-organizations?limit=5
 
 # Get statistics
 curl http://localhost:3000/api/v1/stats
@@ -80,8 +80,8 @@ node scripts/test-pagination.js
 | `/api/v1` | GET | API welcome | No |
 | `/api/v1/health` | GET | Health check | No |
 | `/api/v1/meta` | GET | API metadata | No |
-| `/api/v1/organizations` | GET | List organizations | ✅ Yes |
-| `/api/v1/organizations/{slug}` | GET | Organization details | No |
+| `/api/v1/gsoc-organizations` | GET | List organizations | ✅ Yes |
+| `/api/v1/gsoc-organizations/{slug}` | GET | Organization details | No |
 | `/api/v1/years` | GET | List years | No |
 | `/api/v1/years/{year}/organizations` | GET | Orgs by year | ✅ Yes |
 | `/api/v1/years/{year}/stats` | GET | Year statistics | No |
@@ -121,13 +121,13 @@ bash scripts/test-api.sh
 
 ```bash
 # Organizations
-curl "http://localhost:3000/api/v1/organizations?limit=5"
-curl "http://localhost:3000/api/v1/organizations?technology=python"
-curl "http://localhost:3000/api/v1/organizations/mozilla"
+curl "http://localhost:3000/api/v1/gsoc-organizations?limit=5"
+curl "http://localhost:3000/api/v1/gsoc-organizations?technology=python"
+curl "http://localhost:3000/api/v1/gsoc-organizations/mozilla"
 
 # Years
 curl "http://localhost:3000/api/v1/years"
-curl "http://localhost:3000/api/v1/years/2024/organizations"
+curl "http://localhost:3000/api/v1/years/2024/gsoc-organizations"
 curl "http://localhost:3000/api/v1/years/2024/stats"
 
 # Projects
@@ -198,7 +198,7 @@ gsoc-orgs/
 
 ```typescript
 // Fetch organizations
-const response = await fetch('/api/v1/organizations?technology=python&limit=20');
+const response = await fetch('/api/v1/gsoc-organizations?technology=python&limit=20');
 const data = await response.json();
 
 if (data.success) {
@@ -225,7 +225,7 @@ function OrganizationsList() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch(`/api/v1/organizations?page=${page}&limit=20`)
+    fetch(`/api/v1/gsoc-organizations?page=${page}&limit=20`)
       .then(res => res.json())
       .then(data => {
         if (data.success) {

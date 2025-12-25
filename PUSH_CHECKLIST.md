@@ -13,8 +13,8 @@ All API development is **complete and production-ready**. Here's what you're pus
 ✅ app/api/v1/route.ts
 ✅ app/api/v1/health/route.ts
 ✅ app/api/v1/meta/route.ts
-✅ app/api/v1/organizations/route.ts
-✅ app/api/v1/organizations/[slug]/route.ts
+✅ app/api/v1/gsoc-organizations/route.ts
+✅ app/api/v1/gsoc-organizations/[slug]/route.ts
 ✅ app/api/v1/years/route.ts
 ✅ app/api/v1/years/[year]/organizations/route.ts
 ✅ app/api/v1/years/[year]/stats/route.ts
@@ -131,7 +131,7 @@ curl http://localhost:3000/api/v1/health
 node scripts/test-pagination.js
 
 # 5. Test a few endpoints
-curl "http://localhost:3000/api/v1/organizations?limit=5"
+curl "http://localhost:3000/api/v1/gsoc-organizations?limit=5"
 curl "http://localhost:3000/api/v1/stats"
 curl "http://localhost:3000/api/v1/years/2024/stats"
 ```

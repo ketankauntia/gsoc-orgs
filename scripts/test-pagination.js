@@ -90,7 +90,7 @@ async function runTests() {
   }
   
   // Test organizations
-  await testEndpoint('Organizations', '/organizations', 'organizations');
+  await testEndpoint('gsoc-Organizations', '/gsoc-organizations', 'gsoc-organizations');
   
   // Test projects
   await testEndpoint('Projects', '/projects', 'projects');

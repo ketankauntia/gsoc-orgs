@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 
 /**
- * GET /api/v1/organizations/{slug}
+ * GET /api/v1/gsoc-organizations/{slug}
  * 
  * Returns detailed information about a specific organization
  */

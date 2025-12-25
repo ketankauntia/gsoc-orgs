@@ -40,7 +40,7 @@ curl http://localhost:3000/api/v1
 curl http://localhost:3000/api/v1/health
 
 # 3. Get organizations (first 5)
-curl "http://localhost:3000/api/v1/organizations?limit=5"
+curl "http://localhost:3000/api/v1/gsoc-organizations?limit=5"
 
 # 4. Get 2024 statistics
 curl http://localhost:3000/api/v1/years/2024/stats
@@ -98,7 +98,7 @@ A comprehensive, read-only REST API providing access to Google Summer of Code (G
 - **Explicit versioning** - `/v1`, `/v2` (future)
 - **No breaking changes** - Bookmarked endpoints work forever
 
-**Guarantee:** If you bookmark `/api/v1/organizations/mozilla`, it will work 2 years later with the same structure.
+**Guarantee:** If you bookmark `/api/v1/gsoc-organizations/mozilla`, it will work 2 years later with the same structure.
 
 ---
 
@@ -277,7 +277,7 @@ Welcome message and quick links.
     "version": "v1",
     "status": "stable",
     "quick_links": {
-      "organizations": "/api/v1/organizations",
+      "organizations": "/api/v1/gsoc-organizations",
       "years": "/api/v1/years",
       "projects": "/api/v1/projects",
       "tech_stack": "/api/v1/tech-stack",
@@ -310,7 +310,7 @@ Health check for monitoring.
 
 ### Organizations
 
-#### `GET /api/v1/organizations`
+#### `GET /api/v1/gsoc-organizations`
 
 List organizations with filters.
 
@@ -329,7 +329,7 @@ List organizations with filters.
 
 **Example:**
 ```bash
-curl "http://localhost:3000/api/v1/organizations?year=2024&technology=python&limit=10"
+curl "http://localhost:3000/api/v1/gsoc-organizations?year=2024&technology=python&limit=10"
 ```
 
 **Response:**
@@ -370,13 +370,13 @@ curl "http://localhost:3000/api/v1/organizations?year=2024&technology=python&lim
 }
 ```
 
-#### `GET /api/v1/organizations/{slug}`
+#### `GET /api/v1/gsoc-organizations/{slug}`
 
 Get detailed organization information.
 
 **Example:**
 ```bash
-curl http://localhost:3000/api/v1/organizations/mozilla
+curl http://localhost:3000/api/v1/gsoc-organizations/mozilla
 ```
 
 **Response:** Full organization object with contact, social, years data, and projects.
@@ -411,11 +411,11 @@ List all GSoC years with statistics.
 }
 ```
 
-#### `GET /api/v1/years/{year}/organizations`
+#### `GET /api/v1/years/{year}/gsoc-organizations`
 
 Get organizations that participated in a specific year.
 
-**Path:** `/api/v1/years/2024/organizations`
+**Path:** `/api/v1/years/2024/gsoc-organizations`
 
 **Query Parameters:**
 
@@ -612,10 +612,10 @@ Get overall platform statistics.
 
 | Endpoint | Paginated? | Default Limit | Max Limit |
 |----------|-----------|---------------|-----------|
-| `/organizations` | ✅ Yes | 20 | 100 |
-| `/organizations/{slug}` | ❌ No | - | - |
+| `/gsoc-organizations` | ✅ Yes | 20 | 100 |
+| `/gsoc-organizations/{slug}` | ❌ No | - | - |
 | `/years` | ❌ No | - | - |
-| `/years/{year}/organizations` | ✅ Yes | 50 | 100 |
+| `/years/{year}/gsoc-organizations` | ✅ Yes | 50 | 100 |
 | `/years/{year}/stats` | ❌ No | - | - |
 | `/projects` | ✅ Yes | 20 | 100 |
 | `/projects/{id}` | ❌ No | - | - |
@@ -629,10 +629,10 @@ Get overall platform statistics.
 
 ```bash
 # Without parameters - returns first 20 items
-curl http://localhost:3000/api/v1/organizations
+curl http://localhost:3000/api/v1/gsoc-organizations
 
 # Equivalent to:
-curl http://localhost:3000/api/v1/organizations?page=1&limit=20
+curl http://localhost:3000/api/v1/gsoc-organizations?page=1&limit=20
 ```
 
 ### Response Structure
@@ -671,12 +671,12 @@ curl http://localhost:3000/api/v1/organizations?page=1&limit=20
 Make 6 requests with `limit=100`:
 
 ```bash
-curl "http://localhost:3000/api/v1/organizations?page=1&limit=100"  # 1-100
-curl "http://localhost:3000/api/v1/organizations?page=2&limit=100"  # 101-200
-curl "http://localhost:3000/api/v1/organizations?page=3&limit=100"  # 201-300
-curl "http://localhost:3000/api/v1/organizations?page=4&limit=100"  # 301-400
-curl "http://localhost:3000/api/v1/organizations?page=5&limit=100"  # 401-500
-curl "http://localhost:3000/api/v1/organizations?page=6&limit=100"  # 501-504
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=1&limit=100"  # 1-100
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=2&limit=100"  # 101-200
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=3&limit=100"  # 201-300
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=4&limit=100"  # 301-400
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=5&limit=100"  # 401-500
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=6&limit=100"  # 501-504
 ```
 
 **Option 2: Default Page Size**
@@ -684,8 +684,8 @@ curl "http://localhost:3000/api/v1/organizations?page=6&limit=100"  # 501-504
 Make 26 requests with `limit=20`:
 
 ```bash
-curl "http://localhost:3000/api/v1/organizations?page=1"   # 1-20
-curl "http://localhost:3000/api/v1/organizations?page=2"   # 21-40
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=1"   # 1-20
+curl "http://localhost:3000/api/v1/gsoc-organizations?page=2"   # 21-40
 # ... continue for 26 pages
 ```
 
@@ -694,7 +694,7 @@ curl "http://localhost:3000/api/v1/organizations?page=2"   # 21-40
 ### JavaScript/TypeScript
 
 ```typescript
-// Fetch all organizations
+// Fetch all gsoc-organizations
 async function fetchAllOrganizations() {
   let allOrganizations = [];
   let page = 1;
@@ -702,7 +702,7 @@ async function fetchAllOrganizations() {
 
   while (hasMore) {
     const response = await fetch(
-      `http://localhost:3000/api/v1/organizations?page=${page}&limit=100`
+      `http://localhost:3000/api/v1/gsoc-organizations?page=${page}&limit=100`
     );
     const data = await response.json();
 
@@ -740,13 +740,13 @@ def fetch_all_organizations():
     
     while True:
         response = requests.get(
-            f"{base_url}/organizations",
+            f"{base_url}/gsoc-organizations",
             params={"page": page, "limit": 100}
         )
         data = response.json()
         
         if data["success"]:
-            all_organizations.extend(data["data"]["organizations"])
+            all_organizations.extend(data["data"]["gsoc-organizations"])
             
             # Check if there are more pages
             if page >= data["data"]["pagination"]["pages"]:
@@ -776,7 +776,7 @@ const OrganizationsList = () => {
     setLoading(true);
     
     const response = await fetch(
-      `/api/v1/organizations?page=${page}&limit=20`
+      `/api/v1/gsoc-organizations?page=${page}&limit=20`
     );
     const data = await response.json();
     
@@ -893,16 +893,16 @@ Tests all endpoints and validates responses.
 
 ```bash
 # List first 5 organizations
-curl "http://localhost:3000/api/v1/organizations?limit=5"
+curl "http://localhost:3000/api/v1/gsoc-organizations?limit=5"
 
 # Search by technology
-curl "http://localhost:3000/api/v1/organizations?technology=python&limit=10"
+curl "http://localhost:3000/api/v1/gsoc-organizations?technology=python&limit=10"
 
 # Filter by year
-curl "http://localhost:3000/api/v1/organizations?year=2024&limit=10"
+curl "http://localhost:3000/api/v1/gsoc-organizations?year=2024&limit=10"
 
 # Get specific organization
-curl "http://localhost:3000/api/v1/organizations/mozilla"
+curl "http://localhost:3000/api/v1/gsoc-organizations/mozilla"
 ```
 
 ### Years
@@ -912,7 +912,7 @@ curl "http://localhost:3000/api/v1/organizations/mozilla"
 curl "http://localhost:3000/api/v1/years"
 
 # Get 2024 organizations
-curl "http://localhost:3000/api/v1/years/2024/organizations?limit=10"
+curl "http://localhost:3000/api/v1/years/2024/gsoc-organizations?limit=10"
 
 # Get 2024 statistics
 curl "http://localhost:3000/api/v1/years/2024/stats"
@@ -1097,7 +1097,7 @@ export default async function OrganizationsPage({
   const limit = parseInt(searchParams.limit || '20');
   
   const response = await fetch(
-    `http://localhost:3000/api/v1/organizations?page=${page}&limit=${limit}`,
+    `http://localhost:3000/api/v1/gsoc-organizations?page=${page}&limit=${limit}`,
     { next: { revalidate: 3600 } } // Cache for 1 hour
   );
   
@@ -1135,7 +1135,7 @@ function useOrganizations(filters: {
   year?: number;
 }) {
   return useQuery({
-    queryKey: ['organizations', filters],
+    queryKey: ['gsoc-organizations', filters],
     queryFn: async () => {
       const params = new URLSearchParams();
       if (filters.page) params.set('page', filters.page.toString());
@@ -1144,7 +1144,7 @@ function useOrganizations(filters: {
       if (filters.year) params.set('year', filters.year.toString());
       
       const response = await fetch(
-        `/api/v1/organizations?${params.toString()}`
+        `/api/v1/gsoc-organizations?${params.toString()}`
       );
       const data = await response.json();
       
@@ -1192,10 +1192,10 @@ const app = express();
 const API_BASE = 'http://localhost:3000/api/v1';
 
 // Proxy endpoint with caching
-app.get('/api/organizations', async (req, res) => {
+app.get('/api/gsoc-organizations', async (req, res) => {
   try {
     const queryString = new URLSearchParams(req.query).toString();
-    const response = await fetch(`${API_BASE}/organizations?${queryString}`);
+    const response = await fetch(`${API_BASE}/gsoc-organizations?${queryString}`);
     const data = await response.json();
     
     // Set cache headers
@@ -1223,12 +1223,12 @@ import requests
 app = Flask(__name__)
 API_BASE = 'http://localhost:3000/api/v1'
 
-@app.route('/api/organizations')
+@app.route('/api/gsoc-organizations')
 def get_organizations():
     try:
         # Forward query parameters
         response = requests.get(
-            f'{API_BASE}/organizations',
+            f'{API_BASE}/gsoc-organizations',
             params=request.args
         )
         data = response.json()
@@ -1334,7 +1334,7 @@ docker run -p 3000:3000 -e DATABASE_URL="..." gsoc-api
 After deployment, you can use a custom subdomain:
 
 ```
-https://api.yourdomain.com/v1/organizations
+https://api.yourdomain.com/v1/gsoc-organizations
 ```
 
 Update base URL in documentation from `localhost:3000` to your production domain.
@@ -1349,10 +1349,10 @@ Update base URL in documentation from `localhost:3000` to your production domain
 
 ```javascript
 // Good: Let browser/CDN cache
-fetch('/api/v1/organizations')
+fetch('/api/v1/gsoc-organizations')
 
 // Avoid: Bypassing cache unnecessarily
-fetch('/api/v1/organizations', { cache: 'no-store' })
+fetch('/api/v1/gsoc-organizations', { cache: 'no-store' })
 ```
 
 ### 2. Use Appropriate Limits
@@ -1373,7 +1373,7 @@ fetch('/api/v1/organizations', { cache: 'no-store' })
 ```javascript
 async function fetchOrganizations() {
   try {
-    const response = await fetch('/api/v1/organizations');
+    const response = await fetch('/api/v1/gsoc-organizations');
     const data = await response.json();
     
     if (!data.success) {
@@ -1428,7 +1428,7 @@ const queryClient = new QueryClient({
 
 // Using localStorage
 function getCachedOrganizations() {
-  const cached = localStorage.getItem('organizations');
+  const cached = localStorage.getItem('gsoc-organizations');
   if (cached) {
     const { data, timestamp } = JSON.parse(cached);
     const age = Date.now() - timestamp;

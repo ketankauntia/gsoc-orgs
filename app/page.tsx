@@ -46,7 +46,7 @@ export default function Home() {
     url: SITE_URL,
     potentialAction: {
       "@type": "SearchAction",
-      target: `${getFullUrl('/organizations')}?q={search_term_string}`,
+      target: `${getFullUrl('/gsoc-organizations')}?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   };

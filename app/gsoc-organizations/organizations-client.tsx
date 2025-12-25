@@ -174,11 +174,11 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       
       lastFetchParams.current = paramsString
       
-      const response = await fetch(`/api/organizations?${paramsString}`)
+      const response = await fetch(`/api/gsoc-organizations?${paramsString}`)
       const newData = await response.json()
       setData(newData)
     } catch (error) {
-      console.error('Failed to fetch organizations:', error)
+      console.error('Failed to fetch gsoc organizations:', error)
     } finally {
       setIsLoading(false)
     }

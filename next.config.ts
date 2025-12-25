@@ -5,6 +5,22 @@ const nextConfig: NextConfig = {
   // This causes double-renders in development (intentional)
   // If you experience "double-click" issues in dev, test with: pnpm build && pnpm start
   reactStrictMode: true,
+
+  // Add the redirects for gsoc-organizations
+  async redirects() {
+    return [
+      {
+        source: '/organizations',
+        destination: '/gsoc-organizations',
+        permanent: true,
+      },
+      {
+        source: '/organizations/:path*',
+        destination: '/gsoc-organizations/:path*',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

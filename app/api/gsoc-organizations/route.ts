@@ -68,7 +68,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Organizations API error:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch organizations' },
+      { error: 'Failed to fetch gsoc organizations' },
       { status: 500 }
     )
   }

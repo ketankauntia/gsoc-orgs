@@ -29,8 +29,12 @@ export const metadata: Metadata = {
     apple: [{ url: "/logo.webp", sizes: "180x180", type: "image/webp" }],
   },
   manifest: "/site.webmanifest",
-  themeColor: "#000000",
+  
 };
+
+export const viewport = {
+  themeColor: "#000000"
+}
 
 export default function RootLayout({
   children,

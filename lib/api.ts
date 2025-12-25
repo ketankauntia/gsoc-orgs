@@ -22,7 +22,7 @@ export const API_BASE = getBaseUrl();
 
 /**
  * Custom API fetch wrapper with error handling
- * @param path - API endpoint path (e.g., '/api/organizations')
+ * @param path - API endpoint path (e.g., '/api/gsoc-organizations')
  * @param opts - Fetch options
  */
 export async function apiFetch<T = unknown>(

@@ -15,7 +15,7 @@ interface LayoutProps {
 
 // Parse slug to extract year from format: gsoc-YYYY-organizations
 function parseGSoCSlug(slug: string): string | null {
-  const match = slug.match(/^gsoc-(\d{4})-organizations$/);
+  const match = slug.match(/^gsoc-(\d{4})-gsoc-organizations$/);
   return match ? match[1] : null;
 }
 

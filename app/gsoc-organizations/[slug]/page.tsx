@@ -49,7 +49,7 @@ interface OrganizationWithStats extends Organization {
 
 async function getOrganization(slug: string): Promise<OrganizationWithStats | null> {
   try {
-    return await apiFetchServer<OrganizationWithStats>(`/api/organizations/${slug}`);
+    return await apiFetchServer<OrganizationWithStats>(`/api/gsoc-organizations/${slug}`);
   } catch (error: unknown) {
     if (error && typeof error === 'object' && 'status' in error && error.status === 404) {
       return null;
@@ -85,7 +85,7 @@ export async function generateMetadata({
       images: org.img_r2_url ? [org.img_r2_url] : ["/og.webp"],
     },
     alternates: {
-      canonical: getFullUrl(`/organizations/${slug}`),
+      canonical: getFullUrl(`/gsoc-organizations/${slug}`),
     },
   };
 }

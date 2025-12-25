@@ -39,7 +39,7 @@ export async function generateMetadata({
       : `GSoC Organizations - Page ${page} - Google Summer of Code Organizations Guide`,
     description: "Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests.",
     alternates: {
-      canonical: getFullUrl("/organizations"),
+      canonical: getFullUrl("/gsoc-organizations"),
     },
     robots: {
       index: true,
@@ -48,7 +48,7 @@ export async function generateMetadata({
     openGraph: {
       title: "All GSoC Organizations",
       description: "Explore all Google Summer of Code participating organizations",
-      url: getFullUrl("/organizations"),
+      url: getFullUrl("/gsoc-organizations"),
       type: "website",
     },
   };
@@ -73,7 +73,7 @@ async function getOrganizations(params: {
 
   const query = queryParams.toString();
   return apiFetchServer<PaginatedResponse<Organization>>(
-    `/api/organizations${query ? `?${query}` : ""}`
+    `/api/gsoc-organizations${query ? `?${query}` : ""}`
   );
 }
 

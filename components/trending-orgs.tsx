@@ -27,7 +27,7 @@ export const TrendingOrgs = () => {
   useEffect(() => {
     async function fetchOrgs() {
       try {
-        const response = await fetch('/api/organizations?limit=25&page=1');
+        const response = await fetch('/api/gsoc-organizations?limit=25&page=1');
         if (response.ok) {
           const data = await response.json();
           setOrgs(data.items || []);
