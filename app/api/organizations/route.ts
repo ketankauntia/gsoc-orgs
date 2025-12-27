@@ -34,6 +34,12 @@ export async function GET(request: NextRequest) {
     const topics = parseList(searchParams.get('topics'))
     const difficulties = parseList(searchParams.get('difficulties'))
     const firstTimeOnly = searchParams.get('firstTimeOnly') === 'true'
+    
+    // Parse logic modes (AND or OR for each filter category)
+    const yearsLogic = (searchParams.get('yearsLogic') || 'OR') as 'AND' | 'OR'
+    const categoriesLogic = (searchParams.get('categoriesLogic') || 'OR') as 'AND' | 'OR'
+    const techsLogic = (searchParams.get('techsLogic') || 'OR') as 'AND' | 'OR'
+    const topicsLogic = (searchParams.get('topicsLogic') || 'OR') as 'AND' | 'OR'
 
     // Build where clause with AND logic across filter groups, OR logic within groups
     const whereConditions: Prisma.organizationsWhereInput[] = []
@@ -48,40 +54,80 @@ export async function GET(request: NextRequest) {
       })
     }
 
-    // Years filter: OR logic - org must have participated in ANY of the selected years
+    // Years filter: AND or OR logic based on yearsLogic parameter
     if (years.length > 0) {
-      whereConditions.push({
-        OR: years.map(year => ({
-          active_years: { has: year },
-        })),
-      })
+      if (yearsLogic === 'AND') {
+        // AND: org must have participated in ALL selected years
+        whereConditions.push({
+          AND: years.map(year => ({
+            active_years: { has: year },
+          })),
+        })
+      } else {
+        // OR: org must have participated in ANY of the selected years
+        whereConditions.push({
+          OR: years.map(year => ({
+            active_years: { has: year },
+          })),
+        })
+      }
     }
 
-    // Categories filter: OR logic - org must match ANY of the selected categories
+    // Categories filter: AND or OR logic based on categoriesLogic parameter
     if (categories.length > 0) {
-      whereConditions.push({
-        OR: categories.map(category => ({
-          category: category,
-        })),
-      })
+      if (categoriesLogic === 'AND') {
+        // AND: org must be in ALL selected categories (not possible for single category field, but handle for consistency)
+        whereConditions.push({
+          OR: categories.map(category => ({
+            category: category,
+          })),
+        })
+      } else {
+        // OR: org must be in ANY of the selected categories
+        whereConditions.push({
+          OR: categories.map(category => ({
+            category: category,
+          })),
+        })
+      }
     }
 
-    // Technologies filter: OR logic - org must have ANY of the selected technologies
+    // Technologies filter: AND or OR logic based on techsLogic parameter
     if (techs.length > 0) {
-      whereConditions.push({
-        OR: techs.map(tech => ({
-          technologies: { has: tech },
-        })),
-      })
+      if (techsLogic === 'AND') {
+        // AND: org must have ALL selected technologies
+        whereConditions.push({
+          AND: techs.map(tech => ({
+            technologies: { has: tech },
+          })),
+        })
+      } else {
+        // OR: org must have ANY of the selected technologies
+        whereConditions.push({
+          OR: techs.map(tech => ({
+            technologies: { has: tech },
+          })),
+        })
+      }
     }
 
-    // Topics filter: OR logic - org must have ANY of the selected topics
+    // Topics filter: AND or OR logic based on topicsLogic parameter
     if (topics.length > 0) {
-      whereConditions.push({
-        OR: topics.map(topic => ({
-          topics: { has: topic },
-        })),
-      })
+      if (topicsLogic === 'AND') {
+        // AND: org must have ALL selected topics
+        whereConditions.push({
+          AND: topics.map(topic => ({
+            topics: { has: topic },
+          })),
+        })
+      } else {
+        // OR: org must have ANY of the selected topics
+        whereConditions.push({
+          OR: topics.map(topic => ({
+            topics: { has: topic },
+          })),
+        })
+      }
     }
 
     // First-time organizations filter

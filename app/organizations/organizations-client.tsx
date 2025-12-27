@@ -52,6 +52,10 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     const urlTopics = searchParams.get('topics')?.split(',').filter(Boolean) || []
     const urlDifficulties = searchParams.get('difficulties') || ''
     const urlFirstTimeOnly = searchParams.get('firstTimeOnly') === 'true'
+    const urlYearsLogic = (searchParams.get('yearsLogic') as 'AND' | 'OR') || 'OR'
+    const urlCategoriesLogic = (searchParams.get('categoriesLogic') as 'AND' | 'OR') || 'OR'
+    const urlTechsLogic = (searchParams.get('techsLogic') as 'AND' | 'OR') || 'OR'
+    const urlTopicsLogic = (searchParams.get('topicsLogic') as 'AND' | 'OR') || 'OR'
 
     return {
       search: urlSearch,
@@ -61,6 +65,10 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       topics: urlTopics,
       difficulties: urlDifficulties ? urlDifficulties.split(',').filter(Boolean) : [],
       firstTimeOnly: urlFirstTimeOnly,
+      yearsLogic: urlYearsLogic,
+      categoriesLogic: urlCategoriesLogic,
+      techsLogic: urlTechsLogic,
+      topicsLogic: urlTopicsLogic,
     }
   }, [searchParams])
   
@@ -115,7 +123,11 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       !arraysEqual(filters.techs, newFilters.techs) ||
       !arraysEqual(filters.topics, newFilters.topics) ||
       !arraysEqual(filters.difficulties, newFilters.difficulties) ||
-      filters.firstTimeOnly !== newFilters.firstTimeOnly
+      filters.firstTimeOnly !== newFilters.firstTimeOnly ||
+      filters.yearsLogic !== newFilters.yearsLogic ||
+      filters.categoriesLogic !== newFilters.categoriesLogic ||
+      filters.techsLogic !== newFilters.techsLogic ||
+      filters.topicsLogic !== newFilters.topicsLogic
     
     if (!filtersChanged) return
     
@@ -123,10 +135,22 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     const params = new URLSearchParams()
     // Reset to page 1 when filters change
     if (newFilters.search) params.set('q', newFilters.search)
-    if (newFilters.years.length > 0) params.set('years', newFilters.years.join(','))
-    if (newFilters.categories.length > 0) params.set('categories', newFilters.categories.join(','))
-    if (newFilters.techs.length > 0) params.set('techs', newFilters.techs.join(','))
-    if (newFilters.topics.length > 0) params.set('topics', newFilters.topics.join(','))
+    if (newFilters.years.length > 0) {
+      params.set('years', newFilters.years.join(','))
+      params.set('yearsLogic', newFilters.yearsLogic || 'OR')
+    }
+    if (newFilters.categories.length > 0) {
+      params.set('categories', newFilters.categories.join(','))
+      params.set('categoriesLogic', newFilters.categoriesLogic || 'OR')
+    }
+    if (newFilters.techs.length > 0) {
+      params.set('techs', newFilters.techs.join(','))
+      params.set('techsLogic', newFilters.techsLogic || 'OR')
+    }
+    if (newFilters.topics.length > 0) {
+      params.set('topics', newFilters.topics.join(','))
+      params.set('topicsLogic', newFilters.topicsLogic || 'OR')
+    }
     if (newFilters.difficulties.length > 0) params.set('difficulties', newFilters.difficulties.join(','))
     if (newFilters.firstTimeOnly) params.set('firstTimeOnly', 'true')
     
@@ -157,10 +181,22 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
       params.set('page', page.toString())
       params.set('limit', '20')
       if (filterState.search) params.set('q', filterState.search)
-      if (filterState.years.length > 0) params.set('years', filterState.years.join(','))
-      if (filterState.categories.length > 0) params.set('categories', filterState.categories.join(','))
-      if (filterState.techs.length > 0) params.set('techs', filterState.techs.join(','))
-      if (filterState.topics.length > 0) params.set('topics', filterState.topics.join(','))
+      if (filterState.years.length > 0) {
+        params.set('years', filterState.years.join(','))
+        params.set('yearsLogic', filterState.yearsLogic || 'OR')
+      }
+      if (filterState.categories.length > 0) {
+        params.set('categories', filterState.categories.join(','))
+        params.set('categoriesLogic', filterState.categoriesLogic || 'OR')
+      }
+      if (filterState.techs.length > 0) {
+        params.set('techs', filterState.techs.join(','))
+        params.set('techsLogic', filterState.techsLogic || 'OR')
+      }
+      if (filterState.topics.length > 0) {
+        params.set('topics', filterState.topics.join(','))
+        params.set('topicsLogic', filterState.topicsLogic || 'OR')
+      }
       if (filterState.difficulties.length > 0) params.set('difficulties', filterState.difficulties.join(','))
       if (filterState.firstTimeOnly) params.set('firstTimeOnly', 'true')
       
@@ -220,10 +256,22 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     const params = new URLSearchParams()
     if (page > 1) params.set('page', page.toString())
     if (filters.search) params.set('q', filters.search)
-    if (filters.years.length > 0) params.set('years', filters.years.join(','))
-    if (filters.categories.length > 0) params.set('categories', filters.categories.join(','))
-    if (filters.techs.length > 0) params.set('techs', filters.techs.join(','))
-    if (filters.topics.length > 0) params.set('topics', filters.topics.join(','))
+    if (filters.years.length > 0) {
+      params.set('years', filters.years.join(','))
+      params.set('yearsLogic', filters.yearsLogic || 'OR')
+    }
+    if (filters.categories.length > 0) {
+      params.set('categories', filters.categories.join(','))
+      params.set('categoriesLogic', filters.categoriesLogic || 'OR')
+    }
+    if (filters.techs.length > 0) {
+      params.set('techs', filters.techs.join(','))
+      params.set('techsLogic', filters.techsLogic || 'OR')
+    }
+    if (filters.topics.length > 0) {
+      params.set('topics', filters.topics.join(','))
+      params.set('topicsLogic', filters.topicsLogic || 'OR')
+    }
     if (filters.difficulties.length > 0) params.set('difficulties', filters.difficulties.join(','))
     if (filters.firstTimeOnly) params.set('firstTimeOnly', 'true')
     
@@ -240,15 +288,21 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   }, [currentPage, filters, isLoading, router])
 
   const removeFilter = useCallback((key: keyof FilterState, value?: string) => {
-    const newFilters = { ...filters }
+    const newFilters: FilterState = { ...filters }
     if (key === 'search') {
       newFilters.search = ''
     } else if (key === 'firstTimeOnly') {
       newFilters.firstTimeOnly = false
-    } else if (Array.isArray(filters[key])) {
-      const existing = filters[key] as string[]
-      const updated = value ? existing.filter((v) => v !== value) : []
-      newFilters[key] = updated as FilterState[typeof key]
+    } else if (key === 'years') {
+      newFilters.years = value ? filters.years.filter((v) => v !== value) : []
+    } else if (key === 'categories') {
+      newFilters.categories = value ? filters.categories.filter((v) => v !== value) : []
+    } else if (key === 'techs') {
+      newFilters.techs = value ? filters.techs.filter((v) => v !== value) : []
+    } else if (key === 'topics') {
+      newFilters.topics = value ? filters.topics.filter((v) => v !== value) : []
+    } else if (key === 'difficulties') {
+      newFilters.difficulties = value ? filters.difficulties.filter((v) => v !== value) : []
     }
     handleFilterChange(newFilters)
   }, [filters, handleFilterChange])
@@ -268,7 +322,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
     ...filters.topics.map((topic: string) => ({ key: 'topics' as const, label: topic, value: topic })),
     ...filters.categories.map((cat: string) => ({ key: 'categories' as const, label: cat, value: cat })),
     filters.firstTimeOnly ? { key: 'firstTimeOnly' as const, label: 'First-time orgs', value: 'true' } : null,
-  ].filter(Boolean) as Array<{ key: 'years' | 'techs' | 'topics' | 'categories' | 'firstTimeOnly'; label: string; value: string }>
+  ].filter((item): item is { key: 'years' | 'techs' | 'topics' | 'categories' | 'firstTimeOnly'; label: string; value: string } => item !== null)
 
   // Helper to toggle a difficulty in the array
   const toggleDifficulty = useCallback((difficulty: string) => {
@@ -449,19 +503,75 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
 
           {/* Pagination */}
           {data.pages > 1 && (
-            <div className="flex flex-col items-center gap-3 py-6 border-t border-gray-100">
-              <div className="flex items-center gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1 || isLoading}
-                  className="text-sm"
-                >
-                  Previous
-                </Button>
-                {Array.from({ length: Math.min(data.pages, 7) }, (_, i) => {
-                  const pageNum = i + 1
+            <div className="flex items-center justify-center gap-2 py-6 border-t border-gray-100">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1 || isLoading}
+                className="text-sm"
+              >
+                Previous
+              </Button>
+              
+              {/* First few pages */}
+              {(() => {
+                const pages: (number | string)[] = []
+                const showFirst = 2
+                const showLast = 2
+                const showAround = 2
+                
+                // Always show first page
+                if (currentPage > showFirst + showAround + 1) {
+                  pages.push(1)
+                  if (currentPage > showFirst + showAround + 2) {
+                    pages.push('...')
+                  }
+                } else {
+                  // Show first few pages
+                  for (let i = 1; i <= Math.min(showFirst + showAround + 1, data.pages); i++) {
+                    pages.push(i)
+                  }
+                }
+                
+                // Show pages around current
+                if (currentPage > showFirst + showAround + 1 && currentPage < data.pages - showLast - showAround) {
+                  for (let i = currentPage - showAround; i <= currentPage + showAround; i++) {
+                    if (!pages.includes(i)) {
+                      pages.push(i)
+                    }
+                  }
+                }
+                
+                // Show last few pages
+                if (currentPage < data.pages - showLast - showAround) {
+                  if (currentPage < data.pages - showLast - showAround - 1) {
+                    pages.push('...')
+                  }
+                  for (let i = Math.max(data.pages - showLast + 1, currentPage + showAround + 1); i <= data.pages; i++) {
+                    if (!pages.includes(i)) {
+                      pages.push(i)
+                    }
+                  }
+                } else {
+                  // Show last few pages
+                  const start = Math.max(1, data.pages - showLast - showAround)
+                  for (let i = start; i <= data.pages; i++) {
+                    if (!pages.includes(i)) {
+                      pages.push(i)
+                    }
+                  }
+                }
+                
+                return pages.map((page, idx) => {
+                  if (page === '...') {
+                    return (
+                      <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">
+                        ...
+                      </span>
+                    )
+                  }
+                  const pageNum = page as number
                   return (
                     <Button
                       key={pageNum}
@@ -474,19 +584,18 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
                       {pageNum}
                     </Button>
                   )
-                })}
-                {data.pages > 7 && <span className="px-2 text-gray-400">...</span>}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === data.pages || isLoading}
-                  className="text-sm"
-                >
-                  Next
-                </Button>
-              </div>
-              <p className="text-sm text-gray-500">Page {currentPage} of {data.pages}</p>
+                })
+              })()}
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === data.pages || isLoading}
+                className="text-sm"
+              >
+                Next
+              </Button>
             </div>
           )}
         </div>

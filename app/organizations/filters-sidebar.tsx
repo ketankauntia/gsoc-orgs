@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Search, ChevronDown, ChevronUp } from 'lucide-react'
+import { Search, ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
 
 export interface FilterState {
   search: string
@@ -11,6 +11,11 @@ export interface FilterState {
   topics: string[]
   difficulties: string[]
   firstTimeOnly: boolean
+  // Logic modes: 'AND' means all selected values must match, 'OR' means any selected value matches
+  yearsLogic?: 'AND' | 'OR'
+  categoriesLogic?: 'AND' | 'OR'
+  techsLogic?: 'AND' | 'OR'
+  topicsLogic?: 'AND' | 'OR'
 }
 
 interface FiltersSidebarProps {
@@ -57,6 +62,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
   const [availableTechs, setAvailableTechs] = useState<Array<{ name: string; count: number }>>([])
   const [showAllTechs, setShowAllTechs] = useState(false)
   const [showAllYears, setShowAllYears] = useState(false)
+  const [showHelp, setShowHelp] = useState<{ [key: string]: boolean }>({})
 
   useEffect(() => {
     fetch('/api/tech-stack?limit=100')
@@ -113,7 +119,24 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
       topics: [],
       difficulties: [],
       firstTimeOnly: false,
+      yearsLogic: 'OR',
+      categoriesLogic: 'OR',
+      techsLogic: 'OR',
+      topicsLogic: 'OR',
     })
+  }
+
+  const toggleLogic = (category: 'years' | 'categories' | 'techs' | 'topics') => {
+    const currentLogic = filters[`${category}Logic`] || 'OR'
+    const newLogic = currentLogic === 'OR' ? 'AND' : 'OR'
+    onFilterChange({
+      ...filters,
+      [`${category}Logic`]: newLogic,
+    })
+  }
+
+  const getLogicMode = (category: 'years' | 'categories' | 'techs' | 'topics'): 'AND' | 'OR' => {
+    return filters[`${category}Logic`] || 'OR'
   }
 
   const toggleSection = (section: keyof typeof expandedSections) => {
@@ -189,17 +212,59 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
 
       {/* Years Section */}
       <div className="mb-4 border-t border-gray-100 pt-3">
-        <button
-          onClick={() => toggleSection('years')}
-          className="flex items-center justify-between w-full py-2 text-sm font-semibold text-gray-900"
-        >
-          <span>Years</span>
-          {expandedSections.years ? (
-            <ChevronUp className="h-4 w-4 text-gray-500" />
-          ) : (
-            <ChevronDown className="h-4 w-4 text-gray-500" />
-          )}
-        </button>
+        <div className="flex items-center justify-between w-full py-2">
+          <button
+            onClick={() => toggleSection('years')}
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+          >
+            <span>Years</span>
+            {expandedSections.years ? (
+              <ChevronUp className="h-4 w-4 text-gray-500" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-gray-500" />
+            )}
+          </button>
+          <div className="flex items-center gap-1.5">
+            <div className="relative">
+              <button
+                onClick={() => setShowHelp({ ...showHelp, years: !showHelp.years })}
+                className="p-1 hover:bg-gray-100 rounded"
+                title="What does AND/OR mean?"
+              >
+                <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
+              </button>
+              {showHelp.years && (
+                <div className="absolute right-0 top-6 z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+                  <p className="mb-1"><strong>AND:</strong> Organization must have participated in ALL selected years</p>
+                  <p><strong>OR:</strong> Organization must have participated in ANY selected year</p>
+                  <div className="absolute -top-1 right-2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                </div>
+              )}
+            </div>
+            <div className="flex items-center gap-1 border border-gray-200 rounded">
+              <button
+                onClick={() => toggleLogic('years')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('years') === 'AND'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                AND
+              </button>
+              <button
+                onClick={() => toggleLogic('years')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('years') === 'OR'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                OR
+              </button>
+            </div>
+          </div>
+        </div>
         {expandedSections.years && (
           <div className="py-2">
             <div className="grid grid-cols-2 gap-x-4 gap-y-1">
@@ -239,17 +304,59 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
 
       {/* Technologies Section */}
       <div className="border-t border-gray-100 pt-3">
-        <button
-          onClick={() => toggleSection('technologies')}
-          className="flex items-center justify-between w-full py-2 text-sm font-semibold text-gray-900"
-        >
-          <span>Technologies</span>
-          {expandedSections.technologies ? (
-            <ChevronUp className="h-4 w-4 text-gray-500" />
-          ) : (
-            <ChevronDown className="h-4 w-4 text-gray-500" />
-          )}
-        </button>
+        <div className="flex items-center justify-between w-full py-2">
+          <button
+            onClick={() => toggleSection('technologies')}
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+          >
+            <span>Technologies</span>
+            {expandedSections.technologies ? (
+              <ChevronUp className="h-4 w-4 text-gray-500" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-gray-500" />
+            )}
+          </button>
+          <div className="flex items-center gap-1.5">
+            <div className="relative">
+              <button
+                onClick={() => setShowHelp({ ...showHelp, technologies: !showHelp.technologies })}
+                className="p-1 hover:bg-gray-100 rounded"
+                title="What does AND/OR mean?"
+              >
+                <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
+              </button>
+              {showHelp.technologies && (
+                <div className="absolute right-0 top-6 z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+                  <p className="mb-1"><strong>AND:</strong> Organization must use ALL selected technologies</p>
+                  <p><strong>OR:</strong> Organization must use ANY selected technology</p>
+                  <div className="absolute -top-1 right-2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                </div>
+              )}
+            </div>
+            <div className="flex items-center gap-1 border border-gray-200 rounded">
+              <button
+                onClick={() => toggleLogic('techs')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('techs') === 'AND'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                AND
+              </button>
+              <button
+                onClick={() => toggleLogic('techs')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('techs') === 'OR'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                OR
+              </button>
+            </div>
+          </div>
+        </div>
         {expandedSections.technologies && (
           <div className="py-2">
             <div className="relative mb-2">
@@ -302,17 +409,59 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
       
       {/* Categories Section */}
       <div className="mb-4 border-t border-gray-100 pt-3">
-        <button
-          onClick={() => toggleSection('categories')}
-          className="flex items-center justify-between w-full py-2 text-sm font-semibold text-gray-900"
-        >
-          <span>Categories</span>
-          {expandedSections.categories ? (
-            <ChevronUp className="h-4 w-4 text-gray-500" />
-          ) : (
-            <ChevronDown className="h-4 w-4 text-gray-500" />
-          )}
-        </button>
+        <div className="flex items-center justify-between w-full py-2">
+          <button
+            onClick={() => toggleSection('categories')}
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+          >
+            <span>Categories</span>
+            {expandedSections.categories ? (
+              <ChevronUp className="h-4 w-4 text-gray-500" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-gray-500" />
+            )}
+          </button>
+          <div className="flex items-center gap-1.5">
+            <div className="relative">
+              <button
+                onClick={() => setShowHelp({ ...showHelp, categories: !showHelp.categories })}
+                className="p-1 hover:bg-gray-100 rounded"
+                title="What does AND/OR mean?"
+              >
+                <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
+              </button>
+              {showHelp.categories && (
+                <div className="absolute right-0 top-6 z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+                  <p className="mb-1"><strong>AND:</strong> Organization must be in ALL selected categories</p>
+                  <p><strong>OR:</strong> Organization must be in ANY selected category</p>
+                  <div className="absolute -top-1 right-2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                </div>
+              )}
+            </div>
+            <div className="flex items-center gap-1 border border-gray-200 rounded">
+              <button
+                onClick={() => toggleLogic('categories')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('categories') === 'AND'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                AND
+              </button>
+              <button
+                onClick={() => toggleLogic('categories')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('categories') === 'OR'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                OR
+              </button>
+            </div>
+          </div>
+        </div>
         {expandedSections.categories && (
           <div className="py-2">
             <div className="space-y-0.5 max-h-52 overflow-y-auto">
@@ -334,17 +483,59 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
 
       {/* Topics Section */}
       <div className="mb-4 border-t border-gray-100 pt-3">
-        <button
-          onClick={() => toggleSection('topics')}
-          className="flex items-center justify-between w-full py-2 text-sm font-semibold text-gray-900"
-        >
-          <span>Topics</span>
-          {expandedSections.topics ? (
-            <ChevronUp className="h-4 w-4 text-gray-500" />
-          ) : (
-            <ChevronDown className="h-4 w-4 text-gray-500" />
-          )}
-        </button>
+        <div className="flex items-center justify-between w-full py-2">
+          <button
+            onClick={() => toggleSection('topics')}
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+          >
+            <span>Topics</span>
+            {expandedSections.topics ? (
+              <ChevronUp className="h-4 w-4 text-gray-500" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-gray-500" />
+            )}
+          </button>
+          <div className="flex items-center gap-1.5">
+            <div className="relative">
+              <button
+                onClick={() => setShowHelp({ ...showHelp, topics: !showHelp.topics })}
+                className="p-1 hover:bg-gray-100 rounded"
+                title="What does AND/OR mean?"
+              >
+                <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
+              </button>
+              {showHelp.topics && (
+                <div className="absolute right-0 top-6 z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+                  <p className="mb-1"><strong>AND:</strong> Organization must have ALL selected topics</p>
+                  <p><strong>OR:</strong> Organization must have ANY selected topic</p>
+                  <div className="absolute -top-1 right-2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                </div>
+              )}
+            </div>
+            <div className="flex items-center gap-1 border border-gray-200 rounded">
+              <button
+                onClick={() => toggleLogic('topics')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('topics') === 'AND'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                AND
+              </button>
+              <button
+                onClick={() => toggleLogic('topics')}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
+                  getLogicMode('topics') === 'OR'
+                    ? 'bg-teal-600 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                OR
+              </button>
+            </div>
+          </div>
+        </div>
         {expandedSections.topics && (
           <div className="py-2">
             <div className="space-y-0.5 max-h-40 overflow-y-auto">
