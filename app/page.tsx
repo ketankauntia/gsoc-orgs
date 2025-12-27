@@ -29,7 +29,14 @@ export const metadata: Metadata = {
     description:
       "Discover 200+ Google Summer of Code organizations. Filter by tech stack, difficulty, and find beginner-friendly projects for GSoC 2026.",
     url: SITE_URL,
-    images: ["/og.webp"],
+    type: "website",
+    siteName: "GSoC Organizations Guide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GSoC Organizations Explorer | Find Your Perfect Project",
+    description:
+      "Discover 200+ Google Summer of Code organizations. Filter by tech stack, difficulty, and find beginner-friendly projects for GSoC 2026.",
   },
   alternates: {
     canonical: SITE_URL,

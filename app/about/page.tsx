@@ -24,7 +24,14 @@ export const metadata: Metadata = {
     description:
       "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
     url: getFullUrl("/about"),
-    images: ["/og.webp"],
+    type: "website",
+    siteName: "GSoC Organizations Guide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | GSoC Organizations Guide",
+    description:
+      "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
   },
   alternates: {
     canonical: getFullUrl("/about"),

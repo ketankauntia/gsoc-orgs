@@ -23,12 +23,25 @@ export const metadata: Metadata = {
   description: "Your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities GSoC.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
-      { url: "/logo.webp", sizes: "192x192", type: "image/webp" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    apple: [{ url: "/logo.webp", sizes: "180x180", type: "image/webp" }],
+    shortcut: [{ url: "/favicon.ico" }],
+    apple: [{ url: "/favicon.ico", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    siteName: "GSoC Organizations Guide",
+    locale: "en_US",
+    url: SITE_URL,
+    title: "GSoC Organizations Guide | Google Summer of Code 2026",
+    description: "Your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities GSoC.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GSoC Organizations Guide | Google Summer of Code 2026",
+    description: "Your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities GSoC.",
+  },
   // themeColor: "#000000", // Commented out - should be moved to viewport export per Next.js recommendation
 };
 

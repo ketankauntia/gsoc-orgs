@@ -46,7 +46,13 @@ export async function generateMetadata({
       title: `GSoC ${year} Organizations`,
       description: `Explore all organizations that participated in Google Summer of Code ${year}.`,
       url: getFullUrl(`/${slug}`),
-      images: ["/og.webp"],
+      type: "website",
+      siteName: "GSoC Organizations Guide",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `GSoC ${year} Organizations`,
+      description: `Explore all organizations that participated in Google Summer of Code ${year}.`,
     },
     alternates: {
       canonical: getFullUrl(`/${slug}`),

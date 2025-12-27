@@ -50,6 +50,12 @@ export async function generateMetadata({
       description: "Explore all Google Summer of Code participating organizations",
       url: getFullUrl("/organizations"),
       type: "website",
+      siteName: "GSoC Organizations Guide",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "All GSoC Organizations",
+      description: "Explore all Google Summer of Code participating organizations",
     },
   };
 }

@@ -82,7 +82,16 @@ export async function generateMetadata({
     openGraph: {
       title: `${org.name} - GSoC Organizations Guide`,
       description: org.description || `Learn about ${org.name} and their Google Summer of Code projects.`,
-      images: org.img_r2_url ? [org.img_r2_url] : ["/og.webp"],
+      url: getFullUrl(`/organizations/${slug}`),
+      type: "website",
+      siteName: "GSoC Organizations Guide",
+      images: org.img_r2_url ? [org.img_r2_url] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${org.name} - GSoC Organizations Guide`,
+      description: org.description || `Learn about ${org.name} and their Google Summer of Code projects.`,
+      images: org.img_r2_url ? [org.img_r2_url] : [],
     },
     alternates: {
       canonical: getFullUrl(`/organizations/${slug}`),
