@@ -10,9 +10,9 @@ import { SITE_URL, getFullUrl } from "@/lib/constants";
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: "Home | Explore Google Summer of Code Organizations",
+  title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
   description:
-    "Find and explore the best Google Summer of Code (GSoC) organizations for 2026. Browse by programming language, difficulty level, and project type. Start your open-source journey today!",
+    "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
   keywords: [
     "GSoC 2026",
     "Google Summer of Code organizations",
@@ -25,30 +25,27 @@ export const metadata: Metadata = {
     "machine learning projects GSoC",
   ],
   openGraph: {
-    title: "GSoC Organizations Explorer | Find Your Perfect Project",
+    title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
     description:
-      "Discover 200+ Google Summer of Code organizations. Filter by tech stack, difficulty, and find beginner-friendly projects for GSoC 2026.",
+      "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
     url: SITE_URL,
     type: "website",
     siteName: "GSoC Organizations Guide",
-    // TODO: Replace with proper OG image (1200x630px) at /og.webp for better social sharing
     images: [
       {
-        url: `${SITE_URL}/favicon.ico`,
-        width: 512,
-        height: 512,
+        url: `${SITE_URL}/og/gsoc-organizations-guide.jpg`,
+        width: 1200,
+        height: 630,
         alt: "GSoC Organizations Guide",
       },
     ],
   },
   twitter: {
-    // Using "summary" instead of "summary_large_image" since favicon is square
-    // TODO: Switch to "summary_large_image" when proper OG image (1200x630px) is available
-    card: "summary",
-    title: "GSoC Organizations Explorer | Find Your Perfect Project",
+    card: "summary_large_image",
+    title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
     description:
-      "Discover 200+ Google Summer of Code organizations. Filter by tech stack, difficulty, and find beginner-friendly projects for GSoC 2026.",
-    images: [`${SITE_URL}/favicon.ico`],
+      "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
+    images: [`${SITE_URL}/og/gsoc-organizations-guide.jpg`],
   },
   alternates: {
     canonical: SITE_URL,

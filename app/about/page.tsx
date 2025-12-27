@@ -26,24 +26,21 @@ export const metadata: Metadata = {
     url: getFullUrl("/about"),
     type: "website",
     siteName: "GSoC Organizations Guide",
-    // TODO: Replace with proper OG image (1200x630px) at /og.webp for better social sharing
     images: [
       {
-        url: getFullUrl("/favicon.ico"),
-        width: 512,
-        height: 512,
+        url: getFullUrl("/og/gsoc-organizations-guide.jpg"),
+        width: 1200,
+        height: 630,
         alt: "GSoC Organizations Guide",
       },
     ],
   },
   twitter: {
-    // Using "summary" instead of "summary_large_image" since favicon is square
-    // TODO: Switch to "summary_large_image" when proper OG image (1200x630px) is available
-    card: "summary",
+    card: "summary_large_image",
     title: "About Us | GSoC Organizations Guide",
     description:
       "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
-    images: [getFullUrl("/favicon.ico")],
+    images: [getFullUrl("/og/gsoc-organizations-guide.jpg")],
   },
   alternates: {
     canonical: getFullUrl("/about"),
