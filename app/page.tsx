@@ -31,12 +31,21 @@ export const metadata: Metadata = {
     url: SITE_URL,
     type: "website",
     siteName: "GSoC Organizations Guide",
+    images: [
+      {
+        url: `${SITE_URL}/favicon.ico`,
+        width: 512,
+        height: 512,
+        alt: "GSoC Organizations Guide",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "GSoC Organizations Explorer | Find Your Perfect Project",
     description:
       "Discover 200+ Google Summer of Code organizations. Filter by tech stack, difficulty, and find beginner-friendly projects for GSoC 2026.",
+    images: [`${SITE_URL}/favicon.ico`],
   },
   alternates: {
     canonical: SITE_URL,

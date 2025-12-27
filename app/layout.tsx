@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
     ],
     shortcut: [{ url: "/favicon.ico" }],
     apple: [{ url: "/favicon.ico", sizes: "180x180" }],
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GSoC Organizations Guide | Google Summer of Code 2026",
     description: "Your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities GSoC.",
+    images: [`${SITE_URL}/favicon.ico`],
   },
   // themeColor: "#000000", // Commented out - should be moved to viewport export per Next.js recommendation
 };

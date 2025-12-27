@@ -51,11 +51,20 @@ export async function generateMetadata({
       url: getFullUrl("/organizations"),
       type: "website",
       siteName: "GSoC Organizations Guide",
+      images: [
+        {
+          url: `${getFullUrl("/favicon.ico")}`,
+          width: 512,
+          height: 512,
+          alt: "GSoC Organizations Guide",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: "All GSoC Organizations",
       description: "Explore all Google Summer of Code participating organizations",
+      images: [`${getFullUrl("/favicon.ico")}`],
     },
   };
 }

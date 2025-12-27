@@ -26,12 +26,21 @@ export const metadata: Metadata = {
     url: getFullUrl("/about"),
     type: "website",
     siteName: "GSoC Organizations Guide",
+    images: [
+      {
+        url: getFullUrl("/favicon.ico"),
+        width: 512,
+        height: 512,
+        alt: "GSoC Organizations Guide",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "About Us | GSoC Organizations Guide",
     description:
       "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
+    images: [getFullUrl("/favicon.ico")],
   },
   alternates: {
     canonical: getFullUrl("/about"),
