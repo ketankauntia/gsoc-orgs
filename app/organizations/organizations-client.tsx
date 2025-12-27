@@ -484,7 +484,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
             {isLoading ? (
               <OrganizationsGridSkeleton />
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5">
                 {data.items.map((org) => (
                   <OrganizationCard key={org.id} org={org} />
                 ))}
@@ -599,7 +599,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
 
 function OrganizationsGridSkeleton() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5">
       {Array.from({ length: 6 }).map((_, i) => (
         <div key={i} className="bg-white border border-gray-200 rounded-xl p-5 animate-pulse">
           <div className="flex items-start gap-4 mb-3">

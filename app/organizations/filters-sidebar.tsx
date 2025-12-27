@@ -167,7 +167,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
   const visibleTechs = showAllTechs ? filteredTechs : filteredTechs.slice(0, 10)
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-4 pb-6 shadow-md">
+    <div className="rounded-xl border border-gray-200 bg-white p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-base font-semibold text-gray-900">Filters</h3>
@@ -464,7 +464,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
         </div>
         {expandedSections.categories && (
           <div className="py-2">
-            <div className="space-y-0.5 max-h-52 overflow-y-auto">
+            <div className="space-y-0.5 max-h-52 overflow-y-auto custom-scrollbar pr-1">
               {filteredCategories.map((category) => (
                 <label key={category} className="flex items-center gap-2 py-1.5 cursor-pointer">
                   <input
@@ -538,7 +538,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
         </div>
         {expandedSections.topics && (
           <div className="py-2">
-            <div className="space-y-0.5 max-h-40 overflow-y-auto">
+            <div className="space-y-0.5 max-h-40 overflow-y-auto custom-scrollbar pr-1">
               {filteredTopics.map((topic) => (
                 <label key={topic} className="flex items-center gap-2 py-1.5 cursor-pointer">
                   <input
