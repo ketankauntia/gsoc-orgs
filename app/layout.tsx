@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: "#000000"
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -51,6 +55,7 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/og/gsoc-organizations-guide.jpg`],
   },
   // themeColor: "#000000", // Commented out - should be moved to viewport export per Next.js recommendation
+  
 };
 
 export default function RootLayout({
