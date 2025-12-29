@@ -33,33 +33,26 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 
 ## 📸 Screenshots
 
-<!-- IMAGE: Homepage Preview - Show the main landing page with hero section, trending organizations, and FAQ -->
-<!-- IMAGE: Organization Listing - Display the organizations page with filters and search functionality -->
-<!-- IMAGE: Tech Stack Analytics - Show tech stack analytics page with charts and visualizations -->
-<!-- IMAGE: Organization Details - Display a detailed organization profile page -->
-<!-- IMAGE: Year-by-Year View - Show the year-specific organization listing page -->
+# Homepage Preview
+<img width="1894" height="876" alt="GSoC Organizations Guide" src="https://github.com/user-attachments/assets/41c7d36d-5734-4610-8acf-2aa7abb2f71c" />
+
+# Organization Page with Filters
+<img width="1895" height="877" alt="image" src="https://github.com/user-attachments/assets/9f35916c-8c56-4354-8b01-5e4fc865334f" />
+
+# Tech Stack Analytics
+![gsoc tech stack analytics](https://github.com/user-attachments/assets/a9329ba2-6779-4d4a-b124-d14b3b6697cf)
+
+# Organization Details
+![gsoc-organization-rocket-chat](https://github.com/user-attachments/assets/819399f2-38c1-4ab4-984d-fbf6bac44bca)
+
+# Year-by-Year View
+![google-summer-of-code-2025-analytics-details](https://github.com/user-attachments/assets/e9b6fa6c-327c-4a09-bbd1-22ce60fbc10c)
+
 
 ## 🛠️ Tech Stack
 
 ### Tech-Stack
-- **Next.js 16** - React framework with App Router for server-side rendering and static generation
-- **React 19** - Modern React with latest features and performance optimizations
-- **TypeScript** - Type-safe development for better code quality and maintainability
-- **Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
-- **Radix UI** - Accessible, unstyled component primitives (Accordion, Slot)
-- **Recharts** - Composable charting library for data visualizations
-- **Framer Motion** - Animation library for smooth, performant UI transitions
-- **Lucide React** - Modern icon library
-- **Embla Carousel** - Lightweight carousel component
-- **Prisma** - Next-generation ORM for database access
-- **MongoDB** - NoSQL database storing organization, project, and statistics data
-- **ESLint** - Code linting and quality checks
-- **Husky** - Git hooks for pre-commit validation
-- **Commitlint** - Conventional commit message validation
-- **TypeScript** - Static type checking
-- **Vercel** - Hosting platform with automatic deployments
-- **Vercel Analytics** - Web analytics and performance monitoring
-- **Cloudflare R2** - Object storage for organization logos and images
+[Next.js](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/), [Recharts](https://recharts.org/), [Framer Motion](https://www.framer.com/motion/), [Lucide React](https://lucide.dev/), [Embla Carousel](https://www.embla-carousel.com/), [Prisma](https://www.prisma.io/), [MongoDB](https://www.mongodb.com/), [ESLint](https://eslint.org/), [Husky](https://typicode.github.io/husky/), [Commitlint](https://commitlint.js.org/), [Vercel](https://vercel.com/), [Vercel Analytics](https://vercel.com/analytics), [Cloudflare R2](https://www.cloudflare.com/products/r2/)
 
 ### Data Source
 - Historical Google Summer of Code data (2016-current)
