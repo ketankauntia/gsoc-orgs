@@ -28,15 +28,15 @@ export const FOOTER_NAVIGATION_ITEMS = [
     items: [
       {
         title: "GSoC Organizations",
-        href: "/gsoc-organizations",
+        href: "/organizations",
       },
       {
         title: "GSoC Tech Stack",
-        href: "/gsoc-tech-stack",
+        href: "/tech-stack",
       },
       {
         title: "GSoC Topics",
-        href: "/gsoc-topics",
+        href: "/topics",
       },
       // { // will add when projects route is done
       //   title: "GSoC Projects",
