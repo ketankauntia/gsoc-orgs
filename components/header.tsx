@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
 import { GitHubIcon, TwitterIcon } from '@/components/icons'
 import { ExperimentalDataBanner } from '@/components/experimental-data-banner'
+import { ModeToggle } from './ModeToggle'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -128,6 +129,7 @@ export const Header = () => {
                                         <span>X</span>
                                     </a>
                                 </Button>
+                                <ModeToggle />
                                 {/* <Button
                                     disabled
                                     size="sm"
