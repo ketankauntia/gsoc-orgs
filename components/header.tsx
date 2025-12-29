@@ -6,6 +6,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
 import { GitHubIcon, TwitterIcon } from '@/components/icons'
+import { ModeToggle } from './ModeToggle'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -96,6 +97,7 @@ export const Header = () => {
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <span>Sign Up</span>
                                 </Button> */}
+                                <ModeToggle />
                                 <Button
                                     variant="outline"
                                     size="sm"
@@ -126,6 +128,7 @@ export const Header = () => {
                                         <span>X</span>
                                     </a>
                                 </Button>
+                                
                                 {/* <Button
                                     disabled
                                     size="sm"
