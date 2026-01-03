@@ -12,11 +12,11 @@ export const FOOTER_COPYRIGHT = {
 
 export const SOCIAL_LINKS = {
   github: {
-    href: "https://github.com/ketankauntia",
-    label: "GitHub",
+    href: "https://github.com/ketankauntia/gsoc-orgs/",
+    label: "GSoC Organizations Guide GitHub",
   },
   twitter: {
-    href: "https://x.com/gsoc_orgs_guide",
+    href: "https://www.x.com/gsoc_orgs_guide",
     label: "Twitter (X)",
   },
   linkedin: {
