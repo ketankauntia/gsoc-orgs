@@ -23,7 +23,7 @@ export const Footer = () => {
           </div>
           {/* Social Links */}
           <SocialLinks
-            showLabels={true}
+            showLabels={false}
             className="flex items-center gap-4 text-black"
             textColor="white"
           />

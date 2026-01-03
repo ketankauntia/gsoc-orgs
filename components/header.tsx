@@ -5,7 +5,7 @@ import { Button } from "@/components/ui"
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
-import { GitHubIcon, TwitterIcon } from '@/components/icons'
+import { GitHubIcon, XIcon } from '@/components/icons'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -122,7 +122,7 @@ export const Header = () => {
                                         rel="noopener noreferrer"
                                         aria-label={SOCIAL_LINKS.twitter.label}
                                     >
-                                        <TwitterIcon className="w-4 h-4" />
+                                        <XIcon className="w-4 h-4" />
                                         <span>X</span>
                                     </a>
                                 </Button>

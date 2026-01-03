@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GitHubIcon, TwitterIcon } from "@/components/icons";
+import { GitHubIcon, XIcon, PinterestIcon, QuoraIcon, LinkedInIcon, FacebookIcon } from "@/components/icons";
 import { SOCIAL_LINKS } from "@/components/footer-common";
 
 interface SocialLinksProps {
@@ -34,6 +34,11 @@ export const SocialLinks = ({
 }: SocialLinksProps) => {
   const linkStyle = textColor ? { color: textColor } : undefined;
 
+  const itemStyle = linkStyle
+    ? { ...linkStyle, display: "flex", alignItems: "center", gap: "0.5rem" }
+    : undefined;
+
+
   return (
     <div className={className}>
       <Link
@@ -42,7 +47,7 @@ export const SocialLinks = ({
         rel="noopener"
         className={linkClassName}
         aria-label={SOCIAL_LINKS.github.label}
-        style={linkStyle ? { ...linkStyle, display: 'flex', alignItems: 'center', gap: '0.5rem' } : undefined}
+        style={itemStyle}
       >
         <GitHubIcon />
         {showLabels && <span>GitHub</span>}
@@ -53,12 +58,59 @@ export const SocialLinks = ({
         rel="noopener"
         className={linkClassName}
         aria-label={SOCIAL_LINKS.twitter.label}
-        style={linkStyle ? { ...linkStyle, display: 'flex', alignItems: 'center', gap: '0.5rem' } : undefined}
+        style={itemStyle}
       >
-        <TwitterIcon />
+        <XIcon />
         {showLabels && <span>Twitter (X)</span>}
+      </Link>
+
+      <Link
+        href={SOCIAL_LINKS.linkedin.href}
+        target="_blank"
+        rel="noopener"
+        aria-label={SOCIAL_LINKS.linkedin.label}
+        className={linkClassName}
+        style={itemStyle}
+      >
+        <LinkedInIcon />
+        {showLabels && <span>LinkedIn</span>}
+      </Link>
+
+      <Link
+        href={SOCIAL_LINKS.facebook.href}
+        target="_blank"
+        rel="noopener"
+        aria-label={SOCIAL_LINKS.facebook.label}
+        className={linkClassName}
+        style={itemStyle}
+      >
+        <FacebookIcon />
+        {showLabels && <span>Facebook</span>}
+      </Link>
+
+      <Link
+        href={SOCIAL_LINKS.pinterest.href}
+        target="_blank"
+        rel="noopener"
+        aria-label={SOCIAL_LINKS.pinterest.label}
+        className={linkClassName}
+        style={itemStyle}
+      >
+        <PinterestIcon />
+        {showLabels && <span>Pinterest</span>}
+      </Link>
+
+      <Link
+        href={SOCIAL_LINKS.quora.href}
+        target="_blank"
+        rel="noopener"
+        aria-label={SOCIAL_LINKS.quora.label}
+        className={linkClassName}
+        style={itemStyle}
+      >
+        <QuoraIcon />
+        {showLabels && <span>Quora</span>}
       </Link>
     </div>
   );
 };
-
