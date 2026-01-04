@@ -20,7 +20,7 @@ export const SOCIAL_LINKS = {
     label: "X - GSoC",
   },
   twitter2:{
-    href: "https://x.com/kauntiaketan", 
+    href: "https://www.x.com/kauntiaketan", 
     label: "X - kauntiaketan",    
   },
   linkedin: {
