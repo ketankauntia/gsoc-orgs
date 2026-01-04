@@ -17,7 +17,11 @@ export const SOCIAL_LINKS = {
   },
   twitter: {
     href: "https://www.x.com/gsoc_orgs_guide",
-    label: "Twitter (X)",
+    label: "X - GSoC",
+  },
+  twitter2:{
+    href: "https://x.com/kauntiaketan", 
+    label: "X - kauntiaketan",    
   },
   linkedin: {
     href: "https://www.linkedin.com/company/gsoc-organizations-guide/",

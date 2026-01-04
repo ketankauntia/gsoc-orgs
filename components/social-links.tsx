@@ -60,7 +60,19 @@ export const SocialLinks = ({
         aria-label={SOCIAL_LINKS.twitter.label}
         style={itemStyle}
       >
-        <XIcon />
+      <XIcon />
+        {showLabels && <span>Twitter (X)</span>}
+      </Link>
+
+        <Link
+        href={SOCIAL_LINKS.twitter2.href}
+        target="_blank"
+        rel="noopener"
+        className={linkClassName}
+        aria-label={SOCIAL_LINKS.twitter2.label}
+        style={itemStyle}
+      >
+      <XIcon />
         {showLabels && <span>Twitter (X)</span>}
       </Link>
 
