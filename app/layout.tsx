@@ -15,10 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const viewport = {
-  themeColor: "#000000"
-}
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -64,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > 

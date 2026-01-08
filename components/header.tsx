@@ -96,8 +96,7 @@ export const Header = () => {
                                     size="sm"
                                     className={cn(isScrolled && 'lg:hidden')}>
                                     <span>Sign Up</span>
-                                </Button> */}
-                                <ModeToggle />
+                                </Button> */}                               
                                 <Button
                                     variant="outline"
                                     size="sm"
@@ -112,7 +111,7 @@ export const Header = () => {
                                         <GitHubIcon className="w-4 h-4" />
                                         <span>GitHub</span>
                                     </a>
-                                </Button>
+                                </Button>                                
                                 <Button
                                     variant="outline"
                                     size="sm"
@@ -128,6 +127,7 @@ export const Header = () => {
                                         <span>X</span>
                                     </a>
                                 </Button>
+                                <ModeToggle />
                                 
                                 {/* <Button
                                     disabled
