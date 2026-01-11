@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { HeroComponent } from "@/components/hero-component";
 import { TrendingOrgs } from "@/components/trending-orgs";
+import { WaitlistCTA } from "@/components/waitlist-cta";
 import { FaqComponent } from "@/components/faq";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
@@ -85,6 +86,7 @@ export default function Home() {
       <HeroComponent />
       <TrendingOrgs />
       <FaqComponent />
+      <WaitlistCTA />
       <Footer />
     </>
   );
