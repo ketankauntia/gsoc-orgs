@@ -6,7 +6,13 @@ import { getFullUrl } from "@/lib/constants";
 import { Users, Target, Heart, Code, Globe } from "lucide-react";
 
 // Force revalidation to ensure footer links stay updated
-export const revalidate = 3600; // Revalidate every hour
+/**
+ * ISR Configuration for Static Pages
+ *
+ * About page is mostly static content - cache for 30 days.
+ * Only needs revalidation when content changes.
+ */
+export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = {
   title: "About Us | GSoC Organizations Guide",

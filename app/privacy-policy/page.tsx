@@ -5,7 +5,11 @@ import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 
 // Force revalidation to ensure footer links stay updated
-export const revalidate = 3600; // Revalidate every hour
+/**
+ * ISR Configuration for Legal Pages
+ * Cache for 30 days - only changes when legal content updates.
+ */
+export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = {
   title: "Privacy Policy | GSoC Organizations Guide",

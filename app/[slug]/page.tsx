@@ -28,59 +28,94 @@ import {
 import { GSoCYearClient } from "./gsoc-year-client";
 import { AllOrganizationsSection } from "./all-organizations-section";
 
-// This page relies on dynamic request data (e.g. API fetches) and can't be fully pre-rendered
-export const dynamic = 'force-dynamic';
+/**
+ * ISR Configuration for Year Pages
+ *
+ * Strategy:
+ * - Historical years (2+ years ago): Data is immutable, cache for 30 days
+ * - Current/upcoming years: Data may update during GSoC season, cache for 1 day
+ *
+ * Note: We use 30 days instead of 365 days because Next.js ISR has a max
+ * practical limit, and 30 days provides a good balance between performance
+ * and allowing occasional updates.
+ *
+ * For cache invalidation when new data is added, use:
+ * POST /api/admin/invalidate-cache { "type": "year", "year": 2025 }
+ */
+export const revalidate = 86400; // 1 day base - individual queries use year-specific TTLs
 
-// Fetch organizations for a specific year
+// Fetch organizations for a specific year (handles pagination)
 async function fetchOrganizationsByYear(year: string): Promise<Organization[]> {
   try {
-    const response = await apiFetchServer<{
-      success: boolean;
-      data: {
-        organizations: Array<{
-          slug: string;
-          name: string;
-          category: string;
-          description: string;
-          image_url: string;
-          technologies: string[];
-          topics: string[];
-          years: Record<string, unknown>;
-          stats: {
-            projects_by_year: Record<string, number>;
-            students_by_year: Record<string, number>;
-          };
-        }>;
-      };
-    }>(`/api/v1/years/${year}/organizations?limit=100`);
-
-    if (!response.success || !response.data) {
-      return [];
-    }
-
+    const allOrgs: Organization[] = [];
     const yearNum = parseInt(year, 10);
     const yearKey = `year_${yearNum}`;
+    let page = 1;
+    let hasMore = true;
 
-    return response.data.organizations.map((org) => {
-      const yearData = (org.years as Record<string, { num_projects?: number }>)[yearKey];
-      return {
-      id: org.slug,
-      name: org.name,
-      slug: org.slug,
-      description: org.description,
-      category: org.category,
-      image_url: org.image_url,
-      img_r2_url: org.image_url,
-      logo_r2_url: org.image_url,
-      technologies: org.technologies || [],
-      topics: org.topics || [],
-      total_projects: (yearData?.num_projects as number) || 0,
-      is_currently_active: true,
-      first_year: yearNum,
-      last_year: yearNum,
-      active_years: [yearNum],
-      };
-    });
+    // Fetch all pages to get complete org list with accurate first_year data
+    while (hasMore) {
+      const response = await apiFetchServer<{
+        success: boolean;
+        data: {
+          organizations: Array<{
+            slug: string;
+            name: string;
+            category: string;
+            description: string;
+            image_url: string;
+            img_r2_url?: string;
+            logo_r2_url?: string;
+            technologies: string[];
+            topics: string[];
+            years: Record<string, unknown>;
+            stats: {
+              projects_by_year: Record<string, number>;
+              students_by_year: Record<string, number>;
+            };
+            first_year: number;
+            active_years: number[];
+          }>;
+          pagination: {
+            page: number;
+            pages: number;
+          };
+        };
+      }>(`/api/v1/years/${year}/organizations?limit=100&page=${page}`);
+
+      if (!response.success || !response.data) {
+        break;
+      }
+
+      const orgs = response.data.organizations.map((org) => {
+        const yearData = (org.years as Record<string, { num_projects?: number }>)[yearKey];
+        return {
+          id: org.slug,
+          name: org.name,
+          slug: org.slug,
+          description: org.description,
+          category: org.category,
+          image_url: org.image_url,
+          img_r2_url: org.img_r2_url || org.image_url,
+          logo_r2_url: org.logo_r2_url || org.image_url,
+          technologies: org.technologies || [],
+          topics: org.topics || [],
+          total_projects: (yearData?.num_projects as number) || 0,
+          is_currently_active: true,
+          first_year: org.first_year, // Use actual first_year from API
+          last_year: yearNum,
+          active_years: org.active_years || [yearNum],
+        };
+      });
+
+      allOrgs.push(...orgs);
+
+      // Check if there are more pages
+      hasMore = page < response.data.pagination.pages;
+      page++;
+    }
+
+    return allOrgs;
   } catch (error) {
     console.error("Error fetching organizations:", error);
     return [];
@@ -312,9 +347,8 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-// Force revalidation to ensure footer links stay updated
-// This prevents serving stale cached HTML with old links
-export const revalidate = 3600; // Revalidate every hour
+// Note: revalidate is set at the top of the file (86400 seconds = 1 day)
+// For cache invalidation, use POST /api/admin/invalidate-cache
 
 // Main Page Component
 export default async function GSoCYearOrganizationsPage({
@@ -555,42 +589,9 @@ export default async function GSoCYearOrganizationsPage({
               </CardWrapper>
             </div>
 
-            {/* New Organizations Section - Moved to GSoCYearClient */}
-
-            {/* Beginner-Friendly Organizations */}
-            <CardWrapper className="p-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Heading variant="small" className="text-lg">
-                      Beginner-Friendly Organizations
-                    </Heading>
-                    <Text variant="muted" className="text-sm mt-1">
-                      Perfect for first-time GSoC applicants
-                    </Text>
-                  </div>
-                  <Badge variant="secondary">
-                    For beginners
-                  </Badge>
-                </div>
-                <ExpandableBeginnerOrgs 
-                  organizations={organizations.slice(0, 20).map(org => ({
-                    slug: org.slug,
-                    name: org.name,
-                    logo: org.img_r2_url || org.logo_r2_url || org.image_url,
-                    description: org.description,
-                    topics: org.topics || [],
-                    techStack: org.technologies || [],
-                    projectCount: org.total_projects,
-                    difficulty: "Beginner" as const,
-                  }))} 
-                />
-              </div>
-            </CardWrapper>
           </div>
 
-
-          {/* New Sections: Highest Selections, Projects, Mentors & Contributors */}
+          {/* Highest Selections, First-Time Orgs, Projects, Mentors & Contributors */}
           <Suspense fallback={
             <div className="min-h-[800px] flex items-center justify-center">
               <div className="text-center">
@@ -608,6 +609,37 @@ export default async function GSoCYearOrganizationsPage({
               mentorsAndContributors={mentorsAndContributors}
             />
           </Suspense>
+
+          {/* Beginner-Friendly Organizations */}
+          <CardWrapper className="p-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <Heading variant="small" className="text-lg">
+                    Beginner-Friendly Organizations
+                  </Heading>
+                  <Text variant="muted" className="text-sm mt-1">
+                    Perfect for first-time GSoC applicants
+                  </Text>
+                </div>
+                <Badge variant="secondary">
+                  For beginners
+                </Badge>
+              </div>
+              <ExpandableBeginnerOrgs 
+                organizations={organizations.slice(0, 20).map(org => ({
+                  slug: org.slug,
+                  name: org.name,
+                  logo: org.img_r2_url || org.logo_r2_url || org.image_url,
+                  description: org.description,
+                  topics: org.topics || [],
+                  techStack: org.technologies || [],
+                  projectCount: org.total_projects,
+                  difficulty: "Beginner" as const,
+                }))} 
+              />
+            </div>
+          </CardWrapper>
 
           {/* Organizations Grid - Client Component for Show More/Less */}
           <Suspense fallback={

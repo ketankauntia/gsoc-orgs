@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
+import { CacheHeaders } from '@/lib/cache'
 
 /**
  * GET /api/v1/stats
  * 
  * Returns overall platform statistics
+ * 
+ * Caching: Medium TTL (7 days) - aggregated stats update with new year data
  */
 export async function GET() {
   try {
@@ -102,11 +105,13 @@ export async function GET() {
         meta: {
           timestamp: new Date().toISOString(),
           version: 'v1',
+          cached: true,
+          cache_ttl: '7 days',
         },
       },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+          'Cache-Control': CacheHeaders.MEDIUM,
         },
       }
     )

@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
+import { CacheHeaders } from '@/lib/cache'
 
 /**
  * GET /api/v1/organizations/{slug}
  * 
  * Returns detailed information about a specific organization
+ * 
+ * Caching: Long TTL (30 days) - organization data changes yearly
  */
 export async function GET(
   request: Request,
@@ -37,11 +40,13 @@ export async function GET(
         meta: {
           timestamp: new Date().toISOString(),
           version: 'v1',
+          cached: true,
+          cache_ttl: '30 days',
         },
       },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+          'Cache-Control': CacheHeaders.LONG,
         },
       }
     )

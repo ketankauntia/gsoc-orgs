@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { PaginatedResponse, Organization } from "@/lib/api";
@@ -12,7 +10,17 @@ import { getFullUrl } from "@/lib/constants";
  * Route: /organizations
  * Supports pagination via ?page=N query parameter
  * SEO-optimized with canonical tags
+ *
+ * Caching Strategy:
+ * - Uses ISR with 1 hour revalidation (search results vary by query)
+ * - Query param variations are cached independently by Next.js
+ * - API layer provides additional caching with longer TTLs
+ *
+ * Note: We use `dynamic = 'force-dynamic'` is NOT needed here because:
+ * - Next.js App Router handles searchParams natively with ISR
+ * - Each unique combination of query params gets its own cached version
  */
+export const revalidate = 3600; // 1 hour - search pages need more frequent updates
 
 interface PageProps {
   searchParams: Promise<{

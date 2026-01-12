@@ -233,8 +233,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 checked={filters.firstTimeOnly}
                 onChange={toggleFirstTime}
               />
-              <span className="text-sm text-gray-700">First-time organizations</span>
-              <span className="text-xs text-gray-400">(14)</span>
+              <span className="text-sm text-gray-700">First-time organizations only</span>
             </label>
           </div>
       </div>

@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
+import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
 
 /**
  * GET /api/v1/years/{year}/stats
  * 
  * Returns statistics for a specific GSoC year
+ * 
+ * Caching Strategy:
+ * - Historical years: Immutable data, cache for 1 year
+ * - Current/upcoming years: Cache for 1 day
  */
 export async function GET(
   request: Request,
@@ -110,11 +115,13 @@ export async function GET(
         meta: {
           timestamp: new Date().toISOString(),
           version: 'v1',
+          cached: true,
+          cache_ttl: isHistoricalYear(yearNum) ? '1 year' : '1 day',
         },
       },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+          'Cache-Control': getCacheHeaderForYear(yearNum),
         },
       }
     )

@@ -2,6 +2,7 @@
 
 import { TrendingUp, Award } from "lucide-react";
 import { Bar, BarChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell, LabelList } from "recharts";
+import { getChartBarColor } from "@/lib/theme";
 
 import {
   Card,
@@ -26,23 +27,6 @@ export function LanguagesBarChart({ data }: { data: LanguageData[] }) {
   // Take top 10 for readability
   const topLanguages = data.slice(0, 10);
   const maxCount = Math.max(...topLanguages.map((d) => d.count), 1);
-
-  // Teal gradient colors
-  const getBarColor = (index: number) => {
-    const colors = [
-      "#0d9488", // teal-600
-      "#14b8a6", // teal-500
-      "#2dd4bf", // teal-400
-      "#5eead4", // teal-300
-      "#99f6e4", // teal-200
-      "#0d9488",
-      "#14b8a6",
-      "#2dd4bf",
-      "#5eead4",
-      "#99f6e4",
-    ];
-    return colors[index % colors.length];
-  };
   
   return (
     <Card>
@@ -91,7 +75,7 @@ export function LanguagesBarChart({ data }: { data: LanguageData[] }) {
                 maxBarSize={28}
               >
                 {topLanguages.map((_, index) => (
-                  <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+                  <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
                 ))}
                 <LabelList
                   dataKey="count"
@@ -133,21 +117,6 @@ export function StudentSlotsBarChart({
   // Take top 8 for readability
   const topOrgs = data.slice(0, 8);
   const maxCount = Math.max(...topOrgs.map((d) => d.slots), 1);
-
-  // Teal gradient colors
-  const getBarColor = (index: number) => {
-    const colors = [
-      "#0d9488", // teal-600
-      "#14b8a6", // teal-500
-      "#2dd4bf", // teal-400
-      "#5eead4", // teal-300
-      "#99f6e4", // teal-200
-      "#0d9488",
-      "#14b8a6",
-      "#2dd4bf",
-    ];
-    return colors[index % colors.length];
-  };
   
   return (
     <Card>
@@ -196,7 +165,7 @@ export function StudentSlotsBarChart({
                 maxBarSize={28}
               >
                 {topOrgs.map((_, index) => (
-                  <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+                  <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
                 ))}
                 <LabelList
                   dataKey="slots"
@@ -236,23 +205,6 @@ export function OrganizationsProjectsChart({
   // Take top 8-10 organizations
   const topOrgs = data.slice(0, 10);
   const maxCount = Math.max(...topOrgs.map((d) => d.projects), 1);
-
-  // Teal gradient colors
-  const getBarColor = (index: number) => {
-    const colors = [
-      "#0d9488", // teal-600
-      "#14b8a6", // teal-500
-      "#2dd4bf", // teal-400
-      "#5eead4", // teal-300
-      "#99f6e4", // teal-200
-      "#0d9488",
-      "#14b8a6",
-      "#2dd4bf",
-      "#5eead4",
-      "#99f6e4",
-    ];
-    return colors[index % colors.length];
-  };
   
   return (
     <div className="h-[300px] w-full">
@@ -289,7 +241,7 @@ export function OrganizationsProjectsChart({
           />
           <Bar dataKey="projects" radius={[4, 4, 0, 0]} maxBarSize={50}>
             {topOrgs.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+              <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
             ))}
             <LabelList
               dataKey="projects"

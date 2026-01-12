@@ -6,7 +6,11 @@ import { getFullUrl } from "@/lib/constants";
 
 // Force revalidation to ensure footer links stay updated
 // This prevents serving stale cached HTML with old links
-export const revalidate = 3600; // Revalidate every hour
+/**
+ * ISR Configuration for Year Page Layout
+ * Matches the page revalidation period.
+ */
+export const revalidate = 86400; // 1 day
 
 interface LayoutProps {
   children: ReactNode;

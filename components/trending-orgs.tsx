@@ -62,7 +62,7 @@ export const TrendingOrgs = () => {
 
   if (loading) {
     return (
-      <Section noPadding className="py-20 lg:py-20">
+      <Section noPadding className="py-12 lg:py-16">
         <div className="grid grid-cols-5 gap-10 items-center">
           <Heading variant="small" className="lg:max-w-xl">
             Trending GSoC Organizations
@@ -76,7 +76,7 @@ export const TrendingOrgs = () => {
   }
 
   return (
-    <Section noPadding className="py-20 lg:py-20">
+    <Section noPadding className="py-12 lg:py-16">
       <div className="grid grid-cols-5 gap-10 items-center">
         <Heading variant="small" className="lg:max-w-xl">
           Trending GSoC Organizations

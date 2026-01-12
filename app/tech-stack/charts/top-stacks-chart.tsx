@@ -10,6 +10,7 @@ import {
   Cell,
   LabelList,
 } from "recharts";
+import { getChartBarColor } from "@/lib/theme";
 
 interface TopStacksChartProps {
   data: Array<{ name: string; slug: string; count: number }>;
@@ -27,21 +28,6 @@ export function TopStacksChart({ data }: TopStacksChartProps) {
   // Take top 8 stacks
   const chartData = data.slice(0, 8);
   const maxCount = Math.max(...chartData.map((d) => d.count), 1);
-
-  // Teal gradient colors from dark to light
-  const getBarColor = (index: number) => {
-    const colors = [
-      "#0d9488", // teal-600
-      "#14b8a6", // teal-500
-      "#2dd4bf", // teal-400
-      "#5eead4", // teal-300
-      "#99f6e4", // teal-200
-      "#0d9488",
-      "#14b8a6",
-      "#2dd4bf",
-    ];
-    return colors[index % colors.length];
-  };
 
   return (
     <div className="h-[320px] w-full">
@@ -81,7 +67,7 @@ export function TopStacksChart({ data }: TopStacksChartProps) {
             maxBarSize={28}
           >
             {chartData.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+              <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
             ))}
             <LabelList
               dataKey="count"
