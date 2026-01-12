@@ -218,7 +218,7 @@ export function GSoCYearClient({
       </section>
 
       {/* First-Time Organizations Section */}
-      {organizations.length > 0 && (
+      {/*{organizations.length > 0 && (
         <CardWrapper className="p-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
@@ -295,7 +295,7 @@ export function GSoCYearClient({
             )}
           </div>
         </CardWrapper>
-      )}
+      )}{*/}
 
       {/* Projects Section */}
       <section className="space-y-6">
