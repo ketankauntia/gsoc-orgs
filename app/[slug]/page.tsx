@@ -589,42 +589,9 @@ export default async function GSoCYearOrganizationsPage({
               </CardWrapper>
             </div>
 
-            {/* New Organizations Section - Moved to GSoCYearClient */}
-
-            {/* Beginner-Friendly Organizations */}
-            <CardWrapper className="p-6">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Heading variant="small" className="text-lg">
-                      Beginner-Friendly Organizations
-                    </Heading>
-                    <Text variant="muted" className="text-sm mt-1">
-                      Perfect for first-time GSoC applicants
-                    </Text>
-                  </div>
-                  <Badge variant="secondary">
-                    For beginners
-                  </Badge>
-                </div>
-                <ExpandableBeginnerOrgs 
-                  organizations={organizations.slice(0, 20).map(org => ({
-                    slug: org.slug,
-                    name: org.name,
-                    logo: org.img_r2_url || org.logo_r2_url || org.image_url,
-                    description: org.description,
-                    topics: org.topics || [],
-                    techStack: org.technologies || [],
-                    projectCount: org.total_projects,
-                    difficulty: "Beginner" as const,
-                  }))} 
-                />
-              </div>
-            </CardWrapper>
           </div>
 
-
-          {/* New Sections: Highest Selections, Projects, Mentors & Contributors */}
+          {/* Highest Selections, First-Time Orgs, Projects, Mentors & Contributors */}
           <Suspense fallback={
             <div className="min-h-[800px] flex items-center justify-center">
               <div className="text-center">
@@ -642,6 +609,37 @@ export default async function GSoCYearOrganizationsPage({
               mentorsAndContributors={mentorsAndContributors}
             />
           </Suspense>
+
+          {/* Beginner-Friendly Organizations */}
+          <CardWrapper className="p-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <Heading variant="small" className="text-lg">
+                    Beginner-Friendly Organizations
+                  </Heading>
+                  <Text variant="muted" className="text-sm mt-1">
+                    Perfect for first-time GSoC applicants
+                  </Text>
+                </div>
+                <Badge variant="secondary">
+                  For beginners
+                </Badge>
+              </div>
+              <ExpandableBeginnerOrgs 
+                organizations={organizations.slice(0, 20).map(org => ({
+                  slug: org.slug,
+                  name: org.name,
+                  logo: org.img_r2_url || org.logo_r2_url || org.image_url,
+                  description: org.description,
+                  topics: org.topics || [],
+                  techStack: org.technologies || [],
+                  projectCount: org.total_projects,
+                  difficulty: "Beginner" as const,
+                }))} 
+              />
+            </div>
+          </CardWrapper>
 
           {/* Organizations Grid - Client Component for Show More/Less */}
           <Suspense fallback={
