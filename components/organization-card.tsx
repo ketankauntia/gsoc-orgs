@@ -43,7 +43,8 @@ export function OrganizationCard({
       href={`/organizations/${org.slug}`}
       prefetch={true}
       className={cn(
-        "block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all w-full",
+        "block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all",
+        "w-full max-w-[380px] sm:max-w-[420px]",
         "dark:bg-card dark:border-border dark:hover:border-gray-600",
         className
       )}
