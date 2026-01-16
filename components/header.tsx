@@ -12,6 +12,9 @@ const menuItems = [
     { name: 'Organizations', href: '/organizations' },
     { name: 'Technologies', href: '/tech-stack' },
     { name: 'Topics', href: '/topics' },
+    // { name: 'Resources', href: '#resources' },
+    // { name: 'About Us', href: '#about' },
+    // { name: 'Contact', href: '#contact' },
 ]
 
 export const Header = () => {
@@ -88,6 +91,20 @@ export const Header = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+
+                                {/* <Button
+                                    disabled
+                                    variant="outline"
+                                    size="sm"
+                                    className={cn(isScrolled && 'lg:hidden')}>
+                                    <span>Login</span>
+                                </Button>
+                                <Button
+                                    disabled
+                                    size="sm"
+                                    className={cn(isScrolled && 'lg:hidden')}>
+                                    <span>Sign Up</span>
+                                </Button> */}
                                 
                                 {/* CHANGE 2: Wrapped in hidden lg:block to show ONLY on desktop */}
                                 <div className="hidden lg:block">
@@ -124,6 +141,14 @@ export const Header = () => {
                                         <span>X</span>
                                     </a>
                                 </Button>
+
+                                 {/* <Button
+                                    disabled
+                                    size="sm"
+                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                                    <span>Get Started</span>
+                                </Button> */}
+                                
                                 <Button
                                     variant="outline"
                                     size="sm"
