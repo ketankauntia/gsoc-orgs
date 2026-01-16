@@ -6,14 +6,12 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
 import { GitHubIcon, XIcon } from '@/components/icons'
+import { ModeToggle } from './dark-light-mode'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
     { name: 'Technologies', href: '/tech-stack' },
     { name: 'Topics', href: '/topics' },
-    // { name: 'Resources', href: '#resources' },
-    // { name: 'About Us', href: '#about' },
-    // { name: 'Contact', href: '#contact' },
 ]
 
 export const Header = () => {
@@ -27,6 +25,7 @@ export const Header = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+    
     return (
         <header suppressHydrationWarning>
             <nav
@@ -42,14 +41,20 @@ export const Header = () => {
                                 className="flex items-center space-x-2 font-semibold text-xl">
                                 <span>GSoC Organizations Guide</span>
                             </Link>
-
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
+                            <div className='flex space-x-2'>
+                                {/* CHANGE 1: Wrapped in lg:hidden to show ONLY on mobile */}
+                                <div className="lg:hidden">
+                                    <ModeToggle />
+                                </div>
+                                
+                                <button
+                                    onClick={() => setMenuState(!menuState)}
+                                    aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                                    className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                                    <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                                    <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                </button>
+                            </div>
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
@@ -83,19 +88,12 @@ export const Header = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                {/* <Button
-                                    disabled
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <span>Login</span>
-                                </Button>
-                                <Button
-                                    disabled
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <span>Sign Up</span>
-                                </Button> */}
+                                
+                                {/* CHANGE 2: Wrapped in hidden lg:block to show ONLY on desktop */}
+                                <div className="hidden lg:block">
+                                    <ModeToggle />
+                                </div>
+
                                 <Button
                                     variant="outline"
                                     size="sm"
@@ -126,12 +124,6 @@ export const Header = () => {
                                         <span>X</span>
                                     </a>
                                 </Button>
-                                {/* <Button
-                                    disabled
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <span>Get Started</span>
-                                </Button> */}
                                 <Button
                                     variant="outline"
                                     size="sm"

@@ -66,7 +66,7 @@ export function WaitlistCTA({ className }: WaitlistCTAProps) {
         <div className="rounded-2xl bg-muted/50 border border-border p-8 sm:p-10 lg:p-12">
           <div className="flex flex-col items-center text-center gap-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-grey px-4 py-2 text-xs font-semibold text-black">
+            <div className="inline-flex items-center gap-2 rounded-full border border-grey px-4 py-2 text-xs font-semibold text-black text-foreground">
               <Sparkles className="size-4" />
               <span>Coming Soon</span>
             </div>
