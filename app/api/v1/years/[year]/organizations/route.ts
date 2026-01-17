@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
+import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
 
 /**
  * GET /api/v1/years/{year}/organizations
  * 
  * Returns all organizations that participated in a specific year
+ * 
+ * Caching Strategy:
+ * - Historical years (2+ years ago): Immutable data, cache for 1 year
+ * - Current/upcoming years: Cache for 1 day with SWR
  * 
  * Query Parameters:
  * - page: number (default: 1)
@@ -59,6 +64,8 @@ export async function GET(
           topics: true,
           years: true,
           stats: true,
+          first_year: true,
+          active_years: true,
         },
       }),
       prisma.organizations.count({ where }),
@@ -91,11 +98,13 @@ export async function GET(
         meta: {
           timestamp: new Date().toISOString(),
           version: 'v1',
+          cached: true,
+          cache_ttl: isHistoricalYear(yearNum) ? '1 year' : '1 day',
         },
       },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+          'Cache-Control': getCacheHeaderForYear(yearNum),
         },
       }
     )

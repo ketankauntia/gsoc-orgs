@@ -16,6 +16,7 @@ export { CardWrapper } from "./card-wrapper";
 export { Button } from "./button";
 export { Badge } from "./badge";
 export { Input } from "./input";
+export { SearchBar } from "./search-bar";
 export {
   Accordion,
   AccordionContent,
@@ -30,3 +31,5 @@ export {
   CarouselPrevious,
 } from "./carousel";
 
+// Brand Components
+export { BrandsGrid } from "./brands";

@@ -471,3 +471,17 @@ model projects {
   @@index([org_canonical_id], map: "org_canonical_id_1")
   @@index([year], map: "year_1")
 }
+
+/// Waitlist for future paid AI features and custom GSoC tools.
+/// Write-only from public API - no read endpoints exposed.
+model waitlist_entries {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  email       String    @unique
+  interests   String[]
+  source      String    @default("website")
+  createdAt   DateTime  @default(now()) @db.Date
+  invitedAt   DateTime? @db.Date
+  convertedAt DateTime? @db.Date
+
+  @@map("waitlist_entries")
+}

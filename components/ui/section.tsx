@@ -11,7 +11,7 @@ interface SectionProps {
 
 /**
  * Reusable Section component that provides consistent spacing and container width
- * Used as the main wrapper for page sections
+ * Uses max-w-6xl for centered content with comfortable margins
  */
 export const Section = ({
   children,
@@ -21,10 +21,10 @@ export const Section = ({
   noPadding = false,
 }: SectionProps) => {
   return (
-    <section className={cn("w-full", !noPadding && "py-20 lg:py-40", className)}>
+    <section className={cn("w-full", !noPadding && "py-12 lg:py-20", className)}>
       <div
         className={cn(
-          !fullWidth && "mx-auto max-w-6xl px-6 lg:px-12",
+          !fullWidth && "max-w-6xl mx-auto px-6 lg:px-12",
           containerClassName
         )}
       >

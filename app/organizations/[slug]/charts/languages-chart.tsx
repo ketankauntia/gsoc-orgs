@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import { getChartBarColor } from "@/lib/theme";
 
 interface LanguagesChartProps {
   data: Array<{ name: string; count: number }>;
@@ -29,23 +30,6 @@ export function LanguagesChart({ data }: LanguagesChartProps) {
   }
 
   const maxCount = Math.max(...chartData.map((d) => d.count), 1);
-
-  // Color gradient from dark to light teal
-  const getBarColor = (index: number) => {
-    const colors = [
-      "#0d9488", // teal-600
-      "#14b8a6", // teal-500
-      "#2dd4bf", // teal-400
-      "#5eead4", // teal-300
-      "#99f6e4", // teal-200
-      "#0d9488",
-      "#14b8a6",
-      "#2dd4bf",
-      "#5eead4",
-      "#99f6e4",
-    ];
-    return colors[index % colors.length];
-  };
 
   return (
     <div className="h-[250px] w-full">
@@ -81,7 +65,7 @@ export function LanguagesChart({ data }: LanguagesChartProps) {
           />
           <Bar dataKey="count" radius={[0, 4, 4, 0]} maxBarSize={20}>
             {chartData.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+              <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
             ))}
           </Bar>
         </BarChart>

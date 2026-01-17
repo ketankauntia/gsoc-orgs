@@ -7,26 +7,10 @@ import { Button, Input, SectionHeader } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
 import { FiltersSidebar, FilterState } from './filters-sidebar'
+import { useDebouncedSearch } from '@/hooks'
 
 const arraysEqual = (a: string[], b: string[]) =>
   a.length === b.length && a.every((val, idx) => val === b[idx])
-
-// Debounce utility
-function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value)
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value)
-    }, delay)
-
-    return () => {
-      clearTimeout(handler)
-    }
-  }, [value, delay])
-
-  return debouncedValue
-}
 
 interface OrganizationsClientProps {
   initialData: PaginatedResponse<Organization>
@@ -76,7 +60,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   const [searchInput, setSearchInput] = useState(urlFilters.search)
   
   // Debounce search input to avoid excessive navigation
-  const debouncedSearch = useDebounce(searchInput, 300)
+  const debouncedSearch = useDebouncedSearch(searchInput, 300)
 
   // Sync filters from URL only when URL actually changes (not on every render)
   // Use URL string comparison instead of object comparison

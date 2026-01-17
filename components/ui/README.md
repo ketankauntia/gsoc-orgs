@@ -186,12 +186,100 @@ import { CardWrapper } from "@/components/ui";
 
 ---
 
+## Form Components
+
+### SearchBar
+Reusable search input with optional debouncing, icon, and clear functionality.
+
+```tsx
+import { SearchBar } from "@/components/ui";
+
+// Basic usage
+<SearchBar
+  value={search}
+  onChange={setSearch}
+  placeholder="Search organizations..."
+/>
+
+// With debouncing
+<SearchBar
+  value={search}
+  onChange={setSearch}
+  debounceMs={300}
+  onDebouncedChange={handleDebouncedSearch}
+/>
+
+// Custom size
+<SearchBar value={search} onChange={setSearch} size="lg" />
+```
+
+**Props:**
+- `value` - Current search value
+- `onChange` - Callback when value changes
+- `placeholder` - Placeholder text (default: "Search...")
+- `debounceMs` - Debounce delay in ms, 0 to disable (default: 0)
+- `showIcon` - Show search icon (default: true)
+- `clearable` - Show clear button when value exists (default: true)
+- `size` - Size variant: "sm" | "md" | "lg" (default: "md")
+- `disabled` - Disable the input
+- `onDebouncedChange` - Callback when debounced value changes
+
+---
+
+## Badge Variants
+
+The Badge component includes semantic variants for domain-specific use cases:
+
+```tsx
+import { Badge } from "@/components/ui";
+
+// Technology badges (blue theme)
+<Badge variant="tech" size="xs">
+  Python
+</Badge>
+
+// Year badges (teal theme)
+<Badge variant="year" size="xs">
+  2024
+</Badge>
+
+// Topic badges (purple theme)
+<Badge variant="topic" size="sm">
+  Machine Learning
+</Badge>
+
+// Category badges (orange theme)
+<Badge variant="category" size="md">
+  Data Science
+</Badge>
+```
+
+**Variants:**
+- `default` - Primary color
+- `secondary` - Secondary/muted
+- `destructive` - Error/warning state
+- `outline` - Bordered outline
+- `tech` - Blue theme for technologies
+- `year` - Teal theme for years
+- `topic` - Purple theme for topics
+- `category` - Orange theme for categories
+- `neutral` - Gray neutral badges
+
+**Sizes:**
+- `xs` - Extra small (10px)
+- `sm` - Small (12px)
+- `md` - Medium (14px)
+
+---
+
 ## shadcn UI Components
 
 All shadcn components are also exported from the index for convenience:
 
 - `Button`
 - `Badge`
+- `Input`
+- `SearchBar`
 - `Accordion`, `AccordionContent`, `AccordionItem`, `AccordionTrigger`
 - `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselNext`, `CarouselPrevious`
 

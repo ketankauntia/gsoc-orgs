@@ -2,9 +2,10 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Search } from "lucide-react";
+import Image from "next/image";
+import { Search, ChevronDown, ChevronUp } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from "recharts";
-import { Input, CardWrapper, Heading, Text, Button } from "@/components/ui";
+import { Input, CardWrapper, Heading, Text, Button, Grid } from "@/components/ui";
 import { ProjectCard } from "@/components/project-card";
 import { Organization } from "@/lib/api";
 
@@ -34,8 +35,7 @@ interface GSoCYearClientProps {
 
 export function GSoCYearClient({
   year,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  organizations, // Unused but kept for future use (only used in commented-out code)
+  organizations,
   projects,
   highestSelectionsByTech,
   highestSelectionsByOrg,
@@ -45,6 +45,10 @@ export function GSoCYearClient({
   const [nameSearch, setNameSearch] = useState("");
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllMentors, setShowAllMentors] = useState(false);
+  const [showAllOrgs, setShowAllOrgs] = useState(false);
+
+  // Display orgs for first-time organizations section
+  const displayedOrgs = showAllOrgs ? organizations : organizations.slice(0, 6);
 
   // Filter projects based on search
   const filteredProjects = useMemo(() => {
@@ -213,35 +217,85 @@ export function GSoCYearClient({
         </div>
       </section>
 
-      {/* All Organizations Section */}
-      {/* New Organizations section commented out - not correct */}
-      {/* <section className="space-y-6">
-        <div className="text-center">
-          <Heading variant="subsection">
-            New Organizations in GSoC {year}
-          </Heading>
-          <Text variant="muted" className="text-sm mt-1">
-            Organizations participating in GSoC for the first time
-          </Text>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {displayedOrgs.map((org) => (
-            <OrganizationCard key={org.slug} org={org} />
-          ))}
-        </div>
-
-        {organizations.length > 6 && (
-          <div className="text-center">
-            <Button
-              variant="outline"
-              onClick={() => setShowAllOrgs(!showAllOrgs)}
-            >
-              {showAllOrgs ? "Show Less" : `Show More (${organizations.length - 6} more)`}
-            </Button>
+      {/* First-Time Organizations Section */}
+      {/*{organizations.length > 0 && (
+        <CardWrapper className="p-6">
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <Heading variant="small" className="text-lg">
+                  First-Time Organizations in GSoC {year}
+                </Heading>
+                <Text variant="muted" className="text-sm mt-1">
+                  Organizations participating in GSoC for the first time
+                </Text>
+              </div>
+            </div>
+            <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="md">
+              {displayedOrgs.map((org) => {
+                const logoUrl = org.img_r2_url || org.logo_r2_url || org.image_url;
+                return (
+                  <Link
+                    key={org.slug}
+                    href={`/organizations/${org.slug}`}
+                    className="group"
+                  >
+                    <div className="p-3 rounded-lg border bg-card hover:border-foreground/50 transition-all">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded border flex items-center justify-center shrink-0 overflow-hidden">
+                          {logoUrl ? (
+                            <Image
+                              src={logoUrl}
+                              alt={org.name}
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-cover"
+                              unoptimized={true}
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="text-xs font-semibold text-muted-foreground">
+                              {org.name.charAt(0)}
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <Text className="font-medium text-sm line-clamp-1">
+                            {org.name}
+                          </Text>
+                          <Text variant="small" className="text-muted-foreground">
+                            {org.total_projects} selections
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </Grid>
+            {organizations.length > 6 && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowAllOrgs(!showAllOrgs)}
+                className="w-full"
+              >
+                {showAllOrgs ? (
+                  <>
+                    <ChevronUp className="w-4 h-4 mr-2" />
+                    Show Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-4 h-4 mr-2" />
+                    Show All {organizations.length} Organizations
+                  </>
+                )}
+              </Button>
+            )}
           </div>
-        )}
-      </section> */}
+        </CardWrapper>
+      )}{*/}
 
       {/* Projects Section */}
       <section className="space-y-6">

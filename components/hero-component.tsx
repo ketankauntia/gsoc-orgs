@@ -26,7 +26,7 @@ export const HeroComponent = () => {
 
   return (
     <Section>
-      <div className="flex gap-8 items-center justify-center flex-col">
+      <div className="flex gap-8 items-center justify-center flex-col mt-20">
         <div>
           <Button variant="secondary" size="sm" className="gap-4">
             Read our launch article <MoveRight className="w-4 h-4" />

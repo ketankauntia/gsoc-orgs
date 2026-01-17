@@ -20,6 +20,17 @@ import { getFullUrl } from "@/lib/constants";
  * - Organization-specific FAQ
  */
 
+/**
+ * ISR Configuration for Organization Detail Pages
+ *
+ * Organization data changes rarely (yearly updates).
+ * Cache for 30 days for optimal performance.
+ *
+ * For immediate updates after data changes:
+ * POST /api/admin/invalidate-cache { "type": "organization", "slug": "org-slug" }
+ */
+export const revalidate = 2592000; // 30 days
+
 // Extend the Organization type with full stats
 interface OrganizationWithStats extends Organization {
   stats?: {

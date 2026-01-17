@@ -10,6 +10,7 @@ import {
   Cell,
   LabelList,
 } from "recharts";
+import { getChartBarColor } from "@/lib/theme";
 
 interface MostProjectsChartProps {
   data: Array<{
@@ -31,23 +32,6 @@ export function MostProjectsChart({ data }: MostProjectsChartProps) {
   // Take top 10
   const chartData = data.slice(0, 10)
   const maxCount = Math.max(...chartData.map((d) => d.total), 1);
-
-  // Teal gradient colors
-  const getBarColor = (index: number) => {
-    const colors = [
-      "#0d9488", // teal-600
-      "#14b8a6", // teal-500
-      "#2dd4bf", // teal-400
-      "#5eead4", // teal-300
-      "#99f6e4", // teal-200
-      "#0d9488",
-      "#14b8a6",
-      "#2dd4bf",
-      "#5eead4",
-      "#99f6e4",
-    ];
-    return colors[index % colors.length];
-  };
 
   return (
     <div className="h-[320px] w-full">
@@ -87,7 +71,7 @@ export function MostProjectsChart({ data }: MostProjectsChartProps) {
             maxBarSize={28}
           >
             {chartData.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(index)} />
+              <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
             ))}
             <LabelList
               dataKey="total"

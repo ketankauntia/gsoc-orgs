@@ -11,6 +11,7 @@ import {
   Cell,
   LabelList,
 } from "recharts";
+import { getDifficultyChartColor } from "@/lib/theme";
 
 interface DifficultyByTechChartProps {
   data: Array<{ level: string; count: number }>;
@@ -26,16 +27,6 @@ export function DifficultyByTechChart({ data }: DifficultyByTechChartProps) {
   }
 
   const maxCount = Math.max(...data.map((d) => d.count), 1);
-
-  // Colors matching the reference image - varied colors for each difficulty level
-  const getBarColor = (level: string) => {
-    const levelLower = level.toLowerCase();
-    if (levelLower.includes("beginner")) return "#3b82f6"; // blue
-    if (levelLower.includes("intermediate")) return "#22c55e"; // green
-    if (levelLower.includes("advanced friendly")) return "#eab308"; // yellow
-    if (levelLower.includes("advanced")) return "#f97316"; // orange
-    return "#0d9488"; // teal default
-  };
 
   return (
     <div className="h-[280px] w-full">
@@ -77,7 +68,7 @@ export function DifficultyByTechChart({ data }: DifficultyByTechChartProps) {
             maxBarSize={60}
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(entry.level)} />
+              <Cell key={`cell-${index}`} fill={getDifficultyChartColor(entry.level)} />
             ))}
             <LabelList
               dataKey="count"
