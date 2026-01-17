@@ -11,7 +11,7 @@ export const FooterSmall = () => {
   return (
     <Section
       noPadding
-      className="py-8 bg-gray-100 bg-card text-black border-t dark:text-white"
+      className="py-8 bg-gray-100 bg-card text-black border-t dark:text-foreground"
     >
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         {/* Copyright */}
@@ -19,7 +19,7 @@ export const FooterSmall = () => {
           {FOOTER_COPYRIGHT.text} | © {FOOTER_COPYRIGHT.year} <Link href={FOOTER_COPYRIGHT.organizationUrl} className="hover:underline">{FOOTER_COPYRIGHT.organization}</Link>
         </p>
         {/* Social Links */}
-        <SocialLinks className="flex items-center gap-4 text-black dark:text-white" />
+        <SocialLinks className="flex items-center gap-4 text-black dark:text-foreground" />
       </div>
     </Section>
   );
