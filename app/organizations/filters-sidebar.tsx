@@ -40,7 +40,7 @@ const CATEGORIES = [
 ]
 const TOPICS = [
   'Machine Learning',
-  'Web Development', 
+  'Web Development',
   'Security',
   'Cloud',
   'Graphics',
@@ -66,7 +66,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
   const [showHelp, setShowHelp] = useState<{ [key: string]: boolean }>({})
   const helpButtonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
   const [tooltipPosition, setTooltipPosition] = useState<{ [key: string]: { top: number; right: number } }>({})
-  
+
   // Check if component is mounted (client-side only)
   const mounted = typeof window !== 'undefined'
 
@@ -196,13 +196,13 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
   const visibleTechs = showAllTechs ? filteredTechs : filteredTechs.slice(0, 10)
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
+    <div className="rounded-xl border border-border bg-card p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-base font-semibold text-gray-900">Filters</h3>
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white">Filters</h3>
         {hasActiveFilters && (
-          <button 
-            onClick={clearAllFilters} 
+          <button
+            onClick={clearAllFilters}
             className="text-[13px] text-gray-500 hover:text-gray-700 hover:underline"
           >
             Clear all
@@ -224,27 +224,27 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
 
       {/* Shortcuts Section */}
       <div className="mb-4">
-      <div className="pl-1 py-2">
-            
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
-                checked={filters.firstTimeOnly}
-                onChange={toggleFirstTime}
-              />
-              <span className="text-sm text-gray-700">First-time organizations</span>
-              <span className="text-xs text-gray-400">(14)</span>
-            </label>
-          </div>
+        <div className="pl-1 py-2">
+
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+              checked={filters.firstTimeOnly}
+              onChange={toggleFirstTime}
+            />
+            <span className="text-sm text-gray-700 dark:text-white">First-time organizations</span>
+            <span className="text-xs text-gray-400">(14)</span>
+          </label>
+        </div>
       </div>
 
       {/* Years Section */}
-      <div className="mb-4 border-t border-gray-100 pt-3">
+      <div className="mb-4 border-t border-border pt-3">
         <div className="flex items-center justify-between w-full py-2">
           <button
             onClick={() => toggleSection('years')}
-            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white"
           >
             <span>Years</span>
             {expandedSections.years ? (
@@ -275,10 +275,10 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
               </button>
               {mounted && showHelp.years && tooltipPosition.years && createPortal(
-                <div 
+                <div
                   data-tooltip
                   className="fixed z-[9999] w-56 p-2.5 bg-gray-900 text-white text-xs rounded shadow-lg"
-                  style={{ 
+                  style={{
                     top: `${tooltipPosition.years.top}px`,
                     left: `${tooltipPosition.years.right + 8}px`
                   }}
@@ -300,24 +300,22 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 document.body
               )}
             </div>
-            <div className="flex items-center gap-1 border border-gray-200 rounded">
+            <div className="flex items-center gap-1 border border-border rounded">
               <button
                 onClick={() => toggleLogic('years')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('years') === 'AND'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('years') === 'AND'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 AND
               </button>
               <button
                 onClick={() => toggleLogic('years')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('years') === 'OR'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('years') === 'OR'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 OR
               </button>
@@ -362,11 +360,11 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
       </div>
 
       {/* Technologies Section */}
-      <div className="border-t border-gray-100 pt-3">
+      <div className="border-t border-border pt-3">
         <div className="flex items-center justify-between w-full py-2">
           <button
             onClick={() => toggleSection('technologies')}
-            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white"
           >
             <span>Technologies</span>
             {expandedSections.technologies ? (
@@ -397,10 +395,10 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
               </button>
               {mounted && showHelp.technologies && tooltipPosition.technologies && createPortal(
-                <div 
+                <div
                   data-tooltip
                   className="fixed z-[9999] w-56 p-2.5 bg-gray-900 text-white text-xs rounded shadow-lg"
-                  style={{ 
+                  style={{
                     top: `${tooltipPosition.technologies.top}px`,
                     left: `${tooltipPosition.technologies.right + 8}px`
                   }}
@@ -425,21 +423,19 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
             <div className="flex items-center gap-1 border border-gray-200 rounded">
               <button
                 onClick={() => toggleLogic('techs')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('techs') === 'AND'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('techs') === 'AND'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 AND
               </button>
               <button
                 onClick={() => toggleLogic('techs')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('techs') === 'OR'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('techs') === 'OR'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 OR
               </button>
@@ -455,7 +451,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 placeholder="Search technologies..."
                 value={techSearch}
                 onChange={(e) => setTechSearch(e.target.value)}
-                className="w-full h-8 pl-8 pr-3 text-xs border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200"
+                className="w-full pl-9 pr-3 py-2 text-sm bg-card text-foreground border border-border rounded-lg outline-none focus:border-border focus:ring-1 focus:ring-white/20 transition-all placeholder:text-muted-foreground"
               />
             </div>
             <div className="space-y-0.5 max-h-52 overflow-y-auto custom-scrollbar pr-1">
@@ -495,13 +491,13 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
           </div>
         )}
       </div>
-      
+
       {/* Categories Section */}
-      <div className="mb-4 border-t border-gray-100 pt-3">
+      <div className="mb-4 border-t border-border pt-3">
         <div className="flex items-center justify-between w-full py-2">
           <button
             onClick={() => toggleSection('categories')}
-            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white"
           >
             <span>Categories</span>
             {expandedSections.categories ? (
@@ -532,10 +528,10 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
               </button>
               {mounted && showHelp.categories && tooltipPosition.categories && createPortal(
-                <div 
+                <div
                   data-tooltip
                   className="fixed z-[9999] w-56 p-2.5 bg-gray-900 text-white text-xs rounded shadow-lg"
-                  style={{ 
+                  style={{
                     top: `${tooltipPosition.categories.top}px`,
                     left: `${tooltipPosition.categories.right + 8}px`
                   }}
@@ -560,21 +556,19 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
             <div className="flex items-center gap-1 border border-gray-200 rounded">
               <button
                 onClick={() => toggleLogic('categories')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('categories') === 'AND'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('categories') === 'AND'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 AND
               </button>
               <button
                 onClick={() => toggleLogic('categories')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('categories') === 'OR'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('categories') === 'OR'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 OR
               </button>
@@ -601,11 +595,11 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
       </div>
 
       {/* Topics Section */}
-      <div className="mb-4 border-t border-gray-100 pt-3">
+      <div className="mb-4 border-t border-border pt-3">
         <div className="flex items-center justify-between w-full py-2">
           <button
             onClick={() => toggleSection('topics')}
-            className="flex items-center gap-2 text-sm font-semibold text-gray-900"
+            className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white"
           >
             <span>Topics</span>
             {expandedSections.topics ? (
@@ -636,10 +630,10 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 <HelpCircle className="h-3.5 w-3.5 text-gray-400" />
               </button>
               {mounted && showHelp.topics && tooltipPosition.topics && createPortal(
-                <div 
+                <div
                   data-tooltip
                   className="fixed z-[9999] w-56 p-2.5 bg-gray-900 text-white text-xs rounded shadow-lg"
-                  style={{ 
+                  style={{
                     top: `${tooltipPosition.topics.top}px`,
                     left: `${tooltipPosition.topics.right + 8}px`
                   }}
@@ -664,21 +658,19 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
             <div className="flex items-center gap-1 border border-gray-200 rounded">
               <button
                 onClick={() => toggleLogic('topics')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('topics') === 'AND'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('topics') === 'AND'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 AND
               </button>
               <button
                 onClick={() => toggleLogic('topics')}
-                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${
-                  getLogicMode('topics') === 'OR'
-                    ? 'bg-teal-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
+                className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('topics') === 'OR'
+                  ? 'bg-teal-600 text-white'
+                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  }`}
               >
                 OR
               </button>
@@ -704,7 +696,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
         )}
       </div>
 
-      
+
     </div>
   )
 }

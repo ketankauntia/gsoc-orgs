@@ -25,12 +25,12 @@ export function OrganizationCard({
   return (
     <Link 
       href={`/organizations/${org.slug}`}
-      prefetch={true}
-      className={`block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all w-full ${className}`}
+      prefetch={true}                                                                                              
+      className={`block bg-card border border-border rounded-xl p-5 hover:shadow-md hover:bg-accent/50 transition-all w-full ${className}`}
     >
       {/* Header with Logo */}
       <div className="flex items-start gap-4 mb-3">
-        <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden shrink-0">
+        <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center overflow-hidden shrink-0">
           {logoUrl ? (
             <Image
               src={logoUrl}
@@ -42,23 +42,23 @@ export function OrganizationCard({
               loading="lazy"
             />
           ) : (
-            <span className="text-lg font-semibold text-gray-400">
+            <span className="text-lg font-semibold text-muted-foreground">
               {org.name.charAt(0)}
             </span>
           )}
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="font-semibold text-gray-900 text-base line-clamp-1 mb-0.5">
+          <h3 className="font-semibold text-foreground text-base line-clamp-1 mb-0.5">
             {org.name}
           </h3>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             {org.total_projects} projects
           </p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-sm text-gray-600 line-clamp-3 mb-4">
+      <p className="text-sm text-foreground line-clamp-3 mb-4">
         {org.description}
       </p>
 
@@ -71,7 +71,7 @@ export function OrganizationCard({
               .map((year) => (
                 <span
                   key={year}
-                  className="inline-flex items-center px-2 py-1 text-xs font-medium bg-teal-50 text-teal-700"
+                  className="inline-flex items-center px-2 py-1 text-xs font-medium bg-teal-50 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300 rounded-md"
                 >
                   {year}
                 </span>
@@ -83,19 +83,19 @@ export function OrganizationCard({
       {/* Technologies Section */}
       {showTechStack && org.technologies && org.technologies.length > 0 && (
         <div className="mb-3">
-          <p className="text-xs font-medium text-gray-500 mb-1.5">Tech Stack</p>
+          <p className="text-xs font-medium text-muted-foreground mb-1.5">Tech Stack</p>
           <div className="flex flex-wrap items-center gap-1.5">
             {org.technologies.slice(0, 6).map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-700 rounded-md"
+                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium border border-transparent hover:border-border bg-muted text-muted-foreground rounded-md"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
                 {tech}
               </span>
             ))}
             {org.technologies.length > 6 && (
-              <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-white text-gray-600 border border-gray-200 rounded-md">
+              <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-white text-muted-foreground border border-gray-200 rounded-md">
                 +{org.technologies.length - 6} more
               </span>
             )}
