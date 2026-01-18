@@ -41,12 +41,6 @@ export function OrganizationCard({
   return (
     <Link 
       href={`/organizations/${org.slug}`}
-      prefetch={true}                                                                                              
-      className={`block bg-card border border-border rounded-xl p-5 hover:shadow-md hover:bg-accent/50 transition-all w-full ${className}`}
-    >
-      {/* Header with Logo */}
-      <div className="flex items-start gap-4 mb-3">
-        <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center overflow-hidden shrink-0">
       prefetch={true}
       className={cn(
         "block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all w-full",
@@ -68,7 +62,6 @@ export function OrganizationCard({
               loading="lazy"
             />
           ) : (
-            <span className="text-lg font-semibold text-muted-foreground">
             <span className="text-lg font-semibold text-gray-400 dark:text-muted-foreground">
               {org.name.charAt(0)}
             </span>
@@ -96,10 +89,6 @@ export function OrganizationCard({
             {org.active_years
               .sort((a, b) => b - a)
               .map((year) => (
-                <span
-                  key={year}
-                  className="inline-flex items-center px-2 py-1 text-xs font-medium bg-teal-50 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300 rounded-md"
-                >
                 <Badge key={year} variant="year" size="xs">
                   {year}
                 </Badge>
@@ -116,16 +105,16 @@ export function OrganizationCard({
             {org.technologies.slice(0, 6).map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium border border-transparent bg-blue-50 text-blue-700 hover:border-border dark:bg-muted dark:text-muted-foreground rounded-md"
+                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-700 border border-transparent rounded-md hover:border-border dark:bg-muted dark:text-muted-foreground "
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-muted-foreground/40" />
                 {tech}
-              </Badge>
+              </span>
             ))}
             {org.technologies.length > 6 && (
-              <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-background text-muted-foreground rounded-md border border-t dark:hover:border-border dark:bg-muted">
+              <span className="inline-flex items-center px-2 py-0.5 text-xs bg-background font-medium border border-gray-200 rounded-md dark:bg-muted dark:text-muted-foreground dark:border-border">
                 +{org.technologies.length - 6} more
-              </Badge>
+              </span>
             )}
           </div>
         </div>

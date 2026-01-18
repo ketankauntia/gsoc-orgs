@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
     const interests = validateInterests(body.interests);
 
     // Upsert to handle duplicates gracefully - no error, no indication of existence
-    await prisma.waitlist_entries.upsert({
+    await prisma['waitlist_entries'].upsert({
       where: { email },
       update: {
         // Update interests if new submission has them

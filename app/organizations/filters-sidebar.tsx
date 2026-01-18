@@ -230,28 +230,15 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
-              className="w-4 h-4 rounded border-border text-teal-600 bg-muted focus:ring-teal-500"
+              className="w-4 h-4 rounded border-border text-teal-600 bg-muted dark:text-foreground/80 focus:ring-teal-500"
               checked={filters.firstTimeOnly}
               onChange={toggleFirstTime}
             />
-            <span className="text-sm text-gray-700 dark:text-foreground">First-time organizations</span>
+            <span className="text-sm text-gray-700 dark:text-foreground">First-time organizations only</span>
             <span className="text-xs text-gray-400">(14)</span>
           </label>
         </div>
-      <div className="pl-1 py-2">
-            
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
-                checked={filters.firstTimeOnly}
-                onChange={toggleFirstTime}
-              />
-              <span className="text-sm text-gray-700">First-time organizations only</span>
-            </label>
-          </div>
-
-      </div>
+      </div>      
 
       {/* Years Section */}
       <div className="mb-4 border-t border-border pt-3">
