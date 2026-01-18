@@ -116,14 +116,14 @@ export function OrganizationCard({
             {org.technologies.slice(0, 6).map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium border border-transparent hover:border-border bg-muted text-muted-foreground rounded-md"
+                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium border border-transparent bg-blue-50 text-blue-700 hover:border-border dark:bg-muted dark:text-muted-foreground rounded-md"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-muted-foreground/40" />
                 {tech}
               </Badge>
             ))}
             {org.technologies.length > 6 && (
-              <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-white text-muted-foreground border border-gray-200 rounded-md">
+              <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium bg-background text-muted-foreground rounded-md border border-t dark:hover:border-border dark:bg-muted">
                 +{org.technologies.length - 6} more
               </Badge>
             )}

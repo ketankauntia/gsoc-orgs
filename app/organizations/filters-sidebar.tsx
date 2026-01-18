@@ -199,7 +199,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
     <div className="rounded-xl border border-border bg-card p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-base font-semibold text-gray-900 dark:text-white">Filters</h3>
+        <h3 className="text-base font-semibold text-gray-900 dark:text-foreground">Filters</h3>
         {hasActiveFilters && (
           <button
             onClick={clearAllFilters}
@@ -230,11 +230,11 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
-              className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+              className="w-4 h-4 rounded border-border text-teal-600 bg-muted focus:ring-teal-500"
               checked={filters.firstTimeOnly}
               onChange={toggleFirstTime}
             />
-            <span className="text-sm text-gray-700 dark:text-white">First-time organizations</span>
+            <span className="text-sm text-gray-700 dark:text-foreground">First-time organizations</span>
             <span className="text-xs text-gray-400">(14)</span>
           </label>
         </div>
@@ -258,7 +258,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
         <div className="flex items-center justify-between w-full py-2">
           <button
             onClick={() => toggleSection('years')}
-            className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white"
+            className="flex items-center gap-2 text-sm font-semibold text-foreground"
           >
             <span>Years</span>
             {expandedSections.years ? (
@@ -318,8 +318,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
               <button
                 onClick={() => toggleLogic('years')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('years') === 'AND'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 AND
@@ -327,8 +327,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
               <button
                 onClick={() => toggleLogic('years')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('years') === 'OR'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 OR
@@ -347,7 +347,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                     checked={filters.years.includes(year.toString())}
                     onChange={() => toggleYear(year.toString())}
                   />
-                  <span className="text-[13px] text-gray-700">{year}</span>
+                  <span className="text-[13px] text-foreground/80">{year}</span>
                 </label>
               ))}
             </div>
@@ -434,12 +434,12 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 document.body
               )}
             </div>
-            <div className="flex items-center gap-1 border border-gray-200 rounded">
+            <div className="flex items-center gap-1 border border-border rounded">
               <button
                 onClick={() => toggleLogic('techs')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('techs') === 'AND'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 AND
@@ -447,8 +447,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
               <button
                 onClick={() => toggleLogic('techs')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('techs') === 'OR'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 OR
@@ -478,7 +478,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                       checked={filters.techs.includes(tech.name)}
                       onChange={() => toggleTech(tech.name)}
                     />
-                    <span className="text-[13px] text-gray-700">{tech.name}</span>
+                    <span className="text-[13px] text-foreground/80">{tech.name}</span>
                   </div>
                   <span className="text-xs text-gray-400">({tech.count})</span>
                 </label>
@@ -567,12 +567,12 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 document.body
               )}
             </div>
-            <div className="flex items-center gap-1 border border-gray-200 rounded">
+            <div className="flex items-center gap-1 border border-border rounded">
               <button
                 onClick={() => toggleLogic('categories')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('categories') === 'AND'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 AND
@@ -580,8 +580,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
               <button
                 onClick={() => toggleLogic('categories')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('categories') === 'OR'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 OR
@@ -600,7 +600,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                     checked={filters.categories.includes(category)}
                     onChange={() => toggleCategory(category)}
                   />
-                  <span className="text-[13px] text-gray-700">{category}</span>
+                  <span className="text-[13px] text-foreground/80">{category}</span>
                 </label>
               ))}
             </div>
@@ -669,12 +669,12 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                 document.body
               )}
             </div>
-            <div className="flex items-center gap-1 border border-gray-200 rounded">
+            <div className="flex items-center gap-1 border border-border rounded">
               <button
                 onClick={() => toggleLogic('topics')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('topics') === 'AND'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 AND
@@ -682,8 +682,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
               <button
                 onClick={() => toggleLogic('topics')}
                 className={`px-2 py-0.5 text-[11px] font-medium transition-colors ${getLogicMode('topics') === 'OR'
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
                   }`}
               >
                 OR
@@ -702,7 +702,7 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
                     checked={filters.topics.includes(topic)}
                     onChange={() => toggleTopic(topic)}
                   />
-                  <span className="text-[13px] text-gray-700">{topic}</span>
+                  <span className="text-[13px] text-foreground/80">{topic}</span>
                 </label>
               ))}
             </div>
