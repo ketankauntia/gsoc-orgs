@@ -18,6 +18,8 @@ import {
   Heading,
   Text,
 } from "@/components/ui";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/Footer";
 import { loadYearlyPageData, YearlyPageData } from "@/lib/yearly-page-types";
 import { ExpandableOrgList, ExpandableProjectList, MentorsContributorsTable } from "./client-components";
 import {
@@ -69,7 +71,9 @@ export default async function YearlyPage({
   const isPast = year < currentYear;
 
   return (
-    <div className="w-full">
+    <>
+      <Header />
+      <div className="w-full pt-16">
       <Container size="default" className="py-8 lg:py-16">
         <div className="space-y-12 lg:space-y-16">
 
@@ -450,7 +454,9 @@ export default async function YearlyPage({
 
         </div>
       </Container>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

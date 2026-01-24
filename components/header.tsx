@@ -10,8 +10,10 @@ import { ModeToggle } from './ModeToggle'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Technologies', href: '/tech-stack' },
     { name: 'Topics', href: '/topics' },
+    { name: 'Yearly', href: '/yearly' },
     // { name: 'Resources', href: '#resources' },
     // { name: 'About Us', href: '#about' },
     // { name: 'Contact', href: '#contact' },
@@ -41,7 +43,7 @@ export const Header = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2 font-semibold text-xl">
-                                <span>GSoC Organizations Guide</span>
+                                <span>GSoC Guide</span>
                             </Link>
 
                             <button
