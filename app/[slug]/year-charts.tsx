@@ -1,7 +1,7 @@
 "use client";
 
 import { TrendingUp, Award } from "lucide-react";
-import { Bar, BarChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell, LabelList } from "recharts";
+import { Bar, BarChart, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Cell, LabelList, Tooltip } from "recharts";
 import { getChartBarColor } from "@/lib/theme";
 
 import {
@@ -91,7 +91,7 @@ export function LanguagesBarChart({ data }: { data: LanguageData[] }) {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 font-medium leading-none">
-          Python dominates with {data[0]?.percentage}% adoption <TrendingUp className="h-4 w-4" />
+          {data[0]?.language} dominates with {data[0]?.percentage}% adoption <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
           Showing top {topLanguages.length} programming languages
@@ -114,8 +114,8 @@ export function StudentSlotsBarChart({
   data: StudentSlotData[]; 
   year: string;
 }) {
-  // Take top 8 for readability
-  const topOrgs = data.slice(0, 8);
+  // Take top 10 for readability
+  const topOrgs = data.slice(0, 10);
   const maxCount = Math.max(...topOrgs.map((d) => d.slots), 1);
   
   return (
@@ -201,6 +201,7 @@ export function OrganizationsProjectsChart({
   data 
 }: { 
   data: OrgProjectData[]; 
+  year?: string;
 }) {
   // Take top 8-10 organizations
   const topOrgs = data.slice(0, 10);
@@ -258,3 +259,69 @@ export function OrganizationsProjectsChart({
   );
 }
 
+// Chart 4: Simple Selection Bar Chart (Matches gsoc-year-client.tsx style)
+export function SimpleSelectionChart({
+  data
+}: {
+  data: Array<{ name: string; count: number }>;
+}) {
+  const topItems = data.slice(0, 10);
+  
+  return (
+    <div className="h-[320px] w-full">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={topItems}
+          layout="vertical"
+          margin={{ top: 5, right: 50, left: 0, bottom: 5 }}
+        >
+          <XAxis
+            type="number"
+            tick={{ fontSize: 10, fill: "#6b7280" }}
+            tickLine={false}
+            axisLine={false}
+          />
+          <YAxis
+            dataKey="name"
+            type="category"
+            tick={{ fontSize: 12, fill: "#374151", fontWeight: 500 }}
+            tickLine={false}
+            axisLine={false}
+            width={100}
+          />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "white",
+              border: "1px solid #e5e7eb",
+              borderRadius: "8px",
+              fontSize: "12px",
+            }}
+            formatter={(value: number) => [value.toLocaleString(), "Selections"]}
+          />
+          <Bar 
+            dataKey="count" 
+            radius={[0, 4, 4, 0]} 
+            maxBarSize={28}
+          >
+            {topItems.map((_, index) => {
+              const colors = [
+                "#0d9488", "#14b8a6", "#2dd4bf", "#5eead4", "#99f6e4",
+                "#0d9488", "#14b8a6", "#2dd4bf", "#5eead4", "#99f6e4",
+              ];
+              return (
+                <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+              );
+            })}
+            <LabelList
+              dataKey="count"
+              position="right"
+              fill="#374151"
+              fontSize={11}
+              fontWeight={600}
+            />
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
