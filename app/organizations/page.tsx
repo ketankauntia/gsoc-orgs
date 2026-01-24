@@ -4,23 +4,14 @@ import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
 import { getFullUrl } from "@/lib/constants";
+import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 
 /**
  * Organizations Listing Page
  * Route: /organizations
- * Supports pagination via ?page=N query parameter
- * SEO-optimized with canonical tags
- *
- * Caching Strategy:
- * - Uses ISR with 1 hour revalidation (search results vary by query)
- * - Query param variations are cached independently by Next.js
- * - API layer provides additional caching with longer TTLs
- *
- * Note: We use `dynamic = 'force-dynamic'` is NOT needed here because:
- * - Next.js App Router handles searchParams natively with ISR
- * - Each unique combination of query params gets its own cached version
+ * ...
  */
-export const revalidate = 3600; // 1 hour - search pages need more frequent updates
+export const revalidate = 3600; // 1 hour
 
 interface PageProps {
   searchParams: Promise<{
@@ -31,10 +22,7 @@ interface PageProps {
   }>;
 }
 
-/**
- * Generate metadata for SEO
- * All paginated pages point to the canonical /organizations URL
- */
+// ... (metadata function unchanged)
 export async function generateMetadata({
   searchParams,
 }: PageProps): Promise<Metadata> {
@@ -104,14 +92,23 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = Number(params.page) || 1;
   
-  // Fetch organizations - 20 items per page as recommended
-  const data = await getOrganizations({ 
-    page, 
-    limit: 20,
-    q: params.q,
-    category: params.category,
-    tech: params.tech,
-  });
+  // Parallel data fetching: Orgs + Tech Stack
+  const [data, techStackIndex] = await Promise.all([
+    getOrganizations({ 
+      page, 
+      limit: 20,
+      q: params.q,
+      category: params.category,
+      tech: params.tech,
+    }),
+    loadTechStackIndexData()
+  ]);
+
+  // Transform tech stack data for sidebar
+  const initialTechs = techStackIndex?.all_techs.map(t => ({
+    name: t.name,
+    count: t.org_count
+  })) || [];
 
   return (
     <Suspense fallback={
@@ -122,7 +119,11 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
         </div>
       </div>
     }>
-      <OrganizationsClient initialData={data} initialPage={page} />
+      <OrganizationsClient 
+        initialData={data} 
+        initialPage={page} 
+        initialTechs={initialTechs}
+      />
     </Suspense>
   );
 }

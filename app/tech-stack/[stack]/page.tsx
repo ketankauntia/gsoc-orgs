@@ -1,67 +1,62 @@
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
-import { apiFetchServer } from "@/lib/api.server";
-import { TechStackClient } from "./tech-stack-client";
+import {
+  loadTechStackPageData,
+  loadTechStackIndexData,
+} from "@/lib/tech-stack-page-types";
+import { TechStackDetailClient } from "./tech-stack-detail-client";
 
-/**
- * Tech Stack Detail Page
- * Route: /tech-stack/[stack]
- */
+// Static Generation - cache forever, NO dynamic behavior
+export const revalidate = false;
+export const dynamic = 'force-static';
 
-interface TechStackDetail {
-  technology: {
-    name: string;
-    slug: string;
-    usage_count: number;
-  };
-  organizations: Array<{
-    id: string;
-    name: string;
-    slug: string;
-    description: string;
-    logo_r2_url: string | null;
-    img_r2_url: string | null;
-    category: string;
-    total_projects: number;
-    is_currently_active: boolean;
-    technologies: string[];
-    active_years: number[];
-  }>;
+// Generate static params for all technologies
+export async function generateStaticParams() {
+  const indexData = await loadTechStackIndexData();
+  if (!indexData) return [];
+  
+  return indexData.all_techs.map((tech) => ({
+    stack: tech.slug,
+  }));
 }
 
-async function getTechStack(slug: string): Promise<TechStackDetail | null> {
-  try {
-    return await apiFetchServer<TechStackDetail>(`/api/tech-stack/${slug}`);
-  } catch (error: unknown) {
-    if (error && typeof error === 'object' && 'status' in error && error.status === 404) {
-      return null;
-    }
-    throw error;
-  }
-}
-
-export default async function TechStackDetailPage({ 
-  params 
-}: { 
-  params: Promise<{ stack: string }> 
+// Metadata
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ stack: string }>;
 }) {
-  const { stack: stackSlug } = await params;
-  const data = await getTechStack(stackSlug);
+  const { stack } = await params;
+  const data = await loadTechStackPageData(stack);
+
+  if (!data) {
+    return { title: "Technology Not Found" };
+  }
+
+  return {
+    title: `${data.name} | GSoC Organizations`,
+    description: `Explore ${data.metrics.org_count} Google Summer of Code organizations using ${data.name}. View projects, trends, and find opportunities.`,
+    openGraph: {
+      title: `${data.name} | GSoC Organizations`,
+      description: `Explore ${data.metrics.org_count} organizations using ${data.name} in Google Summer of Code`,
+    },
+  };
+}
+
+export default async function TechStackDetailPage({
+  params,
+}: {
+  params: Promise<{ stack: string }>;
+}) {
+  const { stack } = await params;
+
+  // Load data from static JSON - SINGLE FILE READ, NO AGGREGATION
+  const data = await loadTechStackPageData(stack);
 
   if (!data) {
     notFound();
   }
 
   return (
-    <Suspense fallback={
-      <div className="min-h-[800px] flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]" />
-          <p className="mt-4 text-muted-foreground">Loading tech stack...</p>
-        </div>
-      </div>
-    }>
-      <TechStackClient initialData={data} />
-    </Suspense>
+    <TechStackDetailClient data={data} />
   );
 }

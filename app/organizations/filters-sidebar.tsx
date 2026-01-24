@@ -22,6 +22,7 @@ export interface FilterState {
 interface FiltersSidebarProps {
   onFilterChange: (filters: FilterState) => void
   filters: FilterState
+  availableTechs: Array<{ name: string; count: number }>
 }
 
 const YEARS = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
@@ -48,7 +49,7 @@ const TOPICS = [
   'Database',
 ]
 
-export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps) {
+export function FiltersSidebar({ onFilterChange, filters, availableTechs }: FiltersSidebarProps) {
 
   const [sidebarSearch] = useState('')
   const [expandedSections, setExpandedSections] = useState({
@@ -59,8 +60,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
     topics: true,
   })
 
+  // Local state for tech search within sidebar
   const [techSearch, setTechSearch] = useState('')
-  const [availableTechs, setAvailableTechs] = useState<Array<{ name: string; count: number }>>([])
   const [showAllTechs, setShowAllTechs] = useState(false)
   const [showAllYears, setShowAllYears] = useState(false)
   const [showHelp, setShowHelp] = useState<{ [key: string]: boolean }>({})
@@ -93,19 +94,8 @@ export function FiltersSidebar({ onFilterChange, filters }: FiltersSidebarProps)
     }
   }, [showHelp])
 
-  useEffect(() => {
-    fetch('/api/tech-stack?limit=100')
-      .then((res) => res.json())
-      .then((data: { items?: Array<{ name: string; usage_count?: number }> }) => {
-        setAvailableTechs(
-          (data.items || []).map((item) => ({
-            name: item.name,
-            count: item.usage_count || 0,
-          }))
-        )
-      })
-      .catch(console.error)
-  }, [])
+  // NO API CALL - availableTechs potentially passed from parent
+  // We used to fetch /api/tech-stack here
 
   const toggleFirstTime = () => {
     onFilterChange({ ...filters, firstTimeOnly: !filters.firstTimeOnly })

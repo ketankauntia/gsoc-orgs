@@ -15,9 +15,10 @@ const arraysEqual = (a: string[], b: string[]) =>
 interface OrganizationsClientProps {
   initialData: PaginatedResponse<Organization>
   initialPage: number
+  initialTechs: Array<{ name: string; count: number }>
 }
 
-export function OrganizationsClient({ initialData, initialPage }: OrganizationsClientProps) {
+export function OrganizationsClient({ initialData, initialPage, initialTechs }: OrganizationsClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [data, setData] = useState<PaginatedResponse<Organization>>(initialData)
@@ -324,27 +325,19 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   return (
     <div className="flex">
       {/* Sidebar - Fixed left, 280px width */}
+<<<<<<< HEAD
       <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
         <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} />
+=======
+      <aside className="hidden lg:block w-[280px] shrink-0 bg-white fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+        <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} />
+>>>>>>> 3ff5d5c (fix(tech-stack): fixed)
       </aside>
 
       {/* Main Content - with left margin for sidebar */}
       <div className="flex-1 lg:ml-[280px]">
         <div className="max-w-6xl mx-auto px-6 py-8">
           {/* Header Section */}
-          {/* <div className="text-center mb-8">
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-full mb-3 tracking-wide">
-              GSoC 2026
-            </span>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 italic">
-              All Organizations
-            </h1>
-            <p className="text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
-              Explore all Google Summer of Code participating organizations. Filter by 
-              technology, difficulty level, and find the perfect match for your skills and 
-              interests.
-            </p>
-          </div> */}
           <SectionHeader
             badge="GSoC 2026"
             title="All Organizations"
@@ -457,11 +450,6 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
               ))}
             </div>
           )}
-
-          {/* Results Count */}
-          {/* <p className="text-sm text-gray-500 mb-6">
-            Showing {data.total} organizations
-          </p> */}
 
           {/* Organizations Grid */}
           <div className="mb-8">
