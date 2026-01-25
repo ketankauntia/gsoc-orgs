@@ -68,17 +68,17 @@ export function OrganizationCard({
           )}
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="font-semibold text-gray-900 dark:text-foreground text-base line-clamp-1 mb-0.5">
+          <h3 className="font-semibold text-foreground text-base line-clamp-1 mb-0.5">
             {org.name}
           </h3>
-          <p className="text-sm text-gray-500 dark:text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             {org.total_projects} projects
           </p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-sm text-gray-600 dark:text-muted-foreground line-clamp-3 mb-4">
+      <p className="text-sm text-foreground line-clamp-3 mb-4">
         {org.description}
       </p>
 
@@ -100,18 +100,21 @@ export function OrganizationCard({
       {/* Technologies Section */}
       {effectiveShowTechStack && org.technologies && org.technologies.length > 0 && (
         <div className="mb-3">
-          <p className="text-xs font-medium text-gray-500 dark:text-muted-foreground mb-1.5">Tech Stack</p>
+          <p className="text-xs font-medium text-muted-foreground mb-1.5">Tech Stack</p>
           <div className="flex flex-wrap items-center gap-1.5">
             {org.technologies.slice(0, 6).map((tech) => (
-              <Badge key={tech} variant="tech" size="xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              <span
+                key={tech}
+                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-700 border border-transparent rounded-md hover:border-border dark:bg-muted dark:text-muted-foreground "
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 dark:bg-muted-foreground/40" />
                 {tech}
-              </Badge>
+              </span>
             ))}
             {org.technologies.length > 6 && (
-              <Badge variant="neutral" size="xs">
+              <span className="inline-flex items-center px-2 py-0.5 text-xs bg-background font-medium border border-gray-200 rounded-md dark:bg-muted dark:text-muted-foreground dark:border-border">
                 +{org.technologies.length - 6} more
-              </Badge>
+              </span>
             )}
           </div>
         </div>

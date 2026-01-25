@@ -324,7 +324,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
   return (
     <div className="flex">
       {/* Sidebar - Fixed left, 280px width */}
-      <aside className="hidden lg:block w-[280px] shrink-0 bg-white fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+      <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
         <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} />
       </aside>
 
@@ -354,11 +354,11 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
           />
           {/* Search Bar */}
           <div className="relative max-w-xl mx-auto mb-5">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
               placeholder="Search organizations by name, technology, or keyword..."
-              className="pl-10 h-11 text-sm rounded-xl border border-gray-200 bg-white"
+              className="pl-10 h-12 text-base"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
@@ -370,7 +370,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
               className={`px-3 py-1.5 text-[13px] font-medium rounded-full border transition-colors ${
                 !hasActiveFilters && filters.difficulties.length === 0 && !filters.search
                   ? 'bg-gray-800 text-white border-gray-800'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
+                  : 'bg-background text-gray-600 border-gray-200 hover:border-gray-300 dark:bg-card dark:text-muted-foreground dark:border-t dark:hover:border-border'
               }`}
               onClick={() => handleFilterChange({
                 ...filters,
@@ -387,7 +387,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
             {/* Difficulty filters - Coming soon */}
             <button
               disabled
-              className="px-3 py-1.5 text-[13px] font-medium rounded-full border bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60 relative group"
+              className="px-3 py-1.5 text-[13px] font-medium rounded-full border bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
               title="Coming soon"
             >
               <span className="inline-flex items-center gap-1">
@@ -400,7 +400,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
             </button>
             <button
               disabled
-              className="px-3 py-1.5 text-[13px] font-medium rounded-full border bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60 relative group"
+              className="px-3 py-1.5 text-[13px] font-medium rounded-full border border bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
               title="Coming soon"
             >
               <span className="inline-flex items-center gap-1">
@@ -413,7 +413,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
             </button>
             <button
               disabled
-              className="px-3 py-1.5 text-[13px] font-medium rounded-full border bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60 relative group"
+              className="px-3 py-1.5 text-[13px] font-medium rounded-full border border bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
               title="Coming soon"
             >
               <span className="inline-flex items-center gap-1">
@@ -448,7 +448,7 @@ export function OrganizationsClient({ initialData, initialPage }: OrganizationsC
               {sidebarFilters.map((filter) => (
                 <span
                   key={`${filter.key}-${filter.value}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-gray-100 text-gray-700 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-muted text-muted-foreground rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-card transition-colors"
                   onClick={() => removeFilter(filter.key, filter.value)}
                 >
                   {filter.label}
