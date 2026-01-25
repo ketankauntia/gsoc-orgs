@@ -28,7 +28,7 @@ export const Footer = () => {
             textColor="white"
           />
         </div>
-        <div className="grid lg:grid-cols-3 gap-10 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           {FOOTER_NAVIGATION_ITEMS.map((item) => (
             <div
               key={item.title}

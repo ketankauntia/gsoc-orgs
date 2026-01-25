@@ -1,0 +1,45 @@
+name: Generate Trending Snapshots
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # daily at 00:00 UTC
+  workflow_dispatch: # manual trigger
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate Prisma Client
+        run: pnpm prisma generate
+
+      - name: Generate trending data
+        run: pnpm run generate:trending
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Commit updated snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add new-api-details/trending
+          git diff --staged --quiet || (git commit -m "chore: update trending snapshots [skip ci]" && git push)
