@@ -66,9 +66,9 @@ export default function RootLayout({
       > 
         <ThemeProvider 
           attribute="class" 
-          defaultTheme="light" 
-          enableSystem={false}
+          defaultTheme="light"
           storageKey="gsoc-theme"
+          disableTransitionOnChange={false}
         >
          {children}
         </ThemeProvider>
