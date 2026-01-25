@@ -127,7 +127,10 @@ export async function loadTechStackIndexData(): Promise<TechStackIndexData | nul
   try {
     const data = await import(`@/new-api-details/tech-stack/index.json`);
     return data.default as TechStackIndexData;
-  } catch {
+  } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[TECH-STACK] Failed to load index JSON:', error);
+    }
     return null;
   }
 }
@@ -144,7 +147,10 @@ export async function loadTechStackPageData(slug: string): Promise<TechStackPage
   try {
     const data = await import(`@/new-api-details/tech-stack/${slug}.json`);
     return data.default as TechStackPageData;
-  } catch {
+  } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error(`[TECH-STACK] Failed to load tech stack JSON for ${slug}:`, error);
+    }
     return null;
   }
 }

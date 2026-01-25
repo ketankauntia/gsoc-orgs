@@ -118,7 +118,10 @@ export async function loadOrganizationData(slug: string): Promise<Organization |
   try {
     const data = await import(`@/new-api-details/organizations/${slug}.json`);
     return data.default as Organization;
-  } catch {
+  } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error(`[ORGS] Failed to load organization JSON for ${slug}:`, error);
+    }
     return null;
   }
 }
@@ -135,7 +138,10 @@ export async function loadOrganizationsMetadata(): Promise<OrganizationsMetadata
   try {
     const data = await import(`@/new-api-details/organizations/metadata.json`);
     return data.default as OrganizationsMetadata;
-  } catch {
+  } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[ORGS] Failed to load metadata JSON:', error);
+    }
     return null;
   }
 }

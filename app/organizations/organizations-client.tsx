@@ -199,7 +199,9 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs }: 
       const newData = await response.json()
       setData(newData)
     } catch (error) {
-      console.error('Failed to fetch organizations:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Failed to fetch organizations:', error)
+      }
     } finally {
       setIsLoading(false)
     }

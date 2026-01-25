@@ -136,7 +136,10 @@ export async function loadYearlyPageData(slug: string): Promise<YearlyPageData |
     // Dynamic import of JSON file
     const data = await import(`@/new-api-details/yearly/${slug}.json`);
     return data.default as YearlyPageData;
-  } catch {
+  } catch (error) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error(`[YEARLY] Failed to load yearly page JSON for ${slug}:`, error);
+    }
     return null;
   }
 }
