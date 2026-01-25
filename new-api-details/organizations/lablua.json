@@ -1,0 +1,953 @@
+{
+  "id": "692251da53dd9d7326d33e08",
+  "slug": "lablua",
+  "name": "LabLua",
+  "category": "Operating systems",
+  "description": "Programming Language Research with emphasis on Lua",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/lablua/thpyrwywpx4z6p6s.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/lablua.webp",
+  "logo_r2_url": null,
+  "url": "http://www.lua.inf.puc-rio.br",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "lua",
+    "céu",
+    "elasticsearch",
+    "luarocks",
+    "netbsd",
+    "lunatik",
+    "pallene",
+    "kernel"
+  ],
+  "topics": [
+    "operating systems",
+    "programming languages",
+    "distributed systems",
+    "scripting",
+    "scripting languages",
+    "reactive programming",
+    "kernel scripting",
+    "compilers",
+    "reactive languages",
+    "statically-typed languages"
+  ],
+  "total_projects": 43,
+  "stats": {
+    "avg_projects_per_appeared_year": 5.38,
+    "projects_by_year": {
+      "year_2016": 8,
+      "year_2017": 6,
+      "year_2018": 5,
+      "year_2019": 5,
+      "year_2020": 6,
+      "year_2021": 4,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": 8,
+      "year_2017": 6,
+      "year_2018": 5,
+      "year_2019": 5,
+      "year_2020": 6,
+      "year_2021": 4,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "total_students": 43
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://dhavalkapil.com/blogs/Elasticsearch-Lua-GSOC-2016/",
+          "description": "<p>Elasticsearch is very good and scalable search engine. It provides a REST API accessed through JSON format. My project aims to improve the existing elasticsearch-lua client by adding extensive tests and documentation, thereby targeting a stable release.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6359851743576064/",
+          "proposal_id": null,
+          "short_description": "Elasticsearch is very good and scalable search engine. It provides a REST API accessed through JSON format. My project aims to improve the existing...",
+          "slug": "improve-elasticsearch-lua-tests-and-builds",
+          "status": "completed",
+          "student_name": "Dhaval Kapil",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve elasticsearch-lua tests and builds"
+        },
+        {
+          "code_url": "https://github.com/VicentiuM/Ceu-Emscripten/",
+          "description": "<p>I want to extend the tutorial offered by LabLua for the Ceu language. As it is, when you write code on their website and press submit, the code is sent to their server, compiled and the result is sent back. The problem with this, is that it doesn't show the entire capabilities of the language. For instance if you write a program that prints a message every second for 10 seconds, it will return that message printed ten times in an instant. What I want to do by using Emscripten is to have a real time tutorial, so that after the server sends back the result, it will actually print the message every one second, for ten seconds. I will also want to create a second tutorial that implements SDL as well. SDL is a language that can create shapes and interacts with keyboard inputs and the mouse. There already is compatibility between Ceu and SDL and there is also compatibility between SDL and Emscripten. The challenge is to create a synergy with all three languages. I believe this to be feasible, because you can transform a Ceu program into a C program that can then be compiled with Emscripten.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5719378301550592/",
+          "proposal_id": null,
+          "short_description": "I want to extend the tutorial offered by LabLua for the Ceu language. As it is, when you write code on their website and press submit, the code is...",
+          "slug": "extending-the-online-tutorial-of-céu-with-emscripten-and-sdl",
+          "status": "completed",
+          "student_name": "VicentiuM",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "Extending the online tutorial of Céu with Emscripten and SDL"
+        },
+        {
+          "code_url": "http://kevinclancy.github.io/2016/08/18/a-class-system-for-typed-lua.html",
+          "description": "<p>This project seeks to design and implement a class system for Typed Lua which will replace its current class definition style. It should feel like a cohesive component of the language, rather than a layer on top of Lua's meta-programming primitives. Because Typed Lua compiles to Lua and is designed to interact with regular Lua code, its code generator should support user-defined plug-ins for compiling Typed Lua class definitions into a specific untyped Lua class system.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5414114708946944/",
+          "proposal_id": null,
+          "short_description": "This project seeks to design and implement a class system for Typed Lua which will replace its current class definition style. It should feel like a...",
+          "slug": "add-class-based-object-oriented-programming-to-typed-lua",
+          "status": "completed",
+          "student_name": "Kevin Clancy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add class-based object-oriented programming to Typed Lua"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/17hQuWujl7TU9izmKgsxkVkSFOaY7fm9mKW86yFLrMmc/edit?usp=sharing",
+          "description": "<p>A fully automatic generator of WSDL documents to LuaSOAP composed by a generation module and a parameter based script.  This will improve the LuaSOAP library usage by extinguishing users need to fully understand WSDL types and its syntax.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5317443853484032/",
+          "proposal_id": null,
+          "short_description": "A fully automatic generator of WSDL documents to LuaSOAP composed by a generation module and a parameter based script.  This will improve the LuaSOAP...",
+          "slug": "an-automatic-generator-of-wsdl-documents-to-luasoap",
+          "status": "completed",
+          "student_name": "Victor Dias",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "An automatic generator of WSDL documents to LuaSOAP"
+        },
+        {
+          "code_url": "https://undecidabot.github.io/lpeglabel-gsoc-2016/",
+          "description": "<p>Parsing Expression Grammars (PEGs) are an expressive formalism for designing and implementing top-down parsers with local backtracking. An issue that users of PEG-based parsers face is poor reporting of syntax errors on the part of PEG-based parsers. Labeled failures are an extension to PEGs that aims to address this issue by annotating a PEG with labels corresponding to syntax errors, improving the quality of error messages generated by a PEG-based parser.</p>\n<p>LPegLabel is an extension of the LPeg tool that provides an implementation of PEGs with labeled failures. Labels can be used to signal different kinds of errors and to specify which alternative in a labeled ordered choice should handle a given label.</p>\n<p>The goal of this project is to rewrite the parsers of some Lua libraries, such as the module re from LPeg and lua-parser, by using LPegLabel. After this rewriting we should get parsers with better error messages.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4549674694344704/",
+          "proposal_id": null,
+          "short_description": "Parsing Expression Grammars (PEGs) are an expressive formalism for designing and implementing top-down parsers with local backtracking. An issue that...",
+          "slug": "improving-the-quality-of-error-messages-in-peg-parsers",
+          "status": "completed",
+          "student_name": "MattG",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the Quality of Error Messages in PEG Parsers"
+        },
+        {
+          "code_url": "https://github.com/tomkee/typed-lua-core",
+          "description": "<p>The idea of this project is to use Haskell as another way of reasoning about the typing rules of Typed Lua. Project involves implementing parser and typechecker for Typed Lua Core - Typed Lua dialect which does not contain any syntactic sugar what simplifies reasoning about typing rules.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6507407224078336/",
+          "proposal_id": null,
+          "short_description": "The idea of this project is to use Haskell as another way of reasoning about the typing rules of Typed Lua. Project involves implementing parser and...",
+          "slug": "typed-lua-core-typechecker",
+          "status": "completed",
+          "student_name": "dtomek",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Typed Lua Core Typechecker"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1ewzvCv6glpX0cO90D0hQSG_rAqVizCpg-4E9nd-KlhA/edit?usp=sharing",
+          "description": "<p>In this project we focus on package manager for Lua modules, LuaRocks. Our main goal is to increase quality of test suite, because it's implemented as a big shell script that only does black-box testing. So we write new test suite with Lua unit testing framework busted.This will allow us to extend the test suite by writing smarter tests that check its behavior, write white-box tests of the internals, and also port the test suite to other platforms. Next step is to improve code coverage, by adding white-box tests for parts that are hard-to reach via black-box testing. Make tests cross-platform could be a challenge for Windows operating system. At the end we integrated code coverage results, merging the Linux and Windows runs.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5757487680585728/",
+          "proposal_id": null,
+          "short_description": "In this project we focus on package manager for Lua modules, LuaRocks. Our main goal is to increase quality of test suite, because it's implemented...",
+          "slug": "next-generation-of-the-luarocks-test-suite",
+          "status": "completed",
+          "student_name": "roboo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Next Generation of the LuaRocks test suite"
+        },
+        {
+          "code_url": "https://github.com/sailorproject/sailor/pull/125",
+          "description": "<p>The admin center would be pivotal in utilizing the autogen functions and a configuration file editor would make it easy for the end user to edit conf files. Elasticsearch integration would enable a user to store his database models in the search index for fast and efficient searches.  Luagoogle can be used to get Google results programatically in lua at the backend itself.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_lablua_2016_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6275718971392000/",
+          "proposal_id": null,
+          "short_description": "The admin center would be pivotal in utilizing the autogen functions and a configuration file editor would make it easy for the end user to edit conf...",
+          "slug": "admin-center-elasticsearch-integration-for-sailor-and-luagoogle",
+          "status": "completed",
+          "student_name": "rnikhil275",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database",
+            "backend"
+          ],
+          "title": "Admin Center, Elasticsearch integration for Sailor and Luagoogle"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4733835644239872/"
+    },
+    "year_2017": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/keplerproject/cgilua/pull/14",
+          "description": "<p>Project proposed by LabLua</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6696418936881152/",
+          "proposal_id": null,
+          "short_description": "Project proposed by LabLua",
+          "slug": "adapt-cgilua-sapi-launcher-to-explore-all-wsapi-features",
+          "status": "completed",
+          "student_name": "João Dutra Bastos",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Adapt CGILua SAPI launcher to explore all WSAPI features."
+        },
+        {
+          "code_url": "https://github.com/fsantanna/ceu-arduino/pull/10",
+          "description": "<p>Developing interrupt-based drivers and libraries for Arduino chips and peripherals for the Céu-Arduino language, in order to replace current functions and libraries which freeze the application while executing.</p>\n<p>This project will make an overall contribution not only to the development of the Céu language but to the Arduino and Embedded Systems community as well.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5722829441990656/",
+          "proposal_id": null,
+          "short_description": "Developing interrupt-based drivers and libraries for Arduino chips and peripherals for the Céu-Arduino language, in order to replace current...",
+          "slug": "interrupt-based-drivers-and-libraries-for-céu-arduino",
+          "status": "completed",
+          "student_name": "Guilherme Simas",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Interrupt-based drivers and libraries for Céu-Arduino"
+        },
+        {
+          "code_url": "http://www.brain-dump.org/gsoc17/",
+          "description": "<p>Lua is a powerful, efficient, lightweight and dynamically typed\nscripting language supporting a variety of different programming\nparadigms. Typed Lua extends Lua with an optional type system\nallowing the use of both static and dynamic typing in the same code\nbase, while preserving existing Lua run-time semantics. It achieves\nthat by introducing optional type annotations and applying local type\ninference. This richer type system not only enforces stronger program\nbehavior guarantees, but also facilitates the development of more powerful\ndeveloper tools.</p>\n<p>Programmers nowadays expect that their editors/IDEs suggest accurate\ncompletion candidates, perform asynchronous - as you type - error\nchecking and support type queries such as \"go to definition\" or \"find\nall references\".</p>\n<p>The main goal of the project is to add such features for Typed Lua in\na wide range of popular editors. Furthermore, it shall be investigated\nhow a modern, asynchronous editor plugin architecture could be designed.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4554913883357184/",
+          "proposal_id": null,
+          "short_description": "Lua is a powerful, efficient, lightweight and dynamically typed\nscripting language supporting a variety of different programming\nparadigms. Typed Lua...",
+          "slug": "editor-support-for-typed-lua",
+          "status": "completed",
+          "student_name": "Marc André Tanner",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Editor Support for Typed Lua"
+        },
+        {
+          "code_url": "http://parsergen.blogspot.co.uk/2017/08/parser-generator-based-on-lpeglabel.html",
+          "description": "<p>I would like to implement the LPegLabel parser generator idea.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6543790697349120/",
+          "proposal_id": null,
+          "short_description": "I would like to implement the LPegLabel parser generator idea.",
+          "slug": "parser-generator",
+          "status": "completed",
+          "student_name": "Ben Vaitkevicius",
+          "student_profile": null,
+          "tags": [],
+          "title": "Parser Generator"
+        },
+        {
+          "code_url": "https://akshaynathr.wordpress.com/2017/08/29/gsoc-2017-final-submission/",
+          "description": "<p>Strava is the social network for athletes. It’s a global community of millions of runners, cyclists and triathletes.The Strava V3 API is a publicly available interface allowing developers access to the rich Strava dataset.Currently the library support is not available for Lua language.<br>\n               This project is to build a strava library in Lua language and thereafter build a demo application using the library. Library will have support for most of the important features provided in the Strava API.It is planned to build a demo application  \"Race Listing\".It lists all the races happening in the world registered with strava. User can also see detailed information about a specific race.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5976989768876032/",
+          "proposal_id": null,
+          "short_description": "Strava is the social network for athletes. It’s a global community of millions of runners, cyclists and triathletes.The Strava V3 API is a publicly...",
+          "slug": "lua-client-for-strava-v3-api",
+          "status": "completed",
+          "student_name": "Akshaynath R",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Lua Client for Strava V3 API"
+        },
+        {
+          "code_url": "http://afbranco.github.io/Terra/terra-gsoc.html",
+          "description": "<p>The main goal of the project is, which the title says, to port Terra to Android devices. \nOnce I already have Terra ported to android, my intention is to build an interface between Terra and the android API, that way I am sure Terra will support a lot of features common smartphones have as well as be able to use this features in different devices that have Android on it. This way, by the end of the project, we will not only have ported Terra to android but also develop an interface in which developers can easily access hardware sensors and functionalities to build their own applications.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6289975310024704/",
+          "proposal_id": null,
+          "short_description": "The main goal of the project is, which the title says, to port Terra to Android devices. \nOnce I already have Terra ported to android, my intention...",
+          "slug": "porting-terra-to-android-devices",
+          "status": "completed",
+          "student_name": "Mauricio Pedro Vieira",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Porting Terra to Android Devices"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5842237585883136/"
+    },
+    "year_2018": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/caioluiz/lunatik",
+          "description": "<p>Lunatik is a programming environment based on the Lua language for kernel scripting. By allowing kernel scripting, a user may create scripts in Lua to customize their kernel to suit their needs. Modern day kernels, such as Linux, work on a highly concurrent environment, and therefore must use robust synchronization APIs to ensure data consistency, with each API having their own use cases.</p>\n<p>The Read-copy-update (RCU) is one of those APIs, made specifically for scenarios where data reading is much more common than writing. RCU allows concurrent readers to access protected data in a non-blocking way even during updates or removals. RCU, as with the rest of the Linux Kernel, is written in C.</p>\n<p>The project idea is a binding of RCU for use in Lunatik, thus allowing synchronization of Lua data via RCU.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5736202426646528/",
+          "proposal_id": null,
+          "short_description": "Lunatik is a programming environment based on the Lua language for kernel scripting. By allowing kernel scripting, a user may create scripts in Lua...",
+          "slug": "development-of-a-rcu-binding-for-lua-tables",
+          "status": "completed",
+          "student_name": "Caio Messias",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "api",
+            "ui",
+            "ux"
+          ],
+          "title": "Development of a RCU Binding for Lua tables"
+        },
+        {
+          "code_url": "https://github.com/AnnyCaroline/ceu-maker-gsoc/blob/master/README.md",
+          "description": "<p>The objective of my proposal is to provide an easy-to-install, up-to-date integrated environment for Céu-Arduino and pico-Céu development. Céu is a synchronous reactive language, with supports concurrent lines of execution and broadcast communication through events. The environment issues events to the applications, with responds immediately. It’s recommended to interactive apps such as games, and targets from desktops to embedded systems. Exploring this last flexibility, the language has some variations, such as Céu-Arduino and pico-Céu, a version o Céu meanted to visual and interactive applications.</p>\n<p>In the proposed approach, a developer can use the same source code to implement an application that runs on an Arduino (using Céu-Arduino) and on a computer (using pico-Céu), also supporting communicating between the two sides</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_lablua_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6131837097213952/",
+          "proposal_id": null,
+          "short_description": "The objective of my proposal is to provide an easy-to-install, up-to-date integrated environment for Céu-Arduino and pico-Céu development. Céu is a...",
+          "slug": "céu-maker-easy-to-install-up-to-date-integrated-environment-for-céu-arduino-and-pico-céu-development",
+          "status": "completed",
+          "student_name": "Anny Chagas",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ui"
+          ],
+          "title": "Céu-Maker: easy-to-install, up-to-date integrated environment for Céu-Arduino and pico-Céu development"
+        },
+        {
+          "code_url": "https://github.com/mnaveenkumar2009/GSoC-2018",
+          "description": "<p>The project consists of developing new interrupt-based drivers for microcontrollers, e.g.:\nADC\nSPI and I2C buses\nEEPROM\nReal-time clock\nSome libraries built on top of these drivers (e.g., RF transceiver, ultrasonic sensor, accelerometer).</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5008401494966272/",
+          "proposal_id": null,
+          "short_description": "The project consists of developing new interrupt-based drivers for microcontrollers, e.g.:\nADC\nSPI and I2C buses\nEEPROM\nReal-time clock\nSome...",
+          "slug": "interrupt-based-drivers-in-céu-arduino-for-microcontrollers",
+          "status": "completed",
+          "student_name": "M Naveen Kumar",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Interrupt-based drivers in Céu-Arduino for microcontrollers"
+        },
+        {
+          "code_url": "https://github.com/SatyendraBanjare/luagit2",
+          "description": "<p>This project aims at updating lua bindings to libgit2 for the lua users to use libgit2 ( pure C implementation of the Git core methods ) API from lua. The new luagit2 covers most of important libgit2 modules. It is developed completely using lua-C api. This provided us with a lot of flexibiltiy to create  functions that are very close to lua style in their final implementation. This includes returning multiple values from C to lua, type checking of lua - userdata objects used and error checks if anything goes wrong.</p>\n<p>The tests for such a case of software development where binding is written completely using c and final usage is in lua was very exciting to write. Luagit2 has been tested using busted as testing library and some examples has also been provided for very general case usages.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4531376657268736/",
+          "proposal_id": null,
+          "short_description": "This project aims at updating lua bindings to libgit2 for the lua users to use libgit2 ( pure C implementation of the Git core methods ) API from...",
+          "slug": "update-lua-bindings-to-libgit2",
+          "status": "completed",
+          "student_name": "Satyendra  Kumar Banjare",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Update Lua Bindings to LibGit2"
+        },
+        {
+          "code_url": "https://github.com/tcz717/lunatik/tree/gsoc-final/socket",
+          "description": "<p>Lunatik is a kernel-level Lua interpreter version for scripting the Linux kernel. For example, it allows users to filter packets using Lua scripts.</p>\n<p>I chose this project, Develop Socket API for Lunatik because I hope I can implement a way to reduce the barrier to kernel development. I have some Linux kernel and operating system learning experience and I found that without the necessary knowledge detail of kernel mechanism, it is hard to modify the behavior of an operating system.</p>\n<p>To implement a library containing most socket APIs in Posix.1g for Lunatik. The final library should be available for IPv4, IPv6, TCP, UDP, RAW and Unix/AF_LOCAL. Three kinds of synchronous I/O, Blocking, Non-blocking and I/O Multiplex should be tested with full unit tests.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5993341447569408/",
+          "proposal_id": null,
+          "short_description": "Lunatik is a kernel-level Lua interpreter version for scripting the Linux kernel. For example, it allows users to filter packets using Lua scripts.\nI...",
+          "slug": "develop-socket-api-for-lunatik",
+          "status": "completed",
+          "student_name": "Chengzhi Tan",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ux"
+          ],
+          "title": "Develop Socket API for Lunatik"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6371057715904512/"
+    },
+    "year_2019": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://kingoftheconnors.gitlab.io/apolo/",
+          "description": "<p>Lua is a tiny language that can do a lot. As a scripting language, it can be embedded into larger projects, used in IoT devices for its lightweight nature and implemented as a user-friendly way to get help from a wide variety of coders thanks to its simple interface and flexible design. It can support both functional and object-oriented approaches, but the amount of support it can supply is limited. Lua has no built-in support for advanced file manipulation, directory traversal, process creation or piping. The goal of Apolo, and my Google Summer of Code project is to build a library that adds these core functions to lua.</p>\n<p>The major goals of this project are:</p>\n<ul>\n<li>To broaden Apolo's current library of commands</li>\n<li>To add piping and IO redirecting to Apolo</li>\n<li>To include flexible management of background processes</li>\n<li>To build a wide variety of tests to ensure that all of lua's functions work as intended</li>\n</ul>\n",
+          "difficulty": "advanced",
+          "id": "proj_lablua_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6651359124783104/",
+          "proposal_id": null,
+          "short_description": "Lua is a tiny language that can do a lot. As a scripting language, it can be embedded into larger projects, used in IoT devices for its lightweight...",
+          "slug": "the-apolo-library-building-piping-and-bash-syntax-in-a-light-weight-environment",
+          "status": "completed",
+          "student_name": "Connor McPherson",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "The Apolo Library: Building Piping and bash syntax in a light-weight environment"
+        },
+        {
+          "code_url": "https://uplua.github.io/jekyll/update/2019/08/26/Final-report.html",
+          "description": "<h5>The project consists of developing an interface, in Lua, for the set of Cloud IoT Core APIs, through two REST resources:</h5>\n<ul>\n<li>cloudiot methods, to facilitate device manager tasks</li>\n<li>cloudiotdevice methods, to facilitate device communication over the HTTP bridge </li>\n</ul>\n<h5>The Proof of Concept</h5>\n<ul>\n<li>Another task is to provide a Proof of Concept by using a real world device such as NodeMCU/Raspberry Pi interfaced with temperature sensor to send the temperature data over to the Google Cloud IoT Core. </li>\n<li>Doing the reverse, sending the data to the device using the Google Cloud IoT Core. We expect this data to be a Code Snippet, which would run dynamically on the device every time it is interrupted by the new code received.</li>\n</ul>\n<h5>Development of a software interface with REST support in Lua</h5>\n<ul>\n<li>With a minimal GUI this application will make the life of a person using Lua REST APIs easier by providing a simple interface to send and receive data from an endpoint.</li>\n<li>Testing would be done using the Proof of Concept developed above.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6751965915119616/",
+          "proposal_id": null,
+          "short_description": "The project consists of developing an interface, in Lua, for the set of Cloud IoT Core APIs, through two REST resources:\n\ncloudiot methods, to...",
+          "slug": "google-cloud-iot-core-interface-in-lua",
+          "status": "completed",
+          "student_name": "Gaurav Kumar-1",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "cloud",
+            "ui"
+          ],
+          "title": "Google Cloud IoT Core Interface in Lua"
+        },
+        {
+          "code_url": "https://github.com/JingruiLea/GSoC_2019",
+          "description": "<p>An application from Jingrui for Céu-Arduino, I'll do my best for that.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5352631210344448/",
+          "proposal_id": null,
+          "short_description": "An application from Jingrui for Céu-Arduino, I'll do my best for that.",
+          "slug": "an-application-for-céu-arduino",
+          "status": "completed",
+          "student_name": "Jingrui Li",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "An application for Céu-Arduino"
+        },
+        {
+          "code_url": "https://victornogueirario.github.io/xdplua/",
+          "description": "<p>A version of the Linux Kernel's XDP framework which will support the execution of Lua scripts as well as eBPF programs</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4793801338519552/",
+          "proposal_id": null,
+          "short_description": "A version of the Linux Kernel's XDP framework which will support the execution of Lua scripts as well as eBPF programs",
+          "slug": "xdplua",
+          "status": "completed",
+          "student_name": "Victor Nogueira",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "XDPLua"
+        },
+        {
+          "code_url": "https://vishnu-m.github.io/gsoc19-report/",
+          "description": "<p>Pallene, the statically typed sister language of Lua requires a Foreign Function Interface(FFI) to C. As a starting point, there is a need to create a library in Lua that can parse C header files and incorporate a functionality so as to represent C declarations in Lua.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5167963789852672/",
+          "proposal_id": null,
+          "short_description": "Pallene, the statically typed sister language of Lua requires a Foreign Function Interface(FFI) to C. As a starting point, there is a need to create...",
+          "slug": "c-header-file-parser-in-lua-using-clang-ast",
+          "status": "completed",
+          "student_name": "Vishnu M",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "C Header File Parser in Lua Using Clang AST"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4943100659630080/"
+    },
+    "year_2020": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "http://www.lua.inf.puc-rio.br/gsoc/blog2020.html#pallene",
+          "description": "<p>Pallene is a statically typed, ahead-of-time-compiled sister language to Lua, with a focus on performance. Programmers can use Pallene instead of C modules and LuaJIT to improve and gain a predictable run-time performance. Pallene achieves this by translating a statically typed compilation unit into a C source file, which is implicitly compiled in the background.</p>\n<p>However, there are situations where removal of type annotations are useful.</p>\n<ul>\n<li>The main premise of Pallene is that it is compatible with Lua. This compatibility is defined as removing type annotations from a Pallene program results in transforming it into a Lua program. A Pallene to Lua translator will allow us to check whether this property is still valid. </li>\n<li>Provides greater portability, interoperability and integration with existing Lua codebase and tools.</li>\n<li>The Pallene developers could check if the unit tests are obeying the \"gradual guarantee\".</li>\n<li>In the benchmarks that do not use LuaJIT features, we could generate the Lua version of the code from the Pallene version.</li>\n</ul>\n<p>With the help of the Pallene to Lua translator, users can remove Pallene type annotations to generate plain Lua.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5667973756354560/",
+          "proposal_id": null,
+          "short_description": "Pallene is a statically typed, ahead-of-time-compiled sister language to Lua, with a focus on performance. Programmers can use Pallene instead of C...",
+          "slug": "module-statement-and-automatic-pallene-to-lua-translator",
+          "status": "completed",
+          "student_name": "Samuel Rowe",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Module Statement and Automatic Pallene to Lua Translator"
+        },
+        {
+          "code_url": "https://matheusntg.github.io/lunatik-states-managment/",
+          "description": "<p>Currently, the creation and management of Lua States in Lunatik bindings are made by the binding itself, which can difficult the interoperability of such systems, furthermore, leaving this task to the developer can increase the complexity of the binding. This project has the objective to move the states control to Lunatik, providing an API for these tasks in order to aid the binding development.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_lablua_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5748745045540864/",
+          "proposal_id": null,
+          "short_description": "Currently, the creation and management of Lua States in Lunatik bindings are made by the binding itself, which can difficult the interoperability of...",
+          "slug": "lua-states-management-for-lunatik",
+          "status": "completed",
+          "student_name": "Matheus Silva Rodrigues",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Lua states management for Lunatik"
+        },
+        {
+          "code_url": "https://luainkernel.github.io/ktls/",
+          "description": "<p>Lunatik is a kernel-level Lua interpreter version for scripting the Linux kernel. For example, it allows users to filter packets using Lua scripts. kTLS is a new socket type provided by Linux that transparently handles the encryption and decryption of TLS messages.</p>\n<p>ULP (Upper Layer Protocol) is a new feature merged recently in the Linux kernel which allows user-space programs to attach L7 functionalities to the in-kernel socket structure. kTLS is implemented via ULP.</p>\n<p>The purpose of this project is to implement a kernel level Lua hook inside the kTLS infrastructure. This way we could use Lua scripts to inspect the contents of the HTTP messages transparently inside the kernel.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5442757247631360/",
+          "proposal_id": null,
+          "short_description": "Lunatik is a kernel-level Lua interpreter version for scripting the Linux kernel. For example, it allows users to filter packets using Lua scripts....",
+          "slug": "lua-hook-on-ktls",
+          "status": "completed",
+          "student_name": "Xinzhe Wang",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Lua Hook on kTLS"
+        },
+        {
+          "code_url": "https://github.com/magedrifaat/Ceu-Arduino-IDE/blob/ceu-language-integration/README.md",
+          "description": "<p>This project will involve further modification of the Arduino IDE to support more features of the céu language. This will include support for another céu binding which is pico-céu as well as adding some rich features such as a graphical debugger and improving support for the syntax of the Céu language in the IDE through auto formatting, auto indentation and code folding.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5127791961440256/",
+          "proposal_id": null,
+          "short_description": "This project will involve further modification of the Arduino IDE to support more features of the céu language. This will include support for another...",
+          "slug": "extending-the-support-of-céu-in-the-céu-arduino-ide",
+          "status": "completed",
+          "student_name": "Maged Rifaat",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Extending the support of Céu in the Céu-Arduino IDE"
+        },
+        {
+          "code_url": "https://karanankit01.github.io/LuaFormatter-Report/",
+          "description": "<p>Every Project's code seems good if it is in proper style. LuaFormatter is a code formatter which helps to style a code in Lua scripts which will also help in easy integration with various code editors\nBut currently, LuaFormatter doesn't check if the configuration values make sense before using it. For example, a clueless user could use a negative value in a field where the range expected is [0, ∞). This project is to implement a lazy configuration validator for the LuaFormatter.</p>\n<p>After the completion of this project, the validator will be able enough to detect this kind of error and report it to the user in a nice, helpful way.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_lablua_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4945537473708032/",
+          "proposal_id": null,
+          "short_description": "Every Project's code seems good if it is in proper style. LuaFormatter is a code formatter which helps to style a code in Lua scripts which will also...",
+          "slug": "lazy-configuration-validator-for-luaformatter",
+          "status": "completed",
+          "student_name": "Ankit Karan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Lazy Configuration validator for LuaFormatter"
+        },
+        {
+          "code_url": "https://dev.to/_gusgustavo/my-final-report-for-the-gsoc-2020-167i",
+          "description": "<p>The goal is to build a <strong>parser generator</strong> on top of the library <em>LPegLabel</em> that will automatically support error recovery and (optionally) white spaces around lexical symbols and terminal symbols. We are going to use a conservative algorithm for error labels insertion, hence avoiding insertion on wrong places and no manual intervention from the programmer is needed. If there is enough time, in the end we will improve the number of insertions using information about unique syntactical non-terminal symbols and unique paths to a lexical symbol. During the coding period, some parsers will be generated with the tool as tests and as examples.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5134133883305984/",
+          "proposal_id": null,
+          "short_description": "The goal is to build a parser generator on top of the library LPegLabel that will automatically support error recovery and (optionally) white spaces...",
+          "slug": "a-parser-generator-with-automatic-error-recovery-on-lpeglabel",
+          "status": "completed",
+          "student_name": "Gustavo Castellanos",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "A Parser Generator with Automatic Error Recovery on LPeg(Label)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6003184142647296/"
+    },
+    "year_2021": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gsoc2021.sigeryeung.tk",
+          "description": "<p>Enable users to attach a script or Lua function to a watchpoint and execute it when the program flow hits it in LLDB and improve the whole documentation for Lua scripting in LLDB.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5541855462162432/",
+          "proposal_id": null,
+          "short_description": "Enable users to attach a script or Lua function to a watchpoint and execute it when the program flow hits it in LLDB and improve the whole...",
+          "slug": "lua-scripted-watchpoints-in-lldb",
+          "status": "completed",
+          "student_name": "Shichu Yang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Lua scripted watchpoints in LLDB"
+        },
+        {
+          "code_url": "https://github.com/Deepak123bharat/lablua-submission",
+          "description": "<p>The goal of this project is to provide typed API for LuaRocks modules, specified using Teal, a typed dialect of Lua, which allows for typed definition files to be written for untyped Lua modules. Our goal here is not to port all of LuaRocks to Teal, but to provide typed interfaces for Teal or Lua applications, so that users of these interfaces can have a stable contract of the API's inputs and outputs.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6522415386984448/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to provide typed API for LuaRocks modules, specified using Teal, a typed dialect of Lua, which allows for typed...",
+          "slug": "typed-api-for-luarocks",
+          "status": "completed",
+          "student_name": "Deepak Singh Rathore",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Typed API for LuaRocks"
+        },
+        {
+          "code_url": "https://github.com/micahkendall/freechains-lua",
+          "description": "<h5>Freechains Lua API.</h5>\n<p>This is an API for the Freechains project written in the Lua programming language. The lua-sockets library is used to interface with a daemon which string commands are sent to. This project manages the sockets for you and also provides optional extensions to work with the daemon abstractly without manually writing out strings of commands. This is to allow for concise creation of applications on-top of Freechains, and testing of the Freechains protocol.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6287178954440704/",
+          "proposal_id": null,
+          "short_description": "Freechains Lua API.\nThis is an API for the Freechains project written in the Lua programming language. The lua-sockets library is used to interface...",
+          "slug": "a-lua-library-for-freechains-p2p",
+          "status": "completed",
+          "student_name": "Micah Kendall",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "A Lua library for Freechains-P2P"
+        },
+        {
+          "code_url": "https://srijan-paul.github.io/blog/gsoc-2/index.html",
+          "description": "<p>Pallene is a statically typed sister of the Lua programming language.\nThis proposal aims to add support for Closures in Pallene.</p>\n<p>Closures are functions that are capable of capturing variables from outer scopes and retain references to them\neven after their scope has been exited. The addition of closures and higher order functions will allow programmers to take a functional approach when authoring libraries and scripts.</p>\n",
+          "difficulty": null,
+          "id": "proj_lablua_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5201931584143360/",
+          "proposal_id": null,
+          "short_description": "Pallene is a statically typed sister of the Lua programming language.\nThis proposal aims to add support for Closures in Pallene.\nClosures are...",
+          "slug": "closures-in-pallene",
+          "status": "completed",
+          "student_name": "Srijan Paul",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Closures in Pallene"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5651367128989696/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/sheharyaar/google-summer-of-code-2024",
+          "description": "The goal of this project is to make a new tool that connects Netfilter with Lua, allowing people to create new Netfilter programs using Lua and allows attaching callbacks to the netfilter hooks.",
+          "difficulty": null,
+          "id": "proj_lablua_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/BIJAPZjf/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to make a new tool that connects Netfilter with Lua, allowing people to create new Netfilter programs using Lua and...",
+          "slug": "lunatik-binding-for-netfilter",
+          "status": "completed",
+          "student_name": "sheharyaar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Lunatik binding for Netfilter"
+        },
+        {
+          "code_url": "https://gist.github.com/ChaitanyaD48/da0802dcbbaa4c7c89225c35f4fb8ada",
+          "description": "The project aims to adapt the LuaSQL drivers, which provide an interface between Lua and various database management systems (DBMS), to work seamlessly with the latest version of Lua, 5.4. \nLuaSQL offers a common API for interacting with different DBMS, including ODBC, ADO, Oracle, MySQL, SQLite, Firebird, and PostgreSQL. However, the last version of LuaSQL was tested only against Lua 5.3, and it's essential to ensure compatibility with Lua 5.4 and potentially leverage new features introduced in this version.\nThe primary focus will be on revising the Lua C API part of the code while ensuring minimal disruption to the existing functionality.\n\nProject Objectives - \n\nCompatibility Update: Ensure LuaSQL drivers are compatible with Lua 5.4. \nCode Revision: Review and revise existing Lua C API code for each driver to incorporate any necessary changes considering the new features and changes introduced in Lua 5.4.\nPotential Enhancements: Taking Advantage of any new features that could enhance performance, readability, or maintainability of the codebase.\nDocumentation Update: Update documentation to reflect changes made to adapt Lua 5.4  and provide clear guidance for users. \nTesting: Conduct comprehensive testing to verify functionality across different DBMS.\nDistribution: Package the updated LuaSQL drivers for distribution to users.",
+          "difficulty": null,
+          "id": "proj_lablua_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/4oKWFiF3/",
+          "proposal_id": null,
+          "short_description": "The project aims to adapt the LuaSQL drivers, which provide an interface between Lua and various database management systems (DBMS), to work...",
+          "slug": "adapt-luasql-drivers-to-lua-54",
+          "status": "completed",
+          "student_name": "Chaitanya Deshmukh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Adapt LuaSQL drivers to Lua 5.4"
+        },
+        {
+          "code_url": "https://github.com/luarocks/luarocks/pull/1705",
+          "description": "LuaRocks is the package manager for the Lua language. It is written in pure Lua, making use of several optional libraries. The goal of this project is to port the LuaRocks source code to Teal, a statically typed language that compiles to Lua (Teal is to Lua somewhat like TypeScript is to JavaScript).\n\nPorting LuaRocks to Teal comprises essentially of writing type annotations to its source code, but will also allow for many opportunities for refactoring and improving its codebase, understanding and reporting on limitations of the Teal language and possibly inform or contribute to its development.",
+          "difficulty": null,
+          "id": "proj_lablua_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/jgtBpFe8/",
+          "proposal_id": null,
+          "short_description": "LuaRocks is the package manager for the Lua language. It is written in pure Lua, making use of several optional libraries. The goal of this project...",
+          "slug": "port-luarocks-to-teal",
+          "status": "completed",
+          "student_name": "Victor Ilchev",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "typescript"
+          ],
+          "title": "Port LuaRocks to Teal"
+        },
+        {
+          "code_url": "http://www.lua.inf.puc-rio.br/gsoc/blog2024.html#pallene",
+          "description": "Pallene is a statically typed companion language to Lua, designed to write performance sensitive part of it. Pallene has a very similar syntax as Lua, sharing its runtime as well.\n\n\nPallene is Ahead-of-Time compiled language, compiling into C before getting compiled into a Lua module. As the situation stands for Lua stack trace, it does not store any line number information for any native C call, which Pallene eventually ends up using. There are also missing traces when a Pallene function calls another Pallene function as the call is in Pallene environment and completely oblivious to Lua.\n\n\nThis proposal aims to fix that issue in Pallene, improving its overall debugging support.",
+          "difficulty": null,
+          "id": "proj_lablua_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/L0tirNFw/",
+          "proposal_id": null,
+          "short_description": "Pallene is a statically typed companion language to Lua, designed to write performance sensitive part of it. Pallene has a very similar syntax as...",
+          "slug": "improved-debugging-support-for-pallene",
+          "status": "completed",
+          "student_name": "SD Asif Hossein",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improved debugging support for Pallene"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/lablua/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to create a robust, high-performance parser combined with an easy-to-use macro system for the Teal programming language. Leveraging a bicameral macro model, the project clearly distinguishes the parsing and macro expansion phases whilst still keeping the syntax streamlined. This enables flexible, powerful compile-time code transformations while maintaining clarity and efficiency in compiler design and performance.",
+          "difficulty": "beginner",
+          "id": "proj_lablua_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/kiO8b1Ql",
+          "proposal_id": "1z351TdL",
+          "short_description": "This project aims to create a robust, high-performance parser combined with an easy-to-use macro system for the Teal programming language. Leveraging...",
+          "slug": "ghost-in-the-macro-dual-parser-bicameral-macro-system-for-teal",
+          "status": "in-progress",
+          "student_name": "Amrit Bhogal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Ghost in the Macro: Dual-Parser Bicameral Macro System for Teal"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal introduces myself and outlines the work I will be\r\ndoing during the Google Summer of Code 2025.\r\nMy proposal aims to implement a HID driver framework for\r\nLunatik, a module that provides a way to binding HID devices using\r\nLua script.",
+          "difficulty": null,
+          "id": "proj_lablua_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/afaakeLj",
+          "proposal_id": "TPLL9619",
+          "short_description": "This proposal introduces myself and outlines the work I will be doing during the Google Summer of Code 2025. My proposal aims to implement a HID...",
+          "slug": "gsoc25-proposal-lunatik-hid-framework-implementation",
+          "status": "in-progress",
+          "student_name": "Jieming Zhou",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GSoC’25 Proposal: Lunatik HID Framework Implementation"
+        },
+        {
+          "code_url": null,
+          "description": "The current terminal.lua library is much-needed for terminal application development in the Lua landscape. It has a strong foundation yet is still in an infant stage. This GSOC, I hope to continue terminal.lua's development, and bring it to a production-ready first release 🎉\n\nMy deliverables: \n🌐 A core library with UTF-8 support, text handling, and terminal I/O\n🎹 Input handling system with key mapping and event processing\n🛠️ Exposed API for users to customizable user keymappings \n🖼️ Component system for building TUIs with Lua-ist styling \n🌍 Cross-platform compatibility (Unix/Windows/Mac)\n📚 Comprehensive documentation and examples\n✅ Test suite ensuring reliability across environments",
+          "difficulty": null,
+          "id": "proj_lablua_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/jukGu4Gx",
+          "proposal_id": "dYjHFv9n",
+          "short_description": "The current terminal.lua library is much-needed for terminal application development in the Lua landscape. It has a strong foundation yet is still in...",
+          "slug": "luamodulesterminallua",
+          "status": "in-progress",
+          "student_name": "Nguyễn Vĩnh Bảo Tín",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "luamodules/terminal.lua 🌘"
+        },
+        {
+          "code_url": null,
+          "description": "Lunatik enables scripting the Linux kernel with Lua, offering powerful customization—especially for subsystems like networking. However, limited packaging support across major Linux distributions hinders its accessibility.\n\nThis project aims to create Lunatik packages for Ubuntu, OpenWRT, and VyOS, along with RPM-based packages and potential support for other distributions. It will also provide documentation, templates, and best practices to streamline future packaging efforts.",
+          "difficulty": null,
+          "id": "proj_lablua_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/c6od44I5",
+          "proposal_id": "PU0YO7W3",
+          "short_description": "Lunatik enables scripting the Linux kernel with Lua, offering powerful customization—especially for subsystems like networking. However, limited...",
+          "slug": "lunatik-package-for-linux-distros",
+          "status": "in-progress",
+          "student_name": "Shivam Vashisth",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ux"
+          ],
+          "title": "Lunatik package for Linux distros"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to create a documentation generator for the Teal programming language. The generator will extract information from types and comments to produce documentation in both Markdown and HTML formats. The tool itself will be written in Teal and will utilize its compiler as the primary source of information. By the end of this project, we will extend the Teal compiler to retrieve all the necessary information for documentation generation. Additionally, we will deliver a CLI tool capable of parsing Teal code files and generating documentation in various formats.",
+          "difficulty": null,
+          "id": "proj_lablua_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/MCJkfE3P",
+          "proposal_id": "VCJgBwjx",
+          "short_description": "The goal of this project is to create a documentation generator for the Teal programming language. The generator will extract information from types...",
+          "slug": "documentation-generator-tool-for-teal-language",
+          "status": "in-progress",
+          "student_name": "uped",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Documentation generator tool for Teal language"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/lablua"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "lablua@inf.puc-rio.br",
+    "guide_url": "https://github.com/labluapucrio/gsoc/blob/main/apply.md",
+    "ideas_url": "https://github.com/labluapucrio/gsoc",
+    "irc_channel": "https://matrix.to/#/#lablua:matrix.org",
+    "mailing_list": "https://groups.google.com/g/labluagsoc"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/labluapucrio",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.358Z"
+  }
+}

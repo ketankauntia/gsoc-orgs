@@ -1,0 +1,1214 @@
+{
+  "id": "692251ce53dd9d7326d33d66",
+  "slug": "cgal-project",
+  "name": "CGAL Project",
+  "category": "Science and medicine",
+  "description": "C++ library of computational geometry",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/cgal-project/9ubuadbe0eg5xfcw-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/cgal-project.webp",
+  "logo_r2_url": null,
+  "url": "https://www.cgal.org",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2017,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "github",
+    "c++",
+    "git",
+    "python",
+    "swig",
+    "qt",
+    "c"
+  ],
+  "topics": [
+    "computational geometry",
+    "mesh processing",
+    "arrangement",
+    "geometry processing",
+    "triangulaton",
+    "geometry",
+    "webhook",
+    "point set processing",
+    "triangulation",
+    "computation geometry"
+  ],
+  "total_projects": 58,
+  "stats": {
+    "avg_projects_per_appeared_year": 6.44,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 7,
+      "year_2019": 9,
+      "year_2020": 7,
+      "year_2021": 5,
+      "year_2022": 6,
+      "year_2023": 10,
+      "year_2024": 5,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 7,
+      "year_2019": 9,
+      "year_2020": 7,
+      "year_2021": 5,
+      "year_2022": 6,
+      "year_2023": 10,
+      "year_2024": 5,
+      "year_2025": 5
+    },
+    "total_students": 53
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/2377",
+          "description": "<p>Currently, CGAL's Polygon Mesh Processing package offers an incremental triangle-based isotropic remeshing algorithm to perform two-dimensional mesh smoothing. This project aims at enhancing this functionality by implementing the high quality compatible triangulations algorithm for mesh smoothing and the mean curvature flow for shape smoothing. The final objective is for the user to be able to choose among different mesh optimization methods depending on geometry parameters to achieve optimal result.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5465217303576576/",
+          "proposal_id": null,
+          "short_description": "Currently, CGAL's Polygon Mesh Processing package offers an incremental triangle-based isotropic remeshing algorithm to perform two-dimensional mesh...",
+          "slug": "mesh-and-shape-smoothing",
+          "status": "completed",
+          "student_name": "Konstantinos Katrioplas",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Mesh and Shape smoothing"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/2376",
+          "description": "<p>Hexahedral meshing has been proven to be significantly more efficient than tetrahedral meshing in the solving of most PDEs for physical simulations, they require only 10-25% the number of elements required buy tet meshes.  But hex-meshing is a hard problem and is often done by parameterizing tetrahedral meshes and extracting hexahedral meshes using certain heuristic rules. Numerical inconsistencies and extraction of non-hexahedral polytopes can be avoided at the extraction stage.\nThe algorithm to be implemented is delineated in the paper by Lyon et al: HexEx: Robust Hexahedral Mesh Extraction. My work is to incorporate the algorithm to create hexahedral meshes using combinatorial maps package in CGAL.</p>\n<p>CGAL has a generalized maps package, which generalizes representation of any oriented object of n-dimensions with n-dimensional subdivisions, each of which is stored as a set of darts and pointers that point to other darts, which could be thought of as an oriented edge or 1-cell. We use this data structure to hold the hexahedral subdivisions of the 3D object. The package has classes to define implementations of darts, cells, generalized maps, which will be used for the implementation.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5022034526470144/",
+          "proposal_id": null,
+          "short_description": "Hexahedral meshing has been proven to be significantly more efficient than tetrahedral meshing in the solving of most PDEs for physical simulations,...",
+          "slug": "hexahedral-mesh-extraction",
+          "status": "completed",
+          "student_name": "Vasudha Varadarajan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Hexahedral mesh extraction"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/2367",
+          "description": "<p>By playing around with the 2D Arrangement demo, users can have a visual and direct experience on what functionalities to expect from this module before diving into official documentations.</p>\n<p>The present demo program supports several geometric objects such as line segments. The main goal is to add the support of Bezier and algebraic curves, which enriches the functionalities of the demo.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6217820933193728/",
+          "proposal_id": null,
+          "short_description": "By playing around with the 2D Arrangement demo, users can have a visual and direct experience on what functionalities to expect from this module...",
+          "slug": "2d-arrangement-demo-enhancement-with-new-geometric-curves",
+          "status": "completed",
+          "student_name": "Tianyu Zhou",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "2D Arrangement Demo Enhancement with New Geometric Curves"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/2368",
+          "description": "<p>For many applications ranging from geometry compression to reverse engineering, finding the concise and faithful approximation of an excessively verbose 3D data (in particular, scanned meshes) is beneficial for subsequent processing and may reduce the computational cost dramatically. The proposed project aims to implement the <em>Variational Shape Approximation</em> (VSA) framework and extract the approximated mesh. Apart from approximation, it can be viewed as a package for simplification or shape discovery or a complement to current mesh segmentation package.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6078869077491712/",
+          "proposal_id": null,
+          "short_description": "For many applications ranging from geometry compression to reverse engineering, finding the concise and faithful approximation of an excessively...",
+          "slug": "variational-shape-approximation",
+          "status": "completed",
+          "student_name": "Lingjie Zhu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Variational Shape Approximation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6565611412914176/"
+    },
+    "year_2018": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3272",
+          "description": "<p>This project aims at providing another two powerful generalized barycentric coordinates Harmonic coordinates and Maximum Entropy coordinates that possess a lot of important properties and can be used on a variety of general polygons. Moreover, this project will contribute some changes to the API and a tutorial program, in order to make the package more convenient and easy to understand for the final user.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_cgal-project_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6730399912820736/",
+          "proposal_id": null,
+          "short_description": "This project aims at providing another two powerful generalized barycentric coordinates Harmonic coordinates and Maximum Entropy coordinates that...",
+          "slug": "extending-generalized-barycentric-coordinates",
+          "status": "completed",
+          "student_name": "Keyu Chen",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Extending Generalized Barycentric Coordinates"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3279",
+          "description": "<p>This project aims to build a package for reconstruction watertight surfaces from un-oriented point sets. The first step is to estimate un-oriented normals to the inferred surface by combining Voronoi diagram and Principal Component Analysis. It results in a tensor field which encodes both the normal direction and the confidence in the approxiamtion. The second step is to estimate a implicit function such that its gradient is best aligned with the principal axes of the tensor field encoding the normal directions. This estimation could be viewed as a generalized eigenvalue problem, which can be solved by the power iteration.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5092316834430976/",
+          "proposal_id": null,
+          "short_description": "This project aims to build a package for reconstruction watertight surfaces from un-oriented point sets. The first step is to estimate un-oriented...",
+          "slug": "spectral-surface-reconstruction",
+          "status": "completed",
+          "student_name": "Tong ZHAO",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Spectral Surface Reconstruction"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3282",
+          "description": "<p>The current implementation of Poisson Surface Reconstruction algorithm in CGAL constructs a continuous, piecewise linear implicit function, i.e. it is only C0-continuous.\nMy work during this summer would primarily have two objectives: to implement a C1-continuous implicit function to yield smooth surfaces, and to generate smooth curves as boundaries, using graph cut optimization and local mesh refinement.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5290063034318848/",
+          "proposal_id": null,
+          "short_description": "The current implementation of Poisson Surface Reconstruction algorithm in CGAL constructs a continuous, piecewise linear implicit function, i.e. it...",
+          "slug": "smooth-surface-reconstruction",
+          "status": "completed",
+          "student_name": "Vasudha Varadarajan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Smooth Surface Reconstruction"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3278",
+          "description": "<p>A wide variety of problems in scientific computing and data analysis need to compute accurate shortest paths and distances along curved domains (e.g., curved surfaces representing the boundary of three-dimensional objects).  The Computational Geometry Algorithms Library (CGAL) is a broadly-used open source framework for a wide variety of problems in geometric data analysis, but currently does not incorporate state-of-the-art methods for distance transforms.  The goal of this project is to implement and integrate such methods into CGAL, specifically using methods as described in the paper \"The Heat Method for Distance Computation\" by Crane et al.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4611839111462912/",
+          "proposal_id": null,
+          "short_description": "A wide variety of problems in scientific computing and data analysis need to compute accurate shortest paths and distances along curved domains...",
+          "slug": "fast-and-flexible-distance-transforms-in-cgal",
+          "status": "completed",
+          "student_name": "Christina Vaz",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fast and Flexible Distance Transforms in CGAL"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3280",
+          "description": "<p>CGAL works on computational geometry. It has 2 packages named '2D Regularized Boolean Set Operations' and '2D Minkowski Sum'. My task is to build a demo to demonstrate all the operations of all two packages</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4731861100134400/",
+          "proposal_id": null,
+          "short_description": "CGAL works on computational geometry. It has 2 packages named '2D Regularized Boolean Set Operations' and '2D Minkowski Sum'. My task is to build a...",
+          "slug": "develop-a-demo-to-demonstrate-the-use-of-boolean-operations-and-minkowski-sum",
+          "status": "completed",
+          "student_name": "Apurva Kamlesh Bhatt",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Develop a demo to demonstrate the use of Boolean operations and Minkowski sum"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3276",
+          "description": "<p>Apply the Region Growing algorithm to any user-defined elements</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6015111428833280/",
+          "proposal_id": null,
+          "short_description": "Apply the Region Growing algorithm to any user-defined elements",
+          "slug": "generalized-region-growing",
+          "status": "completed",
+          "student_name": "Thien Hoang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generalized Region Growing"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/3270",
+          "description": "<p>The algorithm in this project was proposed by Khaled Mamou and Faouzi Ghorbel. It’s an efficient approach to decompose a concave 3D mesh into a set of nearly convex surfaces and is useful for skeleton extraction, patterns recognition applications and particularly for the increase of collision detection accuracy without significantly affecting its performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4877293591724032/",
+          "proposal_id": null,
+          "short_description": "The algorithm in this project was proposed by Khaled Mamou and Faouzi Ghorbel. It’s an efficient approach to decompose a concave 3D mesh into a set...",
+          "slug": "approximate-convex-decomposition-of-volumes-bounded-by-triangle-meshes",
+          "status": "completed",
+          "student_name": "Liubomyr Piadyk",
+          "student_profile": null,
+          "tags": [],
+          "title": "Approximate Convex Decomposition of Volumes Bounded by Triangle Meshes"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5076776166359040/"
+    },
+    "year_2019": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "http://www.necipyildiran.com/other/gsoc19-final-report.html",
+          "description": "<p>CGAL’s components are used with other libraries to achieve complex tasks, some of which are suffering from the lack of interoperability while some others from performance issues with the existing wrappers. In this project, two other libraries that can be used with CGAL are considered: OpenGR and pointmatcher. Although OpenGR has a wrapper to work with CGAL types, it suffers from duplication of the point type due to lack of proper abstraction layer. For pointmatcher, there does not exist a wrapper, i.e., an interoperability channel to use its ICP method on a CGAL point cloud that global registration is applied. The first goal of this project is to introduce an abstraction layer around point and normal type for the OpenGR library, so that, CGAL types can be directly used. The second goal is to have a new wrapper for the pointmatcher library  that will provide an ICP method that can be applied after the global registration to a CGAL point cloud.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6368652381650944/",
+          "proposal_id": null,
+          "short_description": "CGAL’s components are used with other libraries to achieve complex tasks, some of which are suffering from the lack of interoperability while some...",
+          "slug": "make-opengr-be-able-to-work-directly-with-cgal-point-clouds",
+          "status": "completed",
+          "student_name": "Necip Fazil Yildiran",
+          "student_profile": null,
+          "tags": [
+            "cloud"
+          ],
+          "title": "Make OpenGR be able to work directly with CGAL point clouds"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4168",
+          "description": "<p>CGAL provides now basic viewers, i.e. global functions allowing to visualize in 3D some CGAL data-structures. These small viewers are very usefull in order to visualize the result of an algorithm, and can help to debug some code. For now, 5 basic viewers exist, for Polyhedron, Surface_mesh, Triangulation_2, Triangulation_3 and Linear_cell_complex. The goal of this project is to develop more basic viewers for other CGAL data-structures.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6605980580708352/",
+          "proposal_id": null,
+          "short_description": "CGAL provides now basic viewers, i.e. global functions allowing to visualize in 3D some CGAL data-structures. These small viewers are very usefull in...",
+          "slug": "basic-viewers-in-cgal-extending-viewers-to-new-datastructures",
+          "status": "completed",
+          "student_name": "Jasmeet Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Basic Viewers in CGAL: Extending viewers to new datastructures"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4185",
+          "description": "<p>The 2D Arrangement package can be used to construct, maintain, alter, and display arrangements in the plane. Once an arrangement is constructed, the package can be used to obtain results of various queries on the arrangement. The demo uses the 2D Arrangement package to show its capabilities.  A potential user can quickly determine whether the package can be used to solve a problem they may have and how to implement it.\nThe current Arrangement Demo has support for</p>\n<ul>\n<li>Segments </li>\n<li>Polyline </li>\n<li>Conics </li>\n<li>Linear </li>\n<li>Circular Arcs. </li>\n</ul>\n<p>The demo can demonstrate to the user more types of curves that are supported by the library like Bezier and Algebraic curves. Certain aspects of the demo also need to be improved, like the parsing of the polynomials for the Algebraic curves and the input and output functionality</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5488134609960960/",
+          "proposal_id": null,
+          "short_description": "The 2D Arrangement package can be used to construct, maintain, alter, and display arrangements in the plane. Once an arrangement is constructed, the...",
+          "slug": "enhancing-the-2d-arrangement-demo",
+          "status": "completed",
+          "student_name": "Saurabh Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing the 2D Arrangement Demo"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4177",
+          "description": "<p>CGAL works on computational geometry.  It has a Demo version of a package named '2D Regularized Boolean Set Operations'. With the use of generic programming and understanding of computational geometry, this project aims at adding support to existing Demo with operations like Minkowski sum and enhancing the functionality to support operations over a larger domain of polygons and improving the UI/UX for this Demo.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4989489175330816/",
+          "proposal_id": null,
+          "short_description": "CGAL works on computational geometry.  It has a Demo version of a package named '2D Regularized Boolean Set Operations'. With the use of generic...",
+          "slug": "enhancing-the-2d-regularized-boolean-set-operations-demo",
+          "status": "completed",
+          "student_name": "Krezhairo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Enhancing the 2D Regularized Boolean Set Operations Demo"
+        },
+        {
+          "code_url": "http://baskin.me/cgal-gsoc-2019.html",
+          "description": "<p>The project will include adding new approaches to already existing triangulated mesh simplification framework of CGAL.</p>\n<p>The current approach depends on a method developed by Turk &amp; Lindstrom, which is based on edge collapsing. The first suggested new approach is based on the algorithm developed by Garland &amp; Heckbert. It uses vertex collapsing\ninstead of edge collapsing as the primitive operation. In their method, they collapse vertices that share an edge or that are close to each other. In each iteration, a pair of vertices get collapsed resulting in a new vertex. They choose the pair that will be collapsed based on an error metric expressed as a quadratic function. They choose the pair that minimizes the error metric. A parallel version of Garland &amp; Heckbert will also be implemented.</p>\n<p>After implementing this approach in CGAL, CGAL’s triangulated mesh simplification framework will be compared to other libraries in terms of runtime and memory usage. (OpenMesh, MeshLab, PCL)</p>\n<p>This cycle will be repeated for other mesh simplification methods.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5075276315230208/",
+          "proposal_id": null,
+          "short_description": "The project will include adding new approaches to already existing triangulated mesh simplification framework of CGAL.\nThe current approach depends...",
+          "slug": "improvements-of-the-surface-mesh-simplification-package",
+          "status": "completed",
+          "student_name": "Baskin Burak Senbaslar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improvements of the Surface Mesh Simplification package"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4188",
+          "description": "<p>A new package about the computation of some topological invariants on surfaces is under development in CGAL. The goal of this project is to add a new method in this package in order to compute a shortest non-contractible cycle on a given surface. The goal is to implement the algorithm described in <a href=\"http://monge.univ-mlv.fr/~colinde/pub/09edgewidth.pdf\" target=\"_blank\">this paper</a> (Algorithms for the edge-width of an embedded graph, Sergio Cabello, Éric Colin de Verdière, Francis Lazarus, Computational Geometry, Volume 45, Issues 5–6, 2012, Pages 215-224).</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5328842544119808/",
+          "proposal_id": null,
+          "short_description": "A new package about the computation of some topological invariants on surfaces is under development in CGAL. The goal of this project is to add a new...",
+          "slug": "compute-a-shortest-non-contractible-cycle-on-a-surface",
+          "status": "completed",
+          "student_name": "Thien Hoang",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Compute a shortest non-contractible cycle on a surface"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4179",
+          "description": "<p>Intersection problems are common in many engineering applications, for example, enforcement of non-penetration constraints in contact mechanics, cut-cells in immersed boundary methods and lattice generation in additive manufacturing, etc. For solving intersection problems an efficient search structure is important. The CGAL library offers the AABB tree structure for fast intersection computation. The k-dop whose facets are determined by hyperplanes with outer normals in a fixed number of directions is a generalisation of the bounding box, and it is promising to be more efficient and flexible than the AABB tree in the intersection search. This project aims to develop a k-dop tree structure in CGAL, and its robustness and efficiency will also be investigated compared with the AABB tree.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4776393232089088/",
+          "proposal_id": null,
+          "short_description": "Intersection problems are common in many engineering applications, for example, enforcement of non-penetration constraints in contact mechanics,...",
+          "slug": "k-dop-tree",
+          "status": "completed",
+          "student_name": "Xiao Xiao",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "K-DOP tree"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4186",
+          "description": "<p>Measuring the similarity between two geometric models is an important problem in diverse fields, including computer graphics, computer games, and geometric modeling. For example, they can be used in terms of benchmarks to determine the variance of a processed geometry from a given ground-truth model.</p>\n<p>One such similarity measure is the Hausdorff distance. Given two compact subsets A, B of a metric space, the one-sided Hausdorff distance between A and B is defined as the distance between an element a from A and an element b from B, where a is chosen to maximize the distance and b is chosen to minimize it. Intuitively speaking, the Hausdorff distance measures the maximum deviation between two models.</p>\n<p>The project consists of implementing the algorithm for interactive Hausdorff distance computation presented by Tang, Lee, and Kim. While it provides an approximation to the Hausdorff distance - as already present in the CGAL framework - it ensures the computed measure to be within a user-specified error bound. Thereby, the user can obtain as good results as necessary for the applications at hand within a fast and efficient pipeline.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5763545361285120/",
+          "proposal_id": null,
+          "short_description": "Measuring the similarity between two geometric models is an important problem in diverse fields, including computer graphics, computer games, and...",
+          "slug": "implementing-a-fast-distance-computation-between-triangle-meshes",
+          "status": "completed",
+          "student_name": "Martin Skrodzki",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Implementing a Fast Distance Computation between Triangle Meshes"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4170",
+          "description": "<p>For this project, I would like to create a new CGAL package that combines the global regularization algorithm from Section 3 of the KIPPI paper, “Kinetic Polygonal Partitioning of Images” by Jean-Phillipe Bauchet and Florent Lafarge and all other regularization techniques that are already available in CGAL. The goal of this project is to create a generic API for the global regularization algorithm, given a set of arbitrary input items, a connectivity among them, and user-defined regularization conditions. The 2D regularization technique described in KIPPI becomes a particular instance of this generic API with the items being 2D lines/segments, the connectivity being a Delaunay triangulation of these items, and the regularization conditions described in the paper. As required, I will write and include all necessary documentation, examples, and tests. This proposal describes the project requirements, anticipated constraints, and the development schedule. I have also included personal information in regards to my academic background and my commitment to CGAL.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6276807777583104/",
+          "proposal_id": null,
+          "short_description": "For this project, I would like to create a new CGAL package that combines the global regularization algorithm from Section 3 of the KIPPI paper,...",
+          "slug": "generalized-global-regularization",
+          "status": "completed",
+          "student_name": "Gennadii Sytov",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Generalized Global Regularization"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4870847817318400/"
+    },
+    "year_2020": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4958",
+          "description": "<p>CGAL works on computational geometry. It has a Demo version of a package named '2D Regularized Boolean Set Operations'. With the use of generic programming and understanding of computational geometry, this project aims at adding support to existing Demo with missing features like exception handling, file handling, complement operation, full integration of Minkowski Sum with color buckets, Undo, Console, flexible viewport and solving bugs that exist in various features of the Demo like PAN along with enhancing the functionality to support operations over a larger domain of polygons and improving the UI/UX for this Demo, ultimately making this a production level publishable demo for the next CGAL release.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5667696160538624/",
+          "proposal_id": null,
+          "short_description": "CGAL works on computational geometry. It has a Demo version of a package named '2D Regularized Boolean Set Operations'. With the use of generic...",
+          "slug": "enhancing-the-2d-regularized-boolean-set-operations-demo",
+          "status": "completed",
+          "student_name": "Krezhairo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Enhancing the 2D Regularized Boolean Set Operations Demo"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4962",
+          "description": "<p>CGAL recently added wrappers to their library to enable global and local point-cloud\nregistration using the OpenGR library. In the current version, registration can only be\nperformed between two point-clouds. The goal of this project is to extend the package to\nmultiple point-clouds, by implementing into OpenGR the approach described in the following\npaper: Global Registration of Multiple Point Clouds Using Semidefinite Programming, K.\nN. Chaudhury, Y. Khoo, and A. Singer, SIAM J. Optim., 25(1), 468501. (34 pages).</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5281286173753344/",
+          "proposal_id": null,
+          "short_description": "CGAL recently added wrappers to their library to enable global and local point-cloud\nregistration using the OpenGR library. In the current version,...",
+          "slug": "extend-cgal-point-cloud-registration-to-multiple-objects",
+          "status": "completed",
+          "student_name": "Felix Herrmann",
+          "student_profile": null,
+          "tags": [
+            "cloud"
+          ],
+          "title": "Extend CGAL Point Cloud Registration to Multiple Objects"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4961",
+          "description": "<p>Introduction of Intel’s Embree and its applications to CGAL in the form of a package \"Embree\" after sufficient bench-marking. The \"Embree\" package makes use of the EmbreeAPI and its user-defined functionality to incorporate CGAL objects. Though in its infant stages, the Embree package has consistent declarations with CGAL::AABB_tree and is much faster in intersection and distance queries.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4546675873415168/",
+          "proposal_id": null,
+          "short_description": "Introduction of Intel’s Embree and its applications to CGAL in the form of a package \"Embree\" after sufficient bench-marking. The \"Embree\" package...",
+          "slug": "use-embree-for-ray-shooting",
+          "status": "completed",
+          "student_name": "Ayush Saraswat",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Use Embree for Ray Shooting"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4965",
+          "description": "<p>The new package \"Surface mesh topology\" will be available in the next CGAL release. It is concerned with the computation of topological invariants of curves on surfaces. The goal of this project is to add a new functionality to this package in order to decide if an input cycle on a given surface can be continuously deformed to a simple curve, i.e. a curve without self-intersection. The goal is to implement the algorithm described in this paper <a href=\"https://arxiv.org/pdf/1511.09327\" target=\"_blank\">https://arxiv.org/pdf/1511.09327</a> (Computing the Geometric Intersection Number of Curves. Vincent Despré and Francis Lazarus. Journal of the ACM 66(6), Article 45, Nov. 2019.). The implementation will strongly rely on the current package functionality for the homotopy test.\nAnother interesting possibility could be to add a new functionality to this package in order to repair mesh surfaces that contain undesired non-trivial topology (small handles or tunnels). A first step is to compute a shortest cycle that is essential on a given surface, i.e. that is neither deformable to a point nor to a boundary cycle of the surface. See Computing the shortest Essential Cycle. P. Worah and J. Erickson. Discrete and Computational Geometry, 2010.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4923026308595712/",
+          "proposal_id": null,
+          "short_description": "The new package \"Surface mesh topology\" will be available in the next CGAL release. It is concerned with the computation of topological invariants of...",
+          "slug": "test-of-simplicity-for-a-cycle-on-a-surface",
+          "status": "completed",
+          "student_name": "Shuhao Tan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Test of Simplicity for a Cycle on a Surface"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4953",
+          "description": "<p>A new package which provides an octree data structure.</p>\n<p>CGAL’s Shape-detection package depends on an octree for nearest-neighbor calculations. The octree used internally will be replaced by a new package, which will also be available to users. The new package will have a flexible API as well as thorough testing and benchmarking. It will become a wrapper for a third party implementation if experimentation determines it can be more performant.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5806397834395648/",
+          "proposal_id": null,
+          "short_description": "A new package which provides an octree data structure.\nCGAL’s Shape-detection package depends on an octree for nearest-neighbor calculations. The...",
+          "slug": "octree-package",
+          "status": "completed",
+          "student_name": "Jackson Campolattaro",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Octree Package"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4957",
+          "description": "<p>I'm currently a Ph.D. student at the University of Southern California and focused on computer graphics. This doc proposed my detailed solutions to improve CGAL basic viewer based on my own development experience in Qt-based OpenGL design including how to achieve \"clipping plane\", \"transparent faces\", \"Arrangement 2 supports\", and \"other basic viewers\". For each goal, I studied CGAL code base, proposed my solution in steps and illustrated the goal that I want to achieve with images. Moreover, I listed the Qt-OpenGL projects and related course projects that I worked on, which will definitely help me with the implementation.</p>\n<p>Keywords: Qt5, OpenGL, shaders, signal, slot, clipping plane, transparent faces, traits, simple basic viewers;</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5952242240192512/",
+          "proposal_id": null,
+          "short_description": "I'm currently a Ph.D. student at the University of Southern California and focused on computer graphics. This doc proposed my detailed solutions to...",
+          "slug": "improve-cgal-basic-viewer",
+          "status": "completed",
+          "student_name": "Jing Yang",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve CGAL basic viewer"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/4964",
+          "description": "<p>The CGAL 2D arrangement package is capable of creating planar arrangements, and running queries on them. CGAL provides a demo for the package that enables the user to explore the package graphically in an easy and intuitive manner.\nThis project is a continuation of the work done in the previous year to support Bezier and algebraic arrangements in the demo.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_cgal-project_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5962039698128896/",
+          "proposal_id": null,
+          "short_description": "The CGAL 2D arrangement package is capable of creating planar arrangements, and running queries on them. CGAL provides a demo for the package that...",
+          "slug": "enhancing-the-2d-arrangement-demo-1",
+          "status": "completed",
+          "student_name": "Ahmed Essam-Sayed",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing the 2D Arrangement Demo (1)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6008526545092608/"
+    },
+    "year_2021": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/poncateam/ponca/issues/50",
+          "description": "<p>The goal of this project is to add Moving Least Squares surface reconstruction algorithms to the point set processing component. This family of algorithms reconstruct an implicit surface from a point set by fitting and projecting each point on a primitive (plane, sphere) fitting its neighborhood. The resulting surface is a smooth approximation of the input point cloud (smoothing degree is controlled by the primitive type and neighborhood size). Depending on the used primitive, several differential properties of the surface can be estimated.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6592432312942592/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to add Moving Least Squares surface reconstruction algorithms to the point set processing component. This family of...",
+          "slug": "moving-least-squares-for-point-set-smoothing-and-differential-properties-estimation",
+          "status": "completed",
+          "student_name": "aniket agarwalla",
+          "student_profile": null,
+          "tags": [
+            "cloud"
+          ],
+          "title": "Moving Least Squares for point set smoothing and differential properties estimation"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/5927",
+          "description": "<p>CGAL’s Axis-Aligned Bounding Box Tree is an acceleration structure which speeds up common tasks such as collision-detection. It is used both directly and throughout other packages in the library, so any performance improvements made to this package will pay dividends elsewhere. The package has already been a major target of performance optimization, but one approach that hasn’t yet been fully explored is the use of SIMD, a type of parallel computation where the processor operates on several data values at a time. The introduction of SIMD optimizations to the AABB tree has the potential to substantially improve performance by better taking advantage of the capabilities of modern computer processors.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5483219159351296/",
+          "proposal_id": null,
+          "short_description": "CGAL’s Axis-Aligned Bounding Box Tree is an acceleration structure which speeds up common tasks such as collision-detection. It is used both directly...",
+          "slug": "simd-optimized-aabb-tree",
+          "status": "completed",
+          "student_name": "Jackson Campolattaro",
+          "student_profile": null,
+          "tags": [],
+          "title": "SIMD Optimized AABB Tree"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1tHkkbgIhU3Sy_JxTukM1suwoRPl6rRa-az8p3UCfvhU/edit",
+          "description": "<p>The Computational Geometry Algorithm’s Library  has a program that demonstrates the package named '2D Regularized Boolean Set Operations'. This Project aims at adding more features to the demo, such as, supporting Boolean operations on polygons bounded by polyline curves. Implementing a console will be another important feature to add. Apart from that I plan to enhance the UI/UX and implement exception handling to prevent the demo from crashing. In short my main objective will be to add a few more features and fix both minor and major bugs to match the level of this demo to the current standards of the library.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6249423608217600/",
+          "proposal_id": null,
+          "short_description": "The Computational Geometry Algorithm’s Library  has a program that demonstrates the package named '2D Regularized Boolean Set Operations'. This...",
+          "slug": "finalizing-the-2d-regularized-boolean-set-operations-demo",
+          "status": "completed",
+          "student_name": "Kabir",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Finalizing the 2D Regularized Boolean Set Operations Demo"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/5922",
+          "description": "<p>For this project, I would like to implement 3D Barycentric Coordinates for Convex Polyhedra with Triangular Faces, which is one of the ideas for this year GSoC. The goal of this project is to extend the CGAL package 2D Generalized Barycentric Coordinates to 3D space, to achieve this, it is necessary to implement several coordinate types, which include coordinates for tetrahedra, 3D Wachspress, mean value, and discrete harmonic coordinates.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6547792637460480/",
+          "proposal_id": null,
+          "short_description": "For this project, I would like to implement 3D Barycentric Coordinates for Convex Polyhedra with Triangular Faces, which is one of the ideas for this...",
+          "slug": "3d-barycentric-coordinates-for-convex-polyhedra-with-triangular-faces",
+          "status": "completed",
+          "student_name": "Antonio Gomes",
+          "student_profile": null,
+          "tags": [
+            "angular"
+          ],
+          "title": "3D Barycentric Coordinates for Convex Polyhedra with Triangular Faces"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/5926",
+          "description": "<p>CGAL currently supports the decimation of triangular meshes using two distinct strategies: Lindstrom-Turk and Garland-Heckbert. These strategies assign a cost to each edge collapse so that edges can be iteratively collapsed in order of least cost until a condition is met.</p>\n<p>Our focus is on the latter of the two strategies, which uses quadrics at each vertex to calculate a cost. The paper <a href=\"https://www.graphics.rwth-aachen.de/publication/03308/\" target=\"_blank\">Fast and Robust QEF Minimization using Probabilistic Quadrics</a> explores the use of probabilistic - as opposed to classic - quadrics and shows that in many use cases, including but not limited to mesh decimation, probabilistic quadrics give better results, are more robust and about as efficient as classical quadrics.</p>\n<p>The aim of this project is to introduce support for probabilistic quadrics in the context of mesh decimation in CGAL, which would improve the library's capability to quickly generate highly desirable mesh simplifications.</p>\n",
+          "difficulty": null,
+          "id": "proj_cgal-project_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5170196842545152/",
+          "proposal_id": null,
+          "short_description": "CGAL currently supports the decimation of triangular meshes using two distinct strategies: Lindstrom-Turk and Garland-Heckbert. These strategies...",
+          "slug": "mesh-decimation-using-probabilistic-quadrics",
+          "status": "completed",
+          "student_name": "Julian Komaromy",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ai",
+            "ui"
+          ],
+          "title": "Mesh Decimation using Probabilistic Quadrics"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6538937723518976/"
+    },
+    "year_2022": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1qpakvXFwWClid2CojvtEmPYsnr28c42I9_m2ZZTfkZY/edit?usp=sharing",
+          "description": "Extracting isosurfaces from scalar functions is a common method for generating 3D meshes. An isosurface is a subspace with equal values of the function. The result of this project will be a CGAL package that provides an API and the algorithms to make isosurfacing on uniform grids available to CGALs users. The interface must be generic and allow the use of different representations of scalar functions and output meshes as well as suitable geometry kernels.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/rGKelltB/",
+          "proposal_id": null,
+          "short_description": "Extracting isosurfaces from scalar functions is a common method for generating 3D meshes. An isosurface is a subspace with equal values of the...",
+          "slug": "state-of-the-art-isosurfacing-in-cgal",
+          "status": "completed",
+          "student_name": "Julian Stahl",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "State-of-the-art Isosurfacing in CGAL"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/pull/6921",
+          "description": "Visualization is an important aspect of computer graphics because it’s useful to visualize the result of an algorithm and help to debug errors in code. Since CGAL 4.13, a basic viewer is provided in CGAL to visualize different CGAL data structures. This project aims to improve current mechanisms (e.g. Polyhedron, Surface_mesh, Linear_cell_complex, Polyhedral Surface, Linear Cell Complex, 2D Triangulations, 3D Triangulations, 3D point set, 2D polygon, a 2D polygon with hole, Voronoi Diagram, Periodic 2 Triangulation 2, Nef Polyhedron, and Arrangement 2, etc.) to allow users to coloring attributes, choose the type of appearance, working interactively in 3D mode(e.g. Add Or Drag/Drop points), mix different viewers in application like using parallelism for visualize point cloud and a surface mesh at the same time, and use new viewers technologies like WebGL(for web viewers), SDL, and Orge3D(3D Engine).",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/sOB0N89A/",
+          "proposal_id": null,
+          "short_description": "Visualization is an important aspect of computer graphics because it’s useful to visualize the result of an algorithm and help to debug errors in...",
+          "slug": "enhancing-basic-viewers-in-cgal",
+          "status": "completed",
+          "student_name": "Mostafa Ashraf Mohamed",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "cloud"
+          ],
+          "title": "Enhancing basic viewers in CGAL"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/6828",
+          "description": "Surface reconstruction recovers a watertight surface mesh from a given set of oriented or unoriented point clouds. Given a tensor field that represents the orientation of a point set, a spectral reconstruction process then computes the implicit function by solving an \neigenvalue problem that aligns its gradient with the normal vector of point clouds. In this \nproject, we will focus on improving the spectral reconstruction quality in the aspect of \ndiscretization and numerical robustness. The final delivery will contribute to a part of the CGAL surface reconstruction component.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/X3Sat21N/",
+          "proposal_id": null,
+          "short_description": "Surface reconstruction recovers a watertight surface mesh from a given set of oriented or unoriented point clouds. Given a tensor field that...",
+          "slug": "spectral-surface-reconstruction",
+          "status": "completed",
+          "student_name": "Hongyi Liu",
+          "student_profile": null,
+          "tags": [
+            "cloud"
+          ],
+          "title": "Spectral Surface Reconstruction"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7063",
+          "description": "This project will implement Interpolated Corrected Curvature Measures for triangular meshes based on “Lachaud, J.-O., Romon, P., Thibert, B. and Coeurjolly, D. (2020), Interpolated corrected curvature measures for polygonal surfaces''. Using the Boost Graph Library and CGAL’s extensions to it, the implementation will be data-structure-independent. The project will hopefully investigate and implement possible extensions to the algorithms to cover different use cases.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/rqwWjZy3/",
+          "proposal_id": null,
+          "short_description": "This project will implement Interpolated Corrected Curvature Measures for triangular meshes based on “Lachaud, J.-O., Romon, P., Thibert, B. and...",
+          "slug": "interpolated-corrected-curvature-measures",
+          "status": "completed",
+          "student_name": "Hossam Mohamed Saeed",
+          "student_profile": null,
+          "tags": [
+            "angular"
+          ],
+          "title": "Interpolated Corrected Curvature Measures."
+        },
+        {
+          "code_url": "https://github.com/sloriot/cgal/pull/2",
+          "description": "CGAL currently uses the Boost Parameter Library to provide a convenient way for users to pass parameters. However, with the evolution of C++ Standard, we would like to create our own API for passing named function parameters. To do so, we create our own API which emulates the Boost Parameter Library, while preserving the current API.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/bT5KhDg3/",
+          "proposal_id": null,
+          "short_description": "CGAL currently uses the Boost Parameter Library to provide a convenient way for users to pass parameters. However, with the evolution of C++...",
+          "slug": "remove-boost-parameter-dependency",
+          "status": "completed",
+          "student_name": "G Yuvan Shankar",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Remove Boost Parameter Dependency"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1e9PNxXqsK12JZ9iMvjIfsw11EHxfjsZPYq46nHVagvg/edit?usp=drivesdk",
+          "description": "An isosurface is a 3D surface representation of points with equal values of a scalar function defined in 3D space. The task of isosurfacing consists in generating a surface mesh from an isosurface. The marching cubes (MC) algorithm, running on regular grids - is the most popular method, but more recent variants are adaptive on octrees. In this project, we will implement state-of-the-art methods for adaptive octree grids (see recent CGAL orthtree component). We will seek for a generic design, for both the input function and output meshes.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/pLtlKPkr/",
+          "proposal_id": null,
+          "short_description": "An isosurface is a 3D surface representation of points with equal values of a scalar function defined in 3D space. The task of isosurfacing consists...",
+          "slug": "isosurfacing-marching-cubes-and-dual-contouring-in-octrees",
+          "status": "completed",
+          "student_name": "asipos",
+          "student_profile": null,
+          "tags": [],
+          "title": "Isosurfacing: Marching Cubes and Dual Contouring in Octrees"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/cgal-project/"
+    },
+    "year_2023": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7674",
+          "description": "Non-rigid Iterative Closest Point (N-ICP) is a classic method used for the registration of non-rigidly deforming shapes. Non-rigid registration seeks to find a series of transformations that aligns one surface to another. This process is a necessary step prior to performing tasks such as shape analysis, dynamic surface reconstruction, and object retrieval. As well as its simplicity, a key benefit of the N-ICP algorithm is its extensibility, allowing it to be adapted/enhanced for specific applications. Currently, there is no implementation of N-ICP within CGAL. This project seeks to develop a novel component for the CGAL library that follows the common design practices used in Open Source projects.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/FOvDMw3h",
+          "proposal_id": "kAB2WO6k",
+          "short_description": "Non-rigid Iterative Closest Point (N-ICP) is a classic method used for the registration of non-rigidly deforming shapes. Non-rigid registration seeks...",
+          "slug": "non-rigid-iterative-closest-point",
+          "status": "completed",
+          "student_name": "Dániel Unyi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Non-rigid Iterative Closest Point"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1Wwj3dGjTDG_1wiOohYyZeLDyN-n8dQqojx31jffyl0E/edit",
+          "description": "Abstract:\nRecently the \"2D Arrangement\" package of CGAL has been enhanced with the support of 2D arrangement of geodesic arcs embedded on the sphere. Demonstrating such an arrangement graphically requires rendering in three dimensions, a.k.a. 3D graphics. \n\nImplementation Plan:\nThe project will proceed in 2 main-stages. The output of the second stage will be a stand-alone program with its source code and the corresponding documentation.\nFirst stage: Examining the 2D arrangements & 3D polyhedron demos and  also Efi Fogel’s initial implementation which has its own set of dependencies.\nSecond stage: Implementation of the 3D arrangements on the sphere program. Here, I will incrementally port Efi Fogel’s program to a stand-alone program that solely depends on CGAL and QT5.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/8C3gdjXL",
+          "proposal_id": "sIyMWFp5",
+          "short_description": "Abstract: Recently the \"2D Arrangement\" package of CGAL has been enhanced with the support of 2D arrangement of geodesic arcs embedded on the sphere....",
+          "slug": "demonstrating-2d-arrangements-embedded-on-the-sphere",
+          "status": "completed",
+          "student_name": "Deniz Diktas",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Demonstrating 2D Arrangements Embedded on the Sphere"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7852",
+          "description": "This project introduces a new simplification (and remeshing) framework to CGAL. Based on the Approximated Centroidal Voronoi Diagrams (ACVD) project which proposes a robust and efficient approach. The implementation will be incremental. Starting from the simple uniform simplification algorithm, then more complex metrics (anisotropic, quadric-based) are planned to be implemented. Finally, a topology correction guarantee step is added based on.  The implementation will be under CGAL’s Polygon Mesh Processing package.  It is planned to write complete documentation and implement tests and visualizations as well.",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/VrwwMSuN",
+          "proposal_id": "6qqytolL",
+          "short_description": "This project introduces a new simplification (and remeshing) framework to CGAL. Based on the Approximated Centroidal Voronoi Diagrams (ACVD) project...",
+          "slug": "approximated-discrete-centroidal-voronoi-diagrams",
+          "status": "completed",
+          "student_name": "Hossam Mohamed Saeed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Approximated (Discrete)  Centroidal Voronoi Diagrams"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7736",
+          "description": "The goal of the proposed project is to extend the existing remeshing functionality in the polygon mesh processing (PMP) package with the adaptive remeshing based on the work by Dunyach et al. (2013). The existing implementation isotropically remshes surfaces in three steps: first, edge splitting or collapsing depending on their \nlength relative to the target edge length; second, edge flipping to improve vertex valence; third, tangential relaxation to improve the vertex distribution. The planned extension with the adaptive remeshing involves expanding the edge splitting and collapsing rules, and introducing a new formulation of the tangential relaxation; in addition, feature edges must be addressed. Apart from implementing those three necessary functionalities in CGAL, the contribution to the project would include creating tests, examples, and documentation.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/HE8oFb28",
+          "proposal_id": "yJK7Z7CN",
+          "short_description": "The goal of the proposed project is to extend the existing remeshing functionality in the polygon mesh processing (PMP) package with the adaptive...",
+          "slug": "curvature-adaptive-remeshing",
+          "status": "completed",
+          "student_name": "Ivan Paden",
+          "student_profile": null,
+          "tags": [],
+          "title": "Curvature Adaptive Remeshing"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7694",
+          "description": "Funded by GSoC this summer, I propose to add collision detection to CGAL in a way that naturally builds on and extends CGAL’s existing AABB-tree functionality. The project will focus on implementing trusted collision-detection methods, which are attested to by their use in projects like the Godot game engine as well as their continued academic propagation through works like Ericson’s “Real-Time Collision Detection” and courses like UT Austin’s “CS395T: Physical Simulation”.\r\n\r\nI envision the project having the following deliverables:\r\n\r\n   - Modifications to CGAL’s existing AABB tree functionality where necessary, e.g. to handle moving bounding boxes and dynamic restructuring of the bounding volume hierarchy\r\n   - Broad-phase collision detection routine that utilizes CGAL’s AABB tree to quickly rule out unnecessary collision queries and identify potential collision pairs\r\n   - Narrow-phase collision detection routine that performs fast collision tests on the pairs of primitives identified in the broad phase\r\n   - Tests to cover all changes and new functionality\r\n   - Documentation of the above\r\n\r\nThe full proposal can be found here: https://hackmd.io/@1V1uNkwcQMiMbp_OanOjUA/r1kG1v_-3",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/uq7t1zqg",
+          "proposal_id": "P8No0M63",
+          "short_description": "Funded by GSoC this summer, I propose to add collision detection to CGAL in a way that naturally builds on and extends CGAL’s existing AABB-tree...",
+          "slug": "continous-time-collision-detection-for-cgal",
+          "status": "completed",
+          "student_name": "Jeffrey.D.Cochran",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Continous-Time Collision Detection for CGAL"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7699",
+          "description": "Polygons are defined by one outer ring and possibly multiple inner rings representing holes, where each ring is usually represented as a sequence of points. This allows for several undesirable configurations, such as self-intersecting rings, badly nested rings (inner outside outer), and inner rings that split the interior of the polygon into multiple disjoint parts. Such undesirable configurations are considered as invalid polygons in many applications, such as in Geographic Information Systems through ISO 19107.\n\nThe aim of this project is to incorporate the polygon repair method originally described in https://doi.org/10.1016/j.cageo.2014.01.009 (but later improved) as a CGAL package. This method consists of three steps: (1) a constrained triangulation of the polygon, (2) labelling of its faces as interior/exterior, (3) extraction of the resulting polygon(s) from the sets of labelled triangular faces.\n\nThe method is already implemented using CGAL and freely available as prepair: https://github.com/tudelft3d/prepair. Integrating it with CGAL as a new package would likely involve switching the code's GDAL dependency with new functions for native CGAL types, adding some functionality in the CGAL 2D/3D Triangulations package (proper deletion of constraints), and the writing of CGAL-style templated code (with support for different kernels and so on).",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ivuH5hxv",
+          "proposal_id": "F4V11f1j",
+          "short_description": "Polygons are defined by one outer ring and possibly multiple inner rings representing holes, where each ring is usually represented as a sequence of...",
+          "slug": "polygon-repair",
+          "status": "completed",
+          "student_name": "Ken Arroyo Ohori",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ai"
+          ],
+          "title": "Polygon repair"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal-public-dev/tree/gsoc2023-Clustering_QEM-mladeuil/",
+          "description": "- 1 weeks understanding the article and making small code test to get into the CGAL architecture  \nat this point I should be able to manipulate the CGAL methods and visualize in a 3d interface what i'm doing.\n\n- 8 weeks for the implementation of the algorithm\n\n\n- 2 weeks concise mesh reconstruction algorithm\nat this point I should be able to reconstruct a mesh\n\n- 1 weeks testing and documentation\nat this point I should be able to deliver a product",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/HcvzfS2g",
+          "proposal_id": "7MA0sMaq",
+          "short_description": "- 1 weeks understanding the article and making small code test to get into the CGAL architecture at this point I should be able to manipulate the...",
+          "slug": "clustering-3d-point-clouds",
+          "status": "completed",
+          "student_name": "Mathieu LADEUIL",
+          "student_profile": null,
+          "tags": [
+            "cloud"
+          ],
+          "title": "Clustering 3D point clouds"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7670",
+          "description": "The goal of the project is to add the \"Virtual Source Propagation\" (Trettner, Bommes, Kobbelt 2021) algorithm to CGAL. This algorithm finds approximate geodesic paths and distance by propagating virtual geodesic sources along the mesh. By the time of the midterm evaluation, we intend to have a working algorithm, some tests and first optimisations. During the second coding phase, we want to further optimise the code and add CPU parallelisation. Afterwards, all the geodesic paths computation methods will be compared in term of accuracy, speed and how they scale with the mesh size and geodesic length so that CGAL users can choose the algorithm that is the best fit for their problem.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Smrl9uML",
+          "proposal_id": "M4ZA4D4h",
+          "short_description": "The goal of the project is to add the \"Virtual Source Propagation\" (Trettner, Bommes, Kobbelt 2021) algorithm to CGAL. This algorithm finds...",
+          "slug": "geodesic-distance-computation-improvements",
+          "status": "completed",
+          "student_name": "rp01052",
+          "student_profile": null,
+          "tags": [],
+          "title": "Geodesic Distance Computation Improvements"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7669",
+          "description": "CGAL has been using OpenGL API to generate its visuals in the 3D demonstrations. With recent MacOS update there, OpenGL support has ben deprecated by the mac machines. This arises a need for implementing the graphics backend in another API that is suitable for the machines that are using MacOS. Vulkan API provides flexibility for different platforms, through the course of this project the graphics backend of CGAL is going to be implemented in Vulkan. Since Qt is used for user interface, QVulkan is going to be used for Vulkan-UI context.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/CzILgtId",
+          "proposal_id": "HPhFPUUE",
+          "short_description": "CGAL has been using OpenGL API to generate its visuals in the 3D demonstrations. With recent MacOS update there, OpenGL support has ben deprecated by...",
+          "slug": "vulkan-api-backend-replacement",
+          "status": "completed",
+          "student_name": "Tolga Yildiz",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "backend"
+          ],
+          "title": "Vulkan API backend replacement"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/7748",
+          "description": "Many applications of point set surfaces work with noisy point sets, requiring a denoising operation to reconstruct the original surface. This project will implement constraint-based point set denoising-- an iterative, anisotropic denoising algorithm presented by Yadav et al. While denoising algorithms exist in CGAL, this method focuses on preserving sharp geometries during the denoising process. The final deliverable for this project will contribute to CGAL's Point Set Processing package.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2023_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/8ltgdTWo",
+          "proposal_id": "5ZwoUOaB",
+          "short_description": "Many applications of point set surfaces work with noisy point sets, requiring a denoising operation to reconstruct the original surface. This project...",
+          "slug": "constraint-based-point-set-denoising",
+          "status": "completed",
+          "student_name": "William Wen",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Constraint-based Point Set Denoising"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/cgal-project"
+    },
+    "year_2024": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/CGAL/cgal-public-dev/blob/gsoc2024-triangle_mesh_sampling-bmccoy/Polygon_mesh_processing/examples/Polygon_mesh_processing/poisson_sampling_sm_example.cpp",
+          "description": "For various applications, a good sampling of triangle meshes is required. While CGAL provides different sampling strategies in the Polygon Mesh Processing package, blue noise sampling is a sampling strategy providing a uniform distribution, especially interesting if coupled with geodesic properties. In this context, we propose to add to CGAL an implementation of the classical Poisson disk sampling on a triangle mesh. A warm-up exercise could be to implement such a function on a 2D and 3D triangle. Various resources are provided below.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/cRBupqeR/",
+          "proposal_id": null,
+          "short_description": "For various applications, a good sampling of triangle meshes is required. While CGAL provides different sampling strategies in the Polygon Mesh...",
+          "slug": "point-sampling-of-triangle-meshes-with-poisson-disc-sampling",
+          "status": "completed",
+          "student_name": "Bradley McCoy",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Point Sampling of Triangle Meshes with Poisson Disc Sampling"
+        },
+        {
+          "code_url": "https://gist.github.com/theo97490/961d6e67d6456d660067f5229368099c",
+          "description": "The goal of this project is to implement the method of the paper \"A template-based approach for parallel hexahedral two-refinement\", Steven J. Owen, Ryan M. Shih, Corey D. Ernst; in CGAL. This method allows to generate a locally refined hexahedral mesh, starting from a coarse grid, and using different templates for refinement. It will be implemented using a 3D linear cell complex as underlying data-structure. To implement the different templates, we can use the volumic Query-replace operation.",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/h27FArca/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to implement the method of the paper \"A template-based approach for parallel hexahedral two-refinement\", Steven J. Owen,...",
+          "slug": "hexahedral-mesh-generation",
+          "status": "completed",
+          "student_name": "Théo Bénard",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hexahedral mesh generation"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal/issues/8575",
+          "description": "The project aims to tackle the challenge of low-quality triangles in triangle meshes by mollifying each triangle, effectively simulating improved edge lengths to eradicate intrinsically thin triangles. The overarching objective is to establish a unified preprocessing step capable of managing such cases, thereby streamlining CGAL's cotangent weight calculation through intrinsic mollification. This endeavor encompasses multiple facets: firstly, the exposure of intrinsic mollification as an independent option for heat method computation; secondly, the implementation and comparison of advanced schemes delineated in recent research to refine intrinsic mollification. Furthermore, the project ultimate goal is to use intrinsic mollification to enhance the outcomes of other CGAL packages such as curvature flow, parameterization, skeletonization, and mesh fairing that use cotangent weights.",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/zhfIjWDe/",
+          "proposal_id": null,
+          "short_description": "The project aims to tackle the challenge of low-quality triangles in triangle meshes by mollifying each triangle, effectively simulating improved...",
+          "slug": "intrinsic-mollification-schemes-to-enhance-cotangent-weights-robustness",
+          "status": "completed",
+          "student_name": "Islam Omar",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Intrinsic Mollification Schemes to Enhance Cotangent Weights Robustness"
+        },
+        {
+          "code_url": "https://github.com/CGAL/cgal-public-dev/tree/gsoc2024-basic_viewer_glfw-tgrillon/Basic_viewer/include/CGAL",
+          "description": "In the past, I played an active role in the development of a lightweight basic viewer for CGAL, utilizing the GLFW framework. The primary aim of this project is to complete this endeavor and initiate a pull request for CGAL. The process will involve fixing known bugs, refactoring the codebase, and adding missing functionalities such as control improvement and animation system. The next priority will be to enhance the user experience by adding more complex functionalities like a selection system.",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/VFReLkmo/",
+          "proposal_id": null,
+          "short_description": "In the past, I played an active role in the development of a lightweight basic viewer for CGAL, utilizing the GLFW framework. The primary aim of this...",
+          "slug": "enhancing-cgals-basic-viewer-based-on-glfw-extending-functionality-and-refining-implementation",
+          "status": "completed",
+          "student_name": "Theo Grillon",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "\"Enhancing CGAL’s Basic Viewer based on GLFW: Extending Functionality and Refining Implementation"
+        },
+        {
+          "code_url": "https://bitbucket.org/taucgl/cgal-python-bindings/branch/gsoc2024-python_bindings-radekaadek",
+          "description": "The CGAL library provides many robust and extensive algorithms, but its use is limited only to C++ experts. My project aims to lower the barrier to entry by providing Python bindings to existing library funcionality. From my own experiance I can say, that many people could benefit from them. They could also speed up the development of projects using CGAL and that can bring attention of companies that would hopefully also contribute to the project.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/gMLRIpqB/",
+          "proposal_id": null,
+          "short_description": "The CGAL library provides many robust and extensive algorithms, but its use is limited only to C++ experts. My project aims to lower the barrier to...",
+          "slug": "cgal-python-bindings",
+          "status": "completed",
+          "student_name": "Radosław Dąbkowski",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "CGAL Python Bindings"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/cgal-project/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to parallelize the CGAL Tetrahedral Remeshing package using the Intel Threading Building Blocks (TBB) library. This will significantly reduce the computational time required for remeshing large meshes, enabling faster and more efficient simulations. CGAL already provides some parallel implementations for some of its packages. While the primary focus is to parallelize the Remeshing package, a key objective is to lay the foundation for a generic parallelization framework for CGAL. Analogously to C++ STL's execution policies we would like to develop a framework that could, as future work, be extended to the rest of the library and allow to seamlessly change execution policies. The core of this proposal is a generic framework for the parallel execution of atomic operations using TBB in the remeshing package.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/1pQ8f10i",
+          "proposal_id": "51JEseWZ",
+          "short_description": "The goal of this project is to parallelize the CGAL Tetrahedral Remeshing package using the Intel Threading Building Blocks (TBB) library. This will...",
+          "slug": "parallel-tetrahedral-remeshing-using-tbb",
+          "status": "in-progress",
+          "student_name": "Iason Manolas",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Parallel tetrahedral remeshing using TBB"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to integrate into the CGAL library an algorithm for medial axis approximation that I developed and published at SIGGRAPH Asia 2024. The algorithm computes an approximate medial axis of a 3D shape—represented either as a triangular mesh or a point cloud—using a variational sampling method that dynamically balances accuracy and robustness. It is designed to handle both clean and noisy input geometry, and supports dynamic updates, allowing users to interactively refine the result as needed.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/nQN4fzNv",
+          "proposal_id": "MLoFKE1w",
+          "short_description": "The project aims to integrate into the CGAL library an algorithm for medial axis approximation that I developed and published at SIGGRAPH Asia 2024....",
+          "slug": "dynamic-skeletonization-via-variational-medial-axis-sampling-cgal-integration",
+          "status": "in-progress",
+          "student_name": "Qijia HUANG",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ai",
+            "cloud"
+          ],
+          "title": "Dynamic Skeletonization via Variational Medial Axis Sampling – CGAL Integration"
+        },
+        {
+          "code_url": null,
+          "description": "The 2D Arrangements package in CGAL offers a powerful framework for constructing and manipulating geometric arrangements. However, current demo applications—specifically the planar arrangement demo and the earth demo—exhibit limitations in rendering quality, curve support, and interactive visualization. This proposal outlines enhancements to these demos to improve rendering efficiency, expand support for various curve types, and refine spherical arrangement visualization. In addition, the project will explore GIS applications by leveraging arrangements for topological error validation and correction in vector maps.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/1hCfEr46",
+          "proposal_id": "8cgAwhDz",
+          "short_description": "The 2D Arrangements package in CGAL offers a powerful framework for constructing and manipulating geometric arrangements. However, current demo...",
+          "slug": "extending-2d-arrangement-drawings",
+          "status": "in-progress",
+          "student_name": "Shepard Liu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending 2D Arrangement Drawings"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to develop an advanced hexahedral grid refinement framework (Owen et al. 2017), supporting single-threaded and multi-threaded environments. In the previous project, the generation of an initial hexahedral grid and grid refinement using the prepared templates were implemented. In this project, we will integrate novel features such as mesh smoothing specialized to the mesh after it and improved thread assignment mechanisms for robust multi-threaded processing. The deliverables include a complete implementation, extensive documentation via Doxygen, and unit tests using ctest.",
+          "difficulty": "advanced",
+          "id": "proj_cgal-project_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/b3o1ogYP",
+          "proposal_id": "Tzb0swoD",
+          "short_description": "This proposal aims to develop an advanced hexahedral grid refinement framework (Owen et al. 2017), supporting single-threaded and multi-threaded...",
+          "slug": "hexahedral-mesh-generation",
+          "status": "in-progress",
+          "student_name": "Soichiro",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Hexahedral Mesh Generation"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to enhance the existing Dual Contouring (DC) method in CGAL by implementing manifold contouring methods. While the classical DC is a powerful isosurfacing method, it may produce non-nonmanifold surfaces, leading to topological inconsistencies and computational challenges. Manifold dual contouring methods overcome this issue by introducing manifold constraints to ensure the generation of 2-manifold surfaces.\n\nThe project will begin with a detailed study of existing literature, including Manifold Dual Contouring by Schaefer, Ju and Warren, and other related methods. Based on the research, we will determine an algorithm that combines the most robust aspects of these methods. The next phase is to review current DC implementations in CGAL  to identify gaps that require modifications, particularly in routines such as the Quadratic Error Function (QEF) minimization, octree traversal, and polygonalization. Lastly, additional features will be added, including manifold criterions like the Euler characteristic test, and the support for multiple vertices per cell.\n\nThe final deliverables will be a robust implementation of the enhanced DC method integrated into CGAL under the Isosurfacing subroutine. The implementation will adhere to CGAL’s existing coding conventions to ensure flexibility, consistency, and maintainability within the library. The documentation will include a test file under Isosurfacing 3/test/Isosurfacing 3, visualization of test cases under Isosurfacing/fig, and a theoretical background under Isosurfacing 3/doc/Isosurfacing 3/Isosurfacing 3.txt.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/OssVTW5a",
+          "proposal_id": "4Sd2swFy",
+          "short_description": "The goal of this project is to enhance the existing Dual Contouring (DC) method in CGAL by implementing manifold contouring methods. While the...",
+          "slug": "enhanced-dual-contouring",
+          "status": "in-progress",
+          "student_name": "Taoli Shen",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhanced Dual Contouring"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/cgal-project"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc-cgal@inria.fr",
+    "guide_url": "https://github.com/CGAL/cgal/wiki/Project-Ideas#information-candidates-should-supply",
+    "ideas_url": "https://github.com/CGAL/cgal/wiki/Project-Ideas",
+    "irc_channel": null,
+    "mailing_list": "https://www.cgal.org/mailing_list.html"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/TheCGALProject",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.983Z"
+  }
+}

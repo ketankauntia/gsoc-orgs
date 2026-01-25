@@ -1,0 +1,207 @@
+{
+  "id": "692251e853dd9d7326d33ec2",
+  "slug": "symbiflow",
+  "name": "SymbiFlow",
+  "category": "Programming languages",
+  "description": "A completely FOSS toolchain for FPGAs.",
+  "image_url": "https://lh3.googleusercontent.com/CvqeGxSl_fS_m75Z_2u_XWVw4JRQRmUDdQ-iL9VyMEnvPQJPbalrvLZcopVRsdK-ESlMAsM4kR_HW8xZgphjZ2YS8OSZssvXu1mMOSb9INA",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/symbiflow.webp",
+  "logo_r2_url": null,
+  "url": "https://symbiflow.github.io/",
+  "active_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "first_year": 2019,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "verilog",
+    "fpga",
+    "xilinx",
+    "python",
+    "c",
+    "c++"
+  ],
+  "topics": [
+    "electronic design tools",
+    "programming languages and development tools",
+    "fpga",
+    "programming languages",
+    "development tools",
+    "open hardware"
+  ],
+  "total_projects": 5,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 1,
+      "year_2020": 3,
+      "year_2021": 1,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 1,
+      "year_2020": 3,
+      "year_2021": 1,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 5
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1SZm44g-9Bo-xD2lDfXcxb8bpzYjewGyK7bVyOYj5Gqs/edit",
+          "description": "<p>I propose replacing VPR’s XML reader for the architecture file with a schema-generated one. Furthermore, I propose replacing current rr_graph, top.net, route and place formats with more efficient binary formats. I’m planning to use FlatBuffers for top.net, route and place, and a custom, memory-mappable binary format for the rr_graph file.</p>\n<p>As an addition, I will investigate possibilities to generate the rr_graph in VPR from smaller pieces of information such as tilegrid.json and tileconn.json.</p>\n",
+          "difficulty": null,
+          "id": "proj_symbiflow_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5441201438720000/",
+          "proposal_id": null,
+          "short_description": "I propose replacing VPR’s XML reader for the architecture file with a schema-generated one. Furthermore, I propose replacing current rr_graph,...",
+          "slug": "optimization-of-vpr-file-formats",
+          "status": "completed",
+          "student_name": "Fahrican Koşar",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Optimization of VPR File Formats"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6469457059250176/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1kTbLwmYdDf0ODxJKlR5rC2zMvPAFGkPV3ksjyIoZQHs/edit?usp=sharing",
+          "description": "<p>The VTR (Verilog-to-routing) project provides an academic open-source CAD flow for FPGAs, combining tools for Synthesis and Logic Optimization (Yosys, ODIN, ABC), with tools for physical implementation (VPR).  At the heart of this tool suite, is a set of scripts that manage the execution of coordinate of these tools.  Currently, these scripts are written in a few different languages, but mostly in Perl.  I am proposing converting the Verilog-to-routing test runner scripts from Perl to Python. While doing this I will make various optimizations and enhancements.</p>\n",
+          "difficulty": null,
+          "id": "proj_symbiflow_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6228610299461632/",
+          "proposal_id": null,
+          "short_description": "The VTR (Verilog-to-routing) project provides an academic open-source CAD flow for FPGAs, combining tools for Synthesis and Logic Optimization...",
+          "slug": "upgrading-vtr-flow-scripts-to-python3-and-adding-new-functionality",
+          "status": "completed",
+          "student_name": "Shad Torrie",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "Upgrading VTR flow scripts to Python3 and adding new functionality"
+        },
+        {
+          "code_url": "https://andrewb1999gsoc.blogspot.com/2020/08/gsoc-final-code-submission.html",
+          "description": "<p>SymbiFlow does not currently support partial reconfiguration regions.  Partial reconfiguration regions are crucial to ongoing FPGA research including reducing verilog to bitstream compilation times through separate compilation.  Two major hurdles to the support of partial reconfiguration regions are SymbiFlow and VPR support for restricted placement/routing and the ability to generate and upload a partial bitstream.  I will be taking on the first of these two hurdles.</p>\n",
+          "difficulty": null,
+          "id": "proj_symbiflow_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5766524633088000/",
+          "proposal_id": null,
+          "short_description": "SymbiFlow does not currently support partial reconfiguration regions.  Partial reconfiguration regions are crucial to ongoing FPGA research including...",
+          "slug": "support-for-partial-reconfiguration-regions-in-symbiflow",
+          "status": "completed",
+          "student_name": "Andrew Butt",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support for Partial Reconfiguration Regions in SymbiFlow"
+        },
+        {
+          "code_url": "https://gsocbill2020.wordpress.com/2020/08/26/gsoc2020-final-report/",
+          "description": "<p>I will focus on the Vehicle-to-Routing (VTR) component of the SymbiFlow project. Specifically, I will work on improving the existing electronic design automation (EDA) tools that place and route various logic gates, flip-flops, look-up tables (LUT) and more complex logic blocks on the Field-programmable Gate Array (FPGA). Important evaluation factors are the speed of the optimization process and the quality of the final mapped design.</p>\n<p>Two major techniques that I will experiment with are:</p>\n<ol>\n<li>Providing a fast and decent preliminary placement solution that does not cluster remotely related logics.</li>\n<li>Allowing clusters to be taken apart and the primitives optimized during placement.</li>\n</ol>\n",
+          "difficulty": "advanced",
+          "id": "proj_symbiflow_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5150851674406912/",
+          "proposal_id": null,
+          "short_description": "I will focus on the Vehicle-to-Routing (VTR) component of the SymbiFlow project. Specifically, I will work on improving the existing electronic...",
+          "slug": "fpga-routing-management-and-optimization",
+          "status": "completed",
+          "student_name": "Bingran Hu",
+          "student_profile": null,
+          "tags": [],
+          "title": "FPGA Routing Management and Optimization"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5628676583981056/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1h1sHjNC2Mz2Ik3ZZTuzzA7HLJjrHAUxxRWpbHu3cwm0/edit?usp=sharing",
+          "description": "<p>Symbiflow has already produced a model of Xilinx's Artix7 in VTR, but it only limited to single chip description.\nThe aim of this project is to instead investigate how to describe Artix7 at a higher level of abstraction, using VTR's architecture description language, so the chip definition can easily be changed to make conducting experiments with related architecture easier.</p>\n",
+          "difficulty": null,
+          "id": "proj_symbiflow_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6548570026541056/",
+          "proposal_id": null,
+          "short_description": "Symbiflow has already produced a model of Xilinx's Artix7 in VTR, but it only limited to single chip description.\nThe aim of this project is to...",
+          "slug": "capturing-an-abstracted-model-of-xilinx-artix7-using-vtr",
+          "status": "completed",
+          "student_name": "Arash Ahmadian",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Capturing an abstracted model of Xilinx Artix7 using VTR"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4577761535983616/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://webchat.freenode.net/?channels=symbiflow",
+    "mailing_list": "https://lists.librecores.org/listinfo/symbiflow"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/symbiflow",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.312Z"
+  }
+}

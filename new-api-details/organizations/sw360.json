@@ -1,0 +1,146 @@
+{
+  "id": "692251e653dd9d7326d33ea4",
+  "slug": "sw360",
+  "name": "SW360",
+  "category": "Web",
+  "description": "Software supply chain management done right !",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/sw360/scylub8cx6f9mkzk-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/sw360.webp",
+  "logo_r2_url": null,
+  "url": "https://eclipse.dev/sw360/",
+  "active_years": [
+    2025
+  ],
+  "first_year": 2025,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "java",
+    "react",
+    "couchdb",
+    "SpringBoot"
+  ],
+  "topics": [
+    "license compliance",
+    "compliance automation",
+    "SBOM",
+    "component repository",
+    "vulnerabilities management"
+  ],
+  "total_projects": 2,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 2
+    },
+    "total_students": 2
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Currently, SW360’s integration with FOSSology is limited to only basic functionalities using outdated endpoints namely, triggering scans and checking scan status. This results in inefficient workflows, redundant uploads, lack of flexibility in scanning configurations, and restricted report formats. It also misses opportunities for reuse of scan data and lacks user-level attribution and secure token handling. This project and proposal aims to refactor and extend SW360's FOSSology integration by utilizing the modern RESTful API (OpenAPI v2 spec) offered by FOSSology. It will enable advanced functionalities such as:\n1. Direct Source Uploads via POST /uploads\n2. Checksum-Based Search and Reuse using /filesearch\n3. Selectable Scanning Agents (e.g., Nomos, Monk, Reuser)\n4. Multi-Format Report Generation (SPDX, CycloneDX, etc.)\n5. User-Specific Token Support for secure and auditable API interactions\nThese enhancements will be implemented through a modular, secure, and scalable API integration layer in SW360, with robust error handling, polling mechanisms, and extensibility for future API versions.\nDeliverables:\n1. REST API Refactoring of SW360's FOSSology connector using modern v2 endpoints.\n2. Efficient File Upload System with token-based authentication and job initiation.\n3. Checksum Reuse Logic to avoid duplicate scans and utilize FOSSology’s “Reuser” agent.\n4. Configurable Scanning Agent Support exposed via backend APIs.\n5. Support for Diverse Report Formats, download mechanisms, and metadata linking.\n6. Secure Token Management for both server-wide and user-specific workflows.\n7. Robust Error Handling, retry logic, audit logging, and performance tuning.\n8. Comprehensive Testing, documentation, and CI/CD pipeline integration.",
+          "difficulty": "advanced",
+          "id": "proj_sw360_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/gh7uLcOi",
+          "proposal_id": "wLz1nPMY",
+          "short_description": "Currently, SW360’s integration with FOSSology is limited to only basic functionalities using outdated endpoints namely, triggering scans and checking...",
+          "slug": "improving-integration-of-sw360-with-fossology",
+          "status": "in-progress",
+          "student_name": "Ritankar Saha",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "backend"
+          ],
+          "title": "Improving Integration of SW360 with FOSSology"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to improve the testing framework for SW360’s REST API endpoints by addressing limited test coverage, insufficient integration tests, and outdated testing workflows. The project will focus on writing comprehensive unit tests for CRUD operations and edge cases, developing integration tests for multi-endpoint workflows, and creating reusable utilities for database mocking and error simulation. Additionally, CI/CD pipelines will be automated with tools like JaCoCo for test coverage tracking and regression prevention. Deliverables include a robust test suite, enhanced testing infrastructure, automated pipelines, and detailed documentation to simplify onboarding and contributions. These improvements will make SW360's APIs more reliable, scalable, and maintainable for the developer community.",
+          "difficulty": null,
+          "id": "proj_sw360_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/GTS6j5jV",
+          "proposal_id": "xRPL0ZgH",
+          "short_description": "This proposal aims to improve the testing framework for SW360’s REST API endpoints by addressing limited test coverage, insufficient integration...",
+          "slug": "improve-tests-for-all-rest-api-endpoints",
+          "status": "in-progress",
+          "student_name": "Rohit Borra",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Improve tests for all REST API endpoints"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sw360"
+    }
+  },
+  "first_time": true,
+  "contact": {
+    "email": null,
+    "guide_url": "https://eclipse.dev/sw360/docs/development/",
+    "ideas_url": "https://eclipse.dev/sw360/gsoc/gsoc-projects-2025/",
+    "irc_channel": "https://matrix.to/#/#technology.sw360-general:matrix.eclipse.org",
+    "mailing_list": "sw360-dev@eclipse.org"
+  },
+  "social": {
+    "blog": "https://eclipse.dev/sw360/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.173Z"
+  }
+}

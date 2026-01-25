@@ -1,0 +1,145 @@
+{
+  "id": "692251eb53dd9d7326d33ee9",
+  "slug": "typelevel",
+  "name": "Typelevel",
+  "category": "Programming languages",
+  "description": "We do functional programming together",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/typelevel/hxlcctbqekguxcxx.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/typelevel.webp",
+  "logo_r2_url": null,
+  "url": "https://typelevel.org",
+  "active_years": [
+    2025
+  ],
+  "first_year": 2025,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "linux",
+    "node.js",
+    "jvm",
+    "scala",
+    "wasm"
+  ],
+  "topics": [
+    "web",
+    "functional programming",
+    "cloud",
+    "AI/ML",
+    "cats"
+  ],
+  "total_projects": 2,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 2
+    },
+    "total_students": 2
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "FS2, a functional streaming library for Scala, currently utilizes blocking I/O operations, resulting in performance bottlenecks such as context switching and resource contention, particularly in high I/O-bound workloads. To overcome this, the project proposes reimplementing I/O APIs specifically Unix sockets, datagram sockets, and processes by leveraging polling-based mechanisms introduced in Cats Effect v3.6.0, which will remove the reliance on dedicated dispatcher threads and eliminate inefficiencies tied to blocking calls. This reimplementation will support JVM selector-based polling and Native file descriptor polling, while keeping existing implementations as fallbacks for runtimes that do not support the new approach therefore ensuring backward compatibility. The project will deliver these reimplemented APIs alongside comprehensive test suites to verify correctness, performance benchmarks to quantify improvements, and updated API documentation to ensure usability. By improving FS2’s efficiency and scalability, this enhancement will strengthen the Typelevel ecosystem and provide high-performance streaming library tailored for modern applications.",
+          "difficulty": null,
+          "id": "proj_typelevel_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/m1AIvq9j",
+          "proposal_id": "xSzO8Xkh",
+          "short_description": "FS2, a functional streaming library for Scala, currently utilizes blocking I/O operations, resulting in performance bottlenecks such as context...",
+          "slug": "polling-based-io-in-fs2",
+          "status": "in-progress",
+          "student_name": "Purmani Rahul Reddy",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Polling-based I/O in FS2"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the challenge of integrating computationally intensive Machine Learning inference into responsive Scala applications without compromising service latency. Currently, ML inference within Cats Effect applications can monopolize CPU resources, starving concurrent operations. The proposed solution develops a compiler that transforms standard ONNX machine learning models into optimized Cats Effect IO operations using Scala Native for high-performance numerical computation via mlpack C++ bindings.\r\n\r\nThe project will deliver: (1) C bindings for mlpack with Scala Native integration, (2) a custom Intermediate Representation for ML operations, (3) an ONNX parser, (4) a core inference library that transforms ML models into Cats Effect IO actions with strategic yielding, (5) a functional MNIST digit recognition web service demo with benchmarking capabilities, and (6) comprehensive documentation and tests. This solution will enable seamless, efficient, and purely functional ML integration within the Typelevel ecosystem without degrading service responsiveness",
+          "difficulty": "medium",
+          "id": "proj_typelevel_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/p31TQtpS",
+          "proposal_id": "hZ0ZvubJ",
+          "short_description": "This project addresses the challenge of integrating computationally intensive Machine Learning inference into responsive Scala applications without...",
+          "slug": "efficient-machine-learning-inference-in-cats-effect-via-scala-native-and-mlpack",
+          "status": "in-progress",
+          "student_name": "Shrey Pant",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml"
+          ],
+          "title": "Efficient Machine Learning Inference in Cats Effect via Scala Native and mlpack"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/typelevel"
+    }
+  },
+  "first_time": true,
+  "contact": {
+    "email": "gsoc@typelevel.org",
+    "guide_url": "https://typelevel.org/gsoc",
+    "ideas_url": "https://typelevel.org/gsoc/ideas",
+    "irc_channel": "https://discord.gg/NAUJXXMxzh",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://typelevel.org/blog/",
+    "discord": "https://discord.gg/NAUJXXMxzh",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://fosstodon.org/@typelevel",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.417Z"
+  }
+}

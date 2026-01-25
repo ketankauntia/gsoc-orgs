@@ -1,0 +1,189 @@
+{
+  "id": "692251da53dd9d7326d33e03",
+  "slug": "kubevirt",
+  "name": "KubeVirt",
+  "category": "Infrastructure and cloud",
+  "description": "Building a virtualization API for Kubernetes",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/kubevirt/pqdi8ojm0atxoo1s-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/kubevirt.webp",
+  "logo_r2_url": null,
+  "url": "https://kubevirt.io",
+  "active_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2023,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "golang",
+    "grpc"
+  ],
+  "topics": [
+    "virtualization",
+    "containers",
+    "kubernetes"
+  ],
+  "total_projects": 4,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.33,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 1,
+      "year_2024": 2,
+      "year_2025": 1
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 1,
+      "year_2024": 2,
+      "year_2025": 1
+    },
+    "total_students": 4
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/kubevirt/k8s-seccomp-generator",
+          "description": "Seccomp is a security facility from the Linux Kernel that prevents processes from executing unauthorised syscalls. By limiting the number of permitted syscalls, seccomp is being utilised in conjunction with Kubernetes to reduce the attack surface of the containers.\nKubeVirt already supports custom Seccomp profiles, but that is based on the default seccomp profile that cri-o uses. This static approach leaves room for the profile to block necessary syscalls or allow unnecessary syscalls, hence compromising the security. \nThis project focuses on automating the process of generating a seccomp profile for the VirtLauncher pod.",
+          "difficulty": null,
+          "id": "proj_kubevirt_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ckQPXYW5",
+          "proposal_id": "WnsYCd2K",
+          "short_description": "Seccomp is a security facility from the Linux Kernel that prevents processes from executing unauthorised syscalls. By limiting the number of...",
+          "slug": "kubevirt-seccomp-profile-generation",
+          "status": "completed",
+          "student_name": "Nithish Karthik",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes",
+            "ux"
+          ],
+          "title": "Kubevirt Seccomp Profile Generation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/kubevirt"
+    },
+    "year_2024": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/TheRealSibasishBehera/GSoC-2024",
+          "description": "Dynamic Resource Allocation (DRA) is a new feature introduced in Kubernetes version 1.26 and above, providing an Alpha API that allows users to define Kubernetes objects similar to the Persistent Volumes API for generic resources. With DRA, users can separate the declaration of a resource to be consumed from its actual consumption. This move away from the limited \"countable\" API provided by device plugins allows for a more flexible control over which resources are consumed and where they are allocated.\n\nFor handling host devices, KubeVirt relies on the Kubernetes device plugin framework, which is crucial for scheduling, allocating, and attaching desired devices and resources to running pods. One limitation of this framework is the lack of persistence in device allocation when the pod is not running.\n\nThe proposed solution involves implementing the DRA plugin in KubeVirt for PCI passthrough (with Nvme devices as a Proof of Concept). A DRA driver typically consists of two separate but coordinating components: a centralized controller and a node-local kubelet plugin. The kube-scheduler communicates with the centralized controller, which makes allocation decisions based on the overall cluster state and resource availability. The kubelet-plugins are responsible for discovering and advertising the node's available resources to the kubelet.\n\nAdditionally, the proposed approach suggests enhancing the VirtualMachineInstance (VMI) resource to include resourceClaims under hostDevices. This way, users can create a VMI resource that references a ResourceClaim (Template) which in turn references a registered ResourceClass. KubeVirt components need to be modified to translate the resource claims in the VMI host devices into the PodSpec of the underlying Pod. Finally, the device driver would be deployed along with virt-handler as part of a DaemonSet.\n\nIn summary, this approach aims to leverage the DRA capabilities to enhance host devices allocation",
+          "difficulty": null,
+          "id": "proj_kubevirt_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/kBnyWE4u/",
+          "proposal_id": null,
+          "short_description": "Dynamic Resource Allocation (DRA) is a new feature introduced in Kubernetes version 1.26 and above, providing an Alpha API that allows users to...",
+          "slug": "persistent-device-claims-for-kubevirt",
+          "status": "completed",
+          "student_name": "Sibasish Behera",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Persistent Device Claims for KubeVirt"
+        },
+        {
+          "code_url": "https://github.com/aerosouund/gsoc-2024",
+          "description": "porting the KubeVirtCI bash code into the existing gocli. by dividing the bash code across methods in a kubevirt provider base type and optional Exec functions for extras like rook-ceph, realtime.. etc. the final deliverable is the gocli tool extended with the new functionality able to run directly on the host system with the need of running in a container",
+          "difficulty": null,
+          "id": "proj_kubevirt_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/RQs5OJUI/",
+          "proposal_id": null,
+          "short_description": "porting the KubeVirtCI bash code into the existing gocli. by dividing the bash code across methods in a kubevirt provider base type and optional Exec...",
+          "slug": "kubevirtci-rewrite",
+          "status": "completed",
+          "student_name": "Ammar Yasser Adel",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "KubevirtCI rewrite"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/kubevirt/"
+    },
+    "year_2025": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project introduces Kubernetes-native emulated BMC support to KubeVirt using IPMI/Redfish, enabling out-of-band VM control and provisioning workflows for tools like Metal³ and Ironic.",
+          "difficulty": null,
+          "id": "proj_kubevirt_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/kRRf6VYE",
+          "proposal_id": "7LR6pMIH",
+          "short_description": "This project introduces Kubernetes-native emulated BMC support to KubeVirt using IPMI/Redfish, enabling out-of-band VM control and provisioning...",
+          "slug": "adding-emulated-bmc-support-to-kubevirt-kubevirtbmc",
+          "status": "in-progress",
+          "student_name": "Salauat",
+          "student_profile": null,
+          "tags": [
+            "kubernetes"
+          ],
+          "title": "Adding Emulated BMC Support to KubeVirt (KubeVirtBMC)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/kubevirt"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/kubevirt/community/wiki/Google-Summer-of-Code-2025#how-and-where-to-find-help",
+    "ideas_url": "https://github.com/kubevirt/community/wiki/Google-Summer-of-Code-2025",
+    "irc_channel": "https://kubernetes.slack.com/archives/C0163DT0R8X",
+    "mailing_list": "https://groups.google.com/forum/#!forum/kubevirt-dev"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://kubernetes.slack.com/archives/C0163DT0R8X",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/kubevirt",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.340Z"
+  }
+}

@@ -1,0 +1,1575 @@
+{
+  "id": "692251e953dd9d7326d33ecf",
+  "slug": "the-freebsd-project",
+  "name": "The FreeBSD Project",
+  "category": "Operating systems",
+  "description": "An OS for servers to embedded devices",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-freebsd-project/4jmspor6mcto9wti-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-freebsd-project.webp",
+  "logo_r2_url": null,
+  "url": "https://www.freebsd.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "c++",
+    "llvm",
+    "shell script",
+    "make",
+    "clang",
+    "shell",
+    "assembly",
+    "c/c+",
+    "POSIX shell"
+  ],
+  "topics": [
+    "virtualization",
+    "security",
+    "cloud",
+    "kernel",
+    "embeddded",
+    "embedded",
+    "embedded systems",
+    "operating systems",
+    "operating system",
+    "Embedded System"
+  ],
+  "total_projects": 76,
+  "stats": {
+    "avg_projects_per_appeared_year": 7.6,
+    "projects_by_year": {
+      "year_2016": 12,
+      "year_2017": 5,
+      "year_2018": 8,
+      "year_2019": 6,
+      "year_2020": 6,
+      "year_2021": 5,
+      "year_2022": 7,
+      "year_2023": 6,
+      "year_2024": 9,
+      "year_2025": 12
+    },
+    "students_by_year": {
+      "year_2016": 12,
+      "year_2017": 5,
+      "year_2018": 8,
+      "year_2019": 6,
+      "year_2020": 6,
+      "year_2021": 5,
+      "year_2022": 7,
+      "year_2023": 6,
+      "year_2024": 9,
+      "year_2025": 12
+    },
+    "total_students": 71
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/TCP-IP-RegressionTestSuite",
+          "description": "<p>Regression testing is one of the most critical elements of the test artifacts and proves to be one of the most preventive measures for testing a software. Currently, within FreeBSD, there is no such tool to perform regression testing of the TCP/IP network stack. The purpose of this project is to develop tests using a regression testing tool which can then be integrated with FreeBSD. The wire level regression test suite will exercise various states in the TCP/IP protocol suite, with both IPv4 and IPv6 support. Once integrated, the tool will also facilitate further development of such tests. The regression testing tool of choice here is Packetdrill. Packetdrill currently supports testing multiple scenarios for TCP/IP protocol suite within Linux. The existing Linux test suite implemented within Packetdrill will provide a basis for understanding, and implementation of the FreeBSD test suite.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6631273544024064/",
+          "proposal_id": null,
+          "short_description": "Regression testing is one of the most critical elements of the test artifacts and proves to be one of the most preventive measures for testing a...",
+          "slug": "tcpip-regression-test-suite",
+          "status": "completed",
+          "student_name": "Shivansh Rai",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ui",
+            "ux"
+          ],
+          "title": "TCP/IP Regression Test Suite"
+        },
+        {
+          "code_url": "https://github.com/jesa7955/vagrant-bhyve/commits/master?author=jesa7955",
+          "description": "<p>Vagrant is a tool to create and manage virutal environment, which can be used to for creating and configure lightweight, reproducible, and portable development environments. This project is aiming at producing a Vagrant plugin to make bhyve as a new provider of Vagrant which makes bhyve users can use Vagrant to manage their VMs more easily.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6640955742486528/",
+          "proposal_id": null,
+          "short_description": "Vagrant is a tool to create and manage virutal environment, which can be used to for creating and configure lightweight, reproducible, and portable...",
+          "slug": "support-bhyve-as-a-vagrant-vm-backend",
+          "status": "completed",
+          "student_name": "jesa",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Support bhyve as a Vagrant VM backend"
+        },
+        {
+          "code_url": "https://github.com/suraj5/freebsd/commits/master",
+          "description": "<p>The purpose of this project is to export physical SCSI devices with all their features over iSCSI through CTL as an actual SCSI target.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5648334039547904/",
+          "proposal_id": null,
+          "short_description": "The purpose of this project is to export physical SCSI devices with all their features over iSCSI through CTL as an actual SCSI target.",
+          "slug": "adding-scsi-passthrough-to-ctl",
+          "status": "completed",
+          "student_name": "Suraj Ponugoti",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding SCSI passthrough to CTL"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1aeZ1v5jMDn6Ez3-fpegwhAqogZrubFIXkI119mcHd1o/edit?usp=sharing",
+          "description": "<p>Ethernet Ring Protection Switching (ERPS) provide sub-50ms protection and recovery switching for Ethernet traffic in a ring topology and at the same time ensuring that there are no loops formed at the Ethernet layer, which is defined in ITU-T G. 8032. The goal of this project is to implement the ERPS protocol in FreeBSD, so that the appliances such as pfSense and FreeNAS can be directly plugged into the ERPS network without the need to sit behind routers.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5447855972024320/",
+          "proposal_id": null,
+          "short_description": "Ethernet Ring Protection Switching (ERPS) provide sub-50ms protection and recovery switching for Ethernet traffic in a ring topology and at the same...",
+          "slug": "ethernet-ring-protection-switching",
+          "status": "completed",
+          "student_name": "Yuanxun",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ethernet Ring Protection Switching"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/libnvImprovements",
+          "description": "<p>The libnv library allows to easily manage name value pairs as well as send and receive them over sockets. You are able to add bools, strings, numbers, descriptors, binaries or even nest one nvlist in another. Nvlist has a great potential since it’s API simplifies the work done by a developers. It still needs some improvements. For example we can add a JSON format or improve efficiency of operations in libnv.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5098158929477632/",
+          "proposal_id": null,
+          "short_description": "The libnv library allows to easily manage name value pairs as well as send and receive them over sockets. You are able to add bools, strings,...",
+          "slug": "libnv-improvements",
+          "status": "completed",
+          "student_name": "Dashhh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "libnv improvements"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/GrantTableUserSpace",
+          "description": "<p>A grant-table user-space device will allow user-space applications to map and share grants (Xen way to share memory) among Xen domains.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6242443443830784/",
+          "proposal_id": null,
+          "short_description": "A grant-table user-space device will allow user-space applications to map and share grants (Xen way to share memory) among Xen domains.",
+          "slug": "grant-table-user-space-device",
+          "status": "completed",
+          "student_name": "ghost_rider",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Grant-Table User-Space Device"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/NonBSMtoBSMConversionTools",
+          "description": "<p>Let's imagine a FreeBSD server which collects audit records from machines that are not necessarily using BSM as the format of their audit records. The idea is to create a tool which would be able to load a module, read audit records in a non-BSM format and output audit records in BSM that misses as little data as possible due to the differences between format standards.</p>\n<p>I’ll focus mainly on the Linux Audit and Windows format.</p>\n<p>The aim of the project is to ease the maintenance of a network of servers with different audit format. The tool would allow to comfortably manage different audit log files collected from our servers and examine them using default FreeBSD administration tools which support BSM format.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4694123034443776/",
+          "proposal_id": null,
+          "short_description": "Let's imagine a FreeBSD server which collects audit records from machines that are not necessarily using BSM as the format of their audit records....",
+          "slug": "non-bsm-to-bsm-conversion-tools",
+          "status": "completed",
+          "student_name": "0mp",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Non-BSM to BSM Conversion Tools"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/HighPerformanceP4SoftwareSwitch",
+          "description": "<h3>High-performance P4 software switch using netmap</h3>\n<p>Software switches are a key component of any cloud infrastructure,\nand even proposal focused on hardware targets, such as P4 (<a href=\"http://p4.org\" target=\"_blank\">http://p4.org</a>),\ncannot ignore software implementations and their performance.</p>\n<p>Historically, software packet processors have been limited in\nperformance by network I/O, but this is no more true with high\nspeed frameworks such as netmap and DPDK.</p>\n<p>In this project I would like to implement a modified version of the reference p4\nswitch on FreeBSD, which uses netmap for faster packet I/O: the goal would be\nreaching the 1 Mpps order-of-magnitude speed (current reference implementation\nis limited to 150 Kpps for a simple l2 switch with 2 hosts).</p>\n<p>This would enable P4 to be used in fast networking experimens as well as real\nenvironments.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4750576889888768/",
+          "proposal_id": null,
+          "short_description": "High-performance P4 software switch using netmap\nSoftware switches are a key component of any cloud infrastructure,\nand even proposal focused on...",
+          "slug": "high-performance-p4-software-switch-using-netmap",
+          "status": "completed",
+          "student_name": "yuri",
+          "student_profile": null,
+          "tags": [
+            "cloud"
+          ],
+          "title": "High-performance P4 software switch using netmap"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/HDAudioEmulationForBhyve",
+          "description": "<p>The bhyve hypervisor does not have any sound card emulation at the moment. This project is proposed by Peter Grehan and aims to implement the High Definition Audio Specification which is one of the best performant and supported device in the nowadays operating systems. Some of the reasons to have this device are: support for multiple input and output streams, up to 16 channels per stream, command-response codec communication, DMA channel for each stream and it is interfaced with the PCI bus. The main goal is to have a functional implementation by the end of the summer that will allow playing sounds inside a bhyve virtual machine.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6558894755151872/",
+          "proposal_id": null,
+          "short_description": "The bhyve hypervisor does not have any sound card emulation at the moment. This project is proposed by Peter Grehan and aims to implement the High...",
+          "slug": "hd-audio-device-model-in-userspace-for-bhyve",
+          "status": "completed",
+          "student_name": "Alex Teaca",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "HD Audio device model in userspace for bhyve"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/ImprovingLibvirtSupportForBhyve",
+          "description": "<p>The primary aim of this project would be to improve libvirt support for bhyve. Missing API functions in the libvirt bhyve driver shall be implemented and where necessary interfaces to the bhyve user-space tools added.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5784838569197568/",
+          "proposal_id": null,
+          "short_description": "The primary aim of this project would be to improve libvirt support for bhyve. Missing API functions in the libvirt bhyve driver shall be implemented...",
+          "slug": "improving-libvirt-support-for-bhyve",
+          "status": "completed",
+          "student_name": "Fabian Freyer",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Improving libvirt support for bhyve"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2016/PtnetDriverAndDeviceModel#preview",
+          "description": "<p>Modern cloud computing technologies require powerful virtualization tools. The bhyve hypervisor is currently missing an high performance Virtual Machine networking solution, comparable to vhost-net on Linux and QEMU-KVM. Using netmap passthrough, I would like to extend the bhyve hypervisor to support high speed TCP/UDP traffic (~20 Gbps per VM interface) .</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5927286796713984/",
+          "proposal_id": null,
+          "short_description": "Modern cloud computing technologies require powerful virtualization tools. The bhyve hypervisor is currently missing an high performance Virtual...",
+          "slug": "high-performance-tcpip-networking-for-bhyve-vms-using-netmap-passthrough",
+          "status": "completed",
+          "student_name": "vmaffione",
+          "student_profile": null,
+          "tags": [
+            "cloud",
+            "ui",
+            "ux"
+          ],
+          "title": "High-performance TCP/IP networking for bhyve VMs using netmap passthrough"
+        },
+        {
+          "code_url": "https://github.com/bhimanshu1997/freebsd/commits/master?author=bhimanshu1997",
+          "description": "<p>CTL is the FreeBSD SCSI target layer. There are various SCSI commands, but it's usually used for block-level access. This projects focuses on making CTL capable of providing physical optical drive as a whole to the initiator machine</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2016_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6277627815919616/",
+          "proposal_id": null,
+          "short_description": "CTL is the FreeBSD SCSI target layer. There are various SCSI commands, but it's usually used for block-level access. This projects focuses on making...",
+          "slug": "add-scsi-passthrough-to-ctl",
+          "status": "completed",
+          "student_name": "bhimanshu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add SCSI passthrough to CTL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5673385510043648/"
+    },
+    "year_2017": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2017/NVMeControllerEmulatorForBhyve",
+          "description": "<p>This project is implementation of disk controller emulator for bhyve. I'l implement is NVMe controller. NVMe is defined by Non-Volatile Memory Host Controller Interface Working Group. NVMe has some advantage compared with another host interface, for example, scalable, small command, large command buffer and so on. It can say with disk controller emulator for virtual machine too. Small command can reduce MMIO emulation, thus, we can obtain performance improvement.\n Bhyve has mechanism of pci emulation. I'll use this one for implementation of NVMe controller emulator. This is similar to pci ahci. The pci ahci controller emulator is already implemented in bhyve, therefore, I can reference this for my project. I divide task for finishing project. First step, I'l implement basically function, for example, minimum queues and commands. When I finish implementation of fundamental function, I'l take more advanced function. For example, namespace queue, shared queue, fused operation and so on.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_the-freebsd-project_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6187999633080320/",
+          "proposal_id": null,
+          "short_description": "This project is implementation of disk controller emulator for bhyve. I'l implement is NVMe controller. NVMe is defined by Non-Volatile Memory Host...",
+          "slug": "nvme-controller-emulator-for-bhyve",
+          "status": "completed",
+          "student_name": "Shunsuke Mie",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "NVMe controller emulator for bhyve"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2017/Mergesort",
+          "description": "<p>The FreeBSD implementation of mergesort is fundamentally flawed in that\nit cannot sort data smaller than half of the size of a pointer. I aim to develop a pointer width agnostic Mergesort remove this constraint. Moreover, I aim to improve the speed of Mergesort and ideally decrease its space requirements when run.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6055951132000256/",
+          "proposal_id": null,
+          "short_description": "The FreeBSD implementation of mergesort is fundamentally flawed in that\nit cannot sort data smaller than half of the size of a pointer. I aim to...",
+          "slug": "a-better-mergesort-for-freebsd",
+          "status": "completed",
+          "student_name": "Miles Fertel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "A better Mergesort for FreeBSD"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/NewZfsBootEnvMgmtLibAndTool",
+          "description": "<p>The purpose of this project is to build a convenient framework for managing ZFS\nboot environments in FreeBSD. Currently, boot environments are managed\nmanually, or with scripts such as <code>beadm</code>.  The approach that this project\nwill take is to first create a boot environment library to offer simplified\nboot environment interaction to userspace applications (for example, TrueOS'\nSysAdm perhaps), and then write an application that provides users with a\ncommand that retains all of the features of <code>beadm</code>, with added\nfunctionality. Among the new features are: the ability to recursively create\nboot environments containing child datasets, the ability to activate an\nenvironment for the next boot only, and the ability to attach/detach a boot\nenvironment to a jail.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6117727257231360/",
+          "proposal_id": null,
+          "short_description": "The purpose of this project is to build a convenient framework for managing ZFS\nboot environments in FreeBSD. Currently, boot environments are...",
+          "slug": "a-new-zfs-boot-environment-management-library-tool-for-freebsd",
+          "status": "completed",
+          "student_name": "Kyle Kneitinger",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "A New ZFS Boot Environment Management Library & Tool For FreeBSD"
+        },
+        {
+          "code_url": "https://github.com/jerrywossion/wireshark/blob/usbdump_dissector/README.GSoC.md",
+          "description": "<p>The usbdump program is an useful tool for capturing USB traffics, but its output is not very convenient for further researching. Wireshark has a user-friendly GUI that can be useful in debugging raw packets. So in this proposal I'd like to add support for usbdump file-format to Wireshark.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5910538034872320/",
+          "proposal_id": null,
+          "short_description": "The usbdump program is an useful tool for capturing USB traffics, but its output is not very convenient for further researching. Wireshark has a...",
+          "slug": "add-support-for-usbdump-file-format-to-wireshark",
+          "status": "completed",
+          "student_name": "Jie Weng",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Add support for usbdump file-format to wireshark"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2017/SmokeTestingOfBaseUtilities",
+          "description": "<p>Smoke testing is a set of light tests which are done for checking basic functionalities of a software to ascertain if the crucial functions work correctly.<br>\nFreeBSD currently has a set of tests under <code>src/tests</code> which are run using the <code>kyua</code> framework. These tests need to be first installed individually before they can be used for testing. This proves problematic in cases when direct testing of some newly installed or updated utility/library has to be performed. It makes testing changes to libraries and utilities difficult as one would like to perform tests (e.g. to ensure a proper build environment) before proceeding for installation.<br>\nThis project aims to develop a new test infrastructure and automation tool along with basic tests to verify if all the base utilities in FreeBSD are linked properly. The testing framework will ease the process of writing test cases which will be run in a completely automated and developer friendly manner without need for any prior installation. Once integrated, the tool will also facilitate further development of tests.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6309642233708544/",
+          "proposal_id": null,
+          "short_description": "Smoke testing is a set of light tests which are done for checking basic functionalities of a software to ascertain if the crucial functions work...",
+          "slug": "smoke-testing-of-all-base-utilities",
+          "status": "completed",
+          "student_name": "Shivansh Rai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Smoke testing of all base utilities"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5058101916991488/"
+    },
+    "year_2018": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2018Projects/ImportXenbus_dmaFromOpenBSD",
+          "description": "<p>Xen uses the grant table interface to grant foreign domains access to page frames and to do ownership transfer. Each domain maintains its own grant table and it shares that with Xen to tell it what permissions other domains have on its pages. The index of a grant table entry, called a grant reference, is transmitted to the other domains that need to access the page. OpenBSD’s implementation uses wrappers for the bus_dma(9) interface to implement custom bus_dma functions for communication between domains. This project will bring in the grant table handlers from OpenBSD and integrate them with the rest of the system.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6591711056756736/",
+          "proposal_id": null,
+          "short_description": "Xen uses the grant table interface to grant foreign domains access to page frames and to do ownership transfer. Each domain maintains its own grant...",
+          "slug": "import-the-xen-grant-table-bus_dma9-handlers-from-openbsd",
+          "status": "completed",
+          "student_name": "Pratyush Yadav",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Import the Xen grant-table bus_dma(9) handlers from OpenBSD"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2018Projects/eBPF",
+          "description": "<p>This project proposes eBPF implementation for FreeBSD. It will have very basic functionality such as maps, interpreter, JIT compiler for x86-64 and character device + ioctl interface which is an alternative of Linux bpf(2). To introduce how it is useful, we will implement eBPF extension module for VALE software switch which can be used to write very fast middle box (firewall, load balancer and so on) easily.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6624189331013632/",
+          "proposal_id": null,
+          "short_description": "This project proposes eBPF implementation for FreeBSD. It will have very basic functionality such as maps, interpreter, JIT compiler for x86-64 and...",
+          "slug": "ebpf-implementation-for-freebsd",
+          "status": "completed",
+          "student_name": "Yutaro Hayakawa",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "eBPF Implementation for FreeBSD"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2018Projects/ConvertPCIdriverAttachmentsToTables",
+          "description": "<p>This project is being undertaken under the mentorship of FreeBSD organization. The goal of the project is to convert all the PCI drivers attachments to be table driven and mark with PNP_INFO. \nThe devmatch infrastructure gives us a way to match up hardware with kernel modules that implement drivers that claim the hardware. The problem is that the drivers need some modification before devmatch can use them. Specifically, they need to have their device ID scans done via a table, and that table needs to be decorated with a PNP_INFO tag so the compiler and kld_xref extract the metadata that devmatch needs to do this job. As the PCI drivers are all over the place in terms of how they match device IDs work will be needed to move some of the in-line code to tables, some of the tables lookups may be able to move to standardized routines, etc. Trimming GENERIC to show that the drivers work is also required.\nThere are about 243 such PCI drivers. grep -r 'DRIVER_MODULE.<em>, pci,' </em> | wc is used to find out. The plan is to convert a significant portion of them and maintain a documentation of the conversion.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5006254145536000/",
+          "proposal_id": null,
+          "short_description": "This project is being undertaken under the mentorship of FreeBSD organization. The goal of the project is to convert all the PCI drivers attachments...",
+          "slug": "convert-all-pci-drivers-attachments-to-be-table-driven-and-mark-with-pnp_info",
+          "status": "completed",
+          "student_name": "Lakhan Kamireddy",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Convert all PCI drivers attachments to be table driven and mark with PNP_INFO"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2018Projects/ExtensionsToNetmap",
+          "description": "<p>The project has 3 major goals:</p>\n<ul>\n<li>Extend VALE switches to support the IEEE 802.1Q standard</li>\n<li>Extend netmap to support buffer offsets</li>\n<li>Write a testing framework for netmap</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5292986162216960/",
+          "proposal_id": null,
+          "short_description": "The project has 3 major goals:\n\nExtend VALE switches to support the IEEE 802.1Q standard\nExtend netmap to support buffer offsets\nWrite a testing...",
+          "slug": "extensions-to-the-netmap-framework",
+          "status": "completed",
+          "student_name": "Stefano Duo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extensions to the netmap framework"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2018Projects/UserSpaceGPIOinterrupts",
+          "description": "<p>FreeBSD already has support for interrupts implemented in the GPIO controller drivers of several SoCs, but there are no interfaces to take advantage of them out of user space yet. The goal of this project is to implement such an interface by providing descriptors which integrate with the common I/O system calls and multiplexing mechanisms.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5321044915126272/",
+          "proposal_id": null,
+          "short_description": "FreeBSD already has support for interrupts implemented in the GPIO controller drivers of several SoCs, but there are no interfaces to take advantage...",
+          "slug": "implementation-of-a-user-space-interface-for-gpio-interrupts",
+          "status": "completed",
+          "student_name": "Christian Krämer",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementation of a user space interface for GPIO interrupts"
+        },
+        {
+          "code_url": "https://github.com/ShubhGupta2125/capsh",
+          "description": "<p>Security is of paramount importance. Capsicum sticks to it principles, but is finite, this project aims on making it more widely applicable.</p>\n<p>Currently only simple applications can run in the oblivious sandbox provided by capsh. This project will aim upon improving the wrapper system(libpreopen, capsh etc) and make applications work in an oblivious sandbox wherein applications will work in the sandbox without being modified or being known of, but this project will specifically focus on file(1) and Clang.</p>\n<p>Moreover, capsh needs to be worked upon such that it becomes aware of the presence of libpreopen and understand the minimal set of resources it needs to preopen, provided by the user implicitly in the form of arguments or defined in a policy file.</p>\n<p>The existing libpreopen and capsh code will provide a basis for understanding and improving the wrapper system based on the applications i.e file(1) and Clang chosen to sandbox obliviously.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5544577024917504/",
+          "proposal_id": null,
+          "short_description": "Security is of paramount importance. Capsicum sticks to it principles, but is finite, this project aims on making it more widely applicable....",
+          "slug": "oblivious-sandboxing-with-capsicum",
+          "status": "completed",
+          "student_name": "Shubh Gupta",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Oblivious Sandboxing with Capsicum"
+        },
+        {
+          "code_url": "https://reviews.freebsd.org/D16707",
+          "description": "<p>PowerShell is a widely used administration tool in Windows Server workloads. This project aims at porting it to FreeBSD in order to make it easier and faster for Windows Server professionals to start working on FreeBSD server workloads and to make available yet another shell choice which is friendly for new-coming Windows users. In order to achieve that, however, porting the .NET Core SDK toolchain, including CoreCLR, CoreFX and the CLI itself, is necessary once they are vital PowerShell dependencies. As a result, FreeBSD users should have access to PowerShell, an object-oriented shell to interact with the system, and .NET Core, which can be useful for developers to build and run their applications on FreeBSD personal and server machines.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6522550137913344/",
+          "proposal_id": null,
+          "short_description": "PowerShell is a widely used administration tool in Windows Server workloads. This project aims at porting it to FreeBSD in order to make it easier...",
+          "slug": "porting-microsofts-coreclr-corefx-and-powershell-to-freebsd",
+          "status": "completed",
+          "student_name": "Mateus de Morais",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Porting Microsoft's CoreCLR, CoreFX, and PowerShell to FreeBSD"
+        },
+        {
+          "code_url": "https://github.com/aniketp/AuditTestSuite",
+          "description": "<p>FreeBSD has an audit subsystem which is responsible for monitoring a variety of security-relevant system events, such as user-logins, configuration changes, file system &amp; network access. Although the audit framework is indispensable for security conscious organizations running FreeBSD servers, currently there is no tool to test its reliability and the intended behavior.</p>\n<p>The project aims to develop a regression test-suite, which will evaluate the audit framework for proper logging of most auditable system calls classified in TCP/IP &amp; UDP sockets, File I/O,  process control and device management, along with the semantics of audit trail's BSM/XML/ text output.</p>\n<p>BSM tokens can be obtained via synchronous I/O multiplexing on a special clonable device <code>/dev/auditpipe</code>, by configuring various preselection parameters for local mode auditing with the provided IOCTLs. Several <code>libbsm(3)</code> APIs and functions within the FreeBSD kernel can be used to analyze syscall tokens in the audit record. Finally, <code>kyua(7)</code>'s run-time engine will be used to automate regression testing of entire operating system at once, <code>audit(4)</code> included.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2018_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5826052001628160/",
+          "proposal_id": null,
+          "short_description": "FreeBSD has an audit subsystem which is responsible for monitoring a variety of security-relevant system events, such as user-logins, configuration...",
+          "slug": "regression-test-suite-for-audit-framework",
+          "status": "completed",
+          "student_name": "Aniket Pandey",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Regression Test Suite for Audit Framework"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4807073560788992/"
+    },
+    "year_2019": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2019Projects/MACPolicyIPAddressJail",
+          "description": "<p>With the introduction of <strong>VNET(9)</strong> in FreeBSD, Jails are free to set their IP addresses.\nHowever, this privilege may need to be limited by the host as per its need for multiple security reasons.</p>\n<p>This project uses <strong>mac(9)</strong> for an access control framework to impose restrictions on FreeBSD jails according to rules defined by the root of the host using sysctl(8). It involves the development of a dynamically loadable kernel module(<strong>mac_ipacl</strong>) based on <strong>The TrustedBSD MAC Framework</strong> to implement a security policy for configuring the network stack.</p>\n<p>This project allows the root of the host to define the policy rules to limit a jail to a set of IP(v4 or v6) addresses and/or subnets for a set of interfaces.</p>\n<p>The features of the mac_ipacl policy module are-</p>\n<ul>\n<li>Host is able to limit the restrict the desired jail to particular IP addresses(or subnets).</li>\n<li>Host can the restrict the certain jail from setting certain IP address or prefixes.</li>\n<li>Host can enforce the policy for a particular network interface(or all interfaces) for a jail.</li>\n<li>sysctl interface for tuning the mac_ipacl module.</li>\n</ul>\n<p>Apart from the module, Proper Test Suite (with ATF and Kyua) and a man page for the mac_ipacl is also part of the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6380763652554752/",
+          "proposal_id": null,
+          "short_description": "With the introduction of VNET(9) in FreeBSD, Jails are free to set their IP addresses.\nHowever, this privilege may need to be limited by the host as...",
+          "slug": "mac-policy-on-ip-addresses-for-freebsd-jail",
+          "status": "completed",
+          "student_name": "Shivank Garg",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "MAC policy on IP addresses for FreeBSD Jail"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2019Projects/KernelSanitizers",
+          "description": "<p>FreeBSD includes support for the kernel coverage sanitizer and undefined behaviour sanitizer, however support for the other sanitizers is missing. These are useful to find bugs while fuzzing the kernel.</p>\n<p>Port one or more of KASAN, KMSAN, and KTSAN to work in the FreeBSD kernel.\nUse the ported sanitizers with fuzzers (syzkaller or triforce) in order to find more memory vulnerabilities.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6418960189227008/",
+          "proposal_id": null,
+          "short_description": "FreeBSD includes support for the kernel coverage sanitizer and undefined behaviour sanitizer, however support for the other sanitizers is missing....",
+          "slug": "kernel-sanitizers",
+          "status": "completed",
+          "student_name": "Costin Carabaș",
+          "student_profile": null,
+          "tags": [],
+          "title": "Kernel sanitizers"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2019Projects/PortsSeparatedBuild",
+          "description": "<p>This project aims to provide the capability of the FreeBSD ports infrastructure to safely and cleanly build ports and all their dependencies without superuser privileges, jails, or touching the installed system in any way, in the interest of improving the safety, reliability, and repeatability of ports building without the administrative and resource overhead of a separated build host or jail.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5311008413843456/",
+          "proposal_id": null,
+          "short_description": "This project aims to provide the capability of the FreeBSD ports infrastructure to safely and cleanly build ports and all their dependencies without...",
+          "slug": "separation-of-ports-build-process-from-local-installation",
+          "status": "completed",
+          "student_name": "Theron Tarigo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Separation of Ports Build Process from Local Installation"
+        },
+        {
+          "code_url": "https://github.com/jansucan/google-summer-of-code-2019",
+          "description": "<p>Ping has been one of the basic most used utilities for network diagnostic. Because of this the major aspect concerning it is ensuring its long term quality. Currently, there are two implementations of ping in FreeBSD: ping is for IPv4 networks and ping6 is for IPv6. They have a lot of duplicate code. To ease maintenance of this tools (adding new features, fixing bugs) the primary goal of my work is to create a single implementation, containing support for both IPv4 and IPv6 networks, where the code duplication will be eliminated and the functionality and output will be equal to the old implementations. The secondary goal is to document my work so that it could be used as a guide for other programmers who would do some similar unifying work.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6516511731089408/",
+          "proposal_id": null,
+          "short_description": "Ping has been one of the basic most used utilities for network diagnostic. Because of this the major aspect concerning it is ensuring its long term...",
+          "slug": "dual-stack-ping-command",
+          "status": "completed",
+          "student_name": "Ján Sučan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Dual-stack ping command"
+        },
+        {
+          "code_url": "https://github.com/pavetheway91/freebsd",
+          "description": "<p>Virtual memory compression is a memory management technique implemented by multiple operating systems ranging from Windows to Darwin. Depending on implementation, it can either reduce swapping to a physical storage medium or completely replace it. In vast majority of systems, compression and decompression is generally known to be faster faster than disk IO. The main goal of this project is to implement a compressed in-memory disk that can be utilized as a swap storage, much like zram on Linux.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_the-freebsd-project_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4941090614935552/",
+          "proposal_id": null,
+          "short_description": "Virtual memory compression is a memory management technique implemented by multiple operating systems ranging from Windows to Darwin. Depending on...",
+          "slug": "virtual-memory-compression",
+          "status": "completed",
+          "student_name": "Paavo-Einari Kaipila",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Virtual memory compression"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2019Projects/FirewallTestSuite",
+          "description": "<p>A framework is to be built, which would be able to run a given test on all the firewalls (pf, ipfw, ipf) since there are a lot of commonalities in the firewalls. For features which are specific to a firewall, a special flag will be specified for the firewall to be tested against this test. The framework is intended to automatically set up the required firewall with the required configuration for a test, all this will be scripted within the framework. For setting up a firewall, vnet(9) and jail is to be used to virtualize network stacks. The list of tests to be integrated into this framework are as follows:</p>\n<ul>\n<li>Basic sanity tests</li>\n<li>Packet filtering tests based on rules on IP, PORT, PROTOCOL.</li>\n<li>Fragmentation testing on maximum fragment limit test, fragment reassemble, fragment crop\nForwarding testing</li>\n<li>NAT related tests like NAT pass tests, Translation Rule Exception tests,</li>\n<li>TCP proxying tests</li>\n<li>Tests on minimum TTL enforcement, maximum MSS enforcement etc\nMore tests based on further investigation is to be integrated.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5965689809010688/",
+          "proposal_id": null,
+          "short_description": "A framework is to be built, which would be able to run a given test on all the firewalls (pf, ipfw, ipf) since there are a lot of commonalities in...",
+          "slug": "firewall-test-suite",
+          "status": "completed",
+          "student_name": "Ahsan Barkati",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Firewall Test Suite"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6504969929228288/"
+    },
+    "year_2020": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/denisSal/freebsd-sume",
+          "description": "<p>NetFPGA is an open-source project aimed to foster networking hardware prototyping. Their latest and de-facto standard development board is NetFPGA SUME with a Virtex-7 FPGA and 4 SFP+ (10 Gbps) ports. The board’s open-source repository includes 14 designs: 'reference' projects to be used as a first step to building customized NICs, switches, routers, etc., as well as community member contributed projects. The NetFPGA software ecosystem, including the device drivers, is unfortunately Linux-centric, with no support for FreeBSD.</p>\n<p>This project will enable using NetFPGA SUME as a 4x10 Gbps NIC on hosts running FreeBSD. There are already FreeBSD drivers for older (now obsolete) versions of NetFPGA 10G (if_nf10bmac(4)) and NetFPGA 1G (<a href=\"https://github.com/wkoszek/freebsd_netfpga\" target=\"_blank\">https://github.com/wkoszek/freebsd_netfpga</a>), both incompatible with the SUME board but could provide some valuable insight. Writing a device driver on top of the iflib(9) framework should inherently provide support for netmap(4), which would enable high-speed traffic exchange between (custom) NetFPGA designs and userspace network applications, paving the way for experimentation with new hardware / software network processing paradigms.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5685815620927488/",
+          "proposal_id": null,
+          "short_description": "NetFPGA is an open-source project aimed to foster networking hardware prototyping. Their latest and de-facto standard development board is NetFPGA...",
+          "slug": "netfpga-sume-freebsd-device-driver",
+          "status": "completed",
+          "student_name": "denisSal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "NetFPGA SUME FreeBSD device driver"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2020Projects/AddAuditSupportToNFS",
+          "description": "<p><strong>Security event auditing</strong> permits the selective and fine-grained configurable logging of security-relevant system events for the purpose of post-mortem analysis, intrusion detection, and run-time monitoring and is intended to meet the requirements of the <strong>Common Criteria(CC)/Common Access protection profile(CAPP) evaluation</strong>. The audit subsystem in FreeBSD, <em>audit(4)</em>, can record a variety of system events like user-logins, file system activities, network activities, process creations, etc.</p>\n<p>The <em>auditd(8)</em> on the server doesn’t generate any record trails for the NFS activities as the audit works mostly on the syscall level and the NFS server is implemented within the kernel.</p>\n<p>To audit NFS activities within the network, it will require to run the <em>auditd(8)</em> on each NFS client. This arrangement works perfectly fine in case of secure networks. But In the case of an insecure network, running <em>auditd(8)</em> on each client is not an option. The <em>audit(4)</em> support to the NFS server is a missing feature for such networks. Thus, the aim of this project is to <strong>audit each NFS RPC</strong>. This would allow audit of all NFS activities within the network by just running <em>auditd(8)</em> on the server.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5686263773921280/",
+          "proposal_id": null,
+          "short_description": "Security event auditing permits the selective and fine-grained configurable logging of security-relevant system events for the purpose of post-mortem...",
+          "slug": "add-audit4-support-to-nfs",
+          "status": "completed",
+          "student_name": "Shivank Garg",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Add audit(4) support to NFS"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2020Projects/eBPFXDPHooks",
+          "description": "<p>The eBPF eXpress Data Path (XDP) allows eBPF programs to be run to filter received packets as early as possible, avoiding unnecessary processing overhead before the filter is run. The goal of this project is to extend an existing FreeBSD network driver (a virtual NIC like a VirtIO if_vtnet ) to be able to call into an eBPF program when processing a newly received packet. As in XDP the driver must PASS (accept and process normally), DROP, TX or REDIRECT the packet as specified by the program. \neBPF helper functions and maps for aiding in packet filtering will also be implemented.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5083542154903552/",
+          "proposal_id": null,
+          "short_description": "The eBPF eXpress Data Path (XDP) allows eBPF programs to be run to filter received packets as early as possible, avoiding unnecessary processing...",
+          "slug": "ebpf-xdp-hooks",
+          "status": "completed",
+          "student_name": "Ankur Kothiwal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "eBPF XDP Hooks"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2020Projects/NetworkConfigurationLibraries",
+          "description": "<p>FreeBSD has high quality tools for the management of the network, which includes tools to configure and manage interfaces, the firewalls and more. However these tools are not available as libraries, any software that wishes to incorporate network management must shell out to the command line tools. This limits the range of possible tools for automating control of a FreeBSD system. The aim of this project is to develop some of the  libraries which would enable the programmatic configuration/management of network interfaces, packet filtering and routing. An example use case of these libraries would be to enable a bhyve VM to be bridged to the host’s ethernet network programmatically and similar benefits can be harvested for the jails as well.</p>\n<p>The libraries that will be created as a part of this project are:</p>\n<ul>\n<li>/lib/libroute: For programmatic manipulation/management of routing</li>\n<li>/lib/libipfw: For programmatic packet filtering and NATing.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5335348705492992/",
+          "proposal_id": null,
+          "short_description": "FreeBSD has high quality tools for the management of the network, which includes tools to configure and manage interfaces, the firewalls and more....",
+          "slug": "network-configuration-libraries",
+          "status": "completed",
+          "student_name": "Ahsan Barkati",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Network Configuration Libraries"
+        },
+        {
+          "code_url": "https://github.com/ritika98/test_suite",
+          "description": "<p>Testing is an integral and important part of any software development cycle, open or closed. Given a fully automated test system, we can run a broad variety of tests with high frequency, and find problems soon after they are introduced.<br>\nKernel Crash Dumping mechanism that allows us to save the contents of the system’s memory for later analysis. The FreeBSD core dump facility preserves a copy of the contents of system memory to a special disk partition at the time of a fatal error for later debugging. This copy or “dump” can be a machine-readable form of the complete contents of system memory or just the set of kernel pages that are active at the time of the crash. The state can be recovered by saving it to a file under /var/crash. Kernel core dumps allow us to examine the state of the kernel after a kernel panic or hang. Currently, there is no automated test suite in FreeBSD to verify if all the code paths work. \nThe aim of the project is to create a framework for recovering and testing those kernel dumps for a different set of configuration variables or code paths while logging every test case separately in a log file and later analyzing which code paths failed.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6529169661362176/",
+          "proposal_id": null,
+          "short_description": "Testing is an integral and important part of any software development cycle, open or closed. Given a fully automated test system, we can run a broad...",
+          "slug": "kernel-dump-regression-testing",
+          "status": "completed",
+          "student_name": "Ritika Gupta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Kernel Dump Regression Testing"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2020Projects/CapsicumizationOfTheBaseSystem",
+          "description": "<p>A sandbox is a protection framework in computer security for separating running programs, typically in an attempt to prevent system failures or spreading software vulnerabilities. It is also used to execute untested or untrusted programs or code, probably from unverified or untrusted third parties, vendors, users or websites, without causing harm to the host machine or operating system.</p>\n<p>Privilege separation, or sandboxing is extensively being used in applications to protect them from malicious data. But only weak primitive methods like chroot and setuid are used. Capsicum uses fine-grained capabilities and a sandboxed capability mode, allowing application compartmentalization and enforcing the principle of least privilege. It helps us eliminate the ambient authority problem.</p>\n<p>These sandboxing techniques also have a weakness. Sometimes an unprivileged application requires access to a namespace, here Casper comes to our rescue. It is a privileged process that provides our application with the resources it needs before entering the capability mode so that the application can utilize them inside the sandbox.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4842955266850816/",
+          "proposal_id": null,
+          "short_description": "A sandbox is a protection framework in computer security for separating running programs, typically in an attempt to prevent system failures or...",
+          "slug": "capsicumization-of-the-base-system",
+          "status": "completed",
+          "student_name": "Shubh Gupta",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Capsicumization of the base system"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5650233226166272/"
+    },
+    "year_2021": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://gsoc.staque.xyz",
+          "description": "<p>Currently, the FreeBSD virtual terminal driver vt(4) does not support inputting CJK characters directly in the virtual terminal, so our project idea is to provide an environment that can run IME (input method editor) in the console.</p>\n<p>A common usage scenario is when a user wants to create a user with the user info description in Chinese during the system installation. Since the installation process must proceed in a virtual console, there is no way to open an IME window to input CJK characters.</p>\n<p>Another example is hosting a FreeBSD server on a cloud platform or a virtual machine. When one wants to do some simple admin routines on the machine or disconnects from the SSH session, he/she needs to do some configurations and keeps records or takes notes on the server. It's sometimes quite inconvenient for those CJK writing-system users to write texts in their most familiar languages.</p>\n<p>And we want to implement similar features of those IME (fcitx, ibus) but in the console.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5702198469591040/",
+          "proposal_id": null,
+          "short_description": "Currently, the FreeBSD virtual terminal driver vt(4) does not support inputting CJK characters directly in the virtual terminal, so our project idea...",
+          "slug": "input-method-in-freebsd-virtual-terminal",
+          "status": "completed",
+          "student_name": "Fan Chung",
+          "student_profile": null,
+          "tags": [
+            "cloud",
+            "ui"
+          ],
+          "title": "Input method in FreeBSD virtual terminal"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2021Projects/NetlinkProposal",
+          "description": "<p>Netlink proposal - motivation, work done</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5471594998136832/",
+          "proposal_id": null,
+          "short_description": "Netlink proposal - motivation, work done",
+          "slug": "netlink-proposal",
+          "status": "completed",
+          "student_name": "Sean Ng",
+          "student_profile": null,
+          "tags": [],
+          "title": "Netlink proposal"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2021Projects/XFSFUSEImplementation",
+          "description": "<p>In this project I aim to port a read-only implementation of the XFS filesystem to FreeBSD. The implementation should be done in userland through the FUSE interface and support at least version 4 of the file system. Support for necessary XFSprogs shall be added to be able to debug and test the file system.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4846660848451584/",
+          "proposal_id": null,
+          "short_description": "In this project I aim to port a read-only implementation of the XFS filesystem to FreeBSD. The implementation should be done in userland through the...",
+          "slug": "xfs-fuse-freebsd-port",
+          "status": "completed",
+          "student_name": "Khaled Emara",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "XFS FUSE FreeBSD Port"
+        },
+        {
+          "code_url": "https://gist.github.com/simran-kathpalia/3491aef1cf4a9a0401da8eafda3e702a",
+          "description": "<p>Project's goal is to enhance syzkaller support for FreeBSD. The project involves adding syscalls and ioctl calls to improve coverage, testing syzkaller with other filesystems, supporting fuzzing of FreeBSD's Linux system call compatibility layer, USB targeted fuzzing, and patching syzkaller reported bugs found in the process.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4855908315693056/",
+          "proposal_id": null,
+          "short_description": "Project's goal is to enhance syzkaller support for FreeBSD. The project involves adding syscalls and ioctl calls to improve coverage, testing...",
+          "slug": "syzkaller-improvements",
+          "status": "completed",
+          "student_name": "Simran Kathpalia",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Syzkaller improvements"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2021Projects/SoundMixerImprovements",
+          "description": "<p>FreeBSD's default mixer utilities are not the best; <code>mixer(8)</code> is very basic  and outdated, end users have to tweak <code>sysctl(8)</code> values to do simple things and programmers have to write DIY implementation for their programs (e.g <code>audio/mixertui</code>). This project aims to improve mixer handling for OSS on FreeBSD and make life for both programmers and users easier.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5768860254339072/",
+          "proposal_id": null,
+          "short_description": "FreeBSD's default mixer utilities are not the best; mixer(8) is very basic  and outdated, end users have to tweak sysctl(8) values to do simple...",
+          "slug": "sound-mixer-improvements",
+          "status": "completed",
+          "student_name": "Christos Margiolis",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Sound mixer improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5255426173566976/"
+    },
+    "year_2022": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2022Projects/AddStaHostapAndAdhocModeToWtapWlanSimulator",
+          "description": "Wtap is a dummy wifi driver, which can be used to test wireless protocol stack and userland applications. Wtap introduces the following things:\n\n- A basic wtap interface\n\n- A hal, which implements an abstraction layer for simulating different device behavior. \n\n- A visibility plugin, which allows for control over which nodes see other nodes (useful for mesh work.)\n\nWtap currently only supports mesh mode, my work is to add support of sta, hostap and adhoc mode for it.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/dco9wAqD/",
+          "proposal_id": null,
+          "short_description": "Wtap is a dummy wifi driver, which can be used to test wireless protocol stack and userland applications. Wtap introduces the following things: - A...",
+          "slug": "add-sta-hostap-and-adhoc-mode-to-wtap-wlan-simulator",
+          "status": "completed",
+          "student_name": "EN-WEI WU",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add sta, hostap and adhoc mode to wtap wlan simulator"
+        },
+        {
+          "code_url": "https://github.com/CloakerSmoker/freebsd-src/tree/loader-prompt-editing",
+          "description": "The FreeBSD bootloader prompt currently doesn't support editing keys, history, or any kind of command/file/directory completion (and any attempt to use the keys for those actions will print garbage to the console). Beyond waiting a few seconds and letting it autoboot, quality of life in the bootloader is very low, so I'd like to set out to improve it by implementing various features a user would expect at any command prompt.\n\nMain goals: Support for binding/rebinding editing keys, support for editing keys/shortcuts, support for command history, support for command/file/directory completion, and to also fix any small/medium sized quality of life problems I bump into (for example, vague errors like \"unknown command\")",
+          "difficulty": "medium",
+          "id": "proj_the-freebsd-project_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/CgbwfHhw/",
+          "proposal_id": null,
+          "short_description": "The FreeBSD bootloader prompt currently doesn't support editing keys, history, or any kind of command/file/directory completion (and any attempt to...",
+          "slug": "freebsd-bootloader-quality-of-life-improvements",
+          "status": "completed",
+          "student_name": "connorbailey",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "FreeBSD Bootloader quality of life improvements"
+        },
+        {
+          "code_url": "https://musikid.github.io/blog/rewrite-pjdfstest",
+          "description": "This project aims to rewrite the PJDFSTest suite.\nToday, the tests are written in a mix of shell script and C.\nThis approach has provided some flexibility and usability,\nallowing to use syscalls within a shell environment.\nHowever, it also has disadvantages, the main ones being performance,\ncode duplication and higher entry barrier for potential contributors.\nWe want to improve the test suite, by switching to a unique language, Rust.\nRust has numerous advantages,\nin particular, fearless multithreading, low-level handling and increased safety.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/6XPYWLzJ/",
+          "proposal_id": null,
+          "short_description": "This project aims to rewrite the PJDFSTest suite. Today, the tests are written in a mix of shell script and C. This approach has provided some...",
+          "slug": "rewrite-pjdfstest-suite",
+          "status": "completed",
+          "student_name": "Sayafdine Said",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Rewrite PJDFSTest suite"
+        },
+        {
+          "code_url": "https://cdaemon.com/posts/gx9tI1NQ",
+          "description": "Intel’s igt-gpu-tools serves as a generic testing suite for drm drivers on Linux. The igt-gpu-tools suite is seperated into tests and tools where tests are the primary focus of the project. These tests target the kernel API: specifically kms, memory management, and command submission. This low-level reporting allows for transparent tracking of kernel changes and efficient debugging.\n\nDevelopment of igt-gpu-tools shifted in 2019 to focus on generic kms-driven tests. The vendor-agnostic foundation of kms allows for igt-gpu-tools to function on a wide range of hardware. This versatility makes igt-gpu-tools extremely helpful when developing and debugging new drm drivers. Porting the project to FreeBSD could introduce greater stability in future releases of FreeBSD’s LinuxKPI-driven drm drivers.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/G5Jor1se/",
+          "proposal_id": null,
+          "short_description": "Intel’s igt-gpu-tools serves as a generic testing suite for drm drivers on Linux. The igt-gpu-tools suite is seperated into tests and tools where...",
+          "slug": "engineer-a-feature-complete-port-of-intels-igt-gpu-tools-for-freebsd",
+          "status": "completed",
+          "student_name": "Jake Freeland",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "ux"
+          ],
+          "title": "Engineer a Feature Complete Port of Intel’s igt-gpu-tools for FreeBSD"
+        },
+        {
+          "code_url": "https://gist.github.com/Koichi98/1b8b34320e763c3f8c7d957d559da79a",
+          "description": "This project aims to implement the functionalities to run Linux binaries on FreeBSD on powerpc64 architecture. This has already been achieved for amd64, arm64, and i386, but not for powerpc64. Since Linux is a clone of Unix and FreeBSD is a Unix-like operating system, they have some similarities. However, differences do exist, and this project will implement a layer that specifically wraps the differences, especially in Application Binary Interface. In other words, the project aims to support binary compatibility with Linux.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ve2i6Vc5/",
+          "proposal_id": null,
+          "short_description": "This project aims to implement the functionalities to run Linux binaries on FreeBSD on powerpc64 architecture. This has already been achieved for...",
+          "slug": "linuxulator-on-powerpc64",
+          "status": "completed",
+          "student_name": "Koichi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Linuxulator on powerpc64"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2022Projects/InstructionLevelDynamicTracing",
+          "description": "The objective of this project is to implement a new DTrace provider for dynamically tracing all instructions in a given function.\n\nFBT (Function Boundary Tracing) is a DTrace provider providing probes for the entry and return points of a kernel function. The new provider – we’ll call it `kinst` – will reuse parts of the FBT mechanism, but extend it to be able to put probes on arbitrary points in a given kernel function.\n\nThis provider will be especially useful for tracing long kernel functions. It will also set the building blocks for inline function tracing.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/IwOJHkgq/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to implement a new DTrace provider for dynamically tracing all instructions in a given function. FBT (Function...",
+          "slug": "instruction-level-dynamic-tracing",
+          "status": "completed",
+          "student_name": "christos",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Instruction-Level Dynamic Tracing"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2022Projects/BhyveDebugServerEnhancements",
+          "description": "Bhyve is a modern type 2 hypervisor originally written for FreeBSD. \nThe goal of this project is to enhance the functionality of its debugging server. \n\nSeveral existing features related to single-stepping are tied to Intel-specific VM mechanisms, which severely impairs\nbhyve's debugging functionality on other platforms.\nThus, the first major goal of this project is to rework the single-stepping mechanism to use the RFLAGS.TF VMEXIT mechanism. This will allow bhyve to support debugging guest operating systems on AMD platforms, which \nwould facilitate kernel development for more 64-bit x86 hardware (other than Intel). \n\nThe second goal is adding support for hardware watchpoints (and optionally hardware breakpoints) using the guest OS's hardware debugging registers.  This will improve the kernel development workflow\n and allow easier and faster fixes for various kernel memory corruption bugs.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2022_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/XpcMpdul/",
+          "proposal_id": null,
+          "short_description": "Bhyve is a modern type 2 hypervisor originally written for FreeBSD. The goal of this project is to enhance the functionality of its debugging server....",
+          "slug": "bhyve-debug-server-enhancements",
+          "status": "completed",
+          "student_name": "Bojan Novković",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "bhyve debug server enhancements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/the-freebsd-project/"
+    },
+    "year_2023": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2023Projects/LLDBKernelModuleImprovement",
+          "description": "Problem statement: LLDB doesn't support module information in kernel space now. So in my proposal, I want to implement full kernel module support for kernel space.\n \nMethod: To achieve this goal, I take kgdb as a reference and use the same method in in my project but use lldb as the backend (kld as the frontend).\n\nDeliverables: In brief, this project is to implement kernel module supply for lldb which the current lldb doesn't have. After this project, LLDB will support more kernel level debug information and thus facilitate kernel module development.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Q8nngj1k",
+          "proposal_id": "MACrAk2S",
+          "short_description": "Problem statement: LLDB doesn't support module information in kernel space now. So in my proposal, I want to implement full kernel module support for...",
+          "slug": "lldb-kernel-module-improvement",
+          "status": "completed",
+          "student_name": "AoK_Blast",
+          "student_profile": null,
+          "tags": [
+            "frontend",
+            "backend"
+          ],
+          "title": "LLDB kernel module improvement"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2023Projects/CallingTheBatmanFreeNetworksOnFreeBSD",
+          "description": "BATMAN (Better Approach to Mobile Ad-hoc Networking), as developed and used by the Freifunk project, is a routing protocol for (primarily wireless) multi-hop ad-hoc networks.\nFreifunk is a German initiative to build an open Wi-Fi network at city-scale, based on the principles of net-neutrality.\nBATMAN's motive is to be a completely decentralized protocol; no one node in the network knows or has to care about the topology of the whole network.\n\nSupport for this protocol is provided by the batman-adv kernel module on Linux, and, with this project, I'd like to bring that to FreeBSD.\nThis will include the kernel module itself, but also userland networking libraries and tools necessary to create BATMAN networks.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/9YX3dONN",
+          "proposal_id": "cxFV62yy",
+          "short_description": "BATMAN (Better Approach to Mobile Ad-hoc Networking), as developed and used by the Freifunk project, is a routing protocol for (primarily wireless)...",
+          "slug": "calling-the-batman-free-networks-on-freebsd",
+          "status": "completed",
+          "student_name": "Aymeric Wibo",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ui",
+            "ux"
+          ],
+          "title": "Calling the BATMAN: Free Networks on FreeBSD"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2023Projects/PhysicalMemoryAntiFragmentationMechanisms",
+          "description": "The use of superpages in modern hardware and operating system yielded important performance benefits. Unfortunately, allocating superpages can often fail due to a high rate of external fragmentation in physical memory. Thus external physical memory fragmentation in modern operating systems has once again become a serious issue.\n\nThis project aims to design and implement several anti-fragmentation mechanisms for the FreeBSD kernel.\nAt the time of writing, the FreeBSD kernel has no memory compaction mechanisms or any way of quantifying physical memory fragmentation.\nThe first major goal is implementing several fragmentation metrics for the page allocation code.\nThe second major goal is designing and implementing a runtime physical memory compaction mechanism.\nWhen invoked, this mechanism would identify sparsely populated\nand fragmented physical memory regions and rearrange the pages to eliminate any \"holes\" in the region. Aside from explicit invocation, a background daemon would monitor\nthe relevant fragmentation metric and trigger the memory compaction mechanism should the value drop below a certain threshold.\nThe last goal will introduce a passive anti-fragmentation mechanism for the demand paging mechanism. The key idea is to enhance the page placement code to\nuse contiguous spans of pages instead of allocating random pages.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/DcDs0ZSS",
+          "proposal_id": "uEm7a4Ej",
+          "short_description": "The use of superpages in modern hardware and operating system yielded important performance benefits. Unfortunately, allocating superpages can often...",
+          "slug": "physical-memory-anti-fragmentation-mechanisms",
+          "status": "completed",
+          "student_name": "Bojan Novković",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Physical memory anti-fragmentation mechanisms"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2023Projects/PortSquashFuseToTheFreeBSDKernel",
+          "description": "SquashFS is a read-only filesystem targeted for small embedded environments, where memory and disk space is constrained. Squash-Fuse is a BSD-licensed FUSE implementation of SquashFS. \nThe goal of this project is to port this implementation to the FreeBSD kernel, with the aim of being able to boot FreeBSD from an in-memory SquashFS filesystem.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/8OUr49Dx",
+          "proposal_id": "w83gjSH1",
+          "short_description": "SquashFS is a read-only filesystem targeted for small embedded environments, where memory and disk space is constrained. Squash-Fuse is a...",
+          "slug": "port-squashfuse-to-the-freebsd-kernel",
+          "status": "completed",
+          "student_name": "Mashijams",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Port SquashFuse to the FreeBSD kernel"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2023Projects/CITestHarnessForBootloader",
+          "description": "FreeBSD supports multiple architectures, file systems, and disk-partitioning schemes. Currently, there is a script named full-test.sh located in src/tools/boot/ that creates several of these environments but does not test all of them. The proposed idea is to rewrite the script in a language such as Python or Lua, which would allow for testing of all the architecture combinations supported in the first and second-tier support, and provide a report on any broken combinations and expected functionality. Additionally, providing Linux Boot support using Linux EFI shim(EDK) II for amd64 and arm64.\r\n\r\nIf time permits, further exploration could be done to integrate the script into the existing build infrastructure (either Jenkins or Github Actions) to generate a comprehensive summary of the test results.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/aa1ptICD",
+          "proposal_id": "ks5qwRoq",
+          "short_description": "FreeBSD supports multiple architectures, file systems, and disk-partitioning schemes. Currently, there is a script named full-test.sh located in...",
+          "slug": "ci-test-harness-for-bootloader",
+          "status": "completed",
+          "student_name": "smk",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui",
+            "ux"
+          ],
+          "title": "CI Test Harness for bootloader"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2023Projects/IntegrateMfsBSDIntoTheReleaseBuildingTools",
+          "description": "This project integrates mfsBSD into the FreeBSD release tool set, creating an additional target of mfsBSD images (.img for disc and .iso for optical images) into the `/usr/src/release/Makefile`. Until now, mfsBSD only existed outside the FreeBSD release tool chain, and only the -release versions have been produced. With this project, mfsBSD images are now available at the official FreeBSD release page, and you can also build mfsBSD yourself by invoking `cd /usr/src/release && make release WITH_MFSBSD=1`, which will then create `mfsbsd-se.img` and `mfsbsd-se.iso` at `/usr/obj/usr/src/${ARCH}/release/`.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Pw6wO1Ng",
+          "proposal_id": "HJs8Vfqw",
+          "short_description": "This project integrates mfsBSD into the FreeBSD release tool set, creating an additional target of mfsBSD images (.img for disc and .iso for optical...",
+          "slug": "integrate-mfsbsd-into-the-release-building-tools",
+          "status": "completed",
+          "student_name": "Soobin Rho",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrate mfsBSD into the release building tools"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/the-freebsd-project"
+    },
+    "year_2024": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/RefactorSyscallCreationScript",
+          "description": "The current FreeBSD system call creation script was implemented to streamline the introduction of system calls into the FreeBSD kernel. It’s a monolithic script, converted from awk to Lua, and has kept much of the procedural-oriented awk code. It does not take full advantage of modern features of Lua (object-oriented design) and is difficult to extend. The goal is to strip the current script into an easily extendable interface. It will utilize classes to give extensible methods to objects, mainly utilizing the facade and command design patterns, to give a more \"bite-sized\" interface to the previously procedural code. This will allow easier maintenance of the Lua tables and procedures, and a better platform to add more. Lua modules will provide better namespacing of globals, dynamic generation of output files,  and more modules with different tasks may be easily added. After refactoring, the previous functionality of the original script can be achieved simply by calling the necessary modules. The benefit to FreeBSD is further streamlining in the creation of system calls, a more maintainable interface, and a strong foundation to build upon in the development of future system call creation tools. It will further demystify the process of system call creation and allow others to more easily contribute. Deliverables are (1) system call creation will work as before; (2) the monolithic script will be refactored into core, modules, and classes; (3) a system call creation library that is easily extensible; and (4) well-documented with conventions used.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/XGd9F1Fq/",
+          "proposal_id": null,
+          "short_description": "The current FreeBSD system call creation script was implemented to streamline the introduction of system calls into the FreeBSD kernel. It’s a...",
+          "slug": "refactor-syscall-creation-script",
+          "status": "completed",
+          "student_name": "agge3",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Refactor syscall creation script"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/ImprovingFreeBSDUserEmulationForVariousArchitectures",
+          "description": "The proposal is to improve QEMU's emulation capabilities on FreeBSD to support and fix issues related to architectures such as ARM, RISC-V, and Aarch64. To achieve this, the goal would be to implement syscalls and other functions from the blitz branch that is being maintained by the mentor. The project will involve finding the necessary calls and adding them to the master branch as a series of patches. My main task would be to upstream changes from the blitz branch after verifying and testing the code, as the end goal is to support more architectures for emulation purposes.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/M4rOQedM/",
+          "proposal_id": null,
+          "short_description": "The proposal is to improve QEMU's emulation capabilities on FreeBSD to support and fix issues related to architectures such as ARM, RISC-V, and...",
+          "slug": "improving-freebsd-user-emulation-for-various-architectures",
+          "status": "completed",
+          "student_name": "Ajeet",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving FreeBSD user emulation for various architectures."
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/ImprovingRepairAbilityOfTheFreeBSDInstaller",
+          "description": "The current FreeBSD installer lacks the environment for users to conveniently repair their system or install packages inside the installer. This project aims to provide theses functionalities by adding new repairing menus in the installer and modify the installer environment to facilitate package installation.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Vk7ZYK6y/",
+          "proposal_id": null,
+          "short_description": "The current FreeBSD installer lacks the environment for users to conveniently repair their system or install packages inside the installer. This...",
+          "slug": "improving-repair-ability-of-the-freebsd-installer",
+          "status": "completed",
+          "student_name": "Chun Cheng Yeh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Repair Ability of the FreeBSD Installer"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/SpeedingUpTheFreeBSDBootProcess",
+          "description": "There is always room for improvement, especially the speed at which FreeBSD boots. The aim of this project is to identify any ineffiencies in the boot process that cause the system to take longer than it should to startup, and alleviate them via patches to the affected parts of the system. To achieve this, the boot process is first profiled via flamecharts, and the TSLOG framework, beforewhich the necessary changes are delivered through user space, and/or kernel space patches.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hkBUTYUy/",
+          "proposal_id": null,
+          "short_description": "There is always room for improvement, especially the speed at which FreeBSD boots. The aim of this project is to identify any ineffiencies in the...",
+          "slug": "speeding-up-the-freebsd-boot-process",
+          "status": "completed",
+          "student_name": "Isaac Cilia Attard",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Speeding up the FreeBSD Boot Process"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/ZeroCostConditionalExecutionMechanism",
+          "description": "It is common for kernel subsystems to conditionally include functionality, based\non compile time and runtime configurations which are relatively infrequently\nsubject to change. Typical examples include: toggling of DTrace probes, boot-\ntime optimizations based on hardware capabilities and inclusion of additional\nsecurity checks. This is often done by examining the state of a global flag and\nexecuting a block of code conditionally based on that state. When this is done\nin a ”hot” (i.e. frequently executed) code path, the overhead of the conditional\nexecution can become significant. Moreover, in situations in which the state of\nthe inspected flags changes rarely, most of the performed checks are redundant.\nThe primary goal of this project is to design and implement a low overhead mechanism\nfor conditional execution in contexts in which the branching condition does not\nchange often. The mechanism will be based on runtime code patching of instructions. The second major goal is applying the developed mechanism to an existing block of kernel code.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/WsnmKM6t/",
+          "proposal_id": null,
+          "short_description": "It is common for kernel subsystems to conditionally include functionality, based on compile time and runtime configurations which are relatively...",
+          "slug": "zero-cost-conditional-execution-mechanism",
+          "status": "completed",
+          "student_name": "MarkoVlaic",
+          "student_profile": null,
+          "tags": [],
+          "title": "Zero-cost conditional execution mechanism"
+        },
+        {
+          "code_url": "https://github.com/realchonk/fuse-ufs/tree/0.3.0",
+          "description": "FreeBSD's UFS is arguably the longest standing UNIX file system still under active development.\nIt is well documented and has many interesting features.\nWhile UFS has been ported to Linux and Mac OSX, the ports are not very good or have been deprecated.\nUsing fusefs as a userland option would let the filesystem be used on many other systems.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/mCAcivuH/",
+          "proposal_id": null,
+          "short_description": "FreeBSD's UFS is arguably the longest standing UNIX file system still under active development. It is well documented and has many interesting...",
+          "slug": "ufs4fuse-support-freebsds-ufs2-with-fusefs",
+          "status": "completed",
+          "student_name": "Benjamin Stürz",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "UFS4fuse: support FreeBSD's UFS2 with fusefs"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/IPv6SupportAndCleanupOfAddressFamilyDependencyInUserlandUtilities#preview",
+          "description": "FreeBSD boasts a plethora of userspace command tools utilizing IPv4 network programming APIs and exhibiting address family dependency. With the emergence of IPv6 to address the limitations of IPv4, it's imperative to update these tools to utilize address-independent APIs, thereby facilitating seamless handling of both IPv4 and IPv6 connections.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/NEYEC0Wt/",
+          "proposal_id": null,
+          "short_description": "FreeBSD boasts a plethora of userspace command tools utilizing IPv4 network programming APIs and exhibiting address family dependency. With the...",
+          "slug": "ipv6-support-and-cleanup-of-address-family-dependency-in-userland-utilities",
+          "status": "completed",
+          "student_name": "Yan-Hao Wang",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml"
+          ],
+          "title": "IPv6 support and cleanup of address family dependency in userland utilities"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/PortAmd64SIMDLibcOptimizationsToRiscv64",
+          "description": "The goal of the project is to port the SIMD optimized routines written for\namd64 to riscv64. This will be accomplished using SWAR techniques. Because\nthe code will only depend on the base integer ISA, the optimizations will result\nin a performance increase on all riscv64 systems.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/yLEu2LCV/",
+          "proposal_id": null,
+          "short_description": "The goal of the project is to port the SIMD optimized routines written for amd64 to riscv64. This will be accomplished using SWAR techniques. Because...",
+          "slug": "port-amd64-simd-libc-optimizations-to-riscv64",
+          "status": "completed",
+          "student_name": "Strahinja",
+          "student_profile": null,
+          "tags": [],
+          "title": "Port amd64 SIMD libc optimizations to riscv64"
+        },
+        {
+          "code_url": "https://wiki.freebsd.org/SummerOfCode2024Projects/PortingAmd64LibcSIMDEnhancementsToArm64",
+          "description": "This Google Summer of Code (GSOC) project aims to improve the performance of the\r\nlibc string manipulation function of the FreeBSD operating system on ARM-based\r\nsystems (aarch64 architecture).\r\n\r\nThe focus is on porting existing SIMD (Single Instruction Multiple Data)\r\noptimizations from the amd64 libc library to arm64, enabling FreeBSD to take\r\nfull advantage of the NEON instruction set and laying the groundwork for future\r\nSVE support.\r\n\r\nThis work builds upon previous SIMD enhancements done by Robert Clausecker\r\n<fuz@FreeBSD.org> for amd64.\r\n\r\nDeliverables include:\r\n\r\nIntroduce a new ARCHLEVEL flag for the aarch64 architecture, allowing selection\r\nbetween base, NEON, and SVE instruction set extensions. This will involve\r\ncreating an `aarch64_archlevel.h' header file to manage the different levels of\r\narchitectural support.\r\n\r\nUpdate the `simd(7)' manual page to document the new SIMD-accelerated string\r\nfunctions for aarch64, including details on the ARCHLEVEL flag and its usage.\r\n\r\nAnd port the functions with already existing SIMD implementations for amd64 to\r\naarch64.\r\nA full list of those functions are available at\r\n/src/lib/libc/amd64/string",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2024_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/TKRS35FA/",
+          "proposal_id": null,
+          "short_description": "This Google Summer of Code (GSOC) project aims to improve the performance of the libc string manipulation function of the FreeBSD operating system on...",
+          "slug": "porting-amd64-libc-simd-enhancements-to-arm64-aarch64",
+          "status": "completed",
+          "student_name": "getz",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Porting amd64 libc SIMD enhancements to arm64 (aarch64)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/the-freebsd-project/"
+    },
+    "year_2025": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to add VMM acceleration support to QEMU on FreeBSD, bridging the gap between QEMU’s userspace emulation and FreeBSD’s kernel-based VMM hypervisor. Currently, QEMU on FreeBSD lacks hardware acceleration, forcing users to rely on slower TCG emulation or switch to bhyve. I plan to modify QEMU’s memory management to work with VMM’s kernel-allocated guest memory. Additionally, I will adapt VMM to make non-critical devices (HPET, RTC) optional, letting QEMU handle them in user space. This would enable a hybrid interrupt model (kernel vLAPIC + emulated IOAPIC). The deliverables for this project would be a working -accel=vmm backend for QEMU. I will also add some changes to VMM, allowing some of the in-kernel devices to be made optional. Finally, I will add comprehensive documentation and benchmarks for the libvmmapi interface. This will enable near-native performance for QEMU on FreeBSD, expanding virtualization options while maintaining compatibility with existing QEMU tooling.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/lRkVElCJ",
+          "proposal_id": "2O2bpZmi",
+          "short_description": "This project aims to add VMM acceleration support to QEMU on FreeBSD, bridging the gap between QEMU’s userspace emulation and FreeBSD’s kernel-based...",
+          "slug": "vmm-accelerator-support-for-qemu",
+          "status": "in-progress",
+          "student_name": "Abhinav Chavali",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "backend"
+          ],
+          "title": "VMM Accelerator support for QEMU"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the lack of structured testing and CI support for Rust kernel modules in FreeBSD. The previous work of many students has introduced the capability of Rust in FreeBSD kernel space. However, current progress remains shallow. This lack of depth makes it difficult for other developers to build upon. I propose to develop a robust testing framework for both existing and future Rust drivers using Kyua, integrate this framework into FreeBSD’s Jenkins CI infrastructure, and re-implement an existing C driver in Rust as a modern reference for the FreeBSD community.\nDeliverables include:\n    1. A reusable testing framework for Rust kernel drivers\n    2. CI integration via Jenkins and GitHub Actions\n    3. A comprehensive set of tests (unit, integration, fault injection, and performance)\n    4. A new, well-documented Rust driver\n    5. Clear public documentation to guide future developers",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/FnDSAZEj",
+          "proposal_id": "gAK6urTr",
+          "short_description": "This project addresses the lack of structured testing and CI support for Rust kernel modules in FreeBSD. The previous work of many students has...",
+          "slug": "testing-ci-integration-for-rust-freebsd-device-drivers",
+          "status": "in-progress",
+          "student_name": "Acesp25",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Testing & CI Integration for Rust FreeBSD Device Drivers"
+        },
+        {
+          "code_url": null,
+          "description": "FreeBSD currently lacks a tool to manage partitions and manipulate file systems like GParted does in Linux. The proposed project aims to use sade, a FreeBSD TUI tool that allows creation, modification, and deletion of partitions, as a starting point to develop a new tool. This project will add operations to manage partitions with different file systems like UFS, exFAT, ext, and NTFS. Also, it would handle minimal ZFS (creating pools and datasets) and applying encryption and labeling over geoms using geli and glabel.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/AQdl28ee",
+          "proposal_id": "17bP4joe",
+          "short_description": "FreeBSD currently lacks a tool to manage partitions and manipulate file systems like GParted does in Linux. The proposed project aims to use sade, a...",
+          "slug": "full-disk-administration-tool-for-freebsd",
+          "status": "in-progress",
+          "student_name": "Braulio Rivas",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Full Disk Administration Tool for FreeBSD"
+        },
+        {
+          "code_url": null,
+          "description": "mkimg(1), a FreeBSD tool used for creating disk images in various formats, currently lacks support for creating compressed QCOW2 images. In this proposal, I describe the steps that should be made in order for mkimg(1) to be able to create compressed QCOW2 images.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/HENL3VNt",
+          "proposal_id": "phu8BfcG",
+          "short_description": "mkimg(1), a FreeBSD tool used for creating disk images in various formats, currently lacks support for creating compressed QCOW2 images. In this...",
+          "slug": "adding-qcow2-compressed-image-support-to-mkimg1",
+          "status": "in-progress",
+          "student_name": "Christos Komis",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding QCOW2 compressed image support to mkimg(1)"
+        },
+        {
+          "code_url": null,
+          "description": "Problem Statement:\r\nSockstat is a useful FreeBSD utility for displaying active sockets, but its current output format is rigid and lacks flexibility. The -w option is a workaround to accommodate wide output, and the tool does not support structured data formats. Enhancing its user interface will improve usability and integration with modern tools.\r\n\r\nProposed Solution:\r\nThis project aims to improve sockstat by integrating libxo, which will allow structured output in multiple formats (JSON, XML, etc.). Additionally, the column sizes will be dynamically adjusted to enhance readability, eliminating the need for the -w option.\r\n\r\nDeliverables:\r\n\r\n-> Rewrite sockstat output using libxo for JSON, XML, and other formats.\r\n-> Implement automatic column sizing for better readability.\r\n-> Remove the -w option and replace it with a more intelligent formatting approach.\r\n-> Ensure backward compatibility and proper testing.\r\n\r\nThis project will enhance sockstat’s usability while maintaining its lightweight and efficient design.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/GuMgVDOs",
+          "proposal_id": "wePcTBjE",
+          "short_description": "Problem Statement: Sockstat is a useful FreeBSD utility for displaying active sockets, but its current output format is rigid and lacks flexibility....",
+          "slug": "sockstat-ui-improvements",
+          "status": "in-progress",
+          "student_name": "Damin Rido J V",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Sockstat UI Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "Intel™’s Advanced Configuration and Power Interface (ACPI) is an industry standard specification that revolutionized power management by putting it in the hands of the operating system, rather than the BIOS. As it currently stands, it is widely available across 32-bit and 64-bit architectures, with specially tailored manuals towards Windows™ and UNIX. \n\nFreeBSD has implemented ACPI, utilizing Intel™’s ACPI Computer Architecture (ACPICA). The major contention point is that it is outside the loader. In this state, it is inefficient; information that’s only available to ACPI, is therefore unavailable to the boot loader. As such, the boot loader essentially has to guess what that information is, and is often wrong. This proposal aims to alleviate this bottleneck by bringing a lightweight version of ACPICA into the loader. With this integration, ACPI will not only be more efficiently managed, but it will also be script-able with Lua, providing FreeBSD users ease of configuration.\n\nDeliverables include: (1) stand/efi/acpica/Osd/ with necessary ACPICA/AML initialization, (2) stand/efi/loader/arch/$ARCH for arm64 and amd64 specific glue code, (3) complete integration of both architectures: ACPI initialized in the loader, (4) the ACPI namespace enumerated in C, (5) an ACPI API layer, (6) Lua bindings, and (7) updated FreeBSD ACPI handbook and man pages.",
+          "difficulty": "advanced",
+          "id": "proj_the-freebsd-project_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/vcXeKCzJ",
+          "proposal_id": "SRQZkCjT",
+          "short_description": "Intel™’s Advanced Configuration and Power Interface (ACPI) is an industry standard specification that revolutionized power management by putting it...",
+          "slug": "acpi-initialization-in-loader-with-lua-bindings",
+          "status": "in-progress",
+          "student_name": "kpowkitty",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "ACPI Initialization in Loader With Lua Bindings"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to accelerate FreeBSD’s boot process by using the TSLOG framework to identify and target specific delays. Initial profiling revealed significant slowdowns caused by unnecessary sleep intervals in disk detection, timeouts in AT keyboard controller resets, and prolonged waiting in IPv6 configuration and the boot menu. The project will set up controlled test environments, apply targeted code modifications (including ZFS adjustments and adopting approaches from Linux), and iteratively validate improvements through repeated profiling. By systematically optimizing each boot phase while ensuring system stability, the project intends to deliver measurable reductions in boot time, ultimately benefiting the FreeBSD community through faster system reboots and a replicable methodology for future performance enhancements.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/x8yTB4un",
+          "proposal_id": "O9hDr9Lu",
+          "short_description": "This proposal aims to accelerate FreeBSD’s boot process by using the TSLOG framework to identify and target specific delays. Initial profiling...",
+          "slug": "speed-up-the-freebsd-boot-process",
+          "status": "in-progress",
+          "student_name": "Lahiru Gunathilake",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Speed up the FreeBSD boot process"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to build a CLI and TUI utility for easy WiFi and network management on the FreeBSD operating system. The base features for listing/configuring network interfaces, scanning, connecting/disconnecting from wireless networks will be implemented using libifconfig, with additional functionality added to the library as needed. The project aims to keep the dependencies to a minimal so that it can be suitable for inclusion into the FreeBSD base system. The CLI will include a REPL interface like iwctl, and a TUI like NetworkManager's nmtui will be built using terminal raw mode and control sequences, avoiding libraries like ncurses.",
+          "difficulty": "beginner",
+          "id": "proj_the-freebsd-project_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/0MvQZDLg",
+          "proposal_id": "tj5Fn8zg",
+          "short_description": "This project aims to build a CLI and TUI utility for easy WiFi and network management on the FreeBSD operating system. The base features for...",
+          "slug": "wifi-management-ui",
+          "status": "in-progress",
+          "student_name": "Muhammad Saheed",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "WiFi Management UI"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement Linux-compatible journaling within FreeBSD's ext2fs filesystem driver to address its current lack of journaling capabilities, which are standard in Linux's ext3 and ext4 filesystems. The absence of journaling in FreeBSD's implementation results in reduced filesystem consistency and slower recovery times after system crashes compared to its Linux counterparts. The proposed solution involves modifying the ext2fs driver to understand the on-disk format and transaction mechanisms of journaling. This includes developing capabilities to detect and read journal metadata, implementing functions to manage journal transactions integrating these functions into essential metadata operations, and enabling mount-time journal recovery to ensure filesystem integrity. Key deliverables include integrated code for detecting, parsing, and managing journal data, functional logging of metadata changes within transactions, a complete implementation for committing these transactions to the on-disk journal, integration of journaling across major metadata operations, support for at least one standard journaling mode (like data=ordered or data=writeback), and comprehensive test cases accompanied by thorough documentation.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/kIeG9hSh",
+          "proposal_id": "C8vIvH1U",
+          "short_description": "This project aims to implement Linux-compatible journaling within FreeBSD's ext2fs filesystem driver to address its current lack of journaling...",
+          "slug": "implement-journaling-for-freebsds-ext34",
+          "status": "in-progress",
+          "student_name": "Pau Sum",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Implement Journaling for FreeBSD's ext3/4"
+        },
+        {
+          "code_url": null,
+          "description": "FreeBSD currently lacks granular power profiling tools, offering only whole-system statistics via ACPI. This makes identifying power-hungry processes challenging, hindering energy efficiency on laptops and servers. To address this, I propose developing a lightweight, FreeBSD-native power profiling tool inspired by Linux’s PowerTOP, prioritizing simplicity and integration with FreeBSD’s architecture.  \n\nThe solution comprises:  \n1. Kernel Module: A RAPL driver to collect CPU power data (Intel/AMD) via `/dev/cpuctl`, leveraging existing FreeBSD code.  \n2. Monitoring Daemon: A background service to aggregate metrics, correlate process activity (using `pmc(3)`), and maintain historical logs.  \n3. User Tools: A CLI utility for real-time process-level analysis and Grafana integration for visualization. Additional support for the `amd_s2idle.py` script will aid suspend/resume diagnostics.  \n\nDeliverables include the kernel module, daemon, CLI tool, validation tests, and documentation. This approach avoids the complexity of modular frameworks like PCP, ensuring low overhead and maintainability.  \n\nThe tool will empower users to optimize energy use, extend battery life, and reduce server costs. Future extensions could support GPU monitoring or predictive analytics. By prioritizing FreeBSD’s design philosophy, this project lays a foundation for advanced power management while delivering immediate, actionable insights.",
+          "difficulty": "advanced",
+          "id": "proj_the-freebsd-project_2025_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/CuSjdaYl",
+          "proposal_id": "d54mNutX",
+          "short_description": "FreeBSD currently lacks granular power profiling tools, offering only whole-system statistics via ACPI. This makes identifying power-hungry processes...",
+          "slug": "freebsd-power-profiling-tool",
+          "status": "in-progress",
+          "student_name": "Sai Kasyap Jannabhatla",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "FreeBSD Power Profiling Tool"
+        },
+        {
+          "code_url": null,
+          "description": "The FreeBSD mac_do(4) and mdo(1) utilities enable controlled transitions of user and group credentials without relying on inherently risky setuid executables. Currently, mac_do only authorizes the /usr/bin/mdo executable, and does not fully support granular group transitions or per-jail executable authorization. This project enhances security by allowing configurable paths for authorized executables (beyond mdo), implementing granular group management via mdo(1) (new -g and -G flags), and integrating comprehensive jail support for isolating credential rules. Key deliverables include kernel-side implementation of allowed executable path lists, enhanced per-jail rule management, extended userland functionality for group management, password authentication integration, and complete documentation updates.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/gZAnOBRn",
+          "proposal_id": "sI7FNtEM",
+          "short_description": "The FreeBSD mac_do(4) and mdo(1) utilities enable controlled transitions of user and group credentials without relying on inherently risky setuid...",
+          "slug": "mac_do4-and-mdo1-improvements",
+          "status": "in-progress",
+          "student_name": "thesynthax",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "mac_do(4) and mdo(1) improvements"
+        },
+        {
+          "code_url": null,
+          "description": "QEMU microvm is a lightweight virtual machine environment designed to run operating systems quickly with few hardware dependencies. This project aims to port FreeBSD to the platform.\n\nThere has been some progress in getting the Firecracker build of FreeBSD to work in microvm. However, there are issues with the current implementation, including inability for the kernel to shut the VM down itself, network devices not sending packets, random freezing, and slow boot times.\n\nMy goal with this project is to improve consistency, usability, and speed of FreeBSD on microvm. Code will be submitted with demonstrations of the kernel having a significantly reduced tendency to freeze, restarts and shutdowns working as intended, network devices sending packets, and boot times being improved. Weekly documentation will be submitted so my work can be utilized by the wider software engineering community.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2025_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/rd4vVntG",
+          "proposal_id": "qpKwAYYx",
+          "short_description": "QEMU microvm is a lightweight virtual machine environment designed to run operating systems quickly with few hardware dependencies. This project aims...",
+          "slug": "port-freebsd-to-qemu-microvm",
+          "status": "in-progress",
+          "student_name": "WGeckle80",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Port FreeBSD to QEMU microvm"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-freebsd-project"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "soc-admins@FreeBSD.org",
+    "guide_url": "https://www.freebsd.org/projects/summerofcode/",
+    "ideas_url": "https://wiki.freebsd.org/SummerOfCodeIdeas",
+    "irc_channel": "https://wiki.freebsd.org/SummerOfCode/IRC",
+    "mailing_list": "https://lists.freebsd.org/mailman/listinfo/freebsd-hackers"
+  },
+  "social": {
+    "blog": "https://planet.FreeBSD.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/freebsdfndation",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.347Z"
+  }
+}

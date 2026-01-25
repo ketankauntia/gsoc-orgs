@@ -1,0 +1,168 @@
+{
+  "id": "692251df53dd9d7326d33e46",
+  "slug": "open-chromosome-collective",
+  "name": "Open Chromosome Collective",
+  "category": "Science and medicine",
+  "description": "Open-Source Tools for 3D Genomics Research",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/open-chromosome-collective/ef70feamp2pdisjj.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/open-chromosome-collective.webp",
+  "logo_r2_url": null,
+  "url": "https://open2c.github.io/",
+  "active_years": [
+    2024
+  ],
+  "first_year": 2024,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "numpy",
+    "scikit-learn",
+    "pandas",
+    "HDF5"
+  ],
+  "topics": [
+    "machine learning",
+    "genomics",
+    "bioinformatics",
+    "data science",
+    "python"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://talipzengin.github.io/Projects/GSoC_Final_Report.html",
+          "description": "The BioFrame Python library is a powerful tool designed for operations and analysis of genomic intervals, enabling users to effortlessly load genomic datasets, such as genome annotations or experimental data for subsequent analysis. Users can perform essential tasks like intersection, union, subtraction and merging of genomic intervals and resolving overlaps, crucial for downstream analyses. BioFrame empowers researchers to streamline their genomic data processing tasks. With its open-source nature, BioFrame encourages collaboration and community-driven development, fostering innovation in genomic data analysis.\nThe project aims to develop comprehensive tutorials using Jupyter notebooks to demonstrate the usage of the BioFrame Python library, focusing on real-world user cases using publicly available genomic data from in vitro experiments. Each tutorial will cover a diverse range of genomic analysis scenarios, including but not limited to ChIP-seq analysis, identification of regulatory elements, and structural variation exploration. By utilizing publicly available in vitro genomic datasets, users will have access to high-quality data for hands-on learning and they will gain practical insights into leveraging BioFrame for efficient manipulation and analysis of genomic intervals. The tutorials will provide step-by-step guidance, from data loading to advanced interval-based operations, ensuring users of all skill levels can easily follow along and they will showcase the integration of BioFrame with other Python libraries commonly used in bioinformatics workflows, enhancing users' understanding of its interoperability. These tutorials will be published on GitHub pages, ensuring easy access and facilitating community collaboration and feedback on the tutorial content. By providing accessible and informative tutorials, the project seeks to democratize genomic data analysis and accelerate scientific discovery in the field of genomics.",
+          "difficulty": "beginner",
+          "id": "proj_open-chromosome-coll_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/8Q9kqy1U/",
+          "proposal_id": null,
+          "short_description": "The BioFrame Python library is a powerful tool designed for operations and analysis of genomic intervals, enabling users to effortlessly load genomic...",
+          "slug": "development-of-use-case-tutorials-for-bioframe",
+          "status": "completed",
+          "student_name": "Talip Zengin",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ios",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Development of use case tutorials for Bioframe"
+        },
+        {
+          "code_url": "https://alejandrogzi.github.io/pages/gsoc.html",
+          "description": "This project aims to enhance the bioframe library developed by Open2C, an organization that creates software for analyzing genomic data. A key focus will be expanding the bioframe API to access genome assembly metadata from additional providers like Ensembl and NCBI, enabling more comprehensive data integration. The API will also be extended with efficient query methods similar to the existing UCSC class. Furthermore, the project will explore using the Rust-based polars package as a potential replacement for pandas in bioframe, with the goal of improving memory efficiency and runtime performance for dataframe operations. Bioframe's core modules will be rebuilt using polars, and benchmarking will be conducted to evaluate performance gains. If successful, the polars implementation will be extended to the entire bioframe package and related functions in other Open2C tools that currently utilize pandas and bioframe methods.",
+          "difficulty": null,
+          "id": "proj_open-chromosome-coll_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/fHBnxNYD/",
+          "proposal_id": null,
+          "short_description": "This project aims to enhance the bioframe library developed by Open2C, an organization that creates software for analyzing genomic data. A key focus...",
+          "slug": "rust-based-acceleration-of-bioframe-using-polars-and-a-new-api-to-access-assembly-metadata",
+          "status": "completed",
+          "student_name": "Alejandro Gonzales-Irribarren",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Rust-based acceleration of bioframe using polars and a new API to access assembly metadata"
+        },
+        {
+          "code_url": "https://gist.github.com/ayaksvals/78461940b34a2360c92e9461e2ed37c9",
+          "description": "Problem: Storing Hi-C contacts in a gzipped .tsv format, which is mainly used in pairtools, cause major slowdowns for computations and storing. \r\n\r\nSolution: develop a new binary pairs format, based on Apache Parquet to speed up storing and significantly reduce memory storage. \r\n\r\nWhy this particular solution?: Incorporating Apache Parquet into the pairtools framework will streamline data storage and retrieval processes, significantly reducing disk space requirements and improving data access speeds. Integration with Hi-C data processing pipelines will enhance scalability and efficiency, enabling seamless handling of large-scale genomic datasets while maintaining compatibility with existing pairtools functionalities.\r\n\r\nDeliverables: \r\n1. Develop and implement Apache Parquet pairs format within pairtools for efficient storage and retrieval of genomic interaction data.\r\n2. Integrate Hi-C data processing functionalities related to new created format into pairtools to enable seamless analysis of large-scale genomic datasets.",
+          "difficulty": null,
+          "id": "proj_open-chromosome-coll_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/C4D2p1sF/",
+          "proposal_id": null,
+          "short_description": "Problem: Storing Hi-C contacts in a gzipped .tsv format, which is mainly used in pairtools, cause major slowdowns for computations and storing....",
+          "slug": "developing-a-binary-pair-format",
+          "status": "completed",
+          "student_name": "Olesia Slavska",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Developing a binary pair format"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/open-chromosome-collective/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "open.chromosome.collective@gmail.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://discord.com/invite/qVfSbDYHNG",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": "https://discord.com/invite/qVfSbDYHNG",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/Open2C_team",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.820Z"
+  }
+}

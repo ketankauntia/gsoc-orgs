@@ -1,0 +1,140 @@
+{
+  "id": "692251ec53dd9d7326d33eff",
+  "slug": "xen-project",
+  "name": "Xen Project",
+  "category": "Infrastructure and cloud",
+  "description": "Bringing the power of virtualization everywhere",
+  "image_url": "https://lh3.googleusercontent.com/8-1iv11qUH3NQh51RUUucz5KaFc-xnirXU3Bsd_oQfGzen68L0H4YvyGdbDuwZqLRhiBRKjAJ_XTkzdJiMMvJTKKb94AmQ",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/xen-project.webp",
+  "logo_r2_url": null,
+  "url": "http://xenproject.org/",
+  "active_years": [
+    2017
+  ],
+  "first_year": 2017,
+  "last_year": 2017,
+  "is_currently_active": false,
+  "technologies": [
+    "linux",
+    "qemu",
+    "free/netbsd",
+    "asm/c/c++",
+    "ocaml"
+  ],
+  "topics": [
+    "virtualization",
+    "security",
+    "cloud computing",
+    "unikernels",
+    "embedded/automotive"
+  ],
+  "total_projects": 2,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 2
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://lists.xen.org/archives/html/xen-devel/2017-08/msg01960.html",
+          "description": "<p>Fuzzing is a recent trend for systematic testing of interfaces by trying more or less random inputs and iterating over them. A subset of fuzzers uses code-coverage as feedback when permuting and choosing inputs, among them the popular user-space fuzzer American Fuzzy Lop. Recently there have been attempts to port fuzzers to the kernel and in a similar manner should now the hypercall interface of Xen be tested.</p>\n<p>While this is overall a very comprehensive problem this project will help to develop a better understanding of the problem space and make at least first advances of the source tree into the necessary direction. A generic mechanism will be implemented allowing fuzzers to obtain feedback on code-coverage. In the next step this output will be further processed in order to actually run a particular fuzzer (such as AFL), although there might not be sufficient time to commit this to the source tree.</p>\n<p>To sum up, the overall steps to getting a fuzzer running are the following:</p>\n<ol>\n<li>Extracting the execution path from the hypervisor via a hypercall</li>\n<li>Parse the execution path into a format consumable by a user-space fuzzer</li>\n<li>Drive a domU to execute the test cases of the fuzzer</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_xen-project_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6343132106981376/",
+          "proposal_id": null,
+          "short_description": "Fuzzing is a recent trend for systematic testing of interfaces by trying more or less random inputs and iterating over them. A subset of fuzzers uses...",
+          "slug": "fuzzing-the-xen-hypercall-interface",
+          "status": "completed",
+          "student_name": "Felix Schmoll",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fuzzing the Xen Hypercall Interface"
+        },
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1mktb0e2NQ4Xh-cL8tx4ENRcL6j-lVXOCP7lbQYE9BaU/edit#gid=0",
+          "description": "<p>Virtual machines use grant table hypercalls to setup a share page for inter-VMs communications. These hypercalls are used by all PV protocols today. However, very simple guests, such as baremetal applications, might not have the infrastructure to handle the grant table. This project is about setting up several shared memory areas for inter-VMs communications directly from the VM config file. So that the guest kernel doesn't have to have grant table support to be able to communicate with other guests. This should work on both x86 and ARM.</p>\n",
+          "difficulty": null,
+          "id": "proj_xen-project_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5356246735519744/",
+          "proposal_id": null,
+          "short_description": "Virtual machines use grant table hypercalls to setup a share page for inter-VMs communications. These hypercalls are used by all PV protocols today....",
+          "slug": "xen-share-memory-areas-among-vms-from-the-config-file",
+          "status": "completed",
+          "student_name": "Zhongze Liu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Xen: share memory areas among VMs from the config file"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5748328394391552/"
+    },
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "community.manager@xenproject.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://xenproject.org/help/irc.html",
+    "mailing_list": "https://xenproject.org/help/mailing-list.html"
+  },
+  "social": {
+    "blog": "http://blog.xenproject.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/xen_org",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.469Z"
+  }
+}

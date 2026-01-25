@@ -85,7 +85,11 @@ export interface OrganizationsMetadata {
 
 /**
  * Load the organizations index data (for /organizations page)
- * Returns minimal fields for list view
+ * 
+ * Loads pre-computed static JSON data containing minimal fields for list view.
+ * Falls back gracefully if JSON file is not available.
+ * 
+ * @returns {Promise<OrganizationsIndexData | null>} The organizations index data, or null if loading fails
  */
 export async function loadOrganizationsIndexData(): Promise<OrganizationsIndexData | null> {
   try {
@@ -104,7 +108,11 @@ export async function loadOrganizationsIndexData(): Promise<OrganizationsIndexDa
 
 /**
  * Load organization detail data for a specific slug
- * @param slug - The organization slug (e.g., "rocketchat")
+ * 
+ * Loads pre-computed static JSON data for a single organization's detail page.
+ * 
+ * @param {string} slug - The organization slug (e.g., "rocketchat")
+ * @returns {Promise<Organization | null>} The organization data, or null if not found
  */
 export async function loadOrganizationData(slug: string): Promise<Organization | null> {
   try {
@@ -117,6 +125,11 @@ export async function loadOrganizationData(slug: string): Promise<Organization |
 
 /**
  * Load organizations metadata (filter data)
+ * 
+ * Loads pre-computed metadata including technologies, topics, categories, and years
+ * for use in filter components.
+ * 
+ * @returns {Promise<OrganizationsMetadata | null>} The metadata object, or null if loading fails
  */
 export async function loadOrganizationsMetadata(): Promise<OrganizationsMetadata | null> {
   try {
@@ -129,7 +142,13 @@ export async function loadOrganizationsMetadata(): Promise<OrganizationsMetadata
 
 /**
  * Convert index data to paginated response format
- * Used for client-side pagination of static data
+ * 
+ * Transforms static index data into a paginated response structure for client-side pagination.
+ * 
+ * @param {OrganizationsIndexData} indexData - The organizations index data
+ * @param {number} [page=1] - The page number (1-indexed)
+ * @param {number} [limit=20] - The number of items per page
+ * @returns {PaginatedResponse<Organization>} Paginated response with items, total, pages, etc.
  */
 export function indexDataToPaginatedResponse(
   indexData: OrganizationsIndexData,
@@ -151,7 +170,18 @@ export function indexDataToPaginatedResponse(
 
 /**
  * Filter organizations in memory (for static filters like year, category, tech)
- * Returns filtered array that can be paginated
+ * 
+ * Applies in-memory filtering to organizations array using OR logic for multi-value filters.
+ * Used when static JSON is loaded and filters need to be applied client-side.
+ * 
+ * @param {OrganizationsIndexData['organizations']} organizations - Array of organizations to filter
+ * @param {Object} filters - Filter criteria
+ * @param {number[]} [filters.years] - Filter by active years (OR logic)
+ * @param {string[]} [filters.categories] - Filter by categories (OR logic)
+ * @param {string[]} [filters.techs] - Filter by technologies (OR logic)
+ * @param {string[]} [filters.topics] - Filter by topics (OR logic)
+ * @param {boolean} [filters.firstTimeOnly] - Filter to first-time organizations only
+ * @returns {OrganizationsIndexData['organizations']} Filtered array of organizations
  */
 export function filterOrganizations(
   organizations: OrganizationsIndexData['organizations'],

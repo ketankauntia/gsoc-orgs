@@ -1,0 +1,368 @@
+{
+  "id": "692251e853dd9d7326d33ec3",
+  "slug": "synfig",
+  "name": "Synfig",
+  "category": "Media",
+  "description": "Open-source 2D animation software",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/synfig/ohcj3eigerib4jym-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/synfig.webp",
+  "logo_r2_url": null,
+  "url": "https://synfig.org",
+  "active_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2019,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c++",
+    "gtk",
+    "gtkmm",
+    "python",
+    "c++11"
+  ],
+  "topics": [
+    "animation",
+    "vector graphics",
+    "2d/3d graphics",
+    "2d animation"
+  ],
+  "total_projects": 12,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.71,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": 0,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 2,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": 0,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 2,
+      "year_2025": 2
+    },
+    "total_students": 11
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/synfig/synfig/pull/930",
+          "description": "<p>Scanned sketches are raster images and raster images have some limitations related to image resizing; to overcome that you need to use high-resolution raster which increases the file size. The only solution is converting a raster image to vector graphics or completely redraw it. After adding the vectorization feature to Synfig, scanned drawings and raster images can be easily converted into Vector Images which are resolution independent. Moreover, the obtained vector graphic can be further edited in Synfig. This proposal is about developing an option for Synfig to perform vectorization of bitmap/raster images using an algorithm(s) of vectorization from OpenToonz.</p>\n",
+          "difficulty": null,
+          "id": "proj_synfig_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6474348691456000/",
+          "proposal_id": null,
+          "short_description": "Scanned sketches are raster images and raster images have some limitations related to image resizing; to overcome that you need to use...",
+          "slug": "vectorization-of-bitmaps",
+          "status": "completed",
+          "student_name": "Ankit Kumar Dwivedi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Vectorization of bitmaps"
+        },
+        {
+          "code_url": "https://github.com/synfig/synfig/pull/756",
+          "description": "<p>The goal of this project is to implement a feature which will allow to export Synfig animation for web through Lottie format (<a href=\"http://airbnb.io/lottie/\" target=\"_blank\">http://airbnb.io/lottie/</a>). Lottie is a library that parses animations exported as json and renders them natively on mobile and on the web. The feature will be implemented as a plugin in the Synfig Studio. As a result, Synfig will become a platform for creating animated content for web.</p>\n",
+          "difficulty": null,
+          "id": "proj_synfig_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5080738523774976/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to implement a feature which will allow to export Synfig animation for web through Lottie format...",
+          "slug": "export-animation-for-web",
+          "status": "completed",
+          "student_name": "Anish Gulati",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "mobile",
+            "ai"
+          ],
+          "title": "Export Animation for Web"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5485328519921664/"
+    },
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://forums.synfig.org/t/11331",
+          "description": "<p>Synfig Studio is an animation system designed to speed up the animation process. Currently, building it requires autotools. Apart from that, there is an option to build it from source using CMake but it requires some extra effort which makes the development process tedious. The aim of this project is to fix that issue by making changes to the existing CMake build scripts, add functionality to build and test Synfig Studio on different systems easily using CMake and work on implementing CPack support to prepare deb, NSIS and DMG installers.</p>\n",
+          "difficulty": null,
+          "id": "proj_synfig_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6582102918692864/",
+          "proposal_id": null,
+          "short_description": "Synfig Studio is an animation system designed to speed up the animation process. Currently, building it requires autotools. Apart from that, there is...",
+          "slug": "cmake-build-system",
+          "status": "completed",
+          "student_name": "ayesdie",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "CMake Build System"
+        },
+        {
+          "code_url": "https://forums.synfig.org/t/11328",
+          "description": "<p>Lottie format provides an easy way for the animations to be rendered to web and mobile applications. Users have found the basic Lottie Exporter plugin to be useful but it still lacks some features like the advanced outline layer which can make the plugin even more helpful for the animators. Therefore, providing an easy method like Lottie will attract more developers and attention to Synfig which is an open source organisation.\nThe final product would be an extension of the already existing plugin with the addition of more layers and convert methods to it. It will export files in  .sif format to the lottie JSON format.</p>\n<p>The goals for the project are :</p>\n<ol>\n<li>Addition of more layers from Synfig format to Lottie format.</li>\n<li>Implement remaining convert methods.</li>\n<li>Exporting outlines without variable widths.</li>\n<li>Adding animation to the addition/deletion of bline points.</li>\n</ol>\n<p>The pre-project phase will involve checking for the feasibility of exporting Layers from Synfig format to Lottie format. This will require lots of requirements gathering, analysis and designing the complete system architecture. The project phase will be about implementing the features and architecture that has been agreed upon.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_synfig_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4655384247140352/",
+          "proposal_id": null,
+          "short_description": "Lottie format provides an easy way for the animations to be rendered to web and mobile applications. Users have found the basic Lottie Exporter...",
+          "slug": "improvements-for-lottie-exporter-plugin",
+          "status": "completed",
+          "student_name": "saurabh22",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "mobile",
+            "ai",
+            "ui"
+          ],
+          "title": "Improvements for Lottie exporter plugin"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5710829074251776/"
+    },
+    "year_2021": {
+      "num_projects": 0,
+      "projects": [],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6046097876713472/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/synfig/synfig/issues/2844",
+          "description": "This project aims at improving Synfig’s GUI by implementing new features which are available at other related applications but not at Synfig yet. Along with other UI fixes and introducements to enhance the user experience, artist workflow, and efficiency. \n\nThe user interface of any application is one of the most noticeable areas to both new users and old ones. An application's UI can make or break its usability. Therefore, the goal in mind is that by the end of this project these new features implemented will ease and visibly enhance the process of animating for synfig users.The main features to be included:\n\nThese features form the core of this UI enhancement project\n- Add the possibility to change parameters using the mouse\n- Ctrl + tab to switch tabs\n- Shortcuts for switching between animation windows \n- Show/Hide rulers\n- Search functionality in parameters panel\n- Better way to set playback area\n- Add ability to copy/paste waypoints \n \nAdditional features :\n\n-  Allow rotation of guides in canvas\n-  Faster entry of values in value fields\n- Reducing float precision displayed in parameters values\n- Fixing inconsistent look of parameter value spin button when expanded\n- Appropriate adjustment of “paragraph text dialog” size",
+          "difficulty": null,
+          "id": "proj_synfig_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/9Aucs8Wk/",
+          "proposal_id": null,
+          "short_description": "This project aims at improving Synfig’s GUI by implementing new features which are available at other related applications but not at Synfig yet....",
+          "slug": "user-interface-improvements",
+          "status": "completed",
+          "student_name": "Mohamed Adham",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "User Interface improvements"
+        },
+        {
+          "code_url": "https://github.com/synfig/synfig/issues/2827",
+          "description": "Synfig can be built on both Windows and Linux, however, it currently cannot be built using MSVC and requires using MinGW. The objective of this project is to enable building Synfig using the MSVC toolchain, and automate the build process using both Conan and VCPKG.",
+          "difficulty": null,
+          "id": "proj_synfig_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/noGB71vE/",
+          "proposal_id": null,
+          "short_description": "Synfig can be built on both Windows and Linux, however, it currently cannot be built using MSVC and requires using MinGW. The objective of this...",
+          "slug": "building-synfig-with-the-msvc-toolchain-automating-the-build-process-using-conan",
+          "status": "completed",
+          "student_name": "Hesham Essam",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Building Synfig with the MSVC Toolchain & automating the build process using Conan"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/synfig/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://forums.synfig.org/t/gsoc-2023-performance-optimization/14122/21",
+          "description": "The project aims to improve the rendering speed of Synfig, a free and open-source 2D animation software. The project's primary goals are to document the rendering system, fix the thread issue, find the best way to schedule rendering tasks, improve the blending and color functions, optimize the contour rasterization algorithm, and stabilize the OpenGL renderer's core. The project's stretch goals include implementing a Contour Layer using shaders. The project will benefit the community by providing faster rendering, better user experience, and proper developer documentation. The project aims to deliver a solid, stable base for the OpenGL renderer and improve software renderer performance, reducing render times and making the viewport more responsive.",
+          "difficulty": null,
+          "id": "proj_synfig_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/qvj9aF7Y",
+          "proposal_id": "BR4dcVyz",
+          "short_description": "The project aims to improve the rendering speed of Synfig, a free and open-source 2D animation software. The project's primary goals are to document...",
+          "slug": "rendering-performance-optimization",
+          "status": "completed",
+          "student_name": "b23v",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Rendering Performance Optimization"
+        },
+        {
+          "code_url": "https://github.com/synfig/synfig/issues/3225",
+          "description": "This project mainly aims at improving the user experience of Synfig. It does so through various improvements. The first is implementing non-vertex editing tool/s. It also attempts to improve the performance by testing internal layer operations to see if it would be beneficial to apply caching optimizations to them. Other than that, it also includes fixing various crashes and issues.\n\nThe project is divided into the following parts:\n\n1-  “Select (non-vertex editing) Tool” : Includes implementing tool/s to handle various transformations in non-vertex ways.\n\n 2-  Fixing UI Lags and Crashes: Includes testing internal layer operations to see if they would benefit from caching mechanisms (implementing the mechanisms if they would be beneficial), and fixing various crashes.\n\n3- Additional Features/Fixes: Includes various miscellaneous improvements.",
+          "difficulty": null,
+          "id": "proj_synfig_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/1AkN3EFi",
+          "proposal_id": "YouK1Bx0",
+          "short_description": "This project mainly aims at improving the user experience of Synfig. It does so through various improvements. The first is implementing non-vertex...",
+          "slug": "select-tool-and-ui-enhancements",
+          "status": "completed",
+          "student_name": "Mohamed Adham",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Select Tool and UI Enhancements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/synfig"
+    },
+    "year_2024": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://ahmed.khaled.yousry.org/blogs/gsoc-2024-final-report/",
+          "description": "This project aims to improve and automate the generation of release notes for Synfig and make Synfig easier for Linux users to download.\n\nThis is done by:\n\n1—Creating a script that uses Synfig's repository git conventional commits history to automatically generate nice-looking Synfig release notes grouped by change type (fix, feature, etc.), automatically adding them to new GitHub releases, and showing contributors using a GitHub bot how their pull requests will affect the release notes when merged. This aims to enhance the pull requests and release notes descriptions and give Synfig’s pull requests a more professional feel to attract more contributors.\n\n2—Currently, Synfig is bundled to work on Linux using AppImage v1.0 complicated scripts. AppImage v1.0 is outdated and has the critical issue that it doesn’t work smoothly on newer systems (Ubuntu v22.04 and others); the AppImage scripts will be updated to use the latest AppImage version to run smoothly on old as well as newer Linux distributions.",
+          "difficulty": null,
+          "id": "proj_synfig_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/w8vYW4hT/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve and automate the generation of release notes for Synfig and make Synfig easier for Linux users to download. This is done...",
+          "slug": "automating-release-notes-generation-simplifying-linux-download-experience",
+          "status": "completed",
+          "student_name": "Ahmed Khaled (Akayiz)",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Automating Release Notes Generation & Simplifying Linux Download Experience"
+        },
+        {
+          "code_url": "https://github.com/synfig/synfig/issues/3449",
+          "description": "A plugin manager dialog would allow the users to install, uninstall and hide/show the plugins. Through this interface the user need not to manually place the Python script, but instead just choose a Plugin installation file and let Synfig take care of it. User would also be able to uninstall a plugin, reset its configuration file, download the Plugin from Synfig's repository, edit configurations for plugin.",
+          "difficulty": null,
+          "id": "proj_synfig_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/bVFeFhR7/",
+          "proposal_id": null,
+          "short_description": "A plugin manager dialog would allow the users to install, uninstall and hide/show the plugins. Through this interface the user need not to manually...",
+          "slug": "plugin-manager-dialog",
+          "status": "completed",
+          "student_name": "Veer Metri",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Plugin manager dialog"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/synfig/"
+    },
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project will deliver a performant integrated Raster Brush Tool alongside a basic Brush Profile Editor. The core implementation uses a real-time overlay preview for smooth interaction and a robust atomic command structure enabling multiple user-selectable undo modes. Key deliverables include the core draw/erase tool, the editor for viewing/modifying key brush parameters , support for standard brush presets and parameters , reliable undo functionality across implemented modes, and fully animatable raster output integrated into synfig.",
+          "difficulty": null,
+          "id": "proj_synfig_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fxeP8E73",
+          "proposal_id": "EYGeVm2N",
+          "short_description": "This project will deliver a performant integrated Raster Brush Tool alongside a basic Brush Profile Editor. The core implementation uses a real-time...",
+          "slug": "brush-tool",
+          "status": "in-progress",
+          "student_name": "Abdelhadi Wael",
+          "student_profile": null,
+          "tags": [],
+          "title": "Brush tool"
+        },
+        {
+          "code_url": null,
+          "description": "The current macOS app bundle creation process for Synfig relies on an outdated Bash script that is slow, error-prone with incorrect paths, and lacks code signing, hindering efficient distribution and user trust. This project aims to replace the script with a robust, automated solution to streamline bundle generation, ensure macOS security compliance, and enhance the native user experience. By leveraging Python for dependency collection, C++ for environment setup, and CMake/CPack for packaging, the project will deliver a signed, distributable SynfigStudio.app bundle. Key improvements include faster dependency gathering, proper code signing, embedded environment setup, Python/lxml integration, and macOS-native interface enhancements.\n\nApproach:\n\t•\tDevelop a Python script to efficiently collect and stage dependencies, optimizing with caching and parallelization.\n\t•\tImplement code signing in reverse dependency order using codesign, including Python and lxml binaries.\n\t•\tRemove the external launcher script by embedding environment setup in the C++ entry point.\n\t•\tPackage Python and lxml into the bundle, ensuring compatibility and signing.\n\t•\tIntegrate CPack into CMake to generate a polished .dmg installer.\n\t•\tEnhance the UI with macOS-native menu bar and window behaviours using GTK.\n\nDeliverables:\n\t•\tA CMake/CPack-based build system producing a signed SynfigStudio.app bundle.\n\t•\tA Python script for automated dependency collection and path rewriting.\n\t•\tCode signing support for all binaries, including Python and lxml.\n\t•\tEmbedded environment setup within SynfigStudio, eliminating the launcher script.\n\t•\tA bundled Python runtime with lxml, fully signed and functional.\n\t•\tA distributable .dmg installer generated via CPack.\n\t•\tmacOS-native UI improvements (e.g., menu bar, shortcuts, dialogs boxes).\n\t•\tComprehensive documentation covering installation, usage, and build instructions.",
+          "difficulty": null,
+          "id": "proj_synfig_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/EqL2LlYZ",
+          "proposal_id": "pZDZv4kb",
+          "short_description": "The current macOS app bundle creation process for Synfig relies on an outdated Bash script that is slow, error-prone with incorrect paths, and lacks...",
+          "slug": "macos-app-bundle-175-hours",
+          "status": "in-progress",
+          "student_name": "Nitish Itankar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "macOS app bundle (175 hours)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/synfig"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "contact@synfig.org",
+    "guide_url": "https://synfig-docs-dev.readthedocs.io/en/latest/gsoc/2025/getting-started.html",
+    "ideas_url": "https://github.com/synfig/synfig-docs-dev/blob/master/docs/gsoc/2025/ideas.rst",
+    "irc_channel": null,
+    "mailing_list": "https://forums.synfig.org/t/gsoc-2025-google-summer-of-code-2025/16119"
+  },
+  "social": {
+    "blog": "https://www.synfig.org/news/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/synfig",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.313Z"
+  }
+}

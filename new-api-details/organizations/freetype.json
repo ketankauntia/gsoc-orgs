@@ -1,0 +1,472 @@
+{
+  "id": "692251d453dd9d7326d33db1",
+  "slug": "freetype",
+  "name": "FreeType",
+  "category": "Programming languages",
+  "description": "FreeType is a software library to render fonts.",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/freetype/bbbcwzgimhkwpcvx-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/freetype.webp",
+  "logo_r2_url": null,
+  "url": "https://freetype.org",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2017,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "fonts",
+    "opentype",
+    "library",
+    "python",
+    "gnu make",
+    "gnu autotools",
+    "autotools",
+    "meson"
+  ],
+  "topics": [
+    "graphics",
+    "rendering",
+    "fonts",
+    "opentype",
+    "truetype",
+    "library"
+  ],
+  "total_projects": 17,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.12,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": 3,
+      "year_2019": 3,
+      "year_2020": 3,
+      "year_2021": 1,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": 0,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": 3,
+      "year_2019": 3,
+      "year_2020": 3,
+      "year_2021": 1,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": 0,
+      "year_2025": null
+    },
+    "total_students": 15
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "http://lists.nongnu.org/archive/html/freetype-devel/2017-08/msg00154.html",
+          "description": "<p>For a widely used library like FreeType, a test framework to check font rasterization is a must have.\nHaving a test framework to test the output of the library avoids many possible errors in early-stage.\nThe project is based on enabling the programmers visualize what exactly is changing and helping them decode why is it changing.</p>\n<h4>Output Glyph --&gt; Test_Framework --&gt; Debugging- -&gt; Quality Code</h4>\n<p>The working of the Test_Framework</p>\n<p>1.Generating glyph images (using libpng) for both \"base\" and the \"test\"(developer) version of the    FreeType library. This is done by linking both version's DLL to the code.</p>\n<p>2.Comparing the images pixel by pixel and making a sprite sheet for each of the glyph.\nEach image in the sprite sheet corresponds to an effect after comparison.</p>\n<p>3.An web interface is generated which lists all the glyphs that are rendered incorrectly in the 'test' version. Selecting a particular image will animate the glyph. (Using the concept of CSS Sprite Sheet Animation)\n(Various animation effects used as per the needs of the developer.)</p>\n<p>All the code is written in ANSI C.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6350994178834432/",
+          "proposal_id": null,
+          "short_description": "For a widely used library like FreeType, a test framework to check font rasterization is a must have.\nHaving a test framework to test the output of...",
+          "slug": "gsoc-2017-proposal-kushal",
+          "status": "completed",
+          "student_name": "Kushal K S V S",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "GSoC 2017 Proposal - Kushal"
+        },
+        {
+          "code_url": "http://lists.gnu.org/archive/html/freetype-devel/2017-08/msg00148.html",
+          "description": "<p>Thanks to Adobe's contribution of their CFF engine, FreeType has excellent rasterization of CFF fonts. However, Type 1 fonts, a similar PostScript font format, has relatively poor rasterization results. This is due to Type 1 being a legacy format, coupled with lack of maintenance for the corresponding module in FreeType. By extending the new CFF module, we can leverage its high quality output for an old format like Type 1.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5183742326865920/",
+          "proposal_id": null,
+          "short_description": "Thanks to Adobe's contribution of their CFF engine, FreeType has excellent rasterization of CFF fonts. However, Type 1 fonts, a similar PostScript...",
+          "slug": "adding-support-for-type-1-fonts-to-adobe-cff-engine",
+          "status": "completed",
+          "student_name": "Ewald Hew",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Adding support for Type 1 fonts to Adobe CFF Engine"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4699374705704960/"
+    },
+    "year_2018": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/cherusker/eba16df5670063f496317d8eb6396112",
+          "description": "<p>Fuzzing is a very important asset when verifying programs, as it reveals critical edge cases that can be missed easily by structured testing.</p>\n<p>FreeType is set up to work with OSS-Fuzz already, yet there are many ways to improve it.\nApart from making fuzzing faster and more efficient, possible improvements also contain the plan to build a regression test suite in a GitHub repository.\nFurthermore, this project could be used to separate testing logic from the source code of FreeType by setting up a dedicated testing repository.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6417229084098560/",
+          "proposal_id": null,
+          "short_description": "Fuzzing is a very important asset when verifying programs, as it reveals critical edge cases that can be missed easily by structured testing....",
+          "slug": "improve-fuzzing-for-freetype",
+          "status": "completed",
+          "student_name": "Armin Hasitzka",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Fuzzing for FreeType"
+        },
+        {
+          "code_url": "https://gist.github.com/nikramakrishnan/416e34ea126287446df7764b2ebba8ca",
+          "description": "<p>The goal of this project is to redesign and fully automate the documentation methods for FreeType, and make it easier to update and manage the FreeType website. This includes changes to the current method of retrieving and generating the API documentation, one-time conversion of the current pages to Markdown, and deploying the website from a repository by automating Markdown to HTML conversions.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5174492376596480/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to redesign and fully automate the documentation methods for FreeType, and make it easier to update and manage the...",
+          "slug": "redevelop-freetypes-documentation-using-markdown",
+          "status": "completed",
+          "student_name": "Nikhil Ramakrishnan",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ml"
+          ],
+          "title": "Redevelop FreeType's documentation using markdown"
+        },
+        {
+          "code_url": "https://gist.github.com/parthw1/58a9168cebf79641fe6ce07bd543a2df",
+          "description": "<p>The goal of this project is to add the support of TeX's bitmap font formats (GF, TFM, PK and VF fonts) into FreeType by providing new modules to handle them.\nThe support for these formats already present in the VFlib library as well as the canonical references for the GF, PK, TFM and VF formats provided in the source code of the TeX tools 'gftype', 'gftopk', 'tftopl' and 'vftovp' respectively serve as the base reference for the new drivers. The new drivers are developed on the lines of existing bitmap drivers already available in FreeType like BDF, PCF and WINFNTS.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5195709045276672/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to add the support of TeX's bitmap font formats (GF, TFM, PK and VF fonts) into FreeType by providing new modules to...",
+          "slug": "integrating-vflibs-tex-format-drivers-into-freetype",
+          "status": "completed",
+          "student_name": "Parth Wazurkar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Integrating VFlib's TeX format drivers into FreeType"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6550700024659968/"
+    },
+    "year_2019": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/GeVic/75889ae2728f6dee0a490166ff8e2271",
+          "description": "<p>‘ftinspect’ is an essential part of FreeType to show how a font gets rendered by FreeType, allowing control over virtually all rendering parameters. The idea is to integrate each demo tools into ‘ftinspect’, based on the Qt GUI toolkit. Currently, it only provides the limited functionality of ‘ftgrid’. Thus, includes finishing ‘ftinspect’ handling all the aspects of ‘ftgrid’ and other demo tools.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5541736875556864/",
+          "proposal_id": null,
+          "short_description": "‘ftinspect’ is an essential part of FreeType to show how a font gets rendered by FreeType, allowing control over virtually all rendering parameters....",
+          "slug": "improve-the-ftinspect-demo-program",
+          "status": "completed",
+          "student_name": "Veeki Yadav",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Improve the 'ftinspect' demo program"
+        },
+        {
+          "code_url": "https://lists.nongnu.org/archive/html/freetype-devel/2019-08/msg00084.html",
+          "description": "<p>To support colored glyphs in <strong>OpenType</strong> fonts, several formats currently exist, namely <strong>SBIX</strong>, <strong>CBDT</strong> and <strong>COLR</strong>. These are used widely with varying degree of support across different platforms. <strong>SVG</strong> is a recent addition that uses a subset of <strong>SVG1.1</strong> features to represent glyphs. It is growing in popularity and will be supported across most devices very soon. <strong>FreeType</strong> is a very powerful font rendering library that is being used across billions of devices. It already supports <strong>SBIX</strong>, <strong>CBDT</strong> and <strong>COLR</strong> formats. The goal of this project is to add support for SVG glyphs to <strong>FreeType</strong>. I plan to accomplish this by:</p>\n<ol>\n<li>Writing code that reads SVG documents from SVG font tables and decode it if it's in <strong>gzip</strong> encoded format.</li>\n<li>Creating a callback API that would allow users of FreeType to plug any external SVG Renderer to be used for SVG rendering.</li>\n<li>Choose one SVG Renderer as the default one so that SVG support comes out of the box with FreeType, while making the callback API generic enough to support other renderers too. </li>\n<li>Testing and documenting everything.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6002250785226752/",
+          "proposal_id": null,
+          "short_description": "To support colored glyphs in OpenType fonts, several formats currently exist, namely SBIX, CBDT and COLR. These are used widely with varying degree...",
+          "slug": "adding-support-for-opentype-svg-fonts-to-freetype",
+          "status": "completed",
+          "student_name": "Moazin",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Adding support for OpenType-SVG Fonts to FreeType"
+        },
+        {
+          "code_url": "https://gist.github.com/nikramakrishnan/f88f3bae3cd2f0ba06d20ab3e0c74fb3",
+          "description": "<p>The aim of this project is to integrate seamless support for the WOFF File Format 2.0 into FreeType so that these fonts can be recognized, decompressed, and loaded as any other SFNT font. This includes study and comparison of how SFNT fonts are wrapped into WOFF 1.0 and WOFF 2.0 files, exploration of existing libraries for WOFF 2.0 and Brotli compression, and finally, writing code to allow FreeType to handle WOFF 2.0 fonts.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6267232768753664/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to integrate seamless support for the WOFF File Format 2.0 into FreeType so that these fonts can be recognized,...",
+          "slug": "add-support-for-woff2-fonts-to-freetype",
+          "status": "completed",
+          "student_name": "Nikhil Ramakrishnan",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Add Support for WOFF2 Fonts to FreeType"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6561043747176448/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/freetype2/freetype2/-/blob/GSoC-2020-greg/CI/Readme.md",
+          "description": "<p>I plan to address the idea \"Develop a test framework for checking FreeType's rendering output\". Frreetype needs to be able to compare images for correctness and continuity. I’ve implemented a similar system in the game engine ENIGMA (<a href=\"https://github.com/enigma-dev/enigma-dev\" target=\"_blank\">https://github.com/enigma-dev/enigma-dev</a>) where we use continuous integration services such as travis-ci, appveyor and azure pipelines. We use these services, in tandem with a test running program and some scripts which I co-authored, to check for compile errors, to check for function correctness using google tests and to do A/B testing for merge requests on master. The testing suite I helped write runs all the aforementioned checks on master and then reports back to GitHub by posting a pull request comment with diff images for manual review if there are any discrepancies. I plan to implement a very similar system for freetype using my past experiences. It is also worth noting that I wrote the freetype code used in ENIGMA, so I already have some familiarity with freetype’s codebase, as well.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5648454337953792/",
+          "proposal_id": null,
+          "short_description": "I plan to address the idea \"Develop a test framework for checking FreeType's rendering output\". Frreetype needs to be able to compare images for...",
+          "slug": "add-improve-freetype-testing-framework",
+          "status": "completed",
+          "student_name": "Greg Williamson",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Add / Improve Freetype Testing Framework"
+        },
+        {
+          "code_url": "https://gist.github.com/Priyeshkkumar/c07ad743e6d385f64c3d9add8d11495a",
+          "description": "<p>FreeType is an open-source library used to render fonts​. FreeType is packed with a lot of complex font-related features, therefore, logging is an important aspect for this library. Freetype uses a home-brewed tracing and debugging facility which is well thought and designed but there is a limitation of this facility to write logs only on platforms that have inbuilt support for standard error. Therefore, this facility fails on platforms lacking standard error. Since FreeType is used on a variety of platforms, there is a strong need to enhance the current logging facility beyond a standard error in order to ease the development and debugging.\nThe idea under this project is to enhance the existing design of writing logs to standard error to writing logs to the file system considering almost all platforms support input/output to files. \nThere are multiple logging libraries that are freely available in the market and are stable, which will do the job of printing logs to a file.\nHence, this project involves exploring the existing logging libraries, selecting one of them, integrating the same in FreeType and finally touching upon the testing part.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_freetype_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4559915714084864/",
+          "proposal_id": null,
+          "short_description": "FreeType is an open-source library used to render fonts​. FreeType is packed with a lot of complex font-related features, therefore, logging is an...",
+          "slug": "replace-freetypes-tracing-and-debugging-facilities-with-an-external-logging-library",
+          "status": "completed",
+          "student_name": "Priyesh Kumar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Replace FreeType's tracing and debugging facilities with an external logging library"
+        },
+        {
+          "code_url": "https://lists.nongnu.org/archive/html/freetype-devel/2020-08/msg00111.html",
+          "description": "<p>Distance fields looks similar to rasterized images but are very different from them. In the context of fonts, each pixel in a distance field image (or bitmap) is a shortest value from that pixel's position to the nearest edge of the outline of the corresponding glyph.\nDistance field is also known as distance transform and have various applications such as image processing, path-finding etc, but the main motive behind this project is to support high quality text rendering in real-time graphics applications (such as games). So, while rendering distance fields in such applications, the renderer can simply check the pixel's value and discard ones that are greater than a specific range. This makes distance fields almost infinity scalable without losing quality, this means you can use a 128x128 resolution distance transform and it will provide better quality than a 4k resolution image and will also require much less space. Moreover they can also be used to add many types of cool effects, like halos, drop shadows, bluring etc.\nSo, the goal of this project is to add support for generating signed distance fields from font files in FreeType.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4812339095797760/",
+          "proposal_id": null,
+          "short_description": "Distance fields looks similar to rasterized images but are very different from them. In the context of fonts, each pixel in a distance field image...",
+          "slug": "integrating-distance-field-generation-in-freetype",
+          "status": "completed",
+          "student_name": "Anuj Verma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrating Distance Field Generation in FreeType"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5205992846917632/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/1sarthakbhardwaj/082b81df1de51fbf16e2031d3f424297",
+          "description": "<p>This Framework aims to compare the development version to the baseline version .\nUpon each commit, several builds are triggered for various operating systems and\nbuild configurations. Each build status is then reported back to the developers in the\nPull Request comment section on Git Lab. Each build creates artifacts containing the\nnewly-built FreeType libraries for developers and users to download. There are also\nspecial pipeline phases called \"Regression Tests\" that run FreeType's built-in demo\nprograms to compare visual outputs between commits. An HTML report that contains a\ntable of the results will get uploaded as an artifact for these tests. For text output, an\nHTML page displaying a difference generated and for images, a special page is\ngenerated that shows both images, layered, so that you can mouse over each to see\ndifferences.</p>\n",
+          "difficulty": null,
+          "id": "proj_freetype_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5957370127056896/",
+          "proposal_id": null,
+          "short_description": "This Framework aims to compare the development version to the baseline version .\nUpon each commit, several builds are triggered for various operating...",
+          "slug": "re-develop-a-test-framework-for-checking-freetypes-rendering-output",
+          "status": "completed",
+          "student_name": "Sarthak Bhardwaj-1",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Re: Develop a test framework for checking FreeType's rendering output"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5483147923292160/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1dGnYX_OxbuUMnizaeHwJBddeDRUSyXe6iAOq736gx_o/edit?usp=sharing",
+          "description": "Investigate and implement alternative font renderers in FreeType, including:\n• font-rs\n• font-go\n• fontdue\n• Pathfinder\n\nThus the project is about implementing an alternative FT_Renderer module in C that can take \npriority over the native FreeType rasterizer after carefully analysing the available work. If required, \nany Rust code will be ported to C to ensure maximum portability of the code.",
+          "difficulty": null,
+          "id": "proj_freetype_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/RD0zDKK1/",
+          "proposal_id": null,
+          "short_description": "Investigate and implement alternative font renderers in FreeType, including: • font-rs • font-go • fontdue • Pathfinder Thus the project is about...",
+          "slug": "integrate-freetype-with-alternative-font-rendering-engines",
+          "status": "completed",
+          "student_name": "Anurag Thakur",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrate FreeType with alternative font rendering engines"
+        },
+        {
+          "code_url": "https://gist.github.com/cqjjjzr/1af5f3bca1d71bf188b3d2e73d9c1b94",
+          "description": "In this project, the Qt-based ftinspect program in the FreeType Demo Programs project is improved from a skeleton with extremely limited functionalities to a comprehensive font inspection tool. It is integrated with functionalities from other showcase tools, such as ftgrid, ftview, and ftstring. The UI and UX also make a big step towards better user-friendless and intuitiveness.",
+          "difficulty": null,
+          "id": "proj_freetype_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/UTT0MqfN/",
+          "proposal_id": null,
+          "short_description": "In this project, the Qt-based ftinspect program in the FreeType Demo Programs project is improved from a skeleton with extremely limited...",
+          "slug": "improve-freetype-demo-program-ftinspect",
+          "status": "completed",
+          "student_name": "Jiang Zhirui",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "ux"
+          ],
+          "title": "Improve FreeType demo program ftinspect"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/freetype/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gitlab.freedesktop.org/freetype/freetype/-/tree/gsoc-2023-ahmet-final",
+          "description": "The goal of this project is to improve the ftbench program in FreeType's build structure for easier performance testing. The current manual process is slow and prone to errors. The plan is to create an automatic system to compare the performance of an older version with the current one. The project involves making a way to compare performance, creating an easy-to-read HTML report, and adding the report to FreeType's CI on GitLab. The final results include the comparison method, the HTML report, the CI integration, and clear documentation.",
+          "difficulty": "beginner",
+          "id": "proj_freetype_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/WTILl9LD",
+          "proposal_id": "4r8Y3Bmb",
+          "short_description": "The goal of this project is to improve the ftbench program in FreeType's build structure for easier performance testing. The current manual process...",
+          "slug": "integrating-ftbench-into-freetypes-build-structure-a-performance-benchmarking-automation-project",
+          "status": "completed",
+          "student_name": "Ahmet Göksu",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Integrating ftbench into FreeType's Build Structure: A Performance Benchmarking Automation Project"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/14me6L4HEMnjBVFwOCjaBayRjQym-WK_RQuOJt7A3pCY/edit?usp=sharing",
+          "description": "Investigate and implement alternative font renderers in FreeType, including:\n\n• font-rs: A font renderer developed by Raph Levien. A blogpost describes some of its \nfeatures in more detail. It claims to be much faster than FreeType's anti-aliasing rendering module by using different data structures, SIMD optimizations etc.\n\n• font-go: Port of font-rs to the Go programming language, includes a fixed-point \nimplementation that is allegedly 1.4 times faster.\n\n• fontdue: It is another rendering engine based on font-rs, and it claims to be even faster and is actively developed. Additional discussion can be found here.\n\n• Pathfinder: Another project inspired by font-rs is Pathfinder, which takes advantages of GPU rendering.\n\nThe project involves continuing and eventually finalizing the GSoC 2022 contribution, including but not limited to improving build system support, adding SIMD optimizations to more processors, improving documentation etc",
+          "difficulty": null,
+          "id": "proj_freetype_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/vnrdFMIr",
+          "proposal_id": "VR7lPhUp",
+          "short_description": "Investigate and implement alternative font renderers in FreeType, including: • font-rs: A font renderer developed by Raph Levien. A blogpost...",
+          "slug": "integrate-freetype-with-alternative-rendering-engines",
+          "status": "completed",
+          "student_name": "Anurag Thakur",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrate FreeType with alternative rendering engines"
+        },
+        {
+          "code_url": "https://gitlab.freedesktop.org/freetype/freetype/-/tree/gsoc-craig-2023-final",
+          "description": "It is easy to render fonts well on screens with high pixel density.  However, straightforward algorithms run into problems when rendering with few pixels available.  For example, fonts where the capital “O” is taller than the capital “T”, or vice versa, should have these characters rendered at the same height when few pixels are available to avoid bumpy-looking text.  Many modern font formats  contain “hints” in these cases, which tell the renderer how it should align each symbol in the font to the pixel grid to create the most legible and consistent rendering.  However, not all fonts and font formats contain hints.  In these cases, the auto-hinter can be enabled, which analyzes the shapes in the font to fix some common issues that would normally be fixed by manually added hints.  This project aims to further improve this process by adding corrections for specific letters, such as “i”, where the dot can merge with the stem, and “ñ”, where the tilde can lose its shape and become flat.  These changes would be described in a capabilities database with a format designed as part of the project.",
+          "difficulty": "beginner",
+          "id": "proj_freetype_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/s3CapZKT",
+          "proposal_id": "6CaOVRhz",
+          "short_description": "It is easy to render fonts well on screens with high pixel density. However, straightforward algorithms run into problems when rendering with few...",
+          "slug": "adding-a-capabilities-database-to-the-freetype-auto-hinter",
+          "status": "completed",
+          "student_name": "gerzytet",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Adding a “capabilities database” to the FreeType auto-hinter"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/freetype"
+    },
+    "year_2024": {
+      "num_projects": 0,
+      "projects": [],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/freetype/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "freetype-devel@nongnu.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": "freetype-devel@nongnu.org"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.152Z"
+  }
+}

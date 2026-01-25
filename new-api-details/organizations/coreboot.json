@@ -1,0 +1,331 @@
+{
+  "id": "692251ed53dd9d7326d33f0d",
+  "slug": "coreboot",
+  "name": "coreboot",
+  "category": "Operating systems",
+  "description": "Fast, secure and flexible BIOS firmware",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/coreboot/aq8ne4b9ot7xq8rz-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/coreboot.webp",
+  "logo_r2_url": null,
+  "url": "https://coreboot.org",
+  "active_years": [
+    2016,
+    2019,
+    2020,
+    2022,
+    2023
+  ],
+  "first_year": 2016,
+  "last_year": 2023,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "assembly",
+    "open hardware",
+    "assembler",
+    "arm",
+    "x86"
+  ],
+  "topics": [
+    "hardware",
+    "embedded systems",
+    "real time",
+    "drivers",
+    "firmware",
+    "boot loader",
+    "BIOS"
+  ],
+  "total_projects": 11,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.2,
+    "projects_by_year": {
+      "year_2016": 3,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 3,
+      "year_2020": 2,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 3,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 3,
+      "year_2020": 2,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 11
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://drive.google.com/drive/folders/0B-Cccp-WWmeuUlh5M3pxT0cyQm8",
+          "description": "<p>The broad goal is to enhance flashrom by adding new and (somewhat) obscure features and, merging pending patches. This project comprises several sub-projects -</p>\n<ul>\n<li>Locking/unlocking of access protection</li>\n</ul>\n<p>Build towards a single flashrom codebase. Basic patches exist in the ChromiumOS branch, but further work needs to be done.</p>\n<ul>\n<li>Support for Multiple Status Registers</li>\n<li>Support for OTP/Security Registers</li>\n<li>Add Support for EEPROMs</li>\n</ul>\n<p>Investigate changes arising in the core infrastructure (including libflashrom) and produce mergeable code that is sustainable.</p>\n<ul>\n<li>Common Flash Interface (CFI)</li>\n</ul>\n<p>Give flashrom the ability to auto-detect chips with CFI capability (similar to auto-detecting SFDP-capable chips).</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5439533130711040/",
+          "proposal_id": null,
+          "short_description": "The broad goal is to enhance flashrom by adding new and (somewhat) obscure features and, merging pending patches. This project comprises several...",
+          "slug": "obscure-features-lockingunlocking-of-access-protection-eeproms-and-cfi",
+          "status": "completed",
+          "student_name": "hatim",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "​Obscure Features, Locking/Unlocking of Access  Protection, EEPROMs and CFI"
+        },
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2016/08/23/gsoc-better-risc-v-support-wrap-up/",
+          "description": "<p>The goal of this project is to get coreboot running on a physical board with a RISC-V processor. So far, only emulated boards (QEMU and Spike) are supported.</p>\n<p>The board will be a lowRISC on a Diligent Nexys 4 FPGA development board.</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5773424962043904/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to get coreboot running on a physical board with a RISC-V processor. So far, only emulated boards (QEMU and Spike) are...",
+          "slug": "better-support-for-risc-v-systems",
+          "status": "completed",
+          "student_name": "Jonathan Neuschäfer",
+          "student_profile": null,
+          "tags": [],
+          "title": "Better Support for RISC-V Systems"
+        },
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2016/08/23/gsoc-panic-room-recap/",
+          "description": "<p>Coreboot is a firmware that aims at replacing the initialisation process performed by the BIOS or UEFI firmware at each boot of the computer system that it’s installed on.\nIn order to achieve this, Coreboot has to understand and support the underlying hardware that it is running on, adding a new motherboard can be quite an error-prone and tedious process that can even take up to several months of work if none or just a few of the device’s components are already supported.\nOne of the tools used to make this process easier is SerialICE, a system software debugger that allows the developer to log and intercept the vendor’s BIOS accesses to the hardware and sends the information through a serial or EHCI debug port.</p>\n<p>This project idea aims at reducing the time and frustration of this process through:</p>\n<ul>\n<li>Improving the workflow of adding a new device thanks to a better integration of SerialICE in the developer’s workflow.</li>\n<li>Allowing access to a recovery and update of the firmware without an OS environment with the use of a flashrom payload.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5851661012566016/",
+          "proposal_id": null,
+          "short_description": "Coreboot is a firmware that aims at replacing the initialisation process performed by the BIOS or UEFI firmware at each boot of the computer system...",
+          "slug": "panic-room-take-a-deep-breath",
+          "status": "completed",
+          "student_name": "avengerf12",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Panic room - Take a deep breath"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6036378966032384/"
+    },
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2019/08/23/gsoc-wrap-up-for-adding-qemu-aarch64-support-to-coreboot/",
+          "description": "<p>We already have some physical mainboards for AArch64. However, we don’t have the support of QEMU/AArch64 yet. ARM-based chips nowadays become popular especially in embedded systems so this movement would spread to 64-bit ARM architectures. Supporting QEMU/AArch64 in the coreboot project would be helpful for developers with compatibility testing. It also would help to make sure that changes to architecture code don’t break current implementations.</p>\n<p>The goal of this project is that we can use the following command:</p>\n<p>$ qemu-system-aarch64 -bios build/coreboot.rom -machine virt -cpu cortex-a53</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4518359851335680/",
+          "proposal_id": null,
+          "short_description": "We already have some physical mainboards for AArch64. However, we don’t have the support of QEMU/AArch64 yet. ARM-based chips nowadays become popular...",
+          "slug": "adding-qemuaarch64-support-to-coreboot",
+          "status": "completed",
+          "student_name": "Asami Doi",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Adding QEMU/AArch64 Support to Coreboot"
+        },
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2019/08/22/gsoc-coreboot-coverity-final-update/",
+          "description": "<p>The coreboot project is automatically scanned by Coverity, a free static-analysis tool provided by Synopsis to open source projects. This tool analyzes the source code to check for common mistakes and errors, including static buffer overruns, null pointer dereferences, integer overflow, and other suspicious code. The coreboot project currently has over 380 flagged Coverity issues. The goal of this project is to make coreboot \"Coverity clean\". All outstanding issues will be classified, invalid reports will be marked as false-positives, and valid ones will be patched. This will address all issues with the current codebase, and ensure a common baseline for triaging new issues in the future.</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4886488813142016/",
+          "proposal_id": null,
+          "short_description": "The coreboot project is automatically scanned by Coverity, a free static-analysis tool provided by Synopsis to open source projects. This tool...",
+          "slug": "making-coreboot-coverity-clean",
+          "status": "completed",
+          "student_name": "Jacob Garber",
+          "student_profile": null,
+          "tags": [],
+          "title": "Making Coreboot Coverity Clean"
+        },
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2019/08/22/gsoc-ghidra-firmware-utilities-wrap-up/",
+          "description": "<p>The goal of this project is to develop plugins for Ghidra to assist in firmware reverse engineering. My planned implementation of this project consists of three parts: a file system loader for firmware images (UEFI firmware volumes and coreboot CBFS), a loader for PCI option ROMs (parsing structures and resolving the entry point), and scripts to assist with UEFI binary reversing (importing common UEFI types/structures/GUIDs from EDK2 and other sources).</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5812824289312768/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to develop plugins for Ghidra to assist in firmware reverse engineering. My planned implementation of this project...",
+          "slug": "ghidra-firmware-utilities",
+          "status": "completed",
+          "student_name": "al3xtjames",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Ghidra Firmware Utilities"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6048278473342976/"
+    },
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2020/08/31/gsoc-address-sanitizer-wrap-up/",
+          "description": "<p>Memory safety is hard to achieve. We, as humans, are bound to make mistakes in our code. While it may be straightforward to detect memory corruption bugs in few lines of code, it becomes quite challenging to find those bugs in a massive code. In such cases, 'Address Sanitizer' may prove to be useful and could help save time.</p>\n<p>Address Sanitizer, also known as ASan, is a runtime memory debugger designed to find out-of-bounds accesses and use-after-scope bugs. The goal of this project is to introduce ASan on coreboot. This feature would help to ensure code quality and make the runtime code more robust.</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5706868980187136/",
+          "proposal_id": null,
+          "short_description": "Memory safety is hard to achieve. We, as humans, are bound to make mistakes in our code. While it may be straightforward to detect memory corruption...",
+          "slug": "address-sanitizer-for-coreboot",
+          "status": "completed",
+          "student_name": "Harshit-Sharma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Address Sanitizer for coreboot"
+        },
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2020/08/31/gsoc-libgfxinit-add-support-for-bay-trail/",
+          "description": "<p>Currently, support for Bay Trail and Braswell hardware is missing from libgfxinit. The project idea is to add support for Bay Trail first, as it is well-documented.</p>\n<p>It may happen that I finish earlier than expected; in that case, then I shall also work on Braswell support.</p>\n",
+          "difficulty": null,
+          "id": "proj_coreboot_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5891337959768064/",
+          "proposal_id": null,
+          "short_description": "Currently, support for Bay Trail and Braswell hardware is missing from libgfxinit. The project idea is to add support for Bay Trail first, as it is...",
+          "slug": "libgfxinit-add-support-for-bay-trail-and-maybe-braswell",
+          "status": "completed",
+          "student_name": "Angel Pons",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "libgfxinit: Add support for Bay Trail (and maybe Braswell)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5721709165936640/"
+    },
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@husnifaiz/coreboot-console-via-smbus-part-ii-bc324fdd2f24",
+          "description": "Not all mainboards have an accessible serial port, but all boards with socketed RAM have a somehow accessible SMBus (used for reading the SPD-EEPROMs), which can be used very early in the boot process to access the coreboot console. As a device to receive the logs for example a beaglebone black or a cheap stm32 board with the i2c-star firmware can be used.",
+          "difficulty": null,
+          "id": "proj_coreboot_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/T1krZ71L/",
+          "proposal_id": null,
+          "short_description": "Not all mainboards have an accessible serial port, but all boards with socketed RAM have a somehow accessible SMBus (used for reading the...",
+          "slug": "console-via-smbus",
+          "status": "completed",
+          "student_name": "Husni Faiz",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Console via SMBus"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/coreboot/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "I plan to update the existing LZ4 and LZMA compressions algorithms and as well to add support for new algorithms to compress and decompress data on the Coreboot File System",
+          "difficulty": null,
+          "id": "proj_coreboot_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/1yVBHuN6",
+          "proposal_id": "kkwMSjtz",
+          "short_description": "I plan to update the existing LZ4 and LZMA compressions algorithms and as well to add support for new algorithms to compress and decompress data on...",
+          "slug": "updating-old-and-supporting-new-compression-algorithms",
+          "status": null,
+          "student_name": "Philipp Macher",
+          "student_profile": null,
+          "tags": [],
+          "title": "Updating old and supporting new compression algorithms"
+        },
+        {
+          "code_url": null,
+          "description": "The current codebase contains several Kconfigs that handle POST codes, but they don't have an impact on most platforms. Also, the code responsible for sending POST codes is spread out throughout the codebase in both C and Assembly languages. Some parts of the code use functions, some use macros, and others simply use the ‘outb()’ instruction. Additionally, the POST codes are duplicated across different stages and aren't properly documented, which makes it difficult to understand and maintain the code. \nTo improve the code, the Kconfigs should be guarded with a \"depends on\" statement to only show on supported platforms, duplicated Kconfigs should be removed, ‘outb()’ calls should be replaced with ‘post_code()’ if it is sending out POST code, the documentation should be updated, macros from the post_code.h file should be used wherever possible, duplicated POST codes should be dropped, and all possible 255 values should be utilized. Finally, new POST codes should be added in a standardized manner to maintain the reliability and maintainability of the codebase.",
+          "difficulty": null,
+          "id": "proj_coreboot_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/qJvxEQYR",
+          "proposal_id": "iOnDLwED",
+          "short_description": "The current codebase contains several Kconfigs that handle POST codes, but they don't have an impact on most platforms. Also, the code responsible...",
+          "slug": "coreboot-post-code-cleanup",
+          "status": null,
+          "student_name": "Yuu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Coreboot POST code cleanup"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/coreboot"
+    },
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "coreboot@coreboot.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://discord.com/invite/JqT8NM5Zbg",
+    "mailing_list": "coreboot@coreboot.org"
+  },
+  "social": {
+    "blog": "https://blogs.coreboot.org/",
+    "discord": "https://discord.com/invite/JqT8NM5Zbg",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://firmware.network/coreboot",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.522Z"
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "id": "692251f053dd9d7326d33f29",
+  "slug": "syslog-ng",
+  "name": "syslog-ng",
+  "category": "Data",
+  "description": "Enhanced log daemon, w/ wide range of I/O methods",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/syslog-ng/ipqfczgd4cx3zm9r-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/syslog-ng.webp",
+  "logo_r2_url": null,
+  "url": "https://www.syslog-ng.com/",
+  "active_years": [
+    2016,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "first_year": 2016,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "python",
+    "java",
+    "rust",
+    "big data",
+    "c++",
+    "rest",
+    "elasticsearch",
+    "json",
+    "sql",
+    "kafka"
+  ],
+  "topics": [
+    "continuous delivery",
+    "log management",
+    "message queue",
+    "data extraction",
+    "message correlation",
+    "python",
+    "logging",
+    "build tools",
+    "high performance data processing",
+    "data processing pipeline",
+    "reliable log transfer",
+    "cloud",
+    "high-performance data processing"
+  ],
+  "total_projects": 12,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": 4,
+      "year_2017": null,
+      "year_2018": 1,
+      "year_2019": 2,
+      "year_2020": 1,
+      "year_2021": 2,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 4,
+      "year_2017": null,
+      "year_2018": 1,
+      "year_2019": 2,
+      "year_2020": 1,
+      "year_2021": 2,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 10
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://vithulanmv.wordpress.com/2016/08/21/syslog-ng-kafka-source-in-depth-analysis/",
+          "description": "<p>The syslog-ng application can read messages from the sources. It processes them with filters, rewrite rules, parsers and finally sends messages to their destinations. The syslog-ng application already has a Kafka destination that is implemented in Java. The Kafka source will allow syslog-ng to read messages from Kafka. This can be used for example as a queue between several syslog-ng instances.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5423024350167040/",
+          "proposal_id": null,
+          "short_description": "The syslog-ng application can read messages from the sources. It processes them with filters, rewrite rules, parsers and finally sends messages to...",
+          "slug": "kafka-source-for-syslog-ng",
+          "status": "completed",
+          "student_name": "Vithulan",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Kafka source for syslog-ng"
+        },
+        {
+          "code_url": "https://kvch.github.io/syslog-ng-as-a-command-line-tool.html",
+          "description": "<p>Syslog-ng is a system logging application available for a wide range of operating systems. It is capable of sending, filtering, parsing, rewriting and forwarding logs to various destinations. It runs as a daemon process on systems and configured via files.</p>\n<p>The projects goal is to extend its functionality by making it able to run offline as a command line tool reading incoming logs from stdin, transforming the input the usual way and forwarding it to stdout.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5083161172115456/",
+          "proposal_id": null,
+          "short_description": "Syslog-ng is a system logging application available for a wide range of operating systems. It is capable of sending, filtering, parsing, rewriting...",
+          "slug": "syslog-ng-as-a-command-line-tool",
+          "status": "completed",
+          "student_name": "kvch",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "syslog-ng as a command line tool"
+        },
+        {
+          "code_url": "http://black-perl.in/gsoc16-syslog-ng-autorel-summary/",
+          "description": "<p>Syslog-ng is a famous log management software with content-based filtering, rich filtering capabilities, flexible configuration options, TCP transport and many other features. The project aims to implement a automated release generation tool for the Syslog-ng project considering the current release requirements of the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6226948275568640/",
+          "proposal_id": null,
+          "short_description": "Syslog-ng is a famous log management software with content-based filtering, rich filtering capabilities, flexible configuration options, TCP...",
+          "slug": "automated-release-generation-for-syslog-ng",
+          "status": "completed",
+          "student_name": "black-perl",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Automated release generation for syslog-ng"
+        },
+        {
+          "code_url": "https://github.com/balabit/syslog-ng-incubator/pull/156",
+          "description": "<p><a href=\"https://github.com/balabit/syslog-ng/\" target=\"_blank\">syslog-ng</a> is an famous log management infrastructure for users all over the world. Syslog-ng is rightly known as the \"Swiss Army Knife of logging\" because of its rich filtering capabilities, flexible configuration options.\n<a href=\"https://tools.ietf.org/html/rfc6455\" target=\"_blank\">WebSocket protocol</a>   is a protocol enabling two-way communication between  a client and server over a single TCP connection.<br>\nThis project will add WebSocket as a destination for syslog-ng.  The new destination can send log messages to an WebSocket Server directly. In addition, this project will enable the new destination to act as a WebSocket server,  so the WebSocket client (such as a javascript client in a browser) could subscribe directly to it to get log messages.  These will make sending log message privately or  publicly much easier.\nThis project will add WebSocket as a source for sysnlog-ng. So that it can receive log much more conveniently in some area such as IoT world.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5141549373456384/",
+          "proposal_id": null,
+          "short_description": "syslog-ng is an famous log management infrastructure for users all over the world. Syslog-ng is rightly known as the \"Swiss Army Knife of logging\"...",
+          "slug": "gsoc-2016-proposal-websocket-for-syslog-ng-yilin-li",
+          "status": "completed",
+          "student_name": "Yilin Li",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web",
+            "ml"
+          ],
+          "title": "GSoC 2016 Proposal: WebSocket for syslog ng (Yilin Li)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4906518294036480/"
+    },
+    "year_2017": null,
+    "year_2018": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/mehul-m-prajapati/gsoc-queue-interface",
+          "description": "<p>The aim of this project that is to develop a Redis based queue interface which could be an alternative to the disk queue.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6460813808238592/",
+          "proposal_id": null,
+          "short_description": "The aim of this project that is to develop a Redis based queue interface which could be an alternative to the disk queue.",
+          "slug": "queue-interface",
+          "status": "completed",
+          "student_name": "Mehul Prajapati",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Queue Interface"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5651276360581120/"
+    },
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/balabit/syslog-ng-gitbook/pull/68",
+          "description": "<p>This project will improve the GitBook of syslog-ng by adding a chapter for plugin programming, with sections dedicated to the various types of plugins found in syslog-ng. A non-trivial example plugin will accompany each section, to aid in the explanation.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6019431409385472/",
+          "proposal_id": null,
+          "short_description": "This project will improve the GitBook of syslog-ng by adding a chapter for plugin programming, with sections dedicated to the various types of...",
+          "slug": "plugin-programming-guide-with-examples",
+          "status": "completed",
+          "student_name": "Victor Ma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Plugin Programming Guide with Examples"
+        },
+        {
+          "code_url": "https://github.com/mehul-m-prajapati/gsoc-debun-tool",
+          "description": "<p>The <code>syslog-ng-debun</code> tool collects and saves information about syslog-ng OSE installation, making troubleshooting easier, especially if anyone is concerned about syslog-ng OSE related issues. The goal of this project is to improve the current debun tool by adding new features and developing tests.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6057215176212480/",
+          "proposal_id": null,
+          "short_description": "The syslog-ng-debun tool collects and saves information about syslog-ng OSE installation, making troubleshooting easier, especially if anyone is...",
+          "slug": "improve-debun-tool-collected-information",
+          "status": "completed",
+          "student_name": "Mehul Prajapati",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Debun tool collected information"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5114387092733952/"
+    },
+    "year_2020": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/vivinperis/gsoc-template-kafka-topic/",
+          "description": "<p>Recently a C based implementation of the kafka() destination was added to replace the older Java based one for performance. One feature that the Java implementation supported and the current C based one does not is support for the template syntax in the topic() parameter.</p>\n<p>The goal of this idea is to implement support for the standard syslog-ng template syntax in this parameter, allowing the use of multiple kafka topics, depending on the value of a syslog-ng name-value pair</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5927967085035520/",
+          "proposal_id": null,
+          "short_description": "Recently a C based implementation of the kafka() destination was added to replace the older Java based one for performance. One feature that the Java...",
+          "slug": "add-support-to-syslog-ng-template-syntax-in-the-topic-parameter-for-the-c-based-kafka-implementation",
+          "status": "completed",
+          "student_name": "Vivin Peris",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Add support to syslog-ng template syntax in the topic() parameter for the C based Kafka implementation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6013743185526784/"
+    },
+    "year_2021": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://yash6866.gitbook.io/syslog-macos-testing/gsoc-project-report",
+          "description": "<p>MacOS, as of 2021, is not officially supported by syslog-ng. Currently, only the building and the corresponding unit tests are guaranteed on  MacOS (x86 architecture) with some minor changes to the config file. However, what makes syslog-ng a better alternative is the abundance of sources/destinations and the rich filtering capabilities.</p>\n<p>These, unfortunately, don't have any guarantee of working as extensive testing is still pending. Moreover, Apple has also introduced their in-house Apple Silicon laptops with ARM architecture, and no tests have been done on this system whatsoever.</p>\n<p>The goal of this project is to test and document the current status of syslog-ng on MacOS and if possible, provide fixes for the same. This project seeks to extensively test multiple modules with their various plugins on both the macOS architectures. For all the plugins tested, reproducible tests and documentation will be maintained and a root cause analysis provided if a plugin fails to function.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6569807901622272/",
+          "proposal_id": null,
+          "short_description": "MacOS, as of 2021, is not officially supported by syslog-ng. Currently, only the building and the corresponding unit tests are guaranteed on  MacOS...",
+          "slug": "investigate-the-current-state-of-syslog-ng-on-macos",
+          "status": "completed",
+          "student_name": "Yash Mathne",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Investigate the current state of syslog ng on MacOS"
+        },
+        {
+          "code_url": "https://github.com/syslog-ng/syslog-ng/pull/3702",
+          "description": "<p>Using regular expressions to parse messages is very common and useful. Currently, syslog ng supports extracting fields (or name-value pairs) in its filter expressions. However, those are primarily meant for filtering and don't store extracted groups by default (despite we can manually add store-matches flags option). To make up for this deficiency, this project is to develop a new parser type, here I call it <strong>regexp-parser()</strong>. The motivation behind <strong>regexp-parser()</strong> is to remove the need to use filters to extract name-value pairs from content, which has traditionally been done by parsers. And these names can be used as user-defined macros for subsequent filtering or other types of message processing.</p>\n",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5764881537564672/",
+          "proposal_id": null,
+          "short_description": "Using regular expressions to parse messages is very common and useful. Currently, syslog ng supports extracting fields (or name-value pairs) in its...",
+          "slug": "gsoc-2021-proposal-add-regexp-parser-xiaoyu-qiu",
+          "status": "completed",
+          "student_name": "Xiaoyu Qiu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GSoC 2021 Proposal: Add regexp-parser() (Xiaoyu Qiu)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6224442098712576/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/syslog-ng/syslog-ng/pull/4145",
+          "description": "Implementing a new log rotation mechanism natively, based on the size of the written file. and formulating new API's thereby enhancing the efficiency and effectiveness",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/J2qWtwjK/",
+          "proposal_id": null,
+          "short_description": "Implementing a new log rotation mechanism natively, based on the size of the written file. and formulating new API's thereby enhancing the efficiency...",
+          "slug": "rotate-log-files-based-on-size-2964",
+          "status": "completed",
+          "student_name": "Shikhar Vashistha",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Rotate log files based on size (#2964)"
+        },
+        {
+          "code_url": "https://yash6866.gitbook.io/syslog-ng-csvparser-enhancements/",
+          "description": "Syslog-ng supports parsing CSV data from messages with its csv-parser(). This project aims to improve its functionality by reducing human input and adding more options for storing the CSV fields. \n\nCurrently, csv-parser() has a mandatory option, columns(\"KEY1\", \"KEY2\", ...), which specifies the name of the key-value pairs to parse the fields into. This project idea aims to make the columns() option optional and provide an alternative method for storing CSV fields: syslog-ng lists.",
+          "difficulty": null,
+          "id": "proj_syslog-ng_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/kbtzd1xx/",
+          "proposal_id": null,
+          "short_description": "Syslog-ng supports parsing CSV data from messages with its csv-parser(). This project aims to improve its functionality by reducing human input and...",
+          "slug": "enhancements-to-the-csv-parser",
+          "status": "completed",
+          "student_name": "Yash Mathne",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhancements to the csv-parser()"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/syslog-ng/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "syslog-ng@lists.balabit.hu",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://gitter.im/balabit/syslog-ng",
+    "mailing_list": "https://lists.balabit.hu/mailman/listinfo/syslog-ng"
+  },
+  "social": {
+    "blog": "https://www.syslog-ng.com/community/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/sngose",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.635Z"
+  }
+}

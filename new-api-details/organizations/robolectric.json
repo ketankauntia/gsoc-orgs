@@ -1,0 +1,204 @@
+{
+  "id": "692251e553dd9d7326d33e9c",
+  "slug": "robolectric",
+  "name": "Robolectric",
+  "category": "Operating systems",
+  "description": "Fast unit testing runtime for Android",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/robolectric/lazlu9me0dgu60vq-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/robolectric.webp",
+  "logo_r2_url": null,
+  "url": "http://robolectric.org/",
+  "active_years": [
+    2022,
+    2024
+  ],
+  "first_year": 2022,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "android",
+    "java",
+    "jvm",
+    "asm"
+  ],
+  "topics": [
+    "testing",
+    "mobile"
+  ],
+  "total_projects": 5,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "total_students": 5
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://hellosagar.hashnode.dev/google-summer-of-code-2022-robolectric",
+          "description": "Robolectric uses error-prone to check the common code quality problems. Currently, there are many warnings/recommendations left to fix, this topic will focus on fixing those problems to improve the Robolectric’s code quality. And there are many tests that are written in Java which I will be converted into Kotlin to make them more concise and to support Google’s Kotlin-first advocacy.",
+          "difficulty": null,
+          "id": "proj_robolectric_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Hnrqbam3/",
+          "proposal_id": null,
+          "short_description": "Robolectric uses error-prone to check the common code quality problems. Currently, there are many warnings/recommendations left to fix, this topic...",
+          "slug": "improve-robolectrics-code-quality",
+          "status": "completed",
+          "student_name": "Sagar Khurana",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Improve Robolectric’s code quality"
+        },
+        {
+          "code_url": "http://robolectric.org/blog/2022/09/06/Umesh-GSoC-on-ConscryptMode/",
+          "description": "Switching to Conscrypt, simulating the security APIs becomes much more high-fidelity and it achieves the goal of Robolectric to make it similar to an Android environment.\n\nCurrently, Robolectric uses BouncyCastle as the Java Cryptography Extension (JCE) security provider. Starting in Android P, Android switched to using Google Conscrypt as the security provider. To be more consistent with Android, Robolectric should update the default security provider to Conscrypt.\n\nAs it is using the BouncyCastle, this means that whenever the JCA APIs are used in a Robolecetric test, BouncyCastle will be used by default. Officially, In Android the default JCE provider is Conscrypt. This is a Java wrapper over BoringSSL. The goal is to have Robolectric switch from BouncyCastle by default to Conscrypt.\n\nThe Conscrypt module uses BoringSSL, a native library that is a Google fork of OpenSSL and which is used in many Google products like Google Chrome for cryptography and TLS. \n \nConscrypt uses Java code and a native library to provide the Android TLS implementation as well as a large portion of Android cryptographic functionality such as key generators, ciphers, and message digests. Conscrypt is relatively selective and focuses on the most important and widely-used algorithms. \n\nConscrypt also supports the curves in Elliptic Curves crypto operations and it is much faster than BouncyCastle as it is optimized native code. But BoringSSL doesn't have official releases and makes no guarantees around API or ABI stability.",
+          "difficulty": null,
+          "id": "proj_robolectric_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/EzEicWoN/",
+          "proposal_id": null,
+          "short_description": "Switching to Conscrypt, simulating the security APIs becomes much more high-fidelity and it achieves the goal of Robolectric to make it similar to an...",
+          "slug": "switching-to-conscrypt-as-the-default-security-provider",
+          "status": "completed",
+          "student_name": "Umesh Singh",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "android",
+            "api"
+          ],
+          "title": "Switching to Conscrypt as the default security provider"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/robolectric/"
+    },
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@shashankkumar45556/gsoc-2024-work-summary-dynamic-feature-support-in-robolectric-104da06f9504",
+          "description": "With Google Play's adoption of the AAB format as the standard publishing format, optimizing app delivery has become more efficient, allowing apps to only download the code and resources needed for a user's specific device configuration. Dynamic feature modules further enhance this by enabling on-demand feature downloads. However, this advanced modularization introduces complexities in local testing environments, particularly with tools like Robolectric that are critical for unit testing Android applications.\n\nThis project aims to extend Robolectric's testing capabilities to fully support dynamic feature modules and the AAB publishing format, addressing the current limitations in activity launching, resource loading, and environment setup for testing apps that utilize dynamic feature delivery and on-demand feature modules.",
+          "difficulty": "advanced",
+          "id": "proj_robolectric_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Oqji84Q5/",
+          "proposal_id": null,
+          "short_description": "With Google Play's adoption of the AAB format as the standard publishing format, optimizing app delivery has become more efficient, allowing apps to...",
+          "slug": "enhancing-robolectric-for-comprehensive-dynamic-feature-module-and-aab-testing-support",
+          "status": "completed",
+          "student_name": "shashankkumar7",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ai"
+          ],
+          "title": "Enhancing Robolectric for Comprehensive Dynamic Feature Module and AAB Testing Support"
+        },
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1oz-pS6hsPWBsa2nSwYXgRFMzZlAT4Frh-uK_-slhKys/edit?usp=sharing",
+          "description": "Robolectric is a unit testing framework for Android, which supports running Android tests in JVM instead of physical device or emulator. Robolectric works by both calling into real Android java classes and optionally delegating to functions of shadow(s).\n\nWhen defining a shadow, Robolectric allows the use of looseSignatures to “when an exact method signature match isn't found, Robolectric will look for a method with the same name but with all argument types replaced with java.lang.Object.”.\n\nlooseSignatures has been working well in Robolectric framework for years, however it has its own downsides, such as error-prone, cumbersome.\n\nIn this proposal, I plan to 1) Deprecate the usage of looseSignatures, add WithType\n2) Adapt Robolectric Annotation Processor (RAP) module to utilize @WithType annotation",
+          "difficulty": null,
+          "id": "proj_robolectric_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Mlprjv9j/",
+          "proposal_id": null,
+          "short_description": "Robolectric is a unit testing framework for Android, which supports running Android tests in JVM instead of physical device or emulator. Robolectric...",
+          "slug": "gsoc2024-replacing-loosesignatures-project-proposal",
+          "status": "completed",
+          "student_name": "Wenyi Shi",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "android"
+          ],
+          "title": "GSoC2024 - Replacing looseSignatures - Project proposal"
+        },
+        {
+          "code_url": "https://gist.github.com/Devashishbasu/791c3844b68e232121345a40eaec7033",
+          "description": "This project aims to address a critical gap in Robolectric's testing framework related to Activity context handling. Currently, Robolectric utilizes the Application Context for Activities, diverging from real Android environments. This incongruity can lead to unreliable test results. The proposal seeks to align Robolectric's Activity context handling with real Android behavior to enhance testing accuracy and reliability. The plan includes investigation, planning, implementation, testing, documentation, and optional enhancements phases. The deliverables include updating Robolectric, conducting thorough testing, and providing documentation.",
+          "difficulty": null,
+          "id": "proj_robolectric_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/j2fid0Nr/",
+          "proposal_id": null,
+          "short_description": "This project aims to address a critical gap in Robolectric's testing framework related to Activity context handling. Currently, Robolectric utilizes...",
+          "slug": "enhancing-robolectric-for-improved-testing-with-better-activity-contexts",
+          "status": "completed",
+          "student_name": "DevashishBasu",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing Robolectric for Improved Testing with Better Activity Contexts"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/robolectric/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "hoisie+gsoc@google.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://github.com/robolectric/robolectric/discussions",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "http://robolectric.org/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/robolectric",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.123Z"
+  }
+}

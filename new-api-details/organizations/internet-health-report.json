@@ -1,0 +1,409 @@
+{
+  "id": "692251d853dd9d7326d33de6",
+  "slug": "internet-health-report",
+  "name": "Internet Health Report",
+  "category": "Science and medicine",
+  "description": "Monitoring the Internet",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/internet-health-report/lifcnmh2qkq9cl5o-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/internet-health-report.webp",
+  "logo_r2_url": null,
+  "url": "https://ihr.iijlab.net",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "javascript",
+    "apache kafka",
+    "VueJS"
+  ],
+  "topics": [
+    "networking",
+    "routing",
+    "communication",
+    "internet",
+    "data analytics"
+  ],
+  "total_projects": 15,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.75,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 4,
+      "year_2024": 4,
+      "year_2025": 4
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 4,
+      "year_2024": 4,
+      "year_2025": 4
+    },
+    "total_students": 13
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://aniketpal.notion.site/Working-with-IHR-in-GSoC-2022-ea8b0f2e8ed94cb086ac9653604f2737",
+          "description": "The audience of IHR largely consists of researchers, network operators, policymakers, and educators. The goal of the proposal is to make the IHR’s internet application an end-to-end solution for stakeholders to work on. Currently, the IHR website provides plots of internet latency and routing for AS and countries. The goal of this software subsystem is to add new plots showing speed test data collected by Measurement-Lab so that users can monitor how disconnections and routing events impact throughput. While providing the users with a quick lookup for the NDT test it becomes immensely important to co-relate IHR traffic analysis with Google and Cloudflare reports. Collecting data from similar services would also pump IHR’s anomaly detector to complement IHR’s alerting system. With IHR the hub for multiple network reports and metrics, it is vital to have a dashboard to customize visual data. I propose to develop a customized IHR dashboard that is self-exploratory. The dashboard would let end users explore the IHR dataset and monitor any event with respect to time and legends according to their purpose. The dashboard would let the user select a set source and destination networks, time periods, and a metric and correspondingly plot the data. Ultimately, adding an assistant to select a set of important networks from a selected country or global statistics about the plotted data.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/LsZRqWCY/",
+          "proposal_id": null,
+          "short_description": "The audience of IHR largely consists of researchers, network operators, policymakers, and educators. The goal of the proposal is to make the IHR’s...",
+          "slug": "exploration-of-open-datasets-on-the-ihr-website",
+          "status": "completed",
+          "student_name": "Aniket",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "cloud",
+            "ui"
+          ],
+          "title": "Exploration of open datasets on the IHR website"
+        },
+        {
+          "code_url": "https://github.com/EndlessSummer0107/ihr-website.git",
+          "description": "Implement user registration:\nWhen the user enters email address, regular expression matching will be conducted at the front end to check if it is in the proper format. After entering the password twice, user can submit the form, and MD5 algorithm will be used to encrypt the password at the front end. In addition, once the verification code submitted by the user is verified, the user email address and password will be written into the database.\n\nImplement user login:\nWhen user email address and password are filled in at the front end, the back end will verify the user's password. After passing the verification, a unique token secret key will be returned to the front end which is generated according to user's account and password by using Django tokens.\n\nImplement notification settings:\nThe user selects the sources and sets the level of verbosities at the front end. After submitting the form, the user account will be firstly recognized according to the tokens, and then the selected sources and verbosities will be stored in the database. User can also search for sources at the front end. Approximate string matching will be used to look for values in a reference database. The first 30 matching results will be returned for users to choose.\n\nImplement sending email:\nI plan to use the email service supported by Django framework. I will configure SMTP related settings and develop an API, which can be called where the alert emails need to be sent.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/RljA8uzV/",
+          "proposal_id": null,
+          "short_description": "Implement user registration: When the user enters email address, regular expression matching will be conducted at the front end to check if it is in...",
+          "slug": "user-management-and-notifications",
+          "status": "completed",
+          "student_name": "Luofei",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "User management and notifications"
+        },
+        {
+          "code_url": "https://observablehq.com/@tasos",
+          "description": "The goal of the project is to develop reusable building blocks for visual exploration of Internet data. The building blocks will be developed in the ObservableHQ platform, which uses the popular visualization library D3.js. The building blocks will be open-source code, published as templates in the ObservableHQ platform. Any user would be able to fork/copy a template and plug their own data, and/or modify it according to their needs. Since the code will be in D3.js, the building blocks can be re-usable by any javascript component, not only in ObservableHQ. The targeted users mainly are Internet researchers and network. There exist various types of Internet data, mainly, tabular data (e.g., ASN or latency value), timeseries (e.g., AS hegemony per day), graphs (e.g., routing graph), paths (e.g., traceroutes, BGP paths). We will create at least one building block that can visualize each type of data. Different types of data need different types of visualizations. We will consider a range of visualizations, such as, sankey diagrams (very useful to visualize relations, paths, etc. in Internet data), graphs, geo-maps, distribution plots (e.g., histograms, violin plots), dendrograms, heatmaps.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/tFAJcpfh/",
+          "proposal_id": null,
+          "short_description": "The goal of the project is to develop reusable building blocks for visual exploration of Internet data. The building blocks will be developed in the...",
+          "slug": "plug-and-plot-with-internet-data",
+          "status": "completed",
+          "student_name": "Anastasios-Theodosios Meletlidis",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "ai",
+            "ui"
+          ],
+          "title": "Plug and Plot with Internet data"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/internet-health-report/"
+    },
+    "year_2023": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/mhmdahmedfathi/GSOC-23/blob/main/README.md",
+          "description": "By introducing the concept of threading and based on the fact that Redis is being used to cache data, it will be easier to make more than one caching layer and each layer will define a worker for each type of notification so they will be used in parallel and there will be no delay in response or time-limit error.\nAdding a new page to ask them if they want to start receiving notifications, and when they click the desired channel, a pop-up message will give them instructions on how to join the notification bot so they can be added to each channel and start receiving notifications from this channel.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/RRZKQNLm",
+          "proposal_id": "CFn0nVew",
+          "short_description": "By introducing the concept of threading and based on the fact that Redis is being used to cache data, it will be easier to make more than one caching...",
+          "slug": "user-management-and-notifications-continuation-of-gsoc22",
+          "status": "completed",
+          "student_name": "Mohamed Ahmed Fathy",
+          "student_profile": null,
+          "tags": [],
+          "title": "User management and notifications (continuation of GSoC'22)"
+        },
+        {
+          "code_url": "https://mohamedawnallah.github.io/gsoc2023/",
+          "description": "The project aims to develop an online tool that can group and aggregate topologically or\ngeographically related alarms in IHR's monitored metrics. The tool will include a JS module for analyzing and aggregating alarms, a VueJS component for displaying the aggregated alarms, and integration with IHR's global report. The tool will provide multi-dimensional reports to enhance the visibility and management of the most important events that generate numerous alarms across multiple datasets.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/u7Y9S6sc",
+          "proposal_id": "98PnETUK",
+          "short_description": "The project aims to develop an online tool that can group and aggregate topologically or geographically related alarms in IHR's monitored metrics....",
+          "slug": "alarms-correlation-and-aggregated-reports-online-tool-ihr-project-mohamed-awnallah-gsoc-proposal",
+          "status": "completed",
+          "student_name": "Mohamed Awnallah",
+          "student_profile": null,
+          "tags": [
+            "vue",
+            "ai"
+          ],
+          "title": "Alarms correlation and aggregated reports (online tool) IHR Project - Mohamed Awnallah GSoC Proposal"
+        },
+        {
+          "code_url": null,
+          "description": "25% of engineering time is spent on devops chores. The aim of this project is to automate those 25% to free researchers to do science full time instead of hoping between research and technical support.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/zAcrMg3G",
+          "proposal_id": "hiUjkWli",
+          "short_description": "25% of engineering time is spent on devops chores. The aim of this project is to automate those 25% to free researchers to do science full time...",
+          "slug": "devops-modernization-of-ihr",
+          "status": null,
+          "student_name": "Mostafa ElGendi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Devops Modernization of IHR"
+        },
+        {
+          "code_url": "https://roopeshsn.com/bytes/gsoc-2023-final-report",
+          "description": "The users of IHR fall under the category of students, educators, professionals, network operators, policymakers, and researchers. The goal of this proposal is to visualize the internet resources through Internet Yellow Pages (IYP), which acts as an end-to-end solution for stakeholders to work on. Currently, IYP has data related to AS, IXP, Peer ASes, Sibling ASes, Countries, URLs, etc. The data can be visualized through tables, charts, and graphs (wherever possible) so that users can access much information. For example, a lot of information can be visualized about an AS including its Prefixes, IXP, Peer ASes, Sibling Ases, etc. I propose to develop a search page for the Internet Yellow Pages which is self-exploratory. The search page would let the user select either AS, Country, and IXP and correspondingly render tables, charts, and graphs to visualize the entity.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/jmLW9PFH",
+          "proposal_id": "QJ2L6Jc8",
+          "short_description": "The users of IHR fall under the category of students, educators, professionals, network operators, policymakers, and researchers. The goal of this...",
+          "slug": "search-page-for-the-internet-yellow-pages",
+          "status": "completed",
+          "student_name": "Roopesh Saravanan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Search page for the Internet Yellow Pages"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/internet-health-report"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/InternetHealthReport/ihr-website/tree/gsoc24",
+          "description": "This project aims to address the need for a more effective way to visualize traceroute data, specifically focusing on latency increases in upstream networks. With a plethora of traceroute data available from RIPE Atlas, the current challenge lies in the absence of an intuitive and detailed visualization tool. This proposal seeks to fill that gap by developing a comprehensive visualization solution that leverages RIPE Atlas data to enhance network analysis and troubleshooting capabilities.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/HOalwttF/",
+          "proposal_id": null,
+          "short_description": "This project aims to address the need for a more effective way to visualize traceroute data, specifically focusing on latency increases in upstream...",
+          "slug": "traceroute-visualization",
+          "status": "completed",
+          "student_name": "Anastasios-Theodosios Meletlidis",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Traceroute Visualization"
+        },
+        {
+          "code_url": "https://github.com/InternetHealthReport/internet-yellow-pages/pull/139",
+          "description": "The Internet Yellow Pages is a database containing information about internet resources including domain names, autonomous system numbers (ASNs), and subnets, which it receives from 18 organizations including Cisco, Cloudflare, and Stanford University. The data is stored using Neo4j, a graph database known for its flexibility and scalability. \n\nIt is important that the Internet Yellow Pages contain accurate data from all these sources and provide users with the data quickly and efficiently. However, IHR currently computes a new database of this form each week, and this deployment is not automated, which increases the time it takes to make the new data publicly available. Thus, the goal of this project is to design and implement an automated pipeline to deploy a new database to a remote server each week and to upload the database dump to a public repository. The solution must be maintainable and rigorously tested, with unit tests for each IYP dataset. This ensures that users receive reliable data with no downtime and that future developers can easily expand upon the pipeline.\n\nThese goals were accomplished by completing the following four subparts: creating unit tests, creating a pipeline to automatically compute a database dump and push it to IHR’s archive, integrating the tests into this pipeline, and extending the pipeline to also deploy a running instance of the database to a remote server. Caddy is used to hotswap newly computed databases and to provide access to previously generated databases.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/gBDItbUY/",
+          "proposal_id": null,
+          "short_description": "The Internet Yellow Pages is a database containing information about internet resources including domain names, autonomous system numbers (ASNs), and...",
+          "slug": "internet-yellow-pages-automatic-deployment",
+          "status": "completed",
+          "student_name": "rpoon18",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database",
+            "cloud",
+            "ui"
+          ],
+          "title": "Internet Yellow Pages Automatic Deployment"
+        },
+        {
+          "code_url": "https://github.com/0xAnon0602/GSOC-24/blob/main/README.md",
+          "description": "The project focuses on improving the visual representation of network\nconnectivity for Autonomous Systems (AS). It uses the extensive data\navailable from the Internet Yellow Pages (IYP). The goal is to provide a clearer\nand more detailed understanding of the complex connections and relationships\nwithin the network infrastructure. By incorporating IYP's comprehensive\ndataset, the project aims to help researchers, and other stakeholders, to enable better\nanalysis and comprehension of the network.to offer valuable insights into the\ntopology and behavior of the internet's backbone.",
+          "difficulty": "advanced",
+          "id": "proj_internet-health-repo_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/20hbhwVa/",
+          "proposal_id": null,
+          "short_description": "The project focuses on improving the visual representation of network connectivity for Autonomous Systems (AS). It uses the extensive data available...",
+          "slug": "network-topology-overview",
+          "status": "completed",
+          "student_name": "0xAnon",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Network Topology Overview"
+        },
+        {
+          "code_url": "https://arnabghosh.vercel.app/gsoc-24",
+          "description": "The goal of this project is to provide a real-time monitoring dashboard on the IHR website to easily monitor how a prefix propagates on the Internet. This tool will get a prefix (or list of prefixes or an ASN) from a user, also the user can select a list of RIS collectors and the maximum number of hops from the monitored prefix to display. Then the user pushes a 'play' button. The tool will connect to RIS Live with the corresponding parameters and display the AS paths received.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/YOteUEcC/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to provide a real-time monitoring dashboard on the IHR website to easily monitor how a prefix propagates on the Internet....",
+          "slug": "real-time-bgp-monitor",
+          "status": "completed",
+          "student_name": "Arnab Ghosh",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "Real Time BGP Monitor"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/internet-health-report/"
+    },
+    "year_2025": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Currently, the IHR website features a tool called the real-time BGP monitor, which is very\nuseful for real-time BGP monitoring but lacks the functionality to view past BGP events. This proposal aims to improve the BGP monitoring dashboard by integrating the BGPlay\nAPI and implementing additional features. The enhanced BGP monitoring dashboard\nwill allow users to view past BGP events by specifying a particular time duration, while\nalso maintaining real-time BGP monitoring functionality.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Yg2BrAaw",
+          "proposal_id": "d9RmLmGW",
+          "short_description": "Currently, the IHR website features a tool called the real-time BGP monitor, which is very useful for real-time BGP monitoring but lacks the...",
+          "slug": "integration-of-bgplay-api-and-improving-bgp-monitoring-dashboard",
+          "status": "in-progress",
+          "student_name": "Arnab Ghosh",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai"
+          ],
+          "title": "Integration of BGPlay API and Improving BGP Monitoring Dashboard"
+        },
+        {
+          "code_url": null,
+          "description": "The Internet Health Report (IHR) REST API provides access to all results displayed on the IHR website. Currently built on Django 2.2.27, an outdated and unsupported version, this project will migrate the API to FastAPI to enhance performance and maintainability. Additionally, the embedded database management logic will be decoupled and replaced with Bash scripts, enabling independent database initialization and management. To further improve scalability and deployment efficiency, this project will also containerize the application using Docker.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/EkdZZm7S",
+          "proposal_id": "hLL6PyEk",
+          "short_description": "The Internet Health Report (IHR) REST API provides access to all results displayed on the IHR website. Currently built on Django 2.2.27, an outdated...",
+          "slug": "migrate-ihr-api",
+          "status": "in-progress",
+          "student_name": "Ibraam Nashaat Rezkalla",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "database",
+            "docker"
+          ],
+          "title": "Migrate IHR API"
+        },
+        {
+          "code_url": null,
+          "description": "RIPE Atlas publishes traceroute measurement results. A measurement result can have a large volume of data. One example of a large volume measurement is as mentioned below: \n\n\"Given around 12000 probes worldwide and the system collects traceroute data from these probes every 15 mins. The measurement has been running for 2+ years. The maximum hops a probe made in this measurement was 32.\"\n\nRIPE Atlas provides a REST API to fetch the measurement result. However, the measurement result object can be a large json response. It increases the memory usage on the server while creating a huge response. If the server succeeds in creating a huge response, the client device may not afford to render an SVG graph given the large traceroute data. \n\nThe main goal for this project is to enable the visualizer to handle traceroute measurement results of any volume. This can mainly be achieved by \n- Narrowing down the search according to the inputs (probe ids to include, time frame) provided by the user\n- Paginate the measurement result API call by probe ids, start time and stop time\n\nExperiment rendering the network graph using more efficient graph libraries and test. If by testing, the results are improved then replace the current implementation of v-network-graph. \n\nAlso, there is a scope for UI enhancements. The main thought process behind thinking UI enhancement for this project was this:\n\"The data which we can provide should simply be there on the graph when the user needs it. \nThis UI enhancement can be achieved by adding another “Detailed mode” to the network graph.\" \nDuring the GSoC timeline, I will be executing testing strategies, fixing the underlying issues of the traceroute visualizer and documenting my work.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/i3G2TGJx",
+          "proposal_id": "WtXYTa5Q",
+          "short_description": "RIPE Atlas publishes traceroute measurement results. A measurement result can have a large volume of data. One example of a large volume measurement...",
+          "slug": "traceroute-visualization-continuation-of-gsoc24",
+          "status": "in-progress",
+          "student_name": "Om Palsanawala",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Traceroute visualization (continuation of GSoC'24)"
+        },
+        {
+          "code_url": null,
+          "description": "The project enhances the IYP Browser to make the exploration of graph data more interactive and powerful. It introduces features such as node expansion on click, expandable graph views, and smart Cypher query suggestions relevant to actual IYP data. The researchers and stakeholders will benefit from improved UI controls,  shareable and embeddable components, and URL-based cypher query execution. These new features will help the researchers explore and analyze networked data, get deeper insights, and make informed decisions.",
+          "difficulty": null,
+          "id": "proj_internet-health-repo_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/bEca6Wwe",
+          "proposal_id": "KWm5jGYt",
+          "short_description": "The project enhances the IYP Browser to make the exploration of graph data more interactive and powerful. It introduces features such as node...",
+          "slug": "iyp-browser",
+          "status": "in-progress",
+          "student_name": "Ronit Jain",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "IYP Browser"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/internet-health-report"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "admin@ihr.live",
+    "guide_url": "https://github.com/InternetHealthReport/gsoc/blob/main/contributor-guidance.md",
+    "ideas_url": "https://github.com/InternetHealthReport/gsoc/blob/main/ideas.md",
+    "irc_channel": null,
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/ihr_alerts",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.276Z"
+  }
+}

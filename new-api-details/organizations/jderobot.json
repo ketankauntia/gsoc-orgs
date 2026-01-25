@@ -1,0 +1,1090 @@
+{
+  "id": "692251d853dd9d7326d33df0",
+  "slug": "jderobot",
+  "name": "JdeRobot",
+  "category": "Other",
+  "description": "Toolkit for developing Robotics applications",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/jderobot/xwu8zkcagffmlqdj-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/jderobot.webp",
+  "logo_r2_url": null,
+  "url": "http://jderobot.github.io",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2017,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "c",
+    "c++",
+    "ros",
+    "gazebo",
+    "opencv",
+    "tensorflow"
+  ],
+  "topics": [
+    "robotics",
+    "computer vision",
+    "teaching",
+    "robot simulator",
+    "education",
+    "developer tools",
+    "artificial intelligence"
+  ],
+  "total_projects": 48,
+  "stats": {
+    "avg_projects_per_appeared_year": 5.33,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 5,
+      "year_2019": 6,
+      "year_2020": 5,
+      "year_2021": 6,
+      "year_2022": 6,
+      "year_2023": 4,
+      "year_2024": 5,
+      "year_2025": 7
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 5,
+      "year_2019": 6,
+      "year_2020": 5,
+      "year_2021": 6,
+      "year_2022": 6,
+      "year_2023": 4,
+      "year_2024": 5,
+      "year_2025": 7
+    },
+    "total_students": 48
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "http://jderobot.org/Ni9elf-colab",
+          "description": "<p>I aim to solve the problem of detecting and recognizing objects in videos by using RGB and depth data as input. The deep learning algorithm used would be an extension of the convolutional neural network YOLO (You Only Look Once). There are two phases to my project. In my first phase, since YOLO is natively written in Darknet based in C, I will explore ports of YOLO in a more friendlier framework (ex: Keras or Tensorflow) and test their accuracy against Darknet.</p>\n<p>In the second phase, I will extend Darknet to accept RGB and depth data as input. An accuracy script will be written in Darknet to evaluate the accuracy of the created models, original YOLO (only RGB), extended YOLO (depth only) and YOLO-D (RGB + depth). The inclusion of depth should hopefully result in an increase in accuracy.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6651478143926272/",
+          "proposal_id": null,
+          "short_description": "I aim to solve the problem of detecting and recognizing objects in videos by using RGB and depth data as input. The deep learning algorithm used...",
+          "slug": "deep-learning-to-detect-objects-in-images-from-rgb-d-input",
+          "status": "completed",
+          "student_name": "Nigel Fernandez",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Deep Learning to Detect Objects in Images from RGB-D Input"
+        },
+        {
+          "code_url": "http://jderobot.org/Deep_Reinforcement_Learning_in_Robotics",
+          "description": "<p>Creating an OpenAI gym environment as a wrapper for Gazebo robots simulator, so that the environment would be a bridge to connect  an agent as a brain to the robot's body and interact with the Gazebo world, is the primary goal of this project. In addition, we will try to use Deep Reinforcement Learning methods to implement DQN agent as baseline and use a robot to learn how to navigate in an unknown map, using sensory data as input to the network, and generating velocity commands for the robot as the output of the network.\nAutonomous navigation and obstacle avoidance, can be used for autonomous driving in an unknown environment that we don't have any map from that. It is also useful for dynamic environments in which the map is constantly changing. This project could be used for autonomous exploring and mapping the environments, providing another solution replacing well-known SLAM algorithm.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5467852131794944/",
+          "proposal_id": null,
+          "short_description": "Creating an OpenAI gym environment as a wrapper for Gazebo robots simulator, so that the environment would be a bridge to connect  an agent as a...",
+          "slug": "deeprl-in-robotics",
+          "status": "completed",
+          "student_name": "Sepehr",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "DeepRL in Robotics"
+        },
+        {
+          "code_url": "http://jderobot.org/Raulperula-colab",
+          "description": "<p>JdeRobot is a software development suite for robotics, home-automation and computer vision applications. These domains include sensors (for instance, cameras), actuators, and intelligent software in between. It has been designed to help in programming such intelligent software. Details for the project:\nProject #5. Teaching Robotics: Translation of a Scratch program to ROS python components\nScratch is a free visual programming language used in children's education, to teach them basic programming. It is composed of graphical building blocks (instructions) that must be visually connected to build the program. The idea here is to take benefit of our experience translating from a graphical description of a program in visual HFSM into a JdeRobot-ROS component to do the same with a different visual language, Scratch. The goal is to explore the use of Scratch with robots, both simulated or real, that JdeRobot-ROS allows and simplifies. We will start with simulated robots in Gazebo, despite with real robots will be the same as they use the same interfaces.\nThis project expects to develop a new tool prototype that reads Scratch programs and translate them into ROS Python components.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6170540859457536/",
+          "proposal_id": null,
+          "short_description": "JdeRobot is a software development suite for robotics, home-automation and computer vision applications. These domains include sensors (for instance,...",
+          "slug": "teaching-robotics-translation-of-a-scratch-program-to-ros-python-components",
+          "status": "completed",
+          "student_name": "Raúl Pérula-Martínez",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Teaching Robotics: Translation of a Scratch program to ROS python components"
+        },
+        {
+          "code_url": "https://github.com/JdeRobot/JdeRobot/pull/902",
+          "description": "<p>I propose to improve the visual HFSM tool by refactoring for Qt5, improving the user experience by developing more capable schema viewer and code editor, integrating ROS SMACH and actionlibs for code generation. We can also improve the tool by creating a library of actions and transitions to have project-level code and behavior reuse. If we can finish early, we can extend the tool to create visual state machines directly from the source code.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5643442877104128/",
+          "proposal_id": null,
+          "short_description": "I propose to improve the visual HFSM tool by refactoring for Qt5, improving the user experience by developing more capable schema viewer and code...",
+          "slug": "jderobot-gsoc17-application-for-visual-hfsm-project",
+          "status": "completed",
+          "student_name": "Okan Aşık",
+          "student_profile": null,
+          "tags": [],
+          "title": "JdeRobot GSOC'17 Application for Visual HFSM Project"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4923454155390976/"
+    },
+    "year_2018": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://jderobot.org/Club-hanqingxie",
+          "description": "<p>This project aims to build a ROS gazebo simulation framework to display robot navigation using OMPL. The framework include OMPL GUI, navigation node, obstacle plugin and robot model.</p>\n<p>OMPL GUI should manage the navigation’s start or stop and set all the parameters such as robot type, start and goal pose and different OMPL planner. The tool can publish relevant message or subscribe service to change parameter.</p>\n<p>Navigation receives configure from GUI node and obstacle information from gazebo. It calls the OMPL api and publish ROS path message. If the robot model is devoted to route, this node should update the new planning path based on new robot pose.</p>\n<p>Although it just needs a known scenario in claim, I think it is convenience that we can change obstacle position freely. The gazebo plugin for obstacle can publish self-information or subscribe navigation’s service to change obstacle information.</p>\n<p>When navigation node publish the Path message, a robot model and its path following function is needed to complete this motion. Conveniently, I will use robot models in the JdeRobot such as turtlebot and adrone.</p>\n<p>Integrate all the above and implement the integral ROS gazebo simulation framework.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5490005304672256/",
+          "proposal_id": null,
+          "short_description": "This project aims to build a ROS gazebo simulation framework to display robot navigation using OMPL. The framework include OMPL GUI, navigation node,...",
+          "slug": "personal-for-gsoc-2018-jderobot-academy-robot-navigation-using-open-motion-planning-library",
+          "status": "completed",
+          "student_name": "Hanqing Xie",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Personal for GSoC 2018 - JdeRobot-Academy: robot navigation using Open Motion Planning Library"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1-G6qkuOka-Wt2XbG0LnA80SvXUlHnTw7JJz_qolSafs/edit?usp=sharing",
+          "description": "<p>JdeRobot's DetectionSuite is primarily used for fair comparision of different Deep learning models on any framework or dataset preferred.\nThis project proposal aims to expand DetectionSuite’s current functionality to support more deep learning Frameworks such as Tensorflow, keras and Caffe and more datasets such as Imagenet, COCO, etc. It also aims to add Segmentation support to this tool along with various evaluation metrics in order to compare different detection models. For easy installation, this project will also improve current documentation and create debian packages.<br>\n<a href=\"https://drive.google.com/open?id=1HSByDVfi6ZOqKVTAJTiUb11ATFTalp-P\" target=\"_blank\">Link to Proposal</a><br>\n<a href=\"https://jderobot.org/GSoC-2018#Project_.233:_Improving_DetectionSuite_deep_learning_tool_including_segmentation_and_classification_tools\" target=\"_blank\">Project Link</a><br>\n<a href=\"https://github.com/JdeRobot/dl-DetectionSuite\" target=\"_blank\">Github Repo</a></p>\n",
+          "difficulty": "beginner",
+          "id": "proj_jderobot_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6510258612600832/",
+          "proposal_id": null,
+          "short_description": "JdeRobot's DetectionSuite is primarily used for fair comparision of different Deep learning models on any framework or dataset preferred.\nThis...",
+          "slug": "improving-detectionsuite-to-support-more-datasets-and-frameworks-with-segmentation-tools",
+          "status": "completed",
+          "student_name": "Vinay  Sharma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving DetectionSuite to support more datasets and Frameworks with Segmentation Tools"
+        },
+        {
+          "code_url": "https://github.com/JdeRobot/VisualStates/pull/59",
+          "description": "<p>The project focuses on improving VisualStates tool which is used for visualizing behaviors as Hierarchical Finite State Machines on a graphical canvas composed of states and transitions. Under the project, Development of Library of Automatons, Parameterized Automatons, and release of VisualStates as a Debian package, App image, and a ROS package.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6028761103335424/",
+          "proposal_id": null,
+          "short_description": "The project focuses on improving VisualStates tool which is used for visualizing behaviors as Hierarchical Finite State Machines on a graphical...",
+          "slug": "improving-visualstates-tool",
+          "status": "completed",
+          "student_name": "Pushkal Katara",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving VisualStates Tool"
+        },
+        {
+          "code_url": "https://jderobot.org/Club-spaniego",
+          "description": "<p>The main purpose of the project is to program an educational robot that uses an Arduino microprocessor with Python. It will support the main Python elements from the beginning, the ones that are used to code the educational robot. The code will be done in Python and them translated into the Arduino programming language. After this process, the code will be compiled and ready to be uploaded to the Arduino board, so we can code our app with Python and use an Arduino board without having to code on the Arduino programming language. To achieve this objective, we will implement a translator that will take the Python code, generate the Arduino code from that one and compile it so it’s ready to be used on a robot like MBot.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6305910443999232/",
+          "proposal_id": null,
+          "short_description": "The main purpose of the project is to program an educational robot that uses an Arduino microprocessor with Python. It will support the main Python...",
+          "slug": "running-a-python-application-on-an-educational-robot-with-an-arduino-microprocessor-built-in",
+          "status": "completed",
+          "student_name": "Sergio Paniego Blanco",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Running a Python application on an educational robot with an Arduino microprocessor built-in"
+        },
+        {
+          "code_url": "https://jderobot.org/Club-jianxiong",
+          "description": "<p>This project (proposal) aims at implementing a complete system for creating realistic 3D maps from SLAM algorithms. In my proposed approach, it's highly related with offline-SLAM.</p>\n<h3>Overview</h3>\n<p>Sparse online SLAM algorithms only produce sparse pointcloud, which is not ideal for the human. Surface reconstruction would produce more human-friendly maps. However, several issues need to be solved for performing surface reconstruction on real-time SLAM result. This includes globally optimize 3D points, enforcing smoothness,etc.</p>\n<p>Besides, it's possible to solve the problem via an offline-SLAM approach (with surface reconstruction), because it's highly related with that.</p>\n<h3>Specifications</h3>\n<p>The main part of this project is related to offline-SLAM, to compensate some trade-offs made by real-time SLAM for real-time consideration. This includes:</p>\n<ul>\n<li>pose-graph optimization</li>\n<li>bundle adjustment</li>\n<li>enforcing smoothness</li>\n<li>surface reconstruction</li>\n<li>additional details about improving pointcloud accuracy</li>\n</ul>\n<p>This project may combine several technicals used in state-of-art SLAM algorithm.</p>\n<h3>Realistic 3D maps</h3>\n<p>Realistic 3D maps refer to maps with surface reconstruction (with color) so that they are more human-friendly.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5131193670434816/",
+          "proposal_id": null,
+          "short_description": "This project (proposal) aims at implementing a complete system for creating realistic 3D maps from SLAM algorithms. In my proposed approach, it's...",
+          "slug": "create-realistic-3d-maps-from-slam-algorithms",
+          "status": "completed",
+          "student_name": "Jianxiong Cai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud"
+          ],
+          "title": "Create realistic 3D maps from SLAM algorithms"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4773757633691648/"
+    },
+    "year_2019": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2019-Nikhil_Khedekar/",
+          "description": "<p>This GSoC project essentially replaces the existing infrastructure of seven available exercises on drone programming with ROS, PX4 in Gazebo and mavROS. The resultant exercises shall allow users the possibility of directly porting their code onto real drones running PX4 with mavROS.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6348465498488832/",
+          "proposal_id": null,
+          "short_description": "This GSoC project essentially replaces the existing infrastructure of seven available exercises on drone programming with ROS, PX4 in Gazebo and...",
+          "slug": "migration-of-drone-excercises-to-ros",
+          "status": "completed",
+          "student_name": "Nikhil Khedekar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Migration of drone excercises to ROS"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2019-Jeevan_Kumar/Report",
+          "description": "<p>This project aims at introducing new features to detection suite like adjustable bounding boxes, ability to add new labels , draw bounding boxes around the object of interest to get its labels and develop a ros-node of the suite. And also on improving the user interactions by adding few new GUI features like playback options , class-labels work-space and easy to start interface.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_jderobot_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6581241837518848/",
+          "proposal_id": null,
+          "short_description": "This project aims at introducing new features to detection suite like adjustable bounding boxes, ability to add new labels , draw bounding boxes...",
+          "slug": "adding-new-features-and-improving-detectionsuite",
+          "status": "completed",
+          "student_name": "sleep-404",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Adding new features and Improving DetectionSuite"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2019-Shyngyskhan_Abilkassov/2019-08-22-report/",
+          "description": "<p>Although currently Robotics Academy aims to be fully ROS-friendly, there are still some exercises on mobile robots and autonomous vehicles which are still based on the non-ROS infrastructure or incomplete. Obviously, these exercises have to be moved to the ROS and comply with Robotics Academy standards, so it will be easier for learners to start working on exercises rather than trying to tune and setup different environments. \nCurrently, there is an unfinished exercise on Amazon Warehouse Robots which is needed to be finalized. For that purpose the infrastructure of the exercise, robot controller, ROS messaging and communication and several GUIs have to be implemented and updated. By doing this, I aim to finish Amazon Warehouse exercises for single and fleet of robots operation and integrate them into the Robotics Academy.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5057302816620544/",
+          "proposal_id": null,
+          "short_description": "Although currently Robotics Academy aims to be fully ROS-friendly, there are still some exercises on mobile robots and autonomous vehicles which are...",
+          "slug": "jderobots-robotics-academy-amazon-warehouse-robots-exercise-integration",
+          "status": "completed",
+          "student_name": "Shyngyskhan Abilkassov",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ai",
+            "ui"
+          ],
+          "title": "JdeRobot’s Robotics Academy: Amazon Warehouse Robots exercise integration"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2019-Srinivasan_Vijayraghavan/",
+          "description": "<p>WebSim is a web-based robot simulator. It is used as a tool for learning robot programming. WebSim is currently programmable through JavaScript. This project aims to support programming the simulator in Python3 by building a transpiler that targets JavaScript.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5576419357229056/",
+          "proposal_id": null,
+          "short_description": "WebSim is a web-based robot simulator. It is used as a tool for learning robot programming. WebSim is currently programmable through JavaScript. This...",
+          "slug": "pyonbrowser-running-python-code-on-a-web-browser",
+          "status": "completed",
+          "student_name": "Srinivasan Vijayraghavan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "javascript",
+            "web",
+            "ai"
+          ],
+          "title": "PyOnBrowser: running Python code on a Web Browser"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2019-Baidyanath_Kundu/2019-08-22-thefinalreport/",
+          "description": "<p>Improving VisualStates, a great tool for easily creating complex robot behaviour, by adding parameterisation to its automatas and an online automata library.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_jderobot_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4816984095588352/",
+          "proposal_id": null,
+          "short_description": "Improving VisualStates, a great tool for easily creating complex robot behaviour, by adding parameterisation to its automatas and an online automata...",
+          "slug": "a-parameterized-automata-library-for-visualstates-tool",
+          "status": "completed",
+          "student_name": "sudo-panda",
+          "student_profile": null,
+          "tags": [],
+          "title": "A parameterized automata Library for VisualStates tool"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2019-Pankhuri_Vanjani/2019-08-23-final-report/",
+          "description": "<p>ROS has changed the world of Robotics, now we need not write every single library for a new project which has already been implemented before. Researchers and developers can work on top of developed tools and libraries. ROS2 Has brought good changes with it, including all features of ROS along with new ones to address shortcomings in earlier version. To make use of those characteristics it is important to migrate our tools and drivers. This project aims to adapt drivers and some crucial JdeRobot tools to make them ROS2 compatible. In this proposal visualization, calibration and visualstates tools are targeted.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5864399514894336/",
+          "proposal_id": null,
+          "short_description": "ROS has changed the world of Robotics, now we need not write every single library for a new project which has already been implemented before....",
+          "slug": "migration-of-jderobot-tools-to-ros2",
+          "status": "completed",
+          "student_name": "Pankhuri Vanjani",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Migration of JDEROBOT tools to ROS2"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4962509264519168/"
+    },
+    "year_2020": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2020-Yijia_Wu/2020-08-31-conclusion/",
+          "description": "<p>The goal of this project is to develop a set of robot manipulation exercises with incremental complexity for JdeRobot’s Robotic Academy users. Exercises include classical pick and place tasks without and with vision assistance, picking from warehouse racks with an industrial mobile manipulator, cooperation between AGV and fixed manipulator to pick objects from a conveyor belt and delivery to the target position.<br>\nWith these exercises, users can gain a better understanding of the processing of a manipulation task which mainly includes perception, planning and control. They can also become more familiar with some popular working frameworks in robotics: ROS, Gazebo, MoveIt, and some well-known open-source computer vision libraries: OpenCV and PCL.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_jderobot_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5649224915484672/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to develop a set of robot manipulation exercises with incremental complexity for JdeRobot’s Robotic Academy users....",
+          "slug": "robotics-academy-exercises-on-industrial-robot-manipulation-with-moveit",
+          "status": "completed",
+          "student_name": "Yijia Wu",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ai"
+          ],
+          "title": "Robotics-Academy: exercises on Industrial Robot Manipulation with Moveit"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2020-Diego_Charrez/logbook/",
+          "description": "<p>JdeRobot provides a set of tools for developing robotic applications, including previous work in autonomous driving robots that use algorithms like a classification neural networks or regression neural networks, Therefore one of the main goals of these project is to combine OpenAI Gym and Gazebo to use Reinforcement Learning (RL) algorithms for autonomous driving, Moreover, it would led us benchmark previous Algorithms with RL.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5436617289891840/",
+          "proposal_id": null,
+          "short_description": "JdeRobot provides a set of tools for developing robotic applications, including previous work in autonomous driving robots that use algorithms like a...",
+          "slug": "reinforcement-learning-for-autonomous-driving-with-gazebo-and-openai-gym",
+          "status": "completed",
+          "student_name": "Diego Charrez",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Reinforcement Learning for Autonomous Driving with Gazebo and OpenAI gym"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2020-Shreyas_Gokhale/final-report",
+          "description": "<p>JdeRobot robotics academy currently offers an exercise for simulating amazon indoor warehouse scenario. The goal of this project is to create a similar scenario for a fleet of robots. This will involve task and path planning for multiple robots. The project also uses ROS2 and leverages its swarm robotics capabilities.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6019813719146496/",
+          "proposal_id": null,
+          "short_description": "JdeRobot robotics academy currently offers an exercise for simulating amazon indoor warehouse scenario. The goal of this project is to create a...",
+          "slug": "jdemultibot",
+          "status": "completed",
+          "student_name": "Shreyas Gokhale",
+          "student_profile": null,
+          "tags": [],
+          "title": "JdeMultiBot"
+        },
+        {
+          "code_url": "https://github.com/TheRoboticsClub/colab-gsoc2020-Sakshay_Mahna",
+          "description": "<p>JdeRobot’s Robotics-Academy is a framework for learning robotics and computer vision. It consists of a collection of robot programming exercises using Python language where the student has to code the behavior of a given (either simulated or real) robot to fit some task related to robotics or computer vision.</p>\n<p>The idea for this project is to introduce Evolutionary Robotics into Robotics-Academy developing exercises with mobile robots. Implementing Neural Networks and their related exercises are the main goals of the exercise.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5154558868717568/",
+          "proposal_id": null,
+          "short_description": "JdeRobot’s Robotics-Academy is a framework for learning robotics and computer vision. It consists of a collection of robot programming exercises...",
+          "slug": "robotics-academy-exercises-on-evolutionary-robotics",
+          "status": "completed",
+          "student_name": "Sakshay Mahna",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "mobile",
+            "ai"
+          ],
+          "title": "Robotics-Academy exercises on Evolutionary Robotics"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/colab-gsoc2020-Muhammad_Taha/",
+          "description": "<p>JdeRobot toolkit provides several tools, libraries and reusable nodes for Robotics and Computer Vision. This project aims at developing a tool that provides a simple drag-and-drop interface consisting of blocks and wires which then synthesizes the program into a Python application. This will shorten the development time greatly as well as make development quite easy. Also, as the modules provide built-in functionality, the software would be much more optimized, robust and modular.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_jderobot_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5161282270920704/",
+          "proposal_id": null,
+          "short_description": "JdeRobot toolkit provides several tools, libraries and reusable nodes for Robotics and Computer Vision. This project aims at developing a tool that...",
+          "slug": "visualcircuit-tool",
+          "status": "completed",
+          "student_name": "Muhammad Taha Suhail",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "VisualCircuit Tool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6129466817904640/"
+    },
+    "year_2021": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2021-Chandan_Kumar/",
+          "description": "<p>Robotics Academy is fully oriented to service Robotics and Computer Vision. It comprises a collection of exercises, including recent service robot applications in real life, with different robots such as autonomous cars, drones, or vacuum cleaners. Industrial Robotics is an open-source collection of resources for JdeRobot and exercises for autonomous robotics manipulation. Last year, they incorporated three exercises based on robot manipulation and navigation. Now, the plan is to extend these exercises to Web Templates. For each exercise, a template performs all the auxiliary tasks such as the graphical interface, connection to the sensors and actuators, timing of the code, etc. This also hosts the student’s code. Using this template, the student focuses on robot intelligence (for instance, perception and control algorithms) without wasting time on auxiliary details with little educational value.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6472717145997312/",
+          "proposal_id": null,
+          "short_description": "Robotics Academy is fully oriented to service Robotics and Computer Vision. It comprises a collection of exercises, including recent service robot...",
+          "slug": "migrating-industrial-robot-manipulation-exercises-to-web-server",
+          "status": "completed",
+          "student_name": "Chandan",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ux"
+          ],
+          "title": "Migrating industrial robot manipulation exercises to web server"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2021-Suhas_Gopal/",
+          "description": "<p><strong>VisualCircuit</strong> allows users to program robotic intelligence using a visual language which consists of blocks and wires, similar to electronic circuits. Currently it's a desktop application released for Linux based on IceStudio which uses AngularJS. The aim of this project is to make a similar web application so that users do not have to do any installation and use newer frameworks on the front-end since EOL for AngularJS is in December 2021. The requirements of the project are:</p>\n<ol>\n<li>Make a web app that has all the functionalities as the original desktop app.</li>\n<li>Add a django based wrapper to the existing backend so that it can communicate with the web-app.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6698819860824064/",
+          "proposal_id": null,
+          "short_description": "VisualCircuit allows users to program robotic intelligence using a visual language which consists of blocks and wires, similar to electronic...",
+          "slug": "shifting-visualcircuit-to-a-web-server",
+          "status": "completed",
+          "student_name": "Suhas G",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "web",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Shifting VisualCircuit to a web server"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2021-Siddharth_Saha/milestones/2021/08/21/final-report",
+          "description": "<p>JdeRobot's Robotics-Academy has the Single and Multi-robot Amazon Warehouse exercises implemented for the gzweb version using ROS2. I would accomplish the following advancements over the summer: Construct a RADI for ROS2 Foxy; Extend the warehouse exercises to the web-based template; Leverage Navigation2 features to improve the solution to the Multi-robot exercise.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5405714226348032/",
+          "proposal_id": null,
+          "short_description": "JdeRobot's Robotics-Academy has the Single and Multi-robot Amazon Warehouse exercises implemented for the gzweb version using ROS2. I would...",
+          "slug": "ros2-radi-and-multi-robot-amazon-warehouse-exercise-in-web-based-template-for-ros2",
+          "status": "completed",
+          "student_name": "Siddharth Saha (trunc8)",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "ROS2-RADI and Multi-robot Amazon warehouse exercise in web-based template for ROS2"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2021-Utkarsh_Mishra/",
+          "description": "<p>Behavior Metrics comprises a wide range of robots with the pipeline completely set for various Deep Learning and Reinforcement Learning (RL) setups. With its main concern over the racing track, the Formula 1 (F1) setting solves the line following objective well. However, the presence of 2 separate pipelines for RL and DL is confusing to the users. The DL base works on the JDERobot app, while the RL base takes the privilege of gym-gazebo. These two bases are unable to communicate with each other. Also, the current framework does not leverage the full capabilities of testing scenarios and robots. Apart from line-following, F1 racing for autonomous maneuvers and drone racing has gained much popularity. Although these settings are highly derivative, it requires few significant changes in the control architecture and modularity wrt multiple robot settings. This project’s primary goal is to move towards more extensive support and documentation of Behavior Studio to suit the same RL environment or DL brain to multiple robots with continuous control integration. The advantages of such changes will make the framework more user-friendly and adaptive to various tasks and robot settings.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5444443020197888/",
+          "proposal_id": null,
+          "short_description": "Behavior Metrics comprises a wide range of robots with the pipeline completely set for various Deep Learning and Reinforcement Learning (RL) setups....",
+          "slug": "behavior-metrics-and-deep-learning-studio-developing-and-deploying-deep-and-reinforcement-learning-for-multiple-robots",
+          "status": "completed",
+          "student_name": "Utkarsh A. Mishra",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Behavior Metrics and Deep Learning Studio: Developing and Deploying Deep and Reinforcement Learning for Multiple-Robots"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2021-Arkajyoti_Basak/blog/2021-08-18-Final-Blog/",
+          "description": "<p>The main aim of this project is to improve the environment of the remaining 6 drone exercises and migrate them from ROS-Melodic node-templates based Robotics Academy v2.1  to web-templates based Robotics Academy v2.3.</p>\n<p>Develop and introduce a new exercise- Drone Package Delivery in ROS-Noetic and Gazebo-11.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5112341552693248/",
+          "proposal_id": null,
+          "short_description": "The main aim of this project is to improve the environment of the remaining 6 drone exercises and migrate them from ROS-Melodic node-templates based...",
+          "slug": "improve-and-add-to-the-drone-exercises",
+          "status": "completed",
+          "student_name": "Arkajyoti Basak",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Improve and add to the drone exercises"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2021-Shashwat_Dalakoti/",
+          "description": "<p>The main goal of this project is to build a new template and a backend architecture running on a docker container for visual detection exercises. More specifically, it revolves around building a template for visual detection exercises(e.g.  Human pose estimation or traffic sign recognition), which must be solved by providing a trained model for the particular exercise.\nIn this way the user would have to upload a trained model through a user-friendly web template, the model must match the defined set of inputs(e.g. Single or multiple images) and outputs(e.g. 2D coordinates).\nThis would help replace the previous requirements of manually coding the behavior of the robot. Finally, we would also be building new exercises in the Robotics Academy which make use of this new paradigm.</p>\n",
+          "difficulty": null,
+          "id": "proj_jderobot_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5636983686168576/",
+          "proposal_id": null,
+          "short_description": "The main goal of this project is to build a new template and a backend architecture running on a docker container for visual detection exercises....",
+          "slug": "exercise-using-deep-learning-for-visual-detection",
+          "status": "completed",
+          "student_name": "Shashwat Dalakoti",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "docker",
+            "ui",
+            "backend"
+          ],
+          "title": "Exercise using Deep Learning for Visual Detection"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5743038910955520/"
+    },
+    "year_2022": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2022-Apoorv_Garg/",
+          "description": "Robotics Academy is a framework for learning robotics and computer vision. It consists of several exercises, where each exercise consists of exercise.py and exercise.html, the web template is currently built on HTML, Javascript, and CSS. The purpose of this project is to migrate and improve the web template by using advanced front-end technologies like React, Vue, or Angular.\nThe technology I have chosen for the project is REACT, an open-source library providing fast and better performance. There are 26 exercises and a Home screen that are required to be migrated to REACT. \nAlong with REACT, worldview for 2d and 3d rendering, noVNC library to create VNC client, reactstrap for styling, react-router-dom for routing, and reactAce to create an ACE editor.\nThe deliverable for the project will be a folder containing templates for the exercise in react, repository architecture updated accordingly, and documentation.",
+          "difficulty": "advanced",
+          "id": "proj_jderobot_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/cf0rUG3S/",
+          "proposal_id": null,
+          "short_description": "Robotics Academy is a framework for learning robotics and computer vision. It consists of several exercises, where each exercise consists of...",
+          "slug": "robotics-academy-improvement-of-the-web-templates-using-powerful-frontend-technologies",
+          "status": "completed",
+          "student_name": "Apoorv Garg",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "react",
+            "vue",
+            "java",
+            "javascript"
+          ],
+          "title": "Robotics-Academy: improvement of the web templates using powerful frontend technologies"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1WDoQGLRbM4-i_5Hpc_PXYCx-dFT1iVjPlBW4Op4wRDM/edit?usp=sharing",
+          "description": "This project aims to improve the “Human detection” Deep Learning exercise at Robotics-Academy, developed along GSoC-2021. Instead of asking the user to code the solution in a web-based editor, they will have to upload a deep learning model that matches video inputs and outputs the image coordinates of the detected humans. In this project, the support for neural network models in the open ONNX format, which is becoming a standard, is one goal. The fluent exercise execution is also a goal, hopefully taking advantage of GPU at the user’s machine from the RoboticsAcademy docker container. An automatic evaluator to test the network's performance provided by the user will also be explored. All the above functionalities have, to some extent, already been implemented in the exercise. The goal is to improve/refine them either on the existing implementation or from scratch.",
+          "difficulty": null,
+          "id": "proj_jderobot_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/sJVwWlZC/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve the “Human detection” Deep Learning exercise at Robotics-Academy, developed along GSoC-2021. Instead of asking the user...",
+          "slug": "robotics-academy-improve-deep-learning-based-human-detection-exercise",
+          "status": "completed",
+          "student_name": "Zekrom_7780",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "docker"
+          ],
+          "title": "Robotics-Academy: Improve Deep Learning based Human Detection exercise"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2022-Nikhil_Paliwal/gsoc/Project-Summary/",
+          "description": "The main aim of the project is to improve the current model stack of deep learning models, in terms of inference speed with minimum loss of precision, for autonomous driving applications. JdeRobot organization has created Behavior Metrics a tool for comparing deep learning architectures for autonomous driving on different circuits with the support of Gazebo and Ros Noetic. The organization also provides another tool called DeepLearningStudio, which has datasets and some model implementations for training deep learning models. We will use available tools and techniques such as TensorRT, Quantization, Pruning, and architectural changes to optimize the correct model stack available in both PyTorch and Tensorflow.",
+          "difficulty": null,
+          "id": "proj_jderobot_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/8iSl34hX/",
+          "proposal_id": null,
+          "short_description": "The main aim of the project is to improve the current model stack of deep learning models, in terms of inference speed with minimum loss of...",
+          "slug": "project-8-optimization-of-deep-learning-models-for-autonomous-driving",
+          "status": "completed",
+          "student_name": "Nikhil Paliwal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Project #8: Optimization of Deep Learning models for autonomous driving"
+        },
+        {
+          "code_url": "https://github.com/TheRoboticsClub/gsoc2022-Akshay_Narisetti",
+          "description": "Goal:-\n\na)Creation of several realistic car models with Ackermann control some of them including a 3D LIDAR.\n\nb)Improved Realistic and Lightweight Environments for Autonomous Driving Exercises in RoboticsAcademy.\n\nc)Migration of Existing Autonomous Driving Exercises into ROS2 at RoboticsAcademy.\n\nPlan:- \n\nThe detailed plan is included in the proposal, this is my plan of action before the official coding period starts.\n\nBefore May 20:\n\n● Study of the Car Sensor plugins and their implementation in ROS2.\n● Explore the new Ignition Gazebo 11 simulator.\n● Explore Sensors, Noise modules, command-line tools, and custom plugins in\nthe Ignition Gazebo 11 simulator.\n● To familiarize myself completely with RoboticsAcademy’s functionality and\narchitecture.\n● Study of Ackermann control and its implementation.\n● Explore ROS2’s Architecture and Communication channels required for\nRoboticsAcademy Exercises.\n\nMay 20 - June 12(Before the official coding time):\n\n● To do self coding with Autonomous Driving Exercises to improve my further understanding.\n● During this period I will remain in constant touch with my mentor and the JdeRobot community. I will remain active on Mailing lists to discuss and finalize the modifications that need to be on existing car models and the design of new models or environments.\n● Thus with the help of my mentor, I will become absolutely clear about my future goals, the final exercise implementations that need to be done as well as the approach that I will follow to convert current exercises to support ROS2.\n\nDeliverables:-\n\n●Several realistic car models with Ackermann control some of them including a 3D LIDAR.\n●Improved Realistic and Lightweight Environments for Autonomous Driving Exercises in RoboticsAcademy.\n●Migration of Existing Autonomous Driving Exercises into ROS2 at RoboticsAcademy.",
+          "difficulty": null,
+          "id": "proj_jderobot_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/4hNhIOuB/",
+          "proposal_id": null,
+          "short_description": "Goal:- a)Creation of several realistic car models with Ackermann control some of them including a 3D LIDAR. b)Improved Realistic and Lightweight...",
+          "slug": "robotics-academy-improvement-of-autonomous-driving-exercises",
+          "status": "completed",
+          "student_name": "Akshay Narisetti",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Robotics Academy: improvement of autonomous driving exercises"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2022-Toshan_Luktuke/",
+          "description": "This project aims to extend and build upon the existing Visual Circuit implementation to improve its functionality and expand its use cases. \nThe main goals are as follows:\n1. Develop new robotic applications using Visual Circuit from JDE's Robot Academy exercises. \n2. To make Visual Circuit a cross-platform application capable of running on both Windows and Unix environments.\n3. Simplifying the template code to make it more accessible to new users.",
+          "difficulty": null,
+          "id": "proj_jderobot_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/vdfYuJ1T/",
+          "proposal_id": null,
+          "short_description": "This project aims to extend and build upon the existing Visual Circuit implementation to improve its functionality and expand its use cases. The main...",
+          "slug": "improvement-of-visual-circuit-web-service",
+          "status": "completed",
+          "student_name": "Toshan Luktuke",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Improvement of Visual Circuit Web Service"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2022-Prakarsh_Kaushik/",
+          "description": "Currently there are 11 drone exercises available, all as web-templates (RoboticsAcademy\nv3.2). The goal of this project is to consolidate the existing exercises, improving front-end\nappealing and extending drones back-end (PX4 and JdeRobot drone-wrapper) with new\nfunctionalities, such as adding support to new control methods or new sensors (IR sensors,\ndepth cameras, etc) If time permits, the project may also explore the development of new\ndrone exercises or extending support to real drones..\nWork will be done with Docker, Gazebo-11 and ROS-noetic. Also, ROS2 use for these\nexercises will be explored. This work will possibly be done in the mentorship of Mr. Pedro\nArias and Mr. Arkajyoti Basak.\n\nDeliverables\nDeliverable 1\nStrengthening of current drone based exercises with bug crushing and optimised template\n(before Evaluation 1)\nDeliverable 2\nDevelopment of better and appealing frontend with broadened and extended drones\nbackend through addition of support for new functionality like sensors and new control\nmethods (by Evaluation 2)\nDeliverable 3\nPre development base for the new drone exercises & extension for support of real drones\nand exploration of ROS2 for these exercises (if time allows) (by the end of the coding period)\n\nApproach\n● Creating an additional folder with several subfolders containing all the necessary\nscripts to beta test the optimised template.\n● Running the exercises in search for details regarding existing bugs\n● Improve the appeal of frontend through HTML document cleanup, optimising CSS\nperformance, minifying CSS, Javascript & HTML\n●Improving PX4 performance for multiple drones and additional HAL methods for\ncontrolling drone(s) through nosing around PX4, creating necessary scripts for\npackages.\n● Adding new gazebo models for new sensors and interfacing them with the Robot’s\nbrain with the HAL\n● RADI (RoboticsAcademy Docker Image) launch shell script has to be updated\nadditional requirements",
+          "difficulty": null,
+          "id": "proj_jderobot_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/RJd3bxAY/",
+          "proposal_id": null,
+          "short_description": "Currently there are 11 drone exercises available, all as web-templates (RoboticsAcademy v3.2). The goal of this project is to consolidate the...",
+          "slug": "project-2-robotics-academy-consolidation-of-drone-based-exercises",
+          "status": "completed",
+          "student_name": "Prakarsh Kaushik",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web",
+            "ml",
+            "ai"
+          ],
+          "title": "Project #2: Robotics Academy: consolidation of drone based exercises"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/jderobot/"
+    },
+    "year_2023": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2023-Meiqi_Zhao/blog/2023/week18/",
+          "description": "Behavior Metrics is an open-sourced autonomous driving network comparison tool that allows the user to load and test their autonomous driving models in different scenarios and compare the performance metrics against other models. Currently, Behavior Metrics only supports the follow-the-line task, where the vehicle must drive along a circuit while maintaining proximity to the center of the lane, and provides multiple trained models for benchmarking. This project aims to expand the current stack by adding support for a route navigation task where the agent follows a sequence of high-level commands to reach a destination while avoiding obstacles in CARLA simulator, as well as providing an end-to-end learning solution for the task. The ultimate goal is a model that enables an ego vehicle to follow the route while avoiding collision with dynamic objects, such as pedestrians and other vehicles, and comprehensive evaluation metrics for the new task.",
+          "difficulty": null,
+          "id": "proj_jderobot_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/n26Ayew7",
+          "proposal_id": "acRduEFg",
+          "short_description": "Behavior Metrics is an open-sourced autonomous driving network comparison tool that allows the user to load and test their autonomous driving models...",
+          "slug": "obstacle-avoidance-for-autonomous-driving-in-carla-using-segmentation-deep-learning-models",
+          "status": "completed",
+          "student_name": "Meiqi Zhao",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Obstacle Avoidance for Autonomous Driving in CARLA Using Segmentation Deep Learning Models"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1W8xshqFpJaKTpQBIe25jm_SIzLjIuAfEs3bNddo2zKU/edit?usp=sharing",
+          "description": "The Robotics Academy is a framework designed for learning robotics and computer vision through a collection of robot programming exercises. Currently, the platform offers 26 exercises and 11 prototype exercises that students can access through the RoboticsAcademy docker image (RADI), which comes pre-installed with all necessary dependencies. The RADI is a key component of the platform, and this project aims to improve it by migrating it to ROS2 Humble Hawksbill from the current ROS noetic version, which is nearing its end of life (2025). The project will involve implementing a few exercises in ROS2 with the new RADI as well as the addition of ROS2 tools such as RViz2 to exercises. Additionally, the project may explore topics such as size optimization, multi-rosdistro docker images, and hardware acceleration.",
+          "difficulty": null,
+          "id": "proj_jderobot_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/4YgccDJg",
+          "proposal_id": "5kTAc59j",
+          "short_description": "The Robotics Academy is a framework designed for learning robotics and computer vision through a collection of robot programming exercises....",
+          "slug": "robotics-academy-migration-to-ros2-humble",
+          "status": "completed",
+          "student_name": "Pawan Wadhwani",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "docker"
+          ],
+          "title": "Robotics Academy: Migration to ROS2 Humble"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2023-Prakhar_Bansal/",
+          "description": "Making a cross-platform desktop application available and working on every environment without any perquisites . The application will be developed using Electron.js,\nIt aims to deliver two main goals i.e. Application size should be small no unnecessary dependencies are used that make the initial loading slow and making it cross-platform efficient with Universally acceptable user experience",
+          "difficulty": null,
+          "id": "proj_jderobot_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Wt3Vki1i",
+          "proposal_id": "yMAEl2IA",
+          "short_description": "Making a cross-platform desktop application available and working on every environment without any perquisites . The application will be developed...",
+          "slug": "cross-platform-robotics-learning-made-easy",
+          "status": "completed",
+          "student_name": "Prakhar Bansal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Cross-Platform Robotics Learning Made Easy"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2023-Siddheshsingh_Tanwar/blogs/2023/08/27/week14.html",
+          "description": "The goal is to enhance the accessibility of Visual Circuit by creating a Docker image and integrating it with Robotics Academy. To accomplish this, we can use the robotics-academy image as the base image and add the necessary Visual Circuit dependencies and execution commands to the Dockerfile.Users can easily access and use both applications through a single container once the Docker image has been created, making it more convenient for them. Additionally, to streamline the process of incorporating new blocks into Visual Circuit, we plan to establish a workflow for adding them. Contributors can initiate a pull request based on provided guidelines, and the maintainer will review and approve the working before merging it.\nDeliverables : A dockerized version of Visual Circuit, a new repository and workflow for adding blocks to Visual Circuit, good documentation for both of the above.",
+          "difficulty": null,
+          "id": "proj_jderobot_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/SPqrs4g7",
+          "proposal_id": "2TNgqvzS",
+          "short_description": "The goal is to enhance the accessibility of Visual Circuit by creating a Docker image and integrating it with Robotics Academy. To accomplish this,...",
+          "slug": "dockerization-of-visual-circuit",
+          "status": "completed",
+          "student_name": "Siddheshsingh Tanwar",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "docker",
+            "ui"
+          ],
+          "title": "Dockerization of Visual Circuit"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/jderobot"
+    },
+    "year_2024": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2024-Oscar_Martinez/weekly%20log/Final-Submission/",
+          "description": "The primary objective of this project is to enhance BT Studio's capabilities\nby introducing a library of behavior trees and composition tools. Currently,\nBT Studio lacks features for reusing behaviors, a significant advantage of the BT\narchitecture. This update aims to incorporate tools for saving, editing, and\ncomposing sub-trees, facilitating the creation of more intricate and modular\napplications. Through these enhancements, a selection of commonly used\nbehaviors will be identified and integrated into a library of behaviours within BT\nStudio that the users will be able to adapt and incorporate to its own projects.\nAdditionally, the feasibility of integrating a library of robot and world models into\nthe platform will be explored. This would enable users to test applications across a\nwider range of scenarios, thereby enhancing debugging and solution robustness.",
+          "difficulty": null,
+          "id": "proj_jderobot_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/uVy0edHs/",
+          "proposal_id": null,
+          "short_description": "The primary objective of this project is to enhance BT Studio's capabilities by introducing a library of behavior trees and composition tools....",
+          "slug": "bt-studio-a-tool-for-programming-robots-with-behavior-trees",
+          "status": "completed",
+          "student_name": "Óscar Martínez Martínez",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai"
+          ],
+          "title": "BT-Studio: a tool for programming robots with Behavior Trees"
+        },
+        {
+          "code_url": "https://github.com/TheRoboticsClub/gsoc2024-ZebinHuang",
+          "description": "Project #10: End-to-end autonomous vehicle driving based on text-based instructions: research project regarding Autonomous Driving + LLMs\nBrief explanation: In previous editions of GSoC, we have explored Behavior Metrics as a tool for evaluation of end-to-end autonomous driving models. We have also explored optimization of end-to-end models and even navigation based on segmented images and commands (see video and project link). In this project, we would like to combine the previous acquired knowledge with LLMs, using the projects that we previously developed successfully on GSoC. The idea is to integrate an LLM system with an end-to-end autonomous driving driving model so the user can give commands in text mode directly to the vehicle, as you’d do when using a real-life taxi (“please, stop here”, “please, turn to the left in the following intersection”). This idea has been already explored in research projects, and we will be replicating it (see references).\nhttps://github.com/opendilab/LMDrive\nhttps://arxiv.org/pdf/2311.14786.pdf\nhttps://github.com/wayveai/Driving-with-LLMs",
+          "difficulty": null,
+          "id": "proj_jderobot_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/QckhmL6q/",
+          "proposal_id": null,
+          "short_description": "Project #10: End-to-end autonomous vehicle driving based on text-based instructions: research project regarding Autonomous Driving + LLMs Brief...",
+          "slug": "end-to-end-autonomous-vehicle-driving-based-on-text-based-instructions",
+          "status": "completed",
+          "student_name": "Zebin",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "End-to-end autonomous vehicle driving based on text-based instructions"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2024-Pankaj_Borade/",
+          "description": "The project focuses on making VisualCircuit easier to host and deploy for a larger audience by simplifying the block addition process and implementing automated testing. This aims to expand the block library, enabling faster and safer development of robotics applications through the use of tested blocks. Developed by JdeRobot, VisualCircuit allows users to program robotic intelligence using a visual language similar to electronic circuits, simplifying the creation of code for robotics applications such as Deep Learning, ROS, and more.\n\nMy work involved adding a global block composition feature, resolving nested issues, transforming the single-dependency codebase to a multi-level dependency, implementing two or more demo robotics applications, expanding the block library, automating the testing of VisualCircuit using GitHub Actions, resolving parameter and multiple instance issue, and releasing a new version with all issue fixes.",
+          "difficulty": null,
+          "id": "proj_jderobot_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Tn7tFcKd/",
+          "proposal_id": null,
+          "short_description": "The project focuses on making VisualCircuit easier to host and deploy for a larger audience by simplifying the block addition process and...",
+          "slug": "visualcircuit-block-library",
+          "status": "completed",
+          "student_name": "Pankaj Keshav Borade",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "VisualCircuit: block library"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2024-Mihir_Gore/jekyll/update/2024/08/10/Project-Report.html",
+          "description": "The aim of this project is to improve the robustness and functionality of the already existing exercises on Robotics Academy: Digit Classification and Human Detection. \nThe frontend of these exercises will be migrated to React, and the appearance of these exercises will be enhanced. \nThe project will also implement ONNX tools like model quantization and graph optimization to reduce computational costs during model execution.\nIn the end, the necessary documentation will be updated to include these changes and guide students to learn better.",
+          "difficulty": null,
+          "id": "proj_jderobot_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/eM463oex/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to improve the robustness and functionality of the already existing exercises on Robotics Academy: Digit Classification...",
+          "slug": "improving-deep-learning-based-exercises",
+          "status": "completed",
+          "student_name": "Mihir Gore",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ai",
+            "ui",
+            "frontend"
+          ],
+          "title": "Improving Deep Learning based Exercises"
+        },
+        {
+          "code_url": "https://theroboticsclub.github.io/gsoc2024-Prajyot_Jadhav/report/",
+          "description": "The Robotics Academy is a framework designed for learning robotics and computer vision through a collection of robot programming exercises. Currently, the platform offers 26 exercises and 11 prototype exercises that students can access through the RoboticsAcademy docker image (RADI), which comes pre-installed with all necessary dependencies. The RADI is a key component of the platform, and this project aims to improve it by migrating it to Gazebo Harmonic from the current Gazebo11 version, which is nearing its end of life (2025). This migration will take form by having a couple of exercises running in ROS2 and Gazebo Harmonic with the new RADI.",
+          "difficulty": null,
+          "id": "proj_jderobot_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/CgRdpsST/",
+          "proposal_id": null,
+          "short_description": "The Robotics Academy is a framework designed for learning robotics and computer vision through a collection of robot programming exercises....",
+          "slug": "robotics-academy-migration-to-gazebo-harmonic",
+          "status": "completed",
+          "student_name": "Prajyot Jadhav",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "docker"
+          ],
+          "title": "Robotics-Academy: Migration to Gazebo Harmonic"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/jderobot/"
+    },
+    "year_2025": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The primary goal of this project is to establish an automated testing framework for the Robotics Academy (RA), Robotics Infrastructure (RI), and Robotics Application Manager (RAM) repositories. This framework will include a suite of unit and integration tests to verify functional correctness and ensure that the software remains maintainable and robust.\nAdditionally, the project will focus on creating continuous integration (CI) pipelines, ensuring early detection of issues, and fostering a culture of quality and accountability across the projects.",
+          "difficulty": null,
+          "id": "proj_jderobot_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/msXOO4mb",
+          "proposal_id": "JYvjvTkj",
+          "short_description": "The primary goal of this project is to establish an automated testing framework for the Robotics Academy (RA), Robotics Infrastructure (RI), and...",
+          "slug": "robotics-academy-ci-testing",
+          "status": "in-progress",
+          "student_name": "Abdallah Ibrahim Ismail",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Robotics Academy: CI & Testing"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the Robotics-Academy platform by porting selected exercises to native ROS 2, removing the need for the Hardware Abstraction Layer (HAL). The current implementation relies on a custom interface, limiting exposure to standard ROS 2 practices. By transitioning exercises like Follow Line and Basic Vacuum Cleaner to use native ROS 2 nodes, topics, publishers, and subscribers, users will gain hands-on experience with real-world ROS development patterns. The project will also ensure compatibility with ROS 2 tools like rqt_graph, ros2 topic echo, and rviz2 for debugging and visualization.\n\nDeliverables include:\n - ROS 2-native versions of two exercises (Follow Line and Basic Vacuum Cleaner)\n - Removal of HAL dependencies\n - Integration with standard ROS 2 tools and practices\n - Documentation and examples to help users build, debug, and run their solutions \n    using native ROS 2\nBy the end of this project, Robotics-Academy will offer a more authentic ROS 2 learning experience, better preparing users for real-world robotics development.",
+          "difficulty": null,
+          "id": "proj_jderobot_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/EXcpJT5g",
+          "proposal_id": "8kJ9tbS9",
+          "short_description": "This project aims to enhance the Robotics-Academy platform by porting selected exercises to native ROS 2, removing the need for the Hardware...",
+          "slug": "robotics-academy-porting-exercises-to-native-ros2-with-direct-topic-integration",
+          "status": "in-progress",
+          "student_name": "Ashish Ramesh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Robotics-Academy: Porting Exercises to Native ROS2 with Direct Topic Integration"
+        },
+        {
+          "code_url": null,
+          "description": "The primary objective of this project is to enhance BT Studio's capabilities by upgrading the library of behavior trees and composition tools. Currently, BT Studio BT library is simple, really overcomplicated and buggy which makes reusing behaviors trees from the library difficult. This update aims to simplify and improve this tools and to increase the amount of entries in the library. \n\nAlso it will improve other features of BT Studio such as the custom universes, making them fully functional and with all the features of the already existing ones inside the Robotics Backend, the docker execution enviroment for robotics applications.\n\nAll of this changes would enable users to test applications across a wider range of scenarios, thereby enhancing debugging and solution robustness.",
+          "difficulty": null,
+          "id": "proj_jderobot_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/O1mpAQXE",
+          "proposal_id": "uUHZJ3vG",
+          "short_description": "The primary objective of this project is to enhance BT Studio's capabilities by upgrading the library of behavior trees and composition tools....",
+          "slug": "bt-studio-a-tool-for-programming-robots-with-behavior-trees",
+          "status": "in-progress",
+          "student_name": "Javier Izquierdo",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "docker",
+            "backend"
+          ],
+          "title": "BT-Studio: a tool for programming robots with Behavior Trees"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a new deep learning exercise within Robotics-Academy,\nfocusing on end-to-end visual control of autonomous vehicles. The exercise will allow\nusers to upload trained PyTorch/TensorFlow models that process camera input from a\nsimulated car or drone in Gazebo and output control vehicle movement based on the\nmodel’s predictions. A web interface will enable model upload, real-time visualization,\nand performance monitoring. The exercise will include a demo model trained on\nsynthetic data, a Gazebo simulation environment, and integration with ROS2. This\nexercise will leverage existing infrastructure from previous deep learning-based\nRobotics-Academy exercises, such as Human Detection and Digit Classifier.",
+          "difficulty": null,
+          "id": "proj_jderobot_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/xJ2gOWNQ",
+          "proposal_id": "lEj8p04S",
+          "short_description": "This project aims to develop a new deep learning exercise within Robotics-Academy, focusing on end-to-end visual control of autonomous vehicles. The...",
+          "slug": "new-exercise-on-end-to-end-visual-control-of-an-autonomous-vehicle-using-deeplearning",
+          "status": "in-progress",
+          "student_name": "Md. Shariar Kabir",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "New exercise on End-to-End Visual Control of an Autonomous Vehicle using DeepLearning"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to significantly enhance two specific simulation scenarios within the JdeRobot Robotics Academy: Follow Line and Vacuum Cleaner. While these exercises serve as valuable educational tools for robotics learners, the current Gazebo environments and robot models lack visual realism, accurate physical behavior, and modular ROS2 integration. To address these limitations, the project will refactor the URDF model used in the Follow Line scenario using modular Xacro descriptions and realistic textures. The line track world will also be improved with high-quality road textures and better lighting for consistent perception results. In the Vacuum Cleaner scenario, the environment will be rebuilt using realistic room furniture and obstacles imported from Blender assets. Additionally, the Roomba robot model will be upgraded for improved physical dynamics, and its SLAM and navigation performance will be enhanced by tuning ROS2 Navigation2 parameters. Common improvements across both scenarios include updating the launch files to align with ROS2 Humble best practices, ensuring compatibility with the latest versions of Gazebo such as Fortress or Ignition, and producing clear documentation to support scenario creation and extension. The final deliverables will include the revamped simulation scenarios, reusable robot models, an organized and modular launch structure, and comprehensive user documentation. These improvements aim to boost the realism, engagement, and overall educational value of the Robotics Academy platform.",
+          "difficulty": null,
+          "id": "proj_jderobot_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/2pUk2XLx",
+          "proposal_id": "HrnBZzml",
+          "short_description": "This project aims to significantly enhance two specific simulation scenarios within the JdeRobot Robotics Academy: Follow Line and Vacuum Cleaner....",
+          "slug": "robotics-academy-improvement-of-gazebo-scenarios-and-robot-models",
+          "status": "in-progress",
+          "student_name": "Nikhil_36",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Robotics Academy: improvement of Gazebo scenarios and robot models"
+        },
+        {
+          "code_url": null,
+          "description": "DetectionMetrics is a toolkit designed to unify and streamline the evaluation of perception models across different frameworks and datasets. The older version i.e DetectionMetrics v1  provides objective performance metrics such as mean average precision and mean inference time for object detection models. Now DetectionMetrics v2 was introduced in which the previous version was redesigned with an expanded focus on image and LiDAR segmentation. \n\nCurrently, DetectionMetrics v2 functions as both a Python library and CLI, focusing on the quantitative evaluation of image and LiDAR segmentation models, with plans to expand into object detection. It supports PyTorch and TensorFlow models, along with multiple public datasets. Its modular design allows easy integration of new models and datasets. \nThis project aims to bring back the key functionalities from v1 that were lost while redesigning, build a GUI and set up a CI workflow.",
+          "difficulty": "beginner",
+          "id": "proj_jderobot_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/lKrxCeUr",
+          "proposal_id": "JoZBg13e",
+          "short_description": "DetectionMetrics is a toolkit designed to unify and streamline the evaluation of perception models across different frameworks and datasets. The...",
+          "slug": "extend-detectionmetrics-gui-ci-workflow-and-object-detection",
+          "status": "in-progress",
+          "student_name": "Sakhineti Praveena",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Extend DetectionMetrics: GUI, CI Workflow, and Object Detection"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to migrate the existing “Machine Vision” exercise from the old Robotics Academy version (ROS1 + MoveIt1) to the current ROS2 + MoveIt2 Docker-based system. The updated version will include a modernized Python API for students, a GUI for visualizing vision images and controlling the manipulator, and improved documentation. The goal is to create a student-friendly, robust, and engaging learning experience aligned with contemporary ROS2 best practices.",
+          "difficulty": null,
+          "id": "proj_jderobot_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/3Rh06QPO",
+          "proposal_id": "ySLKtIfl",
+          "short_description": "This project aims to migrate the existing “Machine Vision” exercise from the old Robotics Academy version (ROS1 + MoveIt1) to the current ROS2 +...",
+          "slug": "migration-and-enhancement-of-machine-vision-exercise-to-ros2-moveit2-in-robotics-academy",
+          "status": "in-progress",
+          "student_name": "Shu Xiao",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "docker",
+            "ui"
+          ],
+          "title": "Migration and Enhancement of 'Machine Vision' Exercise to ROS2 + MoveIt2 in Robotics Academy"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/jderobot"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "jderobot@gmail.com",
+    "guide_url": "https://jderobot.github.io/activities/gsoc/2025#application-instructions-for-gsoc-2025",
+    "ideas_url": "https://jderobot.github.io/activities/gsoc/2025#ideas-list",
+    "irc_channel": null,
+    "mailing_list": "https://gsyc.urjc.es/cgi-bin/mailman/listinfo/jde-developers"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/JdeRobot",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.294Z"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "id": "692251d353dd9d7326d33dad",
+  "slug": "framenet-brasil-ufjf",
+  "name": "FrameNet Brasil (UFJF)",
+  "category": "Data",
+  "description": "Natural Language Understanding with structured computational semantics",
+  "image_url": "https://lh3.googleusercontent.com/4LNL-fV4t3l6MZAA2g-OKLB1hn_lhNlLvf11ppHHRlpt5gEDFhfHFNO1vTa1rvysdir88AjTFzg09XaXPP2V-rar-HgWpP-VF4Qxv-X_iPtn",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/framenet-brasil-ufjf.webp",
+  "logo_r2_url": null,
+  "url": "http://www.ufjf.br/framenetbr-eng/",
+  "active_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "first_year": 2019,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "mysql",
+    "javascript",
+    "php"
+  ],
+  "topics": [
+    "natural language processing",
+    "image processing",
+    "multimodality",
+    "natural language understanding",
+    "machine translation",
+    "video processing",
+    "multilinguality",
+    "multimodal communication"
+  ],
+  "total_projects": 5,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": 1,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": 1,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 5
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@debanjana.kar/frame-based-metric-for-automatic-machine-translation-evaluation-my-journey-in-gsoc-2019-5749f0d21b74?source=friends_link&sk=1eec274567ff753a9704cb785ccb1231",
+          "description": "<p>Machine Translation is one of the most essential tasks of Natural Language Processing where a lot of research has been done. There are various metrics that are available to evaluate the quality of translation but most are obtained by computing the similarity between an MT hypothesis and a reference translation based on character N-grams or word N-grams. Using the data generated from the annotation of the TED Talk in two or more languages, as well as the relations between frames given in the Berkeley FrameNet Data Release 1.7, our task for this project is to build an automated metric system for machine translation, which is intended to measure the frame distance between sentence pairs in two languages. In this proposal, the task has been modelled as a regression task of predicting accuracy scores. The frames evoked and the related frame network has been used as pivotal features of the model.</p>\n",
+          "difficulty": null,
+          "id": "proj_framenet-brasil-ufjf_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5259221979889664/",
+          "proposal_id": null,
+          "short_description": "Machine Translation is one of the most essential tasks of Natural Language Processing where a lot of research has been done. There are various...",
+          "slug": "machine-translation-metric-leveraging-framenet",
+          "status": "completed",
+          "student_name": "Debanjana Kar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Machine Translation Metric leveraging FrameNet"
+        },
+        {
+          "code_url": "https://drive.google.com/open?id=1xbQh1Bdi77xg7DTJuT_qeFr7-hrrcKVY",
+          "description": "<p>I propose to expand the current FrameNet Brasil Web Annotation Tool to allow for users to annotate video, pictures, and audio, in addition to their current ability to annotate text.  Multiple of these modalities will be able to be annotated for the same piece of media, both separately and together as needed.  This will be especially useful for research into multi-modal comprehension and communication, and will also allow for the FrameNet project to develop new semantics-based applications across many types of media.</p>\n",
+          "difficulty": null,
+          "id": "proj_framenet-brasil-ufjf_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5902293138931712/",
+          "proposal_id": null,
+          "short_description": "I propose to expand the current FrameNet Brasil Web Annotation Tool to allow for users to annotate video, pictures, and audio, in addition to their...",
+          "slug": "multi-modal-annotation-tool",
+          "status": "completed",
+          "student_name": "E. P. Hackett",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "Multi-modal Annotation Tool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5090343328940032/"
+    },
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/FrameNetBrasil/webtool/blob/gsoc2020_1/GSoC2020/weekly_reports/final_deliverables.md",
+          "description": "<p>My proposal aims to accelerate future semantic annotation projection research by creating two main deliverables. First, before the GSoC 2020 starts, I intend to complete a Python API for retrieving the annotation dataset. Throughout the GSoC 2020, I will modify existing parsers and create neural networks to project semantic frames and frame elements to unannotated sentences. I mainly work with projections on the manually aligned sentences and aligned sentences generated through transitivity. In addition to suggesting techniques for tackling m:n alignment, I also propose metrics for evaluating the projections in binary and graded manners as well as a phraseological method for analyzing projections for metaphorical phrases. If time permits, I would create sentence alignment models for aligning EN-JP, EN-FR, EN-UR, and EN-HI sentences.</p>\n",
+          "difficulty": null,
+          "id": "proj_framenet-brasil-ufjf_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5277127974322176/",
+          "proposal_id": null,
+          "short_description": "My proposal aims to accelerate future semantic annotation projection research by creating two main deliverables. First, before the GSoC 2020 starts,...",
+          "slug": "multilingual-projections-of-semantic-frames-and-frame-elements-using-modified-existing-parsers-and-neural-networks",
+          "status": "completed",
+          "student_name": "Zheng Xin Yong",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Multilingual Projections of Semantic Frames and Frame Elements using Modified Existing Parsers and Neural Networks"
+        },
+        {
+          "code_url": "https://medium.com/@prishita.r85/a-new-frame-based-image-and-video-annotation-pipeline-my-gsoc-20-project-6daa9fe5f391",
+          "description": "<p>The main motivation for this project is to create a more automated and simplified video  annotation pipeline using both image and textual data for the FrameNet webtool. The existing version relies on manual annotation which is a highly tedious task. In order to annotate multimodal corpora, individual frames or ideas depicted within the video need to be extracted using corresponding audio transcriptions and identified objects. This is important to obtain fine grained semantic representations of events and entities. Moreover, the video may be presented in multiple languages that need to be detected and translated to Portuguese. Also individual objects within a video need to be tracked and identified to generate corresponding textual frame elements that can speed up the annotation process.</p>\n",
+          "difficulty": null,
+          "id": "proj_framenet-brasil-ufjf_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4857286331203584/",
+          "proposal_id": null,
+          "short_description": "The main motivation for this project is to create a more automated and simplified video  annotation pipeline using both image and textual data for...",
+          "slug": "new-frame-based-image-and-video-annotation-pipeline-for-the-framenet-brasil-web-annotation-tool",
+          "status": "completed",
+          "student_name": "Prishita Ray",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "New Frame-Based Image and Video Annotation Pipeline for the FrameNet Brasil Web Annotation Tool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5699340439388160/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/FrameNetBrasil/gsoc2021_qualia",
+          "description": "<p>The proposed project is concerned with the implementation <em>Automatic Generation of Qualia Relations between Lexical Units in FrameNet</em>. The main point of the project is to enrich the data in the existing <em>FrameNet-BR</em> database with some of the information available in <em>BabelNet</em>, more specifically the relations between various word senses.</p>\n<p>The project is going to be composed of two individual components encompassing two independent processes: an extraction tool and an annotation tool.</p>\n<p>The extraction tool is meant to utilize the available information in <em>FrameNet-BR</em> and <em>BabelNet</em> and generate a set of <em>hypotheses</em>, i.e. possible qualia relations between lexical units.</p>\n<p>The annotation tool is meant to provide a visual interface to a human annotator, so that they would be able to evaluate the quality of hypotheses generated by the extraction tool. Hypotheses of acceptable quality are expected to be added to the <em>FrameNet-BR</em> database.</p>\n",
+          "difficulty": null,
+          "id": "proj_framenet-brasil-ufjf_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5157954642247680/",
+          "proposal_id": null,
+          "short_description": "The proposed project is concerned with the implementation Automatic Generation of Qualia Relations between Lexical Units in FrameNet. The main point...",
+          "slug": "automatic-qualia-extraction-and-annotation-tools",
+          "status": "completed",
+          "student_name": "Aleksey Dorkin",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Automatic Qualia Extraction and Annotation Tools"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6046169112772608/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "projeto.framenetbr@ufjf.edu.br",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://framenetbrgsoc.slack.com/",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://framenetbrgsoc.slack.com/",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/FrameNetBrasil",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.145Z"
+  }
+}

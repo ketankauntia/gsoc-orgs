@@ -1,0 +1,1286 @@
+{
+  "id": "692251ef53dd9d7326d33f1c",
+  "slug": "mlpack",
+  "name": "mlpack",
+  "category": "Science and medicine",
+  "description": "a fast, flexible machine learning library",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/mlpack/gs9xn22l8vefyvhh-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/mlpack.webp",
+  "logo_r2_url": null,
+  "url": "https://www.mlpack.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2016,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "c++",
+    "python",
+    "machine learning",
+    "deep learning",
+    "templates",
+    "openmp",
+    "C++ template metaprogramming"
+  ],
+  "topics": [
+    "machine learning",
+    "data mining",
+    "fast algorithms",
+    "data science",
+    "deep learning",
+    "algorithms",
+    "reinforcement learning",
+    "optimization",
+    "neighbor-search",
+    "linear algebra",
+    "embedded",
+    "ai",
+    "Neural networks"
+  ],
+  "total_projects": 60,
+  "stats": {
+    "avg_projects_per_appeared_year": 6.67,
+    "projects_by_year": {
+      "year_2016": 6,
+      "year_2017": 10,
+      "year_2018": 6,
+      "year_2019": 9,
+      "year_2020": 8,
+      "year_2021": 8,
+      "year_2022": 4,
+      "year_2023": 3,
+      "year_2024": 6,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 6,
+      "year_2017": 10,
+      "year_2018": 6,
+      "year_2019": 9,
+      "year_2020": 8,
+      "year_2021": 8,
+      "year_2022": 4,
+      "year_2023": 3,
+      "year_2024": 6,
+      "year_2025": null
+    },
+    "total_students": 58
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "http://mlpack.org/gsocblog/we-need-to-go-deeper-googlenet-project-summary.html",
+          "description": "<p>To implement the components of the GoogLeNet architecture (the inception layer, global average pooling, and other pieces), and then build GoogLeNet on a sample of ImageNet data.  The pieces of this architecture will be usable for other neural network applications.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5694146576646144/",
+          "proposal_id": null,
+          "short_description": "To implement the components of the GoogLeNet architecture (the inception layer, global average pooling, and other pieces), and then build GoogLeNet...",
+          "slug": "we-need-to-go-deeper-googlenet",
+          "status": "completed",
+          "student_name": "nilay_jain",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "We need to go deeper - GoogLeNet"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/summary-of-lsh-changes-for-gsoc-2016.html",
+          "description": "<p>Approximate Nearest Neighbor Search solutions become appealing in problems where dimensionality increases. Locality Sensitive Hashing is a popular algorithm for this task, but has important drawbacks: it requires a large amount of memory, and the number of parameters makes it less appealing to people unfamiliar with the inner workings of the algorithm.</p>\n<p>To reduce memory inefficiency,  Multi-probe LSH (MPLSH) better utilises the memory used by LSH. MPLSH was shown to perform better with regards to both memory and execution time. Also, a model of LSH's performance has been developed, that allows users to easily explore the parameter space by using a small sample of the dataset.</p>\n<p>As part of my GSoC project, I am proposing the implementation of these two algorithms. The core LSH algorithm is already in mlpack, and I believe my proposed additions will</p>\n<ul>\n<li>make it easier for mlpack users to use LSH by alleviating the need to repeat the tedious tuning process every time a new dataset is introduced.</li>\n<li>make the current LSH implementation more efficient both time- and space-wise, by using a smarter algorithm and exploiting the benefits of parallelization.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6145746013257728/",
+          "proposal_id": null,
+          "short_description": "Approximate Nearest Neighbor Search solutions become appealing in problems where dimensionality increases. Locality Sensitive Hashing is a popular...",
+          "slug": "approximate-nearest-neighbor-search-implementation-of-multiprobe-lsh-and-lsh-tuning",
+          "status": "completed",
+          "student_name": "mentekid",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Approximate Nearest Neighbor Search: Implementation of Multiprobe LSH and LSH Tuning"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/summary-of-neuroevolution-algorithms-implementation.html",
+          "description": "<p>Neuroevolution algorithms search optimal solutions by evolution rather than learning, which enables them to deal with large complex problems.</p>\n<p>In this project, we are going to implement neuroevolution algorithms in a unified framework. Specifically, the algorithms we want to implement includes CNE, NEAT, HyperNEAT, etc.</p>\n<p>Our goals include:</p>\n<ol>\n<li>Implementing neuroevolution algorithms for mlpack, include CNE, NEAT and HyperNEAT. </li>\n<li>Testing implemented algorithms by problems such as XOR problem, double pole balancing problem and so on.</li>\n<li>Writing corresponding document for implemented neuroevolution module.</li>\n</ol>\n",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4758591835734016/",
+          "proposal_id": null,
+          "short_description": "Neuroevolution algorithms search optimal solutions by evolution rather than learning, which enables them to deal with large complex problems.\nIn this...",
+          "slug": "neuroevolution-algorithms-implementation",
+          "status": "completed",
+          "student_name": "Bang",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Neuroevolution Algorithms Implementation"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/approximate-nearest-neighbor-search-conclusion.html",
+          "description": "<p>Mlpack provides an extensible, flexible exact nearest neighbor search implementation, with the ability to do dual-tree k-NN search. However, there is currently no support for approximate nearest neighbor search, despite its popularity. The aim of this project is the implementation of approximate K-NN search and then, work with the benchmarking system in order to produce rigorous comparisons between mlpack's approximate k-NN search implementation and other libraries, such as FLANN, ANN, or LSHKIT.\nFollow the progress of the project on: <a href=\"http://mlpack.org/gsocblog/author/marcos-pividori.html\" target=\"_blank\">http://mlpack.org/gsocblog/author/marcos-pividori.html</a></p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4794796530991104/",
+          "proposal_id": null,
+          "short_description": "Mlpack provides an extensible, flexible exact nearest neighbor search implementation, with the ability to do dual-tree k-NN search. However, there is...",
+          "slug": "approximate-nearest-neighbor-search",
+          "status": "completed",
+          "student_name": "Marcos Pividori",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Approximate Nearest Neighbor Search"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/dataset-and-experimentation-tools-summary.html",
+          "description": "<p>This GSoC project aims to develop a tool for managing dataset and experimenting the data. This project is important because most of the time used during solving any machine learning problem takes place in data manipulation process. The better data guarantees to result in the better result. However, real-world data are not in same format and tend to be noisy with mistakes, outliers and missing variables. This project aims to provide user-friendly and easy-to-use command line application by having functionalities that monitor, convert wrongly labeled features, and reduce the noisy variables and etc. It will be followed by clear documentations to promote other users to utilize.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_mlpack_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6043722554802176/",
+          "proposal_id": null,
+          "short_description": "This GSoC project aims to develop a tool for managing dataset and experimenting the data. This project is important because most of the time used...",
+          "slug": "dataset-and-experimentation-tools",
+          "status": "completed",
+          "student_name": "KeonKim",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Dataset and Experimentation Tools"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/implementation-of-tree-types-summary.html",
+          "description": "<p>Many methods of the mlpack machine learning library (such as nearest neighbor search, range search and others) are based on dual-tree algorithms which deal with data organized into space trees in order to reduce the number of queries. All these methods are designed in a tree-independent manner. The main goal of this project is to extend the mlpack's list of tree types by implementing R+ trees, Hilbert R trees, vantage point trees, random projection trees and UB trees for the purpose of using them in mlpack's dual-tree algorithms.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5163031189258240/",
+          "proposal_id": null,
+          "short_description": "Many methods of the mlpack machine learning library (such as nearest neighbor search, range search and others) are based on dual-tree algorithms...",
+          "slug": "r-trees-hilbert-r-trees-vantage-point-trees-random-projection-trees-ub-trees-implementation",
+          "status": "completed",
+          "student_name": "lozhnikov",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "R+ trees, Hilbert R trees, vantage point trees, random projection trees, UB trees implementation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5115751115522048/"
+    },
+    "year_2017": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/sumedhghaisas/a214fedab1123863b7f337bb60c1c8fa",
+          "description": "<p>One of the gems dug up by Deep Mind in the field of neural learning is Neural Turing Machines. By extending the capabilities of a simple neural network by attaching a memory to it, neural networks are able to learn simple algorithms such as copying sorting and etc. The project involves implementing a Neural Turing Machine in the current ANN framework and testing it with the preliminary algorithms.</p>\n<p>In addition, I will also implement batch normalization and GRU cell as part of my project. Batch normalization is an effective technique which has become an essential component in stabilizing the deep network learning. GRU cells are essentially simple forms of LSTM cell, yet for some tasks have been proven to converge faster. Also, GRU cells have lesser parameters, making them more prone to overfitting and stable towrds training.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6637623116300288/",
+          "proposal_id": null,
+          "short_description": "One of the gems dug up by Deep Mind in the field of neural learning is Neural Turing Machines. By extending the capabilities of a simple neural...",
+          "slug": "neural-turing-machines",
+          "status": "completed",
+          "student_name": "Sumedh Ghaisas",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Neural Turing Machines"
+        },
+        {
+          "code_url": "https://github.com/kartik-nighania/Google_Summer_of_Code_2017",
+          "description": "<p>The goal of my project is to implement multiple neural evolution algorithms ie.\n● NEAT - Neural Evolution through Augmented Topologies\n● Hyper-NEAT - Hyper Neural Evolution Through Augmented Topologies\n● CNE - Conventional Neural Evolution.\n● CMA-ES - Covariance Matrix Adaptation - Evolution Strategy\nWith added features, to write tests and finally using various tasks as benchmarking tool\nto compare all four algorithms and make a research paper.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6671506918604800/",
+          "proposal_id": null,
+          "short_description": "The goal of my project is to implement multiple neural evolution algorithms ie.\n● NEAT - Neural Evolution through Augmented Topologies\n● Hyper-NEAT -...",
+          "slug": "neural-evolution-algorithms-on-nes-games",
+          "status": "completed",
+          "student_name": "KARTIK NIGHANIA",
+          "student_profile": null,
+          "tags": [],
+          "title": "Neural Evolution Algorithms on NES games"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/deep-learning-modules-summary.html",
+          "description": "<p>Implementation of RBM, ssRBM, GAN and stacked GAN</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5410328963710976/",
+          "proposal_id": null,
+          "short_description": "Implementation of RBM, ssRBM, GAN and stacked GAN",
+          "slug": "deep-learning-modules",
+          "status": "completed",
+          "student_name": "Kris Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Deep Learning Modules"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/augmented-recurrent-neural-networks-summary.html",
+          "description": "<p>I am applying to work on the GSoC 2017 Augmented RNNs project.\nI am currently a first-year Software Engineering student from Astrakhan State University (Astrakhan, Russia). I have already taken some coursework on machine learning. For example, I have finished the Machine Learning and Data Mining specialization on Coursera (Russian-language specialization from Moscow Institute of Physics and Technology, certificate link: <a href=\"http://bit.ly/2nnuh03\" target=\"_blank\">http://bit.ly/2nnuh03</a>). I also passed Artificial Intelligence course at UC Berkeley (on edX, certificate link: <a href=\"http://bit.ly/1K6B2sR\" target=\"_blank\">http://bit.ly/1K6B2sR</a>). \nI’m already fairly familiar with deep learning. For example, recently I implemented optimality tightening from “Learning to play in a day” (<a href=\"https://arxiv.org/abs/1611.01606\" target=\"_blank\">https://arxiv.org/abs/1611.01606</a>) for the AgentNet (“Deep Reinforcement Learning library for humans”, <a href=\"https://github.com/yandexdataschool/AgentNet\" target=\"_blank\">https://github.com/yandexdataschool/AgentNet</a>). Here is the merged pull request: <a href=\"https://github.com/yandexdataschool/AgentNet/pull/88\" target=\"_blank\">https://github.com/yandexdataschool/AgentNet/pull/88</a>.\nI am interested in this project because it offers me a challenge while sharpening my knowledge of machine learning.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4583913502539776/",
+          "proposal_id": null,
+          "short_description": "I am applying to work on the GSoC 2017 Augmented RNNs project.\nI am currently a first-year Software Engineering student from Astrakhan State...",
+          "slug": "gsoc-17-augmented-rnns-project-proposal",
+          "status": "completed",
+          "student_name": "Konstantin Sidorov",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GSoC '17 \"Augmented RNNs\" project proposal"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/deep-reinforcement-learning-methods-summary.html",
+          "description": "<p>This projects will implement a framework for double deep Q-Learning and some asynchronous methods for DeepRL including asynchronous one-step Q-learning, asynchronous one-step Sarsa, asynchronous n-step Q-learning and asynchronous advantage actor-critic. It will also refactor the existing neural network components to make it more compatible with DeepRL.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4800276775043072/",
+          "proposal_id": null,
+          "short_description": "This projects will implement a framework for double deep Q-Learning and some asynchronous methods for DeepRL including asynchronous one-step...",
+          "slug": "reinforcement-learning-framework",
+          "status": "completed",
+          "student_name": "Shangtong Zhang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reinforcement Learning Framework"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/cross-validation-and-hyper-parameter-tuning-summary.html",
+          "description": "<p>Solving a problem with machine learning algorithms is often a tedious process that requires many experiments before things start to work. The project aims to add to mlpack essential tools automating this process - tools to validate and tune hyper-parameters - to help you find one of the best configurations for a machine learning algorithm.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4812231682293760/",
+          "proposal_id": null,
+          "short_description": "Solving a problem with machine learning algorithms is often a tedious process that requires many experiments before things start to work. The project...",
+          "slug": "cross-validation-and-hyper-parameter-tuning",
+          "status": "completed",
+          "student_name": "Kirill Mishchenko",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Cross-Validation and Hyper-Parameter Tuning"
+        },
+        {
+          "code_url": "https://github.com/mlpack/jenkins-conf",
+          "description": "<p>The objectives of the project are as:</p>\n<ol>\n<li>Completing the build matrix - testing on different compilers, different architectures, different Boost versions. For this, building a number of Docker containers, each with a different set of libraries and compilers, that can be used to build mlpack and run the tests.</li>\n<li>Running docker with Jenkins for continuous integration and continuous deployment. Using plugins to automate the build and deploy process with the Jenkins server.</li>\n<li>For testing on windows and os x, docker images will be supplied for the end users to just say a “docker pull” and get things running.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6043647661309952/",
+          "proposal_id": null,
+          "short_description": "The objectives of the project are as:\n\nCompleting the build matrix - testing on different compilers, different architectures, different Boost...",
+          "slug": "gsoc-2017-build-testing-with-docker-and-vms",
+          "status": "completed",
+          "student_name": "Saurabh Gupta",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "docker",
+            "ui"
+          ],
+          "title": "GSoC-2017: Build testing with Docker and VMs"
+        },
+        {
+          "code_url": "https://github.com/mlpack/blog/blob/master/content/blog/ChenzheSummary.md",
+          "description": "<p>It is known in Jaggi's paper that the traditional OMP algorithm for sparse optimization problems could fit into FW type algorithm. This generalized the usage of FW algorithm to unconstrained optimization problem with sparse solution. I would implement the variants of FW type algorithm, including the unconstrained case using different atom norms, and unify them into the same code structure.</p>\n<p>Furthermore, it is easy to add regularization on atom norms for this unconstrained FW type algorithms. The benefit of doing this is twofold, Firstly, it can give faster convergence speed in optimization. Secondly, the freedom of adding different regularization parameters usually gives better results in applications. I will add this functionality in the code and compare the performance in these 2 aspects.</p>\n<p>Moreover, I will try real world problems such as dictionary learning that will call this FW solver, to give a further demonstration and comparison of the usage of the solver I implemented.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_mlpack_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6108214575759360/",
+          "proposal_id": null,
+          "short_description": "It is known in Jaggi's paper that the traditional OMP algorithm for sparse optimization problems could fit into FW type algorithm. This generalized...",
+          "slug": "frank-wolfe-algorithm-for-sparse-optimization-and-regularization-of-atom-norms",
+          "status": "completed",
+          "student_name": "Chenzhe Diao",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Frank-Wolfe Algorithm for Sparse Optimization and Regularization of Atom Norms"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/profiling-for-parallelization-and-parallel-stochastic-optimization-methods-summary.html",
+          "description": "<p>The free lunch is over and with the ever increasing amounts of data to be analyzed and processed by learning algorithms, we need to find methods for harnessing the processing power available in the form of increasing number of threads in modern CPUs. Optimizers are integral parts of modern machine learning algorithms, forming the backbone of the training infrastructure. Recent research in methods of optimization has revealed a few interesting algorithms for scaling the performance of sequential optimizers over multiple threads. This project proposal looks over the implementation of two primary approaches to parallelizing stochastic optimization algorithms in mlpack.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6110309311840256/",
+          "proposal_id": null,
+          "short_description": "The free lunch is over and with the ever increasing amounts of data to be analyzed and processed by learning algorithms, we need to find methods for...",
+          "slug": "parallel-stochastic-optimization-methods",
+          "status": "completed",
+          "student_name": "Shikhar Bhardwaj",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Parallel stochastic optimization methods"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/benchmarking-mlpack-libraries.html",
+          "description": "<p>There are many mlpack methods that have been added since the previous benchmarking system was build and they need to be benchmarked. These include ANN, Decision Trees, Hoeffding Tree and more. \nThere are many Machine Learning libraries like mrtp,annoy, Tensorflow, spark-Mllib, astroML in Python and libraries like CARET, randomForest, e1071,etc in R and dlib-ml in C++ and Accord.Net also which have not been benchmarked. There are some implementations in sklearn which need to be upgraded to add more options and some need a change in the value of the default parameters to support the latest version of sklearn. So if chosen to work on this project my aim would be to implement Machine Learning algorithms in some of the libraries not benchmarked as well as upgrade the current codes to support latest version of these libraries.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2017_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5967819476828160/",
+          "proposal_id": null,
+          "short_description": "There are many mlpack methods that have been added since the previous benchmarking system was build and they need to be benchmarked. These include...",
+          "slug": "better-benchmarking-for-mlpack-libraries",
+          "status": "completed",
+          "student_name": "Dewang Sultania",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Better Benchmarking for mlpack Libraries"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5584462775582720/"
+    },
+    "year_2018": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "http://mlpack.org/gsocblog/Manish2018Summary.html",
+          "description": "<p>Many cognitive techniques, such as recognition and categorization are assumed to have need of establishing\nsimilarities between perceptual or conceptual representations. Basically when facing situations similar to what we have encountered before. This phenomenon signalled the development of many mathematical models of similarity.</p>\n<p>Metric learning is one amongst those models that perform the task of devising similarities over objects. It has a plethora of applications in fields like information retrieval and recommendation system. Also, many machine learning approaches rely on some metric. This includes unsupervised techniques such as clustering, supervised procedures like KNN classification and semi-supervised modes as well. Metric learning has been involved as a preprocessing step for many of these approaches.</p>\n<p>Henceforth learning a neat distance metric is a crucial task for forming similarities. LMNN &amp; BoostMetric are among the supervised distance metric learning techniques which excel in this task. Accordingly, the fundamental objective of this project is to code novel implementations of LMNN &amp; BoostMetric, with the purpose of achieving better benchmarking over kNN classification.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5229063895515136/",
+          "proposal_id": null,
+          "short_description": "Many cognitive techniques, such as recognition and categorization are assumed to have need of establishing\nsimilarities between perceptual or...",
+          "slug": "lmnn-via-low-rank-optimization-boostmetric-implementation",
+          "status": "completed",
+          "student_name": "Manish Kumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "LMNN (via Low-Rank optimization) & BoostMetric Implementation"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/Haritha2018Summary.html",
+          "description": "<p>Recommendation systems are widely used in various online and offline platforms, collaborative filtering being the most commonly used method for implementing them. Most collaborative filtering algorithms, including the ones existing in mlpack, use matrix factorization for this. Although MF is de facto, it cannot deal with complex user-item relationships and also need the user to provide ratings explicitly (explicit feedback). This project proposal deals with these drawbacks by implementing a module for neural collaborative filtering, which can represent complex user-item interaction using neural networks and also can handle implicit feedback (comprising any interaction user has with any item as a positive instance). Neural collaborative filtering, if needed, can also be generalized to matrix factorization. NCF has been proved to give better hit ratio and other metrics than neighborhood based algorithms, and also gives comparable RMSE with existing CF methods in mlpack. This module can give much more flexible recommendations, even when there is less explicit feedback available.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5639066305429504/",
+          "proposal_id": null,
+          "short_description": "Recommendation systems are widely used in various online and offline platforms, collaborative filtering being the most commonly used method for...",
+          "slug": "neural-collaborative-filtering",
+          "status": "completed",
+          "student_name": "Haritha Sreedharan Nair",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Neural Collaborative Filtering"
+        },
+        {
+          "code_url": "http://mlpack.org/gsocblog/alternatives-to-neighborhood-based-cf.html",
+          "description": "<p>The overall objective of this project is to improve the current CF module in mlpack to provide better rating prediciton, fast execution, and flexible APIs.</p>\n<p>To be more specific, the objectives include:</p>\n<ol>\n<li>Solve the current problems which are affecting the accuracy (e.g. lack of data normalization, lack of alternative methods for aggregation of neighbor ratings).</li>\n<li>Add CF models which are more expressive, and models which can take implicit feedbacks into consideration (e.g. BiasSVD, SVD++).</li>\n<li>Benchmark the cf module with public datasets (e.g. MovieLens, Netflix).</li>\n<li>Accelerate program execution by identifying and modifying the codes which are slowing down the execution.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4529396543127552/",
+          "proposal_id": null,
+          "short_description": "The overall objective of this project is to improve the current CF module in mlpack to provide better rating prediciton, fast execution, and flexible...",
+          "slug": "alternatives-to-neighborhood-based-collaborative-filtering",
+          "status": "completed",
+          "student_name": "Wenhao Huang",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml"
+          ],
+          "title": "Alternatives to Neighborhood-Based Collaborative Filtering"
+        },
+        {
+          "code_url": "https://www.mlpack.org/gsocblog/Yasmine2018Summary.html",
+          "description": "<p>This automatically-generated Go binding proposal aims to allow Go users to have access to the fast and scalable machine learning library that is mlpack while keeping the system maintenance burden low for mlpack.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5776906033037312/",
+          "proposal_id": null,
+          "short_description": "This automatically-generated Go binding proposal aims to allow Go users to have access to the fast and scalable machine learning library that is...",
+          "slug": "automated-binding-generator",
+          "status": "completed",
+          "student_name": "Yasmine Dumouchel",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Automated Binding Generator"
+        },
+        {
+          "code_url": "https://github.com/akhandait/GSoC-2018",
+          "description": "<p>Variational Autoencoders(VAEs) are widely used in unsupervised learning of complicated distributions. The more classical generative models depend upon sampling techniques such as MCMC. These sampling techniques are unable to scale to high dimensional spaces, for example distribution over set of images. Due to this reason, VAEs get rid of sampling by introducing gradient based optimization.</p>\n<p>I propose a project where I will implement a VAE framework for both feed forward and recurrent networks with rigorous testing and seamlessly integrate it with the current ann codebase of mlpack. I have kept in mind both ease of use for novice users and complete control over the VAE network for advanced users. In addition to a class, reproduction of results from the papers and a command line program will also be added. In the end, I will add a tutorial to help users get familiar with the framework.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5975082333634560/",
+          "proposal_id": null,
+          "short_description": "Variational Autoencoders(VAEs) are widely used in unsupervised learning of complicated distributions. The more classical generative models depend...",
+          "slug": "variational-autoencoders",
+          "status": "completed",
+          "student_name": "Atharva Khandait",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Variational Autoencoders"
+        },
+        {
+          "code_url": "https://github.com/ShikharJ/GSoC-2018-Work-Report",
+          "description": "<p>Over the years, <code>Deep Learning</code> has become a promising field of work, attracting attention from the most prominent <code>Machine Learning</code> researchers of the world. One of the most prominent ideas in the field of <code>Deep Learning</code> is <code>Generative Adversarial Networks</code> invented by <code>Ian Goodfellow</code>. This proposal aims to implement <code>Deep Convolutional GAN (DCGAN)</code> and <code>Wasserstein GAN (WGAN)</code>. In addition to these, some additional work is also planned to be done, namely the implementation of <code>Stacked GAN (StackGAN)</code> and <code>Deep Belief Networks (DBN)</code>. The rest of the details are mentioned in the proposal.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5154292944076800/",
+          "proposal_id": null,
+          "short_description": "Over the years, Deep Learning has become a promising field of work, attracting attention from the most prominent Machine Learning researchers of the...",
+          "slug": "implementing-essential-deep-learning-modules",
+          "status": "completed",
+          "student_name": "Shikhar Jaiswal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing Essential Deep Learning Modules"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4895891068551168/"
+    },
+    "year_2019": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "http://mlpack.org/gsocblog/Mehul2019Summary.html",
+          "description": "<p><strong>Application of ANN algorithms implemented in mlpack.</strong></p>\n<ul>\n<li>Implementation of VGG 19 for Image Classification.</li>\n<li>LSTM Networks for Sentiment Analysis.</li>\n<li>LSTM for time series prediction. \n-- Univariate. \n-- Multivariate.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6337601512931328/",
+          "proposal_id": null,
+          "short_description": "Application of ANN algorithms implemented in mlpack.\n\nImplementation of VGG 19 for Image Classification.\nLSTM Networks for Sentiment Analysis.\nLSTM...",
+          "slug": "application-of-ann-algorithms-implemented-in-mlpack",
+          "status": "completed",
+          "student_name": "Mehul Kumar Nirala",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Application of ANN Algorithms Implemented in mlpack"
+        },
+        {
+          "code_url": "https://www.mlpack.org/gsocblog/Jeffin2019Summary.html",
+          "description": "<p>To develop String Processing Utilities for boosting mlpack library to manipulate string data types and to convert it into numeric datatype to apply machine learning algorithms.</p>\n<p>Since most of the algorithm in mlpack have been written to handle numeric data type and as such it becomes important to convert string data type to numeric. By providing string utility function, we can convert string to numeric datatype and then can use a machine learning algorithm on it.</p>\n<p>Also, data preprocessing is an important step involved in machine learning field to achieve high accuracy, and by providing string utility function, such as removing stop word, or removing punctuation, cleaning of string dataset could be achieved.</p>\n<p>I have mentioned in the proposal, which function I would implement and how I would implement it and also have included the timeline. I have briefed about my background and have also added the relevant course work to account for the knowledge needed to build about the project.</p>\n<p>I have raised pull request for many function along with the test, which are on review as of now. I would continue to sought out all the issues and looking forward to contribute to the organization.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6337699743531008/",
+          "proposal_id": null,
+          "short_description": "To develop String Processing Utilities for boosting mlpack library to manipulate string data types and to convert it into numeric datatype to apply...",
+          "slug": "string-processing-utilities",
+          "status": "completed",
+          "student_name": "Jeffin Sam",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "String Processing Utilities"
+        },
+        {
+          "code_url": "http://www.mlpack.org/gsocblog/Sreenik2019Summary.html",
+          "description": "<p>The purpose of this project is to build a converter that can translate models built in Tensorflow, Keras, Pytorch, Mxnet, ONNX to mlpack's model format and vice-versa.</p>\n<p>With the advent of extremely deep neural architectures and their high training cost, transfer learning is the only way out. That said, the number of pre-trained models for mlpack is practically zero till now while more popular frameworks like Tensorflow has dozens of them.</p>\n<p>Models trained in mlpack can be converted and used in Tensorflow for better benchmarking and feature-testing. Moreover, it can open up the field for mlpack and make it as popular as the other frameworks mentioned.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6693947215183872/",
+          "proposal_id": null,
+          "short_description": "The purpose of this project is to build a converter that can translate models built in Tensorflow, Keras, Pytorch, Mxnet, ONNX to mlpack's model...",
+          "slug": "mlpack-tensorflow-translator",
+          "status": "completed",
+          "student_name": "Sreenik Seal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "mlpack-Tensorflow Translator"
+        },
+        {
+          "code_url": "https://github.com/saksham189/GSOC-Work-Report",
+          "description": "<p>In recent years, generative adversarial networks have proven to be very effective for training generative models and hundreds of different variants have been introduced. This proposal aims to implement novel techniques for training GANs efficiently such as mini-batch discrimination, virtual batch normalisation and additionally, adding support for Conditional GAN (<code>CGAN</code>). Future work for Stacked GAN (<code>SGAN</code>) is also proposed.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5626054281003008/",
+          "proposal_id": null,
+          "short_description": "In recent years, generative adversarial networks have proven to be very effective for training generative models and hundreds of different variants...",
+          "slug": "implementing-essential-deep-learning-modules",
+          "status": "completed",
+          "student_name": "Saksham Bansal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing Essential Deep Learning Modules"
+        },
+        {
+          "code_url": "https://github.com/KimSangYeon-DGU/GSoC-2019",
+          "description": "<p>Gaussian Mixture Model (GMM) is widely used in computer vision as a state-of-the-art clustering algorithm. This project proposes Quantum Gaussian Mixture Model (QGMM) for Quantum Clustering. According to the paper, QGMM outperforms classical GMM in every aspect of the estimations. Therefore, in this project, we'll implement QGMM and conduct some experiments to see if how fast it trains, how better it models the data, and what edge cases there are, compared with classical GMM.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6231975097008128/",
+          "proposal_id": null,
+          "short_description": "Gaussian Mixture Model (GMM) is widely used in computer vision as a state-of-the-art clustering algorithm. This project proposes Quantum Gaussian...",
+          "slug": "quantum-gaussian-mixture-models",
+          "status": "completed",
+          "student_name": "Sangyeon Kim",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Quantum Gaussian Mixture Models"
+        },
+        {
+          "code_url": "https://github.com/mlpack/blog/blob/master/doc/tutorials/Xiaohong2019Summary.md",
+          "description": "<p>A new family of policy gradient methods for reinforcement learning, which alternate between sampling data through\ninteraction with the environment, and optimizing a “surrogate” objective function using stochastic gradient ascent.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4796177931829248/",
+          "proposal_id": null,
+          "short_description": "A new family of policy gradient methods for reinforcement learning, which alternate between sampling data through\ninteraction with the environment,...",
+          "slug": "ppoproximal-policy-optimization",
+          "status": "completed",
+          "student_name": "xiaohong ji",
+          "student_profile": null,
+          "tags": [],
+          "title": "PPO(Proximal Policy Optimization)"
+        },
+        {
+          "code_url": "https://walragatver.github.io/2019-08-26-gsoc-report/",
+          "description": "<p>Various <code>Deep learning</code> architectures such as deep neural networks and recurrent neural networks are applied to fields including computer vision, speech recognition, natural language processing, , drug design, medical image analysis, reinforcement learning etc.</p>\n<p>One of the interesting application of deep learning is <code>Generative Adversarial Networks (GANs)</code> which aim at learning the true data distribution of the training set so as to generate new data points. Since the day it was introduced in 2014 it has been used in various applications from Image Synthesis to synthesizing DNA sequences.</p>\n<p>This project aims to provide flexible and extensible implementation of <code>Least Squares Generative Adversarial Networks(LSGANs)</code>, <code>Label Smoothing</code>, <code>Bidirectional GAN(BIGAN)</code> and <code>Stacked Generative Adversarial Network (StackGAN)</code>. In addition it also aims at providing techniques to measure GAN performance like <code>Inception Score(IS)</code> and <code>Fréchet Inception Distance(FID)</code>.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6074520136318976/",
+          "proposal_id": null,
+          "short_description": "Various Deep learning architectures such as deep neural networks and recurrent neural networks are applied to fields including computer vision,...",
+          "slug": "implementing-essential-deep-learning-modules",
+          "status": "completed",
+          "student_name": "Toshal Agrawal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing Essential Deep Learning Modules"
+        },
+        {
+          "code_url": "http://www.mlpack.org/gsocblog/Rahul2019Summary.html",
+          "description": "<p>NeuroEvolution of Augmenting Toplogies (NEAT) is a genetic algorithm that can evolve networks of unbound complexity by starting from simple networks and \"complexifying\" through different genetic operators. It has been used to train agents to play Super Mario World and generate \"genetic art\".</p>\n<p>Multi-Objective Optimization is an area of multiple criteria decision making that is concerned with mathematical optimization problems involving more than one objective function to be optimized simultaneously. Multi-objective optimization has been applied in many fields of science where optimal decisions need to be taken in the presence of trade-offs between two or more conflicting objectives.</p>\n<p>I propose a project where I implement a NEAT framework and use it to optimize single-objective functions within ensmallen. Besides this, I will implement a framework for multi-objective optimization within ensmallen along with a multi-objective optimizer, Unified NSGA-III. If time allows, I will use these two frameworks to implement MultiModal NEAT (MM-NEAT) to train an agent in multi-objective reinforcement learning environments.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5773913680773120/",
+          "proposal_id": null,
+          "short_description": "NeuroEvolution of Augmenting Toplogies (NEAT) is a genetic algorithm that can evolve networks of unbound complexity by starting from simple networks...",
+          "slug": "neuroevolution-of-augmenting-topologies-multi-objective-optimization",
+          "status": "completed",
+          "student_name": "Rahul Ganesh Prabhu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "NeuroEvolution of Augmenting Topologies & Multi-Objective Optimization"
+        },
+        {
+          "code_url": "https://www.mlpack.org/gsocblog/Roberto2019Summary.html",
+          "description": "<p><em>Kernel Density Estimation</em> (KDE) is a widely used non-parametric technique to estimate a probability density function. <em>mlpack</em> already had an implementation of this technique and the goal of this project is to improve the existing codebase, making it faster and more flexible.</p>\n<p>These improvements include:</p>\n<ul>\n<li>Improvements to the <em>KDE</em> space-partitioning trees algorithm.</li>\n<li>Cases in which data dimensionality is high and metric evaluations are computationally expensive.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6285626368851968/",
+          "proposal_id": null,
+          "short_description": "Kernel Density Estimation (KDE) is a widely used non-parametric technique to estimate a probability density function. mlpack already had an...",
+          "slug": "advanced-kernel-density-estimation-improvements",
+          "status": "completed",
+          "student_name": "Roberto Hueso Gomez",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Advanced Kernel Density Estimation Improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5934768259072000/"
+    },
+    "year_2020": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://shrit.me/blog/gsoc_week_9/",
+          "description": "<p>The objective of this project is to minimize mlpack library algorithms to fit into resource constrained devices such as Raspberry PI, Arduino, or VoCore</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5423818589339648/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to minimize mlpack library algorithms to fit into resource constrained devices such as Raspberry PI, Arduino, or...",
+          "slug": "mlpack-on-rpi-and-other-resource-constrained-devices",
+          "status": "completed",
+          "student_name": "Omar Shrit",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "mlpack on RPi and other resource-constrained devices"
+        },
+        {
+          "code_url": "https://github.com/iamshnoo/mlpack-testing",
+          "description": "<p>In this project, my goal is to update the existing ANN facilities within mlpack and the deliverable is an improved ANN module. This includes adding many different functionalities, including layers like Pixel Shuffle layer and Spatial Dropout layer among many others. I have also proposed to add extended support for reduction facilities to be integrated into many different loss functions to bring to the table a degree of flexibility offered in other major machine learning libraries. I will also be building on the work done in a GSOC project last year, the mlpack-Tensorflow translator and mainly I will be updating it with all the latest changes in the source code to support new functionalities which have become a part of mlpack since last year. And finally, I have also proposed to begin work on improving the documentation of all layers, by adding inline examples within the header descriptions to improve usability for a wider range of end-users.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5438203374338048/",
+          "proposal_id": null,
+          "short_description": "In this project, my goal is to update the existing ANN facilities within mlpack and the deliverable is an improved ANN module. This includes adding...",
+          "slug": "improvisation-and-implementation-of-ann-modules",
+          "status": "completed",
+          "student_name": "Anjishnu Mukherjee",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Improvisation and Implementation of ANN Modules"
+        },
+        {
+          "code_url": "https://www.mlpack.org/gsocblog/Jeffin2020Summary.html",
+          "description": "<p>Working with mlpack for almost a year was great. I have always been a fan of the concept <code>see and do</code>. If we can see a graph plotting the accuracy curve while training; would give us more insight and save time instead of actually going through the numbers. Thus I had raised PR for plotting a confusion matrix last year, but still feel we do lack the UI bit in our library. As such, This year I would like to build MLpackBoard so that we can visualize metrics and other utilities.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5469125494702080/",
+          "proposal_id": null,
+          "short_description": "Working with mlpack for almost a year was great. I have always been a fan of the concept see and do. If we can see a graph plotting the accuracy...",
+          "slug": "visualization-tool",
+          "status": "completed",
+          "student_name": "Jeffin Sam",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Visualization Tool"
+        },
+        {
+          "code_url": "https://github.com/kartikdutt18/GSoC-Work-Report",
+          "description": "<p>Over the course of the last couple of years, Computer Vision has played a crucial role in the field of Deep Learning. Object detection is one of the most prominent problem in computer vision and algorithms such as YOLOv3 and tiny-YOLOv3 play a very important role in tackling them. The proposal aims to implement tiny-YOLOv1, tiny-YOLOv3 and YOLOv3. The proposal also aims on implementing visualization tools, data loaders and essential functions needed to tackle object detection problem using any other algorithm. The proposal has an in-depth explanation for the same.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4686907562262528/",
+          "proposal_id": null,
+          "short_description": "Over the course of the last couple of years, Computer Vision has played a crucial role in the field of Deep Learning. Object detection is one of the...",
+          "slug": "application-of-ann-algorithms-implemented-in-mlpack",
+          "status": "completed",
+          "student_name": "Kartik Dutt",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Application of ANN Algorithms Implemented in mlpack."
+        },
+        {
+          "code_url": "https://github.com/himanshupathak21061998/GSOC-Work-Report",
+          "description": "<p>In this project, I am trying to implement some deep learning modules which are used for classification. I am trying to implement some important modules like Radial Basis Kernel SVM,  Radial Basis Function Network and Deep belief Nets.<br>\nDeep belief nets:-  They are probabilistic generative models that are composed of multiple layers of stochastic, latent variables. The latent variables typically have binary values and are often called hidden units or feature detectors.</p>\n<p>Radial Basis Function Network:- It is an artificial neural network that uses radial basis functions as activation functions. The output of the network is a linear combination of radial basis functions of the inputs and neuron parameters.</p>\n<p>Radial Basis Function Kernel:- It is also called the RBF kernel, or gaussian kernel, is a kernel that is in the form of a radial basis function (more specifically, a Gaussian function).</p>\n<p>We can use these deep learning classification modules for various purposes like speech recognition, handwriting recognition, biometric identification, document classification etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4714178020900864/",
+          "proposal_id": null,
+          "short_description": "In this project, I am trying to implement some deep learning modules which are used for classification. I am trying to implement some important...",
+          "slug": "implementing-essential-deep-learning-module",
+          "status": "completed",
+          "student_name": "Himanshu Pathak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing Essential Deep Learning Module"
+        },
+        {
+          "code_url": "https://nishantkr18.github.io/GSoC-2020-mlpack/",
+          "description": "<p>After comparing various algorithms and brainstorming about their methods of implementation, I came up with the <strong>Rainbow</strong> <a href=\"https://arxiv.org/abs/1710.02298\" target=\"_blank\">Hessel et al., 2017</a> and <strong>Soft Actor-Critic</strong> <a href=\"https://arxiv.org/abs/1812.05905\" target=\"_blank\">Haarnoja et al., 2019</a> as the most in-demand and recent algorithms, whose implementation in mlpack would be crucial.</p>\n<p>Thus, I propose to add them to the existing RL codebase. Here are the details of what I expect to have accomplished at the end of the summer.</p>\n<ul>\n<li>Improving the current QLearning implementation.  </li>\n<li>Implementing Rainbow as an improvement on DQN. This would include adding the following as extensions:<ul>\n<li>Dueling DQN</li>\n<li>Noisy DQN</li>\n<li>Categorical DQN</li>\n<li>N-step DQN</li>\n</ul>\n</li>\n<li>Writing test cases for each of the implementations  </li>\n<li>Implementing Soft Actor-Critic (SAC) for continuous action space, along with its tests  </li>\n<li>Creating detailed docs for all the above implementations  </li>\n<li>Creating necessary environments, for proper testing of algorithms above (after discussing with mentors)</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6549718496182272/",
+          "proposal_id": null,
+          "short_description": "After comparing various algorithms and brainstorming about their methods of implementation, I came up with the Rainbow Hessel et al., 2017 and Soft...",
+          "slug": "addition-of-rainbow-and-soft-actor-critic-to-rl-codebase",
+          "status": "completed",
+          "student_name": "Nishant Kumar",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Addition of Rainbow and Soft Actor-Critic to RL codebase"
+        },
+        {
+          "code_url": "https://mrityunjay-tripathi.github.io/gsoc-with-mlpack/report/final_report.html",
+          "description": "<p>Connecting the encoder and decoder through an attention mechanism has made some of the best translation models. The encoder encodes input sentences into some fixed-length vector. The decoder then translates the encoded vector. Attention Mechanism allows the decoder to attend to different parts of the source sentence at each step of the output generation.</p>\n<p>The BERT is designed to pre-train deep bidirectional representations from unlabeled tests by jointly conditioning on both left and right context in all layers. The project will facilitate us in providing the Transfer Learning method in Natural language Processing tasks using the BERT model. After the pre-training, the BERT model can be finetuned with adding some output layer to create models that can be helpful in translation, next word prediction or next sentence prediction, question-answering, etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6124556562989056/",
+          "proposal_id": null,
+          "short_description": "Connecting the encoder and decoder through an attention mechanism has made some of the best translation models. The encoder encodes input sentences...",
+          "slug": "transformer-and-bert-in-mlpack",
+          "status": "completed",
+          "student_name": "Mrityunjay Tripathi",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Transformer and BERT in mlpack"
+        },
+        {
+          "code_url": "https://github.com/Yashwants19/GSoC-2020-Work-Report",
+          "description": "<p>R is a programming language with a design focused on simplicity, effectiveness and performance, that is widely used in all kind of projects. With Python, Julia, Go and Java bindings for mlpack, adding a R interface would further enhance the library.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2020_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5930699892195328/",
+          "proposal_id": null,
+          "short_description": "R is a programming language with a design focused on simplicity, effectiveness and performance, that is widely used in all kind of projects. With...",
+          "slug": "automatically-generated-r-bindings",
+          "status": "completed",
+          "student_name": "Yashwant Singh Parihar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "ml"
+          ],
+          "title": "Automatically-Generated R Bindings"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5279502554365952/"
+    },
+    "year_2021": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/heisenbuug/GSoC-2021-Work-Report",
+          "description": "<p>The project revolves around reducing the binary footprint of mlpack by replacing the functionality of <code>boost::spirits</code> to handle a more diverse range of data in mlpack. This project is a part of the bigger goal of <strong>removing boost dependencies</strong>. The project aims to re-implement mlpack’s custom CSV parser that is currently being utilized to handle non-numeric data by adaptive the armadillo's internal <code>csv parser</code> to handle non-numeric data.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5727116527665152/",
+          "proposal_id": null,
+          "short_description": "The project revolves around reducing the binary footprint of mlpack by replacing the functionality of boost::spirits to handle a more diverse range...",
+          "slug": "replacing-boost-spirits",
+          "status": "completed",
+          "student_name": "Gopi Manohar Tatiraju",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Replacing boost spirits"
+        },
+        {
+          "code_url": "https://github.com/jonpsy/GSoC-2021-mlpack",
+          "description": "<p>The mlpack library boasts an extensive set of objective optimizers, almost all of which focus on single-objective problems. Previous works by Sayan Goswami paved the way for multiobjective optimizers. This was further complemented by the addition of Schaffer-N1 and Fonseca-Flemming test suites.</p>\n<p>This project aims to add optimizers, expand the test framework and make the library more accepting of multi-objective problems in general. Building from existing work, the end product would enrich the MOO module and package these features to fit into our codebase providing familiar public-interface.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5083838471995392/",
+          "proposal_id": null,
+          "short_description": "The mlpack library boasts an extensive set of objective optimizers, almost all of which focus on single-objective problems. Previous works by Sayan...",
+          "slug": "a-framework-for-multiobjective-optimizers",
+          "status": "completed",
+          "student_name": "Nanubala Gnana Sai",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "A Framework for Multiobjective Optimizers"
+        },
+        {
+          "code_url": "https://github.com/swaingotnochill/gsoc-work-report",
+          "description": "<p>Example Zoo is an implementation of mlpack showcasing its potential usage in the real-world domain. It will provide a better starting point for new users to learn from ready-to-run code. It will showcase the usage of API, how it can be integrated with different visualization libraries for cool graphs and plots. The example will show the potential usage of Machine Learning Algorithms and  Deep Neural Networks on real-life datasets. Finally, a well-documented process for creating an end-to-end machine learning project, using mlpack as a core.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5326611297075200/",
+          "proposal_id": null,
+          "short_description": "Example Zoo is an implementation of mlpack showcasing its potential usage in the real-world domain. It will provide a better starting point for new...",
+          "slug": "example-zoo",
+          "status": "completed",
+          "student_name": "Roshan Swain",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Example Zoo"
+        },
+        {
+          "code_url": "https://github.com/NippunSharma/GSoC-2021-Work-Report",
+          "description": "<p>The project proposes to revamp the existing mlpack bindings. Mlpack is one of the most flexible machine learning libraries when accessed through C++ but when it comes to the interface in different languages mlpack still has some ground to cover. This is not intentional, rather it shows how much mlpack has grown over the years. Initially, mlpack only had a command-line interface for which it was obvious to provide as much functionality as possible inside a single function. Now that mlpack not only provides a command-line interface but also an interface in Python, Julia, GO, and R, it has become a necessity to remove the single function interface and use a more modern interface with which the user is more familiar.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5342481670995968/",
+          "proposal_id": null,
+          "short_description": "The project proposes to revamp the existing mlpack bindings. Mlpack is one of the most flexible machine learning libraries when accessed through C++...",
+          "slug": "revamp-mlpack-bindings",
+          "status": "completed",
+          "student_name": "Nippun Sharma",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml"
+          ],
+          "title": "Revamp mlpack bindings"
+        },
+        {
+          "code_url": "https://gist.github.com/abh2k/13590664db7285c80a4d720656348deb",
+          "description": "<p>Adding new layers (Upsample, Group Normalization and ChannelShuffle) to the ANN module of mlpack.\nImprove the speed of pooling operations of max, mean and LP pooling layers.\nImprove the speed of un-pooling operation of mean pooling layers.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6099851103698944/",
+          "proposal_id": null,
+          "short_description": "Adding new layers (Upsample, Group Normalization and ChannelShuffle) to the ANN module of mlpack.\nImprove the speed of pooling operations of max,...",
+          "slug": "improvisation-and-implementation-of-ann-modules",
+          "status": "completed",
+          "student_name": "Abhinav Anand",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Improvisation and Implementation of ANN Modules"
+        },
+        {
+          "code_url": "https://github.com/RishabhGarg108/GSoC-Final-Eval",
+          "description": "<p>Tree ensembles are arguably the best class of machine learning algorithms out there. They regularly win competitive data science competitions.</p>\n<p>This project aims to implement the XGBoost algorithm to improve mlpack's tree ensemble support. XGBoost uses decision tree regressors and mlpack didn't have them, so it was also implemented as part of this project.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4917394429968384/",
+          "proposal_id": null,
+          "short_description": "Tree ensembles are arguably the best class of machine learning algorithms out there. They regularly win competitive data science competitions.\nThis...",
+          "slug": "improve-tree-ensemble-support",
+          "status": "completed",
+          "student_name": "Rishabh Garg",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Improve Tree Ensemble Support"
+        },
+        {
+          "code_url": "https://github.com/Aakash-kaushik/GSoC-mlpack/blob/main/README.md",
+          "description": "<p>Is to implement MobileNetV1 which will also include implementing depthwise separable convolutions and a resnet model builder that can be used to create resnet18, resnet34, resnet50, resnet101, and resnet152. This project would fall under the idea: Ready to use models in mlpack, the resnet builder and MobileNetV1 will fall under the models repository and depthwise separable convolutions will fall under the mlpack repository as a layer inside the artificial neural network codebase.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5888744871165952/",
+          "proposal_id": null,
+          "short_description": "Is to implement MobileNetV1 which will also include implementing depthwise separable convolutions and a resnet model builder that can be used to...",
+          "slug": "ready-to-use-models-in-mlpack",
+          "status": "completed",
+          "student_name": "Aakash Kaushik",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ml",
+            "ui"
+          ],
+          "title": "Ready to use Models in mlpack"
+        },
+        {
+          "code_url": "https://art3mis-17.medium.com/gsoc21-mlpack-example-zoo-adc5c50a4de2",
+          "description": "<p>Example Zoo provides starters a glimpse of most if not all features provided by mlpack, such that users can run the code for themselves to see it in action, maybe change things, Break it &amp; figure out how to fix it. This would enable a starter to become familiar with the library relatively faster than reading documentation and starting from scratch.</p>\n",
+          "difficulty": null,
+          "id": "proj_mlpack_2021_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5889561250496512/",
+          "proposal_id": null,
+          "short_description": "Example Zoo provides starters a glimpse of most if not all features provided by mlpack, such that users can run the code for themselves to see it in...",
+          "slug": "example-zoo",
+          "status": "completed",
+          "student_name": "David Port Louis",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Example Zoo"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5101022367711232/"
+    },
+    "year_2022": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/JohnToro-CZAF/GSOC2022_Report",
+          "description": "The project proposes to enhance the existing mlpack CMA-ES (Covariance matrix adaption-evolutionary strategy) implementation. From the outdated implementation of one of the most robust optimization algorithms, we implement many new improvements to the original algorithm. Refactorize the folder ensmallen/include/ensmallen_bits/cmaes with proper APIs for different variations of CMA-ES.  New API is more flexible to integrate more future improvements. The implementation was tested on real-world problems and has well performance.",
+          "difficulty": null,
+          "id": "proj_mlpack_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ZU9xd9AL/",
+          "proposal_id": null,
+          "short_description": "The project proposes to enhance the existing mlpack CMA-ES (Covariance matrix adaption-evolutionary strategy) implementation. From the outdated...",
+          "slug": "enhance-cma-es-from-existing-implementation-in-ensmallen-a-optimization-header-library",
+          "status": "completed",
+          "student_name": "John Hoang",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml"
+          ],
+          "title": "Enhance CMA-ES from existing implementation in ensmallen - a optimization header library"
+        },
+        {
+          "code_url": "https://github.com/shubham1206agra/GSoC22-mlpack/blob/main/README.md",
+          "description": "The aim is to implement various pre-trained models ranging from very basic AlexNet to super complex networks, including implementing different layers such as depthwise separable convolutions, inception layers, and residual layers. This project would fall under the idea: Ready to use models in mlpack, the pre-trained models will fall under the models repository, and layers will fall under the mlpack repository as a layer inside the artificial neural network (ANN) codebase.",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ujTRUswo/",
+          "proposal_id": null,
+          "short_description": "The aim is to implement various pre-trained models ranging from very basic AlexNet to super complex networks, including implementing different layers...",
+          "slug": "ready-to-use-models",
+          "status": "completed",
+          "student_name": "Shubham Agrawal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Ready to use Models"
+        },
+        {
+          "code_url": "https://github.com/tareknaser360/GSoC22-mlpack-ExampleZoo-Report",
+          "description": "Example Zoo is an implementation of mlpack showcasing its potential usage in the real-world domain. It will provide a better starting point for new users to learn from ready-to-run code. It will showcase the usage of API, how it can be integrated with different visualization libraries for cool graphs and plots. The examples will show the potential usage of Machine Learning Algorithms and Deep Neural Networks on real-life datasets. Finally, a well-documented process for creating an end-to-end machine learning project, using mlpack as a core.",
+          "difficulty": null,
+          "id": "proj_mlpack_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/1hgAURBM/",
+          "proposal_id": null,
+          "short_description": "Example Zoo is an implementation of mlpack showcasing its potential usage in the real-world domain. It will provide a better starting point for new...",
+          "slug": "example-zoo",
+          "status": "completed",
+          "student_name": "Tarek Elsayed",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Example Zoo"
+        },
+        {
+          "code_url": "https://github.com/eshaanagarwal/GSoC-2022-mlpack",
+          "description": "After comparing various algorithms and brainstorming about their methods of implementation, I came up with the Twin Delayed DDPG (TD3) Fujimoto et. al 2018,  Proximal Policy Optimization  Schulman et al., 2017 and Hindsight Experience Replay (HER) Andrychowicz et al., 2018 as the most in-demand and recent algorithms, whose implementation in mlpack would be crucial.\nThus, I propose to add them to the existing RL codebase. Here are the details of what I expect to have accomplished at the end of the summer.\nAddition of Hindsight Experience Replay along with thorough testing\nImplementing Proximal Policy Gradient (PPO) along with its tests \nImplementing TD3 along with test cases.\nCreating detailed docs for all the above implementations \nBenchmarking of Current RL Algorithms on various environments and comparing performances between algorithms - for example :  TD3+HER vs TD3 or DQN+HER vs DQN\nAddition of simple tutorials demonstrating usability of implemented algorithm\nCreating necessary environments, for proper testing of algorithms above (after discussion with mentor)",
+          "difficulty": null,
+          "id": "proj_mlpack_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/m6ZxRreD/",
+          "proposal_id": null,
+          "short_description": "After comparing various algorithms and brainstorming about their methods of implementation, I came up with the Twin Delayed DDPG (TD3) Fujimoto et....",
+          "slug": "addition-of-ppo-twin-delayed-ddpg-hindsight-experience-replay-to-rl-codebase",
+          "status": "completed",
+          "student_name": "Eshaan Agarwal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Addition of PPO, Twin Delayed DDPG, Hindsight Experience Replay to RL Codebase"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/mlpack/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/mayank-root/GSoC-Report/blob/main/GSoC%202023%3A%20Activation%20functions%20and%20Pooling%20layes.md",
+          "description": "Two new activation functions have been recently proposed FTSwish, and LiSHT and I am proposing to add them to mlpack along with two Pooling methods. These activation functions. Activation functions provide the non-linearity vital to allowing deep learning networks to perform an impressive number of tasks. ReLU (Rectified Linear Unit) has been the default workhorse for some time in deep learning. However, some concerns over ReLU’s removal of all negative values and the associated dying gradient, have prompted new activation functions that handle negative values differently.",
+          "difficulty": null,
+          "id": "proj_mlpack_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/qIgOGbv6",
+          "proposal_id": "8BjYWqC2",
+          "short_description": "Two new activation functions have been recently proposed FTSwish, and LiSHT and I am proposing to add them to mlpack along with two Pooling methods....",
+          "slug": "activation-functions-and-pooling-methods",
+          "status": "completed",
+          "student_name": "Mayank Raj",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Activation functions and Pooling methods"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1v3YDuYgO4iW2FKMdtpjkEjGUtgkf35lOi-DdSWk689w/edit?usp=sharing",
+          "description": "Covariance Matrix Adaptation Evolution Strategy (CMA-ES) is an evolutionary strategy which updates the covariance matrix of a normal search distribution. It is used for the optimization of non-linear and non-convex functions. \n\nThe aim of this project is to implement the following algorithms which enhance the performance of (vanilla/plain) CMA-ES:\nSelf-adaptive surrogate-assisted covariance matrix adaptation evolution strategy\n(saACM-ES), a Restart CMA Evolution Strategy with increasing population size (IPOP-CMA-ES), and Active Covariance Matrix Adaptation (Active-CMA-ES).\nThe API design of each should match that of the rest of the code base.\nIn addition to these, appropriate tests and documentation shall be implemented.",
+          "difficulty": null,
+          "id": "proj_mlpack_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/8OY3OEEn",
+          "proposal_id": "4p7xFvZi",
+          "short_description": "Covariance Matrix Adaptation Evolution Strategy (CMA-ES) is an evolutionary strategy which updates the covariance matrix of a normal search...",
+          "slug": "enhance-cma-es",
+          "status": "completed",
+          "student_name": "Suvarsh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Enhance CMA-ES"
+        },
+        {
+          "code_url": "https://github.com/tareknaser/GSoC23-mlpack-RL-Report",
+          "description": "This project's primary objective was to enrich the mlpack reinforcement learning framework by incorporating new agents, specifically DDPG and TD3, complemented by comprehensive testing and documentation.",
+          "difficulty": null,
+          "id": "proj_mlpack_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/mun1rpuI",
+          "proposal_id": "PcQFMNiH",
+          "short_description": "This project's primary objective was to enrich the mlpack reinforcement learning framework by incorporating new agents, specifically DDPG and TD3,...",
+          "slug": "expanding-reinforcement-learning-in-mlpack-ddpg-and-td3-agents-integration",
+          "status": "completed",
+          "student_name": "Tarek Elsayed",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Expanding Reinforcement Learning in mlpack: DDPG and TD3 Agents Integration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/mlpack"
+    },
+    "year_2024": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/beny-dl/GSoC-mlpack-2024-CMAES",
+          "description": "This proposal seeks to enrich the mlpack library by incorporating advanced evolutionary strategies, specifically focusing on enhancing the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) through the integration of Increasing POPulation size CMA-ES (IPOP-CMA-ES) and Self-Adaptive Surrogate-Assisted CMA-ES (saACM-ES). The core of this initiative is to tackle complex optimization problems more effectively by leveraging these sophisticated variants.\r\n\r\nCMA-ES is celebrated for its adaptability and effectiveness in dealing with real-world optimization challenges by dynamically adjusting the search distribution. To augment this capability, the IPOP-CMA-ES variant introduces a restart mechanism with an increasing population size, aimed at improving the algorithm's ability to escape local optima and discover the global optimum in multimodal functions. Further enhancing the CMA-ES framework, the saACM-ES variant employs a surrogate model to approximate the objective function's landscape, significantly reducing the computational expense of function evaluations.\r\n\r\nThe project is structured around three pivotal deliverables to ensure a clear, measurable progression. Initially, by week 6, the IPOP mechanism will be fully integrated, accompanied by comprehensive tests and documentation. Following this, the saACM-ES strategy will be implemented by week 10, ensuring its reliability and efficiency through extensive testing and well-detailed documentation. The final stage, culminating in week 12, involves refining the implementations, enhancing documentation, and showcasing the new capabilities through examples. This comprehensive approach aims not only to bolster mlpack’s suite of algorithms but also to pave the way for future innovations within the library.",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Ktk40cAi/",
+          "proposal_id": null,
+          "short_description": "This proposal seeks to enrich the mlpack library by incorporating advanced evolutionary strategies, specifically focusing on enhancing the Covariance...",
+          "slug": "integrating-advanced-cma-es-strategies-into-mlpack",
+          "status": "completed",
+          "student_name": "beny",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Integrating Advanced CMA-ES Strategies into mlpack"
+        },
+        {
+          "code_url": "https://github.com/TirelessClock/GSoC24-Final-Report/blob/master/README.md",
+          "description": "The goal of this project is to finish the XGBoost implementation inside of mlpack, followed by intense tuning, profiling, and improving such that it is competition ready. Additionally, I'll be implementing two more algorithms with similar implementation strategies - Gradient Boosting and LightGBM, and optimizing other tree based algorithms within mlpack.",
+          "difficulty": null,
+          "id": "proj_mlpack_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/6Pa6XrQM/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to finish the XGBoost implementation inside of mlpack, followed by intense tuning, profiling, and improving such that it...",
+          "slug": "implementing-xgboost",
+          "status": "completed",
+          "student_name": "Abhimanyu Dayal",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Implementing XGBoost"
+        },
+        {
+          "code_url": "https://github.com/IWNMWE/MOO-GSoC-24",
+          "description": "Multi-objective optimization (MOO) plays a crucial role in decision-making across diverse fields, where conflicting objectives need to be balanced. This project proposes to enhance ensmallen's capabilities in MOO by implementing NSGA-III (Non-dominated Sorting Genetic Algorithm III) and AGE-MOEA (Adaptive Geometry Estimation-based Multi-Objective Evolutionary Algorithm). Furthermore, the project aims to add the Maf benchmark problems suite, which are based on real-world problems with varying properties, to benchmark the currently implemented optimizers based on both time taken and IGD score.",
+          "difficulty": null,
+          "id": "proj_mlpack_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/CIHE5bCy/",
+          "proposal_id": null,
+          "short_description": "Multi-objective optimization (MOO) plays a crucial role in decision-making across diverse fields, where conflicting objectives need to be balanced....",
+          "slug": "adding-nsga-3-and-age-moea-multi-objective-optimizers",
+          "status": "completed",
+          "student_name": "Satyam Govind Shukla",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Adding NSGA-3 and AGE-MOEA Multi Objective Optimizers"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1FVAMNWowO__wFhG_vJBoRmesFn0YUJI2Uc-oZZHliJM/edit?usp=sharing",
+          "description": "In Google Summer of Code 2024, I focused on optimizing key algorithms in the mlpack library, targeting both performance and memory usage across neural networks, clustering methods (KMeans, DBScan), and SVD.\n\nHighlights of the project include implementing FFT for faster convolution operations in neural networks, applying post-training quantization to reduce model sizes, and parallelizing KMeans and DBScan with OpenMP for improved execution speed. Additionally, I optimized memory usage and reduced binary sizes by refining the code structure.\n\nThese enhancements have made mlpack faster and more efficient, contributing to its effectiveness for a wide range of machine learning applications.",
+          "difficulty": null,
+          "id": "proj_mlpack_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/bNtAY3ox/",
+          "proposal_id": null,
+          "short_description": "In Google Summer of Code 2024, I focused on optimizing key algorithms in the mlpack library, targeting both performance and memory usage across...",
+          "slug": "performance-and-memory-optimization-for-machine-learning-algorithms-in-mlpack",
+          "status": "completed",
+          "student_name": "Mark Fischinger",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Performance and Memory Optimization for Machine Learning Algorithms in mlpack"
+        },
+        {
+          "code_url": "https://github.com/mlpack/onnx-mlpack",
+          "description": "Training intricate machine learning models to achieve the desired level of proficiency can be time-consuming and require high computational resources. These challenges restrict the utilization of highly complex models in mlpack. To tackle this issue, one solution is to utilize pre-trained models available in the ONNX format. ONNX offers a standardized method for developers to define and exchange deep learning models across various frameworks like TensorFlow, PyTorch, and more.",
+          "difficulty": "advanced",
+          "id": "proj_mlpack_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Okfb7iQ0/",
+          "proposal_id": null,
+          "short_description": "Training intricate machine learning models to achieve the desired level of proficiency can be time-consuming and require high computational...",
+          "slug": "onnx-mlpack-converter",
+          "status": "completed",
+          "student_name": "kumar utkarsh",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "ONNX-mlpack converter"
+        },
+        {
+          "code_url": "https://github.com/mlpack/models/pull/87",
+          "description": "I will implement the yolov3-tiny model using mlpack. I will get Darknet-19 working, flesh out the API, build and train yolov3-tiny, publish the weights, and then test the model on constrained hardware, like the Raspberry PI 4, as well as testing it on my local GPU. I will then publish documentation on the implemented model, so that anybody can train and use the model, or download the pre-trained weights.",
+          "difficulty": null,
+          "id": "proj_mlpack_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/3CAY3Wao/",
+          "proposal_id": null,
+          "short_description": "I will implement the yolov3-tiny model using mlpack. I will get Darknet-19 working, flesh out the API, build and train yolov3-tiny, publish the...",
+          "slug": "implementing-yolov3-tiny-in-mlpack",
+          "status": "completed",
+          "student_name": "Andrew Furey",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Implementing yolov3-tiny in mlpack"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/mlpack/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "mlpack@lists.mlpack.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://mlpack.org/doc/developer/community.html",
+    "mailing_list": "https://github.com/mlpack/mlpack/issues"
+  },
+  "social": {
+    "blog": "https://www.mlpack.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.606Z"
+  }
+}

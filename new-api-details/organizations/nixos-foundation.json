@@ -1,0 +1,158 @@
+{
+  "id": "692251de53dd9d7326d33e3d",
+  "slug": "nixos-foundation",
+  "name": "NixOS Foundation",
+  "category": "Programming languages",
+  "description": "Declarative builds and deployments",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/nixos-foundation/kvnnwp7viwupdsep.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/nixos-foundation.webp",
+  "logo_r2_url": null,
+  "url": "https://nixos.org/",
+  "active_years": [
+    2024
+  ],
+  "first_year": 2024,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "git",
+    "nix"
+  ],
+  "topics": [
+    "declarative",
+    "reproducible",
+    "InfrastrucutreAsCode"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/siddhantk232/nix_gsoc/blob/main/final_submission.org",
+          "description": "This document presents the framework for a GSOC'24 project aimed at improving Nix internals by leveraging std::filesystem where applicable, particularly emphasizing the adoption of std::filesystem::path over the current Path type (which is just an alias for std::string). \n\nIt suggests a methodical approach involving the examination of current Path usage, the revision of utility functions, and the substitution of references across the codebase. \n\nFurthermore, it outlines a timeline encompassing discussion, coding, and submission stages. Additionally, it briefly touches upon previous experience with Nix as both a contributor and user.",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/cjYv6pZN/",
+          "proposal_id": null,
+          "short_description": "This document presents the framework for a GSOC'24 project aimed at improving Nix internals by leveraging std::filesystem where applicable,...",
+          "slug": "nix-internals-use-stdfilesystempath-for-path",
+          "status": "completed",
+          "student_name": "siddhantCodes",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Nix Internals: Use std::filesystem::path for Path"
+        },
+        {
+          "code_url": "https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+author%3Awoojiq+%22lib.network%22",
+          "description": "As part of GSoC campaign, I'd like to add a sort of networking library to nixpkgs. Most general-purpose programming languages support network primitives and operations between them. By adding support for such primitives to nixpkgs, service declarations can be greatly simplified. It's much nicer to deal with built-in types like ipv4/ipv6 (and others) instead of raw strings.\n\n\nDeliverables:\n* Network library with primitives and wide functionality.\n* Several existing services are rewritten to use the library.\n* Comprehensive unit tests for the library.\n* Function api and general documentation.",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/fZjAmqMP/",
+          "proposal_id": null,
+          "short_description": "As part of GSoC campaign, I'd like to add a sort of networking library to nixpkgs. Most general-purpose programming languages support network...",
+          "slug": "nixpkgs-networking-library",
+          "status": "completed",
+          "student_name": "Yurii Shymon",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Nixpkgs networking library"
+        },
+        {
+          "code_url": "https://www.sinanmohd.com/blog/gsoc/",
+          "description": "In evanix we explored making the scheduling of Nix builds more controllable. in particular, we look into implementing constraints such as –max-builds and –max-build-time, which ensure that build operations remain within manageable limits while maximizing throughput.\n\nHere the scheduling problem is framed as a mixed integer linear programming(MILP) problem. The input is a graph G=(V,E), where each vertex v represents a Nix package with a cost w(v) and a value p(v). packages that are classified as transitive dependencies—those required solely for other packages carry a value of 0. In contrast, packages that are requested for direct building are assigned a value of 1. This value structure reflects the prioritization of building requested packages over their dependencies.\n\nOur approach aims to identify a set of vertices or packages following the precedence constraints that maximizes the value or the number of packages built with value 1. It is crucial that a vertex or package can only be selected if all of its dependencies are also selected. An edge in the graph represents a dependency, with the indegree of a vertex denoting the number of packages that depend on it and the outdegree representing the number of dependencies of the package.\n\nWe also developed a linear regression model to predict build times based on input derivations, enabling us to incorporate this information into our solver when it’s unavailable in Hydra. This predictive modeling greatly enhances our ability to estimate build durations for packages not built by Hydra, particularly those outside of Nixpkgs. By integrating these predictive insights with our MILP-based scheduling strategy, we aim to create a more robust nix build scheduler.",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/DjjfWsvl/",
+          "proposal_id": null,
+          "short_description": "In evanix we explored making the scheduling of Nix builds more controllable. in particular, we look into implementing constraints such as –max-builds...",
+          "slug": "evanix-nix-build-scheduler",
+          "status": "completed",
+          "student_name": "Sinan Mohd",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "evanix: Nix Build Scheduler"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/nixos-foundation/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://matrix.to/#/#community:nixos.org",
+    "mailing_list": "https://discourse.nixos.org/"
+  },
+  "social": {
+    "blog": "https://chaos.social/@nixos_org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/nixos_org/",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.773Z"
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "id": "692251e853dd9d7326d33ec7",
+  "slug": "tardis-sn",
+  "name": "TARDIS SN",
+  "category": "Science and medicine",
+  "description": "Exploring supernovae made easy",
+  "image_url": "https://lh3.googleusercontent.com/tznjlg0HUYe_hQPRwpUOSU8OnCpJp7mSlNIy0Xp3ibmdk9nSTBgYQlRc0RwO-CMHwavCN6YZDTaUpeD0xdWc89YotSEwJzAsfGI7AY0pQp4tQA",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/tardis-sn.webp",
+  "logo_r2_url": null,
+  "url": "https://tardis-sn.github.io/tardis/",
+  "active_years": [
+    2016,
+    2020,
+    2021
+  ],
+  "first_year": 2016,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "python",
+    "cython",
+    "numba",
+    "numpy",
+    "jupyter",
+    "pandas"
+  ],
+  "topics": [
+    "astronomy",
+    "monte carlo methods",
+    "radiative transfer",
+    "global optimization",
+    "science",
+    "supernova",
+    "visualization",
+    "big data",
+    "simulation",
+    "astrophysics"
+  ],
+  "total_projects": 9,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": 3,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 3,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 3,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 3,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 9
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/mishinma/011aa5ed9ce417c3f514027394c21300",
+          "description": "<p>For running its simulations TARDIS needs atomic data, such as atomic masses, ionization energies, \nlevels and transitions. This data is available from a number of known sources. In order for TARDIS to be\nable to use the data, it should be downloaded, stored in a database, and converted to the HDF5 format. \nThis task is currently done by the <code>tardisatomic</code> package; however, this package has some underlying \nissues. It has no clear workflow and the existing database structure is difficult to modify and maintain. \nThese problems complicate adding and processing data from new sources.</p>\n<p>If my project is accepted, I will implement a new package named <code>carsus</code> (the name suggested by \nthe collaboration) that will be deprived of the issues inherent in <code>tardisatomic</code>. The new package will \nhave clear workflow, sound database structure and flexible input/output modules.</p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6699840280985600/",
+          "proposal_id": null,
+          "short_description": "For running its simulations TARDIS needs atomic data, such as atomic masses, ionization energies, \nlevels and transitions. This data is available...",
+          "slug": "carsus-tardis-support-package-for-creating-atomic-datasets",
+          "status": "completed",
+          "student_name": "mishinma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Carsus - TARDIS support package for creating atomic datasets."
+        },
+        {
+          "code_url": "https://github.com/ftsamis/tardis/wiki/%5BGSoc-2016%5D-Fotis-Tsamis'-Work-Product-and-devlog",
+          "description": "<p>Currently, TARDIS uses the pyyaml library to parse the configuration file and a complex, custom-made validator to validate it. The issues with the configuration system in its current form are many:</p>\n<ol>\n<li>Many conversions that should be done in the parsing phase are done in the validator.</li>\n<li>The validator implements many concepts which are already implemented in existing validating libraries.</li>\n<li>The validator comes with a custom schema which adds nothing to already existing well-defined and broadly-used schemas.</li>\n<li>The code which processes different input models for the construction of the final Configuration object is poorly-written.</li>\n</ol>\n<p>My project proposal is to improve the way the configuration system works by:</p>\n<ol>\n<li>Taking full advantage of the capabilities of pyyaml, by doing all the required type conversions in the parsing phase.</li>\n<li>Replacing both the validator and the schema with an existing, broadly-used library and format and using the library to the maximum extent in order to cover all the needs.</li>\n<li>Replacing the after-parsing code which processes different input models with a well-defined, easily extensible (with more input model formats) system.</li>\n<li>Documenting and testing all of the above.</li>\n</ol>\n",
+          "difficulty": "advanced",
+          "id": "proj_tardis-sn_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5656164301799424/",
+          "proposal_id": null,
+          "short_description": "Currently, TARDIS uses the pyyaml library to parse the configuration file and a complex, custom-made validator to validate it. The issues with the...",
+          "slug": "improvement-of-the-tardis-configuration-system",
+          "status": "completed",
+          "student_name": "ftsamis",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Improvement of the TARDIS configuration system"
+        },
+        {
+          "code_url": "https://github.com/tardis-sn/tardis/pulls?utf8=%E2%9C%93&q=author%3Akarandesai-96%20created%3A%222016-03-26..2016-08-22%22%20",
+          "description": "<p>TARDIS has scientific code. While many people working together on various functionalities - there are possibilities for anything to break and go undetected for a long time. It might misbehave at times and detecting it would get very difficult at times. Testing a scientific code like TARDIS is crucial - apart from the main code base, the test suite needs to be up-to-date and should have a good code coverage.  This project focuses on development of an extensive test suite - which will stretch and probe many functionalities of TARDIS to make sure everything functions properly. But these test setups are very complex, hence testing is slow and resource extensive.\nSolution - this testing project ! Enabling slow tests to be run at regular intervals on a dedicated server, generating comparison plots and notification of test status through email - these are the assets which are targeted to be added with TARDIS by completion of the project.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_tardis-sn_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4796129849901056/",
+          "proposal_id": null,
+          "short_description": "TARDIS has scientific code. While many people working together on various functionalities - there are possibilities for anything to break and go...",
+          "slug": "extensive-test-suite-for-tardis",
+          "status": "completed",
+          "student_name": "Karan Desai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Extensive Test Suite for TARDIS"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6195713125908480/"
+    },
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://jordi5.github.io/gsoc20/",
+          "description": "<p>My proposal consist on rewriting the 1DRadialmodel function to work under the Factory method design  pattern.   This  method decouples  classes  from  constructors,  which would give a wider range of option to what the Class can do or be and delegating to Subclasses, instead of defining new Class for every difference the created products might present.</p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5699342318436352/",
+          "proposal_id": null,
+          "short_description": "My proposal consist on rewriting the 1DRadialmodel function to work under the Factory method design  pattern.   This  method decouples  classes  from...",
+          "slug": "tardis-code-reestructure-with-factory-method",
+          "status": "completed",
+          "student_name": "Jordi Eguren Brown",
+          "student_profile": null,
+          "tags": [],
+          "title": "TARDIS Code reestructure with factory method"
+        },
+        {
+          "code_url": "https://epassaro.github.io/gsoc20",
+          "description": "<p>TARDIS relies on Carsus to manage the atomic data necessary to run the simulations. These data comes from a wide variety of sources (laboratories) and measurements of the same quantity usually differ depending on the source. The effect of these uncertainties on the synthethic spectra is yet unknown.</p>\n<p>This project will provide new tools and enhancements in order to make easier working with different atomic files and compare the resulting spectra produced by them.</p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5301481479077888/",
+          "proposal_id": null,
+          "short_description": "TARDIS relies on Carsus to manage the atomic data necessary to run the simulations. These data comes from a wide variety of sources (laboratories)...",
+          "slug": "comparing-tardis-spectra-generated-with-different-atomic-data-sources",
+          "status": "completed",
+          "student_name": "Ezequiel Pássaro",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Comparing TARDIS spectra generated with different atomic data sources"
+        },
+        {
+          "code_url": "https://jaladh-singhal.github.io/gsoc20",
+          "description": "<p>A GUI is very essential for TARDIS so as to allow researchers to easily investigate the important information about a simulated supernova model, without knowing its exact inner data structure. But the existing TARDIS GUI is outdated and is implemented in Qt which is no longer an ideal framework. These days, since most of the analysis work is done in Jupyter Notebooks, thus TARDIS GUI can also be brought to the notebooks by using Jupyter widgets and interactive plotting libraries.</p>\n<p>Moreover, the existing GUI is limited in its functionality, providing only shell &amp; line information. There is lot of other information that can be analyzed from a simulation model which will be made accessible under this project, by means of new widgets.  Besides, this project also aims to make it easier for users to try out these widgets themselves. For this, several example notebooks will be embedded in docs, <em>thereby showcasing the unprecedented possibilities with TARDIS!</em></p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5967738750631936/",
+          "proposal_id": null,
+          "short_description": "A GUI is very essential for TARDIS so as to allow researchers to easily investigate the important information about a simulated supernova model,...",
+          "slug": "jupyter-notebook-widgets-for-tardis",
+          "status": "completed",
+          "student_name": "Jaladh_Singhal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Jupyter Notebook Widgets for TARDIS"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6024226160508928/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://sites.google.com/view/jenny-gsoc2021",
+          "description": "<p>TARDIS is an open-source code for rapid spectral modelling of supernovae using Monte Carlo methods. To run the simulation model, TARDIS requires some information such as velocity of shell structure, density, abundances, etc. These input parameters determine the composition of supernovae that the user wishes to explore.</p>\n<p>At present, the model composition is initialized by a configuration YAML file or a CSVY format file and it is impractical to adjust the composition without the two files. Therefore, users have to edit text files manually in order to change the model composition, which tends to be inefficient and inconvenient for them. In this case, a custom abundance widget is proposed to provide a more convenient way in supernovae exploration. The project aims on abundance customization and allows the user to develop custom model compositions graphically, which can then also be output to a file.</p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6713229073448960/",
+          "proposal_id": null,
+          "short_description": "TARDIS is an open-source code for rapid spectral modelling of supernovae using Monte Carlo methods. To run the simulation model, TARDIS requires some...",
+          "slug": "custom-abundance-widget",
+          "status": "completed",
+          "student_name": "Yizheng Yu",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Custom Abundance Widget"
+        },
+        {
+          "code_url": "https://github.com/DhruvSondhi/GSOC-21-TARDIS-Simulation-Logging",
+          "description": "<p><strong>TARDIS</strong> logs the simulation data generated using <code>montecarlo_logger.py</code> module. But it could be further improved by having user-specific capabilities as well as having a newer logging feature that can allow for the logging of <em>packet specific properties</em>. Through this project, I wish to add the proposed functionality to the mentioned module &amp; increase the logging potential for <strong>TARDIS</strong>.</p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5752124545171456/",
+          "proposal_id": null,
+          "short_description": "TARDIS logs the simulation data generated using montecarlo_logger.py module. But it could be further improved by having user-specific capabilities as...",
+          "slug": "improving-tardis-simulation-logging-framework",
+          "status": "completed",
+          "student_name": "Dhruv Sondhi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving TARDIS Simulation Logging Framework"
+        },
+        {
+          "code_url": "https://sites.google.com/view/atharvaarya/google-summer-of-code-2021-report",
+          "description": "<p>TARDIS displays logs during the simulation which consists of values of different mathematical variables and the state of the simulation. This is done so that the user can keep track of the convergence of the simulation. \nHowever, the user experience can be enhanced by displaying the convergence in plots in real-time. This project aims to provide convergence plots and progress bars to display the convergence of the simulation in real-time. \nApart from that, this project also aims to complete the <a href=\"https://github.com/tardis-sn/tardis/projects/14\" target=\"_blank\">Monte Carlo Visualisation Project</a> that was put on hold.</p>\n",
+          "difficulty": null,
+          "id": "proj_tardis-sn_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5844398931181568/",
+          "proposal_id": null,
+          "short_description": "TARDIS displays logs during the simulation which consists of values of different mathematical variables and the state of the simulation. This is done...",
+          "slug": "visualization-tools-for-tardis",
+          "status": "completed",
+          "student_name": "Atharva Arya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Visualization Tools for TARDIS"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4742904236474368/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "http://gitter.im/tardis-sn/gsoc",
+    "mailing_list": "https://groups.google.com/forum/#!forum/tardis-gsoc-2016"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/tardis_sn",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.323Z"
+  }
+}

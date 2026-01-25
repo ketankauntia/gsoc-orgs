@@ -1,0 +1,208 @@
+{
+  "id": "692251e453dd9d7326d33e88",
+  "slug": "prometheus-operator",
+  "name": "Prometheus-Operator",
+  "category": "Infrastructure and cloud",
+  "description": "Managing Prometheus atop Kubernetes",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/prometheus-operator/dpytdkpyfejrot7o-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/prometheus-operator.webp",
+  "logo_r2_url": null,
+  "url": "https://prometheus-operator.dev/",
+  "active_years": [
+    2024,
+    2025
+  ],
+  "first_year": 2024,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "prometheus",
+    "go",
+    "kubernetes",
+    "kubernetes operators"
+  ],
+  "topics": [
+    "monitoring",
+    "cloud",
+    "observability",
+    "Kubernetes Operator"
+  ],
+  "total_projects": 5,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": 2
+    },
+    "total_students": 5
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1-zSPnbbT6ktLTpoUi0SekO9VvAnTba8vtUI9vV3UVaU/edit?usp=sharing",
+          "description": "This proposal aims to enhance the ScrapeConfig CRD to achieve stability and usability. Currently in alpha, the CRD lacks the originally intended 1:1 relationship with Prometheus configurations. The project outlines a roadmap to address these issues, focusing on adding necessary fields, extending support for service discoveries, and implementing thorough testing. The plan includes a strategy for graduating the CRD to beta and eventually stable versions, following Kubernetes API versioning guidelines.\n\nDeliverables:\nUpdated ScrapeConfig CRD with added fields to support service discoveries and other configuration options.\nThorough test coverage for the added fields and overall functionality.\nGraduation of the ScrapeConfig CRD to beta stage, with documentation outlining the upgrade process.\nEnhanced documentation providing up-to-date information on the CRD and migration guides for users upgrading if necessary.",
+          "difficulty": null,
+          "id": "proj_prometheus-operator_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/PHIMDCiF/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to enhance the ScrapeConfig CRD to achieve stability and usability. Currently in alpha, the CRD lacks the originally intended 1:1...",
+          "slug": "extending-the-scrapeconfig-crd-surface",
+          "status": "completed",
+          "student_name": "M Viswanath Sai",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "kubernetes",
+            "ui"
+          ],
+          "title": "Extending The ScrapeConfig CRD Surface"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1dzF-W2ZQ4AiOG6x93aOahJvpxAEc_mZm430rNcFI8AU/edit?usp=sharing",
+          "description": "This project is about designing and implementing the deployment of Prometheus Agent as\nDaemonSet. Currently, Prometheus Agent can only be deployed as StatefulSet, which could\nbe considered as “cluster-wide” strategy, meaning one or several high-availability\nPrometheus Agents are responsible for scraping metrics of the whole cluster. Though this\nworks well for many use cases, some use cases may indeed require a “node-specific”\nstrategy (DaemonSet), where each Prometheus Agent only scrapes the metrics of the node\nit’s on. This proposal will discuss the advantages and tradeoffs of this deployment mode, list\nthe key implementation issues and propose a solution approach for each issue.",
+          "difficulty": null,
+          "id": "proj_prometheus-operator_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/RD3xNW8g/",
+          "proposal_id": null,
+          "short_description": "This project is about designing and implementing the deployment of Prometheus Agent as DaemonSet. Currently, Prometheus Agent can only be deployed as...",
+          "slug": "daemonset-deployment-for-prometheus-agent",
+          "status": "completed",
+          "student_name": "Ha Anh Vu",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "DaemonSet deployment for Prometheus Agent"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1u6o88TZg4pejyFLkhXuwd2C88QjqkDSYimaxc6-BCsc/edit?usp=sharing",
+          "description": "The Prometheus Operator plays a pivotal role in deploying, configuring, and managing Prometheus instances within Kubernetes clusters. Despite its significance, fully leveraging its functionalities remains challenging due to outdated and ambiguous documentation.\n\nThis proposal aims to address this issue by identifying the current shortcomings in the documentation and development processes. It will outline strategies to revamp the documentation, ensuring clarity and relevance. Additionally, emphasis will be placed on establishing sustainable practices to prevent future documentation difficulties.\n\nBy implementing these improvements, the goal is to elevate the Prometheus Operator documentation to a level where users can easily engage with the project. This initiative seeks to highlight the importance of Prometheus Operator while fostering accessibility and usability for all users.",
+          "difficulty": null,
+          "id": "proj_prometheus-operator_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/NIVc2xLU/",
+          "proposal_id": null,
+          "short_description": "The Prometheus Operator plays a pivotal role in deploying, configuring, and managing Prometheus instances within Kubernetes clusters. Despite its...",
+          "slug": "prometheus-operator-websitedocumentation-revamp",
+          "status": "completed",
+          "student_name": "S Ashwin",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Prometheus Operator - Website/Documentation Revamp"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/prometheus-operator/"
+    },
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The project aims to bring the Prometheus Agent's DaemonSet mode in Prometheus Operator to full production readiness. This involves addressing missing functionalities, improving configuration validation, enhancing reliability, and providing comprehensive documentation. The ultimate goal is to offer a scalable, efficient, and fully supported way to run Prometheus Agent across Kubernetes nodes.\n\nThis is achieved by integrating remaining features like using CEL for CRD validation to provide immediate feedback along with adding runtime checks as a fallback for older Kubernetes versions.\nFurthermore, Investigating and potentially implementing EndpointSlice for scalability and extending integration tests to multi-node Kind clusters.\nFinally, adding detailed documentation and example manifests.",
+          "difficulty": null,
+          "id": "proj_prometheus-operator_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/hZAZORpk",
+          "proposal_id": "yQrYSijm",
+          "short_description": "The project aims to bring the Prometheus Agent's DaemonSet mode in Prometheus Operator to full production readiness. This involves addressing missing...",
+          "slug": "completing-the-daemonset-deployment-model-for-prometheus-operator",
+          "status": "in-progress",
+          "student_name": "Dhruv puri",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Completing the DaemonSet deployment model for  Prometheus Operator"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to implement status subresource in Service Monitor, Pod\nMonitor, Probes, AlertmanagerConfig, PrometheusRule and ScrapeConfig\nCustom Resource. Currently, these CRs lack the status subresource, implementing\nit will increase the observability, as it enables users and controllers to observe the\ncurrent state of the resource, for users having access to the status enhances the\nuser experience by providing transparency and visibility into the state of resources.",
+          "difficulty": null,
+          "id": "proj_prometheus-operator_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/aUhE7h7S",
+          "proposal_id": "dLqLzYBN",
+          "short_description": "The project aims to implement status subresource in Service Monitor, Pod Monitor, Probes, AlertmanagerConfig, PrometheusRule and ScrapeConfig Custom...",
+          "slug": "status-for-configuration-objects",
+          "status": "in-progress",
+          "student_name": "Yash Kumar Patel",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Status for configuration objects"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/prometheus-operator"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": "https://github.com/prometheus-operator/community/blob/main/mentoring/gsoc/2025/project_ideas.md",
+    "irc_channel": "https://kubernetes.slack.com/archives/CFFDS2Z7F",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://kubernetes.slack.com/archives/CFFDS2Z7F",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/PromOperator",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.026Z"
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "id": "692251e953dd9d7326d33ed7",
+  "slug": "the-netbsd-foundation",
+  "name": "The NetBSD Foundation",
+  "category": "Operating systems",
+  "description": "Of course it runs NetBSD",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-netbsd-foundation/gi3vozsqpecopqku-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-netbsd-foundation.webp",
+  "logo_r2_url": null,
+  "url": "https://www.NetBSD.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "networking",
+    "kernel",
+    "bsd",
+    "c programming",
+    "security",
+    "arm",
+    "network stack",
+    "virtualization",
+    "filesystems",
+    "mips",
+    "c",
+    "bsd make",
+    "make",
+    "shell script",
+    "bsd unix",
+    "unix"
+  ],
+  "topics": [
+    "operating systems",
+    "package system",
+    "package management",
+    "free and open source software",
+    "general purpose os",
+    "real unix",
+    "kernel",
+    "packaging",
+    "userland",
+    "unix",
+    "bsd"
+  ],
+  "total_projects": 38,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.8,
+    "projects_by_year": {
+      "year_2016": 4,
+      "year_2017": 3,
+      "year_2018": 4,
+      "year_2019": 7,
+      "year_2020": 6,
+      "year_2021": 0,
+      "year_2022": 5,
+      "year_2023": 2,
+      "year_2024": 4,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": 4,
+      "year_2017": 3,
+      "year_2018": 4,
+      "year_2019": 7,
+      "year_2020": 6,
+      "year_2021": 0,
+      "year_2022": 5,
+      "year_2023": 2,
+      "year_2024": 4,
+      "year_2025": 3
+    },
+    "total_students": 38
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/ycui1984/posixtestsuite",
+          "description": "<p>Open Posix benchmark suite (<a href=\"http://posixtest.sourceforge.net/\" target=\"_blank\">http://posixtest.sourceforge.net/</a>) is designed to test whether an operating system respects the standard of POSIX. It is an open source test suite with the goal of performing conformance, functional, stress, and performance testing of the functions described in the IEEE Std 1003.1-2001 System Interfaces specification. The test suite will be developed independent of particular implementations of the POSIX APIs. It is configurable to test any implementation by specifying include and library information. The purpose of this benchmark suite is the creation of tests that depend purely on POSIX APIs, thus leaving open the possibility of OS independence, although initial development is on Linux. NetBSD is one of these major stream operating systems. Thus, it would be cool if we can use this suite to test NetBSD, which also drives the evolvement of operating systems.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5669314954788864/",
+          "proposal_id": null,
+          "short_description": "Open Posix benchmark suite (http://posixtest.sourceforge.net/) is designed to test whether an operating system respects the standard of POSIX. It is...",
+          "slug": "posix-test-suite-compliance",
+          "status": "completed",
+          "student_name": "charles cui",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "ux"
+          ],
+          "title": "POSIX Test Suite Compliance"
+        },
+        {
+          "code_url": "https://github.com/coypoop/npfUI",
+          "description": "<p>NetBSD has a unique packet filter and dynamic firewall which are not widely used in part due to the absence of a user-friendly interface.\nThis proposal is for creating such a user-friendly interface, and also resolving some of the other expected difficulties by users: the initial installation and setting up the rest of the networking features.\nThe potential feature list of such a project is extremely large, so instead a second goal of allowing and documenting the creation of extensions was added.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5074692033478656/",
+          "proposal_id": null,
+          "short_description": "NetBSD has a unique packet filter and dynamic firewall which are not widely used in part due to the absence of a user-friendly interface.\nThis...",
+          "slug": "npf-and-blacklistd-web-interface",
+          "status": "completed",
+          "student_name": "maya",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "NPF and blacklistd web interface"
+        },
+        {
+          "code_url": "https://github.com/iamleot/pkgsrc/commits/debugpkg?author=iamleot",
+          "description": "<p>The ability to debug software is important not just when developing\nbut also when using it, e.g. post-mortem analysis.\nNetBSD provides <code>MKDEBUG</code> and <code>MKDEBUGLIB</code> variables that can be set in\nmk.conf in order to split debugging symbols for user-land applications\nand libraries. Resulting split debugging symbols are then available\nvia the <code>debug.tgz</code> and <code>xdebug.tgz</code> installation sets.\nNetBSD also provides Rump and to some extent also <code>ddb(4)</code>,\n<code>ktrace(1)</code> and DTrace that ease analysis, tracing and debugging.\nAll these features make NetBSD a great operating system in this regard.\nHowever, in pkgsrc it is possible only to generate packages with\ndebugging symbols by providing proper <code>CFLAGS</code> for debugging and\nsetting the <code>INSTALL_UNSTRIPPED</code> flag. This make debugging, especially\nfor binary packages users, not very feasible.</p>\n<p>The purpose of this project is to implement a mechanism for pkgsrc\nsimilar to the one provided by RPM and Debian package manager to\nsplit debugging symbols for a <code>&lt;package&gt;</code> in a separate package\n<code>&lt;package&gt;-{debuginfo,dbg}</code> (that just contains debugging symbols).</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5609947500904448/",
+          "proposal_id": null,
+          "short_description": "The ability to debug software is important not just when developing\nbut also when using it, e.g. post-mortem analysis.\nNetBSD provides MKDEBUG and...",
+          "slug": "split-debug-symbols-for-pkgsrc-builds",
+          "status": "completed",
+          "student_name": "leot",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Split debug symbols for pkgsrc builds"
+        },
+        {
+          "code_url": "http://hrishikeshgoyal.blogspot.in/2016/08/blog-post.html?view=sidebar",
+          "description": "<p>NetBSD currently doesn’t support Ext4fs. The aim of this project is to extend the code of Ext2fs to add Ext4fs read-only support. Additionally, the new functionality is supposed to be implemented in new files rather than making invasive changes in the files that are shared to some extent with UFS.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5183714946449408/",
+          "proposal_id": null,
+          "short_description": "NetBSD currently doesn’t support Ext4fs. The aim of this project is to extend the code of Ext2fs to add Ext4fs read-only support. Additionally, the...",
+          "slug": "implement-ext4fs-support-in-readonly-mode",
+          "status": "completed",
+          "student_name": "hrishikesh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implement Ext4fs support in ReadOnly mode"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6363144104443904/"
+    },
+    "year_2017": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/iamleot/pkgsrc/compare/cb3b0aa4847aae82890947240bd9cec94ec3feb1...5e901b632927a3df75827b1e6e269af785025ab3",
+          "description": "<p>Multi-packages support permits the generation of multiple binary packages\nfrom a single pkgsrc package.\nThis feature is needed to generate <code>&lt;package&gt;-debugpkgs</code> (packages\ncontaining debug symbols for <code>&lt;package&gt;</code>); improve organization and/or\navoid code duplication (e.g. <code>tex-*</code> packages and their corresponding\n<code>tex-*-doc</code> packages) and avoid extract, configure phases of certain\npackages multiple times.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5493508521590784/",
+          "proposal_id": null,
+          "short_description": "Multi-packages support permits the generation of multiple binary packages\nfrom a single pkgsrc package.\nThis feature is needed to generate...",
+          "slug": "add-multi-packages-support-to-pkgsrc",
+          "status": "completed",
+          "student_name": "Leonardo Taccari",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add multi-packages support to pkgsrc"
+        },
+        {
+          "code_url": "http://coypu.sdf.org/2017-08-29-LFS",
+          "description": "<p>Log-structured filesystem (LFS) is a reliable filesystem that suffers from critical bugs preventing its use. It's time to fix those.\nThe project aim is to fix deadlocks and races under heavy use and low free space, and modernize the codebase.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5000331385634816/",
+          "proposal_id": null,
+          "short_description": "Log-structured filesystem (LFS) is a reliable filesystem that suffers from critical bugs preventing its use. It's time to fix those.\nThe project aim...",
+          "slug": "lfs-cleanup",
+          "status": "completed",
+          "student_name": "Maya Rashish",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "LFS cleanup"
+        },
+        {
+          "code_url": "https://bumblebeesky.tumblr.com/post/164549873777/wrapping-things-up",
+          "description": "<p>This project aims at making Anita, a tool for automated testing of NetBSD, modular, provide support for other virtual machine systems like GXemul and Virtualbox and support testing for as many releases/ports (like NetBSD/evbarm-earmv7hf etc.) as possible. This also includes building releases, testing them and debugging the system files (written in C) to make them work. Currently, Anita only has support for qemu (and experimental support for running NetBSD as Xen DomU). Unlike BSD, Linux has a kernel module known as KVM, which allows a user space program to utilize the hardware virtualization features of various processors and can be utilized by qemu to provide “KVM acceleration” when the target architecture is the same as host architecture. The lack of such support makes qemu really slow on NetBSD. Testing system installation on a wide variety of platforms is very crucial for any organisation that’s into OS business. It can be a frustrating task to do that manually, but, if neglected can be a make or break situation for the OS (adoption/marketing). Automated testing with Anita makes the job a cakewalk. Support for Xen and Virtualbox will further enhance the capabilities of Anita.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5311595181768704/",
+          "proposal_id": null,
+          "short_description": "This project aims at making Anita, a tool for automated testing of NetBSD, modular, provide support for other virtual machine systems like GXemul and...",
+          "slug": "make-anita-support-multiple-virtual-machine-systems",
+          "status": "completed",
+          "student_name": "Utkarsh Anand",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Make Anita support multiple virtual machine systems"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5856162406727680/"
+    },
+    "year_2018": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/R3x/src/tree/kasan",
+          "description": "<p>Port and Integrate the Kernel Address SANitizer(KASan) in the NetBSD kernel for amd64. Add a new kernel option that will compile the kernel with KASan. Also run Automated Testing Framework(ATF) tests against the kernel and report the bugs.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5728676100440064/",
+          "proposal_id": null,
+          "short_description": "Port and Integrate the Kernel Address SANitizer(KASan) in the NetBSD kernel for amd64. Add a new kernel option that will compile the kernel with...",
+          "slug": "implementing-kernel-address-sanitizer-kasan-in-the-netbsd-kernel",
+          "status": "completed",
+          "student_name": "Siddharth",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing Kernel Address Sanitizer (KASan) in the NetBSD kernel"
+        },
+        {
+          "code_url": "https://github.com/plusun/src",
+          "description": "<p>libFuzzer is a popular fuzzing tool both in research area and industry. In the development of NetBSD, there would be some potential bugs which are not easy to find by programmers themselves. So, integration of fuzzing tool like libFuzzer is a good choice to find bugs in NetBSD so that programmers can focus more on developing and debugging. This proposal tries to integrate the libFuzzer into NetBSD and try to find some bugs.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_the-netbsd-foundatio_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6215991008690176/",
+          "proposal_id": null,
+          "short_description": "libFuzzer is a popular fuzzing tool both in research area and industry. In the development of NetBSD, there would be some potential bugs which are...",
+          "slug": "integrate-libfuzzer-with-the-basesystem",
+          "status": "completed",
+          "student_name": "Yang Zheng",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate libFuzzer With the Basesystem"
+        },
+        {
+          "code_url": "https://github.com/NBens/TestsTrackingSystem",
+          "description": "<p>This project aims for :\nCreating a tool that takes XML Test results , generated by the Automated Testing Framework (ATF), and inserts it to a well-designed PostgreSQL Database.\nBuilding a website that shows statistics based on the data from the PostgreSQL database, and that enables dedicated queries in a simple way.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6241075161202688/",
+          "proposal_id": null,
+          "short_description": "This project aims for :\nCreating a tool that takes XML Test results , generated by the Automated Testing Framework (ATF), and inserts it to a...",
+          "slug": "sql-database-for-atf-tests-results-with-online-query-and-statistics-page",
+          "status": "completed",
+          "student_name": "Nizar Benshaqi",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "SQL Database for ATF tests results with online query and statistics page"
+        },
+        {
+          "code_url": "https://github.com/kmotavalli/pkgsrc/commit/024dbe1782933e3e20dd6b71b261fef80c8b3e5c",
+          "description": "<p>using Version Control Systems to keep track of system configuration changes in package upgrades</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4858976697057280/",
+          "proposal_id": null,
+          "short_description": "using Version Control Systems to keep track of system configuration changes in package upgrades",
+          "slug": "configuration-files-versioning-in-pkgsrc",
+          "status": "completed",
+          "student_name": "Keivan Motavalli",
+          "student_profile": null,
+          "tags": [],
+          "title": "configuration files versioning in pkgsrc"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5928349130031104/"
+    },
+    "year_2019": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://github.com/SauravPrakash98/netbsd-src/tree/build_1",
+          "description": "<p>NetBSD currently has good support for Allwinner (\"Sunxi\") family SoCs and some support for SoCs from Amlogic (\"meson\"), Rockchip, and NVIDIA (\"Tegra\"). This project is aimed at extending NetBSD support to Hummingboard Pulse. Hummingboard Pulse has i.MX8M Dual/Quad core ARM Cortex A53 up to 1.5Ghz (with ARM M4 GPP) marketed as a modular fanless mini computer, to be integrated with larger networks or systems, especially in the area of IOT development.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6347947199954944/",
+          "proposal_id": null,
+          "short_description": "NetBSD currently has good support for Allwinner (\"Sunxi\") family SoCs and some support for SoCs from Amlogic (\"meson\"), Rockchip, and NVIDIA...",
+          "slug": "porting-netbsd-to-hummingboard-pulse",
+          "status": "completed",
+          "student_name": "Saurav Prakash",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Porting NetBSD to HummingBoard Pulse"
+        },
+        {
+          "code_url": "https://github.com/jsonhigh/gsoc-argon2-src",
+          "description": "<p>NetBSD provides a number of hashing algorithms related to local password management. Algorithms cur-\nrently provided are DES, MD5, SHA1, and Blowfish. This project seeks to augment the existing system\nwith the Argon2 hashing algorithm, a modern, memory-hard algorithm and winner of the Password Hash-\ning Competition (PHC).</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5433671824179200/",
+          "proposal_id": null,
+          "short_description": "NetBSD provides a number of hashing algorithms related to local password management. Algorithms cur-\nrently provided are DES, MD5, SHA1, and...",
+          "slug": "incorporation-of-argon2-password-hashing-algorithm-into-netbsd",
+          "status": "completed",
+          "student_name": "Jason High",
+          "student_profile": null,
+          "tags": [],
+          "title": "Incorporation of Argon2 Password Hashing Algorithm into NetBSD"
+        },
+        {
+          "code_url": "https://github.com/R3x/syzkaller/tree/netbsd-gsoc-19",
+          "description": "<p>Improve support for NetBSD kernel fuzzing in Syzkaller kernel fuzzer and add support for fuzzing other kernel subsystems.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6126495280398336/",
+          "proposal_id": null,
+          "short_description": "Improve support for NetBSD kernel fuzzing in Syzkaller kernel fuzzer and add support for fuzzing other kernel subsystems.",
+          "slug": "enhancing-syzkaller-support-for-netbsd",
+          "status": "completed",
+          "student_name": "Siddharth Muralee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Syzkaller support for NetBSD"
+        },
+        {
+          "code_url": "https://github.com/sh4nnu/clang/tree/gsoc-netbsdKNF",
+          "description": "<p>Add clang-format configuration ‘NetBSD’ reflecting  KNF (Kernel Normal Form) NetBSD style and upstream it to the LLVM project. Find and specify missing style rules in clang-format based on the /usr/share/misc/style file. Find missing clang-format rules demanded by the NetBSD style and implement these rules in the upstream tool, and integrate it with NetBSD distribution, shipping it with MKLLVM=yes.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5564812057116672/",
+          "proposal_id": null,
+          "short_description": "Add clang-format configuration ‘NetBSD’ reflecting  KNF (Kernel Normal Form) NetBSD style and upstream it to the LLVM project. Find and specify...",
+          "slug": "add-knf-netbsd-style-clang-format-configuration",
+          "status": "completed",
+          "student_name": "Manikishan Ghantasala",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add KNF (NetBSD style) clang-format configuration"
+        },
+        {
+          "code_url": "https://gist.github.com/Freakqency/ad7dcca7fd8b3a1a689abb8e4d2bdb74",
+          "description": "<p>Port and Integrate DRM ioctl in NetBSD kernel for Linux binaries running in NetBSD. Convert between 32bit and 64bit DRM ioctl calls. Create a test suit to run and test Linux applications in NetBSD.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6537601547239424/",
+          "proposal_id": null,
+          "short_description": "Port and Integrate DRM ioctl in NetBSD kernel for Linux binaries running in NetBSD. Convert between 32bit and 64bit DRM ioctl calls. Create a test...",
+          "slug": "implementation-of-compat_linux-and-compat_netbsd32-drm-ioctls-support-for-netbsd-kernel",
+          "status": "completed",
+          "student_name": "Surya P",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "ux"
+          ],
+          "title": "Implementation of COMPAT_LINUX and COMPAT_NETBSD32 DRM ioctls support for NetBSD kernel"
+        },
+        {
+          "code_url": "https://blog.netbsd.org/tnf/entry/porting_wine_to_amd64_on1",
+          "description": "<p>Inclusion of USER_LDT option in NetBSD kernel allows Wine32\napplications to be run on amd64 architecture. This is useful primarily\nowing to the majority of Windows applications being 32-bit. My work\ninvolves getting the latest version of Wine to compile and run on i386\nand amd64, and building Wine with WoW64 support which will allow\nrunning Wine32 applications on amd64.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6555986825838592/",
+          "proposal_id": null,
+          "short_description": "Inclusion of USER_LDT option in NetBSD kernel allows Wine32\napplications to be run on amd64 architecture. This is useful primarily\nowing to the...",
+          "slug": "porting-wine-to-amd64-architecture-on-netbsd",
+          "status": "completed",
+          "student_name": "Naveen Narayanan",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Porting WINE to amd64 architecture on NetBSD"
+        },
+        {
+          "code_url": "https://github.com/akulpillai/pkgsrc-wip-gsoc2019",
+          "description": "<p>To adapt the TriforceAFL kernel syscall fuzzer to effectively catch and report issues in the NetBSD kernel for amd64. TriforceAFL is a modified version of AFL that supports fuzzing using QEMU's full system emulation. Triforce-for-NetBSD will be a syscall fuzzer built on top of TriforceAFL.\nFuzz the NetBSD kernel and report bugs that were found. Create a pkgsrc package with TriforceAFL-for-NetBSD.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5878693921030144/",
+          "proposal_id": null,
+          "short_description": "To adapt the TriforceAFL kernel syscall fuzzer to effectively catch and report issues in the NetBSD kernel for amd64. TriforceAFL is a modified...",
+          "slug": "adapting-triforceafl-for-netbsd-kernel-fuzzing",
+          "status": "completed",
+          "student_name": "Akul Abhilash Pillai",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Adapting TriforceAFL for NetBSD kernel fuzzing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6058884492427264/"
+    },
+    "year_2020": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/NJnisarg/fuzznetrump",
+          "description": "<p>Carry out fuzzing of various layers and protocols of the Network stack of NetBSD using rumpkernel environment in order to improve the stability of the network stack and test for bugs. The final deliverables will be a set of tests to fuzz different layers and protocols of network stack within rumpkernel, along with a reproducible and extensible framework/interface for adding more tests in the future. The project will have a list of APIs/functions of different protocols like IP, TCP, UDP, ICMP, Ethernet etc. for which fuzz tests would be written. For Example, functions like ip_input, ip_output, udp_input, udp_output, rip_input, rip_output etc. which are for input and output processing for different protocols(and layers).</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6410974778621952/",
+          "proposal_id": null,
+          "short_description": "Carry out fuzzing of various layers and protocols of the Network stack of NetBSD using rumpkernel environment in order to improve the stability of...",
+          "slug": "fuzzing-the-network-stack-of-netbsd-in-a-rumpkernel-environment",
+          "status": "completed",
+          "student_name": "Nisarg Joshi",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Fuzzing the network stack of NetBSD in a rumpkernel environment"
+        },
+        {
+          "code_url": "https://github.com/adityavardhanpadala/rumpsyscallfuzz/tree/gsoc-20",
+          "description": "<p>Integrate a selection of fuzzers with the rumpkernel codebase involving sanitizers for efficient fuzzing of rumpkernel syscalls</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5595677779820544/",
+          "proposal_id": null,
+          "short_description": "Integrate a selection of fuzzers with the rumpkernel codebase involving sanitizers for efficient fuzzing of rumpkernel syscalls",
+          "slug": "rumpkernel-syscall-fuzzing",
+          "status": "completed",
+          "student_name": "Aditya Vardhan Padala",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rumpkernel Syscall Fuzzing"
+        },
+        {
+          "code_url": "https://n0.is/gsoc2020finalreport/",
+          "description": "<p>The library functions popen(3) and system(3) are used to create a new shell process and (in case of popen(3) set up IPC channels to the new process).\nCurrently they are implemented using fork(2), execve(2) and do a bit of astonishing complex internal bookkeeping.\nIt should be possible to simplify both implementations using posix_spawn(3) and associated helper functions.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_the-netbsd-foundatio_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5638715566718976/",
+          "proposal_id": null,
+          "short_description": "The library functions popen(3) and system(3) are used to create a new shell process and (in case of popen(3) set up IPC channels to the new process)....",
+          "slug": "make-system3-and-popen3-use-posix_spawn3-internally",
+          "status": "completed",
+          "student_name": "Nikita Gillmann",
+          "student_profile": null,
+          "tags": [],
+          "title": "Make system(3) and popen(3) use posix_spawn(3) internally"
+        },
+        {
+          "code_url": "https://gist.github.com/apurvanandan1997/d13298c9672c74dc258a85aa9007c1b0",
+          "description": "<p>Integrate the Phoronix Test Suite (PTS) with NetBSD by porting the available test profiles &amp; suites, in order to automate and web-host the regression and performance benchmarking of kernel and userland libraries.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6481344864976896/",
+          "proposal_id": null,
+          "short_description": "Integrate the Phoronix Test Suite (PTS) with NetBSD by porting the available test profiles & suites, in order to automate and web-host the regression...",
+          "slug": "benchmark-netbsd",
+          "status": "completed",
+          "student_name": "Apurva Nandan",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Benchmark NetBSD"
+        },
+        {
+          "code_url": "https://www.github.com/ais2397/sys2syz/tree/gsoc-2020/",
+          "description": "<p>Project involves fixing existing issues related to network stack's support for syzkaller, improve coverage by adding new syscalls and ioctl calls for drivers and fuzzing other interfaces in syzkaller.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6516105780133888/",
+          "proposal_id": null,
+          "short_description": "Project involves fixing existing issues related to network stack's support for syzkaller, improve coverage by adding new syscalls and ioctl calls for...",
+          "slug": "enhance-the-syzkaller-support-for-netbsd",
+          "status": "completed",
+          "student_name": "Ayushi Sharma",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance the syzkaller support for NetBSD"
+        },
+        {
+          "code_url": "https://github.com/NamanJain8/curses",
+          "description": "<p><strong>Curses library</strong> is an important part of the NetBSD operating system as many applications rely on the correct functioning of the library. Performing modifications on the curses library can be difficult because the effects of the change may be subtle and can introduce bugs that are not detected for a long time. This project aims to write a <strong>test suite for the curses library</strong> with support for integration with the automatic testing framework (ATF).</p>\n",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6077997674659840/",
+          "proposal_id": null,
+          "short_description": "Curses library is an important part of the NetBSD operating system as many applications rely on the correct functioning of the library. Performing...",
+          "slug": "curses-library-automated-testing",
+          "status": "completed",
+          "student_name": "Jain Naman",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Curses library automated testing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6156737276542976/"
+    },
+    "year_2021": {
+      "num_projects": 0,
+      "projects": [],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5674199175135232/"
+    },
+    "year_2022": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/VivekKSah/NetBSD_project_2022",
+          "description": "The requirement of this project arises because currently each donation made to NetBSD electronically from PayPal and Stripe are handled manually using Request Tracker and tickets. The person handling the tickets needs to extract the donation details and enter them into the acknowledgement form and send it to the donor. Further the donor can decide if they want to be listed on the public list of donor and inform by a mail. This process involves manual intervention which may result in error and/or delay. Therefore, if an automated system can be made that handles all these tasks, it will speed up the process, reduce errors, and also save time and energy of the person who performed all these tasks.\n\nThe primary goal of this project is to develop a system that automates all these processes : acknowledgement of the donor, storage of donation details in the database(to be created) and updating the public list of donor on the official NetBSD website based on the response received form the donor through the online feedback form.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/UPlZRXS6/",
+          "proposal_id": null,
+          "short_description": "The requirement of this project arises because currently each donation made to NetBSD electronically from PayPal and Stripe are handled manually...",
+          "slug": "automating-donor-acknowledgement-and-information-storage-updation",
+          "status": "completed",
+          "student_name": "Vivek Kumar Sah",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Automating donor acknowledgement and information storage & updation"
+        },
+        {
+          "code_url": "https://github.com/MakwanaVihas/gsoc_2k22",
+          "description": "Currently, the NetBSD kernel supports a range of different wireless\ndevices. But it lacks a driver for the devices based on RTL8821AU chipset (e.g., TP-Link Archer T2U Nano, product\nid 0x011e). Driver for that chipset is available in FreeBSD, named “rtwn”.\nSo, my project will be to port that driver to NetBSD and convert it to\nthe new wifi stack.\nIf everything goes well and I finish the porting + conversion to the new\nwifi stack quickly, then I also plan to introduce another driver for devices\nbased on MediaTek MT7601U chipset.\n\nI look forward to contributing to the NetBSD project even after GSoC concludes.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/yO4fTbNn/",
+          "proposal_id": null,
+          "short_description": "Currently, the NetBSD kernel supports a range of different wireless devices. But it lacks a driver for the devices based on RTL8821AU chipset (e.g.,...",
+          "slug": "introduce-a-new-wi-fi-driver",
+          "status": "completed",
+          "student_name": "Vihas Makwana",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Introduce a new Wi-Fi driver"
+        },
+        {
+          "code_url": "https://github.com/cosmologistPiyush/emul-linux-syscalls/blob/trunk/GSoC22-TNF-FinalSubmission.md",
+          "description": "The NetBSD Kernel has an in-kernel translation layer that helps run Linux ABIs compiled for Linux under compat_linux. Not all the system calls have not been implemented under compat_linux, therfore this project is about identifying those missing system calls and implementing them.\nFor my project proposal, I have chosen sendfile(2) and splice(2). I will write a general version of splice(2) in the Linux compat layer and have sendfile(2) use that very splice(2) for its functionality as well.\nA long-term plan for this project also includes implementing something even more generic, like splicev() as a core NetBSD kernel primitive which will end up being the backing function for both splice(2) and sendfile(2). The splicev() function would take both operation tags and specific arguments for that paritcular operation when invoked.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/37Q8OZNU/",
+          "proposal_id": null,
+          "short_description": "The NetBSD Kernel has an in-kernel translation layer that helps run Linux ABIs compiled for Linux under compat_linux. Not all the system calls have...",
+          "slug": "emulating-missing-linux-syscalls",
+          "status": "completed",
+          "student_name": "Piyush Sachdeva",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Emulating missing linux syscalls"
+        },
+        {
+          "code_url": "https://github.com/CCLDArjun/netbsd-src/pull/1/files",
+          "description": "inetd enhancements to allow it to babysit general daemons, not just networking ones. To make it a service management program for starting, stopping and managing daemons, processes and other programs. This will give inetd the ability to keep daemons alive (even when they crash), start them after various specified events/intervals and specify scheduling priority of them. And, a new command line utility to add/remove/start/stop new services.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/LDY5asp0/",
+          "proposal_id": null,
+          "short_description": "inetd enhancements to allow it to babysit general daemons, not just networking ones. To make it a service management program for starting, stopping...",
+          "slug": "inetd-enhancements",
+          "status": "completed",
+          "student_name": "ccldarjun",
+          "student_profile": null,
+          "tags": [],
+          "title": "inetd enhancements"
+        },
+        {
+          "code_url": "https://bschnepp.github.io/gsoc-2022/",
+          "description": "This project aims to port the vc4 graphics driver to NetBSD, which drives the VideoCore GPU available on the Raspberry Pi. It will allow for a Raspberry Pi running NetBSD to take advantage of the dedicated graphics processor, which could be useful for other programs which currently use software rasterization to utilize OpenGL ES. Specifically, the project will be compatible with Mesa as-is, allowing existing programs which depend on Mesa for graphics API support to be able to support the Raspberry Pi's GPU under NetBSD. This will be solved by porting the existing driver to be managed inside a NetBSD loadable kernel module, which can be loaded at runtime when needed. When complete, this will allow for OpenGL ES programs which have been ported to NetBSD from Linux, and already utilize the GPU under Linux to similarly use the GPU under NetBSD, such as programs which can render a triangle, a teapot, and some games.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/esA98HIB/",
+          "proposal_id": null,
+          "short_description": "This project aims to port the vc4 graphics driver to NetBSD, which drives the VideoCore GPU available on the Raspberry Pi. It will allow for a...",
+          "slug": "raspberry-pi-gpu-driver",
+          "status": "completed",
+          "student_name": "bschnepp",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ux"
+          ],
+          "title": "Raspberry Pi GPU Driver"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/the-netbsd-foundation/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://jeandrek.github.io/gsoc-blog/",
+          "description": "The NetBSD Project has been working to adapt the FreeBSD Wi-Fi stack.  When this is complete, things will be more up-to-date, newer protocols will be supported, and NetBSD will let one use multiple Virtual Access Points with the same physical Wi-Fi adapter.  As of yet, most of the Wi-Fi drivers need to be converted to the new stack.  The athn(4) driver will be reworked as necessary, and if time permits the ath(4) driver also.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/nCbfQku8",
+          "proposal_id": "kgjIYGo3",
+          "short_description": "The NetBSD Project has been working to adapt the FreeBSD Wi-Fi stack. When this is complete, things will be more up-to-date, newer protocols will be...",
+          "slug": "update-atheros-wi-fi-drivers-for-new-wi-fi-stack",
+          "status": "completed",
+          "student_name": "Jeandre Kruger",
+          "student_profile": null,
+          "tags": [],
+          "title": "Update Atheros Wi-Fi driver(s) for new Wi-Fi stack"
+        },
+        {
+          "code_url": "https://github.com/6167656e74323431/gsoc-netbsd-linux-emulation/blob/trunk/README.md",
+          "description": "NetBSD's syscall emulation was implemented with individual programs in mind, and so lacks predictability. By taking a more systematic approach to testing and syscall implementation, this project aims to add support for Go binaries.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/HkphWKeE",
+          "proposal_id": "VMnV1aSd",
+          "short_description": "NetBSD's syscall emulation was implemented with individual programs in mind, and so lacks predictability. By taking a more systematic approach to...",
+          "slug": "linux-syscalls-a-tale-of-two-binaries",
+          "status": "completed",
+          "student_name": "Theodore Preduta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Linux Syscalls: A Tale of Two Binaries"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/the-netbsd-foundation"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/coderaccords/gsoc24-netbsd-linux-emulation/tree/develop",
+          "description": "NetBSD with the thin in-kernel ABI layer COMPAT_LINUX enables support\nfor running Linux binaries by means of emulation on NetBSD systems. As newer features are added to the Linux kernel, newer system calls are also added when they are deemed essential. This project attempts to identify some of the such critical newer system calls that currently have no emulation support by means of the Linux Test Project and add support for them in the emulation layer by following a mix of some of the strategies like limited support, native support, empty subs, etc. This extends the NetBSD kernel emulation completeness, trying to tackle the Linux2NetBSD binary execution problem, one system call at a time.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/JvDjd2H9/",
+          "proposal_id": null,
+          "short_description": "NetBSD with the thin in-kernel ABI layer COMPAT_LINUX enables support for running Linux binaries by means of emulation on NetBSD systems. As newer...",
+          "slug": "emulating-missing-linux-syscalls-tackling-the-l2n-problem",
+          "status": "completed",
+          "student_name": "Shiv_Jam",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Emulating Missing Linux Syscalls: Tackling “The L2N Problem”"
+        },
+        {
+          "code_url": "https://github.com/Emmankoko/Open_source_reports/blob/main/GSOC/gsoc24.md",
+          "description": "The aim of this project is to refactor ALTQ to use improvements in both the API and implementation. ALTQ was written a long time ago and suffers a lot of code duplication, dangerous code practices both in the API and implementation and could use these improvements by Handling duplications, Introducing good design patterns, and Making code more maintainable. ALTQ will also be optimized for large networks as well.\nAfter these issues are addressed, ALTQ will be configured to be integrated with npf which is the NetBSD packet filter which focuses on high performance design and large volume client handling since ALTQ is also currently integrated with pf packet filter which is obsolete.\nIn ALTQ configuration with npf, npf will be configured to use ALTQ by creating a new /etc/npf.conf where all the ALTQ queuing and policies to apply to different types of traffic and filtering rules will be defined and integrated.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/pRS1iXgs/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to refactor ALTQ to use improvements in both the API and implementation. ALTQ was written a long time ago and suffers a...",
+          "slug": "altq-refactoring-and-npf-integration",
+          "status": "completed",
+          "student_name": "Emmanuel Nyarko",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "ALTQ refactoring and NPF integration"
+        },
+        {
+          "code_url": "https://github.com/StephenCao422/mpsafe",
+          "description": "Access to hardware registers and other things can only be done by one CPU at a time. An easy way to do this is to make the entire network stack run with a single lock held so operations only take place on one core. This is inefficient if you ever want to use more than one core for faster-performing cards.",
+          "difficulty": "beginner",
+          "id": "proj_the-netbsd-foundatio_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/W5JmdBcW/",
+          "proposal_id": null,
+          "short_description": "Access to hardware registers and other things can only be done by one CPU at a time. An easy way to do this is to make the entire network stack run...",
+          "slug": "making-network-drivers-mpsafe-in-netbsd",
+          "status": "completed",
+          "student_name": "Zhaofeng Cao",
+          "student_profile": null,
+          "tags": [],
+          "title": "Making Network Drivers MPSAFE in NetBSD"
+        },
+        {
+          "code_url": "https://github.com/DiviyamPathak/Gsoc-2024-NetBSD",
+          "description": "extending test coverage to root filesystem selection and documenting config(8). rump servers will be used to write test in ATF of NetBSD. This project shall improve on stability of NetBSD.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/NwvHtUmK/",
+          "proposal_id": null,
+          "short_description": "extending test coverage to root filesystem selection and documenting config(8). rump servers will be used to write test in ATF of NetBSD. This...",
+          "slug": "test-root-device-and-root-file-system-selection",
+          "status": "completed",
+          "student_name": "diviyam pathak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Test root device and root file system selection"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/the-netbsd-foundation/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "NAT64 is a transition mechanism from IPv6 to IPv4. it enables IPv6-only clients to communicate with IPv4-only servers. Despite the growing adoption of IPv6, many legacy systems still rely on IPv4. Implementing NAT64 support in NPF will enhance its networking capabilities, ensuring seamless communication between IPv6 and IPv4 networks.\n\nProject Goals:\nThe following are the project goals but not limited to this alone:\n- Extend NPF to support IPv6-to-IPv4 translation\n- Optimize NAT64 processing within NPF to ensure minimal latency and efficient packet handling, especially in high-traffic environments.\n- Passing the information to the kernel, and modifying the kernel packet filter code to process the user/group filtering options and allow/drop packets, in addition to Implementing a robust and efficient NAT64 mechanism within NPF packet filters.\n\nDeliverables:\nWith a commitment and devotion of 40 hours per week, the project is expected to be completed within 2 months and some days.\n\nGuidance from Mentors, personal research, reference implementations from sample codes or other open-source projects (such as Tayga and Jool) can serve as guides to ensure a standards-compliant solution and project completion.\n\nMost importantly, Code reviews from mentors and others will definitely help me to solve problems.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/p2rxlbUv",
+          "proposal_id": "bTQbAafj",
+          "short_description": "NAT64 is a transition mechanism from IPv6 to IPv4. it enables IPv6-only clients to communicate with IPv4-only servers. Despite the growing adoption...",
+          "slug": "enhancing-support-for-nat64-protocol-translation-in-netbsd",
+          "status": "in-progress",
+          "student_name": "Dennis  O.I",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Enhancing Support for NAT64 Protocol Translation in NetBSD"
+        },
+        {
+          "code_url": null,
+          "description": "We will be refactoring the I/O pipeline within the NetBSD kernel to support asynchronous I/O. This involves creating a new protocol which will function as a intermediary layer within the I/O path. This protocol will support both asynchronous and synchronous modes, providing a zero-cost layer of abstraction for synchronous operations within a broader asynchronous framework.\r\n\r\nThis new I/O protocol is crux of the project. There will exist servicing pools that will be threaded in parallel to concurrently invoke multiple operations within a single thread without blocking on any individual operation. We must not block on any single operation because that would merit the creation of a new thread, which is exactly what this project is aiming to address. Given that the current implementation is highly synchronous, primarily relying on blocking, certain fundamental I/O primitives at the lowest layer of abstraction within the path will need to be restructured.\r\n\r\nOnce implemented, we will begin integrating this protocol into the system at large, starting from the lowest layer of abstraction within the I/O path moving upwards, then finally revising the POSIX AIO interface.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/DyO9DOU3",
+          "proposal_id": "wwxQYEIt",
+          "short_description": "We will be refactoring the I/O pipeline within the NetBSD kernel to support asynchronous I/O. This involves creating a new protocol which will...",
+          "slug": "asynchronous-io-framework",
+          "status": "in-progress",
+          "student_name": "Ethan Miller",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Asynchronous I/O Framework"
+        },
+        {
+          "code_url": null,
+          "description": "NetBSD allows the execution of Linux binaries with compat_linux, a NetBSD kernel module that translates Linux system calls into NetBSD system calls. But, not all of Linux's system calls have been implemented in compat_linux, which means that not all Linux applications can be ran on NetBSD.\n\nOne relevant application that can't be ran is bubblewrap, a tool for constructing sandbox environments. By tracing the system calls executed by the bubblewrap Linux binary and comparing with the ones in compat_linux's source code, we can identify the system calls that need to be implemented.\n\nOne required but currently missing Linux system call is unshare, a system call to create Linux namespaces, which provide isolation of multiple parts from the host, this makes it a complicated system call to emulate.\nUnshare will be the main system call of this project but there will be others as well, such as the capabilities family of system calls, we will study each system call individually to understand if we need to create a completely new system call, or if we can simply translate the Linux system call's arguments to ones used by an equivalent NetBSD system call.\n\nThe successful completion of this project will result in a patch to compat_linux, which will allow bubblewrap to be ran on NetBSD under compat_linux, bringing a new way of sandboxing to NetBSD.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundatio_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/KvbHxbzO",
+          "proposal_id": "C0Ezt3or",
+          "short_description": "NetBSD allows the execution of Linux binaries with compat_linux, a NetBSD kernel module that translates Linux system calls into NetBSD system calls....",
+          "slug": "using-bubblewrap-to-add-sandboxing-to-netbsd",
+          "status": "in-progress",
+          "student_name": "Vasyl Lanko",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Using bubblewrap to add sandboxing to NetBSD"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-netbsd-foundation"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc-admin@NetBSD.org",
+    "guide_url": "https://wiki.NetBSD.org/projects/gsoc/",
+    "ideas_url": "https://wiki.NetBSD.org/projects/gsoc/",
+    "irc_channel": "https://web.libera.chat/#NetBSD-code",
+    "mailing_list": "https://www.NetBSD.org/mailinglists/"
+  },
+  "social": {
+    "blog": "https://blog.NetBSD.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/netbsd",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.377Z"
+  }
+}

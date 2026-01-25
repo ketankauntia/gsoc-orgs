@@ -1,0 +1,900 @@
+{
+  "id": "692251e453dd9d7326d33e8d",
+  "slug": "qemu",
+  "name": "QEMU",
+  "category": "Infrastructure and cloud",
+  "description": "Open source machine emulator and virtualizer",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/qemu/gik5gsxljb3j1jx1-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/qemu.webp",
+  "logo_r2_url": null,
+  "url": "https://qemu.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "assembly",
+    "kvm",
+    "python",
+    "linux",
+    "virtualization",
+    "rust"
+  ],
+  "topics": [
+    "virtualization",
+    "operating systems",
+    "compilers",
+    "emulation",
+    "compiler",
+    "hypervisor",
+    "cloud",
+    "kernel",
+    "lowlevel",
+    "emulator",
+    "code generation",
+    "systems programming"
+  ],
+  "total_projects": 41,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.56,
+    "projects_by_year": {
+      "year_2016": 6,
+      "year_2017": 4,
+      "year_2018": 4,
+      "year_2019": 3,
+      "year_2020": 3,
+      "year_2021": 6,
+      "year_2022": 4,
+      "year_2023": 6,
+      "year_2024": null,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": 6,
+      "year_2017": 4,
+      "year_2018": 4,
+      "year_2019": 3,
+      "year_2020": 3,
+      "year_2021": 6,
+      "year_2022": 4,
+      "year_2023": 6,
+      "year_2024": null,
+      "year_2025": 5
+    },
+    "total_students": 40
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/RandomNickname/qemu/commits/img-dd?author=randomNickname",
+          "description": "<p>This proposal aims primarily to fuzz test qemu-img from QEMU project in order to discover\nthe potential security bugs and write bug fixes for them. The second goal will be to extend\nqemu-img to support a new subcommand dd.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5660612814176256/",
+          "proposal_id": null,
+          "short_description": "This proposal aims primarily to fuzz test qemu-img from QEMU project in order to discover\nthe potential security bugs and write bug fixes for them....",
+          "slug": "qemu-img-fuzzing-and-subcommand-dd",
+          "status": "completed",
+          "student_name": "Reda",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "qemu-img fuzzing and subcommand \"dd\""
+        },
+        {
+          "code_url": "https://github.com/aslaq/AMD-Vi",
+          "description": "<p>This project aims to get the current AMD IOMMU patches merged into Qemu as well as introduce interrupt remapping support to the current AMD IOMMU implementation. Interrupt remapping is a feature implemented on Intel and AMD iommus that allows interrupts from peripheral devices to be intercepted, validated and posted to the specific CPU cores based on the information stored in the in the relevant data structures programmed by System Software.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5087715448061952/",
+          "proposal_id": null,
+          "short_description": "This project aims to get the current AMD IOMMU patches merged into Qemu as well as introduce interrupt remapping support to the current AMD IOMMU...",
+          "slug": "amd-iommu-interrupt-remapping-and-other-improvements",
+          "status": "completed",
+          "student_name": "asla",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "AMD IOMMU interrupt remapping and other improvements"
+        },
+        {
+          "code_url": "https://harisphnx.github.io/",
+          "description": "<p>Live Migration is a process of moving a running virtual machine from one physical system to another. There are usually two ways, precopy and postcopy. Postcopy migration is used for virtual machines which have a high memory dirtying rate, (higher than the bandwidth of the network that will be used to perform migration). The disadvantage of postcopy migration is, if there is a network failure then we are left with an inconsistent vm at both the source and the destination side.\nThe aim of this project is to recover from the network failure, and complete the migration process. The project will include completing the process of sending the leftover memory pages.\nProject would start by making sure that the threads do not fail at both the source and destination end. This would be followed by re-establishing the network connection between the source and the destination. After this is done, the migration process is restarted. The vCPUs on the destination side were suspended due to page faults, so these pages are transferred first. Followed by the rest of the leftover pages on the source side.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5582796059836416/",
+          "proposal_id": null,
+          "short_description": "Live Migration is a process of moving a running virtual machine from one physical system to another. There are usually two ways, precopy and...",
+          "slug": "postcopy-migration-recovery-from-a-broken-network-connection",
+          "status": "completed",
+          "student_name": "haris3301",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Postcopy migration: Recovery from a broken network connection"
+        },
+        {
+          "code_url": "https://github.com/GerardGarcia/gsoc16",
+          "description": "<p>Zero-configuration communication between the QEMU hypervisor and its guests can be achieved using the virtio-serial device. Virtio-serial has several limitations though. For example, it does not allow multiple connections to the same port. To overcome this limitations the driver virtio-vsock has been developed.</p>\n<p>The virtio-vsock driver supports the POSIX Sockets API which is more familiar to developers wanting to perform communication between processes. The Sockets API allows N:1 communication and differentiates between block and stream protocols. In addition, programs that already use sockets can easily transition to the virtio-vsock device without major changes in their code.</p>\n<p>However, the traffic sent through virtio-vsock is hidden to the outside world, as it is internally performed between the hypervisor and the driver. And to facilitate debugging  is important to be able to see this exchange of information.</p>\n<p>The goal of this project is to expose the traffic exchanged through the virtio-vsock socket interface so that programs like Wireshark can capture it. To achieve this, it would be necessary to implement a device driver that exposes the traffic and a Wireshark dissector.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4789705652568064/",
+          "proposal_id": null,
+          "short_description": "Zero-configuration communication between the QEMU hypervisor and its guests can be achieved using the virtio-serial device. Virtio-serial has several...",
+          "slug": "af_vsock-packet-capture-in-linux-and-wireshark",
+          "status": "completed",
+          "student_name": "GerardGarcia",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ux"
+          ],
+          "title": "AF_VSOCK packet capture in Linux and Wireshark"
+        },
+        {
+          "code_url": "https://gist.github.com/pranith/af6f5a203b02cee2839c2d7c50024e73",
+          "description": "<p>QEMU uses a single-threaded tiny code generator (TCG) which translates instructions of the guest ISA to instructions of the host ISA. These translated instructions are then executed on the host in an execution thread. For SMP guests, this single thread is scheduled to execute translated instructions of all the CPUs in a round robin manner. This is a significant performance bottleneck in utilizing all the available cores on the host machine. Multi-threaded TCG (MTTCG) project was started to solve this problem by designing and implementing a multi-threaded TCG.  In this design, multiple threads are concurrently scheduled, and each thread executes the translated instructions from one guest CPU. Various consistency issues were identified in this design and the current work aims to solve them.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4940413639065600/",
+          "proposal_id": null,
+          "short_description": "QEMU uses a single-threaded tiny code generator (TCG) which translates instructions of the guest ISA to instructions of the host ISA. These...",
+          "slug": "mttcg-memory-consistency",
+          "status": "completed",
+          "student_name": "Pranith Kumar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "MTTCG Memory Consistency"
+        },
+        {
+          "code_url": "https://gist.github.com/avg206/1035d552c460b6daeba55f3d62ccc7b4",
+          "description": "<p>The implementing serial tablet would allow to have mouse integration for vintage operating systems. This feature is absent in other virtualisation systems, as far a I know. Emulating additional character  device with absolute coordinates – the one which was rather popular in 1990x– would allow us to use already existing drivers for old operating systems without USB support and so such device would bring mouse integration to them.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5820230978764800/",
+          "proposal_id": null,
+          "short_description": "The implementing serial tablet would allow to have mouse integration for vintage operating systems. This feature is absent in other virtualisation...",
+          "slug": "implementing-one-more-absolute-coordinates-device-for-qemu-a-serial-tablet-with-behaviour-like-usb-tablet-we-use-to-get-mouse-integration",
+          "status": "completed",
+          "student_name": "avg206",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing one more absolute coordinates device for QEMU – a serial tablet with behaviour like usb-tablet we use to get mouse integration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5308561592680448/"
+    },
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/Sergio889/gsoc_2017",
+          "description": "<p>The idea of the project is to add support for macOS’s native hypervisor through the Hypervisor.framework API. This API exposes to user applications the processor's Virtual-Machine Extensions (VMX), which allows fast and transparent virtualization in user space by allowing guest software to execute directly and unmodified on the processor, avoiding costly and complicated emulation.\nHypervisor.framework is part of Mac OS frameworks since OS X Yosemite (version 10.10).</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5320295980204032/",
+          "proposal_id": null,
+          "short_description": "The idea of the project is to add support for macOS’s native hypervisor through the Hypervisor.framework API. This API exposes to user applications...",
+          "slug": "hypervisorframework-support-for-qemu",
+          "status": "completed",
+          "student_name": "Sergio Gómez Del Real",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Hypervisor.framework Support for QEMU"
+        },
+        {
+          "code_url": "https://lists.nongnu.org/archive/html/qemu-devel/2017-08/msg05371.html",
+          "description": "<p>I/O throttling is currently hard-coded in QEMU. A request is checked for throttling directly in block-backend.c instead of having a filter driver process every I/O request for throttling during the walk in the BlockDriverState graph. Throttling can become modular by being utilised with a filter block driver.</p>\n<p>Add before write notifying (bdrv_add_before_write_notifier: which is used in backup_run for backups) is also hard-coded.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4532831443222528/",
+          "proposal_id": null,
+          "short_description": "I/O throttling is currently hard-coded in QEMU. A request is checked for throttling directly in block-backend.c instead of having a filter driver...",
+          "slug": "implementing-io-throttling-and-write-notifiers-into-filter-block-drivers",
+          "status": "completed",
+          "student_name": "Manos Pitsidianakis",
+          "student_profile": null,
+          "tags": [
+            "backend"
+          ],
+          "title": "Implementing I/O throttling and write notifiers into filter Block Drivers"
+        },
+        {
+          "code_url": "http://lists.gnu.org/archive/html/qemu-devel/2017-08/msg04260.html",
+          "description": "<p>Nowadays QEMU doesn't have any PCIE-PCI bridge except DMI-PCI i82801b11 bridge, but as DMI is a proprietary Intel bus, it can be used only on x86 targets, besides, it isn't hotpluggable. \nThat is why the goal of this project is to create generic PCIExpress-PCI bridge, which will be able to be used by different target architectures and OSes and the bridge will be natively (in terms of PCIExpress) hotpluggable, which involves SHPC usage. \nAs a result , after finishing PCIE-PCI bridge device QEMU PCI subsystem can be moved to QOM model.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6004304418701312/",
+          "proposal_id": null,
+          "short_description": "Nowadays QEMU doesn't have any PCIE-PCI bridge except DMI-PCI i82801b11 bridge, but as DMI is a proprietary Intel bus, it can be used only on x86...",
+          "slug": "generic-pcie-pci-bridge",
+          "status": "completed",
+          "student_name": "Aleksandr Bezzubikov",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generic PCIE-PCI bridge"
+        },
+        {
+          "code_url": "https://gist.github.com/Keenuts/199184f9a6d7a68d9a62cf0011147c0b",
+          "description": "<p>3D acceleration is non-existent on Windows guests. The goal for this project is to bring a support for OpenGL. For the host part, we will use Virgl, but on the guest side, we must provide a complete user and kernel OpenGL driver.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6005267028246528/",
+          "proposal_id": null,
+          "short_description": "3D acceleration is non-existent on Windows guests. The goal for this project is to bring a support for OpenGL. For the host part, we will use Virgl,...",
+          "slug": "virgl-windows-driver",
+          "status": "completed",
+          "student_name": "Nathan Gauër",
+          "student_profile": null,
+          "tags": [],
+          "title": "Virgl Windows driver"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4782716667035648/"
+    },
+    "year_2018": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://douzepouze.github.io/gsoc18-qemu/",
+          "description": "<p>The micro:bit is a small computer for educational use that is also suitable for embedded and Internet of Things (IoT) projects. The micro:bit ecosystems offers various staggered ways of creating programs that run on the computer, including a javascript block editor, a python editor and a c/c++ runtime. This way it enables students and other users to gradually develop and enhance their knowledge about computing.\nThe micro:bit consists of a single pcb which features many I/O capabilities including a 5x5 LED display, 2 buttons, Bluetooth and Nordic Gazell radio communications, an accelerometer, a compass, temperature and light sensing, UART, and GPIO pins for external devices, all connected to the ARM Cortex-M0 based Nordic nRF51822 at its center.\nCurrently there are no means of running programs targeted to the microbit in a emulated environment.\nThe goal of this project is to enhance QEMUs capabilities to being able to load and run code targeted to the micro:bit computer and emulating the aforementioned peripherals.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4715949118717952/",
+          "proposal_id": null,
+          "short_description": "The micro:bit is a small computer for educational use that is also suitable for embedded and Internet of Things (IoT) projects. The micro:bit...",
+          "slug": "microbit-machine-type-and-cortex-m0-support",
+          "status": "completed",
+          "student_name": "Steffen Görtz",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "javascript",
+            "ui"
+          ],
+          "title": "micro:bit machine type and cortex-m0 support"
+        },
+        {
+          "code_url": "https://github.com/esposem/GSoC-2018",
+          "description": "<p>Testing is very important in software development, it allows developers to find bugs and evaluate software quality. For instance, regression testing helps programmers to control the stability of the software when new features or changes are made. \nQEMU currently features hard-coded tests for every machine configuration, since each has only a limited set of drivers available to test, making it not very flexible to changes and future additions.</p>\n<p>The purpose of this project is to implement a framework that uses libqos to automatically start QEMU with the right options to provide the driver requested by the unit test. The framework will essentially produce a graph of “consumes-produces” relationships between the various drivers, interfaces and unit tests, in order to understand what options to give to QEMU.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6499721380102144/",
+          "proposal_id": null,
+          "short_description": "Testing is very important in software development, it allows developers to find bugs and evaluate software quality. For instance, regression testing...",
+          "slug": "qtest-driver-framework",
+          "status": "completed",
+          "student_name": "Emanuele Esposito",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Qtest Driver Framework"
+        },
+        {
+          "code_url": "https://gist.github.com/Keenuts/ede88bfe603018a0bc702aed6ce5905d",
+          "description": "<p>VirGL provides an OpenGL path well supported on Linux guests. On the host, QEMU offers several console back-ends, from EGL to SDL. Adding a Vulkan path will require to change the current VirGL API, write new guest drivers, and also offer a way to display the output. This is a huge task, which can be split in several sub-projects. Expending the current  VirGL API  to support Vulkan is the first step.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6557966572453888/",
+          "proposal_id": null,
+          "short_description": "VirGL provides an OpenGL path well supported on Linux guests. On the host, QEMU offers several console back-ends, from EGL to SDL. Adding a Vulkan...",
+          "slug": "vulkan-ize-virgl",
+          "status": "completed",
+          "student_name": "Nathan Gauër",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "ux"
+          ],
+          "title": "Vulkan-ize VirGL"
+        },
+        {
+          "code_url": "https://gist.github.com/shubhamdotjain/17dd9cad8b869d0b04222393d0675989",
+          "description": "<p>Patchew is an open source CI project to automate testing of patches submitted as emails on mailing lists. Currently Patchew has a simple API, but it is complicated to use it because it is not REST-like and it exposes low-level details of the patchew database schema. The project aims at replacing it with a new REST API.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6097035849629696/",
+          "proposal_id": null,
+          "short_description": "Patchew is an open source CI project to automate testing of patches submitted as emails on mailing lists. Currently Patchew has a simple API, but it...",
+          "slug": "patchew-rest-api-improvements",
+          "status": "completed",
+          "student_name": "shubham.jain",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Patchew REST API improvements."
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4650540726222848/"
+    },
+    "year_2019": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/a1xndr/qemu/blob/master/gsoc-wps.md",
+          "description": "<p>Integrate <strong>QEMU</strong> with the <strong>OSS-Fuzz</strong> continuous fuzzing service. Implement functionality to fuzz QEMU’s  devices adhering to the <strong>VirtIO</strong> standard. Fuzzing is a powerful technique for bug finding. QEMU’s implementation of VirtIO devices is a particularly appealing target for fuzzing due to their widespread use and VirtIO’s clear specification of the Guest-Device interface.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6200259867312128/",
+          "proposal_id": null,
+          "short_description": "Integrate QEMU with the OSS-Fuzz continuous fuzzing service. Implement functionality to fuzz QEMU’s  devices adhering to the VirtIO standard. Fuzzing...",
+          "slug": "fuzzing-qemus-implementation-of-virtio-devices",
+          "status": "completed",
+          "student_name": "Alexander  Oleinik",
+          "student_profile": null,
+          "tags": [],
+          "title": "Fuzzing QEMU's implementation of VirtIO devices"
+        },
+        {
+          "code_url": "https://wiki.qemu.org/Features/TCGCodeQuality",
+          "description": "<p>One of the most important steps in tuning an emulator performance is to identify which are the hot regions and to measure their translation quality. However, in QEMU, there is no easy way to identify hot TBs. Therefore, we propose in this project the enhance of QEMU log system to add these capabilities. Our plan is to add three new capabilities to QEMU: (1) to profile and list hot emulated blocks, (2) to calculate global and per block translation quality statistics, and (3) to allow all these inspections to be done in an interactive mode in the monitor tool.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_qemu_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4725549073694720/",
+          "proposal_id": null,
+          "short_description": "One of the most important steps in tuning an emulator performance is to identify which are the hot regions and to measure their translation quality....",
+          "slug": "improving-measurement-of-tiny-code-generation-quality",
+          "status": "completed",
+          "student_name": "Vanderson M. do Rosario",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving Measurement of Tiny Code Generation Quality"
+        },
+        {
+          "code_url": "https://lists.nongnu.org/archive/html/qemu-devel/2019-08/msg05369.html",
+          "description": "<p>QEMU's TCG just-in-time compiler translates target CPU instructions into host CPU instructions so that programs written for other CPU architectures can be run on any host. Modern CPUs feature vector processing instructions, sometimes called Single Instruction Multiple Data (SIMD) instructions, which perform the same operation on multiple data elements at once. Intel's SSE and AVX instruction set extensions were introduced for x86 CPUs for this purpose.</p>\n<p>The target/i386 front-end has support for TCG emulation of SSE4.2, but does not feature support for later vector extensions, such as AVX. The goal of the proposed project is to implement and test AVX instructions that are currently not implemented in QEMU's TCG.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5147761538760704/",
+          "proposal_id": null,
+          "short_description": "QEMU's TCG just-in-time compiler translates target CPU instructions into host CPU instructions so that programs written for other CPU architectures...",
+          "slug": "support-for-avx-within-tcg",
+          "status": "completed",
+          "student_name": "Jan Bobek",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support for AVX within TCG"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6510621636427776/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://drive.google.com/drive/folders/1KkwJNCDaxxKnUL3mNBfJqsRsUvBMPPca?usp=sharing",
+          "description": "<p>Very often, the QEMU emulator is used to emulate user level processes that are compiled for a different architecture set than the \"host\" machine on which they are running. This operating mode in QEMU is called the user mode and it is much simpler than the more commonly known system mode in which the full computer system is emulated. The user mode is useful for fast cross execution and debugging and is usually executed on Linux based systems. It achieves this cross execution by having its' own implementations of system functions from the Linux kernel interface. Although many system functions are supported in QEMU, the kernel is constantly extended by addition of new system calls. QEMU user mode can't consistently follow this kernel extension and thus many kernel functions are left unimplemented. The goal of this project is to significantly extend this QEMUs implementation of system functions so that many user programs that depend on these system calls can be safely cross executed. This projects' contribution also extends to the Linux Test Project by developing unit tests for system functions implemented within QEMU.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5665760506019840/",
+          "proposal_id": null,
+          "short_description": "Very often, the QEMU emulator is used to emulate user level processes that are compiled for a different architecture set than the \"host\" machine on...",
+          "slug": "extend-linux-user-syscalls-and-ioctls",
+          "status": "completed",
+          "student_name": "Filip Božuta",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Extend linux-user syscalls and ioctls"
+        },
+        {
+          "code_url": "https://github.com/ahmedkrmn/TCG-Continuous-Benchmarking",
+          "description": "<p>QEMU's emulator allows running operating systems and binaries compiled against one architecture (e.g. Linux ARM) on a host with a different architecture (e.g. Linux x86_64). This process involves a JIT compiler that translates the target CPU instructions to the host's. In this process, some targets outperform others, and some targets have performance bottlenecks in QEMU functions that other targets don't.</p>\n<p>In this project, the performance of QEMU's emulation will be deeply analyzed using major profiling tools across all of its targets for both of its user mode (executables) and system mode (operating systems).</p>\n<ul>\n<li>Custom written benchmark programs will be used to activate the desired QEMU functionalities and locate the target bottlenecks and profile its execution and runtime.</li>\n<li>Automation tools will be written that detects runtime performance degradation across different versions and targets of QEMU. They will also be used to find how different targets perform compared to each other.</li>\n<li>Past major releases of QEMU will be examined to identify performance regressions from the past.</li>\n</ul>\n<p>All of the findings and conclusions will be regularly presented to the QEMU developers to act upon.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5825868330434560/",
+          "proposal_id": null,
+          "short_description": "QEMU's emulator allows running operating systems and binaries compiled against one architecture (e.g. Linux ARM) on a host with a different...",
+          "slug": "tcg-continuous-benchmarking",
+          "status": "completed",
+          "student_name": "Ahmed Karaman",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "TCG Continuous Benchmarking"
+        },
+        {
+          "code_url": "https://gist.github.com/MattGorko/745099bda01a8abacb9f3d0344e16762",
+          "description": "<p>U2F is an open authentication standard used worldwide. It enables relying parties exposed to the internet to offer a strong second factor option for end user authentication.</p>\n<p>Materialize by a device implementing the U2F protocol, this second factor brings many advantages to both sides. Allowing to reduce over-reliance on passwords, it increases authentication security and simplifies passwords.</p>\n<p>U2F is increasingly supported and adopted worldwide, it is present on all the most used browsers, and is also arrived recently on openssh 8.2: <code>https://www.openssh.com/txt/release-8.2</code>, still showing that its adoption is exponential.</p>\n<p>Qemu, which is an open source project for machine emulation and virtualization, should integrate U2F support, especially for all users who wish to take the advantages given by U2F in guest machines.</p>\n<p>There is no doubt about the benefits provided by U2F and its widespread adoption. Integrate the support for U2F in Qemu is a good idea.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5159818492379136/",
+          "proposal_id": null,
+          "short_description": "U2F is an open authentication standard used worldwide. It enables relying parties exposed to the internet to offer a strong second factor option for...",
+          "slug": "virtual-fidou2f-security-key-on-qemu",
+          "status": "completed",
+          "student_name": "César Belley",
+          "student_profile": null,
+          "tags": [],
+          "title": "Virtual FIDO/U2F security key on Qemu"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6231608723505152/"
+    },
+    "year_2021": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Gaelan/febec4e4606e1320026a0924c3bf74d0",
+          "description": "<p>QEMU supports exposing block devices to the guest OS over the\nvirtio-scsi protocol. Currently, this is implemented using C code\nrunning in the main QEMU process. There is also support for using an\nexternal backend over vhost-user-scsi, but the existing backend is\nimplemented in C, and is fairly limited, only supporting iSCSI.</p>\n<p>The goal of this project is to implement an alternate vhost-user-scsi\nbackend in Rust. This would provide benefits to security, reusability, and performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6705083835744256/",
+          "proposal_id": null,
+          "short_description": "QEMU supports exposing block devices to the guest OS over the\nvirtio-scsi protocol. Currently, this is implemented using C code\nrunning in the main...",
+          "slug": "vhost-user-scsi-device-in-rust",
+          "status": "completed",
+          "student_name": "Gaelan Steele",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "vhost-user-scsi device in Rust"
+        },
+        {
+          "code_url": "https://gitlab.com/niteesh.gs/qemu/-/commits/aqmp-tui-prototype-v5",
+          "description": "<p>The aim of the project is to build a Text User Interface(TUI) for issuing and receiving QEMU Monitor Protocol (QMP) commands from a running QEMU instance.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5726750817910784/",
+          "proposal_id": null,
+          "short_description": "The aim of the project is to build a Text User Interface(TUI) for issuing and receiving QEMU Monitor Protocol (QMP) commands from a running QEMU...",
+          "slug": "interactive-asynchronous-qemu-machine-protocol-qmp-text-user-interface-tui",
+          "status": "completed",
+          "student_name": "Niteesh Babu G S",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Interactive, asynchronous QEMU Machine Protocol (QMP) text user interface (TUI)"
+        },
+        {
+          "code_url": "https://github.com/harshanavkis/gsoc-2021-contributions",
+          "description": "<p>This project aims to realize a vhost-user-vsock application that will leverage the vhost-user protocol to emulate a virtio-vsock device in an external process. It will additionally provide the hybrid vsock over AF_UNIX interface, that was introduced by firecracker. Kata containers rely on virtio-vsock to create a communications channel between the runtime in the host and the agent in the guest. The vhost-user-vsock application, developed during the course of this program, would then be integrated into kata containers, who prefer that devices be emulated in an external userspace process to reduce the attack surface.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6126117680840704/",
+          "proposal_id": null,
+          "short_description": "This project aims to realize a vhost-user-vsock application that will leverage the vhost-user protocol to emulate a virtio-vsock device in an...",
+          "slug": "development-of-a-vhost-user-vsock-application-and-its-integration-with-kata-contianers",
+          "status": "completed",
+          "student_name": "Harshavardhan Unnibhavi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Development of a vhost-user-vsock application and its integration with kata contianers"
+        },
+        {
+          "code_url": "https://gist.github.com/i3abghany/95dbbd48b3a4d8ffe4350f6290ea6d37",
+          "description": "<p>Since cache performance is one of the essential metrics that may bottle-neck the overall performance of the system, monitoring it and identifying points of weakness (and resolving them) may drastically improve the performance of the system.</p>\n<p>In this project, a cache modelling QEMU TCG-plugin is proposed and implemented, with simplicity rather than intricacy in mind, that models the behavior of caches when given the working set proposed by a program, or system-wide working set, report the cache performance, and identify the frequently cache-missing instructions.</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4511250880397312/",
+          "proposal_id": null,
+          "short_description": "Since cache performance is one of the essential metrics that may bottle-neck the overall performance of the system, monitoring it and identifying...",
+          "slug": "tcg-plugin-cache-modelling",
+          "status": "completed",
+          "student_name": "Mahmoud Mandour",
+          "student_profile": null,
+          "tags": [],
+          "title": "TCG Plugin: Cache Modelling"
+        },
+        {
+          "code_url": "https://gist.github.com/krady21/178378051f6904015763a635cf72c46c",
+          "description": "<p>This project revolves around designing a reusable framework for mocking the driver side of a VirtQueue operation. It would allow rust-vmm crates and other projects to use it and would provide a cleaner alternative to mocking code already found in vm-virtio.</p>\n<p>The framework would at first provide users with more granular control over mocking what the driver will place in the queue and will later support mocking more advanced features such as notification suppression, indirect descriptors and other device specific features.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_qemu_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6507517051404288/",
+          "proposal_id": null,
+          "short_description": "This project revolves around designing a reusable framework for mocking the driver side of a VirtQueue operation. It would allow rust-vmm crates and...",
+          "slug": "mocking-framework-for-virtio-queues",
+          "status": "completed",
+          "student_name": "Bogdan Grigoruță",
+          "student_profile": null,
+          "tags": [],
+          "title": "Mocking framework for virtio queues"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1224kGT9ruoZ6rntbOkIvATuOwJj9OvMFCCqBBrTKhuA/edit?usp=sharing",
+          "description": "<p>QEMU already includes a basic implementation of the virtualization extensions that are found in AMD processors. This implementation, however, is not complete and contains several bugs. The project's primary purpose is to complete the AMD virtualization emulation. The project includes:</p>\n<ul>\n<li>Fixing bugs in the implementations, using the kvm-unit-tests suite</li>\n<li>Adding support for new features such as vGIF or vVMLOAD/vVMSAVE</li>\n</ul>\n<p>(<a href=\"https://wiki.qemu.org/Google_Summer_of_Code_2021#Complete_AMD_virtualization_emulation\" target=\"_blank\">https://wiki.qemu.org/Google_Summer_of_Code_2021#Complete_AMD_virtualization_emulation</a>)</p>\n",
+          "difficulty": null,
+          "id": "proj_qemu_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6024513887666176/",
+          "proposal_id": null,
+          "short_description": "QEMU already includes a basic implementation of the virtualization extensions that are found in AMD processors. This implementation, however, is not...",
+          "slug": "complete-amd-virtualization-emulation",
+          "status": "completed",
+          "student_name": "Lara Lazier",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Complete AMD virtualization emulation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4837236381581312/"
+    },
+    "year_2022": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/fandahao17/qemu/tree/gsoc-final",
+          "description": "QEMU-NVMe is an important tool for developers to experiment with new features in the NVMe stack. However, its emulation performance has failed to catch up with the ever-increasing speed of modern storage devices. The goal of this project is to improve QEMU's NVMe emulation performance so that it becomes comparable to virtio-blk. We intend to implement the following optimizations: (1) Add Shadow Doorbell Buffer support to reduce doorbell writes. (2) Add Submission Queue Tail Doorbell register ioeventfd support. (3) Add iothread support to run emulation in a separate event loop. (4) Add Submission Queue Tail Doorbell register polling.",
+          "difficulty": null,
+          "id": "proj_qemu_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/6jRNut5x/",
+          "proposal_id": null,
+          "short_description": "QEMU-NVMe is an important tool for developers to experiment with new features in the NVMe stack. However, its emulation performance has failed to...",
+          "slug": "nvme-emulation-performance-optimization",
+          "status": "completed",
+          "student_name": "Jinhao Fan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "NVMe Emulation Performance Optimization"
+        },
+        {
+          "code_url": "https://gist.github.com/ramyak-mehra/4869a3616f459fe167d5a12797b557ae",
+          "description": "This project aims to extend the support for aarch64 on rust-vmm/vmm-reference. rust-vmm enables the community to build custom VMM solutions. It currently supports booting up a dummy VM with no devices. The purpose of this project is to extend the existing functionality getting it closer to what is already available on x86_64.",
+          "difficulty": null,
+          "id": "proj_qemu_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/zn1zBd2u/",
+          "proposal_id": null,
+          "short_description": "This project aims to extend the support for aarch64 on rust-vmm/vmm-reference. rust-vmm enables the community to build custom VMM solutions. It...",
+          "slug": "extend-aarch64-support-in-rust-vmmvmm-reference",
+          "status": "completed",
+          "student_name": "Ramyak mehra",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Extend aarch64 support in rust-vmm/vmm-reference"
+        },
+        {
+          "code_url": "https://rliu.dev/blog/qemu-snapshot-fuzzing/",
+          "description": "Add a new virtual device to QEMU to interface with a custom snapshot/restore functionality. Modified memory is kept track of by instrumenting the TCG store instructions. The virtual device will be designed for easy integration with a fuzzer, such as AFL.",
+          "difficulty": "beginner",
+          "id": "proj_qemu_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/w3IJvnc0/",
+          "proposal_id": null,
+          "short_description": "Add a new virtual device to QEMU to interface with a custom snapshot/restore functionality. Modified memory is kept track of by instrumenting the TCG...",
+          "slug": "snapshotrestore-for-fuzzing-with-qemu",
+          "status": "completed",
+          "student_name": "richyliu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Snapshot/restore for fuzzing with QEMU"
+        },
+        {
+          "code_url": "https://github.com/iaGuoZhi/Virtualization/tree/master/in_order",
+          "description": "VIRTIO_F_IN_ORDER is a new feature presented in VIRTIO 1.1.\n\nAs mentioned on the project description page, VIRTIO_F_IN_ORDER is a feature that devices and drivers can negotiate when the device uses descriptors in the same order in which they were made available by the driver. This feature can help devices and drivers batch buffers and improve performance.\n\nCurrently the devices and drivers available in Linux and QEMU do not support the VIRTIO_F_IN_ORDER feature. The only implementation is available in DPDK for the virtio-net driver.\n\nI will spend this summer to implement VIRTIO_F_IN_ORDER feature in both Linux and QEMU, and in both split and packed virtqueue layouts.\n\nPatches will be sent as soon as possible.",
+          "difficulty": null,
+          "id": "proj_qemu_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/AR3DqQ9V/",
+          "proposal_id": null,
+          "short_description": "VIRTIO_F_IN_ORDER is a new feature presented in VIRTIO 1.1. As mentioned on the project description page, VIRTIO_F_IN_ORDER is a feature that devices...",
+          "slug": "virtio_f_in_order-support-for-virtio-devices",
+          "status": "completed",
+          "student_name": "Zhi Guo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "VIRTIO_F_IN_ORDER support for virtio devices"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/qemu/"
+    },
+    "year_2023": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/czzrr/gsoc2023",
+          "description": "Virtiofs is a shared file system that lets virtual machines access a directory tree on the host. Unlike existing approaches, it is designed to offer local file system semantics and performance. \n\nCurrently, virtiofsd integrates the sandboxing code and the server code in a single binary. The goal is to extract that code and create an external tool that creates a sandbox environment and runs virtiofsd in it. This will make it easier to develop sandboxing features and virtiofsd side by side.\n\nIn addition, that tool should be extended to be able to run virtiofsd in a restricted environment with Landlock. Landlock is a Linux kernel module that allows unprivileged processes to restrict their own access rights. This will enable the tool to apply access restrictions to virtiofsd without requiring privileged access, in a way that is enforced by the kernel, thereby increasing the protection of virtiofsd users.\n\nThis will allow greater flexibility when integrating virtiofsd into a VMM or running it inside a container, due to how Landlock enforces access restriction rules as composable security layers that are compatible with system access controls.",
+          "difficulty": null,
+          "id": "proj_qemu_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/52bIKoWU",
+          "proposal_id": "T95L6Ml2",
+          "short_description": "Virtiofs is a shared file system that lets virtual machines access a directory tree on the host. Unlike existing approaches, it is designed to offer...",
+          "slug": "a-sandboxing-tool-for-virtiofsd",
+          "status": "completed",
+          "student_name": "Christopher Acosta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "A sandboxing tool for virtiofsd"
+        },
+        {
+          "code_url": "https://github.com/JiaweiHawk/gsoc2023",
+          "description": "Virtio-net device uses Control Virtqueue(CVQ) for changing device parameters. For some devices, such as vDPA, its CVQ is passed from Guest’s driver directly to Host driver, which makes it difficult for QEMU to track the status of these devices.\n\nTo solve this problem, QEMU introduces Shadow Virtqueue(SVQ) for vdpa device, which shadows the CVQ via QEMU instead of being assigned directly to Guest. During QEMU Live migration, to restore the vdpa device in the destination VM to the state in the source VM, SVQ can use CVQ’s interface and send the state as regular CVQ commands.\n\nDue to some CVQ commands for vDPA are missing at present, this project aims to achieve support for a subset of CVQ commands, including VIRTIO_NET_CTRL_RX family commands, VIRTIO_NET_CTRL_GUEST_OFFLOADS_SET command, VIRTIO_NET_CTRL_VLAN_ADD command, VIRTIO_NET_CTRL_MQ_HASH_CONFIG command and VIRTIO_NET_CTRL_MQ_RSS_CONFIG command for vDPA.",
+          "difficulty": null,
+          "id": "proj_qemu_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/zptoHp3v",
+          "proposal_id": "ojCNsbfz",
+          "short_description": "Virtio-net device uses Control Virtqueue(CVQ) for changing device parameters. For some devices, such as vDPA, its CVQ is passed from Guest’s driver...",
+          "slug": "add-virtio-net-control-virtqueue-state-restore-support",
+          "status": "completed",
+          "student_name": "Hawkins Jiawei",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add virtio-net Control Virtqueue state restore support"
+        },
+        {
+          "code_url": "https://gitlab.com/Kariiem/qemu/-/blob/master/GSoC23.org",
+          "description": "The proposal is about improving the QEMU emulator for the armv7 architecture on FreeBSD OS, it's goal is to get a simple C++ hello-world program to compile and run inside an armv7 jail hosted on an amd64 machine, using clang.\n\nTo achieve this, about 32 syscalls need to be implemented for the qemu-bsd-user master branch, they are already implemented in the blitz branch, by the project mentor. The project is to add them to the master branch, perform testing and debugging of any errors, add them in a series of patches, each should pass the code review guidelines set up by QEMU developers.\n\nThe solution starts by getting a stack trace of the syscalls that the compiler calls when using the blitz build of qemu-bsd-user, then compare them to the ones that succeed when using the master build of the qemu-bsd-user.\n\nHaving done this, now we know which syscall are already added and those that are not.\nNow we proceed to add the missing ones, the project plan is included in the proposal.\nI will be delivering 32 patches to the qemu-devel mailing list, each one corresponding to a missing syscall.",
+          "difficulty": null,
+          "id": "proj_qemu_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/nPd0n4mh",
+          "proposal_id": "qr9HUksv",
+          "short_description": "The proposal is about improving the QEMU emulator for the armv7 architecture on FreeBSD OS, it's goal is to get a simple C++ hello-world program to...",
+          "slug": "improving-freebsd-user-emulation-of-the-armv7-architecture",
+          "status": "completed",
+          "student_name": "Kariiem",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving FreeBSD User Emulation of the Armv7 Architecture"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1w2gB8xJNDlhRl7WwN9GMl_jzLsyW6lTW7IXi__01Vpg/edit?usp=shar",
+          "description": "QEMU is able to export its display over D-Bus. We can create a server that uses the provided API to export the display over the network. There is already an experimental VNC server, but RDP is more popular and would provide more features and better efficiency.",
+          "difficulty": null,
+          "id": "proj_qemu_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ps0s1dH2",
+          "proposal_id": "lYxUXqev",
+          "short_description": "QEMU is able to export its display over D-Bus. We can create a server that uses the provided API to export the display over the network. There is...",
+          "slug": "out-of-process-rdp-server-for-qemu",
+          "status": "completed",
+          "student_name": "Mihnea Buzatu",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Out-of-process RDP server for QEMU"
+        },
+        {
+          "code_url": "https://gist.github.com/tage64/73972c2452092c05e6d0017cd448c75d",
+          "description": "Network Block Device (NBD) is a protocol for exporting block devices, either between processes or across the network. Libnbd is a client library for talking to NBD servers. Currently, this library has bindings in various languages, including C, Golang and Python, but not in Rust. This project aims to make ergonomic Rust bindings for libnbd.\n\nThe bindings should be automatically generated from the API of libnbd, so they will keep in sync as the library evolves. Apart from the actual bindings, several tests and examples will be created and good documentation will be written.",
+          "difficulty": null,
+          "id": "proj_qemu_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/nh7sGpK6",
+          "proposal_id": "iVhbaBNl",
+          "short_description": "Network Block Device (NBD) is a protocol for exporting block devices, either between processes or across the network. Libnbd is a client library for...",
+          "slug": "rust-bindings-for-libnbd",
+          "status": "completed",
+          "student_name": "Tage Johansson",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Rust bindings for libnbd"
+        },
+        {
+          "code_url": "https://gist.github.com/techiepriyansh/d11a56152abb496f009c0b3b374a91fd",
+          "description": "The vhost-user-vsock Rust application emulates a virtio-vsock device in an external process and provides the hybrid VSOCK interface over AF_UNIX introduced by Firecracker. The goal of the project is to extend this application to support sibling VM communication.",
+          "difficulty": null,
+          "id": "proj_qemu_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/MYtudh2C",
+          "proposal_id": "ygChlYEO",
+          "short_description": "The vhost-user-vsock Rust application emulates a virtio-vsock device in an external process and provides the hybrid VSOCK interface over AF_UNIX...",
+          "slug": "sibling-vm-communication-in-vhost-user-vsock",
+          "status": "completed",
+          "student_name": "techiepriyansh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sibling VM communication in vhost-user-vsock"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/qemu"
+    },
+    "year_2024": null,
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project extends QEMU FUSE export with support for FUSE-over-io_uring, a modern Linux interface that enables asynchronous, high-performance communication between FUSE daemons and the kernel. Unlike the traditional /dev/fuse path, io_uring reduces system calls, supports batching, and lowers CPU overhead.\n\nThis project will integrate FUSE-over-io_uring into QEMU as an optional mode, enabling more efficient access to disk image contents through the FUSE export. The work includes implementing queue setup and negotiation with the kernel, supporting multiple inflight FUSE requests, enabling multi I/OThreads, and benchmarking performance using fio.\n\nDeliverables include:\nFUSE-over-io_uring support in QEMU\nMulti-inflight and multi-IOThread support\nPerformance benchmarks\nDocumentation",
+          "difficulty": null,
+          "id": "proj_qemu_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Zoesj2mE",
+          "proposal_id": "41gCj5un",
+          "short_description": "This project extends QEMU FUSE export with support for FUSE-over-io_uring, a modern Linux interface that enables asynchronous, high-performance...",
+          "slug": "fuse-over-io_uring-exports",
+          "status": "in-progress",
+          "student_name": "Brian Song",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Fuse-over-io_uring exports"
+        },
+        {
+          "code_url": null,
+          "description": "Virtio-fs is a shared file system that lets virtual machines access a directory tree on the host. Virtiofsd is the user-level host daemon that communicates with the guest VMs and performs I/O operations on the shared directory tree. Currently, virtiofsd processes FUSE-based I/O requests in a mostly sequential manner. Even though it uses a thread pool, concurrency is limited by the number of available threads. This project aims to enable truly asynchronous I/O request handling in virtiofsd by leveraging io_uring. The deliverables will include a complete patch implementing asynchronous I/O handling, along with a performance evaluation of the resulting system.",
+          "difficulty": null,
+          "id": "proj_qemu_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uEfjI7DH",
+          "proposal_id": "AtJFp6bR",
+          "short_description": "Virtio-fs is a shared file system that lets virtual machines access a directory tree on the host. Virtiofsd is the user-level host daemon that...",
+          "slug": "asynchronous-request-handling-for-virtiofsd",
+          "status": "in-progress",
+          "student_name": "Kaisei Hishida",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Asynchronous request handling for virtiofsd"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to formally verify that the Rust vmm (a Rust implementation of the VirtIO specification used in virtualization platforms like QEMU) behaves correctly according to the VirtIO specification. The approach involves writing unit proofs for critical functions in Rust vmm and verifying them using Kani, a Rust-based bounded model checker. These proofs, which will be integrated into continuous integration (CI), will not only check correctness for all executions within a bound but also verify memory safety, especially in areas mixing safe and unsafe Rust.\n\nCommunity Benefits:\n\n1. Increased trust in Rust vmm’s conformance to the VirtIO spec, benefiting all dependent projects.\n2. Maintainable proofs using the Code-As-Spec paradigm, making them accessible to Rust vmm developers.\n3. Demonstrates the practical value of formal verification for ensuring correctness in critical open source infrastructure.",
+          "difficulty": null,
+          "id": "proj_qemu_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/jBUdLT2D",
+          "proposal_id": "M5lPuGWc",
+          "short_description": "This project aims to formally verify that the Rust vmm (a Rust implementation of the VirtIO specification used in virtualization platforms like QEMU)...",
+          "slug": "adding-kani-proofs-for-virtqueues-in-rust-vmm",
+          "status": "in-progress",
+          "student_name": "Siddharth Priya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Adding Kani proofs for Virtqueues in Rust-vmm"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance QEMU's HP PA-RISC emulation by implementing LASI Network Card and NCR 710 SCSI Controller device models.\nLASI Network Card: Debug, test and complete the current Intel 82596 based implementation to provide full functionality\nNCR 710 SCSI Controller: Develop a new, accurate QEMU device model based on documentations present.\n\nDeliverables: Fully functional LASI Network Card and NCR 710 SCSI Controller models.",
+          "difficulty": null,
+          "id": "proj_qemu_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/OMa5aKPb",
+          "proposal_id": "kmFDiKer",
+          "short_description": "This project aims to enhance QEMU's HP PA-RISC emulation by implementing LASI Network Card and NCR 710 SCSI Controller device models. LASI Network...",
+          "slug": "implementing-lasi-network-card-and-ncr-710-scsi-controller-device-models",
+          "status": "in-progress",
+          "student_name": "Soumyajyotii Ssarkar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing LASI Network Card and NCR 710 SCSI Controller Device Models"
+        },
+        {
+          "code_url": null,
+          "description": "Extend rust-vmm crates (vhost, vhost-user-backend) to enable vhost-user device support on non-Linux POSIX systems (macOS/*BSD). The goal of this project is to make sure that we can use rust-vmm's vhost and vhost-user-backend crates on other POSIX systems besides Linux.",
+          "difficulty": null,
+          "id": "proj_qemu_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/XRKi5d8M",
+          "proposal_id": "jsjYj4sR",
+          "short_description": "Extend rust-vmm crates (vhost, vhost-user-backend) to enable vhost-user device support on non-Linux POSIX systems (macOS/*BSD). The goal of this...",
+          "slug": "vhost-user-devices-in-rust-on-macos-and-bsd",
+          "status": "in-progress",
+          "student_name": "Wenyu Huang",
+          "student_profile": null,
+          "tags": [
+            "ux",
+            "backend"
+          ],
+          "title": "vhost-user devices in Rust on macOS and *BSD"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/qemu"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "stefanha@gmail.com",
+    "guide_url": "https://wiki.qemu.org/Google_Summer_of_Code_2025",
+    "ideas_url": "https://wiki.qemu.org/Google_Summer_of_Code_2025",
+    "irc_channel": "https://webchat.oftc.net/?channels=qemu-gsoc",
+    "mailing_list": "https://lists.nongnu.org/mailman/listinfo/qemu-devel"
+  },
+  "social": {
+    "blog": "https://qemu.org/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.041Z"
+  }
+}

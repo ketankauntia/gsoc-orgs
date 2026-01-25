@@ -1,0 +1,556 @@
+{
+  "id": "692251d553dd9d7326d33dc7",
+  "slug": "git",
+  "name": "Git",
+  "category": "Programming languages",
+  "description": "Fast,Scalable,Distributed revision control system",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/git/mbqqznjbaohwgq80-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/git.webp",
+  "logo_r2_url": null,
+  "url": "https://git-scm.com/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "shell script",
+    "git",
+    "shell",
+    "c language"
+  ],
+  "topics": [
+    "version control",
+    "dvcs",
+    "version-control"
+  ],
+  "total_projects": 22,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.2,
+    "projects_by_year": {
+      "year_2016": 1,
+      "year_2017": 1,
+      "year_2018": 3,
+      "year_2019": 2,
+      "year_2020": 3,
+      "year_2021": 2,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": 1,
+      "year_2017": 1,
+      "year_2018": 3,
+      "year_2019": 2,
+      "year_2020": 3,
+      "year_2021": 2,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": 3
+    },
+    "total_students": 22
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://drive.google.com/drive/folders/0B2SBIDYEkAaiV2xhNWZNSUdWOVE?usp=sharing",
+          "description": "<p>Git bisect is a frequently used command which helps the developers in finding the commit which introduced the regression. Some part of it is written in shell script. I intend to convert it to portable C code thus making them builtins. This will increase Git’s portability.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5595001820020736/",
+          "proposal_id": null,
+          "short_description": "Git bisect is a frequently used command which helps the developers in finding the commit which introduced the regression. Some part of it is written...",
+          "slug": "incremental-rewrite-of-git-bisect",
+          "status": "completed",
+          "student_name": "Pranit Bauva",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Incremental Rewrite of Git Bisect"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5532648021688320/"
+    },
+    "year_2017": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://drive.google.com/drive/folders/0B1HuYKpJFTqWYk5vcmpaa2JJa28",
+          "description": "<p>To manage the external dependencies, git submodule commands have been\nfrequently used by the developers in their projects. But as most of the\nsubcommands of git submodule are still written in shell scripts (All, but\ngit submodule init), my project intends to convert the subcommands into\nC code, thus making them builtins. This will increase Git's portability\nand hence the efficiency of working with the git-submodule commands.\nThe function cmd_init has been ported to its built-in successfully and\nsimilar operation needs to be done to the remaining functions.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5434523185577984/",
+          "proposal_id": null,
+          "short_description": "To manage the external dependencies, git submodule commands have been\nfrequently used by the developers in their projects. But as most of the...",
+          "slug": "incremental-rewrite-of-git-submodules",
+          "status": "completed",
+          "student_name": "Prathamesh Chavan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Incremental Rewrite of git-submodules"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5061577619275776/"
+    },
+    "year_2018": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/ungps/gsoc2018",
+          "description": "<p>Currently, many components of Git are still in the form of Shell or Perl scripts. This choice makes sense especially when considering how faster new features can be implemented in Shell and Perl scripts, rather than writing them in C. However, in production, where Git runs daily on millions of computers with distinct configurations (i.e. different operating systems) some problems appear (i.e. POSIX-to-Windows path conversion issues).</p>\n<p>The idea of this project is to take “git-stash.sh” and reimplement it in C. Apart from fixing compatibility issues and increasing the performance by going one step closer to native code, I believe this is an excellent excuse to fix long-standing bugs or implement new minor features.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6700324135895040/",
+          "proposal_id": null,
+          "short_description": "Currently, many components of Git are still in the form of Shell or Perl scripts. This choice makes sense especially when considering how faster new...",
+          "slug": "convert-git-stash-to-builtin",
+          "status": "completed",
+          "student_name": "Paul-Sebastian Ungureanu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Convert “git stash” to builtin"
+        },
+        {
+          "code_url": "https://github.com/prertik/GSoC2018",
+          "description": "<p>Many components of Git are still in the form of shell and Perl scripts. This has certain advantages of being extensible but causes problems in production code on multiple platforms like Windows. I propose to rewrite a couple of shell and perl scripts into portable and performant C code, making them built-ins. The major advantage of doing this is improvement in efficiency and performance.</p>\n<p>Much more scripts like  git-am, git-pull,  git-branch have already been rewritten in C. Much more scripts like git-rebase, git-stash, git-add --interactive are still present in shell and perl scripts. I propose to work in git-rebase and it's sub-commands.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5389615745728512/",
+          "proposal_id": null,
+          "short_description": "Many components of Git are still in the form of shell and Perl scripts. This has certain advantages of being extensible but causes problems in...",
+          "slug": "convert-rebase-and-its-options-to-c",
+          "status": "completed",
+          "student_name": "Pratik Karki",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Convert rebase  and it's options to C"
+        },
+        {
+          "code_url": "https://github.com/agrn/gsoc2018",
+          "description": "<p>git is a modular source control management software, and all of its subcommands are programs on their own. A lot of them are written in C, but a couple of them are shell or Perl scripts. This is the case of git-rebase--interactive (or interactive rebase), which is a shell script. Rewriting it in C would improve its performance, its portability, and maybe its robustness.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6165469845258240/",
+          "proposal_id": null,
+          "short_description": "git is a modular source control management software, and all of its subcommands are programs on their own. A lot of them are written in C, but a...",
+          "slug": "convert-interactive-rebase-to-c",
+          "status": "completed",
+          "student_name": "Alban Gruin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Convert interactive rebase to C"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4840889583140864/"
+    },
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://rashiwal.me/2019/final-report/",
+          "description": "<p>Since when it was created in 2005, the git rebase command has been implemented using shell scripts that are calling other git commands. Commands like git format-patch to create a patch series for some commits, and then git am to apply the patch series on top of a different commit in case of regular rebase and the interactive rebase calls git cherry-pick repeatedly for the same.</p>\n<p>git-sequencer executed a sequence of git instructions to  \n or \n and the sequence was given by a \n or through stdin. The git-sequencer wants to become the common backend for git-am, git-rebase and other git commands, so as to improve performance, since then it eliminated the need to spawn a new process.</p>\n<p>As of now, there are still some inconsistencies among these commands, e.g., there is no --skip flag in git-cherry-pick while one exists for git-rebase. This project aims to remove inconsistencies in how the command line options are handled.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5390155215536128/",
+          "proposal_id": null,
+          "short_description": "Since when it was created in 2005, the git rebase command has been implemented using shell scripts that are calling other git commands. Commands like...",
+          "slug": "improve-consistency-of-sequencer-commands",
+          "status": "completed",
+          "student_name": "__rohit",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Improve consistency of sequencer commands"
+        },
+        {
+          "code_url": "https://matheustavares.gitlab.io/posts/gsoc-final-report",
+          "description": "<p>As direct as possible, the goal with this project is to <strong>make more of Git’s codebase thread-safe</strong>, so that we can <strong>improve parallelism in various commands</strong>. The motivation behind this are the complaints from developers experiencing slow Git commands when working with large repositories, such as chromium and Android. And since nowadays, most personal computers have multi-core CPUs, it is a natural step trying to improve parallel support so that we can better use the available resources.</p>\n<p>With this in mind, pack access code is a good target for improvement, since it’s used by many Git commands (e.g., checkout, grep, blame, diff, log, etc.). This section of the codebase is still sequential and has many global states, which should be made local, removed or protected before we can work to improve parallelism. That's what this project is targeting.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4787791739748352/",
+          "proposal_id": null,
+          "short_description": "As direct as possible, the goal with this project is to make more of Git’s codebase thread-safe, so that we can improve parallelism in various...",
+          "slug": "make-pack-access-code-thread-safe",
+          "status": "completed",
+          "student_name": "Matheus Tavares",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ai"
+          ],
+          "title": "Make pack access code thread-safe"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6548634445807616/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://shouryashukla.blogspot.com/2020/08/the-final-report.html",
+          "description": "<p>Some Git commands were initially implemented directly in shell script with some instances of Perl as well. As times progressed, various platforms to run Git emerged &amp; projects became large, <em>enter</em>, problems in production level code. These problems included difficulties in porting code across platforms especially in non-POSIX compliant systems as well as a large overhead involved in calling shell scripts due to multiple <code>fork()</code> &amp; <code>exec()</code> syscalls. To address these issues, commands were ported from shell to C, thus making them a builtin. Various commands, such as <code>add</code>, <code>blame</code>, <code>commit</code>, etc.  have been converted to C due to the aforementioned reasons.</p>\n<p>There are 4 subcommands of <code>git submodule</code> due for conversion, namely: <code>add</code>, <code>set-url</code>, <code>set-branch</code> &amp; <code>summary</code>. My project intends to convert these subcommands into C, thus making <code>git submodule</code> a <strong>'builtin'</strong>. This would increase the efficiency of the command by a great margin as well as address the aforementioned problems in the shell versions of the command.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4541259818991616/",
+          "proposal_id": null,
+          "short_description": "Some Git commands were initially implemented directly in shell script with some instances of Perl as well. As times progressed, various platforms to...",
+          "slug": "convert-submodule-to-builtin",
+          "status": "completed",
+          "student_name": "shourya",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Convert submodule to builtin"
+        },
+        {
+          "code_url": "https://github.com/abhishekkumar2718/GSoC20/blob/master/README.md",
+          "description": "<p>Git uses various clever methods for making operations on very large repositories faster, from <a href=\"https://githubengineering.com/counting-objects/\" target=\"_blank\">bitmap indices for git fetch</a> to <a href=\"https://devblogs.microsoft.com/devops/supercharging-the-git-commit-graph-iii-generations/\" target=\"_blank\">generation numbers</a> (also known as topological levels) in the commit-graph file for commit graph traversal operations like <code>git log --graph</code>.</p>\n<p>However, generation numbers do not always improve performance. Stolee has previously explored <a href=\"https://lore.kernel.org/git/6367e30a-1b3a-4fe9-611b-d931f51effef@gmail.com/\" target=\"_blank\">alternatives for a better generation number</a> for a better generation number.</p>\n<p>This project implements generation number v2 along with other commit-graph related improvements.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6510085276172288/",
+          "proposal_id": null,
+          "short_description": "Git uses various clever methods for making operations on very large repositories faster, from bitmap indices for git fetch to generation numbers...",
+          "slug": "implement-generation-number-v2",
+          "status": "completed",
+          "student_name": "abhishekkumar8222",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implement Generation Number v2"
+        },
+        {
+          "code_url": "https://harry-hov.github.io/blogs/posts/the-final-report",
+          "description": "<p>Git has an old problem of duplicated implementations of some logic. For example, Git had at least 4 different implementations to format command output for different commands. The foremost aim of this project is to simplify codebase by getting rid of duplication of a similar logic and, as a result, simplify adding new functionality.  The current task is to reuse <code>ref-filter</code> formatting logic in <code>pretty</code> to minimize code duplication and to have one unified interface to extract all needed data from the object and to print it properly.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6123927484497920/",
+          "proposal_id": null,
+          "short_description": "Git has an old problem of duplicated implementations of some logic. For example, Git had at least 4 different implementations to format command...",
+          "slug": "unify-ref-filter-formats-with-other-pretty-formats",
+          "status": "completed",
+          "student_name": "Hariom Verma",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Unify ref-filter formats with other --pretty formats"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5445576591671296/"
+    },
+    "year_2021": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://adlternative.github.io/GSOC-Git-Final-Blog/",
+          "description": "<p>git cat-file has options --batch[=\n] and --batch-check[=\n] that can take a \n. It would be nice if the implementation of this \n would use the as much as possible the same code and syntax as the ref-filter formats.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5443907994779648/",
+          "proposal_id": null,
+          "short_description": "git cat-file has options --batch[=\n] and --batch-check[=\n] that can take a \n. It would be nice if the implementation of this \n would use the as much...",
+          "slug": "use-ref-filter-formats-in-git-cat-file",
+          "status": "completed",
+          "student_name": "ZheNing Hu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Use ref-filter formats in git cat-file"
+        },
+        {
+          "code_url": "https://github.com/tfidfwastaken/gitnotes/blob/main/final-report.md",
+          "description": "<p>Git has historically had many components implemented in the form of shell scripts. This was less than ideal for several reasons:</p>\n<ul>\n<li>Portability: Non-POSIX systems like Windows don’t play nice with shell script commands like grep, cd and printf, to name a few, and these commands have to be reimplemented for the system. There are also POSIX to Windows path conversion issues.</li>\n<li>No direct access to plumbing: Shell commands do not have direct access to the low level Git API, and a separate shell is spawned to just to carry out their operations.</li>\n<li>Performance: Shell scripts tend to create a lot of child processes which slows down the functioning of these commands, especially with large repositories.</li>\n</ul>\n<p>The goal of this project is to complete the conversion of the remaining parts of <code>git submodule</code> to C, namely, the <code>add</code> and <code>update</code> commands. If possible, I intend to even get rid of the shell script called <code>git-submodule.sh</code> entirely, which currently calls <code>submodule--helper</code> to perform most of the business logic, and instead make <code>submodule</code> a proper builtin in pure C.</p>\n",
+          "difficulty": null,
+          "id": "proj_git_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5071550033690624/",
+          "proposal_id": null,
+          "short_description": "Git has historically had many components implemented in the form of shell scripts. This was less than ideal for several reasons:\n\nPortability:...",
+          "slug": "finish-converting-submodule-to-builtin",
+          "status": "completed",
+          "student_name": "Atharva Raykar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Finish converting submodule to builtin"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6398200235163648/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://ffyuanda.github.io/blog/GSoC-final-blog/",
+          "description": "The spare index feature accelerates Git commands when using sparse-checkout in cone mode. This works by modifying the on-disk index file in a way that includes “sparse directory” entries instead of only file entries. This requires care when enabling the sparse index for different commands, as custom logic might be necessary. At minimum, interaction with the sparse index needs to be carefully tested in the Git test suite when enabling it.\r\nThe most-used commands have already been integrated with the sparse index feature. Keep integrating the remaining commands with the sparse index.",
+          "difficulty": null,
+          "id": "proj_git_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/hz4rcOUB/",
+          "proposal_id": null,
+          "short_description": "The spare index feature accelerates Git commands when using sparse-checkout in cone mode. This works by modifying the on-disk index file in a way...",
+          "slug": "more-sparse-index-integrations",
+          "status": "completed",
+          "student_name": "Shaoxuan Yuan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "More Sparse Index Integrations"
+        },
+        {
+          "code_url": "https://medium.com/@abhra303/gsoc-final-report-feaaacfae737",
+          "description": "Git uses bitmaps to speed up the work of knowing which object(trees, blobs, etc.) can be reached from which commit. The current bitmap implementation has several problems. These are -\n1)  Decompression of bitmaps is slow with EWAH. To know if an object is\nrelated to a particular commit, we have to decompress the whole thing.\n\n2. Loading a `.bitmap` file can be slow for large bitmaps. This is because we\nneed to read the file sequentially in order to discover the offset of each\nbitmap within the file.\n\n3. Regenerating bitmaps can take a long time.\n\n4. If we solve the above points, we would think of other aspects like\nrethinking how we select which commit receives bitmaps etc.\n\nNow there are multiple ways to solve these problems. Point to point solution is given below - \n\n1. There are better and more modern techniques than EWAH for compressing. Roaring+run bitmap can be used as an alternative to EWAH. So that, we can optimize the performance of compressing/decompression. I will also write performance tests to verify that.\n\nOne possible approach  to problem no. 3, is to add a new mode that only adds new bitmaps for commits introduced between successive bitmap generations.\n\nTo solve problem no. 2, we can create a `table of contents for these bitmaps. Taylor (mentor) has already initiated some work on it. I will finish it.",
+          "difficulty": null,
+          "id": "proj_git_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/UPtA6qdf/",
+          "proposal_id": null,
+          "short_description": "Git uses bitmaps to speed up the work of knowing which object(trees, blobs, etc.) can be reached from which commit. The current bitmap implementation...",
+          "slug": "reachability-bitmap-improvements",
+          "status": "completed",
+          "student_name": "Abhra303",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reachability bitmap improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/git/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://five-sh.github.io/2023/08/26/the-final-report",
+          "description": "Git has an old problem of duplicated implementations of some logic. For example, Git had at least 4 different implementations to format command output for different commands.  The end goal of this project is to unify these formats into a single implementation. The first task is to re-implement atoms of pretty in ref-filter, which will help remove duplicated implementations. Once that is completed, work will done to unify both the formats so that there is a single interface that formats command output in Git.",
+          "difficulty": null,
+          "id": "proj_git_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/rck3kmq2",
+          "proposal_id": "yny8lAaX",
+          "short_description": "Git has an old problem of duplicated implementations of some logic. For example, Git had at least 4 different implementations to format command...",
+          "slug": "unify-ref-filter-formats-with-other-pretty-formats",
+          "status": "completed",
+          "student_name": "Kousik Sanagavarapu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Unify ref-filter formats with other --pretty formats"
+        },
+        {
+          "code_url": "https://cheskaqiqi.github.io/2023/08/22/Final/",
+          "description": "The \"sparse-index\" is a feature that reduces the size of the working directory's index to function effectively with \"sparse-checkout\", resulting in significant performance improvements. Integration with \"sparse-index\" may require changes to git command logic and git's internal data structure. When enabling the sparse index, it is essential to carefully analyze its interaction within the git test suite to ensure proper functionality and compatibility with the git command. Continue integrating the remaining commands with the sparse index.",
+          "difficulty": null,
+          "id": "proj_git_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Rkbc1Abe",
+          "proposal_id": "3hKzB8QH",
+          "short_description": "The \"sparse-index\" is a feature that reduces the size of the working directory's index to function effectively with \"sparse-checkout\", resulting in...",
+          "slug": "more-sparse-index-integrations",
+          "status": "completed",
+          "student_name": "SHUQI LIANG",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "More Sparse Index Integrations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/git"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://spectre10.github.io/posts/gsoc_final_report/",
+          "description": "Git has many existing end-to-end tests which are written in shell script. However, to unit test some of the internal libraries/functionality, we use helper binaries whose output is consumed by these shell scripts to compare the result obtained from those binaries with the expected result. This translation is costly due to many reasons. Therefore, this project aims port some of these existing unit tests to the newly merged TAP implementation of a unit testing framework, which allows for tests to be written solely in C, and does not require the shell script translation.",
+          "difficulty": null,
+          "id": "proj_git_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/e9C4rhrv/",
+          "proposal_id": null,
+          "short_description": "Git has many existing end-to-end tests which are written in shell script. However, to unit test some of the internal libraries/functionality, we use...",
+          "slug": "move-existing-tests-to-a-unit-testing-framework",
+          "status": "completed",
+          "student_name": "Ghanshyam Thakkar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Move existing tests to a unit testing framework"
+        },
+        {
+          "code_url": "https://chand-ra.github.io/2024/08/24/GSoC-Final-Report.html",
+          "description": "A new unit testing framework was introduced to the Git mailing list last year with the aim of simplifying testing and improving maintainability by moving the current testing setup from shell scripts and helper files to a framework written wholly in C. This project aims to extend that work by moving the tests exercising reftable's code from the current setup to the new unit testing framework and improving the tests themselves.",
+          "difficulty": null,
+          "id": "proj_git_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/tlh611d7/",
+          "proposal_id": null,
+          "short_description": "A new unit testing framework was introduced to the Git mailing list last year with the aim of simplifying testing and improving maintainability by...",
+          "slug": "move-and-improve-reftable-tests-in-the-unit-testing-framework",
+          "status": "completed",
+          "student_name": "Chand",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Move and improve reftable tests in the unit testing framework"
+        },
+        {
+          "code_url": "https://luolibrary.com/2024/08/25/GSoC-Final-Report/",
+          "description": "The project addresses the issue that the current git-fsck command cannot detect corruption in the \"packed-refs\" file and lacks explicit checks for the ref database, especially with the introduction of the new \"retable\" backend format.\r\n\r\nThe solution involves creating an infrastructure that allows for backend-specific consistency checks for refs. This will include checks for both the existing \"file\" backend and the new \"retable\" backend. The project will leverage Git's polymorphism in handling refs to ensure that all ref names are conformant and to prevent directory/file conflicts among ref names. Additionally, it will ensure the \"packed-refs\" file is well-formatted and that refs are ordered lexicographically.\r\n\r\n\r\nDeliverables for the project include the infrastructure setup for backend-specific checks, implementation of generic ref checks, and unit tests to ensure correctness. The project is expected to take 175 to 350 hours, depending on whether checks for the \"retable\" backend are implemented.",
+          "difficulty": null,
+          "id": "proj_git_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ukm4PTEF/",
+          "proposal_id": null,
+          "short_description": "The project addresses the issue that the current git-fsck command cannot detect corruption in the \"packed-refs\" file and lacks explicit checks for...",
+          "slug": "implement-consistency-check-for-refs",
+          "status": "completed",
+          "student_name": "shejialuo",
+          "student_profile": null,
+          "tags": [
+            "database",
+            "backend"
+          ],
+          "title": "Implement consistency check for refs"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/git/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Git currently relies on a global object the_repository and several global environment-related variables, which limits modularity and complicates long-term maintainability. This project aims to refactor Git’s environment handling by relocating global variables into more appropriate repository-specific contexts, primarily struct repository and struct repo_settings.\n\nHowever, some global variables are only relevant to specific subsystems. In such cases, instead of placing them in the repository structure, they will be moved into subsystem-specific contexts that better reflect their scope. \n\nOverall, the project will reduce global state and improve the maintainability and modularity of the codebase.",
+          "difficulty": null,
+          "id": "proj_git_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/no7dVMeG",
+          "proposal_id": "edYSEbKn",
+          "short_description": "Git currently relies on a global object the_repository and several global environment-related variables, which limits modularity and complicates...",
+          "slug": "refactoring-in-order-to-reduce-gits-global-state",
+          "status": "in-progress",
+          "student_name": "Ayush Chandekar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Refactoring in order to reduce Git’s global state"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces a new Git sub-command (currently intended to be called git repo-info) that will centralize data currently retrieved by git rev-parse in a JSON format.",
+          "difficulty": null,
+          "id": "proj_git_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fGgMYHwl",
+          "proposal_id": "XGcRKExG",
+          "short_description": "This project introduces a new Git sub-command (currently intended to be called git repo-info) that will centralize data currently retrieved by git...",
+          "slug": "machine-readable-repository-information-query-tool",
+          "status": "in-progress",
+          "student_name": "Lucas Oshiro",
+          "student_profile": null,
+          "tags": [],
+          "title": "Machine-Readable Repository Information Query Tool"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to streamline reference management in Git by consolidating functionality currently spread across multiple commands into a single git-refs command. The updated git refs command will offer sub-commands to list, retrieve, verify/check existence, write, and optimize references. The deliverables include the git refs command along with its numerous sub-commands, updated documentation, and thorough test coverage.",
+          "difficulty": null,
+          "id": "proj_git_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/xVrT5e2q",
+          "proposal_id": "hcHxJPhQ",
+          "short_description": "This project aims to streamline reference management in Git by consolidating functionality currently spread across multiple commands into a single...",
+          "slug": "consolidate-ref-related-functionality-into-git-refs",
+          "status": "in-progress",
+          "student_name": "Meet Soni",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Consolidate ref-related functionality into git-refs"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/git"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "git@vger.kernel.org",
+    "guide_url": "https://git.github.io/General-Application-Information/",
+    "ideas_url": "https://git.github.io/SoC-2025-Ideas/",
+    "irc_channel": "https://git-scm.com/community",
+    "mailing_list": "https://git-scm.com/community"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.201Z"
+  }
+}

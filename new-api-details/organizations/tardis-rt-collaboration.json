@@ -1,0 +1,400 @@
+{
+  "id": "692251e853dd9d7326d33ec6",
+  "slug": "tardis-rt-collaboration",
+  "name": "TARDIS RT Collaboration",
+  "category": "Science and medicine",
+  "description": "Exploring supernovae made easy",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/tardis-rt-collaboration/0ocxr3jw3fwdloye-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/tardis-rt-collaboration.webp",
+  "logo_r2_url": null,
+  "url": "https://tardis-sn.github.io",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "numba",
+    "numpy",
+    "jupyter",
+    "pandas"
+  ],
+  "topics": [
+    "visualization",
+    "big data",
+    "simulation",
+    "astrophysics"
+  ],
+  "total_projects": 15,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.75,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 4,
+      "year_2023": 6,
+      "year_2024": 3,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 4,
+      "year_2023": 6,
+      "year_2024": 3,
+      "year_2025": 2
+    },
+    "total_students": 15
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://code-explorer.github.io/GSOC_2022_Report/",
+          "description": "Currently, TARDIS simulations run quickly and thus pausing and resuming a simulation is not necessary. However, future additions to the code may increase runtimes substantially, so a way to save and restart a TARDIS run arbitrarily is needed. TARDIS produces HDF files of simulation results, so a similar method to save the in-progress simulation would be appropriate. When pausing and writing to file occurs should be determined by the end user at runtime.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/RD6PU1xK/",
+          "proposal_id": null,
+          "short_description": "Currently, TARDIS simulations run quickly and thus pausing and resuming a simulation is not necessary. However, future additions to the code may...",
+          "slug": "resuming-tardis-simulations-from-hdf",
+          "status": "completed",
+          "student_name": "Satwik Kambham",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Resuming TARDIS Simulations from HDF"
+        },
+        {
+          "code_url": "https://sites.google.com/view/jayant-gsoc2022",
+          "description": "TARDIS uses a monte carlo method to propagate photon packets through a model of an exploded star. As these virtual packets move through the ejecta model they interact with the gas through absorption, emission, and scattering. TARDIS has the functionality to track the properties of the packets that are generated when running the Simulation. But currently, all this tracked data is stored as ASCII data. This project will build an interactive animated visualization tool so that scientists can see exactly how packets move through their models.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/CfP6hTdM/",
+          "proposal_id": null,
+          "short_description": "TARDIS uses a monte carlo method to propagate photon packets through a model of an exploded star. As these virtual packets move through the ejecta...",
+          "slug": "monte-carlo-2d-packet-visualization",
+          "status": "completed",
+          "student_name": "Jayant bhakar",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Monte Carlo 2D Packet Visualization"
+        },
+        {
+          "code_url": "https://www.atharvaarya.tech/google-summer-of-code-2022-report",
+          "description": "This project aims to improve the current Carsus testing framework and add a version key to Carsus output format. Along with this, the project would implement three pipelines. The first two are to update and compare reference data in pull requests. The third pipeline would allow finding out if a given Carsus output format is compatible with a given TARDIS version and will produce correct results.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/VI1FUJJa/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve the current Carsus testing framework and add a version key to Carsus output format. Along with this, the project would...",
+          "slug": "improving-the-carsus-testing-framework",
+          "status": "completed",
+          "student_name": "Atharva Arya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the Carsus Testing Framework"
+        },
+        {
+          "code_url": "https://sites.google.com/view/rohith-varma-gsoc22",
+          "description": "Tardis is an open-source project designed for rapid spectral modelling of supernovae. Astrophysicists widely use it to model supernovas. When new astrophysicists start using the Tardis, they will use the help of past projects to understand the simulated spectra. So it is crucial to continuously update the simulated spectra of past projects as the code of Tardis gets modified. \r\nCurrently, three past projects are stored in the tardis-setups repository. Each time there is a change in the codebase of Tardis, it is hard to run the projects and update the spectra manually. So a CI/CD framework should be created to automate comparing and publishing the results. To achieve this, we intend to use GitHub Actions.\r\nThe existing projects have different ways to run the simulations. So the existing projects will be modified to be integrated into the pipeline. Guidelines will also be put in place to allow future contributors to add more projects.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/M1wKU03z/",
+          "proposal_id": null,
+          "short_description": "Tardis is an open-source project designed for rapid spectral modelling of supernovae. Astrophysicists widely use it to model supernovas. When new...",
+          "slug": "tardis-setups-framework",
+          "status": "completed",
+          "student_name": "Rohith Varma Buddaraju",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Tardis Setups Framework"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/tardis-rt-collaboration/"
+    },
+    "year_2023": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1qXd7ps3rxMk0x2He3ZKlaWR8125VJ8rzbKXBb6m03hw/edit?usp=sharing",
+          "description": "TARDIS operates on a “photospheric” inner boundary approximation. A hard inner boundary in velocity is set from which radiative packets are emitted through the ejecta according to a black-body distribution at a given temperature. Currently, TARDIS can solve for the radiative and inner boundary temperatures as well as dilution factors given a static inner velocity boundary. The precise location of where this inner boundary velocity should be placed is not always obvious and there are a few methods by which one can intelligently select a location based on the properties of the plasma (which are constantly updating over each iteration).\n\nThis project will aim to update the location of the inner boundary velocity based on a set of options for desired properties of the plasma at each iteration. The options include setting the inner boundary velocity according to a given optical depth over all frequencies (either Planck or Rossland mean opacities) or setting the inner boundary according to a desired value for the dilution factors.\n\nThe project can be broken down into the following four deliverables:\n\n- Estimating the inner velocity value based on target values of optical depth and dilution factor\n\n- Integrate the estimation methods into TARDIS base\n\n- Write thorough test cases for all the above changes.\n\n- Make Jupyter notebooks and tutorials demonstrating the feature.\n\n-Thorough documentation of the changes.\n\n- Write a blog about the project.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/uyYkVw0V",
+          "proposal_id": "exwjVkkq",
+          "short_description": "TARDIS operates on a “photospheric” inner boundary approximation. A hard inner boundary in velocity is set from which radiative packets are emitted...",
+          "slug": "inner-boundary-velocity-solver",
+          "status": "completed",
+          "student_name": "Ansh_49",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Inner Boundary Velocity Solver"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1zDZcunshy0eAD7W11okAVryDAjYNBQPggi_OiRVZ2_8/edit?usp=sharing",
+          "description": "TARDIS generates synthetic observations of stellar explosions that can be compared to real observations. With such comparisons, we can learn more about the physical processes occurring and the conditions inside the supernova, including which elements and atomic transitions are dominant. TARDIS tracks the atomic transitions of interacting photons, level populations, etc. allowing the user to interrogate the physical conditions of the supernova. The goal of this project is to build a visual tool to represent this information for the user in Grotrian diagrams, which show different atomic levels of ions and transitions between them. Developing this tool will allow the user to more easily understand the important physical conditions of their supernova model.\n\nA regular Grotrian diagram would only display the overall line interaction for the packets that interact with the ion, but we also want to display how many packets went through each specific transition and the level populations. One way it could be done is to color each arrow to represent quantity of packets (similar to a heatmap) and the thickness of the level platforms denoting the level populations. This project will have the following deliverables:\n\n- Develop an interactive widget which allows the user to look at the Grotrian diagram for specific ions which interacted with photon packets during a TARDIS simulation.\n\n- The widget should allow the user to filter on a wavelength range, type of line interaction (excitation or de-excitation), and ion. The diagram will also give a sense of the frequency of each line transition using colors.\n\n- Develop the above plot as a static Matplotlib too.\n\n- Integrate this widget into TARDIS codebase and documentation.\n\n- Create a Jupyter notebook tutorial for the tool.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/HxymUMRe",
+          "proposal_id": "PtRP31Es",
+          "short_description": "TARDIS generates synthetic observations of stellar explosions that can be compared to real observations. With such comparisons, we can learn more...",
+          "slug": "grotrian-diagram-visualisation",
+          "status": "completed",
+          "student_name": "Ayushi Daksh",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Grotrian Diagram Visualisation"
+        },
+        {
+          "code_url": "https://gist.github.com/light2802/b7d2d019e8f0a02d4b3b8d0eea047811",
+          "description": "Most of the functions in STARDIS generate and loop over huge numpy arrays, that are over a million elements. Initializing the array requires iterating over each index and calculating what that entry should be. This is a task that can be done in parallel. The project aims to increase the speed of STARDIS using Numba by allowing slower parts of STARDIS to be run in parallel and allowing for them to be run on the GPU using Numba’s CUDA capabilities if the user requires them.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/LhiIWAnR",
+          "proposal_id": "L78bF5xM",
+          "short_description": "Most of the functions in STARDIS generate and loop over huge numpy arrays, that are over a million elements. Initializing the array requires...",
+          "slug": "stardis-parallelization-and-gpu",
+          "status": "completed",
+          "student_name": "light2802",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "STARDIS Parallelization and GPU"
+        },
+        {
+          "code_url": "https://gist.github.com/s-rathi/5ece9b45b03d43cc7ad4c53d9da24c6c",
+          "description": "Carsus generates an HDF file by combining data from various sources. This HDF file can be used by Tardis to generate Atomic Spectra. However, when a new version of the atomic source rolls out, there is no way of determining the changes in the datasets.\nThe goal of this project is to create a repository integrated with CI pipelines to periodically check for changes in the upstream data sources and maintain a repository of semantic versioned datasets along with a report on the changes in each version update.\nThe Carsus project will be updated to use the latest data source by default by checking for updates in the data repository. Additionally, a utility function will be implemented in the Carsus to support using the older version of the datasets available on the data repository by passing the dataset version number.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/tXpWIPLe",
+          "proposal_id": "707kSH7s",
+          "short_description": "Carsus generates an HDF file by combining data from various sources. This HDF file can be used by Tardis to generate Atomic Spectra. However, when a...",
+          "slug": "having-versioned-atomic-data-repositories",
+          "status": "completed",
+          "student_name": "Shikha Rathi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Having Versioned Atomic Data Repositories"
+        },
+        {
+          "code_url": "https://sites.google.com/view/shreyas-gsoc2023-tardis/home",
+          "description": "TARDIS has a new module that transports gamma rays created by nuclear decay. The NNDC stores nuclear decay data in a format that is difficult to read and compile called ENSDF. But NNDC also provides a parser for this data online called “radlist”. This project will use the ENSDF archives from NNDC and the parser to download, process, and store nuclear decay data for all available isotopes in the Carsus HDF output.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/F7C111oc",
+          "proposal_id": "gn3k5aoM",
+          "short_description": "TARDIS has a new module that transports gamma rays created by nuclear decay. The NNDC stores nuclear decay data in a format that is difficult to read...",
+          "slug": "import-and-store-nndc-deposition-data",
+          "status": "completed",
+          "student_name": "Shreyas Singh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Import and Store NNDC Deposition Data"
+        },
+        {
+          "code_url": "https://sites.google.com/view/smokestacklightnin-gsoc-2023/home",
+          "description": "The main goal for this project is to improve the speed of STARDIS, a Python library that generates synthetic spectra for stars. An easy way to accomplish this quickly is to add Numba JIT compilation. Because this can be accomplished so rapidly, a next goal would be to reimplement parts of STARDIS with C/C++ or Cython extensions. This project proposal therefore consists of four implementation phases, the first pair using Numba and the second pair using C/C++ or Cython extensions, with each pair consisting of a CUDA and a Non-CUDA implementation. \n\nI intend to make these improvements incrementally and systematically. I will also benchmark the performance before and after each time I reimplement portions of the STARDIS codebase to both understand how much speed was gained and prioritize what to focus on in each next step.",
+          "difficulty": "beginner",
+          "id": "proj_tardis-rt-collaborat_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/sm8D0H9D",
+          "proposal_id": "Tbh9vRIk",
+          "short_description": "The main goal for this project is to improve the speed of STARDIS, a Python library that generates synthetic spectra for stars. An easy way to...",
+          "slug": "stardis-parallelization-and-gpu-with-numba-cc-extensions-and-cuda",
+          "status": "completed",
+          "student_name": "smokestacklightnin",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "STARDIS Parallelization and GPU with Numba, C/C++ Extensions, and CUDA"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/tardis-rt-collaboration"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/officialasishkumar/3ddcb3b732c9459d8a917da6852952cd",
+          "description": "The first half of the project which is writing benchmarks and improving the webpage for storing it. In order to achieve this goal I will be using airspeed velocity to write benchmarks that cover almost all parts of tardis codebase (will take unit tests as reference). For improving the website, I will store more than 5 commits and add the commit which caused highest regression among the range of commits. \n\nThe second half of the project is improving tardis codebase. In order to do this I will look out for the results from scalene and memray profilers. I will use faster algorithms, C/C++ libraries or functions and tools like mpi4py, polar etc to improve the codebase in terms of space and time complexity when running on both multi and single core.",
+          "difficulty": "advanced",
+          "id": "proj_tardis-rt-collaborat_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Xglqxr46/",
+          "proposal_id": null,
+          "short_description": "The first half of the project which is writing benchmarks and improving the webpage for storing it. In order to achieve this goal I will be using...",
+          "slug": "tardis-benchmarking-and-performance-improvement",
+          "status": "completed",
+          "student_name": "Asish Kumar",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "TARDIS Benchmarking and Performance Improvement"
+        },
+        {
+          "code_url": "https://gist.github.com/Sumit112192/fc0140fa2d11bb903bd2d0e0ce0c8462",
+          "description": "TARDIS provides ways to simulate and analyze supernovae. Currently, as a visualization tool, we have the \"Spectral element DEComposition (SDEC) Plot,\" which generates the output spectrum of the supernovae. However, there is a lot of other information a researcher might need, and this project aims to solve one, i.e., getting the interaction information. TARDIS already has a Tracker functionality which tracks all the interactions in the ejecta, which requires some optimizations and refactoring. I will also be introducing another Tracking Functionality, which will precisely track the last interaction. The Current Tracking functionality has no tests to check if the data generated by it is correct. So, I will also be writing tests. I will also be documenting the trackers.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/1VNxItcN/",
+          "proposal_id": null,
+          "short_description": "TARDIS provides ways to simulate and analyze supernovae. Currently, as a visualization tool, we have the \"Spectral element DEComposition (SDEC)...",
+          "slug": "enhancing-packet-trackers",
+          "status": "completed",
+          "student_name": "Sumit_Gupta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing Packet Trackers"
+        },
+        {
+          "code_url": "https://sites.google.com/view/sarthak-gsoc2024/home",
+          "description": "Understanding photon-ion interactions within ejecta is crucial for interpreting astronomical spectra. While the TARDIS SDEC plot visualizes which ions photon packets interact with, it lacks information on where these interactions occur within the ejecta. This information can be extremely useful to astronomers who want to understand which regions of the ejecta are responsible for important features in the output spectrum. \nThe project addresses this issue by developing a visualization tool that plots the number of photon packet interactions as a function of velocity for each element present in the ejecta. It involves obtaining interaction data post-simulation, creating an interactive widget comprising spectrum selection, ion frequency display, and velocity histogram, and it is stored in a dedicated class.\nThe project will deliver a fully functional interactive widget designed to visualize photon-ion interactions by velocity, significantly enhancing astronomers' ability to interpret astronomical spectra. This widget will provide users with a comprehensive understanding of the regions within ejecta responsible for specific spectral features. Alongside the widget, the project will also produce a suite of thorough test cases ensuring the accuracy and functionality of the tool. Additionally, comprehensive documentation will be provided, offering detailed guidance on implementing and utilizing the visualization tool effectively. This documentation will serve as a valuable resource for users seeking to integrate the tool into their research workflows.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/dyvYc2Qb/",
+          "proposal_id": null,
+          "short_description": "Understanding photon-ion interactions within ejecta is crucial for interpreting astronomical spectra. While the TARDIS SDEC plot visualizes which...",
+          "slug": "velocity-packet-tracker-visualization",
+          "status": "completed",
+          "student_name": "Sarthak Srivastava",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Velocity Packet Tracker Visualization"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/tardis-rt-collaboration/"
+    },
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project will result in functionality for both TARDIS and STARDIS to identify and display a user provided list of atomic and molecular lines to existing spectral visualizations.  This will be done by leveraging information stored in the simulation's energy packets to identify source species.  This is critical work as observed spectra often have blended line features due to the high ejecta speeds broadening neighboring lines into each other; However, in the simulated spectra, source packets are known and thus blended lines can be disentangled. This work will enable simple comparisons with published, labeled spectra; identification of unlabeled features in newly observed spectra; a physical understanding of new models; and development of publication-ready plots.",
+          "difficulty": null,
+          "id": "proj_tardis-rt-collaborat_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Lrr5ZL0u",
+          "proposal_id": "0gsx1esE",
+          "short_description": "This project will result in functionality for both TARDIS and STARDIS to identify and display a user provided list of atomic and molecular lines to...",
+          "slug": "line-identification-plotting-functionality",
+          "status": "in-progress",
+          "student_name": "Haille Perkins",
+          "student_profile": null,
+          "tags": [],
+          "title": "Line Identification Plotting Functionality"
+        },
+        {
+          "code_url": null,
+          "description": "TARDIS implements a regression testing framework which is used to compare the current output of TARDIS to a saved data repository to validate code. This data repository is modified at times when there are code/infrastructure changes in TARDIS, this could be environment updates, scientific code changes or more. However, the impact of smaller commits goes unnoticed. There is a comparison notebook implemented that can compare two different commits and spectra in a comprehensive manner but that does not provide a way to compare multiple commits at once.\n\nThis project aims to build a system to compare the regression data produced by a range of TARDIS commits and will be able to find the commits which impact the regression data files. Also this project aims to enhance TARDIS HDF writing capabilities by adding a HDF writing system to most TARDIS objects and the simulation, so it is easy to reproduce TARDIS objects from stored HDF files.",
+          "difficulty": "beginner",
+          "id": "proj_tardis-rt-collaborat_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/nV27R9ep",
+          "proposal_id": "ChvI46XG",
+          "short_description": "TARDIS implements a regression testing framework which is used to compare the current output of TARDIS to a saved data repository to validate code....",
+          "slug": "regression-data-dashboard-and-hdf-writing-capabilities-of-tardis-modules",
+          "status": "in-progress",
+          "student_name": "Riddhi Gangbhoj",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Regression Data Dashboard and HDF Writing Capabilities of TARDIS Modules"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/tardis-rt-collaboration"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://tardis-sn.github.io/summer_of_code/gsoc_home/",
+    "ideas_url": "https://tardis-sn.github.io/summer_of_code/ideas/",
+    "irc_channel": "https://gitter.im/tardis-sn/gsoc",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/tardis_sn",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.321Z"
+  }
+}

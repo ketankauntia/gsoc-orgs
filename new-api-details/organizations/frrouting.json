@@ -1,0 +1,172 @@
+{
+  "id": "692251d353dd9d7326d33da8",
+  "slug": "frrouting",
+  "name": "FRRouting",
+  "category": "Other",
+  "description": "Routing suite including BGP, IS-IS, LDP, OSPF, PIM",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/frrouting/wvsrcdtt2anax9ej-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/frrouting.webp",
+  "logo_r2_url": null,
+  "url": "https://frrouting.org/",
+  "active_years": [
+    2020,
+    2021,
+    2022
+  ],
+  "first_year": 2020,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "linux",
+    "lua",
+    "networking",
+    "linux kernel",
+    "routing"
+  ],
+  "topics": [
+    "networking",
+    "software defined networking",
+    "linux",
+    "performance",
+    "systems programming",
+    "routing",
+    "systems"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 1,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 1,
+      "year_2021": 1,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 1,
+      "year_2021": 1,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://urbanczyk.dev/post/gsoc2020/",
+          "description": "<h4>Dataplane batching</h4>\n<p>FRRouting uses the concept of a data plane which is the part of the code that processes thedata requests. It is used in communication with kernel i.a. to update routing tables. There areseveral different methods for reading kernel routing table information, updating kernel routingtables, and for looking up interfaces. One of them is Linux Netlink - asynchronouscommunication between kernel and user. FRRouting with its dataplane abstraction, uses aqueue of dataplane context objects for messages waiting to be sent. A separate thread loopsover this queue and sends the context objects to the appropriate dataplane. Every singlemessage is handled and sent separately, but there’s room for improvement. Certaindataplanes allow for sending multiple messages to them at once, so we could benefit from it.This would improve overall processing time. My proposal will involve implementing one ofthe proposed ideas, namely “Dataplane Batching”.</p>\n",
+          "difficulty": null,
+          "id": "proj_frrouting_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6282628304470016/",
+          "proposal_id": null,
+          "short_description": "Dataplane batching\nFRRouting uses the concept of a data plane which is the part of the code that processes thedata requests. It is used in...",
+          "slug": "dataplane-batching",
+          "status": "completed",
+          "student_name": "Jakub Urbańczyk",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Dataplane batching"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5039063742021632/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://dlqs.dev/frr-gsoc-2021.html",
+          "description": "<p>Design and implement a hook system to attach Lua scripts</p>\n",
+          "difficulty": null,
+          "id": "proj_frrouting_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5018934603939840/",
+          "proposal_id": null,
+          "short_description": "Design and implement a hook system to attach Lua scripts",
+          "slug": "lua-hook-points",
+          "status": "completed",
+          "student_name": "Donald Lee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Lua hook points"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5868804143316992/"
+    },
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://sigeryang.net/gsoc2022-frr/",
+          "description": "Add the ability for ZEBRA to modify TC tables via the netlink protocol. Currently FRR has no ability to modify the underlying TC tables. This would be extremely useful for BGP Flowspec as well as with PBR.",
+          "difficulty": null,
+          "id": "proj_frrouting_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/eBqqrRLd/",
+          "proposal_id": null,
+          "short_description": "Add the ability for ZEBRA to modify TC tables via the netlink protocol. Currently FRR has no ability to modify the underlying TC tables. This would...",
+          "slug": "zebra-traffic-control",
+          "status": "completed",
+          "student_name": "Shichu Yang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Zebra Traffic Control"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/frrouting/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://frrouting.org/community/",
+    "mailing_list": "https://lists.frrouting.org/listinfo"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.131Z"
+  }
+}

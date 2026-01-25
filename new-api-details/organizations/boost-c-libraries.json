@@ -1,0 +1,860 @@
+{
+  "id": "692251cd53dd9d7326d33d5c",
+  "slug": "boost-c-libraries",
+  "name": "Boost C++ Libraries",
+  "category": "Programming languages",
+  "description": "Boost provides free peer-reviewed portable C++ source libraries",
+  "image_url": "https://lh3.googleusercontent.com/L2nkbvYerHZT6hivm4I6ErU8MhfH9SXbPE2nqP73bnFwaXm9-KM2wdQAT1jMerAsdjszft_OTFSI8H5KMxOEXC3prbP2IDWilNDoqqOilVk",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/boost-c-libraries.webp",
+  "logo_r2_url": null,
+  "url": "https://www.boost.org/",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "first_year": 2017,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "c++",
+    "c++11",
+    "c++14",
+    "boost",
+    "c++17",
+    "c++ libraries c++11 c++14 c++17 c++20",
+    "c++20"
+  ],
+  "topics": [
+    "library",
+    "software engineering",
+    "c++ development",
+    "c++ tools",
+    "c++ standardization",
+    "c++ libraries c++ standard",
+    "c++",
+    "programming libraries",
+    "peer-reviewed libraries",
+    "c++ standard",
+    "algorithms",
+    "image processing",
+    "data structures"
+  ],
+  "total_projects": 41,
+  "stats": {
+    "avg_projects_per_appeared_year": 8.2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 9,
+      "year_2019": 11,
+      "year_2020": 9,
+      "year_2021": 8,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 9,
+      "year_2019": 11,
+      "year_2020": 9,
+      "year_2021": 8,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 37
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/RArora28/6c6712c816a2eb5a88ef4ef943efa6cb",
+          "description": "<p>To implement the dataframes library for uBLAS using Expression Templates and Meta-programming paradigm in C++ that is capable of doing simple manipulations with data sets.\nIt requires studying the existing implementations (data.table/data.frame in R and Pandas in Python) and analyzing the limitations (that occur due to template meta-programming paradigm) and possible optimisations (instantiation of type parameters which is not possible in R and python because of generic implementation of data.frame).</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5563281339056128/",
+          "proposal_id": null,
+          "short_description": "To implement the dataframes library for uBLAS using Expression Templates and Meta-programming paradigm in C++ that is capable of doing simple...",
+          "slug": "dataframes-in-boostublas",
+          "status": "completed",
+          "student_name": "Rishabh Arora",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "Data.Frames in boost.uBLAS"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC17/uBLAS",
+          "description": "<p>Matrix multiplication is one of the most important operations in linear algebra. The project \"Optimising multiplication in uBLAS\" is concerned with optimising the multiplications under matrices. Optimising multiplication in uBLAS can be done in done following two lines: 1) By finding patterns to optimise in expression templates using template programming. 2) By applying optimising algorithms (written with templates). I would be optimising the matrices multiplication operation following both the above mentioned ways.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5627141597167616/",
+          "proposal_id": null,
+          "short_description": "Matrix multiplication is one of the most important operations in linear algebra. The project \"Optimising multiplication in uBLAS\" is concerned with...",
+          "slug": "optimising-multiplication-in-ublas",
+          "status": "completed",
+          "student_name": "Mohd Sharique",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimising Multiplication in uBLAS"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC17/geometry/wiki",
+          "description": "<p>In some algorithms there is the need to compare two distances of two point pairs. Especially, computing distances on ellipsoid in Boost.Geometry used compare_distance() function, which need to calculate the actual distance of two geodesic segments on the ellipsoid. Boost.Geometry used Vincenty formula, the time complexity of this algorithm is hard to estimate and expensive.</p>\n<p>To reduce the time complexity, this project tried to use the following approaches:</p>\n<ul>\n<li><strong>Condition Division</strong>:Compute the Euclidean distances first, if the length of two segments are very close, defined not “far enough” means “very close”. then fall back to expensive geographic distance calculation otherwise return the result by comparing those numbers obtained by less expensive cartesian computation.</li>\n<li><strong>Calculation with Sectorial Area</strong>:Get cross-section through the center of ellipsoid and the geodesic segments, then calculate the sectorial area, which is easy to compare distances. </li>\n<li><strong>Calculation with Performing a local spheroid approximation and return the 2D distance by map projection</strong>:Perform a local spheroid approximation, then use methods of map projection to calculate the distances.</li>\n</ul>\n",
+          "difficulty": "beginner",
+          "id": "proj_boost-c-libraries_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6056458475012096/",
+          "proposal_id": null,
+          "short_description": "In some algorithms there is the need to compare two distances of two point pairs. Especially, computing distances on ellipsoid in Boost.Geometry used...",
+          "slug": "gsoc2017-boostgeometryfiltering-of-compare-distance-predicates-proposal",
+          "status": "completed",
+          "student_name": "Ruoyun Jing",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GSoC2017 Boost.Geometry:Filtering of compare distance predicates Proposal"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC17/static-views/tree/v0.1",
+          "description": "<p>This document proposes an addition to <code>Boost C++ Libraries</code> -- a <em>compile-time</em> hash table. There are multiple good implementations of unordered associate containers (e.g. <code>std::unordered_map</code>, <code>Google</code>'s <code>sparsehash</code>). These implementations provide both lookup and insertion/deletion functionality. They are, however, not the perfect fit for the case when the contents of the container are fixed upon construction or even known at compile time. <code>std::vector</code> vs. <code>std::array</code> is a good analogy here. We propose a <code>static_map</code> -- an associate container with focus on <code>constexpr</code> usage.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5964928695402496/",
+          "proposal_id": null,
+          "short_description": "This document proposes an addition to Boost C++ Libraries -- a compile-time hash table. There are multiple good implementations of unordered...",
+          "slug": "boost-static_map",
+          "status": "completed",
+          "student_name": "Tom Westerhout",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "boost static_map"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5196100961042432/"
+    },
+    "year_2018": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/FadyEssam/2407043523fcfed32ebc46bd25b59fbb",
+          "description": "<p>UBlas is one of the most respectable linear algebra libraries but it still lacks doing the matrix computations on GPU.\nMy proposal is to provide support for doing that through the boost.Compute technology and an api that will make it so easy to do these computations on a device from the user's choice</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_boost-c-libraries_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6748874311991296/",
+          "proposal_id": null,
+          "short_description": "UBlas is one of the most respectable linear algebra libraries but it still lacks doing the matrix computations on GPU.\nMy proposal is to provide...",
+          "slug": "add-gpu-computations-to-ublas",
+          "status": "completed",
+          "student_name": "Fady Essam",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Add GPU computations to uBLAS"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC17/static-views",
+          "description": "<p>This document proposes an addition to Boost <code>C++</code> Libraries — <code>Static_views</code> library.\nThe library focuses on working with compile-time (i.e. <code>constexpr</code>) homogeneous data.\nIts applications range from converting bitmaps from 8-bit to 24-bit representations to\nimplementing efficient enumeration to string conversions and custom error categories.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5701330244993024/",
+          "proposal_id": null,
+          "short_description": "This document proposes an addition to Boost C++ Libraries — Static_views library.\nThe library focuses on working with compile-time (i.e. constexpr)...",
+          "slug": "bringing-static_views-to-review-ready-state",
+          "status": "completed",
+          "student_name": "Tom Westerhout",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bringing Static_views to review-ready state"
+        },
+        {
+          "code_url": "https://medium.com/@laobelloli/boost-real-9e2dfbfbed5b",
+          "description": "<p>In the history of Computer Science, real numbers representation and data structures do not have a simple solution, numerical errors can be carried from one operation to the next and after several steps, the error may significantly increase. Also, irrational numbers representation as the number π or e^π are not handled by the native number data types and causing limitations when calculations are based on those numbers. The problem can be summarized as: there are an infinite amount of different numbers and a finite representation system. Even if there are some existing solutions, there is not a modern C++ open source library to attack the problem and Boost C++ could be the appropriated place.</p>\n<p>Following the Real number representation introduced in chapter 2 of Oliver Aberth. Computable Calculus. Academic Press, 2001. I propose to implement a data type to represent Real numbers and to define the operators (+, -, *, /, !=, &lt;, &gt;, =). This data type attacks the introduced problem and allows to represent some calculable real numbers as π</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5715348548485120/",
+          "proposal_id": null,
+          "short_description": "In the history of Computer Science, real numbers representation and data structures do not have a simple solution, numerical errors can be carried...",
+          "slug": "boostreal-project",
+          "status": "completed",
+          "student_name": "Laouen Belloli",
+          "student_profile": null,
+          "tags": [],
+          "title": "Boost.Real project"
+        },
+        {
+          "code_url": "https://gist.github.com/Harisaicharan/68b5efb0e1946b103aad9d1fb3d44a1f",
+          "description": "<p>This increases the scope of Boost.Intrusive library by adding more data structures into the collection.Every data structure is capable of solving a large range of problems.So adding data structures increases the problem solving ability of intrusive library which increases the number of users using this library.Nowadays, data structures are used in many fields.There are  2 main reasons behind the use of data structures.First, to obtain better performance benefits and Second, to save space required for execution of an algorithm.The data structures i am going to implement are Segment tree , Fenwick tree , Suffix tree and Suffix Automata .segment tree and fenwick tree are very useful when range queries need to be done efficiently.Suffix tree and automata can solve various types of string based problems.Hence , these are very much used in modern world.Hence this project increases the demand for the intrusive library.Every data structure can only solve problems with particular characteristics and it cannot solve or the performance is bad when the same data structure is used for other types of problems.So, one has to select correct data structure.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5433723650572288/",
+          "proposal_id": null,
+          "short_description": "This increases the scope of Boost.Intrusive library by adding more data structures into the collection.Every data structure is capable of solving a...",
+          "slug": "enhancing-boostintrusive-library",
+          "status": "completed",
+          "student_name": "Hari sai charan challa",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing Boost.Intrusive Library"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC18/tensor/wiki",
+          "description": "<p>Tensors provide a natural and compact representation for massive multidimensional data with a high dimensionality which occur in disciplines like computational neuroscience, neuroinformatics, pattern/image recognition, signal processing and machine learning. My tensor project proposal is based on the foundations Boost’s uBlas implementation and focuses on extending uBLAS by a tensor and tensor operations. The extension shall primarily support dense tensors that can be projected on subtensors with ranges or slices. I also want to provide expressions templates for basic tensors operations using static polymorphism with generic lambdas. The library shall support all basic multilinear algebra operations such as the modal tensor contractions and tensor transpositions. Tensor object shall be able to communicate with Boost’s matrix and vector objects through expression templates and free functions. Repeating the primary design goals of uBlas, the tensor library shall be efficient with almost no abstraction penalties, functional, compatible and provide a convenient mathematical notation.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6064119220273152/",
+          "proposal_id": null,
+          "short_description": "Tensors provide a natural and compact representation for massive multidimensional data with a high dimensionality which occur in disciplines like...",
+          "slug": "designing-a-generic-tensor-library-for-boostublas",
+          "status": "completed",
+          "student_name": "Cem Bassoy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Designing a Generic Tensor Library for Boost.uBlas"
+        },
+        {
+          "code_url": "https://github.com/boostorg/geometry/pull/490",
+          "description": "<p>In this project,  the goal is to implement algorithms for computing Similarity between Geometries using Expression Templates and Meta-programming paradigm in C++.  The project will initially focus on Linestrings and will try to extend it to rings or polygons.  For implementation purposes, It requires studying the different variation of Hausdroff distance and Frechet distance. After we are done with implementation part, we will generate test cases and verify those test cases and set benchmarks for different algorithms. Finally, we will integrate it with Boost.Geometry.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6092082141724672/",
+          "proposal_id": null,
+          "short_description": "In this project,  the goal is to implement algorithms for computing Similarity between Geometries using Expression Templates and Meta-programming...",
+          "slug": "similarity-between-geometries",
+          "status": "completed",
+          "student_name": "Yaghyavardhan Singh",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Similarity between geometries"
+        },
+        {
+          "code_url": "https://gist.github.com/lpranam/8581f865fc684ecbf74dc22dfd64556d",
+          "description": "<p>This project involves developing a new library which tries to cover the major concepts of a complex and diverse field of Astronomy. This library will provide functionalities to mitigate the complexities of astronomical calculations using C++.</p>\n<p><strong>1) Celestial Coordinate System:</strong><br>\nFor any Astronomical observation, it is essential to know the location of any object on the celestial sphere. These classes will provide functionalities (e.g.: find sun, find the moon, the angular separation between two points in the sky, find the constellation of coordinate, conversion from cartesian coordinates to spherical polar coordinates and vice versa, etc.) for using different coordinate systems, process them for different purposes and convert them into each other.</p>\n<p><strong>2) Handling FITS (Flexible Image Transport System) File:</strong><br>\nThis library will provide functionality for reading, manipulating and verifying file which can further be used for other processes like making light curves or spectroscopy. It will deal with data unit consisting of 8 bit, 16 bit and 32 bit also. It will also provide functionality for converting the normal image to FITS and applying Astrometry to find positions of objects in the data unit</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_boost-c-libraries_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5876939915001856/",
+          "proposal_id": null,
+          "short_description": "This project involves developing a new library which tries to cover the major concepts of a complex and diverse field of Astronomy. This library will...",
+          "slug": "astronomy-library",
+          "status": "completed",
+          "student_name": "Pranam Lashkari",
+          "student_profile": null,
+          "tags": [
+            "angular"
+          ],
+          "title": "Astronomy Library"
+        },
+        {
+          "code_url": "https://adl1995.github.io/google-summer-of-code-2018-final-evaluation-report.html",
+          "description": "<p>Nearly antipodal points refer to the most geographically distant points on a sphere i.e. the points are diametrically opposite to each other. Computing the great circle distance between these points is often a corner case for most geodesic computations, and the distance is either overestimated or underestimated.</p>\n<p>This project aims to provide an accurate implementation of geodesic algorithms in Boost Geometry library following the paper <a href=\"https://arxiv.org/pdf/1109.4448.pdf\" target=\"_blank\">Algorithms for geodesics</a> by Charles Karney. An in-depth analysis of the inaccuracy in current implementation is provided in this <a href=\"https://adl1995.github.io/inaccuracy-in-boost-geometry-geodesic-algorithms-for-nearly-antipodal-points.html\" target=\"_blank\">blog post</a>.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5152398595063808/",
+          "proposal_id": null,
+          "short_description": "Nearly antipodal points refer to the most geographically distant points on a sphere i.e. the points are diametrically opposite to each other....",
+          "slug": "nearly-antipodal-points-distance-accuracy-improvement",
+          "status": "completed",
+          "student_name": "Adeel Ahmad",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Nearly antipodal points distance accuracy improvement"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC18/ublas-stats/wiki/GSoC-Report",
+          "description": "<p>Boost.uBLAS employs numerous compile-time optimizations which improve the performance of matrix operations. However, there is no implementation of any application on matrices which can exploit this performance - like mean, variance, factorization etc. Providing some such fundamental functionalities for vectors and matrices in a single package would be a great addition to the uBLAS library.\nThe goal of this project is to lay out the foundation of uBLAS to support basic statistical analysis methods and machine learning algorithms. More specifically, I am interested in implementing the following fundamental components:</p>\n<ul>\n<li>Basic statistics</li>\n<li>Running statistics</li>\n<li>Histograms - with custom number of bins and edges</li>\n<li>KMeans clustering</li>\n<li>Principal Component Analysis (PCA)</li>\n<li>Gaussian Mixture Model - Expectation Maximization</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2018_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5184336173203456/",
+          "proposal_id": null,
+          "short_description": "Boost.uBLAS employs numerous compile-time optimizations which improve the performance of matrix operations. However, there is no implementation of...",
+          "slug": "add-statistics-and-machine-learning-functions-to-boostublas",
+          "status": "completed",
+          "student_name": "Dattatreya Mohapatra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add statistics and machine learning functions to Boost.uBLAS"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5136992144719872/"
+    },
+    "year_2019": {
+      "num_projects": 11,
+      "projects": [
+        {
+          "code_url": "https://github.com/boostorg/gil/commits?author=simmplecoder",
+          "description": "<p>Proposal describes epipolar geometry tools that I would like to implement. The algorithms that I would like to implement: KAZE feature detector and descriptor (or some other, if unavailable for open-source), fundamental matrix calculation, drawing epipolar lines and image rectification. Those will lay foundations for 3D scene reconstruction, motion tracking (tracking an object in a video) and other lightweight computer vision tools.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6440504349163520/",
+          "proposal_id": null,
+          "short_description": "Proposal describes epipolar geometry tools that I would like to implement. The algorithms that I would like to implement: KAZE feature detector and...",
+          "slug": "boost-gil-proposal",
+          "status": "completed",
+          "student_name": "Olzhas Zhumabek",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost GIL proposal"
+        },
+        {
+          "code_url": "https://gist.github.com/miralshah365/ca1d2ea05e78dc189f15bcac824680e7",
+          "description": "<p>In this project, new Image processing algorithms will be introduced which will expand the scope of Boost.GIL and provide more functionality to the users. This would cover specific basic algorithms which can be used to develop other advanced image processing algorithms. One of the main topics includes the development of image processing kernel to serve as a base for other Image processing algorithms which are to be implemented in this project, or in the future.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_boost-c-libraries_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6441643874451456/",
+          "proposal_id": null,
+          "short_description": "In this project, new Image processing algorithms will be introduced which will expand the scope of Boost.GIL and provide more functionality to the...",
+          "slug": "boost-gil",
+          "status": "completed",
+          "student_name": "Miral Shah",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost GIL"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC19/tensor/wiki",
+          "description": "<h3>Boost uBLAS</h3>\n<h4>Modifying (Smart) Expression Templates</h4>\n<h5>Abstract</h5>\n<p>This proposal aims at improving the efficiency of the expression templates that are used by <code>boost::numeric::ublas::tensor</code>. Traditional Expression templates are efficient but Klaus Iglberger showed in his <a href=\"https://arxiv.org/abs/1104.1729\" target=\"_blank\">work</a> that traditional ETs (Expression Templates) does not automatically result in faster execution of the expression. Smart expression templates are a tool for capturing the expression, possibly transforming and evaluating the expression. For better expression evaluation I will use  <a href=\"https://www.boost.org/doc/libs/1_69_0/doc/html/yap.html\" target=\"_blank\">Boost.YAP</a>, a C++14 and later expression template library. Boost.YAP already offers a lot of functions and algorithms for dealing with expressions. It will ease my task moreover most of the issues pointed out in the paper cited above are efficiently handled by YAP. Hence, this proposal aims at the integration of Boost.YAP for convenient expression template transformation and evaluation in <code>boost::numeric::ublas::tensor</code></p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5456481455964160/",
+          "proposal_id": null,
+          "short_description": "Boost uBLAS\nModifying (Smart) Expression Templates\nAbstract\nThis proposal aims at improving the efficiency of the expression templates that are used...",
+          "slug": "modifying-smart-expression-templates",
+          "status": "completed",
+          "student_name": "Ashar Khan",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Modifying (Smart) Expression Templates"
+        },
+        {
+          "code_url": "https://gist.github.com/sarthak2007/e4cc8b1d5aad194030ba4bfa183a87ef",
+          "description": "<p>In this project I would like to focus on implementing the following things:</p>\n<ol>\n<li>Implement Boost::unit with Boost::astronomy::coordinate to provide a robust astronomical coordinate system.</li>\n<li>Completing the parser for the FITS to read files including all types of extensions.</li>\n<li>Adding the documentation and fixing the existing one.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5493368698699776/",
+          "proposal_id": null,
+          "short_description": "In this project I would like to focus on implementing the following things:\n\nImplement Boost::unit with Boost::astronomy::coordinate to provide a...",
+          "slug": "bringing-boostastronomy-to-review-ready-state",
+          "status": "completed",
+          "student_name": "Sarthak Singhal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bringing Boost.Astronomy to review-ready state"
+        },
+        {
+          "code_url": "https://universenox.github.io/gsoc19_Final_Eval",
+          "description": "<p>Real serves to tackle the pervasive problem of inaccuracy that arises from floating point arithmetic. However, there is still much to be done to get to a peer review ready state. I propose to optimize the memory usage of Real. By changing the way real_explicit stores numbers, we can reduce memory usage of real_explicit by an order of magnitude. Utilizing std::variant, we can reduce the memory used by a real number to that of either a real_operation, real_explicit, or real_algorithm. I propose to better the way Real deals with operations, in particular, by simplifying sums of multiples of the same number. Further, I propose to implement benchmarking using Google Benchmark, to allow direct comparison between Real and other representations. After this, Boost.Real may be ready for peer review.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4968680998305792/",
+          "proposal_id": null,
+          "short_description": "Real serves to tackle the pervasive problem of inaccuracy that arises from floating point arithmetic. However, there is still much to be done to get...",
+          "slug": "boostreal-improving-complexity",
+          "status": "completed",
+          "student_name": "Kimberly Swanson",
+          "student_profile": null,
+          "tags": [],
+          "title": "Boost.Real: Improving Complexity"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC19/tensor/wiki",
+          "description": "<p>My goal is to implement design policy which will dictate how memory is accessed and how dimension is specified for example dynamic dimension or static dimension and which device or execution policy to used, for example GPUs, CPUs  , etc. Try to shift to mdspan or similar design</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6190499470245888/",
+          "proposal_id": null,
+          "short_description": "My goal is to implement design policy which will dictate how memory is accessed and how dimension is specified for example dynamic dimension or...",
+          "slug": "adding-design-policy-and-improving-design",
+          "status": "completed",
+          "student_name": "Amit Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding design policy and improving design"
+        },
+        {
+          "code_url": "https://gist.github.com/lpranam/4958a0a7d188f2be6d85aebd66d4c167",
+          "description": "<p>The project is divided into two parts.</p>\n<ol>\n<li>Integrating Boost.Units with the existing coordinate system in the library. It will provide a better, robust and error-proof coordinate system to users.</li>\n<li>Completing the FITS file parser. In this phase parser for ASCII Table Extension and Binary Table Extension will be implemented.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6195601304190976/",
+          "proposal_id": null,
+          "short_description": "The project is divided into two parts.\n\nIntegrating Boost.Units with the existing coordinate system in the library. It will provide a better, robust...",
+          "slug": "bringing-boostastronomy-to-review-ready-state",
+          "status": "completed",
+          "student_name": "Pranam Lashkari",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bringing Boost.Astronomy to review-ready state"
+        },
+        {
+          "code_url": "https://sagnikdey92.github.io/GSoC",
+          "description": "<p>My goal will be to finish up the details and missing functionality of the Boost.Real library created during the previous GSoC and get it to review ready state.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4664279486169088/",
+          "proposal_id": null,
+          "short_description": "My goal will be to finish up the details and missing functionality of the Boost.Real library created during the previous GSoC and get it to review...",
+          "slug": "boostreal",
+          "status": "completed",
+          "student_name": "Sagnik Dey",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost.Real"
+        },
+        {
+          "code_url": "https://tinko92.github.io/gsoc2019/2019/09/24/work-product.html",
+          "description": "<p>The goals of this project are to add capabilities for computing Delaunay Triangulations/Voronoi Diagrams and for generating random geometries to the Boost.Geometry library.</p>\n<p>To reach the first goal, concepts for triangles and general meshes and an interface for a Delaunay Triangulation algorithm are to be designed and documented. The next steps will be providing models that conform to these concepts and implementing and testing a Triangulation at least for 2D cartesian coordinates and possibly for spherical coordinates.</p>\n<p>To reach the second goal, a random geometry distribution concept will be defined and documented based on the existing concept for random number distributions found in Boost.Random. After that, uniform point distributions on basic geometries will be implemented.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6526899294044160/",
+          "proposal_id": null,
+          "short_description": "The goals of this project are to add capabilities for computing Delaunay Triangulations/Voronoi Diagrams and for generating random geometries to the...",
+          "slug": "delaunay-triangulation-and-random-geometries-for-boostgeometry",
+          "status": "completed",
+          "student_name": "Tinko Sebastian Bartels",
+          "student_profile": null,
+          "tags": [],
+          "title": "Delaunay Triangulation and Random Geometries for Boost.Geometry"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC19/data_frame",
+          "description": "<p>A library for creating data structure with same functionality as DataFrame in R or pandas</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2019_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5847778259894272/",
+          "proposal_id": null,
+          "short_description": "A library for creating data structure with same functionality as DataFrame in R or pandas",
+          "slug": "boostublasdataframe",
+          "status": "completed",
+          "student_name": "Aperjump",
+          "student_profile": null,
+          "tags": [],
+          "title": "Boost::ublas::DataFrame"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1zQPgRy0stg1MxHxrjEbjceYsnaa7sPsdw6QAStA-VYg/edit?usp=sharing",
+          "description": "<p>Floating point number operation are not guaranteed to hold correct results. A certain range of errors can occur silently (overflow, underflow, imprecision, etc). This library aims to provide a replacement for floating-point number that warns on error.</p>\n<p>The library is already in a relatively advanced state. The goal of this project is to bring it in a review-ready state.\nIn this application, I suggest exploring a new design that hopefully should end up being more performant than the current one. I also want to implement the missing features and to complete tests and documentation.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_boost-c-libraries_2019_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6282760602255360/",
+          "proposal_id": null,
+          "short_description": "Floating point number operation are not guaranteed to hold correct results. A certain range of errors can occur silently (overflow, underflow,...",
+          "slug": "bringing-boostsafefloat-to-review-ready-state",
+          "status": "completed",
+          "student_name": "Thomas Ferrand",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Bringing Boost.SafeFloat to review-ready state"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5525710674853888/"
+    },
+    "year_2020": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://github.com/boostorg/gil/projects/8",
+          "description": "<p>The project aims to implement missing pieces of feature detection. Feature detection is one of the fundamental operations in Computer Vision, which is becoming an integral part of any image manipulation. Providing a high quality implementation, thorough tests and well written documentation should make GIL more versatile image library, while still not getting into not well researched areas.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5656764025929728/",
+          "proposal_id": null,
+          "short_description": "The project aims to implement missing pieces of feature detection. Feature detection is one of the fundamental operations in Computer Vision, which...",
+          "slug": "gsoc20-boost-gil-proposal",
+          "status": "completed",
+          "student_name": "Olzhas Zhumabek",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GSoC'20 Boost GIL Proposal"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC20/multiprecision/blob/develop/gsoc_writeup/main.md",
+          "description": "<p>Boost is one of the most fundamental collections of C++ libraries, powering thousands of projects, but also driving the development of C++ best practices and C++ standards. Boost.Multprecision is the Boost library providing number types with precision higher than that of C++ built-in types. The library offers support for integer, floating-point and rational data types at compile-time fixed, arbitrary and variable precision.</p>\n<p>Currently, many operations are already supported for arbitrary precision, but tests exist only for up to 1024 bits. The purpose of this project is to 1) extend testing for precision of thousands of bits and 2) add arbitrary-precision support for more complicated functions and constants. This includes adding tests for arithmetic operations of higher precision, extending tests for simple functions, extending special functions to higher precision, adding support for higher precision constants (and adaptive precision algorithms) and optimising several of the operations (see Milestones for details).</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5561606609567744/",
+          "proposal_id": null,
+          "short_description": "Boost is one of the most fundamental collections of C++ libraries, powering thousands of projects, but also driving the development of C++ best...",
+          "slug": "extending-testing-and-optimising-boostmultiprecision-to-higher-precision",
+          "status": "completed",
+          "student_name": "Dimitrios Los",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Extending testing and optimising Boost.Multiprecision to higher precision"
+        },
+        {
+          "code_url": "https://gist.github.com/codejaeger/b50a6571d370ea510b5c51ac0eb5d354",
+          "description": "<p>This proposal aims to make histogram calculation a built-in feature of Boost.GIL. The proposal also adds histogram related image processing algorithms to Boost.GIL like histogram equalization, histogram matching, CLAHE, etc. Apart from that, for the purposes of visualizations of the plots, a new extension will be provided for 3D histograms. The existing code in GIL will be updated with the new features implemented.</p>\n<p>All the code provided will be completely generic such that it works with any container type and any image type supported by GIL. It will also extend support for using Boost.Histogram as a container class. Apart from the histogram related contrast enhancement algorithms  implemented, tutorials will also be provided for other contrast enhancement algorithms using GIL features to complete the contrast enhancement suite in GIL. The proposal also aims to add benchmark tools to perform quality tests of the available image processing algorithms.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6229480600764416/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to make histogram calculation a built-in feature of Boost.GIL. The proposal also adds histogram related image processing...",
+          "slug": "histogram-computation-and-algorithms-for-boostgil",
+          "status": "completed",
+          "student_name": "Debabrata Mandal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Histogram Computation and Algorithms for Boost.GIL"
+        },
+        {
+          "code_url": "https://kishanshukla-2307.github.io/posts/2020/08/gsoc-final-evaluation/",
+          "description": "<p>I propose to add new mathematical functions and operators to the Boost.Real library. Apart from new additions, I'll optimize few algorithms and address the previously unresolved issues. I'll also improve the code documentation and implement the necessary tests to bring the library to review-ready state.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6234794683269120/",
+          "proposal_id": null,
+          "short_description": "I propose to add new mathematical functions and operators to the Boost.Real library. Apart from new additions, I'll optimize few algorithms and...",
+          "slug": "bringing-boostreal-to-review-ready-state",
+          "status": "completed",
+          "student_name": "Kishan Shukla",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bringing Boost.Real to review-ready state"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC20/ublas/wiki",
+          "description": "<p>This proposal aims at three major things, improving the uBLAS interfaces that were added in GSOC 2019 work, stabilizing and enhancing the unit testing and C++20-ification of the library with new Concepts and better <code>constexpr</code> support.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4640624726245376/",
+          "proposal_id": null,
+          "short_description": "This proposal aims at three major things, improving the uBLAS interfaces that were added in GSOC 2019 work, stabilizing and enhancing the unit...",
+          "slug": "boostublas-stabilizing-improving-and-c20-ification",
+          "status": "completed",
+          "student_name": "Ashar Khan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost.uBLAS: Stabilizing, Improving and C++20-ification"
+        },
+        {
+          "code_url": "https://gist.github.com/Zyro9922/ab1edb0e2b868d2621a9a50743f25929",
+          "description": "<p>Development of a generic and dynamic system for interconversion of the already implemented coordinate systems.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4765438052925440/",
+          "proposal_id": null,
+          "short_description": "Development of a generic and dynamic system for interconversion of the already implemented coordinate systems.",
+          "slug": "boostastronomy-coordinate-transformationconversion",
+          "status": "completed",
+          "student_name": "Syed Ali Hasan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Boost.Astronomy: Coordinate Transformation/Conversion"
+        },
+        {
+          "code_url": "https://medium.com/@vikram2000b/bringing-boost-real-to-review-ready-state-56b2582773d3",
+          "description": "<p>Boost.Real aims to provide a data-type that can represent all types of computable real numbers and provides the flexibility of performing arbitrary precision arithmetic. I propose to optimize memory usage by implementing a larger and stable base. I propose to add new types for integer and rational numbers, methods of calculating powers, factorials, and utilizing those to get methods for exponentials, logarithms, and trigonometric function using Taylor expansion. Using exponentials and logarithms to make methods for the real^real method. I am also proposing to add some scientific and mathematical constants like Pi (can be calculated using Chudnovsky Algorithm after having methods for power and factorials), mass and charge of electron and proton, Plack's constant, etc. After this, Boost.Real may be ready for peer review.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5893744785620992/",
+          "proposal_id": null,
+          "short_description": "Boost.Real aims to provide a data-type that can represent all types of computable real numbers and provides the flexibility of performing arbitrary...",
+          "slug": "boostreal",
+          "status": "completed",
+          "student_name": "Vikram Singh Chundawat",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost.Real"
+        },
+        {
+          "code_url": "https://gist.github.com/gopi487krishna/09fe9b9aa8c7c64cfe9e98bd2da940af",
+          "description": "<p>This project involves building a External High Level API and certain enhancements around the existing <strong>Flexible Image Transport System</strong> library ( Certain Optimizations , New Features etc. ) to provide a clean and easy to use API for working with <strong>FITS</strong> files.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_boost-c-libraries_2020_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6281042220023808/",
+          "proposal_id": null,
+          "short_description": "This project involves building a External High Level API and certain enhancements around the existing Flexible Image Transport System library (...",
+          "slug": "boostastronomyflexible_image_transport_system-fits-module",
+          "status": "completed",
+          "student_name": "Gopi Krishna Menon",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "boost.astronomy.Flexible_Image_Transport_System( FITS Module )"
+        },
+        {
+          "code_url": "https://tinko92.github.io/gsoc2020/2020/08/27/work-product-gsoc-2020.html",
+          "description": "<p>A number of geometric algorithms, such as the triangulation of a point set, employ geometric predicates (implemented as strategies in Boost.Geometry). One example for such a predicate is the 2d orientation test, which, given three points p1, p2, p3, determines whether p3 lies on the left or right side of the line segment that goes through p1 and p2.</p>\n<p>Using floating-point arithmetics to answer that question can lead to incorrect and ultimately inconsistent results that may cause the algorithm that employs the predicate to produce nonsensical results or crash entirely for certain inputs.</p>\n<p>Using algorithms for exact floating-point arithmetics combined with some considerations regarding forward error analysis, a complicated method can be implemented that evaluates such predicates robustly and only adaptively increases the precision if necessary to avoid expensive high precision computations whenever possible.</p>\n<p>I propose a general, automated approach that generates such robust, adaptive predicates from arbitrary arithmetic expressions.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2020_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5226818304475136/",
+          "proposal_id": null,
+          "short_description": "A number of geometric algorithms, such as the triangulation of a point set, employ geometric predicates (implemented as strategies in...",
+          "slug": "general-robust-adaptive-geometric-predicates",
+          "status": "completed",
+          "student_name": "Tinko Bartels",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "General robust, adaptive geometric predicates"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6585514028695552/"
+    },
+    "year_2021": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/BoostGSoC21/ublas/wiki",
+          "description": "<p>Simplifying  uBlas::matrix and uBlas::vector templates using the new uBlas tensor extension as base implementation.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5734323952549888/",
+          "proposal_id": null,
+          "short_description": "Simplifying  uBlas::matrix and uBlas::vector templates using the new uBlas tensor extension as base implementation.",
+          "slug": "create-new-matrix-and-vector-types",
+          "status": "completed",
+          "student_name": "Shikhar Vashistha",
+          "student_profile": null,
+          "tags": [],
+          "title": "Create new matrix and vector types"
+        },
+        {
+          "code_url": "https://medium.com/@Divyam_Singal/boost-real-optimizing-internal-representation-of-operation-and-improving-math-functions-6513cc697b86",
+          "description": "<p>Boost.Real aims to provide a data-type that can represent all types of computable real numbers and provides the flexibility of performing arbitrary precision arithmetic. I propose to optimize the space and time by reducing the dag structure and by various arithmetic optimizations in operation. I propose to optimize space and time in addition and multiplication operations by making adjustments to Karatsuba multiplication and other helper functions. I propose to improve the Champernowne Irrational number and pi's digit computation and add e and golden ratio to irrationals as well. I propose to optimize mathematical functions like exponent, logarithm, trigonometric and add inverse trigonometric functions. After this, Boost.Real may be ready for peer review.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5419667199361024/",
+          "proposal_id": null,
+          "short_description": "Boost.Real aims to provide a data-type that can represent all types of computable real numbers and provides the flexibility of performing arbitrary...",
+          "slug": "boostreal-optimizing-internal-representation-of-operation-and-improving-math-functions",
+          "status": "completed",
+          "student_name": "Divyam Singal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost.Real: Optimizing internal representation of operation and improving math functions"
+        },
+        {
+          "code_url": "https://gist.github.com/meshtag/17fb6ae2a3562d12af335ffa41a82226",
+          "description": "<ul>\n<li>A layer of separation between two dimensional convolution and correlation was added.</li>\n<li>Support for many different boundary options along with optimisation was developed.</li>\n<li>2D convolution implementation was completely aligned with existing implementation of 1D convolution(APIs of both implementations are consistent and provide suitable functionalities). </li>\n<li>All changes were complemented with tests and documentation.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5527983355330560/",
+          "proposal_id": null,
+          "short_description": "A layer of separation between two dimensional convolution and correlation was added.\nSupport for many different boundary options along with...",
+          "slug": "boostgil-2d-convolution-and-correlation",
+          "status": "completed",
+          "student_name": "Prathamesh Tagore",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Boost.Gil : 2D convolution and correlation"
+        },
+        {
+          "code_url": "https://medium.com/@surajnehra112/benchmarking-boost-real-d4054b16086e",
+          "description": "<p>Boost.Real aims at providing a data-type that can represent all types of computable real numbers and provides the flexibility of performing arbitrary precision arithmetic, the user can always decide and control the amount of precision to be used for a calculation thus controlling the computational power used by the machine.\nI propose to benchmark the library and compare it against other similar libraries. There is a scope of optimization for Trigonometric functions and performance can be improved  by a significant  amount. I also plan for several other small optimizations</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5062111910166528/",
+          "proposal_id": null,
+          "short_description": "Boost.Real aims at providing a data-type that can represent all types of computable real numbers and provides the flexibility of performing arbitrary...",
+          "slug": "benchmarking-and-improving-boostreal",
+          "status": "completed",
+          "student_name": "Suraj Kumar-3",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Benchmarking and improving Boost.Real"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC21/multiprecision/blob/develop/report/report.md",
+          "description": "<p>A new <strong>quad-double</strong> type would be implemented, initially as a wrapper around the QD package's <code>qd_real</code> class authored by <em>David Bailey</em>. Tests for correctness and benchmarks will be subsequently written along with the documentation. If time permits and if the mentors find it feasible, a new <strong>multiple-double</strong> type based on the same algorithms as QD package will be written with no dependency on external libraries.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4565185871740928/",
+          "proposal_id": null,
+          "short_description": "A new quad-double type would be implemented, initially as a wrapper around the QD package's qd_real class authored by David Bailey. Tests for...",
+          "slug": "implementation-of-a-new-quad-double-type-for-boostmultiprecision",
+          "status": "completed",
+          "student_name": "Syed Fahad",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of a new Quad-double type for Boost.Multiprecision"
+        },
+        {
+          "code_url": "https://github.com/boostorg/python/pull/365",
+          "description": "<p>GIL is  restricting  Python  code  performance.   There  have  been  a  long  time  that  the  Pythondevelopers are struggling to solve the performance issue brought byGIL. In PEP554,  peoplecame up with the idea of multi-interpreter in the same program.  Which can start multiple in-terpreter concurrently to solve the problem.  But due to some reasons, it wasn’t be implementedin Python 3.9\nThanks to boost::asio::iocontext::strand, it’s possible for us to use multiple Python interpretersin the same program in theactor modelfashion.  Hereby I propose this project to implementPython eventloop usingboost::asio::iocontext::strand\nThose developers who wants to use numerous Python libraries and share rich Python ecosystemwill benefit from this project.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6023928564154368/",
+          "proposal_id": null,
+          "short_description": "GIL is  restricting  Python  code  performance.   There  have  been  a  long  time  that  the  Pythondevelopers are struggling to solve the...",
+          "slug": "boostpython-asyncio-event-loop-implementation-using-boostasio",
+          "status": "completed",
+          "student_name": "Pan Yue",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Boost.Python: asyncio event loop implementation using Boost.Asio"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC21/math-fft-report/releases/download/v1.1/gsoc-report.pdf",
+          "description": "<p>We propose the implementation of Fast Fourier Transform (FFT) capabilities\ninside the Boost.Math library. This project answers the need for a C++ library\nof this sort, and the lack of FFT within Boost.Math.\nOur main goal is to design a modern C++ template interface for FFT\nthat supports multiple types that satisfy the Ring Axioms and specialized\nroutines for complex numbers, which constitute the most used cases.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_boost-c-libraries_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4927085990117376/",
+          "proposal_id": null,
+          "short_description": "We propose the implementation of Fast Fourier Transform (FFT) capabilities\ninside the Boost.Math library. This project answers the need for a C++...",
+          "slug": "boostmath-fft-utilities",
+          "status": "completed",
+          "student_name": "Eduardo Quintana Miranda",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Boost.Math: FFT Utilities"
+        },
+        {
+          "code_url": "https://github.com/BoostGSoC21/ublas/wiki",
+          "description": "<p>This project aims to extend the existing <code>tensor</code> extension of uBlas by providing support for <code>subtensor</code>, i.e. views of <code>tensor</code> type, along with the auxiliary types such as <code>span</code>/<code>range</code>. The projects' scope is to improve the existing <code>subtensor</code> implementation while simplifying the overall design and usage.</p>\n",
+          "difficulty": null,
+          "id": "proj_boost-c-libraries_2021_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5140417753907200/",
+          "proposal_id": null,
+          "short_description": "This project aims to extend the existing tensor extension of uBlas by providing support for subtensor, i.e. views of tensor type, along with the...",
+          "slug": "boostublas-finalizing-and-improving-the-subtensor-type",
+          "status": "completed",
+          "student_name": "Kannav Krishan Mehta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Boost:uBlas : Finalizing and improving the subtensor type"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5123901926932480/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "david.bellot@gmail.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://gitter.im/boostorg/home",
+    "mailing_list": "https://lists.boost.org/mailman/listinfo.cgi/boost"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/boost_libraries?lang=en",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.966Z"
+  }
+}

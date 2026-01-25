@@ -1,0 +1,160 @@
+{
+  "id": "692251dc53dd9d7326d33e28",
+  "slug": "microkernel-devroom",
+  "name": "Microkernel devroom",
+  "category": "Operating systems",
+  "description": "Confederation of microkernel projects (Genode, HelenOS, GNU Hurd, MINIX, Redox)",
+  "image_url": "https://lh3.googleusercontent.com/XeXZIspaZAf8QZNUxWJBehgrnCcvKiy5WIAja2N9AEGcaQC81kS1lzPkh38BYkJJMkPBVTUmAvMoBAAMnQX-Lw-AgxE19Ab0",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/microkernel-devroom.webp",
+  "logo_r2_url": null,
+  "url": "http://www.microkernel.info/",
+  "active_years": [
+    2017
+  ],
+  "first_year": 2017,
+  "last_year": 2017,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "c++",
+    "rust",
+    "arm",
+    "x86"
+  ],
+  "topics": [
+    "virtualization",
+    "desktop",
+    "microkernel",
+    "components",
+    "ipc"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 3,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 3,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://redox-os.org/news/gsoc-self-hosting-final/",
+          "description": "<p>In order to build Redox on Redox, Rustc has to be ported, along with Cargo, and any dependencies (such as LLVM). Additionally, the build process currently requires make and a Bourne-compatible shell, which will have to be ported, or a way to build without them provided.</p>\n<p>LLVM seems to assume it is running under Windows or Unix. So the code in lib/Support/Unix and lib/Support/Windows likely needs to be reimplemented for Redox.</p>\n",
+          "difficulty": null,
+          "id": "proj_microkernel-devroom_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6599330798501888/",
+          "proposal_id": null,
+          "short_description": "In order to build Redox on Redox, Rustc has to be ported, along with Cargo, and any dependencies (such as LLVM). Additionally, the build process...",
+          "slug": "make-redox-self-hosting",
+          "status": "completed",
+          "student_name": "ids1024",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Make Redox Self-hosting"
+        },
+        {
+          "code_url": "http://lists.gnu.org/archive/html/bug-hurd/2017-08/msg00035.html",
+          "description": "<p>The Hurd is the kernel of the GNU system. It consists on the GNU Mach microkernel and several user-space servers that offer most of the functions that usually a kernel offers, one of these functions is a TCP/IP stack. Currently, in the Hurd this stack if offered by the pfinet server, a port of the Linux 2.2 TCP/IP stack. This stack should be replaced since it is obsolete and lacks important features like PPP support. In this project, we will port LwIP TCP/IP stack to the Hurd to replace pfinet.</p>\n",
+          "difficulty": null,
+          "id": "proj_microkernel-devroom_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4564115985006592/",
+          "proposal_id": null,
+          "short_description": "The Hurd is the kernel of the GNU system. It consists on the GNU Mach microkernel and several user-space servers that offer most of the functions...",
+          "slug": "porting-lwip-to-the-gnuhurd",
+          "status": "completed",
+          "student_name": "Joan Lledó",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Porting LwIP to the GNU/Hurd"
+        },
+        {
+          "code_url": "http://wiki.minix3.org/doku.php?id=soc:2017:portrpi",
+          "description": "<p>The MINIX3 has already supported ARM-based platforms such as BeagleBoard. The goal of this project is port the MINIX3 to the RaspberryPi. The task requires changing booting process, because it doesn't allow have more than one platform.\nAlso, some of RaspberryPi drivers such as USB, SDCard, SPI, I2C, etc. must be implemented.</p>\n",
+          "difficulty": null,
+          "id": "proj_microkernel-devroom_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5859737430130688/",
+          "proposal_id": null,
+          "short_description": "The MINIX3 has already supported ARM-based platforms such as BeagleBoard. The goal of this project is port the MINIX3 to the RaspberryPi. The task...",
+          "slug": "porting-minix3-to-raspberry-pi",
+          "status": "completed",
+          "student_name": "Nikita Korobov",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Porting MINIX3 to Raspberry Pi"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5026327212064768/"
+    },
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@microkernel.info",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.574Z"
+  }
+}

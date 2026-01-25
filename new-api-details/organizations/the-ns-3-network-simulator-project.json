@@ -1,0 +1,793 @@
+{
+  "id": "692251ea53dd9d7326d33ee2",
+  "slug": "the-ns-3-network-simulator-project",
+  "name": "The ns-3 Network Simulator Project",
+  "category": "Science and medicine",
+  "description": "ns-3 is a simulation tool for computer networks.",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-ns-3-network-simulator-project/0zmaec44y4jcfuj2-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-ns-3-network-simulator-project.webp",
+  "logo_r2_url": null,
+  "url": "https://www.nsnam.org",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2017,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "c++",
+    "c",
+    "python 3",
+    "django"
+  ],
+  "topics": [
+    "networking",
+    "simulation",
+    "computer networking",
+    "research and development",
+    "network simulation",
+    "research",
+    "emulation",
+    "network analysis"
+  ],
+  "total_projects": 34,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.78,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 5,
+      "year_2018": 5,
+      "year_2019": 4,
+      "year_2020": 4,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": 3,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 5,
+      "year_2018": 5,
+      "year_2019": 4,
+      "year_2020": 4,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": 3,
+      "year_2025": 5
+    },
+    "total_students": 34
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://gitpitch.com/abhijithanilkumar/ns-3-AppStore",
+          "description": "<p>The ns-3 App Store project aims to support modularization of the ns-3 codebase and federation of development activities. Once this project is complete, ns-3 users will be able to download modules depending on their requirements. Developers can make use of the app store to upload new modules as well. The app store will support dependency management, patch management, bake integration, module grouping, regression testing and also a rating system.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6606597614731264/",
+          "proposal_id": null,
+          "short_description": "The ns-3 App Store project aims to support modularization of the ns-3 codebase and federation of development activities. Once this project is...",
+          "slug": "ns-3-app-store",
+          "status": "completed",
+          "student_name": "Abhijith Anilkumar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "ns-3 App Store"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2017MobileIp#Final_Report_for_Google",
+          "description": "<p>MIPv6 is the base standard from the IETF for IP based mobility management in wireless networks. The next generation mobility management schemes are mainly following the protocol stack of MIPv6. Until today ns-3 – which aims to replace the aging ns2 and its associated old-featured simulators –  does not have even in its latest version a MIPv6 module that is fully compliant to the IETF specification. To fill this gap, I am going to implement a novel MIPv6 simulation model which can be integrated into ns-3.\nThe project idea aims at testing the code in different network scenarios, containing different link layer technologies such as Wi-Fi, WiMAX and LTE. The current implementation of LTE does not have support of IPv6 in ns-3. So, the idea of testing MIPv6 code into LTE would follow IPv6 support implementation in LTE first and then the MIPv6 support. So, ns-3 researchers can benefit themselves with the addition of this feature. \nThus, implementation of MIPv6 in ns-3 as the base mobility management solution and providing LTE support within it could help the current network researchers working on ns-3.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5437524965064704/",
+          "proposal_id": null,
+          "short_description": "MIPv6 is the base standard from the IETF for IP based mobility management in wireless networks. The next generation mobility management schemes are...",
+          "slug": "mobile-ipv6-implementation-with-lte-support",
+          "status": "completed",
+          "student_name": "Manoj Kumar Rana",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "mobile",
+            "ai"
+          ],
+          "title": "Mobile IPv6 Implementation with LTE Support"
+        },
+        {
+          "code_url": "https://tcp-prague-framework-gsoc-2017.github.io/",
+          "description": "<p>Recently, there has been a lot of interest in the research community (IRTF / IETF) towards parallely implementing and standardizing a new TCP extension called TCP Prague, which is targeted to be an evolution of Data Center TCP (DCTCP). DCTCP starves the throughput of other TCP flows (e.g., Reno, Cubic, etc) when they co-exist; so one of the goals is to ensure that TCP Prague can co-exist with other TCP flows without degrading their throughput. Although TCP Prague is still a work in progress, some related modules have been finalised and briefly experimented, such as: the Low Latency, Low Loss, Scalable throughput (L4S) service architecture, DualQ Coupled AQM, Modified ECN Semantics for Ultra Low Queueing Delay. Availability of these modules in network simulators like ns-3 is crucial to boost up the ongoing efforts of standardizing TCP Prague. In this project, the aim is to implement the above mentioned modules in ns-3. Additionally, the functionality of these modules will be tested, and the necessary documentation with some examples will also be provided.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5373072538337280/",
+          "proposal_id": null,
+          "short_description": "Recently, there has been a lot of interest in the research community (IRTF / IETF) towards parallely implementing and standardizing a new TCP...",
+          "slug": "framework-for-tcp-prague-simulations-in-ns-3",
+          "status": "completed",
+          "student_name": "Shravya K.S.",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Framework for TCP Prague simulations in ns-3"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2017TBFAndHHF#GSoC_Wrap_Up_and_Final_Report",
+          "description": "<p>In PSNs, sometimes it is not possible to distinguish and manipulate different kinds of network flows. For example, we may want to give priority to some flows while limiting bandwidth of other flows or even perform packet classification. To solve such problems, we have a traffic control layer in ns-3 which intercepts the packets flowing between the L2 Net devices and any IP protocol. It uses several qdiscs like pfifo, HBT, RED, CoDel etc., in order to process these packets and perform scheduling or shaping. Currently the ns-3 traffic layer only contains traffic scheduling qdisc models (AQMs) and lacks realistic traffic shaping algorithms. This project aims to introduce the TBF and HHF algorithms into the ns-3 traffic control layer. TBF is a classless traffic shaper, that is used to control the flow rate or bandwidth of the throughput. HHF is a size-based qdisc that attempts to differentiate small and heavy flows. The goal is to catch the heavy flows and move them to a separate queue with less priority so that bulk traffic does not affect the latency of critical traffic.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5936345956483072/",
+          "proposal_id": null,
+          "short_description": "In PSNs, sometimes it is not possible to distinguish and manipulate different kinds of network flows. For example, we may want to give priority to...",
+          "slug": "implementation-of-token-bucket-filter-and-heavy-hitter-filter-in-ns-3",
+          "status": "completed",
+          "student_name": "tssurya",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Implementation of Token Bucket Filter and Heavy-Hitter Filter in ns-3"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2017Lte#Project_summary",
+          "description": "<p>The goal of my project is implementation of <strong>handover to secondary cell in LTE with Carrier Aggregation</strong>.</p>\n<p>To make it possible I plan to:</p>\n<ol>\n<li>Improve architecture of LTE CA to make sure secondary cells are treated the same way as primary cells by eNB and frequency channels can be switched easily on UE.</li>\n<li>Implement minimally feasible version of handover procedure on eNB and UE and write unit tests for this procedure.</li>\n<li>Implement necessary signalling on RRC to make handover negotiation possible.</li>\n<li>Implement handover algorithm to make automatic handover possible.</li>\n<li>Write a scenario to validate implemented functionality and provide an example of usage for implemented functionality.</li>\n</ol>\n<p>More detailed plan is provided in project proposal itself.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5130326087041024/",
+          "proposal_id": null,
+          "short_description": "The goal of my project is implementation of handover to secondary cell in LTE with Carrier Aggregation.\nTo make it possible I plan to:\n\nImprove...",
+          "slug": "enabling-lte-ca-handover-to-secondary-cell",
+          "status": "completed",
+          "student_name": "ilabdsf",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enabling LTE CA handover to secondary cell"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5226418732531712/"
+    },
+    "year_2018": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2018Coexistence#GSoC_2018_Wrap_Up_and_Final_Evaluations",
+          "description": "<p>The LTE and Wi-Fi Coexistence module has been quite popular with ns-3 users. But currently, it is detached from the upstream ns-3-dev and missing improvements that has been implemented on the upstream. It is also created to implement TR 36.889 test scenarios, making it difficult to customize for other cases.</p>\n<p>The goal will be successfully merging the existing works to ns-3-dev, improving the flexibility of scenario deployment, and improving usability in terms of getting more useful data out of the simulations.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5717242897498112/",
+          "proposal_id": null,
+          "short_description": "The LTE and Wi-Fi Coexistence module has been quite popular with ns-3 users. But currently, it is detached from the upstream ns-3-dev and missing...",
+          "slug": "merging-and-improvement-of-lte-and-wi-fi-coexistence-module",
+          "status": "completed",
+          "student_name": "muh.iqbal.cr",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ui"
+          ],
+          "title": "Merging and Improvement of LTE and Wi-Fi Coexistence Module"
+        },
+        {
+          "code_url": "https://ecnpp-accecn-gsoc-2018.github.io/",
+          "description": "<p>Reducing Internet Transport Latency is an interesting research topic and has gained significant attention in the recent past. Some of the promising new solutions rely on Explicit Congestion Notification (ECN) (RFC 3168) to notify TCP endpoints of congestion that may be developing in a bottleneck queue, without resorting to packet drops. As a result, there have been attempts at Internet Engineering Task Force (IETF) to extend the functionality of ECN and provide rich feedback to TCP endpoints. In this regard, Accurate ECN feedback (AccECN) and ECN++ are two active topics of discussion at IETF. This project proposal is to: extend the ECN implementation in ns-3 to support AccECN and ECN++, test the correctness of implementation and provide examples.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5009854200545280/",
+          "proposal_id": null,
+          "short_description": "Reducing Internet Transport Latency is an interesting research topic and has gained significant attention in the recent past. Some of the promising...",
+          "slug": "implementation-of-accecn-and-ecn-in-ns-3",
+          "status": "completed",
+          "student_name": "WenYing Dai",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of AccECN and ECN++ in ns-3"
+        },
+        {
+          "code_url": "http://magr.in/sem/gsoc",
+          "description": "<p>The envisioned solution consists in the creation of a python library that can\n   start, manage and collect results from multiple simulation runs. In essence,\n   the aim of this library is to make obtaining and organizing results from\n   multiple ns-3 script executions straightforward: users will only need to\n   worry about writing the desired simulation script and specifying the range of\n   parameters they desire to run the script with. The framework will then\n   optimize the execution of the needed simulation runs, store the results in a\n   human-readable way and wrap them up in a data structure that can then be\n   analyzed using numpy, MATLAB or similar tooling.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5554849244512256/",
+          "proposal_id": null,
+          "short_description": "The envisioned solution consists in the creation of a python library that can\n   start, manage and collect results from multiple simulation runs. In...",
+          "slug": "a-simulation-execution-manager-for-ns-3",
+          "status": "completed",
+          "student_name": "Davide Magrin",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "A simulation execution manager for ns-3"
+        },
+        {
+          "code_url": "https://medium.com/@jude.niroshan11/gsoc-2018-trust-based-routing-protocols-framework-in-ns-3-dffeee692c24",
+          "description": "<p>ns-3 contains different routing modules, both for IPv4 and for IPv6. None of them is trust-based. Given the increasing interest on trust-based routing schemes to increase and improve the network resilience Vs routing attacks, it would be useful to have a general approach for Trust-based schemes. As a matter of fact, there are multiple trust-based extensions for well known protocold (e.g., AODV), but each one modifies in a particular way the single routing protocol, making it difficult to export the solution to other routing schemes.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5765955477045248/",
+          "proposal_id": null,
+          "short_description": "ns-3 contains different routing modules, both for IPv4 and for IPv6. None of them is trust-based. Given the increasing interest on trust-based...",
+          "slug": "trust-based-routing-protocols-framework",
+          "status": "completed",
+          "student_name": "Jude",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Trust-based routing protocols framework"
+        },
+        {
+          "code_url": "https://ns-3-dce-gsoc-2018.github.io/",
+          "description": "<p>Direct Code Execution is a framework for ns-3. It allows the users to execute Linux kernel and Linux userspace networking applications inside ns-3 without changing their code. In order to provide such functionality, DCE integrates network simulator with custom Linux kernels like net-next-sim or net-next-nuse (LibOs). But net-next-nuse has not kept pace with latest versions of Linux kernel. This has been the major hindrance for DCE to use latest Linux kernel. An active alternative to LibOs is Linux Kernel Library (LKL), which provides similar features of LibOs and supports latest Linux kernel versions. In this project, LibOs will be replaced with LKL from DCE to support the networking stack of Linux. Currently, DCE uses custom implementation of libc; this makes it hard to maintain the code base. The another aspect of this project is to drop the custom libc and embed the musl libc in DCE.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5971732796014592/",
+          "proposal_id": null,
+          "short_description": "Direct Code Execution is a framework for ns-3. It allows the users to execute Linux kernel and Linux userspace networking applications inside ns-3...",
+          "slug": "direct-code-execution-upgrade",
+          "status": "completed",
+          "student_name": "Sourabh Jain",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Direct Code Execution upgrade"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6608136823635968/"
+    },
+    "year_2019": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/liangcheng-yu/ns-3-dev",
+          "description": "<p>Flow Completion Time (FCT) has been the core metric to optimize via scheduling, congestion control, load balancing in Data Center Networks (DCN). As a user-perceived metric, FCT is one of the most important networks' performance metrics, as the users typically want their flows to complete as quickly as possible during their interactions with the network, e.g., webpage download, \ffile transfer. The past decade has witnessed significant interest in studying the FCT minimization in networked systems research, especially in DCN.</p>\n<p>Current NS-3 are less friendly to researchers in this domain. This project aims to augment NS-3 with related components to support the simulation in the domain so that researchers would try out with a minimal amount of coding. The framework will supplement the NS-3 ecosystem with components such as Multi-Level Feedback Queue scheduling, topology helper, load balancing algorithms and so on.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5438335672123392/",
+          "proposal_id": null,
+          "short_description": "Flow Completion Time (FCT) has been the core metric to optimize via scheduling, congestion control, load balancing in Data Center Networks (DCN). As...",
+          "slug": "flow-performance-optimization-for-data-center-networks-in-ns-3",
+          "status": "completed",
+          "student_name": "Liangcheng Yu",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Flow Performance Optimization for Data Center Networks in NS-3"
+        },
+        {
+          "code_url": "https://mishal23.github.io/gsoc19-report/",
+          "description": "<p>The project aims to extend the functionalities of the existing AppStore and primarily linking it with the bake build system, so as to support more functionality to the build system and make it easier for ns-3 developers to install new extensions, search for new extensions, support to update extensions from the command line will also be added. However, currently, the AppStore is in Python2.7 and hence porting the AppStore to Python3 is also one of the tasks ahead to keep the AppStore up with the current technology. \nTo enhance the functionalities of the AppStore GitLab/GitHub OAuth will be added, statistics for each extension will be added, multi-threaded comments will also be added for better developer interaction and the modules rating UI will be improved.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4544832284917760/",
+          "proposal_id": null,
+          "short_description": "The project aims to extend the functionalities of the existing AppStore and primarily linking it with the bake build system, so as to support more...",
+          "slug": "improving-the-ns-3-appstore-and-linking-with-bake",
+          "status": "completed",
+          "student_name": "Mishal Shah",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Improving the ns-3 AppStore and linking with bake"
+        },
+        {
+          "code_url": "https://ns-3-tcp-validation.github.io",
+          "description": "<p>This project aims at alignment and testing of ns-3 implementation of TCP with Linux kernel. Through rigorous testing various features of TCP like ECN, RACK, SACK, Paced Chirping etc. will be aligned and a proper documentation of the differences will be prepared.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5993036872417280/",
+          "proposal_id": null,
+          "short_description": "This project aims at alignment and testing of ns-3 implementation of TCP with Linux kernel. Through rigorous testing various features of TCP like...",
+          "slug": "tcp-testing-and-alignment",
+          "status": "completed",
+          "student_name": "Apoorva Bhargava",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "TCP Testing and Alignment"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2019ThreeGPPChannel#Final_Report",
+          "description": "<p>In recent years, ns-3 has been widely used for the simulation of wireless networks, because it features several built-in and external modules implementing different wireless technologies. The overall performance of this kind of networks are strongly influenced by the characteristics of the signal propagation through the wireless link, thereby, a proper modeling of the channel behavior is of primary importance to obtain reliable results from the simulations. This project aims to tackle this issue by proposing an extension of the spectrum module to model both frequency and spatial-dependent phenomena, and to account for the directional behavior of the signal propagation. This will be achieved by implementing the modeling framework described in 3GPP TR 38.901, which includes the statistical characterization of different propagation environments, supports the modeling of multi-antenna systems, and, thanks to its modularity, can be easily extended with new environments or other additional features. Even if it has been specifically designed for the simulation of cellular networks, it supports frequency bands between 0.5 and 100 GHz, thus can be used even for other wireless technologies.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5175006479253504/",
+          "proposal_id": null,
+          "short_description": "In recent years, ns-3 has been widely used for the simulation of wireless networks, because it features several built-in and external modules...",
+          "slug": "integration-of-the-3gpp-tr-38901-channel-model-in-the-ns-3-spectrum-module",
+          "status": "completed",
+          "student_name": "Tommaso Zugno",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integration of the 3GPP TR 38.901 channel model in the ns-3 spectrum module"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5495934539005952/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://bhaskar792.github.io/GSoC-2020-Report/",
+          "description": "<p>Phase 1:<br>\n1) Add L4S to ns-3 FqCoDel:  ECT(1) traffic gets marked at CE_threshold,\nECT(0) is marked at the normal CoDel threshold.  For now, avoid the\npossibility of hash collisions causing both types to share a flow queue.</p>\n<p>2) Add FQ scheduling to IETF dual queue model</p>\n<p>Phase 2:  CodelAF draft-morton-tsvwg-codel-approx-fair-01</p>\n<p>Phase 3:  Support TCP Prague with overload signal (Jake Holland's proposal)</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6657232399237120/",
+          "proposal_id": null,
+          "short_description": "Phase 1:\n1) Add L4S to ns-3 FqCoDel:  ECT(1) traffic gets marked at CE_threshold,\nECT(0) is marked at the normal CoDel threshold.  For now, avoid the...",
+          "slug": "sce-aqms-and-tcp-along-with-cnq-codelaf-and-lfq",
+          "status": "completed",
+          "student_name": "Bhaskar Kataria",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "SCE AQMs and TCP along with CNQ-CodelAF and LFQ"
+        },
+        {
+          "code_url": "https://ananthu-dev.github.io/net-device-consistency-gsoc-2020/",
+          "description": "<p>There is some inconsitency among the working of NetDevices and IP Interfaces. Ideally when a NetDevice changes it state, it should get reflected in IP Interface also. i.e When a NetDevice goes down, associated IP Interface should also go down. When IP Interface goes down, it triggers related events such as DHCP IP address renegotiation, MIP implementation, etc. Currently this is not happening as expected. IP Interfaces, both IPv4 and IPv6 does not respond to state change of NetDevices. This project aims at fixing this behavior, provide the documentation about what is the standard behavior, and what NetDevices are actually implementing it in the right way.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5502409377316864/",
+          "proposal_id": null,
+          "short_description": "There is some inconsitency among the working of NetDevices and IP Interfaces. Ideally when a NetDevice changes it state, it should get reflected in...",
+          "slug": "netdevice-updown-consistency-and-event-chain",
+          "status": "completed",
+          "student_name": "Ananthakrishnan S",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "NetDevice up/down consistency and event chain"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2020Prague",
+          "description": "<p>Scalable congestion controls such as DCTCP improve performance over Reno and Cubic, which perform badly in high-speed networks (because of their slow response with large congestion windows). Several additional modifications over DCTCP have been drafted into the protocol called TCP Prague, that aims to integrate scalable congestion control into the Internet while still allowing it to coexist with current Classic protocols. This project would complete the integration and testing of fallback detection, RTT independence and pacing into the TCP Prague model of ns-3. The project would also validate the aforementioned implemenation against Linux and document the changes made.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5605945972883456/",
+          "proposal_id": null,
+          "short_description": "Scalable congestion controls such as DCTCP improve performance over Reno and Cubic, which perform badly in high-speed networks (because of their slow...",
+          "slug": "tcp-prague-model-for-ns-3",
+          "status": "completed",
+          "student_name": "Deepak K",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "TCP Prague model for ns-3"
+        },
+        {
+          "code_url": "https://shivamanipatil.github.io/gsoc-2020-report/",
+          "description": "<p>Project aims to develop a CI/CD server and add necessary updates to ns-3 AppStore to check if apps/modules available in AppStore build and pass test successfully for given ns-3 version and display that information in AppStore. In short, it is about making AppStore CI aware.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4852224477364224/",
+          "proposal_id": null,
+          "short_description": "Project aims to develop a CI/CD server and add necessary updates to ns-3 AppStore to check if apps/modules available in AppStore build and pass test...",
+          "slug": "app-store-improvements",
+          "status": "completed",
+          "student_name": "Shivamani Patil",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "App Store improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5105708816662528/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2021NixVectorFinalReport",
+          "description": "<p>The project aims to implement IPv6 Nix-Vector Routing with minimal code duplication from IPv4 Nix-Vector Routing.</p>\n<p>ns-3 has an implementation of Nix-Vector routing for IPv4. Routing protocols like Global Routing and Nix-Vector Routing help the user a lot when dealing with complex topologies. Unlike any dynamic routing protocol, these protocols simply fill the routing tables and prevent any overhead involved. Currently, there is no such implementation for IPv6 available in ns-3. For IPv6 Nix-Vector Routing, the implementation should handle link-local and global unicast addresses.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_the-ns-3-network-sim_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4999974001049600/",
+          "proposal_id": null,
+          "short_description": "The project aims to implement IPv6 Nix-Vector Routing with minimal code duplication from IPv4 Nix-Vector Routing.\nns-3 has an implementation of...",
+          "slug": "ipv6-nix-vector-routing",
+          "status": "completed",
+          "student_name": "Ameya Deshpande",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "IPv6 Nix-Vector Routing"
+        },
+        {
+          "code_url": "https://ns-3-dce-linux-upgrade.github.io/",
+          "description": "<p>DCE currently makes use of net-next-nuse to extend the Linux kernel internals like the networking stack to host applications but over the years the project hasn't been updated with the latest releases of the Linux kernel. \nThis project aims at enabling support for latest Linux kernel features and toolchains in the DCE environment with support for the socket networking stack, sysctl interfaces, system call access, etc. without any changes to the user APIs currently being used by host applications.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6549367481171968/",
+          "proposal_id": null,
+          "short_description": "DCE currently makes use of net-next-nuse to extend the Linux kernel internals like the networking stack to host applications but over the years the...",
+          "slug": "direct-code-execution-modernization",
+          "status": "completed",
+          "student_name": "Parth Pratim Chatterjee",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ux"
+          ],
+          "title": "Direct Code Execution Modernization"
+        },
+        {
+          "code_url": "https://akshitpatel01.github.io/GSoC-2021-Report/",
+          "description": "<p>The project aims to add support for ns-3’s built-in logging to SEM, also allowing the user to visualize the logs on an interactive dashboard. The user will be able to enable specific log components at a specified log level for their ns-3 scripts ran with SEM. In addition to this, the users will be provided with an interactive table (with different filter options) and a graph to easily visualize the logs generated.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5787760157261824/",
+          "proposal_id": null,
+          "short_description": "The project aims to add support for ns-3’s built-in logging to SEM, also allowing the user to visualize the logs on an interactive dashboard. The...",
+          "slug": "add-logging-support-to-simulation-execution-manager-sem",
+          "status": "completed",
+          "student_name": "Akshit Patel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Add logging support to Simulation Execution Manager (SEM)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6270070723969024/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2022NeighborCacheFinalReport",
+          "description": "The project aims to implement a “Perfect” version of ARP and NDP which produce caches that contain all needed IP address–MAC address mapping. \nARP and NDP are sometimes intrusive in high-level testing, it will introduce unexpected noise to the simulation (unwanted delays, packet drops, etc.). Perfect ARP/NDP can ensure every ARP/NDP look-up hits the cache so that no ARP messages or Neighbor discovery messages will be generated.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/DdUT09pZ/",
+          "proposal_id": null,
+          "short_description": "The project aims to implement a “Perfect” version of ARP and NDP which produce caches that contain all needed IP address–MAC address mapping. ARP and...",
+          "slug": "perfect-arp-and-ndp",
+          "status": "completed",
+          "student_name": "Zhiheng",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "“Perfect” ARP and NDP"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2022Channel#Project_Overview",
+          "description": "Currently, ns-3 provides the TR 38.901 channel model as the default option for sampling  MIMO wireless channels which take into account the presence of (possibly directional) multiple antenna elements at both transmitter and receiver. However, this model represents a major performance bottleneck for most end-to-end simulations, especially whenever they involve upwards of hundreds of nodes.\nAccordingly, the goal of my proposal is twofold: (i) to provide ns-3 with a simplified\nstatistical channel model, to be used for analyses which are focused on the upper layers of the protocol stack only ; and (ii) to improve the performance of the TR 38.901-based framework which is currently available in ns-3, for the remainder of the use cases.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/uxXqy83g/",
+          "proposal_id": null,
+          "short_description": "Currently, ns-3 provides the TR 38.901 channel model as the default option for sampling MIMO wireless channels which take into account the presence...",
+          "slug": "a-simplified-channel-and-beamforming-model-for-ns-3",
+          "status": "completed",
+          "student_name": "Matteo Pagin",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "A simplified channel and beamforming model for ns-3"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/the-ns-3-network-simulator-project/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC20235GUsabilityFinalReport",
+          "description": "IUNS-3 5G NR is a GSoC '23 medium-size project proposal that offers a general purpose introductory scenario to dive into the 5G New Radio world, unlocking the ability for users, from university students to research scientists and engineers, to know the 5G architecture in detail and enable them to use the simulator for research and development.",
+          "difficulty": "medium",
+          "id": "proj_the-ns-3-network-sim_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/oeDFknbT",
+          "proposal_id": "NdWVI08L",
+          "short_description": "IUNS-3 5G NR is a GSoC '23 medium-size project proposal that offers a general purpose introductory scenario to dive into the 5G New Radio world,...",
+          "slug": "iuns-3-5g-nr-improving-the-usability-of-ns-3s-5g-nr-module",
+          "status": "completed",
+          "student_name": "ggrieco",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "IUNS-3 5G NR: Improving the Usability of ns-3's 5G NR Module"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2023ns3-aiFinalReport",
+          "description": "The proposed project aims to enhance the ns3-ai module, which provides interfaces between ns-3 and Python-based ML frameworks using shared memory, with a focus on performance optimization and expanding the range of supported data structures.\nTo achieve this, the project will introduce APIs for additional data structures like vector and string in shared memory IPC to reduce the interaction between C++ and Python. Additionally, the project will provide examples demonstrating how to implement ML algorithms within ns-3 using C++ and open-source frameworks such as TensorFlow and PyTorch. The project will also improve the current examples and documentation and integrate new examples, such as LTE handover.\nOverall, the project aims to expand and accelerate the capabilities of the ns3-ai module, enabling users to simulate and analyze large-scale networks with greater efficiency and flexibility.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/A4KZ7dxo",
+          "proposal_id": "Vw78tMR0",
+          "short_description": "The proposed project aims to enhance the ns3-ai module, which provides interfaces between ns-3 and Python-based ML frameworks using shared memory,...",
+          "slug": "ns3-ai-enhancements",
+          "status": "completed",
+          "student_name": "Mu Yuan Shen",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "ns3-ai enhancements"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2023NetAnimFinalReport",
+          "description": "NetAnim is a tool used to visualize a node's movement and messages between node's. The current NetAnim module implementation has one severe limitation-It requires events from the node's and the net-devices, and to do so it hooks on several callbacks. The goal of this project is to refactor NetAnim so that each module willing to use NetAnim will have a NetDeviceAnim class responsible for communication with the NetAnim module, enabled only if NetAnim is active. This will break the dependencies and will allow more flexibility for out-of-tree modules and modules migrating to the AppStore.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/EpacH0ct",
+          "proposal_id": "EtfFk5b7",
+          "short_description": "NetAnim is a tool used to visualize a node's movement and messages between node's. The current NetAnim module implementation has one severe...",
+          "slug": "dynamic-device-registration-for-netanim-simulation-animations",
+          "status": "completed",
+          "student_name": "Raghuram Kannan",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Dynamic device registration for NetAnim simulation animations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/the-ns-3-network-simulator-project"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2024DHCPv6FinalReport",
+          "description": "The project aims to implement DHCP for IPv6 (DHCPv6), which is used in IPv6 networks for address configuration on devices, and allows for central management of the network.\n\nns-3 has a model for DHCP, which is used in IPv4 networks for address configuration. In IPv6, stateless address autoconfiguration (SLAAC) may be used, but this does not allow one to manage addresses of hosts in a network. ns-3 currently does not have an implementation for DHCPv6, and the aim is to add functionality for this protocol.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/X6Wbehcn/",
+          "proposal_id": null,
+          "short_description": "The project aims to implement DHCP for IPv6 (DHCPv6), which is used in IPv6 networks for address configuration on devices, and allows for central...",
+          "slug": "dhcpv6",
+          "status": "completed",
+          "student_name": "Kavya Bhat",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "DHCPv6"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2024RLUsability5GFinalReport",
+          "description": "In wireless networking, research utilizing reinforcement learning is on the rise. In response, ns-3 has introduced additional modules like ns3-gym and ns3-ai to support such research. With the increasing traffic and diverse services, 5G NR has been developed and is supported in ns-3 via 5G-LENA. However, there's a need for more reinforcement learning examples based on NR. Additionally, improving the ease of use of multi-agent reinforcement learning (MARL) approaches aims to enhance the usability of NR Sidelink, enabling distributed operations.\n\nIn this project, I will improve the interface between OpenGymEnv in ns3 and ns3env in the Python ns3 gym module for Multi-Agent Reinforcement Learning (MARL). Currently, ns3gym utilizes the REQ-REP pattern in ZeroMQ as the interface. By incorporating techniques such as client identity and parallel processing of workers in ZMQ, I aim to develop a MARL interface in ns3gym. Additionally, I will enhance the usability of 5G by implementing MARL approaches in 5G examples, with a specific focus on 5G LENA.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/vPuZgTe1/",
+          "proposal_id": null,
+          "short_description": "In wireless networking, research utilizing reinforcement learning is on the rise. In response, ns-3 has introduced additional modules like ns3-gym...",
+          "slug": "enhancement-of-rl-approach-accessibility-in-nr",
+          "status": "completed",
+          "student_name": "mye280c37",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Enhancement of RL Approach Accessibility in NR"
+        },
+        {
+          "code_url": "https://www.nsnam.org/wiki/GSOC2024Channels5GFinalReport",
+          "description": "What I aim for the “5G NR module benchmark analysis for distinct channel models” project is to complete it in the available time (175 hours) and successfully, achieve all goals. Moreover, I intend to provide a simple interface, using the NR Helper class, to make setting the channel model easy for users. Afterward, I will create an example of an outdoor scenario to evaluate, assess, and benchmark the channel models that are being implemented. Also, to provide a test case code that uses these three channel models.",
+          "difficulty": "beginner",
+          "id": "proj_the-ns-3-network-sim_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/OdtVEGnj/",
+          "proposal_id": null,
+          "short_description": "What I aim for the “5G NR module benchmark analysis for distinct channel models” project is to complete it in the available time (175 hours) and...",
+          "slug": "5g-nr-module-benchmark-and-analysis-for-distinct-channel-models",
+          "status": "completed",
+          "student_name": "João Albuquerque",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "5G NR Module Benchmark and Analysis for Distinct Channel Models"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/the-ns-3-network-simulator-project/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "In the current implementation of ns-3, there is no implementation of a dedicated socket for sending ICMP packets. Thus, it is difficult to accurately model the applications and real-world protocols that rely on sending ICMP packets.\nThis project aims to resolve this issue by implementing a new ICMP socket model that supports both the IPv4 and the IPv6 functionalities.\n\nIn the solution, there will be specialized classes like IcmpSocket, IcmpSocketImpl, IcmpSocketFactory, and IcmpSocketFactoryImpl. This will allow for proper handling of ICMP echo/reply requests and error messages like Destination Unreachable, TTL exceeded, etc. Along with this, the solution will also allow for advanced functionalities like ICMPv6 Neighbor Discovery Protocol, ICMP redirects, etc.\n\nThe deliverables for this project include developing sockets that seamlessly integrate with the IP layer (both IPv4 and IPv6) and developing wrapper classes (Socket and SocketFactory) that simplify the socket creation and management. These ensure realistic handling of the ICMP packets in the ns-3 simulations.",
+          "difficulty": "advanced",
+          "id": "proj_the-ns-3-network-sim_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/K7AZ4Yh2",
+          "proposal_id": "5eukrvaJ",
+          "short_description": "In the current implementation of ns-3, there is no implementation of a dedicated socket for sending ICMP packets. Thus, it is difficult to accurately...",
+          "slug": "icmp-socket-and-generatehandle-icmp-messages-hostnet-unreachable",
+          "status": "in-progress",
+          "student_name": "Aditya Ruhela",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "ICMP socket and generate/handle ICMP messages (host/net unreachable)"
+        },
+        {
+          "code_url": null,
+          "description": "The 6LoWPAN-ND (RFCs 4944, 6775, and 8505) is a replacement for IPv6 DAD and NDP for 6LoWPAN networks, and it is important to ensure address uniqueness across a network that can potentially use different MAC/PHY layers.\nThere is a model for 6LoWPAN-ND, but it is still not merged in the main ns-3 branch. The goal is to clean up the implementation, remove an actual limitation due to a questionable assumption, and to add the support for multi-hop operations (EDAR and EDAC messages).",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/DCsjRKRt",
+          "proposal_id": "GwNPtExR",
+          "short_description": "The 6LoWPAN-ND (RFCs 4944, 6775, and 8505) is a replacement for IPv6 DAD and NDP for 6LoWPAN networks, and it is important to ensure address...",
+          "slug": "6lowpan-neighbor-discovery-protocol",
+          "status": "in-progress",
+          "student_name": "Boh Jie Qi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "6LoWPAN Neighbor Discovery Protocol"
+        },
+        {
+          "code_url": null,
+          "description": "The AQM Evaluation Suite is an automated framework based on RFC 7928 that simplifies simulation setup, topology creation, traffic generation, execution, and results visualization of AQM algorithms in ns-3. Originally developed in 2017 and maintained until 2019, the suite now needs an upgrade to:\n    - Migrate its build system from waf to CMake\n    - Integrate support for state-of-the-art AQM algorithms and enhanced ECN functionalities\n    - Update simulation examples to reflect modern traffic control models and data center load balancing scenarios\n    - Package and publish the suite on the ns-3 App Store",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/d7sZPqy6",
+          "proposal_id": "36B3x0Ra",
+          "short_description": "The AQM Evaluation Suite is an automated framework based on RFC 7928 that simplifies simulation setup, topology creation, traffic generation,...",
+          "slug": "upgrade-the-aqm-evaluation-suite-for-ns-3",
+          "status": "in-progress",
+          "student_name": "David Lin",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Upgrade the AQM Evaluation Suite for ns-3"
+        },
+        {
+          "code_url": null,
+          "description": "The aim of this project is to extend the functionality of GlobalRouting to Ipv6, while maintaining minimal code duplication.\n\nGlobal Routing is based on the OSPFv2 routing protocol and\nuses the Djikstra Shortest path algorithm to compute paths for a single area network\nconfiguration. The problem is that GlobalRouting doesn't work for IPv6, and that's a huge limitation. The goal of the project is to fix that limitation\n\nThe general Idea is to convert the Ipv4 Classes to Generic Template Classes and Handle Ipv6 based Implementation differences using a combination of Type Traits and Compile time if statements.\n\nDeliverables include a working implementation of Ipv6GlobalRouting which handles different Address Types in Ipv6, while also maintaining Minimal Code Duplication.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/wdNG4pyV",
+          "proposal_id": "coXzNk2y",
+          "short_description": "The aim of this project is to extend the functionality of GlobalRouting to Ipv6, while maintaining minimal code duplication. Global Routing is based...",
+          "slug": "ipv6-global-routing",
+          "status": "in-progress",
+          "student_name": "Shashwat Patni",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "IPv6 Global Routing"
+        },
+        {
+          "code_url": null,
+          "description": "Creation of Mobility and Orbit models for LEO Satellites along with a NTN Helper for GEO and LEO Satellites, and an example using the helper integrating LEO Satellites with 5G NR.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-sim_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Z1PZUHaC",
+          "proposal_id": "c229W0Wu",
+          "short_description": "Creation of Mobility and Orbit models for LEO Satellites along with a NTN Helper for GEO and LEO Satellites, and an example using the helper...",
+          "slug": "ntn-helper-and-a-leo-example-for-5g-nr",
+          "status": "in-progress",
+          "student_name": "Thiago Miyazaki",
+          "student_profile": null,
+          "tags": [],
+          "title": "NTN Helper and a LEO example for 5G NR"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-ns-3-network-simulator-project"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "ns-developers@isi.edu",
+    "guide_url": "https://www.nsnam.org/wiki/GSOC2025ContributorGuide",
+    "ideas_url": "https://www.nsnam.org/wiki/GSOC2025Projects",
+    "irc_channel": "https://ns-3.zulipchat.com",
+    "mailing_list": "https://groups.google.com/g/ns-developers"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.406Z"
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "id": "692251d553dd9d7326d33dc4",
+  "slug": "genome-assembly-and-annotation",
+  "name": "Genome Assembly and Annotation",
+  "category": "Science and medicine",
+  "description": "Providing freely accessible genomic data",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/genome-assembly-and-annotation/fbu2s36u7uatdgev-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/genome-assembly-and-annotation.webp",
+  "logo_r2_url": null,
+  "url": "https://www.ebi.ac.uk/",
+  "active_years": [
+    2021,
+    2022,
+    2023
+  ],
+  "first_year": 2021,
+  "last_year": 2023,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "mysql",
+    "javascript",
+    "rust",
+    "pytorch",
+    "docker",
+    "nextflow"
+  ],
+  "topics": [
+    "genomics",
+    "data science",
+    "cloud",
+    "deep learning",
+    "workflows",
+    "machine learning",
+    "big data",
+    "hpc"
+  ],
+  "total_projects": 14,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": 6,
+      "year_2023": 5,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": 6,
+      "year_2023": 5,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 14
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/AidanMar/GSoC-2021-compara-deep-learning",
+          "description": "<p>Many genes both within and across species share a common origin. Homologoy inference is concerned with disentangling the precise nature of this shared origin and is essential for performing comparative genomics studies between species where previously unseen genes are annotated by comparing protein sequences to those of a known species. Inferring such relationships is can be computationally expensive. Deep learning offers a way to infer homolgy relations based on a limited set of data. This project will build upon previous work to develop a faster pre-processing pipeline and boost predictive performance for more distantly related species.</p>\n",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5434276832608256/",
+          "proposal_id": null,
+          "short_description": "Many genes both within and across species share a common origin. Homologoy inference is concerned with disentangling the precise nature of this...",
+          "slug": "deep-learning-homology-inference",
+          "status": "completed",
+          "student_name": "Aidan Marshall",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Deep learning homology inference"
+        },
+        {
+          "code_url": "https://github.com/rishabgit/genomic-info-from-papers",
+          "description": "<p>Current limitations with the variant detection using wbtools (and entity extraction in Wormbases’s AFP pipeline) is that it relies on regular expression and string matching with database. This approach can not be scaled to the entities or variants which do not have a clear pattern or are novel - especially relevant when there’s a lack of common consensus in SNP nomenclature.</p>\n<p>This proposal, in short, aims to increase entity detection capabilities of the AFP pipeline (and variant or strain detection capabilities of wbtools) by integrating more data models in the current pipeline, and for cases which aren’t possible to be generalized using a data model, use the present curated databases to train Named Entity Recognition (NER) using BERT to extract data from papers. Then, validate the discovered SNP by using NCBI’s Basic Local Alignment Search Tool.</p>\n",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5097312455491584/",
+          "proposal_id": null,
+          "short_description": "Current limitations with the variant detection using wbtools (and entity extraction in Wormbases’s AFP pipeline) is that it relies on regular...",
+          "slug": "extract-important-information-from-scientific-papers",
+          "status": "completed",
+          "student_name": "Rishab Mallick",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Extract important information from scientific papers"
+        },
+        {
+          "code_url": "https://github.com/EBI-Metagenomics/orchestra",
+          "description": "<p>MGnify is a freely available online service hosted by the European Bioinformatics Institute (EMBL-EBI). It helps researchers to do exploration and analysis of publicly available or user submitted metagenomic, metatranscriptomic, amplicon and assembly data. These analyses can be very resource-intensive and sometimes takes many days to complete, even on HPC clusters. It makes it infeasible for small research groups or individuals to perform these analyses on their workstations. So, MGnify is an invaluable resource for the community as it makes these analyses freely available for everyone.</p>\n<p>MGnify currently runs on the EMBL-EBI High-Performance Computing (HPC) cluster. However, due to increasing data volumes, the MGnify team needs to scale up the service to keep it in good health. Part of this effort is to enable the MGnify service to run on heterogeneous compute clusters.</p>\n<p>This project aims to build a system that can coordinate the execution of  jobs within a set of distributed compute clusters. It will act as an abstraction layer to hide the complexities of distributed heterogeneous compute clusters and provide a unified interface to interact with and monitor the service.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_genome-assembly-and-_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6226042074693632/",
+          "proposal_id": null,
+          "short_description": "MGnify is a freely available online service hosted by the European Bioinformatics Institute (EMBL-EBI). It helps researchers to do exploration and...",
+          "slug": "an-orchestration-system-for-mgnify-running-on-distributed-heterogeneous-compute-clusters",
+          "status": "completed",
+          "student_name": "Ank",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "An orchestration system for MGnify running on distributed heterogeneous compute clusters"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5794597745197056/"
+    },
+    "year_2022": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/rohitxsh/ensembl_lakehouse_ui/",
+          "description": "The goal of this project is to build a nextgen replacement for the BioMart tool that provides a way to download custom reports of genes, transcripts, proteins and other data types. Considering the huge amount of data that needs to be dealt with in the area of genomic study, the current tool has very limited use cases because of scalability issues. The new tool will use the latest technologies available in the market such as AWS Athena (built on Presto), Parquet/ORC to build a scalable solution.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Uuk8xmzG/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to build a nextgen replacement for the BioMart tool that provides a way to download custom reports of genes, transcripts,...",
+          "slug": "accessing-ensembl-data-with-presto-and-aws-athena",
+          "status": "completed",
+          "student_name": "Rohit Shrivastava",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Accessing Ensembl data with Presto and AWS Athena"
+        },
+        {
+          "code_url": "https://gist.github.com/sunnytarawade/342f7c99949bbe1077da48529117bb0e",
+          "description": "Current limitations: \n\nThe current Back End for the Functional Annotation of Animal Genomes project (FAANG) provides users with a public rest API to access data. But it has a few limitations. \n\nFirst, in order to fetch data from different Elasticsearch indices or to fetch details of different documents, user has to make multiple API request calls. \n\nSecond, users have to write CURL queries to work with the API which users may find complicated.\n\n\nProposed solution:\n\nThe main aim of creating a new backend for the Functional Annotation of Animal Genomes project (FAANG) is to make accessing and handling required data for users much easier than the current setup. In order to achieve this the following are the main tasks for the project:\n\nFirst, creating a Back End for Fetching Data (BE Read): To create a GraphQL Server which will make it easy to fetch the required data using advanced operations like join and aggregations by making a single API call to the Back End.\n\nSecond, creating a Front End for Fetching Data (FE Read): To create a UI for selecting which data is to be fetched.\n\nHence using a GraphQL Server, user only needs to make a single API call, and with a better UI, user wont have to worry about writing queries for fetching data.\n\n\nDeliverables : \n\n1. Basic Fetching of documents (single and multiple documents of an elasticsearch index)\n2. Implementing Dataloader in the GraphQL server for decreasing DB hits\n3. Implementing Filter and Join functionality between elasticsearch indices for fetching data from the GraphQL server\n4. Implementing Aggregation for data to be fetched from the GraphQL server\n5. Implementing Frontend interfaces to make data fetching easier and reduce mistakes from the user's side",
+          "difficulty": "beginner",
+          "id": "proj_genome-assembly-and-_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/rhDWo6D5/",
+          "proposal_id": null,
+          "short_description": "Current limitations: The current Back End for the Functional Annotation of Animal Genomes project (FAANG) provides users with a public rest API to...",
+          "slug": "new-faang-backend-with-elasticsearch-and-graphql",
+          "status": "completed",
+          "student_name": "Sunny Tarawade",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "frontend",
+            "backend"
+          ],
+          "title": "New FAANG backend with Elasticsearch and GraphQL"
+        },
+        {
+          "code_url": "https://github.com/EnsemblGSOC/Ensembl-Repeat-Identification",
+          "description": "A number of tools exist for identifying repeat features, but it remains a problem that the DNA sequence of some genes can be identified as being a repeat sequence. If such sequences are used to mask the genome, genes may be missed in the downstream annotation. Assuming that gene sequences have various signatures relating to their function and that repeats have different signatures including the repetitive nature of the signal itself, we want to train a classifier to separate the repeat sequences from the gene sequences. \nWe are inspired by DETR, an object detection model, this proposal will use transformer structure to complete the identify repeat sequence task, our model will unify segmentation and classification into one like the object detection model.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/eNOm24S7/",
+          "proposal_id": null,
+          "short_description": "A number of tools exist for identifying repeat features, but it remains a problem that the DNA sequence of some genes can be identified as being a...",
+          "slug": "using-machine-learning-to-identify-and-classify-repeat-features",
+          "status": "completed",
+          "student_name": "Yantong",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Using Machine Learning to Identify and Classify Repeat Features"
+        },
+        {
+          "code_url": "https://github.com/gaojunxuan/homology_storage_compara",
+          "description": "A key challenge surrounding modern bioinformatics is to manage and store the growing amount of biological data with both space efficiency and scalability. Traditionally, biological data are often stored as human-readable flat files or as entries in a conventional relational database. However, a drawback of such approaches is that the space required to maintain these data is becoming increasingly unmanageable, significantly reducing the scalability. Additionally, along with the size of the database, the time to query the database also increases. As stated in the problem statement, on Ensembl, homology data are currently stored as tuples in a relational database, resulting in the whole database being large and hard to scale. A natural way to compactly store the data is to exploit the intrinsic hierarchical structure of homology relationships. We propose multiple hierarchical data structures and formatting methods to improve the space efficiency of homology databases as well as important metrics to consider when designing such data structures and formats. We propose these potential approaches with the application in actual gene homology databases in mind. As part of the project, we will implement the representations using Python and/or C++ and evaluate them using proposed metrics.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/nidhwgvC/",
+          "proposal_id": null,
+          "short_description": "A key challenge surrounding modern bioinformatics is to manage and store the growing amount of biological data with both space efficiency and...",
+          "slug": "investigating-and-implementing-compact-data-representation-of-homology-relationship",
+          "status": "completed",
+          "student_name": "KevinGao",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Investigating and Implementing Compact Data Representation of Homology Relationship"
+        },
+        {
+          "code_url": "https://github.com/malayjoshi13/GSoC2022_OligoFinder",
+          "description": "During GSoC 2021, BioBERT and RegEx/string matching technique based “Named Entity Recognition” (NER) system was developed to recognize and extract data classes of Mutation, Gene, and Gene-Var combo, Strains, Variants, Variation type, and Functional effect. But it has limitations that it can still not recognize many entities of predefined classes due to being trained on a dataset having less training data in natural language form and less generalized RegEx/string matching rules. Also, due to the poor entity normalization approach, many extracted entities are being ignored in the final output stage of the pipeline. \n\nThis project proposal aims to increase the entity detection capabilities of this “Named Entity Recognition” (NER) system by firstly integrating additional RegEx/string matching rules in the current pipeline. Secondly, by combining other training datasets with the existing IDP4 dataset and then extending this combined training dataset using active learning to capture more data classes in natural language form. Lastly, re-training the current BioBERT model using a modified approach and making the entity standardization approach more general and scalable. Along with improving entity recognition of existing data classes, this proposal also aims to extend the current “Named Entity Recognition” (NER) system to extract data classes related to the CRISPR-cas9 experiment.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/5b96vIqa/",
+          "proposal_id": null,
+          "short_description": "During GSoC 2021, BioBERT and RegEx/string matching technique based “Named Entity Recognition” (NER) system was developed to recognize and extract...",
+          "slug": "extract-important-information-from-scientific-papers",
+          "status": "completed",
+          "student_name": "Malay Joshi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Extract important information  from scientific papers"
+        },
+        {
+          "code_url": "https://github.com/kshitijsoni/GSoC-2022--Extraction-of-data-from-tables-in-Scientific-papers",
+          "description": "PyTesseract is really helpful, the first time I knew PyTesseract, I directly used it to detect some a short text and the result is satisfying. Then, I used it to detect text from a table but the algorithm failed to perform.\n\nThis project aims to machine develop algorithms (preferably CNN and CNNA architectures) to identify tables and figures in pdf, then extract texts from those tables and figures and finally format them in a standard manner.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/HKusZvP4/",
+          "proposal_id": null,
+          "short_description": "PyTesseract is really helpful, the first time I knew PyTesseract, I directly used it to detect some a short text and the result is satisfying. Then,...",
+          "slug": "gsoc-2022-proposal-extract-text-from-tables-in-scientific-papers-by-kshitij-soni",
+          "status": "completed",
+          "student_name": "kshitijsoni",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GSoC 2022 Proposal - Extract text from tables in Scientific Papers by Kshitij Soni"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/genome-assembly-and-annotation/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://amartyanambiar.github.io/gsoc-blog/posts/Final_Report/",
+          "description": "The project aims to improve the visualisation tools for metagenomics data in the MGnify platform by identifying and using new technologies that can be used both on the website and in Jupyter notebooks. The goal is to enable researchers to easily compare taxonomic information from multiple studies for better interpretation and analysis of metagenomics data. Additionally, the project aims to streamline the process of user community contribution to MGnify Notebooks for improved accessibility and user experience. The project will be approached in three phases: research and evaluation of visualisation technologies, development of a Jupyter/observable notebook for comparing and visualising data from two studies, and integration of a JupyterLab extension to streamline the contribution process. The deliverables include a report on suitable visualisation technologies, a fully-functional Jupyter/Observable Notebook, and an integrated extension for user contributions. As a stretch goal, a component for the MGnify website that allows users to select multiple studies and launch a notebook for cross-study analyses will be developed.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Kg1GYNtp",
+          "proposal_id": "FlLjEIdY",
+          "short_description": "The project aims to improve the visualisation tools for metagenomics data in the MGnify platform by identifying and using new technologies that can...",
+          "slug": "interactive-visualization-for-comparative-metagenomics-in-mgnify",
+          "status": "completed",
+          "student_name": "Amartya Nambiar",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Interactive Visualization for Comparative Metagenomics in MGnify"
+        },
+        {
+          "code_url": "https://github.com/Ensembl/gsoc-dl-protein-coding-genes",
+          "description": "Accurate gene annotation in eukaryotes solely based on genomic data has been a significant obstacle in biology since the introduction of next-generation sequencing technologies and thus the rapid increase of available data. Traditional methods either rely on homology searches to map the open reading frames to previously identified protein-coding genes or utilize additional experimental data, e.g., transcriptomics data. The first approach produces potentially inaccurate results if the genome of interest is not at least somewhat related to an already annotated genome. The second approach is hindered because gathering transcriptomic data is labor-intensive and expensive. For that reason, there is a high demand for models that predict the location of protein-coding genes solely from inherent features of the DNA sequence of the gene. Although theoretically possible, methods that use, for instance, Hidden Markov models to detect protein-coding genes based on known gene features are often inaccurate. In this project, we will train a Deep Learning Transformer model to extract features of protein-coding genes to gain deeper insight into their exact properties that lead to translation. The whole workflow will include first training a Conditional Random Field model to recognize candidate gene regions and then using these as input for a more fine-grained Transformer - Convolutional Neural Network hybrid model. The final pipeline will be tested against a benchmark of gold standard annotations as well as various test sets to evaluate the influence of different parameters like genome sequence quality, protein length or gene structure complexity.",
+          "difficulty": "advanced",
+          "id": "proj_genome-assembly-and-_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/buBy0L0w",
+          "proposal_id": "UGarEtSz",
+          "short_description": "Accurate gene annotation in eukaryotes solely based on genomic data has been a significant obstacle in biology since the introduction of...",
+          "slug": "using-deep-learning-to-identify-features-of-protein-coding-genes",
+          "status": "completed",
+          "student_name": "Friederike Biermann",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Using Deep Learning to Identify Features of Protein-Coding Genes"
+        },
+        {
+          "code_url": "https://kennylam8.com/projects/gsoc-2023/",
+          "description": "The advancement in the accuracy of long-read sequencing technology has allowed us to explore novel transcript variants of known genes. Preventing potentially wrong transcripts and gene annotation is essential to the science community as many rely on the annotation for decision-making. Automated workflow with a has been developed to minimise the time needed to verify and annotated those transcript variants. However, current workflows are developed using a very strict rule-set and hence many of the novel transcript variants were rejected.\nTo address issue that strict filters rejects most of the legitimate introns,\nwe developed IntronOrNot (ION) - a machine learning to differentiate that predicts\nif the intron is real or misaligned. The model accepts coordinates, .bed, and .gtf file as input. The prediction script is easy to use and achieved comparable results\nto sequence-based deep learning intron predictor. A standalone script\nthat extracts introns from .gtf files is also developed.",
+          "difficulty": "beginner",
+          "id": "proj_genome-assembly-and-_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/BrtBAPoF",
+          "proposal_id": "fmeLZ9us",
+          "short_description": "The advancement in the accuracy of long-read sequencing technology has allowed us to explore novel transcript variants of known genes. Preventing...",
+          "slug": "differentiating-real-and-misaligned-introns-with-machine-learning",
+          "status": "completed",
+          "student_name": "Kenny Lam",
+          "student_profile": null,
+          "tags": [],
+          "title": "Differentiating Real and Misaligned Introns with Machine Learning"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/13o2FHhQOY1VaYZOa9rmceTd_MO1n6SmAn5rjJ8s5Onk/edit#heading=h.doruredts3f",
+          "description": "My proposal is to develop a NextFlow pipeline that will efficiently and accurately perform repeat annotation and masking on large genome sequences that are filled with repetitive elements. The pipeline will be designed to handle genome chunking and multiprocessing to ensure efficient use of computational resources.\n\nThe pipeline will take a genome sequence in FASTA format as input and use the RepeatModeler tool to generate a de novo repeat library for the input genome sequence. It will then use RepeatMasker to mask and annotate the repeats in the input genome sequence. Additionally, it will use Dust to mask and annotate low complexity sequences and TRF to mask and annotate tandem repeats in the input genome sequence. The pipeline will combine the results from these steps to output a masked genome sequence in FASTA format and annotated repeats in GTF format.\n\nFurthermore, the pipeline will use the tool RED to perform additional masking and output an additional masked genome sequence in FASTA format. The pipeline will be deployed in the cloud using the Embassy Cloud within the EMBL-EBI infrastructure to allow for testing and scaling, with the aim of determining the cost of running it at scale.\n\nThe main problem that this proposal aims to solve is the challenge of identifying and masking repetitive elements in large and complex genome sequences. The pipeline will provide a detailed and informative annotation of the repeats within the genome, making it easier for researchers to analyze the non-repetitive regions of the genome.\n\nThe deliverables of this proposal will include a NextFlow pipeline for repeat annotation and masking, a de novo repeat library for the input genome sequence, a masked genome sequence in FASTA format with repeat, low complexity, and tandem repeat annotations, an annotated repeats file in GTF format, and an additional masked genome sequence in FASTA format generated using the tool RED.",
+          "difficulty": "advanced",
+          "id": "proj_genome-assembly-and-_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/aFLAmznr",
+          "proposal_id": "tfBLN5zc",
+          "short_description": "My proposal is to develop a NextFlow pipeline that will efficiently and accurately perform repeat annotation and masking on large genome sequences...",
+          "slug": "a-nextflow-pipeline-for-repeat-annotation",
+          "status": "completed",
+          "student_name": "Purav Biyani",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud"
+          ],
+          "title": "A Nextflow Pipeline for Repeat Annotation"
+        },
+        {
+          "code_url": "https://github.com/Asrst/taxon-search",
+          "description": "The objective of this project is to create a standalone Elasticsearch tool that can handle taxonomic-related requests. This tool helps to expand the Ensembl beta’s search functionality to include and support searching based on taxonomic information. In particular, to provide the users a list of close relatives when a given species is requested and it is not part of Ensembl (yet), return the list of species available given a taxonomic clade instead of a species name, or find a species even when a (homotypic) synonym is provided instead of its current scientific name.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/05i92ZEc",
+          "proposal_id": "2IAHWUxN",
+          "short_description": "The objective of this project is to create a standalone Elasticsearch tool that can handle taxonomic-related requests. This tool helps to expand the...",
+          "slug": "expand-the-species-search-functionality-for-the-ensembl-beta-website-metazoa",
+          "status": "completed",
+          "student_name": "Satya.Adda",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Expand the species search functionality for the ensembl beta website (Metazoa)."
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/genome-assembly-and-annotation"
+    },
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "helpdesk@ensembl.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "http://www.ensembl.info",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/ensembl",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.193Z"
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "id": "692251ea53dd9d7326d33ee3",
+  "slug": "tianocore",
+  "name": "TianoCore",
+  "category": "Operating systems",
+  "description": "Modern, open source, UEFI BIOS firmware",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/tianocore/klcxfxidgxhn6yan-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/tianocore.webp",
+  "logo_r2_url": null,
+  "url": "https://www.tianocore.org/",
+  "active_years": [
+    2021,
+    2022
+  ],
+  "first_year": 2021,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "python",
+    "rust",
+    "golang",
+    "uefi"
+  ],
+  "topics": [
+    "firmware",
+    "uefi",
+    "bootloader",
+    "edk2",
+    "open system firmware",
+    "acpi",
+    "BIOS"
+  ],
+  "total_projects": 8,
+  "stats": {
+    "avg_projects_per_appeared_year": 4,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 5,
+      "year_2022": 3,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 5,
+      "year_2022": 3,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 7
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1HE85sVvCnY8eQLF3BIzKhnsJrRYOGQUod7R3r3sw3HM/edit?usp=sharing",
+          "description": "<p>This project proposes the implementation of an ext4 driver in Tianocore. EXT4 is widely recognized as a de-facto standard filesystem for modern Linux and Android systems, with its usage being almost ubiquitous. Therefore, it's of utmost importance to add support for it in the leading UEFI open-source implementation.</p>\n",
+          "difficulty": null,
+          "id": "proj_tianocore_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6610488355454976/",
+          "proposal_id": null,
+          "short_description": "This project proposes the implementation of an ext4 driver in Tianocore. EXT4 is widely recognized as a de-facto standard filesystem for modern Linux...",
+          "slug": "ext4-filesystem-driver",
+          "status": "completed",
+          "student_name": "Pedro Falcato",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ui",
+            "ux"
+          ],
+          "title": "EXT4 Filesystem driver"
+        },
+        {
+          "code_url": "https://gist.github.com/benjamindoron/cf9ce28bba0b6356113918a40814af30",
+          "description": "<p>MinPlatform is a project to get open-source EDK2 firmware booting mainstream boards. However, other than the Intel RVP development boards, presently it only supports the UP Xtreme and System76 Galago Pro 3 (discontinued).</p>\n<p>Therefore, I propose to develop a board port to an Acer Skylake platform. This adds another board port to the tree, resulting in open-source firmware being a little more widely available. I also hope that it encourages further work in this area.</p>\n",
+          "difficulty": null,
+          "id": "proj_tianocore_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6129563955888128/",
+          "proposal_id": null,
+          "short_description": "MinPlatform is a project to get open-source EDK2 firmware booting mainstream boards. However, other than the Intel RVP development boards, presently...",
+          "slug": "minimum-platform-board-port-acer-aspire-vn7-572g",
+          "status": "completed",
+          "student_name": "Benjamin Doron",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Minimum Platform Board Port - Acer Aspire VN7-572G"
+        },
+        {
+          "code_url": "https://github.com/mhaeuser/gsoc-2021-edk2-pe-loader",
+          "description": "<p>Security best practices are of utmost importance on all layers if a system is to be considered secure. Unfortunately, during my internship at ISP RAS my colleague Vitaly Cheptsov and I identified multiple defects in the current implementation of the EDK II PE/COFF loader. In consequence, I was tasked with implementing a more robust version of the library, ensuring reliability and security using formal methods. After the internship has concluded and our new loader has proven to be functional in many real-world scenarios, it is time to integrate it into the EDK II core, to increase the overall level of the firmware's reliability and security. The surrounding ecosystem should follow to take full advantage of the new code, including application of stricter memory permissions.</p>\n",
+          "difficulty": null,
+          "id": "proj_tianocore_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5061684091158528/",
+          "proposal_id": null,
+          "short_description": "Security best practices are of utmost importance on all layers if a system is to be considered secure. Unfortunately, during my internship at ISP RAS...",
+          "slug": "integration-of-a-pecoff-loader-designed-with-formal-methods",
+          "status": "completed",
+          "student_name": "Marvin Häuser",
+          "student_profile": null,
+          "tags": [
+            "ios"
+          ],
+          "title": "Integration of a PE/COFF loader designed with formal methods"
+        },
+        {
+          "code_url": "https://github.com/tianocore/edk2-staging/tree/2021-gsoc-llvm-gnumake",
+          "description": "<p>On Windows, using the Clang toolchain still depends on Visual Studio. This proposal is to fix these two dependencies:\na.    BaseTools contains C programs that need to be compiled and executed as part of the build process. While we have gotten Clang to compile UEFI modules, we have not gotten it to compile windows .exe files yet.\nb.    BaseTools currently depends on the nmake.exe program included with Visual Studio, but it also supports GNU make for UNIX systems. A method of building and distributing a Windows version of GNU make needs to be made and BaseTools needs to be adjusted to use it.</p>\n",
+          "difficulty": null,
+          "id": "proj_tianocore_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6480757324775424/",
+          "proposal_id": null,
+          "short_description": "On Windows, using the Clang toolchain still depends on Visual Studio. This proposal is to fix these two dependencies:\na.    BaseTools contains C...",
+          "slug": "proposal-for-enable-clangllvm-build-for-microsoft-windows",
+          "status": "completed",
+          "student_name": "yuqi (alyssa) chen",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "proposal for Enable Clang/LLVM Build for Microsoft Windows"
+        },
+        {
+          "code_url": "https://edk2.groups.io/g/devel/message/79692",
+          "description": "<ul>\n<li>Fix bugs in the terminal driver to ensure that each terminal type is using the best character set for their usecase. </li>\n<li>Fix it so OVMF and  MinPlatform setup menu actually communicates the correct terminal type.</li>\n</ul>\n<p>Left Over Time:</p>\n<ul>\n<li>Building Options for setting terminal default types </li>\n<li>Writing Unit Tests</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_tianocore_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6124043882725376/",
+          "proposal_id": null,
+          "short_description": "Fix bugs in the terminal driver to ensure that each terminal type is using the best character set for their usecase. \nFix it so OVMF and  MinPlatform...",
+          "slug": "terminal-driver-improvements",
+          "status": "completed",
+          "student_name": "Pokemod97",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Terminal Driver Improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6228850043781120/"
+    },
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.programmershideaway.xyz/post15/",
+          "description": "This project aims to add UEFI support to Rust to allow building applications and modules for edk2 and UEFI in general. This will entail achieving the following things:\n\n1. Get most of Rust-std running under the UEFI target\n2. Add testing support for UEFI target.\n3. Possibly add support for ARM and RISCV UEFI targets (currently only X86_64, AARCH64, and I386 are present)\n\nBy the end of this project, using Rust for UEFI target should be a smooth experience similar to normal std supported targets.",
+          "difficulty": null,
+          "id": "proj_tianocore_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/PwQlcngc/",
+          "proposal_id": null,
+          "short_description": "This project aims to add UEFI support to Rust to allow building applications and modules for edk2 and UEFI in general. This will entail achieving the...",
+          "slug": "add-rust-support-for-building-uefi-applications-and-modules",
+          "status": "completed",
+          "student_name": "Ayush Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Add Rust Support for building UEFI Applications and Modules"
+        },
+        {
+          "code_url": "https://gist.github.com/theomacx86/3abf8854a013fc5226045671de63a900",
+          "description": "The goal is to support a fully emulated UEFI environnement in QEMU using the MinPlatform specification.\n\nDeliverables would correspond to the different stages of the Minimum Platform implementation.\nThe first one would be a silicon specific package for QEMU-x86-64\n\nThe first objective would be to get an UEFI shell inside of qemu-x86-64, and then getting an OS to boot. If time allows it, getting OpenQEMUBoardPkg to run on additional architecture could be another objective.\n\nThe first month could be used to get to a working UEFI shell, the second to add the missing features to get a feature-complete package for UEFI emulation, and if everything goes as planned, porting to other Qemu-supported architectures.\n\nFSP Stretch goal can be achieved by porting the existing QemuFSP package, reducing complexity for platform init on Intel platforms (which qemu-system-x86_64 emulates).",
+          "difficulty": "advanced",
+          "id": "proj_tianocore_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/s892c1ox/",
+          "proposal_id": null,
+          "short_description": "The goal is to support a fully emulated UEFI environnement in QEMU using the MinPlatform specification. Deliverables would correspond to the...",
+          "slug": "add-qemu-support-to-minplatform-openqemuboardpkg",
+          "status": "completed",
+          "student_name": "Théo Jehl",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add QEMU support to MinPlatform (OpenQEMUBoardPkg)"
+        },
+        {
+          "code_url": "https://gist.github.com/benjamindoron/e8c5f4f866424c96e9f3a5a7269fc1b5",
+          "description": "MinPlatform is a project to get open-source EDK2 firmware booting mainstream boards. However, it presently lacks support for S3 resume, an important feature for mobile platforms. This limits its applicability as-is regarding mainstream use. Therefore, I propose to develop S3 resume support for MinPlatform.\n\nHowever, the S3 resume path can be difficult to debug, like the early PEI phase in general. Since serial ports are commonly either difficult to access or entirely lacking in laptops, closed-chassis debugging options are desirable. While most interface protocols are unavailable until DMA is possible, HDMI offers I2C over the DDC pins. Therefore, I intend to develop support for a debug port over HDMI.",
+          "difficulty": null,
+          "id": "proj_tianocore_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/bxqSRN3n/",
+          "proposal_id": null,
+          "short_description": "MinPlatform is a project to get open-source EDK2 firmware booting mainstream boards. However, it presently lacks support for S3 resume, an important...",
+          "slug": "minimum-platform-implement-support-for-s3-resume-and-closed-chassis-hdmi-debug",
+          "status": "completed",
+          "student_name": "Benjamin Doron",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ai"
+          ],
+          "title": "Minimum Platform - Implement support for S3 resume and closed-chassis HDMI debug"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/tianocore/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": "https://edk2.groups.io/g/devel"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/tianocore",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.408Z"
+  }
+}

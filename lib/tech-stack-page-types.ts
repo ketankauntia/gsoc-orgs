@@ -118,6 +118,10 @@ export interface TechOrgSnapshot {
 
 /**
  * Load the tech stack index data (for /tech-stack page)
+ * 
+ * Loads pre-computed static JSON data containing all technologies, metrics, and chart data.
+ * 
+ * @returns {Promise<TechStackIndexData | null>} The tech stack index data, or null if loading fails
  */
 export async function loadTechStackIndexData(): Promise<TechStackIndexData | null> {
   try {
@@ -130,7 +134,11 @@ export async function loadTechStackIndexData(): Promise<TechStackIndexData | nul
 
 /**
  * Load tech stack page data for a specific technology
- * @param slug - The tech slug (e.g., "typescript")
+ * 
+ * Loads pre-computed static JSON data for a single technology's detail page.
+ * 
+ * @param {string} slug - The tech slug (e.g., "typescript")
+ * @returns {Promise<TechStackPageData | null>} The tech stack page data, or null if not found
  */
 export async function loadTechStackPageData(slug: string): Promise<TechStackPageData | null> {
   try {
@@ -143,6 +151,10 @@ export async function loadTechStackPageData(slug: string): Promise<TechStackPage
 
 /**
  * Get list of available technology slugs (for generateStaticParams)
+ * 
+ * Retrieves all available technology slugs from the index data for static page generation.
+ * 
+ * @returns {Promise<string[]>} Array of technology slugs
  */
 export async function getAvailableTechSlugs(): Promise<string[]> {
   const indexData = await loadTechStackIndexData();

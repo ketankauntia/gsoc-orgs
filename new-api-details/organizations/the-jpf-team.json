@@ -1,0 +1,1042 @@
+{
+  "id": "692251e953dd9d7326d33ed1",
+  "slug": "the-jpf-team",
+  "name": "The JPF team",
+  "category": "Programming languages",
+  "description": "JPF is a Java VM used to verify and debug software",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-jpf-team-hg/rvqtnz4hyojrfgvw.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-jpf-team.webp",
+  "logo_r2_url": null,
+  "url": "https://github.com/javapathfinder/jpf-core/wiki",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "android",
+    "java",
+    "distributed systems",
+    "jvm",
+    "bytecode",
+    "smt solvers"
+  ],
+  "topics": [
+    "testing",
+    "verification",
+    "model checking",
+    "program analysis",
+    "environment generation",
+    "symbolic execution",
+    "test input generation",
+    "formal methods",
+    "concurrency",
+    "virtual machine",
+    "software model checking",
+    "verification of concurrent systems",
+    "jvm"
+  ],
+  "total_projects": 46,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.6,
+    "projects_by_year": {
+      "year_2016": 10,
+      "year_2017": 7,
+      "year_2018": 4,
+      "year_2019": 6,
+      "year_2020": 6,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": 10,
+      "year_2017": 7,
+      "year_2018": 4,
+      "year_2019": 6,
+      "year_2020": 6,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": 3
+    },
+    "total_students": 43
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://jpf.byu.edu/finger-printing/",
+          "description": "<p>Fingerprinting for Programs is aimed at analyzing code blocks on a semantic level. This is done by symbolically executing the code block via SPF over JPF in order to generate path constraints for each possible path that a program may take. The path constraints are then put into canonical form and analyzed. Level of refinement of the path constraints dictate the level at which we model programs i.e. If we do not refine the path constraints at all, the program is modeled on a syntactical level. If we stop refinement early, the program is modeled on a semantic level but syntactical structure of the program is still considered. If we  completely refine the path constraints and put them into canonical form, the program is modeled on a semantic level with no consideration towards the syntactical structure of the program. This gives us options on applications of fingerprinting for programs. Further research in this field could result in semantic patterns not just being observed but rather analyzed. Applications of this analysis include the possible creation of a semantic auto-complete for programmers.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6333797935087616/",
+          "proposal_id": null,
+          "short_description": "Fingerprinting for Programs is aimed at analyzing code blocks on a semantic level. This is done by symbolically executing the code block via SPF over...",
+          "slug": "fingerprinting-for-programs",
+          "status": "completed",
+          "student_name": "Blaine",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fingerprinting for Programs"
+        },
+        {
+          "code_url": "https://github.com/ai-se/brahms",
+          "description": "<p>The goal of NASA’s NextGen research is to accommodate the traffic increase coming over the 15 years. One requirement for NextGen is to provide a better, at least the same, level of safety system, compared to the current ATS (Air transportation System). Using the Brahms Multi Agent System Modeling framework, researchers at NASA and the FAA are building models describing actions of flight and ground staff. These models are being explored to find better ways to coordinate to keep planes in the air, as well as how to land them quicker and safer.</p>\n<p>Within those models, the Java Pathfinder tool has been used to verify properties related to safety and workload. This verification process suffers from the (in)famous state space explosion problem: for the large model it is not possible to do complete state space exploration.</p>\n<p>In this proposal we propose to use  the GALE optimizer (GALE is a fast heuristic algorithm which can find the optimal result to the multi-objectives problem by pruning the unpromising subspace) to find the most promising sub-state space in the models so that the verification process can be targeted and more efficient.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6338391671046144/",
+          "proposal_id": null,
+          "short_description": "The goal of NASA’s NextGen research is to accommodate the traffic increase coming over the 15 years. One requirement for NextGen is to provide a...",
+          "slug": "verifying-safety-of-nextgen-models",
+          "status": "completed",
+          "student_name": "Jianfeng.Chen",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "Verifying Safety of NextGen Models"
+        },
+        {
+          "code_url": "https://bitbucket.org/mmuesly/psyco_gsoc16/wiki/GSOC-2016%20Final%20Project%20Summary%20Malte%20Mues",
+          "description": "<p>My projekt goal is to extend PSYCO by a symbolic search algorithm to generate a termination criteria for the learning phase and to enable PSYCO to check properties on reactive systems.</p>\n<p>The current JPF-PSYCO extension combines active automata learning and dynamic symbolic execution to generate interfaces of reactive components. Further in the accompanying theoretical work of Giannakopoulou et al.[1] is shown, that this interfaces are k-full, in case they are safe, permissive, and tight for all method sequences of length up to k, k ϵ ℕ. The evaluation part of the current PSYCO implementation shows that the choice of k heavily influences the runtime behavior of PSYCO. Further it is argued, that it is possible to choose k to a relative small value after a manual analysis of the source code. During my project I will implement a symbolic search on the symbolic transition system produced by JDART to generate possible good choices for k in an automated manner. Apart of the choice of k the symbolic search output can also be used to prove invariants on the analyzed components, e.g., the absence of assertion violations.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5522244805591040/",
+          "proposal_id": null,
+          "short_description": "My projekt goal is to extend PSYCO by a symbolic search algorithm to generate a termination criteria for the learning phase and to enable PSYCO to...",
+          "slug": "psyco-for-reactive-systems",
+          "status": "completed",
+          "student_name": "mmuesly",
+          "student_profile": null,
+          "tags": [
+            "react"
+          ],
+          "title": "PSYCO for Reactive Systems"
+        },
+        {
+          "code_url": "https://bitbucket.org/matsurago/jpf-mobile-devices/commits/all",
+          "description": "<p>Java PathFinder (JPF) has potential to be used for verification of Android apps, as they are written in Java. There is already an ongoing project to use JPF to verify Android apps outside of the Android platform, but such approach has limitations on the app functionality that can be verified, because modelling of Android environment on the desktop is difficult. Moreover, some apps cannot be properly analyzed in this way, as they rely on system events, make native calls, or interact with other Android apps that are unavailable outside the platform.</p>\n<p>We propose an alternative approach: to create a fork of JPF and its extensions for Android platform. We plan to create an Android app that includes all sources of jpf-core, with necessary modifications, wrapped in the user interface (UI). The UI will start main method of underlying jpf-core, provide to it command line arguments, and display output. The underlying JPF will be executed as service.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5532152087183360/",
+          "proposal_id": null,
+          "short_description": "Java PathFinder (JPF) has potential to be used for verification of Android apps, as they are written in Java. There is already an ongoing project to...",
+          "slug": "java-pathfinder-for-android-devices",
+          "status": "completed",
+          "student_name": "Octarine",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "android",
+            "ai",
+            "ui"
+          ],
+          "title": "Java PathFinder for Android Devices"
+        },
+        {
+          "code_url": "https://jpf.byu.edu/probabilistic-repair/",
+          "description": "<p>The main idea of the project is to define program repairs, which make the program closest to its oracle.</p>\n<p>Initially, we have a program, which is implemented in an incorrect way. We apply some fix options in the form of simple syntactic changes to it. Then, we run the same set of inputs on the oracle program and the repaired versions of the program. Using SPF and Green we calculate the percentage of the inputs for which the oracle program and the repaired program produce the same outputs. This percentage is the indicator of the quality of each fix.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6263126664151040/",
+          "proposal_id": null,
+          "short_description": "The main idea of the project is to define program repairs, which make the program closest to its oracle.\nInitially, we have a program, which is...",
+          "slug": "oracle-based-program-repair",
+          "status": "completed",
+          "student_name": "Gunel Jahangirova",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Oracle-Based Program Repair"
+        },
+        {
+          "code_url": "https://drive.google.com/open?id=0BwrgAhm5slznTFlpNUhJRjRXZ1k",
+          "description": "<p>No one likes to arrive at the airport only to realize that their flight has been delayed. Departure Sensitive Arrival Spacing (DSAS) is a new concept developed at NASA Ames Research Center that has been shown to improve flight scheduling, enabling more departing planes to leave the runway. In order to fully evaluate the concept, it’s necessary to thoroughly test its impact on the workload of the human operators. Java Pathfinder can be used to check for just such a property.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4633597818437632/",
+          "proposal_id": null,
+          "short_description": "No one likes to arrive at the airport only to realize that their flight has been delayed. Departure Sensitive Arrival Spacing (DSAS) is a new concept...",
+          "slug": "using-jpf-to-efficiently-compute-workload-in-multi-agent-systems",
+          "status": "completed",
+          "student_name": "JaneOL",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Using JPF to efficiently compute workload in Multi-Agent Systems"
+        },
+        {
+          "code_url": "http://chaofz.me/jdart-viz/description/",
+          "description": "<p>JDart is a tool for performing concolic execution on a Java program. The aim of concolic execution is to explore additional behavior in the program by generating input values which will result in a different path being taken through a program (or method). The result of concolic execution is a constraints tree, i.e., a tree with its inner nodes reflecting the decisions that were made during the execution of the program. The nodes on the trees are labeled as: OK if the method was regularly exited, ERROR if there was an exception, or DONT_KNOW if no valuation could be generated for the respective path.</p>\n<p>Currently, the constraints tree is represented only as a plain text file which makes identifying the nodes and the statuses of leaves extremely hard in such a simplistic representation. To provide a better user experience, I will develop a web interface to visualize the constraints trees generated by JDart. At a very basic level, a user will have an intuitive overview on the whole generated trees. At a later stage, I will enable interactive operations on the web interface, e.g. letting user select on which part of a tree JDart should focus on.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4834860522799104/",
+          "proposal_id": null,
+          "short_description": "JDart is a tool for performing concolic execution on a Java program. The aim of concolic execution is to explore additional behavior in the program...",
+          "slug": "visualization-support-for-jdart",
+          "status": "completed",
+          "student_name": "Chao",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Visualization Support for JDart"
+        },
+        {
+          "code_url": "https://github.com/Soothsilver/gsoc-inspector/wiki/2016-Changelog",
+          "description": "<p>This project will bring the JPF Inspector debugging tool up to date with the most recent version of JPF and Java, and it will add additional features, among which are a command-line interface, new commands and JPF introspection.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5770847981666304/",
+          "proposal_id": null,
+          "short_description": "This project will bring the JPF Inspector debugging tool up to date with the most recent version of JPF and Java, and it will add additional...",
+          "slug": "improving-jpf-inspector",
+          "status": "completed",
+          "student_name": "Soothsilver",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Improving JPF Inspector"
+        },
+        {
+          "code_url": "https://github.com/R1kM/Pathfinder",
+          "description": "<p>Symbolic Pathfinder (SPF) is an open-source symbolic execution tool, based on NASA Java Pathfinder (JPF) model checker, which is used in research and industry labs.\n    It executes Java bytecode using a custom JVM to perform its analysis.\n    We propose to add support for symbolic execution of complex datastructures, especially arrays, and to implement a module to generate concrete inputs and replay symbolic execution with concrete variables.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_the-jpf-team_2016_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5957049577897984/",
+          "proposal_id": null,
+          "short_description": "Symbolic Pathfinder (SPF) is an open-source symbolic execution tool, based on NASA Java Pathfinder (JPF) model checker, which is used in research and...",
+          "slug": "extending-spf-with-handling-of-symbolic-arrays-and-implementing-a-replay-module",
+          "status": "completed",
+          "student_name": "afromherz",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Extending SPF with handling of symbolic arrays, and implementing a replay module"
+        },
+        {
+          "code_url": "https://bitbucket.org/nastaran/jpf-nhandler-gsoc2016/wiki/Home",
+          "description": "<p>JPF is the most popular model checking tool for Java applications. It is extensible and there are lots of\nextensions for various purposes. Jpf­nhandler is one of such extensions. Its goal is delegating the\nexecution of SUT methods from JPF to JVM level. \nOne goal of this project is to improve jpf-­nhandler performance using the cache layer. The latter\nprevents invoking methods more than once and problems caused by this. It also considerably increases\nthe jpf­nhnandler efficiency as each method is executed only once. If jpf­nhandler encounters delegated\nmethod that has been executed, it just reflects result of its invocation. Another goal is to extend the\nconverter component and including convertor classes for missing incompatible model classes.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2016_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5182993391943680/",
+          "proposal_id": null,
+          "short_description": "JPF is the most popular model checking tool for Java applications. It is extensible and there are lots of\nextensions for various purposes....",
+          "slug": "cache-layer-for-jpf-nhandler",
+          "status": "completed",
+          "student_name": "Jayton",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Cache layer for jpf-nhandler"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4723150839349248/"
+    },
+    "year_2017": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://github.com/Niols/GSoC17",
+          "description": "<p>Symbolic Pathfinder (SPF) is an open-source symbolic execution tool, based on the NASA Java Pathfinder (JPF) model checker, which is used in research and industry labs. It executes Java bytecode using a custom JVM to perform its analysis.</p>\n<p>It currently uses <em>lazy initialization</em>, a brute-force enumeration of all heap objects that can bind to the structured inputs accessed by the program. This explicit enumeration may lead to a huge amount of false alarms.</p>\n<p>We propose to explore alternative ways of representing constraints over the heap. This would allow SPF to avoid a complete enumeration of all the possible cases, eliminating the ones violating the data structures properties. We want to focus in particular on separation logic and see if it brings an improvement compared to the lazy initialization or to languages like [1].</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4984409404997632/",
+          "proposal_id": null,
+          "short_description": "Symbolic Pathfinder (SPF) is an open-source symbolic execution tool, based on the NASA Java Pathfinder (JPF) model checker, which is used in research...",
+          "slug": "verification-and-testing-of-heap-based-programs-with-symbolic-pathfinder",
+          "status": "completed",
+          "student_name": "Nicolas Jeannerod",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Verification and Testing of Heap-based Programs with Symbolic PathFinder"
+        },
+        {
+          "code_url": "https://bitbucket.org/jayton/jpf-nas-gsoc2017/wiki/Home",
+          "description": "<p>Extending jpf-nas tool.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5012310720512000/",
+          "proposal_id": null,
+          "short_description": "Extending jpf-nas tool.",
+          "slug": "jpf-nas",
+          "status": "completed",
+          "student_name": "Jayton",
+          "student_profile": null,
+          "tags": [],
+          "title": "jpf-nas"
+        },
+        {
+          "code_url": "https://github.com/CanonicalSearchAndRepair/CanonizedSearch",
+          "description": "<p>The Symbolic Execution (SPF) extension for NASA’s Java Pathfinder (JPF) has been used to generate quality test cases by symbolically executing code and using the derived constraints to find test values which will follow each feasible program path.</p>\n<p>A similar idea views the derived constraints as a partial specification of correct program behavior and uses this data to guide program repair.  This turns program repair into a search problem over the space of code snippets characterized by constraints derived via symbolic execution, the “semantic search” problem.  Previous work in this area was done exclusively with C programs, and the extension of this work to Java would be of major benefit for program repair research.</p>\n<p>For GSoC, I propose to use SPF to empirically quantify the degree to which such an approach is possible using currently-existing open-source Java programs, create functionality-searchable database of Java code snippets, and use this with existing efforts for search-based program repair.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5269591475355648/",
+          "proposal_id": null,
+          "short_description": "The Symbolic Execution (SPF) extension for NASA’s Java Pathfinder (JPF) has been used to generate quality test cases by symbolically executing code...",
+          "slug": "program-repair-via-symbolic-execution-derived-constraint-characterization",
+          "status": "completed",
+          "student_name": "Andrew Hill",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Program Repair via Symbolic Execution-Derived Constraint Characterization"
+        },
+        {
+          "code_url": "https://gist.github.com/vaibhavbsharma/ec4442788fcbb33a4dd00792e1d12875",
+          "description": "<p>Improving the performance of symbolic execution to make it scale to industrial-sized programs is an important current issue. Veritesting provides a practical solution by combining the advantages of static symbolic execution (SSE) with those of dynamic symbolic execution (DSE). While Avgerinos et al. showed veritesting allows large-scale testing at the X86 binary level, it can also be applied to improve the performance of dynamic symbolic execution at the Java bytecode level. Symbolic PathFinder (SPF) performs symbolic execution for Java programs at the bytecode level. In this project, I plan to work on extending Symbolic PathFinder (SPF) to perform bounded static symbolic execution.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4719452335636480/",
+          "proposal_id": null,
+          "short_description": "Improving the performance of symbolic execution to make it scale to industrial-sized programs is an important current issue. Veritesting provides a...",
+          "slug": "increasing-spf-performance-with-bounded-static-symbolic-execution",
+          "status": "completed",
+          "student_name": "Vaibhav B Sharma",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Increasing SPF Performance with Bounded Static Symbolic Execution"
+        },
+        {
+          "code_url": "https://github.com/longph1989/jpf-star",
+          "description": "<p>Symbolic PathFinder (SPF) has been very successful in testing and verifying Java bytecode programs with numeric inputs. However, its capability is very limited when coping with programs that have heap data structures. The underlying lazy initialization algorithm exhaustively enumerates all heap objects that can bind to the structured inputs accessed by the program. This enumeration may identify many invalid heap configurations that violate properties of the data structures in the heap, which leads to a huge amount of false alarms.</p>\n<p>We aim to tackle this problem by using separation logic, a well-known assertion language designed for reasoning about heap-manipulating programs. We will build a system, Java StarFinder (JSF), that enables users to describe properties of the data structures in the heap using separation logic. JSF is a symbolic execution engine, built on top of SPF, that generates path conditions (PCs) in the form of separation logic. These PCs are checked by a solver for satisfiability and test input generation. In addition, JSF can verify program correctness by collecting PCs satisfying some given preconditions and verifying if these PCs satisfy user-provided assertions.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4789313736802304/",
+          "proposal_id": null,
+          "short_description": "Symbolic PathFinder (SPF) has been very successful in testing and verifying Java bytecode programs with numeric inputs. However, its capability is...",
+          "slug": "java-starfinder-symbolic-execution-with-separation-logic-for-testing-and-verifying-heap-manipulating-programs",
+          "status": "completed",
+          "student_name": "Pham Hong Long",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "Java StarFinder: Symbolic Execution with Separation Logic for Testing and Verifying Heap-manipulating Programs."
+        },
+        {
+          "code_url": "https://bitbucket.org/Developer_Jan/gsoc_2017/wiki/Home",
+          "description": "<p>Many symbolic program analysis techniques use satisfiability modulo theory (SMT) solvers to verify properties of programs. SMT solvers can provide solutions quicker if they cache their results. GREEN, which is currently integrated into Symbolic Pathfinding (SPF), is a promising SMT\nmemoization solution. The project entails (a) optimization of GREEN's satisfiability checking, (b) improving the model counting and (c) incorporating unit propagation into GREEN.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6505791108415488/",
+          "proposal_id": null,
+          "short_description": "Many symbolic program analysis techniques use satisfiability modulo theory (SMT) solvers to verify properties of programs. SMT solvers can provide...",
+          "slug": "optimize-greens-caching-for-satisfiability-and-model-counting-when-using-spf",
+          "status": "completed",
+          "student_name": "Jan Taljaard",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Optimize GREEN’s caching for satisfiability and model counting when using SPF"
+        },
+        {
+          "code_url": "https://bitbucket.org/qiyitang71/jpf-visual/overview",
+          "description": "<p>Multithreaded programming is becoming a mainstream programming practice, while multithreaded programming is difficult and error prone. jpf-trace-server, an extension of Java PathFinder (JPF), can store and analyze traces. The error traces caused by deadlock can also be viewed in a new shell panel from jpf-shell.</p>\n<p>In this project, we will develop jpf-trace-server to trace the execution of the threads and to provide feedback to the programmer to help them fix the bugs. Inspired by previous work on visualization in JPF, we would like to show the thread interleavings as traces in a new panel of jpf-shell. We would like to show the source code in the panel along with the transition information. The users should be able to walk through each transition of a selected error trace and the corresponding source code where it is executed.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4886274234122240/",
+          "proposal_id": null,
+          "short_description": "Multithreaded programming is becoming a mainstream programming practice, while multithreaded programming is difficult and error prone....",
+          "slug": "visualization-of-execution-traces",
+          "status": "completed",
+          "student_name": "Qiyi Tang",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Visualization of Execution Traces"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4740037845450752/"
+    },
+    "year_2018": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/javapathfinder/jpf-core/wiki/Support-Java-10-for-JPF-CORE",
+          "description": "<p>JPF-CORE currently builds and runs on Java 8. The main objective of this project is to get it up and running with Java 9, leveraging its new features like the modularity, strong encapsulation, while also handling the deprecates and removes. There are also other new enhancements like multi-release JAR files which is useful in supporting one or two major versions, in addition to just Java 9.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6413312073924608/",
+          "proposal_id": null,
+          "short_description": "JPF-CORE currently builds and runs on Java 8. The main objective of this project is to get it up and running with Java 9, leveraging its new features...",
+          "slug": "support-java-9-for-jpf-core",
+          "status": "completed",
+          "student_name": "Gayan Weerakutti",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "Support Java 9 for JPF-CORE"
+        },
+        {
+          "code_url": "https://github.com/guolong-zheng/starfix",
+          "description": "<p>The state of art of program repair for heap manipulating program  has focus on specific properties of bugs, like null pointer dereference. We try to fix programs with pre-condition and post-condition written in separation logic. Given a program, we first run JSF to collect its post-state(p) by symbolic execution with the given pre-condition. Then we check if p entails the given post-condition(p'). If not, a bug is detected. Our approach to program repair has two main components: abduction and repair specification inference. First, we propose to infer the missing information to establish the post-condition through abduction using an existing solver. In particular, we infer a constraint f such that p * f is satisfied and p * f |-&gt; p'. Secondly, based on abduction, we symbolically execute the input program with the abduction in a backward manner in order to construct repair specifications at every line of the input program. These repair specifications help to infer valid Hoare-style triples with fix candidates.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5708007778287616/",
+          "proposal_id": null,
+          "short_description": "The state of art of program repair for heap manipulating program  has focus on specific properties of bugs, like null pointer dereference. We try to...",
+          "slug": "synthesis-to-repair-heap-manipulating-programs-using-java-starfinder",
+          "status": "completed",
+          "student_name": "Guolong Zheng",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Synthesis to repair heap-manipulating programs using Java StarFinder"
+        },
+        {
+          "code_url": "https://github.com/javapathfinder/jpf-core/wiki/Gradle-Support-on-JPF",
+          "description": "<p>Developers often perform recurrent tasks during the development process such as testing, managing external libraries, generating API documentation, and managing release artifacts. Build tools help to automate those error-prone and daunt tasks with scripts that abstract those tasks. This proposal aims to modernize the build workflow from the Java PathFinder (JPF) project by migrating from Ant to Gradle. Gradle is a general purpose build system and uses Groovy, a JVM language, to create flexible and highly customizable build workflows. To achieve this goal, my strategy is to have a working Gradle build coexisting with the current Ant script. Ant targets will migrate to Gradle tasks in an incremental and iterative process. By the end of the program, is expected to have the Gradle support fully integrated into the main repository.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4968904304623616/",
+          "proposal_id": null,
+          "short_description": "Developers often perform recurrent tasks during the development process such as testing, managing external libraries, generating API documentation,...",
+          "slug": "modernizing-the-java-pathfinder-build-workflow-migrating-from-ant-to-gradle",
+          "status": "completed",
+          "student_name": "Jeanderson Candido",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Modernizing the Java PathFinder Build Workflow: Migrating from Ant to Gradle"
+        },
+        {
+          "code_url": "https://github.com/sohah/VeritestingTransformations/issues/4",
+          "description": "<p>Veritesting, [1] is a promising technique that speeds up dynamic symbolic execution by multiple of factors [2]. In veritesting, expensive forking is minimized by statically analyzing and summarizing regions of code, which are then used during dynamic symbolic execution.\nDuring summer, I plan to a) extend veritesting to support test case generation for static re- gions, b) optimize instantiation of high-order regions based on benchmark results and c) work on a prototype to support static regions for 2-threaded programs.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6292514843656192/",
+          "proposal_id": null,
+          "short_description": "Veritesting, [1] is a promising technique that speeds up dynamic symbolic execution by multiple of factors [2]. In veritesting, expensive forking is...",
+          "slug": "extending-veritesting-in-spf",
+          "status": "completed",
+          "student_name": "Soha Hussein",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending Veritesting In SPF"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6274587650162688/"
+    },
+    "year_2019": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://bitbucket.org/byu-vv/jpf-hj/pull-requests/1/",
+          "description": "<p>[Nakade et al. 2018] proposed to model check Habanero programs using only one program run. This project aims to further reduce state space being explored by considering symbolic graph instead of concrete one. Habanero synchronization primitives are used to guide SPF execution.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5119022520074240/",
+          "proposal_id": null,
+          "short_description": "[Nakade et al. 2018] proposed to model check Habanero programs using only one program run. This project aims to further reduce state space being...",
+          "slug": "boosting-data-race-detection-by-extinguishing-state-explosion",
+          "status": "completed",
+          "student_name": "Egor Namakonov",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Boosting data race detection by extinguishing state explosion"
+        },
+        {
+          "code_url": "https://manish3499.github.io/parallelization-of-JPF/",
+          "description": "<p>One of the major challenges faced when applying model checking is the state space explosion, due to which it becomes impossible to detect errors in many cases. The main aim of this project is to utilize multiple cores for state space exploration in order to achieve massive speedup.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5228194599272448/",
+          "proposal_id": null,
+          "short_description": "One of the major challenges faced when applying model checking is the state space explosion, due to which it becomes impossible to detect errors in...",
+          "slug": "parallel-implementation-of-java-pathfinder-project",
+          "status": "completed",
+          "student_name": "Manish Thakur",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Parallel implementation of Java Pathfinder Project"
+        },
+        {
+          "code_url": "https://bitbucket.org/byu-vv/dporengine/src/gsoc/",
+          "description": "<p>A engine to simplify Dynamic Partial Order Reduction in JPF as well as a tool to efficiently prove or disprove data race freedom in structured parallel programs that generalizes over input.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5242752474808320/",
+          "proposal_id": null,
+          "short_description": "A engine to simplify Dynamic Partial Order Reduction in JPF as well as a tool to efficiently prove or disprove data race freedom in structured...",
+          "slug": "dynamic-partial-order-reduction-engine-connected-with-symbolic-data-race-detection-for-habanero-java",
+          "status": "completed",
+          "student_name": "Kyle Storey",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Dynamic Partial Order Reduction Engine connected with Symbolic Data Race Detection for Habanero Java"
+        },
+        {
+          "code_url": "https://github.com/JunyeWen/jpf-symbc-symreplacer",
+          "description": "<p>Symbolic execution is a powerful analysis to systematically check assertions in programs. However, the already notorious scalability problem of symbolic execution is exacerbated by assertions. In our previous studies, we have introduced parallelism to check assertions with Symbolic Pathfinder (SPF) either with static analysis or dynamic analysis. In this work, we propose to combine static and dynamic analyses for parallel analysis to achieve better scalability, to further reduce the cost of symbolic execution using compositional and incremental assertion checking with SPF when the code or assertions are changed.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5249874335891456/",
+          "proposal_id": null,
+          "short_description": "Symbolic execution is a powerful analysis to systematically check assertions in programs. However, the already notorious scalability problem of...",
+          "slug": "checking-assertions-with-symbolic-pathfinder",
+          "status": "completed",
+          "student_name": "Junye Wen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Checking Assertions with Symbolic Pathfinder"
+        },
+        {
+          "code_url": "https://yuvaraj-anbarasan.github.io/gsoc-19/gsoc-work-report",
+          "description": "<p>JPF is a model checking tool for java applications. JPF-core is the core structure of JPF. The build for jpf-core has been moved from ant (upto java 8 support version)to gradle. The current JPF-core version doesn’t have java 11 support i.e jpf-core is not portable for java 11. Jpf extensions have not moved from ant to gradle yet. This is because of the potential breaking changes from its previous versions. One such major breaking change in java 11 is “bootstrap methods”. The goal of this project is to fix gradle support for java 11, to update the extension template,provide the widely used jpf-extensions with gradle support.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4726399477219328/",
+          "proposal_id": null,
+          "short_description": "JPF is a model checking tool for java applications. JPF-core is the core structure of JPF. The build for jpf-core has been moved from ant (upto java...",
+          "slug": "support-gradle-for-jpf-core-and-extensions",
+          "status": "completed",
+          "student_name": "Yuvaraj Anbarasan",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ui"
+          ],
+          "title": "Support gradle for jpf-core and extensions."
+        },
+        {
+          "code_url": "https://github.com/KomaEc/NFix",
+          "description": "<p>Automated program repair has been gaining ground recently with substantial efforts devoted to the area. Not only has APR had great influence on academia recently, but also it has received considerable attention from the industry. Motivated by the potential impact of APR, in this project, we propose to build a repair framework that improves upon on past successful work VFix and S3.</p>\n<p>In this project, we aim to fix NPE bugs. We will use data flow analysis as proposed in VFix to accurately localize buggy code fragments in program under repair. We then use S3 to semantically reason about the identified buggy code fragments via dynamic symbolic execution on test cases. However, simply relying on test cases may not be sufficient. We thus plan to further enhance the semantic reasoning in S3 with the ability to leverage user-provided annotations. After this step, we obtain a set of constraints that constitutes specifications of the program. We then propose a program synthesis technique that improve the template-based repair in VFix and syntax-guided synthesis in S3 to synthesize repairs.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4946719622561792/",
+          "proposal_id": null,
+          "short_description": "Automated program repair has been gaining ground recently with substantial efforts devoted to the area. Not only has APR had great influence on...",
+          "slug": "nfix",
+          "status": "completed",
+          "student_name": "Hanliang Zhang",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "NFix"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4859784585543680/"
+    },
+    "year_2020": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1rXXqsG1MEq9k-QhQ6BRNQjLp8va2yRaTezAIdZAwZuA/edit?usp=sharing",
+          "description": "<p>Path merging is a promising technique that speeds up dynamic symbolic execution by multiple factors. In Path merging expensive forking is minimized by statically analyzing and summarizing regions of code, which are then used during dynamic symbolic execution. This technique was first introduced by the name of Veritesting[1] for c programs and recently implemented for Java programs in Java Ranger [2]. Both works report substantial benefits from merging of paths, with the latter winning SVComp’2020, a competition among Java verification and analysis tools.</p>\n<p>In this proposal, I plan to: 1) support test case generation for Java Ranger that would support branch coverage criteria, and 2) experiment the feasibility of path merging of threads by implementing a simulated thread interpreter and using Java Ranger to path merge thread interleavings.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6640947628081152/",
+          "proposal_id": null,
+          "short_description": "Path merging is a promising technique that speeds up dynamic symbolic execution by multiple factors. In Path merging expensive forking is minimized...",
+          "slug": "extending-path-merging-for-spf",
+          "status": "completed",
+          "student_name": "Soha Hussein",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Extending Path Merging for SPF"
+        },
+        {
+          "code_url": "https://github.com/muhammadusman93/jpf-symbc",
+          "description": "<p>Symbolic PathFinder (SPF) is a tool that uses Java PathFinder at the back-end and can extract path conditions for a program by executing the program symbolically. Users can specify which variables they want to make symbolic and which methods to run. The Pre-GSoC implementation of Symbolic PathFinder allows only to run symbolic execution with fixed neural network architecture, i.e., MNIST0. We have added another implementation which is more generic and supports symbolic execution for all types of neural network architectures. We evaluated our implementation using a variety of architectures, namely MNIST0, MNIST1, MNIST2, and CIFAR. Evaluation results verified the correctness of the implementation. We believe that this GSoC implementation will make it easier for researchers to analyze a wide variety of neural networks. This will enable them to improve the neural network performance as well as help in identifying the vulnerabilities in already existing neural network architectures.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5389292286771200/",
+          "proposal_id": null,
+          "short_description": "Symbolic PathFinder (SPF) is a tool that uses Java PathFinder at the back-end and can extract path conditions for a program by executing the program...",
+          "slug": "symbolic-pathfinder-for-neural-network-analysis",
+          "status": "completed",
+          "student_name": "Usman",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "Symbolic PathFinder for Neural Network Analysis"
+        },
+        {
+          "code_url": "https://github.com/bqcuong/lyfix",
+          "description": "<p>Automated Program Repair (APR) has been showing a high capability recently of fixing software bugs automatically. Despite the recent advancements, there are only a few APR techniques specifically addressing regression errors. These techniques yet, however, have not fully exploited the information available in software evolution history, e.g., bug-inducing commits, etc, for repairing regression errors. Moreover, the techniques either work on a specific language (e.g., C language) or do not provide their implementations for public access.</p>\n<p>This project aims to empower automatic repair of regression errors for Java programs by implementing and extending recent interesting findings of regression errors, e.g., the correlation between bug-inducing and bug-fixing commits. We aim to build a system, namely LyFix, that enables users to fix Java regression bugs automatically by leveraging fix ingredients and specific repair operators learned from the software development history.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4738531525656576/",
+          "proposal_id": null,
+          "short_description": "Automated Program Repair (APR) has been showing a high capability recently of fixing software bugs automatically. Despite the recent advancements,...",
+          "slug": "lyfix-regression-error-repair-for-java-program",
+          "status": "completed",
+          "student_name": "Quang-Cuong Bui",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "LyFix:  Regression Error Repair for Java Program"
+        },
+        {
+          "code_url": "https://github.com/SymbolicPathFinder/jpf-symbc/pull/54",
+          "description": "<p>SPF’s constraint interface needs to be restructured. The current implementation doesn’t allow for the easy addition of new solvers and could be optimized further. In order to do so, I propose the creation of a new hybrid list-tree data structure for the constraints of a path, roughly similar to that of the Abstract Syntax Tree utilized by the GREEN framework with the help of the visitor pattern. With this sort of data structure, SPF’s key backtracking features that allow for symbolic execution would remain intact, while the design of the constraint library would gain a level of abstraction that is not currently implemented in the code.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_the-jpf-team_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6052538316488704/",
+          "proposal_id": null,
+          "short_description": "SPF’s constraint interface needs to be restructured. The current implementation doesn’t allow for the easy addition of new solvers and could be...",
+          "slug": "a-restructuring-of-the-path-constraint-interface",
+          "status": "completed",
+          "student_name": "Carson Smith",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "A Restructuring of the Path Constraint Interface"
+        },
+        {
+          "code_url": "https://amgad-rady.github.io/gsoc-2020/report.html",
+          "description": "<p>JPF does not yet fully implement the features of Java 11 - support extends only to Java 8 - including features as simple as string concatenation. This is an especially difficult situation given that Oracle has initiated an “end of public updates process” for Java 8 (although it is interesting to note that Oracle will continue “premier support” for Java 8). It is likely that many Java users will migrate to higher versions, and unless JPF fully supports the new features of a higher version of Java it is unlikely to be used and adopted.</p>\n<p>A crucial feature of Java 11 that needs to be urgently implemented is support for bootstrap methods that are generated and resolved at load time. These are used in Java for things as varied as string concatenation and lambda expressions. It is likely that more features of Java will take advantage of bootstrap methods as we go forward, so it is desirable to have a complete bootstrap method resolution engine in the JPF runtime that complies with the Java Virtual Machine 11 (JVM 11) specification for JPF to remain current.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4860230799720448/",
+          "proposal_id": null,
+          "short_description": "JPF does not yet fully implement the features of Java 11 - support extends only to Java 8 - including features as simple as string concatenation....",
+          "slug": "support-java-1112-for-jpf-core",
+          "status": "completed",
+          "student_name": "Amgad Rady",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Support Java 11/12 for jpf-core"
+        },
+        {
+          "code_url": "https://yuvaraj-anbarasan.github.io/gsoc-2020/gsoc_work_report.html",
+          "description": "<p>JPF is a model checking tool for Java applications. It is a Virtual Machine (VM) for Java bytecode which executes the system under test (SUT). The JPF source is partially compatible with Java 11. The problem is to support new features of Java 11 like the bootstrap methods. They are used for things as common as string concatenation ( String + String, String + int, String + double, String + Byte, etc ). As of now, a few specialized cases are supported, but there are still few cases that fail with Java 11. There are also some internal APIs from Java 11 that no longer exist in Java 12. Therefore the aim of this project is to support the general case of bootstrap methods and update the code to support java 12.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4899232022003712/",
+          "proposal_id": null,
+          "short_description": "JPF is a model checking tool for Java applications. It is a Virtual Machine (VM) for Java bytecode which executes the system under test (SUT). The...",
+          "slug": "support-java-11-for-jpf-core",
+          "status": "completed",
+          "student_name": "Yuvaraj Anbarasan",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "api",
+            "ai"
+          ],
+          "title": "Support Java 11 for jpf-core"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/4643042893496320/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/marlinroberts21/GSOC21-SPF-String-Solvers",
+          "description": "<p>To reason about string manipulating Java programs Symbolic Pathfinder (SPF) employs string constraint solvers. Currently, SPF integrates a limited set of dated string constraint solvers. Since string constraint solvers constantly evolve, there is a continuing need to integrate them with SPF. Adding a new string constraint solver into SPF involves augmentation to the existing SPF code. An in-depth understanding of the SPF solver interface is necessary to accomplish this integration. These obstacles lead to a lack of support for state-of-the-art string constraint solvers in SPF. This proposal outlines changes to SPF that would allow integration of Satisfiability Modulo Theories Library (SMT-LIB) compliant solvers with minimal effort and no modifications to existing code. Further, string constraint solvers that are not fully SMT-LIB compliant and require specific translations could be integrated with the addition of a single translation class and no modifications to existing code.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6544381091250176/",
+          "proposal_id": null,
+          "short_description": "To reason about string manipulating Java programs Symbolic Pathfinder (SPF) employs string constraint solvers. Currently, SPF integrates a limited...",
+          "slug": "improved-integration-of-string-solvers-in-spf",
+          "status": "completed",
+          "student_name": "Marlin Roberts",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "Improved Integration of String Solvers in SPF"
+        },
+        {
+          "code_url": "https://github.com/Amirfarhad-Nilizadeh/GSoC_Fuzzer_RAC",
+          "description": "<p>Security and Semantic bugs exist in software systems, and discovering them is time-consuming, complicated, and challenging. \nSeveral static and dynamic techniques are presented for discovering bugs. \nHowever, finding a bug is still a challenging topic.\nIn this work, we investigate developing a prototype tool that uses the benefits of using the lightweight specification, fuzzing, and symbolic execution for discovering security and semantic bugs in an arbitrary Java program. \nThis proposal aims to extend Badger, meaning both SPF and Kelinci, with the ability of handling both pre and postconditions using the runtime assertion checker of OpenJML with the lightweight specification.\nAlso,  using and extending <code>Debug.assume()'' and</code>Debug.assert()'' mechanisms in SPF that they work like precondition and postcondition, respectively.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4871326879186944/",
+          "proposal_id": null,
+          "short_description": "Security and Semantic bugs exist in software systems, and discovering them is time-consuming, complicated, and challenging. \nSeveral static and...",
+          "slug": "using-lightweight-specifications-with-fuzzing-and-symbolic-execution-to-reveal-security-and-semantic-bugs",
+          "status": "completed",
+          "student_name": "Amirfarhad Nilizadeh",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ml",
+            "ai"
+          ],
+          "title": "Using Lightweight Specifications with Fuzzing and Symbolic Execution to Reveal Security and Semantic Bugs"
+        },
+        {
+          "code_url": "https://y553546436.github.io/jpf-core/",
+          "description": "<p>Computer hardware is susceptible to errors. For example, radiation may induce error to the hardware and some bit might be flipped. It is important to improve the resiliency of software against hardware errors. One way to evaluate the resiliency of software against hardware errors is by fault injection. Using Java PathFinder, we can explore how a Java program acts for hardware errors. Specifically, we can let JPF simulate hardware errors like bit flips at some point in the program. A bit flip can happen in many positions, such as registers or main memory. We can let JPF explore the possible results of bit flips in various positions.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6291440367304704/",
+          "proposal_id": null,
+          "short_description": "Computer hardware is susceptible to errors. For example, radiation may induce error to the hardware and some bit might be flipped. It is important to...",
+          "slug": "systematically-explore-bit-flip-faults-in-user-specified-variables-in-java-programs",
+          "status": "completed",
+          "student_name": "Pu (Luke) Yi",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Systematically explore bit-flip faults in user-specified variables in Java  programs"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5712237452328960/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/yanxx297/jpf-symbc/blob/mjr/dev_init_igen/doc/Z3str3-string-support.md",
+          "description": "String solving is an important feature of symbolic execution for successful security and correctness analysis. In Java Symbolic Pathfinder (SPF), a widely used Java symbolic executor, existing string solving integration lacks support for many string functions, including some frequently used ones. To improve SPF string solving, I will implement support for unhandled string functions based on functions that are already supported. For some functions looping on the input string, I will construct solver constraints by symbolically executing the implementation of those functions. As stretch goals, I also plan to add support to StringBuilder/StringBuffer and implement regex solver integration. The deliverable of this project is an SPF branch with most string functions supported, together with documentation and unit tests for newly supported functions.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/PNS1YxFc/",
+          "proposal_id": null,
+          "short_description": "String solving is an important feature of symbolic execution for successful security and correctness analysis. In Java Symbolic Pathfinder (SPF), a...",
+          "slug": "support-more-java-string-functions-in-spf",
+          "status": "completed",
+          "student_name": "Qiuchen Yan",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "Support More Java String Functions in SPF"
+        },
+        {
+          "code_url": "https://github.com/gaurangkudale/Google-Summer-of-Code-2022",
+          "description": "Gradle is a build automation tool known for its flexibility to build software. A\nbuild automation tool is used to automate the creation of applications. The\nbuilding process includes compiling, linking, and packaging the code. The\nprocess becomes more consistent with the help of build automation tools.\n\nCurrently, SymbolicPathFinder is using Ant as a build automation tool but the\nGradle resolves all the issues faced by building tools like Maven and ANT. It is\nWell-Known to be highly customizable for different projects\ndealing with various technologies. We can customize the project according to\nthe needs of the project.\n\nGradle is popular for providing high-speed performance, nearly twice as fast as\nMaven. Gradle makes building common types of projects easy by adding\nlayers of conventions and pre-built functionality through plugins. We can\napply all those to enhance our SPF project.\nAt the end of this project, we will get High performance, Build Scan, incremental build (that states it executes the tasks).\n\nSome steps to Implement this project :\n\n1. Create Gradle build from scratch.\n2. Restructuring of the project.\n3. Implement a continuous integration (CI) pipeline.\n4. Improve Junit Testing.\n5. Update Documentation.",
+          "difficulty": "beginner",
+          "id": "proj_the-jpf-team_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/NQhh53gZ/",
+          "proposal_id": null,
+          "short_description": "Gradle is a build automation tool known for its flexibility to build software. A build automation tool is used to automate the creation of...",
+          "slug": "add-gradle-support-for-symbolicpathfinder",
+          "status": "completed",
+          "student_name": "Gaurang Pramod Kudale",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Add Gradle support for SymbolicPathFinder"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/the-jpf-team/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1sTP9xfc-XRT2GTLsQoJYBv7CMogTIDS7yEqozEebtbg/edit?usp=sharing",
+          "description": "Java Pathfinder (JPF) is a Java virtual machine that can run compiled Java programs as well as model checking it. It is also an extensible software analysis framework for Java bytecode. As it has been created for about two decades, supporting new Java language features is of vital importance for its wide adoption. JPF community has taken steps to add Java 11 support, but there are still some unsolved issues.\n\nIn this project, I plan to add better Java 11 support for JPF. This includes more comprehensive Java bytecode support, especially for invokedynamic, more JDK API support, and some bug fixes. It will fix all 13 failing tests JPF faces now on Java 11 and enable more programs to run on JPF.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/lwLp9Tuy",
+          "proposal_id": "UmpOtgPn",
+          "short_description": "Java Pathfinder (JPF) is a Java virtual machine that can run compiled Java programs as well as model checking it. It is also an extensible software...",
+          "slug": "better-java-11-support-for-java-pathfinder",
+          "status": "completed",
+          "student_name": "Daohan Qu",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "api",
+            "ai"
+          ],
+          "title": "Better Java 11 Support for Java Pathfinder"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1a0o8zLBMU0FjgxyeMdRrS69dGGIMEF4otTsgYVyMyYM/edit?usp=sharing",
+          "description": "jpf-core is essentially a JVM that currently fully supports only Java 8. The goal of this project is to make it up-to-date with new features of Java 11. The key feature of Java 11 that is currently not fully supported are bootstrap methods that are generated at load time. They are used for things as common as string concatenation (\"Hello, \" + name). \n\nAs of now, many cases are supported, but there are still many programs (and unit tests) that fail with Java 11. The priority of this project is to attain 100% compatibility with Java 11 by fixing the 15 tests failing currently.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/NnfaIK1C",
+          "proposal_id": "nHc9z8pN",
+          "short_description": "jpf-core is essentially a JVM that currently fully supports only Java 8. The goal of this project is to make it up-to-date with new features of Java...",
+          "slug": "support-java-11-bootstrap-methods-and-other-issues-for-jpf-core",
+          "status": "completed",
+          "student_name": "varad_galgali",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Support Java 11 (bootstrap methods and other issues) for jpf-core"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/the-jpf-team"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1cWojYxAZlSMJSCEW8b_URKlrPPMZFki9s68lzO04ddE/edit?usp=sharing",
+          "description": "This proposal aims to enhance Java Path Finder (JPF) to seamlessly support Java 17, ensuring compatibility with the latest Java version. The project focuses on analyzing JPF's codebase, identifying areas requiring modification, and implementing necessary changes to accommodate Java 17 features and APIs. Through rigorous testing and validation, the project aims to certify JPF's compatibility with Java 17 across diverse usage scenarios. Additionally, the proposal includes comprehensive documentation updates and release management strategies to facilitate smooth adoption of the updated JPF versions by the Java development community. By bridging JPF to Java 17, this project endeavors to capabilities for bytecode analysis and verification, empowering developers to ensure the correctness and reliability of their Java applications in modern software ecosystems.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/eXcgkDiq/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to enhance Java Path Finder (JPF) to seamlessly support Java 17, ensuring compatibility with the latest Java version. The project...",
+          "slug": "support-for-java-17-for-jpf-core",
+          "status": "completed",
+          "student_name": "Rahul Kumar (Ekla)",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ios",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Support for Java 17 for jpf-core"
+        },
+        {
+          "code_url": "https://github.com/kylekim72/GSoC-2024/blob/main/README.md",
+          "description": "Our final goal of this project is to obtain missing scores for Symbolic PathFinder(SPF) in SV-COMP. There are two main reasons why SPF is losing many points. First, there are too many unconfirmed results. Even though we provided correct results, we’re losing points because these results cannot be verified by witness validators. To address this, we should support generation of violation witness in a format that witness validators can verify. Second, there are incorrect results. To deal with this problem, we will analyze why SPF outputs wrong answers for certain task and repair SPF to work correctly. In addition, we will categorize why SPF outputs some incorrect results.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/sq7d5cmt/",
+          "proposal_id": null,
+          "short_description": "Our final goal of this project is to obtain missing scores for Symbolic PathFinder(SPF) in SV-COMP. There are two main reasons why SPF is losing many...",
+          "slug": "support-the-generation-of-violation-witness-in-graphml-format-in-spf",
+          "status": "completed",
+          "student_name": "Kunha Kim",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Support the generation of violation witness in graphML format in SPF"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1xhWcA9e3jreugVDV_W0Is-9wKSLmg1DQD-GnGqX7h0E/edit?usp=sharing",
+          "description": "Modbat is a model-based testing framework that utilizes finite state machines (FSMs) to generate tests systematically, exploring various execution paths based on predefined models. Java PathFinder (JPF) is a powerful model checking tool that verifies Java programs by exhaustively exploring their state space.The primary objective of this project is to integrate Modbat with JPF to improve the effectiveness and efficiency of test generation for Java applications. By combining the model-based approach of Modbat with the exhaustive verification capabilities of JPF, we aim to achieve comprehensive test coverage while minimizing redundant test cases.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/dAoR7FEI/",
+          "proposal_id": null,
+          "short_description": "Modbat is a model-based testing framework that utilizes finite state machines (FSMs) to generate tests systematically, exploring various execution...",
+          "slug": "model-based-testing-with-modbat-for-jpf",
+          "status": "completed",
+          "student_name": "Harshvardhan Parmar",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Model-based Testing with Modbat for JPF"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/the-jpf-team-hg/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Java Path Finder (JPF), a specialized Java Virtual Machine for software verification, excels with Java 8 but faces challenges with modern features in Java 11 and 17, such as bootstrap methods (e.g., lambdas and string concatenation) and internal functions like toString() and hashCode() for records. My project seeks to address this by enhancing JPF to fully support Java 11 and 17. I will upgrade BootstrapMethodInfo to manage string concatenation effectively, refine INVOKEDYNAMIC execution to mirror the host JVM’s dynamic call site generation, and ensure internal functions operate correctly for new Java features. Drawing on OpenJDK research, I’ll implement these changes and validate them with thorough testing. Deliverables include full Java 17 support in JPF’s default branch, a comprehensive test suite for string concatenation and records and  updated documentation. This work will modernize JPF, enabling it to verify advanced Java programs and strengthening its value to the verification community.",
+          "difficulty": "advanced",
+          "id": "proj_the-jpf-team_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/3FSUKUlW",
+          "proposal_id": "bw96ogIq",
+          "short_description": "Java Path Finder (JPF), a specialized Java Virtual Machine for software verification, excels with Java 8 but faces challenges with modern features in...",
+          "slug": "support-java-1117-for-jpf-extensions",
+          "status": "in-progress",
+          "student_name": "Mahmoud Khawaja",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ui"
+          ],
+          "title": "Support Java 11/17 for JPF extensions"
+        },
+        {
+          "code_url": null,
+          "description": "Java PathFinder (JPF) is an extensible software analysis framework for java bytecode which can be used to check for concurrency defects like deadlocks, and unhandled exceptions like NullPointerExceptions and AssertionErrors. Symbolic PathFinder (SPF) is its extension that enables symbolic execution of java programs. \n\nThis proposal outlines my plan to contribute to The JPF Team by working on the Support portfolio of solvers in SPF Project during Google Summer of Code 2025. \n\nThe main goal of this project is to enable the simultaneous invocation of multiple constraint solvers, where execution halts as soon as any solver returns a satisfactory result. This approach is expected to enhance SPF's ability to handle a broader range of constraints. \n\nThis Project will extend SPF branch sv-comp. The outcome will enhance SPF’s scalability and applicability in symbolic execution tasks.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/XWELkdRG",
+          "proposal_id": "zKPj1vc8",
+          "short_description": "Java PathFinder (JPF) is an extensible software analysis framework for java bytecode which can be used to check for concurrency defects like...",
+          "slug": "support-portfolio-of-solvers-in-spf",
+          "status": "in-progress",
+          "student_name": "Rehan Chalana",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Support portfolio of solvers in SPF"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to support and extend SPF’s symbolic execution capabilities which are being limited by certain factors, unhandled common Java runtime exceptions arising from symbolic inputs and the need to polish or fix the issues related to Java 11. This project also aims to address certain issues on SPF like additional support for strings and the impact of Java 11 on previously supported model classes in Java 8 (e.g., Math.java, Scanner.java). This project aims to help SPF detect, model and explore execution paths leading to runtime exceptions such as NullPointerException and IndexOutOfBoundsException. This will involve modifying the core components like symbolic bytecode handlers and methods summarizers (e.g., SymbolicStringHandler). This work, primarily, will extend the sv-comp branch resulting in a better version of Symbolic PathFinder.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/wxOGtvXL",
+          "proposal_id": "XL7amYVo",
+          "short_description": "The project aims to support and extend SPF’s symbolic execution capabilities which are being limited by certain factors, unhandled common Java...",
+          "slug": "support-runtime-exception-in-spf",
+          "status": "in-progress",
+          "student_name": "Saiff",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Support Runtime Exception In SPF"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-jpf-team-hg"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "jpf.gsoc@gmail.com",
+    "guide_url": "https://github.com/javapathfinder/jpf-core/wiki/JPF-Google-Summer-of-Code-2024",
+    "ideas_url": "https://github.com/javapathfinder/jpf-core/wiki/GSoC-2025-Project-Ideas",
+    "irc_channel": "https://discord.gg/sX4YZUVHK7",
+    "mailing_list": "https://groups.google.com/g/java-pathfinder"
+  },
+  "social": {
+    "blog": null,
+    "discord": "https://discord.gg/sX4YZUVHK7",
+    "facebook": null,
+    "github": "https://github.com/javapathfinder/jpf-core/wiki",
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/Java_Pathfinder",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.355Z"
+  }
+}

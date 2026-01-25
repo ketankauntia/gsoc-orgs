@@ -1,0 +1,365 @@
+{
+  "id": "692251d853dd9d7326d33de8",
+  "slug": "invesalius",
+  "name": "Invesalius",
+  "category": "Science and medicine",
+  "description": "3D Medical visualization and neuronavigation tool",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/invesalius/ktlk8dmldhfmlyb2-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/invesalius.webp",
+  "logo_r2_url": null,
+  "url": "https://invesalius.github.io/",
+  "active_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2023,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "cython",
+    "numpy",
+    "dicom",
+    "Vtk"
+  ],
+  "topics": [
+    "ehealth",
+    "medical imaging",
+    "3D Reconstruction",
+    "3d printing",
+    "Neuronavigation"
+  ],
+  "total_projects": 13,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.33,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 2,
+      "year_2024": 5,
+      "year_2025": 6
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 2,
+      "year_2024": 5,
+      "year_2025": 6
+    },
+    "total_students": 13
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/miki998/invesalius3/tree/fmri_supp",
+          "description": "Currently InVesalius does not support simultaneous visualization of structural MRI and fMRI volumes. This is however of large interest to visualize both modalities for people involved in the clinical and analytical domain. Indeed a direct implication would be to have functional connectivity induced graphs visible along with structural connections (white matter). On top of which, after generating 3d maps, it may then be possible to visualize in space the functional connections versus structural connections. \n\nFirst of all, this project would be a useful feature to InVesalius, but secondly also to the neuroscience community. By having InVesalius open source and in a UI format it would enable clinical experts or neuroscientists without engineering background to have ready to go visualization of fMRI and structural MRI volumes. In general this could be extended to other modalities as well.\n\nTwo possible ways to simultaneously visualize structural MRI and fMRI are: \n\n1. Overlay different masks or contrasts (need to be carefully picked) for each of the two modality. There might be a need to apply some color distribution matching between structural and functional (e.g histogram equalization) since one would be T1 and the other T2 to have better visualization. Both slices would need to be co-registered prior to overlaying. The effect on the generation of 3D visualization would also be cared for.\n\n2. Having two views or preview of fMRI in each orientation (sagittal, coronal, axial and 3d).\n Two views or one main view and a preview would require to have a tracker (dot) that points to the same voxels in the two views. This could be a way for the user to match regions for instance and essentially avoid crowding the visualization.\n\nThe language I plan on using and believe fits the project would be python. The potential libraries used during the project would include already required ones for InVesalius (e.g scipy,opencv)",
+          "difficulty": null,
+          "id": "proj_invesalius_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/QeC87EKQ",
+          "proposal_id": "AGqiyiKp",
+          "short_description": "Currently InVesalius does not support simultaneous visualization of structural MRI and fMRI volumes. This is however of large interest to visualize...",
+          "slug": "fmri-support-to-invesalius",
+          "status": "completed",
+          "student_name": "Michael Chan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "fMRI Support to InVesalius"
+        },
+        {
+          "code_url": "https://github.com/hvini/invesalius3",
+          "description": "Picturing Archiving and Communication Systems (PACS) is a tool used to store, retrieve and share medical images among healthcare professionals. PACS systems make it easier to manage medical images since it contains integration with Dicom standard, that implements the dimse protocol which is used to perform medical images retrieve/upload operations.\n\nInVesalius is a desktop tool that allows the visualization and tridimensional reconstructions of Computed Tomography and also Magnetic Resonance Imaging files. InVesalius allows uploading a set of images from CT or MRI and then it shows the Coronal, Sagittal and Axial planes and also allows the application of masks to reconstruct the images in three dimensions. Currently InVesalius does not have integration with PACS systems, this means that all the files are handled by the application.\n\nThe suggested proposal presents a schedule to integrate multiple PACS systems with InVesalius. The schedule includes all the steps needed to integrate both systems, aiming for usability and code maintainability.",
+          "difficulty": null,
+          "id": "proj_invesalius_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/AC0fbfwA",
+          "proposal_id": "7rZuOPkf",
+          "short_description": "Picturing Archiving and Communication Systems (PACS) is a tool used to store, retrieve and share medical images among healthcare professionals. PACS...",
+          "slug": "add-pacs-communication",
+          "status": "completed",
+          "student_name": "Vinícius Cavalcanti",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add PACS Communication"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/invesalius"
+    },
+    "year_2024": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://guara.tech/posts/gsoc_2024_invesalius/",
+          "description": "The InVesalius software operates with the visualization, reconstruction and edition of CT and MRI images, and is mainly applied to operate on brain images. It uses a voxel based approach to display the image.\nThe tool currently allows 2D editing of masks. This is performed in a slice by slice fashion in the 2D of the viewports available in the software. Currently, the functionality is error prone and repetitive and this proposal improves this.\nThis project adds the feature of using the 3D viewport to create manipulations of masks by picking points in the viewports and creating surfaces to perform the same editing operations but in 3D space, which will allow for a faster and smoother usage.",
+          "difficulty": null,
+          "id": "proj_invesalius_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/DwUUVgie/",
+          "proposal_id": null,
+          "short_description": "The InVesalius software operates with the visualization, reconstruction and edition of CT and MRI images, and is mainly applied to operate on brain...",
+          "slug": "3d-edit-of-masks-in-invesalius",
+          "status": "completed",
+          "student_name": "Henrique Núñez",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "3D edit of masks in InVesalius"
+        },
+        {
+          "code_url": "https://dot-dog-06a.notion.site/GSoC-Submission-c5593496129b4866a1d9f8db91a8b806",
+          "description": "The proposed project aims to develop a high-quality 3D rendering engine to be integrated with Invesalius. This engine will feature a cinematic mode, commonly found in various software, enabling users to produce renders of specific structures of interest. Although these renders are typically not generated in real-time, they will facilitate the end users in swiftly and efficiently presenting their segmented data to clients, enhancing the overall quality and effectiveness of the presentations.",
+          "difficulty": null,
+          "id": "proj_invesalius_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/X7PDwP45/",
+          "proposal_id": null,
+          "short_description": "The proposed project aims to develop a high-quality 3D rendering engine to be integrated with Invesalius. This engine will feature a cinematic mode,...",
+          "slug": "cinematic-mode-for-invesalius",
+          "status": "completed",
+          "student_name": "Vinícius Arcoverde",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Cinematic mode for Invesalius"
+        },
+        {
+          "code_url": "https://mngaafar.com/projects/creations/tms-motor-mapping-visualization-gsoc-24-invesalius/",
+          "description": "The process of transcranial magnetic stimulation neuronavigation involves the generation of motor evoked potentials (MEP), which are detected and measured using electromyography. These MEP signals can be effectively represented through a color map projected onto the brain surface. This innovative approach enables real-time visualization of brain motor mapping, offering a dynamic and comprehensive understanding of neural activity during the procedure.\n\nRequirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.\n\nDeliverables:\n\nDevelop pipeline to receive motor mapping data using websocket\nProjection of motor mapping data, based on the neuronavigation position, in the brain surface\nGUI to define the color map preferences and customize the number of stimuli\nCoordinate communication between the websocket data receiver, projection module, and GUI.",
+          "difficulty": null,
+          "id": "proj_invesalius_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/BljggnRT/",
+          "proposal_id": null,
+          "short_description": "The process of transcranial magnetic stimulation neuronavigation involves the generation of motor evoked potentials (MEP), which are detected and...",
+          "slug": "real-time-motor-mapping-visualization-for-enhanced-tms",
+          "status": "completed",
+          "student_name": "Mohamed Gaafar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "web",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Real-time Motor Mapping Visualization for Enhanced TMS"
+        },
+        {
+          "code_url": "https://github.com/invesalius/invesalius3/issues/830",
+          "description": "Python's evolution to support static type hinting since Python 3.5 marks a significant milestone in developing robust programs. This project aims to upgrade the Invesalius3 project by incorporating static type checking using Mypy, augmenting functions, methods, and classes with type information. The project also includes implementing a GitHub CI workflow to detect type errors in pull requests. Additionally, I plan to integrate swift linting support with Ruff, upgrade the packaging system using a \"pyproject.toml\" file, and automate hook management using pre-commit.",
+          "difficulty": null,
+          "id": "proj_invesalius_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/fKG1Dl3D/",
+          "proposal_id": null,
+          "short_description": "Python's evolution to support static type hinting since Python 3.5 marks a significant milestone in developing robust programs. This project aims to...",
+          "slug": "add-type-information-to-functions-methods-and-classes-in-invesalius",
+          "status": "completed",
+          "student_name": "Omar Abdelgawad",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai"
+          ],
+          "title": "Add type information to functions, methods and classes in InVesalius"
+        },
+        {
+          "code_url": "https://github.com/rishabh-ranjan1/GSoC-2024-Documentation/blob/main/Rishabh-Ranjan-invesalius-2024-Final-Report.pdf",
+          "description": "Tool that allows the user to activate the capture of logs and errors. It should be possible to save the sequence of events in a text file. It will be necessary to add logging capture to all functions and functionalities and their respective levels (debug, info, warn, error or critical).\nDeliverables:\n     1) Graphic interface integrated to InVesalius that allows the user to activate the tool \n         and save the logs.\n    2) Log support to all InVesalius functions and functionalities. A separate text window \n         for console stream output.\n    3)Add provision/tools for error catching.",
+          "difficulty": null,
+          "id": "proj_invesalius_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/zYrNyRVw/",
+          "proposal_id": null,
+          "short_description": "Tool that allows the user to activate the capture of logs and errors. It should be possible to save the sequence of events in a text file. It will be...",
+          "slug": "add-logging-and-error-catching-tool",
+          "status": "completed",
+          "student_name": "Rishabh Ranjan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add logging and error catching tool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/invesalius/"
+    },
+    "year_2025": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "InVesalius is an open-source software that enables synchronous 2D and 3D visualization of medical images, facilitating the reconstruction of computed tomography (CT) and magnetic resonance imaging (MRI) data into three-dimensional models. It allows users to create masks easily through various preset parameters, such as predefined threshold values for different tissues and materials. However, in cases where automatic segmentation is insufficient, manual editing becomes necessary. This process can be quite slow and labor-intensive, as it requires editing each slice individually, which is particularly time-consuming for large volumes.\n\nImplementing a feature that enables mask creation through projections directly on the 3D rendering screen would significantly enhance InVesalius's usability and \nefficiency. Currently, mask editing in InVesalius requires a slice-by-slice approach, which can be repetitive and prone to errors. By allowing users to edit the entire volume simultaneously via 3D projections, the segmentation process would\nbe streamlined, saving time and increasing accuracy.",
+          "difficulty": null,
+          "id": "proj_invesalius_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/H1nIn5ni",
+          "proposal_id": "wXxz5lp4",
+          "short_description": "InVesalius is an open-source software that enables synchronous 2D and 3D visualization of medical images, facilitating the reconstruction of computed...",
+          "slug": "3d-edition-of-masks",
+          "status": "in-progress",
+          "student_name": "Felipe Cybis Pereira",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "3D edition of masks"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the lack of automated testing in InVesalius, which currently relies on manual verification, slowing development and risking regressions. By implementing a comprehensive pytest-based test suite (unit, functional, and GUI tests) and integrating GitHub Actions CI/CD, the project will ensure core functionalities like DICOM processing, 3D visualization, and GUI interactions remain stable as new features are added. Deliverables include:\n\n1)A structured test suite covering the entire inVesalius codebase.\n\n2)GitHub Actions workflows to automate testing on commits/pull requests.\n\n3)Mock file systems and dependency isolation for safe, repeatable tests.\n\n4)Well-documented test cases to guide future contributors.\nThis will reduce reviewer workload, accelerate debugging, and foster community growth by lowering the barrier to entry for new developers.",
+          "difficulty": null,
+          "id": "proj_invesalius_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/QsOP2iEF",
+          "proposal_id": "CNDgDUEe",
+          "short_description": "This project addresses the lack of automated testing in InVesalius, which currently relies on manual verification, slowing development and risking...",
+          "slug": "add-unit-tests-to-invesalius-to-ease-the-process-of-adding-new-features",
+          "status": "in-progress",
+          "student_name": "Hrishav Deka",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Add unit tests to InVesalius to ease the process of adding new features"
+        },
+        {
+          "code_url": null,
+          "description": "The proposed project aims to automate the creation of nightly and release installers for InVesalius on macOS using GitHub Actions. By leveraging continuous integration workflows, this project will streamline the build, packaging, and distribution process, eliminating the need for manual compilation. The automation will utilize PyInstaller to generate macOS application bundles and installers while ensuring compatibility with system dependencies. This solution will enhance accessibility for macOS users, providing a reliable and up-to-date distribution method for InVesalius.",
+          "difficulty": null,
+          "id": "proj_invesalius_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/2LCxiDo6",
+          "proposal_id": "Xs0GcwTf",
+          "short_description": "The proposed project aims to automate the creation of nightly and release installers for InVesalius on macOS using GitHub Actions. By leveraging...",
+          "slug": "use-github-actions-to-create-installers-for-macos",
+          "status": "in-progress",
+          "student_name": "Mann Patwa",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Use GitHub actions to create installers for macOS"
+        },
+        {
+          "code_url": null,
+          "description": "Development and integration of the functionality for simultaneous control of two robots, aimed at applying dual-site Transcranial Magnetic Stimulation (TMS) in InVesalius (currently, support is provided for only one TMS coil attached to one robot). This feature is based on the existing implementation for the use of two or more coils, adapting it for multiple robots. The inclusion of this feature not only improves the speed, accuracy, and safety of the stimulatory process, but also enables the scientific exploration of interactive brain networks, by allowing concurrent, targeted TMS pulses to multiple brain areas.",
+          "difficulty": null,
+          "id": "proj_invesalius_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/vG6Rv7zY",
+          "proposal_id": "pcioYG3w",
+          "short_description": "Development and integration of the functionality for simultaneous control of two robots, aimed at applying dual-site Transcranial Magnetic...",
+          "slug": "simultaneous-visualization-and-control-of-two-robots-for-dual-transcranial-magnetic-stimulation",
+          "status": "in-progress",
+          "student_name": "Márcio Campos",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Simultaneous visualization and control of Two Robots for Dual Transcranial Magnetic Stimulation"
+        },
+        {
+          "code_url": null,
+          "description": "InVesalius, a medical imaging tool, lacks user feedback during file loading and saving (e.g., .inv3 projects) and offers a basic, non-cancellable progress bar for volume rendering, frustrating users. This project aims to enhance usability by implementing a wxPython-based progress dialog with real-time updates and cancellation support. I’ll integrate this into invesalius/control.py and gui/frame.py, threading file operations (OpenPlistProject, SavePlistProject) and upgrading Volume.Render’s feedback with VTK-based stages. Deliverables include: (1) a cancellable progress dialog for .inv3 loading, (2) a similar dialog for saving, (3) a revamped volume rendering dialog with percentage updates, and (4) unit tests ensuring reliability. Built with Python, wxPython, and NumPy, this will make InVesalius more intuitive and responsive for researchers and clinicians.",
+          "difficulty": null,
+          "id": "proj_invesalius_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/D5nIVoDd",
+          "proposal_id": "xd1jKFJr",
+          "short_description": "InVesalius, a medical imaging tool, lacks user feedback during file loading and saving (e.g., .inv3 projects) and offers a basic, non-cancellable...",
+          "slug": "improvements-in-user-response-loading-and-saving-files",
+          "status": "in-progress",
+          "student_name": "Shruti Parmar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Improvements in user response (loading and   saving files)"
+        },
+        {
+          "code_url": null,
+          "description": "This project tackles the challenge of time-consuming manual brain segmentation in MRI by developing an automated tool using deep learning (FastSurfer) to accurately segment key brain areas critical for TMS. The approach uses advanced CNN models to quickly and precisely divide the brain into subparts like the cortex, thalamus, and hippocampus. This helps accurately position the TMS coil for effective treatment.",
+          "difficulty": "advanced",
+          "id": "proj_invesalius_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Thg42Q4y",
+          "proposal_id": "7pp31Q1O",
+          "short_description": "This project tackles the challenge of time-consuming manual brain segmentation in MRI by developing an automated tool using deep learning...",
+          "slug": "segment-brain-in-its-subparts",
+          "status": "in-progress",
+          "student_name": "unichronic",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Segment Brain in it's Subparts"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/invesalius"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/invesalius/gsoc/blob/main/gsoc_application.md",
+    "ideas_url": "https://github.com/invesalius/gsoc/blob/main/gsoc_2025_ideas.md",
+    "irc_channel": null,
+    "mailing_list": "https://github.com/invesalius/invesalius3/discussions"
+  },
+  "social": {
+    "blog": "https://invesalius.github.io/publication.html",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.279Z"
+  }
+}

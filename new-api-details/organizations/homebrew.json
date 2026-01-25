@@ -1,0 +1,332 @@
+{
+  "id": "692251d653dd9d7326d33dd7",
+  "slug": "homebrew",
+  "name": "Homebrew",
+  "category": "Programming languages",
+  "description": "The Missing Package Manager for macOS (or Linux)",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/homebrew/9enfivj2ibae26ot-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/homebrew.webp",
+  "logo_r2_url": null,
+  "url": "https://brew.sh",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2020,
+    2022
+  ],
+  "first_year": 2016,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "ruby",
+    "git",
+    "osx",
+    "github",
+    "bash",
+    "macos",
+    "rspec",
+    "linux"
+  ],
+  "topics": [
+    "package system",
+    "homebrew",
+    "development tools",
+    "package management",
+    "distribution",
+    "package managers",
+    "macos",
+    "terminal applications",
+    "github",
+    "linux",
+    "package manager"
+  ],
+  "total_projects": 11,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.2,
+    "projects_by_year": {
+      "year_2016": 4,
+      "year_2017": 2,
+      "year_2018": 1,
+      "year_2019": null,
+      "year_2020": 3,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 4,
+      "year_2017": 2,
+      "year_2018": 1,
+      "year_2019": null,
+      "year_2020": 3,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 11
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1iuR5DwRNmY_zOwzLawZjOJQceSsJAj3b757N21ZrjeA/edit?usp=sharing",
+          "description": "<p>The goal of my project is making Homebrew Cask better integrate with Homebrew by moving Cask core into Homebrew and making Cask commands use Homebrew code.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5374137421791232/",
+          "proposal_id": null,
+          "short_description": "The goal of my project is making Homebrew Cask better integrate with Homebrew by moving Cask core into Homebrew and making Cask commands use Homebrew...",
+          "slug": "closer-integrating-homebrew-with-homebrew-cask",
+          "status": "completed",
+          "student_name": "Anastasia",
+          "student_profile": null,
+          "tags": [],
+          "title": "Closer integrating Homebrew with Homebrew cask"
+        },
+        {
+          "code_url": "http://blog.woodruffw.us/2016/08/20/State-of-Ruby-Macho-GSoC-2016-Wrapup-Edition",
+          "description": "<p>During last year's GSoC, I began work on transitioning Homebrew away from its XCode dependency by modifying the bottling system to hook certain necessary utilities (i.e., <code>install_name_tool</code> and <code>otool</code>) prior to installation.</p>\n<p>After GSoC ended I began work on <code>ruby-macho</code>,which will ultimately be capable of replacing last year's hooking system with a pure-Ruby library capable of the kinds of relocation operations that Homebrew's bottles require.</p>\n<p>My proposal for this summer is to continue work on <code>ruby-macho</code>, bringing it to feature-completeness with <code>libmacho</code> (at least for x86 and PPC). Additionally, I intend to get Homebrew's vendored version of <code>ruby-macho</code> activated by the end of the program for everyday users (rather than its current developer-only status).</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6500589231931392/",
+          "proposal_id": null,
+          "short_description": "During last year's GSoC, I began work on transitioning Homebrew away from its XCode dependency by modifying the bottling system to hook certain...",
+          "slug": "integrating-ruby-macho-fully-into-homebrew-and-removing-external-dependencies-on-install_name_toolotool-entirely",
+          "status": "completed",
+          "student_name": "woodruffw",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrating ruby-macho fully into Homebrew and removing external dependencies on install_name_tool/otool entirely"
+        },
+        {
+          "code_url": "https://gist.github.com/DomT4/cbd077abaebfc67a5b872780fe21cc42",
+          "description": "<p>Adding GPG optional verification for source packages and Homebrew-provided binary packages (bottles).</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6078376766865408/",
+          "proposal_id": null,
+          "short_description": "Adding GPG optional verification for source packages and Homebrew-provided binary packages (bottles).",
+          "slug": "gpg-verification-in-homebrew",
+          "status": "completed",
+          "student_name": "domt4",
+          "student_profile": null,
+          "tags": [],
+          "title": "GPG Verification in Homebrew"
+        },
+        {
+          "code_url": "https://gist.github.com/vladshablinsky/f85838450103acfce86ef53418e464c4",
+          "description": "<p>For now <code>HEAD</code> formulae can't be upgraded by just running <code>brew upgrade &lt;formula&gt; --HEAD</code>. The only way to upgrade <code>HEAD</code> formula is to uninstall it and install once again or using <code>reinstall</code> which is almost the same thing. This is not very convenient. We don't know if it's time to upgrade formula, we don't have other versions. We don't reinstall stable formula to upgrade them and the same way we don't need to reinstall head formula to upgrade them. The outcome of the project is to provide <code>HEAD</code> versions and the ability to upgrade them.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6302606271971328/",
+          "proposal_id": null,
+          "short_description": "For now HEAD formulae can't be upgraded by just running brew upgrade &lt;formula&gt; --HEAD. The only way to upgrade HEAD formula is to uninstall it...",
+          "slug": "better-support-head-formulae",
+          "status": "completed",
+          "student_name": "Vlad Shablinsky",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Better support HEAD formulae"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5422996969750528/"
+    },
+    "year_2017": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@mansimarkaur.mks/writing-tests-for-brew-during-gsoc-2017-9f61995d037c",
+          "description": "<h4>Why this project?</h4>\n<p>The impact this project has, is huge and being able to make such an impact and also exponentiate my growth graph attracted me towards this project.</p>\n<h4>How I plan to accomplish the tasks?</h4>\n<p>I would learn Ruby before and during the bonding period.\nSpend an equivalent of 40 hours per week for 13 weeks time on increasing the test coverage for Brew</p>\n<h4>About me</h4>\n<p>I'm a junior year student at the University of Delhi. I was an intern with Mozilla for the round 13 of Outreachy. I'm an avid open source enthusiast. My internship and open source contributions have given me a lot of experience in writing unit tests.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4951665782292480/",
+          "proposal_id": null,
+          "short_description": "Why this project?\nThe impact this project has, is huge and being able to make such an impact and also exponentiate my growth graph attracted me...",
+          "slug": "increasing-test-coverage-for-brew",
+          "status": "completed",
+          "student_name": "Mansimar Kaur",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Increasing test coverage for Brew"
+        },
+        {
+          "code_url": "https://gauthamgoli.github.io/blog/2017/08/16/GSoC-report.html",
+          "description": "<p><code>brew audit</code> command now runs <a href=\"https://github.com/bbatsov/rubocop\" target=\"_blank\">RuboCop</a> custom cops to enforce and automatically fix Homebrew coding style guidelines within supported editors and using the rubocop tool. The objectives of this project are to better integrate RuboCop into <a href=\"https://github.com/Homebrew/brew\" target=\"_blank\">Homebrew core</a> and also developing a DSL to make it easier for maintainers to add custom cops as required and migrating all possible brew audit rules (e.g. those using regex matches) to use RuboCop rather than custom brew audit logic.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5140405569978368/",
+          "proposal_id": null,
+          "short_description": "brew audit command now runs RuboCop custom cops to enforce and automatically fix Homebrew coding style guidelines within supported editors and using...",
+          "slug": "port-brew-audit-rules-to-rubocop",
+          "status": "completed",
+          "student_name": "Gautham Goli",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Port brew audit rules to RuboCop"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6752289616297984/"
+    },
+    "year_2018": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/Homebrew/brew/issues/4661",
+          "description": "<p>The goal of this project is to improve the integration of Casks and Homebrew-Cask commands into Homebrew by removing redundant code that is used by both Casks and Formulae, and by merging some <code>brew cask</code> commands with their <code>brew</code> counterparts.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4514338253570048/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to improve the integration of Casks and Homebrew-Cask commands into Homebrew by removing redundant code that is used by...",
+          "slug": "improve-cask-integration",
+          "status": "completed",
+          "student_name": "Markus Reiter",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Cask Integration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4830398454431744/"
+    },
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/rmNULL/1eccdc43874a661c90b49ded02699e11",
+          "description": "<p>Refactor keg, keg_relocate and elf.rb modules to use rbelftools and patchelf.rb instead of calling shell commands.\nPatchelf.rb is doesn't work well with the ELFs modified using <code>patchelf</code>. Make patchelf.rb behave like patchelf. This is important as most of the bottles in the bintray  are relocated with placeholders using <code>patchelf</code>.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6419861770600448/",
+          "proposal_id": null,
+          "short_description": "Refactor keg, keg_relocate and elf.rb modules to use rbelftools and patchelf.rb instead of calling shell commands.\nPatchelf.rb is doesn't work well...",
+          "slug": "replace-shell-patchelf-and-readelf-with-ruby-equivalents",
+          "status": "completed",
+          "student_name": "rmnull",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "replace shell `patchelf` and `readelf` with ruby equivalents"
+        },
+        {
+          "code_url": "https://gist.github.com/vidusheeamoli/9abbcd6f7c72c8c3a66a06ecb0a8f2ba",
+          "description": "<p>The majority of the code in Homebrew is written in Ruby which is a dynamic language. This means that types are checked when the code is run. My project aims to incorporate Sorbet, a static type checker which would provide the benefits of static type checking to a developer. Adding static type checking helps developers rectify potential errors before the actual runtime. It also provides faster debugging of pre-existing bugs even by new developers, as they can easily jump to class/method definitions without having prior knowledge of the directory structure of the project. Sorbet serves as a tool to reduce brittle code, increases a developer’s confidence in their work and is a great tool for refactoring. I believe that this project has a lot of potential and the impact that it is going to have on the overall development cycle is going to be huge.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5656724901462016/",
+          "proposal_id": null,
+          "short_description": "The majority of the code in Homebrew is written in Ruby which is a dynamic language. This means that types are checked when the code is run. My...",
+          "slug": "add-support-for-type-checking-using-sorbet",
+          "status": "completed",
+          "student_name": "Vidushee Amoli",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add support for type checking using Sorbet"
+        },
+        {
+          "code_url": "https://github.com/nandahkrishna/GSoC/blob/master/GSoC_2020_Report.md",
+          "description": "<p>DSLs or domain-specific languages are written in order to serve a highly specific purpose. Currently, Homebrew has DSLs for various purposes, in Formulae, Casks, and so on. Homebrew also has a livecheck Tap which enables checking for latest versions, compared to the user’s locally installed version. The Tap checks for the latest version from a URL specified or obtained from the Formula specification, using Regex and a heuristic.</p>\n<p>Currently, Livecheckables or “instructions” for livecheck are part of the homebrew/livecheck Tap. However, it would be more beneficial to include the livecheck details as part of the Formula definition in homebrew/core itself. This would require changes to the Formula class defined in Homebrew, in the form of adding a domain-specific language for livecheck. Once this is added, a Formula’s author may include the livecheck details in the Formula definition on homebrew/core, and not have to maintain a separate Livecheckable in homebrew/liveecheck, making things more convenient for maintainers and contributors.</p>\n<p>The project aims to add this DSL for livecheck to Homebrew Formulae and migrate all existing Livecheckables to home-brew/core.</p>\n",
+          "difficulty": null,
+          "id": "proj_homebrew_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5328388006346752/",
+          "proposal_id": null,
+          "short_description": "DSLs or domain-specific languages are written in order to serve a highly specific purpose. Currently, Homebrew has DSLs for various purposes, in...",
+          "slug": "adding-a-livecheck-formula-dsl-and-migrating-livecheckables-to-home-brewcore",
+          "status": "completed",
+          "student_name": "Nanda H Krishna",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Adding a livecheck Formula DSL and migrating Livecheckables to home-brew/core"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6369733965774848/"
+    },
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/mohammadzainabbas/GSoC_2022",
+          "description": "Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new versions, this feature doesn't work with resources. This project will enhance Homebrew's existing livecheck feature.",
+          "difficulty": null,
+          "id": "proj_homebrew_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/VDmpki2A/",
+          "proposal_id": null,
+          "short_description": "Many Homebrew packages use resources, a special kind of package dependency. While Homebrew has tools which automatically upgrade packages to new...",
+          "slug": "auto-bumping-resources-in-formulae-2022",
+          "status": "completed",
+          "student_name": "Mohammad Zain Abbas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Auto-bumping resources in Formulae (2022)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/homebrew/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://github.com/homebrew/brew",
+    "mailing_list": "https://github.com/Homebrew/discussions/discussions"
+  },
+  "social": {
+    "blog": "https://brew.sh/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/machomebrew",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.238Z"
+  }
+}

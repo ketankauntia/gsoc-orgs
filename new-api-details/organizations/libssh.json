@@ -1,0 +1,234 @@
+{
+  "id": "692251ee53dd9d7326d33f19",
+  "slug": "libssh",
+  "name": "libssh",
+  "category": "Programming languages",
+  "description": "The SSH library",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/libssh/kcfc8lhxh3uyozbu-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/libssh.webp",
+  "logo_r2_url": null,
+  "url": "https://www.libssh.org/",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "ssh",
+    "ci",
+    "git",
+    "sftp"
+  ],
+  "topics": [
+    "security",
+    "cryptography"
+  ],
+  "total_projects": 6,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": 2,
+      "year_2025": 1
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": 2,
+      "year_2025": 1
+    },
+    "total_students": 6
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/libssh/libssh-mirror/-/merge_requests/263",
+          "description": "I read the source code of libssh and I notice that there’re many switch-case in the sftp server code, while the implementation to handle different IO events in the server part is based on a call-based model, which has a quite clear logic. And sftp is a subsystem in libssh which can be established through a channel, as a subsystem having many sub-message type, it’s better to use a callback based method to implement a sftp server. Therefore, I’m going to modify the sftp part in libssh and write a sftp server with the api in libssh to achieve this goal.",
+          "difficulty": null,
+          "id": "proj_libssh_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Hm79LwKE/",
+          "proposal_id": null,
+          "short_description": "I read the source code of libssh and I notice that there’re many switch-case in the sftp server code, while the implementation to handle different IO...",
+          "slug": "callback-based-sftp-server",
+          "status": "completed",
+          "student_name": "Zeyu Sheng",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Callback based sftp server"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/libssh/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@itsahsenkamal/my-google-summer-of-code-gsoc-experience-with-libssh-8c302892d3aa",
+          "description": "The proposal aims to describe briefly my approach to implement OpenSSH connection multiplexing in libssh. It goes over the required components and functions and how they work in order to achieve connection multiplexing. The project aims to deliver multiplexing multiple sessions using only one TCP connection.",
+          "difficulty": null,
+          "id": "proj_libssh_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/GdK87jbe",
+          "proposal_id": "SkpgBpIV",
+          "short_description": "The proposal aims to describe briefly my approach to implement OpenSSH connection multiplexing in libssh. It goes over the required components and...",
+          "slug": "support-for-openssh-connection-multiplexing",
+          "status": "completed",
+          "student_name": "Ahsen Kamal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Support for OpenSSH connection multiplexing"
+        },
+        {
+          "code_url": "https://galorithm.com/gsoc2023",
+          "description": "This project aims to create async SFTP client API's for libSSH.\n\nCurrently sftp_write is the only way of uploading files over SFTP using libssh but sftp_write is a synchronous write. Providing an asynchronous api for upload will make the upload process much more faster. A high level API which will internally use the low level async API for uploads and downloads will also be created which will make uploads/downloads easier for the user and more efficient since the async API is used internally.\n\nThe set of deliverables for this project will be : a low level async API for writing, a high level API for upload and download,  tests for the created API's, benchmark code to analyse performance of the API's, documentation for the created API's.",
+          "difficulty": null,
+          "id": "proj_libssh_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/CdkiroFH",
+          "proposal_id": "PcpVhJmc",
+          "short_description": "This project aims to create async SFTP client API's for libSSH. Currently sftp_write is the only way of uploading files over SFTP using libssh but...",
+          "slug": "async-sftp-client",
+          "status": "completed",
+          "student_name": "Eshan Kelkar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Async SFTP Client"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/libssh"
+    },
+    "year_2024": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://xaerru.github.io/gsoc24/",
+          "description": "This project will set up Kerberos as part of the test suite using cwrap wrappers and write tests for the \"gssapi-with-mic\" user authentication method.\n\nIt will also implement and test GSSAPI Key Exchange and “gssapi-keyex” user authentication method from RFC 4462 for both the libssh client and server.",
+          "difficulty": null,
+          "id": "proj_libssh_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/yojunwbr/",
+          "proposal_id": null,
+          "short_description": "This project will set up Kerberos as part of the test suite using cwrap wrappers and write tests for the \"gssapi-with-mic\" user authentication...",
+          "slug": "implement-gssapi-key-exchange-and-improve-testing",
+          "status": "completed",
+          "student_name": "Gauravsingh Sisodia",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Implement GSSAPI Key Exchange and Improve Testing"
+        },
+        {
+          "code_url": "https://medium.com/@eferollo/my-google-summer-of-code-2024-journey-with-libssh-802e72f935e3",
+          "description": "This project aims to significantly enhance libssh capability to handle OpenSSH certificates. Currently, libssh only supports certificates as opaque blobs for basic interoperability with some compatible OpenSSH servers. \nThis implies that there is no control over the certificate attributes, thus preventing both user and host authentication by means of certificates. \nThis project entails the development of a parsing mechanism for extracting certificate contents, along with a proper system to manage them. The deliverables are a set of new APIs for handling certificate-based user and host authentication, combined with an entire key revocation control infrastructure.",
+          "difficulty": null,
+          "id": "proj_libssh_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Ct9ZLgzB/",
+          "proposal_id": null,
+          "short_description": "This project aims to significantly enhance libssh capability to handle OpenSSH certificates. Currently, libssh only supports certificates as opaque...",
+          "slug": "support-for-openssh-certificates",
+          "status": "completed",
+          "student_name": "Francesco Rollo",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Support for OpenSSH certificates"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/libssh/"
+    },
+    "year_2025": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to implement client-side support for FIDO/U2F authentication in libssh using the libfido2 library. It will introduce functionality to detect and interact with FIDO authenticators, perform user presence or verification (e.g., touch or PIN), and use these devices for SSH authentication. The final deliverables will include a working implementation, unit and integration tests against an openSSH server, and examples for using the added code.",
+          "difficulty": null,
+          "id": "proj_libssh_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ziHCZkB4",
+          "proposal_id": "NTpximuy",
+          "short_description": "This project aims to implement client-side support for FIDO/U2F authentication in libssh using the libfido2 library. It will introduce functionality...",
+          "slug": "support-for-fidou2f-keys-on-the-client-side",
+          "status": "in-progress",
+          "student_name": "Praneeth Sarode",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Support for FIDO/U2F keys on the client side"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/libssh"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://www.libssh.org/development/google-summer-of-code/",
+    "ideas_url": "https://www.libssh.org/development/google-summer-of-code/",
+    "irc_channel": "https://matrix.to/#/!yBkUIMByeIPFgUzcVM:matrix.org?via=matrix.org",
+    "mailing_list": "https://www.libssh.org/communication/"
+  },
+  "social": {
+    "blog": "https://www.libssh.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.593Z"
+  }
+}

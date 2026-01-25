@@ -1,0 +1,215 @@
+{
+  "id": "692251e353dd9d7326d33e7c",
+  "slug": "point-cloud-library",
+  "name": "Point Cloud Library",
+  "category": "Science and medicine",
+  "description": "Standalone, large scale, open project for 2D/3D image and point cloud processing",
+  "image_url": "https://lh3.googleusercontent.com/AOzUOMLm4TOHrEUH5LV9vlw6WgOjPt3DIm8hFkXUox68mU2eFZvb4nVLyeeo_joW2BSHQ6fAz10QKrlsB4-nSxldoa3zi54gZ_qXBxwXchveZg",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/point-cloud-library.webp",
+  "logo_r2_url": null,
+  "url": "https://pointclouds.org/",
+  "active_years": [
+    2020,
+    2021
+  ],
+  "first_year": 2020,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "cmake",
+    "cpp",
+    "devops",
+    "python",
+    "cuda",
+    "c++14",
+    "computer vision"
+  ],
+  "topics": [
+    "robotics",
+    "3d computer vision",
+    "perception",
+    "computer vision",
+    "data structures",
+    "2d/3d graphics",
+    "gpu computing"
+  ],
+  "total_projects": 5,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 5
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://pointclouds.org/gsoc-2020/gpu/",
+          "description": "<p>Despite being the go-to library for point cloud based computation, PCL can cause some friction to users due to its old-fashioned and sometimes inconsistent API and the lack of certain features. This proposal aims to  introduce the following new features to the PCL library;</p>\n<ul>\n<li>GPU implementation of Iterative Closest Point (ICP) algorithm</li>\n<li>Implementation of Fast Resampling of 3D Point Clouds via Graphs</li>\n</ul>\n<p>As well as to refactor and modernize the library by means of;</p>\n<ul>\n<li>Introducing better type for point indices, thereby providing support for larger point clouds</li>\n<li>Introducing a fluent API for algorithms</li>\n<li>Modernising the GPU Octree module to align with the it’s CPU counterpart</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_point-cloud-library_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5743656952135680/",
+          "proposal_id": null,
+          "short_description": "Despite being the go-to library for point cloud based computation, PCL can cause some friction to users due to its old-fashioned and sometimes...",
+          "slug": "refactoring-modernisation-feature-addition-with-emphasis-on-gpu-module",
+          "status": "completed",
+          "student_name": "Haritha Jayasinghe",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "cloud"
+          ],
+          "title": "Refactoring, Modernisation & Feature  Addition with Emphasis on GPU Module"
+        },
+        {
+          "code_url": "https://pointclouds.org/gsoc-2020/executors/",
+          "description": "<h3>Motivation</h3>\n<p>With the current trend of increasing parallelism, there is a need for a uniform way of making these parallel implementations available along with the default serial ones. Currently in PCL, this has been done by providing separate classes/functions having independent APIs.</p>\n<p>With the integration of execution policies and executors (part of C++23 hopefully) libraries like PCL will be able to provide a unified API to switch between different implementations. To ensure there is no sudden breakage in the existing API, a transition phase is needed to slowly phase out the old API in favour of a unified API.</p>\n<h3>Implementation</h3>\n<p>This project aims to transition the existing API to forward-compatible unified API. \nThe basic details are:\nUsing tag dispatching to enable function overloading, allowing user to select  between different available implementations.\nLack of tags allows PCL to choose best possible implementations, this allows to maintain backward compatibility with current API.\nMissing implementation for a tag raises compile-time errors\nProviding SIMD/OpenMP/CUDA implementations of existing algorithms using the proposed unified API.</p>\n",
+          "difficulty": null,
+          "id": "proj_point-cloud-library_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5956677699895296/",
+          "proposal_id": null,
+          "short_description": "Motivation\nWith the current trend of increasing parallelism, there is a need for a uniform way of making these parallel implementations available...",
+          "slug": "unified-api-for-algorithms",
+          "status": "completed",
+          "student_name": "Shrijit Singh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Unified API for Algorithms"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6128597321908224/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/tin1254/PCL_GSoC_2021/blob/master/README.md",
+          "description": "<p>In PCL, there are a variety of filters, many of which contain similar filtering logic in at least part of their code.\nIn the early years, the filters were created by different developers, a unified code design did not emerge organically. As a result, there are many boilerplate snippets throughout the filter module. Further enhancements to the filters, such as parallelizing loops, are challenging due to the necessary boilerplate code requiring changes to all the equivalent code across multiple classes without breaking them.</p>\n<p>We found some instances of the boilerplate codes in the voxel filters: <code>ApproximateVoxelGrid</code>, <code>VoxelGrid</code>, <code>GridMinimum</code>, <code>VoxelGridLabel</code>, <code>UniformSampling</code> (and also in the binary removal filters)</p>\n<p>Our goal was to investigate a unified code design that eliminates redundancy by refactoring similar code pieces across multiple filters without breaking the present API, while simultaneously attempting to simplify implementation and increase runtime speed.</p>\n",
+          "difficulty": null,
+          "id": "proj_point-cloud-library_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6682359029563392/",
+          "proposal_id": null,
+          "short_description": "In PCL, there are a variety of filters, many of which contain similar filtering logic in at least part of their code.\nIn the early years, the filters...",
+          "slug": "better-voxel-filter",
+          "status": "completed",
+          "student_name": "Tin Chon Chan",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Better Voxel Filter"
+        },
+        {
+          "code_url": "https://gist.github.com/divmadan/33a6e469e9055bc7c85bb53a8465d1be",
+          "description": "<p>Enhancing Point Cloud Library’s clang-bind project to fix and extend its existing capabilities. \nCurrently, the project is lacking in its scope to bind a complete module of PCL to python, and this project would like to build upon that. The aim is to fix existing issues and increase the coverage of the existing scope to develop python bindings of PCL.</p>\n",
+          "difficulty": null,
+          "id": "proj_point-cloud-library_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4740755578421248/",
+          "proposal_id": null,
+          "short_description": "Enhancing Point Cloud Library’s clang-bind project to fix and extend its existing capabilities. \nCurrently, the project is lacking in its scope to...",
+          "slug": "enhancing-clang-bind",
+          "status": "completed",
+          "student_name": "Divyanshu Madan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "cloud",
+            "ui"
+          ],
+          "title": "Enhancing clang-bind"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1M6oeheNOyYMi45y8mSZUQJdYz7xR5pKYNYrPrgR4RsQ/edit?usp=sharing",
+          "description": "<p>The increasing parallelism brought by CUDA and GPU libraries benefits PCL as well as other open-source communities greatly. However, the test for these GPU-accelerated code is a bit awkward on those common CI without free GPU. Therefore, building a generic tool to allow CPU to run CUDA without a GPU is inspiring and valuable. And integrating this tool into the CI of PCL will bring more convenience and confidence to CI build.</p>\n<p>The toolkits used in this project will also provide an option for AMD users to build and run CUDA codes in AMD GPUs.</p>\n<p>This proposal aims to build a generic tool to allow CPU to run CUDA code, and introduce this feature to PCL as necessary.</p>\n",
+          "difficulty": null,
+          "id": "proj_point-cloud-library_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6005703977730048/",
+          "proposal_id": null,
+          "short_description": "The increasing parallelism brought by CUDA and GPU libraries benefits PCL as well as other open-source communities greatly. However, the test for...",
+          "slug": "enable-cuda-builds-on-ci",
+          "status": "completed",
+          "student_name": "Hang Yan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enable CUDA builds on CI"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6260986197049344/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://discord.gg/JFFMAXS",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://pointclouds.org/gsoc-2020/",
+    "discord": "https://discord.gg/JFFMAXS",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.002Z"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "692251e653dd9d7326d33ead",
+  "slug": "seastar",
+  "name": "Seastar",
+  "category": "Programming languages",
+  "description": "Framework for writing high-performance server applications on modern hardware",
+  "image_url": "https://lh3.googleusercontent.com/rBIDW74GlN99v142I_orxLgDEKEkmkkFd3qfmN0D6N1u9c9GD1LQD_2XDGY_1uU03TbaQPwsLA_jQEZXkeADHCJyO4QTJSU",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/seastar.webp",
+  "logo_r2_url": null,
+  "url": "http://www.seastar-project.org/",
+  "active_years": [
+    2018
+  ],
+  "first_year": 2018,
+  "last_year": 2018,
+  "is_currently_active": false,
+  "technologies": [
+    "linux",
+    "cpp",
+    "framework",
+    "dpdk",
+    "tcp"
+  ],
+  "topics": [
+    "network",
+    "high performance",
+    "tcp",
+    "app development",
+    "framework"
+  ],
+  "total_projects": 1,
+  "stats": {
+    "avg_projects_per_appeared_year": 1,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": 1,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": 1,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 1
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/ryanhuang1014/Seastar-for-GSoC2018/blob/bbr-gsoc2018/README-BBR.md",
+          "description": "<p>TCP BBR was proposed as a modern TCP congestion control algorithm by Google in 2016. The traditional loss-based TCP algorithms like TCP CUBIC, reduce their sending rates greatly when detecting packet loss, and increase rates conservatively when no packets loss happens. However, it is hard to estimate the network condition just on basis of one metric, i.e, packet loss. As a consequence, loss-based TCP algorithms underutilize network during most of the time, but cause severe congestion occasionally.</p>\n<p>TCP BBR is a new variation of TCP algorithm which adjusts its sending rate based on the real-time network metric, i.e, packet round trip time (RTT), the delivered rate (goodput). It is optimal that the amount of traffic walking through a network link is just equal to the well-known bandwidth delay production (BDP). Hence, TCP BBR uses RTT and goodput to constrict the amount of traffic in flight is equal to BDP. In this way, TCP BBR can maximize the goodput, and minimize the RTT at the same time.</p>\n<p>As a high-performance network stack, it is very important for Seastar to provide such high-performance TCP algorithm to further upgrade the performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_seastar_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5671090722439168/",
+          "proposal_id": null,
+          "short_description": "TCP BBR was proposed as a modern TCP congestion control algorithm by Google in 2016. The traditional loss-based TCP algorithms like TCP CUBIC, reduce...",
+          "slug": "tcp-bbr-implementation-in-seastar",
+          "status": "completed",
+          "student_name": "Ryan Huang",
+          "student_profile": null,
+          "tags": [],
+          "title": "TCP BBR implementation in Seastar"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5132636779446272/"
+    },
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "info@scylladb.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://scylladb-users.slack.com",
+    "mailing_list": "http://seastar-dev@googlegroups.com"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://scylladb-users.slack.com",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.203Z"
+  }
+}

@@ -65,6 +65,10 @@ export interface TopicPageData {
 
 /**
  * Load the topics index data (for /topics page)
+ * 
+ * Loads pre-computed static JSON data containing all topics with their metrics.
+ * 
+ * @returns {Promise<TopicsIndexData | null>} The topics index data, or null if loading fails
  */
 export async function loadTopicsIndexData(): Promise<TopicsIndexData | null> {
   try {
@@ -83,7 +87,11 @@ export async function loadTopicsIndexData(): Promise<TopicsIndexData | null> {
 
 /**
  * Load topic detail data for a specific slug
- * @param slug - The topic slug (e.g., "web-development")
+ * 
+ * Loads pre-computed static JSON data for a single topic's detail page.
+ * 
+ * @param {string} slug - The topic slug (e.g., "web-development")
+ * @returns {Promise<TopicPageData | null>} The topic page data, or null if not found
  */
 export async function loadTopicData(slug: string): Promise<TopicPageData | null> {
   try {
@@ -102,6 +110,17 @@ export async function loadTopicData(slug: string): Promise<TopicPageData | null>
 
 /**
  * Filter topics in memory (for client-side filtering)
+ * 
+ * Applies in-memory filtering to topics array. Used when static JSON is loaded
+ * and filters need to be applied client-side.
+ * 
+ * @param {TopicsIndexData['topics']} topics - Array of topics to filter
+ * @param {Object} filters - Filter criteria
+ * @param {string} [filters.search] - Search query to match against topic name or slug
+ * @param {number} [filters.minOrgs] - Minimum organization count
+ * @param {number} [filters.minProjects] - Minimum project count
+ * @param {number[]} [filters.years] - Filter by years (topic must appear in at least one year)
+ * @returns {TopicsIndexData['topics']} Filtered array of topics
  */
 export function filterTopics(
   topics: TopicsIndexData['topics'],

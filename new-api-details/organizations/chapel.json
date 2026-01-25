@@ -1,0 +1,413 @@
+{
+  "id": "692251cf53dd9d7326d33d77",
+  "slug": "chapel",
+  "name": "Chapel",
+  "category": "Programming languages",
+  "description": "A Productive Parallel Programming Language",
+  "image_url": "https://lh3.googleusercontent.com/iZSd2PHRnRgRP4BCokwbqnPV2zONVGnDqp95vx7j0TgtcleFt-_DR1xiBr_HhUPxQjLIG-J8wYW6KC8cbpw6tRwJgeJuse4Ajpqu4XeG0QT4",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/chapel.webp",
+  "logo_r2_url": null,
+  "url": "https://chapel-lang.org/",
+  "active_years": [
+    2016,
+    2017,
+    2019,
+    2020,
+    2021
+  ],
+  "first_year": 2016,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "python",
+    "c++",
+    "chapel",
+    "high performance computing"
+  ],
+  "topics": [
+    "compilers",
+    "programming languages",
+    "distributed computing",
+    "high performance computing",
+    "parallel computing"
+  ],
+  "total_projects": 16,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.2,
+    "projects_by_year": {
+      "year_2016": 2,
+      "year_2017": 3,
+      "year_2018": null,
+      "year_2019": 4,
+      "year_2020": 4,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 2,
+      "year_2017": 3,
+      "year_2018": null,
+      "year_2019": 4,
+      "year_2020": 4,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 16
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/chapel-lang/chapel/commits?author=panzone",
+          "description": "<p>Chapel is a programming language that wants to make the development of parallel applications easier. This project wants to extend the Chapel runtime with the support to stack traces when an unrecoverable error is encountered. A stack trace is a list of functions in the call stack at the moment of the error: this can immensely help developers during the debugging phase since it permits to see where, in the source code, the error is generated.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5240769828880384/",
+          "proposal_id": null,
+          "short_description": "Chapel is a programming language that wants to make the development of parallel applications easier. This project wants to extend the Chapel runtime...",
+          "slug": "reporting-stack-traces-on-halt",
+          "status": "completed",
+          "student_name": "panzone",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reporting stack traces on halt"
+        },
+        {
+          "code_url": "https://gist.github.com/kushalsingh007/c6901b7a5b416f3c4ebdde166a8fa5ca",
+          "description": "<p>Currently, re-compiling a Chapel program would mean re-compiling the parts that haven’t changed, including the functions that haven’t been altered since the last compilation. The idea behind this project is to utilise the already existing information that compiler already has to speed up re-compilation. The main steps in the project would be to start away with restructuring the way currently elements with same name are distinguished. The main goal would be to create a code cache which can be stored in as a part of the object file. We would like to utilise our code cache to avoid re-instantiation and recompilation for functions that are already present as a part of the code cache, and finally we want to be able to re-link the correct functions and symbols from the cache during the building of the executable.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5942240530661376/",
+          "proposal_id": null,
+          "short_description": "Currently, re-compiling a Chapel program would mean re-compiling the parts that haven’t changed, including the functions that haven’t been altered...",
+          "slug": "incremental-compilation",
+          "status": "completed",
+          "student_name": "kushalsingh007",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Incremental Compilation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4704629866627072/"
+    },
+    "year_2017": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/chapel-lang/chapel/pull/7139",
+          "description": "<p>This project aims to enable Chapel with its own module which would be a collection of both secure hash functions(such as SHA256) and various encryption algorithms(such as AES / DES / RSA/ ElGamal, etc) by using the crypto primitives of native libraries such as OpenSSL or libsodium in Chapel (libtomcrypt in our case). This module will be a part of Chapel’s standard library and enable it to compete with other cryptographically secure languages and increase Chapel's range of applications.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5356768842481664/",
+          "proposal_id": null,
+          "short_description": "This project aims to enable Chapel with its own module which would be a collection of both secure hash functions(such as SHA256) and various...",
+          "slug": "to-write-a-new-cryptography-module-for-chapel-that-provides-an-interface-to-standard-cryptography-libraries-that-support-common-algorithms",
+          "status": "completed",
+          "student_name": "saru95",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "To write a new cryptography module for Chapel that provides an interface to standard cryptography libraries that support common algorithms."
+        },
+        {
+          "code_url": "https://github.com/LouisJenkinsCS/Distributed-Data-Structures",
+          "description": "<p>Built-in data structures are a necessity for any budding language, and in a language where distributed computing is at its core, data structures that can properly be maintained across clusters is desired.</p>\n<p>For my project, I have designed the core framework for a distributed data structures library, and have implemented two novel scalable distributed data structures, an ordered deque and an unordered multiset, that exceed a naive implementation by at least two orders of magnitude in a moderately sized cluster.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6530769430249472/",
+          "proposal_id": null,
+          "short_description": "Built-in data structures are a necessity for any budding language, and in a language where distributed computing is at its core, data structures that...",
+          "slug": "distributed-data-structures",
+          "status": "completed",
+          "student_name": "LouisJenkinsCS",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Distributed Data Structures"
+        },
+        {
+          "code_url": "https://gist.github.com/coodie/546d92f3e18bed9a82537207f237f4e2",
+          "description": "<p>This project is about improving LLVM backend for chapel compiler. Improvements consist of improving loop vectorization by adding proper metadata and changing loop compilation, adding type-based alias analysis metadata,  adding notations when there is load from const memory, experimenting with aliasing algorithms, adding polly optimizer and extending support for wide pointers. Main goal of the project is to improve loop vectorization.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5832541428776960/",
+          "proposal_id": null,
+          "short_description": "This project is about improving LLVM backend for chapel compiler. Improvements consist of improving loop vectorization by adding proper metadata and...",
+          "slug": "improve-llvm-backend-for-chapel-compiler",
+          "status": "completed",
+          "student_name": "Przemysław Leśniak",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Improve LLVM backend for Chapel compiler"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4757669491507200/"
+    },
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/chapel-lang/chapel/commits/master/?author=mnafees&since=2019-05-27&until=2019-08-26",
+          "description": "<p>The Chapel compiler optionally can produce LLVM IR and use LLVM optimizations with –llvm. Going forward, Chapel will use LLVM more and more because the compiler can effectively communicate more important details to the optimization passes. This task is to improve the quality of the LLVM IR, the testing of Chapel with LLVM, and the performance of the Chapel compiler in –llvm mode.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5278359498522624/",
+          "proposal_id": null,
+          "short_description": "The Chapel compiler optionally can produce LLVM IR and use LLVM optimizations with –llvm. Going forward, Chapel will use LLVM more and more because...",
+          "slug": "improvements-to-chapel-llvm-backend",
+          "status": "completed",
+          "student_name": "Mohammed Nafees",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Improvements to Chapel LLVM Backend"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1YcvBmC-mP2dtKqV26zBlj72cESOuKOpQpa4yop64Ny4/edit?usp=sharing",
+          "description": "<p>This project includes adding BLAS, Sparse linear algebra and iterative solvers into Chapel.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4768140871860224/",
+          "proposal_id": null,
+          "short_description": "This project includes adding BLAS, Sparse linear algebra and iterative solvers into Chapel.",
+          "slug": "distributed-sparse-linear-algebra-library-in-chapel",
+          "status": "completed",
+          "student_name": "Alvis Wong",
+          "student_profile": null,
+          "tags": [],
+          "title": "Distributed Sparse Linear Algebra Library in Chapel"
+        },
+        {
+          "code_url": "https://github.com/dgarvit/epoch-based-manager/tree/ebr",
+          "description": "<p>Currently Chapel has support for ‘shared’ lifetime-managed objects, which is implemented using reference-counting. Unfortunately reference counting has associated with it very large overheads that are remedied by other types of memory reclamation.\nThis project focuses on exploration of Epoch-Based Reclamation and the newer Interval-Based Reclamation, first via their implementation in shared-memory in a way that allows them to be direct contributions to the language, and then via adaptations and synthesizing possibly newer memory reclamation algorithms from the above mentioned or even from newer, novel ideas.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5877554395742208/",
+          "proposal_id": null,
+          "short_description": "Currently Chapel has support for ‘shared’ lifetime-managed objects, which is implemented using reference-counting. Unfortunately reference counting...",
+          "slug": "concurrent-safe-memory-reclamation-systems",
+          "status": "completed",
+          "student_name": "Garvit Dewan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Concurrent-Safe Memory Reclamation Systems"
+        },
+        {
+          "code_url": "https://gist.github.com/krishnadey30/046d21a16ff0f2f19bc4d4a608a608d6",
+          "description": "<p>Deployment is the last stage in the application development process and before that, any application undergoes a comprehensive testing process to validate that the system meets its functional and non-functional requirements.\nAn application comprises several functions, classes, procedures which are referred to a unit. The objective in unit testing is to isolate each unit of the system and validate its precision by identifying and fixing the defects and bugs and benefit of unit testing is that issues can be identified on earlier stages.\nChapel currently lacks unit testing, which harms the development of the platform and makes easier to reintroduce past bugs while developing. \n<strong>This project is a proposal to add a set of unit test classes to Chapel. </strong></p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6309272764284928/",
+          "proposal_id": null,
+          "short_description": "Deployment is the last stage in the application development process and before that, any application undergoes a comprehensive testing process to...",
+          "slug": "unit-test-framework",
+          "status": "completed",
+          "student_name": "Krishna Kumar Dey",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Unit Test Framework"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5677337046155264/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/ankingcodes/672f12c18e2b242d461305c4d31fb1b2",
+          "description": "<p>A package manager is a programming language's tool to create environments for projects and easily use external dependencies. It allows users or developers to package their projects and publish them which can be used by others. Hence, easy implementation, hassle free experience, fast builds, least bugs while using a package manager tool. This project aims to improve the user experience of Mason command line interface and the Mason registry by solving known bugs, adding new features, while writing tests and documentation.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_chapel_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4615671905779712/",
+          "proposal_id": null,
+          "short_description": "A package manager is a programming language's tool to create environments for projects and easily use external dependencies. It allows users or...",
+          "slug": "improve-mason-package-manager",
+          "status": "completed",
+          "student_name": "Ankush Bhardwaj",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Mason Package Manager"
+        },
+        {
+          "code_url": "https://gist.github.com/rahulghangas/fddf487ec4a3c2cdc138c8c81c7e0420",
+          "description": "<p>Provide a distributed implementation of the Linear Algebra package in Chapel, which is currently restricted to a single node/locale</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4665070807678976/",
+          "proposal_id": null,
+          "short_description": "Provide a distributed implementation of the Linear Algebra package in Chapel, which is currently restricted to a single node/locale",
+          "slug": "native-distribute-linear-algebra-implementations",
+          "status": "completed",
+          "student_name": "Rahul Ghangas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Native Distribute Linear Algebra Implementations"
+        },
+        {
+          "code_url": "https://gist.github.com/Rapiz1/a4bc437f8960081a5be1495d50c96a37",
+          "description": "<p>Provide a new mason package implementing various parallel safe sequential data structures.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6016402642698240/",
+          "proposal_id": null,
+          "short_description": "Provide a new mason package implementing various parallel safe sequential data structures.",
+          "slug": "sequential-data-structures",
+          "status": "completed",
+          "student_name": "Yujia Qiao",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sequential Data Structures"
+        },
+        {
+          "code_url": "https://aniket21mathur.github.io/blog/GSoC20/",
+          "description": "<p>Google Protocol Buffers is a language-neutral serialization library. However Chapel support for Protocol Buffers has not been investigated. Nonetheless, there are a number of interoperability scenarios that would benefit from having such a feature. This feature is something that many other projects can build on - including calling Python from Chapel or creating a Chapel distributed in-memory key-value storage service.The protocol buffers compiler supports a few languages directly but also includes a plugin mechanism to generate code for other languages. These plugins can be written in the target language.</p>\n<p>The project involves the following:</p>\n<ul>\n<li>Create a Chapel library that works with basic Protocol Buffers functions.</li>\n<li>Implement a Chapel plugin for the protocol buffers compiler.</li>\n<li>Demonstrate this tool in an example integration using protocol buffers.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4850203527479296/",
+          "proposal_id": null,
+          "short_description": "Google Protocol Buffers is a language-neutral serialization library. However Chapel support for Protocol Buffers has not been investigated....",
+          "slug": "protocol-buffers-integration",
+          "status": "completed",
+          "student_name": "Aniket Mathur",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ios",
+            "ui"
+          ],
+          "title": "Protocol Buffers Integration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6722154118250496/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/Yudhishthira1406/GSOC-21_Final_Report/blob/main/README.md",
+          "description": "<p>This project aims to add support of Go-Style Channels to the Chapel language. In Go, a channel is used to synchronize and communicate between different goroutines. A similar library can be added to chapel to support efficient communication between various chapel tasks in a lock-free manner. The channels would enable a user to decompose algorithms into tasks in a more logical way. The work will involve studying the performance against the original Go channels.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6055211428216832/",
+          "proposal_id": null,
+          "short_description": "This project aims to add support of Go-Style Channels to the Chapel language. In Go, a channel is used to synchronize and communicate between...",
+          "slug": "go-style-channels",
+          "status": "completed",
+          "student_name": "Divye Nayyar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Go-Style Channels"
+        },
+        {
+          "code_url": "https://github.com/prashanth018/GSoC-21",
+          "description": "<p>Matrix Exponentials are used in solving systems of linear differential equations. It is also widely used in Quantum Mechanics (Schrodinger's equation: Describes how a quantum particle behaves) and Control Theory. I had a chance to go through the “Scaling and Squaring Algorithm” for matrix exponentiation. In this paper, The technique to calculate the \"pade estimate\" to categorize which \"pade value\" to be used for optimization has interested me to pursue this project. I also hope to understand and achieve the parallelization of the current task for efficient computation of matrix exponential and be challenged by the intricacies of Chapel.</p>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5802229633646592/",
+          "proposal_id": null,
+          "short_description": "Matrix Exponentials are used in solving systems of linear differential equations. It is also widely used in Quantum Mechanics (Schrodinger's...",
+          "slug": "matrix-exponentials",
+          "status": "completed",
+          "student_name": "Prasanth Duvvuri",
+          "student_profile": null,
+          "tags": [],
+          "title": "Matrix Exponentials"
+        },
+        {
+          "code_url": "https://king-11.github.io/gsoc-2021-report/",
+          "description": "<p>The Proposal contains details for implementation of <strong>Socket Module</strong> to be completed within the timeline of GSOC in the summers. Key elements of the proposal are:</p>\n<ul>\n<li>Socket Module to integrate C Socket Calls into Chapel Module.</li>\n<li>Writing good unit tests and documentation.</li>\n<li>Performance testing for finding out the best possible implementation.</li>\n<li>Ensuring Concurrency, Parallelism and Non-Blocking Nature of Procedures.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_chapel_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5199276891701248/",
+          "proposal_id": null,
+          "short_description": "The Proposal contains details for implementation of Socket Module to be completed within the timeline of GSOC in the summers. Key elements of the...",
+          "slug": "socket-library",
+          "status": "completed",
+          "student_name": "Lakshya Singh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Socket Library"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6086891878744064/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "chapel+info@discoursemail.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://chapel-lang.org/developers.html",
+    "mailing_list": "https://chapel-lang.org/developers.html"
+  },
+  "social": {
+    "blog": "https://www.facebook.com/ChapelLanguage",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/ChapelLanguage",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.011Z"
+  }
+}

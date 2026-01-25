@@ -1,0 +1,257 @@
+{
+  "id": "692251da53dd9d7326d33e0b",
+  "slug": "librecube-initiative",
+  "name": "LibreCube Initiative",
+  "category": "Science and medicine",
+  "description": "Open Source Space Exploration",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/librecube-initiative/zkfjswciuihmdxu1-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/librecube-initiative.webp",
+  "logo_r2_url": null,
+  "url": "https://librecube.org",
+  "active_years": [
+    2021,
+    2022,
+    2024
+  ],
+  "first_year": 2021,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "micropython",
+    "zmq",
+    "mbed",
+    "mongodb",
+    "rest",
+    "docker",
+    "raspberry pi"
+  ],
+  "topics": [
+    "space",
+    "cubesat",
+    "mission control",
+    "Communication Protocols",
+    "robotics",
+    "automation",
+    "ai",
+    "Rover"
+  ],
+  "total_projects": 7,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.33,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 2,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 2,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": null
+    },
+    "total_students": 7
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://shambu2k.bearblog.dev/gsoc-21-librecube/",
+          "description": "<p>The SPP and USDLP are the CCSDS recommended protocols used to efficiently transfer space application data through different space-links such as ground-to-space, space-to-ground, space-to-space, or on-board communication links.\nAs of now there are very limited available implementations of SPP and USDLP. Implementing these protocols will be of great help to amateurs and students who find it difficult to get their hands on an open source solution with community support.</p>\n",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5740295097942016/",
+          "proposal_id": null,
+          "short_description": "The SPP and USDLP are the CCSDS recommended protocols used to efficiently transfer space application data through different space-links such as...",
+          "slug": "ccsds-space-packet-usldp-transport-layer-for-python-and-micropython",
+          "status": "completed",
+          "student_name": "Sidharth Shambu",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "CCSDS Space Packet / USLDP Transport Layer for Python and MicroPython"
+        },
+        {
+          "code_url": "https://medium.com/@shayan.majumder2/implementing-ccsds-file-delivery-protocol-cfdp-in-micropython-for-gsoc-2021-67fdb3100a78",
+          "description": "<p>CCSDS  File  Delivery  Protocol  (CFDP)  is a  file transfer protocol for use in space,  e.g., between  Earth and spacecraft in  Earth orbit or between Earth and spacecraft on interplanetary missions. The  CCSDS  File  Delivery  Protocol (CFDP)  has been implemented in  Python by  LibreCube.   This project aims to make the existing setup OS independent and make it compatible with micropython and extend its utilities as a ready-to-use space software. It will be demonstrated using the pyboard as the server and using UDP transport over WiFi. This project will also include extending the capabilities of the current system and testing the system exhaustively. The CFDP  GUI  application made by LibreCube shall be used for this and extended/modified as needed.</p>\n",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4978825582084096/",
+          "proposal_id": null,
+          "short_description": "CCSDS  File  Delivery  Protocol  (CFDP)  is a  file transfer protocol for use in space,  e.g., between  Earth and spacecraft in  Earth orbit or...",
+          "slug": "ccsds-file-delivery-protocol-in-micropython",
+          "status": "completed",
+          "student_name": "Shayan Majumder",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "CCSDS File Delivery Protocol in MicroPython"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5642529495580672/"
+    },
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/balotofi/GSoC-2022/blob/main/WorkProductReport.md",
+          "description": "The orbit module provides means to model orbital/trajectory movement of an object in the solar system and includes the calculation of planet positions, perturbation effects on the orbit. It computes the position and velocity of the object, taking into account the forces applied. It also defines a number of generic coordinate systems, including one for each planet and a local one for the object (spacecraft) to be modelled.\r\nThis proposal aims at providing a generic structure for the orbit module to perform the basic tasks needed.\r\n\r\nThe main milestones for completing this project are to:\r\nCreate object {spacecraft}\r\nCreate other objects {celestial bodies}\r\nDefine local coordinate system of object {spacecraft}\r\nDefine coordinate systems for other objects {planets}\r\nModel trajectory of an object {spacecraft in solar system}\r\nDefine perturbation effects on orbit {position, velocity of object, forces applied}",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/2uxuBPK3/",
+          "proposal_id": null,
+          "short_description": "The orbit module provides means to model orbital/trajectory movement of an object in the solar system and includes the calculation of planet...",
+          "slug": "generic-orbital-model-implementation",
+          "status": "completed",
+          "student_name": "Husseinat",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Generic Orbital Model Implementation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/librecube-initiative/"
+    },
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/spacedao/frontend/spacedao-global-ui",
+          "description": "Space DAO represents a decentralized autonomous organization (DAO) and initiative\ndesigned to facilitate decentralized, transparent, and neutral applications, thereby circumventing centralized authority management. This paper addresses the need for effective space traffic management in an environment where a small number of dominant space situational awareness (SSA) companies overshadow a long tail of competitors, resulting in underutilization of expert insights and missed opportunities for valuable information confrontation. Originating as an initiative under the European Space Agency Tech Innovation, the proposed approach employs business incentives to enhance transparency, predictability, and accountability in line with current and evolving regulations. Leveraging user voting mechanisms, the rules governing applications can evolve dynamically, making it particularly suitable for space traffic management, an arena lacking established global regulations and in urgent need of a coordinated international agreement. Recognizing the orbit as a global commons, effective international negotiation in this context often assumes a business-oriented language. Within the DAO framework, applications serve as global marketplaces for insights, facilitating information exchange for space traffic management, while concurrently functioning as a global market for judgment, where the reliability of participants is evaluated based on their performance.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/2WFL0Umk/",
+          "proposal_id": null,
+          "short_description": "Space DAO represents a decentralized autonomous organization (DAO) and initiative designed to facilitate decentralized, transparent, and neutral...",
+          "slug": "spacedao-space-traffic-governance",
+          "status": "completed",
+          "student_name": "Antoine Delamare",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "SpaceDAO (Space traffic governance)"
+        },
+        {
+          "code_url": "https://github.com/Kedyi/GSoC_2024_Final_Evaluation_Report/blob/master/GSoC_2024_Final_Report_Komal.md",
+          "description": "This project aims to develop a user-friendly interface (either block-based or graphical) for users to define rover control commands. This interface will be adaptable and work across different environments:\n\nPython Turtle Environment (Initial Development): Users can visualize their control programs in real-time within a simulated 2D environment.\n\nGazebo Simulator (Integration): The user interface will be integrated with the Gazebo simulator, allowing users to control a simulated rover in a 3D environment with realistic physics.\n\nReal-World Rover Communication (Extended Goal): As an extended goal, the interface will be adapted to communicate with a real rover using Space Packets and PUS protocols.\n\nThis project will contribute to user-friendly and accessible rover programming, fostering citizen science participation and innovation in space exploration endeavors.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/qSZd1iFq/",
+          "proposal_id": null,
+          "short_description": "This project aims to develop a user-friendly interface (either block-based or graphical) for users to define rover control commands. This interface...",
+          "slug": "from-simulation-to-reality-a-flexible-programming-interface-for-rover-control",
+          "status": "completed",
+          "student_name": "Komal.",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "From Simulation to Reality: A Flexible Programming Interface for Rover Control"
+        },
+        {
+          "code_url": "https://gist.github.com/Saigenix/e22a8c62d0c44ba82869b8d7960621e0",
+          "description": "Blockly is an open-source software designed to utilize graphical blocks as code representations, enabling users to construct programs visually. The primary objective of this project is to develop an application with a visually appealing theme built upon Blockly that generates PLUTO scripts. Specifically, users can assemble blocks containing commands (e.g., to do the movement of our prototype rover) within a control logic framework. Subsequently, a corresponding PLUTO script will be automatically generated. Additionally, an optional feature of the project involves the creation of visualizations of the generated script in PDF format, thereby enhancing the project's functionality.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/j96pQ9Cp/",
+          "proposal_id": null,
+          "short_description": "Blockly is an open-source software designed to utilize graphical blocks as code representations, enabling users to construct programs visually. The...",
+          "slug": "blockly-for-pluto-script-generation",
+          "status": "completed",
+          "student_name": "sai m",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Blockly for PLUTO Script Generation"
+        },
+        {
+          "code_url": "https://github.com/faithinspace/GSoC_2024_Final_Evaluation_Report",
+          "description": "The Unified Space Data Link Protocol (USLP) is a relatively new space protocol standard from CCSDS that aims to unify the protocols used for telecommand uplink and telemetry downlink between ground and space assets. This project proposes developing an open-access Python prototype implementation of USLP to demonstrate its benefits within the context of the LibreCube 1U rover platform. The prototype will facilitate the transmission of frames between PCs using this unified format, and accompanying documentation will also provided.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/TDAX1ycA/",
+          "proposal_id": null,
+          "short_description": "The Unified Space Data Link Protocol (USLP) is a relatively new space protocol standard from CCSDS that aims to unify the protocols used for...",
+          "slug": "unified-space-data-link-protocol",
+          "status": "completed",
+          "student_name": "thefaith",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Unified Space Data Link Protocol"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/librecube-initiative/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "info@librecube.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://app.element.io/#/room/#librecube.org:matrix.org",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://fosstodon.org/@librecube",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.366Z"
+  }
+}

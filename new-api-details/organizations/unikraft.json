@@ -1,0 +1,423 @@
+{
+  "id": "692251eb53dd9d7326d33eed",
+  "slug": "unikraft",
+  "name": "Unikraft",
+  "category": "Operating systems",
+  "description": "A Fast and Secure Unikernel SDK",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/unikraft/5nx7anuq3iixdm54.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/unikraft.webp",
+  "logo_r2_url": null,
+  "url": "https://unikraft.org/",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "xen",
+    "kvm",
+    "assembly language",
+    "golang"
+  ],
+  "topics": [
+    "virtualization",
+    "cloud",
+    "software reuse",
+    "software configurability"
+  ],
+  "total_projects": 16,
+  "stats": {
+    "avg_projects_per_appeared_year": 4,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 4,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 4,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "total_students": 16
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://unikraft.org/blog/2022-06-27-unikraft-synchronization/",
+          "description": "At the moment, Unikraft can leverage a single processor only. While there can be multiple threads (i.e., multiprogramming), no two activities actually run at the same time (i.e., multiprocessing). Unikraft introduces support for symmetric multiprocessing (SMP), thereby allowing it to execute code on all processors and cores of a system concurrently. This creates new challenges for synchronizing access to shared resources. On a single-processor machine synchronization primitives like mutexes and semaphores can consider interrupts as the only source of parallel execution. It is thus sufficient to protect a critical section of code by temporarily disabling interrupts. With SMP, however, this is no longer sufficient as other processors may access shared resources at any time.\nThe project will involve studying locking mechanisms used in modern kernels like Linux, FreeBSD, etc, improving the existing locking mechanisms in unikraft, and implementing new mechanisms such as read-write. The important part of the project will be identifying the critical sections present in the kernel and protecting these critical sections.",
+          "difficulty": null,
+          "id": "proj_unikraft_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/K2BWctCe/",
+          "proposal_id": null,
+          "short_description": "At the moment, Unikraft can leverage a single processor only. While there can be multiple threads (i.e., multiprogramming), no two activities...",
+          "slug": "adding-smp-synchronization",
+          "status": "completed",
+          "student_name": "Sairaj Kodilkar",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Adding SMP synchronization"
+        },
+        {
+          "code_url": "https://github.com/mariasfiraiala/GSoC-Shadow-Stack",
+          "description": "Control-flow hijacking attacks represent one of the most recurrent methods of gaining fine grained access to a system. Forward edge attacks (through function pointers and virtual calls) were proven to be less accessible after implementing Control-flow integrity (CFI) solutions. However, backward edge attacks easily bypass present instrumentation (Safe Stacks, canaries).\n\nUnder these circumstances, shadow stacks become more than necessary: shadow stacks are a defense mechanism that require metadata about the program’s state to enforce their policies. They protect the return value of the functions by comparing what’s pushed into them with what resides in the traditional stack, practically, functioning as a backup and check storage. \n\nMy project will consist of comparing different implementations of shadow stacks with their advantages and disadvantages, crafting a compelling PR, that would perfectly fit Unikraft's vision regarding modularization and portability and a clear discussion of the overhead brought by such an approach.",
+          "difficulty": null,
+          "id": "proj_unikraft_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/kdif1bq5/",
+          "proposal_id": null,
+          "short_description": "Control-flow hijacking attacks represent one of the most recurrent methods of gaining fine grained access to a system. Forward edge attacks (through...",
+          "slug": "shadow-stack",
+          "status": "completed",
+          "student_name": "Maria Sfîrăială",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Shadow Stack"
+        },
+        {
+          "code_url": "https://github.com/unikraft/unikraft/pull/474",
+          "description": "This proposal describes my planned work for Intel SGX-based Isolation for Unikraft. It will enable SGX support for Unikraft, which provides strong isolation between SGX-protected contents and others. My plan is divided into 6 tasks:\n1. Deploy SGX-related environment for QEMU and KVM\n2. Let Unikraft be capable of being aware of SGX at boot time by checking corresponding CPUID flags.\n3. Enable a very simple unikraft application (say helloworld) in SGX, without paging support by porting corresponding libraries and implementing the SGX drivers.\n4. Enable paging for SGX applications in Unikraft.\n5. Try to port a complex application like sqlite3 into Unikraft with SGX support to check if there is any bug or issue to be solved.\n6. Document the work finished in this project and make a plan for future work.",
+          "difficulty": "advanced",
+          "id": "proj_unikraft_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/H2LcKmLu/",
+          "proposal_id": null,
+          "short_description": "This proposal describes my planned work for Intel SGX-based Isolation for Unikraft. It will enable SGX support for Unikraft, which provides strong...",
+          "slug": "intel-sgx-based-isolation-for-unikraft",
+          "status": "completed",
+          "student_name": "Xiangyi",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Intel SGX-based Isolation for Unikraft"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/unikraft/"
+    },
+    "year_2023": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/MdSahil-oss/667e2a0feb3a4eaadea7073e21d8f652",
+          "description": "In this project, I will upgrade the VSCode extension to use KraftKit, the newly released CLI companion tool for Unikraft rewritten in Go.\n\nThe project requires modifications to the project's main binary, kraft, to enable JSON output of various commands so that the integration with VSCode can be done through a machine-readable interface.\n\nAdditionally, I'll enhance the experience, including adding support for additional steps in Unikraft's build cycle: packaging unikernels in different formats, providing a linting mechanism so that projects which are developed for Unikraft can be checked for compatibility.",
+          "difficulty": null,
+          "id": "proj_unikraft_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ZUeHjGnO",
+          "proposal_id": "nHi06rpN",
+          "short_description": "In this project, I will upgrade the VSCode extension to use KraftKit, the newly released CLI companion tool for Unikraft rewritten in Go. The project...",
+          "slug": "enhancing-the-vscode-developer-experience",
+          "status": "completed",
+          "student_name": "MdSahil-oss",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing the VSCode Developer Experience"
+        },
+        {
+          "code_url": "https://github.com/unikraft/gsoc/tree/staging/gsoc-2023/work-product/Rares-Miculescu-Plat-Re-Arch",
+          "description": "Unikraft is an automated system for building specialized POSIX-compliant OSes (unikernels). These unikernels are configured for the needs of specific applications. It is based around the concept of small, modular libraries, each providing a part of functionality found in an operating system (e. g. memory allocation, scheduling, network stack etc.).\nAll components of Unikraft’s architecture are micro-libraries. Despite its “everything is  a library” concept, Unikraft should have some architectural changes that can improve the program’s modularity and everybody’s experience. For example, some of the changes that can be made are: source code’s layout to be changed, APIs written as libraries (e. g. paging.c), moving drivers outside ‘common/’,  implementing per-platform configuration etc.",
+          "difficulty": null,
+          "id": "proj_unikraft_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/L97cI91F",
+          "proposal_id": "fzg7k8Fr",
+          "short_description": "Unikraft is an automated system for building specialized POSIX-compliant OSes (unikernels). These unikernels are configured for the needs of specific...",
+          "slug": "rearch-unikraft",
+          "status": "completed",
+          "student_name": "Rares Miculescu",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "re:Arch Unikraft"
+        },
+        {
+          "code_url": "https://github.com/i-Pear/GSoC-Expanding-App-Compat",
+          "description": "One of the weak points of most unikernel projects has always been application support, often requiring that applications be ported to the target unikernel OS.\nIn this area, Unikraft has made significant progress by prioritizing POSIX compatibility.\nThrough its binary compatibility mode, Unikraft allows unmodified ELFs to be executed, with resulting syscalls wrapped and redirected to the Unikraft core via the app-elfloader.\nCurrently, Unikraft supports loading both statically and dynamically linked ELFs in binary compatibility mode.\nHowever, Unikraft has not been able to fully support all behaviors of glibc and user applications, which causes certain programs to fail in initializing or crash.\nAdditionally, running applications in binary compatibility mode incurs performance loss compared to ported programs, due to the TLS switching and system interrupts caused by binary syscalls.\nTo address the issues mentioned above, this project focuses on expanding Unikraft's binary compatibility mode by: \n\n* Using vDSO (virtual dynamic shared object) and vsyscall (virtual system call) to bypass binary syscalls.\n\n* Expanding supported syscalls to provide compatibility for a wider range of applications.\n\n* Adding AArch64 architecture support for app-elfloader and syscall-shim layer.\n\n* Implementing a faster way to port new applications by externally compiling.\n\n* Establishing a CI/CD system to ensure that new commits do not break libc compatibility.",
+          "difficulty": null,
+          "id": "proj_unikraft_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Bl7ARfep",
+          "proposal_id": "lTl5Vt0V",
+          "short_description": "One of the weak points of most unikernel projects has always been application support, often requiring that applications be ported to the target...",
+          "slug": "expanding-binary-compatibility-mode",
+          "status": "completed",
+          "student_name": "Tianyi Liu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Expanding binary compatibility mode"
+        },
+        {
+          "code_url": "https://github.com/unikraft/gsoc/blob/staging/gsoc-2023/work-product/Xingjian-Zhang-Arm-CCA-Support/Xingjian-Zhang-Arm-CCA-Support.md",
+          "description": "This project aims to add Arm Arm Confidential Computing Architecture (CCA) support to the Unikraft ecosystem, which is a step of “Unikraft as the Secure Configurable Unikernel”. Arm CCA is introduced in Arm v9 and it introduces new hardware features to make OS run as a confidential VM without trusting the underlying hypervisor. To achieve this goal, this project needs to finish the following tasks: 1) making CCA an option for Unikraft and adding support for necessary RSI commands; 2) preparing the FVP environment; 3)  Adding support for more advanced features like attestation and memory encryption; 4) testing the project using several applications.",
+          "difficulty": "advanced",
+          "id": "proj_unikraft_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/5oKH0o5n",
+          "proposal_id": "Qg5m2xkp",
+          "short_description": "This project aims to add Arm Arm Confidential Computing Architecture (CCA) support to the Unikraft ecosystem, which is a step of “Unikraft as the...",
+          "slug": "arm-cca-support-for-unikraft",
+          "status": "completed",
+          "student_name": "Zhang Xingjian",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Arm CCA Support for Unikraft"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/unikraft"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/unikraft/gsoc/tree/staging/gsoc-2024/work-product/Mihnea-Firoiu-Lxboot-Support-in-Unikraft",
+          "description": "While Unikraft may have the bare minimum implementation required to receive and process the information passed from Firecracker under the form of the Linux Boot Protocol structures, it is not able to boot through this protocol from more strict and proper environments such as QEMU, GRUB, U-Boot or any of the many open source bootloaders that speak this protocol. The main reason this does not happen is because the Unikraft bootable images are missing the Linux header.\n\nThe first step will be reading documentation and familiarizing myself with the project. I would estimate that this step will take about two weeks. The Linux x86 Boot Protocol will be studied and questions will be asked towards the community and the mentor. \n\nSecondly, a step for planning ahead the workflow that will dictate the way I will work on the project (two weeks). By doing this, a schedule will be set in place that will help me always be on time. Design the structure of the external program to parse bootloader metadata and generate the Linux Boot Protocol header. Comparing the x86 header to the ARM64 one could highlight  certain common traits that can be used to minimize the existent code.\n\nFinally, the coding period will start that will be summed up by taking feedback, discussing unforeseen problems, striving to meet deadlines. This will take approximately twelve weeks. At this time, the best course of action is to respect the planning done before and focus on integrating everything that can be picked from the UEFI script. The rest can be done after thorough testing and reviews from the community.",
+          "difficulty": null,
+          "id": "proj_unikraft_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/imWl9WWd/",
+          "proposal_id": null,
+          "short_description": "While Unikraft may have the bare minimum implementation required to receive and process the information passed from Firecracker under the form of the...",
+          "slug": "linux-x86-boot-protocol-support",
+          "status": "completed",
+          "student_name": "Mihnea Firoiu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Linux x86 Boot Protocol Support"
+        },
+        {
+          "code_url": "https://github.com/unikraft/gsoc/pull/18",
+          "description": "Unikraft is a unikernel capable to boot in various environments and through quite a few boot protocols. From supporting the first version of Multiboot, being able to boot through the Linux Boot Protocol on ARM64 and having its own UEFI stub enabling the Operating System to load without a Bootloader, Unikraft has still a lot to learn with respect to the booting environments it knows.\n\nOne such booting protocol that would be very useful is Multiboot2. This protocol represents a significant improvement over Multiboot version 1, providing improved flexibility in the realm of bootloaders. A notable improvement is the extended information provided by Multiboot2, which provides detailed and accurate communication between the bootloader and the operating system kernel during the bootstrapping process. In addition, Multiboot2 comes with a standardized tag system, enabling easier data and system configuration parsing between the bootloader and the kernel and allowing greater interoperability and better integration of boot modules. The introduction of optional commandline further enhances the flexibility of the boot process. Together, these enhancements contribute to a more robust and scalable bootstrapping mechanism, making Multiboot2 a better choice than Multiboot version 1.\n\nConcretely speaking, it would allow us to boot directly in 64-bit mode, while having access to pointers to the UEFI tables as well as the ACPI tables, unlike Multiboot 1, offering us access to more modern firmware interfaces. The task at hand involves integrating the Multiboot2 definitions as well as its corresponding bootstrapping code into Unikraft. Auxiliary scripts may be implemented to allow the automatic creation of Multiboot2-based Unikraft bootable images.",
+          "difficulty": null,
+          "id": "proj_unikraft_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/bolIUpVB/",
+          "proposal_id": null,
+          "short_description": "Unikraft is a unikernel capable to boot in various environments and through quite a few boot protocols. From supporting the first version of...",
+          "slug": "multiboot2-support-in-unikraft",
+          "status": "completed",
+          "student_name": "Maria Pana",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Multiboot2 Support in Unikraft"
+        },
+        {
+          "code_url": "https://github.com/unikraft/gsoc/blob/staging/gsoc-2024/work-product/Sriprad-Potukuchi-UEFI-GOP-Support/Sriprad-Potukuchi-UEFI-GOP-Support.md",
+          "description": "When it comes to modern baremetal environments as well as second generation Virtual Machines, Unikraft's ability to print debugging logs to the screen is limited.\n\nThe aim of this project is to support the modern UEFI GOP interface in Unikraft, which allows drawing fonts directly to the screen, thus enabling the printing of logs.\n\nUEFI GOP supports multiple rendering resolutions and color depths, ensuring close compatibility with all hardware systems.\n\nImplementing logging with UEFI GOP will greatly improve the development experience of Unikraft on UEFI-enabled targets, particularly targets where serial port consoles are unavailable.",
+          "difficulty": null,
+          "id": "proj_unikraft_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ndL0Gxgw/",
+          "proposal_id": null,
+          "short_description": "When it comes to modern baremetal environments as well as second generation Virtual Machines, Unikraft's ability to print debugging logs to the...",
+          "slug": "uefi-graphics-output-protocol-support-in-unikraft",
+          "status": "completed",
+          "student_name": "Sriprad Potukuchi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "UEFI Graphics Output Protocol Support in Unikraft"
+        },
+        {
+          "code_url": "https://github.com/unikraft/gsoc/blob/staging/gsoc-2024/work-product/Yang-Hu-Synchronization-Support-in-Internal-Libraries/Yang-Hu-Synchronization-Support-in-Internal-Libraries.md",
+          "description": "This project aims to integrate additional memory allocators with the Unikraft core library, enhancing support for multithreaded applications and expanding options for developers seeking specialized memory allocation solutions tailored to their needs.",
+          "difficulty": null,
+          "id": "proj_unikraft_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/j7NR4pqk/",
+          "proposal_id": null,
+          "short_description": "This project aims to integrate additional memory allocators with the Unikraft core library, enhancing support for multithreaded applications and...",
+          "slug": "synchronization-support-in-internal-libraries",
+          "status": "completed",
+          "student_name": "Yang Hu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Synchronization Support in Internal Libraries"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/unikraft/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project proposes modernizing and maintaining Unikraft application libraries (microlibraries) such as lib-nginx, lib-redis, lib-sqlite, lib-python3, lib-libgo, and lib-lua by:\n1. Updating them to their latest upstream versions\n2. Adopting the Directory-model for structured, scalable versioning\n3. Enhancing CI integration and creating automation scripts\n4. Validating compatibility with multiple Unikraft core versions\n5. Delivering tooling for library upgrades (e.g., kraft lib upgrade)\n6. Providing detailed documentation and testing frameworks\n\nThe goal is to reduce technical debt, streamline versioning and patching, and improve developer and contributor experience through a robust infrastructure overhaul.",
+          "difficulty": null,
+          "id": "proj_unikraft_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/1dZJgC9t",
+          "proposal_id": "EOqTcIOB",
+          "short_description": "This project proposes modernizing and maintaining Unikraft application libraries (microlibraries) such as lib-nginx, lib-redis, lib-sqlite,...",
+          "slug": "update-unikraft-application-libraries",
+          "status": "in-progress",
+          "student_name": "abhinav_1203",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai"
+          ],
+          "title": "Update Unikraft Application Libraries"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on restoring and modernizing Newlib support within the Unikraft unikernel framework, which previously removed Newlib after version 0.11.0. The main goal is to port a newer version of Newlib and integrate it with pthread-embedded to enable proper multithreading support. A significant part of the work includes ensuring that pthread-embedded functions correctly alongside Musl’s existing pthread implementation, avoiding any conflicts that could arise from having two threading systems. The project also includes developing practical example applications that demonstrate the use of pthreads with both Newlib and Musl, making it easier for other developers to adopt and understand threading in Unikraft. Overall, this effort is expected to enhance Unikraft’s flexibility, improve its threading model, increase system stability through thorough testing, and broaden its appeal by giving developers more runtime options and better documentation.",
+          "difficulty": null,
+          "id": "proj_unikraft_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Q1hFzB7p",
+          "proposal_id": "RXgtyN7u",
+          "short_description": "This project focuses on restoring and modernizing Newlib support within the Unikraft unikernel framework, which previously removed Newlib after...",
+          "slug": "update-newlib-and-pthread-embedded-libraries",
+          "status": "in-progress",
+          "student_name": "Abolfazl Soltanisamani",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Update Newlib and Pthread-embedded Libraries"
+        },
+        {
+          "code_url": null,
+          "description": "Unikraft, a lightweight unikernel, demonstrated top-tier performance in the EuroSys 2021 paper, but its 2025 version may have regressed. This project evaluates and improves Unikraft’s current performance by re-running the 2021 benchmarks, identifying bottlenecks, and optimizing them. I’ll study the eurosys21-artifacts repository to adapt its benchmarking setup, profile Unikraft for inefficiencies, and implement targeted fixes. Deliverables include a new repository with updated experiments, GitHub issues detailing bottlenecks, and GitHub PRs with performance-enhancing patches, aiming to restore or surpass Unikraft’s 2021 advantages.",
+          "difficulty": null,
+          "id": "proj_unikraft_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/UeazUSm1",
+          "proposal_id": "jgBqSUYq",
+          "short_description": "Unikraft, a lightweight unikernel, demonstrated top-tier performance in the EuroSys 2021 paper, but its 2025 version may have regressed. This project...",
+          "slug": "fine-tuning-unikrafts-performance",
+          "status": "in-progress",
+          "student_name": "Ashirvad Mohanty",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fine-tuning Unikraft's Performance"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to expand the Unikraft ecosystem by enabling the execution of popular applications through binary-compatibility mode. Currently, many popular applications are not supported on Unikraft, and this project will address that gap by integrating these applications into the Unikraft catalog. I will work on adding a variety of applications, such as MinIO, Consul, Traefik, and others, to the Unikraft catalog. The project will also involve extending or adding new system calls to ensure proper functionality, writing automated GitHub workflow files, and creating thorough test cases to validate that these applications run correctly. Additionally, the project will focus on performance benchmarking and resource usage measurements to ensure efficient operation within the unikernel environment. This project will significantly enhance Unikraft's application compatibility, making it more attractive to developers and helping grow the Unikraft community.",
+          "difficulty": null,
+          "id": "proj_unikraft_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Nq7LcmEV",
+          "proposal_id": "WGMDRzoO",
+          "short_description": "The goal of this project is to expand the Unikraft ecosystem by enabling the execution of popular applications through binary-compatibility mode....",
+          "slug": "expanding-the-unikraft-software-support-ecosystem",
+          "status": "in-progress",
+          "student_name": "prasoon054",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expanding the Unikraft Software Support Ecosystem"
+        },
+        {
+          "code_url": null,
+          "description": "I have to develop a testing framework that is able to multiplex the variety of configuration options, VMMs, hypervisors, architectures, boot protocols, to validate the successful building and running of unikernel images. This framework can configure, build, run and test the variety of Unikraft builds. It is written in Python and is subject to improvements and refactoring.\nI must augment the testing infrastructure to make it seamless to be used by Unikraft developers and users. To this end we aim to:\n•\tConsolidate the testing framework as a separate project inside its own repository.\n•\tHave the testing framework work out-of-the-box with the catalog and catalog-core repositories.\n•\tIntegrate the testing framework with the CI/CD system used in the Unikraft organization repositories to automatically validate builds for contributions. Tests are to be triggered each time a pull request is open in the unikraft and in core library repositories.",
+          "difficulty": null,
+          "id": "proj_unikraft_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/XAFE48Dj",
+          "proposal_id": "E8qz8Yyx",
+          "short_description": "I have to develop a testing framework that is able to multiplex the variety of configuration options, VMMs, hypervisors, architectures, boot...",
+          "slug": "testing-framework-for-unikraft-builds",
+          "status": "in-progress",
+          "student_name": "Shashank Srivastava",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Testing Framework for Unikraft Builds"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/unikraft"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://unikraft.org/docs/contributing/",
+    "ideas_url": "https://github.com/unikraft/gsoc/blob/staging/gsoc-2025/ideas.md",
+    "irc_channel": "https://bit.ly/UnikraftDiscord",
+    "mailing_list": "https://github.com/unikraft/unikraft/discussions"
+  },
+  "social": {
+    "blog": "https://unikraft.org/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/unikraftsdk",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.424Z"
+  }
+}

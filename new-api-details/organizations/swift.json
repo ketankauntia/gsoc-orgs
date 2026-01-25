@@ -1,0 +1,641 @@
+{
+  "id": "692251e853dd9d7326d33ec0",
+  "slug": "swift",
+  "name": "Swift",
+  "category": "Programming languages",
+  "description": "Fast, safe, and expressive programming language",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/swift/moutmu5fv3rozvrz-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/swift.webp",
+  "logo_r2_url": null,
+  "url": "https://swift.org",
+  "active_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2018,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "llvm",
+    "c++",
+    "cmake",
+    "swift",
+    "ios",
+    "programming languages",
+    "compilers",
+    "server"
+  ],
+  "topics": [
+    "compilers",
+    "programming languages",
+    "programming",
+    "developer tools",
+    "debugging",
+    "programming languages and development tools",
+    "package management",
+    "programming libraries",
+    "cross-platform",
+    "Packages",
+    "Server development",
+    "Standard Libraries"
+  ],
+  "total_projects": 26,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.25,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": 0,
+      "year_2019": 1,
+      "year_2020": 4,
+      "year_2021": 5,
+      "year_2022": 5,
+      "year_2023": 3,
+      "year_2024": 4,
+      "year_2025": 4
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": 0,
+      "year_2019": 1,
+      "year_2020": 4,
+      "year_2021": 5,
+      "year_2022": 5,
+      "year_2023": 3,
+      "year_2024": 4,
+      "year_2025": 4
+    },
+    "total_students": 24
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": {
+      "num_projects": 0,
+      "projects": [],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5146674678726656/"
+    },
+    "year_2019": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1aRQ4v91gzIgsiqC6Cqo1MBtqm8Q_rsDWcqbz7A9HfVY/edit?usp=sharing",
+          "description": "<p>Over the last couple of years, the Swift compiler has gained a new library called libSyntax. Its purpose is to represent the syntax of Swift source code with full fidelity (including white-space), enable structured editing and provide immutable, thread-safe data structures.</p>\n<p>This paper proposes that the Swift parser fully embraces the new libSyntax library in its parser and stops emitting ASTs. This will allow more parts of the compiler pipeline to eventually leverage the capabilities of the new library.</p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5925163453906944/",
+          "proposal_id": null,
+          "short_description": "Over the last couple of years, the Swift compiler has gained a new library called libSyntax. Its purpose is to represent the syntax of Swift source...",
+          "slug": "integrating-libsyntax-with-the-rest-of-the-compiler-pipeline",
+          "status": "completed",
+          "student_name": "Jan Svoboda",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Integrating libSyntax with the Rest of the Compiler Pipeline"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6407128493850624/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1RlkVI2B0hpKAXsNQN3b4_kVYdSwXNl-2yH6poVu02q4/edit?usp=sharing",
+          "description": "<p>Diagnostics play a vital role in a programming language experience. It’s vital for developer productivity that the compiler can produce proper guidance in any situation, especially incomplete or invalid code through messages. However, the diagnostic messages might be helpful in much time; for the non-English speakers, it’s not.</p>\n<p>As a step towards the goal of making Swift programming language more accessible for non-English speakers, this proposal extends the Swift compiler to allow it to produce localized diagnostic messages.</p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6639952672063488/",
+          "proposal_id": null,
+          "short_description": "Diagnostics play a vital role in a programming language experience. It’s vital for developer productivity that the compiler can produce proper...",
+          "slug": "localization-of-compiler-diagnostic-messages",
+          "status": "completed",
+          "student_name": "Hassan ElDesouky",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Localization of Compiler Diagnostic Messages"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/10Zhus-95thtlGuIVSFlCyhuuHUnDG-8nDnWepFbiXck/edit?usp=sharing",
+          "description": "<p>Swift supports multiple levels of optimizations per single module. This project aims to achieve LTO support for Swift at LLVM level and at Swift’s intermediate representation level to do more aggressive optimization across modules.</p>\n<p>This proposal suggests language-agnostic LTO support and linker plugin implementation for Swift specific LTO.</p>\n<p>The linker plugin will be able to accept serialized Swift Intermediate Language (SIB) files for multiple modules and performs cross-module optimization passes (e.g. Dead Code Elimination, Inlining).</p>\n<p>As a result, it’s expected to achieve significant binary size reduction and runtime performance improvements.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_swift_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5093814072508416/",
+          "proposal_id": null,
+          "short_description": "Swift supports multiple levels of optimizations per single module. This project aims to achieve LTO support for Swift at LLVM level and at Swift’s...",
+          "slug": "lto-support-for-swift",
+          "status": "completed",
+          "student_name": "kateinoigakukun",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "LTO support for Swift"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/google-summer-of-code-final-report/39893",
+          "description": "<p>Debuggers are essential tools in aiding developers to do their work more efficiently. They are inherently tied to the target  operating system, and therefore require platform-specific work in order to deliver functional parity between different platforms. Swift is a multi-platform programming language, and having a good debugging experience in all platforms is beneficial for the language. With that in mind, I propose to improve LLDB’s support on the Linux operating system by: fixing Swift type metadata parsing for ELF objects; unifying queries of dynamic type resolution under the RemoteMirrors API; and, finally, enabling tests which currently do not run on Linux, or are marked as expected to fail.</p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4877023215878144/",
+          "proposal_id": null,
+          "short_description": "Debuggers are essential tools in aiding developers to do their work more efficiently. They are inherently tied to the target  operating system, and...",
+          "slug": "improving-swifts-debugger-experience-on-linux",
+          "status": "completed",
+          "student_name": "Augusto Noronha",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Improving Swift’s Debugger experience on Linux"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/current-state-of-swift-tracing/39830",
+          "description": "<p>Libraries for <a href=\"https://github.com/apple/swift-log\" target=\"_blank\">Logging</a> and <a href=\"https://github.com/apple/swift-metrics\" target=\"_blank\">Metrics</a>, embraced by the Serverside Swift Work Group, have enabled many Swift projects to simplify their code bases by removing their own implementations. However, there’s currently no official story for distributed tracing.</p>\n<p>This project aims to kick off the work on a distributed tracing infrastructure for the Swift ecosystem by creating a context propagation library with integration points for Swift NIO, AsyncHTTPClient, Swift gRPC, URLSession, and more.</p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6305735463403520/",
+          "proposal_id": null,
+          "short_description": "Libraries for Logging and Metrics, embraced by the Serverside Swift Work Group, have enabled many Swift projects to simplify their code bases by...",
+          "slug": "swift-server-tracing",
+          "status": "completed",
+          "student_name": "slashmo",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Swift (Server) Tracing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/4543471290941440/"
+    },
+    "year_2021": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/stevapple/gsoc-2021-writeups",
+          "description": "<p>This proposal aims to bring scripting support to SwiftPM. The goal for GSoC is some kind of proof-of-concept and is expected to be the foundation of a full implementation of this feature. The outcome is expected to be a prototype of the new <code>swift-script</code> tool, which has a limited set of basic operations implemented like <code>run</code> and <code>reset</code>. There will also be a new flag for Swift Driver which enables a shortcut to the feature through <code>swift</code> command.</p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6406944385925120/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to bring scripting support to SwiftPM. The goal for GSoC is some kind of proof-of-concept and is expected to be the foundation of...",
+          "slug": "swiftpm-support-for-swift-scripts",
+          "status": "completed",
+          "student_name": "Yongrong Chen",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "SwiftPM support for Swift scripts"
+        },
+        {
+          "code_url": "https://gist.github.com/fwcd/20199db534ba3c9f1be59abba69cb249",
+          "description": "<p>Inlay hints take advantage of Swift's powerful type inference by visualizing inferred types throughout a Swift program in the editor. This makes it easier to read and understand Swift code, all while letting the programmer write concise code, without having to spell out every type. To achieve this, a custom LSP request is introduced that fetches the inferred types of unannotated variable bindings from the language server which, in turn, queries <code>sourcekitd</code> for the required information. The request will be called by the editor, e.g. VSCode, which will subsequently present the corresponding text decorations.</p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4721958352060416/",
+          "proposal_id": null,
+          "short_description": "Inlay hints take advantage of Swift's powerful type inference by visualizing inferred types throughout a Swift program in the editor. This makes it...",
+          "slug": "inlay-type-hints-for-sourcekit-lsp",
+          "status": "completed",
+          "student_name": "Fredrik Wieczerkowski",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Inlay type hints for SourceKit-LSP"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/gsoc-shared-storage-for-property-wrappers-and-expanded-parameters/51355",
+          "description": "<p>Property Wrappers are responsible for wrapping common getting and setting boilerplate and also for storing any auxiliary helpers. Often, these helpers are the same across different instances of the wrapper. Thus, having to store it in each individual wrapper instance is a waste that should be avoided.\nWe can solve this by introducing a static storage that is shared across instances, within the scope of where they are declared. Thus, providing a tool for property wrapper authors to optimize their wrapper abstractions.</p>\n<pre><code>@propertyWrapper(shared: Storage)\nstruct Clamped {\n    private var value: Value\n\n    struct Storage {\n        let range: ClosedRange&lt;Value&gt;\n        init(_ range: ClosedRange&lt;Value&gt;) { // ... } \n    }\n\n    // wrappedValue would be accessed through a subscript\n    subscript(shared storage: Storage) -&gt; Value {\n        get { value }\n        set { value = storage.range.clamping(newValue) }\n    }\n}\n</code></pre>\n",
+          "difficulty": null,
+          "id": "proj_swift_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4862276208689152/",
+          "proposal_id": null,
+          "short_description": "Property Wrappers are responsible for wrapping common getting and setting boilerplate and also for storing any auxiliary helpers. Often, these...",
+          "slug": "shared-storage-for-property-wrappers",
+          "status": "completed",
+          "student_name": "Isabel Lima",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Shared Storage for Property Wrappers"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/bit-array-and-bit-set-api-review-the-end-of-a-gsoc-review/51396",
+          "description": "<p>View the final API Review here: <a href=\"https://forums.swift.org/t/bit-array-and-bit-set-api-review-the-end-of-a-gsoc-project/51396\" target=\"_blank\">https://forums.swift.org/t/bit-array-and-bit-set-api-review-the-end-of-a-gsoc-project/51396</a></p>\n",
+          "difficulty": null,
+          "id": "proj_swift_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4876271292514304/",
+          "proposal_id": null,
+          "short_description": "View the final API Review here: https://forums.swift.org/t/bit-array-and-bit-set-api-review-the-end-of-a-gsoc-project/51396",
+          "slug": "a-bite-sized-bitarray",
+          "status": "completed",
+          "student_name": "Mahanaz Atiqullah",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "A \"Bite-Sized\" BitArray"
+        },
+        {
+          "code_url": "https://gist.github.com/justinfargnoli/cea6de8cf889c0fa0a1bdaf9ff9fd414",
+          "description": "<p>The <a href=\"https://docs.google.com/document/d/1dOK9FYKf2egZcYqrR3rdtF8o2ykTdVxwuuwZcrs5lwQ/edit#heading=h.b4gt1ulsb82o\" target=\"_blank\">Alive for SIL</a> project aims to build a tool that will find errors in optimizations performed by the Swift compiler.</p>\n<p><a href=\"https://swift.org/swift-compiler/#compiler-architecture\" target=\"_blank\">SIL</a> (a.k.a. Swift Intermediate Language) is an IR (a.k.a. intermediate representation) used within the Swift compiler between the Swift AST and LLVM IR. SIL enables the Swift compiler to perform Swift-specific optimizations.</p>\n<p><a href=\"https://sf.snu.ac.kr/publications/alive2.pdf\" target=\"_blank\">Alive</a> is a tool that formally verifies the correctness of optimizations performed on LLVM IR and produces counterexamples when such optimizations are incorrect. For example, if an optimization accidentally adds undefined behavior into a program, then Alive2 would be able to find this error and produce an example that exposes the undefined behavior.</p>\n<p>This project aims to extend Alive to verify the correctness of optimizations performed on SIL.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_swift_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5984156026142720/",
+          "proposal_id": null,
+          "short_description": "The Alive for SIL project aims to build a tool that will find errors in optimizations performed by the Swift compiler.\nSIL (a.k.a. Swift Intermediate...",
+          "slug": "alive-for-sil",
+          "status": "completed",
+          "student_name": "Justin Fargnoli",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Alive for SIL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4908645044715520/"
+    },
+    "year_2022": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/apple/swift/pull/59971",
+          "description": "Swift’s type inference algorithm allows us to write source code without explicit type notations. It is implemented using a type checker that breaks up the source code into subexpressions and generates their abstract type variables and type relationships to create a constraint system that maps out all of these components of the subexpressions of the source code and helps the compiler deduce the missing concrete type information from this context. These type variables, their interrelationships, and the final type-checked expressions can be printed as debug information to help compiler developers understand this process. However, the current debug output is hard to understand, wordy and repetitive, with a format that is difficult to follow. This proposal will reorganize and rewrite the debug output of the type inference algorithm to make it more human-friendly and improve the debugging experience for new and experienced Swift compiler developers.",
+          "difficulty": null,
+          "id": "proj_swift_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/lTuJeWjs/",
+          "proposal_id": null,
+          "short_description": "Swift’s type inference algorithm allows us to write source code without explicit type notations. It is implemented using a type checker that breaks...",
+          "slug": "improving-the-debug-output-of-the-type-inference-algorithm",
+          "status": "completed",
+          "student_name": "Amritpan Kaur",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the Debug Output Of The Type Inference Algorithm"
+        },
+        {
+          "code_url": "https://github.com/apple/swift-argument-parser/issues/449",
+          "description": "For this project, we would design and implement an interactive mode for command-line tools built using ArgumentParser that prompts for any required arguments not given in the initial command.\n\nIn the past, users would get lengthy error messages and help text when the command is incomplete. Interactive mode will reduce duplication and provide a conversational CLI which is both easier to write and easier to read.",
+          "difficulty": null,
+          "id": "proj_swift_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ynUKk8wd/",
+          "proposal_id": null,
+          "short_description": "For this project, we would design and implement an interactive mode for command-line tools built using ArgumentParser that prompts for any required...",
+          "slug": "interactive-mode-for-swift-cli-tool-argumentparser",
+          "status": "completed",
+          "student_name": "Kth",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Interactive mode for swift CLI tool ArgumentParser"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/pitch-quick-navigation-in-docc-render/59550",
+          "description": "DocC Render is an open-sourced project that let us visualize `.doccarchive` on the web, it renders the compiled Swift codebase documentation in a clean and standardized UI making it easier for developers to learn, review and share packages and frameworks documentation. \n\nThe codebase documentation can get very large easily and right now the DocC rendered website only provides certain filter and search capabilities through the sidebar, but besides that, there's no convenient way to explore the docs. \n\nIn this project we are going to design and implement the “Quick Navigation” feature into swift-docc-render, allowing users to navigate and discover documentation symbols and files easily.\n\nSimilar to \"Open Quickly\" in Xcode and other web-based documentation sites we will let the user type and find what they are looking for through some cool capabilities including fuzzy search, quick access to recent symbols, and keyboard navigation.",
+          "difficulty": null,
+          "id": "proj_swift_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/R3HQnNal/",
+          "proposal_id": null,
+          "short_description": "DocC Render is an open-sourced project that let us visualize `.doccarchive` on the web, it renders the compiled Swift codebase documentation in a...",
+          "slug": "quick-navigation-in-docc-render",
+          "status": "completed",
+          "student_name": "Sofía Rodríguez",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Quick navigation in DocC Render"
+        },
+        {
+          "code_url": "https://gist.github.com/fwcd/b70cc91a27a4d00baf869785a3bf8a6d",
+          "description": "Providing excellent tooling for Swift often involves operating on Swift syntax trees directly. The swift-syntax library serves this purpose by providing a Swift representation of syntax trees, along with facilities to parse and generate Swift code. To make code generation especially convenient, the library includes a Domain-Specific Language (DSL) for building syntax trees that, however, currently relies on external tooling to generate a large part of its own definitions. To test the DSL on a non-trivial codebase and to make it production-ready, we will rewrite the syntax builder in itself, generating its sources using its own DSL and thereby bootstrapping its implementation.",
+          "difficulty": null,
+          "id": "proj_swift_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/2a55KowT/",
+          "proposal_id": null,
+          "short_description": "Providing excellent tooling for Swift often involves operating on Swift syntax trees directly. The swift-syntax library serves this purpose by...",
+          "slug": "bootstrapping-swiftsyntaxbuilder",
+          "status": "completed",
+          "student_name": "Fredrik Wieczerkowski",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Bootstrapping SwiftSyntaxBuilder"
+        },
+        {
+          "code_url": "https://github.com/swift-server/swift-kafka-gsoc",
+          "description": "Apache Kafka is a distributed event streaming platform that is very widely used to process and store data. This project aims to create a Swift Package that enables Swift developers to send and receive data in the Kafka ecosystem while also taking advantage of the new Swift Concurrency features. At first, this shall be achieved by wrapping an existing C library called librdkafka.",
+          "difficulty": null,
+          "id": "proj_swift_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/5nq3GuxI/",
+          "proposal_id": null,
+          "short_description": "Apache Kafka is a distributed event streaming platform that is very widely used to process and store data. This project aims to create a Swift...",
+          "slug": "kafka-client-package-for-swift",
+          "status": "completed",
+          "student_name": "Felix Schlegel",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Kafka Client Package for Swift"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/swift/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/apple/swift/pull/67297",
+          "description": "SE-0249 introduced key path expressions as functions to the Swift language, to allow Swift users to write a more concise \\Root.value in place of the more verbose { $0[keyPath: \\.<member>] } wherever key paths are used as literal expressions. During compilation, the key path expression root and value are sequentially type-checked to resolve a key path type from this context. However, the current design of how the type-checker evaluates key path component types, their relationships to each other, and key path capabilities results in incongruous compiler errors for otherwise valid Swift code. This proposal briefly explores how key path expressions are type-checked today and suggests how this type-checker process can be made more robust, dependable, and faster.",
+          "difficulty": null,
+          "id": "proj_swift_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/w2oMo4BC",
+          "proposal_id": "WDww7XAC",
+          "short_description": "SE-0249 introduced key path expressions as functions to the Swift language, to allow Swift users to write a more concise \\Root.value in place of the...",
+          "slug": "key-path-inference-and-diagnostic-improvements",
+          "status": "completed",
+          "student_name": "Amritpan Kaur",
+          "student_profile": null,
+          "tags": [],
+          "title": "Key Path inference and diagnostic improvements"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/gsoc-2023-swift-memcache-gsoc-project-kickoff/64932",
+          "description": "I will be developing a native Swift Memcached client using SwiftNIO to address the need for an efficient and user-friendly caching solution in Swift based applications. The goal is to provide a high performance client that integrates seamlessly with existing Swift ecosystems, simplifying the process of sending commands and receiving responses from memcached servers. Our focus is on implementing the Memcached meta protocol, request encoding, response decoding, and request pipelining, while the non-goals is to cover every memcached feature or command. This project aims to benefit developers by offering an asynchronous-first Swift API for essential memcached operations, ultimately enhancing the caching capabilities of their applications.",
+          "difficulty": null,
+          "id": "proj_swift_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/wdnBvz3G",
+          "proposal_id": "IZAethTf",
+          "short_description": "I will be developing a native Swift Memcached client using SwiftNIO to address the need for an efficient and user-friendly caching solution in Swift...",
+          "slug": "swift-native-implementation-of-a-memcached-client-using-swiftnio-for-the-networking-stack",
+          "status": "completed",
+          "student_name": "dkz",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Swift native implementation of a Memcached Client using SwiftNIO for the networking stack."
+        },
+        {
+          "code_url": "https://gist.github.com/StevenWong12/8a5fd948f0b4957267a69140b188ab6e",
+          "description": "Considering the performance, instead of reparsing the entire file every time, we could speed up the parsing procedure with the information provided by old AST, which is an ability provided by the old parser.\n\nIn the old implementation, this feature was only applied to CodeBlockList and MemberDeclList. In the new implementation, It would be nice to apply node reusing to other syntax collections e.g. exprList, functionParameterList, etc.  \n\nAlso, It would be good to allow more fine-grained reusable nodes via expanding the definition of nodeAtCursorCanBeReused to allow reusing nodes such as FunctionDeclSyntax where only identifier is changed.",
+          "difficulty": null,
+          "id": "proj_swift_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/youSUzrO",
+          "proposal_id": "Mc4j7Ihk",
+          "short_description": "Considering the performance, instead of reparsing the entire file every time, we could speed up the parsing procedure with the information provided...",
+          "slug": "implement-incremental-re-parsing-in-swiftparser",
+          "status": "completed",
+          "student_name": "Ziyang Huang",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implement Incremental Re-Parsing in SwiftParser"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/swift"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://esraaeiid.github.io/posts/GSoC-Write-a-Swift-code-generator-to-support-the-creation-of-SAM-deployment-descriptor",
+          "description": "Deploying AWS Lambda functions using AWS SAM (Serverless Application Model) requires manual creation of a deployment descriptor, posing challenges for Swift developers due to learning a new DSL and adopting new tools like SAM CLI and Docker. To simplify this process, the community proposed a Swift-based DSL and a Swift package plugin. However, these solutions rely heavily on accurately mimicking the evolving SAM AWS deployment descriptor.\n\nTo address this, this project proposes to automatically generate the AWSLambdaDeploymentDescriptor library based on the SAM template definition. That generated code is used by the Swift-based DSL to create SAM YAML templates required to deploy Lambda functions and their dependencies to AWS.",
+          "difficulty": null,
+          "id": "proj_swift_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/KSQWXrJU/",
+          "proposal_id": null,
+          "short_description": "Deploying AWS Lambda functions using AWS SAM (Serverless Application Model) requires manual creation of a deployment descriptor, posing challenges...",
+          "slug": "write-a-swift-code-generator-to-support-the-creation-of-sam-deployment-descriptor",
+          "status": "completed",
+          "student_name": "Esraa Eid",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "docker",
+            "ui"
+          ],
+          "title": "Write a Swift code generator to support the creation of SAM deployment descriptor"
+        },
+        {
+          "code_url": "https://forums.swift.org/t/gsoc-2024-expansion-of-swift-macros-in-visual-studio-code-detailed-post-lokesh-t-r-alex-hoppen-adam-fowler/74163",
+          "description": "“Implementing a Code Action in Visual Studio Code to show the\nexpansion of a Swift Macro in a peeked editor”.\n\nSwift Macros allow the generation of source code at compile time. While this provides concise code and avoids repetition of common paradigms, understanding the source code can become harder if it is unknown what the macro expands to.\n\nVisual Studio Code using the Swift Extension currently has limited ability to show the code generated by a macro by invoking a code action that replaces the macro by its generated code inside the current source file.\n\nThe project’s goal is to implement a code action to show the macro-generated code without modifying the current source file. This includes the implementation of a request in sourcekit-lsp to compute the contents of the macro expansion and support in the Visual Studio Swift Extension to display that content.\n\nAs a stretch goal, Visual Studio Code should also offer semantic functionality like jump-to-definition inside the macro expansion and allow the expansion of nested macros.\n\n*Deliverables*:\n1. An Expand Macro Code Action in VS Code that shows the generated contents of a swift macro in a peeked editor\n2. Support for Semantic Functionality such as jump-to-defintion, hover, syntax highlighting in the peeked editor\n3. Allow expanding macros generated from macro in the peeked editor i.e. Nested Macro Expansion\n4. Add a standard request support for other LSP-based editors giving them ability to expand macros upto the first level.",
+          "difficulty": null,
+          "id": "proj_swift_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/zQNf7ztP/",
+          "proposal_id": null,
+          "short_description": "“Implementing a Code Action in Visual Studio Code to show the expansion of a Swift Macro in a peeked editor”. Swift Macros allow the generation of...",
+          "slug": "expansion-of-swift-macros-in-visual-studio-code",
+          "status": "completed",
+          "student_name": "Lokesh T R",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expansion of Swift Macros in Visual Studio Code"
+        },
+        {
+          "code_url": "https://www.jakubflorek.com/posts/gsoc-2024",
+          "description": "This proposal describes how we can implement Lexical scopes library for swift-syntax. The library would describe what declarations are available in what scopes, would enable looking up declarations of particular references as well as finding what scopes that keywords refer to. The functionality would be beneficial especially from the compiler and IDE perspective.\n\nThis approach focuses on creating a tree structure under a common protocol that would enable a bottom-up recursive reference lookup. In order to directly access scope information, AST nodes would be extended with additional scope-related properties.",
+          "difficulty": null,
+          "id": "proj_swift_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/EPNFLBXw/",
+          "proposal_id": null,
+          "short_description": "This proposal describes how we can implement Lexical scopes library for swift-syntax. The library would describe what declarations are available in...",
+          "slug": "lexical-scopes-for-swift-syntax",
+          "status": "completed",
+          "student_name": "Jakub Florek",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Lexical scopes for swift-syntax"
+        },
+        {
+          "code_url": "https://github.com/swift-server/swift-etcd-client-gsoc",
+          "description": "Developing a native Swift-etcd client aims to seamlessly integrate etcd, a distributed Swift key-value store into Swift applications. This project aims to enable developers to have efficient communication with etcd servers via gRPC API, by targeting authentication, key-value operations, watch operations, and lease management.",
+          "difficulty": null,
+          "id": "proj_swift_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/qn0MgoxJ/",
+          "proposal_id": null,
+          "short_description": "Developing a native Swift-etcd client aims to seamlessly integrate etcd, a distributed Swift key-value store into Swift applications. This project...",
+          "slug": "swift-etcd-a-native-client-for-seamless-integration-with-etcd-servers",
+          "status": "completed",
+          "student_name": "AyushiTiwari",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Swift-etcd: A Native Client for Seamless Integration with etcd Servers"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/swift/"
+    },
+    "year_2025": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Currently, SourceKit-LSP only shows the first line of the documentation for code completion items. Furthermore, it doesn’t support the Language Server Protocol’s (LSP) signature help request which provides information about the function or subscript being completed like alternative signatures, documentation, parameter list, and parameter-specific documentation.\n\nThe goal of this project is to enhance how SourceKit-LSP displays documentation for code completion items by:\n1. Providing the full documentation for code completion items rather than the first line only.\n2. Implementing LSP’s signature help request to provide richer guidance for completing function/subscript signatures.\n\nThe implementation will require changes in SourceKit-LSP and sourcekitd in the Swift compiler codebase. This will enhance the developer experience for Swift developers using SourceKit-LSP on editors like Visual Studio Code and Neovim aligning with Swift’s vision of cross-platform support.",
+          "difficulty": null,
+          "id": "proj_swift_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/CgWk0OF5",
+          "proposal_id": "kB2joC94",
+          "short_description": "Currently, SourceKit-LSP only shows the first line of the documentation for code completion items. Furthermore, it doesn’t support the Language...",
+          "slug": "improve-the-display-of-documentation-during-code-completion-in-sourcekit-lsp",
+          "status": "in-progress",
+          "student_name": "Ahmed Elrefaey",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Improve the display of documentation during code completion in SourceKit-LSP"
+        },
+        {
+          "code_url": null,
+          "description": "The swift-java interoperability library provides the jextract-swift tool, which extracts Java sources that are used to call Swift code from Java. However, the tool uses the Foreign Function and Memory API (FFM), which requires JDK 22+, making it unavailable on platforms such as Android. The goal of this proposal is to extend the jextract-swift tool, such that it is able to generate Java sources using JNI instead of FFM and thereby allowing more platforms to utilize Swift/Java interoperability.\n\nThe solution will modify the code generation to support multiple modes through a protocol. Thereby, allowing us to generate JNI Java wrappers that that utilize the JNI functionality already defined in the library. We will modify the current Arena implementations to support memory management for JNI as well, through calls to the Swift runtime. The library will also generate Swift thunks that implement the native methods defined in Java and handle JNI/Swift conversion and object initialization. \n\nThe project will achieve feature parity with the current FFM mode and explore more complex language features, if time permits.",
+          "difficulty": "advanced",
+          "id": "proj_swift_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/oIpmPLvm",
+          "proposal_id": "ykQ4dntF",
+          "short_description": "The swift-java interoperability library provides the jextract-swift tool, which extracts Java sources that are used to call Swift code from Java....",
+          "slug": "jni-mode-for-swift-javas-source-jextract-tool",
+          "status": "in-progress",
+          "student_name": "Mads Odgaard",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "android",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "JNI mode for swift-java’s source jextract tool"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to integrate Swiftly with the Swift Extension for VSCode. It should allow users to install Swiftly and Swift toolchains in the VSCode editor toolchains directly within the VSCode editor.\n\nCurrently, we have the “Swift Extension of VS Code,” which provides code completion and LSP integration, error annotations with applicable suggestions, automatic generation of launch configurations for debugging, automatic task creation, Swift PM integration, and test explorer view. \n\nSince different projects may require different versions of Swift toolchains, we want to integrate with Swiftly to provide a seamless toolchain selection experience in VSCode.",
+          "difficulty": null,
+          "id": "proj_swift_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/OnmTLTo3",
+          "proposal_id": "dr7ZM4V0",
+          "short_description": "This project aims to integrate Swiftly with the Swift Extension for VSCode. It should allow users to install Swiftly and Swift toolchains in the...",
+          "slug": "swiftly-integration-in-vs-code",
+          "status": "in-progress",
+          "student_name": "Priyambada Roul",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Swiftly Integration in VS Code"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the console output experience for the Swift Testing framework. The goal is to design and implement a new reporting component that formats test output with improved readability, including live progress bars, hierarchical test structures, test metadata (display names, tags), parameterized arguments, and color-coded statuses. The work involves building a modular reporting layer that listens to testing events, integrates with Swift Package Manager, and supports user-configurable output options. Deliverables include a working implementation behind an experimental flag, documentation, community discussion proposals, and visual demonstrations of the improved output.",
+          "difficulty": null,
+          "id": "proj_swift_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/cdZEDJcL",
+          "proposal_id": "vT3Af5wb",
+          "short_description": "This project aims to enhance the console output experience for the Swift Testing framework. The goal is to design and implement a new reporting...",
+          "slug": "improved-console-output-for-swift-testing",
+          "status": "in-progress",
+          "student_name": "Tien Quoc Bui",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improved Console Output for Swift Testing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/swift"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "core-team@swift.org",
+    "guide_url": "https://www.swift.org/contributing/",
+    "ideas_url": "https://www.swift.org/gsoc2025/",
+    "irc_channel": null,
+    "mailing_list": "https://forums.swift.org"
+  },
+  "social": {
+    "blog": "https://swift.org/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/SwiftLang",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.307Z"
+  }
+}

@@ -1,0 +1,888 @@
+{
+  "id": "692251ed53dd9d7326d33f09",
+  "slug": "cbioportal-for-cancer-genomics",
+  "name": "cBioPortal for Cancer Genomics",
+  "category": "Science and medicine",
+  "description": "Aid discovery in complex cancer genomics data",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/cbioportal-for-cancer-genomics/fdxtjhb0urtqcyfe-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/cbioportal-for-cancer-genomics.webp",
+  "logo_r2_url": null,
+  "url": "https://www.cbioportal.org/",
+  "active_years": [
+    2016,
+    2017,
+    2019,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "javascript",
+    "java",
+    "web",
+    "html",
+    "big data",
+    "web services",
+    "reactjs",
+    "database",
+    "web apps",
+    "mysql",
+    "react",
+    "typescript"
+  ],
+  "topics": [
+    "genomics",
+    "cancer",
+    "bioinformatics",
+    "biology",
+    "precision medicine",
+    "big data",
+    "data visualization",
+    "cancer research"
+  ],
+  "total_projects": 38,
+  "stats": {
+    "avg_projects_per_appeared_year": 5.43,
+    "projects_by_year": {
+      "year_2016": 5,
+      "year_2017": 6,
+      "year_2018": null,
+      "year_2019": 6,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 2,
+      "year_2023": 6,
+      "year_2024": 9,
+      "year_2025": 4
+    },
+    "students_by_year": {
+      "year_2016": 5,
+      "year_2017": 6,
+      "year_2018": null,
+      "year_2019": 6,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 2,
+      "year_2023": 6,
+      "year_2024": 9,
+      "year_2025": 4
+    },
+    "total_students": 38
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/shrumit/ff3c282f9e2e5260d1b28886202aca7a",
+          "description": "<p>cBioPortal allows the analysis and visualization of published cancer genomic datasets. These datasets must be queried by entering symbols of genes of interest. \"OQL\" keywords can also be added to further refine the query.</p>\n<p>My project focuses on improving the querying experience on cBioPortal. This is done by giving users visual feedback regarding the correctness of the symbols that they have entered. For incorrect symbols, similarly-spelled valid symbols are provided as suggestions. This is useful when a user has misspelled a gene symbol, or has entered an incomplete/ambiguous symbol. Furthermore, when a user wants to enter OQL keywords, a multi-level prompt menu is provided where a user can choose keywords and see a description of what they mean. Upon selecting it, the keyword is added to their query.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6736105642655744/",
+          "proposal_id": null,
+          "short_description": "cBioPortal allows the analysis and visualization of published cancer genomic datasets. These datasets must be queried by entering symbols of genes of...",
+          "slug": "onco-query-language-oql-editor",
+          "status": "completed",
+          "student_name": "Shrumit Mehta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Onco Query Language (OQL) editor"
+        },
+        {
+          "code_url": "https://github.com/cBioPortal/pdb-annotation/wiki/GSOC-2016-project-summary-and-guide",
+          "description": "<p>cBioPortal provides web resources in cancer genome research. Building a web service to provide protein alignments between ensembl and PDB sequences will help mapping mutations to protein 3D structures. Building an auto updating pipeline will help cBioPortal kept adopting the updated protein structures, and advance the cancer research eventually. The project starts from downloading human proteins in all isoforms from ensembl and blast them against all PDB sequences. The alignments will be parsed and stored into carefully designed databases. A JSON based API will be built upon the database via predefined methods in database query, and cBioPortal obtained the alignments from the exposed API. A pipeline will also be constructed to update the alignments weekly. Once new structures from PDB were released, the pipeline initiate automatically to update the alignments on the updated structures. The updated alignments were stored into the database and a regression test was applied to check the correctness on a validation set. Performance, robustness, reliability and developing feasibility were all considered in the proposal.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5458181341839360/",
+          "proposal_id": null,
+          "short_description": "cBioPortal provides web resources in cancer genome research. Building a web service to provide protein alignments between ensembl and PDB sequences...",
+          "slug": "build-a-web-service-and-auto-updating-pipeline-to-provide-3d-structure-alignments-for-bioportal",
+          "status": "completed",
+          "student_name": "JuexinWang",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Build a web service and auto updating pipeline to provide 3D structure alignments for BioPortal"
+        },
+        {
+          "code_url": "https://pambot.github.io/posts/gsoc2016-cbioportal",
+          "description": "<p>A key step towards the development of effective personalized cancer treatments is the collection of vast stores of patient data on a variety of tumor types, and cBioPortal has taken these efforts by The Cancer Genome Atlas (TCGA) and provided an accessible visualization tool for biological data discovery. Currently, cBioPortal has a multitude of information on DNA and RNA, but their information on protein levels derives from protein arrays, a technology that has severe limitations relative to mass spectrometry. Clinical Proteomic Tumor Analysis Consortium (CPTAC) has performed mass spectrometry on the patient samples for TCGA tumors and it also includes information on post-translational modifications. I propose to integrate this information with the cBioPortal visualization interface. This involves extending their database with protein abundances and PTMs based on the CPTAC data and updating the cBioPortal interface with a new tab for post-translational modifications and updating existing tabs to accommodate the new protein data. By providing this upgrade, a tool that helps both scientists and doctors see personal and population biology at a glance will gain a new dimension.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5256488603877376/",
+          "proposal_id": null,
+          "short_description": "A key step towards the development of effective personalized cancer treatments is the collection of vast stores of patient data on a variety of tumor...",
+          "slug": "integration-of-proteomics-data-to-cbioportal",
+          "status": "completed",
+          "student_name": "pambot",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Integration of Proteomics Data to cBioPortal"
+        },
+        {
+          "code_url": "https://drive.google.com/open?id=11FVU_BYcrEQOz2IwN1_5GSSOmC1hZ8j-szo000P9EnQ",
+          "description": "<p>My proposal outlines my project goals. I have detailed my vision about how could the problem be solved. Also, I tried to enhance my strengths. I feel that I can be a good candidate due to my passion for technology and also for your field of interest.\nI looking forward to reading any comments on my proposal in order to improve it. \nI am really willing to participate in Google Summer of Code as part of your team!</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5537963580588032/",
+          "proposal_id": null,
+          "short_description": "My proposal outlines my project goals. I have detailed my vision about how could the problem be solved. Also, I tried to enhance my strengths. I feel...",
+          "slug": "prototype-plugin-framework-for-authentication",
+          "status": "completed",
+          "student_name": "AndreeaBican",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Prototype Plugin framework for Authentication"
+        },
+        {
+          "code_url": "https://github.com/cbioportal/clinical-timeline/commits/master?author=rohangoel96",
+          "description": "<p>The primary aim of this project is to improve the cBioPortal’s clinical-timeline. The present implementation (<a href=\"https://github.com/cbioportal/clinical-timeline\" target=\"_blank\">https://github.com/cbioportal/clinical-timeline</a>) is pretty rudimentary and there is a lot that can be improved upon. There are many new features that I plan to implement so that the end users and the researchers have better tools for analyzing and visualising the data.</p>\n<p>Along with the features, proper unit tests will be written which will help maintain the project better, ensure it doesn’t break anytime and also demonstrate that my code works.\nMany unattended bugs that the timeline has will also be fixed so that it works smoothly and as expected.</p>\n<p>This project will provide a better toolset for clinicians to analyse the patient’s data and that in turn would help society at large. I am really passionate about this project and the fact that my work could affect the lives of millions of cancer patients across the world is highly satisfying and motivating.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4613756411707392/",
+          "proposal_id": null,
+          "short_description": "The primary aim of this project is to improve the cBioPortal’s clinical-timeline. The present implementation...",
+          "slug": "improving-the-clinical-timeline-of-cbioportals-patient-view",
+          "status": "completed",
+          "student_name": "rohangoel96",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the clinical timeline of cBioPortal's patient view"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5251173044977664/"
+    },
+    "year_2017": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/cBioPortal/clinical-data-normalization/pull/1/",
+          "description": "<p>cBioPortal provides clinical data from a number of different cancer studies.  The clinical data from the studies is conveniently organized in a tabular format, however the data available varies between different studies.  The variation in data makes it difficult to directly compare all of the different studies.  The aim of this project is to standardize the data currently available and to propose certain standards for the data added to cBioPortal from future studies.  Standardized data will allow for users to more easily work with the data provided by cBioPortal.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5426615479697408/",
+          "proposal_id": null,
+          "short_description": "cBioPortal provides clinical data from a number of different cancer studies.  The clinical data from the studies is conveniently organized in a...",
+          "slug": "standardizing-clinical-data-from-cbioportal-to-for-easier-comparison-and-analysis",
+          "status": "completed",
+          "student_name": "bsir",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Standardizing clinical data from cBioPortal to for easier comparison and analysis"
+        },
+        {
+          "code_url": "https://github.com/JiaoJiao123/igv.js/pull/11",
+          "description": "<p>Through this project I plan to improve the genome overview in the patient view page. By adding- 1) Zoom Feature 2) Introducing Probe Level Copy Number Data 3) Filtering feature (Showing the overview for only a subset of samples)</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5445666612445184/",
+          "proposal_id": null,
+          "short_description": "Through this project I plan to improve the genome overview in the patient view page. By adding- 1) Zoom Feature 2) Introducing Probe Level Copy...",
+          "slug": "improved-genome-overview-in-patient-view-page",
+          "status": "completed",
+          "student_name": "Ishu Kalra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved genome overview in patient view page."
+        },
+        {
+          "code_url": "https://pambot.github.io/posts/gsoc2017-cbioportal",
+          "description": "<p>A major need in cancer research is the development of non-invasive cancer detection and monitoring methods. Circulating tumor DNA (ctDNA) is DNA that has escaped from tumor cells and is free-floating in the bloodstream, meaning that genetic information about the developing tumor can be obtained without the need to invasively extract tumor tissue. cBioPortal wants to display the insights obtained from these “liquid biopsies” onto their existing Patient View page. I propose to create a global view of ctDNA information by modifying their existing Genomic Overview to display allele frequencies, allowing users to identify at a glance mutated genes of interest. Mutated genes can be tracked by clicking on the gene, which would display a plot of the gene’s mutation concentration over time. A heatmap of selected genes can also be generated to monitor tumor heterogeneity over time. Another feature could consist of plots to track whether a mutated gene produces a differential time to relapse or survival time compared to the unaltered gene. By visualizing ctDNA results on the cBioPortal interface, I can participate in adding an exciting new clinician tool for personalized cancer genomics.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5038821003493376/",
+          "proposal_id": null,
+          "short_description": "A major need in cancer research is the development of non-invasive cancer detection and monitoring methods. Circulating tumor DNA (ctDNA) is DNA that...",
+          "slug": "visualizing-circulating-tumor-dna-results-in-the-cbioportal-patient-view",
+          "status": "completed",
+          "student_name": "Pamela Wu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Visualizing circulating tumor DNA results in the cBioPortal patient view"
+        },
+        {
+          "code_url": "https://medium.com/@technospace/gsoc-2017-integrating-molecularmatch-clinical-trials-data-into-cbioportal-fd32da44ea9b",
+          "description": "<p>One of the main challenges in CBioPortal is to interpret the great amount of genomic data it has accumulated. It has currently integrated a few resources, including OncoKB, MyCancerGenome, and CancerHotspot.org in the annotation column in the mutation table. In addition to this, it would be useful to link to clinical trials too for each mutation.\nClinical trials are a key research tool for advancing medical knowledge and patient care. They are an important step in discovering new treatments for cancers and other diseases as well as new ways to detect, diagnose, and reduce the risk of disease. Therefore I propose to link clinical trials for cancer studies in CBioPortal which will improve the ability to analyze and interpret the genomic data for various kinds of mutations. Linking clinical trials from Molecular Match for mutations based on a patient’s cancer type and molecular data would the most feasible option for this project since it provides an effective API to retrieve precise data in real time</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6569403466383360/",
+          "proposal_id": null,
+          "short_description": "One of the main challenges in CBioPortal is to interpret the great amount of genomic data it has accumulated. It has currently integrated a few...",
+          "slug": "integrating-molecularmatch-clinical-trials-data-into-cbioportal",
+          "status": "completed",
+          "student_name": "sathyabandara",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Integrating MolecularMatch clinical trials data into cBioPortal"
+        },
+        {
+          "code_url": "https://github.com/cBioPortal/gdc-et-pipeline",
+          "description": "<p>The goal of this project is to extract Cancer Genomic data available from NCI's Genomic Data Commons and transform them according to the file formats required by cBioPortal. There is currently no ET pipeline existing to import data from NCI data repository and this project will add this feature to cBioPortal. The user will simply need to run a Batch that will transform genomic data from GDC into accepted file formats.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6012174140964864/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to extract Cancer Genomic data available from NCI's Genomic Data Commons and transform them according to the file formats...",
+          "slug": "implement-a-pipeline-to-extract-and-transform-gdc-data",
+          "status": "completed",
+          "student_name": "Dixit Patel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Implement a Pipeline to Extract and Transform GDC Data"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1JElWO3knKrANMkvtp231tpH6N2Er5CSQM3WRHT-75gs/edit",
+          "description": "<p>The tool used in cBioPortal for network visualization is a powerful one with many implemented features. However, researchers and biologists are more comfortable with a simplified network view, which represents diagrams of curated The Cancer Genome Atlas (TCGA) pathways. With the aim to have a more attractive and intuitive tool for the biologists, PathwayMapper project was developed, which provides more intuitive pathway diagrams supported with cBioPortal’s rich data. For this project, I hope to help in implementation of a new version of\nPathwayMapper, which will include new features as well as making it more user friendly and easier to be used. Furthermore, I'd like to do the necessary integration to the portal pages such that PathwayMapper capabilities are more conveniently reachable to portal users.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6038148760993792/",
+          "proposal_id": null,
+          "short_description": "The tool used in cBioPortal for network visualization is a powerful one with many implemented features. However, researchers and biologists are more...",
+          "slug": "collaborative-construction-of-cancer-pathways-with-pathwaymapper",
+          "status": "completed",
+          "student_name": "Leonard Dervishi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Collaborative construction of cancer pathways with PathwayMapper"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4741825894023168/"
+    },
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/lizabethkatsnelson/GoogleSummerOfCode2019",
+          "description": "<p>This project will aim to create a pipeline for all CPTAC data transformation into cBioPortal compatible files for public access. Conversion and addition of novel CPTAC proteogenomic datasets into the cBioPortal will advance cancer studies, which will lead to a better understanding of the molecular profiles of cancer.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6341239065018368/",
+          "proposal_id": null,
+          "short_description": "This project will aim to create a pipeline for all CPTAC data transformation into cBioPortal compatible files for public access. Conversion and...",
+          "slug": "addition-of-novel-cptac-proteogenomic-datasets-to-the-cbioportal",
+          "status": "completed",
+          "student_name": "Lizabeth Katsnelson",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Addition of novel CPTAC proteogenomic datasets to the cBioPortal"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1VfepQWZuvsNC6dVcJGuEvoLjf7SSNrDbiR5zY1kab2w/edit?usp=sharing",
+          "description": "<p>I would like to work on issue #70, “OncoKB Analysis in Study View”. An inconvenience for both biologists trying to get valuable information to make informed decisions on prognosis and patients who would like to readily have access to this information for their own comfort, is the time needed to access this data. As the genomic data sets for each study vary in size, viewing annotations for studies that have large data sets in real-time is a challenge because it takes a while for the information to load. For example: MSK-IMPACT 2017 has a data set of 10,000 samples, so it will take a few minutes for the study view to load. I would like to work on the three backend tasks and first frontend task. This means pre-annotating the mutation data and storing it into the MySQL database and creating an additional column in the mutation table called “annotation”. Querying and using the web API to provide the information needed to solve the front-end goal of creating pie charts for oncogenicity and highest level of sensitive therapeutic implications per sample.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5669025143586816/",
+          "proposal_id": null,
+          "short_description": "I would like to work on issue #70, “OncoKB Analysis in Study View”. An inconvenience for both biologists trying to get valuable information to make...",
+          "slug": "oncokb-analysis-in-study-view",
+          "status": "completed",
+          "student_name": "Andrew Cvekl",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "database",
+            "frontend",
+            "backend"
+          ],
+          "title": "OncoKB Analysis in Study View"
+        },
+        {
+          "code_url": "https://wenjiesun.blogspot.com/2019/08/gsoc-2018-clonal-evolution.html",
+          "description": "<p>The sequencing technology produces the DNA sequence information of tumor cells. And cBioPortal is one of the leading web-tools which collected tumor sequencing result and provides visualization and exploring function. The tumor is not homogeneity, the mutations were accumulated when the cell divide. The different parts of a tumor can be the clone of different cells with obvious genetic distance respectively. This project aiming to construct a front end module to estimate the clonal evolutionary relationship using multi-region sequencing data.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5620818162221056/",
+          "proposal_id": null,
+          "short_description": "The sequencing technology produces the DNA sequence information of tumor cells. And cBioPortal is one of the leading web-tools which collected tumor...",
+          "slug": "clonal-evolution-visualization-web-tools",
+          "status": "completed",
+          "student_name": "Wenjie Sun",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Clonal evolution visualization web-tools"
+        },
+        {
+          "code_url": "https://gist.github.com/zheins/4bd6767b3a49d588343f27082503fbb5",
+          "description": "<p>The Genomic Data Commons (GDC) Portal serves as a large-scale genomic data repository hosting data from NCI cancer genome projects in standardized formats amenable to programmatic access. As one of the major goals of the cBioPortal is to serve cancer genomic data from a wide range of sources in a easy to analyze manner, the creation of an Extraction Translation (ET) pipeline between the two platforms would greatly benefit the cancer genomic research community as a whole.</p>\n<p>A previous GSOC project laid the foundation for this pipeline, developing a Spring Batch pipeline that takes a GDC manifest file specifying the data desired and creates a clinical file and a Genome Nexus annotated MAF suitable for cBioPortal import. This project will expand on the pipeline, creating new Spring Batch reader/processor/writers and corresponding pipeline logic for CNA and mRNA expression data, two data types similar in format and useful in conjunction to analyze over and under expressed genes in a given sample.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_cbioportal-for-cance_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6012388719984640/",
+          "proposal_id": null,
+          "short_description": "The Genomic Data Commons (GDC) Portal serves as a large-scale genomic data repository hosting data from NCI cancer genome projects in standardized...",
+          "slug": "etl-pipeline-development-for-tcga-data-from-gdc-portal",
+          "status": "completed",
+          "student_name": "Zachary Heins",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "ETL pipeline development for TCGA data from GDC Portal"
+        },
+        {
+          "code_url": "https://github.com/doori/GSoC-submission",
+          "description": "<p>cBioPortal utilizes a Spring MVC architecture with MyBatis for the persistence layer and a relational database (MySQL) for data storage. As the number and size of cancer datasets increase, high-performance computing and storage will only become more vital in providing an adequate cBioPortal user experience. The primary goals of this project are to use Spark and Parquet to improve the performance of the existing web APIs and to provide a high-performance computing platform for future development.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5774843675410432/",
+          "proposal_id": null,
+          "short_description": "cBioPortal utilizes a Spring MVC architecture with MyBatis for the persistence layer and a relational database (MySQL) for data storage. As the...",
+          "slug": "spark-and-parquet-backend-for-cbioportal-web-api",
+          "status": "completed",
+          "student_name": "Doori Rose",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "database",
+            "backend"
+          ],
+          "title": "Spark and Parquet Backend for cBioPortal Web API"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1lcD5f0DSTkwfYg8F39ae61H17jWJzOXHAZDZpc9bUcw/edit?usp=sharing",
+          "description": "<p>PathwayMapper provides a pathway visualization environment which biologists are mostly familiar with. Currently, it works as a standalone application online but integrating it into cBioPortal would be quite beneficial for cBioPortal users. In the first sub-project, including a read-only version of PathwayMapper into cBioPortal is aimed.</p>\n<p>NetworkView is a gene network visualization tool that is embedded into cBioPortal. However, it does not get along well with the cBioPortal codebase. Hence, in this second sub-project, the aim is to re-architect NetworkView module to make it compatible with cBioPortal codebase.</p>\n",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5947413179662336/",
+          "proposal_id": null,
+          "short_description": "PathwayMapper provides a pathway visualization environment which biologists are mostly familiar with. Currently, it works as a standalone application...",
+          "slug": "integrating-pathwaymapper-into-cbioportal-and-separating-the-network-view-as-a-standalone-module",
+          "status": "completed",
+          "student_name": "Ziya ERKOÇ",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrating PathwayMapper into cBioPortal and Separating the Network View as a standalone module"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6278222700871680/"
+    },
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/ozguzMete/GSoC2022FinalWorkSubmission",
+          "description": "This will be the Genome Nexus' cli to rule them all. Main objectives:\n1. All 3 projects will be merged into one Java project.\n2. Interface will follow Command Line Interface Guidelines to the point.\n3. I will try to stick to Test Driven Design as much as possible.\n4. A dependency will only be added to the project when it is unavoidable.\n5. Killer cli documentation and web-based documentation will be added.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/bIWlKExH/",
+          "proposal_id": null,
+          "short_description": "This will be the Genome Nexus' cli to rule them all. Main objectives: 1. All 3 projects will be merged into one Java project. 2. Interface will...",
+          "slug": "improve-genome-nexus-command-line-interface-experience",
+          "status": "completed",
+          "student_name": "Mete Ozguz",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Genome Nexus' Command Line Interface Experience"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1vuILzKAa86coq-49sCQUf43eqLt3hLQQRlm6Oby04cQ/",
+          "description": "The goal of this project is to improve the integration of PathwayMapper into cBioPortal as well as enhancing the full-blown, stand-alone editor version as follows. To do this, we will improve the integration of PathwayMapper viewer in cBioPortal and improve PathwayMapper editor. For the first problem, we have 3 subtasks: adding Pathways tab to Comparison Page in cBioPortal, investigating alternative or better ranking schemes for Pathways and resolving the issues and bugs in cBioPortal. To improve PathwayMapper editor, we have 6 subtasks: revisiting overall architecture of PathwayMapper to properly address different views in different contexts, integration of expand-collapse  and hide-show operations for complexity management, incorporation of filtering and highlighting capabilities ,fixing the issues in ShareDB in collaborative mode editor, upgrading all third party libraries and resolving issues/bugs.\nThrogh GSoC, we will focus on these issues and solve them to improve the pathway views in cBioPortal.",
+          "difficulty": "advanced",
+          "id": "proj_cbioportal-for-cance_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/FzzHizYK/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to improve the integration of PathwayMapper into cBioPortal as well as enhancing the full-blown, stand-alone editor...",
+          "slug": "broader-use-of-pathway-views-in-cbioportal",
+          "status": "completed",
+          "student_name": "Yusuf Ziya Özgül",
+          "student_profile": null,
+          "tags": [],
+          "title": "Broader use of pathway views in cBioPortal"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/cbioportal-for-cancer-genomics/"
+    },
+    "year_2023": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/aditygrg2/1e20071a8b0ca0168a8d286e7b1d4755",
+          "description": "This proposal aims to add a mutation diagram to the study view will enhance the mutation analysis capabilities of cBioPortal. The mutation diagram will display the distribution of mutations across different genes, samples, and mutation types within a study.\n\nThis interactive diagram will allow users to explore mutation data in a way that is more intuitive and informative than simple tables or charts. Users will be able to select specific samples and mutation types and see the distribution of mutations across different genes and samples.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/uvgCfYuK",
+          "proposal_id": "w0v8K8lf",
+          "short_description": "This proposal aims to add a mutation diagram to the study view will enhance the mutation analysis capabilities of cBioPortal. The mutation diagram...",
+          "slug": "add-mutation-diagram-on-study-view-for-enhanced-mutation-analysis",
+          "status": "completed",
+          "student_name": "Aditya  Garg",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Add Mutation Diagram on Study View for Enhanced Mutation Analysis"
+        },
+        {
+          "code_url": "https://github.com/cBioPortal/cbioportal-frontend/pull/4687",
+          "description": "The cBioPortal provides access to a wealth of cancer genomics data, but new users often struggle to navigate its features, and existing users may not be aware of all available tools. \nThis project aims to enhance the user experience of the cBioPortal for Cancer Genomics by implementing an interactive web tour feature. The objective is to guide new users on how to use the portal and to showcase new features to experienced users. \nThe project proposes using reactour for implementing the web tour and local storage to record the tour progress. The deliverables include implementing the web tour feature for the group comparison tool, allowing users to disable hints, and addressing difficulties such as automatically filling input boxes and continuing tour steps after jumping to other pages.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/luumPTO5",
+          "proposal_id": "mebYFKi3",
+          "short_description": "The cBioPortal provides access to a wealth of cancer genomics data, but new users often struggle to navigate its features, and existing users may not...",
+          "slug": "proposal_interactive-web-tour_biqing-su",
+          "status": "completed",
+          "student_name": "Biqing Su",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Proposal_Interactive web tour_Biqing Su"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/13myG9e-jts-kqBThMl7k3sJl58Y5jx_LCxn6NJNJ-t0/edit?usp=sharing",
+          "description": "The project aims to enhance the functionality and usability of the PathwayMapper tool in cBioPortal. The project will have two tasks: The first task will focus on alternative ranking schemes and resolving outstanding issues/bugs related to PathwayMapper in cBioPortal. The second task will focus on improving the PathwayMapper editor by revisiting its architecture, integrating expand-collapse and hide-show operations, incorporating filtering and highlighting capabilities, upgrading third-party libraries, and resolving outstanding issues/bugs. The sub-tasks outlined in the proposal will be completed through a combination of research, testing, and development work.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/s7TIxlWq",
+          "proposal_id": "7N2KiyVv",
+          "short_description": "The project aims to enhance the functionality and usability of the PathwayMapper tool in cBioPortal. The project will have two tasks: The first task...",
+          "slug": "pathway-improvements-in-cbioportal",
+          "status": "completed",
+          "student_name": "Gorkem",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Pathway Improvements in cBioPortal"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1U7K3VgYwo3zz9K7cDyGq99xcFq7TUBJJRDOamRQq3oE/edit?usp=sharing",
+          "description": "The objective of this project is to improve the functionality of cBioPortal by introducing support for categorical and binary data analysis and visualization in the Generic Assay format.\n\nThe project involves implementing new services and controllers in the backend to provide the needed GenericAssayData for the frontend. The frontend will support features to allow users to perform Fisher's exact test for binary data and chi-square test for categorical data, and to view the results in a clear and easy-to-understand bar chart and table format. In addition, end-to-end tests will be added to ensure the feature works as expected.\n\nDliverables include wrapped and tested visualization functionalities in comparison page and comparison tab in results.",
+          "difficulty": "beginner",
+          "id": "proj_cbioportal-for-cance_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/QiwswzZ8",
+          "proposal_id": "hcdTPMWC",
+          "short_description": "The objective of this project is to improve the functionality of cBioPortal by introducing support for categorical and binary data analysis and...",
+          "slug": "group-comparison-generic-assay-categorical-and-binary-data-implementation",
+          "status": "completed",
+          "student_name": "JiahangLi",
+          "student_profile": null,
+          "tags": [
+            "frontend",
+            "backend"
+          ],
+          "title": "Group Comparison - Generic Assay Categorical and Binary data implementation"
+        },
+        {
+          "code_url": "https://gist.github.com/justinjao/c012caa6aa5646780e2fc64292eda9f8",
+          "description": "cBioPortal allows submission of data sets to enrich its open-access cancer genomics database. Currently, new data sets can be uploaded to a separate repository for further review. However, to ensure full quality assurance, new data sets must be manually imported into an instance of cBioPortal and visually inspected to ensure the data displays correctly. This manual step is tedious, and presents a barrier to easily reviewing new submissions. \n\nTo resolve this bottleneck in the review process, the proposed solution will create a new workflow that will trigger upon a new submission to automatically deploy a live staging instance of cBioPortal, with the new data set already imported. Time permitting, a second potential workflow could also be explored to further streamline the process by generating resources such as screenshots for easier visual inspection. These improvements would allow cBioPortal maintainers to more easily validate new submissions, leading to faster approvals for new data, and a higher quality database for cancer researchers.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/NH758ApJ",
+          "proposal_id": "vgPwZt0i",
+          "short_description": "cBioPortal allows submission of data sets to enrich its open-access cancer genomics database. Currently, new data sets can be uploaded to a separate...",
+          "slug": "automating-quality-control-of-datahub-submissions",
+          "status": "completed",
+          "student_name": "Justin Jao",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "database"
+          ],
+          "title": "Automating Quality Control of Datahub Submissions"
+        },
+        {
+          "code_url": "https://github.com/Singhj2/ctims/pull/2",
+          "description": "Scope: To create a standalone React component from MatchMiner that will use Firebase to provide trial curation across multiple projects uses \n\nRequirements:\n•\tFamiliarize with React, MatchMiner, OncoKB Angular and Firebase \n\n Execution\n•\tStudy previous MatchMiner implementations to leverage that information into the current implementation plan \n•\tRefactor Match Miner component \n•\tCode formatting\n•\tCreate standalone component that can be reused across multiple projects \n•\tEmploy best practice on naming conventions and proper de-structuring \n\n Constraints:\n•\tTime\n•\tLack of working experience in Angular \n\nRisks:\n•\tCan only build upon the component, cannot transform or remove features \n•\tUnexpected consequences of changes and ensuring failures will be localized to the component \n\n\n\nDeliverables \n\nTask 1: Strip down Match MinerAngular to base component, its most reusable part, via a DRY method. \n\nTask 2: Re-factor MatchMiner in React that will be extendable as a stateless component \n\nTask 3: Ensure library component in React is developer friendly in order to not burden the End Dev\n\nTask 4: Testing in staging environment to ensure proper functionality",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/xSitA8Cr",
+          "proposal_id": "rzPxxhAO",
+          "short_description": "Scope: To create a standalone React component from MatchMiner that will use Firebase to provide trial curation across multiple projects uses...",
+          "slug": "create-a-clinical-trial-curation-tool-based-on-ctml-from-matchminer",
+          "status": "completed",
+          "student_name": "Justin Singh",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "react",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Create a clinical trial curation tool based on CTML from MatchMiner"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/cbioportal-for-cancer-genomics"
+    },
+    "year_2024": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://github.com/cBioPortal/cbioportal-frontend/pull/4856",
+          "description": "This project aims to enhance cBioPortal functionality by allowing users to seamlessly launch code notebook environments like JupyterLite directly within the application. This will empower users to perform custom data analysis and visualizations on their filtered and queried datasets without switching platforms.\n\nI am planning to integrate a standalone Jupyterlite server that will contain a Jupyter extension allowing us to overwrite the files. We will be modifying the data of those file, that will allow to work with that data. \n\nRight now, I have added the notebook in the UI and working on the data-transfer part which is going to be a major task of the project. \n\nExcited to contribute further on this project.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/uke0Gm6i/",
+          "proposal_id": null,
+          "short_description": "This project aims to enhance cBioPortal functionality by allowing users to seamlessly launch code notebook environments like JupyterLite directly...",
+          "slug": "add-the-ability-to-spawn-code-notebooks-from-cbioportal-queries",
+          "status": "completed",
+          "student_name": "gautamsarawagi",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Add the ability to spawn code notebooks from cBioPortal queries"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/12QPx5IVg5ofI4n4qe8IUh-M8JgsVCBfuesERkqlx0fI/edit?usp=sharing",
+          "description": "This project involves the integration of AlphaMissense, an innovative tool for predicting the pathogenicity of missense mutations, into two established platforms: Genome Nexus and cBioPortal. My Objectives and Deliverables are:\n\n- Integrate AlphaMissense pathogenicity predictions into Genome Nexus API responses, enriching genetic variant analysis with detailed pathogenicity scores.\n- Display AlphaMissense predictions within the Genome Nexus variant pages and add dedicated data columns in the cBioPortal mutation tables, complete with functionalities for sorting, filtering, and downloading. \n-Add AlphaMissense pathogenicity prediction and score into Genome Nexus annotation pipeline as two new columns in the annotation result file\n\nThe project will be executed in phases, starting with initialization and planning, followed by backend and frontend development to integrate and visualize AlphaMissense data. Subsequent phases will focus on testing, deployment, and documentation, concluding with a final review and official launch. Post-launch, the project will enter a maintenance and support phase to address any arising issues and incorporate user feedback.\n\nBackend development will utilize Java and Spring Boot for integrating the AlphaMissense plugin into the Genome Nexus API.\nFrontend components will be developed using React and TypeScript, ensuring a dynamic and user-friendly interface for displaying genetic predictions.Comprehensive testing phases, including unit, integration, and User Acceptance Testing, will ensure the reliability and accuracy of the integration.\n\nThis integration represents a significant leap forward in personalized medicine. By making pathogenicity predictions more accessible and interpretable, this project aims to support advancements in genetic research and clinical decision-making, ultimately contributing to improved patient outcomes.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ZOtvSMbd/",
+          "proposal_id": null,
+          "short_description": "This project involves the integration of AlphaMissense, an innovative tool for predicting the pathogenicity of missense mutations, into two...",
+          "slug": "integration-of-alphamissense-pathogenicity-predictions-into-genome-nexus-and-cbioportal",
+          "status": "completed",
+          "student_name": "Ivy Zou",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "java",
+            "typescript",
+            "api",
+            "ai"
+          ],
+          "title": "Integration of AlphaMissense Pathogenicity Predictions into Genome Nexus and cBioPortal"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/11DJKuWaKE5gMOIso_iFRT67ntByyjYjhx8gah7xsK0M/edit?usp=sharing",
+          "description": "Omics data repositories often contain heterogeneous data from multiple studies\nand diverse sources. This lack of structure in the metadata is challenging\nfor the development of new algorithms and application of machine learning\nor deep learning to cross-study datasets. Under this project, some work has\nalready been conducted. Currently, Manual review of the metadata schema,\nconsolidation of similar or identical information spread across schema, and\nincorporation of ontologies where possible has already been done. In this light,\nmanual harmonization cBioPortal’s key clinical metadata across the whole data\nrepository, not just at the study level, and incorporation of ontology terms has\nimproved the AI/ML-readiness of the cBioPortal data.\n\nWe want to take the current work further to harmonize/digest new/incoming data in the format of the data dictionary already established in an automated fashion with minimum manual curation. For this purpose, we will explore advanced natural language processing techniques, particularly sentence transformers, to automate the process of metadata curation for clinical metadata within the cBioPortal platform.Additionally, we will also creating an interactive dashboard for visualizing and potentially editing\nthe automated harmonization results, enhancing user accessibility and control over the curation process.",
+          "difficulty": "advanced",
+          "id": "proj_cbioportal-for-cance_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/TgAYG5dK/",
+          "proposal_id": null,
+          "short_description": "Omics data repositories often contain heterogeneous data from multiple studies and diverse sources. This lack of structure in the metadata is...",
+          "slug": "automated-curation-and-harmonization-of-cbioportal-clinical-metadata-using-sentence-transformers",
+          "status": "completed",
+          "student_name": "Abhilash Dhal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Automated Curation and Harmonization of cBioPortal Clinical Metadata using Sentence Transformers"
+        },
+        {
+          "code_url": "https://docs.google.com/presentation/d/1x8hwMFq85BB0-DRJU7Sxyc2Il1pPMlUNLq1KDvHVSxE/edit?usp=sharing",
+          "description": "This project is about build and train a streaming chatbot on four datasets: Documentation site of cBioportal, Google group conversations, PMC papers used in studies, and OPENAPI. Also, the project used route logic to combine 4 chains, and wrote a routing logic function to choose chatbot depending on user query. The chatbot has chat history, indicators, and example questions, download button and footer (disclaimer) in user interface.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/5PYvMkWW/",
+          "proposal_id": null,
+          "short_description": "This project is about build and train a streaming chatbot on four datasets: Documentation site of cBioportal, Google group conversations, PMC papers...",
+          "slug": "chatbot-trained-on-documentation-site-and-conversations",
+          "status": "completed",
+          "student_name": "Xinling Wang",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Chatbot trained on documentation site and conversations"
+        },
+        {
+          "code_url": "https://github.com/oncokb/oncokb-transcript/pull/426",
+          "description": "The cBioPortal organization is dedicated to assisting clinicians and researchers in the analysis of complex cancer genomics data. And cBioPortal includes OncoKB annotation in it's view to provide detailed biological effect and clinical implications for each variant. Despite the availability of a standard API for annotating alterations, users without a computational background still find it challenging to annotate their variants. This project addresses this gap by first developing a pipeline to fetch a list of genomic variants from the MSK-IMPACT clinical cohort that have not been curated by OncoKB. The approach utilizes distributed parallel computing to accelerate the identification of target variants while ensuring data consistency through regular monitoring and timely updates. Then, a web interface has been designed to allow users to view and annotate these uncurated variants directly from the webpage. This interface supports searching and sorting functionalities, enabling users to find specific variants and prioritize them for OncoKB curation. The outcome of this initiative includes an automated pipeline, powered by AirFlow, for the continuous retrieval and verification of uncurated variants, alongside a user-friendly interface that facilitates the direct annotation of variants by users through webpage interactions. This project aims to simplify the variant annotation process, making it more accessible to a broader audience and further advancing the field of precision oncology.",
+          "difficulty": "advanced",
+          "id": "proj_cbioportal-for-cance_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ZnoBajlM/",
+          "proposal_id": null,
+          "short_description": "The cBioPortal organization is dedicated to assisting clinicians and researchers in the analysis of complex cancer genomics data. And cBioPortal...",
+          "slug": "create-pipelineinterface-to-prioritize-variants-for-oncokb-curation",
+          "status": "completed",
+          "student_name": "Yameng Ge",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai"
+          ],
+          "title": "Create pipeline/interface to prioritize variants for OncoKB curation"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1b8vIBYPvCgAXo5nf4YuWRzxrF-POZGYiuUtMR6f0-Zs/edit?usp=sharing",
+          "description": "The goal of this project is to improve the navigability of the HTAN data standards in HTAN portal as well as in schema-visualization. To do this, we will add a 'Search field' on both applications, which would enable users to search through attributes efficiently and display required search results. For the first problem, we have 3 subtasks: adding a Search field to the Standard Page in HTAN portal, displaying search results in the Standard Page, and resolving the issues and bugs in HTAN Portal. To improve schema-visualization navigation, we have 3 subtasks: integration of the search field, incorporation of search filtering results with the existing Data Table, and resolving issues/bugs. Through GSoC, we will focus on these issues and solve them to improve the visualisation data standards.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/v019dm8R/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to improve the navigability of the HTAN data standards in HTAN portal as well as in schema-visualization. To do this, we...",
+          "slug": "improve-navigatability-of-the-htan-data-standards",
+          "status": "completed",
+          "student_name": "Ankita Sahu",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Improve navigatability of the HTAN data standards"
+        },
+        {
+          "code_url": "https://gist.github.com/olzhasmukayev/deb78937c2795ff760bb9c16881665bd",
+          "description": "Extend the \"Chart\" functionality on the Study View Page by supporting additional types of charts such as line charts and area charts. Support chart toggle functionality to allow users to select different types of charts for the particular data set. Implement \"group chart\" functionality to improve UX for chart analysis.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/9vHrWwVV/",
+          "proposal_id": null,
+          "short_description": "Extend the \"Chart\" functionality on the Study View Page by supporting additional types of charts such as line charts and area charts. Support chart...",
+          "slug": "extend-chart-types-in-study-view",
+          "status": "completed",
+          "student_name": "mukayevolzhas",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Extend Chart Types in Study View"
+        },
+        {
+          "code_url": "https://github.com/SURAJ-SHARMA27/GSoC24-final-doc-cBioPortal/blob/main/GSoC24-FInal-Report.md",
+          "description": "My project aims to bridge the gap between single-cell gene expression data analysis and existing cancer genomics workflows, particularly within the cBioPortal platform. Currently, cBioPortal lacks support for visualizing single-cell data alongside bulk genomics data, hindering researchers from gaining a comprehensive understanding of cancer biology. To address this, I propose the development of a dedicated single-cell analysis module within cBioPortal, focusing on the MSK Spectrum dataset.\n\nThe key problem I am addressing is the inability to integrate single-cell gene expression data with existing cancer genomics workflows. By incorporating single-cell data into cBioPortal, researchers will be empowered to identify specific cells with altered gene expression, understand their contribution to overall expression patterns, and connect this information with genetic alterations.\n\nMy solution involves developing a custom Single-Cell Tab within cBioPortal's study view. The tab will include features such as dataset information, gene selection, interactive visualizations (boxplots, scatter plots, stacked bar graphs, and pie charts), filtering options, and download capabilities.\n\nTo achieve this, I will aggregate the single-cell data to a gene-cell type-sample level, creating a pseudo bulk representation to manage the large dataset size effectively. I will utilize existing charting libraries like CanvasJS and React primitives for visualization components, ensuring seamless integration with cBioPortal's design language.\n\nMy deliverables include:\n\nCustom Single-Cell Tab within cBioPortal study view.\nDataset information panel for study description and cell type/sample details.\nGene selection panel with autocomplete functionality.\nInteractive visualizations including boxplots, scatter plots, stacked bar graphs, and pie charts.\nFiltering options for focused data exploration.\nDownload options for data and plots in common file formats.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/K3eUFqx8/",
+          "proposal_id": null,
+          "short_description": "My project aims to bridge the gap between single-cell gene expression data analysis and existing cancer genomics workflows, particularly within the...",
+          "slug": "frontend-visualization-and-incorporation-of-single-cell-data-in-cbioportal",
+          "status": "completed",
+          "student_name": "SURAJ  SHARMA",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ml",
+            "ai",
+            "frontend"
+          ],
+          "title": "Frontend visualization and incorporation of single cell data in cBioPortal"
+        },
+        {
+          "code_url": "https://github.com/oncokb/oncokb-annotation-visualizer",
+          "description": "OncoKB™ is a crucial resource which provides comprehensive information about genomic alterations in cancer. However, despite the availability of APIs and annotation tools, some users, especially those without computational backgrounds, face challenges in effectively annotating variants and generating reports. To bridge this gap, my project seeks to publish a standalone npm package for visualization of OncoKB annotations and a report generation module to make the annotations downloadable by the users. Seamless integration of these modules with cBioPortal will mark the end of my project.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2024_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/EaOORsnA/",
+          "proposal_id": null,
+          "short_description": "OncoKB™ is a crucial resource which provides comprehensive information about genomic alterations in cancer. However, despite the availability of APIs...",
+          "slug": "visualize-oncokb-annotation-and-patient-report-generation",
+          "status": "completed",
+          "student_name": "Aishika Nandi",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Visualize OncoKB annotation and  patient report generation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/cbioportal-for-cancer-genomics/"
+    },
+    "year_2025": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to automate metadata harmonization for cBioPortal, a widely used platform for cancer genomics research. Currently, metadata from different studies often uses inconsistent terms, limiting cross-study analysis and making it harder to apply AI/ML models effectively. Manual harmonization is time-consuming and not scalable.\n\nTo address this, I propose building an automated metadata harmonization tool using fine-tuned biomedical sentence transformer models to semantically match and standardize metadata terms. The pipeline will include data preprocessing, semantic matching, low-confidence flagging, and expert validation. A user-friendly UI will allow curators to review and confirm mappings, with final results stored in cBioPortal’s backend database.\n\nKey deliverables include:\n\n-A fully functional metadata harmonization pipeline\n-Semantic similarity models fine-tuned on curated biomedical data\n-Integration with cBioPortal's existing infrastructure\n-An interactive UI for expert review and export\n-Documentation and testing coverage\n\nThis tool will reduce manual curation time by over 70%, improve metadata consistency, and enhance the platform’s readiness for AI-driven research.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NzVvml1R",
+          "proposal_id": "YFWb8mY9",
+          "short_description": "This project aims to automate metadata harmonization for cBioPortal, a widely used platform for cancer genomics research. Currently, metadata from...",
+          "slug": "automated-metadata-harmonization-tool",
+          "status": "in-progress",
+          "student_name": "Changchang Li",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "database",
+            "ui",
+            "backend"
+          ],
+          "title": "Automated Metadata Harmonization Tool"
+        },
+        {
+          "code_url": null,
+          "description": "The cBioPortal for Cancer Genomics is an open resource for interactive exploration of multidimensional cancer genomics data sets. The goal of cBioPortal is to significantly lower the barriers between complex genomic data and cancer researchers by providing rapid, intuitive, and high-quality access to molecular profiles and clinical attributes from large-scale cancer genomics projects.\nCurrently, a Structural Variants tab is present in the cBioPortal results view page reporting structural variants in a tabular format without any visual representation. However, structural variants mainly consist of large and complex chromosome rearrangements that overlap with other mutational data and need to be carefully checked in relation to other metrics, such as depth of coverage and mutational density. Therefore, the lack of a comprehensive visualization tool that is able to display the whole mutational landscape in one genomic region has become a pressing issue.\nThis project aims to fill this gap by enriching multiple cBioPortal tabs with interactive plots where the user will be able to dive into these intricate genomic aberrations. The new visual components will be realized by a react component based on Gosling.js package, following the steps of the recently integrated Chromoscope iframe.",
+          "difficulty": "advanced",
+          "id": "proj_cbioportal-for-cance_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ecz27vCT",
+          "proposal_id": "52aTUwJ2",
+          "short_description": "The cBioPortal for Cancer Genomics is an open resource for interactive exploration of multidimensional cancer genomics data sets. The goal of...",
+          "slug": "use-chromoscope-react-component-for-structural-variants-visualization",
+          "status": "in-progress",
+          "student_name": "Eugenio Mazzone",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Use Chromoscope React Component for Structural Variants Visualization"
+        },
+        {
+          "code_url": null,
+          "description": "My project aims to enhance cBioportal's analytical capabilities by integrating Variant Allele Frequency (VAF) visualization into the Plots Tab and OncoPrint views. Currently, in Plots Tab we can visualize mutation types of particular gene across different cancer types but it is not possible to visualize VAF data for different samples across different cancer types. It is very crucial for researchers to understand mutation clonality and prevalence across cohorts through VAF. Similarly in OncoPrint view we cannot add tracks for VAF heatmaps across different genes. The proposed solution has two components. For the Plots Tab, we will introduce VAF (linked to a specific gene) as a selectable numerical data type of mutation for plot axes. This involves modifying the axis data generation logic  to calculate VAF per sample using, appropriately handling cases with multiple or no mutations. Existing plot components will then automatically render Box-Scatter or Scatter plots. For OncoPrint, we will implement gene-specific VAF heatmap tracks displayed below the main alteration grid. A new UI element within the Tracks menu toolbar will enable users to add VAF tracks for selected genes. This action updates URL parameters, triggering a new data fetching utility which retrieves VAF heatmaps corresponding to primary displayed mutations with a dedicated 0-1 color scale. OncoprintJS library  will render these heatmap tracks, complemented by tooltips showing detailed VAF information on hover.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/8scNjJhi",
+          "proposal_id": "wgcfmlC3",
+          "short_description": "My project aims to enhance cBioportal's analytical capabilities by integrating Variant Allele Frequency (VAF) visualization into the Plots Tab and...",
+          "slug": "show-variant-allele-frequency-on-the-plots-tab-and-oncoprint",
+          "status": "in-progress",
+          "student_name": "Rishi Prasad Sulakhe",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Show Variant Allele Frequency on the Plots Tab and OncoPrint"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to enhance the cBioPortal platform by generating a list of recommended default genes for each OncoTree code, which are often used for molecular classification of specific cancer subtypes. This will improve the effectiveness of the cBioPortal database by prioritizing the display of relevant genes to each disease subtype. To achieve this goal, a Large Language Model (LLM) such as GPT-4o, will be fine-tuned with prompt engineering and Retrieval-Augmented Generation (RAG) techniques to provide domain-specific knowledge and context. The goal is to train the LLM to connect relevant genes to each OncoTree code. \nApproach:\nLLM Selection: GPT-4o is a strong candidate due to its versatility and performance in various NLP tasks.\nPrompt Engineering: Develop efficient prompts for the selected LLM to generate gene lists.\nRAG Component: Implement a RAG component to provide context to the LLM and enhance accuracy using e-utilities to retrieve curated literature from NCBI GeneReviews and ClinVar.\nValidation: Cross-reference the generated gene lists with expert-curated resources like ClinGen and variant frequencies in cBioPortal, and COSMIC.\nEvaluation: Continuously monitor the model's performance using validation sets and adjust hyperparameters as needed.\nDeployment: Integrate the solution into the cBioPortal platform such as sorting variants on patient view pages by relevant genes first.\nConclusion: Completion of this project will significantly improve the usability of cBioPortal, providing users like researchers and clinicians with relevant gene and pathway information based on the cancer type they are exploring.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cance_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/2AJ2V3qf",
+          "proposal_id": "vDWYtBH5",
+          "short_description": "The project aims to enhance the cBioPortal platform by generating a list of recommended default genes for each OncoTree code, which are often used...",
+          "slug": "aillm-generated-gene-alteration-and-expression-based-subtyping-for-each-tumor-type",
+          "status": "in-progress",
+          "student_name": "Suhasini Lulla",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "AI/LLM Generated gene alteration and expression based subtyping for each tumor type"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/cbioportal-for-cancer-genomics"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/cBioPortal/GSoC",
+    "ideas_url": "https://github.com/cBioPortal/gsoc/issues?q=is%3Aissue%20state%3Aopen%20label%3AGSoC-2025",
+    "irc_channel": "https://slack.cbioportal.org",
+    "mailing_list": "https://groups.google.com/forum/#!forum/cbioportal-gsoc"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/cbioportal",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.509Z"
+  }
+}

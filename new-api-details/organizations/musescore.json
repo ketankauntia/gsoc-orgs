@@ -1,0 +1,605 @@
+{
+  "id": "692251dd53dd9d7326d33e32",
+  "slug": "musescore",
+  "name": "MuseScore",
+  "category": "End user applications",
+  "description": "The World’s Most Popular Music Notation Software",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/musescore/tgkjkzlqhj0qru5z.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/musescore.webp",
+  "logo_r2_url": null,
+  "url": "https://musescore.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2016,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "c++",
+    "qt",
+    "qml",
+    "c++11",
+    "qt5",
+    "breakpad",
+    "cpp",
+    "midi",
+    "cmake"
+  ],
+  "topics": [
+    "music",
+    "notation",
+    "midi",
+    "musicxml",
+    "sheet music",
+    "music engraving",
+    "user interface",
+    "end user applications",
+    "music notation",
+    "composing",
+    "notation software",
+    "piano",
+    "guitar",
+    "audio",
+    "engraving"
+  ],
+  "total_projects": 24,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.67,
+    "projects_by_year": {
+      "year_2016": 3,
+      "year_2017": 3,
+      "year_2018": 3,
+      "year_2019": 4,
+      "year_2020": 3,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 1,
+      "year_2024": 2,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 3,
+      "year_2017": 3,
+      "year_2018": 3,
+      "year_2019": 4,
+      "year_2020": 3,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 1,
+      "year_2024": 2,
+      "year_2025": null
+    },
+    "total_students": 22
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/user/124871/blog/2016/08/17/gsoc-work-product",
+          "description": "<p>At the moment MuseScore has poor ability to handle multiple voices. For example it’s actually not possible to create two excerpts with only one voice from a instrument which has two voices in one staff. There is also not a direct way to explode multiple voices in one stave to multiple staves containing one single voice. The project’s aim is to implement a better handling of multiple voices in the excerpt generation and an improvement to the Implode and Explode tools, so for example they’ll be able to deal with different rhythms.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4597633641349120/",
+          "proposal_id": null,
+          "short_description": "At the moment MuseScore has poor ability to handle multiple voices. For example it’s actually not possible to create two excerpts with only one voice...",
+          "slug": "voice-to-part-tool-and-extended-implodeexplode-tool",
+          "status": "completed",
+          "student_name": "Rocketone",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "voice to part tool and extended implode/explode tool"
+        },
+        {
+          "code_url": "https://musescore.org/en/user/57401/blog/2016/08/23/gsoc-2016-work-product-semi-realtime-midi",
+          "description": "<p>This project would implement a new method of entering notes into MuseScore via a computer or MIDI keyboard that is more natural to musicians than the existing “step-time” method. The new method basically allows the user to play the piece into to the computer as though they were giving a live performance, but steps are taken to ensure the accuracy of the resulting notation. This would make the process of entering notes significantly faster.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4677819875459072/",
+          "proposal_id": null,
+          "short_description": "This project would implement a new method of entering notes into MuseScore via a computer or MIDI keyboard that is more natural to musicians than the...",
+          "slug": "semi-realtime-midi",
+          "status": "completed",
+          "student_name": "shoogle",
+          "student_profile": null,
+          "tags": [],
+          "title": "Semi-realtime MIDI"
+        },
+        {
+          "code_url": "https://musescore.org/en/user/527826/blog/2016/08/22/gsoc-2016-workproduct-playback",
+          "description": "<p>I want to improve the playback capabilities of the music notation software MuseScore. MuseScore ships with two synthesizers Fluidsynth (using the SF format) and Zerberus (using the SFZ Format). I want to improve both of them. The Fluidsynth in MuseScore got forked some time ago - all fixes and improvements that have gone into upstream Fluidsynth which can help MuseScore shall be incorporated. Furthermore <a href=\"https://en.wikipedia.org/wiki/Legato\" target=\"_blank\">legato</a> playback shall be added to Fluidsynth (preferable via <a href=\"http://www.nortonmusic.com/midi_cc.html\" target=\"_blank\">Midi CC68</a>). MuseScore's midi rendering will be extended with single note/chord (de)crescendo via Midi CC11.\nZerberus is still in its infancy. But the SFZ format grants a lot more flexibility and open design than the traditional SF format. So having a good SFZ synthesizer is the key to better sound in the future. I will focus on adding looping support and ADSR envelopes but as much opcodes as possible shall be incorporated!</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4818557363814400/",
+          "proposal_id": null,
+          "short_description": "I want to improve the playback capabilities of the music notation software MuseScore. MuseScore ships with two synthesizers Fluidsynth (using the SF...",
+          "slug": "improving-playback-in-musescore",
+          "status": "completed",
+          "student_name": "hpfmn",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Improving playback in MuseScore"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5302100888125440/"
+    },
+    "year_2017": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/user/930801/blog/2017/08/26/gsoc-2017-work-product-accessibility",
+          "description": "<p>The goal of the project is to improve keyboard accessibility so that visually impaired users can use MuseScore for score creation as well as score reading. Particularly, the aim is to make score editing possible through the use of keyboard only, eliminating the need for the mouse. This will allow blind users to use MuseScore for score editing, and will also benefit sighted users who feel that using the keyboard is more efficient.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5691957217067008/",
+          "proposal_id": null,
+          "short_description": "The goal of the project is to improve keyboard accessibility so that visually impaired users can use MuseScore for score creation as well as score...",
+          "slug": "improving-the-accessibility-of-musescore-for-visually-impaired-musicians",
+          "status": "completed",
+          "student_name": "Divya Raghunathan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the Accessibility of MuseScore for Visually Impaired Musicians"
+        },
+        {
+          "code_url": "https://musescore.org/en/user/1214841/blog/2017/08/26/gsoc-2017-final-work-product-submission",
+          "description": "<p>The project idea that I would like to implement is a start-up wizard for MuseScore. This idea stems from the idea of implementing keyboard layouts and shortcut management. Every MuseScore user has a different profile. At the beginning of the program, we could ask users different questions to help configure MuseScore better for their use. Some of these questions include a user’s language, keyboard layout or their level. We could then use this information to toggle settings and set up MuseScore in a way that enhances their process of writing scores. The wizard will be available to users after setting up in the form of an easy-to-use configuration panel that can aid users in their score writing process.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_musescore_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6552515386540032/",
+          "proposal_id": null,
+          "short_description": "The project idea that I would like to implement is a start-up wizard for MuseScore. This idea stems from the idea of implementing keyboard layouts...",
+          "slug": "start-up-wizard-for-musescore",
+          "status": "completed",
+          "student_name": "Aryaman Vinchhi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Start-Up Wizard for MuseScore"
+        },
+        {
+          "code_url": "https://gist.github.com/JoshuaBonn1/906556e3fa93578b9fc5e1912355e6c7",
+          "description": "<p>The timeline is a possible alternative to the existing navigator tool. It would display an abstract view of the score, distilling it down to measure numbers, key signature, time signature, and tempo changes, as well as a list of the instruments. These would be displayed in a grid format. The user can select a spot on the grid and be automatically placed there in the scroll. Many features would exist to help the user navigate the timeline and understand the abstraction.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5830531652517888/",
+          "proposal_id": null,
+          "short_description": "The timeline is a possible alternative to the existing navigator tool. It would display an abstract view of the score, distilling it down to measure...",
+          "slug": "timeline-navigator",
+          "status": "completed",
+          "student_name": "Joshua Bonn",
+          "student_profile": null,
+          "tags": [],
+          "title": "Timeline Navigator"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4738118800375808/"
+    },
+    "year_2018": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/node/275235/",
+          "description": "<p>The main goal of the proposed project is creation of a tool integrated into MuseScore which will allow users to compare their scores to see differences between them in textual form. As an additional task, the work on visual comparison tool is planned to be started, though it will not be finished during this summer. For implementation of these tasks some changes will be made to MSCX file format which is one of the formats used by MuseScore for saving music scores. This format will be optimized for suitability for textual comparison purpose which will allow to benefit from well-established robust textual comparison tools for implementation of the score comparison tools mentioned above.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4974437766004736/",
+          "proposal_id": null,
+          "short_description": "The main goal of the proposed project is creation of a tool integrated into MuseScore which will allow users to compare their scores to see...",
+          "slug": "score-comparison-tool-for-musescore",
+          "status": "completed",
+          "student_name": "Dmitri Ovodok",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Score Comparison Tool for MuseScore"
+        },
+        {
+          "code_url": "https://gist.github.com/nasehim7/0c633c08437e43d5b784d8dbf066c78f",
+          "description": "<p>The basic idea would be to support the current scenario of Audiveris OMR integration with MuseScore by accumulating a large correct dataset. The OMR needs to be successfully trained on a large dataset so that it can provide precise outputs which will help the Music community. To carry out this task, a new metadata XML format, similar to the output understandable by Audiveris, is to be implemented in the application so that scores are saved as the desired XML. This project will create a huge dataset of annotated music symbols that will help Audiveris perform better which in turn will bring out a new dimension to Musescore as a feature. This functionality will be able to help support other OMR projects.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4691290906165248/",
+          "proposal_id": null,
+          "short_description": "The basic idea would be to support the current scenario of Audiveris OMR integration with MuseScore by accumulating a large correct dataset. The OMR...",
+          "slug": "machine-learning-dataset-for-optical-music-recognition",
+          "status": "completed",
+          "student_name": "Animesh Tewari",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Machine Learning Dataset for Optical Music Recognition"
+        },
+        {
+          "code_url": "https://gist.github.com/JoshuaBonn1/19fbfa62850466708199db47648a98c8",
+          "description": "<p>The beginner mode and teaching functionality project will assist newcomers to MuseScore. The beginner mode will present a simpler UI and some simplified options to avoid information overload. It will also integrate the handbook in as on screen help. The teaching functionality will entail many abilities to lock measures, disable UI options, and introduce a “teaching mode” to give tutorials to newcomers.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_musescore_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5222358377824256/",
+          "proposal_id": null,
+          "short_description": "The beginner mode and teaching functionality project will assist newcomers to MuseScore. The beginner mode will present a simpler UI and some...",
+          "slug": "beginner-mode-and-tutorial-creation",
+          "status": "completed",
+          "student_name": "Joshua Bonn",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Beginner Mode and Tutorial Creation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4728147161382912/"
+    },
+    "year_2019": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/node/293780",
+          "description": "<p>One of the ways that MuseScore lags behind other pieces of software is in its handling of instrument changes. Currently, to change between pitched instruments, you add an instrument change object, right click on it to change the instrument, and then change the text manually. This is quite unintuitive, and there are is currently no way to change between pitched and unpitched percussion. I would like to implement a number of changes to streamline the process, and bring the functionality up to the level of competing pieces of software.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6401723948597248/",
+          "proposal_id": null,
+          "short_description": "One of the ways that MuseScore lags behind other pieces of software is in its handling of instrument changes. Currently, to change between pitched...",
+          "slug": "improvements-to-instrument-changes",
+          "status": "completed",
+          "student_name": "Josh Wood",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Improvements to Instrument Changes"
+        },
+        {
+          "code_url": "https://musescore.org/en/user/2068843/blog/2019/08/23/gsoc-2019-chord-symbol-playback-work-product",
+          "description": "<p>MuseScore currently supports playback for a majority of their elements. Chord Symbols, however, are purely visual and lack playback. When writing or arranging lead sheets, this can be an issue as the chord symbols detail the entire harmony of the piece. Additionally, others users may want to notate partial ideas or a skeleton of an idea that’s most easily represented with chord symbols. In these cases, this means that a user would only be able to hear a preview of the melody and nothing else. Unless the user is an experienced professional with strong audiation skills, being unable to physical hear the harmony of their music is an important setback.</p>\n<p>This project aims to implement the playback of chord symbols in a flexible way to suit different styles and genres of music and be versatile for use with final scores as well as unfinished drafts. Completion of this project will allow users to work with greater efficiency and enhanced feedback on their scores as well as set up MuseScore for additional development in harmony.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6678339035594752/",
+          "proposal_id": null,
+          "short_description": "MuseScore currently supports playback for a majority of their elements. Chord Symbols, however, are purely visual and lack playback. When writing or...",
+          "slug": "chord-symbol-improvements",
+          "status": "completed",
+          "student_name": "Peter Vu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Chord Symbol Improvements"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/293702",
+          "description": "<p>The palette in Musescore is redesigned using a QTreeWidget. With the help of model/view programming and custom delegates, a new view is created to display the palette in two ways - \nList view and Icon View. Keyboard shortcuts are also implemented to access the branches of the QTreeWidget.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5395601234067456/",
+          "proposal_id": null,
+          "short_description": "The palette in Musescore is redesigned using a QTreeWidget. With the help of model/view programming and custom delegates, a new view is created to...",
+          "slug": "palette-accessibility",
+          "status": "completed",
+          "student_name": "Anand H",
+          "student_profile": null,
+          "tags": [],
+          "title": "Palette Accessibility"
+        },
+        {
+          "code_url": "https://musescore.org/en/user/1941193/blog/2019/08/21/gsoc-2019-plugin-manager-work-product",
+          "description": "<p>MuseScore functionality can be extended by plugins. Discovering the compatible plugins and installing them however is currently a manual job. You have to use a web browser to choose and download a plugin of the correct version from a plugin page, extract it using your file archiver, copy qml files(and sometimes with translation files) to MuseScore plugin directory and finally reload the plugins in MuseScore.</p>\n<p>The whole process described above is possible to be fully automated, which is exactly the goal of this project.</p>\n<p>The project consists of 2 parts:</p>\n<ul>\n<li>A plugin store from which the user can discover, (un)install and auto-update plugins from the MuseScore plugin repository in an easy manner.</li>\n<li>Improvements of the old plugin manager\nThe main change is integrating both local plugins and plugins from store.</li>\n</ul>\n",
+          "difficulty": "beginner",
+          "id": "proj_musescore_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5911398738034688/",
+          "proposal_id": null,
+          "short_description": "MuseScore functionality can be extended by plugins. Discovering the compatible plugins and installing them however is currently a manual job. You...",
+          "slug": "app-store-like-plugin-manager",
+          "status": "completed",
+          "student_name": "Songchao Wang",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai"
+          ],
+          "title": "App Store-like Plugin Manager"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4748058460422144/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/node/309770",
+          "description": "<p>There are a variety of standard notations, which can be grouped under the loose rubric of “counting-related symbols,” that current versions of MuseScore cannot create. Among these are old-style multimeasure rests (MuseScore currently only supports the H-bar style), the symbol to repeat the previous two measures (or to repeat the previous four measures or <em>n</em> measures), and automatic numbering when the same measure is repeated multiple times. This project would implement all of these loosely related features, with simple user controls for their appearance, along with added and improved appearance controls for the already supported basic H-bar rests. In addition to the notation aspect, the symbols for 2-measure, 4-measure, or <em>n</em>-measure repeats will come with MIDI playback support.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6334421281538048/",
+          "proposal_id": null,
+          "short_description": "There are a variety of standard notations, which can be grouped under the loose rubric of “counting-related symbols,” that current versions of...",
+          "slug": "repeats-rests-and-other-counting-related-symbols",
+          "status": "completed",
+          "student_name": "Isaac Weiss",
+          "student_profile": null,
+          "tags": [],
+          "title": "Repeats, Rests, and Other Counting-Related Symbols"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/309683",
+          "description": "<p>The current implementation of Albums in MuseScore 3 is buggy and limited. That's why it has been disabled in the normal build. I want to re-implement the Albums feature in MuseScore 3, add functionality and bring it up to the standards of the rest of the software.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5471142015401984/",
+          "proposal_id": null,
+          "short_description": "The current implementation of Albums in MuseScore 3 is buggy and limited. That's why it has been disabled in the normal build. I want to re-implement...",
+          "slug": "albums-feature",
+          "status": "completed",
+          "student_name": "SKefalidis",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Albums feature"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/309706",
+          "description": "<p>If Musescore was being built today using web technologies like React etc., it would have definitely been built with a tree-like model for the score with each element in the score containing the smaller elements, like Score -&gt; Staff -&gt; Measure -&gt; Note -&gt; Accidental. In the case of Musescore, the code was written manually for QT, with all the drawing and file handling code written manually. So the classes in libmscore follow this tree-like model somewhat informally, but not explicitly. I will be refactoring the code, such that the classes in libmscore follow this model exactly by adding a \"children\" list to the ScoreElement class. Many operations can then be written as tree traversals. This would prevent a lot of duplication in code, and simplify the code in a lot of places.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4599259090911232/",
+          "proposal_id": null,
+          "short_description": "If Musescore was being built today using web technologies like React etc., it would have definitely been built with a tree-like model for the score...",
+          "slug": "tree-model-for-libmscore",
+          "status": "completed",
+          "student_name": "Kumar Kartikay",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Tree Model for libmscore"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5017312551239680/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/node/323928",
+          "description": "<h3>Smart Tempo in MuseScore 4</h3>\n<h3>Adding static and dynamic tempo changes</h3>\n<p>The primary focus of this project is intended to improve the engraving support for static tempo markings, by allowing the user to input complex temp markings with ease. The project will also add \"Relative Tempo Changes\" which are another category of static tempo markings. Once these goals are achieved, and enough time is available, the project will tackle adding basic dynamic tempo changes which have been a long requested feature. Once fundamental support for dynamic tempo changes are done, tempo resets will be added to complement both the static and dynamic changes</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_musescore_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5278929711005696/",
+          "proposal_id": null,
+          "short_description": "Smart Tempo in MuseScore 4\nAdding static and dynamic tempo changes\nThe primary focus of this project is intended to improve the engraving support for...",
+          "slug": "smart-tempo-in-musescore-4",
+          "status": "completed",
+          "student_name": "Sidharth Anand",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Smart Tempo in MuseScore 4"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/323954",
+          "description": "<h3><strong>Improving Accessibility for the Visually Impaired</strong></h3>\n<p>My project revolves around making improvements to MuseScore’s design that acknowledge, dismantle, and prevent the barriers holding back a minority of Partially Sighted individuals from comfortably reading and writing music. In particular, I am going to be targeting the existing High Contrast mode within the application.</p>\n<p>The changes include, but are not limited to:</p>\n<p>• Score Page Colour Inversion</p>\n<p>• Re-colourization of the existing High Contrast mode</p>\n<p>• Different High Contrast modes (Light/Dark) with appropriate Colour Schemes</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4805171464372224/",
+          "proposal_id": null,
+          "short_description": "Improving Accessibility for the Visually Impaired\nMy project revolves around making improvements to MuseScore’s design that acknowledge, dismantle,...",
+          "slug": "improving-accessibility-for-the-visually-impaired",
+          "status": "completed",
+          "student_name": "Arjun Taneja",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Accessibility for the Visually Impaired"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/323927",
+          "description": "<p>MuseScore is an open-source software that enables users to create and share professional-grade sheet music. The application really stands out as a great program in that it provides a hassle-free environment to create sheet music. Currently, the application uses styles defined in XML files to represent chords. Even though it greatly extends the functionality, it is not very accessible to an average user. This project aims at creating the Chord Symbol Style Editor for the users to have complete control over how the chords are represented in their sheet music. The editor houses a simple-to-use interface that provides the ability to control every aspect of the chord representation the user might want to customize.</p>\n",
+          "difficulty": null,
+          "id": "proj_musescore_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6071808859570176/",
+          "proposal_id": null,
+          "short_description": "MuseScore is an open-source software that enables users to create and share professional-grade sheet music. The application really stands out as a...",
+          "slug": "chord-symbol-style-editor",
+          "status": "completed",
+          "student_name": "Ashwath V A",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Chord Symbol Style Editor"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5844642704130048/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/node/335019",
+          "description": "This project will add a well integrated method of adding and editing harp pedalling diagrams to scores.  The user will drag a pedalling diagram from the palette to the score then be able to edit it from the inspector.  Proofreading will be immediate and automatic, giving the user feedback by highlighting notes impossible to play in the current configuration in red.",
+          "difficulty": null,
+          "id": "proj_musescore_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/FeUGBjpx/",
+          "proposal_id": null,
+          "short_description": "This project will add a well integrated method of adding and editing harp pedalling diagrams to scores. The user will drag a pedalling diagram from...",
+          "slug": "harp-pedalling-diagrams",
+          "status": "completed",
+          "student_name": "James Mizen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Harp Pedalling Diagrams"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/335032",
+          "description": "This project intends to extend the shortcut system of the application by allowing users to instantly attach a shortcut to any required item in the interface. This may be accomplished via right-clicking the buttons and bringing up a context menu, or by using a modifier key (say CTRL) to assign a shortcut to the button pressed while holding that key.\n\nA stretch goal would be to create collections of shortcuts to assist new users coming from comparable software like as Sibelius in becoming acclimated and comfortable working with MuseScore.",
+          "difficulty": null,
+          "id": "proj_musescore_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Yab6dE8h/",
+          "proposal_id": null,
+          "short_description": "This project intends to extend the shortcut system of the application by allowing users to instantly attach a shortcut to any required item in the...",
+          "slug": "global-shortcuts",
+          "status": "completed",
+          "student_name": "Rahul_Garg",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Global Shortcuts"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/musescore/"
+    },
+    "year_2023": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/node/355441",
+          "description": "The main objective of this project is to develop a functioning text pop-up feature in Musescore. This pop-up will act as a framework for various text-related features that will be added in the future. It can be accessed by selecting a section of text in the score, providing users with access to basic text properties such as font, font color, font size, line spacing, and text spacing.\nIn addition to the text pop-up feature, UI improvements in Musescore will be implemented to enhance the overall user experience. These improvements will focus on optimizing the layout and improving usability. If time permits, spell-checking, automatic hyphenation, and verse extraction capabilities will be worked on as a part of this project.",
+          "difficulty": null,
+          "id": "proj_musescore_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/OifrwbNC",
+          "proposal_id": "M6P0s5Q9",
+          "short_description": "The main objective of this project is to develop a functioning text pop-up feature in Musescore. This pop-up will act as a framework for various...",
+          "slug": "floating-text-widget-ui-improvements",
+          "status": "completed",
+          "student_name": "Hirnaymay Bhaskar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Floating Text Widget / UI improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/musescore"
+    },
+    "year_2024": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://musescore.org/en/node/367419",
+          "description": "Organisations such as the Royal National Institute of Blind People (RNIB) are currently manually adjusting appearance settings like staff size change, line thickness change etc. in Musescore to aid users with low vision, as these features are scattered throughout the software. This manual adjustment process consumes significant resources and bandwidth, posing challenges for effective access and use of the software by individuals with visual impairments.\n\nThe idea is to address this issue by introducing a new settings feature in MuseScore. This feature will provide a list of standard accessibility profiles, such as normal, large, etc., each one customised to specific needs of users with low vision. These profiles will collectively update a set of appearance settings, including staff size, page size, and other relevant ones, to enhance accessibility for users with visual impairments.",
+          "difficulty": null,
+          "id": "proj_musescore_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/MkrENRK2/",
+          "proposal_id": null,
+          "short_description": "Organisations such as the Royal National Institute of Blind People (RNIB) are currently manually adjusting appearance settings like staff size...",
+          "slug": "accessibility-profiles",
+          "status": "completed",
+          "student_name": "Animesh Tewari",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Accessibility profiles"
+        },
+        {
+          "code_url": "https://musescore.org/en/node/367395",
+          "description": "This project aims to enhance the user experience and streamline the workflow of musical score editing in MuseScore through the implementation of a Dynamics Popup feature. The primary objective is to develop a new user interface component that appears when users interact with dynamic markings or hairpins within the score. The Dynamics Popup will enable users to seamlessly replace dynamic markings, add new ones, and select hairpin options such as crescendo or decrescendo. Upon selecting a hairpin, the hairpin along with a suggested arrival dynamic will be drawn on the score. Further, the Popup will reposition itself above the arrival dynamic allowing the user to set it to what they want.",
+          "difficulty": null,
+          "id": "proj_musescore_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/NAi2Ul9M/",
+          "proposal_id": null,
+          "short_description": "This project aims to enhance the user experience and streamline the workflow of musical score editing in MuseScore through the implementation of a...",
+          "slug": "dynamics-popup",
+          "status": "completed",
+          "student_name": "Aniketto",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Dynamics Popup"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/musescore/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "m.keary@musescore.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://github.com/musescore/MuseScore/wiki/Contact#MuseScores-Discord-server",
+    "mailing_list": "http://mscore-developer@lists.sourceforge.net"
+  },
+  "social": {
+    "blog": "https://github.com/musescore/MuseScore/wiki/Contact#MuseScores-Discord-server",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/musescore?lang=en",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.644Z"
+  }
+}

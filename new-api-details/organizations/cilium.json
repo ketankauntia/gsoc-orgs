@@ -1,0 +1,161 @@
+{
+  "id": "692251d053dd9d7326d33d7a",
+  "slug": "cilium",
+  "name": "Cilium",
+  "category": "Infrastructure and cloud",
+  "description": "eBPF-based Networking, Security, and Observability",
+  "image_url": "https://lh3.googleusercontent.com/VPNqZNIcRxMMfF6D-9o6tvWwn17wdXQzXkmGYaLh5yO_v7DzRd7YQkjte75fFbjRpcDXc6h1VNWLM9ZF-Mgo7fdpFyoVxGaY0heHjj-or6BD",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/cilium.webp",
+  "logo_r2_url": null,
+  "url": "https://cilium.io",
+  "active_years": [
+    2021
+  ],
+  "first_year": 2021,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "linux",
+    "go",
+    "kubernetes",
+    "ebpf"
+  ],
+  "topics": [
+    "networking",
+    "kernel",
+    "cloud-native"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/rgo3/609b17835870cba8de6ca3a5e92dc7c9",
+          "description": "<p>Currently <code>bpftool</code> as a userspace utility tool living in the linux kernel can do ebpf feature probing: <code>bpftool feature probe</code>. As the Go+ebpf user-base is growing, it would be useful to have the possibility to probe the kernel for available ebpf features from other userspace programs written in Go without having to shell out to <code>bpftool</code>.\nThis proposal is about adding a feature probe API to cilium/ebpf that gives users a standardized interface to query the kernel for available ebpf features, furthermore encouraging the use of Go within a fast growing ebpf community.</p>\n",
+          "difficulty": null,
+          "id": "proj_cilium_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6231018767384576/",
+          "proposal_id": null,
+          "short_description": "Currently bpftool as a userspace utility tool living in the linux kernel can do ebpf feature probing: bpftool feature probe. As the Go+ebpf user-base...",
+          "slug": "a-feature-probe-api-for-ciliumebpf",
+          "status": "completed",
+          "student_name": "rgo3",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ux"
+          ],
+          "title": "A Feature Probe API for cilium/ebpf"
+        },
+        {
+          "code_url": "https://gist.github.com/h3llix/20c2489ccc09881f63eb9c4157ce1c07",
+          "description": "<p>Currently, cilium-agent CLI exposes only a subset of daemon configurations. However, most of the applied configurations can be seen by viewing the ConifgMap in the Kubernetes cluster. The main issue is that ConfigMap does not stay reconciled with the active daemon configurations. This means that if we change any configuration in the ConfigMap, it is not immediately reflected in Cilium. Cilium needs to be restarted to apply those configurations. Depending on kernel configurations, It may happen that ConfigMap and daemon both show different active configurations. So, this project aims at improving the existing <code>cilium config</code> command to expose all active configurations.</p>\n<p>Add subcommand :</p>\n<ol>\n<li><code>cilium encrypt status,</code> which displays information on the current status of the IPSec configurations </li>\n<li><code>cilium encrypt flush,</code> which flushes the current XFRM States of the node.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_cilium_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4722189072334848/",
+          "proposal_id": null,
+          "short_description": "Currently, cilium-agent CLI exposes only a subset of daemon configurations. However, most of the applied configurations can be seen by viewing the...",
+          "slug": "expose-all-active-configurations-and-cli-improvements",
+          "status": "completed",
+          "student_name": "Gaurav Genani",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Expose all active configurations and CLI improvements."
+        },
+        {
+          "code_url": "https://gist.github.com/chez-shanpu/146c7ac1ac931c742f01af8792f2ca9d",
+          "description": "<p>Cilium is a networking software which provides secure network connectivity and load-balancing between applications using eBPF. In addition, Cilium is a CNI plugin for Kubernetes.\nCilium can manage network access control by using network policy functions, called “CiliumNetworkPolicy” (CNP). Users can allow or deny specific traffic by applying a CNP. However, currently, any traffic except for TCP/UDP (including ICMP) is denied if an L4 CNP is present, and there is no way for the user to explicitly allow ICMP traffic. Therefore, I propose to implement a CNP for explicitly allowing ICMP traffic.</p>\n",
+          "difficulty": null,
+          "id": "proj_cilium_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5847858258903040/",
+          "proposal_id": null,
+          "short_description": "Cilium is a networking software which provides secure network connectivity and load-balancing between applications using eBPF. In addition, Cilium is...",
+          "slug": "explicit-allow-listing-for-icmp",
+          "status": "completed",
+          "student_name": "Tomoki Sugiura",
+          "student_profile": null,
+          "tags": [
+            "kubernetes"
+          ],
+          "title": "Explicit Allow-Listing for ICMP"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6055505163714560/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://docs.cilium.io/en/latest/community/#slack",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://cilium.io/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/ciliumproject",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.017Z"
+  }
+}

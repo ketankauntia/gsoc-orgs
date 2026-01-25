@@ -1,0 +1,307 @@
+{
+  "id": "692251d453dd9d7326d33db9",
+  "slug": "gnu-image-manipulation-program",
+  "name": "GNU Image Manipulation Program",
+  "category": "End user applications",
+  "description": "GIMP is a cross-platform image editor",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/gnu-image-manipulation-program/n73ytwpnna15tra2-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/gnu-image-manipulation-program.webp",
+  "logo_r2_url": null,
+  "url": "https://www.gimp.org/",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "GEGL"
+  ],
+  "topics": [
+    "graphics",
+    "design",
+    "photography",
+    "illustration"
+  ],
+  "total_projects": 10,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 3,
+      "year_2024": 3,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 3,
+      "year_2024": 3,
+      "year_2025": 3
+    },
+    "total_students": 8
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://cmykstudent.blogspot.com/2022/09/google-summer-of-code-2022-report.html",
+          "description": "One of the most requested features for GIMP is support for CMYK and desktop publishing - there's even an FAQ entry on their site specifically for it! While GIMP is primarily focused on digital editing, their backend systems and libraries are more than capable of CMYK workflows.\n\nThe goal of this project is to enable users to begin using GIMP for creating images for print. A basic implementation consists of three milestones:\n\n1) Allowing users to import and export the most common \"print\" file formats (.tiff, .pdf/.eps/.ai, .psd) with CMYK profiles.\n\n2) Developing a Dockable Dialogue to simplify the process of changing profiles, enabling soft-proofing, and other related tools.\n\n3) Identifying and improving existing issues with Color Management as part of GIMP's Color Space Invasion initiative.\n\nWhile this basic implementation would not fully implement the \"High-end CMYK support\" goal in GIMP's roadmap, it would be a step in that direction, and could encourage users and developers to contribute further to that effort.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/x9DLkUcC/",
+          "proposal_id": null,
+          "short_description": "One of the most requested features for GIMP is support for CMYK and desktop publishing - there's even an FAQ entry on their site specifically for it!...",
+          "slug": "implement-basic-cmyk-support-in-gimp",
+          "status": "completed",
+          "student_name": "cmyk-student",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Implement basic CMYK support in GIMP"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/gnu-image-manipulation-program/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gimp-nde-gsoc-2023.blogspot.com/2023/08/record-of-work-done-on-nde.html",
+          "description": "GIMP utilizes a Destructive Editing workflow – all changes are made directly to the image itself. A much requested feature is Non-Destructive Editing (NDE) which would allow users to make changes without overwriting the original image. This would mean they can easily revert prior edits, modify the settings of filters to see live changes, and rearrange the order that effects are applied in. \n\nGIMP’s image processing engine GEGL is fully capable of many NDE operations. However, these features are not fully exposed to users. The goal of this project would be to enable Non-Destructive Editing on individual layers and layer groups through “Layer Effects” such as drop shadows and brightness/contrast filters. A basic implementation consists of three milestones:\n\n1. Research and design a NDE workflow that compliments GIMP’s current design and user base.\n\n2. Implement “Layer Effects” for GIMP’s regular and text layers as well as layer groups.\n\n3. Add support to the PSD plug-in to recognize and import equivalent “Layer Styles” and “Adjustment Layers” as NDE Layer Effects.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/CuwyAr75",
+          "proposal_id": "dutevTyw",
+          "short_description": "GIMP utilizes a Destructive Editing workflow – all changes are made directly to the image itself. A much requested feature is Non-Destructive Editing...",
+          "slug": "implement-initial-non-destructive-editing-workflow-in-gimp",
+          "status": "completed",
+          "student_name": "cmyk-student",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Implement Initial Non-Destructive Editing Workflow in GIMP"
+        },
+        {
+          "code_url": "https://gitlab.gnome.org/GNOME/gimp/-/merge_requests?scope=all&state=all&author_username=user062&label_name=9.%20GSoC&deployed_before=2.99.18",
+          "description": "GIMP is a high end photo editor, but its text tool is rudimentary. A lot could be done to improve it, UI/UX-wise and feature-wise. I plan on improving OpenType features, mainly support for alternate glyphs, and also some other improvments.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/l07oaC3k",
+          "proposal_id": "scgfZ5yQ",
+          "short_description": "GIMP is a high end photo editor, but its text tool is rudimentary. A lot could be done to improve it, UI/UX-wise and feature-wise. I plan on...",
+          "slug": "improving-the-text-tool",
+          "status": "completed",
+          "student_name": "Idriss Fekir",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Improving the Text Tool"
+        },
+        {
+          "code_url": "https://gitlab.gnome.org/GNOME/gimp/-/merge_requests/961",
+          "description": "GNU Image Manipulation Program, or GIMP in short, is one of the most popular image editing\nprograms that is Free and Open Source. But currently, the image layers need to be resized\nmanually which is inefficient and degrades user experience. This can be particularly frustrating\nwhen using a brush tool. Also, beginners might find it hard to use. So this project aims to add\nsupport for Auto growing layers in GIMP and other features required for implementing it.",
+          "difficulty": "beginner",
+          "id": "proj_gnu-image-manipulati_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/6mh7rn5o",
+          "proposal_id": "UPCU0RhS",
+          "short_description": "GNU Image Manipulation Program, or GIMP in short, is one of the most popular image editing programs that is Free and Open Source. But currently, the...",
+          "slug": "auto-growing-layers",
+          "status": "completed",
+          "student_name": "sbdaule5",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Auto-growing layers"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/gnu-image-manipulation-program"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/user062/text-layout-experiment",
+          "description": "Continuing last year’s GSOC work done on the text-tool, This project aims at bringing OpenType features support to GIMP, and also improve Font handling, and refactor the text handling code to make the transition to a custom text-layout handling implementation easier and smoother.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hSGxzFxr/",
+          "proposal_id": null,
+          "short_description": "Continuing last year’s GSOC work done on the text-tool, This project aims at bringing OpenType features support to GIMP, and also improve Font...",
+          "slug": "improving-the-text-tool-contd",
+          "status": "completed",
+          "student_name": "Idriss Fekir",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving the Text-Tool (cont'd)"
+        },
+        {
+          "code_url": "https://gist.github.com/cheesequake/c5381fca202b5a60e5eab9b8d085b63f",
+          "description": "Currently GIMP uses the complicated GtkTreeView from GTK3. My job is to create a new GimpTreeView widget which moves away from GtkTreeView as it will be deprecated in GTK4 port, and which is much simpler to implement than GtkTreeView. With inspiration from GTK4's GtkColumnView, I will create a versatile widget which is much cleaner in implementation.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/PanhUm2r/",
+          "proposal_id": null,
+          "short_description": "Currently GIMP uses the complicated GtkTreeView from GTK3. My job is to create a new GimpTreeView widget which moves away from GtkTreeView as it will...",
+          "slug": "porting-from-gtktreeview-to-a-new-gimptreeview",
+          "status": "completed",
+          "student_name": "Cheesequake",
+          "student_profile": null,
+          "tags": [],
+          "title": "Porting from GtkTreeView to a new GimpTreeView"
+        },
+        {
+          "code_url": "https://gist.github.com/VarunSamaga/8de8def82d154f141649a1ffcf43bfd3",
+          "description": "The massively parallel nature of many real-world computations has led to the development of specialized massively parallel hardware such as GPUs, TPUs and FPGAs. Many closely-related programming models exist such as CUDA and OpenCL. OpenCL is a popular framework for writing massively parallel code given its broader ecosystem and supported platforms. GIMP is a popular free open-source image manipulation tool often shipped as the default tool in many Unix-based distributions. GIMP uses GEGL internally for accelerating various image processing tasks. GEGL comes with OpenCL implementations for many operations. However, the OpenCL backend in GEGL was often slower than the baselines and resulted in incorrect outputs (and crashed sometimes). The goal of this project is to enumerate all the existing OpenCL implementations in GEGL, write a thorough suite of tests for them, and fix as many implementations as possible. If time permits and once correctness is established via tests, the project adds new faster implementations for popular operations. A successful completion of the project would allow the OpenCL backend to be enabled by default and allow the end-users to take advantage of hardware acceleration on their devices automatically.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/NmrndTt8/",
+          "proposal_id": null,
+          "short_description": "The massively parallel nature of many real-world computations has led to the development of specialized massively parallel hardware such as GPUs,...",
+          "slug": "robust-opencl-operations",
+          "status": "completed",
+          "student_name": "Varun Samaga B L",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "backend"
+          ],
+          "title": "Robust OpenCL Operations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/gnu-image-manipulation-program/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to create a GEGL filter browser for GIMP, improving the user experience by providing an easy-to-use interface to explore and apply filters. The current system lacks an efficient way to browse and manage filters, especially for beginners. The new browser will feature List and Tree views, allowing users to search, filter, and view descriptions and properties of available filters.\n\nAdditionally, users will be able to apply selected filters directly from the browser, speeding up their workflow. The project will be developed in stages: design, implementation, testing, and documentation.\n\nThe final deliverables will include a fully functional filter browser, an interactive filter application feature, and user-friendly documentation, making it easier for users to discover and apply the right filters in GIMP.",
+          "difficulty": "beginner",
+          "id": "proj_gnu-image-manipulati_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/bHqrCiaR",
+          "proposal_id": "QtwLDkrm",
+          "short_description": "This project aims to create a GEGL filter browser for GIMP, improving the user experience by providing an easy-to-use interface to explore and apply...",
+          "slug": "desing-and-implementation-of-a-gegl-filter-browser-for-gimp",
+          "status": "in-progress",
+          "student_name": "Gabriele Barbero",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Desing and Implementation of a GEGL Filter Browser for GIMP"
+        },
+        {
+          "code_url": null,
+          "description": "The new 3.0 release of GIMP introduced many API changes that require all third-party plugins to be updated. Notably, a new filter API for using GEGL filters replaced an old compatibility API. This provides a new level of flexibility and convenience at the expense of discoverability. Plug-in and filter creators need an accessible and convenient way of discovering what GEGL filters they can make use of. Overall, the plug-in/filter development experience could be improved. Especially the discoverability of available APIs and where to find them.\r\n\r\nIn this project I want to implement a new browser for discovering which GEGL filters are available and how they can be used from a plug-in/filter. Then, I want to explore how to merge existing procedure and plug-in browsers with the newly implemented one. Lastly, I want to explore how to further enhance the development experience. Some options are (a) making additional API documentation available in the GIMP UI, (b) doing research with plug-in/filter developers to learn about their problems and experiences.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/VQ0jE58o",
+          "proposal_id": "w5EXEZJQ",
+          "short_description": "The new 3.0 release of GIMP introduced many API changes that require all third-party plugins to be updated. Notably, a new filter API for using GEGL...",
+          "slug": "enhance-the-plug-infilter-development-experience",
+          "status": "in-progress",
+          "student_name": "Ondřej Míchal",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Enhance the plug-in/filter development experience"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal outlines a comprehensive plan to develop a new website for GIMP's extension platform. The project will focus on creating a primarily static website with minimal yet essential dynamic components, ensuring security and ease of maintenance.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulati_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/4I53AOAO",
+          "proposal_id": "5H82Ouyy",
+          "short_description": "This proposal outlines a comprehensive plan to develop a new website for GIMP's extension platform. The project will focus on creating a primarily...",
+          "slug": "extension-website",
+          "status": "in-progress",
+          "student_name": "SamIsTheFBI",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Extension website"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gnu-image-manipulation-program"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://developer.gimp.org/core/internship/",
+    "ideas_url": "https://developer.gimp.org/core/internship/ideas/",
+    "irc_channel": "https://www.gimp.org/discuss.html#irc-matrix",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://www.gimp.org/news/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/GIMP_Official",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.171Z"
+  }
+}

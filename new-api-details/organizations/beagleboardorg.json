@@ -1,0 +1,1032 @@
+{
+  "id": "692251cd53dd9d7326d33d53",
+  "slug": "beagleboardorg",
+  "name": "BeagleBoard.org",
+  "category": "Science and medicine",
+  "description": "Open hardware computing for educators and makers",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/beagleboardorg/4w6td6bjy31ei9v2-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/beagleboardorg.webp",
+  "logo_r2_url": null,
+  "url": "https://www.beagleboard.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "linux",
+    "javascript",
+    "beaglebone",
+    "iot",
+    "real-time",
+    "gcc",
+    "physical computing",
+    "linux kernel",
+    "raspberry pi",
+    "hardware acceleration",
+    "opencv",
+    "tensorflow",
+    "fpga",
+    "arm",
+    "risc-v",
+    "dsp",
+    "Zephyr RTOS"
+  ],
+  "topics": [
+    "robotics",
+    "iot",
+    "real time",
+    "physical computing",
+    "coprocessing",
+    "audio",
+    "ros",
+    "interfaces",
+    "machine learning",
+    "hardware",
+    "privacy/security",
+    "embedded",
+    "teaching",
+    "real-time",
+    "ai",
+    "open hardware",
+    "process automation",
+    "software defined radio",
+    "Personal Server"
+  ],
+  "total_projects": 44,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.4,
+    "projects_by_year": {
+      "year_2016": 6,
+      "year_2017": 6,
+      "year_2018": 3,
+      "year_2019": 3,
+      "year_2020": 4,
+      "year_2021": 6,
+      "year_2022": 4,
+      "year_2023": 4,
+      "year_2024": 3,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": 6,
+      "year_2017": 6,
+      "year_2018": 3,
+      "year_2019": 3,
+      "year_2020": 4,
+      "year_2021": 6,
+      "year_2022": 4,
+      "year_2023": 4,
+      "year_2024": 3,
+      "year_2025": 5
+    },
+    "total_students": 43
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/henrix/libdsp-x15/wiki",
+          "description": "<p>The <a href=\"http://www.creative-technologies.de/linux-based-low-latency-multichannel-audio-system-2/\" target=\"_blank\">CTAG face2|4 Audio Card</a> is a multichannel I2S soundcard based on the <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD1938.pdf\" target=\"_blank\">AD1938 audio codec</a> by Analog Devices. Currently the soundcard can only be used with a <a href=\"http://beagleboard.org/black\" target=\"_blank\">BeagleBone Green/Black</a>. Due to CPU intensive calculations in digital audio the <a href=\"http://beagleboard.org/x15\" target=\"_blank\">BeagleBoard-X15</a> seems to be a perfect alternative to realize  more complex audio effects and synthesizers and achieve lower latencies. Moreover the BeagleBone-X15 (<a href=\"http://www.ti.com/lit/ug/spruhz6e/spruhz6e.pdf\" target=\"_blank\">TI AM5728 SoC</a>) offers two separate DSPs (<a href=\"https://www.ti.com/lsds/ti/processors/dsp/c6000_dsp/c66x/overview.page\" target=\"_blank\">C66x</a>) which can be used to offload cpu-intensive multimedia tasks in asymmetric multiproccesing (AMP) configurations. The goal of the project is to port the soundcard drivers to the BeagleBoard-X15 and create an user-space library to make use of C66x DSPs via TI OpenCL and TI DSPLIB.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_beagleboardorg_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5351212496977920/",
+          "proposal_id": null,
+          "short_description": "The CTAG face2|4 Audio Card is a multichannel I2S soundcard based on the AD1938 audio codec by Analog Devices. Currently the soundcard can only be...",
+          "slug": "porting-the-ctag-face24-multichannel-soundcard-drivers-to-beagleboard-x15-am5728-soc-create-library-to-make-use-of-am5728-dsps-c66x",
+          "status": "completed",
+          "student_name": "henrix (Henrik Langer)",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Porting the CTAG face2|4 multichannel soundcard drivers to BeagleBoard-X15 (AM5728 SoC). Create library to make use of AM5728 DSPs (C66x)."
+        },
+        {
+          "code_url": "https://github.com/amragaey/bone101/wiki/BeagleBoard-GSoC'16:-Improving-Bone101-Experience",
+          "description": "<p>This idea is aimed to improve the experience of Bone101 to make the most use of it to be friendly to novice developers, allowing them to work with BBUI inside tutorials, write python code beside Javascript, and discover new experience of Bone101 in Cloud9 IDE.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4505918104403968/",
+          "proposal_id": null,
+          "short_description": "This idea is aimed to improve the experience of Bone101 to make the most use of it to be friendly to novice developers, allowing them to work with...",
+          "slug": "beagleboard-gsoc16-improving-bone101-experience",
+          "status": "completed",
+          "student_name": "amragaey",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "javascript",
+            "ai",
+            "cloud"
+          ],
+          "title": "BeagleBoard GSoC'16: Improving Bone101 Experience"
+        },
+        {
+          "code_url": "https://github.com/pmezydlo/SPI_slave_driver_implementation/wiki",
+          "description": "<p>SPI slave driver implementation. The task is to create a driver controlling SPI hardware controller in slave mode, and to ensure optimal performance through the use of DMA and interrupt. Creating an easy to implement realization of SPI slave would definitely help the BeagleBone community members to write applications based on SPI much more easily. The first implementation of my protocol driver is going to example of a bidirectional data exchange. This application will provide the BeagleBone community with valuable experience and will be a good example of SPI slave.\nHardware limitations make it impossible to perform any realization of the device using SPI slave. Sending away data to the master during one transaction is not possible. One transaction is enough to receive data by slave device. To receive and send back data, two transactions are needed. The data received from master device in a single transaction is transferred to the user after completing the transaction. The user's reply to received data is sent in the next transaction.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6567958478323712/",
+          "proposal_id": null,
+          "short_description": "SPI slave driver implementation. The task is to create a driver controlling SPI hardware controller in slave mode, and to ensure optimal performance...",
+          "slug": "spi-slave-driver-implementation",
+          "status": "completed",
+          "student_name": "pmezydlo",
+          "student_profile": null,
+          "tags": [],
+          "title": "SPI slave driver implementation"
+        },
+        {
+          "code_url": "https://github.com/ZeekHuge/BeagleScope/wiki",
+          "description": "<p>Many applications require mechanisms for high speed, real time and continuous data acquisition from a sensor that is essentially an ADC. Most hobbyists would want to use simple devices, rather than high end converters with differential serial interfaces to communicate as these high end devices can be expensive. The typical serial data communication protocols used for this are somewhat limited in terms of speed, while parallel data communication definitely has an advantage of higher speed data transfers.</p>\n<p>This GSoC project aims to utilize the two PRUs present in the PRUSS2 subsystem and their low latency architecture to get a fast, generic, parallel analog converter interface, in the form of parallel bus, ready for various applications. The project will provide a ready to use firmware, user-space library, kernel driver, and the subsystem to manage all the parallel data transactions. This will further allow developers to build some cool applications like function generators, oscilloscopes, voltmeter etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4885400476712960/",
+          "proposal_id": null,
+          "short_description": "Many applications require mechanisms for high speed, real time and continuous data acquisition from a sensor that is essentially an ADC. Most...",
+          "slug": "beaglescope",
+          "status": "completed",
+          "student_name": "ZeekHuge",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "BeagleScope"
+        },
+        {
+          "code_url": "https://github.com/chanakya-vc/PRU-I2C_SPI_master/wiki",
+          "description": "<p>Bitbanging  an SPI  or/an I2C device in Linux leads to a lot of problems.It consumes a lot of valuable CPU cycles.And since Linux is an non-preemptive OS(And not an RTOS),once we start bitbanging,other important tasks that require CPU time would suffer.Thus,there are a lot of software overheads in doing the same.\nTo avoid this on the BBB,we could offload the task of bitbanging I2C,SPI,UART, to the PRU.The PRU is a separate core and,hence,not affected by the Linux Scheduler. Hence the motivation for exposing the PRU as an I2C,SPI,UART device comes from the fact that they would be no software overheads in doing it and hence,we would gain extra serial interfaces without wasting valuable CPU cycles in bitabanging.</p>\n<p>This project involves writing Device Tree Overlays,Device Drivers and PRU firmware code for Bitbanging I2C,SPI and UART.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5936772366204928/",
+          "proposal_id": null,
+          "short_description": "Bitbanging  an SPI  or/an I2C device in Linux leads to a lot of problems.It consumes a lot of valuable CPU cycles.And since Linux is an...",
+          "slug": "exposing-the-pru-as-an-i2cspiuart-device",
+          "status": "completed",
+          "student_name": "chanakya_vc",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Exposing The PRU as an I2C,SPI,UART device"
+        },
+        {
+          "code_url": "https://github.com/kiran4399/bb_blue_api/blob/master/Readme.md",
+          "description": "<p>The aim of the project is to create easy-to-use APIs for the hardware on the BB Blue. This would consist of developing/improving kernel drivers for the on-board devices and then re-implementing the Strawson APIs to use these kernel drivers. These APIs will then be used by real-time applications which can be run on BB Blue. In the later phase of the project, support for BB Blue will be added in Ardupilot and ROS will be ported to BB Blue using these APIs.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6295262146330624/",
+          "proposal_id": null,
+          "short_description": "The aim of the project is to create easy-to-use APIs for the hardware on the BB Blue. This would consist of developing/improving kernel drivers for...",
+          "slug": "api-support-for-beaglebone-blue",
+          "status": "completed",
+          "student_name": "kiran4399",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "API support for Beaglebone Blue"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6012249034457088/"
+    },
+    "year_2017": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/thetransformerr/beagle-sonic",
+          "description": "<p>Write program for PRU present in BeagleBoard and to create a portable device able to measure the wind speed and temperature reliably in outdoor environments.It delivers the result by analyzing the time of flight or phase difference of sound waves between two points, deliver the final results in terms of ambient Temperature,Wind speed and direction.Considering the costs of commercial products available at this time in market, this open source project would provide a very useful and reliable anemometer to help universities and students/hobbyists during their meteorological research by providing them results in real time and format that can be further processed by user using languages like python etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6450379722063872/",
+          "proposal_id": null,
+          "short_description": "Write program for PRU present in BeagleBoard and to create a portable device able to measure the wind speed and temperature reliably in outdoor...",
+          "slug": "sonic-anemometer-using-pru-and-prudaq",
+          "status": "completed",
+          "student_name": "Naveen Saini",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Sonic Anemometer using PRU and PRUDAQ"
+        },
+        {
+          "code_url": "https://gist.github.com/maciejjo/58a0d0213712e67fba9d0061f6b5bead",
+          "description": "<p>Most of existing PRU applications utilize (waste) one PRU core for data transfer. The goal of this project is to enable usage of EDMA controller for copying of data to and from main memory (DDR), which would allow applications to use both cores for computation.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6614225476648960/",
+          "proposal_id": null,
+          "short_description": "Most of existing PRU applications utilize (waste) one PRU core for data transfer. The goal of this project is to enable usage of EDMA controller for...",
+          "slug": "beaglebone-pru-dma-support",
+          "status": "completed",
+          "student_name": "Maciej Sobkowski",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "BeagleBone PRU DMA support"
+        },
+        {
+          "code_url": "https://medium.com/@ravikp7/gsoc-2017-final-report-beagleboot-a20d28c8d632",
+          "description": "<p>Currently, the ways to flash images in BeagleBone hardware are not easy especially for beginners, SD card method takes up much time and manual configuration, BBBlfs flashing tool works but is CLI based, not much reliable and works on limited platforms, TI's Uniflash tool is also old and works only under older versions of Windows and Linux with a lot of manual configuration. \nThe project is to port the BeagleBone bootloader server BBBlfs(currently written in c) to JavaScript(node.js) and make a cross platform GUI (using electron framework) flashing tool utilising the etcher.io project. This will allow us to have single code base for a cross platform tool.</p>\n<p>The tool works as:</p>\n<ol>\n<li>TFTP transfer of SPL binary and u-boot.</li>\n<li>Utilizing the ums feature of u-boot, booting the BB hardware into USB mass storage mode.</li>\n<li>Flashing the BB hardware with etcher.io like tool. </li>\n</ol>\n<p>This project project will be really helpful for everybody especially newbies, who would have a nice experience with flashing images easily and faster, so that they can focus on the more important stuff be it their robotics project, kernel development or some new PRU hack.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5066113104740352/",
+          "proposal_id": null,
+          "short_description": "Currently, the ways to flash images in BeagleBone hardware are not easy especially for beginners, SD card method takes up much time and manual...",
+          "slug": "beagleboot-an-all-in-one-flasherupdater",
+          "status": "completed",
+          "student_name": "Ravi Kumar Prasad",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "ui",
+            "ux"
+          ],
+          "title": "BeagleBoot , an all in one flasher/updater"
+        },
+        {
+          "code_url": "https://github.com/pmezydlo/BeagleWire/wiki",
+          "description": "<p>The task is to create software support for FPGA cape (based on iCE40 device). The completed project will provide the BeagleBoard.org community with easy to implement and powerful tools for realization of projects based on Programmable Logic Device(FPGA), which will surely increase the number of applications based on it.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5314472004550656/",
+          "proposal_id": null,
+          "short_description": "The task is to create software support for FPGA cape (based on iCE40 device). The completed project will provide the BeagleBoard.org community with...",
+          "slug": "beaglewire-software-support",
+          "status": "completed",
+          "student_name": "Patryk Mężydło",
+          "student_profile": null,
+          "tags": [],
+          "title": "BeagleWire software support"
+        },
+        {
+          "code_url": "https://github.com/induarun9086/avbtest/wiki",
+          "description": "<p>Building a AVB node the stream reservation protocol and the precision time protocol are to be built in the linux kernel. \nA demo application will be included for a stereo speaker system with two individual beagle boards. The first board will decode a stereo audio file (ex: mp3 files stored in local disk) and play one channel of the audio through its speakers (ex: left channel) and then it transmits the second channel (ex: right channel) to the second device over AVB which plays back the second channel through its speakers. The objective is to achieve frame synchronization over such a system. This can be tested by recording the output from both devices and analyzing with an audio analyzer. In this case one device acts as a AVB master node and the second device acts as a AVB slave node.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4596929535148032/",
+          "proposal_id": null,
+          "short_description": "Building a AVB node the stream reservation protocol and the precision time protocol are to be built in the linux kernel. \nA demo application will be...",
+          "slug": "beaglebone-avb-stack",
+          "status": "completed",
+          "student_name": "Indumathi Duraipandian",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "ux"
+          ],
+          "title": "BeagleBone AVB Stack"
+        },
+        {
+          "code_url": "https://github.com/ekmecic/libbeaglebone",
+          "description": "<p>My project is basically two high quality, well-documented libraries for interfacing with BeagleBone hardware in Rust and Go.\nThese libraries will provide interfaces for common usecases like GPIO, ADC reads, PWM, UART, SPI, and I2C (I'm open to more!).\nThe intent of the project is to bridge the gap between the lower level and the higher level languages and make using the BeagleBone accessible to a wider range of users.</p>\n<p>People trying to get into hardware projects today are faced with difficult choices, especially when it comes to the platform their project will be based on.\nThe BeagleBone community has made an great strides toward bridging this gap by with the cheap and approachable BeagleBones, but users are still confronted with the choice of fast/difficult to use C, or easy to use/slow JavaScript.</p>\n<p>Users seeking to work on the BeagleBone shouldn't have to face this choice; which is where this project comes in.\nBy providing a well-documented set of libraries for the common tasks that every hardware project uses, users will be able to harness the power of performant languages while still having a pleasant development process.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4815942534037504/",
+          "proposal_id": null,
+          "short_description": "My project is basically two high quality, well-documented libraries for interfacing with BeagleBone hardware in Rust and Go.\nThese libraries will...",
+          "slug": "beaglelibs-libraries-for-interfacing-with-the-beaglebone-in-rust-and-go",
+          "status": "completed",
+          "student_name": "ee",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript"
+          ],
+          "title": "BeagleLibs: Libraries for interfacing with the BeagleBone in Rust and Go"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5370804795604992/"
+    },
+    "year_2018": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/AnirbanBanik1998/Modern_Speak_and_Spell/wiki",
+          "description": "<p>This project is basically to rebrain the previous Speak and Spell by Texas Instruments, and generate open source code for it . This is a Linux application which can be reproduced. The added features include offline speech recognition...using CMU Sphinx...to provide more robust features. Here I am working to reproduce the games with added features to appeal to the present day children... specifically the preschoolers. This almost totally a software project...only to be deployed in a PocketBeagle...with some wiring to be done...and display to be enhanced. My future goal is to extend this project to other languages...so that this wonderful device can be used more extensively.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5031706255949824/",
+          "proposal_id": null,
+          "short_description": "This project is basically to rebrain the previous Speak and Spell by Texas Instruments, and generate open source code for it . This is a Linux...",
+          "slug": "modern-speak-and-spell-using-pocketbeagle",
+          "status": "completed",
+          "student_name": "Anirban Banik",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Modern Speak and Spell using PocketBeagle"
+        },
+        {
+          "code_url": "https://medium.com/@ravikp7/gsoc-2018-final-report-beagleboot-303fcd41700d",
+          "description": "<p>Integrate node-beagle-boot to Etcher and add features like U-boot console on boot up, TCT/IP proxy server, grab latest images from beagleboard.org to BeagleBoot (electron app), developed last year during GSoC.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4610302519803904/",
+          "proposal_id": null,
+          "short_description": "Integrate node-beagle-boot to Etcher and add features like U-boot console on boot up, TCT/IP proxy server, grab latest images from beagleboard.org to...",
+          "slug": "beagleboot",
+          "status": "completed",
+          "student_name": "Ravi Kumar Prasad",
+          "student_profile": null,
+          "tags": [],
+          "title": "BeagleBoot"
+        },
+        {
+          "code_url": "https://github.com/vaishnav98/bone101/wiki/BeagleBoard-GSoC'18:-Fixing-Bugs-in-BoneScript-and-Improving-BeagleBone-User-Interface",
+          "description": "<p>BoneScript is an existing Node.js library specifically optimized for the Beagle family and featuring familiar Arduino function calls, exported to the browser.The BoneScript library provides several functions for easy interaction with hardware which otherwise would have required the users to manipulate the SysFs files directly(assuming use of no other libraries),which is obviously confusing for a beginner-level user.</p>\n<p>BoneScript library even though being widely used by BeagleBone users has compatibility issues across boards,some bugs and unfinished features.The primary aim of my project is to solve most of the open issues reported and add some more features which will be of benefit to the users.</p>\n<p>A secondary objective of my project is to add Improvements to the BeagleBone User Interface to provide a similar interface for PocketBeagle that can also  support the BaconBits cape examples, so as to provide PocketBeagle beginners a Graphical User Interface from which they can try out the example codes easily(similar to BBUI).</p>\n<p>Detailed Proposal at :<a href=\"https://elinux.org/BeagleBoard/GSoC/fix-bugs-bonescript\" target=\"_blank\">https://elinux.org/BeagleBoard/GSoC/fix-bugs-bonescript</a></p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4871854686732288/",
+          "proposal_id": null,
+          "short_description": "BoneScript is an existing Node.js library specifically optimized for the Beagle family and featuring familiar Arduino function calls, exported to the...",
+          "slug": "fixing-bugs-in-bonescript-and-improve-beaglebone-ui",
+          "status": "completed",
+          "student_name": "VAISHNAV M.A",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Fixing Bugs in BoneScript and Improve BeagleBone UI"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5713309579870208/"
+    },
+    "year_2019": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@denisobrezkov/xen-on-beagleboard-x15-a517ea7d9bb",
+          "description": "<p>The idea behind the project is to make Xen hypervisor available and easy to use on beagleboard-x15. This implementation will allow users to experiment on embedded virtualization and in related fields like automotive, critical systems prototyping and processor's resources sharing. It might also provide very interesting possibilities for heterogeneous resources' utilization. The most interesting outcome is the availability of open-source virtualization on top of the open-source hardware.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5107782238339072/",
+          "proposal_id": null,
+          "short_description": "The idea behind the project is to make Xen hypervisor available and easy to use on beagleboard-x15. This implementation will allow users to...",
+          "slug": "xen-on-beagleboard-x15",
+          "status": "completed",
+          "student_name": "Denis Obrezkov",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Xen on BeagleBoard-x15"
+        },
+        {
+          "code_url": "https://github.com/pratimugale/PRUSS-Bindings/wiki",
+          "description": "<p>This project aims to provide an API for different programming languages to load firmware, start/stop and communicate with the BeagleBone PRUs (Programmable Realtime Units) from user space using the RemoteProc, RPMsg drivers. \nExample firmware and user space software are provided to demonstrate the use of the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5988515748249600/",
+          "proposal_id": null,
+          "short_description": "This project aims to provide an API for different programming languages to load firmware, start/stop and communicate with the BeagleBone PRUs...",
+          "slug": "pru-user-space-api",
+          "status": "completed",
+          "student_name": "Pratim Ugale",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "PRU User Space API"
+        },
+        {
+          "code_url": "https://github.com/vaishnav98/gbsim/wiki/Beagleboard-GSoC-'19:--Clickboard-Support-Under-Greybus",
+          "description": "<p>Click boards are a flagship hardware product line of MikroElektronika with over 600 add-on boards ranging from wireless connectivity clicks to Human Machine Interface clicks for interfacing with peripheral sensors or transceivers. Most of the Click boards use the common protocols like SPI,I2C or UART to communicate with the Beaglebone and thus the support for them now is accomplished via device tree overlays via the bb.org-overlays repository. This requires /boot/uEnv.txt to be modified to load the drivers at boot, requiring at least one reboot to enable the support in a potentially error-prone way.</p>\n<p>The Greybus Simulator is a tool which simulates an AP Bridge, SVC, and an arbitrary set of modules plugged into Greybus. Greybus already provides most of the interfaces used on click boards and utilises manifest files to enumerate hardware at run-time.This project aims to enable Click Board Support via Greybus Simulator by writing suitable Manifests according to the Click board Specifications and by simply copying the manifest to a hotplug-directory a click board can be loaded,which would make the interfacing a lot easier.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6291016871575552/",
+          "proposal_id": null,
+          "short_description": "Click boards are a flagship hardware product line of MikroElektronika with over 600 add-on boards ranging from wireless connectivity clicks to Human...",
+          "slug": "clickboard-support-under-greybus",
+          "status": "completed",
+          "student_name": "Vaishnav M A",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Clickboard Support Under Greybus"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6713523407683584/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/deebot/Beaglebone-BidirectionBus/wiki",
+          "description": "<p>While the BeagleBone family has a large number of pins available on their P8/P9 headers, projects requiring a large amount of GPIO I/O may still be infeasible due to pinmux conflicts with other interfaces (SPI, UARTs, etc.). The newer PocketBeagle platform is even more restricted in the number of available GPIOs for interfacing. In addition, bi-directional bus communication using GPIOs is infeasible, as each GPIO is configured for either input or output. This project will combine your hardware and software skills to address these limitations by creating a shift register-based hardware design that will allow serial streams of data going in/out of the PocketBeagle or BeagleBone family GPIOs to be mapped into a bi-directional communications bus</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6635395644653568/",
+          "proposal_id": null,
+          "short_description": "While the BeagleBone family has a large number of pins available on their P8/P9 headers, projects requiring a large amount of GPIO I/O may still be...",
+          "slug": "reference-design-for-a-gpio-based-parallel-bi-directional-bus",
+          "status": "completed",
+          "student_name": "Deepankar Maithani",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Reference Design For A GPIO-based Parallel Bi-Directional Bus"
+        },
+        {
+          "code_url": "https://niklaswan.github.io/GSoC-Overview/",
+          "description": "<p>The BeagleBone AI is equipped with a high amount of processing power due to the Dual Core ARM Cortex-A15 chip as a main computing unit and its accompanying co-processors. This makes the AI a perfect fit for highly demanding applications regarding CPU consumption, like media applications which have extremely strong realtime constraints. Professional audio/video studios have to guarantee for small latencies when transmitting media signals between different devices. Different media channels in a transmitted stream need to be carefully synchronized to guarantee for e.g. lip synchronicity. \nTo use the AI in such a scenario, the AVB protocol stack should be implemented in the Beagleboard Linux Kernel, which allows for synchronization of media streams within a local area network. \nFurthermore the CTAG Face audio drivers should be ported from BeagleBoard-X15 and HDMI audio out capabilities should be deployed, to allow the in- and output of audio data.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6143660611076096/",
+          "proposal_id": null,
+          "short_description": "The BeagleBone AI is equipped with a high amount of processing power due to the Dual Core ARM Cortex-A15 chip as a main computing unit and its...",
+          "slug": "media-ip-streaming",
+          "status": "completed",
+          "student_name": "Niklas Wantrupp",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Media Ip Streaming"
+        },
+        {
+          "code_url": "https://deepaklorkhatri.me/GSoC2020_BeagleBoard.org/",
+          "description": "<p>The idea of this project is to make the same user space examples work with both BeagleBone Black and BeagleBone AI, using the same references to drivers for peripherals assigned to the same pins between BeagleBone Black and BeagleBone AI.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6248850903269376/",
+          "proposal_id": null,
+          "short_description": "The idea of this project is to make the same user space examples work with both BeagleBone Black and BeagleBone AI, using the same references to...",
+          "slug": "cape-compatibility-layer-for-beaglebone-black-and-beaglebone-ai",
+          "status": "completed",
+          "student_name": "Deepak Khatri",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Cape compatibility layer for BeagleBone Black and BeagleBone AI."
+        },
+        {
+          "code_url": "https://github.com/VedantParanjape/simpPRU/wiki",
+          "description": "<p>Programming the PRU is a uphill task for a beginner, since it involves several steps, writing the firmware for the PRU, writing a loader program. This can be a easy task for a experienced developer, but it keeps many creative developers away. So, I propose to implement a REPL based control of the PRU, hiding all the low level things behind the REPL and providing a clean interface to uses PRU. This can be achieved by implementing a PRU firmware which only runs some specific user defined commands delivered by RPMSG, executes and then sends a appropriate response. This can be achieved by offloading major task like lexing, parsing to the linux core, and through RPMSG only certain set of commands will be run, the high level code will be converted to these set of commands, on the linux machine itself.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6551712266977280/",
+          "proposal_id": null,
+          "short_description": "Programming the PRU is a uphill task for a beginner, since it involves several steps, writing the firmware for the PRU, writing a loader program....",
+          "slug": "implement-a-repl-interpreter-for-pru",
+          "status": "completed",
+          "student_name": "Vedant Paranjape",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Implement a REPL interpreter for PRU"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5073969981423616/"
+    },
+    "year_2021": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://beaglewire.github.io/",
+          "description": "<h3>Introduction</h3>\n<ul>\n<li>The BeagleWire is an FPGA development platform that has been designed for use with BeagleBone boards. \n  BeagleWire is a cape on which there is an FPGA device (Lattice iCE40HX). The software support for BeagleWire is \n  still in the development phase. </li>\n<li>In this project, I'm developing and testing the existing software support of Beaglewire. The known primary issue in \n Beaglewire is the interface between 32MB SDRAM and ICE40HX4K. For this Solution, I'm going to try options like \n LiteDRAM(a small footprint and configurable DRAM core). </li>\n</ul>\n<h3>Testing and Improvement of Subsystem Like I2C, SPI, PWM, UART</h3>\n<ul>\n<li>In this project I'm going to test all the subsystems like I2C, SPI, PWM, UART in Hardware and the primary goal will be to debug the issues related to them and fix them accordingly. Along with the driver code ready to use solutions will be added in software support.</li>\n</ul>\n<h3>Others</h3>\n<ul>\n<li>There are current Issues open on BeagleWire Repository, These will be solved during this project.</li>\n<li>More PMODs will be interfaced with the BeagleWire.</li>\n<li>Increase the Documentation and also add getting started guide for BeagleWire.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6597728544489472/",
+          "proposal_id": null,
+          "short_description": "Introduction\n\nThe BeagleWire is an FPGA development platform that has been designed for use with BeagleBone boards. \n  BeagleWire is a cape on which...",
+          "slug": "beaglewire-software",
+          "status": "completed",
+          "student_name": "Omkar  Bhilare",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "BeagleWire Software"
+        },
+        {
+          "code_url": "https://jduchniewicz.github.io/gsoc2021-blog/gsoc/updates/2021/08/19/project-report.html",
+          "description": "<p>Since BeagleBoards are heterogeneous platforms, why not use them to their full extent? Apparently for the time being the GPU block lies mostly useless and cannot assist with any computations due to non-technical reasons. Normally, OpenCL would be used for accelerating on the GPU, but taking the limitations discussed above it is impossible, yet there is another way! GPGPU acceleration with OpenGLES.</p>\n<p>The GPU accelerators from PowerVR (series SGX500) are available in all BB's and a unified acceleration framework for them is the topic of this proposal. The targeted version of OpenGL ES is 2.0, but extending it to the future versions will not be a problem from a technical point of view as the newer versions are backwards compatible. The API of the library will allow for performing various mathematical operations, and will return the results to the user in the same format they input the data in.</p>\n<p>Apart from the library, the project will explore the performance gains when using the GPU (compared to the CPU) and provide the user with guidelines on when it is feasible to put the BB's GPU accelerator to use and when to refrain from it.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5248746325016576/",
+          "proposal_id": null,
+          "short_description": "Since BeagleBoards are heterogeneous platforms, why not use them to their full extent? Apparently for the time being the GPU block lies mostly...",
+          "slug": "gpgpu-with-gles-api",
+          "status": "completed",
+          "student_name": "Jakub Duchniewicz",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "GPGPU with GLES API"
+        },
+        {
+          "code_url": "https://github.com/archisman-dey/simpPRU/wiki",
+          "description": "<p>Building upon the work done in GSoC 2020 to make programming the PRU easier for beginners, this project aims to add tests, features, and more compatibility for simpPRU, the simple Python-like language that compiles to PRU C and runs natively on the PRU. More specifically, I am planning to add support for the BeagleBone Blue, add unit tests for every language feature, add hexadecimal support for ints, add support for modulo and bitshift operators, support for a new char/uint8 data type, support for a simple array structure, adding a more flexible for loop, and adding the ability to send more complex data in the form of strings through rpmsg and receive them in simppru-console. I will also improve the error handling in the parser and fix known issues in simpPRU. This will make the overall language more robust and complete, which will help beginners learning to use the PRU or experienced users prototyping something on the PRU.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6216005071667200/",
+          "proposal_id": null,
+          "short_description": "Building upon the work done in GSoC 2020 to make programming the PRU easier for beginners, this project aims to add tests, features, and more...",
+          "slug": "improvemens-to-simppru",
+          "status": "completed",
+          "student_name": "Archisman Dey",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Improvemens to simpPRU"
+        },
+        {
+          "code_url": "https://yadnik1.github.io/Yadnik1-GSoC-2021.github.io/post/project-report-for-gsoc-2021/",
+          "description": "<p>The project includes porting MicroPython and CircuitPython support to the BeagleConnect Freedom Device as well as writing drivers for interfaces like GPIO, I2C, SPI, PWM, UART and ADC in Micropython.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6255768214437888/",
+          "proposal_id": null,
+          "short_description": "The project includes porting MicroPython and CircuitPython support to the BeagleConnect Freedom Device as well as writing drivers for interfaces like...",
+          "slug": "micropython-for-beagleconnect-freedom",
+          "status": "completed",
+          "student_name": "Yadnik Bendale",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "Micropython for BeagleConnect Freedom"
+        },
+        {
+          "code_url": "https://github.com/SAtacker/beagle-config/wiki",
+          "description": "<p><strong>Beagle-Config</strong> is a tool-set, that aims to provide the functionality to make the most common low-level configuration changes in beagle devices easily and providing a terminal UI to do the same as well as a host-side application for ICS and many one-click enable features for seamless user experience.</p>\n<ul>\n<li>Brings down the steep curve and enables anybody to configure their beagle device</li>\n<li>Makes beagle devices more friendly </li>\n<li>More configurations can be added at any point in the time</li>\n<li>Safer than using scripts from a non-trusted source</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6276044352389120/",
+          "proposal_id": null,
+          "short_description": "Beagle-Config is a tool-set, that aims to provide the functionality to make the most common low-level configuration changes in beagle devices easily...",
+          "slug": "beagle-config",
+          "status": "completed",
+          "student_name": "Shreyas Swanand Atre",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Beagle-Config"
+        },
+        {
+          "code_url": "https://dhruvag2000.github.io/Blog-GSoC21/",
+          "description": "<p>As given on the <a href=\"https://learn.bela.io/get-started-guide/say-hello-to-bela/#what-is-bela\" target=\"_blank\">official website</a>, Bela is a hardware and software system for creating beautiful interaction with sensors and sound. Bela consists of a Bela cape on top of a BeagleBone Black computer (uptil now).  The idea is to enable smooth transition of the associated software  to the BBAI and future TI chips.</p>\n",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5188984237457408/",
+          "proposal_id": null,
+          "short_description": "As given on the official website, Bela is a hardware and software system for creating beautiful interaction with sensors and sound. Bela consists of...",
+          "slug": "bela-support-for-the-beaglebone-ai-andor-future-ti-boards",
+          "status": "completed",
+          "student_name": "Dhruva Gole",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Bela support for the BeagleBone AI and/or future TI boards"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5067823478472704/"
+    },
+    "year_2022": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://krvprashanth.in/gsoc2022/",
+          "description": "Bela is an open  hardware and software platform for creating beautiful interaction with sensors, sound and it is designed for artists, musicians, researchers and makers, Bela brings the power of ultra-low latency interactive audio and sensors to digital systems. \n\nBela Platform uses the Bela software which is a customised Debian distribution including a custom xenomai kernel, minimal clutter, and custom systemd configurations and It takes advantage of features of the BeagleBone computers and can achieve extremely fast audio and sensor processing times.  Bela Image development repo is heavily based and which was initially inspired by Beagleboard Image-builder scripts. Currently, the Beagle board Image development repo diverged greatly from a common functionalities of building Images. Now, there is a requirement to \"rebase\" the functionalities of the Bela Image builder repo to the Beagleboard Image builder one.  As the two codebases are drastically different. This project is to Improve the maintainability of the Bela Image development by adding the functionalities of the Bela Image builder repo to the BeagleBoard Image builder repo.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ykkMkxcR/",
+          "proposal_id": null,
+          "short_description": "Bela is an open hardware and software platform for creating beautiful interaction with sensors, sound and it is designed for artists, musicians,...",
+          "slug": "building-bela-images",
+          "status": "completed",
+          "student_name": "Kurva Prashanth",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Building Bela Images"
+        },
+        {
+          "code_url": "https://gist.github.com/ezrapierce000/af89fdab4dac376f21f2a836807c6c62",
+          "description": "The goal of this project is to improve the tooling surrounding embedded machine learning on the BeagleBone Black(BBB)/Bela to aid its community in experimenting with machine learning applications for their projects. The specific developer tools chosen for this project are an inference benchmarking tool as well as a perf-based profiler developed for the BBB/Bela platform.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ky4Dpka9/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to improve the tooling surrounding embedded machine learning on the BeagleBone Black(BBB)/Bela to aid its community in...",
+          "slug": "running-machine-learning-models-on-bela",
+          "status": "completed",
+          "student_name": "Ezra Pierce",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Running Machine Learning Models on Bela"
+        },
+        {
+          "code_url": "https://git.beagleboard.org/gsoc/bb-config",
+          "description": "This project contain two parts which are Bb-Config Improvement and GPIO Benchmarking. For bb-config improvement, I will implement some new features on top of it making more user interactive and functionable. For GPIOs benchmark, We needed data to help ourselves and developers to decide which method accessing GPIOs suit them better. We compare the latency performance of different methods to access GPIOs.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/2DbiYPlY/",
+          "proposal_id": null,
+          "short_description": "This project contain two parts which are Bb-Config Improvement and GPIO Benchmarking. For bb-config improvement, I will implement some new features...",
+          "slug": "bb-config-improvements-gpio-benchmarking",
+          "status": "completed",
+          "student_name": "JianDe",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "BB-config improvements & GPIO Benchmarking"
+        },
+        {
+          "code_url": "https://github.com/Krishna-13-cyber/simpPRU/wiki",
+          "description": "Building upon the work done in GSoC 2021 to make programming the PRU easier for beginners, this project aims to add tests, features, and more compatibility for simpPRU, the simple Python-like language that compiles to PRU C and runs natively on the PRU. I will be adding assignment,bitwise operators which increase the efficiency of usage and write testcases for it, adding the compiler flags for generated C code and document their outcomes,the python test would be added to github actions for testsuite,I will be adding support for return statements,calling C from simpPRU,enhance error handling in parser,adding additional testcases for the features present. I will be writing a research paper on simpPRU quoting its need,implementation done and its preferable usage.This will make the overall language more robust and efficient, which will help beginners who are learning to use the PRU or experienced users prototyping something on the PRU.",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/atWuie8j/",
+          "proposal_id": null,
+          "short_description": "Building upon the work done in GSoC 2021 to make programming the PRU easier for beginners, this project aims to add tests, features, and more...",
+          "slug": "adding-features-to-simppru",
+          "status": "completed",
+          "student_name": "Krishna Narayanan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Adding features to simpPRU"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/beagleboardorg/"
+    },
+    "year_2023": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://programmershideaway.xyz/post28/",
+          "description": "The project aims to eliminate GBridge and merge its functionality into greybus (linux driver) and cc1352 driver. The subtasks I have identified are the following:\n\n1. Allow Greybus Linux driver to directly communicate with cc1352\n2. Move SVC and APBridge roles into cc1352\n3. Eliminate the need for GBridge",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/iTfGBkDk",
+          "proposal_id": "L1vRTE8g",
+          "short_description": "The project aims to eliminate GBridge and merge its functionality into greybus (linux driver) and cc1352 driver. The subtasks I have identified are...",
+          "slug": "replace-gbridge-in-beagleconnect",
+          "status": "completed",
+          "student_name": "Ayush Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Replace GBridge in BeagleConnect"
+        },
+        {
+          "code_url": "https://khushi-balia.github.io/blog/2023/final-report/",
+          "description": "This project intends to introduce LLVM support for PRU, to enable us to use clang rather than pru-gcc. As Clang provides extremely clear and simple diagnoses and is considerably faster and requires less memory, it will be beneficial.\nThe LLVM support will offer greater tooling, compatibility, and optimization.\nI will therefore build the LLVM Backend for PRU.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/nfmrQ9LL",
+          "proposal_id": "gclK9NZP",
+          "short_description": "This project intends to introduce LLVM support for PRU, to enable us to use clang rather than pru-gcc. As Clang provides extremely clear and simple...",
+          "slug": "building-an-llvm-backend-for-pru",
+          "status": "completed",
+          "student_name": "Khushi Balia",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "backend"
+          ],
+          "title": "Building an LLVM Backend for PRU"
+        },
+        {
+          "code_url": "https://gist.github.com/slpp95prashanth/4f09493037d564d54e9de331ee24377e",
+          "description": "Current SoCs frequently feature heterogeneous remote processor units in asymmetric multiprocessing (AMP) setups, which may be running several Linux or other real-time OS instances. One such SoC is TDA4VM, with heterogeneous multicore support it can run multiple operating systems simultaneously. TDA4VM has Dual 64-bit Arm® Cortex®-A72 microprocessor subsystem at up to 2.0 GHz, Six Arm® Cortex®-R5F MCUs at up to 1.0 GHz, Two C66x floating point DSP, up to 1.35 GHz, 40 GFLOPS, 160 GOPS and 3D GPU PowerVR® Rogue 8XE GE8430, up to 750 MHz, 96 GFLOPS, 6 Gpix/sec.\nZephyr is a small real-time operating system for connected, resource-constrained and embedded devices supporting multiple architectures. Zephyr allows for easy handling of multiple configuration options, APIs and external components, and is well suited to structured application development. Another benefit of Zephyr is that it targets some very serious protocol and standard implementations, being e.g. the first open source RTOS to introduce TSN support – by way of Antmicro’s contribution. The rising popularity of TSN in automotive and aerospace applications, and just about everywhere else, could be a very important reason to start using Zephyr in your TSN-capable product.\nThe goal of the project is to add Zephyr RTOS support to run on Cortex R5 processor core loaded from A72 core running Linux through remoteproc and add few peripheral support (Interrupts, Gpio, UART, Timers) for TDA4VM. The Cortex R5 processor cores are built to provide deeply embedded real-time and safety-critical systems. Adding Zephyr RTOS support for R5 cores in TDA4VM will be very helpful for the Users..\nProgramming Languages: Assembly Programming, C.",
+          "difficulty": "beginner",
+          "id": "proj_beagleboardorg_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/MyuaawJq",
+          "proposal_id": "3TnXdXwR",
+          "short_description": "Current SoCs frequently feature heterogeneous remote processor units in asymmetric multiprocessing (AMP) setups, which may be running several Linux...",
+          "slug": "zephyr-on-r5m4f",
+          "status": "completed",
+          "student_name": "Prashanth S",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Zephyr on R5/M4F"
+        },
+        {
+          "code_url": "https://gist.github.com/Pratham-Bot/8eaa15df3d49d2f6a89b2f1d1f606124",
+          "description": "Deep learning is a subset of machine learning that involves the use of neural networks with multiple layers. Neural networks consist of multiple layers of interconnected nodes, each building upon the previous layer to refine and optimize the prediction. The main goal of the project is to accelerate as many types of layers as possible using OpenGLES and Darknet as deep learning frameworks. Accelerating the performance of deep learning models is crucial for real-time applications. GPUs are widely used to accelerate the computations in deep learning models, as they can perform many operations in parallel.OpenGLES is a widely used graphics API that provides a framework for performing computations on GPUs. By using OpenGLES to perform computations, we can leverage the parallel processing power of the GPU to accelerate the performance of deep learning models.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/gf9eB3q9",
+          "proposal_id": "v6tboDjj",
+          "short_description": "Deep learning is a subset of machine learning that involves the use of neural networks with multiple layers. Neural networks consist of multiple...",
+          "slug": "opengles-acceleration-for-dl",
+          "status": "completed",
+          "student_name": "Pratham Deshmukh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "OpenGLES Acceleration for DL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/beagleboardorg"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://openbeagle.org/gsoc/2024/riscv-io-core/-/wikis/GSoC-Final-Report",
+          "description": "On several BeagleBone boards, there are an ultra-low latency 32-bit RISC CPUs called Programmable Real-time Units (PRUs) with register-mapped I/O directly to pins that is a custom architecture. The programmable nature of the PRU, along with its access to pins, events, and all SoC resources, provides flexibility in implementing fast real-time responses, specialized data handling operations, custom peripheral interfaces, and in offloading tasks from the other processor cores of the system-on-chip (SoC).\n\nTo provide the capability of a Programmable Real-time Unit Industrial Control SubSystem (PRU-ICSS), I propose to deploy an existing RISC-V 32IM core with a customized Instruction Set Architecture on FPGA Fabric present on BeagleV-Fire. The goal of this deployment is to provide high bandwidth between the CPU and I/O, resulting in a on-board microcontroller.\nAt project conclusion, BeagleV-Fire will host a fully functional PRU system that can execute Risc-V based instructions, and can be controlled by invoking specific functions within a C code using a PRU C library.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/KjUoFlg2/",
+          "proposal_id": null,
+          "short_description": "On several BeagleBone boards, there are an ultra-low latency 32-bit RISC CPUs called Programmable Real-time Units (PRUs) with register-mapped I/O...",
+          "slug": "low-latency-io-risc-v-cpu-core-in-fpga-fabric",
+          "status": "completed",
+          "student_name": "Atharva Kashalkar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Low-latency I/O RISC-V CPU core in FPGA fabric"
+        },
+        {
+          "code_url": "https://ijc8.me/2024/08/26/gsoc-difflogic/",
+          "description": "This project aims to enable the development of models that are suitably efficient for use in real-time interactive applications on embedded systems such as the BeagleBone-based Bela. At the project's core is difflogic, a recent technique that employs sparsely-connected network composed of basic logic gates to obtain small models and fast inference. The core goal of the project is to enable a convenient workflow for developing difflogic models and running them on the Bela, with an expected workflow of developing and training models on a larger machine, followed by exporting the model to C and cross-compiling it for the BeagleBone - either the main CPU or the PRUs. To support this, I will develop wrappers for exporting compiled difflogic models for use in the languages supported on Bela (C++, Pure Data, SuperCollider, Csound).\n\nI will then build out integrations and applications of difflogic for the rapid development of useful audio models, exploring the possibilities for combining difflogic networks with DDSP (differentiable digital signal processing) and cheap/lightweight techniques and toolkits, \"porting\" well-known ML architectures to difflogic networks, and training difflogic networks to approximate the behavior of existing neural networks (knowledge distillation). I will develop example applications involving sound analysis, classification, and synthesis, and experiment with interactive machine learning.\n\nFinally, I will apply these techniques to a creative application inspired by work on bytebeat and sound matching: generating networks of logic gates to approximate sounds and exploring the space of such sound-generating networks. I will train difflogic gates to reproduce particular sounds, treating the entire network as a bytebeat-style audio-generating function of time.\nLastly, I will build an interactive application to explore the space of sound-generating networks (e.g. by mutating or morphing networks) and visualize the execution of logic gate networks.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/FBk0MM8g/",
+          "proposal_id": null,
+          "short_description": "This project aims to enable the development of models that are suitably efficient for use in real-time interactive applications on embedded systems...",
+          "slug": "differentiable-logic-for-interactive-systems-and-generative-music",
+          "status": "completed",
+          "student_name": "Ian Clester",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Differentiable Logic for Interactive Systems and Generative Music"
+        },
+        {
+          "code_url": "https://gist.github.com/AryanNanda17/677e4da2e836dd48964375b63f6a2fce",
+          "description": "In this GSoC project, I worked on developing a multimedia processing system, focusing on commercial detection and replacement using deep learning. I have developed a real-time, efficient solution that enhances media consumption experiences by seamlessly integrating custom audio streams during commercial breaks.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/UOX7iDEU/",
+          "proposal_id": null,
+          "short_description": "In this GSoC project, I worked on developing a multimedia processing system, focusing on commercial detection and replacement using deep learning. I...",
+          "slug": "enhanced-media-experience-with-ai-powered-commercial-detection-and-replacement",
+          "status": "completed",
+          "student_name": "Aryan Nanda",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Enhanced Media Experience with AI-Powered Commercial Detection and Replacement"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/beagleboardorg/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "BeagleMind will develop an AI documentation assistant for BeagleBoard that combines fine-tuned LLMs with Retrieval-Augmented Generation (RAG) to deliver accurate technical support. By specializing an LLM on BeagleBoard documentation using efficient PEFT/LoRA adaptation and augmenting it with a vector database of official resources, the system will provide precise, citation-backed answers while minimizing errors. The project will deliver a production-ready solution including both web and command-line interfaces, deploy the optimized model via Hugging Face Inference Endpoints, and implement automated evaluation agents to continuously verify answer quality. This assistant will help BeagleBoard users quickly find reliable technical information, significantly reducing development bottlenecks and support demands while improving the overall user experience.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/pbanUSAu",
+          "proposal_id": "XY5hDFJD",
+          "short_description": "BeagleMind will develop an AI documentation assistant for BeagleBoard that combines fine-tuned LLMs with Retrieval-Augmented Generation (RAG) to...",
+          "slug": "a-conversational-ai-assistant-for-beagleboard-using-rag-and-fine-tuning",
+          "status": "in-progress",
+          "student_name": "Fayez Zouari",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "A Conversational AI Assistant for BeagleBoard using RAG and Fine-tuning"
+        },
+        {
+          "code_url": null,
+          "description": "Work on fixing support for beaglev ahead. Additionally work on fixing the broken WiFi and port mikroBUS driver to this board. There are a bunch of documentation fixes to be done.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/SO5KvcNL",
+          "proposal_id": "4GDcH7aL",
+          "short_description": "Work on fixing support for beaglev ahead. Additionally work on fixing the broken WiFi and port mikroBUS driver to this board. There are a bunch of...",
+          "slug": "improve-beaglev-ahead-support",
+          "status": "in-progress",
+          "student_name": "Kanak Shilledar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Beaglev Ahead Support"
+        },
+        {
+          "code_url": null,
+          "description": "The Greybus module for Zephyr currently exists as an out-of-tree component, making maintenance, testing, and contributions difficult. This project aims to upstream Greybus as an official Zephyr module, improving maintainability, accessibility, and seamless integration within the Zephyr RTOS ecosystem.\n\nBy upstreaming Greybus, BeagleConnect and other Greybus-enabled platforms will gain native support in Zephyr, removing the need for custom patches or kernel modifications. Originally developed by Google as part of Project Ara, Greybus is a lightweight, high-speed protocol designed for efficient, low-power communication across diverse hardware interfaces. While initially intended for modular smartphones, Greybus has since expanded into IoT and industrial applications, particularly in wireless sensor networks.\n\nThis project will focus on cleaning up and refactoring the existing Greybus module, revamping its testing infrastructure, and ensuring compatibility with Zephyr’s CI/CD workflows. The successful completion of this work will enable seamless hardware-software interaction, making Greybus more accessible for embedded systems development within Zephyr.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/we7PbNHN",
+          "proposal_id": "3Z5uZeoB",
+          "short_description": "The Greybus module for Zephyr currently exists as an out-of-tree component, making maintenance, testing, and contributions difficult. This project...",
+          "slug": "upstream-greybus-module-for-zephyr",
+          "status": "in-progress",
+          "student_name": "Sahil Jaiswal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Upstream Greybus Module for Zephyr"
+        },
+        {
+          "code_url": null,
+          "description": "The objective is to enhance the Beagle-Tester framework for BeagleBoard devices by adding mikroBUS support and updating it for mainline kernel testing. This project aims to develop an automated regression test suite for Linux kernel and device-tree overlays on BeagleBoard hardware, enabling continuous validation within the OpenBeagle CI server.\n\nThe approach includes developing comprehensive test cases for interfaces such as PWM, ADC, UART, I2C, SPI, and GPIO, integrating automated power cycling capabilities for test farms, building a web interface for real-time monitoring of test results, and optimizing the framework for seamless Buildroot deployment.\n\nKey deliverables include an enhanced Beagle-Tester with mikroBUS support, an automated regression testing framework for kernel updates, a GitLab CI pipeline for weekly testing, a modular test farm design with power cycling capabilities, a web-based monitoring interface, and comprehensive documentation with tutorials.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/c9jqkFDp",
+          "proposal_id": "nXCc2QIU",
+          "short_description": "The objective is to enhance the Beagle-Tester framework for BeagleBoard devices by adding mikroBUS support and updating it for mainline kernel...",
+          "slug": "update-beagle-tester-for-mainline-testing",
+          "status": "in-progress",
+          "student_name": "Vidhu",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Update beagle-tester for mainline testing"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to enhance and upstream the existing wpanusb and bcfserial drivers in Linux to meet upstream quality standards. Currently, several key driver operations are missing, such as listen before talk and setting frame retries. Preliminary sketches exist but are non-functional pending corresponding changes in the Zephyr firmware side. The project will also add the ability to read the device's permanent extended address, support generic radio configuration (including band, channels, and power levels), and provide comprehensive querying of radio properties. In addition, improvements are required to accommodate upcoming features like management frames and active/passive scanning. This effort is aimed at enabling seamless interoperation between the radio and Zigbee protocols while ensuring support for both 2.4GHz and SubGHz operations, ensuring that the solution meets upstream quality standards and is maintainable over the long term.",
+          "difficulty": null,
+          "id": "proj_beagleboardorg_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/xZofecH8",
+          "proposal_id": "8zwO65oa",
+          "short_description": "The project aims to enhance and upstream the existing wpanusb and bcfserial drivers in Linux to meet upstream quality standards. Currently, several...",
+          "slug": "upstream-wpanusb-bcfserial",
+          "status": "in-progress",
+          "student_name": "Whiz-Manas",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Upstream wpanusb bcfserial"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/beagleboardorg"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@beagleboard.org",
+    "guide_url": "https://bbb.io/gsoc",
+    "ideas_url": "https://bbb.io/gsocideas",
+    "irc_channel": "https://bbb.io/gsocchat",
+    "mailing_list": "https://bbb.io/gsocml"
+  },
+  "social": {
+    "blog": "https://www.beagleboard.org/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/beagleboardorg",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.951Z"
+  }
+}

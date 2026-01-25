@@ -1,0 +1,380 @@
+{
+  "id": "692251d753dd9d7326d33de2",
+  "slug": "intel-video-and-audio-for-linux",
+  "name": "Intel Video and Audio for Linux",
+  "category": "Media",
+  "description": "We enable Linux Audio and Video for Intel",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/intel-video-and-audio-for-linux/u8hffydro4hyexxd-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/intel-video-and-audio-for-linux.webp",
+  "logo_r2_url": null,
+  "url": "https://01.org/linuxmedia",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "first_year": 2017,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "video",
+    "decode",
+    "encode",
+    "vpp",
+    "multimedia",
+    "c",
+    "hardware acceleration",
+    "codecs",
+    "va-api",
+    "audio",
+    "gstreamer",
+    "ffmpeg",
+    "sound open firmware",
+    "libxcam",
+    "vaapi",
+    "c++",
+    "opengl",
+    "Codec",
+    "Media",
+    "Imaging"
+  ],
+  "topics": [
+    "camera",
+    "video",
+    "accelerated media",
+    "compress",
+    "encoding",
+    "video encode",
+    "video decode",
+    "hardware accelerated media processing",
+    "video post processing",
+    "video apis",
+    "video processing",
+    "audio firmware",
+    "video framework",
+    "video decoding/encoding",
+    "360 stereo video",
+    "opensource audio firmware",
+    "ffmpeg neuronetwork",
+    "graphics / video / audio / virtual reality",
+    "media",
+    "imaging",
+    "Codec"
+  ],
+  "total_projects": 12,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": 1,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": 1,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 12
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://andrey1994.github.io/GSoC_2017/",
+          "description": "<p>Deblurring is a process that removes distortion from a blurry image using knowledge of the point spread function.\nThe blurring, or degradation, of an image can be caused by many factors:</p>\n<ol>\n<li>Movement during the image capture process, by the camera or, when long exposure times are used, by the subject</li>\n<li>Out-of-focus optics, use of a wide-angle lens, atmospheric turbulence, or a short exposure time, which reduces the number of photons captured</li>\n<li>Scattered light distortion in confocal microscopy</li>\n</ol>\n<p>In this project I will be focused on removing blurs from camera shaking. It's a blind deblurring problem and iterative method will be used to estimate point spread function and deblurred image alternately.\nFor removing ringing artifacts edgetaper function will be implemented using OpenCV, also will be implemented PSF order estimation algorithm.</p>\n<p>The most time consuming operations, such as FFT2d, will be implemented using OpenCL to improve the algorithm's performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6440371911393280/",
+          "proposal_id": null,
+          "short_description": "Deblurring is a process that removes distortion from a blurry image using knowledge of the point spread function.\nThe blurring, or degradation, of an...",
+          "slug": "libxcam-enable-a-debluring-feature-with-opencl-design",
+          "status": "completed",
+          "student_name": "Andrey Parfenov",
+          "student_profile": null,
+          "tags": [],
+          "title": "libxcam Enable a debluring feature with OpenCL Design"
+        },
+        {
+          "code_url": "https://gist.github.com/orestisf1993/cee24c54c1c9c2add951248a325c8e38",
+          "description": "<p>According to the H.264/AVC standard, a decoder should be able to only decode the base view of an MVC encoded stream if the hardware doesn't support MVC decoding.\nThe same applies to the base layer of a SVC encoded stream.\nI propose adding proper backwards compatible decoding support to vaapih264dec by resolving:\n<a href=\"https://bugzilla.gnome.org/show_bug.cgi?id=732267\" target=\"_blank\">#732267</a>,\n<a href=\"https://bugzilla.gnome.org/show_bug.cgi?id=732265\" target=\"_blank\">#732265</a>,\n<a href=\"https://bugzilla.gnome.org/show_bug.cgi?id=732266\" target=\"_blank\">#732266</a>.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5282402289057792/",
+          "proposal_id": null,
+          "short_description": "According to the H.264/AVC standard, a decoder should be able to only decode the base view of an MVC encoded stream if the hardware doesn't support...",
+          "slug": "support-for-decoding-mvcsvc-base-viewslayers-in-the-h264-decoder-of-gstreamer-vaapi",
+          "status": "completed",
+          "student_name": "Orestis Floros",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Support for decoding MVC/SVC base views/layers in the H264 decoder of gstreamer-vaapi"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6149200777576448/"
+    },
+    "year_2018": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://sommerof2018.wordpress.com/2018/08/03/gsoc-final-report/",
+          "description": "<p>With the proposed GSOC 2018 project I'd like to contributing to an up-to-date libva-utils, by adding VP8 and HEVC encoding as well as VP8 temporal scaling support. With the help of QR Codes I'd also like to include automated testing for basic image reproduction of the encoders. If time allows optionally temporal scaling support for VP9 is targeted.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5680735809699840/",
+          "proposal_id": null,
+          "short_description": "With the proposed GSOC 2018 project I'd like to contributing to an up-to-date libva-utils, by adding VP8 and HEVC encoding as well as VP8 temporal...",
+          "slug": "enhancing-libva-utils-with-vp8-and-hevc-encoding-and-temporal-scalability-for-vp8",
+          "status": "completed",
+          "student_name": "Georg Ottinger",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Libva-Utils with VP8 and HEVC Encoding and Temporal Scalability for VP8"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4797072796549120/"
+    },
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/achie27/super-resolution/",
+          "description": "<p>Often a low resolution image is needed to be up-scaled to a higher resolution. Even though there are already a lot of interpolation methods which accomplish that, none of them actually make the image look better and natural to the human eye.</p>\n<p>Super resolution methods output an up-scaled image with improved details. The essentially unknown details in the high resolution output are filled in using different SR techniques.</p>\n<p>For this project, I will focus on deep learning based SR using, mainly, EDSR and ProGANSR. I will train and model these architectures with PyTorch and convert them to ONNX representations which the DNN module (OpenVINO) of libXcam can infer from.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6138831282110464/",
+          "proposal_id": null,
+          "short_description": "Often a low resolution image is needed to be up-scaled to a higher resolution. Even though there are already a lot of interpolation methods which...",
+          "slug": "super-resolution-image-from-low-resolution-image",
+          "status": "completed",
+          "student_name": "achie27",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Super Resolution image from low resolution image"
+        },
+        {
+          "code_url": "https://werti.github.io/GSoC2019/",
+          "description": "<p>VMAF is a new full-reference perceptual video quality metric developed by Netflix, which has a high correlation with subjective quality scores. This metric is widely used in industry, and I want to add VMAF plugin to GStreamer. Also, I have some additional interesting ideas related to VMAF accelerating and tuning.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5270964152041472/",
+          "proposal_id": null,
+          "short_description": "VMAF is a new full-reference perceptual video quality metric developed by Netflix, which has a high correlation with subjective quality scores. This...",
+          "slug": "gstreamer-add-vmaf-filter-as-plugin-in-the-gstreamer",
+          "status": "completed",
+          "student_name": "Sergey Zvezdakov",
+          "student_profile": null,
+          "tags": [],
+          "title": "GStreamer: Add VMAF filter as plugin in the GStreamer"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4612056525832192/"
+    },
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1dYegoVERuGVpy1Qwz9Jpko0UE7kwCQWOaGlbK9DUV2s/edit",
+          "description": "<p>FFmpeg DNN (deep neural network) module supports the dnn-based filters, it has two backends, one backend is TensorFlow which invokes TensorFlow C library for model loading and inference, the other backend is native. The native backend is a CPU fallback option when the system does not support TensorFlow, and so we can’t introduce 3rd party library for native mode. The native mode is still in early development stage and the performance has not been tuned yet.</p>\n<p>This project focuses on the native conv2d layer optimization with c/asm on Intel CPUs. Firstly, we will do some research on how to implement conv2d layer in a way which is convenient to operate parallelly. Secondly, write the corresponding C code for preliminary optimization. Thirdly, add some x86 SIMD optimization for conv2d layer to get better performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5017760704233472/",
+          "proposal_id": null,
+          "short_description": "FFmpeg DNN (deep neural network) module supports the dnn-based filters, it has two backends, one backend is TensorFlow which invokes TensorFlow C...",
+          "slug": "ffmpeg-dnn-native-conv2d-layer-optimization",
+          "status": "completed",
+          "student_name": "xu jun",
+          "student_profile": null,
+          "tags": [
+            "backend"
+          ],
+          "title": "FFmpeg DNN native conv2d layer optimization"
+        },
+        {
+          "code_url": "https://github.com/ymdatta/gsoc-report/blob/master/report.org",
+          "description": "<p>Fuzzing the SOF IPC input to make the SOF FW more resilient. There are few open-source fuzzing tools available such as AFL/Peach/oss-fuzz. The scope of this project involves leveraging the input generation in the open-source fuzzers and integrating it with the SOF fuzzer test harness and QEMU to fuzz the code that parses the topology file and sends the IPCs to the DSP.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4926638409646080/",
+          "proposal_id": null,
+          "short_description": "Fuzzing the SOF IPC input to make the SOF FW more resilient. There are few open-source fuzzing tools available such as AFL/Peach/oss-fuzz. The scope...",
+          "slug": "fuzzing-sof-ipc",
+          "status": "completed",
+          "student_name": "ymdatta",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fuzzing SOF IPC"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5820969215590400/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://unishift.github.io/project/2021-08-20-gsoc-libxcam",
+          "description": "<p>360° video is getting popular during the past years and it is predicted to evolve [1]. Compared to virtual and augmented reality, 360° video is much more accessible for viewers. The cameras are getting cheaper, and many video sharing services have an option for 360° video support (YouTube, Vimeo, Facebook) as well as applications (e.g. VLC).</p>\n<p>360 video requires special transformations to be viewed: the most popular way to store the data at ERP and CMP projections.</p>\n<p>The goal of the project is to implement and optimize ERP and CMP conversion algorithms using GLES. The algorithm will perform 360° video transformations between ERP and CMP.\n[1] <a href=\"https://images.app.goo.gl/iVyk3qkdxmR7CNGA8\" target=\"_blank\">https://images.app.goo.gl/iVyk3qkdxmR7CNGA8</a></p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5096192475660288/",
+          "proposal_id": null,
+          "short_description": "360° video is getting popular during the past years and it is predicted to evolve [1]. Compared to virtual and augmented reality, 360° video is much...",
+          "slug": "equirectangular-projection-erp-and-cubemap-projection-cmp-conversion",
+          "status": "completed",
+          "student_name": "Eugene Lyapustin",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ui"
+          ],
+          "title": "Equirectangular Projection (ERP) and Cubemap Projection (CMP) conversion"
+        },
+        {
+          "code_url": "https://medium.com/@shubhanshu02/async-support-for-tensorflow-backend-in-ffmpeg-695998cd439c?source=friends_link&sk=ae01e6f2a982a387658f285ce9b0d9d1",
+          "description": "<p>This project focuses on implementing an asynchronous mechanism for model inference and batch execution in the TensorFlow backend of the FFmpeg Deep Neural Network module to boost model inference performance.</p>\n<p>The Tensorflow backend uses the TensorFlow C API, which currently does not provide functions for asynchronous execution. The support for async behavior can be provided using multithreading on the existing TensorFlow library functions. We will implement this behavior through detached threads that work independently of each other.</p>\n<p>Several inference frames will be combined to a single input tensor and executed together in a single batch to enable the batch mode. The DNN module authors saw a performance gain in the OpenVino backend with asynchronous batch inference against synchronous inference. A similar performance gain is expected from this project.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5123228556591104/",
+          "proposal_id": null,
+          "short_description": "This project focuses on implementing an asynchronous mechanism for model inference and batch execution in the TensorFlow backend of the FFmpeg Deep...",
+          "slug": "async-support-for-tensorflow-backend-in-ffmpeg",
+          "status": "completed",
+          "student_name": "Shubhanshu Saxena",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "backend"
+          ],
+          "title": "Async Support for TensorFlow Backend in FFmpeg"
+        },
+        {
+          "code_url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad/-/merge_requests/2364",
+          "description": "<p><strong>Versatile Video Coding (VVC)</strong> is the latest video compression standard after HEVC. <strong>GStreamer need to support VVC, and we should start from a VVC parser</strong>. Codec parsers are a core part of the Gstreamer hardware decoder. They are used in <code>gstvappi</code> and <code>gstcodecs</code> to split frames, get slice level information. VVC specification is finalized on 6 July 2021. It's a good time to start work on the VVC codec parser for GStreamer.</p>\n",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5950195820396544/",
+          "proposal_id": null,
+          "short_description": "Versatile Video Coding (VVC) is the latest video compression standard after HEVC. GStreamer need to support VVC, and we should start from a VVC...",
+          "slug": "vvc-parser-for-gstreamer",
+          "status": "completed",
+          "student_name": "Hongcheng Zhong",
+          "student_profile": null,
+          "tags": [],
+          "title": "VVC Parser for Gstreamer"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6244611265134592/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Kizna1ver/9ad16cc4c46dec414f8df23c4f8626fc",
+          "description": "Problem: FFmpeg DNN(Deep Neural Network) module has enabled OpenVINO backend inference on Intel GPU. While the FFmpeg decode and encode work on cpu currently memory copy between CPU and GPU, which lead to notable latency. It results in performance degradation when we do inference with some certain models. Therefore,I wan't to support the FFmpeg DNN inference GPU full pipeline, which means the FFmpeg DNN can do all the decode, encode and inference only on Intel GPU, without any memory copy.\nMethod: Integrate ffmpeg dnn module and OpenVINO GPU inference with VaSurface GPU memory type\nDeliverables: A full gpu codec and inference pipeline on ffmpeg dnn module and a well writen document with user guide expamples",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/kNdqzYp5/",
+          "proposal_id": null,
+          "short_description": "Problem: FFmpeg DNN(Deep Neural Network) module has enabled OpenVINO backend inference on Intel GPU. While the FFmpeg decode and encode work on cpu...",
+          "slug": "ffmpeg-dnn-inference-on-igpu-full-pipeline-support",
+          "status": "completed",
+          "student_name": "Jianyu Liu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "FFmpeg DNN inference on IGPU full pipeline support"
+        },
+        {
+          "code_url": "https://github.com/Dec1s1on/libxcam/tree/yx/modules/dnn/depth_prediction",
+          "description": "In this project we want to generate disparity map and depth information from multiple 360-degree Images that can be helpful 3D scenes reconstruction. \r\nI will focus on deep learning based depth map inference. I will model and train current state-of-the-art models with Tensorflow/Pytorch and compare their performance. I will convert the best performing model to ONNX representation which the DNN module (OpenVINO) can infer from. Thus integrating the model into libXcam for 360-degree depth map inference.",
+          "difficulty": null,
+          "id": "proj_intel-video-and-audi_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/aNyDhKYR/",
+          "proposal_id": null,
+          "short_description": "In this project we want to generate disparity map and depth information from multiple 360-degree Images that can be helpful 3D scenes reconstruction....",
+          "slug": "dense-depth-estimation-from-multiple-360-degree-images",
+          "status": "completed",
+          "student_name": "Dec1s1on",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Dense Depth Estimation from Multiple 360-degree Images"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/intel-video-and-audio-for-linux/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "Focus.Luo@intel.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://01.org/linuxmedia",
+    "mailing_list": "https://01.org/linuxmedia"
+  },
+  "social": {
+    "blog": "https://01.org/linuxmedia/blogs",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.266Z"
+  }
+}

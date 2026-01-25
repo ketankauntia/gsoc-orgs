@@ -1,0 +1,547 @@
+{
+  "id": "692251da53dd9d7326d33e04",
+  "slug": "kubeflow",
+  "name": "Kubeflow",
+  "category": "Infrastructure and cloud",
+  "description": "The Machine Learning Toolkit for Kubernetes (AI)",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/kubeflow/uqphmd1y7opxpjim-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/kubeflow.webp",
+  "logo_r2_url": null,
+  "url": "https://kubeflow.org",
+  "active_years": [
+    2020,
+    2024,
+    2025
+  ],
+  "first_year": 2020,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "tensorflow",
+    "kubernetes",
+    "jupyter notebook",
+    "kustomize",
+    "go",
+    "typescript",
+    "YAML"
+  ],
+  "topics": [
+    "machine learning",
+    "cloud",
+    "infrastructure",
+    "kubernetes",
+    "AI/ML",
+    "generative AI"
+  ],
+  "total_projects": 21,
+  "stats": {
+    "avg_projects_per_appeared_year": 7,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 8,
+      "year_2025": 11
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 8,
+      "year_2025": 11
+    },
+    "total_students": 21
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/kubeflow/kubeflow/blob/master/components/crud-web-apps/tensorboards/README.md",
+          "description": "<p>Many Data Scientists have their data saved in a PersistentVolumeClaim accessed by their Notebooks. So it would be helpful and greatly improve Kubefow's UX if the user could also visualize data with Tensorboard that lives inside of a PersistentVolumeClaim. This way, they wouldn't need to save their visualization data on external services, which would also require additional code and effort when working inside of a Jupyter Notebook. I would love to contribute to such a project since my work could be part of real world workflows and help organizations perform their day to day Machine Learning tasks more efficiently.</p>\n",
+          "difficulty": null,
+          "id": "proj_kubeflow_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6613367730470912/",
+          "proposal_id": null,
+          "short_description": "Many Data Scientists have their data saved in a PersistentVolumeClaim accessed by their Notebooks. So it would be helpful and greatly improve...",
+          "slug": "build-a-ui-to-deploy-managed-tensorboard-instances-with-support-for-pvcs",
+          "status": "completed",
+          "student_name": "Kostas Andriopoulos",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Build a UI to Deploy Managed Tensorboard Instances with Support for PVCs"
+        },
+        {
+          "code_url": "https://yashjakhotiya.github.io/blog/open-source/mlops/2020/08/23/gsoc-kubeflow.html",
+          "description": "<p>Kubernetes is already an industry-standard in managing cloud resources. Kubeflow is on its path to become an industry standard in managing machine learning workflows on cloud. Examples that illustrate Kubeflow functionalities using latest industry technologies make Kubeflow easier to use and more accessible to all potential users. This project aims at building a sample for Jupyter notebook to Kubeflow deployment with a sentiment analysis model built with Tensorflow 2.0 Keras, illustrating Customer User Journey in the process. This project also serves as an hands-on to large scale application of Machine Learning and this is what excites me the most about it.</p>\n",
+          "difficulty": null,
+          "id": "proj_kubeflow_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6175219762331648/",
+          "proposal_id": null,
+          "short_description": "Kubernetes is already an industry-standard in managing cloud resources. Kubeflow is on its path to become an industry standard in managing machine...",
+          "slug": "create-a-sample-for-notebook-to-kubeflow-deployment-using-tensorflow-20-keras",
+          "status": "completed",
+          "student_name": "Yash Jakhotiya",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes",
+            "cloud",
+            "ui"
+          ],
+          "title": "Create a sample for notebook to Kubeflow deployment using TensorFlow 2.0 Keras"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5374310232883200/"
+    },
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/kubeflow/katib/issues/2340",
+          "description": "The project aims to provide a Python SDK API interface for users to push metrics to Katib DB directly. The current implementation of Metrics Collector is pull-based, raising design problems such as determining the frequency at which we scrape the metrics, performance issues like the overhead caused by too many sidecar containers, and restrictions on developing environments that must support sidecar containers. Thus, we decided to implement a new API for Katib Python SDK to offer users a push-based way to store metrics directly into the Kaitb DB and resolve those issues raised by pull-based metrics collection.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Y24WA26D/",
+          "proposal_id": null,
+          "short_description": "The project aims to provide a Python SDK API interface for users to push metrics to Katib DB directly. The current implementation of Metrics...",
+          "slug": "push-based-metrics-collection-for-katib-project-6",
+          "status": "completed",
+          "student_name": "Shao Wang",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Push-based Metrics Collection for Katib (Project 6)"
+        },
+        {
+          "code_url": "https://github.com/kubeflow/katib/pull/2392",
+          "description": "This proposal aims to automate the generation of comprehensive documentation for Kubeflow Python SDKs, specifically focusing on the Training Operator and Katib SDKs. We aim to create user-friendly documentation by leveraging existing docstrings, seamlessly integrating it into Kubeflow's CI/CD pipeline, and hosting it on the Read the Docs platform. This initiative will significantly enhance developer productivity and foster community collaboration within the Kubeflow ecosystem.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/YE04jBvV/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to automate the generation of comprehensive documentation for Kubeflow Python SDKs, specifically focusing on the Training Operator...",
+          "slug": "automated-documentation-generation-for-kubeflow-python-sdks-project-proposal",
+          "status": "completed",
+          "student_name": "SIVASUBRAMANIAM L",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai"
+          ],
+          "title": "Automated Documentation Generation for Kubeflow Python SDKs Project Proposal"
+        },
+        {
+          "code_url": "https://github.com/kubeflow/katib/issues/2374",
+          "description": "The goal of this project is to enhance the Katib Experiment APIs to support various parameter distributions such as uniform, log-uniform, and qlog-uniform. This improvement aims to align Katib more closely with other hyperparameter tuning frameworks like Hyperopt, which offer a broader range of parameter distributions. Currently, Katib is limited to supporting only uniform distribution for integer, float, and categorical hyperparameters. By introducing additional distributions, Katib will become more flexible and powerful in conducting hyperparameter optimization tasks.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/V3mup6rZ/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to enhance the Katib Experiment APIs to support various parameter distributions such as uniform, log-uniform, and...",
+          "slug": "project-proposal-project-8-support-various-parameter-distributions-like-log-uniform-in-katib",
+          "status": "completed",
+          "student_name": "Shashank Mittal",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "(Project Proposal) Project 8: Support various parameter distributions like log-uniform in Katib"
+        },
+        {
+          "code_url": "https://sandipanpanda.github.io/gsoc2024/",
+          "description": "The machine learning (ML) community is continually seeking ways to streamline the process of training and deploying models. JAX, with its high-performance capabilities, has become a popular choice for researchers and developers. However, running distributed training jobs on Kubernetes clusters can be complex and time-consuming. Integrating JAX into Kubeflow Training Operator aims to address these challenges. By integrating JAX with the Training Operator, the ML community can harness the power of distributed training on Kubernetes, making it more accessible and efficient for a wide range of users. This integration aligns with the community's need for high-performance computing while maintaining ease of use and flexibility in ML workflows.",
+          "difficulty": "advanced",
+          "id": "proj_kubeflow_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/c29HXzpc/",
+          "proposal_id": null,
+          "short_description": "The machine learning (ML) community is continually seeking ways to streamline the process of training and deploying models. JAX, with its...",
+          "slug": "integrate-jax-with-kubeflow-training-operator",
+          "status": "completed",
+          "student_name": "Sandipan Panda",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Integrate JAX with Kubeflow Training Operator"
+        },
+        {
+          "code_url": "https://gist.github.com/Adembc/983d4cbc1d3899815b708e5a77fd8fde",
+          "description": "This proposal aims to introduce a new Kubernetes controller for Kubeflow Notebooks. The implementation of this project will significantly enhance the user experience. Users will interact with dropdown menus instead of dealing with PodSpec directly, simplifying the setup of Kubeflow instances for their ML services, making it accessible even for non-technical users.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/6cxU1OFn/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to introduce a new Kubernetes controller for Kubeflow Notebooks. The implementation of this project will significantly enhance the...",
+          "slug": "kubeflow-notebooks-20",
+          "status": "completed",
+          "student_name": "Adem Baccara",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Kubeflow Notebooks 2.0"
+        },
+        {
+          "code_url": "https://github.com/kubeflow/katib/issues/2339",
+          "description": "This proposal aims to address the challenge of tuning hyperparameters for Large Language Models (LLMs) by developing a user-friendly high-level API. Leveraging the method used in the Training Operator for importing pre-trained models and datasets from external platforms, we will create a tune function similar to existing methods. This will empower users to easily explore various hyperparameter configurations through the API, optimizing LLM performance without requiring in-depth infrastructure knowledge. The proposal includes the design, implementation, and timeline for the API development. Additionally, some future functionalities are proposed to further improve user experience.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/osQjg4Se/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to address the challenge of tuning hyperparameters for Large Language Models (LLMs) by developing a user-friendly high-level API....",
+          "slug": "llm-hyperparameters-tuning-api-proposal-project-4",
+          "status": "completed",
+          "student_name": "Hezhi Xie",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "LLM Hyperparameters Tuning API Proposal (Project 4)"
+        },
+        {
+          "code_url": "https://github.com/hansinikarunarathne/GSoC-2024",
+          "description": "The main goal of the project is to find a solution to categorize issues and PRs in the Kubeflow Github repository. There are a lot of issues and PRs in the repository. They have to be merged or closed with less human interaction as quickly as possible. The project is based on the Issues/PRs of the https://github.com/kubeflow/kubeflow Github repo. There are 218 issues and 219 PRs for now. The features that needed to be included in the solution should be \n- Decide which Issues/PRs are still relevant\n- Categorize Issues/PRs by type\n- De-duplicate multiple Issues for the same request\n- Suggest which ones are the most important.\n- Help find “good first issues” for new members\n- Review which PRs are likely safe to merge (especially dependent ones)\n\nThe planned solution is to create an application to add the above features into the application by providing automated solutions for all of these features. The proposed application provides automated tasks to fulfill the above requirements so that the issues and PRs can be resolved with less human interaction.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/8xPdKdCd/",
+          "proposal_id": null,
+          "short_description": "The main goal of the project is to find a solution to categorize issues and PRs in the Kubeflow Github repository. There are a lot of issues and PRs...",
+          "slug": "triage-and-categorize-kubeflow-github-issues-prs",
+          "status": "completed",
+          "student_name": "Hansini Karunarathne",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Triage and Categorize Kubeflow GitHub Issues & PRs"
+        },
+        {
+          "code_url": "https://gist.github.com/biswajit-9776/3a28e3d73c1db51ee495574c60bf321d",
+          "description": "My proposal aims to test and integrate the featues of Istio-CNI and Kubernetes' Pod Security Standards that are require to run Kubeflow rootless as per CNCF best practices and help enhance security around the components of Kubeflow. It also aims to introduce Ambient Mesh as new data plane for Kubeflow's Istio component and plans to make the integration of these features into the next Kubeflow's 1.10 release smoother.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/FuHa3NYl/",
+          "proposal_id": null,
+          "short_description": "My proposal aims to test and integrate the featues of Istio-CNI and Kubernetes' Pod Security Standards that are require to run Kubeflow rootless as...",
+          "slug": "rootless-kubeflow-container-imagesistio-ambient-mesh",
+          "status": "completed",
+          "student_name": "Biswajit Pattnaik",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes",
+            "ui"
+          ],
+          "title": "Rootless Kubeflow Container Images(Istio Ambient Mesh)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/kubeflow/"
+    },
+    "year_2025": {
+      "num_projects": 11,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to use self-hosted runners to run GPU-intensive tasks like LLM blueprint or (planned) AI Playground. The necessary infra is provided by Oracle, plan is to use Oracle Kubernetes Engine (OKE) with NVIDIA GPUs for this task. Any code or sample that requires GPU-intensive resources will be transferred to OKE infra instead of generic GitHub infra for faster and more efficient execution.\nFor now, the idea is to have a specific policy that whenever any Jupyter Notebook code will be added to a trainer/examples/pytorch/** folder (e.g., in trainer/example/pytorch/image-generation/sample.ipynb), that action is transferred to OKE infra by the GitHub self runner. For security reasons, this process will require manual approval from one of the maintainers to trigger the self-runner build. I will set up the GitHub workflow to monitor changes in the respective folder. Once approved, the CI action will execute the code using the GitHub self-runner on the OKE infrastructure. Additionally, we will set up a dashboard for monitoring and metrics to understand usage patterns and identify bottlenecks.\nThe scope of this project is set up on OKE, but theoretically, this is platform-agnostic; it can be deployed on any Kubernetes cluster with sufficient GPU resources.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fwZkvPr0",
+          "proposal_id": "24VdSJ1G",
+          "short_description": "This project aims to use self-hosted runners to run GPU-intensive tasks like LLM blueprint or (planned) AI Playground. The necessary infra is...",
+          "slug": "project-7-gpu-testing-for-llm-blueprints",
+          "status": "in-progress",
+          "student_name": "Akash Jaiswal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes",
+            "ui"
+          ],
+          "title": "Project 7: GPU Testing for LLM Blueprints"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the issue of fragmented tools within the Kubeflow ecosystem, specifically Elyra, Kale, and Jupyter Scheduler, which complicates workflows for data scientists. The proposal aims to solve this by developing a unified JupyterLab plugin for Kubeflow. This plugin will consolidate and modernize the functionalities of the existing tools, providing a cohesive environment for developing, testing, and deploying machine learning workflows directly from JupyterLab.\nThe plugin will achieve this by implementing seamless integration with Kubeflow Pipelines. Users will be able to convert notebook cells to pipeline steps, define and visualize pipeline workflows, submit pipeline runs, and monitor their execution status, all within JupyterLab. The plugin will be built with a modular architecture, including Python backend components for interacting with Kubeflow Pipelines and parsing notebooks, and TypeScript/React frontend components for the user interface.\nThe key deliverables of this project are:\n• A unified JupyterLab plugin architecture consolidating Elyra, Kale, and Jupyter Scheduler functionalities.\n• Seamless integration with Kubeflow Pipelines, enabling notebook-to-pipeline conversion, workflow definition and visualization, pipeline submission, and monitoring within JupyterLab.\n• A user-friendly UI for pipeline development and management using modern React components.\n• Initial integration with Kubeflow Notebooks for easier notebook provisioning.\n• Comprehensive documentation and usage examples.\n• A robust testing framework to ensure plugin reliability, including unit tests, integration tests, user acceptance testing, continuous integration, and compatibility testing.\nThis unified plugin is expected to significantly improve workflow efficiency for data scientists and ML engineers by bridging the gap between interactive development and production-grade ML infrastructure.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/vtdQwx7U",
+          "proposal_id": "8JS2QiBt",
+          "short_description": "This project addresses the issue of fragmented tools within the Kubeflow ecosystem, specifically Elyra, Kale, and Jupyter Scheduler, which...",
+          "slug": "project-5-jupyterlab-plugin-for-kubeflow",
+          "status": "in-progress",
+          "student_name": "Amrit_Kumar",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "python",
+            "typescript",
+            "ml",
+            "ai"
+          ],
+          "title": "Project 5: JupyterLab Plugin for Kubeflow"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Kubeflow's security posture by implementing Istio CNI by default and providing an optional Ambient Mesh configuration. \n\nThe work involves securing the service mesh, creating controllers for HTTPRoute and AuthorizationPolicies, updating manifests to support these new features, securing KServe with proper authentication protocols, and making Kubeflow rootless by default. \n\nThe project will also introduce performance benchmarking so that users can compare between the three available modes: Istio CNI (default), Istio init containers, and Ambient Mesh.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/WAHCCi8V",
+          "proposal_id": "6yn5QybT",
+          "short_description": "This project aims to enhance Kubeflow's security posture by implementing Istio CNI by default and providing an optional Ambient Mesh configuration....",
+          "slug": "project3-istio-cni-and-ambient-mesh-for-secure-kubeflow-deployments",
+          "status": "in-progress",
+          "student_name": "Ayush Gupta (Madmecodes)",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Project3:  Istio CNI and Ambient Mesh for Secure Kubeflow Deployments"
+        },
+        {
+          "code_url": null,
+          "description": "Jupyter Notebooks provide a powerful, interactive environment widely used by data scientists and ML engineers for exploratory analysis, visualization, and prototyping. However, as the scale and complexity of data workloads grow, running computations locally within notebook pods becomes inefficient and limiting.\r\n\r\nThe Batch Processing Gateway integrates with Kubeflow Spark Operator to manage the full lifecycle of Spark applications in a cloud-native environment. It enables distributed computation at scale and automates job deployment, resource management, and status tracking using Kubernetes Custom Resource Definitions (CRDs).\r\n\r\nThis project proposes integrating Jupyter Notebooks and the Batch Processing Gateway, enabling it to manage the notebook kernel lifecycle of remote Spark kernels as distributed Spark applications. This decouples computation from the notebook pod and scales Spark workloads efficiently in Spark.\r\n\r\nTo achieve this, we will introduce Batch Processing Gateway to manage the lifecycle of Notebook kernels and introduce Jupyter Enterprise Gateway (JEG) for runtime communication to enable Jupyter messaging protocol for notebook cell execution during runtime.",
+          "difficulty": "advanced",
+          "id": "proj_kubeflow_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/zRPtxGBI",
+          "proposal_id": "dk4027eG",
+          "short_description": "Jupyter Notebooks provide a powerful, interactive environment widely used by data scientists and ML engineers for exploratory analysis,...",
+          "slug": "batch-processing-gateway-integration",
+          "status": "in-progress",
+          "student_name": "Fellipe Resende",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "kubernetes",
+            "cloud"
+          ],
+          "title": "Batch Processing Gateway Integration"
+        },
+        {
+          "code_url": null,
+          "description": "The KServe Models Web App is a crucial front-end interface for managing ML models deployed through KServe, a core component of Kubeflow. However, the application has become outdated, with deprecated dependencies and technical debt. This project aims to modernize and enhance the app by upgrading its tech stack, resolving open issues, and implementing a robust CI/CD pipeline with GitHub Actions. \n\nKey improvements include regression testing with Cypress, model editing capabilities, and synchronization with KServe 0.14+. Additionally, the project explores migrating the app from kserve/kserve-models-web to kubeflow/kserve-model-ui for better integration. \n\nThe deliverables include a stabilized, modernized codebase, improved user experience for ML engineers, and streamlined contributor documentation. This effort will reduce operational overhead, enhance usability, and support Kubeflow’s mission of making ML workflows simpler and more scalable.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/K9iend9b",
+          "proposal_id": "dvpTePex",
+          "short_description": "The KServe Models Web App is a crucial front-end interface for managing ML models deployed through KServe, a core component of Kubeflow. However, the...",
+          "slug": "project-2-kserve-models-web-app",
+          "status": "in-progress",
+          "student_name": "Harshit Nayan",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Project 2: Kserve Models Web App"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Kubeflow’s infrastructure by productionizing the SeaweedFS proof of concept as a secure alternative to MinIO, improving artifact isolation in Pipelines using a single bucket, and streamlining code migration to proper repositories. Additionally, adding group-based authentication support, and improving CI/CD scripts in Manifests to support testing across multiple Kubernetes versions. The deliverables include a secure and scalable object storage setup, better pipeline isolation, completed code migrations, enhanced auth features, and robust CI/CD tooling.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/PWDq4Zvt",
+          "proposal_id": "8qchamo9",
+          "short_description": "This project aims to enhance Kubeflow’s infrastructure by productionizing the SeaweedFS proof of concept as a secure alternative to MinIO, improving...",
+          "slug": "project-1-kubeflow-platform-enhancements",
+          "status": "in-progress",
+          "student_name": "Harshvir Potpose",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "kubernetes"
+          ],
+          "title": "Project 1: Kubeflow Platform Enhancements"
+        },
+        {
+          "code_url": null,
+          "description": "The proposed project aims to bridge a critical gap in the Kubeflow ecosystem by introducing robust Helm-based deployment support. While Kustomize has been the default configuration tool, many organizations have standardized on Helm for managing Kubernetes applications due to its templating capabilities and ecosystem support. This mismatch has led to significant maintenance burdens, with adopters often resorting to maintaining custom Kustomize forks to support essential components such as Istio and OAuth2. These customizations introduce complexity in upgrades and contribute to version drift, undermining reliability. By enabling Helm-based deployment, the project will align Kubeflow with mainstream Kubernetes practices, simplify maintenance, and foster broader community adoption. This initiative also supports the CNCF’s goal of interoperability and standardization across cloud-native projects.",
+          "difficulty": "advanced",
+          "id": "proj_kubeflow_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/azZltU0y",
+          "proposal_id": "lrYgtUyJ",
+          "short_description": "The proposed project aims to bridge a critical gap in the Kubeflow ecosystem by introducing robust Helm-based deployment support. While Kustomize has...",
+          "slug": "deploying-kubeflow-with-helm",
+          "status": "in-progress",
+          "student_name": "Kunal Dugar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes",
+            "cloud"
+          ],
+          "title": "Deploying Kubeflow with Helm"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements key components of KEP-2170, introducing the Kubeflow Training V2\nAPI. Specifically, it focuses on creating the TrainingRuntime and ClusterTrainingRuntime for\nthe JAX and TensorFlow frameworks, built upon the Kubernetes JobSet API. These runtimes\nwill serve as blueprints for model training (including LLMs) within cloud-native ML pipelines. This\nabstraction allows Data Scientists and MLOps Engineers to easily reuse standardized runtimes\nand launch training jobs, particularly via the SDK, without needing deep knowledge of\nunderlying Kubernetes complexities.",
+          "difficulty": "advanced",
+          "id": "proj_kubeflow_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/50KbkoaM",
+          "proposal_id": "O4l8vxal",
+          "short_description": "This project implements key components of KEP-2170, introducing the Kubeflow Training V2 API. Specifically, it focuses on creating the...",
+          "slug": "project-8-support-jax-and-tensorflow-training-runtimes",
+          "status": "in-progress",
+          "student_name": "Mahdi Khashan",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "kubernetes",
+            "cloud"
+          ],
+          "title": "Project 8: Support JAX and TensorFlow Training Runtimes"
+        },
+        {
+          "code_url": null,
+          "description": "refer notion site for better view : https://smart-rhubarb-c5c.notion.site/GSoC-2025-Proposal-Project-12-Empowering-Kubeflow-Documentation-with-LLMs-1c209ac9a7bd80e6941ee51ab6601c7c\n\nThis project aims to build an AI-powered assistant for the Kubeflow ecosystem using Retrieval-Augmented Generation (RAG) and a long-context LLM. The assistant will index Kubeflow Github repository including, GitHub issues, and community discussions using a structured pipeline involving Feast (feature store) and Milvus (vector DB). It will support real-time queries through a FastAPI WebSocket interface and serve responses via KServe.\n\nKey deliverables include:\nEnd-to-end RAG pipeline integrated with Kubeflow Pipelines & Feast\nGitHub-triggered document ingestion and vector index updates\nLLM deployment and retrieval API with RBAC controls\nEvaluation loop using “LLM-as-a-Judge”\nMonitoring setup with Prometheus + Grafana\nFrontend integration with Hugo-based docs site\nThis project will improve Kubeflow’s developer experience by enabling contextual, cited answers directly from its ecosystem.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/a9JPxfEh",
+          "proposal_id": "6qXw7H1a",
+          "short_description": "refer notion site for better view :...",
+          "slug": "project-12-empowering-kubeflow-documentation-with-llms",
+          "status": "in-progress",
+          "student_name": "Santhosh Toorpu",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui",
+            "frontend"
+          ],
+          "title": "Project 12: Empowering Kubeflow Documentation with LLMs"
+        },
+        {
+          "code_url": null,
+          "description": "This document outlines a proposal to support Volcano for gang-scheduling in Kubeflow Trainer, so as to provide users with more AI-specific scheduling capacities like priority scheduling and queue resource management.  This will allow for better control over resources, with features like queue management and job prioritization. Thanks to the Kubeflow Trainer Pipeline Framework, we can seamlessly integrate Volcano into Kubeflow Trainer as a runtime plugin.  \nThe deliverables include:\n1. The integration of the Volcano plugin into the Trainer, allowing for Gang-Scheduling and resource management.\n2. Documentation updates, including usage examples and design details.\n3. Testing the plugin's functionality and performance under various environments.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ZWbY1Rfj",
+          "proposal_id": "BhjjvwI0",
+          "short_description": "This document outlines a proposal to support Volcano for gang-scheduling in Kubeflow Trainer, so as to provide users with more AI-specific scheduling...",
+          "slug": "project-10-support-volcano-scheduler-in-kubeflow-trainer",
+          "status": "in-progress",
+          "student_name": "Xinmin Du",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Project 10: Support Volcano Scheduler in Kubeflow Trainer"
+        },
+        {
+          "code_url": null,
+          "description": "Kubeflow Pipelines (KFP) currently only supports MySQL/MariaDB databases, creating a significant limitation for many organizations that standardize on PostgreSQL. This project aims to implement comprehensive PostgreSQL support across the KFP stack, including the API server, cache server, and ML Metadata components. The solution involves developing database abstraction layers, SQL dialect adapters, and migration tools that enable users to seamlessly deploy KFP with PostgreSQL backends. By providing this integration, the project will greatly expand deployment options for enterprise environments where MySQL is prohibited by policy, benefit organizations leveraging PostgreSQL's superior data warehousing capabilities, and eliminate the need for unsupported workarounds that currently require substantial effort from users. The end result will be a more flexible, enterprise-ready Kubeflow Pipelines platform that meets diverse organizational requirements.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2025_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fw66akzN",
+          "proposal_id": "kxMOoOaO",
+          "short_description": "Kubeflow Pipelines (KFP) currently only supports MySQL/MariaDB databases, creating a significant limitation for many organizations that standardize...",
+          "slug": "project-11-support-postgres-for-kubeflow-pipelines-backend",
+          "status": "in-progress",
+          "student_name": "Yunkai Li",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Project 11: Support Postgres for Kubeflow Pipelines Backend"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/kubeflow"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "https://groups.google.com/g/kubeflow-discuss",
+    "guide_url": null,
+    "ideas_url": "https://www.kubeflow.org/events/gsoc-2025/",
+    "irc_channel": "https://cloud-native.slack.com/archives/C0742LBR5BM",
+    "mailing_list": "https://www.kubeflow.org/docs/about/gsoc/"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": "https://medium.com/kubeflow",
+    "reddit": null,
+    "slack": "https://cloud-native.slack.com/archives/C0742LBR5BM",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/kubeflow",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.342Z"
+  }
+}

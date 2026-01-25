@@ -1,0 +1,272 @@
+{
+  "id": "692251cc53dd9d7326d33d45",
+  "slug": "android-graphics-tools-team",
+  "name": "Android Graphics Tools Team",
+  "category": "Programming languages",
+  "description": "Providing excellent tools for graphics developers and driver makers",
+  "image_url": "https://lh3.googleusercontent.com/Fim0FTxXCZAngG0K5O1XjS_iEl0SrxtytcdA0Ic0wWFtXqhCyIgrVZgS8eIBWZLp4EFkKTcwx6mph6ZZyQDfORh1vpBBLgqNj5qbbwN_21A",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/android-graphics-tools-team.webp",
+  "logo_r2_url": null,
+  "url": "https://github.com/google/graphicsfuzz/blob/master/docs/summer-of-code-ideas/2021.md",
+  "active_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "first_year": 2019,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "c++",
+    "java",
+    "opengl",
+    "vulkan",
+    "spir-v",
+    "python 3",
+    "webgpu"
+  ],
+  "topics": [
+    "testing",
+    "bug finding",
+    "developer tools",
+    "debugging",
+    "2d/3d graphics",
+    "profiling",
+    "graphics",
+    "fuzzing"
+  ],
+  "total_projects": 8,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 3,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 3,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 8
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/jiradeto/36b28fbc3d2596f218efc98e069786f6",
+          "description": "<p>GraphicsFuzz is a tool that helps graphics driver makers capture defects by fuzzing and rendering semantically equivalent shaders. The tool applies the metamorphic testing technique that transforms shaders using the available functions in OpenGL shading language (GLSL). Currently, GLSL built-in functions are not fully supported by the tool. Providing a new set of GLSL features to GraphicsFuzz would create new ideas of transformation, and help the tool to detect a wider range of bugs.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6377225270591488/",
+          "proposal_id": null,
+          "short_description": "GraphicsFuzz is a tool that helps graphics driver makers capture defects by fuzzing and rendering semantically equivalent shaders. The tool applies...",
+          "slug": "improve-shading-language-support-in-graphicsfuzz",
+          "status": "completed",
+          "student_name": "Jiradet Ounjai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Shading Language Support in GraphicsFuzz"
+        },
+        {
+          "code_url": "https://gist.github.com/abelbriggs1/ce2d56fd3264d4b1f0e7a248ae251179",
+          "description": "<p>The Android Graphics Tools Team's GraphicsFuzz is a metamorphic testing framework for OpenGL and Vulkan graphics drivers. Among its tools are a shader generator, which mutates a shader program into variants that differ in machine code, but render a similar image to the original - and a shader reducer, which reduces shader code to focus on specific logic that a user is interested in. Used in tandem, these tools allow one to fuzz test shader compilers for flaws and easily reproduce them.</p>\n<p>The generator mutates a shader by performing \"transformations\" on the original code which complicate control/data flow. These transformations often make use of OpenGL's built-in functions and features to mutate expressions into equivalent forms.</p>\n<p>However, the generator and reducer are only aware of a subset of the OpenGL shader language, and do not support all of OpenGL's built-in math and transformation functions. This reduces the number of potential mutations and ultimately hampers GraphicsFuzz's capability of finding edge cases.</p>\n<p>This project aims to enhance GraphicsFuzz's support for OpenGL semantics and extend its capabilities with new transformations, then apply them to open-source drivers.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6034777595969536/",
+          "proposal_id": null,
+          "short_description": "The Android Graphics Tools Team's GraphicsFuzz is a metamorphic testing framework for OpenGL and Vulkan graphics drivers. Among its tools are a...",
+          "slug": "enhancing-metamorphic-testing-tools-for-graphics-drivers",
+          "status": "completed",
+          "student_name": "Abel Briggs",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing Metamorphic Testing Tools For Graphics Drivers"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5704209515675648/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/google/graphicsfuzz/blob/master/docs/summer-of-code-ideas/summer-of-code-reports/gsoc-2020-andreperezmaselco.md",
+          "description": "<p><a href=\"https://github.com/KhronosGroup/SPIRV-Tools\" target=\"_blank\">SPIRV-Tools</a> is a collection of tools to work on <em>SPIR-V</em> modules. One of these tools is <em>spirv-fuzz</em>. It applies <em>semantics-preserving transformations</em> to a <em>SPIR-V</em> module, that we call the <em>reference</em> module, to obtain a modified <em>variant</em> module. Theoretically, a <em>semantics-preserving transformation</em> should not change the behaviour of the code. In this way, the <em>reference</em> and <em>variant</em> modules can be run, and the outputs compared. The output is usually an image. If the images differ, this probably indicates a shader compiler bug. This is a specialised form of <em>fuzzing</em> that uses a technique called <em>metamorphic testing</em>.</p>\n<p>This project involved using the metamorphic testing approach to extend <em>spirv-fuzz</em> by adding new transformations to cover instructions and patterns of <em>SPIR-V</em> that were not previously covered by existing <em>spirv-fuzz</em> transformations. Also, the project used tools such as <a href=\"https://github.com/ChrisLidbury/CLSmith\" target=\"_blank\">CLSmith</a> and <a href=\"https://github.com/google/clspv\" target=\"_blank\">clspv</a> to improve <em>spirv-fuzz</em>.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5742438724927488/",
+          "proposal_id": null,
+          "short_description": "SPIRV-Tools is a collection of tools to work on SPIR-V modules. One of these tools is spirv-fuzz. It applies semantics-preserving transformations to...",
+          "slug": "fuzzing-graphics-shaders",
+          "status": "completed",
+          "student_name": "André Perez Maselco",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fuzzing Graphics Shaders"
+        },
+        {
+          "code_url": "https://gist.github.com/Vasniktel/e36fd3ec914a2b28498472a5083c0090",
+          "description": "<p>This proposal aims to describe a set of transformations to implement for the spirv-fuzz tool. It provides a high-level overview of the transformations as well as specific implementation details that might be important to mention.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4968382538973184/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to describe a set of transformations to implement for the spirv-fuzz tool. It provides a high-level overview of the...",
+          "slug": "implementation-of-additional-transformations-for-spirv-fuzz",
+          "status": "completed",
+          "student_name": "Vasyl Teliman",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of additional transformations for spirv-fuzz"
+        },
+        {
+          "code_url": "https://github.com/nipunG314/graphicsfuzz/blob/master/docs/summer-of-code-ideas/summer-of-code-reports/gsoc-2020-nipungarg.md",
+          "description": "<p>The objective of this project would be to write Vulkan Apps that demonstrate some part/combination of the Vulkan API that is not already covered by the Sascha-Willems Demos, the Khronos Samples, the Google Test Apps or the Imagination demos.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5171977712566272/",
+          "proposal_id": null,
+          "short_description": "The objective of this project would be to write Vulkan Apps that demonstrate some part/combination of the Vulkan API that is not already covered by...",
+          "slug": "httpsdocsgooglecomdocumentd1ef4uoxfvdq4owtjjpfo4w3gfryhbsfespvgzbffv8s0edituspsharing",
+          "status": "completed",
+          "student_name": "Nipun Garg",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "https://docs.google.com/document/d/1EF4UoXfvDQ4owTjJpfO4W3gfrYHBsFESPVGzBffV8S0/edit?usp=sharing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5158050039595008/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1sXGXAxrNptlGjzeKGMQ8tta-whV9-nzBQLZbmpIXCY8/edit?usp=sharing",
+          "description": "<p>Spir-fuzz is a C++-based tool that automatically finds bugs in Vulkan drivers. It works by transform the original shader into a new one that is semantically the same. Differences in the output of the new shader and the original one can be caused by bugs in the driver. Thus, our task involves expanding the set of transformations by building sets of transformation classes and writing their corresponding tests and fuzzer passes.</p>\n<p>Our main task involves the WebGPU Shading Language, a new shading language featured by WebGPU. Since web browsers will have WebGPU, a secure implementation is crucial. To achieve a high test coverage, we use coverage-guided fuzzing. It uses program instrumentation to trace the code coverage reached by each input fed to a fuzz target. The information is then used to make informed decisions that maximize coverage, and thus increase the effectiveness of finding software bugs and security vulnerabilities. This project involves automatic fuzzing using LibFuzzer. Since LibFuzzer-based custom mutators mutate test cases in a domain-specific way, effective designing and implementing Tint-specific custom mutators are essential for this project to succeed.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5538790298353664/",
+          "proposal_id": null,
+          "short_description": "Spir-fuzz is a C++-based tool that automatically finds bugs in Vulkan drivers. It works by transform the original shader into a new one that is...",
+          "slug": "diversity-transformation-class-space-and-implement-coverage-guided-mutation-based-fuzzing-for-webgpu",
+          "status": "completed",
+          "student_name": "Shiyu Liu",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Diversity transformation class space and implement Coverage-guided mutation-based fuzzing for WebGPU"
+        },
+        {
+          "code_url": "https://gist.github.com/EGJ1996/3a6a2906f466feef88978ab7b16fb033",
+          "description": "<p>In this project, I will study WebGPU, the upcoming standard for exposing the capabilities of the GPU hardware in web browsers, and its shading language WGSL. I will then try to test WGSL, by using a mutation based approach. Designing custom mutators can be done by either using the bijection between SPIR-V and WGSL and the existing spirv-fuzz tools, or by studying WGSL in isolation and generating new LibFuzzer custom mutators that operate on WGSL directly or in the output generated by Tint, which is a compiler for WGSL.</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5988176115531776/",
+          "proposal_id": null,
+          "short_description": "In this project, I will study WebGPU, the upcoming standard for exposing the capabilities of the GPU hardware in web browsers, and its shading...",
+          "slug": "coverage-guided-mutation-based-fuzzing-for-webgpu",
+          "status": "completed",
+          "student_name": "Emiljano Gjiriti",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "Coverage-guided mutation-based fuzzing for WebGPU"
+        },
+        {
+          "code_url": "https://gist.github.com/Mostafa-ashraf19/9ab988701ef3fb0dbcd08eef3c301134",
+          "description": "<p>project involve adding new transformations to spirv-fuzz tools to improve their support for compute shaders</p>\n",
+          "difficulty": null,
+          "id": "proj_android-graphics-too_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5133242306396160/",
+          "proposal_id": null,
+          "short_description": "project involve adding new transformations to spirv-fuzz tools to improve their support for compute shaders",
+          "slug": "improving-support-for-compute-shaders-in-spirv-fuzz",
+          "status": "completed",
+          "student_name": "Mostafa Ashraf Mohamed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving support for compute shaders in spirv-fuzz"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5995132419047424/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "android-graphics-tools@google.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": "https://github.com/google/graphicsfuzz/blob/master/docs/summer-of-code-ideas/2021.md",
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.907Z"
+  }
+}

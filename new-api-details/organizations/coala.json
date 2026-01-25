@@ -1,0 +1,814 @@
+{
+  "id": "692251ed53dd9d7326d33f0c",
+  "slug": "coala",
+  "name": "coala",
+  "category": "Programming languages",
+  "description": "Linting and Fixing Code for All Languages",
+  "image_url": "https://lh3.googleusercontent.com/0PqG5lb1LsnualMXfs468WjitwnUq_jx1wefb_QF6EgC8c7LOp4DYPODanM12sQM1f7RlV4vXHaucZ8ZJ8PyiBdlE5kR8s5gQxUSsm_WoxYf",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/coala.webp",
+  "logo_r2_url": null,
+  "url": "https://coala.io",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2021
+  ],
+  "first_year": 2017,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "django",
+    "python 3",
+    "antlr",
+    "emberjs",
+    "reactjs",
+    "java",
+    "haskell",
+    "docker",
+    "angularjs"
+  ],
+  "topics": [
+    "code analysis",
+    "devops",
+    "chatops",
+    "language server",
+    "dependency management",
+    "static code analysis‎",
+    "chat"
+  ],
+  "total_projects": 37,
+  "stats": {
+    "avg_projects_per_appeared_year": 9.25,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 9,
+      "year_2018": 14,
+      "year_2019": 10,
+      "year_2020": null,
+      "year_2021": 4,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 9,
+      "year_2018": 14,
+      "year_2019": 10,
+      "year_2020": null,
+      "year_2021": 4,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 37
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://damngamerz.github.io/gsoc/Souvenir-of-GSoC'2017!.html",
+          "description": "<p>To develop an analyzing routine at least for python and java that will find all documentation strings in a file, parse them into specific groups and check them against a specified documentation style given by the user. The functionality can be extended so that the analyzing routine provides a patch that re-formats the documentation correctly, checks for grammatical errors (eg: checking parameter’s description for imperative present tense) and perform other aesthetical fixes (i.e capitalization, sentence termination with a period).</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6645955352854528/",
+          "proposal_id": null,
+          "short_description": "To develop an analyzing routine at least for python and java that will find all documentation strings in a file, parse them into specific groups and...",
+          "slug": "documentation-extraction-parsing",
+          "status": "completed",
+          "student_name": "Saurav Singh",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "api",
+            "ai"
+          ],
+          "title": "Documentation Extraction & Parsing"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2017/StatusReport/MeetMangukiya",
+          "description": "<p>coala community has grown substantially over last few months. To make it easier on maintainers to cope up and still be a welcoming community for new contributors.</p>\n<p>Currently, cobot is a hubot instance, scripts for which are written in Coffeescript. This project is about porting the existing functionality of cobot to a python bot framework errbot and adding topic modelling to cobot to auto respond with correct(probably) answer when someone asks a question.</p>\n<p>Another reason for porting: coala is python inclined community, cobot will receive more contribution if the devs can write plugins for cobot in python.</p>\n<h5>Addition of an interesting feature: Topic-Modelling for auto-responding FAQs</h5>\n<p>As previously mentioned, coala has been growing substantially and there are new contributors frequently and same questions are asked frequently. This feature aims at using Natural Language Processing and matching the asked questions with the sections in docs and then respond with a relevant section. This saves time for the users as well as developers significantly. Also, since this a bot interaction one doesn't tire out the opposite person responding.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5675653521211392/",
+          "proposal_id": null,
+          "short_description": "coala community has grown substantially over last few months. To make it easier on maintainers to cope up and still be a welcoming community for new...",
+          "slug": "cobot-enhancement",
+          "status": "completed",
+          "student_name": "Meet Mangukiya",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "cobot enhancement"
+        },
+        {
+          "code_url": "https://gist.github.com/satwikkansal/b72265a0d0ec678b9291ea8e21a398ec",
+          "description": "<p>coala is a modular and language-agnostic tool for performing static code analysis. The aim of coala is to make static code analysis easier for the users. However, getting started with coala for a user requires prior knowledge about different bears coala has (users may get confused among lots of available options), how to create a correct coafile, what values to provide for settings, avoid duplicity among the bears, what bear-dependencies to install, etc.</p>\n<p>coala-quickstart is a tool with an aim to help users to quickly get started with coala by doing all the boilerplate work. It generates a .coafile (coala's configuration file) that is tailored to the project.</p>\n<p>The ultimate goal of the project is to make coala-quickstart generate a more tailored coala configuration file with less user effort and time.</p>\n<p>The primary objectives of the project are:</p>\n<ol>\n<li>Develop a mechanism to extract information of interest to coala like setting values from some common kinds of project files like <code>Gruntfile.js</code>, <code>Gulpfile.js</code>, etc.</li>\n<li>Make coala-quickstart include relevant bears to the project in the generated coafile.</li>\n<li>Improving the user interface, increasing automation and adding some minor features.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6208607959908352/",
+          "proposal_id": null,
+          "short_description": "coala is a modular and language-agnostic tool for performing static code analysis. The aim of coala is to make static code analysis easier for the...",
+          "slug": "enhance-coala-quickstart",
+          "status": "completed",
+          "student_name": "Satwik Kansal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhance coala-quickstart"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2017/StatusReport/HemangKumar",
+          "description": "<p>Currently, the coala Online module lacks support for all the bears. Bears with non-optional settings are ignored. The first goal of this project is to have a powerful online module that provides backend and frontend interface to be able to do code analysis with any given bear. The project focusses on enhancing coala-html by introducing results and bear search and filtering on basis of parameters.\nThe next thing where the project will help us is that it will provide an effective bear search mechanism on coala.io and make projects.coala.io configurable and extensible.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4573465860374528/",
+          "proposal_id": null,
+          "short_description": "Currently, the coala Online module lacks support for all the bears. Bears with non-optional settings are ignored. The first goal of this project is...",
+          "slug": "improve-coala-website-and-supporting-tools",
+          "status": "completed",
+          "student_name": "Hemang Kumar",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "frontend",
+            "backend"
+          ],
+          "title": "Improve coala Website and Supporting Tools"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2017/StatusReport/adhikasp",
+          "description": "<p>Currently configuring coala on a new project is <em>unnecessarily</em> hard, especially for first time user. There are few reason for this.</p>\n<p>New users are not always familiar with all the functionality provided by various tools inside coala. But, coala tries to provide a full set of options for those tools, which make configuration overwhelming. Finally, there is the possibility that the same type of checking could be executed by multiple tools, which makes choosing the right tools for a type of analysis hard.</p>\n<p>This project will aim to <strong>implement aspect based configuration on coala</strong>. With aspect, we abstract the bear picking process with specifying list of aspect and coala will automatically choose the required bear to run.</p>\n<p><strong>aspect</strong> itself is a category of analysis that should be run over a code. Each aspect have a <strong>taste</strong>, which is a measurable metric on how a \"correct\" code should look like.</p>\n<p>This project have 3 main milestone, which is:</p>\n<ul>\n<li>Extend coala configuration files</li>\n<li>Implement bear picking strategy</li>\n<li>Documentation, depreciation old code, and integration testing.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4605261771702272/",
+          "proposal_id": null,
+          "short_description": "Currently configuring coala on a new project is unnecessarily hard, especially for first time user. There are few reason for this.\nNew users are not...",
+          "slug": "coala-implement-aspeca",
+          "status": "completed",
+          "student_name": "Adhika Setya Pramudita",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "coala: Implement Aspeca"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2017/StatusReport/NaveenKumarSangi",
+          "description": "<h4>GitMate for all!</h4>\n<p>This time with user configurable plugins!</p>\n<h3>About the product</h3>\n<p><strong>GitHub</strong>, <strong>GitLab</strong> and <strong>BitBucket</strong> support webhooks for common events like opening/closing/commenting on Merge Requests, creating Issues, etc. These webhooks could be configured for automated response using their own API's for comments, tests/integrations, etc. <strong>GitMate</strong> merely acts as a tunnel for these events and responds accordingly. The interface for these API's is held by its wrapper library, IGitt.</p>\n<h3>Aim of the project</h3>\n<p>This project is aimed at extending the support for <strong>GitMate</strong> to <strong>GitLab</strong> and <strong>BitBucket</strong> repositories. This adds up to unified and automated code analysis and maintenance on the big three code hosting platforms.</p>\n<h3>Implementation</h3>\n<p>This project consists of implementing <strong>GitLab</strong> and <strong>BitBucket</strong> interfaces in <strong>IGitt</strong>, following the already implemented <strong>GitHub</strong>'s convention, while simultaneously creating webhook responders and tasks for the same on <strong>gitmate-2</strong>.</p>\n<p>Extending plugins is quite easy on <strong>gitmate-2</strong> following <code>gitmate_testplugin</code> as an example, thanks to its plugin-based architecture.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_coala_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4690491102724096/",
+          "proposal_id": null,
+          "short_description": "GitMate for all!\nThis time with user configurable plugins!\nAbout the product\nGitHub, GitLab and BitBucket support webhooks for common events like...",
+          "slug": "extending-gitmatev20-to-support-gitlab-and-bitbucket",
+          "status": "completed",
+          "student_name": "Naveen Kumar Sangi",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Extending GitMatev2.0 to support GitLab and BitBucket"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2017/StatusReport/AlexMaxim",
+          "description": "<p>coala has come a long way from its early days in terms of its usability, although all the changes that have been made are improvisations. A proper and planned overhaul of the user interface would help coala become much more user friendly and intuitive. At its core any software is as good as its interface with the user and this project aims to improve that.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6112228356915200/",
+          "proposal_id": null,
+          "short_description": "coala has come a long way from its early days in terms of its usability, although all the changes that have been made are improvisations. A proper...",
+          "slug": "improve-the-coala-cli",
+          "status": "completed",
+          "student_name": "Alexandru-Sorin Maxim",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve the coala CLI"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2017/StatusReport/RahulJha",
+          "description": "<p>vulture is a tool which detects and reports dead (unused) code and coala is an automatic linter.\nThe motivation of this proposal is to:</p>\n<ul>\n<li><strong>Extend vulture as an API</strong> which respects the Bear's Input Output method</li>\n<li><strong>Refactor VultureBear</strong> such as to use the new API - this would highly optimize it's performance.</li>\n<li><strong>Enhance python whitelist</strong> and making it <strong>default</strong> for every run.</li>\n<li>Implement a method to <strong>acquire the source range of dead code</strong> - currently, only the beginning of the dead code is reported.</li>\n<li>Revamp vulture's scavenging property by additional <em>detection of the cases which render the <strong>code unreachable</strong> </em>.</li>\n<li>Implement a <strong>confidence value with results</strong> - this would be necessary when implementing <em>auto</em> removal, as we would need a proportion of surety or certainty with which we report dead code.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_coala_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5154725527814144/",
+          "proposal_id": null,
+          "short_description": "vulture is a tool which detects and reports dead (unused) code and coala is an automatic linter.\nThe motivation of this proposal is to:\n\nExtend...",
+          "slug": "auto-removal-of-dead-code-through-vulture",
+          "status": "completed",
+          "student_name": "Rahul Jha [:RJ722]",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Auto-removal of dead code through vulture"
+        },
+        {
+          "code_url": "https://yash-nisar.github.io/blog/gsoc-summary/",
+          "description": "<p>The aim of the project is to ease the process of testing bears in coala by significantly improving the testing API to yield favorable, easy to understand results, add support for at least 8 additional useful linter bears, integrate the MarkdownBear with useful plugins, include <code>remark-lint</code> to report error messages and get the MarkdownBear to a bug free state, and enhance documentation to include the newly written Linter bears.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_coala_2017_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5215509247164416/",
+          "proposal_id": null,
+          "short_description": "The aim of the project is to ease the process of testing bears in coala by significantly improving the testing API to yield favorable, easy to...",
+          "slug": "extend-linter-integration",
+          "status": "completed",
+          "student_name": "Yash Nisar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Extend Linter Integration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5817061024464896/"
+    },
+    "year_2018": {
+      "num_projects": 14,
+      "projects": [
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/li-boxuan",
+          "description": "<p>The goal of project meta-review is to track emoji responses to review comments. These responses would be collected, processed and displayed. This project builds a meta-review system on the community site\nand gh-board to display score ranking statistics and meta-reviews in need, respectively, and encourage people to do meta-review.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6420710960398336/",
+          "proposal_id": null,
+          "short_description": "The goal of project meta-review is to track emoji responses to review comments. These responses would be collected, processed and displayed. This...",
+          "slug": "meta-review",
+          "status": "completed",
+          "student_name": "Boxuan Li",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Meta-review"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2018/StatusReport/ksdme",
+          "description": "<p>coala as a linting and code fixing tool can be far more useful when its power can be directly leveraged from within the code editor. Since all the major IDE's and code editors are now starting to support the standard Microsoft Language Server protocol it is now possible to expose coala's capabilities via the one said protocol and support a wide range of code editors. This proposal outlines the project where I intend to build one such server loosely based upon the proof of concept implementation built for vs-code. It should see noticeable performance improvements, feature upgrades to support actions such as didChange, didSave etc, customization of bears from within the LSP,  support for all languages coala supports and be a fully standards confirming general language server.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6624888538267648/",
+          "proposal_id": null,
+          "short_description": "coala as a linting and code fixing tool can be far more useful when its power can be directly leveraged from within the code editor. Since all the...",
+          "slug": "coala-language-server",
+          "status": "completed",
+          "student_name": "ksdme",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "coala language server"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/pareksha",
+          "description": "<p>This project is part of adding the 'aspect' functionality to coala-bears.</p>\n<p>Through this functionality coala users will no longer have to worry about searching for the bear or remembering the name of the bear appropriate for their work. They will be able to fix their code with the help of an ‘aspect’, which is nothing but a keyword that relates to the action they want the bear to perform on their code.</p>\n<p>This project aims at adding the aspect support to at least five more bears. Plus having properly defined and documented aspects for the same bears. After this project, these bears will get executed by using their respective aspects.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6736178522882048/",
+          "proposal_id": null,
+          "short_description": "This project is part of adding the 'aspect' functionality to coala-bears.\nThrough this functionality coala users will no longer have to worry about...",
+          "slug": "convert-bears-to-aspects-project",
+          "status": "completed",
+          "student_name": "Pareksha Manchanda",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Convert Bears to Aspects Project"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2018/StatusReport/shrikrishna",
+          "description": "<p>As coala tries to be welcoming organization for newcomers, giving them clear pathways and as much direct assistance as possible.\nHowever, it is already known that newcomers face many barriers while attempting to contribute to the open source community for the first time. Some barriers they face include orientation issues that can potentially demotivate newcomers from placing their first contribution.\nOn the other hand, gamification is widely used to engage and motivate people to accomplish task and improve their performance.Therefore, the goal of this project is to use gamification to orient and motivate newcomers to overcome onboarding barriers to contribute and engage with coala and its community.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5456264041594880/",
+          "proposal_id": null,
+          "short_description": "As coala tries to be welcoming organization for newcomers, giving them clear pathways and as much direct assistance as possible.\nHowever, it is...",
+          "slug": "newcomer-metrics-and-gamification",
+          "status": "completed",
+          "student_name": "Shrikrishna Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Newcomer metrics and gamification"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/virresh",
+          "description": "<p>This project aims to implement a library that integrates with the existing coala code and allows writing native bears for coala that can leverage the power of ANTLR and enable them to advanced linting routines based on the parse-tree of a language with a given grammar.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_coala_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5370686482677760/",
+          "proposal_id": null,
+          "short_description": "This project aims to implement a library that integrates with the existing coala code and allows writing native bears for coala that can leverage the...",
+          "slug": "integration-of-antlrv4-into-coala-core",
+          "status": "completed",
+          "student_name": "Viresh Gupta",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Integration of ANTLRv4 into coala core"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2018/StatusReport/macbox7",
+          "description": "<p>The idea, here, is to integrate <strong>pyflakes-enhanced AST</strong> into coala as a <strong>metabear</strong> which can then be used to develop various plugins. The second part of the project involves redesigning flake8 plugins <strong>flake8-future-import</strong> and <strong>flake8-builtins</strong> in such a way that they use pyflakes-enhanced AST over python AST. Finally, a wrapper is to be created which supplies a python AST to flake8 plugins so that they work as it is.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4541083551793152/",
+          "proposal_id": null,
+          "short_description": "The idea, here, is to integrate pyflakes-enhanced AST into coala as a metabear which can then be used to develop various plugins. The second part of...",
+          "slug": "integrate-pyflakes-enhanced-ast-into-coala",
+          "status": "completed",
+          "student_name": "Ankit Joshi",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "Integrate pyflakes-enhanced AST into coala"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/VamshiKrishna",
+          "description": "<p>GitMate.io is an automation tool for developers. While it works well, there are a number of plugins which saves a lot of time of our community(for example automatically close PR's from master). Many of them are general plugins, which are required by every org, but we need more plugins which support coala development workflow(Like gitmate coala linter plugin). This project adds more automations and plugins like auto-review, auto-reject PR’s, assign, mark plugins, etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4795178514644992/",
+          "proposal_id": null,
+          "short_description": "GitMate.io is an automation tool for developers. While it works well, there are a number of plugins which saves a lot of time of our community(for...",
+          "slug": "implement-gitmate-automations-and-plugins-for-coala",
+          "status": "completed",
+          "student_name": "Vamshi Krishna",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Implement GitMate automations and plugins for coala"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2018/StatusReport/RahulJha",
+          "description": "<p>The following has been proposed to facilitate the user experience with whitelisting in Vulture:</p>\n<ul>\n<li>Create a command line tool which takes in sip files as input and spits a whitelist with all the virtual functions defined in the sip files. (Add Documentation and tests)</li>\n<li>Use this tool to generate a whitelist for PyQt and ship it with vulture. This will reduce overhead for PyQt projects which use vulture.</li>\n<li>Implement a helper function to automatically produce whitelists based on the current output of Vulture. These whitelists should be easily editable.</li>\n<li>Improve the ignoring mechanism for Vulture such that the users can ignore whatever results matches with the provided regular expressions.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6524402275450880/",
+          "proposal_id": null,
+          "short_description": "The following has been proposed to facilitate the user experience with whitelisting in Vulture:\n\nCreate a command line tool which takes in sip files...",
+          "slug": "improve-whitelisting-infrastructure-for-vulture",
+          "status": "completed",
+          "student_name": "Rahul Jha (~RJ722)",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Whitelisting infrastructure for Vulture"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/ishanSrt",
+          "description": "<p>It is tough for a new user to quickly grasp and start using the settings provided by coala. The user needs to be aware of the bears he might possibly need for his project and also the settings provided by the bears. Many of them directly opting for individual linting softwares when coala can provide a unified environment for them. This way many are never able to unleash the true power of coala. The first runs of coala should involve as less user interaction as possible, so that new users can realize how hassle free it is to use coala <strong>over</strong> a collection of linting technologies. Quickstart should be able to learn the bear settings from the project.</p>\n<p>This project adds the capabilities to coala-quickstart by making smart analysis, depending upon the format already followed by the users, may it be separate formatting used for separate files or for a separate group of files (eg. grouped in a specific folder) or for different language files.</p>\n<p>Many major communities don't use a fixed coding styles that the bears provide. The quickstart should be able to adapt itself and generate a config file which matches as closely to the codebase as it possibly can for easy and quick adoption.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_coala_2018_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6107526978338816/",
+          "proposal_id": null,
+          "short_description": "It is tough for a new user to quickly grasp and start using the settings provided by coala. The user needs to be aware of the bears he might possibly...",
+          "slug": "quickstart-green-mode",
+          "status": "completed",
+          "student_name": "Ishan Srivastava",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Quickstart Green Mode"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/saksham",
+          "description": "<p>The project focuses on improving coala's dependency management for installing bear and their dependencies on multiple platforms. Specifically, the core focus is on trying to automate dependency management using Ansible playbooks and roles. Additionally, improving the existing dependency management API by introducing a <code>PlatformRequirement</code> class for system specific package managers and fixing and improving the exiting cib install bears tool which uses the dependency management API by adding complete test coverage.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6123324002271232/",
+          "proposal_id": null,
+          "short_description": "The project focuses on improving coala's dependency management for installing bear and their dependencies on multiple platforms. Specifically, the...",
+          "slug": "improve-installation-of-coala-and-coala-bears",
+          "status": "completed",
+          "student_name": "Saksham Bansal",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Improve Installation of coala and coala-bears"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2018/StatusReport/NitanshuVashistha",
+          "description": "<p><strong>corobo Enhancement</strong></p>\n<p>The goal of this project is to make corobo secure by reducing its surface vulnerability. It also includes implementing a better testing infrastructure to test plugins like LabHub, as well as to make the existing plugins configurable so that they can also be adapted by other communities to cater their needs.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4866887288619008/",
+          "proposal_id": null,
+          "short_description": "corobo Enhancement\nThe goal of this project is to make corobo secure by reducing its surface vulnerability. It also includes implementing a better...",
+          "slug": "corobo-enhancement",
+          "status": "completed",
+          "student_name": "Nitanshu Vashistha",
+          "student_profile": null,
+          "tags": [],
+          "title": "corobo Enhancement"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/kriti21",
+          "description": "<p>This project is about adding a verification process for the pull requests made to coala. There are many special types of commit messages that should only be used in conjunction with patches containing a special type of content. Such commits should be detected, and allowed or disallowed based on configuration settings in .coafile.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5785308331245568/",
+          "proposal_id": null,
+          "short_description": "This project is about adding a verification process for the pull requests made to coala. There are many special types of commit messages that should...",
+          "slug": "commit-content-inspection-project",
+          "status": "completed",
+          "student_name": "Kriti Rohilla",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Commit content inspection project"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/palash25",
+          "description": "<p>Integrate an optimized version of the current caching mechanism with the Nextgen core. \nThe objective is to take the improvement suggested to optimize the old core's cache like Ignoring directories and some newly proposed improvements like cache controls, proxy objects, etc and try to implement them within the current Nextgen core architecture.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2018_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5999631360065536/",
+          "proposal_id": null,
+          "short_description": "Integrate an optimized version of the current caching mechanism with the Nextgen core. \nThe objective is to take the improvement suggested to...",
+          "slug": "optimize-caching-for-nextgen-core",
+          "status": "completed",
+          "student_name": "Palash Nigam",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimize Caching (For Nextgen-Core)"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2018/StatusReport/RaiVaibhav",
+          "description": "<h3>Debug and Profile Bears</h3>\n<p>The aim of this project is to create a  better quality Bears by creating a tool which will have the ability to jump directly into Bear code and move through it using a debugger interface such as pdb and make debugging of Bears as easy as writing the Bear.</p>\n<p>A Debugger should also have the ability to investigate the settings passed to the Bear and inspect the results created by the Bear.</p>\n<p>Implementation of a Profiling Interface which will help Bear writer to create a Better Performant Bear.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_coala_2018_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6307813517164544/",
+          "proposal_id": null,
+          "short_description": "Debug and Profile Bears\nThe aim of this project is to create a  better quality Bears by creating a tool which will have the ability to jump directly...",
+          "slug": "debug-and-profile-bears",
+          "status": "completed",
+          "student_name": "Vaibhav Kumar Rai",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Debug and Profile Bears"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4906591174262784/"
+    },
+    "year_2019": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/Naveenaidu.html",
+          "description": "<p>The aim of this project is to implement the architecture that enables the support for   nested - languages by default. The users of coala would not have to concentrate on writing new bears/ analysis routines. This project would perfectly work with the existing bears.</p>\n<p>On the successful completion of project, coala would have the support for the following programming languages:</p>\n<ol>\n<li>Codeblocks in RST</li>\n<li>PHP and HTML</li>\n</ol>\n<p>It is important to note that the aim of the project is not to provide a full fledged support for all nested languages , but to lay the foundation of architecture. It’s not possible to provide the full fledged support for languages until coala has a new feature where the bears can accept AST’s and lint through them, instead of taking files as input.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6358992580771840/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to implement the architecture that enables the support for   nested - languages by default. The users of coala would not...",
+          "slug": "handle-nested-programming-languages",
+          "status": "completed",
+          "student_name": "Naveen Naidu",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Handle Nested Programming Languages"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/PrajwalM.html",
+          "description": "<p>coala is a linting and code fixing tool with support for many languages. Having a configuration file is essential to make full use of coala. Having a standardised configuration format like TOML helps. coala currently has an INI style configuration. Also, INI style configuration has certain limitations when it comes to custom sub-level parsing. The LineParser and ConfParser becomes complex and error-prone. This project will allow developers to quickly implement new features and will allow users to write configuration files in a format that they are already familiar with.</p>\n<p>This project would focus on :</p>\n<ol>\n<li>Allowing the user to create configuration files in TOML</li>\n<li>Providing coala with the functionality to create TOML configuration files from sections</li>\n<li>Creating a tool to convert .coafile to TOML configuration file</li>\n<li>Allowing coala-quickstart to generate configuration files in TOML as well.</li>\n<li>Creation of TOMLLintBear and a repository of good configuration files to allow users to easily bootstrap their projects.</li>\n</ol>\n",
+          "difficulty": "advanced",
+          "id": "proj_coala_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6410866457575424/",
+          "proposal_id": null,
+          "short_description": "coala is a linting and code fixing tool with support for many languages. Having a configuration file is essential to make full use of coala. Having a...",
+          "slug": "support-toml-as-a-configuration-format",
+          "status": "completed",
+          "student_name": "PRAJWAL M",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Support TOML as a configuration format"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/KVGarg.html",
+          "description": "<p>This project aims to increase the usability and easiness for all the open-source enthusiasts by enhancing and improving the coala <a href=\"https://community.coala.io/\" target=\"_blank\">Community website</a> as well as coala <a href=\"https://projects.coala.io/\" target=\"_blank\">Projects website</a> for <strong>newcomers</strong>, <strong>developers</strong> as well as <strong>for other communities</strong>. A community website plays an essential role for an open-source community because it spreads the idea of offerings that community provide to other organizations, with information about the active community by exploring their skills as well as their precious contributions to it. So, the major focus of this project proposal is to enhance the architecture of websites. In addition, new API Endpoints will be created in coala <a href=\"https://gitlab.com/coala/landing\" target=\"_blank\">webservices</a>. These new endpoints will manage the user-database as well as coala database in a more structured form.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5670365173383168/",
+          "proposal_id": null,
+          "short_description": "This project aims to increase the usability and easiness for all the open-source enthusiasts by enhancing and improving the coala Community website...",
+          "slug": "enhance-websites-architecture",
+          "status": "completed",
+          "student_name": "Keshav Garg",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Enhance Websites Architecture"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/A-Hilaly",
+          "description": "<h3>git-bug</h3>\n<p>git-bug is a distributed bug tracker imbedded in git.</p>\n\n<h3>Current state</h3>\n<p>Currently the project provides a large set of tools and functionalities (command line, web UI, and terminal UI) to deal with issues locally and supports Github and launchpad issues imports.</p>\n<h3>GSoC program</h3>\n<p>During the GSoC program this project aim mainly to:</p>\n<ul>\n<li>Complete bidirectional syncing with Github by implementing it exporter. </li>\n<li>Support bidirectional syncing with Gitlab by implementing it exporter and importer.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5494265222791168/",
+          "proposal_id": null,
+          "short_description": "git-bug\ngit-bug is a distributed bug tracker imbedded in git.\n\nCurrent state\nCurrently the project provides a large set of tools and functionalities...",
+          "slug": "git-bug",
+          "status": "completed",
+          "student_name": "Amine Hilaly",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "git-bug"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2019/StatusReport/AmolGrover.html",
+          "description": "<p>coala plugin for JetBrains IDEs that supports linting of files using coala right within the IDE. The plugin would provide a unified experience for the developer to keep their code files clean and readable, without ever leaving the IDE, and hindering the development workflow.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6138082162638848/",
+          "proposal_id": null,
+          "short_description": "coala plugin for JetBrains IDEs that supports linting of files using coala right within the IDE. The plugin would provide a unified experience for...",
+          "slug": "plugin-for-jetbrains-ides",
+          "status": "completed",
+          "student_name": "Amol Grover",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Plugin for Jetbrains IDEs"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/bkhanale.html",
+          "description": "<p>coala currently has few generic bears which are not very useful or are not maintained well. The objective of the project is to get most of the generic bears in a working state so that they can be used in production.</p>\n<p>Apart from the current bear, this project brings many new generic bears which have been requested by the community from a long time but they were not worked upon. Such bears include <code>OutdatedDependencyBear</code>, <code>FileModeBear</code>, <code>FileExistsBear</code>, <code>RequirementsCheckBear</code>, etc. Apart from these, there are several improvements to <code>PEP8Bear</code> and <code>PycodestyleBear</code>. All of the bears are to be well tested and documented. This project also aims to bring a few improvements to coala core and upstream repositories.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5000522073899008/",
+          "proposal_id": null,
+          "short_description": "coala currently has few generic bears which are not very useful or are not maintained well. The objective of the project is to get most of the...",
+          "slug": "improve-generic-bear-quality",
+          "status": "completed",
+          "student_name": "Bhushan Khanale",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Generic Bear Quality"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/Utkarsh1308.html",
+          "description": "<p>I aim to improve the existing diff handling capability of coala so that it is possible for bears to offer multiple fixes for an issue. I also plan to implement interactive diff behavior where the user input is used to generate interactive diffs using appropriate placeholders in the code. For achieving this I plan to have a generic approach for bears to pass their own applicable actions which can then be used to write a generic bear which can offer multiple patches. This can be followed by Implementation for templated patches and interactive diff behavior along with writing tests supporting these new functionalities. Finally thorough testing and exception handling should be done to fix bugs and designing alternate approaches if necessary(e.g. resolve conflicts of multiple bears on a single issue by git like conflict markers through IDE). I would be updating the documentation throughout the project. An optional task would be implementing output formats for the enhanced features and their processing functions being implemented in the Linter class if time permits.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5233092673929216/",
+          "proposal_id": null,
+          "short_description": "I aim to improve the existing diff handling capability of coala so that it is possible for bears to offer multiple fixes for an issue. I also plan to...",
+          "slug": "improve-diff-handling",
+          "status": "completed",
+          "student_name": "Utkarsh1308",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve Diff Handling"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2019/StatusReport/RohanVB.html",
+          "description": "<p>The main purpose of this project is to make the text-editors of coala more robust and active. This will be done through ensuring that the plugins are up-to-date with proper tests and continuous integration, to make maintenance more simplified for contributors in the future. This project will be completed through the use of several open-source tools. Further, the completion of this project will lead to other developers having the freedom to use coala in their favourite text editors. The ease of usage in different text editors may also help potentially serve as a way to popularize coala.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5597218944319488/",
+          "proposal_id": null,
+          "short_description": "The main purpose of this project is to make the text-editors of coala more robust and active. This will be done through ensuring that the plugins are...",
+          "slug": "cohesive-editor-support",
+          "status": "completed",
+          "student_name": "Rohan Bhambhoria",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Cohesive Editor Support"
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2019/StatusReport/akshatkarani.html",
+          "description": "<p>This proposes a new action system which will allow bears to define their own actions, hence make bears more useful. Implementation of such a system makes providing support for bears which can suggest multiple patches, which is a part of Improve Diff Handling project, easy.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_coala_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4879237096407040/",
+          "proposal_id": null,
+          "short_description": "This proposes a new action system which will allow bears to define their own actions, hence make bears more useful. Implementation of such a system...",
+          "slug": "next-generation-action-system",
+          "status": "completed",
+          "student_name": "Akshat Karani",
+          "student_profile": null,
+          "tags": [],
+          "title": "Next Generation Action System."
+        },
+        {
+          "code_url": "http://projects.coala.io/GSoC/2019/StatusReport/chay2199.html",
+          "description": "<p>Goal of this project is to use coala's json output format, convert it to various test result formats and then integrate these test format reports to various tools like CricleCI, Appveyor, Jenkins and Phabricator. Result format inconsistencies has been a problem for a long time but the benefit of converting the static analysis results into a test result format can provide tight integration with various systems. This project also aims to provide our upstream linters with some of these test formats using the Result Reporter Tool library and help developers in extending this project to other formats and uses in the future.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2019_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5912489659727872/",
+          "proposal_id": null,
+          "short_description": "Goal of this project is to use coala's json output format, convert it to various test result formats and then integrate these test format reports to...",
+          "slug": "result-reporter-tool",
+          "status": "completed",
+          "student_name": "Chaitanya Tyagi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Result Reporter Tool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5097595045675008/"
+    },
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/nakuldx/18bd90034b1a2777d5c11f9368f6180b",
+          "description": "<p>Improvements to the corobo project enhancing its security, features and usability of coala’s devops bot.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6609047830134784/",
+          "proposal_id": null,
+          "short_description": "Improvements to the corobo project enhancing its security, features and usability of coala’s devops bot.",
+          "slug": "corobo-enhancement-project",
+          "status": "completed",
+          "student_name": "nakuldx",
+          "student_profile": null,
+          "tags": [],
+          "title": "corobo Enhancement Project"
+        },
+        {
+          "code_url": "https://gist.github.com/shreyarwal/87501f449a40d9ed2e0c85ed7fd051c3",
+          "description": "<p>Result reporter tool to convert linter/bear results into multiple formats.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5750814211047424/",
+          "proposal_id": null,
+          "short_description": "Result reporter tool to convert linter/bear results into multiple formats.",
+          "slug": "result-reporter-tool-for-bears",
+          "status": "completed",
+          "student_name": "Shreya Agarwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Result Reporter Tool for Bears"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2021/StatusReport/pilgrim2308.html",
+          "description": "<p>Gitmate, a git workflow management bot created by coala, hasn't been actively maintained in the last 3 years. My project aims to update it and bring it back to active use for the coala community. I plan to undertake various improvements to Gitmate as well as IGitt, the underlying library that powers Gitmate's git operations.</p>\n<p>My primary goal is to set up Gitmate for the coala community. I will also upgrade both Gitmate and IGitt to the latest API versions of Github, Gitlab and Jira and add support for the latest python versions by upgrading the dependencies. Along with this, I will update various aspects of the documentation of both these projects, improve testing, and ensure that the Continuous Integration setup is in perfect condition. The last phase of my project will involve merging three pull request plugins into a combined plugin and improving various pull request events. \nThroughout the project, I will work on feedback from the coala community and try my utmost best to improve their experience with using Gitmate.</p>\n",
+          "difficulty": null,
+          "id": "proj_coala_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5755105789345792/",
+          "proposal_id": null,
+          "short_description": "Gitmate, a git workflow management bot created by coala, hasn't been actively maintained in the last 3 years. My project aims to update it and bring...",
+          "slug": "gitmate-for-coala",
+          "status": "completed",
+          "student_name": "Sanchit (pilgrim2308)",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Gitmate for coala"
+        },
+        {
+          "code_url": "https://projects.coala.io/GSoC/2021/StatusReport/pra17dod.html",
+          "description": "<p>This project aims to create a tool that allows anyone to become a market gardener, given some space. As a first step, a user will merely sign up and enter the amount of space that they want to use. The system will then trigger tasks the user has to do to farm on his space efficiently. Those tasks are triggered by simple rules and may depend on weather events, dates, and later also other triggers. Thus, anyone can be a market gardener, and this tool will be beneficial and easy to use.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_coala_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5825474533523456/",
+          "proposal_id": null,
+          "short_description": "This project aims to create a tool that allows anyone to become a market gardener, given some space. As a first step, a user will merely sign up and...",
+          "slug": "microfarm-for-everybody",
+          "status": "completed",
+          "student_name": "Prashant Dodiya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Microfarm For Everybody"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4904398832009216/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "abhinavkaushlya@gmail.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://coala.io/chat",
+    "mailing_list": "https://github.com/coala/coala/wiki/Mailing-Lists"
+  },
+  "social": {
+    "blog": "https://blog.coala.io",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/coala_io",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.519Z"
+  }
+}

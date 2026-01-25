@@ -1,0 +1,287 @@
+{
+  "id": "692251de53dd9d7326d33e37",
+  "slug": "neovim",
+  "name": "Neovim",
+  "category": "End user applications",
+  "description": "hyperextensible Vim-based text editor",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/neovim/wsjrusphcrjmo5tf-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/neovim.webp",
+  "logo_r2_url": null,
+  "url": "https://neovim.io/",
+  "active_years": [
+    2018,
+    2019,
+    2020,
+    2025
+  ],
+  "first_year": 2018,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "javascript",
+    "lua",
+    "vim",
+    "rpc"
+  ],
+  "topics": [
+    "text editor",
+    "vim",
+    "cross platform",
+    "tools",
+    "developer tools",
+    "cross-platform",
+    "editor",
+    "system programming",
+    "programming",
+    "ai",
+    "text-editor"
+  ],
+  "total_projects": 8,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": 2,
+      "year_2019": 2,
+      "year_2020": 1,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": 2,
+      "year_2019": 2,
+      "year_2020": 1,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 3
+    },
+    "total_students": 8
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://utkarshme.github.io/blog/progress-at-the-end-of-gsoc-with-neovim",
+          "description": "<p>This project aims to improve the existing UI protocol to let other applications embed <em>Neovim</em> instances to provide \"vim mode\" like features. The improved API will equip the embedders with even finer control of the GUI to provide a more integrated and rich experience. It would also externalize all the individual elements for a finer control.</p>\n",
+          "difficulty": null,
+          "id": "proj_neovim_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5425846814769152/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve the existing UI protocol to let other applications embed Neovim instances to provide \"vim mode\" like features. The...",
+          "slug": "improve-ui-protocolapi-to-facilitate-consistent-guis-in-embedding-applications",
+          "status": "completed",
+          "student_name": "Utkarsh Maheshwari",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve UI protocol/API to facilitate consistent GUIs in embedding applications"
+        },
+        {
+          "code_url": "https://github.com/neovim/neovim/issues/8337#issuecomment-412862089",
+          "description": "<p>The Neovim text editor offers a comprehensive API that allows its functionality to be extended by plugins and integrated into other applications. The goal of this project is to create an API client library in C# that will allow .NET applications to conveniently use the API. Additionally, an extension for Visual Studio will be created to integrate most of Neovim's functionality into the IDE.</p>\n",
+          "difficulty": null,
+          "id": "proj_neovim_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5007950254964736/",
+          "proposal_id": null,
+          "short_description": "The Neovim text editor offers a comprehensive API that allows its functionality to be extended by plugins and integrated into other applications. The...",
+          "slug": "neovim-net-api-client-and-visual-studio-extension",
+          "status": "completed",
+          "student_name": "Brock Mammen",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Neovim .NET API Client and Visual Studio Extension"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5474817897660416/"
+    },
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/neovim/neovim/pull/9943",
+          "description": "<p>The job control feature of Neovim introduced great multitasking support that added new capabilities and enhanced important tasks by allowing them to be done asynchronously (e.g.: online linting, as in <a href=\"https://github.com/dense-analysis/ale\" target=\"_blank\">ALE</a> for instance). This improved the overall user experience and reduced editing latency.</p>\n<p>We aim to add multiprocessing support to VimL, the built-in scripting language of Neovim, by allowing functions to be invoked asynchronously in separate processes and enabling the retrieval of their results through callbacks and by waiting for them on demand in the parent process.\nThis multiprocessing feature will have a noticeable positive impact on the performance of parallelizable computations and tasks.</p>\n<p>This is achieved by introducing the following built-in multiprocessing primitives based on the job control feature:</p>\n<ul>\n<li><code>call_async({callee}, {args}[, {opts}])</code></li>\n<li><code>call_parallel({callee}, {arglists}[, {opts}])</code></li>\n<li><code>call_wait({ids}[, {timeout}])</code></li>\n<li><code>:&amp;:{cmd}</code> (invokes <code>{cmd}</code> asynchronously; has a custom predefined handler for <code>:[l]vimgrep[add]</code> commands)</li>\n</ul>\n<p>Complementing the multiprocessing feature, is the context feature, which is a set of built-in functions to save and restore parts of the current editor state.</p>\n",
+          "difficulty": null,
+          "id": "proj_neovim_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5254863745712128/",
+          "proposal_id": null,
+          "short_description": "The job control feature of Neovim introduced great multitasking support that added new capabilities and enhanced important tasks by allowing them to...",
+          "slug": "multiprocessing-feature",
+          "status": "completed",
+          "student_name": "abdelhakeem",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Multiprocessing Feature"
+        },
+        {
+          "code_url": "https://medium.com/@hlpr98/the-final-report-of-gsoc-2019-9438df33d6a?source=friends_link&sk=e3286a1e49561f29d71322160419cece",
+          "description": "<p>Nvim works as both a server and a client. “Nvim client” can connect to any other “Nvim server” and Nvim GUIs can show the screen of a remote “Nvim server”. But the built in Nvim TUI cannot show the screen of a remote Nvim server. The goal of this project is to bring this functionality to Neovim.</p>\n<p>The aim of the project can be summarized as: Whenever the user starts Nvim as</p>\n<p><code>nvim --connect {addr}</code></p>\n<p>the Nvim will connect to the Nvim server running at <code>{addr}</code>, where <code>{addr}</code> is either a <code>pipe</code> or a <code>tcp</code> address. The Nvim client instance would send input to the remote Nvim server and reflects the UI of the remote Nvim server. So the Nvim client acts like any other external GUI.</p>\n<p>Thus, this project makes <code>TUI</code> an RPC client. This enables us to convert <code>nvim</code> from a multi-threaded process, where <code>TUI</code> and <code>nvim server</code> ran on separate threads, to a multi-process system with <code>TUI</code> and the <code>server</code> running as separate processes and interacting with each other using the RPC API (<code>MessagePack</code>) of <code>nvim</code>.</p>\n",
+          "difficulty": null,
+          "id": "proj_neovim_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4799834828046336/",
+          "proposal_id": null,
+          "short_description": "Nvim works as both a server and a client. “Nvim client” can connect to any other “Nvim server” and Nvim GUIs can show the screen of a remote “Nvim...",
+          "slug": "tui-terminal-ui-remote-attachment",
+          "status": "completed",
+          "student_name": "H.L Praveen Raj",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "TUI (Terminal UI) remote attachment"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4864359866564608/"
+    },
+    "year_2020": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/neovim/neovim/issues/12458",
+          "description": "<p>This project aims to do the following:</p>\n<ul>\n<li>Improving autoread by making neovim automatically prompt for reloading a buffer if it was changed outside the current editing session. </li>\n<li>Dsplaying diff between the changed file and the buffer while prompting for reload. </li>\n<li>Refactoring old code related to file I/O.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_neovim_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5088690579177472/",
+          "proposal_id": null,
+          "short_description": "This project aims to do the following:\n\nImproving autoread by making neovim automatically prompt for reloading a buffer if it was changed outside the...",
+          "slug": "improving-autoread-and-file-change-detection",
+          "status": "completed",
+          "student_name": "BK1603",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving autoread and file-change detection"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6636241820319744/"
+    },
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Neovim currently lacks built-in support for AI features. As a result, plugin developers need to reimplement the same core functionalities again and again. This leads to duplication and inconsistencies in the plugin ecosystem.\n\nThis project aims to introduce AI-friendly primitives to streamline AI plugin development. It should add support for inline completion, buffer status indicators, a standardized progress API, and enhance prompt buffers with multiline support to be more friendly toward building AI-assisted workflows. These improvements should make it easy to integrate AI capabilities in Neovim while keeping Neovim performant, lightweight, and extensible as always.",
+          "difficulty": "beginner",
+          "id": "proj_neovim_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/5QH1bGGq",
+          "proposal_id": "ccWwAINZ",
+          "short_description": "Neovim currently lacks built-in support for AI features. As a result, plugin developers need to reimplement the same core functionalities again and...",
+          "slug": "enhancing-ai-primitives-in-neovim",
+          "status": "in-progress",
+          "student_name": "Shadman Saleh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing AI Primitives in Neovim"
+        },
+        {
+          "code_url": null,
+          "description": "A much wanted and highly requested feature for neovim is the ability to edit remote files over ssh seamlessly. There is no native way of doing so and plugins do not feel as polished as expected. The aim of this project is to add such a feature to neovim.",
+          "difficulty": null,
+          "id": "proj_neovim_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/cxwY8wMs",
+          "proposal_id": "NqleB6f5",
+          "short_description": "A much wanted and highly requested feature for neovim is the ability to edit remote files over ssh seamlessly. There is no native way of doing so and...",
+          "slug": "remote-ssh-editing",
+          "status": "in-progress",
+          "student_name": "Siddhant Agarwal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Remote ssh Editing"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to enhance Neovim’s API to support AI-powered features, while also bringing broader improvements to the editor's functionality. While Neovim can provide some AI capabilities, current APIs are not convenient enough for handling complex tasks like streaming results or customizing AI interactions.\n\nTo solve this, the proposal focuses on three main areas:\n\n1. Enhanced LSP Support: Adding support for AI-related methods such as `textDocument/inlineCompletion` and improving LSP's handling of partial results with `PartialResultParam`.\n2. Progress Interface: Introducing a built-in progress interface (`vim.ui.progress`) to track and display long-running tasks, improving user experience during AI interactions.\n3. Prompt Buffer Improvements: Creating a new Lua API for multi-line and editable prompt buffers to facilitate interactive AI chats or REPL-like environments.\n\nBy addressing these areas, this project will provide a foundation for integrating AI into Neovim while offering general usability and extensibility improvements for all users.",
+          "difficulty": "advanced",
+          "id": "proj_neovim_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/7Q85JtxY",
+          "proposal_id": "dMDGCOji",
+          "short_description": "This proposal aims to enhance Neovim’s API to support AI-powered features, while also bringing broader improvements to the editor's functionality....",
+          "slug": "ai-driven-api-enhancements-with-broader-benefits",
+          "status": "in-progress",
+          "student_name": "Yi Ming",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "AI-Driven API Enhancements with Broader Benefits"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/neovim"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "justinkz+gsoc@gmail.com",
+    "guide_url": "https://github.com/neovim/neovim/wiki/Google-Summer-of-Code",
+    "ideas_url": "https://github.com/neovim/neovim/wiki/Google-Summer-of-Code#gsoc-ideas-2025",
+    "irc_channel": "https://matrix.to/#/#neovim:matrix.org",
+    "mailing_list": "https://github.com/neovim/neovim/discussions"
+  },
+  "social": {
+    "blog": "https://neovim.io/news/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://bsky.app/profile/neovim.io",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.744Z"
+  }
+}

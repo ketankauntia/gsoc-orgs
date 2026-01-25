@@ -1,0 +1,170 @@
+{
+  "id": "692251cc53dd9d7326d33d4f",
+  "slug": "audacity",
+  "name": "Audacity",
+  "category": "End user applications",
+  "description": "Free, open source, cross-platform audio software",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/audacity/7opleanl35jab5va-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/audacity.webp",
+  "logo_r2_url": null,
+  "url": "https://www.audacityteam.org/",
+  "active_years": [
+    2021,
+    2022
+  ],
+  "first_year": 2021,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c++",
+    "qt",
+    "cmake",
+    "wxwidgets",
+    "VST"
+  ],
+  "topics": [
+    "audio",
+    "audio editor",
+    "audio analysis",
+    "audio processing",
+    "editing",
+    "compression",
+    "Sound",
+    "Effects"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 2,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 2,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://www.audacityteam.org/gsoc-2021-work-product-source-separation-and-deep-learning-tools/",
+          "description": "<p>This project proposes the design and integration of a deep learning framework into Audacity, with the focus of developing an interface for end users to interact with state of the art (SOTA) audio source separation models. Although the vast majority of SOTA source separation algorithms are built using Python-based frameworks, PyTorch’s C++ torchscript API provides an elegant solution for deploying python models in C++ applications. In Audacity, this would introduce the opportunity for the user to choose from a collection of domain-specific pretrained models, each suited for a different task (e.g. speech or music).  Additionally, it would set the foundational code for future integration of deep models designed for different tasks, such as speech recognition and audio classification. The goal of this work is not only to integrate source separation algorithms into Audacity, but more importantly to lay the groundwork for an extensible suite of open-source, deep learning-based music information retrieval (MIR) tools hosted by the world’s most popular free and open-source audio editor.</p>\n",
+          "difficulty": null,
+          "id": "proj_audacity_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5097817919455232/",
+          "proposal_id": null,
+          "short_description": "This project proposes the design and integration of a deep learning framework into Audacity, with the focus of developing an interface for end users...",
+          "slug": "source-separation-and-extensible-mir-tools-for-audacity",
+          "status": "completed",
+          "student_name": "Hugo Flores Garcia",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Source Separation and Extensible MIR Tools for Audacity"
+        },
+        {
+          "code_url": "https://www.audacityteam.org/gsoc-2021-with-audacity-work-product-spectral-editing-tool/",
+          "description": "<p>New set of tools will be implemented, for users to effectively select the spectral data in the frequency domain, the data selected will then be used for further processing, e.g. Noise reduction or removal.</p>\n<h3>Basic deliverable</h3>\n<p>The brush tool will be served as a basic deliverable, whereas the Hann window will likely be chosen with minimal 75% overlapping for both analysis and synthesis part. Regarding circular-shaped data,  Bresenham’s algorithm or Midpoint circle algorithm will be used to estimate the circumference points in the frequency domain, the remaining points will be calculated using the Flood fill algorithm.</p>\n<h3>Optional features: Overtone selection &amp; data reselection</h3>\n<p>The overtone resonances will now be estimated and selected automatically for the user-selected fundamental frequency. Moreover, the data selected can be refined using the slider, to determine the threshold for spectral energy.</p>\n",
+          "difficulty": null,
+          "id": "proj_audacity_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4714793742630912/",
+          "proposal_id": null,
+          "short_description": "New set of tools will be implemented, for users to effectively select the spectral data in the frequency domain, the data selected will then be used...",
+          "slug": "spectral-selection-tools",
+          "status": "completed",
+          "student_name": "Edward HUI",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Spectral Selection Tools"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5631107231383552/"
+    },
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://www.audacityteam.org/gsoc-2022-work-product-creating-fundamental-ruler-and-waveform-display-options/",
+          "description": "The current display options in Audacity for Rulers and Waveforms lack many features one might expect from audio editing and recording software. Additionally, the current infrastructure for Rulers is inflexible and hard to customize, making it difficult for developers to create new options. My project will flesh out the existing ruler infrastructure, allowing for not only linear and logarithmic rulers, but also other nonlinear and completely custom rulers. I will use this to create display options like a true linear decibel scale, a time ruler that counts by beats and bars, and many new ways to display waveforms.",
+          "difficulty": null,
+          "id": "proj_audacity_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/9zv4AuyT/",
+          "proposal_id": null,
+          "short_description": "The current display options in Audacity for Rulers and Waveforms lack many features one might expect from audio editing and recording software....",
+          "slug": "creating-fundamental-ruler-and-waveform-display-options",
+          "status": "completed",
+          "student_name": "Michael Papadopoulos",
+          "student_profile": null,
+          "tags": [],
+          "title": "Creating Fundamental Ruler and Waveform Display Options"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/audacity/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@audacityteam.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://discord.gg/D8KruQSfeu",
+    "mailing_list": "https://www.audacityteam.org/contact/mailing-lists/"
+  },
+  "social": {
+    "blog": "https://discord.gg/D8KruQSfeu",
+    "discord": "https://discord.gg/D8KruQSfeu",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.940Z"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": "692251d253dd9d7326d33d9c",
+  "slug": "electron",
+  "name": "Electron",
+  "category": "End user applications",
+  "description": "Cross-platform desktop apps with web technologies",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/electron/vchyhnp6rhabucgj-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/electron.webp",
+  "logo_r2_url": null,
+  "url": "https://electronjs.org",
+  "active_years": [
+    2022,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "javascript",
+    "node.js",
+    "c++",
+    "typescript",
+    "Chromium"
+  ],
+  "topics": [
+    "desktop",
+    "framework",
+    "javascript"
+  ],
+  "total_projects": 4,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.33,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": 1,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": 1,
+      "year_2025": 2
+    },
+    "total_students": 4
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/aryanshridhar/a6cf5f664b511c038aca5d2a393001c4",
+          "description": "This project aims to get rid of the Node environment from the renderer process for Electron fiddle to enforce a stronger security model.\nBasically, with the release of Electron v12.0.0, it is now made default to set the\ncontextIsolation as true which prevents the usage of powerful Node APIs in the renderer process.\n\nHowever, these changes aren’t yet reflected in fiddle’s architecture due to which it\ncurrently uses an outdated security model.\nTherefore, over the summer I plan to refactor Electron fiddle by migrating all the Node APIs used in renderer process to main process and later call them via IPC events.",
+          "difficulty": null,
+          "id": "proj_electron_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/kXWmZ2wy/",
+          "proposal_id": null,
+          "short_description": "This project aims to get rid of the Node environment from the renderer process for Electron fiddle to enforce a stronger security model. Basically,...",
+          "slug": "enable-context-isolation-in-electron-fiddle",
+          "status": "completed",
+          "student_name": "aryanshridhar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Enable Context Isolation in Electron Fiddle"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/electron/"
+    },
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/piotrpdev/gsoc/blob/main/2024-electron-product.md",
+          "description": "The Electron documentation currently doesn't feature API history for its functions, classes, etc. I aim to implement the missing API history in a similar fashion to the Node.js documentation: by allowing the use of a simple but powerful YAML schema in the API documentation Markdown files and displaying it nicely on the Electron documentation website.",
+          "difficulty": null,
+          "id": "proj_electron_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/wenKR2i3/",
+          "proposal_id": null,
+          "short_description": "The Electron documentation currently doesn't feature API history for its functions, classes, etc. I aim to implement the missing API history in a...",
+          "slug": "api-history-in-electron-documentation",
+          "status": "completed",
+          "student_name": "Piotr Płaczek",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "API History in Electron Documentation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/electron/"
+    },
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Currently, the Devtron Extension is not in a functional state, primarily because, over the past 10 years, significant changes have occurred. Newer manifest versions have been released, and several APIs in both Chrome and Electron have evolved, leading to its current non-functional state.\nApp developers who are new to Electron often find it challenging to understand IPC concepts and how to work with them.\nBuilding a completely new extension from scratch that tracks IPC events would be an effective approach to developing an IPC tracker that aligns with the requirements of the latest Manifest Version 3 and is fully compatible with the latest Chrome and Electron APIs.\nAdditionally, trackers for Event Listeners and Require Graph can also be added.\n\nA working prototype for the extension can be found on my GitHub : https://github.com/hitarth-gg/electron-tracker-prototype",
+          "difficulty": null,
+          "id": "proj_electron_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ppdEAKGU",
+          "proposal_id": "pJ4dmdTU",
+          "short_description": "Currently, the Devtron Extension is not in a functional state, primarily because, over the past 10 years, significant changes have occurred. Newer...",
+          "slug": "electron-restore-electron-devtron-extension",
+          "status": "in-progress",
+          "student_name": "Hitarth",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Electron - Restore Electron Devtron Extension"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Electron does not have any built-in mechanism for saving and restoring the state of BrowserWindows, but this is a very common need for apps that want to feel more native. This project aims to implement a save/restore window state API for Electron by providing a powerful configuration object called windowStateSavePolicy. This API will offer a declarative way to configure window persistence behavior while accommodating complex edge cases automatically. The configuration object will be optional within the BrowserWindowConstructorOptions. The primary approach involves leveraging Chromium’s PrefService to store the window state as a JSON object.",
+          "difficulty": "advanced",
+          "id": "proj_electron_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/7k1LLfEg",
+          "proposal_id": "Qf8t7l06",
+          "short_description": "Currently, Electron does not have any built-in mechanism for saving and restoring the state of BrowserWindows, but this is a very common need for...",
+          "slug": "saverestore-window-state-api",
+          "status": "in-progress",
+          "student_name": "Nilay Arya",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Save/Restore Window State API"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/electron"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "summer-of-code@electronjs.org",
+    "guide_url": "https://electronhq.notion.site/Electron-Google-Summer-of-Code-2025-Contributor-Guidance-1851459d1bd181ac8004ecb9e031b368",
+    "ideas_url": "https://electronhq.notion.site/Electron-Google-Summer-of-Code-2025-Ideas-List-1851459d1bd1811894dad8b48a68596d",
+    "irc_channel": "https://discord.gg/electronjs",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://electronjs.org/blog",
+    "discord": "https://discord.gg/electronjs",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/electronjs",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.066Z"
+  }
+}

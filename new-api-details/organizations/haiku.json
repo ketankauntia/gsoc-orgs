@@ -1,0 +1,644 @@
+{
+  "id": "692251d653dd9d7326d33dd2",
+  "slug": "haiku",
+  "name": "Haiku",
+  "category": "Operating systems",
+  "description": "Operating system that targets personal computing.",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/haiku/lnrgd3agfl2kogbo-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/haiku.webp",
+  "logo_r2_url": null,
+  "url": "https://www.haiku-os.org",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2017,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "c++",
+    "posix",
+    "ffmpeg",
+    "bsd unix",
+    "webkit",
+    "arm",
+    "x86",
+    "unix",
+    "virtualization"
+  ],
+  "topics": [
+    "frameworks",
+    "kernel",
+    "operating system",
+    "desktop integration",
+    "user interface",
+    "desktop",
+    "graphics",
+    "network",
+    "media",
+    "drivers",
+    "filesystems",
+    "virtualization",
+    "filesystem",
+    "web",
+    "gui"
+  ],
+  "total_projects": 26,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.25,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 5,
+      "year_2018": 2,
+      "year_2019": 1,
+      "year_2020": 4,
+      "year_2021": 3,
+      "year_2022": 3,
+      "year_2023": 3,
+      "year_2024": 5,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 5,
+      "year_2018": 2,
+      "year_2019": 1,
+      "year_2020": 4,
+      "year_2021": 3,
+      "year_2022": 3,
+      "year_2023": 3,
+      "year_2024": 5,
+      "year_2025": null
+    },
+    "total_students": 24
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://www.haiku-os.org/blog/akshayagarwal007/2017-08-28_gsoc_2017_calendar_application_final_report/",
+          "description": "<p>Develop a native calendar application for Haiku.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6601098714415104/",
+          "proposal_id": null,
+          "short_description": "Develop a native calendar application for Haiku.",
+          "slug": "calendar-application",
+          "status": "completed",
+          "student_name": "AkshayAgarwal007",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Calendar Application"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/a-star/2017-08-26_gsoc_2017_-_tcp_optimization_and_fine_tuning_final_report/",
+          "description": "<p>TCP/IP is the most widely implemented, non-vendor-specific Internet protocol suite in use today. TCP (Transmission Control Protocol) is at the heart of million of network applications ranging all the way from simple file sharing apps to social media to complex distributed cloud systems. One of the main challenges of an operating system is to get their tcp implementation running at maximum efficiency.</p>\n<p>This project aims at improvising the current tcp implementation of Haiku to adhere to the recommendations suggested by rfc 7414 and any other rfcs mentioned therein. To keep the implementation robust and fault tolerant at all times is of absolute priority.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_haiku_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4982657058340864/",
+          "proposal_id": null,
+          "short_description": "TCP/IP is the most widely implemented, non-vendor-specific Internet protocol suite in use today. TCP (Transmission Control Protocol) is at the heart...",
+          "slug": "tcp-optimization-and-fine-tuning",
+          "status": "completed",
+          "student_name": "Ayush Agrawal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud",
+            "ui"
+          ],
+          "title": "TCP optimization and fine tuning"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/anirudhm/2017-08-27_gsoc_2017_preferences_gui_refactoring_-_final_report/",
+          "description": "<p>Haiku is an operating system aimed at mainstream desktop users, it currently lacks a centralized preferences panel. This project proposes development of a shared control panel for all the preferences with its respective quick settings, and also a search bar for quick filter based on keywords.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4535466271440896/",
+          "proposal_id": null,
+          "short_description": "Haiku is an operating system aimed at mainstream desktop users, it currently lacks a centralized preferences panel. This project proposes development...",
+          "slug": "preferences-gui-refactoring",
+          "status": "completed",
+          "student_name": "Anirudh M",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Preferences GUI Refactoring"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/hyche/2017-08-25_gsoc_2017_-_btrfs_write_supports_third_coding_period_-_final_recap/",
+          "description": "<p>Btrfs (B-tree filesystem) is a filesystem uses Btrees as its main on-disk data structure. It is based on Copy-on-Write (CoW) principle which means it does copy only when a write request is sent or a modification is necessary. Btree is used most in filesystem, database system. In Haiku, Btrfs is currently support read-only, the codebase only shows the basic structure, read operations, it lacks of core tree manipulation code, write supports, and other features.\nThe project ideas request supporting write features for Btrfs. This will be accomplished in the following steps: Setting up userland friendly development mode for Btrfs, implementing tree operations (splittings, CoW, etc), adding more Btrfs structures if necessary, implementing write-feature functions.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6290091542577152/",
+          "proposal_id": null,
+          "short_description": "Btrfs (B-tree filesystem) is a filesystem uses Btrees as its main on-disk data structure. It is based on Copy-on-Write (CoW) principle which means it...",
+          "slug": "write-supports-for-btrfs",
+          "status": "completed",
+          "student_name": "Hy Che",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Write supports for BTRFS"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/return0e/2017-08-28_gsoc_2017_porting_swift_to_haiku_-_final_report",
+          "description": "<p>Swift is a general purpose, multi-paradigm modern programming language which focuses on performance, safety and modern software design patterns aiming to be a C/C++ and Objective-C alternative. It was recently open-sourced by Apple and aims to make Swift portable with various OSes by leveraging LLVM for its compiler internals and POSIX for maintaining portability.</p>\n<p>Haiku has support for other modern languages with similar technologies but it still misses out on being officially supported by them and as new releases come by, maintenance becomes very difficult as some use platform specific features.  With Swift 3's main focus on portability and with Haiku being partially POSIX compliant, this serves as a opportunity to add Haiku as a supported platform for both Swift 3 and Swift 4 and to then merge these changes upstream.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5199222731177984/",
+          "proposal_id": null,
+          "short_description": "Swift is a general purpose, multi-paradigm modern programming language which focuses on performance, safety and modern software design patterns...",
+          "slug": "porting-the-swift-programming-language-to-haiku",
+          "status": "completed",
+          "student_name": "Joseph Calvin Hill",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Porting the Swift Programming Language to Haiku"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5096040436858880/"
+    },
+    "year_2018": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://hrily.github.io/TrackGit",
+          "description": "<p>Tracker addon for Git Version Control System</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5498289424171008/",
+          "proposal_id": null,
+          "short_description": "Tracker addon for Git Version Control System",
+          "slug": "trackgit",
+          "status": "completed",
+          "student_name": "Hrishikesh Hiraskar",
+          "student_profile": null,
+          "tags": [],
+          "title": "TrackGit"
+        },
+        {
+          "code_url": "https://github.com/haiku/haiku/blob/master/docs/develop/kernel/sdhci_mmc_driver.md",
+          "description": "<p>This project is intended to give support for PCI devices with class 8 and subclass 5 according to SD Host Controller Specification. SDHCI are more common in the ARM and currently, it is not possible to boot Haiku for lack of a suitable mass storage driver. The project includes writing drivers for  MMC bus manager, SDHCI controller and disk device driver for the MMC bus. This project will project add functionality for efficient data transfer without loosing much data through DMA concepts.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5144371838058496/",
+          "proposal_id": null,
+          "short_description": "This project is intended to give support for PCI devices with class 8 and subclass 5 according to SD Host Controller Specification. SDHCI are more...",
+          "slug": "sdhci-mmc-driver",
+          "status": "completed",
+          "student_name": "B Krishnan Iyer",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "SDHCI MMC Driver"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5826402578333696/"
+    },
+    "year_2019": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://www.haiku-os.org/blog/rajagopalan/2019-08-15_gsoc_2019_final_report/",
+          "description": "<p>The aim of this project is to port WebKit2 to Haiku and create a minibrowser to demonstrate the functionalities offered by the completed port. This is done to replace the old rendering engine WebKitLegacy used by Haiku's mainstream browser WebPositive.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5011585305673728/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to port WebKit2 to Haiku and create a minibrowser to demonstrate the functionalities offered by the completed port. This...",
+          "slug": "porting-webkit2-to-haiku",
+          "status": "completed",
+          "student_name": "Rajagopalan-Gangadharan",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Porting WebKit2 to Haiku"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4805982134206464/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/alaviss/8bdfcc59d3d723f60d6f95cb8dfddc82",
+          "description": "<p>Services Kit is the backbone of many Internet-based applications on Haiku such as Weather, HaikuDepot, WebPositive and more... This makes the kit one of the more important components in the system, as the majority of the user experience on Haiku is dependent on this kit.</p>\n<p>However, Services Kit is not without any issues. It's <a href=\"https://dev.haiku-os.org/ticket/10748\" target=\"_blank\">slow by design</a>, doesn't support HTTP/1.1 (which also contributes to the slowness), and may <a href=\"https://dev.haiku-os.org/ticket/13235\" target=\"_blank\">randomly crash on you</a>. All of which don't translate to a decent user experience.</p>\n<p>My project this GSoC is to dig into Services Kit, iron out annoying bugs, getting rid of the bottlenecks, adding some more features, like FTP support and give it some better documentation so that people outside of the project can make good use of the kit.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6628309284159488/",
+          "proposal_id": null,
+          "short_description": "Services Kit is the backbone of many Internet-based applications on Haiku such as Weather, HaikuDepot, WebPositive and more... This makes the kit one...",
+          "slug": "improving-and-extending-services-kit",
+          "status": "completed",
+          "student_name": "leorize",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai"
+          ],
+          "title": "Improving and Extending Services Kit"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/cruxbox/2020-08-30_gsoc_2020_project_xfs_project_final_report/",
+          "description": "<p>Haiku has great support for its own file system, but is completely missing support for some other filesystems. XFS is one of them. Adding it, will improve interoperability with Linux.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5741571812622336/",
+          "proposal_id": null,
+          "short_description": "Haiku has great support for its own file system, but is completely missing support for some other filesystems. XFS is one of them. Adding it, will...",
+          "slug": "adding-xfs-filesytem-support",
+          "status": "completed",
+          "student_name": "Shubham Bhagat",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Adding XFS FileSytem support"
+        },
+        {
+          "code_url": "https://gist.github.com/Preetpalkaur3701/314b7c50bf286131466bc56e8323520d",
+          "description": "<p>In this project I will work on the below-mentioned things:</p>\n<p>For powerful user and gammers</p>\n<p>*Add a facility where the user can configure a 6 button mouse.</p>\n<p>*Add Joystick UI and its configuration.</p>\n<p>*Add Wacom tablet UI and its configuration.</p>\n<p>*Each device should have separate settings</p>\n<p>UI enhancement</p>\n<p>*Add a logo for each device in the list.</p>\n<p>*Remove the devices from the list which are not connected.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6546769028055040/",
+          "proposal_id": null,
+          "short_description": "In this project I will work on the below-mentioned things:\nFor powerful user and gammers\n*Add a facility where the user can configure a 6 button...",
+          "slug": "input-preferences",
+          "status": "completed",
+          "student_name": "Preetpal Kaur",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Input Preferences"
+        },
+        {
+          "code_url": "https://review.haiku-os.org/q/hashtag:%2522gsoc2020%2522+(status:open+OR+status:merged)+owner:suhelmehta%2540outlook.com",
+          "description": "<p>Haiku has great support for its own file system, but is completely missing support for some other filesystems. UFS2 is one of them. In this project I will implement UFS2 in haiku.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5181296281649152/",
+          "proposal_id": null,
+          "short_description": "Haiku has great support for its own file system, but is completely missing support for some other filesystems. UFS2 is one of them. In this project I...",
+          "slug": "adding-ufs2-filesystem-to-haiku",
+          "status": "completed",
+          "student_name": "Suhel Mehta",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Adding UFS2 filesystem to Haiku"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5963723224645632/"
+    },
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.haiku-os.org/blog/ritz/2021-08-22_gsoc_2021_final_report_coding_style_checker_bot_for_gerrit",
+          "description": "<p>The aim of this project is to create a bot for Gerrit that would use haiku-format tool for checking whether the patch submitted follows the community guidelines of Haiku and post the report in the comments. The architecture will include the existing concourse CI and Gerrit review tool and their interaction using REST APIs.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6597494904979456/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to create a bot for Gerrit that would use haiku-format tool for checking whether the patch submitted follows the community...",
+          "slug": "coding-style-checker-bot-for-gerrit",
+          "status": "completed",
+          "student_name": "Hrithik Kumar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Coding style checker bot for Gerrit"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/jadedctrl/2021-08-19_gsoc_2021_final_report_modernizing_chat-o-matic_caya/",
+          "description": "<p>Renovate Caya and write a libpurple plugin for it.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5675895150346240/",
+          "proposal_id": null,
+          "short_description": "Renovate Caya and write a libpurple plugin for it.",
+          "slug": "caya-renovation",
+          "status": "completed",
+          "student_name": "Jaidyn Levesque",
+          "student_profile": null,
+          "tags": [],
+          "title": "Caya Renovation"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/saloni/2021-08-18_gsoc_2021_improvements_to_haiku-format_final_update/",
+          "description": "<p>Haiku has its own coding standards  which describe how the code should be formatted. There is a tool for reformatting and checking if code follows these guidelines, but it has to be compiled on the developer machine and then run manually. The tool ‘ haiku-format ’ is work in progress which can be used to check the format according to guidelines which will be integrated with concourse to automate the process of checking coding style.</p>\n<p>The goal of this project is to integrate tool with gerrit and develop the tool to give desired results, the web app Haiku uses for code reviews. It could then give quick feedback on the coding style as soon as a patch is submitted, making the review process smoother and easier.</p>\n",
+          "difficulty": null,
+          "id": "proj_haiku_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4967271348305920/",
+          "proposal_id": null,
+          "short_description": "Haiku has its own coding standards  which describe how the code should be formatted. There is a tool for reformatting and checking if code follows...",
+          "slug": "coding-style-checker-bot-for-gerrit",
+          "status": "completed",
+          "student_name": "Saloni",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Coding style checker bot for Gerrit"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5748009966501888/"
+    },
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.haiku-os.org/blog/harshitsharma/2022-09-12_gsoc_2022_final_report_improving_the_calendar_application/",
+          "description": "I plan on improving the native Calendar application of Haiku OS, and add the following features in the application:\n- Utiliity to set Reminders (pretty self explanatory)\n- Separate Calendar Profiles (It will allow the user to set up events and tasks, without getting riled up between different niche, such as work related events and personal events)\n- Advanced search feature (It will allow user to search for a particular event just by entering a keyword, without having to manually scroll the calendar for it)\n- I will also work on the opened issues on the features the application still needs.",
+          "difficulty": "advanced",
+          "id": "proj_haiku_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Aw6dks92/",
+          "proposal_id": null,
+          "short_description": "I plan on improving the native Calendar application of Haiku OS, and add the following features in the application: - Utiliity to set Reminders...",
+          "slug": "improving-the-calendar-application",
+          "status": "completed",
+          "student_name": "Harshit Sharma",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the Calendar Application"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/mashijams/2022-09-09_gsoc_2022_xfs__final_report/",
+          "description": "XFS is a file system that was designed for computer systems with large numbers of CPUs and large disk arrays. It focuses on supporting large files and good streaming I/O performance.\nHaiku Currently has XFS version 4 read support.\nThe goal of this project is to get XFS version 5, Extended Attributes, Symbolic links and write support for Haiku.",
+          "difficulty": null,
+          "id": "proj_haiku_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/S348lwJ7/",
+          "proposal_id": null,
+          "short_description": "XFS is a file system that was designed for computer systems with large numbers of CPUs and large disk arrays. It focuses on supporting large files...",
+          "slug": "xfs-filesystem-support",
+          "status": "completed",
+          "student_name": "Mashijams",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "XFS Filesystem Support"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/dominicm/2022-09-10_gsoc_2022_ham_final_report/",
+          "description": "Haiku currently uses Jam as a simpler alternative to a make build system. However, Jam is currently unmaintained, and while Haiku uses its own fork of Jam the legacy codebase makes it difficult to update. A replacement project called Ham was started, but not completed. This proposal builds upon the existing Ham codebase to build a Jam replacement. The goals of this project are: 1. Create a clean codebase conducive to future changes, 2. Fix notable bugs such as race conditions in parallel builds, failure on the first run, and segfaults, 3. Have complete feature parity and backwards compatibility with Jam files.",
+          "difficulty": null,
+          "id": "proj_haiku_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/vQOjUNb2/",
+          "proposal_id": null,
+          "short_description": "Haiku currently uses Jam as a simpler alternative to a make build system. However, Jam is currently unmaintained, and while Haiku uses its own fork...",
+          "slug": "jam-replacement-ham",
+          "status": "completed",
+          "student_name": "Dominic Martinez",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Jam Replacement (Ham)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/haiku/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/Swangeon/HCC",
+          "description": "The current Haiku OS lacks a functional Virtual Private Network (VPN) implementation, which is essential for secure internet communication. The primary objective of this project is to enable Haiku OS to establish secure internet connections via VPNs, such as WireGuard through a TUN Virtual Interface. To achieve this, the project will deliver two key contributions:\n    1. Develop a driver and interface that facilitates data transmission between the network stack and applications through TUN and TAP virtual driver and interface.\n    2. Port a fully functioning OpenVPN implementation to Haiku OS, laying the groundwork for other potential VPN and tunneling software in the future.",
+          "difficulty": null,
+          "id": "proj_haiku_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/9qBna62P",
+          "proposal_id": "kqtHzyEW",
+          "short_description": "The current Haiku OS lacks a functional Virtual Private Network (VPN) implementation, which is essential for secure internet communication. The...",
+          "slug": "vpn-support-project",
+          "status": "completed",
+          "student_name": "Sean Brady",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "VPN Support Project"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/trungnt2910/2023-08-20_gsoc_2023_dotnet_port_final_report/",
+          "description": ".NET is a trending developer platform in the recent years. A .NET port or C# support is also requested multiple times by Haiku users throughout the years.\n\nThis project aims to port the .NET runtime and SDK to Haiku and create Haiku API bindings for C#, making it possible not only for users to run existing .NET binaries/games on Haiku, but also for developers to create Haiku-native applications in an entirely new way.",
+          "difficulty": null,
+          "id": "proj_haiku_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/oJkCpfnv",
+          "proposal_id": "HMQXEhEp",
+          "short_description": ".NET is a trending developer platform in the recent years. A .NET port or C# support is also requested multiple times by Haiku users throughout the...",
+          "slug": "net-developer-platform-port-for-haiku",
+          "status": "completed",
+          "student_name": "trungnt2910",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": ".NET Developer Platform port for Haiku"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/zardshard/2023-08-18_gsoc_2023_improving_icon-o-matic_final_report/",
+          "description": "This project aims to improve Icon-O-Matic by refactoring the code, adding new features, and fixing bugs. Features that will be added include reference images, shape previews, and, if possible, the ability to group shapes. Bugs that will be fixed include Tracker and Icon-O-Matic displaying gradients differently, potentially a bug in gradients not respecting their bounding box, and various other bugs.",
+          "difficulty": null,
+          "id": "proj_haiku_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/MP7NTIOV",
+          "proposal_id": "aq5c5koa",
+          "short_description": "This project aims to improve Icon-O-Matic by refactoring the code, adding new features, and fixing bugs. Features that will be added include...",
+          "slug": "improving-icon-o-matic",
+          "status": "completed",
+          "student_name": "Zardshard",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Icon-O-Matic"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/haiku"
+    },
+    "year_2024": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://www.haiku-os.org/blog/trungnt2910/2024-08-18_gsoc_2024_debugging_final_report/",
+          "description": "This project aims to port a popular debugger, GDB, to provide a more stable tool with many features Haiku's native Debugger is lacking. The project then goes on to improve Debugger itself using the ported GDB as a tool to diagnose bugs and random crashes.",
+          "difficulty": null,
+          "id": "proj_haiku_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/MnqxjIe6/",
+          "proposal_id": null,
+          "short_description": "This project aims to port a popular debugger, GDB, to provide a more stable tool with many features Haiku's native Debugger is lacking. The project...",
+          "slug": "improving-the-userland-debugging-experience",
+          "status": "completed",
+          "student_name": "trungnt2910",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving the Userland Debugging Experience"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/zardshard/2024-08-16_gsoc_2024_porting_webkit2_final_report/",
+          "description": "WebPositive is Haiku’s default browser, but it certainly has room for improvement. WebPositive’s browser engine is WebKit. Currently, we’re stuck using WebKitLegacy, an older interface to WebKit. Thanks to Rajagopalan’s GSoC project, and PulkoMandy’s work, we do have a partially working version of WebKit 2, the successor to WebKitLegacy. Currently, though, it can’t load webpages, and doubtless has various other problems. I hope to significantly improve it. And, maybe, hopefully, I can even get the changes integrated back into WebPositive.",
+          "difficulty": null,
+          "id": "proj_haiku_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/5FA1ctxn/",
+          "proposal_id": null,
+          "short_description": "WebPositive is Haiku’s default browser, but it certainly has room for improvement. WebPositive’s browser engine is WebKit. Currently, we’re stuck...",
+          "slug": "fix-haikus-webkit2-port",
+          "status": "completed",
+          "student_name": "Zardshard",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Fix Haiku’s WebKit2 Port"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/diegoroux/2024-08-22_gsoc_2024_final_report/",
+          "description": "This proposal aims to implement VirtIO sound driver for Haiku. Haiku’s performance in virtualized environments will be significantly improved, instead of relying on emulated sound cards or other drivers.",
+          "difficulty": null,
+          "id": "proj_haiku_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/WSF8Mu8F/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to implement VirtIO sound driver for Haiku. Haiku’s performance in virtualized environments will be significantly improved,...",
+          "slug": "audio-virtio-improving-haikus-virtualization-as-a-guest-os",
+          "status": "completed",
+          "student_name": "Diego Roux",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Audio VirtIO: Improving Haiku's virtualization as a guest OS"
+        },
+        {
+          "code_url": "https://github.com/Calisto-Mathias/Haiku-GSoC-Contributions",
+          "description": "In the proposed contributions to Haiku, I plan to revamp the Tracker Query Window's user interface, incorporating a Next Generation Find Panel to enhance search functionality. This involves rebuilding the UI from scratch, integrating features such as query submenus for saving, loading, and editing queries, along with options for selecting attributes and drive/folder locations for searching. Additionally, I aim to introduce real-time query result updates and improve the selection of search parameters for a more intuitive experience. \n\nApart from this, I also intend to work on bugs and enhancements to the Tracker Windows and associated tickets.",
+          "difficulty": null,
+          "id": "proj_haiku_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/AzMHeSrw/",
+          "proposal_id": null,
+          "short_description": "In the proposed contributions to Haiku, I plan to revamp the Tracker Query Window's user interface, incorporating a Next Generation Find Panel to...",
+          "slug": "enhancing-tracker-next-gen-find-window-and-functionalities",
+          "status": "completed",
+          "student_name": "Calisto Abel Mathias",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing Tracker: Next-Gen Find Window and Functionalities"
+        },
+        {
+          "code_url": "https://www.haiku-os.org/blog/dalme/2024-08-19_gsoc_2024_hardware_virtualization_final_report/",
+          "description": "QEMU is a virtual machine which allows running an operating system inside of another. While there already is a Haiku port, it currently does not support any acceleration system through native virtualization (through Intel VT-x and AMD SVM.) This makes it too slow for many uses. Fixing this would allow Haiku users to run another system, such as Windows or Linux, when they need to run an application that is not yet available for Haiku. This would make using Haiku as their primary operating system a viable approach for more people.\n\nThis project aims to port NVMM's virtualization driver and library to Haiku, so that QEMU can support virtualization acceleration on Haiku.",
+          "difficulty": null,
+          "id": "proj_haiku_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/7iuNzLBk/",
+          "proposal_id": null,
+          "short_description": "QEMU is a virtual machine which allows running an operating system inside of another. While there already is a Haiku port, it currently does not...",
+          "slug": "hardware-virtualization-for-haikus-qemu-port",
+          "status": "completed",
+          "student_name": "Daniel Martin",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Hardware virtualization for Haiku’s QEMU port"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/haiku/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "contact@haiku-inc.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://www.haiku-os.org/community/irc",
+    "mailing_list": "https://www.haiku-os.org/community/ml"
+  },
+  "social": {
+    "blog": "https://www.haiku-os.org/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/haikuos?lang=en",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.226Z"
+  }
+}

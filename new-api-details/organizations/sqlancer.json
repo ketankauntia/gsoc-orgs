@@ -1,0 +1,221 @@
+{
+  "id": "692251e653dd9d7326d33ea3",
+  "slug": "sqlancer",
+  "name": "SQLancer",
+  "category": "Data",
+  "description": "Automatically testing database systems",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/sqlancer/hzunjobwazuptdb6.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/sqlancer.webp",
+  "logo_r2_url": null,
+  "url": "https://www.sqlancer.com",
+  "active_years": [
+    2023,
+    2025
+  ],
+  "first_year": 2023,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "java",
+    "sql"
+  ],
+  "topics": [
+    "fuzzing",
+    "Automated Testing",
+    "Logic bugs",
+    "Database systems"
+  ],
+  "total_projects": 6,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 2,
+      "year_2024": null,
+      "year_2025": 4
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 2,
+      "year_2024": null,
+      "year_2025": 4
+    },
+    "total_students": 6
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/ColinYoungTaro/df271b8683b526a6a73b568ce721b5e2",
+          "description": "SQLancer randomly generates test cases consisting of potentially hundreds or thousands of SQL statements. In order to efficiently identify bugs in these statements, automatic reduction is needed to  systematically remove the bug inducing statements until a minimal bug-triggering test case is derived.\n\nTo improve the efficiency and effectiveness of SQLancer for bug detection and resolution in various DBMSs, I propose to undertake the following tasks:\n\n1. Implement delta-debugging algorithms for statement reduction in SQLancer to improve efficiency and speed.\n2. Define parser-tree transforms to simplify SQL statements. Since SQL syntax varies among DBMSs, generic parser-tree transforms that can be applied across multiple DBMSs will be implemented, such as removing expression nodes or removing certain clauses from the statement.\n3. Generalize statement reduction to additional DBMSs by adding bug reproducers to them.\n\nThe deliverables for this project include:\n\n1. A delta-debugging algorithm that can reduce the bug-inducing statement.\n2. Generic parser-tree transforms that simplify SQL statements.\n3. Support of statement reduction for more DBMSs.",
+          "difficulty": null,
+          "id": "proj_sqlancer_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/MYC1ttkZ",
+          "proposal_id": "ExhDoiyn",
+          "short_description": "SQLancer randomly generates test cases consisting of potentially hundreds or thousands of SQL statements. In order to efficiently identify bugs in...",
+          "slug": "automated-test-case-reduction-for-sqlancer-with-delta-debugging-and-sql-parser-tree-transforms",
+          "status": "completed",
+          "student_name": "Yutan Yang",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Automated Test Case Reduction for SQLancer with delta-debugging and SQL parser-tree transforms"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1XBVfTxIowdyAxpO14UXHj0KKRJIpo4NrsC7qIAbGlS8/edit?usp=sharing",
+          "description": "SQLancer is an open-source tool for testing the correctness of SQL database systems and supports close to 20 database systems. The goal of this project is to add support for one or more new database systems to SQLancer and test them to find potential bugs.\n\nAs for which DBMS to add support for, I would like to firstly choose StoneDB, which is being actively maintained and their community showed their interest of being support by SQLancer. What’s more, StoneDB is just the primary choose. If we have time, we can also add support to other DBMS.\n\nThe project Proposal will consist of four main stages: \n1)Choose a DBMS\n2)Implementation of selected DBMS\n3)Refactoring existing code\n4)Testing and reporting",
+          "difficulty": null,
+          "id": "proj_sqlancer_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/cLw871Fm",
+          "proposal_id": "bzbOo9Q1",
+          "short_description": "SQLancer is an open-source tool for testing the correctness of SQL database systems and supports close to 20 database systems. The goal of this...",
+          "slug": "adding-support-for-and-testing-new-database-systems",
+          "status": "completed",
+          "student_name": "Zhenglin Li",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Adding Support for and Testing New Database Systems"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/sqlancer"
+    },
+    "year_2024": null,
+    "year_2025": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "SQLancer is a tool to automatically test Database Management Systems (DBMSs) in order to find bugs in their implementation. That is, it finds bugs in the code of the DBMS implementation, rather than in queries written by the user. SQLancer has found hundreds of bugs in mature and widely-known DBMSs.\n\nDQE is a method for systematically detecting logical errors in UPDATE and DELETE queries. Integrating Published Testing Approaches into SQLancer makes up for the limitation of existing tools (such as PQS, NoREC, TLP) that only target SELECT queries, and significantly improves SQLancer's vulnerability detection capabilities.",
+          "difficulty": null,
+          "id": "proj_sqlancer_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/dXStZ2I1",
+          "proposal_id": "4g8eut2m",
+          "short_description": "SQLancer is a tool to automatically test Database Management Systems (DBMSs) in order to find bugs in their implementation. That is, it finds bugs in...",
+          "slug": "integrating-published-testing-approaches-into-sqlancer",
+          "status": "in-progress",
+          "student_name": "Dongqiao Huang",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "Integrating Published Testing Approaches into SQLancer"
+        },
+        {
+          "code_url": null,
+          "description": "SQLancer’s current test case reduction framework faces three key limitations: (1) tight coupling between internal reducers (Delta Debugging and AST-based), limiting extensibility; (2) structural unawareness in Delta Debugging, which treats SQL inputs linearly despite their hierarchical relationships; (3) narrow applicability due to engine-specific Reproducer dependencies (only SQLite3 supported). This project addresses these issues by introducing a modular Reducer<G> interface to decouple reduction strategies (supporting tools like C-Reduce/Perses), implementing Hierarchical Delta Debugging (HDD) to group SQL statements by logical dependencies (improving efficiency from O(n²) to O(n log n)), and automating external reducer integration through dynamic script generation. Deliverables include the modular interface, HDD-preprocessed reducers, C-Reduce/Perses adapters, and comprehensive tests/documentation.",
+          "difficulty": null,
+          "id": "proj_sqlancer_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/LNNO9Bcf",
+          "proposal_id": "c82R8Guq",
+          "short_description": "SQLancer’s current test case reduction framework faces three key limitations: (1) tight coupling between internal reducers (Delta Debugging and...",
+          "slug": "enhancing-sqlancer-with-external-reducer-support-and-hierarchical-delta-debugging",
+          "status": "in-progress",
+          "student_name": "Jinhui Xu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing SQLancer with External Reducer Support and Hierarchical Delta Debugging"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal addresses the complexity of deploying DBMS instances for testing with SQLancer—an issue that makes it challenging for beginners and hinders efficient bug reproduction. \nThe project will deliver a suite of automated scripts  that streamlines the entire process: from dynamically generating configuration files and Dockerfiles to building and running Docker containers, initializing databases, and executing SQLancer tests. By leveraging Python, Docker and other relevant automating technologies, the solution will enable a reproducible, user-friendly, and reliable testing workflow. \nDeliverables include an initial working prototype for automated DBMS deployment, enhanced modular scripts with configuration management and logging, comprehensive documentation, and optional CI/CD integration for continuous testing.",
+          "difficulty": "beginner",
+          "id": "proj_sqlancer_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/u7MUhGUF",
+          "proposal_id": "gi5NMKR3",
+          "short_description": "This proposal addresses the complexity of deploying DBMS instances for testing with SQLancer—an issue that makes it challenging for beginners and...",
+          "slug": "supporting-automated-scripts-for-dbms-deployment",
+          "status": "in-progress",
+          "student_name": "Leyao Liu",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "database",
+            "docker"
+          ],
+          "title": "Supporting Automated Scripts for DBMS Deployment"
+        },
+        {
+          "code_url": null,
+          "description": "SQLancer is a tool that automatically tests DBMS in order to find bugs in their implementations. As of right now, SQLancer\nsupports many great database systems, however, some of the systems are outdated including one of the most frequently used\ndatabases: PostgreSQL. SQLancer supports Postgre version 12 which became end-of-life in Nov 2024 and many versions along\nwith critical changes have been made since then. This project aims to advance SQLancer to support the latest version of\nPostgres (version 17) by removing necessary deprecations as well as adding new features, by the end of this project, SQLancer\nwill support additional features such as JSON data types/functions, procedural extensions, advance error handling, and hopefully\nreiterate the upgrade to other databases",
+          "difficulty": null,
+          "id": "proj_sqlancer_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/tvKWpQx8",
+          "proposal_id": "jgsQvisO",
+          "short_description": "SQLancer is a tool that automatically tests DBMS in order to find bugs in their implementations. As of right now, SQLancer supports many great...",
+          "slug": "adding-support-for-the-latest-postgres-version",
+          "status": "in-progress",
+          "student_name": "Yaojie Jia",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Adding Support for the Latest Postgres Version"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sqlancer"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/sqlancer/sqlancer/wiki/GSoC-2025-Ideas#contributor-guidance",
+    "ideas_url": "https://github.com/sqlancer/sqlancer/wiki/GSoC-2025-Ideas",
+    "irc_channel": "https://join.slack.com/t/sqlancer/shared_invite/zt-eozrcao4-ieG29w1LNaBDMF7OB_~ACg",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://join.slack.com/t/sqlancer/shared_invite/zt-eozrcao4-ieG29w1LNaBDMF7OB_~ACg",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/sqlancer_dbms",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.169Z"
+  }
+}

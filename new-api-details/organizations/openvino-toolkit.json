@@ -1,0 +1,760 @@
+{
+  "id": "692251e153dd9d7326d33e64",
+  "slug": "openvino-toolkit",
+  "name": "OpenVINO Toolkit",
+  "category": "Development tools",
+  "description": "Make AI inference faster and easier to deploy!",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/openvino-toolkit/ivzvok335ujezk2z-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/openvino-toolkit.webp",
+  "logo_r2_url": null,
+  "url": "https://docs.openvino.ai/",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "c++",
+    "x86",
+    "arm"
+  ],
+  "topics": [
+    "deep learning",
+    "Neural networks",
+    "Edge AI",
+    "DL-inference",
+    "machine learning",
+    "ai",
+    "neural network",
+    "inference",
+    "gen ai"
+  ],
+  "total_projects": 32,
+  "stats": {
+    "avg_projects_per_appeared_year": 8,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": 8,
+      "year_2025": 16
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": 8,
+      "year_2025": 16
+    },
+    "total_students": 32
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/spencergotowork/4877de7aa989a7e737bb699f19249e74",
+          "description": "We usually need visualization, in fact, to enhance the interpretability of data or results, and facilitate the understanding of developers and users. In machine learning, 3D or 4D representation provides more depth information than the 2D representation, many of the tasks may be much better understood if we provide a 3D or 4D. But OpenVINO has no native real-time 3D visualization engine or library. This can be very troublesome for users who use display 3D images. So our goal is working natural 3D support for Jupyter Notebooks running OpenVINO (AI inference). There are a few solutions in Jupyter 3D graphic display, though:\n\n1. Requires complex setup, build or is not friendly to the average user (without graphics programming experience)\n2. Not integration with OpenVINO(Need process different data and different inference results available from OpenVINO, the user only needs a simple interface to set this up)\n\nThe project idea aims at fill in the gaps mentioned above:\n\n1. Provides a clean interface to set up the display of these graphics without the need for a graphical programming background(beginner-friendly)\n2. 3D support for Jupyter Notebooks running OpenVINO(Be able to transform and process the output data of OpenVino)",
+          "difficulty": "beginner",
+          "id": "proj_openvino-toolkit_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/swrwomsh/",
+          "proposal_id": null,
+          "short_description": "We usually need visualization, in fact, to enhance the interpretability of data or results, and facilitate the understanding of developers and users....",
+          "slug": "3d-jupyter-notebooks-and-webgl-integration-for-openvino",
+          "status": "completed",
+          "student_name": "Ran Piao",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "3D Jupyter Notebooks and WebGL Integration for OpenVINO"
+        },
+        {
+          "code_url": "https://github.com/openvinotoolkit/openvino_contrib/pull/382",
+          "description": "The openvino_contrib contains The ARM CPU Plugin project, which provides support for ARM CPUs, and Java Wrappers access The underlying infering public API. This project is to implement a real-time object detection demo running on ARM CPUs on Android devices with Java API 1.0 and Java API 2.0 usage examples and complete tutorial documentation.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/3aCUzQEw/",
+          "proposal_id": null,
+          "short_description": "The openvino_contrib contains The ARM CPU Plugin project, which provides support for ARM CPUs, and Java Wrappers access The underlying infering...",
+          "slug": "object-detection-demo-application-to-run-ai-on-arm-based-android-devices",
+          "status": "completed",
+          "student_name": "Bo Lv",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "android",
+            "api",
+            "ai"
+          ],
+          "title": "Object Detection demo application to run AI on ARM-based Android devices"
+        },
+        {
+          "code_url": "https://gist.github.com/ThanosM97/04a88826a00d8930f89ab51b05944c79",
+          "description": "The project is divided into two parts. \n\nThe goal for the first part is to train a  lightweight Deep Learning model to generate a dataset of synthetic images.  I propose a class-conditional Generative Adversarial Network to generate images for the 10 categories of the CIFAR-10 dataset, given the class label as input. The model is trained using a knowledge distillation framework, in an attempt to compress the StyleGAN2-ADA network.\n\nFor the second part, the pre-trained model of the first part is used to generate a dataset of synthetic images for CIFAR-10. Subsequently, this dataset is used for model optimization using OpenVINO's Post-training Optimization Tool. We evaluate the performance of the 8-bit post-training quantization method on a range of Computer Vision models.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/bCmHAPIL/",
+          "proposal_id": null,
+          "short_description": "The project is divided into two parts. The goal for the first part is to train a lightweight Deep Learning model to generate a dataset of synthetic...",
+          "slug": "train-a-dl-model-for-synthetic-data-generation-for-model-optimization",
+          "status": "completed",
+          "student_name": "Athanasios Masouris",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Train a DL model for synthetic data generation for model optimization"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/openvino-toolkit/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/ashish-2005/36d27cf400ecd3468a5b6eb8434e59e5",
+          "description": "The aim of the project is to read industrial meter with Deep Learning frameworks and OpenVINO .The project is divided into two parts. In the first part of the project, we created a deep learning-based solution to read industrial meters. We achieved this by first detecting meters in the frame with the EfficientDet-d0 model, then doing semantic segmentation of meters with UNET (with a Resnet50 backbone) to obtain a segmentation map with which we calculated readings, and for inference we use the OpenVINO runtime. In part two of the project, we further optimize the solution pipeline to support multiple camera inputs with OpenVINO-toolkit functions like AsyncInferQueue and other performance hints, along with a web-based GUI with HTML,CSS, JS, and Flask web framework.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/3eKcuFkd",
+          "proposal_id": "OXAgcmg0",
+          "short_description": "The aim of the project is to read industrial meter with Deep Learning frameworks and OpenVINO .The project is divided into two parts. In the first...",
+          "slug": "industrial-meter-reading-with-openvino",
+          "status": "completed",
+          "student_name": "Ashish Bangwal",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Industrial meter reading with OpenVINO"
+        },
+        {
+          "code_url": "https://gist.github.com/blaz-r/cfaa95ff33708635fefade1d12b7a8a7",
+          "description": "When tackling the challenge of detecting defects in high-resolution images, we encounter many challenges. One significant problem is the difficulty in training models effectively, primarily due to memory limitations. The process of down-sampling these images to fit within memory capacities leads to the loss of crucial information, which can result in the oversight of small yet significant defects.\n\nTo overcome these issues, we can employ a strategy involving a tiled ensemble mechanism. In this case, images are split into smaller, manageable tiles. Each of these tiles is then processed using a separate model, specifically trained for that tile position. This strategy enhances localization and improves the detection of small anomalies, while also satisfying memory limitations.\n\nAnomalib currently has a basic tiler. However, the advantages of locally-aware models, like Padim, are diminished without the support of a tiled ensemble. To address this problem, we introduce a tiled ensemble implementation that preserves the advantages of local awareness while also enhancing overall performance. \n\nThis approach aims to incorporate Anomalib's existing features, while simultaneously providing users the flexibility to tailor specific steps within our pipeline. All the while, we ensure that our approach remains memory-efficient.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/WUSjdxGl",
+          "proposal_id": "ckSTs5zo",
+          "short_description": "When tackling the challenge of detecting defects in high-resolution images, we encounter many challenges. One significant problem is the difficulty...",
+          "slug": "add-ensembling-methods-for-tiling-to-anomalib",
+          "status": "completed",
+          "student_name": "Blaž Rolih",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add ensembling methods for tiling to Anomalib"
+        },
+        {
+          "code_url": "https://gist.github.com/jpcbertoldo/12553b7eaa97cfbf3e55bfd7d1cafe88",
+          "description": "This project proposes novel evaluation metrics for anomaly segmentation in computer vision, taking into account pixel-level and spatial information. The aim is to provide a more comprehensive evaluation of anomaly segmentation algorithms, aiding researchers and practitioners in selecting and fine-tuning models.\n\nThe first proposed metric is the False Positive Blob Relative Volume (FP-BRV), which accounts for the visual nuisance of false positive pixels, complementing the Per-Region Overlap (PRO). The proposed metric will be evaluated on popular anomaly segmentation public datasets and visually validated. \n\nMilestones: prototype implementation, testing and validation on public datasets, production implementation, optimization/unit testing/documentation, and research paper writing.\n\nSee \"Section 5 Detailed project proposal\" in the PDF for details and a timeline.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/SPMopugd",
+          "proposal_id": "YkU9PckZ",
+          "short_description": "This project proposes novel evaluation metrics for anomaly segmentation in computer vision, taking into account pixel-level and spatial information....",
+          "slug": "anomaly-segmentation-metrics-for-anomalib",
+          "status": "completed",
+          "student_name": "Joao P C Bertoldo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Anomaly Segmentation Metrics for anomalib"
+        },
+        {
+          "code_url": "https://github.com/rajatkrishna/google-summer-of-code/tree/main",
+          "description": "Performance-focused, production-level machine learning libraries need to leverage the resources at their disposal to the maximum extent to deliver efficient and effective machine learning workflows that ultimately result in improved user experience. SparkNLP, one such library widely adopted and used by 16% of enterprise companies(as of Feb 2019), is currently capable of taking advantage of CPU optimization capabilities using Intel-optimized Tensorflow. This coupled with other optimizations already allows it to run machine learning pipelines orders of magnitude faster than legacy libraries. Such a library would benefit from solutions like OpenVINO that offer extensive integrations in the ML ecosystem and even further optimization capabilities for inferring and deploying models on a range of hardware platforms. Exposing the OpenVINO API bindings in Java will allow integration with SparkNLP to enable the above-mentioned capabilities, and furthermore, open up avenues for a large community of developers to benefit from OpenVINO’s rich feature set in the future.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/4YM6Dr1f",
+          "proposal_id": "a9RuYEwo",
+          "short_description": "Performance-focused, production-level machine learning libraries need to leverage the resources at their disposal to the maximum extent to deliver...",
+          "slug": "add-openvino-support-to-john-snow-labs-spark-nlp",
+          "status": "completed",
+          "student_name": "Rajat Krishna",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "api",
+            "ml"
+          ],
+          "title": "Add OpenVINO support to John Snow Labs Spark NLP"
+        },
+        {
+          "code_url": "https://github.com/huggingface/optimum-intel/pull/404",
+          "description": "My proposal aims to optimize PyTorch Image Models (Timm) using OpenVINO and NNCF libraries. The problem at hand is that these models are computationally intensive and require a lot of resources, making them challenging to deploy in resource-limited environments. To solve this problem, I plan to implement optimization techniques such as quantization, pruning, and compression on a selected subset of models from the Timm library. I will evaluate the performance of these optimized models on different hardware platforms and compare them with the baseline models. The deliverables for this project include optimized Timm models, a tutorial notebook detailing the setup and usage of OpenVINO and NNCF libraries, and documentation and tests for the code developed during the project. If my proposal is accepted, I am excited to work on this project and contribute to the community by making these models more accessible and efficient to deploy.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/WIZaWTq5",
+          "proposal_id": "f4qZ41B2",
+          "short_description": "My proposal aims to optimize PyTorch Image Models (Timm) using OpenVINO and NNCF libraries. The problem at hand is that these models are...",
+          "slug": "showcase-performance-of-pytorch-image-models-timm-with-openvino",
+          "status": "completed",
+          "student_name": "Sawradip Saha",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Showcase performance of PyTorch Image Models (Timm) with OpenVINO"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/openvino-toolkit"
+    },
+    "year_2024": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/openvinotoolkit/openvino/pull/25674",
+          "description": "[Problem] The project aims to enhance the runtime performance of OpenVINO on RISC-V devices to fully leverage their power efficiency for running DL/AI workloads efficiently.\n\n[Methodology] This will be achieved through three key optimization strategies: adopting or improving third-party libraries with RISC-V optimized primitives, porting existing x86/ARM optimized kernels to RISC-V ISA, and implementing device-specific transformation passes tailored for RISC-V backend optimizations.\n\n[Deliverables] The project will deliver: 1. Adoption of optimized RISC-V kernels from third-party libraries for more operations in OpenVINO. 2. Porting of critical x86/ARM optimizations to RISC-V ISA. 3. Implementation of device-specific transformation passes for RISC-V backend requirements. 4. Demonstrated improvement in OpenVINO runtime performance on RISC-V CPU devices through benchmarking against determined workloads.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/OQfr1njq/",
+          "proposal_id": null,
+          "short_description": "[Problem] The project aims to enhance the runtime performance of OpenVINO on RISC-V devices to fully leverage their power efficiency for running...",
+          "slug": "porting-and-optimizing-openvino-for-risc-v-devices-with-vector-extension",
+          "status": "completed",
+          "student_name": "BHbean",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Porting and Optimizing OpenVINO for RISC-V Devices with Vector Extension"
+        },
+        {
+          "code_url": "https://gist.github.com/LucaTamSapienza/52430fdc387529d5b9a4f8f82192c58b",
+          "description": "This project aims to make PyTorch and OpenVINO interchangeable. By using the Python API of OpenVINO, we will create an adapter for PyTorch, the first of its kind. The goal of this project is to showcase (POC) the potential performance benefits of using OV. The change on the user side should look like: import torch --> import torch_adapter as torch. This library will cover all preprocessing steps of an image, up to loading a model for inference on the processed image. Benchmarks will be conducted on these to demonstrate the benefits of using my adapter, and tests will be performed to confirm consistency with PyTorch. Finally, the package will be released to be installable via pip in any environment (pip install torch_adapter).",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ycul7Mf5/",
+          "proposal_id": null,
+          "short_description": "This project aims to make PyTorch and OpenVINO interchangeable. By using the Python API of OpenVINO, we will create an adapter for PyTorch, the first...",
+          "slug": "openvino-adapters-pytorch-adapter",
+          "status": "completed",
+          "student_name": "Luca Tam",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "OpenVINO adapters - PyTorch adapter"
+        },
+        {
+          "code_url": "https://github.com/mengbingrock/Stable-Diffusion-WebUI-Extention-OpenVINO/tree/final_report",
+          "description": "This proposal is provided by OpenVINO team. I just copy and paste here.\n\nShort description: Automatic1111 is a powerful web user interface based on Gradio library specifically designed for Stable Diffusion. It’s most popular open-source Stable Diffusion WebUI on GitHub with 119K+ stars, which supports a lot of features like text-to-image, image-to-image, inpainting, Lora models, custom models from model hubs like civitai.com and huggingface etc. OpenVINO support for Automatic1111 enables Stable Diffusion run on Intel CPUs and GPUs, this solution is currently supported using a custom script. Implementing OpenVINO through the Automatic1111 extension will provide an easier way to use OpenVINO. This project will also aim to provide support for more AUTOMATIC111 features with OpenVINO. Task Description:\n\nDevelop a built-in extension for Automatic1111 SD WebUI based on the existing OpenVINO custom script leveraging Diffusers library.\nSupport some of the new features like Hires upscalers, new samplers, tiling, face restoration etc. Develop test scripts to evaluate these features.\nEvaluate with different Stable Diffusion variants (V1.5, V2.1, XL, LCM etc.) on Intel CPUs and GPUs.\nOptional: Evaluate compatibility with other extensions like ControlNet.\nExpected outcomes:\n\nRaise a PR with all the contributions to the OpenVINO fork and eventually to the mainstream Automatic1111 repo.\nDocumentation with clear description of features in the extension and demo videos.\nMedium/OpenVINO blogs.",
+          "difficulty": "medium",
+          "id": "proj_openvino-toolkit_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/BwJdrnsb/",
+          "proposal_id": null,
+          "short_description": "This proposal is provided by OpenVINO team. I just copy and paste here. Short description: Automatic1111 is a powerful web user interface based on...",
+          "slug": "1-openvino-extension-for-automatic1111-stable-diffusion-webui",
+          "status": "completed",
+          "student_name": "Mengbing Wang",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "1. OpenVINO Extension for Automatic1111 Stable Diffusion WebUI"
+        },
+        {
+          "code_url": "https://github.com/inbasperu/VisionGuard/blob/main/docs/GSoC_2024_VisionGuard_Final_Report.md",
+          "description": "VisionGuard is a desktop application designed for AI-enabled PCs to mitigate eye strain through real-time gaze tracking. The app builds on OpenVINO's gaze estimation demo to provide customizable break reminders and detailed screen time analytics. With support for multiple devices (CPU, GPU, NPU), VisionGuard ensures efficient, private, and low-power local processing without the need for an internet connection. The user-friendly interface includes system tray integration, leveraging OpenVINO, Qt, and OpenCV for seamless functionality. All data remains securely on your device, ensuring privacy while promoting healthier screen habits.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/QUbIeRAM/",
+          "proposal_id": null,
+          "short_description": "VisionGuard is a desktop application designed for AI-enabled PCs to mitigate eye strain through real-time gaze tracking. The app builds on OpenVINO's...",
+          "slug": "visionguard-smart-screen-time-management",
+          "status": "completed",
+          "student_name": "Inbasekaran",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "VisionGuard: Smart Screen Time Management"
+        },
+        {
+          "code_url": "https://gist.github.com/qxprakash/784473df5557342c5fb97a9810c5c5f4",
+          "description": "This project targets the expansion of OpenVINO's functionality within the Node.js ecosystem,  the Node.js API which currently lacks comprehensive samples. The primary goal is to translate existing Python API samples to Node.js and to introduce new samples that harness the Node.js API, thus making OpenVINO's deep learning optimization capabilities more accessible to JavaScript developers. The project will entail a thorough analysis of Python samples to extract core functionalities like model loading, preprocessing, inference, and output processing, and replicate these using Node.js, adhering to its asynchronous nature and event-driven architecture. The endeavor will address gaps in the Node.js API through alternative solutions or the development of adding new APIs to the Node.js bindings . Deliverables include a suite of translated and new Node.js samples, and detailed documentation to aid developer usage, significantly enhancing OpenVINO’s utility across a broader range of development environments.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/SFIcDSA2/",
+          "proposal_id": null,
+          "short_description": "This project targets the expansion of OpenVINO's functionality within the Node.js ecosystem, the Node.js API which currently lacks comprehensive...",
+          "slug": "inference-of-neural-model-in-nodejs-environment-using-openvino",
+          "status": "completed",
+          "student_name": "qxPrakash",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "javascript",
+            "api",
+            "ai"
+          ],
+          "title": "Inference of Neural model in Node.js environment using OpenVINO"
+        },
+        {
+          "code_url": "https://github.com/openvinotoolkit/openvino.genai/pull/740",
+          "description": "I will extend the existing OpenVINO GenAI text-to-image pipeline to support image-to-image functionality by incorporating ControlNet and utilizing the OpenPose detector. Additionally, I plan to create a new image-to-text pipeline using the CLIP model. Lastly, I will develop a cross-platform GUI using Qt to showcase these pipelines.\n\nI will deliver:\n\n1. An image-to-image pipeline.\n2. An image-to-text pipeline.\n3. A cross-platform GUI.\n\nAnd if possible, more controlnet model could be implemented into  image-to-image pipeline.\n\nAdditionally, I'll explore the generation speed on CPU only, with integrated GPU (iGPU), and with the Intel Arc A770 GPU. I'll also investigate if I can build more similar projects using OpenVINO.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/CG19DjKW/",
+          "proposal_id": null,
+          "short_description": "I will extend the existing OpenVINO GenAI text-to-image pipeline to support image-to-image functionality by incorporating ControlNet and utilizing...",
+          "slug": "openvino-genai",
+          "status": "completed",
+          "student_name": "Yongsheng Xu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "OpenVINO GenAI"
+        },
+        {
+          "code_url": "https://gist.github.com/mory91/bd528f7751f836e9d6f98e23801b0bdf",
+          "description": "This project aims to enhance the performance of Generative AI (GenAI) workloads on ARM devices using the OpenVINO toolkit, focusing on reducing latency and throughput metrics, accelerating model compilation times, and minimizing memory requirements. The initial phase involves establishing a robust benchmarking environment tailored for GenAI models, employing tools such as Flame Graphs for performance visualization and monitoring tools for memory usage analysis. This setup will enable rapid assessment of optimizations' impacts on performance and resource consumption.\n\nRefine and enhance the performance of Generative AI workloads on ARM devices, targeting the OpenVINO toolkit. The project will concentrate on advanced optimization techniques not yet fully explored or implemented in the OpenVINO ecosystem for ARM architectures, specifically focusing on graph transformations, low-level kernel optimizations, and enhanced utilization of the ACL (Arm Compute Library).",
+          "difficulty": "advanced",
+          "id": "proj_openvino-toolkit_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/WGN9SuB2/",
+          "proposal_id": null,
+          "short_description": "This project aims to enhance the performance of Generative AI (GenAI) workloads on ARM devices using the OpenVINO toolkit, focusing on reducing...",
+          "slug": "improve-generative-ai-workload-performance-on-arm-devices-with-openvino",
+          "status": "completed",
+          "student_name": "mory91",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Generative AI workload performance on ARM devices with OpenVINO"
+        },
+        {
+          "code_url": "https://bepitic.github.io/gsoc_2024.html",
+          "description": "Problem: Traditional anomaly detection systems often struggle with limited data scenarios and can lack the ability to explain their detections. Addressing these challenges is crucial for advancing the field and expanding its application range.\n\nSolution: This project proposes the integration of Vision Language Models (VLMs) into the anomalib framework using OpenAI's API. The goal is to enhance anomaly detection capabilities through few-shot and zero-shot learning techniques. This integration involves creating a new model class, 'LVM_openAI', as a subclass of 'AnomalyModule', and incorporating unique parameters like API_key and custom prompts. The model will leverage OpenAI’s API for processing and interpreting data, and will handle error catching, response parsing, and anomaly detection.\n\nMethodology: The project will start with a deep dive into Anomalib and OpenAI’s ChatGPT API, followed by a design and prototyping phase. The development will be in phases, with each phase focusing on different aspects of the integration, including testing with various datasets (e.g., MVTec AD and LOCO) and comparing against other models. Additionally, a comprehensive documentation, including a detailed notebook for setting up and using the model, will be created.\n\nDeliverables:\n\n    An integrated VLM-based anomaly detection system within anomalib.\n    Complete documentation and a set of experiments demonstrating the efficacy of the approach.\n    An optional user interface for enhanced model interaction.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/jA70KMpe/",
+          "proposal_id": null,
+          "short_description": "Problem: Traditional anomaly detection systems often struggle with limited data scenarios and can lack the ability to explain their detections....",
+          "slug": "anomalibvlm-enhancing-anomaly-detection-with-vision-language-models",
+          "status": "completed",
+          "student_name": "Bepitic - Paco Amoros Cubells",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "api",
+            "ai"
+          ],
+          "title": "AnomalibVLM: Enhancing Anomaly Detection with Vision Language Models."
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/openvino-toolkit/"
+    },
+    "year_2025": {
+      "num_projects": 16,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "​Managing and refining large-scale multimodal datasets—comprising images, text, and other data types—poses significant challenges due to the lack of integrated and scalable tools for effective cross-modal analysis and annotation. Traditional methods often require manual intervention and multiple disparate tools, leading to inefficiencies and potential inconsistencies in data handling. This fragmentation hampers the development of robust AI models that rely on high-quality, well-annotated datasets.​\n\nTo address these challenges, this project proposes the development of an Interactive Multimodal Data Explorer, a unified platform designed to streamline dataset inspection, cleaning, and refinement. Leveraging the capabilities of the Datumaro dataset management framework and OpenVINO Training Extensions (OTX) , the system will offer:​\nGitHub\nDatumaro Integration Layer\nEmbeddings Module\nInteractive Visualization Engine\nAnnotation Interface\n\nThe key deliverables of this project include a modular, scalable architecture optimized for large datasets with features like lazy loading and distributed processing; cross-modal visualization tools, including alignment heatmaps and nearest-neighbor comparisons, to enhance data quality auditing; and integration with existing MLOps ecosystems, providing an API-ready foundation for enterprise-scale deployments. By unifying dataset management tasks into a single interface, this project aims to accelerate the development of robust multimodal AI models while reducing manual labeling efforts.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/j834yUmd",
+          "proposal_id": "aMU86ach",
+          "short_description": "​Managing and refining large-scale multimodal datasets—comprising images, text, and other data types—poses significant challenges due to the lack of...",
+          "slug": "interactive-multimodal-data-explorer-using-datumaro-and-otx",
+          "status": "in-progress",
+          "student_name": "Aarya Pandey",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Interactive Multimodal Data Explorer using Datumaro and OTX"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop an OpenVINO GenAI extension for LangChain, enabling users to utilize OpenVINO as a backend for running language models. It involves integrating these components to ensure seamless compatibility, providing optimized performance for language model inference.\nDeliverables:\n1. A fully functional OpenVINO GenAI extension for LangChain, allowing users to run language models with OpenVINO as the backend.\n2. A finalized package distributed as a Python wheel.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/7zYWvO3f",
+          "proposal_id": "ElPZdMZz",
+          "short_description": "This project aims to develop an OpenVINO GenAI extension for LangChain, enabling users to utilize OpenVINO as a backend for running language models....",
+          "slug": "openvino-genai-provider-for-langchain",
+          "status": "in-progress",
+          "student_name": "bhuminjaysoni",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "backend"
+          ],
+          "title": "OpenVINO GenAI provider for LangChain"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Anomalib by integrating state-of-the-art (SOTA)\nanomaly detection models, including GLASS, GLAD, MuSc, for both one-class and\nmulti-class classification. By incorporating these models, Anomalib will remainaligned with the latest advancements in anomaly detection, strengthening its\nbenchmarking capabilities. Additionally, new benchmark datasets, such as BTAD\n(for images) and UBNormal (for videos), will be integrated to expand the\nframework’s applicability across industrial and medical domains. The project will\nalso introduce advanced evaluation metrics, including mIoU-max and averaged\nmAD, to enable more comprehensive performance assessments. Comprehensive\ndocumentation, along with updated benchmarks and performance comparisons,\nwill ensure ease of use and deployment readiness. These enhancements will\nestablish Anomalib as a more robust and versatile framework for real-world\nanomaly detection applications.",
+          "difficulty": "advanced",
+          "id": "proj_openvino-toolkit_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/xOJtUUDA",
+          "proposal_id": "eB1h0xOZ",
+          "short_description": "This project aims to enhance Anomalib by integrating state-of-the-art (SOTA) anomaly detection models, including GLASS, GLAD, MuSc, for both...",
+          "slug": "enhancing-anomalib-with-sota-anomaly-detection-benchmarks-models-and-evaluation-metrics",
+          "status": "in-progress",
+          "student_name": "code-dev05",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhancing Anomalib with SOTA Anomaly Detection Benchmarks, Models and Evaluation Metrics"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the inefficiency of full fine-tuning in classification tasks on small-scale datasets and low-resource environments within OpenVINO Training Extensions (OTX). To solve this, the project will introduce Parameter-Efficient Fine-Tuning (PEFT) techniques(specifically DoRA) and integrate lightweight Vision Transformer (ViT) backbones into the OTX framework. The solution will be validated through benchmarking on datasets of varying sizes to evaluate the trade-off between performance and training cost. Deliverables include the implementation of PEFT modules, integration of ViT-based backbones, and comprehensive benchmark results.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/1iiEaSOA",
+          "proposal_id": "I3bCch34",
+          "short_description": "This project addresses the inefficiency of full fine-tuning in classification tasks on small-scale datasets and low-resource environments within...",
+          "slug": "improve-otx-classification-via-dora-and-transformer-backbone",
+          "status": "in-progress",
+          "student_name": "GyuIlLim",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve OTX Classification via DoRA and Transformer Backbone."
+        },
+        {
+          "code_url": null,
+          "description": "As machine learning models grow in size and complexity, there is a rising need for fast, efficient, and scalable ways to serve them in production environments. This project aims to build a fully functional pipeline that enables both training and inference using models optimized with OpenVINO and served using KServe.\nIt will provide dynamic request parsing and serving through KServe. Real-time inference will be managed by the system, along with remote training using a friendly API. Deliverables are an efficient inferencing and training pipelines with pre/post-processing and production-ready deployment with OpenVINO being at the core.",
+          "difficulty": "advanced",
+          "id": "proj_openvino-toolkit_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/iPrS5Atx",
+          "proposal_id": "aQolUqhp",
+          "short_description": "As machine learning models grow in size and complexity, there is a rising need for fast, efficient, and scalable ways to serve them in production...",
+          "slug": "optimized-serving-endpoint-for-classic-machine-learning-model-training-and-inference",
+          "status": "in-progress",
+          "student_name": "Harshitha Manne",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Optimized Serving endpoint for classic machine learning model training and inference"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to enable seamless integration between Open-WebUI—a comprehensive frontend platform designed for generative AI applications—and OpenVINO Model Server, a highly efficient backend optimized for scalable and performant inference. The integration will enable Open-WebUI to utilize OpenVINO Model Server endpoints for various generative tasks, including text/chat generation, Retrieval Augmented Generation (RAG), and image generation, through standardized OpenAI-compatible APIs.\nThe solution will include the following key components:\n1. Deploying OpenVINO Model Server:\n•\tSet up OpenVINO Model Server using Docker or Kubernetes, preparing a model repository with models suitable for generative AI tasks.\n•\tConfigure OpenVINO Model Server to expose REST or gRPC endpoints compatible with OpenAI's API specifications.\n2. Configuring Open-WebUI:\n•\tInstall and configure Open-WebUI via Docker, setting it up to forward inference requests to OpenVINO Model Server endpoints using the custom OpenAI-compatible API integration.\n3. End-to-End Validation:\n•\tTest key generative workflows, including multi-turn chat, RAG, and image generation, ensuring compatibility and functionality between OpenVINO Model Server and Open-WebUI.\n4. Documentation and Reporting:\n•\tProvide clear, step-by-step deployment instructions, including example configurations and setup guides.\n•\tDocument any minor adjustments needed to either OpenVINO Model Server or Open-WebUI to facilitate integration and clearly note any significant challenges or limitations for future reference.\nBy successfully completing these components, the project will provide a detailed and user-friendly integration recipe, significantly enhancing the accessibility and practicality of deploying advanced generative AI solutions.",
+          "difficulty": "advanced",
+          "id": "proj_openvino-toolkit_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/jpuxDLqI",
+          "proposal_id": "fmhl25qi",
+          "short_description": "The goal of this project is to enable seamless integration between Open-WebUI—a comprehensive frontend platform designed for generative AI...",
+          "slug": "proposal-for-20-demonstrating-integration-of-open-webui-with-openvino-model-server",
+          "status": "in-progress",
+          "student_name": "Huanli",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ml",
+            "ai",
+            "docker"
+          ],
+          "title": "Proposal for 20. Demonstrating integration of  open-webui with OpenVINO Model Server"
+        },
+        {
+          "code_url": null,
+          "description": "The project is designed to detect vehicles, pedestrians, and traffic violations such as red-light jumping in real time.\n\nAt its core, the system uses the YOLOv12 object detection model, which is first trained using synthetic and real-world data, then optimized using OpenVINO for deployment on edge devices like CPUs and integrated GPUs.\n\nSynthetic scenes are created in CARLA to simulate diverse traffic conditions. This ensures the system performs accurately even in uncommon or challenging scenarios. \n\nA desktop dashboard built using PyQt5 provides live video feeds with detection overlays. \n\n\nVisual Language Models such as BLIP or LLaVA are integrated to interpret the scene and generate concise descriptions—for example, summarizing traffic density or describing the context of a violation.\n\nThe system is modular, scalable, and built to support real-time traffic monitoring at multiple intersections, offering a compact and efficient solution for modern urban traffic management.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Jgei3MYO",
+          "proposal_id": "TzRG3LYe",
+          "short_description": "The project is designed to detect vehicles, pedestrians, and traffic violations such as red-light jumping in real time. At its core, the system uses...",
+          "slug": "traffic-intersection-monitoring-system-with-openvino",
+          "status": "in-progress",
+          "student_name": "Jatin Sachdeva",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Traffic Intersection Monitoring System with OpenVINO"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to fine-tune Vision-Language Models (VLMs) for domain-specific tasks like object detection and hierarchical classification, focusing on real-world applications in fields such as medical diagnostics and biodiversity monitoring. Although VLMs like BLIP-2 and TinyCLIP show strong general-purpose performance, their effectiveness diminishes in specialized domains due to domain shifts, hierarchical label structures, and hardware constraints.\n\nTo address this, we will implement efficient fine-tuning strategies—including LoRA, QLoRA, and adapter tuning—within the OpenVINO Training Extensions (OTX), enabling scalable training on consumer-grade GPUs. We’ll enhance these models with support for structured prediction and deploy them using OpenVINO’s quantization and optimization toolchain, ensuring fast, lightweight inference across devices.\n\nBeyond technical contributions, the project delivers practical tools and open-source pipelines that bring advanced multimodal AI to resource-limited environments. By supporting transparent, efficient deployment of VLMs in impactful domains, this work bridges cutting-edge research with high-value, real-world use cases.",
+          "difficulty": "advanced",
+          "id": "proj_openvino-toolkit_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/eYkkpBH5",
+          "proposal_id": "lo7WpiNl",
+          "short_description": "This project aims to fine-tune Vision-Language Models (VLMs) for domain-specific tasks like object detection and hierarchical classification,...",
+          "slug": "fine-tuning-vision-language-models-for-object-detection-and-hierarchical-classification",
+          "status": "in-progress",
+          "student_name": "Jiayu Li",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fine-tuning Vision-Language Models for Object Detection and Hierarchical Classification"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal outlines a detailed, structured, and actionable two-phase strategy for developing an OpenVINO AI PC Model Training Kit. The core objective of this initiative is to enable streamlined, efficient, and scalable AI model training capabilities on widely accessible hardware by fully leveraging OpenVINO’s optimization capabilities and integrating it seamlessly with leading machine learning frameworks such as PyTorch, TensorFlow, and Scikit-learn.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/i7OuLusy",
+          "proposal_id": "h6bjkHTs",
+          "short_description": "This proposal outlines a detailed, structured, and actionable two-phase strategy for developing an OpenVINO AI PC Model Training Kit. The core...",
+          "slug": "openvino-ai-pc-model-training-kit",
+          "status": "in-progress",
+          "student_name": "LeoHeim",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "OpenVINO AI PC Model Training Kit"
+        },
+        {
+          "code_url": null,
+          "description": "Enable popular Keras Hub GenAI/LLM pipelines for the OpenVINO backend in Keras 3 and optimize their performance. This project focuses on implementing missing operations in the OpenVINO backend to support and optimize Gemma and Mistral pipelines, ensuring efficient inference. The final deliverables will be two fully enabled and optimized pipelines running on Keras 3 with OpenVINO.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Gf0CDHkh",
+          "proposal_id": "uHMyZqvx",
+          "short_description": "Enable popular Keras Hub GenAI/LLM pipelines for the OpenVINO backend in Keras 3 and optimize their performance. This project focuses on implementing...",
+          "slug": "keras-hub-genaillm-pipelines-for-the-openvino-backend-in-keras-3",
+          "status": "in-progress",
+          "student_name": "Mohamed Ashraf Ibrahim",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Keras hub GenAI/LLM pipelines for the OpenVINO backend in Keras 3"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to optimize the calculation of multimodal embeddings (text, image, audio, video) by exposing REST API endpoints in OpenVINO Model Server. It combines the transformers library for data preprocessing with OpenVINO for efficient inference execution. The project will include a Mediapipe graph for preprocessing and inference, along with a sample application for image search using embeddings stored in a vector database. The goal is to enable flexible, efficient comparison of different data types based on semantic meaning.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/AApbJ45K",
+          "proposal_id": "JjhK8qcb",
+          "short_description": "This project aims to optimize the calculation of multimodal embeddings (text, image, audio, video) by exposing REST API endpoints in OpenVINO Model...",
+          "slug": "project-18-multimodal-embeddings-based-on-ovms",
+          "status": "in-progress",
+          "student_name": "Raghav Yadav",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Project 18: Multimodal embeddings based on OVMS"
+        },
+        {
+          "code_url": null,
+          "description": "The AI PC has multiple processing units. While most face detection models use just one unit throughout their lifetime, we try to use all the units available to ensure better efficiency, lesser power consumption, and a better overall user experience. We aim to achieve this by switching the unit being used according to the compute requirement.\n\nDo this while ensuring that there are no crashes while the model runs inference. We build on top of OpenVINO AUTO to deliver an app that serves the user by helping switch between various compute engines",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NcCGwcnx",
+          "proposal_id": "bOTEQvKL",
+          "short_description": "The AI PC has multiple processing units. While most face detection models use just one unit throughout their lifetime, we try to use all the units...",
+          "slug": "expand-openvino-auto",
+          "status": "in-progress",
+          "student_name": "RaghavSharma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Expand OpenVINO AUTO"
+        },
+        {
+          "code_url": null,
+          "description": "Large Language Models (LLMs) have demonstrated exceptional performance across a wide range of tasks, leading to their widespread adoption. However, they still require significant computational resources for inference, especially when deployed on hardware-constrained devices. While the Neural Network Compression Framework (NNCF) helps reduce memory and compute requirements through quantization and weight compression, further efficient execution of these compressed models remains a challenge due to kernel-level inefficiencies. In particular, low-bit matrix multiplications (matmul) introduce unwanted overhead, often involving multiple separate kernels for operations like dequantization, bit packing, matmul, etc. Additionally, multiple kernels are required to accommodate different scenarios such as single (GEMV) or batched (GEMM and GEMM Split-K) prefills and token decoding in LLMs, adding another layer of complexity. This project aims to accelerate inference of NNCF-compressed LLMs by implementing optimized, fused low-bit matmul kernels using Triton. Existing open-source low-bit kernel implementations (e.g., GemLite, Tinygemm, etc.) will be evaluated, and the most suitable will be adapted and integrated into NNCF. These custom kernels will support available quantization formats (INT8, INT4, etc.), and will be wrapped using custom_op to ensure compatibility with PyTorch’s torch.compile. It will include performance benchmarking and profiling on NVIDIA and Intel GPUs, submission of a pull request to NNCF with the implemented changes, and comprehensive blog posts/documentation.",
+          "difficulty": "advanced",
+          "id": "proj_openvino-toolkit_2025_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/dVmaMFJg",
+          "proposal_id": "Q4qTCAnH",
+          "short_description": "Large Language Models (LLMs) have demonstrated exceptional performance across a wide range of tasks, leading to their widespread adoption. However,...",
+          "slug": "accelerating-inference-of-nncf-compressed-llms-with-triton",
+          "status": "in-progress",
+          "student_name": "Riffat Khan",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Accelerating Inference of NNCF-Compressed LLMs with Triton"
+        },
+        {
+          "code_url": null,
+          "description": "Modern messaging platforms like Discord and Slack are not just used for communication but also for consuming news, discussions, and topic-specific updates. However, keeping track of all this information across channels is overwhelming. This project aims to build a privacy-preserving, offline desktop AI assistant that can retrieve and summarize past messages using a local Retrieval-Augmented Generation (RAG) pipeline. Leveraging Intel's OpenVINO 2025 Generative AI workflow and LangChain, the assistant will extract messages via the Discord API, embed them using OpenVINO-accelerated models, and store them in a FAISS vector database. On receiving a user query or generating a daily digest, the system retrieves relevant context and runs inference using a locally optimized LLM, accelerated by GPU, NPU, or CPU depending on available hardware. A PyQt-based desktop application server as the user interface, providing features like chat, digest summaries, model/device selection, and system notifications.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/n5QRaAsb",
+          "proposal_id": "9ou5MaPf",
+          "short_description": "Modern messaging platforms like Discord and Slack are not just used for communication but also for consuming news, discussions, and topic-specific...",
+          "slug": "openvino-messenger-ai-assistant-for-an-ai-pc",
+          "status": "in-progress",
+          "student_name": "Siddhant Chauhan",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "OpenVINO Messenger AI-Assistant for an AI PC"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a hand-gesture computer control system by porting MediaPipe’s Gesture Recognizer to OpenVINO, enhancing performance on Intel hardware. It will have a context-aware system that maps hand movements to keyboard shortcuts, mouse clicks, and other inputs, with the innovation of application-specific mapping where identical gestures trigger different actions based on the active application. Deliverables include converted MediaPipe models (palm detection, landmark detection, gesture embedder, and classifier) in OpenVINO IR format with complete pipeline integration, a real-time gesture control system that achieves at least 20 FPS with smooth cursor tracking, and a user-friendly GUI for customizing gesture-to-input mappings; in addition, performance will be benchmarked across various Intel platforms and the implementation process will be thoroughly documented for future contributors.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/j0BaBXKt",
+          "proposal_id": "xofw6TnN",
+          "short_description": "This project aims to develop a hand-gesture computer control system by porting MediaPipe’s Gesture Recognizer to OpenVINO, enhancing performance on...",
+          "slug": "gesture-control-with-openvino",
+          "status": "in-progress",
+          "student_name": "VijayKr338",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Gesture Control with OpenVINO"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement a framework that leverages Large Foundation Models (LFMs) for automated dataset annotation. It also aims to distill their knowledge into lightweight models suitable for deployment on edge devices. Initially, LFMs assign labels to training datasets, that are then refined through human-in-the-loop verification. During the training of lightweight models, human annotators improve the quality of the training data. Active learning is employed to identify informative samples to minimize human effort for label correction. Through this iterative process, the lightweight models gradually acquire task capability with minimal human effort, whose knowledge is distilled from LFMs.",
+          "difficulty": null,
+          "id": "proj_openvino-toolkit_2025_016",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/2xtHy9KV",
+          "proposal_id": "CGg1zFTv",
+          "short_description": "This project aims to implement a framework that leverages Large Foundation Models (LFMs) for automated dataset annotation. It also aims to distill...",
+          "slug": "training-edge-deployable-models-via-collaborative-annotation-with-humans-and-large-foundation-models",
+          "status": "in-progress",
+          "student_name": "Yuki Wakai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Training Edge-Deployable Models via Collaborative Annotation with Humans and Large Foundation Models"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openvino-toolkit"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/openvinotoolkit/openvino/wiki/Google-Summer-Of-Code#application-template",
+    "ideas_url": "https://github.com/openvinotoolkit/openvino/wiki/Google-Summer-Of-Code#project-ideas-for-2025",
+    "irc_channel": null,
+    "mailing_list": "https://github.com/openvinotoolkit/openvino/discussions/categories/google-summer-of-code"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": "https://medium.com/openvino-toolkit",
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.932Z"
+  }
+}

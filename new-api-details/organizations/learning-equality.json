@@ -1,0 +1,438 @@
+{
+  "id": "692251da53dd9d7326d33e09",
+  "slug": "learning-equality",
+  "name": "Learning Equality",
+  "category": "End user applications",
+  "description": "Building equity in education to transform lives",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/learning-equality/iptmmzjiktknrg9p-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/learning-equality.webp",
+  "logo_r2_url": null,
+  "url": "https://learningequality.org/",
+  "active_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2021,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "javascript",
+    "django",
+    "vue.js"
+  ],
+  "topics": [
+    "education",
+    "distributed databases",
+    "offline",
+    "learning"
+  ],
+  "total_projects": 16,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 1,
+      "year_2022": 3,
+      "year_2023": 3,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 1,
+      "year_2022": 3,
+      "year_2023": 3,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "total_students": 16
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://blog.learningequality.org/contributions-to-kolibri-for-google-summer-of-code-2021-aeac44634c64",
+          "description": "<p>Kolibri has a Tasks API that runs time consuming tasks asynchronously outside of HTTP request / response cycle hence unblocking the HTTP connection for other requests.</p>\n<p>The current Tasks API backend has a very poor consumer experience. Adding new tasks require plugin developers to inherit from <code>kolibri.core.tasks.api.BaseTaskAPIViewset</code> class which adds in multiple extra endpoints for handling of this new task.</p>\n<p>The current architecture makes it a tiring experience for plugin developers to submit and monitor their custom tasks. It also disturbs the core Tasks API code and has heavily polluted <code>kolibri.core.tasks.api</code> module.</p>\n<p>This project <strong>fully revolutionizes</strong> the Tasks API backend.</p>\n<p>This project aims to make it super straightforward for plugin developers to submit, monitor and manage custom asynchronous tasks with a simplified backend architecture.</p>\n<p>The result is:</p>\n<ul>\n<li>Plugin developers can submit any custom task by POSTing to just one endpoint. </li>\n<li>Plugin developers can manage and monitor their tasks via specific and consistent endpoints.</li>\n</ul>\n<p>And most importantly, this makes the Tasks API super duper easy to work with.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_learning-equality_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4823549662986240/",
+          "proposal_id": null,
+          "short_description": "Kolibri has a Tasks API that runs time consuming tasks asynchronously outside of HTTP request / response cycle hence unblocking the HTTP connection...",
+          "slug": "revolutionizing-the-tasks-api",
+          "status": "completed",
+          "student_name": "Vivek Agrawal",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Revolutionizing the Tasks API"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5523941925322752/"
+    },
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/learningequality/kolibri/pull/9652",
+          "description": "Kolibri lacks representable authentic testing data , also generating testing data utilities are run during unit test runtime making them not so efficient.\n\nThis project aims at \n1- Improving Kolibri Testing Data for its various apps by generating ready to load staic fixtures files  which should be authentic,more relevant to real usage and comprehensible.\n2- Wiriting Scripts responsible for generating determinstic data on the fly so developers writing test cases get to choose suitable options based on the current testing scenario.\n3- Writing Scripts to update Fixtures files according to changes in the databse models.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/SvWwlwgO/",
+          "proposal_id": null,
+          "short_description": "Kolibri lacks representable authentic testing data , also generating testing data utilities are run during unit test runtime making them not so...",
+          "slug": "fixture-generation-for-testing",
+          "status": "completed",
+          "student_name": "Bedo Khaled",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Fixture Generation for Testing"
+        },
+        {
+          "code_url": "https://medium.com/@velezllaquealex/google-summer-of-code-2022-improve-accessibility-of-pdf-renderer-alex-velez-b87abf46a355",
+          "description": "This project plans to implement a more accessible version of the current Kolibri PDF Renderer. It currently does not support some basic features of a PDF reader reader such as selecting the text, making annotations, and an outline of the pages, among others. The objective of this project is to update the current PDF renderer plugin with a newer version of the PDF.js library that allows basic activities typical of a PDF Reader.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/bYOMxAIc/",
+          "proposal_id": null,
+          "short_description": "This project plans to implement a more accessible version of the current Kolibri PDF Renderer. It currently does not support some basic features of a...",
+          "slug": "improve-accessibility-of-pdf-renderer",
+          "status": "completed",
+          "student_name": "Alex Velez",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Accessibility of PDF Renderer"
+        },
+        {
+          "code_url": "https://medium.com/@prathameshd419/google-summer-of-code-2022-optimizing-existing-real-time-communication-with-websockets-5a2508cb232d",
+          "description": "Kolibri Studio is a content curation tool for Kolibri. Its main purpose is to provide an\neasy and convenient way to organize learning resources and build channels for Kolibri.\nUser Experience is a really important aspect of Kolibri Studio as it may involve multiple\nusers working on the same content curation unit (channels). Delayed reflection of the\nmodified state of a channel to a collaborative user may cause inconvenience and may even lead to repetitive change to the same entity.\n\nThe current setup for Real-Time Communication in Studio involves maintaining a\nserver-side log which is being simulated by calling the POST method of sync API. All\ncollaborative users are hitting this POST method at regular intervals to post any changes made by them (if no changes are made then the empty changes array is posted) and receive any changes made by other users as a response of this method.\n\nThe proposed WebSocket architecture will neutralize and reduce the load on the server which is currently being created due to continuous polling of the APIs. It will convert the complex underlying structure of Sync API into a simple real-time-friendly architecture in which a full-duplex communication between client and server takes place. It will also enormously enhance the user experience of the whole process of collaborative content curation.",
+          "difficulty": "beginner",
+          "id": "proj_learning-equality_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/AsVsGFCq/",
+          "proposal_id": null,
+          "short_description": "Kolibri Studio is a content curation tool for Kolibri. Its main purpose is to provide an easy and convenient way to organize learning resources and...",
+          "slug": "optimizing-existing-real-time-communication-with-websockets",
+          "status": "completed",
+          "student_name": "Prathamesh Desai",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Optimizing Existing Real-Time Communication with Websockets"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/learning-equality/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@akash5100/ai-driven-caption-generation-in-kolibri-studio-8270c0c2554a",
+          "description": "This project aims to enhance the accessibility of Kolibri Studio's resources for learners by implementing a feature that automatically generates and edits captions for uploaded audio and video resources. The project will focus on two main tasks: (1) implementing a self-hosted solution for auto-generating captions in the same language as the video with translation into different languages and (2) adding frontend support for previewing and editing uploaded or auto-generated captions. The project will explore various libraries and tools for language support and build a front-end editor that allows for real-time caption editing and synchronization with the video or audio resource. Multilanguage options will also be supported, with automatic translation considered for future development.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/tx5vUflI",
+          "proposal_id": "Beyu6jzg",
+          "short_description": "This project aims to enhance the accessibility of Kolibri Studio's resources for learners by implementing a feature that automatically generates and...",
+          "slug": "kolibri-studio-ai-powered-transcription-generation",
+          "status": "completed",
+          "student_name": "Akash Verma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "frontend"
+          ],
+          "title": "Kolibri Studio - AI-Powered Transcription Generation"
+        },
+        {
+          "code_url": "https://github.com/Akila-I/gsoc-2023",
+          "description": "Kolibri offers a well integrated EPUB renderer for its users with smooth responsiveness, control over the text size, and six color themes to choose from. The existing color themes include variations for both light and dark modes. However, those color themes are fixed to the application and cannot be fine tuned as per individual user needs. Objective of this project is to design and implement a custom color picker component for the Kolibri EPUB renderer so that users can have their own custom color themes in the application.\n\nDeliverables of the project:\n1. Section in UI to display custom themes\n2. Integrated color picker to create and modify custom themes\n3. Functionalities of adding, editing, removing custom themes and apply them into EPUB renderer\n\nTools to be used:\n1. epub.js library\n2. Alwan color picker",
+          "difficulty": null,
+          "id": "proj_learning-equality_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/3V9w0tMx",
+          "proposal_id": "voKP2hsz",
+          "short_description": "Kolibri offers a well integrated EPUB renderer for its users with smooth responsiveness, control over the text size, and six color themes to choose...",
+          "slug": "adding-a-custom-text-color-picker-for-kolibri-epub-renderer",
+          "status": "completed",
+          "student_name": "Akila Induranga Gamage",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Adding a custom text color picker for Kolibri EPUB renderer"
+        },
+        {
+          "code_url": "https://github.com/learningequality/studio/issues/4081",
+          "description": "This project tries to solve the problem of importing two new file formats called H5P and IMS Content Package (SCORM). These packages' metadata needs to be extracted and used to create a course node ( topic node and resource node ) which will later be used to render the files for educational content. To make the content available offline, this project aims to download all the externally linked reference links and embed them along with the file. This will be achieved using various npm packages like JSZip and fast-xml-parser to parse and extract the metadata from the content files and JavaScript to download the externally linked files and embed them into the files for offline use.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ee06M2RH",
+          "proposal_id": "uubaBL5P",
+          "short_description": "This project tries to solve the problem of importing two new file formats called H5P and IMS Content Package (SCORM). These packages' metadata needs...",
+          "slug": "facilitating-h5p-and-scorm-import-in-kolibri-studio",
+          "status": "completed",
+          "student_name": "Manav Aggarwal",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "ml",
+            "ai"
+          ],
+          "title": "Facilitating H5P and SCORM import in Kolibri Studio"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/learning-equality"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://blog.learningequality.org/transforming-education-my-gsoc-2024-journey-with-learning-equality-04f252edb855",
+          "description": "The project aims to significantly enhance the educational resources available in Kolibri by integrating the Bloom Library's interactive books, which are accessible in hundreds of languages. Currently, leveraging these resources requires specialized software, a barrier this project seeks to eliminate. By integrating the bloom-player library as a viewer plugin within Kolibri and facilitating the upload of BloomPub resources in Kolibri Studio via ricecooker, we aim to make these valuable educational tools widely accessible.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hrVyhpsG/",
+          "proposal_id": null,
+          "short_description": "The project aims to significantly enhance the educational resources available in Kolibri by integrating the Bloom Library's interactive books, which...",
+          "slug": "integrate-bloom-library-into-kolibri-ecosystem",
+          "status": "completed",
+          "student_name": "Divyansh_Agarwal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integrate Bloom Library into Kolibri ecosystem"
+        },
+        {
+          "code_url": "https://blog.learningequality.org/google-summer-of-code-2024-distributed-error-reporting-sujai-gupta-91312a1d286c",
+          "description": "This project focuses on Distributed Error Reporting in Kolibri Learning Platform. Kolibri mostly focuses on offline access to education where Internet connectivity is low.\nSo with this project we will be able to trace errors when users are using the app(and store in database) and to ping the Kolibri server with all the errors whenever the connection is restored.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/4lZAkzMm/",
+          "proposal_id": null,
+          "short_description": "This project focuses on Distributed Error Reporting in Kolibri Learning Platform. Kolibri mostly focuses on offline access to education where...",
+          "slug": "distributed-error-reporting",
+          "status": "completed",
+          "student_name": "thesujai",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "Distributed Error Reporting"
+        },
+        {
+          "code_url": "https://blog.learningequality.org/gsoc24-a-summer-tale-of-coding-with-learning-equality-b2a17c92978e",
+          "description": "The Kolibri Design System contains resources for designers and developers building\nKolibri products. With inclusivity at the heart of Learning Equality’s mission, the purpose\nof KDS is to reduce the time it takes to design & build products while ensuring\naccessibility, responsiveness, and cross-browser compatibility.\nCurrently, Data tables in Kolibri and Studio are implemented using CoreTable and\nSortableHeader components. However, this implementation does not support adding\nsorting functionality to the tables, which is one of the most common tools for data\nmanagement. Sorting helps arrange data meaningfully to make it easier to understand,\ncompare, and visualize. Also, using these components leaves too much to the developer\nto ensure accessibility across all user sections. This project aims to develop a new KDS\ncomponent, a sortable table to provide a solution to these problems.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/XhQkrvev/",
+          "proposal_id": null,
+          "short_description": "The Kolibri Design System contains resources for designers and developers building Kolibri products. With inclusivity at the heart of Learning...",
+          "slug": "implement-a-prototype-of-an-accessible-sortable-table",
+          "status": "completed",
+          "student_name": "Baby_Elias",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Implement a Prototype of an Accessible Sortable Table"
+        },
+        {
+          "code_url": "https://medium.com/learning-equality/gsoc-24-my-journey-as-a-contributor-at-learning-equality-4ed4c623b189",
+          "description": "This project aims to integrate visual testing into the Kolibri Design System's (KDS) CI workflows to streamline the validation process for UI modifications. Currently, KDS lacks a visual testing service leading to manual effort in validating UI modifications. Leveraging tools like Puppeteer and Percy, the project proposes to automate the process of capturing and comparing screenshots of UI components before and after modifications, ensuring consistency and correctness.\nKey deliverables of the project are:  1. Integration of Percy into the existing Jest test suite, 2. Implementing visual testing for at least one UI component, 3. Establishing a mechanism for surfacing visual differences in pull requests. \nThis will help enhance the efficiency and reliability of KDS development, fostering a consistent and polished user experience across Kolibri products.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ygxmOD0S/",
+          "proposal_id": null,
+          "short_description": "This project aims to integrate visual testing into the Kolibri Design System's (KDS) CI workflows to streamline the validation process for UI...",
+          "slug": "integrating-visual-testing-with-kolibri-design-systems-ci",
+          "status": "completed",
+          "student_name": "Kshitij Thareja",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Integrating visual testing with Kolibri Design System’s CI"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/learning-equality/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Kolibri's current Windows installer is outdated, difficult to maintain, relies on the unsupported IE11 engine, and lacks parity with the modern kolibri-app used on macOS. This project aims to replace the legacy installer by enhancing the existing Python-based kolibri-app to provide a first-class experience on Windows.\r\n\r\nThe solution involves integrating the Microsoft Edge WebView2 engine, implementing native Windows features such as background operation via a Windows Service (using pywin32) and a system tray icon (wxPython), and creating a new native installer using InnoSetup. The application architecture will separate the UI and server processes for robustness. An automated build pipeline using GitHub Actions will be developed to produce the application bundle (via PyInstaller) and the final installer package, including code signing for releases.\r\n\r\nMain deliverables include: a functional Kolibri Windows application built from the kolibri-app codebase, a native InnoSetup installer (.exe), system tray functionality for server management, reliable background operation via a Windows service, seamless WebView2 integration, and an automated GitHub Actions build workflow for Windows artifacts.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/mvtTIkC0",
+          "proposal_id": "rdFncAa2",
+          "short_description": "Kolibri's current Windows installer is outdated, difficult to maintain, relies on the unsupported IE11 engine, and lacks parity with the modern...",
+          "slug": "create-robust-windows-app",
+          "status": "in-progress",
+          "student_name": "Dimitrios Mylonas",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Create Robust Windows App"
+        },
+        {
+          "code_url": null,
+          "description": "This project replaces Kolibri Studio's editor with a TipTap/ProseMirror solution that maintains Markdown support while improving reliability, accessibility, and performance. The modern implementation delivers core formatting through a schema-based architecture, reducing bundle size by 60% for better performance on low-end devices. It solves immediate needs while future-proofing content creation.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/SnDqa0ef",
+          "proposal_id": "KP74gf86",
+          "short_description": "This project replaces Kolibri Studio's editor with a TipTap/ProseMirror solution that maintains Markdown support while improving reliability,...",
+          "slug": "legacy-compatible-prototype-of-a-rich-text-editor",
+          "status": "in-progress",
+          "student_name": "Habiba Ayman",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Legacy Compatible prototype of a Rich Text Editor"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of the project presented in this proposal is to create a community library that will enable content creators in the Kolibri ecosystem to share their content with other users. This will allow users to create content channels, especially curated for specific learning environments or aligned to a certain curriculum, and make the content freely and easily discoverable and reusable by others.\n\nThe project implements the project idea Easy sharing of community channels from the official Learning Equality idea list.",
+          "difficulty": "beginner",
+          "id": "proj_learning-equality_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/9nSTd6ca",
+          "proposal_id": "Np8Ew0rz",
+          "short_description": "The goal of the project presented in this proposal is to create a community library that will enable content creators in the Kolibri ecosystem to...",
+          "slug": "kolibri-community-library",
+          "status": "in-progress",
+          "student_name": "Jakub Komárek",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Kolibri Community Library"
+        },
+        {
+          "code_url": null,
+          "description": "Kolibri currently lacks an in-app onboarding system, relying solely on external user \ndocumentation. This project aims to design and implement an intuitive in-app onboarding experience using Tippy.js library for Kolibri, guiding users through key features within the Learn plugin. The onboarding process will introduce interactive tooltips and pop-up elements to help users navigate the platform effectively.",
+          "difficulty": null,
+          "id": "proj_learning-equality_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/1UtqS4c1",
+          "proposal_id": "zFCNrsgQ",
+          "short_description": "Kolibri currently lacks an in-app onboarding system, relying solely on external user documentation. This project aims to design and implement an...",
+          "slug": "create-a-new-user-onboarding-experience-for-kolibri",
+          "status": "in-progress",
+          "student_name": "Shruti862",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Create a new user onboarding experience for  Kolibri"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to integrate a new resource type, HTML5 articles, into the Kolibri Ecosystem by developing a content renderer capable of displaying HTML5 articles outside of an iframe. \r\nKolibri currently supports sandboxed HTML5 applications that allow arbitrary styling, JavaScript, and HTML within iframes. However, this approach demands advanced technical expertise in HTML and CSS from content creators. The HTML5 Article Renderer will simplify content creation, allowing creators to generate rich text content more easily.\r\nFor this project, I will contribute to the safe_html5_viewer plugin in the kolibri repository under the mentorship of Samson Akol and Allan Otodi Opeto.",
+          "difficulty": "advanced",
+          "id": "proj_learning-equality_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/s4jiV249",
+          "proposal_id": "6MLezZDK",
+          "short_description": "This project aims to integrate a new resource type, HTML5 articles, into the Kolibri Ecosystem by developing a content renderer capable of displaying...",
+          "slug": "html5-article-renderer",
+          "status": "in-progress",
+          "student_name": "Winny Chang",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "ml",
+            "ai"
+          ],
+          "title": "HTML5 Article Renderer"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/learning-equality"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@learningequality.org",
+    "guide_url": "https://learningequality.org/r/gsoc-contributor-guidelines",
+    "ideas_url": "https://docs.google.com/document/d/e/2PACX-1vT49WKgbsAIUoJ0jJS8LTWWm7UTByM0Pw3qt0KgyU_BShB1oGtZBkrEWuannFsRMVvGd0QBytZt8blh/pub",
+    "irc_channel": null,
+    "mailing_list": "https://community.learningequality.org/"
+  },
+  "social": {
+    "blog": "https://blog.learningequality.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/learneq",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.361Z"
+  }
+}

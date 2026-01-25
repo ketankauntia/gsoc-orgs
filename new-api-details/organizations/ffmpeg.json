@@ -1,0 +1,1040 @@
+{
+  "id": "692251d353dd9d7326d33da3",
+  "slug": "ffmpeg",
+  "name": "FFmpeg",
+  "category": "Media",
+  "description": "Record, convert and stream audio & video",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/ffmpeg/9nltyc13lvn7dqn0-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/ffmpeg.webp",
+  "logo_r2_url": null,
+  "url": "https://ffmpeg.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "git",
+    "asm",
+    "assembly",
+    "assembler",
+    "c99"
+  ],
+  "topics": [
+    "audio",
+    "video",
+    "multimedia",
+    "image",
+    "compression",
+    "filter",
+    "compressio",
+    "subtitles",
+    "image processing",
+    "images"
+  ],
+  "total_projects": 49,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.9,
+    "projects_by_year": {
+      "year_2016": 7,
+      "year_2017": 6,
+      "year_2018": 5,
+      "year_2019": 6,
+      "year_2020": 5,
+      "year_2021": 5,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": 7,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": 7,
+      "year_2017": 6,
+      "year_2018": 5,
+      "year_2019": 6,
+      "year_2020": 5,
+      "year_2021": 5,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": 7,
+      "year_2025": 3
+    },
+    "total_students": 47
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/theacetoace/1440449c7dc6cb34f4dc797c9bda3e62",
+          "description": "<p>This project proposed implementation of P frames with motion compensation and motion estimation support for FFv1 FFmpeg codec and its fine-tuning until the best compression rate is achieved. \nIt is important to provide common use lossless FFmpeg codec with ability to work with P frames, so it would be more effective and it would make FFv1 competitive with existing I+P frame lossless codecs.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5391653909037056/",
+          "proposal_id": null,
+          "short_description": "This project proposed implementation of P frames with motion compensation and motion estimation support for FFv1 FFmpeg codec and its fine-tuning...",
+          "slug": "ffv1-p-frame-support",
+          "status": "completed",
+          "student_name": "sdolganov",
+          "student_profile": null,
+          "tags": [],
+          "title": "FFv1 P frame support"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/16HocGB8AviXsRohkKMObag-ayG74ib4LTXOqyn6nd_w/edit?usp=sharing",
+          "description": "<p>Generate video frames by means of interpolation between existing ones by estimating the \"true\" motion using various algorithms, in attempt to make the video smooth.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5503363592486912/",
+          "proposal_id": null,
+          "short_description": "Generate video frames by means of interpolation between existing ones by estimating the \"true\" motion using various algorithms, in attempt to make...",
+          "slug": "motion-interpolation-filter",
+          "status": "completed",
+          "student_name": "DSM_",
+          "student_profile": null,
+          "tags": [],
+          "title": "Motion Interpolation Filter"
+        },
+        {
+          "code_url": "https://github.com/FFmpeg/FFmpeg/commits/master?author=omerjerk",
+          "description": "<p>The project aims at enhancing and merging the MPEG-4 ALS encoder, which has been written already, into the official FFmpeg codebase. Second, the encoder is to be brought through the usual reviewing process to hit the codebase at the end of the timeline.\nAlso, support for decoding 32-bit floating point data will be added to the decoder.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5071180629278720/",
+          "proposal_id": null,
+          "short_description": "The project aims at enhancing and merging the MPEG-4 ALS encoder, which has been written already, into the official FFmpeg codebase. Second, the...",
+          "slug": "mpeg-4-audio-lossless-coding-als-encoder-implementation",
+          "status": "completed",
+          "student_name": "Mohammad Umair",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "MPEG-4 Audio Lossless Coding (ALS) encoder implementation"
+        },
+        {
+          "code_url": "http://ffmpeg.org/pipermail/ffmpeg-devel/2016-August/198108.html",
+          "description": "<p>Tee muxer is capable of writing same coded packets to multiple outputs. However in current implementation outputs are being blocked by each other and lack mechanism for gracefully restarting output in case of failure. This disallows usage of tee muxer for high-availability purposes.</p>\n<p>In the proposed project tee muxer will be rewritten so that each of the output will be processed independently and the behaviour of the outputs in case of failure will be configurable by user.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5588593460379648/",
+          "proposal_id": null,
+          "short_description": "Tee muxer is capable of writing same coded packets to multiple outputs. However in current implementation outputs are being blocked by each other and...",
+          "slug": "tee-muxer-improvement",
+          "status": "completed",
+          "student_name": "Ján Sebechlebský",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Tee muxer improvement"
+        },
+        {
+          "code_url": "https://github.com/Benjaminst123/FFmpeg/commits/master",
+          "description": "<p>FFmpeg has implemented VDPAU video decoding for quite a time.This project focuses on adding VDPAU filtering support to FFmpeg, allowing to further decrease processor load.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4843924245970944/",
+          "proposal_id": null,
+          "short_description": "FFmpeg has implemented VDPAU video decoding for quite a time.This project focuses on adding VDPAU filtering support to FFmpeg, allowing to further...",
+          "slug": "vdpau-filter",
+          "status": "completed",
+          "student_name": "Benjamin St",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "VDPAU filter"
+        },
+        {
+          "code_url": "http://jailuthra.in/2016/08/gsoc-3.html",
+          "description": "<p>Dolby TrueHD is one of the lossless audio codecs used on Blu-ray discs. FFmpeg is capable of decoding TrueHD content, but encoding functionality is missing. MLP (Meridian Lossless Packing) is a lossless audio codec used on DVDs, and is the basis for TrueHD. A nearly functional MLP encoder had been written in 2009 by Ramiro Polla.</p>\n<p>For this project, that encoder is first to be updated to fit into the current codebase of FFmpeg and to be tested for conformance against proprietary MLP encoder(s). Second, the encoder is to be updated to implement TrueHD functionality, allowing it to losslessly encode audio to play it on hardware devices capable of TrueHD decoding. Finally, the encoder is to be brought through the usual reviewing process to hit the codebase at the end of the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4887887262777344/",
+          "proposal_id": null,
+          "short_description": "Dolby TrueHD is one of the lossless audio codecs used on Blu-ray discs. FFmpeg is capable of decoding TrueHD content, but encoding functionality is...",
+          "slug": "truehd-encoder",
+          "status": "completed",
+          "student_name": "darkapex",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "TrueHD Encoder"
+        },
+        {
+          "code_url": "https://github.com/FFmpeg/FFmpeg/commits/master?author=psincraian",
+          "description": "<p>Doing changes on large projects can break the project, besides finding bugs can be hard and tedious. Tests help to prevent, find and fix bugs much quicker. FFmpeg contains many self-tests, but still more code is not tested. My work is to significantly improve selftest coverage.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5186119859699712/",
+          "proposal_id": null,
+          "short_description": "Doing changes on large projects can break the project, besides finding bugs can be hard and tedious. Tests help to prevent, find and fix bugs much...",
+          "slug": "improve-selftest-coverage",
+          "status": "completed",
+          "student_name": "psincraian",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve selftest coverage"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4753437874978816/"
+    },
+    "year_2017": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/19jRCio_vsE-sxhe47My8aD0Lnx5vEWu14dY84Eay8HU/edit?usp=sharing",
+          "description": "<p>Ambisonics is a full-sphere surround sound technique: in addition to the horizontal plane, it covers sound sources above and below the listener. FFmpeg as of now has no-support for decoding standard B-Format sound into any user-decided speaker configuration. The project would focus on implementing a fully-featured Ambisonic decoder, which decodes standard B-Format and converts it into the required speaker configuration. This would enable FFmpeg to decode Ambisonic files, right at the user-end and he/she will be able to create his/her own speaker configuration. This decoder would be implemented as a filter in FFmpeg/libavfilter.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5502705388748800/",
+          "proposal_id": null,
+          "short_description": "Ambisonics is a full-sphere surround sound technique: in addition to the horizontal plane, it covers sound sources above and below the listener....",
+          "slug": "fully-featured-ambisonic-decoder-implemented-as-a-filter",
+          "status": "completed",
+          "student_name": "Sanchit Sinha",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Fully featured Ambisonic decoder implemented as a filter"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1RxNM424sANbe9XZ3KuEnx93G5ZvLYzEBbrM04wYJ7Yo/edit?usp=sharing",
+          "description": "<p>The project aims at implementing the FITS image encoder and decoder in ffmpeg. FITS is an open standard defining a digital file format useful for storage, transmission and processing of scientific and other images. FITS is the most commonly used digital file format in astronomy.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4991827350388736/",
+          "proposal_id": null,
+          "short_description": "The project aims at implementing the FITS image encoder and decoder in ffmpeg. FITS is an open standard defining a digital file format useful for...",
+          "slug": "fits-image-encoder-and-decoder",
+          "status": "completed",
+          "student_name": "Paras Chadha",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "FITS image encoder and decoder"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1Hyh_rxP1KGsVkg7i7yU8Bcv92z0LIL4r-axpoKfvMFk",
+          "description": "<p>Improve quality of frames generated by currently implemented Motion Compensated Frame Rate Conversion video filter - mInterpolate by implementing state-of-the-art algorithms from latest academic papers.\nThe project also focuses on Motion Estimation API for FFmpeg which could be used independently by codecs, filters internally and by users.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5632390584074240/",
+          "proposal_id": null,
+          "short_description": "Improve quality of frames generated by currently implemented Motion Compensated Frame Rate Conversion video filter - mInterpolate by implementing...",
+          "slug": "minterpolate-improvements",
+          "status": "completed",
+          "student_name": "Davinder Singh",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "mInterpolate Improvements"
+        },
+        {
+          "code_url": "https://gist.github.com/zakne/06618f0af3ddd490df6e8701f0c402c9",
+          "description": "<p>Assembly optimizations that take advantage of avx2 instruction set to provide performance improvements to the vp9 decoder. Tile threading support.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6251046800195584/",
+          "proposal_id": null,
+          "short_description": "Assembly optimizations that take advantage of avx2 instruction set to provide performance improvements to the vp9 decoder. Tile threading support.",
+          "slug": "vp9-decoder-improvements",
+          "status": "completed",
+          "student_name": "Ilia Valiakhmetov",
+          "student_profile": null,
+          "tags": [],
+          "title": "VP9 decoder improvements"
+        },
+        {
+          "code_url": "https://tjones879.github.io/blog/gsoc-2017/",
+          "description": "<p>Vorbis as a lossy audio codec provides excellent quality audio compared to other codecs at a similar bit rate, including MP3, and even comparable to AAC. High-quality audio combined with a fully open license should be valued by the open source community as an alternative to codecs that require a patent license for encoding or payments in order to legally stream.</p>\n<p>However, FFmpeg’s native vorbis encoder is currently labeled as experimental or broken due to its relatively poor performance and audio quality in comparison to competing audio codecs. It serves only to output a valid bitstream, with little concern about quality. This project aims to improve the general performance of the encoder, bringing it closer to a viable status. This will be done by integrating features of the existing AAC psychoacoustic model system within the native Vorbis encoder and adapting the FFmpeg Vorbis decoder to utilize that new information. Finally, additional documentation and test coverage will be added to enable long-term development in this area.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6487867807236096/",
+          "proposal_id": null,
+          "short_description": "Vorbis as a lossy audio codec provides excellent quality audio compared to other codecs at a similar bit rate, including MP3, and even comparable to...",
+          "slug": "vorbis-encoder-improvements",
+          "status": "completed",
+          "student_name": "Tyler Jones",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Vorbis Encoder Improvements"
+        },
+        {
+          "code_url": "https://gist.github.com/ashk43712/89e51b39b1c224fca49e6ff99a48f6d9",
+          "description": "<p>VMAF is a perceptual video quality assessment algorithm developed by Netflix. The project aims to create a fully functional video filter inside FFmpeg that measures the  Video Multimethod Assessment Fusion (VMAF) score of any input video compared to a reference. The overall goal is to have both the independent vmaf containing the implementation of metrics used in vmaf like ansnr,vif,dlm,motion and fusing them using Support Vector Machine (SVM) and a dependent library implementation linking to Netflix's vmaf (librarification).</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4843671916642304/",
+          "proposal_id": null,
+          "short_description": "VMAF is a perceptual video quality assessment algorithm developed by Netflix. The project aims to create a fully functional video filter inside...",
+          "slug": "vmaf-video-filter",
+          "status": "completed",
+          "student_name": "Ashish Pratap Singh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "VMAF video filter"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4641979178680320/"
+    },
+    "year_2018": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2018/Results#SuperResolutionfilter",
+          "description": "<p>For the past two years several image and video super resolution methods have been proposed that are based on convolutional neural networks. This work will be more focused on the super resolution algorithms for video, but some algorithms for images will also be considered. All considered super resolution methods will be objectively evaluated and the algorithm with best performance/quality tradeoff will be implemented as a FFmpeg’ super resolution filter.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5661133578960896/",
+          "proposal_id": null,
+          "short_description": "For the past two years several image and video super resolution methods have been proposed that are based on convolutional neural networks. This work...",
+          "slug": "super-resolution-filter",
+          "status": "completed",
+          "student_name": "Sergey Lavrushkin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Super Resolution Filter"
+        },
+        {
+          "code_url": "https://github.com/klaxa/ffserver",
+          "description": "<p>The goal of this project is to write a replacement for the now removed ffserver component. It should meet the criteria proposed for the work on ffserver while there was still discussion about it. The result should be a multi-protocol streaming server that only uses the public API.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5074919532527616/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to write a replacement for the now removed ffserver component. It should meet the criteria proposed for the work on...",
+          "slug": "ffserver-replacement",
+          "status": "completed",
+          "student_name": "klaxa",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "FFserver replacement"
+        },
+        {
+          "code_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2018/Results#OpenCLsupportforLibavfilter",
+          "description": "<p>This project focuses on implementing OpenCL support for Libavfilter, with other parts of the project (including scaling, color conversion and deinterlacer) being treated as optional improvements for FFmpeg.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4577695128092672/",
+          "proposal_id": null,
+          "short_description": "This project focuses on implementing OpenCL support for Libavfilter, with other parts of the project (including scaling, color conversion and...",
+          "slug": "opencl-support-for-libavfilter",
+          "status": "completed",
+          "student_name": "Danil Iashchenko",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenCL support for Libavfilter"
+        },
+        {
+          "code_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2018/Results#ColorConstancyFilter",
+          "description": "<h4>Various implementations of color constancy filter using machine learning and low-level image statistics.</h4>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4807736529256448/",
+          "proposal_id": null,
+          "short_description": "Various implementations of color constancy filter using machine learning and low-level image statistics.",
+          "slug": "color-constancy-filter",
+          "status": "completed",
+          "student_name": "Mina Sami",
+          "student_profile": null,
+          "tags": [],
+          "title": "Color Constancy Filter"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1sUswaJW5tkGj0nQavwZHG20d_rLKvxGbHgrWBQLiklY/edit?usp=sharing",
+          "description": "<p>The GoPro Cineform codec is a cross-platform intermediate codec designed for editing high-resolution footage. It was original designed for compressed Digital Intermediate workflows for film or television applications using HD or higher resolution media. FFmpeg reverse engineered Cineform decoder currently supports progressive video files with image formats YUV 4:2:2 10-bit, RGB and RGBA 4:4:4 12-bit.  This project aims to support more features present in cineform codec, namely Inverse Temporal Transform for p-frames, deinterlacing support, assembly instructions integration into the ffmpeg version, and making it faster by using threading models present in FFmpeg. The result of this project will be that Cineform decoder can be integrated with many tools that use FFmpeg libav.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_ffmpeg_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4870773697150976/",
+          "proposal_id": null,
+          "short_description": "The GoPro Cineform codec is a cross-platform intermediate codec designed for editing high-resolution footage. It was original designed for compressed...",
+          "slug": "cineform-decoder-improvements",
+          "status": "completed",
+          "student_name": "Gagandeep Singh-2",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Cineform Decoder Improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5447853019234304/"
+    },
+    "year_2019": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://cldfire.dev/blog/gsoc-2019/",
+          "description": "<p>The goal of this project is to write a solid, feature-complete, and reasonably performant implementation of the deshake video filter in OpenCL. This filter uses motion estimation to compensate for erratic camera movement and smooth out shaky footage.</p>\n<p>Secondary goals to be pursued if time allows include the addition of interop between macOS's videotoolbox API and the OpenCL filters as well as ports of some of the other simple post-processing filters (such as delogo).</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5054350244708352/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to write a solid, feature-complete, and reasonably performant implementation of the deshake video filter in OpenCL. This...",
+          "slug": "implement-opencl-deshake-filter",
+          "status": "completed",
+          "student_name": "Jarek Samic",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Implement OpenCL Deshake Filter"
+        },
+        {
+          "code_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2019/Results#DerainFilter",
+          "description": "<p>Rain and fog are very common weather in actual life. However, it can affect the visibility. Especially in heavy rain, rain streaks from various directions accumulate and make the background scene misty, which will seriously influence the accuracy of many computer vision systems, including video surveillance, object detection and tracking in autonomous driving, etc. Therefore, it is an important task to remove the rain and fog, and recover the background from rain images. It can be used for image and video processing to make them clearer and it can be a preprocessing method for many computer vision systems. We propose to implement this technology in FFmpeg. For video, this proposal proposes to utilize the relationship between frames to remove rain and fog. For single image, we can use traditional methods, such as discriminative sparse coding, low rank representation and the Gaussian mixture model. And also some deep learning methods.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5369519290187776/",
+          "proposal_id": null,
+          "short_description": "Rain and fog are very common weather in actual life. However, it can affect the visibility. Especially in heavy rain, rain streaks from various...",
+          "slug": "derain-filter-in-ffmpeg",
+          "status": "completed",
+          "student_name": "Xuewei Meng",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Derain Filter in FFmpeg"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/15Q0vcm8xHUP3DOl5E4j6npDdqKN01XbtasyMhQDsoMM/edit?usp=sharing",
+          "description": "<p>The aim of this project is to add support for HEIF/HEIC files in FFmpeg. High Efficiency Image File Format (HEIF) specifies the storage of individual images, image sequences and their metadata into a container file conforming to the ISO Base Media File Format (ISOBMFF). This format has increasing usage in mobile devices.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5632663078043648/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to add support for HEIF/HEIC files in FFmpeg. High Efficiency Image File Format (HEIF) specifies the storage of individual...",
+          "slug": "heif-support",
+          "status": "completed",
+          "student_name": "Swaraj Hota",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ai"
+          ],
+          "title": "HEIF Support"
+        },
+        {
+          "code_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2019/Results#a360VideoFilter",
+          "description": "<p>For the past several years 360° cameras have become far more accessible, and several video-sharing services enabled support for 360° videos (for example, YouTube and Facebook). Nevertheless, FFmpeg currently doesn’t support any of 360° video formats.</p>\n<p>The goal of the project is to write a filter which will be supporting conversation between various 360° video formats. A filter should also support all basic 360° transformations: rotations (roll/yaw/pitch), Field of View extraction, etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4513054174216192/",
+          "proposal_id": null,
+          "short_description": "For the past several years 360° cameras have become far more accessible, and several video-sharing services enabled support for 360° videos (for...",
+          "slug": "360-video-filter",
+          "status": "completed",
+          "student_name": "Eugene Lyapustin",
+          "student_profile": null,
+          "tags": [],
+          "title": "360° video filter"
+        },
+        {
+          "code_url": "https://shivamgoyal15.github.io/dicom_gsoc/",
+          "description": "<p>The project aims to program a demuxer in the libavformat and a parser and decoder in the libavcodec library. As DICOM files contain lots of metadata about the medical procedure done, the demuxer should be able to correctly identify and\nseparate the data in the required number of streams. The DICOM decoder should decode the compressed pixel data and can extract a frame ( or multiple frames, depending on the stream ) from it.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6056126536220672/",
+          "proposal_id": null,
+          "short_description": "The project aims to program a demuxer in the libavformat and a parser and decoder in the libavcodec library. As DICOM files contain lots of metadata...",
+          "slug": "dicom-support",
+          "status": "completed",
+          "student_name": "Shivam Goyal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "DICOM Support"
+        },
+        {
+          "code_url": "https://velocityra.github.io/gsoc-2019",
+          "description": "<p><a href=\"https://en.wikipedia.org/wiki/Digital_Negative\" target=\"_blank\">Digital Negative (DNG)</a> image format decoding support for the <a href=\"https://ffmpeg.org\" target=\"_blank\">FFmpeg</a> project.\nDNG is an open lossless/raw image format meant to standardize and replace proprietary, custom camera-specific RAW formats.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6056224766820352/",
+          "proposal_id": null,
+          "short_description": "Digital Negative (DNG) image format decoding support for the FFmpeg project.\nDNG is an open lossless/raw image format meant to standardize and...",
+          "slug": "dng-raw-image-format-support",
+          "status": "completed",
+          "student_name": "Nick Renieris",
+          "student_profile": null,
+          "tags": [],
+          "title": "DNG Raw Image Format Support"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6415948024643584/"
+    },
+    "year_2020": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1V4ICZF4E125QwwEmYwX6XVuXxBL3wpw6eVr4-vkya9Y/edit?usp=sharing",
+          "description": "<p>FFMPEG has a native JPEG2000 decoder. However, the decoder is incomplete and does not support all types of JPEG2000 files. The aim of this project is to make the native JPEG2000 decoder comprehensive and allow it to support all types of JPEG2000 files. Additionally, the project aims to add support for code linked to the JPEG2000, such as RTP encoding/decoding, J2K stream parsing, etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6407186080595968/",
+          "proposal_id": null,
+          "short_description": "FFMPEG has a native JPEG2000 decoder. However, the decoder is incomplete and does not support all types of JPEG2000 files. The aim of this project is...",
+          "slug": "jpeg-2000-decoder-improvements",
+          "status": "completed",
+          "student_name": "Gautam Ramakrishnan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "JPEG 2000 Decoder improvements"
+        },
+        {
+          "code_url": "https://spartazhc.github.io/2020/08/23/ABR-meets-FFmpeg-in-detail/",
+          "description": "<p>The goal of this project is to implement  an adaptive bitrate (ABR) module into video streaming protocols over HTTP such as DASH / HLS to achieve better QoE.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5241336032133120/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to implement  an adaptive bitrate (ABR) module into video streaming protocols over HTTP such as DASH / HLS to achieve...",
+          "slug": "abr-module-for-ffmpeg",
+          "status": "completed",
+          "student_name": "Hongcheng Zhong",
+          "student_profile": null,
+          "tags": [],
+          "title": "ABR module for FFmpeg"
+        },
+        {
+          "code_url": "https://gist.github.com/kartikkhullar/9a470d723f4a4c807ed67e9fdcdc7d2e",
+          "description": "<p>FLIF is a modern lossless image format with very good compression ratio compared to other formats. I worked to implement this codec under FFmpeg suite of libraries by taking reference from flif specifications and reference codec.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4597597005676544/",
+          "proposal_id": null,
+          "short_description": "FLIF is a modern lossless image format with very good compression ratio compared to other formats. I worked to implement this codec under FFmpeg...",
+          "slug": "flif-encoder-decoder-project",
+          "status": "completed",
+          "student_name": "Kartik K. Khullar",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "FLIF Encoder & Decoder Project"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/e/2PACX-1vTcWh_a5s7XYTR8uQdS1dp0a3p9Yvh-KDC968qeiCJoXgY2OTiJPFnCQOemDLwhMLu2dXn-YIM9bBK0/pub",
+          "description": "<p>The aim of this project is to create an audio tones source filter that generates music algorithmically. The filter uses Fluidsynth API and gives the user command over the instrumentation, pitch mapping, time control and style of the algorithmic music.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4680497927553024/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to create an audio tones source filter that generates music algorithmically. The filter uses Fluidsynth API and gives the...",
+          "slug": "audio-tones-source-filter",
+          "status": "completed",
+          "student_name": "Ashutosh Pradhan",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Audio Tones Source Filter"
+        },
+        {
+          "code_url": "https://gist.github.com/daujerrine/7dba27669a997d6b38c33141b2893198",
+          "description": "<p>Free Lossless Image Format (FLIF) is a relatively new lossless image format which claims to have a higher\ncompression ratio than most conventional image formats. The format uses a combination of arithmetic\ncoding techniques including a modified version of Context Adaptive Binary Arithmetic Coding (CABAC).\nThis project aims to implement a working codec module for libavcodec codec library maintained by the\nFFmpeg project. This text explains the FLIF format, its encoding techniques, the current internal API of\nFFmpeg and how the codec may be implemented in libavcodec. An outline of the tasks and when they may\nbe done has also been provided.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4908582367133696/",
+          "proposal_id": null,
+          "short_description": "Free Lossless Image Format (FLIF) is a relatively new lossless image format which claims to have a higher\ncompression ratio than most conventional...",
+          "slug": "implementation-of-a-flif-codec-in-libavcodec",
+          "status": "completed",
+          "student_name": "aghorui",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Implementation of a FLIF Codec in libavcodec"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/4857919167791104/"
+    },
+    "year_2021": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/luc65r/df6ef41e05f4ba4396d81c56da6dfdae",
+          "description": "<p>The new frequency transformation infrastructure in libavutil is lacking 64-bit float versions of FFTs and MDCTs for x86.\nThis projects aims at filling this gap.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5730083444097024/",
+          "proposal_id": null,
+          "short_description": "The new frequency transformation infrastructure in libavutil is lacking 64-bit float versions of FFTs and MDCTs for x86.\nThis projects aims at...",
+          "slug": "ffmpeg-x86-64-assembly-fft",
+          "status": "completed",
+          "student_name": "luc65r",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "FFmpeg x86-64 assembly FFT"
+        },
+        {
+          "code_url": "https://gist.github.com/memst/5a85c143a204830192e5ef5b4aab3b76",
+          "description": "<p>libavutil is being expanded with a modern way of handling frequency transformation. The project aims to significantly increase the speed of this code on a selected architecture by writing the transformations in assembly.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5288867057369088/",
+          "proposal_id": null,
+          "short_description": "libavutil is being expanded with a modern way of handling frequency transformation. The project aims to significantly increase the speed of this code...",
+          "slug": "fft-assembly",
+          "status": "completed",
+          "student_name": "Martynas Stankevičius",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "FFT assembly"
+        },
+        {
+          "code_url": "https://drive.google.com/drive/u/0/folders/16FJ7EkRgYTI7iL-lemHPZ6tTVX3XGm-z",
+          "description": "<p>Modern codecs require handwritten SIMD assembly for good performance, much of this has been implemented for 8-bit depth in h264 and hevc but there are still missing for 10 (h264) and 10/12 (hevc).</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4786140229402624/",
+          "proposal_id": null,
+          "short_description": "Modern codecs require handwritten SIMD assembly for good performance, much of this has been implemented for 8-bit depth in h264 and hevc but there...",
+          "slug": "h264hevc-arm64-10-bit-assembly",
+          "status": "completed",
+          "student_name": "Mikhail Nitenko",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "H264/HEVC ARM64 10-bit assembly"
+        },
+        {
+          "code_url": "https://git.sr.ht/~sm2n/gsoc2021",
+          "description": "<p>I plan to write SIMD assembly for the new tx (transform) subsystem in FFmpeg, targeted at AArch64 for double precision inputs.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6022798752874496/",
+          "proposal_id": null,
+          "short_description": "I plan to write SIMD assembly for the new tx (transform) subsystem in FFmpeg, targeted at AArch64 for double precision inputs.",
+          "slug": "tx-aarch64-doubles-simd-assembly",
+          "status": "completed",
+          "student_name": "S.M Mukarram Nainar",
+          "student_profile": null,
+          "tags": [],
+          "title": "TX AArch64 Doubles SIMD Assembly"
+        },
+        {
+          "code_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2021/Results",
+          "description": "<p>Dehaze, derain, and denoise are very common image processing tasks, aiming to improve the visual quality of images. Even worse, the low-quality images will seriously influence the accuracy of many computer vision systems. There are many methods for these tasks. The guided filter is a widely known tool that shows remarkable performance for image dehazing and edge-preserving filtering. However, this tool is not supported in FFmpeg. We propose to implement the guided filter in FFmpeg, including the conventional guided filter, fast guided filter and the high-performance guided filter, such as the side-window-based guided filter and so on.</p>\n",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5931071371214848/",
+          "proposal_id": null,
+          "short_description": "Dehaze, derain, and denoise are very common image processing tasks, aiming to improve the visual quality of images. Even worse, the low-quality...",
+          "slug": "guided-filter-in-ffmpeg",
+          "status": "completed",
+          "student_name": "Xuewei Meng",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Guided Filter in FFmpeg"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6245462977282048/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/MohamedElhadidy0019/FFmpeg_cuda_gsoc2022/blob/main/README.md",
+          "description": "FFmpeg has existing widely used filters that runs perfectly but on the CPU without using the GPU, so I will be working on writing some of these filters in CUDA C++ so  the video processing will run on GPU which will make the process way faster and convenient for the user.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ufW321cw/",
+          "proposal_id": null,
+          "short_description": "FFmpeg has existing widely used filters that runs perfectly but on the CPU without using the GPU, so I will be working on writing some of these...",
+          "slug": "gpu-cuda-accelerate-common-software-video-filters",
+          "status": "completed",
+          "student_name": "Mohamed Khaled  Mohamed",
+          "student_profile": null,
+          "tags": [],
+          "title": "GPU (CUDA) accelerate common software video filters"
+        },
+        {
+          "code_url": "https://etemesi254.github.io/posts/Google-Summer-Of-Code-Writeup/",
+          "description": "This proposal aims to implement an ISO ITU-T Rec. T.814 compliant High Throughput jpeg2000 decoder for ffmpeg.\n\nThe new jpeg2000 standard while being an improvement over the 1992 standard comes with a high computational complexity that makes it non-viable for current mainstream CPUs\n\nThe main part being the context based binary adaptive arithmetic coder which manipulates bits(not bytes) hence has a high overhead. Part 15 of the spec seeks to replace that with a simpler and faster scheme for a high throughput decoder.\n\nThis proposal seeks to implement a fully compliant  ISO ITU-T Rec. T.814 for ffmpeg.\n\n\nDeliverables\n - A  complete jpeg2000 decoder implementing  the part 15 of the decoder for ffmpeg",
+          "difficulty": "advanced",
+          "id": "proj_ffmpeg_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/fm3YZPRg/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to implement an ISO ITU-T Rec. T.814 compliant High Throughput jpeg2000 decoder for ffmpeg. The new jpeg2000 standard while being...",
+          "slug": "add-support-for-part-15-to-the-jpeg-2000-ht-decoder",
+          "status": "completed",
+          "student_name": "etemesi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add support for Part 15 to the JPEG 2000 (HT) decoder"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/ffmpeg/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://frankplowman.com/posts/gsoc-23-writeup",
+          "description": "Versatile video coding (VVC) is a recent standard for video compression. It is the newest in a line of standards which have proven extremely successful and dominate video coding today. FFmpeg is a project which develops a suite of multimedia libraries used by billions in applications including Google Chrome and VLC. This project improves on FFmpeg's implementation of a VVC decoder FFVVC in two ways:\n* Its conformance to the VVC specification is improved by implementing esoteric features.\n* Its performance on x86 systems is improved by the development of hand-written assembly optimisations.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/wGFG0Zvw",
+          "proposal_id": "RpcAbExM",
+          "short_description": "Versatile video coding (VVC) is a recent standard for video compression. It is the newest in a line of standards which have proven extremely...",
+          "slug": "future-proofing-ffmpeg-vvc-decoder-improvements",
+          "status": "completed",
+          "student_name": "Frank Plowman",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Future-proofing FFmpeg — VVC Decoder Improvements"
+        },
+        {
+          "code_url": "https://gist.github.com/HarshK23/703946316d98f5f3bf4e0442f956bd7d",
+          "description": "The Audio Overlay Filter aims to provide the functionality of replacing specified sections of an audio stream with other input audio streams. I will be designing and implementing the filter along with the necessary documentation for it to become a part of FFmpeg's libavfilter library.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/kbZJCtZK",
+          "proposal_id": "7OfNxuI4",
+          "short_description": "The Audio Overlay Filter aims to provide the functionality of replacing specified sections of an audio stream with other input audio streams. I will...",
+          "slug": "implementing-an-audio-overlay-filter",
+          "status": "completed",
+          "student_name": "Harshit Karwal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing an Audio Overlay Filter"
+        },
+        {
+          "code_url": "https://gist.github.com/zackerthescar/ebcc5c0accaeeb2dd95c066b4345e121",
+          "description": "Versatile Video Codec (a.k.a VVC, H.266) is the successor to the popular High\nEfficiency Video Codec (a.k.a HEVC, H.265) video compression standard. In\nanticipation of industry adoption, the FFmpeg community has embarked on the\nffvvc project, aiming to bring a VVC decoder into FFmpeg, the open source \nmultimedia processing framework. FFmpeg is the backbone to many open source\nmultimedia technologies, so a high-performance VVC decoder in FFmpeg will\nallow many other projects to process VVC-encoded video without the baggage\nof closed-source decoders. \n\nWhile modern compilers like Clang and GCC can employ tons of optimization\ntechniques to speed up a compiled program, compilers are still not capible\nof generating high-performance code for DSP and video processing workloads.\nModern compilers also struggle with the SIMD extensions introduced by CPU\nmanufacturers, such as the AVX2 extensions released by Intel in 2014. These\nSIMD extensions massively improve performance in DSP and video processing workloads, and FFmpeg's HEVC decoder already employs AVX2 SIMD instructions to improve performance.\n\nGiven that previous work into writing HEVC decoding filters in x86_64\nassembly with SIMD instructed yielded tangible performance improvements, this\nproposal aims to implement the VVC deblocking filter in x86_64 assembly\nto improve the ffvvc decoder's performance on x86_64 processors.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/0ffpwy0b",
+          "proposal_id": "GmVDwS4F",
+          "short_description": "Versatile Video Codec (a.k.a VVC, H.266) is the successor to the popular High Efficiency Video Codec (a.k.a HEVC, H.265) video compression standard....",
+          "slug": "x86_64-assembly-code-for-vvc-decoding-filters",
+          "status": "completed",
+          "student_name": "zackerthescar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "x86_64 Assembly code for VVC decoding filters"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/ffmpeg"
+    },
+    "year_2024": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/dre-droid/effd22ce0f7ed13914d446367b4bab64",
+          "description": "eSSIM presents a solution to the limitations of the widely adopted SSIM metric in accurately assessing human visual perception and performance. This project aims to implement the eSSIM metric as a native video filter in FFmpeg, building upon the existing SSIM filter while incorporating improvements outlined in research papers and existing implementations. Key objectives include transitioning to rectangular windows for local statistics computation, employing integral images for efficiency gains and adopting a Self-Adaptive Scale Transform (SAST).",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/erwtAKxC/",
+          "proposal_id": null,
+          "short_description": "eSSIM presents a solution to the limitations of the widely adopted SSIM metric in accurately assessing human visual perception and performance. This...",
+          "slug": "essim-video-filter-implementation",
+          "status": "completed",
+          "student_name": "Andrea Mastroberti",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ai",
+            "ui"
+          ],
+          "title": "eSSIM: video filter implementation"
+        },
+        {
+          "code_url": "https://github.com/rajivharlalka/gsoc24-ffmpeg",
+          "description": "The project incorporates addition of a new video filter to FFmpeg, PU21 transform. PU21 has been developed to convert absolute high dynamic range (HDR) linear color values into approximately perceptually uniform (PU) values, which can be used with standard quality metrics. This transformation would eventually help evaluate HDR videos based on quality tests known for SDR ones.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Z2tq722P/",
+          "proposal_id": null,
+          "short_description": "The project incorporates addition of a new video filter to FFmpeg, PU21 transform. PU21 has been developed to convert absolute high dynamic range...",
+          "slug": "addition-of-pu21-transform-filter",
+          "status": "completed",
+          "student_name": "Rajiv Harlalka",
+          "student_profile": null,
+          "tags": [],
+          "title": "Addition of PU21 Transform Filter"
+        },
+        {
+          "code_url": "https://gist.github.com/PoorvaGaikar/bcace7d289c1e16c0d47b360fbfbeb4b",
+          "description": "This proposal aims to update the SITI video filter within FFmpeg to align with the latest ITU-T P.910 specification. The current implementation suffers from outdated methodologies and lacks support for High Dynamic Range (HDR) images, leading to limitations in image quality assessment. Our solution involves updating the methodology and algorithms to conform to the 07/22 revision of ITU-T P.910, implementing HDR support, and ensuring compliance with updated SITI specifications.\n\nKey Deliverables:\n\n1)Updated video filter conforming to the latest ITU-T P.910 specification, including SI and TI metrics from the 07/22 revision.\n2)Enhanced filter functionality supporting HDR image processing.\n3)Comprehensive documentation detailing implementation changes, usage guidelines, and technical specifications.\n\nIf selected for GSoC, this project will significantly improve the accuracy and relevance of the SITI filter in modern multimedia processing pipelines, benefiting users and developers working with FFmpeg.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/TiDN7sga/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to update the SITI video filter within FFmpeg to align with the latest ITU-T P.910 specification. The current implementation...",
+          "slug": "update-siti-filter-to-match-with-latest-specification",
+          "status": "completed",
+          "student_name": "Poorva Gaikar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Update SITI filter to match with latest specification."
+        },
+        {
+          "code_url": "https://gist.github.com/raphaelthegreat/e166a3423401d6e31fbc4876dc641135",
+          "description": "VC-2 is a relatively recent codec for high definition video in high bitrate applications. While hardware encoders for it exist, they come with many limitations. Given the codec is suitable for being implemented purely as a GPU shader, the goal of this project is to implement a GPU encoder using the Vulkan API for the FFmpeg project.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/sLzIndGO/",
+          "proposal_id": null,
+          "short_description": "VC-2 is a relatively recent codec for high definition video in high bitrate applications. While hardware encoders for it exist, they come with many...",
+          "slug": "vulkan-vc-2-encoder",
+          "status": "completed",
+          "student_name": "Geo Ster",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Vulkan VC-2 encoder"
+        },
+        {
+          "code_url": "https://gist.github.com/stone-d-chen/1df34a481274a39eda7b0bb5c1fe5b0b",
+          "description": "VVC is the successor to the well-known codec HEVC and is currently being implemented in FFmpeg. This project will focus on improving the performance aspects of FFmpeg’s current VVC implementation. In particular this project will focus on adding SIMD x86 optimizations for inter-prediction decoding. The expected result is to land 300+ lines of ASM for the VVC decoder.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ZPJ6HHdj/",
+          "proposal_id": null,
+          "short_description": "VVC is the successor to the well-known codec HEVC and is currently being implemented in FFmpeg. This project will focus on improving the performance...",
+          "slug": "performance-enhancement-of-vvc-decoder-via-x86-simd-assembly",
+          "status": "completed",
+          "student_name": "Stone Chen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Performance enhancement of VVC decoder via x86 SIMD assembly"
+        },
+        {
+          "code_url": "https://gist.github.com/pmozil/a8ff5b07672321f884ad363d49c4c414",
+          "description": "This projects's aim is to implement the VC-2 decoder for FFmpeg in vulkan.\n\n\n\nVC-2 is a low-latency video codec that uses wavelet transforms and entropy coding. It can be readily implemented in hardware or software at very high bit rates. It can also be efficiently implmented on GPU hardware.\n\n\nTo this, end, an encoder and a decoder must be implemented and tested with\nthe VC-2 conformance software.\nThe encoder requires a wavelet transform, quantization, etropy coding and writing back the result in a proper format and bitstream coding.\nThe decoder, in turn, reuires: bitstream parsing, entropy decoding, dequantization and another wavelet transform.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Vlx5W3Md/",
+          "proposal_id": null,
+          "short_description": "This projects's aim is to implement the VC-2 decoder for FFmpeg in vulkan. VC-2 is a low-latency video codec that uses wavelet transforms and entropy...",
+          "slug": "vc-2-decoder-vulkan-implementation",
+          "status": "completed",
+          "student_name": "pmozil",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "VC-2 decoder Vulkan Implementation"
+        },
+        {
+          "code_url": "https://yigithanyigit.github.io/myblog/en/gsoc/2024/08/19/A-Summer-With-GSoC-FFmpeg-and-Netflix.html",
+          "description": "Project aims to enhance current implementation of the libvmaf filter in FFmpeg, which calculates the Video Multimethod Assessment Fusion (VMAF) for a video. The objective is to adapt the filter to propagate VMAF scores into AVFrame metadata and aligning it with other video quality filters in FFmpeg (PSNR, SSIM, Motion).\n\n- Implement new API to VMAF for metadata propagation\n\n- Update the current VMAF filter to support metadata",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/yma73MGc/",
+          "proposal_id": null,
+          "short_description": "Project aims to enhance current implementation of the libvmaf filter in FFmpeg, which calculates the Video Multimethod Assessment Fusion (VMAF) for a...",
+          "slug": "enhancement-of-ffmpegs-libvmaf-filter",
+          "status": "completed",
+          "student_name": "Yigithan Yigit",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Enhancement of FFmpeg's libvmaf Filter"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/ffmpeg/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "ProRes is a video codec developed by Apple, and is frequently used as an intermediate in video editing, sitting in-between raw formats and consumer codecs such as H.264.\nDue to the increasing bandwidth and compute power required to edit high-resolution content (4K and up), a shader-based decoder is desirable to accelerate ProRes processing in video editing pipelines and other situations.\nThis projects aims at delivering a high-performance, Vulkan-based decoder for Apple ProRes, supporting its 4444 and 4444 XQ profiles, and integrated within the ubiquitous FFmpeg framework.",
+          "difficulty": "medium",
+          "id": "proj_ffmpeg_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uVO1901a",
+          "proposal_id": "eQeK0mru",
+          "short_description": "ProRes is a video codec developed by Apple, and is frequently used as an intermediate in video editing, sitting in-between raw formats and consumer...",
+          "slug": "prores-vulkan-decoder",
+          "status": "in-progress",
+          "student_name": "averne",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "ProRes Vulkan decoder"
+        },
+        {
+          "code_url": null,
+          "description": "ProRes is a popular codec for video editors and professional due to its high quality. FFmpeg has supported it for a while, but lacks hardware acceleration outside of MacOS. Using vulkan compute shaders, encoding performance can be increased in a cross platform way, using modern GPUs",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/PHTgRqGg",
+          "proposal_id": "FM8AicPk",
+          "short_description": "ProRes is a popular codec for video editors and professional due to its high quality. FFmpeg has supported it for a while, but lacks hardware...",
+          "slug": "prores-vulkan-encoder",
+          "status": "in-progress",
+          "student_name": "Geo Ster",
+          "student_profile": null,
+          "tags": [],
+          "title": "ProRes Vulkan Encoder"
+        },
+        {
+          "code_url": null,
+          "description": "Synopsis:\nSupport WebRTC-HTTP ingestion protocol for FFmpeg but do minimal changes to current code. Support basic ICE candidate exchange and basic DTLS handshake.\n\nDeliverables:\n1. Research and understand RFC9429 and related WebRTC/WHIP specifications.\n\n2. Add new file named whip.c in libavformat as muxer\n\n2. Implement basic ICE interaction in FFmpeg.\n\n3. Add minimal DTLS support for WHIP.\n\n4. Modify RTP/RTCP workflow to support WHIP.\n\n5. Develop tests and documentation.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/CjXkqCQX",
+          "proposal_id": "Q9snsHdL",
+          "short_description": "Synopsis: Support WebRTC-HTTP ingestion protocol for FFmpeg but do minimal changes to current code. Support basic ICE candidate exchange and basic...",
+          "slug": "implementation-of-whip-webrtc-http-ingestion-protocol-in-ffmpeg",
+          "status": "in-progress",
+          "student_name": "Jack Lau",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ux"
+          ],
+          "title": "Implementation of WHIP (WebRTC-HTTP Ingestion Protocol) in FFmpeg"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ffmpeg"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "ffmpeg-devel@ffmpeg.org",
+    "guide_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2025",
+    "ideas_url": "https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2025",
+    "irc_channel": "http://ffmpeg.org/contact.html#IRCChannels",
+    "mailing_list": "http://ffmpeg.org/contact.html#MailingLists"
+  },
+  "social": {
+    "blog": "https://ffmpeg.org/contact.html",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/ffmpeg",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.082Z"
+  }
+}

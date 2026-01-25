@@ -1,0 +1,503 @@
+{
+  "id": "692251ec53dd9d7326d33efb",
+  "slug": "xorg-foundation",
+  "name": "X.Org Foundation",
+  "category": "Media",
+  "description": "X Window System and related projects (Mesa, DRI, Wayland, etc.)",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/xorg-foundation/g3sbklva7h1ksltv-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/xorg-foundation.webp",
+  "logo_r2_url": null,
+  "url": "https://www.x.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2022,
+    2023
+  ],
+  "first_year": 2016,
+  "last_year": 2023,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "opengl",
+    "c++",
+    "vulkan",
+    "opencl",
+    "x11",
+    "wayland",
+    "DRM"
+  ],
+  "topics": [
+    "graphics",
+    "graphics stack",
+    "operating system",
+    "3d",
+    "video",
+    "3d acceleration",
+    "media acceleration",
+    "2d acceleration",
+    "windowing system",
+    "graphic stack",
+    "2d/3d graphics",
+    "windowing systems",
+    "testing/ci",
+    "gpu",
+    "drivers",
+    "kernel"
+  ],
+  "total_projects": 19,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.71,
+    "projects_by_year": {
+      "year_2016": 2,
+      "year_2017": 4,
+      "year_2018": 2,
+      "year_2019": 2,
+      "year_2020": 1,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 2,
+      "year_2017": 4,
+      "year_2018": 2,
+      "year_2019": 2,
+      "year_2020": 1,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 19
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://hopetech.github.io/tech/2016/08/18/Last_week_GSoC.html",
+          "description": "<p>For decades CPUs did not have hardware floating point support. Floating point was implemented using using bit twiddling operations and integer math. This applied to both single and double precision. Starting with GLSL 1.30, GPUs have all of the necessary bit twiddling operator and integer math to do the same thing. GPUs natively support single precision, but only OpenGL 4.0 class GPUs have hardware support for double precision. The goal of this project is to implement a library of double precision operations in pure GLSL 1.30.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5364636148826112/",
+          "proposal_id": null,
+          "short_description": "For decades CPUs did not have hardware floating point support. Floating point was implemented using using bit twiddling operations and integer math....",
+          "slug": "soft-double-precision-floating-point-support",
+          "status": "completed",
+          "student_name": "Hopetech",
+          "student_profile": null,
+          "tags": [],
+          "title": "\"Soft\" double precision floating point support"
+        },
+        {
+          "code_url": "https://perfc.wordpress.com/2016/08/23/gsoc-16-final/",
+          "description": "<p>Apitrace is an open source program that allows tracing, replaying, inspecting and profiling OpenGL/Direct3D calls made by any application.\nLast summer during GSoC 2015 there was developed an abstract interface that allows to use various profiling backends in Apitrace, also several backends (that use OpenGL extensions) were implemented then.\nThe goal of this task is to provide a convenient interface to the new feature in qapitrace. There already exists a version of profiling view in qapitrace. It has only a limited set of old metrics and it might lack some usability features. This GUI project plans to add new metrics, as well as improving the interface overall.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5548391492747264/",
+          "proposal_id": null,
+          "short_description": "Apitrace is an open source program that allows tracing, replaying, inspecting and profiling OpenGL/Direct3D calls made by any application.\nLast...",
+          "slug": "plug-the-core-apitrace-support-for-performance-counters-to-qapitrace",
+          "status": "completed",
+          "student_name": "trtt",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "backend"
+          ],
+          "title": "Plug the core-apitrace support for performance counters to qapitrace"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5141521993039872/"
+    },
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://singhcodes.wordpress.com/2017/08/22/gsoc-2017-project-summary-success/",
+          "description": "<p>Currently the OpenMAX state tracker in Mesa/Gallium uses. Bellagio has not been updated for a few years and only supports the OpenMAX IL 1.1 specification while the latest OpenMAX specification version is 1.2. \nThe main aim of the project is to provide a new state tracker that conforms to the latest OpenMAX 1.2 specifications using Tizonia. Tizonia is actively maintained and also up to date with latest OpenMAX IL 1.2 provisional specification. \nThis project is a step towards completely replacing the old bellagio state tracker. In addition to that the project would also be focused on enhancing the performance of the new state tracker by adding support for reference frame management (optional) and adding support of OMX_UseEGLImage.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6355967214092288/",
+          "proposal_id": null,
+          "short_description": "Currently the OpenMAX state tracker in Mesa/Gallium uses. Bellagio has not been updated for a few years and only supports the OpenMAX IL 1.1...",
+          "slug": "add-openmax-state-tracker-in-mesagallium-that-uses-tizonia",
+          "status": "completed",
+          "student_name": "Gurkirpal Singh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add OpenMAX state tracker in Mesa/Gallium that uses Tizonia"
+        },
+        {
+          "code_url": "https://github.com/programmerjake/vulkan-cpu/blob/gsoc-2017/docs/gsoc-2017-landing-page.md",
+          "description": "<p>Write a software renderer for Vulkan that implements graphics and compute shaders by translating directly from SPIR-V to LLVM IR, running a custom whole-function vectorization pass, running a custom control-barrier lowering pass, then using LLVM's MC framework to generate code.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5689794164162560/",
+          "proposal_id": null,
+          "short_description": "Write a software renderer for Vulkan that implements graphics and compute shaders by translating directly from SPIR-V to LLVM IR, running a custom...",
+          "slug": "software-renderer-for-vulkan",
+          "status": "completed",
+          "student_name": "Jacob Lifshay",
+          "student_profile": null,
+          "tags": [],
+          "title": "Software Renderer for Vulkan"
+        },
+        {
+          "code_url": "https://lists.x.org/archives/xorg-devel/2017-August/054422.html",
+          "description": "<p>XWayland currently only renders into a single Wayland buffer. This leads to tearing in case of prolonged use by the compositor or on direct scan out. This project aims at solving the issue by implementing multi buffered Present functionality in XWayland.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6098284611371008/",
+          "proposal_id": null,
+          "short_description": "XWayland currently only renders into a single Wayland buffer. This leads to tearing in case of prolonged use by the compositor or on direct scan out....",
+          "slug": "multi-buffered-present-in-xwayland",
+          "status": "completed",
+          "student_name": "romangg",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Multi buffered Present in XWayland"
+        },
+        {
+          "code_url": "https://hjdskes.github.io/blog/gsoc-part-15/",
+          "description": "<p>Piper is an application frontend to libratbag and ratbagd, a library and system daemon to\nconfigure gaming mice respectively. In its current state Piper is not user friendly and lacks\nsupport for features found in many modern gaming mice. This project aims to reimplement\nPiper such that it is more user friendly and can support these missing new features.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5203581049241600/",
+          "proposal_id": null,
+          "short_description": "Piper is an application frontend to libratbag and ratbagd, a library and system daemon to\nconfigure gaming mice respectively. In its current state...",
+          "slug": "piper-gaming-mice-configuration",
+          "status": "completed",
+          "student_name": "Jente Hidskes",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "frontend"
+          ],
+          "title": "Piper, gaming mice configuration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6339354280591360/"
+    },
+    "year_2018": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://ndesh26.github.io/gsoc/2018/08/07/My-GSoC-Summary/",
+          "description": "<p>All the GPU drivers have a scheduler component that schedules the job received from the applications on the GPU hardware. Recently the amdgpu’s (AMD’s graphics driver) scheduler was shifted to a common space (now called DRM GPU scheduler) so that the other drivers can reuse the code. The GPU scheduler is now used by amdgpu and etnaviv (graphics driver for Vivante GPUs). It provides entities which allow userspace to push jobs into queues which are then executed by a hardware run queue. Now amdgpu has multiple identical hardware queues and we currently map round robin to the software queues provided by the GPU scheduler when those are created. To better balance the load we could extend the scheduler to feed multiple hardware queues from just one software queue provided by the GPU scheduler.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5618182563823616/",
+          "proposal_id": null,
+          "short_description": "All the GPU drivers have a scheduler component that schedules the job received from the applications on the GPU hardware. Recently the amdgpu’s...",
+          "slug": "improve-the-linuxdrm-gpu-scheduler-to-feed-one-entity-into-multiple-run-queues",
+          "status": "completed",
+          "student_name": "Nayan Deshmukh",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Improve the Linux/DRM GPU scheduler to feed one entity into multiple run queues"
+        },
+        {
+          "code_url": "http://siqueira.tech/report/gsoc-final-report/",
+          "description": "<p>The Kernel Mode-Setting (KMS) is a mechanism that enables a process to command the kernel to set a mode (screen resolution, color depth, and rate) which is in a range of values supported by graphics cards and the display screen. Create a Virtual KMS (VKMS) has benefits. First, it could be used for testing; second, it can be valuable for running X or Wayland on a headless machine enabling the use of GPU. This module is similar to VGEM, and in some ways to VIRTIO. At the moment that VKMS gets mature enough, it will be used to run i-g-t test cases and to automate userspace testing.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4614338513993728/",
+          "proposal_id": null,
+          "short_description": "The Kernel Mode-Setting (KMS) is a mechanism that enables a process to command the kernel to set a mode (screen resolution, color depth, and rate)...",
+          "slug": "virtual-kms-module",
+          "status": "completed",
+          "student_name": "Rodrigo Siqueira",
+          "student_profile": null,
+          "tags": [],
+          "title": "Virtual KMS module"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4893771770626048/"
+    },
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gitlab.freedesktop.org/ekhaled1836/mesa/snippets/658",
+          "description": "<p>The project sets to add tilling support for the Adreno 3XX gallium driver, figuring out the\nvarious layouts for different types of textures, when to use them, and update the use\ncases. Tiled rendering greatly reduces the required memory bandwidth, which is particularly\nimportant for handheld/embedded devices and low power GPUs with restricted\nresources. This especially important nowadays with the advent of IOT.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5506050613051392/",
+          "proposal_id": null,
+          "short_description": "The project sets to add tilling support for the Adreno 3XX gallium driver, figuring out the\nvarious layouts for different types of textures, when to...",
+          "slug": "tiled-textures-support-for-adreno-3xx-gallium-driver",
+          "status": "completed",
+          "student_name": "Khaled Emara",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Tiled Textures Support For Adreno 3XX Gallium Driver"
+        },
+        {
+          "code_url": "https://mstoeckl.com/notes/gsoc/blog.html",
+          "description": "<p>To create a program which acts as a Wayland proxy (client + server pair), and which can forward Wayland protocol information and local shared-memory updates over a socket. The end result should enable a workflow similar to network transparency with X11 and ssh.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6302692069081088/",
+          "proposal_id": null,
+          "short_description": "To create a program which acts as a Wayland proxy (client + server pair), and which can forward Wayland protocol information and local shared-memory...",
+          "slug": "a-wayland-application-proxy",
+          "status": "completed",
+          "student_name": "mstoeckl",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "A Wayland application proxy"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4999753610297344/"
+    },
+    "year_2020": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://melissawen.github.io/blog/2020/08/31/gsoc-final-report",
+          "description": "<p>This project proposal is around the VKMS, a software-only model of a KMS driver part of the DRM subsystem. My primary goal is to improve VKMS using the IGT GPU tool to assist the development quality. In short, the work plan has two stages: (1) check the failing subtests in IGT test kms_cursor_test and code the necessary fixes to ensure that all tests pass (with a clean success); (2) add a new feature to VKMS for planes overlay and ensure the success of related IGT tests. Additionally, I aim to produce guidance material to describe the existing abstractions both in the cursor operations and CRC computing in the VKMS and in the construction of tests that also include knowledge of Cairo. I will also post on my blog the status update weekly with contents like experience reports, documentation, basic concepts, and operations description.</p>\n",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6046648674811904/",
+          "proposal_id": null,
+          "short_description": "This project proposal is around the VKMS, a software-only model of a KMS driver part of the DRM subsystem. My primary goal is to improve VKMS using...",
+          "slug": "improve-vkms-using-igt-gpu-tools",
+          "status": "completed",
+          "student_name": "Melissa Wen",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve VKMS using IGT GPU Tools"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5883488672153600/"
+    },
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://tales-aparecida.github.io/tales-tips-and-tricks/posts/dri-devel/gsoc-final-report/index.html",
+          "description": "My project’s primary goal is to create unit tests using KUnit for the AMDGPU driver focused on the Display and Compositing Engine (DCE) 11.2, which will be tested on the GPU “RX 580”. The motivation for that comes not only to assert that the APIs work as expected, but also to keep their behavior stable across minor changes in their code, which can allow for great improvement to the code readability and maintainability.\nThere is a great probability that KUnit will have some limitations in regards to testing GPU’s drivers’ functions, so the secondary goal will be to enhance its capabilities. It’s expected that there will be other people working with KUnit on DCN in parallel, so there will probably be some code review to be done as well.\nI will keep track of my weekly progress on my blog, reporting the challenges I will face and trying to create an introductory material that could help future newcomers.",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/JYeBJNnX/",
+          "proposal_id": null,
+          "short_description": "My project’s primary goal is to create unit tests using KUnit for the AMDGPU driver focused on the Display and Compositing Engine (DCE) 11.2, which...",
+          "slug": "introduce-unit-tests-to-the-amdgpu-dce-component",
+          "status": "completed",
+          "student_name": "Tales",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Introduce Unit Tests to the AMDGPU “DCE” Component"
+        },
+        {
+          "code_url": "https://mairacanal.github.io/gsoc-final-report/",
+          "description": "The Display Mode Library (DML) is a fundamental part of the AMDGPU driver. It involves lots of complex calculations and a large number of parameters. That said, it points to itself as a great candidate for the implementation of unit tests. Unit tests will help graphic developers recognize bugs before they are merged into the mainline and make it possible for a future code refactor.\n\nThis project intends to implement unit testing in the Display Mode VBA libraries, especially the Display Mode VBA public API and the DCN20's Display Mode VBA functions.",
+          "difficulty": "advanced",
+          "id": "proj_xorg-foundation_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/fATmfPlL/",
+          "proposal_id": null,
+          "short_description": "The Display Mode Library (DML) is a fundamental part of the AMDGPU driver. It involves lots of complex calculations and a large number of parameters....",
+          "slug": "introducing-unit-testing-to-the-display-mode-vba-library",
+          "status": "completed",
+          "student_name": "Maíra Canal",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Introducing Unit Testing to the Display Mode VBA Library"
+        },
+        {
+          "code_url": "https://crosscat.me/gsoc-22-final-report/",
+          "description": "My project mainly aims at testing files in the DML folder in the AMDGPU Linux kernel driver. The AMDGPU driver is the largest one in the kernel, with the DML component being particularly nasty as it doesn't adhere to many of the codebase's standards.\n\nKUnit is a framework for performing unit tests in a manageable way, without requiring basically any setup at all, and that would be used for testing the files under the DML component.\n\nThus, my project encompasses (1) making patches for testing those files, as well as refactoring and documenting them. (2) Producing blog posts about my experiences with the community and the project, tutorials on what I learned, and explanations that are less technical than the proper documentation, so as to reach more people. (3) Generating proper coverage reports and documenting the process for doing so. (4) I also plan on contributing to KWorkflow and IGT GPU tools to some extent, so as to make the project, all around, more useful for the kernel's engineers and also integrable in their CI tools.\n\nPlease check out the X.Org official project page: https://www.x.org/wiki/AMDGPU2022/",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/6AoBcunH/",
+          "proposal_id": null,
+          "short_description": "My project mainly aims at testing files in the DML folder in the AMDGPU Linux kernel driver. The AMDGPU driver is the largest one in the kernel, with...",
+          "slug": "drm-amdgpu-unit-tests",
+          "status": "completed",
+          "student_name": "Isabella Basso",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "DRM AMDGPU Unit tests"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/xorg-foundation/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://grillo-0.github.io/blog/kernel%20developing/2023/08/27/gsoc-2023-final-report.html",
+          "description": "This proposal aims to increase code coverage on the DRM core helpers with meaningful tests. Unfortunately, it is impractical to have 100% coverage on all core helpers in such a small time frame, so I will focus on the drm_format_helper.c, which makes the conversion between color formats.\nParallel with developing the tests, I will improve the kernel-doc when needed, create blog posts about the process, and study the DRM subsystem.\nMoreover, with the knowledge gained, I will improve the xfrm functions to work with multi-plane formats.",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/kaJtz1s3",
+          "proposal_id": "nJnc4HWb",
+          "short_description": "This proposal aims to increase code coverage on the DRM core helpers with meaningful tests. Unfortunately, it is impractical to have 100% coverage on...",
+          "slug": "increase-code-coverage-to-the-drm-core-helpers",
+          "status": "completed",
+          "student_name": "Arthur Grillo",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Increase Code Coverage to the DRM core helpers"
+        },
+        {
+          "code_url": "https://gitlab.freedesktop.org/pipewire/pipewire/-/merge_requests/1704",
+          "description": "Sharing video buffers via PipeWire requires at the moment consumers and producers to provide a common capability set of buffer type, buffer format and in case of hardware buffers drm\\_modifier.\nTo mitigate mismatch issues, the goal is creating a PipeWire plugin, similar to the existing audioconvert one, using vulkan as the underlying technology for efficient video format conversions on hardware buffers and optional downloads to system memory.\nThis approach allows producers to focus solely on the most efficient buffer type and format, removing the necessity to provide a fallback to system memory buffers, or its own rendering capabilities, while consumers on the other hand get increased compatibility and don't have to support any possible format. This eases the development of a working PipeWire client, making it possible to implement support for a wider range of formats and more advanced features later.",
+          "difficulty": "advanced",
+          "id": "proj_xorg-foundation_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/BRWjKfFw",
+          "proposal_id": "rypkWXzd",
+          "short_description": "Sharing video buffers via PipeWire requires at the moment consumers and producers to provide a common capability set of buffer type, buffer format...",
+          "slug": "videoconvert-plugin-for-pipewire",
+          "status": "completed",
+          "student_name": "columbarius",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Videoconvert plugin for PipeWire"
+        },
+        {
+          "code_url": "https://gitlab.freedesktop.org/mupuf/boot2ipxe",
+          "description": "Valve CI Infrastructure currently requires to be run on an x86_64 gateway, which raises its deployment and maintenance costs. Single board computers such as Raspberry Pi offer a cheaper and easier to maintain alternative. The goal of the project is to port Valve CI Infrastructure to Raspberry Pis.",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/IyeWQriR",
+          "proposal_id": "mzBiO0nH",
+          "short_description": "Valve CI Infrastructure currently requires to be run on an x86_64 gateway, which raises its deployment and maintenance costs. Single board computers...",
+          "slug": "port-the-valve-infra-to-raspberry-pis",
+          "status": "completed",
+          "student_name": "jpy794",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Port the Valve Infra to Raspberry Pis"
+        },
+        {
+          "code_url": "https://mohamexiety.github.io/posts/final_report/",
+          "description": "YCbCr is a color space used in video and digital systems to express color, where Y is the luma component and CB and CR are the blue-difference and red-difference chroma components respectively. \n\nThis project aims to add YCbCr support to the Nouveau Vulkan driver (NVK), which opens the way for support for more applications and is also an important step towards Vulkan 1.1 compliance.\n\nWork on this project is split into 4 phases; first investigation and reading up the relevant parts of the Vulkan specification and the open-sourced NVIDIA hardware headers, second the actual implementation and coding, and finally the third and fourth stages being verification and review where I verify that the implementation is working and conformant, and fix any issues that pop up. All this would then be followed by a merge request implementing and enabling YCbCr support in the driver.",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/YQplnMlR",
+          "proposal_id": "kPUIg2AQ",
+          "short_description": "YCbCr is a color space used in video and digital systems to express color, where Y is the luma component and CB and CR are the blue-difference and...",
+          "slug": "ycbcr-support-for-the-nouveau-vulkan-driver",
+          "status": "completed",
+          "student_name": "Mohamexiety",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "YCbCr Support for the Nouveau Vulkan Driver"
+        },
+        {
+          "code_url": "https://blog.krx.sh/gsoc23/final/",
+          "description": "wlroots would benefit from a smarter frame schedule that reduces waiting\nbetween client commits and compositing, and between compositing and scanout.\nBy learning how long rendering takes from previous frames, the compositor can adjust its schedule so that so that more user inputs can be collected without missing the render deadline. This project will implement frame scheduling in wlroots and adaptive logic for adjusting the schedule automatically, so that many Wayland compositors can benefit from lower latency.",
+          "difficulty": null,
+          "id": "proj_xorg-foundation_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/vRcNkDIJ",
+          "proposal_id": "d5bcspeD",
+          "short_description": "wlroots would benefit from a smarter frame schedule that reduces waiting between client commits and compositing, and between compositing and scanout....",
+          "slug": "wlroots-presentation-scheduling",
+          "status": "completed",
+          "student_name": "Rose Hudson",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "wlroots presentation scheduling"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/xorg-foundation"
+    },
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "https://lists.freedesktop.org/mailman/listinfo/dri-devel",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://webchat.oftc.net/?channels=#dri-devel",
+    "mailing_list": "https://www.x.org/wiki/SummerOfCodeIdeas/"
+  },
+  "social": {
+    "blog": "https://planet.freedesktop.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/XOrgFoundation",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.455Z"
+  }
+}

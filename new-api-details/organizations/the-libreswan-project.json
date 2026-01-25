@@ -1,0 +1,327 @@
+{
+  "id": "692251e953dd9d7326d33ed3",
+  "slug": "the-libreswan-project",
+  "name": "The Libreswan Project",
+  "category": "Infrastructure and cloud",
+  "description": "Encrypting the Internet with IKE / IPsec",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-libreswan-project/k7boxaxvirkfj1ti-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-libreswan-project.webp",
+  "logo_r2_url": null,
+  "url": "https://libreswan.org",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "first_year": 2017,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "python",
+    "shell script",
+    "qemu",
+    "web",
+    "virtualization",
+    "nss",
+    "kvm",
+    "namespaces",
+    "shell",
+    "RFCs"
+  ],
+  "topics": [
+    "vpn",
+    "ipsec",
+    "ike",
+    "ipsec vpn",
+    "encryption",
+    "ikev2",
+    "security"
+  ],
+  "total_projects": 10,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": 3,
+      "year_2019": 1,
+      "year_2020": 3,
+      "year_2021": 1,
+      "year_2022": 0,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 2,
+      "year_2018": 3,
+      "year_2019": 1,
+      "year_2020": 3,
+      "year_2021": 1,
+      "year_2022": 0,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 8
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://libreswan.org/wiki/Compliance_of_RFC_7427_-_Signature_Authentication_in_IKEv2",
+          "description": "<p>Currently in IKEv2 , signature based authentication is per algorithm i.e., there is one for RSA digital signatures, one for DSS digital signatures (using SHA-1), and three for different ECDSA curves, each tied to exactly one hash algorithm.This design is cumbersome when more signature algorithms, hash algorithms, and elliptic curves need to be supported.\n RFC 7427 generalizes IKEv2 signature support to allow any signature method supported by PKIX and also adds signature hash algorithm negotiation.\nWhy is it important for libreswan and what problem does it solve?\nCurrently  Libreswan  only supports RSA as  the digitial signature authentication method. Therefore there exists a need for extension so that other methods, such as ECDSA or EDDSA can be used easily. Implementation of RFC 7427 would solve this problem as the new digital signature method is flexible enough to include all current signature methods (RSA, DSA, ECDSA, RSASSA-PSS, etc.) and add new methods (ECGDSA, ElGamal, etc.) in the future.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6740068286857216/",
+          "proposal_id": null,
+          "short_description": "Currently in IKEv2 , signature based authentication is per algorithm i.e., there is one for RSA digital signatures, one for DSS digital signatures...",
+          "slug": "rfc-7427-signature-authentication-support-to-ikev2-for-libreswan",
+          "status": "completed",
+          "student_name": "Sahana Prasad",
+          "student_profile": null,
+          "tags": [],
+          "title": "RFC-7427 Signature Authentication support to IKEv2 for Libreswan"
+        },
+        {
+          "code_url": "https://libreswan.org/wiki/GSOC_2017:_Implementing_RFC_8229_%22TCP_Encapsulation_of_IKE_and_IPsec_Packets%22_for_Libreswan",
+          "description": "<p>Currently, the IKE and IPsec use UDP encapsulation whenever faced with NAT gateways which do not allow ESP or IKE packets. But some NAT rules even drop the UDP packets, only allowing TCP streams to go through. TCP encapsulation can reach through to hosts behind such NATs. An initiator must always try to send IKE_SA_INIT over UDP first, and if there are a certain number of transmission fails then only it should fall back to TCP. Another thing to do would be to schedule checks for UDP so we can go to establishing the tunnel using UDP if it becomes available and tear down the TCP IPsec tunnel. The above two steps are to be done as TCP encapsulation adds overheads and has performance trade offs compared to UDP, therefore we should always prefer using UDP unless required otherwise. Once the TCP support is added, we need to look into enabling ESPinTCP support in the kernel. The kernel must be able to identify TCP packets where the first 4 bytes are zero and we must tell the kernel to process ESPinTCP packets. Everything else will be done by following the draft RFC draft-ietf-ipsecme-tcp-encaps-09.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5478532239065088/",
+          "proposal_id": null,
+          "short_description": "Currently, the IKE and IPsec use UDP encapsulation whenever faced with NAT gateways which do not allow ESP or IKE packets. But some NAT rules even...",
+          "slug": "implement-tcp-encapsulation-of-ike-and-ipsec-packets",
+          "status": "completed",
+          "student_name": "Mayank Totale",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Implement TCP Encapsulation of IKE and IPsec Packets"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6311703818010624/"
+    },
+    "year_2018": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://libreswan.org/wiki/Extend_RFC-7427_Signature_Authentication_support_to_IKEv2_with_ECDSA",
+          "description": "<p>Libreswan itself currently only supports RSA as Digital Signature Authentication method, so it needs to be extended internally as well to be able to use other methods, such as ECDSA or EDDSA. Implementation of ECC/ECDSA requires the modification of the existing Libreswan public key code to fix  the RSA only parts so that it is able to accept different new types of keys in the future ( not just limited to EDDSA ). Libreswan will then be compliant to RFC-7427 and RFC-8247.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6632036571807744/",
+          "proposal_id": null,
+          "short_description": "Libreswan itself currently only supports RSA as Digital Signature Authentication method, so it needs to be extended internally as well to be able to...",
+          "slug": "extend-rfc-7427-signature-authentication-support-to-ikev2-with-ecc-eddsa-support",
+          "status": "completed",
+          "student_name": "Sahana Prasad",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Extend RFC-7427 Signature Authentication support to IKEv2 with ECC / EDDSA support"
+        },
+        {
+          "code_url": "https://libreswan.org/wiki/RFC_5685_-_Redirect_Mechanism",
+          "description": "<p>This project is sort of a hybrid project and it consists of implementation of atleast two out of three IETF RFCs/Drafts. The three features in question are \"<a href=\"https://tools.ietf.org/html/draft-yeung-g-ikev2-13\" title=\"Group Key Managment using IKEv2\" target=\"_blank\"><strong>Group Key Managment using IKEv2</strong></a>\", \"<a href=\"https://tools.ietf.org/html/rfc5685\" title=\"Redirection Mechanism for IKEv2\" target=\"_blank\"><strong>Redirection Mechanism for IKEv2</strong></a>\" and \"<a href=\"https://tools.ietf.org/html/rfc5723\" title=\"IKEv2 Session Resumption\" target=\"_blank\"><strong>IKEv2 Session Resumption</strong></a>\". The \"<em>Redirection Mechanism for IKEv2</em>\" will be implemented before the first evaluation period, and after that it will be dynamically decided (with the libreswan mentors) whether to continue with implementing \"<em>Group Key Managment using IKEv2</em>\" or \"<em>IKEv2 Session Resumption</em>\". The reasons for that approach are described in project proposal.</p>\n<p>\"<em>Redirection Mechanism for IKEv2</em>\" and \"<em>IKEv2 Session Resumption</em>\" are features that will improve the performance of VPN servers, especially the ones that serve a lot of VPN clients. \"<em>Group Key Managment using IKEv2</em>\" will enable key exchanging for secure Multicast communication.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5254240859586560/",
+          "proposal_id": null,
+          "short_description": "This project is sort of a hybrid project and it consists of implementation of atleast two out of three IETF RFCs/Drafts. The three features in...",
+          "slug": "implementing-group-key-management-using-ikev2-ietf-draft-rfc-5685-redirect-mechanism-for-ikev2-andor-rfc-5723-ikev2-session-resumption",
+          "status": "completed",
+          "student_name": "Vukašin Karadžić",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Implementing “Group Key Management using IKEv2” IETF draft, RFC 5685 - “Redirect Mechanism for IKEv2” and/or RFC 5723 - “IKEv2 Session Resumption”"
+        },
+        {
+          "code_url": "https://github.com/Rishabh04-02/Libreswan-managing-interface",
+          "description": "<p>There are shell scripts for creating X.509 certificates, revoking certificates and signing CRLs and scripts for the creation of Profile certificate files for certain devices such as Linux, Apple OS X, Windows, iOS, etc., these require careful specification of various certificate attributes so that these certificates work on a variety of devices: Android, Windows, iOS/OSX, Linux, etc. \nThe goal of this project is to gather all that knowledge into a simple interface which should support the following:</p>\n<ul>\n<li>Generating the proper ipsec.conf configuration based on web admin interface including DNS/split-DNS configurations.</li>\n<li>Allow Administrator to invite new users using email id.</li>\n<li>A new user after account validation can download the generated certificate/profile (over TLS) for different platforms.</li>\n<li>The generated certificates/profiles can only be downloaded once, through the portal.</li>\n<li>Admin can list, revoke/disable (temporary revocation) user certificates/profiles.</li>\n<li>Generate PKCS#12 certificates for users.</li>\n<li>Generate iOS/OSX .mobileconfig profiles for automatic installation on iOS/OSX.</li>\n<li>Ipsilon user authentication to web application.</li>\n<li>Configure munin-node to work with libreswan plugin.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5841849025560576/",
+          "proposal_id": null,
+          "short_description": "There are shell scripts for creating X.509 certificates, revoking certificates and signing CRLs and scripts for the creation of Profile certificate...",
+          "slug": "web-based-certificate-and-profile-user-interface",
+          "status": "completed",
+          "student_name": "Rishabh Chaudhary",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ios",
+            "web",
+            "mobile",
+            "ai"
+          ],
+          "title": "Web based Certificate and Profile User Interface"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5106919723237376/"
+    },
+    "year_2019": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://libreswan.org/wiki/Libreswan_Opportunistic_IPsec_using_LetsEncrypt",
+          "description": "<p>Opportunistic IPsec is an attempt to encrypt the internet at large. The idea is to build VPN tunnels directly to all internet hosts irrespective of the communication used. An initial proof of concept was created that leverages LetsEncrypt certificates for use with IKE and IPsec. The goal of this project is to turn this proof of concept into production quality code that makes it trivial to enrol and deploy on any server and any client.</p>\n\n<p>The project has the following objectives:</p>\n<ul>\n<li>Automate Client, Server configuration and the enrollment and updating of LetsEncrypt certificates for use with libreswan.</li>\n<li>Implement a DNS/DNSSEC based method for advertising Opportunistic IPsec support using LetsEncrypt for servers.</li>\n<li>Design a non-DNS based method for publishing support of LetsEncrypt based Opportunistic IPsec for servers.</li>\n<li>Enhance libreswan to allow a secure fallback to the existing NULL Authentication method.</li>\n<li>Ensure the working of two behind the same NAT. Along with ensuring the working of two clients behind NAT, with one not using IPsec.</li>\n<li>Support the recovery from server OR client reboot/crashes. Along with ensuring no lockouts happen.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5634012301754368/",
+          "proposal_id": null,
+          "short_description": "Opportunistic IPsec is an attempt to encrypt the internet at large. The idea is to build VPN tunnels directly to all internet hosts irrespective of...",
+          "slug": "opportunistic-ipsec-development-using-letsencrypt",
+          "status": "completed",
+          "student_name": "Rishabh Chaudhary",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Opportunistic IPsec development using LetsEncrypt"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4734236785901568/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://libreswan.org/wiki/IKEv2_Interop_testing_with_OpenBSD",
+          "description": "<p>IPSec standards are produced and maintained by <a href=\"https://ietf.org/\" target=\"_blank\">Internet Engineering Task Force</a> which are implemented by many software including <a href=\"https://libreswan.org/\" target=\"_blank\">Libreswan</a>. <a href=\"https://www.openiked.org/\" target=\"_blank\">OpenIKED</a> is one such native implementation of <a href=\"https://tools.ietf.org/html/rfc7296\" target=\"_blank\">IKEv2</a> on OpenBSD. My project’s purpose is to enable Interop tests where one end is Libreswan on Linux and the other is the native IKE daemon on OpenBSD. This helps us test Linux kernel to BSD kernel and understand several issues with Linux when inter-operating with with Non-Linux Operating Systems.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6403027881164800/",
+          "proposal_id": null,
+          "short_description": "IPSec standards are produced and maintained by Internet Engineering Task Force which are implemented by many software including Libreswan. OpenIKED...",
+          "slug": "ikev2-interop-testing-with-openbsd",
+          "status": "completed",
+          "student_name": "Ravi Teja CMS",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ux"
+          ],
+          "title": "IKEv2 Interop testing with OpenBSD"
+        },
+        {
+          "code_url": "https://libreswan.org/wiki/Session_Resumption",
+          "description": "<p>The project involves work on adding support for RFC 5723 primarily. RFC 5723 proposes an extension to IKEv2 (Internet Key Exchange v2) that allows a client to re-establish an IKE Security Association with a gateway in a highly efficient manner, utilizing a previously established IKE SA.\nAs this RFC might not be enough for the entire GSoC period, I will be working on further adding support for RFC 6023.\nRFC 6023 describes an extension to the Internet Key Exchange version 2 (IKEv2) protocol that allows an IKEv2 Security Association to be created and authenticated without generating a Child SA.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5445578470719488/",
+          "proposal_id": null,
+          "short_description": "The project involves work on adding support for RFC 5723 primarily. RFC 5723 proposes an extension to IKEv2 (Internet Key Exchange v2) that allows a...",
+          "slug": "add-support-for-rfc-5723-session-resumption-and-rfc-6023-childless-initiation-of-sa",
+          "status": "completed",
+          "student_name": "Nupur Agrawal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support for RFC 5723 'Session Resumption' and RFC 6023 'Childless Initiation of SA'"
+        },
+        {
+          "code_url": "https://libreswan.org/wiki/Intermediate_Exchange",
+          "description": "<p>Libreswan implements IPsec protocol, which uses IKEv2 for authentication and key establishment. IKEv2 uses the classical Diffie-Hellman key exchange methods which will soon become insecure and should be replaced with Quantum Computer (QC) resistant ones.\nSince most of QC-resistant key exchange methods require transfer of large public keys, the fragmentation of the messages is needed. Current IKE fragmentation cannot be used in the initial exchange and instead the IP fragmentation will take place. However, the use of the IP fragmentation has significant drawbacks, for instance some network devices do not allow IP fragments to pass through and hence IKE communication is blocked.</p>\n<p>Intermediate Exchange is a solution to transfer large amounts of data in IKEv2. A series of these exchanges may take place after the IKE_SA_INIT phase and enable message fragmentation via IKE Fragmentation mechanism. This allows the transfer of large keys without causing IP fragmentation. Implementing Intermediate Exchange for libreswan is the next important step in improving the long-term security of IKEv2 and IPsec such that the protocols will also remain secure against attacks by quantum computers.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_the-libreswan-projec_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6543765369520128/",
+          "proposal_id": null,
+          "short_description": "Libreswan implements IPsec protocol, which uses IKEv2 for authentication and key establishment. IKEv2 uses the classical Diffie-Hellman key exchange...",
+          "slug": "intermediate-exchange-for-ikev2",
+          "status": "completed",
+          "student_name": "Yulia Kuzovkova",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "INTERMEDIATE exchange for IKEv2"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5398756750524416/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://libreswan.org/wiki/Extend_RFC-7427_Signature_Authentication_support_to_IKEv2_with_EDDSA",
+          "description": "<p>The Internet Key Exchange Protocol Version 2 can use arbitrary signature algorithms for authentication as described in RFC-7427. Currently, Libreswan supports RSA, RSA-PSS, and ECDSA. This project aims to add support for EdDSA as per RFC-8420.</p>\n",
+          "difficulty": null,
+          "id": "proj_the-libreswan-projec_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6544758175956992/",
+          "proposal_id": null,
+          "short_description": "The Internet Key Exchange Protocol Version 2 can use arbitrary signature algorithms for authentication as described in RFC-7427. Currently, Libreswan...",
+          "slug": "extend-rfc-7427-signature-authentication-support-to-ikev2-with-eddsa-support",
+          "status": "completed",
+          "student_name": "Rishabh Kumar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Extend RFC-7427 Signature Authentication Support To IKEv2 With EDDSA Support"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6271961616875520/"
+    },
+    "year_2022": {
+      "num_projects": 0,
+      "projects": [],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/the-libreswan-project/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@libreswan.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://meet.google.com",
+    "mailing_list": "swan@lists.libreswan.org"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/libreswan/",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.363Z"
+  }
+}

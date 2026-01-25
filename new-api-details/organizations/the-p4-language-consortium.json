@@ -1,0 +1,290 @@
+{
+  "id": "692251ea53dd9d7326d33ed8",
+  "slug": "the-p4-language-consortium",
+  "name": "The P4 Language Consortium",
+  "category": "Programming languages",
+  "description": "Evolve the programmable data plane ecosystem!",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-p4-language-consortium/tru8mncy4zqlbxhe.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-p4-language-consortium.webp",
+  "logo_r2_url": null,
+  "url": "https://p4.org/",
+  "active_years": [
+    2024,
+    2025
+  ],
+  "first_year": 2024,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "llvm",
+    "c++",
+    "mlir",
+    "ebpf",
+    "Z3"
+  ],
+  "topics": [
+    "networking",
+    "programming language",
+    "compiler",
+    "AI/ML Networking",
+    "networking security"
+  ],
+  "total_projects": 9,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "total_students": 9
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/AdarshRawat1/gsoc-2024",
+          "description": "The project aims to centralize the P4 compiler (p4c) documentation by developing a new, well-structured documentation website using Doxygen for automated content generation. It will utilize GitHub Actions to automate build and update processes and introduce a PR preview system, enabling contributors and maintainers to review documentation changes before merging. These efforts will establish a clear, accessible, and organized website, making it easier for all members of the P4 community to navigate and maintain.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/u2HpJKI2/",
+          "proposal_id": null,
+          "short_description": "The project aims to centralize the P4 compiler (p4c) documentation by developing a new, well-structured documentation website using Doxygen for...",
+          "slug": "p4-compiler-documentation",
+          "status": "completed",
+          "student_name": "Adarsh Rawat",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "P4 Compiler Documentation"
+        },
+        {
+          "code_url": "https://github.com/p4lang/gsoc/blob/main/2024/projects/container_migration/README.md",
+          "description": "Kubernetes has recently moved its forensic container checkpointing feature into beta. This feature allows checkpointing containers within Kubernetes pods, and, with some additional steps, restoring them on a different node. This approach preserves active TCP connections of the container. However, workloads (e.g., web servers) with established TCP connections to the migrated container cannot make use of this feature, as the container IP changes after migrating to another node. This project implements a P4-based load balancer on the data plane that dynamically reroutes packets to the correct IP address after container migration. The goal is to make the migration invisible to the client, causing only a period of service unavailability, after which communication can be resumed without re-establishing the TCP connection. Deliverables of this project include a P4-based load balancer, control plane code for P4 runtime interaction, a minimal CNI plugin for Kubernetes integration, and performance benchmarks to demonstrate the system's effectiveness.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/sYbpOJhD/",
+          "proposal_id": null,
+          "short_description": "Kubernetes has recently moved its forensic container checkpointing feature into beta. This feature allows checkpointing containers within Kubernetes...",
+          "slug": "p4-enabled-container-migration-in-kubernetes",
+          "status": "completed",
+          "student_name": "Stanislav Kosorin",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "kubernetes"
+          ],
+          "title": "P4-Enabled Container Migration in Kubernetes"
+        },
+        {
+          "code_url": "https://github.com/p4lang/gsoc/blob/main/2024/projects/formatter/README.md",
+          "description": "P4 (Programming Protocol-independent Packet Processors) is a domain-specific language for network devices. It allows programmers to specify how data plane elements (switches, NICs, routers) process packets without needing to deal with the specifics of the underlying hardware.\n\nThe absence of a code formatter for the P4lang poses challenges for developers working on large codebases, hindering efforts to maintain consistent coding styles across projects.This project aims to address this gap by developing a code formatter specifically tailored for P4. This would enhance productivity by standardising coding styles, facilitating collaboration among developers, and improving code readability. By implementing this tool, developers will be able to efficiently format P4 codebases, ensuring adherence to coding standards and fostering a more streamlined development process.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/TbPyjqVw/",
+          "proposal_id": null,
+          "short_description": "P4 (Programming Protocol-independent Packet Processors) is a domain-specific language for network devices. It allows programmers to specify how data...",
+          "slug": "p4-formatter",
+          "status": "completed",
+          "student_name": "Nitish Kumar.",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "P4 Formatter"
+        },
+        {
+          "code_url": "https://github.com/p4lang/gsoc/tree/main/2024/projects/bmv2_pna",
+          "description": "Programming Protocol-independent Packet Processors (P4) is a domain-specific language for network devices, specifying how data plane devices (switches, NICs, routers, filters, etc.) process packets. BMv2 is a P4 software switch. Currently the BMv2 simulator supports v1model and Portable Switch Architecture (PSA). As the P4 use cases on the NIC side increases, so does the need for a P4 simulator that supports Portable NIC Architecture (PNA). In this project, I will focus on adding PNA support to BMv2. This proposal includes adding core subset of PNA to the BMv2 simulator; extending p4c BMv2 backend to target the updated BMv2 simulator; Identifying and Implementing various functionalities required by PNA as externs.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/oEpUp1dW/",
+          "proposal_id": null,
+          "short_description": "Programming Protocol-independent Packet Processors (P4) is a domain-specific language for network devices, specifying how data plane devices...",
+          "slug": "bmv2-pna-support",
+          "status": "completed",
+          "student_name": "Rupesh  Chiluka",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "BMv2 PNA Support"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/the-p4-language-consortium/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Gigaflow is an innovative solution to accelerate network processing in large-scale data centers by leveraging flow locality and pipeline-aware caching, offloading processing to SmartNICs. Currently, it supports only Alveo U250 FPGAs, limiting its versatility. This proposal aims to extend Gigaflow’s backend support by developing new APIs for flow integration, enabling compatibility with Pensando DPUs. Additionally, the current implementation of Sub-Treversal Partitioning (STP) incurs high CPU overhead during startup, minimizing the system's performance benefits. This project will optimize STP to reduce CPU usage and improve startup efficiency.\nFinally, Gigaflow’s newness requires further optimization in the compilation, LTM, and driver pipeline, alongside additional testing for alternative strategies for priority selection and rule deletion. The proposal will address these challenges. By achieving these goals, the project will streamline Gigaflow caches in the OVS backend, facilitating more efficient and flexible solutions for modern data centers.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/YD415t5R",
+          "proposal_id": "dratGYEI",
+          "short_description": "Gigaflow is an innovative solution to accelerate network processing in large-scale data centers by leveraging flow locality and pipeline-aware...",
+          "slug": "accelerating-ovs-with-gigaflow-a-smart-cache-for-smartnics",
+          "status": "in-progress",
+          "student_name": "Advay Singh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Accelerating OVS with Gigaflow: A Smart Cache for SmartNICs"
+        },
+        {
+          "code_url": null,
+          "description": "Contemporary developments of Machine Learning Applications in real-time Networks to classify traffic for better security and performance are examples of cutting-edge research happening. This growing idea begs for an efficient framework of ML Models to adapt to needs and match the expected output, more like making a General ML Model into a Network domain-specific ML one.\n\nThis project aims to adapt the SpliDT Framework, a partition-based approach for implementing decision tree inference directly in the data plane using P4. It will be optimized through TensorFlow, and HyperMapper and using Python libraries like scikit-learn.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Qvq4a3yR",
+          "proposal_id": "kjMg63jO",
+          "short_description": "Contemporary developments of Machine Learning Applications in real-time Networks to classify traffic for better security and performance are examples...",
+          "slug": "splidt-scaling-stateful-decision-tree-algorithms-in-p4",
+          "status": "in-progress",
+          "student_name": "Sankalp Jha",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai"
+          ],
+          "title": "SpliDT: Scaling Stateful Decision Tree Algorithms in P4"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend the existing P4sim module integrated within the ns-3 network simulator by implementing control plane functionalities. The P4sim currently supports the simulation of P4-programmable data planes in ns-3, providing a powerful environment for research and development in programmable networking. \nThis project proposes to bridge that gap by integrating a control plane to support P4 Runtime, like changing the openconfig-interfaces, the ethernet augments and other runtime configurable features. The enhancements will improve the realism and usability of the simulator for research and experimentation involving P4",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/4Kwb6VGX",
+          "proposal_id": "crqICQWK",
+          "short_description": "This project aims to extend the existing P4sim module integrated within the ns-3 network simulator by implementing control plane functionalities. The...",
+          "slug": "p4sim-control-plane-enhancement",
+          "status": "in-progress",
+          "student_name": "Vineet Goel",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "P4Sim Control Plane Enhancement"
+        },
+        {
+          "code_url": null,
+          "description": "P4C, being a reference compiler for the P4 language, struggles with some fundamental shortcomings of its internal code representation (IR). These issues result in increased running time of the compiler itself as well as unacceptable memory consumption of certain compiler passes.\n\n\nSince these problems lie at the foundation of the present IR, as an alternative to just fixing them (that would require some redesign of the IR and would require some invasive changes in the compiler codebase) we are aiming to explore alternative solutions that might at the same time open more opportunities for future growth and expansion of the compiler. One of such possibilities is to explore the adoption of the results of MLIR project to be used within P4C.\n\n\nIn particular, we aim to develop a P4-specific MLIR dialect (P4HIR) that would allow reuse the infrastructure, code analysis, and transformation passes that have recently been developed within MLIR framework.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/c7FcHjXq",
+          "proposal_id": "Vb2UNlVC",
+          "short_description": "P4C, being a reference compiler for the P4 language, struggles with some fundamental shortcomings of its internal code representation (IR). These...",
+          "slug": "p4mlir-mlir-based-high-level-ir-for-p4-compilers",
+          "status": "in-progress",
+          "student_name": "Xiaomin Liu",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "P4MLIR: MLIR-based high-level IR for P4 compilers"
+        },
+        {
+          "code_url": null,
+          "description": "P4 empowers developers to program the data plane of network devices—switches, routers, and NICs—at a level of detail previously only accessible to hardware designers. P4 software/simulated switches like BMv2 make the development even easier by having the programs and control plane run on developers' computers and give instant feedback. \n\nThis project aims to further improve the capability of BMv2 and enable a potentially broader insight for developers to analyze their P4 program. \n\nWhile traditionally one packet only goes through one path within the switch and thus obtains only one result, there are many situations where it is more useful to have all possible outputs from a P4 simulation. For example, we use this for diff testing, to determine whether the switch is doing something correct or something incorrect.\n\nMultiple allowed behaviors and results usually arise from various multi-path constructs (e.g. ECMP, WCMP, or perhaps LAGs) which are often modeled as action profiles/selector in P4. BMv2 currently allows users to set a mode determining action profile/selector behavior, like `round robin` where every time one sends in the same packet, it would invoke the next possible forwarding action (eventually wrapping around).\n\nThe goal of this project is to provide a new mode for BMv2 to output all possible behaviors. This will both require extending the action profile modes, and extending the notion of output from a set of packets to a set of sets of packets.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-cons_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/dsjZn7sx",
+          "proposal_id": "g3zrKPnd",
+          "short_description": "P4 empowers developers to program the data plane of network devices—switches, routers, and NICs—at a level of detail previously only accessible to...",
+          "slug": "bmv2-with-all-possible-output-packets",
+          "status": "in-progress",
+          "student_name": "Xiyu Hao",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "BMv2 With All Possible Output Packets"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-p4-language-consortium"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/p4lang/gsoc/blob/main/2025/contributor_guidance.md",
+    "ideas_url": "https://github.com/p4lang/gsoc/blob/main/2025/ideas_list.md",
+    "irc_channel": "https://p4lang.zulipchat.com/",
+    "mailing_list": "https://p4.org/join/"
+  },
+  "social": {
+    "blog": "https://p4.org/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://x.com/p4lang/",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.379Z"
+  }
+}

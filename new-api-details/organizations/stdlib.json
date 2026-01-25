@@ -1,0 +1,302 @@
+{
+  "id": "692251ef53dd9d7326d33f27",
+  "slug": "stdlib",
+  "name": "stdlib",
+  "category": "Science and medicine",
+  "description": "The fundamental numerical library for JavaScript",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/stdlib/7ornclj6w5zz9fca-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/stdlib.webp",
+  "logo_r2_url": null,
+  "url": "https://stdlib.io",
+  "active_years": [
+    2024,
+    2025
+  ],
+  "first_year": 2024,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "javascript",
+    "node.js",
+    "typescript",
+    "webassembly"
+  ],
+  "topics": [
+    "mathematics",
+    "web",
+    "scientific computing",
+    "numerical computing",
+    "statistics"
+  ],
+  "total_projects": 9,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 4,
+      "year_2025": 5
+    },
+    "total_students": 9
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/stdlib-js/stdlib/wiki/GSoC-2024-%E2%80%90-Snehil-Shah",
+          "description": "The read-eval-print loop (REPL) is a fixture of data analysis and numerical computing and provides a critical entry-point for individuals seeking to learn and better understand APIs and their associated behavior.\nFor a library emphasizing numerical and scientific computing, a well-featured REPL\nbecomes an essential tool allowing users to easily visualize and work with data in an\ninteractive environment. \n\nThe stdlib REPL is a command-line based interactive interpreter environment for Node.js equipped with namespaces and tools for statistical computing and data exploration enabling easy prototyping, testing, debugging, and programming. It aims to be a better alternative to the Node.js REPL with a specialized focus on scientific computing and data analysis.\n\nThis project focuses on implementing a suite of enhancements to the stdlib REPL including fuzzy auto-completion, syntax highlighting, visualization tools for tabular data, bracketed-paste, multi-line editing, custom keybindings, and workshops for numerical computing, to ultimately achieve feature parity with similar environments for interactive computing like IPython and Julia.",
+          "difficulty": "beginner",
+          "id": "proj_stdlib_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/KRRdM6F8/",
+          "proposal_id": null,
+          "short_description": "The read-eval-print loop (REPL) is a fixture of data analysis and numerical computing and provides a critical entry-point for individuals seeking to...",
+          "slug": "a-better-nodejs-repl-for-numerical-and-scientific-computing",
+          "status": "completed",
+          "student_name": "Snehil Shah",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "A better Node.js REPL for Numerical and Scientific Computing"
+        },
+        {
+          "code_url": "https://github.com/stdlib-js/stdlib/wiki/GSoC-2024-%E2%80%90-Aman-Bhansali",
+          "description": "The goal of this proposal is to add BLAS (Basic Linear Algebra Subprograms) routines and their C, Fortran, and Js implementations for linear algebra. There are three levels for BLAS: Level 1 is for vector-vector operations, Level 2 is for vector-matrix operations, and Level 3 is for matrix-matrix operations.\n\nI propose to add the Javascript, C, and free form Fortran implementations for the routines using the fixed form Fortran implementations available. For each package, I will add thorough benchmarks, comprehensive test suites, examples, and a README containing the API signatures for the routine in multiple languages, along with the ndarray case. I will also add the docs folder, which houses a repl.txt file, a typescript file that provides introductions, usage instructions to aid in documentation, and other files to check cases where the function may become invalid. A cblas wrapper will also be added for devices with support for cblas, such as AppleAccelerators, for hardware-optimized performance.\n\nThis implementation will open doors for domains such as time series analysis or linear algebra operations such as SVD that are built on top of these BLAS routines. A comprehensive suite of BLAS routine APIs will be incorporated into stdlib, and the integration of C and Fortran implementations will aim at optimizing performance and enabling potential hardware-based implementations.",
+          "difficulty": null,
+          "id": "proj_stdlib_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/gxSf9XqK/",
+          "proposal_id": null,
+          "short_description": "The goal of this proposal is to add BLAS (Basic Linear Algebra Subprograms) routines and their C, Fortran, and Js implementations for linear algebra....",
+          "slug": "add-blas-bindings-and-implementations-for-linear-algebra",
+          "status": "completed",
+          "student_name": "Aman Bhansali",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "typescript",
+            "api",
+            "ai"
+          ],
+          "title": "Add BLAS bindings and implementations for linear algebra"
+        },
+        {
+          "code_url": "https://github.com/stdlib-js/stdlib/wiki/GSoC-2024-%E2%80%90-Gunj-Joshi",
+          "description": "This project aims at developing C implementations for base special mathematical functions in stdlib, which are currently implemented in JavaScript. This would enable us to switch to the C implementation of a particular function, whenever necessary, by installing node addons. Along with that, this project would also aim to add some more packages to base special. We would also be updating the implementations of our existing packages, according to the latest standards, and would be working on the automation and scaffolding part, to generate package metadata, that would be beneficial for working with higher order APIs.",
+          "difficulty": null,
+          "id": "proj_stdlib_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/PVwSgrbG/",
+          "proposal_id": null,
+          "short_description": "This project aims at developing C implementations for base special mathematical functions in stdlib, which are currently implemented in JavaScript....",
+          "slug": "develop-c-implementations-for-base-special-mathematical-functions",
+          "status": "completed",
+          "student_name": "Gunj Joshi",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "api",
+            "ai"
+          ],
+          "title": "Develop C implementations for base special mathematical functions"
+        },
+        {
+          "code_url": "https://github.com/stdlib-js/stdlib/wiki/GSoC-2024-%E2%80%90-Jaysukh-Makvana",
+          "description": "Referring the implementation of how complex64 arrays are implemented, I proposed adding support for boolean arrays in stdlib. Unlike complex64 array, boolean array will be backed by uint8Array and integrated throughout stdlib namespaces like array, strided and ndarray. I will be adding 23 methods like copyWithin, every, fill, filter, etc and corresponding constructors. I will be adding implementation for the array masking and indexing using the Boolean array. Some ndarray APIs also be added which return types are boolean  like, some, every, none, any and perform dimensionality reduction in ndarray. With successful completion of this project, stdlib will have @stdlib/array/bool package exposing a new typed array constructor, support for BooleanArray instances throughout @stdlib/array/*, ndarrays-API and other integration opportunities.",
+          "difficulty": "advanced",
+          "id": "proj_stdlib_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/8zUO9AU0/",
+          "proposal_id": null,
+          "short_description": "Referring the implementation of how complex64 arrays are implemented, I proposed adding support for boolean arrays in stdlib. Unlike complex64 array,...",
+          "slug": "add-support-for-boolean-arrays-in-stdlib",
+          "status": "completed",
+          "student_name": "Jaysukh Makvana",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Add support for Boolean arrays in Stdlib"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/stdlib/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to develop JavaScript implementations of LAPACK (Linear Algebra Package) routines. Each implementation will provide both a strided API and an ndarray API to ensure compatibility with stdlib ndarrays, while supporting both row-major (C-style) and column-major (Fortran-style) storage layouts, overcoming the original LAPACK's column-major limitation. The project covers both lower level helper routines and higher level user facing routines. To further optimize these routines, techniques such as loop reordering and loop tiling will be used. The project will include a comprehensive test suite to achieve 100% test coverage and thorough benchmarks to validate performance. All functionality will be well-documented using Markdown and JSDoc to provide clear usage instructions and technical details. Upon the completion of this project, users will be able to call LAPACK routines in JavaScript environments, including web browsers.",
+          "difficulty": null,
+          "id": "proj_stdlib_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/opJzlQTz",
+          "proposal_id": "vDq1qj53",
+          "short_description": "The goal of this project is to develop JavaScript implementations of LAPACK (Linear Algebra Package) routines. Each implementation will provide both...",
+          "slug": "add-lapack-bindings-and-implementations-for-linear-algebra",
+          "status": "in-progress",
+          "student_name": "Aayush Khanna",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web",
+            "api",
+            "ai"
+          ],
+          "title": "Add LAPACK bindings and implementations for linear algebra"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the stats routines in stdlib by introducing convenience array wrappers for all 1D strided APIs, simplifying access to statistical functions for common use cases. Additionally, it will develop specialized ndarray kernels for statistical operations, such as mean, variance, and correlation, enabling efficient handling of multi-dimensional data. The project also involves refactoring existing packages to include C ndarray interfaces and aligning them with stdlib's coding standards. Deliverables include fully implemented and tested convenience wrappers, ndarray kernels, detailed documentation, and benchmarks, making the library more accessible, modular, and efficient for developers working with numerical and scientific computing in JavaScript.",
+          "difficulty": null,
+          "id": "proj_stdlib_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/JYSuqCBs",
+          "proposal_id": "qDJC1GiI",
+          "short_description": "This project aims to enhance the stats routines in stdlib by introducing convenience array wrappers for all 1D strided APIs, simplifying access to...",
+          "slug": "expanding-array-based-statistical-computation-in-stdlib",
+          "status": "in-progress",
+          "student_name": "Gururaj Gurram",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "api",
+            "ai"
+          ],
+          "title": "Expanding array-based statistical computation in stdlib"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement and enhance base special mathematical functions in JavaScript and C for stdlib. The goal is to complete missing C implementations for existing double-precision packages, develop new single-precision versions, and ensure consistency, accuracy, and IEEE 754 compliance. Deliverables include multiple function implementations, added constants, improved test coverage, and documentation updates. These enhancements will make math functions in stdlib faster, more robust, and more accessible for developers across platforms.",
+          "difficulty": null,
+          "id": "proj_stdlib_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Td3c9qv2",
+          "proposal_id": "gldClMl7",
+          "short_description": "This project aims to implement and enhance base special mathematical functions in JavaScript and C for stdlib. The goal is to complete missing C...",
+          "slug": "implement-base-special-mathematical-functions-in-javascript-and-c",
+          "status": "in-progress",
+          "student_name": "Karan Anand",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "ai"
+          ],
+          "title": "Implement base special mathematical functions in JavaScript and C"
+        },
+        {
+          "code_url": null,
+          "description": "JavaScript lacks a general purpose and cache efficient multi-dimensional array API for operating on large datasets of high-dimensionality. To address this limitation, stdlib provides ndarray API for creating and manipulating multi-dimensional arrays. This project aims to extend those efforts by achieving full API parity between stdlib ndarrays and built-in JavaScript arrays. This work will include implementing functions such as concat, find, flat, includes, indexOf, reduce, some, none, any, with, sort and others to facilitate high-performance data transformation and manipulation. For performance intensive operations such as searching, sorting and reductions, this project will develop C implementations and corresponding Node.js native add-ons for accelerated performance. These enhancements will allow JavaScript developers to work with multi-dimensional arrays with the same ease as working with built-in arrays and thus expand JavaScript's capabilities for scientific and numerical computing.",
+          "difficulty": null,
+          "id": "proj_stdlib_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/lKDCoGBz",
+          "proposal_id": "OGIQTqx5",
+          "short_description": "JavaScript lacks a general purpose and cache efficient multi-dimensional array API for operating on large datasets of high-dimensionality. To address...",
+          "slug": "achieve-ndarray-api-parity-with-built-in-javascript-arrays",
+          "status": "in-progress",
+          "student_name": "muhammad_haris",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "achieve ndarray API parity with built-in JavaScript arrays"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to increase BLAS (Basic Linear Algebra Subprograms) support in stdlib via the development of JavaScript, C, Fortran, and WebAssembly implementations capable of execution in both client- and server-side web applications. BLAS routines are divided into 3 levels: Level 1 (vector-vector operations), Level 2 (vector-matrix operations), Level 3 (matrix-matrix operations). While stdlib currently supports most Level 1 operations, several Level 2 and 3 routines involving specialized matrix storage types are currently missing. I aim to address this gap, with a particular emphasis on those routines which are key dependencies of LAPACK routines, such as dgetc2, dgbtf2, and others. A key outcome of this project will be a set of performance-optimized APIs for lower-level linear algebra operations which will subsequently help facilitate the development of high-performance machine learning and statistical analysis libraries and applications supporting execution on the web.",
+          "difficulty": null,
+          "id": "proj_stdlib_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NJC5LuLO",
+          "proposal_id": "wtSZ7pS6",
+          "short_description": "This project aims to increase BLAS (Basic Linear Algebra Subprograms) support in stdlib via the development of JavaScript, C, Fortran, and...",
+          "slug": "add-blas-bindings-and-implementations-for-linear-algebra",
+          "status": "in-progress",
+          "student_name": "Shabareesh Shetty",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web",
+            "api",
+            "ai"
+          ],
+          "title": "Add BLAS bindings and implementations for linear algebra"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/stdlib"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/stdlib-js/google-summer-of-code",
+    "ideas_url": "https://github.com/stdlib-js/google-summer-of-code/blob/main/ideas.md",
+    "irc_channel": "https://gitter.im/stdlib-js/stdlib",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://x.com/stdlibjs",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.631Z"
+  }
+}

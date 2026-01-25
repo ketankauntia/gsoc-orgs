@@ -1,0 +1,332 @@
+{
+  "id": "692251cb53dd9d7326d33d39",
+  "slug": "aflplusplus",
+  "name": "AFLplusplus",
+  "category": "Security",
+  "description": "State of the art fuzzing for better security",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/aflplusplus/dw8yelaswljerorz-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/aflplusplus.webp",
+  "logo_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/aflplusplus.webp",
+  "url": "https://aflplus.plus",
+  "active_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2020,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "c++",
+    "llvm",
+    "fuzzing",
+    "qemu",
+    "sanitizers",
+    "rust",
+    "instrumentation"
+  ],
+  "topics": [
+    "bug finding",
+    "fuzzing",
+    "software testing",
+    "secure development",
+    "instrumentation",
+    "ci"
+  ],
+  "total_projects": 10,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": 2,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": 2,
+      "year_2025": 1
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": 2,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": 2,
+      "year_2025": 1
+    },
+    "total_students": 10
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@010jackofspades/gsoc-2020-with-afl-bb95fe11ae3",
+          "description": "<p>This project idea aims to extend the afl-fuzz project as a multithreaded software using the standard linux threading library <code>pthreads</code>, while keeping the <strong>multi-platform support</strong> for afl-fuzz intact. Another key idea of the project is to make the fuzzer features as an <strong>embeddable library</strong> which extends the framework nature of afl, while giving the developers freedom to use afl.</p>\n",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4649283380314112/",
+          "proposal_id": null,
+          "short_description": "This project idea aims to extend the afl-fuzz project as a multithreaded software using the standard linux threading library pthreads, while keeping...",
+          "slug": "reengineer-afl-fuzz-as-thread-safe-embeddable-library",
+          "status": "completed",
+          "student_name": "Rishi Ranjan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Reengineer afl-fuzz as Thread Safe, Embeddable Library"
+        },
+        {
+          "code_url": "https://github.com/AFLplusplus/Grammar-Mutator",
+          "description": "<p>AFL++’s mutation engine is optimized for compact data formats, such as images, multimedia, compressed data. However, the current AFL++ does not support grammar and therefore struggles with highly-structured inputs like PHP, JavaScript, or HTML . Although AFL++ allows users to define a dictionary, including language keywords, to help generate inputs, it still lacks more structured descriptions of the underlying syntax.</p>\n<p>To tackle the existing limitations of AFL++, the main goal of this project is to develop a pluggable grammar mutator that is integrated with AFL++’s mutation engine and can efficiently generate grammar-aware inputs. On one hand, like Nautilus, we want to combine grammar mutators with AFL++’s mutation engine. Also, we want to avoid the potential limitation of Nautilus: “over time Nautilus de-generates to structure-unaware greybox fuzzing”, as indicated by AFLSmart paper. On the other hand, we want to generate test cases efficiently as F1 fuzzer. Furthermore, to improve usability, we will develop a program generator that takes the grammar model as input and generates a mutator library, which is based on AFL++’s custom mutator APIs.</p>\n",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4827255919869952/",
+          "proposal_id": null,
+          "short_description": "AFL++’s mutation engine is optimized for compact data formats, such as images, multimedia, compressed data. However, the current AFL++ does not...",
+          "slug": "a-flexible-grammar-mutator",
+          "status": "completed",
+          "student_name": "Shengtuo Hu",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "A Flexible Grammar Mutator"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6438212253253632/"
+    },
+    "year_2021": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://tokatoka.github.io/GSoC/",
+          "description": "<p>Fuzzing has been a popular vulnerability detection tool, and researchers have developed various techniques to build the \"best\" fuzzer. It is claimed, however, that the fuzzer adjusted for the target program that one wants to fuzz is the most effective one.<br>\nLibAFL offers those functionalities, with which users can customize the fuzzer or even extend the fuzzer tailored for each target program. However, since it is still at the early stage of development, some of the powerful scheduling algorithms have not been incorporated into LibAFL yet.<br>\nThis proposal is to implement two effective scheduling algorithms, the AFLFast, and the MOpt algorithm into LibAFL. With these techniques, LibAFL can offer users a faster way to discover vulnerabilities and a more efficient mutator selection strategy.</p>\n",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6509647623618560/",
+          "proposal_id": null,
+          "short_description": "Fuzzing has been a popular vulnerability detection tool, and researchers have developed various techniques to build the \"best\" fuzzer. It is claimed,...",
+          "slug": "scheduler-for-libafl",
+          "status": "completed",
+          "student_name": "Dongjia Zhang",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Scheduler for LibAFL"
+        },
+        {
+          "code_url": "https://julihoh.github.io/2021/08/19/gsoc-final-report.html",
+          "description": "<p>Hybrid fuzzing is a term used to describe techniques in fuzzing which involve concolic execution to drive the fuzzing campaign through difficult-to-reach parts of the target program. In the academic world, this concept has received a lot of attention in the past few years and the results are promising. However, so far this technique does not seem to have escaped the lab yet, with many academic projects being difficult to use in practice.\nAFL++ and LibAFL are projects that aim to make cutting edge fuzzing research usable in the real world and in the same vein, this project proposes to make hybrid fuzzing more approachable by providing the necessary components to do hybrid fuzzing with LibAFL.</p>\n",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6266317660749824/",
+          "proposal_id": null,
+          "short_description": "Hybrid fuzzing is a term used to describe techniques in fuzzing which involve concolic execution to drive the fuzzing campaign through...",
+          "slug": "hydra-hybrid-fuzzing-with-libafl",
+          "status": "completed",
+          "student_name": "Julius Hohnerlein",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Hydra - Hybrid Fuzzing with LibAFL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5090910303420416/"
+    },
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/syheliel/5f11d9c1082edb595f36c371ddbd9dad",
+          "description": "Nyx is a full system emulation fuzzing mode that supports snapshots. Users can apply it to both source-code-based instrumentation and binary-only targets. \r\nOur task is to integrate Nyx into LibAFL. The proposal mainly contains three parts:\r\n1. automate the environment setup of Nyx, which includes KVM-PT, QEMU-PT, and glue tools for them\r\n2. provide an easy-to-use LibAFL interface\r\n3. build an example fuzzer using Nyx in LibAFL",
+          "difficulty": "beginner",
+          "id": "proj_aflplusplus_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/L9MXXYvq/",
+          "proposal_id": null,
+          "short_description": "Nyx is a full system emulation fuzzing mode that supports snapshots. Users can apply it to both source-code-based instrumentation and binary-only...",
+          "slug": "bridge-nyx-to-libafl",
+          "status": "completed",
+          "student_name": "syheliel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "bridge Nyx to LibAFL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/aflplusplus/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/ToSeven/141706d8eb1ef8da588146edb45118a9",
+          "description": "LibAFL, a library written by Rust, helps people develop a fuzzer tailored to specific needs, but due to the lack of the running status information of LibAFL, we are difficult to grasp some key metrics in a fuzzing campaign. so I propose adding AFL-style UI to the TUI monitor. LibAFL will have an AFL-style UI encompassing some key status metrics such as the status bar, process timing, and so on.",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/opfPA5Ly",
+          "proposal_id": "OmDhmdMi",
+          "short_description": "LibAFL, a library written by Rust, helps people develop a fuzzer tailored to specific needs, but due to the lack of the running status information of...",
+          "slug": "afl-style-ui-add-afl-style-ui-to-the-tui-monitor",
+          "status": "completed",
+          "student_name": "hengzh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "AFL-style UI: Add AFL-style UI to the TUI monitor"
+        },
+        {
+          "code_url": "https://github.com/AFLplusplus/LibAFL/pull/1344",
+          "description": "Libafl is a library written in Rust that provides components to build fuzzers. A newcomer might feel confused when creating a fuzzer because that requires some knowledge of what each component does and how they can be used together. Without prior experience, going through the repository and trying to understand these features on your own is not a trivial task.\nTo make Libafl more beginner-friendly, as well as didactic, this project proposes the implementation of a Fuzzer Template Generator. The generator will guide the user through the components, explain their functionalities and utilization, and output snippets of that component's Rust code, so the user may apply it to their fuzzer implementation.\nTherefore, this project aims to: 1. Implement a wizard, to show options and take the user's decisions, 2. Add a progressive flow chart generation, to help keep visual track, 3. Output Rust code for each component selected.",
+          "difficulty": "beginner",
+          "id": "proj_aflplusplus_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/CQBo3pNX",
+          "proposal_id": "oz4jvGQ9",
+          "short_description": "Libafl is a library written in Rust that provides components to build fuzzers. A newcomer might feel confused when creating a fuzzer because that...",
+          "slug": "fuzzer-template-generator-abstracting-complexity-to-produce-knowledge",
+          "status": "completed",
+          "student_name": "Matheus Baptistella",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Fuzzer Template Generator: abstracting complexity to produce knowledge."
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/aflplusplus"
+    },
+    "year_2024": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Marcondiro/7701cc51eeba8ac9ed252b5499fdecaa",
+          "description": "This proposal addresses the project Adapt kAFL / Nyx to LibAFL QEMU presented in the project list.\r\nThe project's goal is to integrate hypervisor-based fuzzing into `LibAFL QEMU` leveraging Intel lab's kAFL project and Nyx, which is the backend that kAFL uses.\r\nAt the moment `LibAFL QEMU` runs QEMU with the TCG accelerator which, in a nutshell, performs emulation.\r\nThe usage of the hypervisor KVM as the accelerator for QEMU can bring a remarkable performance improvement.",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/iVGBslto/",
+          "proposal_id": null,
+          "short_description": "This proposal addresses the project Adapt kAFL / Nyx to LibAFL QEMU presented in the project list. The project's goal is to integrate...",
+          "slug": "adapt-kafl-nyx-to-libafl-qemu",
+          "status": "completed",
+          "student_name": "Marcondiro",
+          "student_profile": null,
+          "tags": [
+            "backend"
+          ],
+          "title": "Adapt kAFL / Nyx to LibAFL QEMU"
+        },
+        {
+          "code_url": "https://github.com/AFLplusplus/LibAFL/blob/main/fuzzers/others/libafl-fuzz/",
+          "description": "LibAFL is a framework which pioneered the concept of modular fuzzers, where different parts of the fuzzer, such as the instrumentation, mutators, corpus and objectives can be swapped and configured to fuzz applications and platforms with diverse constraints.\n\nLibAFL re-uses and re-implements several parts of AFL++, it’s sister project, which is a fork of AFL and it’s community acclaimed successor.\n\nWith LibAFL’s feature parity with AFL++ and it’s potential to succeed the project, this project aims to re-implement afl-fuzz, AFL++'s fuzzer implementation, in Rust, to become a front-end for LibAFL. Additionally, this initiative will attempt to implement missing features required by afl-fuzz to close the feature-gap between AFL++ and LibAFL.",
+          "difficulty": null,
+          "id": "proj_aflplusplus_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/4tBXDbB9/",
+          "proposal_id": null,
+          "short_description": "LibAFL is a framework which pioneered the concept of modular fuzzers, where different parts of the fuzzer, such as the instrumentation, mutators,...",
+          "slug": "rewrite-afls-afl-fuzz-in-rust-as-a-front-end-for-libafl",
+          "status": "completed",
+          "student_name": "aarnav",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Rewrite AFL++'s afl-fuzz in Rust as a front-end for LibAFL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/aflplusplus/"
+    },
+    "year_2025": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to simplify overly complex generic parameters and trait bounds in LibAFL's Rust codebase. By analyzing actual trait usage through compiler internals and static analysis techniques, it will identify and safely remove unnecessary bounds while preserving correctness and API stability. The work includes building a simplification pipeline, integrating it into the LibAFL workflow, and delivering extensive tests, documentation, and performance evaluations. This will enhance maintainability, improve compilation times, and promote best practices in Rust generic design.",
+          "difficulty": "advanced",
+          "id": "proj_aflplusplus_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/37faqHUT",
+          "proposal_id": "6bCGM6ZI",
+          "short_description": "This project aims to simplify overly complex generic parameters and trait bounds in LibAFL's Rust codebase. By analyzing actual trait usage through...",
+          "slug": "less-is-more-simplifying-rust-generics-and-bounds-in-libafl",
+          "status": "in-progress",
+          "student_name": "Khagan Karimov",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Less is More: Simplifying Rust Generics and Bounds in LibAFL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/aflplusplus"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "afl@aflplus.plus",
+    "guide_url": "https://github.com/AFLplusplus/LibAFL/blob/main/CONTRIBUTING.md",
+    "ideas_url": "https://github.com/AFLplusplus/LibAFL/issues/2992",
+    "irc_channel": "https://github.com/AFLplusplus/AFLplusplus/issues/783",
+    "mailing_list": "https://groups.google.com/d/forum/afl-users"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/aflplusplus",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.876Z"
+  }
+}

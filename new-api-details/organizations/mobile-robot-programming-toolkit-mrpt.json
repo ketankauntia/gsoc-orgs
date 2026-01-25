@@ -1,0 +1,279 @@
+{
+  "id": "692251dd53dd9d7326d33e2a",
+  "slug": "mobile-robot-programming-toolkit-mrpt",
+  "name": "Mobile Robot Programming Toolkit (MRPT)",
+  "category": "Science and medicine",
+  "description": "Empowering C++ development in robotics",
+  "image_url": "https://lh3.googleusercontent.com/w2l4mVMo8PxUGi4V63Zd6mHHOeUc1k1lewYp4bPyltlnLgbvNuVlZJG4MdPW9AxnQ52AJu_t8DFtPTYU--17Tjc99sxqNqw",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/mobile-robot-programming-toolkit-mrpt.webp",
+  "logo_r2_url": null,
+  "url": "https://www.mrpt.org",
+  "active_years": [
+    2016,
+    2017,
+    2018
+  ],
+  "first_year": 2016,
+  "last_year": 2018,
+  "is_currently_active": false,
+  "technologies": [
+    "ros",
+    "opencv",
+    "c++",
+    "qt",
+    "cmake",
+    "opengl",
+    "wxwidgets",
+    "python",
+    "c",
+    "webs"
+  ],
+  "topics": [
+    "robotics",
+    "vision",
+    "slam",
+    "selfdriving",
+    "mobile robots",
+    "computer vision",
+    "algorithms",
+    "webapps",
+    "ai",
+    "real-time",
+    "robot"
+  ],
+  "total_projects": 8,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.67,
+    "projects_by_year": {
+      "year_2016": 3,
+      "year_2017": 4,
+      "year_2018": 1,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 3,
+      "year_2017": 4,
+      "year_2018": 1,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 8
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/MRPT/GSoC2016-discussions/issues/3",
+          "description": "<p>Mobile Robot Programming Toolkit (MRPT) implements a versatile Rao-Blackwellized Particle Filter (RBPF) for practical robotics applications. At present, there are no Rao-Blackwellized Particle Filter ROS packages with such broad range of features. The existing <em>slam_gmapping</em> ROS package, which is based on gmapping from OpenSLAM, uses only grid-based maps from laser data. The implementation from the MRPT library can work simultaneously with multiple instances of grid-based maps, point maps, beacon maps and combinations of them. Moreover, MRPT provides several types of Particle Filters such as PF with Standard and Optimal [Grisetti et al., 2007] Proposals, as well as an Approximate Optimal Sampling [Blanco et al., 2008a]. Thus, existing <em>slam_gmapping</em> package features only a subset of this functionality and robotics community will benefit greatly from being able to use implementation offered by MRPT library. Therefore, the goal of this project is to provide MRPT-powered ROS packages for Rao-Blackwellized Particle Filter.</p>\n",
+          "difficulty": null,
+          "id": "proj_mobile-robot-program_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5032051866599424/",
+          "proposal_id": null,
+          "short_description": "Mobile Robot Programming Toolkit (MRPT) implements a versatile Rao-Blackwellized Particle Filter (RBPF) for practical robotics applications. At...",
+          "slug": "ros-packages-for-versatile-rbpf-based-slam",
+          "status": "completed",
+          "student_name": "Vladislav Tananaev",
+          "student_profile": null,
+          "tags": [
+            "mobile"
+          ],
+          "title": "ROS packages for versatile RBPF-based SLAM"
+        },
+        {
+          "code_url": "https://github.com/MRPT/GSoC2016-discussions/issues/2",
+          "description": "<p>The proposal at hand describes the working plan for developing a graph-based SLAM algorithm using the mrpt toolkit in the following summer. The suggested strategy builds upon the ideas developed by (Olson, 2009) for the data association and robust loop closing parts, while using already implemented schemes (mrpt version of Levenberg Marquardt, iSAM solver) for dealing with the optimization part. The result by the end of summer should be a fully functional, robust and usuable graph-based SLAM algorithm ready to be used by researchers and roboticists. We provide an overal timeline, with intermediate milestones to make sure that we meet the goals of the project. The proposal begins with an introduction to the graph-based formulation and lists already implemented and successful graphSLAM strategies. The following two sections (implementation details, timeline) describe the graphSLAM algorithm that we suggest. The final section provides with general information about the author and his background in simultaneous localization and mapping and open-source programming projects</p>\n",
+          "difficulty": "medium",
+          "id": "proj_mobile-robot-program_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6025600208732160/",
+          "proposal_id": null,
+          "short_description": "The proposal at hand describes the working plan for developing a graph-based SLAM algorithm using the mrpt toolkit in the following summer. The...",
+          "slug": "design-and-developement-of-a-full-graph-based-slam-strategy-in-mrpt",
+          "status": "completed",
+          "student_name": "Nikos Koukis",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Design and developement of a full graph-based SLAM strategy in mrpt"
+        },
+        {
+          "code_url": "https://dl.dropboxusercontent.com/s/nm95samwk9f4fu2/pnp_perf_comp.html",
+          "description": "<p>The objective of this project is to develop a novel closed form Perspective n Point (PnP) pose\nestimation algorithm for a monocular camera.  A variety of techniques have been developed to\nestimate the pose using a monocular camera. However, the algorithms developed do not meet the\nsimultaneous requirement of computation time, precision and efficiency. The proposed algorithm,\nLinear Least Squares (LLS-PnP) would minimize the  cost function (non-linear error norm)\nwhich can be explicitly expressed as a quadratic function of the rotation matrix. The position is eliminated using least squares formulation. This leads to the possibility to solve the estimation problem in a closed form w.r.t. the rotation matrix. The proposed algorithm will break new grounds in computer vision and can be extended for pose estimation using Stereo vision. The final product (toolkit) will comprise of the new algorithm and the state-of-the-art PnP algorithms, which will provide the end user the choice to choose any given algorithm as well as to enable performance comparison between the various algorithms.</p>\n",
+          "difficulty": null,
+          "id": "proj_mobile-robot-program_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6116359041712128/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to develop a novel closed form Perspective n Point (PnP) pose\nestimation algorithm for a monocular camera.  A...",
+          "slug": "pnp-algorithms-toolkit-for-mrpt",
+          "status": "completed",
+          "student_name": "Chandra",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "PnP Algorithms toolkit for MRPT"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5644101080842240/"
+    },
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/pranjal-rai/307e178d023b9a4b5455ca9ca8383344",
+          "description": "<p>Nanoflann is a C++ library provided by MRPT for building KD-Trees. The library is a fork of the widely-used FLANN C++ library and is mostly optimized for lower dimensional point clouds. Most ICP algorithms for robot SLAM and localization require finding nearest neighbor in 2D/3D point clouds. Support for dynamic point clouds and nearest neighbour query in non flat spaces are two paramount features which are missing in the current nanoflann library.</p>\n",
+          "difficulty": null,
+          "id": "proj_mobile-robot-program_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6710140954738688/",
+          "proposal_id": null,
+          "short_description": "Nanoflann is a C++ library provided by MRPT for building KD-Trees. The library is a fork of the widely-used FLANN C++ library and is mostly optimized...",
+          "slug": "algorithm-improvements-to-kd-tree-module-applications-to-icp",
+          "status": "completed",
+          "student_name": "Pranjal Kumar Rai",
+          "student_profile": null,
+          "tags": [
+            "cloud",
+            "ui"
+          ],
+          "title": "Algorithm improvements to KD-Tree module: applications to ICP"
+        },
+        {
+          "code_url": "https://gist.github.com/LisGein/1ad3951ecc8a67d4915a59ae042b9f45",
+          "description": "<p>I would like to develop a new GUI application based on Qt 5.5 or next version that should be able to load data in the simplemap format and visualize it as a set of different metric maps. Also, it should allow editing robot poses to fix errors in automatic SLAM algorithms.\nI want to integrate my application in CMake main project of MRPT.</p>\n",
+          "difficulty": null,
+          "id": "proj_mobile-robot-program_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5244103260372992/",
+          "proposal_id": null,
+          "short_description": "I would like to develop a new GUI application based on Qt 5.5 or next version that should be able to load data in the simplemap format and visualize...",
+          "slug": "new-gui-app-to-visualize-and-edit-robot-made-maps",
+          "status": "completed",
+          "student_name": "LisGein",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "New GUI app to visualize and edit robot-made maps"
+        },
+        {
+          "code_url": "https://github.com/MRPT/GSoC2017-discussions/issues/2",
+          "description": "<p>Many contemporary robotic applications need precise simulation and prognosing of system dynamics. Making a lightweight application that is tailored to analysis of vehicle dynamics and accurate simulation of typical robot will allow developers simple workflow with simulated robotics systems.</p>\n",
+          "difficulty": null,
+          "id": "proj_mobile-robot-program_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5296787476709376/",
+          "proposal_id": null,
+          "short_description": "Many contemporary robotic applications need precise simulation and prognosing of system dynamics. Making a lightweight application that is tailored...",
+          "slug": "mvsim-development",
+          "status": "completed",
+          "student_name": "Borys Tymchenko",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "MVSim development"
+        },
+        {
+          "code_url": "https://github.com/MRPT/GSoC2017-discussions/issues/3",
+          "description": "<p>Computer Vision-based application for robotics rely on extracting meaningful features from images which can be used to perform many tasks like place recognition, place categorization, tracking, Visual Odometry, SLAM, object detection, object recognition, etc. All these tasks rely on a set of key-points and descriptors that describe them. Each of the features/key-points are associated with some sort of key signatures (called descriptors of those key points). Many existing methods for detection/description of these features exists, each descriptor has certain properties that are suitable for certain vision applications. Some of the existing methods include SIFT, SURF, BRISK, FAST, ORB,AKAZE, LATCH, LSD/BLD (lines), etc. Some of the detectors already provide descriptors but some of them do not, so different combinations of descriptors can be used. In this project a GUI application is built which evaluates these descriptors/key-points. The app also provides a means to benchmark these features for certain vision tasks like Visual Odometry, Tracking and Place Recognition. A second mini project of extending the MRPT ROS package to playback MRPT Datasets in ROS RViz is also implemented.</p>\n",
+          "difficulty": null,
+          "id": "proj_mobile-robot-program_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5222489240109056/",
+          "proposal_id": null,
+          "short_description": "Computer Vision-based application for robotics rely on extracting meaningful features from images which can be used to perform many tasks like place...",
+          "slug": "gui-app-to-benchmark-image-feature-detectors-and-descriptors",
+          "status": "completed",
+          "student_name": "Raghavender Sahdev",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "GUI app to benchmark image feature detectors and descriptors"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5289044053327872/"
+    },
+    "year_2018": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://rachit173.github.io/gsoc2018/",
+          "description": "<p>Robots are slowly becoming a part of the internet of things, and easy control and universal access will be a step in future of robotics. MRPT’s Web Framework Library should address this problem.A lightweight publisher/subscriber mechanism needs to be created for MRPT. The C++ server library and the javascript library will then leverage this to  create further applications. There will be two libraries,  a C++ server library for RPC on the robot. Another will be a javascript library which provides modules for such procedure calls.This task involve serialization of existing mrpt objects for JSON transfer, RPC protocol, websocket setup, 3D rendering of objects in js, reusable js components for sending and receiving data from user created app where the user is largely benefitted from easy to use library methods and objects.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_mobile-robot-program_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5111807261802496/",
+          "proposal_id": null,
+          "short_description": "Robots are slowly becoming a part of the internet of things, and easy control and universal access will be a step in future of robotics. MRPT’s Web...",
+          "slug": "web-frameworks-library-for-mrpt",
+          "status": "completed",
+          "student_name": "Rachit Tibrewal",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web"
+          ],
+          "title": "Web Frameworks Library for MRPT"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6557734510002176/"
+    },
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://gitter.im/MRPT/mrpt",
+    "mailing_list": "https://groups.google.com/forum/#!forum/mrpt-users"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.595Z"
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "id": "692251d553dd9d7326d33dbf",
+  "slug": "grame",
+  "name": "GRAME",
+  "category": "Programming languages",
+  "description": "Domain specific language for audio",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/grame/joff5sziiuapvits-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/grame.webp",
+  "logo_r2_url": null,
+  "url": "https://faust.grame.fr",
+  "active_years": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "javascript",
+    "c++",
+    "typescript",
+    "rust"
+  ],
+  "topics": [
+    "audio",
+    "compiler",
+    "digital signal processing",
+    "function programming language"
+  ],
+  "total_projects": 10,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": 4,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": 2,
+      "year_2024": 4,
+      "year_2025": 3
+    },
+    "total_students": 10
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://resonant-bytes.de/blog/gsoc-final-submission/",
+          "description": "The proposed GSoC project aims at integrating support for the Faust audio programming language into HISE, an extensive framework for the creation of sample-based virtual musical instruments.\nThere are multiple ways to accomplish the integration, ahead-of-time compilation and just-in-time compilation, each with their specific benefits and shortcomings.\n\nThe most straight-forward method involves ahead-of-time compilation of the Faust code into a dynamic library which the HISE instrument can interface with.\nThis works well for finished products which will be exported and compiled once, but run many times.\nDuring prototyping, however, build time is essential and relinking the complete instrument would be excessive.\nIn that case machine code will be generated just-in-time (JIT) from the Faust source code whenever it is modified without recompiling or linking the rest of the instrument.\nFaust already provides the necessary mechanisms for just-in-time compilation via LLVM, which will be tied to suitable data structures inside HISE.\n\nLastly HISE also provides an integrated development environment (IDE) with a syntax-highlighting text editor to the instrument developer.\nProgramming the instruments in Faust should be an on-par experience to the developer when comparing to other supported languages, e.g., SNEX and JavaScript.\nTherefore the existing development environment will be extended to support the Faust language, while allowing the developer to still use their editors and tools outside of HISE.",
+          "difficulty": null,
+          "id": "proj_grame_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/cAyIN9Bi/",
+          "proposal_id": null,
+          "short_description": "The proposed GSoC project aims at integrating support for the Faust audio programming language into HISE, an extensive framework for the creation of...",
+          "slug": "faust-integration-in-hise",
+          "status": "completed",
+          "student_name": "etXzat",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "ai",
+            "ui"
+          ],
+          "title": "Faust Integration in HISE"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/grame/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://ijc8.me/2023/08/27/gsoc-faust/",
+          "description": "Faust is a functional programming language that enables people to express sound synthesis and audio processing algorithms concisely, efficiently, and portably. It is known for targeting a wide variety of environments: Faust code compiles to C, C++, LLVM IR and more, and for many different audio APIs and environments. In recent years, following the development of asm.js, Emscripten, Audio Worklets, and WebAssembly, the web has become an increasingly viable platform for DSP and audio programming. Prior work has enabled the generation of Audio Worklets (and older Script Processor Nodes) from Faust code. Furthermore, Faust has web-based tools such as an editor, IDE, and playground that allow people to easily try the language and hear the results without installing a compiler toolchain. I propose to improve Faust's support for the web platform by 1) updating and extending the Faust web tools and 2) building on Faust's ability to target WebAssembly in order to make Faust documentation more usable and to make it easier to find and share Faust code on the web.",
+          "difficulty": null,
+          "id": "proj_grame_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/L6oI4LhW",
+          "proposal_id": "upjcDfYk",
+          "short_description": "Faust is a functional programming language that enables people to express sound synthesis and audio processing algorithms concisely, efficiently, and...",
+          "slug": "better-faust-on-the-web",
+          "status": "completed",
+          "student_name": "Ian Clester",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Better Faust on the Web"
+        },
+        {
+          "code_url": "https://github.com/grame-cncm/faust/pull/939",
+          "description": "Support for differentiable Faust algorithms is currently provided by an external JAX backend. The aim of this project is to add automatic differentiation capabilities to the Faust compiler with a view to enabling a variety of machine learning approaches to digital audio synthesis and signal processing directly within the Faust language.",
+          "difficulty": null,
+          "id": "proj_grame_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/v91Az2k0",
+          "proposal_id": "1djNz9ch",
+          "short_description": "Support for differentiable Faust algorithms is currently provided by an external JAX backend. The aim of this project is to add automatic...",
+          "slug": "automatic-differentiation-in-the-faust-compiler",
+          "status": "completed",
+          "student_name": "trusht",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Automatic Differentiation in the Faust Compiler"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/grame"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/hatchjaw/faust-ddsp/pull/1",
+          "description": "This proposal bridges the gap between audio processing and machine learning by introducing an automatic differentiation (AD) library for the Faust programming language. This library empowers audio engineers to leverage machine learning within their familiar Faust environment.\n\nThe core of the library will be pre-defined building blocks. These include Faust primitives with built-in derivative functions for common math and audio processing tasks. Additionally, there will be helper functions to simplify program construction and various loss functions specifically suited for audio processing. The proposal also explores Faust Neural Net Blocks (FNNBs), which are pre-written code modules representing specific neural network functionalities. These FNNBs will save development time, improve code maintainability, and allow audio engineers to focus on network architecture rather than low-level programming for each layer.\n\nThe project deliverables will showcase the utility of the AD library in various phases. Phase I will deliver a working example of a differentiable filter or envelope in Faust. Phase II will focus on implementing a full-scale machine learning algorithm. This will be achieved through an autodiff file and a weights file. Finally, Phase III and IV will deliver an autoencoder implemented using FNNBs. \n\nBy combining the AD library, FNNBs, and an architecture file specifying the training process, users can design and train complex neural network models for audio processing tasks entirely within Faust. This eliminates the need to switch between Faust and separate machine learning frameworks, while offering the benefits of automatic differentiation for efficient model training.",
+          "difficulty": "advanced",
+          "id": "proj_grame_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/aUfXnbex/",
+          "proposal_id": null,
+          "short_description": "This proposal bridges the gap between audio processing and machine learning by introducing an automatic differentiation (AD) library for the Faust...",
+          "slug": "faustnet-enabling-ml-in-faust",
+          "status": "completed",
+          "student_name": "Advik Basani",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "FaustNet: Enabling ML in Faust"
+        },
+        {
+          "code_url": "https://tyler-li-mcgill.tech/blog/gsoc3",
+          "description": "Inspired by the pMix and Amati projects, this plugin will be built using the JUCE framework for the interface and libFaust with LLVM and interpreter backend API to compile Faust code. The user will be able to write Faust code in any VST-aware host and can be saved or recompiled on the fly. There are six components to the plugin, the editor, the console, a section for editing the parameters, a block diagram displaying the DSP, a preference page to change the settings, and a keyboard section where the user can enter MIDI inputs. The plugin will also support polyphonic Faust DSP objects, and the parameter inputs will be created depending on Faust code. Amati project is currently used as a starting point for the project, so it will use much of the existing code. However, changes might be made to them if needed.",
+          "difficulty": null,
+          "id": "proj_grame_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/1DEONCV5/",
+          "proposal_id": null,
+          "short_description": "Inspired by the pMix and Amati projects, this plugin will be built using the JUCE framework for the interface and libFaust with LLVM and interpreter...",
+          "slug": "amati-a-vstclap-plugin-embedding-the-dynamic-compiler",
+          "status": "completed",
+          "student_name": "Tyler Li",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "backend"
+          ],
+          "title": "Amati++, a VST/CLAP Plugin embedding the dynamic compiler"
+        },
+        {
+          "code_url": "https://gist.github.com/shehab299/259ee6b0a06da9a7027e8910c097c807",
+          "description": "The proposal aims to develop a  package manager for the Faust programming language, consisting of several components to enhance the development and sharing of Faust libraries. The proposed system encompasses:\n\nCentral Repository on GitHub: Establishing a central repository on GitHub to store metadata for Faust libraries. This repository will serve as a centralized hub for developers to publish.\n\nGitHub App for Publishing Automation: Developing a GitHub application to automate the publishing process of Faust libraries to the central repository. The GitHub app will automate the submission of libraries, manage versioning, and generate documentation automatically to enhance accessibility and ease of use.\n\nPackage Manager Application: Creating a package manager application designed to manage dependencies for Faust projects locally. The package manager will enable developers to efficiently integrate and manage dependencies within their projects, ensuring seamless integration of Faust libraries.\n\nFaust-hub Website: It will contain comprehensive information about Faust libraries available in the central repository. Faust-hub will provide a user-friendly interface for browsing, searching, and accessing Faust libraries, enhancing collaboration and community engagement within the Faust ecosystem.",
+          "difficulty": null,
+          "id": "proj_grame_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/W0niFpi8/",
+          "proposal_id": null,
+          "short_description": "The proposal aims to develop a package manager for the Faust programming language, consisting of several components to enhance the development and...",
+          "slug": "packaging-system-for-faust-libraries",
+          "status": "completed",
+          "student_name": "Shehab Khaled",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai"
+          ],
+          "title": "Packaging system for Faust libraries"
+        },
+        {
+          "code_url": "https://github.com/FayCarsons/Cables-Faust-Plugin/blob/gsoc/submission.md",
+          "description": "This project aims to develop a Cables.gl plugin that compiles Faust DSP code into a WASM AudioWorklet in real-time. The plugin’s features will be focused on composability, modular I/O, and integration with Cables.gl’s WebGL backend. This is in addition to foundational development goals such as creating a pleasant UX, robustness, and elegance. \n\nThis plugin would allow users to create DSP programs without boilerplate and have those programs integrate on a signal flow level with Cables.gl WebGL functionality. There are currently no tools that allow for this to my knowledge, this plugin would offer a unique opportunity for creative coding in both the audio and visual realms including simultaneously live-coding audio and visuals on one platform. \n\nThis signal flow level integration would allow for passing arbitrary data to both the WebGL and WebAudio portions of Cables.gl programs, as well as between these different portions. This includes using shader buffers as audio input, enabling GPGPU for massively parallel audio computations, or audio output as sources for visual effects such as vertex displacement, SDF distortion, and other audio-reactive visual effects. This is in addition to simpler modulation schemes such as passing MIDI or OSC to both audio and graphics portions of programs in parallel or doing the same with Javascript sequencing.",
+          "difficulty": null,
+          "id": "proj_grame_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/tnuKTxY7/",
+          "proposal_id": null,
+          "short_description": "This project aims to develop a Cables.gl plugin that compiles Faust DSP code into a WASM AudioWorklet in real-time. The plugin’s features will be...",
+          "slug": "faust-cablesgl-plugin",
+          "status": "completed",
+          "student_name": "Fay_Carsons",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "java",
+            "javascript",
+            "web",
+            "ai"
+          ],
+          "title": "Faust Cables.gl plugin"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/grame/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This proposal aims to develop a feature-rich programming environment for writing Faust programs in VS Code by providing powerful Language Server Protocol(LSP) features such as code completion, diagnostics checking, definition lookup, etc. and any other features commonly supported by other mature programming language projects.\nThe goal is to enhance and optimize the current Faust programming experience, making Faust development smoother for developers and allowing Faust programming to be more accessible for beginners to the Faust ecosystem.",
+          "difficulty": "beginner",
+          "id": "proj_grame_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/o08fWFr0",
+          "proposal_id": "PwfsNNQc",
+          "short_description": "This proposal aims to develop a feature-rich programming environment for writing Faust programs in VS Code by providing powerful Language Server...",
+          "slug": "faust-lsp",
+          "status": "in-progress",
+          "student_name": "carn181",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Faust LSP"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes the development of faust2clap, a tool that integrates the Faust programming language with the CLAP (CLever Audio Plugin) standard. Faust is a high-level functional language for real-time DSP, while CLAP is a modern open-source plugin format gaining traction as an alternative to VST and AudioUnit. Currently, Faust does not officially support CLAP as a target architecture.\n\nThe goal is to extend the existing faust2xx framework by implementing a CLAP architecture file and a new command-line utility, faust2clap. This will allow developers to compile Faust DSP code into fully functional CLAP plugins, supporting advanced features such as per-note modulation and sample-accurate automation.\n\nDeliverables include the tool itself, a reusable architecture backend, a suite of test plugins, and comprehensive documentation. The project has been developed in close collaboration with the Faust team and aims to be merged upstream as an official component of the Faust toolchain.\n\nBy bridging Faust and CLAP, this project supports open plugin standards, expands deployment options for DSP developers, and modernises the Faust ecosystem.",
+          "difficulty": "advanced",
+          "id": "proj_grame_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/5xh4Ttn4",
+          "proposal_id": "cBln2bUB",
+          "short_description": "This project proposes the development of faust2clap, a tool that integrates the Faust programming language with the CLAP (CLever Audio Plugin)...",
+          "slug": "faust2clap-support-for-clap-format",
+          "status": "in-progress",
+          "student_name": "Facundo F",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "faust2clap: Support for CLAP format"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to integrate the Faust programming language with Audiokinetic's Wwise - the industry standard audio middleware in game development. Two key deliverables will be created: a faust2wwise tool for statically compiling Faust DSP code into Wwise modules, and a plugin that embeds the libfaust & LLVM JIT compiler for dynamic Faust DSP live-coding within Wwise. Drawing on experience in C++ audio programming, DSP techniques, and plugin development, a practical connection will be built that allows audio designers and programmers to use Faust's DSP capabilities directly within their Wwise workflows.",
+          "difficulty": null,
+          "id": "proj_grame_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Pim5UypA",
+          "proposal_id": "1QOfhUuj",
+          "short_description": "This project aims to integrate the Faust programming language with Audiokinetic's Wwise - the industry standard audio middleware in game development....",
+          "slug": "integration-in-audiokinetic-wwise",
+          "status": "in-progress",
+          "student_name": "pmelaudev",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Integration in Audiokinetic Wwise"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/grame"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "research@grame.fr",
+    "guide_url": "https://github.com/grame-cncm/faustideas",
+    "ideas_url": "https://github.com/grame-cncm/faustideas",
+    "irc_channel": "https://discord.gg/qPPcXzJdmR",
+    "mailing_list": "https://faust.grame.fr/community/help/"
+  },
+  "social": {
+    "blog": "https://github.com/grame-cncm/faustideas",
+    "discord": "https://discord.gg/qPPcXzJdmR",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.184Z"
+  }
+}

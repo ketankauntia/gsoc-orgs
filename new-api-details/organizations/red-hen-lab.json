@@ -1,0 +1,1821 @@
+{
+  "id": "692251e553dd9d7326d33e98",
+  "slug": "red-hen-lab",
+  "name": "Red Hen Lab",
+  "category": "Data",
+  "description": "Research on Multimodal Communication",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/red-hen-lab/ugdzrslbomp6lacy-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/red-hen-lab.webp",
+  "logo_r2_url": null,
+  "url": "http://www.redhenlab.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2016,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "machine learning",
+    "opencv",
+    "high performance computing",
+    "audio procesing",
+    "multimodal analysis",
+    "audio processing",
+    "python",
+    "tensorflow",
+    "singularity",
+    "scikit-learn",
+    "syntaxnet",
+    "nlp",
+    "asr",
+    "data science",
+    "big data science",
+    "computer vision",
+    "machinelearning",
+    "ai"
+  ],
+  "topics": [
+    "natural language processing",
+    "deep learning",
+    "multimedia",
+    "co-speech gesture",
+    "big data visualization",
+    "machine learning",
+    "artificial intelligence",
+    "video processing",
+    "audio processing",
+    "big data",
+    "ai",
+    "communication",
+    "cognitive science",
+    "data science",
+    "metadata",
+    "media",
+    "language",
+    "multimodal communication",
+    "gesture"
+  ],
+  "total_projects": 88,
+  "stats": {
+    "avg_projects_per_appeared_year": 9.78,
+    "projects_by_year": {
+      "year_2016": 5,
+      "year_2017": 9,
+      "year_2018": 10,
+      "year_2019": 15,
+      "year_2020": 8,
+      "year_2021": 12,
+      "year_2022": 12,
+      "year_2023": 5,
+      "year_2024": 12,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 5,
+      "year_2017": 9,
+      "year_2018": 10,
+      "year_2019": 15,
+      "year_2020": 8,
+      "year_2021": 12,
+      "year_2022": 12,
+      "year_2023": 5,
+      "year_2024": 12,
+      "year_2025": null
+    },
+    "total_students": 83
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1nS-YMBXSaEb4lT610ICkeyfcFmu7q_AJQdZlvB6WoBs/edit?usp=sharing",
+          "description": "<p>Gesture Recognition using template matching, motion history image and machine learning. The project is basically divided into 3 phases involving segmentation, data collection and learning. Segmentation is done using fast and robust template matching. Details of template matching are mentioned in the proposal. Phase 2 will involve deciding various gestures and corresponding data collection of these gestures from the mentioned NewsScape database. Phase 2 will also involve feature extraction. Three different kinds of features will be extracted. Firstly the template features used to segment the hand and head will be used , secondly the features generated using motion history image of the segmented hand will be used and finally the relative positions of the hands and heads will be used. These 3 types of features will be stored and used for learning. Learning will involve using  2dSvd for dimensionality reduction without losing time information. Various classifiers will b used to learn the reduced data and the one the the highest accuracy will be chosen.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6465935019868160/",
+          "proposal_id": null,
+          "short_description": "Gesture Recognition using template matching, motion history image and machine learning. The project is basically divided into 3 phases involving...",
+          "slug": "gesture-recognition-using-machine-learning",
+          "status": "completed",
+          "student_name": "Abhinav Mehta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Gesture Recognition Using Machine Learning"
+        },
+        {
+          "code_url": "https://github.com/RedHenLab/Gesture/tree/mohsin_gesture/gesture_reco_mohsin",
+          "description": "<p>Use video and text data of the speaker to recognise gesture of the speaker on TV using LSTMs.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5125399222681600/",
+          "proposal_id": null,
+          "short_description": "Use video and text data of the speaker to recognise gesture of the speaker on TV using LSTMs.",
+          "slug": "gesture-recognition-using-multimodal-deep-learning",
+          "status": "completed",
+          "student_name": "mozin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Gesture recognition using multimodal deep learning"
+        },
+        {
+          "code_url": "https://github.com/mfs6174/GSoC2016-RedHen",
+          "description": "<p>The proposal is inspired by the idea G on RedHen's GSoC 2016 idea page. The main purpose is to develop models and code helping domain experts to research on art history. It includes five main tasks:</p>\n<ol>\n<li>Training a classifier for recognizing a limited number of known visual symbols in images of religious artworks. VGG-net based fully convolutional network models will be trained for this task. Multi-scale detection, non-maximum suppression and bounding box regression will be implemented. </li>\n<li>Training a detector for localizing person heads and hands in images of art with various styles. CNN models will be trained based on a state-of-art head detection method.</li>\n<li>Building a module identifying a few certain hand gestures in images of artworks based on task 2.  With the cropped detection result of task 2, a classifier based on VGG-net will be built.</li>\n<li>Developing a tool generating a frontal view of a face given a artistic portrait with a side view of the face based on existing face frontalization code. </li>\n<li>Developing initial research code for analysis of color style changes over time of Christian paintings by \nmachine learning.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5326857348055040/",
+          "proposal_id": null,
+          "short_description": "The proposal is inspired by the idea G on RedHen's GSoC 2016 idea page. The main purpose is to develop models and code helping domain experts to...",
+          "slug": "computer-vision-and-machine-leaning-applications-on-artwork-images",
+          "status": "completed",
+          "student_name": "Xi-Jin Zhang (mfs6174)",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Computer Vision and Machine Leaning Applications on Artwork Images"
+        },
+        {
+          "code_url": "https://github.com/AswinKumar1/Forced-Alignment/wiki",
+          "description": "<p>The Project aims at detecting the Human gesture  with the help of classifiers.The project consists of 1) Database, has the Segmented Frames of gestures which would be compared with the incoming news video only if there is a change in the motion of the object,found out by Graph-based segmentation. 2) Annotator, which will help in finding us the type of gesture given by the object by searching over our database. In order to improve the quality of the result we use Feedback loop between the user annotations and machine analysis results with the help of ELAN.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5886680833720320/",
+          "proposal_id": null,
+          "short_description": "The Project aims at detecting the Human gesture  with the help of classifiers.The project consists of 1) Database, has the Segmented Frames of...",
+          "slug": "to-construct-bootstrapping-human-motion-data-for-gesture-analysis",
+          "status": "completed",
+          "student_name": "Aswin kumar J",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "To construct Bootstrapping Human Motion Data for Gesture Analysis"
+        },
+        {
+          "code_url": "http://soumitraagarwal.github.io/BlendedJointAttention/articles/2016-07/Coding-period(First)",
+          "description": "<p>The proposal aims to identify elements of co-speech gestures in a massive data of television news. The steps will include building a flawed data-set, which can be then manually corrected for blended classic joint attention scenarios. I have two co-speech gestures in mind, which include one trivial and one complex implementation both aiming at the movement of head and gaze direction.</p>\n<p>1.“Yes/No” gesture with shaking the head horizontally or vertically.\n2.Fast bobbing head with slow closing of eyes, as a gesture of understanding.</p>\n<p>Other than identification of the above to co-speech gestures, the project aims to create a feedback mechanism for improvement of the detection of such gestures. Also it attempts to work on better algorithms for emotion/gaze direction etc. detection. Identification of such gestures would be done first by implementing on some classifiers I already know about, including the “Haar-Classifier” and the rest of the project would concentrate on building and training one’s own classifier.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_red-hen-lab_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5151727909076992/",
+          "proposal_id": null,
+          "short_description": "The proposal aims to identify elements of co-speech gestures in a massive data of television news. The steps will include building a flawed data-set,...",
+          "slug": "gestures-machine-learning-and-other-things",
+          "status": "completed",
+          "student_name": "Soumitra Agarwal",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Gestures, Machine learning and other things"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5973353810624512/"
+    },
+    "year_2017": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://github.com/RedHenLab/multilingualpipeline",
+          "description": "<p>This project aims to build a pipeline for a searchable corpus on multiple languages. We will be using NewsScape data for the project and tools like SyntaxNet for dependency parsing and PoS tagging.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6671164529180672/",
+          "proposal_id": null,
+          "short_description": "This project aims to build a pipeline for a searchable corpus on multiple languages. We will be using NewsScape data for the project and tools like...",
+          "slug": "multilingual-corpus-pipeline",
+          "status": "completed",
+          "student_name": "Prannoy Mupparaju",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Multilingual Corpus Pipeline"
+        },
+        {
+          "code_url": "https://github.com/RedHenLab/ControversyDetection",
+          "description": "<p>Whilst crime in general has been falling for decades, hate crime has gone in the other direction. Especially after the US election 2016, it has risen to a new level against minorities- colored people, muslims, jews, LGBT community. The perpetrators often share their threats blatantly before committing the crime. If we can figure out the credible threats by automatically analyzing the text patterns, then we can save lives. In this project, we will decompose the overall detection problem into detection of sensitive topics, lending itself into text classification sub-problems. We will scrape data from social microblogs to build our corpus and then we will experiment with different classifiers.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5399338813489152/",
+          "proposal_id": null,
+          "short_description": "Whilst crime in general has been falling for decades, hate crime has gone in the other direction. Especially after the US election 2016, it has risen...",
+          "slug": "sentiment-analysis-of-social-media-data",
+          "status": "completed",
+          "student_name": "Nayeem Aquib",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Sentiment Analysis of Social Media Data"
+        },
+        {
+          "code_url": "https://github.com/dhfromkorea/digital-silo",
+          "description": "<p>I aim to build a general system that detects natural boundaries of TV shows. This task has long been under the realm of manual approach by skilled workers, but the recent development in machine learning may offer a new opportunity where the system uses the multimodal cues of videos like humans would. The final product will be a Python-based classifier that takes video data as input and produce as output for each decision unit (1 second of frames) whether there has been a change of show (from one program to another). The performance of the system will be measured against test data for which the show boundaries had been annotated by manual efforts. The performance benchmark will be whatever best detector the Red Hen Lab provides (e.g. cc-keyword-spacing). As a corollary to solving the main task, I aim to develop a system that automatically generates meta information (indexing/tagging), the subtask noted in the original problem description.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5441354465280000/",
+          "proposal_id": null,
+          "short_description": "I aim to build a general system that detects natural boundaries of TV shows. This task has long been under the realm of manual approach by skilled...",
+          "slug": "multimodal-television-show-segmentation",
+          "status": "completed",
+          "student_name": "donghun lee",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Multimodal television show segmentation"
+        },
+        {
+          "code_url": "https://bitbucket.org/skrish13/gsoc17-krish",
+          "description": "<p>This is a deep learning approach which uses both image and audio modality from the videos to detect emotion and characterize it. It uses a combination of CNN-RNN (Convolutional-Recurrent Neural Network), 3D convolutions (C3D) and audio features, as shown in the winning solution of EmotiW 2016 competition. A special RNN called LSTM (Long Short-Term Memory) is used to learn the motion by taking the individual features of each image frame, extracted by the CNN. The 3D convolutional network, works in a way such that it takes care of the image as well as flow of the video (appearance and motion). For extracting the audio features, it uses the OpenSmile toolkit. The EmotiW dataset is used for training this network. The goal of this project is to give an API which will take a video from the user and returns the output regarding the characteristics of emotion. This API will be fully tested, documented with examples and will be deployable in the HPC.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5064191643746304/",
+          "proposal_id": null,
+          "short_description": "This is a deep learning approach which uses both image and audio modality from the videos to detect emotion and characterize it. It uses a...",
+          "slug": "multimodal-emotion-detection-on-videos-using-cnn-rnn-3d-convolutions-and-audio-features",
+          "status": "completed",
+          "student_name": "skrish13",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Multimodal Emotion Detection on Videos using CNN-RNN, 3D Convolutions and Audio features"
+        },
+        {
+          "code_url": "https://ahaldar.github.io/blog/summer-2017-5/",
+          "description": "<p>An interesting study is to construct a model of the media representations of the world, considering features from social discourse such as crime, race, and so on. In other words, we generate “interpretive frames” that introduce selected media biases and predispose the system to look at the world in a certain way. Therefore, any data that is presented to this system will be viewed through this lens where certain outcomes are anticipated, and the communicative effects will depend on the associated inferences.</p>\n<p>We propose a few models and studies:</p>\n<ul>\n<li>Model 1: Generating different summaries of a news story by opinion spectrum based framing</li>\n<li>Model 2: Generating parody news stories based on an image using neural storytelling</li>\n<li>Model 3: Simulating evolving window of acceptability</li>\n<li>Model 4: Simulating the spread of unverified information</li>\n<li>Study: News recommender systems causing filter bubble effect</li>\n</ul>\n<p>With the help of these, we may conclusively demonstrate real world phenomena that highlight issues of media bias, framing, echo chambers, and the wisdom of the crowd. Such an analysis may shed some light on the political climate and how crowd consensus comes to be.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5582091953635328/",
+          "proposal_id": null,
+          "short_description": "An interesting study is to construct a model of the media representations of the world, considering features from social discourse such as crime,...",
+          "slug": "neural-network-models-to-study-framing-and-echo-chambers-in-news",
+          "status": "completed",
+          "student_name": "ahaldar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Neural Network Models to Study Framing and Echo Chambers in News"
+        },
+        {
+          "code_url": "https://pandeydiveshnotgeek.wordpress.com/2017/08/28/google-summer-of-code-work-submission/",
+          "description": "<p>Current Red Hen Lab’s Audio Pipeline can be extended to support speech recognition. This project proposes the development of a deep neural-net speech to text module for the pipeline, based on the paper Deep Speech.\nThe aim is to use both audio and visual modalities for achieving speech recognition.</p>\n<p>The initial goal is to extend current Deep Speech model (audio only) to Red Hen lab's TV news videos datasets. The next goal is to develop a multi-modal Speech to Text system (AVSR) by extracting visual modalities and concatenating them to the previous inputs.</p>\n<h5>Project Outline</h5>\n<p>I plan to develop four versions of Speech to Text during 12 weeks time.</p>\n<ul>\n<li>Version 1: Rewriting the Deep Speech model to support audio inputs from Red Hen Lab datasets. </li>\n<li>Version 2: Improving results using either N-gram model or a spell check system</li>\n<li>Version 3: Extracting visual features, concatenate them with Audio features and modify Deep Speech’s Input</li>\n<li>Version 4: Improving results using the same approach as in 2, tracking actual speaker’s lips, etc.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4582190549565440/",
+          "proposal_id": null,
+          "short_description": "Current Red Hen Lab’s Audio Pipeline can be extended to support speech recognition. This project proposes the development of a deep neural-net speech...",
+          "slug": "audio-visual-speech-recognition-system-based-on-deep-speech",
+          "status": "completed",
+          "student_name": "Divesh Pandey",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Audio Visual Speech Recognition System based on Deep Speech"
+        },
+        {
+          "code_url": "https://gist.github.com/ganesh-srinivas/15181ee1b2f0a829031ed18fac58db1b",
+          "description": "<p>I propose to train a deep neural network to discriminate between various kinds of laughter (giggle, snicker, etc.) A convolutional neural network can be trained to produce continuous-valued vector representations (embeddings) for spectrograms of audio data. A triplet-loss function during training can constrain the network to learn an embedding space where Euclidean distance corresponds to acoustic similarity. In such a space, algorithms like k-Nearest Neighbors can be used for classification. The network weights can be visualized to glean insight about the low- and high-level features it has learned to look for (pitch, timbre, unknowns, etc.) I also propose to obtain visualizations of the embedding space of laughter sounds using dimension reduction techniques like Principal Components Analysis (PCA) and t-distributed Stochastic Neighbor Embedding (t-SNE). I will also apply these same techniques techniques directly on the high-dimension audio spectrograms. All techniques proposed here have been applied previously on related problems in audio and image processing.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6110691832365056/",
+          "proposal_id": null,
+          "short_description": "I propose to train a deep neural network to discriminate between various kinds of laughter (giggle, snicker, etc.) A convolutional neural network can...",
+          "slug": "learning-embeddings-for-laughter-categorization",
+          "status": "completed",
+          "student_name": "Ganesh Srinivas",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Learning Embeddings for Laughter Categorization"
+        },
+        {
+          "code_url": "http://redhenaudio.blogspot.de/2017/08/week-12-final-report.html",
+          "description": "<p>This project aims to build a large-scale speaker recognition system for tagging speakers in CNN news recordings upon the existing Red Hen audio processing pipeline. The current speaker recognition system of the pipeline although fully functional, is not yet ready for processing news videos archived in the NewsScape. The main reason is lack of training data from relevant speakers to enroll into the system. Manually extracting such training data by human experts is inefficient, time-consuming or even infeasible at large scale. On the other hand, for a significant part of the archive (videos recorded over a decade since 2007), there are transcripts (the tpt files) that contain caption and speaker information saved along with the videos. These transcripts can potentially be used to automatically extract speaker training data, if they are accurately aligned with the audios. Therefore, the core idea of this proposal is to establish a workflow in the current audio pipeline from Gentle alignment to accurate timestamps of speech boundaries, then to speaker training data, and finally to identified speakers.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5851575381655552/",
+          "proposal_id": null,
+          "short_description": "This project aims to build a large-scale speaker recognition system for tagging speakers in CNN news recordings upon the existing Red Hen audio...",
+          "slug": "large-scale-speaker-recognition-system-for-cnn-news",
+          "status": "completed",
+          "student_name": "littleowen",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Large-scale Speaker Recognition System for CNN News"
+        },
+        {
+          "code_url": "https://github.com/RedHenLab/multi-modal-emotion-prediction/wiki",
+          "description": "<p>Auditory stimuli like music, radio recordings, movie soundtracks or the regular speech are widely used in research. While it is easy for a human to recognize the emotional load of Bach symphonies, how can it be done by a computer? Currently, algorithms are able to analyze low level features like signals energy. Those features are far from capturing how does the stimuli actually sound to us, and the best we can do is to ask a human subject to judge.\nThe following project aims to bridge the gap between human- and machine-like sound understanding by building an audio embedding space. Such embeddings have been proven extremely successful for texts (word2vec) and images (image recognition, convolutional neural networks, vgg). The aim of this project is to offer similar insight into the nature of the audio stimuli. \nThe embedding space will be obtained by a machine learning model trained to perform on various audio task. Deliverables are: the architecture (data loading and preprocessing pipeline, deep neural network for universal feature extraction and classifiers train separately for each task), ready-to-load optimized parameters, and a use case tutorial (github repository).</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_red-hen-lab_2017_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5904382272995328/",
+          "proposal_id": null,
+          "short_description": "Auditory stimuli like music, radio recordings, movie soundtracks or the regular speech are widely used in research. While it is easy for a human to...",
+          "slug": "audio-embedding-space-in-a-multitask-architecture",
+          "status": "completed",
+          "student_name": "Karolina Stosio",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Audio embedding space in a MultiTask architecture"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6645492838563840/"
+    },
+    "year_2018": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://github.com/awani216/BoundaryDetection",
+          "description": "<p>University and libraries of social science and literature department have a large collection of digitized legacy video recordings but are inaccessible. This is known as digital silo problem. One of the tasks required to solve the problem of the digital silo is Show Segmentation. Show Segmentation will help to extract important information from the different show by splitting them at their proper episode boundaries.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5707321791479808/",
+          "proposal_id": null,
+          "short_description": "University and libraries of social science and literature department have a large collection of digitized legacy video recordings but are...",
+          "slug": "multimodal-television-show-segmentation",
+          "status": "completed",
+          "student_name": "Awani Mishra",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Multimodal Television Show Segmentation"
+        },
+        {
+          "code_url": "https://github.com/RedHenLab/Neural-Machine-Translation",
+          "description": "<p>The aim of this project is to build a single Machine Translation system using Neural Networks (RNNs-LSTMs, GRUs,Bi-LSTMs) to translate between multiple languages. This project will cover 12-15 language pairs where the target language is English. ​The system will be made such that, it is relatively simple to add a new language pair for translation.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5746569068412928/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to build a single Machine Translation system using Neural Networks (RNNs-LSTMs, GRUs,Bi-LSTMs) to translate between...",
+          "slug": "multilingual-neural-machine-translation-system",
+          "status": "completed",
+          "student_name": "Vikrant Goyal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Multilingual Neural Machine Translation System"
+        },
+        {
+          "code_url": "https://medium.com/@btayyab.bese15seecs/google-summer-of-code-work-product-submission-4fcc561dcefd",
+          "description": "<p>We are proposing an OCR framework for recognizing ticker text in Russian Videos. We do this by solving two main problems, improving the OCR by implementing a Recurrent Neural Network, with a 1-dimensional (1-d) Bi-Directional Long Short-Term Memory (BDLSTM) architecture for Tensorflow which gives better results than Tesseract, and we solve the Scrolling Ticker problem by proposing an algorithm (Early Fusion) which checks the tickers and combine them in correct order.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5465811149914112/",
+          "proposal_id": null,
+          "short_description": "We are proposing an OCR framework for recognizing ticker text in Russian Videos. We do this by solving two main problems, improving the OCR by...",
+          "slug": "russian-ticker-tape-ocr",
+          "status": "completed",
+          "student_name": "Burhan Ul Tayyab",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Russian Ticker Tape OCR"
+        },
+        {
+          "code_url": "https://github.com/saisumit/gsoc2018-redhen-saisumit",
+          "description": "<p>Hey, I have been in constant touch with Mehul regarding my project on Multi-modal Egocentric Perception. I have already had a skype meet with him before drafting this final pre-proposal.</p>\n<p>Abstract: The idea of the project is to introduce multimodality in recognizing everyday activities and scenes. As per today, no work has been done now which includes multimodality into account (especially audio ) to determine the kind of activities and scenes that person is involved when it comes to egocentric perception. I have already built an audio-based model based on popular IEEE-DCASE-challenge which can successfully classify scenes into categories like ( person is walking in a park, driving in a car ) for egocentric views. I plan to extend my work as part of gsoc-2k18 to incorporate my model with video-based models and increase the scope of model from scenes to scenes+activities. The final breakdown of the steps is submitted in the pre-proposal attached above. The idea is to built pyscene-detect for egocentric videos,  which would be a prominent contribution owing to growing research in the area of first person view  videos.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5075236890345472/",
+          "proposal_id": null,
+          "short_description": "Hey, I have been in constant touch with Mehul regarding my project on Multi-modal Egocentric Perception. I have already had a skype meet with him...",
+          "slug": "multimodal-egocentric-perception-with-video-audio-eyetracking-data",
+          "status": "completed",
+          "student_name": "Sumit Vohra",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Multimodal Egocentric Perception (with video, audio, eyetracking data)"
+        },
+        {
+          "code_url": "https://cynthiasuwi.github.io//GSoC-Work-Submission/",
+          "description": "<p>In this project, a Speech-to-Text conversion engine on Chinese is established, resulting in a working application.</p>\n<p>There are two leading candidates for idea implementation:</p>\n<ol>\n<li>A Tensorflow implementation for Chinese speech recognition based on DeepMind’s WaveNet. Although WaveNet was designed as a generative model, it can straightforwardly be adapted to discriminative audio tasks such as speech recognition. The paper omitted specific details about the implementation, we can fill the gaps in our own way in this project.</li>\n<li>A Tensorflow implementation for Chinese speech recognition based on Baidu's DeepSpeech. Mozilla's DeepSpeech project is an open source Speech-To-Text engine, using a model trained by machine learning techniques. It is a well-known open source project on Github, therefore we can make our own breakthroughs based on the existing framework in this project.</li>\n</ol>\n<p>Since these two architecture are both based on Tensorflow, we can actually refer both of the architectures when designing our own network. In this project, we can use THCHS-30, Chinese news from two CCTV channels, two Hunan regional channels, and one Changsha local channel to train our model.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5570900208386048/",
+          "proposal_id": null,
+          "short_description": "In this project, a Speech-to-Text conversion engine on Chinese is established, resulting in a working application.\nThere are two leading candidates...",
+          "slug": "automatic-speech-recognition-for-speech-to-text-on-chinese",
+          "status": "completed",
+          "student_name": "Shuwei Xu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Automatic Speech Recognition for Speech-to-Text on Chinese"
+        },
+        {
+          "code_url": "https://bitbucket.org/gyanesh-m/gsoc_2018_redhenlabs/src",
+          "description": "<p>This project aims to tackle the problem of egocentric activity recognition based on the information available from two modalities which are video and eye tracking data. It achieves this by the fusion of multi stream convnet architecture to learn the spatial and temporal features from video data. It also makes use of the object saliency detection obtained from eye tracking data to further improve the identification of activity based on its surrounding.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6253549826605056/",
+          "proposal_id": null,
+          "short_description": "This project aims to tackle the problem of egocentric activity recognition based on the information available from two modalities which are video and...",
+          "slug": "multi-modal-egocentric-perception-with-video-and-eye-tracking-data",
+          "status": "completed",
+          "student_name": "Gyanesh Malhotra",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Multi modal Egocentric Perception (with video and eye tracking data)"
+        },
+        {
+          "code_url": "https://github.com/DevendraPratapYadav/gsoc18_RedHenLab/",
+          "description": "<p>This project aims to develop a pipeline for emotion detection using video frames. Specifically, we detect and analyze faces present in the video using deep neural networks for emotion recognition. We use a CNN and RNN based on papers submitted to Emotion Recognition In The Wild Challenge. An input video will be broken into small segments. For each segment, we will detect, crop, and align faces. This gives us a sequence of face images. A CNN will extract relevant features for each image in the sequence. These features will be sequentially fed to a RNN which will encode motion and facial expressions to predict emotion. The complete process will be implemented as a Python API with video input and JSON annotation output. Tensorflow, dlib, MTCNN and ffmpeg are used for various tasks in the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4835552415186944/",
+          "proposal_id": null,
+          "short_description": "This project aims to develop a pipeline for emotion detection using video frames. Specifically, we detect and analyze faces present in the video...",
+          "slug": "emotion-detection-and-characterization-in-video-using-cnn-rnn",
+          "status": "completed",
+          "student_name": "Devendra Yadav",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Emotion detection and characterization in video using CNN-RNN"
+        },
+        {
+          "code_url": "https://github.com/guptavaibhav18197/rapidannotator",
+          "description": "<p>With Red Hen Lab’s Rapid Annotator we try to enable researchers worldwide to <em><strong>annotate large chunks of data</strong></em> in a very short period of time with least effort possible and try to get started with minimal training.</p>\n<p>Rapid annotator is currently a proof-of-concept rather than a finished product. This project aims to deliver a usable product by the end of Google Code of Summer. The <strong>final product</strong> would be a complete tool for fast and simple classification of datasets and an <em><strong>administrative interface</strong></em> for the experimenters where they can conduct their annotation runs. It broadly comprises of 3 steps, namely</p>\n<ul>\n<li>Uploading their datasets to setup the experiment.</li>\n<li>Assigning annotators datasets for annotation.</li>\n<li>Keeping a track of the annotation progress.</li>\n</ul>\n<p>The main aim of the pre-project phase is to do <em><strong>requirements gathering</strong></em>, analysis and <em><strong>designing</strong></em> the complete system architecture. The project phase will deal with implementing the architecture finally decided upon</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4907831413178368/",
+          "proposal_id": null,
+          "short_description": "With Red Hen Lab’s Rapid Annotator we try to enable researchers worldwide to annotate large chunks of data in a very short period of time with least...",
+          "slug": "rapid-annotator",
+          "status": "completed",
+          "student_name": "Vaibhav Gupta-1",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Rapid Annotator"
+        },
+        {
+          "code_url": "https://xuzhaoqing.github.io/archivers/GSOC-Final-Submission",
+          "description": "<p>This project is roughly divided into three parts: OCR Recognition, which uses existing tools to extract captions from videos to text; Speech Recognition, which uses deep learning tools(BaiduSpeech) to translate audios to text; NLP tasks, including segmentation, part-of-speech tagging, named entity recognition, dependency parsing, semantic role labeling and so on. The most important part is Speech Recognition. Since there are few guidences about how to use DeepSpeech model to train Chinese, I will pay more attention to this part and train a model as soon as possible.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5998498495332352/",
+          "proposal_id": null,
+          "short_description": "This project is roughly divided into three parts: OCR Recognition, which uses existing tools to extract captions from videos to text; Speech...",
+          "slug": "chinese-pipeline",
+          "status": "completed",
+          "student_name": "Xu Tony",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Chinese Pipeline"
+        },
+        {
+          "code_url": "https://ai-zahran.github.io/jekyll/update/2018/08/12/Arabic-ASR-and_DI.html",
+          "description": "<p>The project proposed aims to implement an <strong>Arabic speech recognition</strong> model using training data from the <a href=\"http://www.mgb-challenge.org/arabic.html\" target=\"_blank\"><em>MGB-3</em></a> Arabic datasets to perform speech recognition on a <strong>television news corpus</strong> captured in Cairo by Red Hen Lab. Another contribution will be to train a <strong>dialect identification</strong> model to perform Arabic dialect identification on the Television news corpus.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2018_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5146445703282688/",
+          "proposal_id": null,
+          "short_description": "The project proposed aims to implement an Arabic speech recognition model using training data from the MGB-3 Arabic datasets to perform speech...",
+          "slug": "arabic-speech-recognition-and-dialect-identification",
+          "status": "completed",
+          "student_name": "Ahmed Ismail",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Arabic Speech Recognition and Dialect Identification"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6069086618386432/"
+    },
+    "year_2019": {
+      "num_projects": 15,
+      "projects": [
+        {
+          "code_url": "https://github.com/yongzx/GSoC-2019-FrameNet",
+          "description": "<p>This project sets out to achieve two goals. The first objective is to update the annotation system for Red Hen’s NewsScape dataset to FrameNet 1.7 using Open-Sesame and Semafor parsers. The second objective is to expand the lexical units, frames and frame-to-frame relations in FrameNet 1.7 through a knowledge-driven approach and a distributional semantics approach. The knowledge-driven approach uses BabelNet to induce the frames of unrecognized lexical units in the tagged NewsScape dataset. The latter distributional semantics approach uses Deep Structured Semantic Models (DSSM) to create word embeddings of lexical units (LUs) to resolve the inconsistency in FrameNet hierarchy, tag LUs with their missing frames, and locate new frames using SemCor corpus. If time permits, DSSM is used to expand the frame-to-frame relations with Entity and Event frames using ACE 2005 Entities and Events dataset.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6628996119265280/",
+          "proposal_id": null,
+          "short_description": "This project sets out to achieve two goals. The first objective is to update the annotation system for Red Hen’s NewsScape dataset to FrameNet 1.7...",
+          "slug": "annotating-newsscape-with-framenet-17-and-expanding-framenet-with-babelnet-and-deep-structured-semantic-models",
+          "status": "completed",
+          "student_name": "Yong Zheng Xin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Annotating NewsScape with FrameNet 1.7 and Expanding FrameNet with BabelNet and Deep Structured Semantic Models"
+        },
+        {
+          "code_url": "https://poulami-sarkar.github.io/blog/post/2019/08/19/Final.html",
+          "description": "<p>For this project I wish to develop OCR for television news in a tri-phased implementation model. The first phase will be consist of successfully detecting text regions from videos. For this I intend to use OpenCv to detect specific features that are unique to each of the mentioned languages. EX( Detecting repeated occurrences of a horizontal line to detect text regions for Hindi and Bengali. Detecting strips having two or three colours of high contrast)\nThe next phase would involve developing an algorithm for eliminating any duplicate texts detected. Ex: In a breaking news video. The title breaking news and the news headlines will have to appear in several frames and will thus have to be filtered to remove redundancies.\nThe third phase would involve the actual Optical Character Recognition script using Long Short Term Memory (LSTM) implementation of RNNs.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5392125447897088/",
+          "proposal_id": null,
+          "short_description": "For this project I wish to develop OCR for television news in a tri-phased implementation model. The first phase will be consist of successfully...",
+          "slug": "ocr-for-chinese-arabic-hindiurdubengali",
+          "status": "completed",
+          "student_name": "Poulami Sarkar",
+          "student_profile": null,
+          "tags": [],
+          "title": "OCR for Chinese, Arabic, Hindi,Urdu,Bengali"
+        },
+        {
+          "code_url": "https://github.com/eonr/ShowSegmentation",
+          "description": "<p>The goal of the proposal is to create an algorithm that can automatically find boundaries between TV shows in unannotated recordings and also find the names of the shows identified. The final method uses face recognition to find all the faces present in the video and clusters them to group the faces by persons. We then separate anchors/hosts of shows from those persons that are not anchors/hosts using a few rules. All anchors found using this method are named using our custom classifier built on the MS-Celeb dataset. More details about the problem statement can be found on the Red Hen Labs website.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5050831441756160/",
+          "proposal_id": null,
+          "short_description": "The goal of the proposal is to create an algorithm that can automatically find boundaries between TV shows in unannotated recordings and also find...",
+          "slug": "multimodal-show-segmentation",
+          "status": "completed",
+          "student_name": "Sasi Kiran Bhimavarapu",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Multimodal Show Segmentation"
+        },
+        {
+          "code_url": "https://github.com/swagato-c/gsoc2019",
+          "description": "<p>In this project I propose to include a tool to the Red Hen Lab's Art pipeline based on Gradient Activated Class Maps which can be used for understanding which features are being the paramount one for Iconographic Image Captioning. The tool will not be a silver bullet but another tool in the arsenal of tools, that will be used to study features in the Artworks which are proving important for understanding an Iconography.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5339343185510400/",
+          "proposal_id": null,
+          "short_description": "In this project I propose to include a tool to the Red Hen Lab's Art pipeline based on Gradient Activated Class Maps which can be used for...",
+          "slug": "feature-recognition-in-works-of-art-and-iconographic-artwork-captioning",
+          "status": "completed",
+          "student_name": "Swagato Chatterjee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Feature Recognition in works of Art and Iconographic Artwork Captioning"
+        },
+        {
+          "code_url": "https://github.com/llucifer97/Pose-analysis-of-art",
+          "description": "<p>I have worked on building an annotation tool which helps to correct the extracted pose from images and build a pipeline to retrieve the extracted pose over a restful API saved in the database over a cloud. These corrected poses will then used to be used for predicting the poses available in the image and will try to predict the scene and its interpretation.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5565179075493888/",
+          "proposal_id": null,
+          "short_description": "I have worked on building an annotation tool which helps to correct the extracted pose from images and build a pipeline to retrieve the extracted...",
+          "slug": "gesture-recognition-in-works-of-art",
+          "status": "completed",
+          "student_name": "Ayush Raj",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database",
+            "cloud",
+            "ui"
+          ],
+          "title": "Gesture Recognition in works of art"
+        },
+        {
+          "code_url": "https://shreya2111.github.io/gsoc/report",
+          "description": "<p>The aim of the project would be to develop an​ ASR pipeline utilizing the existing news conversation dataset and audio pipeline codebase. Additionally, It will be adapted to each speaker to obtain speaker adapted ASR models.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4696272026468352/",
+          "proposal_id": null,
+          "short_description": "The aim of the project would be to develop an​ ASR pipeline utilizing the existing news conversation dataset and audio pipeline codebase....",
+          "slug": "speaker-adapted-asr-pipeline",
+          "status": "completed",
+          "student_name": "Shreya .",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Speaker Adapted ASR Pipeline"
+        },
+        {
+          "code_url": "https://gulshan-mittal.github.io/GSoC19-Blog/2019/08/20/GSoC'19-Summary.html",
+          "description": "<p>With Red Hen Lab’s Rapid Annotator we try to enable researchers worldwide to <strong>annotate large chunks of data</strong> in a very short period of time with least effort possible and try to get started with minimal training.</p>\n<p>This Project is aimed at extending the <a href=\"https://github.com/RedHenLab/RapidAnnotator-2.0\" target=\"_blank\">Red Hen Rapid Annotator</a>, which was re-implemented from scratch as a Python/Flask application during last year's GSoC. This project mainly aims to deliver a fully usable and handy product by the end of Google Code of Summer and incorporation of <a href=\"https://sites.google.com/case.edu/techne-public-site/red-hen-rapid-annotator\" target=\"_blank\">new feature request and bug fixes</a>. The <strong>final product</strong> would be a complete tool for fast and simple classification of datasets and an <strong>administrative interface</strong> ​for the experimenters where they can conduct their annotation runs. It broadly comprises of 3 steps, namely</p>\n<ul>\n<li>Uploading their datasets to set up the experiment. </li>\n<li>Assigning annotators datasets for annotation.</li>\n<li>Keeping a track of the annotation progress.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6510363133083648/",
+          "proposal_id": null,
+          "short_description": "With Red Hen Lab’s Rapid Annotator we try to enable researchers worldwide to annotate large chunks of data in a very short period of time with least...",
+          "slug": "red-hen-rapid-annotator",
+          "status": "completed",
+          "student_name": "gulshan_kumar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Red Hen Rapid Annotator"
+        },
+        {
+          "code_url": "https://github.com/AASHISHAG/asr-german",
+          "description": "<p>This project aims to build an ASR pipeline for European Language (German) and it must be built as a Singularity container on the Case HPC and put into production to process daily incoming files. The project proposes to use different state-of-the-art Speech to Text open source toolkits (Kaldi, DeepSpeech).</p>\n<p>It can be divided into following sub-tasks:</p>\n<ol>\n<li>Data cleaning and Feature Extraction</li>\n<li>Language Modeling</li>\n<li>Building Phoneme Dictionary</li>\n<li>Acoustic Modeling</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6029180767043584/",
+          "proposal_id": null,
+          "short_description": "This project aims to build an ASR pipeline for European Language (German) and it must be built as a Singularity container on the Case HPC and put...",
+          "slug": "automatic-speech-recognition-for-european-language-german",
+          "status": "completed",
+          "student_name": "Aashish Agarwal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Automatic Speech Recognition for European Language (German)"
+        },
+        {
+          "code_url": "https://amrmaghraby.github.io/",
+          "description": "<p>OCR is a very wide application which translates characters in the image to an editable format. OCR on television news shows would recognize any text appear on a screen and translate this text to editable formate at one-second intervals.\nDuring OCR development some challenges appear, one of these challenges is to detect duplication if text repeats in successive frames, the application will handle this case.\nAnother challenge is to see if it is time to make space between words or not (i.e. space detection) as the output may be all words concatenated together and space some times not detectable in frames. My work will be based on CNN and BLSTM VS open source libraries the best accuracy will be deployed. \nThe project will be deployed on HPC machines using Singularity containers.\nAnother contribution will be also done an enhancement on ASR (Automatic speech recognition) which is done last year by Ahmed Ismail. This project will be trained on a new dataset and new modification to the architecture may be done (if required ) to increase it is accuracy.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5790179393011712/",
+          "proposal_id": null,
+          "short_description": "OCR is a very wide application which translates characters in the image to an editable format. OCR on television news shows would recognize any text...",
+          "slug": "gsoc-2019-red-hen-lab-ocr",
+          "status": "completed",
+          "student_name": "Amr Maghraby",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "GSoC 2019 | Red Hen Lab OCR"
+        },
+        {
+          "code_url": "https://github.com/yogayu/deepLearningCourse",
+          "description": "<p>This Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course will contain labs case studies from multimodal communication.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5913691646590976/",
+          "proposal_id": null,
+          "short_description": "This Project goal is to design and develops an online course, to teach deep learning for students in the humanities and social sciences. The course...",
+          "slug": "design-and-develop-an-online-deep-learning-course-for-humanists",
+          "status": "completed",
+          "student_name": "Xinyu You",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Design and develop an online deep learning  course for humanists"
+        },
+        {
+          "code_url": "https://github.com/shaheenkdr/GSoC2019",
+          "description": "<p>This project aims to build an Automated Speech Recognition engine for <strong>Indian English</strong> and <strong>Hindi</strong>  using Deep Learning( RNN-CTC, TDNN, LDA-MLLT, CNN ). The proposed Deep Neural Networks will be trained on 5000+ hours of training data( Audio + manually aligned transcripts ) . The secondary goal of this project is to implement <strong>Speaker Diarization</strong> to generate speaker separated transcripts. The end objective is to deploy all the modules within a single pipeline to help understand Television news with more precision and accuracy.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5914472793767936/",
+          "proposal_id": null,
+          "short_description": "This project aims to build an Automated Speech Recognition engine for Indian English and Hindi  using Deep Learning( RNN-CTC, TDNN, LDA-MLLT, CNN )....",
+          "slug": "speech-recognition-for-indian-english-hindi",
+          "status": "completed",
+          "student_name": "SHAHEEN A KADER",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Speech Recognition for Indian English & Hindi"
+        },
+        {
+          "code_url": "https://medium.com/@animysore/final-report-for-google-summer-of-code-2019-a825cd1531f1",
+          "description": "<p>This project automates the task of sensing the health of the many Red Hen Lab remote capture stations, which are Raspberry Pi devices, and provides a responsive web dashboard that the management entity can use to easily perform her monitoring tasks. This has been achieved by implementing a set of scripts, whose execution in the capture stations is controlled over SSH and a comprehensive monitoring system using a centralized server (called Coop) built on the MERN stack - MongoDB, Express, React, Node.JS.</p>\n<p>The server consists of a Telemetry component which can communicate with the capture stations through SSH, a Control component which performs tasks like addition and updation of station metadata in the mongo database as well as report generation and backup upon user command and a frontend that allows visualization through a centralized dashboard that can be accessed through a desktop or mobile device with appropriate security credentials.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5915487278465024/",
+          "proposal_id": null,
+          "short_description": "This project automates the task of sensing the health of the many Red Hen Lab remote capture stations, which are Raspberry Pi devices, and provides a...",
+          "slug": "cockpit-the-red-hen-monitoring-system",
+          "status": "completed",
+          "student_name": "Aniruddha Mysore",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "mobile",
+            "database",
+            "ui"
+          ],
+          "title": "Cockpit : The Red Hen Monitoring System"
+        },
+        {
+          "code_url": "https://liuziyi219.github.io/2019/08/21/Chinese-pipeline-Final-Report/",
+          "description": "<p>Red Hen gathers Chinese broadcasts to make data sets for NLP, OCR, audio, and video pipelines. Currently, Red Hen have a preliminary ASR pipeline but it needs great improvement.  This proposal is divided into 2 parts. The first one is to improve the ASR pipeline which contains 3 steps: find a source of correct transcript of the shows;use a different way to cut the audios; use new models to train the data. The second part is to build a CONCRETE Chinese NLP pipeline which includes basic tasks like data ingest, word segmentation, part-of-speech tagging,etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6001285625544704/",
+          "proposal_id": null,
+          "short_description": "Red Hen gathers Chinese broadcasts to make data sets for NLP, OCR, audio, and video pipelines. Currently, Red Hen have a preliminary ASR pipeline but...",
+          "slug": "chinese-pipeline",
+          "status": "completed",
+          "student_name": "Ziyi Liu",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Chinese Pipeline"
+        },
+        {
+          "code_url": "https://github.com/iMaxmoe/GSoC-2019-topic-detect-vis",
+          "description": "<p>In the proposal, I described and demonstrated my ideas about the visualization tasks: \n1) Clusters of Event Category Over Time\n2) Distribution of emotions across nations and networks\n3) The emotional intensity of a single event cascading through the international news landscape</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6280106799005696/",
+          "proposal_id": null,
+          "short_description": "In the proposal, I described and demonstrated my ideas about the visualization tasks: \n1) Clusters of Event Category Over Time\n2) Distribution of...",
+          "slug": "semantic-art-from-big-data",
+          "status": "completed",
+          "student_name": "Xumeng Chen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Semantic Art from Big Data"
+        },
+        {
+          "code_url": "https://anjapago.github.io/AnalyzeAccountability/",
+          "description": "<p>The objective of this project is to automatically detect types of accountability in news articles when describing crimes such as shootings, using a dataset that was annotated with custom labels for this task. Analysis will be done to assess the given annotations, and build a classifier to automate this type of annotation for future research. Experiments will be conducted to compare various text representations and classification models. AutoML approaches will be used to tune parameters and optimize models. This project is in collaboration with Red Hen Lab, Dr. Glik from the UCLA school of public health.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2019_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5222629395398656/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to automatically detect types of accountability in news articles when describing crimes such as shootings, using a...",
+          "slug": "accountability-classifier-from-annotated-data",
+          "status": "completed",
+          "student_name": "ajp",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Accountability Classifier from Annotated Data"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4781629350871040/"
+    },
+    "year_2020": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/smithhenryd/GSoC_2020_UnderrepresentedMessagesAndDemocrats-/tree/master/project_submission",
+          "description": "<p>Social media has continued to proliferate, not only as a space for self-expression, but also for greater communication between politicians and constituents. In this project, we seek to answer the question of how Democratic politicians, who rely on a diverse base for support, effectively connect with and mobilize constituents who are members of underrepresented racial, ethnic, gender and sexual groups through social media. To do so, we will collect a data set of the visual media posted by Democratic politicians and build a prediction model of variables measured from these images related to their diversity appeal as well as their more generalized traits. We will subsequently analyze how Democratic candidates in racially diverse districts present themselves through social media during contested primary elections.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6618292313128960/",
+          "proposal_id": null,
+          "short_description": "Social media has continued to proliferate, not only as a space for self-expression, but also for greater communication between politicians and...",
+          "slug": "understanding-messages-to-underrepresented-racial-ethnic-gender-and-sexual-groups-on-social-media-by-democratic-politicians-and-their-electoral-implications",
+          "status": "completed",
+          "student_name": "Henry Smith",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Understanding Messages to Underrepresented Racial, Ethnic, Gender, and Sexual Groups on Social Media by Democratic Politicians and their  Electoral Implications"
+        },
+        {
+          "code_url": "https://github.com/frankier/gsoc2020/",
+          "description": "<p>This proposal concerns the addition of pose data extraction using OpenPose and the generation of posture and gesture embeddings to Red Hen’s pipelines for processing the NewsScape datasets, and posture and gesture search by example and similarity search to the vitrivr video information retrieval software. The focus is on reorienting some of the existing work towards similarity search in a pilot production environment. Embeddings for static body and hand poses will be created using Spatial (Non-Temporal) Graph Convolutional Networks using triplet loss. Candidates for illustrative gestures will be segmented based upon manually engineered features on skeletons from OpenPose and then embedded using Spatial Temporal Graph Convolutional Networks combined with triplet loss. Functionality for querying using a webcam will be added to vitrivr, and the embedding pipeline will be integrated into cineast</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5654826458808320/",
+          "proposal_id": null,
+          "short_description": "This proposal concerns the addition of pose data extraction using OpenPose and the generation of posture and gesture embeddings to Red Hen’s...",
+          "slug": "pipeline-for-posture-and-posture-and-gesture-embeddings-including-addition-of-query-by-gesture-functionality-into-vitrivr",
+          "status": "completed",
+          "student_name": "Frankie Robertson",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "Pipeline for posture, and posture and gesture embeddings including addition of query by gesture functionality into vitrivr"
+        },
+        {
+          "code_url": "https://www.kangzhiq.com/2020/08/30/gsoc2020-final-report/",
+          "description": "<p>The goal is to implement a reliable pipeline which can take a raw RGB video as input and output information such as whether there is a hand gesture and what is the gesture. The implementation would be applied to a data set of Ref Hen Lab, having around 600,000 hours of television news recordings in multiple languages.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5114866995560448/",
+          "proposal_id": null,
+          "short_description": "The goal is to implement a reliable pipeline which can take a raw RGB video as input and output information such as whether there is a hand gesture...",
+          "slug": "hand-gesture-detection-and-recognition-in-news-videos",
+          "status": "completed",
+          "student_name": "Zhiqi KANG",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hand gesture detection and recognition in news videos"
+        },
+        {
+          "code_url": "https://github.com/Himani2000/GSOC_2020",
+          "description": "<p>The projects aim to design a system that clusters the images and the audio from the media broadcasts and\nthen re-orders them accordingly in the red hen rapid annotator. The important part is to figure out the\nfeatures algorithms and the thresholds to use. The project will start with data collection. Data from the\nprevious redhen research will be enough for the task. The second step would be to do the pre-processing of\nthe image and the audio data as it would lead to better performance of the system. The third step would\nbe to find out the best features from the audio and the image data. And at the end first, the conventional\nalgorithms would be used to make it as baseline performance and then the deep neural models will be used\nto cluster the data.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5252990258118656/",
+          "proposal_id": null,
+          "short_description": "The projects aim to design a system that clusters the images and the audio from the media broadcasts and\nthen re-orders them accordingly in the red...",
+          "slug": "image-and-audio-clustering",
+          "status": "completed",
+          "student_name": "Himani Negi",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Image and audio clustering"
+        },
+        {
+          "code_url": "https://github.com/gulshan-mittal/RapidAnnotator-2.0",
+          "description": "<p>With Red Hen Lab’s Rapid Annotator we try to enable researchers worldwide to <strong>annotate large chunks of data</strong> in a very short period of time with least effort possible and try to get started with minimal training.\nThis task is aimed at extending the <a href=\"https://github.com/RedHenLab/RapidAnnotator-2.0\" target=\"_blank\">Red Hen Rapid Annotator</a>, which was re-implemented from scratch as a Python/Flask application during GSoC 2018 by Vaibhav Gupta and improved in last year's GSoC by Gulshan Kumar. This project mainly aims to deliver a fully usable and handy product by the end of Google Code of Summer 2020 and incorporation of <a href=\"https://sites.google.com/case.edu/techne-public-site/red-hen-rapid-annotator\" target=\"_blank\">new feature request and bug fixes</a>. The ​final product would be a complete tool for fast and simple classification of datasets and an administrative interface ​for the experimenters where they can conduct their annotation runs. It broadly comprises of 3 steps, namely</p>\n<ul>\n<li>Uploading their datasets to set up the experiment. </li>\n<li>Assigning annotators datasets for annotation.</li>\n<li>Keeping a track of the annotation progress.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6501149831593984/",
+          "proposal_id": null,
+          "short_description": "With Red Hen Lab’s Rapid Annotator we try to enable researchers worldwide to annotate large chunks of data in a very short period of time with least...",
+          "slug": "red-hen-rapid-annotator",
+          "status": "completed",
+          "student_name": "gulshan_kumar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Red Hen Rapid Annotator"
+        },
+        {
+          "code_url": "https://sites.google.com/view/frame-blends-entry/home",
+          "description": "<p>For the project idea \"AI Recognizers of Frame Blends, Especially in Conversations About the Future,\" Wenyue developed multiple approaches that can nominate some kinds of Frame Blending cases, built a preliminary system of Frame Embedding, and made an interactive prototype of the human-in-the-loop Frame Blends Nomination System. Wenyue also created Google site entry for her project, which has been integrated into Red Hen Lab official website, to present the instructions and tutorial videos for contributors and users in the future. By reading research papers, developing algorithms, and interacting with mentors and peers, Wenyue also made great progress in academic familiarity and professional maturity through working with Red Hen Lab.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6032075448123392/",
+          "proposal_id": null,
+          "short_description": "For the project idea \"AI Recognizers of Frame Blends, Especially in Conversations About the Future,\" Wenyue developed multiple approaches that can...",
+          "slug": "2020-gsoc-red-hen-lab-proposal-for-ai-recognizers-of-frame-blends-especially-in-conversations-about-the-future",
+          "status": "completed",
+          "student_name": "Wenyue Xi",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "2020 GSoC Red Hen Lab Proposal for AI Recognizers of Frame Blends, Especially in Conversations About the Future"
+        },
+        {
+          "code_url": "https://github.com/EdOates84/Show-Segmentation-2020",
+          "description": "<p>The main research question or problem is to split the videos into named show and dated show. Identify anchor/show names or recognizes what show it is. Using the IMDb dataset (Will discuss in the proposal) to identify show names from anchor names (identified using MSCeleb). We Split the newsscape videos into smaller segments, one for each TV show, with annotations of show title, channel, time, date. Currently, the most time-consuming process in the program is that of going frame by frame and extracting faces. We can speed up using multi-threading.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5898298658914304/",
+          "proposal_id": null,
+          "short_description": "The main research question or problem is to split the videos into named show and dated show. Identify anchor/show names or recognizes what show it...",
+          "slug": "multimodal-tv-show-segmentation",
+          "status": "completed",
+          "student_name": "NITESH MAHAWAR",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Multimodal TV Show Segmentation"
+        },
+        {
+          "code_url": "https://github.com/Xiaoyu-Lu/GSoC_2020",
+          "description": "<p>It has been raising industrial and research interest to analyze the age biasing in various video formats. Here I'm proposing a project to make use of Redhen's enriched news audio and video dataset and analyze the age biasing in the news media. The primary work involved in this project is to develop a pipeline to create the audio and video inputs using Redhen's dataset, use existing external data source for ground truth,  train Machine Learning(ML) models to detect the age signals, apply necessary filtering based on testing/evaluation metrics and combine the produced annotation with original inputs (encoding and merging the annotations).</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2020_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5179266104295424/",
+          "proposal_id": null,
+          "short_description": "It has been raising industrial and research interest to analyze the age biasing in various video formats. Here I'm proposing a project to make use of...",
+          "slug": "age-group-prediction-in-tv-news",
+          "status": "completed",
+          "student_name": "Xiaoyu Lu",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Age Group Prediction in TV news"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6243181680656384/"
+    },
+    "year_2021": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://github.com/tre3x/FilmEditDetection",
+          "description": "<p>A film can be fundamentally broken into innumerous shots, placed after one another. These shots are\ndivided by cuts. Film cuts can be broadly divided into two categories - Sharp/Hard cuts, Gradual cuts. This\nwork is about the detection and classification of these film cuts. While there are many algorithms for cut\ndetection, few of them yield a good performance efficiency ratio. In this work, a synthetic dataset has\nalso been made from scratch using appropriate algorithms. A method has been used in\nwhich the hard cuts and gradual cuts are filtered and processed in different modules using different deep learning techniques. This approach should yield a descent performance and less computational complexity.\nThe proposed model is capable of detecting multiple cuts in a video and return timestamps of the cut\noccurrence in the video. I have also proposed on making a flask webapp/ pyQT GUI to integrate this\nmodel at the backend of the webapp or GUI. The webapp can be added to RedHenLab’s rapid annotator.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_red-hen-lab_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6646654563778560/",
+          "proposal_id": null,
+          "short_description": "A film can be fundamentally broken into innumerous shots, placed after one another. These shots are\ndivided by cuts. Film cuts can be broadly divided...",
+          "slug": "machine-detection-of-film-edits",
+          "status": "completed",
+          "student_name": "Shreyan Ganguly",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ui",
+            "backend"
+          ],
+          "title": "Machine detection of film edits"
+        },
+        {
+          "code_url": "https://edoates84.github.io/final-submission.html",
+          "description": "<p>I will continue from last year’s work and improve the clustering algorithm to the in-production code and enhance the previous work. The main problem is to find the correct anchor. For this, I want to propose a celeb detection API of Microsoft azure which is the best for this use case. Currently, the most time-consuming process in the program is going frame by frame and extracting faces. The face-recognition method used in the production code processes each frame individually. I want to upgrade it to a parallelized algorithm to process multiple frames in a batch and increase the processing speed exponentially, which will also help in faster testing of hyperparameters. Batch processing can be much quicker than processing single images at a time. So I think we use batch processing for multi-threading.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5728490413883392/",
+          "proposal_id": null,
+          "short_description": "I will continue from last year’s work and improve the clustering algorithm to the in-production code and enhance the previous work. The main problem...",
+          "slug": "multimodal-tv-show-segmentation",
+          "status": "completed",
+          "student_name": "Nitesh Mahawar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Multimodal TV Show Segmentation"
+        },
+        {
+          "code_url": "https://github.com/hannesleipold2/gsoc-sp2sp-net",
+          "description": "<p>We design a simple pipeline for using state-of-the-art speech-to-text, text-to-text, and text-to-speech to create a speech-to-speech translation system as well as text-to-text. Users can then create and share audio or  video files that will be translated for them to the language of the other user they want to message.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5051160112660480/",
+          "proposal_id": null,
+          "short_description": "We design a simple pipeline for using state-of-the-art speech-to-text, text-to-text, and text-to-speech to create a speech-to-speech translation...",
+          "slug": "utilizing-speech-to-speech-translation-to-facilitate-a-multilingual-text-audio-and-video-message-board-and-database",
+          "status": "completed",
+          "student_name": "Hannes",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "Utilizing Speech-to-Speech Translation to Facilitate a Multilingual Text, Audio, and Video Message Board and Database"
+        },
+        {
+          "code_url": "https://github.com/AmrMaghraby/GSoC_2021_Red_Hen_Lab",
+          "description": "<p>By using digital video, every day the number of people needs to edit and manipulate video content is to increase. This requires from us to have better understanding how videos are constructed. Videos are constructed by combining different shots of the camera placed after each other. A combination of different shot transition creates the final video at the end. The final video contain visual effects which could be classified into two main categories: sharp and gradual. The former is a sudden change of the shot over 1 frame, while gradual transitions occur over multiple frames. Gradual transitions are further classified into dissolve and non-dissolve. The former includes cases such as semi-transparent graduals, fade in and fade out. Non-dissolve are dominated by wipes. Wipe graduals have a much wider variety than the dissolve graduals.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5231647791775744/",
+          "proposal_id": null,
+          "short_description": "By using digital video, every day the number of people needs to edit and manipulate video content is to increase. This requires from us to have...",
+          "slug": "machine-detection-of-film-edits",
+          "status": "completed",
+          "student_name": "Amr Maghraby",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Machine detection of film edits"
+        },
+        {
+          "code_url": "https://blog.yunfeizhao.com/2021/08/22/GSOC-final-2021/",
+          "description": "<p>Gesture recognition becomes popular in recent years since it can play an essential role in non-verbal communication, emotion analysis as well as human-computer interaction. The research task is to detect hand gestures in raw news videos which are streams of RGB images.  I propose a Transformer and keypoints-based pose tracking system and a Transformer and keypoints-based gesture detector to fulfill this task. This structure is composed of a keypoints extractor, a person tracker, and a gesture detector. The mission has three main parts, the first part is to track people in temporal space. In the second part, for each person, we use their hand keypoints features in temporal space to construct several keypoints sequences. The third part is to use these sequences to make predictions of the existence of gestures. I believe that for gesture detection tasks, both spatial and temporal information is important. So that is why we use the Transformer which can take into account the local information of hand keypoints in one frame to capture the shape information and it values also the relationship of keypoints in different frames that is the global information refer to the motion.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5641365928542208/",
+          "proposal_id": null,
+          "short_description": "Gesture recognition becomes popular in recent years since it can play an essential role in non-verbal communication, emotion analysis as well as...",
+          "slug": "gesture-temporal-detection-pipeline-for-news-videos",
+          "status": "completed",
+          "student_name": "Yunfei Zhao",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Gesture temporal detection pipeline for news videos"
+        },
+        {
+          "code_url": "https://ankiitgupta7.medium.com/final-project-report-gsoc21-at-red-hen-labs-d88a6d4f66ad",
+          "description": "<p>Vervet monkeys (Cercopithecus aethiops) are said to give acoustically different alarm calls to different predators, evoking contrasting, seemingly adaptive, responses. Since it can be a potentially critical evolutionary feature if proven its worth, there is a need to check how effective are these alarm calls in helping the vervets' overall survival. This project is a predator-prey agent-based modeling attempt to simulate an ecological setup consisting of vervet monkeys as they interact with predators and give alarm calls. Hence the main goal of the simulation is to efficiently model representational communication through an agent-based model and show how the differential meaning of vervet’s alarm calls is helping in their survival.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6188011817009152/",
+          "proposal_id": null,
+          "short_description": "Vervet monkeys (Cercopithecus aethiops) are said to give acoustically different alarm calls to different predators, evoking contrasting, seemingly...",
+          "slug": "simulating-representational-communication-in-vervet-monkeys",
+          "status": "completed",
+          "student_name": "ankiitgupta7",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Simulating Representational Communication in Vervet Monkeys"
+        },
+        {
+          "code_url": "https://github.com/yashkhasbage25/AnonymizingAudioVisualData",
+          "description": "<p>The Audiovisual data present with Red Hen is not shareable. The visual data clearly shows the speakers involved, and a person can be recognized with the recorded audio. These datasets cannot be shared easily to protect the privacy of people. Thus, Red Hen needs an anonymization engine for its audiovisual data. Using audio processing techniques, classical computer vision algorithms and recent deep learning algorithms, we propose an anonymization engine. The engine will have a simple web-app interface, where users can choose the type of anonymization desired, or simply choose to randomly anonymize.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6223212362334208/",
+          "proposal_id": null,
+          "short_description": "The Audiovisual data present with Red Hen is not shareable. The visual data clearly shows the speakers involved, and a person can be recognized with...",
+          "slug": "anonymizing-audiovisual-data",
+          "status": "completed",
+          "student_name": "Yash Khasbage",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml"
+          ],
+          "title": "Anonymizing Audiovisual Data"
+        },
+        {
+          "code_url": "https://github.com/Nickil21/joint-meaning-construal/",
+          "description": "<p>The project aims to develop a prototype that is capable of meaning construction using multi-modal channels of communication. Specifically, for a co-speech gestures dataset, using the annotations obtained manually coupled with the metadata obtained through algorithms, we devise a mechanism to disambiguate meaning considering the influence of all the different modalities involved in a particular frame. Since only a handful of annotated datasets have been made available by Red Hen, we leverage semi-supervised learning techniques to annotate additional unlabeled data. Furthermore, since each frame could have multiple meaning interpretations possible, we use human annotators to annotate a subset of our validation set and report our performance on that set.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4744921025609728/",
+          "proposal_id": null,
+          "short_description": "The project aims to develop a prototype that is capable of meaning construction using multi-modal channels of communication. Specifically, for a...",
+          "slug": "detecting-joint-meaning-construal-by-language-and-gesture",
+          "status": "completed",
+          "student_name": "Nickil Maveli",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Detecting Joint Meaning Construal by Language and Gesture"
+        },
+        {
+          "code_url": "https://github.com/lisardop/GSoC2021",
+          "description": "<p>Among all the human writing communication systems and inspired by Google Arts &amp; Culture project\nFabricius, we propose the creation of a framework to identify glyphs in Aztec/Central Mexican codex and\nclassifying their Graphical Communication System (GCS) using Convolutional Neural Networks (CNN) Keras. The goal is to create a model with transformed glyphs in RGB-matrix samples to successfully train Deep Learning algorithms as a useful too for Aztec scholars.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4769685135949824/",
+          "proposal_id": null,
+          "short_description": "Among all the human writing communication systems and inspired by Google Arts & Culture project\nFabricius, we propose the creation of a framework to...",
+          "slug": "depicting-of-graphical-communication-systems-gcs-in-azteccentral-mexican-manuscripts-with-deep-learning-glyphic-visual-recognition-and-deciphering-using-keras",
+          "status": "completed",
+          "student_name": "Lisardo Pérez Lugones",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Depicting of Graphical Communication Systems (GCS) in Aztec/Central Mexican manuscripts with Deep Learning: glyphic visual recognition and deciphering using Keras"
+        },
+        {
+          "code_url": "https://rrrokhtar.github.io/rapid-annotator-21/",
+          "description": "<p>Continuing the work done on Rapid Annotator 2.0 by Vaibhav Gupta, There were some improvements and new functionalities can be added to the current project in order to make the rapid annotator more useful and easier to use. So, I decided to contribute with my ideas in order to make those improvements and  implementing them.</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4819825255251968/",
+          "proposal_id": null,
+          "short_description": "Continuing the work done on Rapid Annotator 2.0 by Vaibhav Gupta, There were some improvements and new functionalities can be added to the current...",
+          "slug": "red-hen-rapid-annotator",
+          "status": "completed",
+          "student_name": "Mohamed Mokhtar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Red Hen Rapid Annotator"
+        },
+        {
+          "code_url": "https://swadesh13.github.io/gestures-dataset-blog/",
+          "description": "<p>Red Hen OpenDataset contains annotated gesture videos from talk shows. The project requires to systematize the data for computer science researchers and develop deep learning models as classifiers on the video dataset.</p>\n<p>The goals of this research project will be as follows:</p>\n<ol>\n<li>Organization and systematic characterization of the data into a proper format so that it can be readily used by computer science researchers</li>\n<li>Developing performance baseline(s) on the dataset</li>\n<li>Developing a pipeline for testing the models with any video input</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5848088979177472/",
+          "proposal_id": null,
+          "short_description": "Red Hen OpenDataset contains annotated gesture videos from talk shows. The project requires to systematize the data for computer science researchers...",
+          "slug": "create-a-red-hen-opendataset-for-gestures-with-performance-baselines",
+          "status": "completed",
+          "student_name": "Swadesh Jana",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Create a Red Hen OpenDataset for gestures with performance baselines"
+        },
+        {
+          "code_url": "https://github.com/TrunnMosby/GSoC-RedHenLabs-Aztec-Glyph-Detection",
+          "description": "<p>This project aims to Develop a Visual Recognition model for Aztec Hieroglyphs. Aztec language is pictographic\nand ideographic photo-writing. It has no alphabets but different symbolic signs. The model's working will be as\nfollows it'll take in an image, compare it with the ones in our dataset, and finally display the possible matches of\nthat image and identify various atomic elements in the picture. For training, we'll use Deep Neural Network\nmodel and, final deployment will be done on Heroku cloud server</p>\n",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2021_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5883776399310848/",
+          "proposal_id": null,
+          "short_description": "This project aims to Develop a Visual Recognition model for Aztec Hieroglyphs. Aztec language is pictographic\nand ideographic photo-writing. It has...",
+          "slug": "development-of-a-visual-recognition-model-for-aztec-hieroglyphs",
+          "status": "completed",
+          "student_name": "Tarun Nagdeve",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud"
+          ],
+          "title": "Development of  a Visual Recognition model for Aztec Hieroglyphs"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5946697670197248/"
+    },
+    "year_2022": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://github.com/ParthS28/gsoc22-christian-iconography",
+          "description": "A knowledge extraction pipeline for artworks from christian iconography that will be used to create a knowledge graph for Christian Iconography. The intention of knowledge graph is that it should help untutored eyes find connections between different artworks. This project is divided into 4 main parts:\n1) A model to find the parts of the image that might be useful to us and extract those regions of interest \n2) A classification model that would extract possible classes as well as items and use the confidence scores \n3) Defining an ontology that would be the skeleton for our knowledge graph. It would be able to tackle the problem of finding connections between separate artworks using the confidence scores found in the previous step \n4) Finally, we would populate our knowledge base with the help of our ontology.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/0XP3H7nL/",
+          "proposal_id": null,
+          "short_description": "A knowledge extraction pipeline for artworks from christian iconography that will be used to create a knowledge graph for Christian Iconography. The...",
+          "slug": "the-émile-mâle-pipeline-at-redhenlab",
+          "status": "completed",
+          "student_name": "Parth Shukla",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "The Émile Mâle pipeline at RedHenLab"
+        },
+        {
+          "code_url": "https://github.com/tre3x/FilmEditDetection",
+          "description": "Shot Boundary Detection of films is an important task that is mostly performed manually. There are some available tools and existing research which tend to automate the process. However, in the case of old archival films, available tools fail to detect most of the shot boundaries. State-of-the-art research performs quite well in detecting these boundaries, but these methods come with high time complexity and are not feasible to use in real life. In this work, an efficient and accurate shot boundary detection is proposed which should work well with archival films. The proposed tool will be built upon the existing work 'FilmEditDetection', which is developed during the last summer of code. The proposed tool should be able to detect the shot boundaries, which the previous tool fails to detect, without compromising the time complexity of the entire tool. This is achieved by using a machine learning-based framework on top of the cut detection module(Siamese Network). Few new features are also to be added to the tool - Average Shot Length, Comparison of individual shot lengths, etc. The current version of the tool is based on CLI. A graphical user interface can be developed based on the tool for simplicity of use.",
+          "difficulty": "advanced",
+          "id": "proj_red-hen-lab_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/W8ZP5YIS/",
+          "proposal_id": null,
+          "short_description": "Shot Boundary Detection of films is an important task that is mostly performed manually. There are some available tools and existing research which...",
+          "slug": "machine-detection-of-film-edits",
+          "status": "completed",
+          "student_name": "Shreyan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Machine Detection of Film Edits"
+        },
+        {
+          "code_url": "https://github.com/lazyCodes7/RedHenLab_Multimodal_Christian_Art_Tagging",
+          "description": "Christian Iconography refers to the study of identifying the saints in a painting by using the attributes such as a crucifix, pedestal or key. Art historians such as Emile Male have spent a significant amount of time describing this art. Due to their contributions, while most of this art is available digitally with provided captions, there still doesn’t exist a \"ground-truth\" dataset for the same. Hence the goal of this project is to curate a dataset for tagging this arena of art. As a second direction, this project proposes\nthe use of a Multimodal Transformer to automate the process of tagging. While this would never replace the actual historian it still has possibilities in reducing the burden on actual professionals and helping out people who might not be well-versed with Christian Art.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/vXibixtZ/",
+          "proposal_id": null,
+          "short_description": "Christian Iconography refers to the study of identifying the saints in a painting by using the attributes such as a crucifix, pedestal or key. Art...",
+          "slug": "multimodal-image-captioning-and-a-dataset-for-christian-art",
+          "status": "completed",
+          "student_name": "Rishab Mudliar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Multimodal Image Captioning and a dataset for Christian Art"
+        },
+        {
+          "code_url": "https://github.com/lisardop/GSoC2022",
+          "description": "Our aim is to enlarge the data set with added iconographic and hieroglyphic examples, varying the angles on the ones we have and adding examples from other manuscript sources. A larger dataset will help ustest the accuracy and improve the grade of matching with respect to users’ tests (uploading hieroglyphs for mechanical decipherment). With the expanded and more diversified dataset, we will also establish a protocol of action and behavior between hieroglyphic texts and the previously created Machine Learning prototype. Finally, the results will be linked to potential entries in the Visual Lexicon dictionary and, inturn, the Online Nahuatl Dictionary where end-users can learn more about their images under study their visual characteristics and linguistic meanings.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/0Gben6SZ/",
+          "proposal_id": null,
+          "short_description": "Our aim is to enlarge the data set with added iconographic and hieroglyphic examples, varying the angles on the ones we have and adding examples from...",
+          "slug": "improving-the-visual-recognition-of-aztec-hieroglyphs-decipherment-tool",
+          "status": "completed",
+          "student_name": "Lisardo Pérez Lugones",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving the Visual Recognition of Aztec Hieroglyphs (Decipherment Tool)"
+        },
+        {
+          "code_url": "https://github.com/Harsh188/GSoC-RedHenLab-MTVSS-2022",
+          "description": "This proposal proposes a multi-modal multi-phase pipeline to tackle television show segmentation on the Rosenthal videotape collection. The two-stage pipeline will begin with feature filtering using pre-trained classifiers and heuristic-based approaches. This stage will produce noisy title sequence segmented data containing audio, video, and possibly text. These extracted multimedia snippets will then be passed to the second pipeline stage. In the second stage, the extracted features from the multimedia snippets will be clustered using RNN-DBSCAN. Title sequence detection is possibly the most efficient path to high precision segmentation for the first and second tiers of the Rosenthal collection (which have fairly structured recordings). This detection algorithm may not bode well for the more unstructured V8+ and V4 VCR tapes in the Rosenthal collection. Therefore the goal is to produce accurate video cuts and split metadata results for the first and second tiers of the Rosenthal collection.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/vb1oMHTh/",
+          "proposal_id": null,
+          "short_description": "This proposal proposes a multi-modal multi-phase pipeline to tackle television show segmentation on the Rosenthal videotape collection. The two-stage...",
+          "slug": "pipeline-for-multimodal-television-show-segmentation",
+          "status": "completed",
+          "student_name": "Harshith Mohan Kumar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Pipeline for Multimodal Television Show Segmentation"
+        },
+        {
+          "code_url": "https://gist.github.com/technosaby/b1e68810f63ff47207a18ee5e46359c6",
+          "description": "The objective is to develop a machine learning model to tag sound effects in streams (like police sirens in a news-stream) of Red Hen’s data. A single stream of data can contain multiple sound effects, so the model should be able to label them from a group of known sound effects like a Multi-label classification problem. The first step would be to develop a baseline model using existing pre-trained deep learning models and add to the Red Hen’s pipeline. Then the performance can be improved using transfer learning and fine tuning the existing model to achieve better accuracy. In this process, the models can be trained on sound effects from noisy or human labeled data sets after they are pre-processed to avoid acoustic domain mismatch problems.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/m9boall8/",
+          "proposal_id": null,
+          "short_description": "The objective is to develop a machine learning model to tag sound effects in streams (like police sirens in a news-stream) of Red Hen’s data. A...",
+          "slug": "tagging-sound-effects",
+          "status": "completed",
+          "student_name": "Sabyasachi Ghosal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Tagging Sound Effects"
+        },
+        {
+          "code_url": "https://shreypandit.medium.com/classification-of-body-keypoint-trajectories-of-gesture-co-occurring-with-time-expressions-4bcd9d9d2541",
+          "description": "The way humans interact with each other occurs in multimodality. We not only articulate words, but also we show them. Expressing different concepts such as time, place, and emotion comes with speech and some movements called body gestures. In this study, we propose a multi-modal method that captures different patterns of body gestures aligned with an articulated time expression such as \"from beginning to end\". Our proposed architecture lies on two neural networks, the Compact Transformer and the Long-Short Term Memory (LSTM). Compact Transformer which is the current State-of-the-art structure for temporally distributed images also performs well over low-resourced data. LSTM performs well over temporal data with long-term dependencies. The hypothesis of this project is the existence of a relation between the body gestures and the time expressions we speak and using neural networks we try to accept or reject this hypothesis.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/lgrBs0T3/",
+          "proposal_id": null,
+          "short_description": "The way humans interact with each other occurs in multimodality. We not only articulate words, but also we show them. Expressing different concepts...",
+          "slug": "classification-of-body-keypoint-trajectories-of-gesture-co-occurring-with-time-expressions",
+          "status": "completed",
+          "student_name": "Shrey Pandit",
+          "student_profile": null,
+          "tags": [],
+          "title": "Classification of body keypoint trajectories of gesture co-occurring with time expressions"
+        },
+        {
+          "code_url": "https://github.com/raina-11/Show-Segmentation-22",
+          "description": "We are already getting segmented shows from the past year's algorithm. We need to focus on improving accuracy and time complexity now. The results from the previous algorithm are pretty similar to Paul's manually annotated spreadsheet shared by Tim. In my proposed approach, major problems with the algorithm can be solved, So I have decided to continue the show segmentation project. Some of the anchors are misinterpreted, leading us to the wrong show name. There are 2 ways to solve it by improving the boundary detection, thus improving the clustering algorithm, and using a cleaned MS-Celeb dataset. Combining both approaches will definitely enhance our boundary segmentation by up to 90%, resulting in final high accuracy in predicting show names and networks. We’ll try to finalize the segmentation project by this summer, and this should be the end of the past 5 years of quality research.",
+          "difficulty": "advanced",
+          "id": "proj_red-hen-lab_2022_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/56a4lW1u/",
+          "proposal_id": null,
+          "short_description": "We are already getting segmented shows from the past year's algorithm. We need to focus on improving accuracy and time complexity now. The results...",
+          "slug": "tv-show-segmentation-final-stage",
+          "status": "completed",
+          "student_name": "Raina Middha",
+          "student_profile": null,
+          "tags": [],
+          "title": "TV Show Segmentation (Final Stage)"
+        },
+        {
+          "code_url": "https://github.com/ankiitgupta7/Google-Summer-of-Code-at-Red-Hen-Labs",
+          "description": "Communication within any species is very crucial to its survival. One of the primitive forms of communication featuring mere alarm calls is claimed to aid in the survival of vervet monkeys (Cercopithecus aethiops). There have been attempts to document vervets’ behavior in the wild\n(Seyfarth, Cheney, & Marler, 1980) to prove the significance of alarm calls in their survival. And this project aims to consolidate this claim using agent-based simulation.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/3gJf6UQy/",
+          "proposal_id": null,
+          "short_description": "Communication within any species is very crucial to its survival. One of the primitive forms of communication featuring mere alarm calls is claimed...",
+          "slug": "simulating-representational-communication-in-vervet-monkeys-using-agent-based-simulation",
+          "status": "completed",
+          "student_name": "ankiitgupta7",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Simulating Representational Communication in Vervet Monkeys using Agent-Based Simulation"
+        },
+        {
+          "code_url": "https://kkie02.github.io/GSOC22.github.io/",
+          "description": "I am going to use some already proposed NLP methods to implement sub-word based spelling checker,  T5 based grammar checker, and merge open source wav2text application into the project to improve the content-wise accuracy of automatic generated subtitle/caption.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/GJVsyb6V/",
+          "proposal_id": null,
+          "short_description": "I am going to use some already proposed NLP methods to implement sub-word based spelling checker, T5 based grammar checker, and merge open source...",
+          "slug": "11-tools-for-improving-subtitlecaption-quality",
+          "status": "completed",
+          "student_name": "KomoQ",
+          "student_profile": null,
+          "tags": [],
+          "title": "11. Tools for improving subtitle/caption quality"
+        },
+        {
+          "code_url": "https://rrrokhtar.github.io/rapid-annotator/22",
+          "description": "Extending the Red Hen Rapid Annotator through adding are some new features based on the suggestions I am proposing and the app-users requests, in particular in experiment configuration and connectivity to other software.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/9NEltylG/",
+          "proposal_id": null,
+          "short_description": "Extending the Red Hen Rapid Annotator through adding are some new features based on the suggestions I am proposing and the app-users requests, in...",
+          "slug": "red-hen-rapid-annotator",
+          "status": "completed",
+          "student_name": "Mohamed Mokhtar",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Red Hen Rapid Annotator"
+        },
+        {
+          "code_url": "https://medium.com/@apapoudakis/film-edit-detection-gsoc-2022-228edd3cefc6",
+          "description": "Automatic film comprehension has recently gained increased attention due to the rapid development of the streaming services and the need to reduce manual processing of video content. During this project, we aspire to work upon the shot boundary detection problem which is of high importance for various other tasks such as movies retrieval, indexing and summarization. Our goal is to detect the transition between the consecutive shots and at the same time to identify the type of cut (e.g. gradual, abrupt). Compared to the majority of the existing works, we aim to work on historical films, with damaged or low-quality video data, which makes the cuts identification task particularly challenging. A large-scale dataset with historical films will be constructed with upper goal to reduce the required human effort, and then a multimodal deep learning network will be employed to perform fine-grained cut identification.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2022_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/QDwVy7Wb/",
+          "proposal_id": null,
+          "short_description": "Automatic film comprehension has recently gained increased attention due to the rapid development of the streaming services and the need to reduce...",
+          "slug": "machine-detection-of-film-edits",
+          "status": "completed",
+          "student_name": "Argyrios Papoudakis",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Machine Detection of Film Edits"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/red-hen-lab/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/Dhruv454000/Semantic-search-in-video-datasets",
+          "description": "I propose to create a semantic multimodal search engine for collections of transcribed and aligned videos using state-of-the-art artificial intelligence models of different types, including NLP (Large Language Models) for text generation and capturing the semantics of transcriptions, as well as image description models to understand what is being seen in the video. Only focusing on the transcribed text does not help much, considering the context, what is being shown in the video will be helpful. The search engine will list down the most closest matches to the user query containing the metadata like link to the video, video-id, timestamp, text.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/2p2PgKDn",
+          "proposal_id": "pkxixzi0",
+          "short_description": "I propose to create a semantic multimodal search engine for collections of transcribed and aligned videos using state-of-the-art artificial...",
+          "slug": "semantic-search-in-video-datasets",
+          "status": "completed",
+          "student_name": "Dhruv Kunjadiya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Semantic search in video datasets"
+        },
+        {
+          "code_url": "https://medium.com/@Dhruv_Tyagi/gsoc-2023-red-hen-lab-feaa572f2cdc",
+          "description": "The way humans interact with each other occurs in multimodality. We not only articulate words but also, show them. Expressing different concepts such as time, place, and emotion comes with speech and some movements called body gestures. The aim of this project is to detect these commonly occurring phrase and gesture combinations to get meaningful patterns and insights. For this, I propose a multi-modal multi-phase pipeline that captures different patterns of body gestures and speech phrases aligned with an articulated time. The three-stage pipeline begins with pose feature extraction in which both supervised\nand unsupervised approaches shall be incorporated to classify and cluster various gesture classes. In the next stage phrase features are extracted. These extracted features are then passed through the next stage. This stage will produce a synchronized dataset by aligning extracted features in time by applying late fusion. Lastly, Apriori Algorithm is applied to identify the frequent phrase and gesture combinations. Further, the project can be merged into production in a Red Hen pipeline.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/yWTZ53Vp",
+          "proposal_id": "uOAoGrwn",
+          "short_description": "The way humans interact with each other occurs in multimodality. We not only articulate words but also, show them. Expressing different concepts such...",
+          "slug": "extraction-of-gesture-features",
+          "status": "completed",
+          "student_name": "Dhruv Tyagi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Extraction of Gesture Features"
+        },
+        {
+          "code_url": "https://github.com/karanjotsv/news_broadcast.git",
+          "description": "With the increased American viewership of cable news stations, it has become important to understand the stance of the news stories, relating to sensitive topics, curated by these stations along with the demographics of their viewership. It is witnessed in recent studies how minor verbal tweaks can lead individuals to believe\na certain community being socially distant and indifferent, making it necessary to detect the underlying bias if any, among news stories. This proposal focuses on developing a stance detection pipeline for television news stories incorporating all three modalities i.e. video feed, speech utterances and transcripts. The focus\nis on capturing global characteristics of each modality and then passing them simultaneously through a multi-modal setting including a series of Multi-modal Transformers to induce cross-modal attention across distinct modalities to generate a generic feature representation. These feature representations will be employed to train a classification head to output the stance of a news story.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/vewW5EEx",
+          "proposal_id": "HmdYWyaj",
+          "short_description": "With the increased American viewership of cable news stations, it has become important to understand the stance of the news stories, relating to...",
+          "slug": "multi-modal-stance-detection-on-television-news",
+          "status": "completed",
+          "student_name": "KaranjotSingh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Multi-modal Stance Detection on Television News"
+        },
+        {
+          "code_url": "https://medium.com/@gautamsaksham103/google-summer-of-code-final-report-72f31ac9a1aa",
+          "description": "The Red Hen Anonymizer is a software that uses deep learning and signal processing techniques to anonymize audio-visual data. The proposed project aims to expand the software’s capabilities by adding two new features for visual data anonymization, namely Level Wise Anonymization and Anonymization using StarGANv2. Additionally, the project proposes to add a new feature for audio data anonymization, namely Anonymization According to the Anonymized Face, while retaining the existing features. The new algorithms are based on deep learning and require GPU power for training. The objective is to create a versatile and robust software, with a user-friendly interface. The final deliverable will be a complete anonymization engine integrated into a web application, providing users with a convenient one-click anonymization options that meets their specific needs.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/zruME4ga",
+          "proposal_id": "wByOvxyS",
+          "short_description": "The Red Hen Anonymizer is a software that uses deep learning and signal processing techniques to anonymize audio-visual data. The proposed project...",
+          "slug": "red-hen-anonymizer",
+          "status": "completed",
+          "student_name": "Saksham Gautam",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Red Hen Anonymizer"
+        },
+        {
+          "code_url": "https://medium.com/@f20200731/google-summer-of-code-23-red-hen-labs-6bc683056ebf",
+          "description": "This project aims to improve the previous iteration of the project where the hypothesis of it was the existence of a relation between the body gestures and the time expressions we speak and using neural networks we try to accept or reject this hypothesis. So, I proposed a new multimodal graph-based neural network architecture to classify the body keypose points by constructing a spatio-temporal graph and audio features are fused with it to converge the model to test this hypothesis. Also, suggested transfer learning to overcome the lack of data.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/989BTxO8",
+          "proposal_id": "qurZ5hJO",
+          "short_description": "This project aims to improve the previous iteration of the project where the hypothesis of it was the existence of a relation between the body...",
+          "slug": "classification-of-body-keypose-trajectories-of-gesture-co-occurring-with-time-expressions-using-gnns",
+          "status": "completed",
+          "student_name": "SSP",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Classification of body-keypose trajectories of gesture co-occurring with time expressions using GNNs"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/red-hen-lab"
+    },
+    "year_2024": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://medium.com/@charon0707/gsoc2024-final-report-0069e96073ad",
+          "description": "Red Hen Lab has access to a large archive of news transcript, which is perfect for training a foundational large language model about the world. To achieve this goal, the methodology includes automatic QA extracting and fine-tuning with PEFT, a python library for tuning pre-trained models. Llama2 is seleceted as base model due to its multilingual support. I also plan to improve multi-turn chat ability by constructing history chat dataset and fine-tuning on it.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/H3cVMp9T/",
+          "proposal_id": null,
+          "short_description": "Red Hen Lab has access to a large archive of news transcript, which is perfect for training a foundational large language model about the world. To...",
+          "slug": "red-hen-tv-news-multilingual-chat-llm",
+          "status": "completed",
+          "student_name": "YufeiGao",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Red Hen TV News Multilingual Chat - LLM"
+        },
+        {
+          "code_url": "https://github.com/MayankPalan2004/Modeling-Wayfinding",
+          "description": "Stentor roeselii is a free-living ciliate species of the genus Stentor. It is a unicellular organism but shows remarkable hierarchy of decisions when faced with a stimulus leading us to question whether there is some level of cognition involved and whether the line between metabolism and cognition is fuzzy implying mitochondria may be the cognitive centre \n\nFor the last 200 years research into human cognition and decision-making has revolved around rational choice theory, which assumes that actors are utility maximizers capable of searching and finding rational and optimal decisions. However human behavioral data doesn’t support the assumptions that we have infinite time nor infinite cognitive energy to search the full space of candidate choices to produce optimal decisions. Take for example a hiker, who has an infinite number of paths to choose from. It's irrational to assume that the hiker is capable of fully evaluating each of the infinite paths available to them to then choose the most rational/ optimal path. And yet that is the operating assumption for most modern cognitive models.\n\nTo remedy this, we have the Wayfinding theory which along with an optimal-control based model can be used by researchers in private and academic settings to develop more accurate computational models of cognition in various life species",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/fRdO8ACC/",
+          "proposal_id": null,
+          "short_description": "Stentor roeselii is a free-living ciliate species of the genus Stentor. It is a unicellular organism but shows remarkable hierarchy of decisions when...",
+          "slug": "modeling-wayfinding",
+          "status": "completed",
+          "student_name": "Mayank Palan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Modeling Wayfinding"
+        },
+        {
+          "code_url": "https://github.com/prakritishetty/GSoC2024-Overhaul_of_AuToBI",
+          "description": "Detection of Intonational Units- An overhaul of AuToBI aims to refurbish the AuToBI system first proposed by Andrew Rosenberg in 2009, with today’s state-of-the-art algorithms and models so as to cater to the compute, speed and accuracy requirements that are characteristic to today and the future.\n\n\n\n\nThe main idea is still the automatic detection and classification of prosodic events (Rosenberg’s thesis considers two events of interest pitch accents and phrase boundaries, but we can target to cater to a wider array of events), but we will lay our focus on the broad goal of establishing a new baseline by employing some of the more sophisticated MLmethods as of today. \n\n\nOne of the fairly less-explored avenues of today is the interpretability of models, and with our work, we hope to set precedent for the future of prosody-detection with a highly interpretable model\n\nGoals and Deliverables:\n\nGoal 1: Try to incorporate speaking rate and speech rhythm  as additional prosodic events.\n\nCorrelated Goal 1A: Analyse the correlation between the prosodic events of speech rate/rhythm with phrase boundaries.\n\nGoal 2: Try to incorporate CTC alignment to do away with disparities due to frame-level alignment. Analyse the benefits of the change.\n\nGoal 3: Employ techniques like Tandem DNN-HMMs, RNN-Transducers and WSFTs and analyse the benefits, if any\n\nAmbitious Goal 4: Employ state-of-the-art techniques to improve speaker diarization. Can try to generalise speakers to larger groups based on ethnicity/region to employ region-specific analysis.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/xnXEqDa6/",
+          "proposal_id": null,
+          "short_description": "Detection of Intonational Units- An overhaul of AuToBI aims to refurbish the AuToBI system first proposed by Andrew Rosenberg in 2009, with today’s...",
+          "slug": "detection-of-intonational-units-an-overhaul-of-autobi",
+          "status": "completed",
+          "student_name": "Prakriti Shankar Shetty",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Detection of Intonational Units - an Overhaul of AuToBI"
+        },
+        {
+          "code_url": "https://medium.com/@aasthapunjabi8/gsoc-24-speech-and-language-processing-for-a-multimodal-corpus-of-farsi-86cff4456fce",
+          "description": "A multimodal corpus is a treasure trove of language data. In this project, we’re diving into Farsi-language\ncontent from public broadcasts. Through the integration of many media formats, a multimodal corpus\noffers an abundant resource for linguistic analysis, allowing scholars to investigate patterns and behaviors\nof language across diverse modalities. Using Red Hen’s YouTube pipeline, the initiative aims to build\na comprehensive and varied collection of Farsi-language content from public broadcast media. In order\nto do this, we will use yt-dlp to seamlessly acquire data from YouTube and other media sources, and\nOpenAI’s Whisper, which is an automatic speech recognition (ASR) system that can generate highquality subtitles for videos, will intervene in the case of videos without subtitles to guarantee that no\nimportant linguistic information is lost. One of our main goals is to pinpoint the most effective natural\nlanguage processing (NLP) pipeline tailored specifically for spoken Persian. Ultimately, the envisioned\npipeline will streamline the process, accepting a list of video URLs and seamlessly transforming them into\na functional multimodal corpus within CQPweb.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/pqtgFmAA/",
+          "proposal_id": null,
+          "short_description": "A multimodal corpus is a treasure trove of language data. In this project, we’re diving into Farsi-language content from public broadcasts. Through...",
+          "slug": "speech-and-language-processing-for-a-multimodal-corpus-of-farsi",
+          "status": "completed",
+          "student_name": "Aastha Punjabi",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Speech and Language Processing for a multimodal corpus of Farsi"
+        },
+        {
+          "code_url": "https://github.com/RohanHBTU/ChattyAI",
+          "description": "Red Hen Lab focuses on various aspects of linguistics and cognitive science, including Construction Grammar and FrameNet. With a voluminous collection of research publications, Red Hen Lab receives numerous inquiries from interested individuals seeking guidance. However, due to resource constraints, they are unable to respond comprehensively to all queries. To address this issue, the proposal aims to develop two open-source AI chatbots capable of engaging with users focusing on Red Hen Lab itself as well as on Construction Grammar and FrameNet. This document proposes the utilization of a transformer-based generative model augmented with Retrieval-Augmented Generation and meticulously fine-tuned on domain-specific data sourced from Red Hen Lab and FrameNet/Construction Grammar.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Fm2o5Xzt/",
+          "proposal_id": null,
+          "short_description": "Red Hen Lab focuses on various aspects of linguistics and cognitive science, including Construction Grammar and FrameNet. With a voluminous...",
+          "slug": "chatty-ai",
+          "status": "completed",
+          "student_name": "Rohan Kumar Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Chatty AI"
+        },
+        {
+          "code_url": "https://github.com/Zhongheng-Cheng/gsoc2024-frame-blending",
+          "description": "Despite LLMs' proficiency in various tasks, they struggle with incorporating characteristics like frame blending into sentence generation, a concept well-developed in linguistics and Frame Semantics. The significance of frame semantics lies in understanding words based on conceptual structures, enhancing insights into linguistics, and contributing to fields like economics and politics. The research aims to employ training, fine-tuning, and prompt engineering technologies when using open-source LLMs for generating frame-blending examples. The proposed method involves leveraging FrameNet data for training and fine-tuning LLMs to enhance frame-blending capabilities. The expected outcome is improved frame blending and overall semantic understanding in LLMs, contributing to a deeper exploration of their capabilities and future prospects. Furthermore, a detailed schedule is provided at the end of this proposal.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/zrlTsZo4/",
+          "proposal_id": null,
+          "short_description": "Despite LLMs' proficiency in various tasks, they struggle with incorporating characteristics like frame blending into sentence generation, a concept...",
+          "slug": "frame-blending-by-llms",
+          "status": "completed",
+          "student_name": "Zhongheng Cheng",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Frame Blending by LLMs"
+        },
+        {
+          "code_url": "https://github.com/manishkumart/Super-Rapid-Annotator-Multimodal-Annotation-Tool",
+          "description": "This proposal outlines the development of an innovative system designed to enhance video annotation capabilities through the integration of a multimodal vision and language model with spatial-temporal analysis. Utilizing the LLaVA-v1.5-13b model with Video Adapter, known for its rapid inference and entity detection in video frames, this system aims to extract annotations automatically and compile them into a user-friendly CSV format. At its core, a Pydantic API extracts boolean values for annotation entities from enhanced language model responses, facilitating the concurrent processing of multiple videos. The entire workflow, from video and JSON input to CSV output, will be accessible via a Gradio interface on the Hugging Face platform, ensuring ease of use and broad accessibility.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/rYosJtqh/",
+          "proposal_id": null,
+          "short_description": "This proposal outlines the development of an innovative system designed to enhance video annotation capabilities through the integration of a...",
+          "slug": "super-rapid-annotator-multimodal-vision-tool-to-annotate-videos-with-llava-framework",
+          "status": "completed",
+          "student_name": "Manish Kumar Thota",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Super Rapid Annotator - Multimodal vision tool to annotate videos with LLaVA framework"
+        },
+        {
+          "code_url": "https://github.com/JadSoucar/RoeseliiQSim",
+          "description": "For the last 200 years research into human cognition and decision-making has revolved around rational choice theory, which assumes that actors are utility maximizers capable of searching and finding rational and optimal decisions. However human behavioral data doesn’t support the assumptions that we have infinite time nor infinite cognitive energy to search the full space of candidate choices to produce optimal decisions. Take for example a hiker, who has an infinite number of paths to choose from. It's irrational to assume that the hiker is capable of fully evaluating each of the infinite paths available to them to then choose the most rational/ optimal path. And yet that is the operating assumption for most modern cognitive models. To remedy this problem, I propose three axiomatic principles of energy-efficient decision making, along with an optimal-control based model and Deep Q learning model that capture those principles. I hope that a formalization of my theory of energy-efficient decision making along with the open-source python library we develop can be used by researchers in private and academic settings to develop more accurate computational models of human decision making, that can be used to model agent behavior in a number of fields ranging from market behavior to crowd dynamics, along with improving LLM infrastructures.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Tcw35fHX/",
+          "proposal_id": null,
+          "short_description": "For the last 200 years research into human cognition and decision-making has revolved around rational choice theory, which assumes that actors are...",
+          "slug": "a-model-predictive-control-deep-q-learning-approach-to-wayfinding",
+          "status": "completed",
+          "student_name": "JadSoucar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "A Model Predictive Control & Deep Q Learning Approach to Wayfinding"
+        },
+        {
+          "code_url": "https://medium.com/@mohamedahmedkrichen/multimodal-sentiment-and-stance-detection-with-red-hen-lab-ef1469822394",
+          "description": "This project aims to develop a unified system for sentiment and stance detection in televised\nnews content. Leveraging text, audio, and video modalities, the research seeks to understand the\ninterplay between emotional tone and the position taken on specific issues in news narratives.\nThe goal is to create an integrated tool for comprehensive analysis, contributing to a deeper\ncomprehension of the overall narrative in news broadcasts.\nThe methods include implementing sentiment analysis models for news transcripts, developing\nstance detection models for specific topics, and building a unified system that combines sentiment\nand stance information. The project’s potential impact lies in providing researchers and analysts\nwith a valuable tool for nuanced news content analysis.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/isKHu0wv/",
+          "proposal_id": null,
+          "short_description": "This project aims to develop a unified system for sentiment and stance detection in televised news content. Leveraging text, audio, and video...",
+          "slug": "multimodal-sentiment-and-stance-detection",
+          "status": "completed",
+          "student_name": "Mohamed Ahmed Krichen",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Multimodal Sentiment and Stance Detection"
+        },
+        {
+          "code_url": "https://medium.com/@jaintarun7/google-summer-of-code-2024-red-hen-lab-final-evaluation-9b8d25d8dd62",
+          "description": "Large Language Models serve as the foundation for recent advancements in AI. Leveraging the extensive news transcripts data archive from Red Hen Labs, LLMs can function as conversational bots capable of answering news-related questions from around the world. Developing a Multilingual Large Language Model for conversational bots presents a significant challenge, particularly because the news industry operates predominantly in various native languages. With my 1+ year experience at AI Planet startup and being Google Developer Expert in ML, I understand the concepts to fine-tune a LLMs. My approach to addressing this challenge involves preparing data in accordance with alpaca instructions and training both the tokenizer and model so make LLM understand new language, thus creating a Multilingual Chat based LLM to answer news data Q&A.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/8D9AhF8O/",
+          "proposal_id": null,
+          "short_description": "Large Language Models serve as the foundation for recent advancements in AI. Leveraging the extensive news transcripts data archive from Red Hen...",
+          "slug": "red-hen-tv-news-multilingual-chat-llm",
+          "status": "completed",
+          "student_name": "Tarun R Jain",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Red Hen TV News Multilingual Chat - LLM"
+        },
+        {
+          "code_url": "https://kolubex.github.io/projects/gsoc_2024/",
+          "description": "Human communication is multi-modal and includes both the visual and audio cues. Modern technology makes it possible to capture both aspects of communication in natural settings. This work is a new step towards transcribing audio, including speech, audio events, and video description. This project enriches transcription in noisy settings by understanding the environment through audio and visual cues. Thus, given a predefined collection of audio cues and visual scenes, this study integrates these elements with the video’s subtitles.",
+          "difficulty": null,
+          "id": "proj_red-hen-lab_2024_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/PAsaFUNE/",
+          "proposal_id": null,
+          "short_description": "Human communication is multi-modal and includes both the visual and audio cues. Modern technology makes it possible to capture both aspects of...",
+          "slug": "visual-aware-end-to-end-speech-recognition-in-noisy-setting",
+          "status": "completed",
+          "student_name": "Lakshmipathi Balaji",
+          "student_profile": null,
+          "tags": [],
+          "title": "Visual-Aware End-to-End Speech Recognition in Noisy Setting"
+        },
+        {
+          "code_url": "https://medium.com/@shounakdas246/quantum-wave-function-for-information-processing-3fa72ff61a34",
+          "description": "Neural networks are descendants of McCulloch & Pitts' threshold-based mathematical model of a binary neuron, but there is ample evidence that unicellular organisms are capable of relatively complex maze navigation and other cognitive tasks, indicating information-processing capabilities in cellular subsystems. The task is to develop a computational model of elementary processing of analog information using Schrödinger's wave equation and Pilot Wave theory, leveraging the fact that a quantum wave function has multiple valid solutions and only one of them manifests. In Bohm & Hiley's elaboration of Pilot Wave theory, the Quantum Hamilton-Jacobi Equation can be decomposed into a classical component and a quantum component, the quantum potential. Most of the energy is in the classical component, but a small part of it is in the quantum potential. As the energy in the quantum potential is informed by and responds to the shape of the quantum wave, the process creates new information, expressed in the trajectory of the particle. The trajectory will help us take decisions. We propose two techniques, Statistical approach and Instantaneous approach. Both of the approaches use Pilot Wave theory since it is causal. For Statistical approach we will model the double slit experiment with Bohmian mechanics. The slits shape will depend on the input. We will pass many particles through the slit and take decision based on the interference pattern produced and the trajectory of the particles. In the second approach we will model the FMO complex in Green Sulphur Bacteria. Our model of the FMO complex will be used for Binary classification. There will be multiple slits in this and we will use AI to find the dimensions and location of the slits. Based on the trajectory we will take decision.",
+          "difficulty": "advanced",
+          "id": "proj_red-hen-lab_2024_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/NWI8ubv4/",
+          "proposal_id": null,
+          "short_description": "Neural networks are descendants of McCulloch & Pitts' threshold-based mathematical model of a binary neuron, but there is ample evidence that...",
+          "slug": "quantum-wave-function-for-information-processing",
+          "status": "completed",
+          "student_name": "Shounak",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Quantum Wave Function for Information-Processing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/red-hen-lab/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "redhenlab@gmail.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "http://redhen-gsoc.slack.com",
+    "mailing_list": "https://docs.google.com/forms/d/1V9jzUi9OvLU357HAcN1Ewp7vFEIWVcrYtwBeifWlO58/edit"
+  },
+  "social": {
+    "blog": "https://sites.google.com/site/distributedlittleredhen/home/8-CrowingRooster",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "http://redhen-gsoc.slack.com",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/redhenlab",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.107Z"
+  }
+}

@@ -1,0 +1,798 @@
+{
+  "id": "692251d853dd9d7326d33df1",
+  "slug": "jenkins",
+  "name": "Jenkins",
+  "category": "Programming languages",
+  "description": "Jenkins, build great things at any scale",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/jenkins-wp/7qlgfron9nyj194y-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/jenkins.webp",
+  "logo_r2_url": null,
+  "url": "https://jenkins.io",
+  "active_years": [
+    2016,
+    2018,
+    2019,
+    2020,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "java",
+    "groovy",
+    "html",
+    "jenkins",
+    "css",
+    "javascript",
+    "machine learning",
+    "docker",
+    "kubernetes",
+    "go"
+  ],
+  "topics": [
+    "automation",
+    "continuous integration",
+    "continuous delivery",
+    "java",
+    "development",
+    "development tools",
+    "devops",
+    "developer tools"
+  ],
+  "total_projects": 33,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.12,
+    "projects_by_year": {
+      "year_2016": 1,
+      "year_2017": null,
+      "year_2018": 2,
+      "year_2019": 5,
+      "year_2020": 7,
+      "year_2021": null,
+      "year_2022": 4,
+      "year_2023": 4,
+      "year_2024": 5,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": 1,
+      "year_2017": null,
+      "year_2018": 2,
+      "year_2019": 5,
+      "year_2020": 7,
+      "year_2021": null,
+      "year_2022": 4,
+      "year_2023": 4,
+      "year_2024": 5,
+      "year_2025": 5
+    },
+    "total_students": 33
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://alexsomai.github.io/gsoc-2016/",
+          "description": "<p>Currently, Jenkins’ build workspace may become very large in size due to the fact that some compilers generate very large volumes of data. The existing plugins that share the workspace across builds are able to do this by copying the files from one workspace to another, process which is inefficient.<br>\nA solution for this problem is to create the <a href=\"https://github.com/jenkinsci/external-workspace-manager-plugin\" target=\"_blank\">External Workspace Manager</a> Plugin.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5176706365128704/",
+          "proposal_id": null,
+          "short_description": "Currently, Jenkins’ build workspace may become very large in size due to the fact that some compilers generate very large volumes of data. The...",
+          "slug": "external-workspace-manager-plugin",
+          "status": "completed",
+          "student_name": "Alexandru Somai",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "External Workspace Manager Plugin"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4879888423059456/"
+    },
+    "year_2017": null,
+    "year_2018": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2018/remoting-over-message-bus/",
+          "description": "<p>Current versions of Jenkins Remoting are based on the TCP protocol. If it fails, the agent connection and the build fails as well. There are also issues with traffic prioritization and multi-agent communications, which impact Jenkins stability and scalability.\nThis project aims an update of Remoting and Jenkins in order to add support of a popular message queue/bus technology (RabbitMQ or Kafka) as a fault-tolerant communication layer in Jenkins.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5655266787852288/",
+          "proposal_id": null,
+          "short_description": "Current versions of Jenkins Remoting are based on the TCP protocol. If it fails, the agent connection and the build fails as well. There are also...",
+          "slug": "jenkins-remoting-over-message-busqueue",
+          "status": "completed",
+          "student_name": "Pham Vu Tuan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Jenkins Remoting over Message Bus/Queue"
+        },
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2018/code-coverage-api-plugin/",
+          "description": "<p>A code coverage api plugin.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4789740079415296/",
+          "proposal_id": null,
+          "short_description": "A code coverage api plugin.",
+          "slug": "code-coverage-plugin",
+          "status": "completed",
+          "student_name": "Shenyu Zheng",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Code Coverage Plugin"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5245157809061888/"
+    },
+    "year_2019": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2019/gitlab-support-for-multibranch-pipeline/",
+          "description": "<p>Current version of GitLab plugin on Jenkins doesn't fully support Multibranch Pipeline Jobs. There exists another unofficial plugin (Gitlab Branch Source Plugin) which hasn't been released yet. There has been abandoned effort to combine both these plugins due to multiple issues mostly because of different APIs both the plugins use. The project's plan is to develop a new Gitlab API plugin that can be consumed by other plugins and a new Gitlab Branch Source plugin which will provide all freestyle, singlebranch and multibranch pipeline support. The existing Gitlab Plugin will only contain auth, triggers and other Gitlab-Jenkins Configurations. All the partial implementation of Branch Source functions will be deprecated.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5552439128752128/",
+          "proposal_id": null,
+          "short_description": "Current version of GitLab plugin on Jenkins doesn't fully support Multibranch Pipeline Jobs. There exists another unofficial plugin (Gitlab Branch...",
+          "slug": "multi-branch-pipeline-support-for-gitlab",
+          "status": "completed",
+          "student_name": "Parichay Barpanda",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Multi-branch Pipeline support for Gitlab"
+        },
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2019/remoting-over-apache-kafka-docker-k8s-features/",
+          "description": "<p>Current version of Remoting over Apache Kafka plugin requires users to manually configure the entire system which includes Zookeeper, Kafka and remoting agents. It also doesn't support dynamic agent provisioning so scalability is harder to achieve. This project aims to solve two problems:</p>\n<ol>\n<li>Out-of-the-box solution to provision Apache Kafka cluster. More specifically, users can connect with a Kafka server seamlessly by either local binary files, Kubernetes container or from a Software-as-a-Service provider.</li>\n<li>Dynamic agent provisioning in a Kubernetes cluster. This can be done by implementing Cloud API or integrate Kafka agent launcher in Kubernetes plugin.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6217166049771520/",
+          "proposal_id": null,
+          "short_description": "Current version of Remoting over Apache Kafka plugin requires users to manually configure the entire system which includes Zookeeper, Kafka and...",
+          "slug": "remoting-over-apache-kafka-with-kubernetes-features",
+          "status": "completed",
+          "student_name": "Nguyen Le Vu Long",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "kubernetes",
+            "cloud"
+          ],
+          "title": "Remoting over Apache Kafka with Kubernetes features"
+        },
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2019/role-strategy-performance/",
+          "description": "<p>The project revolves around improving the performance of the <a href=\"https://github.com/jenkinsci/role-strategy-plugin\" target=\"_blank\">Role Strategy Plugin</a>, the most downloaded authorization plugin for Jenkins (which is not included in Jenkins itself). The plugin allows Jenkins’ administrators to assign permissions (called a “role”) to projects (and Jenkins nodes) whose names match the regular expression for that role.\nOn adding a large number of roles to the plugin, a significant slowdown is visible in the Jenkins Web UI. The project aims to improve the end user experience by improving the performance of the plugin and creating a reliable performance testing framework which can be used in other Jenkins plugins.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5953561777668096/",
+          "proposal_id": null,
+          "short_description": "The project revolves around improving the performance of the Role Strategy Plugin, the most downloaded authorization plugin for Jenkins (which is not...",
+          "slug": "role-strategy-plugin-performance-improvement",
+          "status": "completed",
+          "student_name": "Abhyudaya Sharma",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Role Strategy Plugin Performance Improvement"
+        },
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2019/plugin-installation-manager-tool-cli/",
+          "description": "<p>One of the most defining features of Jenkins is its extensibility via plugins. Although plugins can be managed and installed from within a live master instance, many administrators would like to be able to control which plugins and their particular versions are installed before the Jenkins Master starts. There are currently many reincarnations of plugin management across Jenkins; the goal of this project is to create a new Plugin Manager CLI tools and a library which would unify the plugin management across the different implementations.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5963447450206208/",
+          "proposal_id": null,
+          "short_description": "One of the most defining features of Jenkins is its extensibility via plugins. Although plugins can be managed and installed from within a live...",
+          "slug": "plugins-installation-manager-cli-toollibrary",
+          "status": "completed",
+          "student_name": "Natasha Stopa",
+          "student_profile": null,
+          "tags": [],
+          "title": "Plugins Installation Manager CLI Tool/Library"
+        },
+        {
+          "code_url": "https://jenkins.io/projects/gsoc/2019/working-hours-improvements/",
+          "description": "<p>The current Working Hour Plugin provides an interface to set up a schedule of allowable build times but the user interface and usability still need enhancement. Thus a new user interface based on new technologies like React could be used to optimize user experience and code readability.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6005137003249664/",
+          "proposal_id": null,
+          "short_description": "The current Working Hour Plugin provides an interface to set up a schedule of allowable build times but the user interface and usability still need...",
+          "slug": "working-hours-plugin-ui-improvements",
+          "status": "completed",
+          "student_name": "Jack Shen",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ui"
+          ],
+          "title": "Working Hours Plugin - UI Improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4658407594786816/"
+    },
+    "year_2020": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/jenkins-x-apps-consolidation/",
+          "description": "<p>The main aim of the project is to consolidate Apps and Addons inside Jenkins X to avoid confusion.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4990370489827328/",
+          "proposal_id": null,
+          "short_description": "The main aim of the project is to consolidate Apps and Addons inside Jenkins X to avoid confusion.",
+          "slug": "jenkins-x-consolidate-the-use-of-apps-addons",
+          "status": "completed",
+          "student_name": "Zixuan Liu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Jenkins X: Consolidate the use of Apps / Addons"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/machine-learning/",
+          "description": "<p>This project provides a plugin for data scientists to integrate Machine Learning Workflow with Jenkins. The plugin will be a golden solution for the current problems not solvable by existing notebooks in the Data Science world. It helps to the Jenkins community to make an impact on Machine Learning history. Each ML steps can be integrated smoothly with the help of Jenkins. This project mainly focuses on Python, but in the future, it can be extended to other interpreters too.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5230915703275520/",
+          "proposal_id": null,
+          "short_description": "This project provides a plugin for data scientists to integrate Machine Learning Workflow with Jenkins. The plugin will be a golden solution for the...",
+          "slug": "jenkins-machine-learning-plugin-for-data-science",
+          "status": "completed",
+          "student_name": "Loghi Perinpanayagam",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai"
+          ],
+          "title": "Jenkins Machine Learning Plugin for Data Science"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/external-fingerprint-storage/",
+          "description": "<p>File fingerprinting is a way to track which version of a file is being used by a job/build, making dependency tracking easy. The fingerprint engine of Jenkins can track usages of artifacts, credentials, files, etc within the system. It does this by maintaining a local XML-based database. This leads to dependence on the physical disk of the Jenkins master. Hence, the core idea of this project is to extend Jenkins core to support storing of fingerprints in an external storage, which would be managed by storage system specific plugins. This would involve designing and creating the external fingerprint storage API. The API would also allow multiple Jenkins instances to store their fingerprints inside a single external storage instance, enabling traceability of artifacts across the CI/CD flow. The project also involves creating two plugins, as reference implementations. These plugins would allow users to store fingerprints inside their Redis and PostgreSQL instances.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_jenkins_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5316126277369856/",
+          "proposal_id": null,
+          "short_description": "File fingerprinting is a way to track which version of a file is being used by a job/build, making dependency tracking easy. The fingerprint engine...",
+          "slug": "external-fingerprint-storage-for-jenkins",
+          "status": "completed",
+          "student_name": "stellargo",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "External Fingerprint Storage for Jenkins"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/github-checks/",
+          "description": "<p>The GitHub Checks API allows developers to report the CI integrations’ detail information rather than binary pass/fail build status on GitHub pages. This project is about implementing this API as a new Jenkins plugin for other plugins. By consuming this API, they can easily create GitHub checks. Thus, any information during the Jenkins CI process like warnings, durations,  summaries, and conclusions can be directly shown on GitHub pages.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6547923568951296/",
+          "proposal_id": null,
+          "short_description": "The GitHub Checks API allows developers to report the CI integrations’ detail information rather than binary pass/fail build status on GitHub pages....",
+          "slug": "github-checks-api-for-jenkins-plugins",
+          "status": "completed",
+          "student_name": "Kezhi Xiong",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "GitHub Checks API for Jenkins Plugins"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/custom-jenkins-distribution-build-service/",
+          "description": "<p>The main idea behind the project is to build a customizable Jenkins distribution service that could be used to build tailor-made Jenkins distributions. The service would provide users with a simple interface to select the configurations they want to build the instance with eg: plugins, authorization matrices etc. Furthermore it would include a section for sharing community created distros so that users can find and download already built Jenkins war/configuration files to use out of the box</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6558730914627584/",
+          "proposal_id": null,
+          "short_description": "The main idea behind the project is to build a customizable Jenkins distribution service that could be used to build tailor-made Jenkins...",
+          "slug": "custom-jenkins-distribution-build-service",
+          "status": "completed",
+          "student_name": "Sladyn Nunes",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Custom Jenkins distribution build service"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/winsw-yaml-configs/",
+          "description": "<p>Enhance Jenkins server and client service management on Windows by offering new configuration file formats and improving settings validation. Currently, the configuration file is written in XML and there are fewer validations. In this project, I will  convert the configurations file into YAML and add validations for configurations.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6064899869900800/",
+          "proposal_id": null,
+          "short_description": "Enhance Jenkins server and client service management on Windows by offering new configuration file formats and improving settings validation....",
+          "slug": "jenkins-windows-services-yaml-configuration-support",
+          "status": "completed",
+          "student_name": "Buddhika Chathuranga",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Jenkins Windows Services: YAML Configuration Support"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2020/projects/git-plugin-performance/",
+          "description": "<p>At this moment, the number of installations for git-plugin is 200,000+ and git-client-plugin has a similar usage. These two plugins have one of the most extensively used implementations of SCM API and performance improvement is a much-needed task which is going to affect a broad Jenkins audience.</p>\n<p>In this project, I wish to use the principles of micro-benchmarking to create and execute a test suite which involves comparison of GitClient APIs implemented by CliGitAPIImpl and JGitAPIImpl using “average execution time per operation” as a performance metric. The results from this study can be used to prioritize implementation for a particular operation and provide an option to the users to improve end-to-end performance of the plugins.</p>\n<p>Apart from benchmarking, I wish to resolve the JENKINS-49757 issue. Currently, git checkout step calls git fetch twice, where the second fetch is an incremental call. Resolution of this issue will improve git plugin performance.</p>\n<p>Also, by running JUnit tests with code coverage, I wish to identify and create more automated test cases which cover the implementations in git-client-plugin and their functionalities in the git-plugin.</p>\n",
+          "difficulty": null,
+          "id": "proj_jenkins_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5913906536513536/",
+          "proposal_id": null,
+          "short_description": "At this moment, the number of installations for git-plugin is 200,000+ and git-client-plugin has a similar usage. These two plugins have one of the...",
+          "slug": "git-plugin-performance-improvement",
+          "status": "completed",
+          "student_name": "Rishabh Budhouliya",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Git Plugin Performance Improvement"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5087283272744960/"
+    },
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/jenkins-infra/plugin-health-scoring",
+          "description": "This project aims to introduce a metric system to calculate the health score of\neach plugin within the Jenkins ecosystem and reflect the final scores on the\nPlugin Site for the plugin maintainers and users. The health score of each plugin\nwould be shown on the UI with a detailed report of strengths and areas of\nimprovement, making it easier for maintainers to maintain their plugins, and for\nusers to decide if they should install/use a plugin.",
+          "difficulty": null,
+          "id": "proj_jenkins_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/O44ApUtz/",
+          "proposal_id": null,
+          "short_description": "This project aims to introduce a metric system to calculate the health score of each plugin within the Jenkins ecosystem and reflect the final scores...",
+          "slug": "plugin-health-scoring-system",
+          "status": "completed",
+          "student_name": "Dheeraj Singh Jodha",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Plugin Health Scoring System"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2022/projects/automatic-git-cache-maintenance/",
+          "description": "Git caches that exist on the controller can become slower and larger than necessary during use. Recent versions of command line git (since 2.30.0) have a set of commands for \"git maintenance\" that can be used to regularly update and maintain the contents of a git repository. Those commands provide good ideas of maintenance operations that would benefit the cached copies of git repositories stored on the Jenkins controller.",
+          "difficulty": null,
+          "id": "proj_jenkins_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/W8ZxacEA/",
+          "proposal_id": null,
+          "short_description": "Git caches that exist on the controller can become slower and larger than necessary during use. Recent versions of command line git (since 2.30.0)...",
+          "slug": "automatic-git-cache-maintenance-on-the-controller",
+          "status": "completed",
+          "student_name": "Hrushikesh Rao",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Automatic git cache maintenance on the controller"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2022/projects/pipeline-step-documentation-generator/",
+          "description": "Pipeline Step Documentation Generator is a tool that generates documentation for Pipeline jobs. However, this documentation, being generated automatically, is not very user-friendly.\nThis project aims to modify the code base such that the generated Asciidoc for the Pipeline Steps contains information that is presented to the users in a better way. It will also improve the layout of the Pipeline Steps Reference on the jenkins.io website.",
+          "difficulty": null,
+          "id": "proj_jenkins_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/wDsxqdYZ/",
+          "proposal_id": null,
+          "short_description": "Pipeline Step Documentation Generator is a tool that generates documentation for Pipeline jobs. However, this documentation, being generated...",
+          "slug": "pipeline-step-documentation-generator-improvements",
+          "status": "completed",
+          "student_name": "Vihaan Thora",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Pipeline Step Documentation Generator Improvements"
+        },
+        {
+          "code_url": "https://www.jenkins.io/projects/gsoc/2022/projects/jenkinsfile-runner-action-for-github-actions/",
+          "description": "Jenkinsfile Runner Action creates the containerized pipeline execution in GitHub Actions by modifying the current structure of Jenkinsfile Runner and several predefined docker images. The default version without configuration and JCasC style version with user's configuration are expected in the final pull requests.",
+          "difficulty": null,
+          "id": "proj_jenkins_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/0DADMrfK/",
+          "proposal_id": null,
+          "short_description": "Jenkinsfile Runner Action creates the containerized pipeline execution in GitHub Actions by modifying the current structure of Jenkinsfile Runner and...",
+          "slug": "jenkinsfile-runner-action-for-github-actions",
+          "status": "completed",
+          "student_name": "Cr1t-GYM",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "docker"
+          ],
+          "title": "Jenkinsfile Runner Action for GitHub Actions"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/jenkins-wp/"
+    },
+    "year_2023": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://www.jenkins.io/blog/2023/08/24/gsoc-docker-based-quickstart/",
+          "description": "This proposal aims to simplify the use of Jenkins with Docker by creating easy-to-use Docker Compose files with suitable examples. The process of getting started with Jenkins with docker is too complex and the available documentation is also hard to understand making it challenging for new users to get started. By simplifying the use of Jenkins with Docker, we can enable more developers to take advantage of these powerful tools together and accelerate their software development process. The main point of the project is to simplify the spinning up of the container to run a Jenkins instance with a single command. That’s where Docker-compose comes to the rescue which uses YAML files to spin up multi-container setups. The expected outcomes after completion of the project are an elegant docker-compose file, comprehensive documentation on the workings of these docker-compose files with examples, a Jenkinsfile will be added to ci.jenkins.io with instructions to check the docker-compose files and as these docker-compose files will be able to run on Gitpod we will be able to create a one-click setup for Jenkins using docker and Gitpod.",
+          "difficulty": "beginner",
+          "id": "proj_jenkins_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/4RsDTPvh",
+          "proposal_id": "L9qsNcNg",
+          "short_description": "This proposal aims to simplify the use of Jenkins with Docker by creating easy-to-use Docker Compose files with suitable examples. The process of...",
+          "slug": "docker-based-jenkins-quick-start-examples",
+          "status": "completed",
+          "student_name": "Ashutosh Saxena",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "docker",
+            "ui"
+          ],
+          "title": "Docker-based Jenkins quick start examples"
+        },
+        {
+          "code_url": "https://www.jenkins.io/blog/2023/08/24/gitlab-plugin-modernization-report/",
+          "description": "For a long time, the Jenkins community has suffered due to the old RESTEasy library being used in the GitLab Plugin. Thus this project aims to replace its use with a modern GitLab4J-API library via GitLab API Jenkins Library Plugin and clean up the codebase.",
+          "difficulty": "beginner",
+          "id": "proj_jenkins_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/j5lsgAAs",
+          "proposal_id": "vBch4Zto",
+          "short_description": "For a long time, the Jenkins community has suffered due to the old RESTEasy library being used in the GitLab Plugin. Thus this project aims to...",
+          "slug": "gitlab-plugin-modernization",
+          "status": "completed",
+          "student_name": "harsh-ps-2003",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "GitLab Plugin Modernization"
+        },
+        {
+          "code_url": "https://gist.github.com/Jagrutiti/c8490d38bf382fea9b87e5408668e8cb",
+          "description": "Project Abstract\n\nThe project proposes to add new probes to the Plugin Health Score tool. Originally started in 2022 as a part of a GSoC project, this tool determines the health score of a plugin. Probes are the heart of the tool. To extend the work started last year, I propose adding new probes to make the tool more valuable and feature-complete. \n\nProject Description\n\nJenkins is an almost two-decade-old open-source project with over 1000 repositories. Plugins bridge the gap between Jenkins and different environments. \nA project as mature and large-scale as Jenkins requires active involvement from active maintainers. \n\nIn general, probes serve two purposes within the context of this toolset: \nTo collect the data to compute the score of the plugin systematically. Based on the computed score, the health of the plugin can be determined.\nBased on the score future contributors, maintainers, and adopters decide which plugin(s) they want to invest their time in. \n\n\nProject Deliverables\n\nDesigning of the probes\nIdentify the key features and functionality of the plugins.\nDefine the metrics that would contribute to the Plugin Health Score.\nThe more probe criteria the plugin meets, the higher the health score of the plugin.\n\nDeciding the probe’s interaction with other probes\n\nDetermining how the probe would contribute to the score.\n\nAdding unit test cases for each probe and scoring implementation. If time permits, I will add integration test cases too.\n\nThe final delivery would be 10 new probes to the Plugin Health Scoring System. \nThese probes will contribute to calculating the overall health of a plugin.\nBy the time the project ends, the tool will approximately have 24 probes in all (10 new + 14 existing probes)\n\nProposed Implementation Plan \n\n- Build each probe, implement it, score it and write its test cases. \n\n- Define interaction of probes with each other.\n\n- Define execution order of each probe.\n\nStretch Goals\n\n- Adding metrics probe\n- Writing integration test cases",
+          "difficulty": null,
+          "id": "proj_jenkins_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/GtfMGrXa",
+          "proposal_id": "8p9ki69w",
+          "short_description": "Project Abstract The project proposes to add new probes to the Plugin Health Score tool. Originally started in 2022 as a part of a GSoC project, this...",
+          "slug": "adding-probes-to-plugin-health-score",
+          "status": "completed",
+          "student_name": "Jagruti Tiwari",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Adding Probes to Plugin Health Score"
+        },
+        {
+          "code_url": "https://www.jenkins.io/blog/2023/09/24/building-jenkinsio-with-alternative-tools/",
+          "description": "This project aims to build jenkins.io site with Antora and Gatsby where Antora would be used for the complete site and Gatsby would be used only to build the Blogs. Project uses Antora as currently jenkins.io doesn't has versioned documentation and Antora is famous for its versioning and easy to use architecture. Gatsby is used for the Blogs part as its easy to submit blogs using Gatsby.",
+          "difficulty": "beginner",
+          "id": "proj_jenkins_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/5B6EgSAn",
+          "proposal_id": "SIfLlI6r",
+          "short_description": "This project aims to build jenkins.io site with Antora and Gatsby where Antora would be used for the complete site and Gatsby would be used only to...",
+          "slug": "gsoc2023_vanditsingh_buildingjenkinsiowithalternativetools",
+          "status": "completed",
+          "student_name": "Vandit Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "GSOC2023_VanditSingh_BuildingJenkins.ioWithAlternativeTools"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/jenkins-wp"
+    },
+    "year_2024": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/jenkins-infra/repository-permissions-updater/commit/688b7b858a9091ee5ea6943e3cebbc798a30ae25",
+          "description": "The Jenkins Repository Permission Updater is used to distribute the permissions on Github for the Jenkins plugins. Currently this work is partly done manually by the hosting team of Jenkins or by the existing code of the Repository Permission Updater which is still based on, partly Groovy.\r\nBy using YAML files, it should be possible to set the permissions automatically with pull requests through various components such as GitHub API, Jira and Artifactory, so that removal and update is also possible. \r\nBy integrating official interfaces such as JIRA, GitHub, Artifactory and revising the structure, it will be possible in the future to update, set and remove rights more easily and without manual effort. \r\nManual implementations will be replaced by interfaces with better structures, i.e. Github, Jira and Artifactory. \r\nBy replacing Groovy code, it will be possible to use Java 21 in the future.",
+          "difficulty": null,
+          "id": "proj_jenkins_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/EwnzmKRe/",
+          "proposal_id": null,
+          "short_description": "The Jenkins Repository Permission Updater is used to distribute the permissions on Github for the Jenkins plugins. Currently this work is partly done...",
+          "slug": "improve-maintainability-for-the-repository-permission-updater",
+          "status": "completed",
+          "student_name": "Phillipp Glanz",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Improve Maintainability  for the Repository Permission Updater"
+        },
+        {
+          "code_url": "https://www.jenkins.io/blog/2024/08/26/gsoc-manage-github-permissions/",
+          "description": "The goal of this project is to automate the management of GitHub permissions\nfor the JenkinsCI organization. With the existing RPU tool lacking direct\ncapabilities to update or manage repository permissions directly, this upgrade\nwill enable as-code management of team maintainers through YAML files,\nleveraging GitHub Actions for automatic synchronisation, thus improving\nefficiency and security",
+          "difficulty": null,
+          "id": "proj_jenkins_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/P8PB7VV6/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to automate the management of GitHub permissions for the JenkinsCI organization. With the existing RPU tool lacking...",
+          "slug": "manage-jenkinsci-github-permissions-as-code",
+          "status": "completed",
+          "student_name": "Alaurent",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Manage jenkinsci GitHub permissions as code"
+        },
+        {
+          "code_url": "https://www.jenkins.io/blog/2024/08/26/gsoc-using-openrewrite-for-plugin-modernization/",
+          "description": "The Jenkins ecosystem, characterized by its monolithic core and modular plugin system, offers users remarkable flexibility. However, it encounters difficulties in propagating large-scale changes across its multitude of plugins. These challenges encompass technology migration, API deprecation, dependency updates, and more. Given the extensive number of plugins—over 1900—in Jenkins, updating each one to accommodate these changes proves to be a laborious and manual process, resulting in many plugins falling behind. To address this issue, this project leverages OpenRewrite to develop a versatile tool capable of transforming code. This initiative empowers developers to efficiently address technical debt within their repositories.",
+          "difficulty": null,
+          "id": "proj_jenkins_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/anaMmWRR/",
+          "proposal_id": null,
+          "short_description": "The Jenkins ecosystem, characterized by its monolithic core and modular plugin system, offers users remarkable flexibility. However, it encounters...",
+          "slug": "using-openrewrite-recipes-for-plugin-modernization",
+          "status": "completed",
+          "student_name": "Sridhar S",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Using OpenRewrite Recipes for Plugin Modernization"
+        },
+        {
+          "code_url": "https://github.com/jenkins-infra/stats.jenkins.io",
+          "description": "This project aims to improve the Jenkins Infrastructure Statistics GitHub Pages website by addressing its current limitations in lack of a focused narrative, insufficient organization, and not very appealing graphic design. Acknowledging the critical need for a more intuitive and engaging user experience, this proposal seeks to introduce a comprehensive overhaul including the implementation of summary pages, a dynamic search feature, and a more informative and less cluttered dependency graph. Enhancements will also include interactivity and sparseness in the graph visualization to tackle current issues of misleading functionality and visual overload. By utilizing a more user-friendly and meaningful organization and presentation, this project endeavors to significantly improve the accessibility and utility of Jenkins infrastructure statistics for users, thereby enhancing its overall usability and effectiveness, bringing values for the Jenkins community.",
+          "difficulty": null,
+          "id": "proj_jenkins_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/o5wO2BQ8/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve the Jenkins Infrastructure Statistics GitHub Pages website by addressing its current limitations in lack of a focused...",
+          "slug": "implementing-ui-for-jenkins-infra-statistics",
+          "status": "completed",
+          "student_name": "Shlomo Dahan",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Implementing UI for Jenkins Infra Statistics"
+        },
+        {
+          "code_url": "https://www.jenkins.io/blog/2024/08/25/gsoc-enhancing-llm",
+          "description": "This project aims to enhance the performance of the LLAMA2 model by fine-tuning it specifically for Jenkins data, thus enabling users to access Jenkins knowledge through a user-friendly interface. By leveraging data from Jenkins documentation and other relevant sources, the model will be refined to better understand and respond to domain-specific queries. The project involves conducting data preprocessing, fine-tuning the LLAMA model, designing a simple graphical user interface (GUI), and integrating the refined model into the system. Through testing and user feedback, the project aims to ensure the robustness and usability of the system. \nThe deliverables include a system architecture design document, data preprocessing/refining documentation, a user-friendly GUI, a fine-tuned LLAMA2 model, testing reports with results, and a maintenance plan/documentation. \nThe project will empower users to interact with Jenkins knowledge more effectively, thereby enhancing the accessibility and usability of the software.",
+          "difficulty": null,
+          "id": "proj_jenkins_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/a76MBQHy/",
+          "proposal_id": null,
+          "short_description": "This project aims to enhance the performance of the LLAMA2 model by fine-tuning it specifically for Jenkins data, thus enabling users to access...",
+          "slug": "enhancing-an-existing-llm-model-with-domain-specific-jenkins-knowledge",
+          "status": "completed",
+          "student_name": "Nour Almulhem",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing an Existing LLM Model with Domain-specific Jenkins knowledge"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/jenkins-wp/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Jenkins website currently relies on Awestruct, an outdated static site generator, leading to maintenance challenges, inconsistent user experience, and missing versioned documentation. To address this, the project aims to migrate non-versioned content to Gatsby and versioned documentation to Antora. The solution includes modernising the UI/UX with shared React components, integrating Algolia search, maintaining SEO-friendly redirects, and automating builds for smoother contributions. Key deliverables include a full content migration, unified responsive design with a Jenkins theme, cross-version navigation, and a CI/CD pipeline for seamless deployments.",
+          "difficulty": null,
+          "id": "proj_jenkins_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/FQsbBQzK",
+          "proposal_id": "7oW5d7BM",
+          "short_description": "The Jenkins website currently relies on Awestruct, an outdated static site generator, leading to maintenance challenges, inconsistent user...",
+          "slug": "complete-build-retooling-of-jenkinsio",
+          "status": "in-progress",
+          "student_name": "Birajit Saikia",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Complete build retooling of jenkins.io"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to improve Jenkins CI/CD troubleshooting by creating a domain-specific Large Language Model (LLM). The core task involves fine-tuning an open-source LLM (e.g., Phi-4/Qwen 2.5) on structured data derived from ci.jenkins.io build, logs and metadata, using resource-efficient techniques like QLoRA with Unsloth. To ensure feasibility despite potential API limitations, a primary strategy involves heuristic/manual data curation, supplemented by LLM assistance where possible. A baseline Retrieval-Augmented Generation (RAG) system incorporating Jenkins documentation will be implemented to enhance factual accuracy. Key deliverables include the fine-tuned model (GGUF for Ollama), a basic FastAPI backend, the RAG pipeline, and an evaluation report incorporating both automated metrics and qualitative mentor feedback",
+          "difficulty": null,
+          "id": "proj_jenkins_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/oTNbvlrM",
+          "proposal_id": "BAdu7A7A",
+          "short_description": "This project aims to improve Jenkins CI/CD troubleshooting by creating a domain-specific Large Language Model (LLM). The core task involves...",
+          "slug": "jenkins-domain-specific-llm-based-on-actual-jenkins-usage-using-cijenkinsio-data",
+          "status": "in-progress",
+          "student_name": "Chiruu12",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Jenkins Domain specific LLM based on actual Jenkins usage using ci.jenkins.io data"
+        },
+        {
+          "code_url": null,
+          "description": "Many Jenkins beginners often struggle with setup issues, plugin compatibility, and troubleshooting pipeline configurations. This project proposes the development of an AI-powered chatbot integrated into Jenkins inside a plugin. This AI tool is designed to assist users by providing context-aware support based con Jenkins documentation and community resources. \n\nThe assistant will be delivered as a Jenkins plugin, combining a modern React frontend, a Java backend, and a local lightweight AI model exposed via a FastAPI service. Instead of relying on fine-tuned models, the project exploits Retrieval-Augmented-Generation(RAG) approach, fetching relevant context from a vector index built from Jenkins docs and community forums,\n\nDeliverables include: a complete indexing pipeline, a functioning RAG-based LLM assistant, a modern UI, a Jenkins plugin that integrates the AI service, a robust testing coverage and a clear documentation. \n\nThe final goal is to reduce the learning curve of the Jenkins users, allowing them access to a smart, embedded support tool.",
+          "difficulty": "beginner",
+          "id": "proj_jenkins_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/hVAyeHoe",
+          "proposal_id": "Vkk3sT6t",
+          "short_description": "Many Jenkins beginners often struggle with setup issues, plugin compatibility, and troubleshooting pipeline configurations. This project proposes the...",
+          "slug": "ai-powered-chatbot-for-quick-access-to-jenkins-resources",
+          "status": "in-progress",
+          "student_name": "Giovanni Vaccarino",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "java",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "AI-Powered Chatbot for Quick Access to Jenkins Resources"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the Jenkins Tekton Client Plugin by implementing full CRUD (Create, Read, Update, Delete) operations for Tekton resources, including Tasks, Pipelines, PipelineRuns, TaskRuns, Triggers, TriggerBindings, and TriggerTemplates. By adding Read and Update capabilities, the plugin will support complete lifecycle management directly from Jenkins, improving CI/CD workflows and reducing context switching.\n\nDeliverables include a fully functional plugin with CRUD support, improved error handling, integration with Jenkins credentials, user-friendly UI components, comprehensive testing, and detailed documentation. This enhancement will streamline cloud-native CI/CD management within Jenkins, making Tekton resources more accessible and manageable.",
+          "difficulty": null,
+          "id": "proj_jenkins_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NgZbuUAK",
+          "proposal_id": "qUQzEt5G",
+          "short_description": "This project aims to enhance the Jenkins Tekton Client Plugin by implementing full CRUD (Create, Read, Update, Delete) operations for Tekton...",
+          "slug": "improving-tekton-client-plugin-for-jenkins",
+          "status": "in-progress",
+          "student_name": "Maeve Ho",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "cloud",
+            "ui"
+          ],
+          "title": "Improving Tekton Client Plugin for Jenkins"
+        },
+        {
+          "code_url": null,
+          "description": "Jenkins Plugin Modernizer overcomes the hurdles of manually updating and maintaining more than 2000 Jenkins plugins. Most plugins are based on outdated technologies or deprecated APIs, and modernization is a crucial but time-consuming process. The project suggests automating the use of Open Rewrite recipes to modernize plugins, beginning with the creation of a metadata storage system to track modernization efforts and recipe applications. Secure REST APIs will be created to communicate with this metadata to allow easy reading and updates. This modernization metadata will be stored on Jenkins Report Site. The project will also entail automation of the finding and updating of low-scoring health plugins so that there will be an active maintenance approach. Visualization of the progress of modernization will be included in the Jenkins Statistics Site to enable the community to see improvements.  More recipes will be added based on community feedback to provide extensibility.",
+          "difficulty": "beginner",
+          "id": "proj_jenkins_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/cEtNKcdc",
+          "proposal_id": "hfPbNCkB",
+          "short_description": "Jenkins Plugin Modernizer overcomes the hurdles of manually updating and maintaining more than 2000 Jenkins plugins. Most plugins are based on...",
+          "slug": "improving-plugin-modernizer",
+          "status": "in-progress",
+          "student_name": "Raunak Madan",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Improving Plugin Modernizer"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/jenkins-wp"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "jenkinsci-gsoc-all-public@googlegroups.com",
+    "guide_url": "https://www.jenkins.io/projects/gsoc/contributors",
+    "ideas_url": "https://www.jenkins.io/projects/gsoc/2025/project-ideas/",
+    "irc_channel": "https://gitter.im/jenkinsci/gsoc-sig",
+    "mailing_list": "https://community.jenkins.io/c/contributing/gsoc/6"
+  },
+  "social": {
+    "blog": "https://www.jenkins.io/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://x.com/jenkinsci",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.297Z"
+  }
+}

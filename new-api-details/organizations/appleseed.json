@@ -1,0 +1,331 @@
+{
+  "id": "692251ed53dd9d7326d33f08",
+  "slug": "appleseed",
+  "name": "appleseed",
+  "category": "Media",
+  "description": "A modern open source rendering engine for animation and visual effects",
+  "image_url": "https://lh3.googleusercontent.com/fsKtYgvjsvcdf4l6Uscn9CACN6kGKEyuWCWZwl_GqZF3ZhS10gsfHpEMhwqBJEa0FOF-eJD8JWFALd1hi8LNSLAmHKHQe8Y",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/appleseed.webp",
+  "logo_r2_url": null,
+  "url": "https://appleseedhq.net/",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020
+  ],
+  "first_year": 2017,
+  "last_year": 2020,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "c++",
+    "qt",
+    "c",
+    "opengl",
+    "c++11"
+  ],
+  "topics": [
+    "3d",
+    "rendering",
+    "computer graphics",
+    "animation",
+    "vfx",
+    "mathematics",
+    "graphics",
+    "physics",
+    "high performance",
+    "simulation",
+    "image synthesis"
+  ],
+  "total_projects": 11,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.75,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 3,
+      "year_2018": 3,
+      "year_2019": 2,
+      "year_2020": 3,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 3,
+      "year_2018": 3,
+      "year_2019": 2,
+      "year_2020": 3,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 11
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/glebmish/GSoC-appleseed-final-report",
+          "description": "<ul>\n<li>Python is an easy-to-learn and easy-to-use language which is often used to automate actions with scripts and to accelerate development of modules, that are not sensible to perfomance. Many projects are using python to provide facilities of using project functionality from scripts or to extend their functionality with Python modules.</li>\n<li>Appleseed can greatly benefit from using Python. With Python embeded the ability to script actions on currently opened project will appear. Furthermore, new functionality can be implemented with Python modules. These will lead to gain in development speed and make it easier to contribute to project for newcomers.</li>\n<li>My goal is to integrate Python interpreter into appleseed.studio and provide API to use current project and other application data from scripts. Also simple script editor will be provided so users wouldn't need to open stand-alone text editor just to make a small change in script. I will also start to investigate ways of extending appleseed.studio with Python and implement a few features as a result of investigation.</li>\n</ul>\n",
+          "difficulty": "beginner",
+          "id": "proj_appleseed_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5680813790199808/",
+          "proposal_id": null,
+          "short_description": "Python is an easy-to-learn and easy-to-use language which is often used to automate actions with scripts and to accelerate development of modules,...",
+          "slug": "python-scripting-feature-for-appleseedstudio",
+          "status": "completed",
+          "student_name": "Gleb Mishchenko",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Python scripting feature for appleseed.studio"
+        },
+        {
+          "code_url": "https://medium.com/@petragospodneti/gsoc-2017-with-appleseedhq-cc5f33d04170",
+          "description": "<p>In order to render a nice looking scene (where light is concerned) we need to take into consideration that an object is lit by a combination of indirect and direct light, where each reflected light ray (indirect light) represents a new light source (small but not unimportant). With that in mind, the number of light sources in a scene expands rapidly and requires a program to traverse the lights optimally when estimating their significance and impact for each scene point. As such, the many-light problem is introduced when calculating global illumination.</p>\n<p>There are different algorithms to compute the global illumination, but each of those algorithms needs to sample all the lights of the scene first, and then do the computations. Optimizing the light sampling algorithm leads to faster and more efficient use of rendering time with the same degree of image realism, which are the exact same reasons why improvement of many-light sampling in Appleseed is required.</p>\n<p>Within the proposal I've given an overview of the implementation approach of the new many-light sampling algorithm, split the overall problem into smaller pieces and tried to propose a realistic implementation timeline.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4810446049640448/",
+          "proposal_id": null,
+          "short_description": "In order to render a nice looking scene (where light is concerned) we need to take into consideration that an object is lit by a combination of...",
+          "slug": "implementation-of-the-improved-many-light-sampling-algorithm-by-nathan-veghdal",
+          "status": "completed",
+          "student_name": "Petra Gospodnetić",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Implementation of the Improved Many-Light Sampling Algorithm by Nathan Veghdal"
+        },
+        {
+          "code_url": "https://github.com/Biart95/appleseed-volumetric-rendering-final-report/blob/master/report.md",
+          "description": "<p>Currently, appleseed only renders the surfaces of objects, and treats the space between objects as a void. Hereby, one of the most requested features in appleseed is <strong>Volume rendering</strong>. This term implies that the rendering engine takes into account how light interacts with media between the objects, and computes how it is absorbed and scattered by air, smoke or fog molecules, or by denser media such as milk or marble.</p>\n<p>My goal is to integrate the feature of rendering homogeneous volumes to appleseed engine, and thus making it capable to handle simple volumetric effects, such as light shafts in a foggy environment. During my work I will investigate different approaches of visualizing volumes, select the techniques that are modern, efficient and fit the best to the existing path tracing code of appleseed, and then implement the chosen methods. Additionally, I will introduce how users will interact with the newly added features by extending the user interface of appleseed.studio.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5167749210832896/",
+          "proposal_id": null,
+          "short_description": "Currently, appleseed only renders the surfaces of objects, and treats the space between objects as a void. Hereby, one of the most requested features...",
+          "slug": "volume-rendering",
+          "status": "completed",
+          "student_name": "Artem Bishev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Volume Rendering"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6110372931043328/"
+    },
+    "year_2018": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1BBKFKzQWjTVDoqYZ9ndKE8jHCdYyCv1IB1r6lNseDLQ/edit?usp=sharing",
+          "description": "<p>Embree is a collection of high-performance ray tracing kernels, developed at Intel and being adopted by a range of commercial renderers such as VRay or Corona. Using embree inside appleseed might lead to significant performance gain. Moreover, there are interesting side effects: support for variety of geometry types, curve types, advanced opensubdiv caching and state-of-the-art multi-segment motion blur handling.</p>\n<p>I will be happy to work with appleseed and make it even better.</p>\n<p>I want to thank François Beaune and Esteban Tovagliari for invaluable assistance!</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_appleseed_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4810871519838208/",
+          "proposal_id": null,
+          "short_description": "Embree is a collection of high-performance ray tracing kernels, developed at Intel and being adopted by a range of commercial renderers such as VRay...",
+          "slug": "embree-integration",
+          "status": "completed",
+          "student_name": "Fedor Matantsev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Embree Integration"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1PwRI3yieYznrLBfh0sA5sI6AHinuv7MV7mva0EspN6o/edit#",
+          "description": "<p>The project aims to add three main components to the appleseed render to improve the hair and fur pipeline. Firstly, the addition of per vertex attributes to the curves primitive in order to create a more robust hair fibre curve representation. Secondly, the creation of a hair binary file format to import hair geometry from popular modelling softwares and export the format for ease of data flow in production. It will also support conversion from different binary hair file formats to the new native format. Finally, the addition of an advanced hair shading model that is tuned for production rendering. It is a physically based hair shader that captures the effects of the light scattering through hair fibres. The model is importance sampled and also has various parameters to change physical properties in the hair like refractive index and colour absorption and distribution. This project will fix one of the main deficiencies of the appleseed renderer and help the renderer challenge other production renderers for the mantle of the best.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_appleseed_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4831516353888256/",
+          "proposal_id": null,
+          "short_description": "The project aims to add three main components to the appleseed render to improve the hair and fur pipeline. Firstly, the addition of per vertex...",
+          "slug": "hair-rendering-ii-hair-shader-and-binary-format",
+          "status": "completed",
+          "student_name": "Girish Ramesh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Hair Rendering II - Hair shader and binary format"
+        },
+        {
+          "code_url": "https://github.com/oktomus/gsoc-2018/blob/master/appleseed-final-report.md",
+          "description": "<p>Current implementation of adaptive sampling needs to be overwriten so that it is more efficient, easier to use for any user and more robust regarding animations. Up to now, appleseed's image plane adaptive sampler is based on a per-pixel variance analysis. To work correctly, it requires a large amount of initial samples, which is not convinient. Moreover, each pixel analysis isn't aware of its neighbours and this lead to an image still noisy.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5797050771832832/",
+          "proposal_id": null,
+          "short_description": "Current implementation of adaptive sampling needs to be overwriten so that it is more efficient, easier to use for any user and more robust regarding...",
+          "slug": "adaptive-image-plane-sampling-proposal",
+          "status": "completed",
+          "student_name": "Kevin Masson",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Adaptive image plane sampling proposal"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5125340301099008/"
+    },
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://www.grayolson.me/blog/posts/gsoc-2019/",
+          "description": "<p>Light path recording is a unique and potentially extremely valuable tool in appleseed; however, it is currently relatively limited in capability of both data capture and visualization. This project aims to help remedy both of these by improving the number of quantities that are able to be recorded, improve the visualization capabilities for these quantities, and provide a method for basic data analysis, filtering, and report generation.</p>\n<p>In order to do this, a main piece of the project will be to provide a unified viewport in appleseed.studio which is capable of displaying and switching between several possible views of a scene and overlay data and widgets on top of it. This will greatly improve the usability of appleseed.studio as a scene mastering tool by allowing a technical artist to view exactly how different parts of a render are being affected by lights, objects, etc. and will pave the way for even more useful data integration to be added in the future.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6635569482825728/",
+          "proposal_id": null,
+          "short_description": "Light path recording is a unique and potentially extremely valuable tool in appleseed; however, it is currently relatively limited in capability of...",
+          "slug": "light-paths-visualization-and-viewport-unification",
+          "status": "completed",
+          "student_name": "Gray Olson",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Light Paths Visualization and Viewport Unification"
+        },
+        {
+          "code_url": "https://github.com/BashPrince/GSoC-2019-Final-Report",
+          "description": "<p>For my Google Summer of Code project proposal I suggest implementing the technique described in the paper “Practical Path Guiding for Efficient Light-Transport Simulation” by Thomas Müller, Markus Gross and Jan Novák. The authors describe an iterative process to learn and approximate a scene’s spatial and directional radiance distribution in a tree structure they call SD-Tree. The learned approximation is utilized for path guiding, i.e. the importance sampling of incident radiance for intelligent path construction.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5250155975016448/",
+          "proposal_id": null,
+          "short_description": "For my Google Summer of Code project proposal I suggest implementing the technique described in the paper “Practical Path Guiding for Efficient...",
+          "slug": "practical-path-guiding",
+          "status": "completed",
+          "student_name": "Stephen Agyemang",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Practical Path Guiding"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5485316792647680/"
+    },
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/lorentzo/GSOC-2020-Report",
+          "description": "<p>Texture maps are used for defining material properties for every point per object surface. Normal maps are textures that are efficient for introducing spatial variational detail on smooth geometry. Information from the normal map, in current shading point, can be used to define either shading normal of meso-surface or microsurface profile of microfacet bidirectional reflectance distribution function (BRDF). In this project, we will implement a method from Schüssler et al.  \"Microfacet-based normal mapping for robust Monte Carlo path tracing\" which tackles with microfacet based normal mapping. The result of this method enables us to use arbitrary normal maps and BRDFs for defining the microfacet BRDF for the whole surface. Important properties of the introduced microfacet BRDF are energy conservation, symmetry and discrete distribution of microsurface normals which preserves high-frequency detail.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5359071688916992/",
+          "proposal_id": null,
+          "short_description": "Texture maps are used for defining material properties for every point per object surface. Normal maps are textures that are efficient for...",
+          "slug": "microfacet-based-normal-mapping",
+          "status": "completed",
+          "student_name": "Lovro Bosnar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Microfacet-based Normal Mapping"
+        },
+        {
+          "code_url": "https://github.com/laurelkeys/gsoc-2020/blob/master/gsoc-final-report.md",
+          "description": "<p>This project aims to equip the post-processing pipeline with a good amount of new artistic effects, to allow users to tweak the overall look and feel of their scenes without having to leave appleseed.</p>\n<p>The four main effects which will be added are <strong>Bloom</strong>, <strong>Tonemapping</strong>, <strong>Chromatic Aberration</strong> and <strong>Vignetting</strong>, which do not take place during rendering, but rather, are composited on top of the resulting image.</p>\n<p>Post-processing applies full image filters and transformations to the rendered scenes, which can drastically improve their visual quality with little computation time. Currently, this is only possible with final renders in appleseed, however, bringing this feature to paused interactive renders is another goal of this project, as this is a more artist friendly approach to testing different customizable values of effects.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4671601607442432/",
+          "proposal_id": null,
+          "short_description": "This project aims to equip the post-processing pipeline with a good amount of new artistic effects, to allow users to tweak the overall look and feel...",
+          "slug": "new-post-processing-stages",
+          "status": "completed",
+          "student_name": "Tiago Loureiro Chaves",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "New Post-Processing Stages"
+        },
+        {
+          "code_url": "https://github.com/mororo250/Gsoc-sun-sky/blob/master/gsoc_final_report.md",
+          "description": "<p>This project will improve the current Appleseed's implementation of physical sun and sky models. Fixing the current blue tint present on Appleseed implementation and adding several new features. Such as, a solar disk, ability to configure the Sun with a geographic location, a date and a time and allow users to change atmosphere parameters.\nThose new features will make the sky models more flexible for artists and will provide a more accurate representation of the appearance and illumination from the day sky. The new features will also make it possible to render other planets skies, from a physically plausible mars sky to an alien sky with multiple suns and a stunning sky's color.</p>\n",
+          "difficulty": null,
+          "id": "proj_appleseed_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4825622892773376/",
+          "proposal_id": null,
+          "short_description": "This project will improve the current Appleseed's implementation of physical sun and sky models. Fixing the current blue tint present on Appleseed...",
+          "slug": "revisiting-physical-sun-and-sky-model",
+          "status": "completed",
+          "student_name": "João Marcos Mororó Costa",
+          "student_profile": null,
+          "tags": [],
+          "title": "Revisiting Physical Sun and Sky Model"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5459614121852928/"
+    },
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "hello@appleseedhq.net",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://discord.gg/dNCE5J8",
+    "mailing_list": "https://groups.google.com/forum/#!forum/appleseed-dev"
+  },
+  "social": {
+    "blog": null,
+    "discord": "https://discord.gg/dNCE5J8",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/appleseedhq",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.505Z"
+  }
+}

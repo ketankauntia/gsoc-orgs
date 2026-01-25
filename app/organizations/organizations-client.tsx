@@ -361,13 +361,8 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs }: 
   return (
     <div className="flex">
       {/* Sidebar - Fixed left, 280px width */}
-<<<<<<< HEAD
       <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
-        <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} />
-=======
-      <aside className="hidden lg:block w-[280px] shrink-0 bg-white fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
         <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} />
->>>>>>> 3ff5d5c (fix(tech-stack): fixed)
       </aside>
 
       {/* Main Content - with left margin for sidebar */}

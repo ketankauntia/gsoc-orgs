@@ -1,0 +1,629 @@
+{
+  "id": "692251ea53dd9d7326d33edd",
+  "slug": "the-rust-foundation",
+  "name": "The Rust Foundation",
+  "category": "Programming languages",
+  "description": "A language empowering everyone",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/the-rust-foundation/pplrhxvka7dufvsn.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/the-rust-foundation.webp",
+  "logo_r2_url": null,
+  "url": "https://www.rust-lang.org",
+  "active_years": [
+    2024,
+    2025
+  ],
+  "first_year": 2024,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "rust"
+  ],
+  "topics": [
+    "compilers",
+    "programming languages"
+  ],
+  "total_projects": 28,
+  "stats": {
+    "avg_projects_per_appeared_year": 14,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 9,
+      "year_2025": 19
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 9,
+      "year_2025": 19
+    },
+    "total_students": 26
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/s7tya/96dc1cae4ca9e59841a95f0f48d023d6",
+          "description": "rustc-perf is composed of a data collector that collects rustc’s comiple & runtime benchmarks and web application that visualize the collected data.  I'll be improving them by adding detailed runtime benchmark graphs, add query trace frontend inside of perf.rust-lang.org, migrate HTML templates to Vue.js.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/MeyNanKI/",
+          "proposal_id": null,
+          "short_description": "rustc-perf is composed of a data collector that collects rustc’s comiple & runtime benchmarks and web application that visualize the collected data....",
+          "slug": "improve-rust-benchmark-suite",
+          "status": "completed",
+          "student_name": "Eitaro Kubotera",
+          "student_profile": null,
+          "tags": [
+            "vue",
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Rust benchmark suite"
+        },
+        {
+          "code_url": "https://d-sonuga.netlify.app/gsoc/regalloc-iii/",
+          "description": "The Rust compiler is notorious for needing to be faster at its job. Enormous effort has been\nput into solving this problem, but there is still room for improvement.\nThis project aims to implement a new register allocator for the Cranelift backend whose\nfocus will be on optimizing the speed of compilation rather than optimizing the program's\nruntime performance. The ultimate aim is to make the Rust compiler faster.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/zxxeGZMt/",
+          "proposal_id": null,
+          "short_description": "The Rust compiler is notorious for needing to be faster at its job. Enormous effort has been put into solving this problem, but there is still room...",
+          "slug": "design-and-implementation-of-a-faster-register-allocator-for-cranelift",
+          "status": "completed",
+          "student_name": "Demilade Sonuga",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Design and Implementation of a Faster Register Allocator For Cranelift"
+        },
+        {
+          "code_url": "https://hackmd.io/@PthRWaPvSmS_2Yu_GLbGpg/Hk-ficKpC",
+          "description": "Project Description: The existing completion functionality for cargo commands is achieved through the maintenance of a completion script. This script is difficult to maintain and cannot be easily ported across different shells, with each shell requiring its own specific completion script. How to solve: This project aims for the completion script to call an external completion program, thereby realizing the implementation of the completion functionality in Rust language, instead of shell completion scripts. Rust will bring various advantages such as safety, testability, portability, and ease of extension. Deliverables: 1. Implement a stable and easy-to-use dynamic auto-completion script generation module for the clap project. 2. Implementation of cargo dynamic completion feature. 3. Testing the cargo dynamic completion feature",
+          "difficulty": "beginner",
+          "id": "proj_the-rust-foundation_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/jjnidpgn/",
+          "proposal_id": null,
+          "short_description": "Project Description: The existing completion functionality for cargo commands is achieved through the maintenance of a completion script. This script...",
+          "slug": "move-cargo-shell-completions-to-rust",
+          "status": "completed",
+          "student_name": "shanmu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Move cargo shell completions to Rust"
+        },
+        {
+          "code_url": "https://ding-young.github.io/posts/gsoc-final/",
+          "description": "Rustfmt, the de facto standard tool for formatting Rust code, has been reported that it occasionally fails to format silently. One of the major causes is that the internal formatting mechanism loses the context when issues occur during formatting. While rustfmt heavily relies on the Rewrite trait to format various AST structures, the rewrite method, the only method that consists of the Rewrite trait, returns Option. This makes it hard to track how and why formatting failed. To improve handling of silent failures and allow rustfmt to retry formatting under more contexts, this project aims to refactor the Rewrite trait so that errors occurring in formatting can be propagated.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/gHEu3vxc/",
+          "proposal_id": null,
+          "short_description": "Rustfmt, the de facto standard tool for formatting Rust code, has been reported that it occasionally fails to format silently. One of the major...",
+          "slug": "rewriting-the-rewrite-trait",
+          "status": "completed",
+          "student_name": "SeoYoung Lee",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Rewriting the Rewrite trait"
+        },
+        {
+          "code_url": "https://gist.github.com/tiif/3e08ba6e8cfb1d078e6155410108ae48",
+          "description": "Miri is a testing tool to check undefined behaviour in unsafe Rust. Currently, a significant portion of Tokio async program still cannot be effectively tested with Miri due to unhandled system calls. This project aims to rectify this limitation by offering support for Tokio async in Miri through a complete implementation of epoll shim. By doing so, it will open up a whole new part of the async ecosystem to be tested with Miri, ensuring greater reliability and stability in Rust ecosystem.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/rk1Ey4hN/",
+          "proposal_id": null,
+          "short_description": "Miri is a testing tool to check undefined behaviour in unsafe Rust. Currently, a significant portion of Tokio async program still cannot be...",
+          "slug": "tokio-async-support-in-miri",
+          "status": "completed",
+          "student_name": "Tiffany Pek Yuan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Tokio async support in Miri"
+        },
+        {
+          "code_url": "https://oneirical.github.io/gsocfinal/",
+          "description": "tests/run-make contains a heaping collection - 349 to be precise - of Makefiles containing ancient and difficult to understand test scripts. As a result, Rust maintainers may struggle to understand why these tests fail and how to patch their code appropriately. This project aims to rewrite these tests in robust, documented rmake.rs files, backed up by a supportive and easy to understand run-make-support support tool.",
+          "difficulty": "beginner",
+          "id": "proj_the-rust-foundation_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/P5BC91Hr/",
+          "proposal_id": null,
+          "short_description": "tests/run-make contains a heaping collection - 349 to be precise - of Makefiles containing ancient and difficult to understand test scripts. As a...",
+          "slug": "rewriting-esoteric-error-prone-makefile-tests-using-robust-rust-features",
+          "status": "completed",
+          "student_name": "Julien Robert",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Rewriting Esoteric, Error-Prone Makefile Tests Using Robust Rust Features"
+        },
+        {
+          "code_url": "https://github.com/mav3ri3k/rust/blob/gsoc24/gsoc24.md",
+          "description": "Add experimental support to rustc for building and running procedural macros as WebAssembly. Procedural Macro crates can opt in for being compiled to WebAssembly. This wasm-proc-macro will be a wasm blob sandboxed using WASM. It will interact with the compiler only through a stream of token and no ability to interact with the outside world.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/kXG0mZoj/",
+          "proposal_id": null,
+          "short_description": "Add experimental support to rustc for building and running procedural macros as WebAssembly. Procedural Macro crates can opt in for being compiled to...",
+          "slug": "sandboxed-and-deterministic-proc-macro-using-wasm",
+          "status": "completed",
+          "student_name": "Apurva Mishra",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "Sandboxed and Deterministic Proc Macro using Wasm"
+        },
+        {
+          "code_url": "https://blog.mcarr.one/gsoc-final/",
+          "description": "cargo-semver-checks is an amazing tool in the Rust ecosystem that automatically detects violations in Semantic Versioning (semver) using lints.  However, it cannot currently be controlled with enough granularity, which means that not every library can currently adopt this.  With this project, users of cargo-semver-checks will be able to configure the program at the per-lint level, making it much more feasible for libraries to use this tool and increase adherence and trust in SemVer.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hADSyIDV/",
+          "proposal_id": null,
+          "short_description": "cargo-semver-checks is an amazing tool in the Rust ecosystem that automatically detects violations in Semantic Versioning (semver) using lints....",
+          "slug": "adding-lint-level-configuration-to-cargo-semver-checks",
+          "status": "completed",
+          "student_name": "Max Carr",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding lint-level configuration to cargo-semver-checks"
+        },
+        {
+          "code_url": "https://fractalfir.github.io/generated_html/rustc_codegen_clr_v0_2_0.html",
+          "description": "This proposal aims to extend the ability of `rustc_codegen_clr`, the Rust to .NET compiler backend, to run `cargo test`s. While the project is already quite feature-rich, it still can't compile Rust tests properly. This project will focus on adding all the features necessary for such tests to run, with the end goal of running them within the .NET runtime.\r\n\r\nAdding those features will not only enable running tests, it will also improve the project, enabling it to compile far more Rust programs.\r\n\r\nAt the end of GSoC, this project will deliver the following features:\r\n\r\n1. Support for parsing command line arguments in Rust programs running within the .NET runtime. \r\n\r\n2. Implementation of atomic intrinsics needed for `std` argument parsing to function properly. They should be implemented using cross-platform .NET APIs, but using architecture-specific functions may be needed to properly handle certain atomics.\r\n\r\n3. Support for dynamic trait objects - creating them, dropping them, calling their member functions.\r\n\r\n4. Support for catching panics, implemented using the .NET exception-handling primitives.\r\n\r\n5. Support for multithreading: launching threads, and getting information about them.\r\n\r\n6. Extended .NET interop, automatic creation of safe GC handles for managed objects. This feature is necessary for safely handling .NET threads, but will be exposed in the `mycorrhiza` interop layer, provided by the codegen. \r\n\r\n7. Fixes to string formatting. This feature is necessary for reporting test results. At the end of this proposal, simple formatting, such as `format!(\"my string is:{string}\")` should run within the .NET runtime.\r\n\r\nThe end goal of this proposal is running a simple cargo test within the .NET runtime. This test will consist of two cases: one failing, and one passing.\r\n\r\nAll the deliverables mentioned above are strictly needed for achieving that goal.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2024_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/IIHP5ozV/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to extend the ability of `rustc_codegen_clr`, the Rust to .NET compiler backend, to run `cargo test`s. While the project is...",
+          "slug": "rust-to-net-compiler-add-support-for-compiling-running-cargo-tests",
+          "status": "completed",
+          "student_name": "Fractal Fir",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Rust to .NET compiler - add support for compiling & running cargo tests"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/the-rust-foundation/"
+    },
+    "year_2025": {
+      "num_projects": 19,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The libc crate has been a core part of Rust since its early days, making breaking changes increasingly difficult over time. Redundant and legacy code have complicated maintenance. This project aims to release a new major version of libc, introducing breaking changes and improving the testing infrastructure to ensure better long-term maintainability.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/r3LkZkOy",
+          "proposal_id": "uXE1dZY2",
+          "short_description": "The libc crate has been a core part of Rust since its early days, making breaking changes increasingly difficult over time. Redundant and legacy code...",
+          "slug": "modernising-the-libc-crate",
+          "status": "in-progress",
+          "student_name": "Abdul Muiz",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Modernising the libc Crate"
+        },
+        {
+          "code_url": null,
+          "description": "There is ongoing work to instrument the Rust standard library with safety contracts. Based on a discussion by the Formal Verification Working Group there is still a lot of work to leverage the power of separation logic in contracts, and make it compatible with existing tools that use separation logic. The nature of my contribution would be more research-oriented, since a very good understanding of the connection between separation logic, existing tools and what we can and need to support in Rust contracts is necessary. Based on this research, a successful project should deliver the appropriate code contributions to support (partially or fully) separation logic in Rust contracts, and ideally demonstrate its compatibility with existing tools by tackling selected challenges in the Verify Rust Std Lib project.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/UYWEKUkd",
+          "proposal_id": "fkcac6gI",
+          "short_description": "There is ongoing work to instrument the Rust standard library with safety contracts. Based on a discussion by the Formal Verification Working Group...",
+          "slug": "add-safety-contracts",
+          "status": "in-progress",
+          "student_name": "Dawid Lachowicz",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add safety contracts"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, the new, experimental GCC based compiler backend for Rust(`rustc_codegeng_gcc`) is not able to build the Rust compiler.\n\nThe goal of this proposal is to add the fixes and features necessary for `cg_gcc` to build a fully functional stage 2(and possibly 3) of the Rust compiler. This will require adding support for 128 bit SwitchInt terminators, fixing recursive `#[inline(always)]`, and plugging some soundness holes within the backend.\n\nThis should help the GCC based codegen become more mature. In the future, this could also open the way towards building and running the Rust compiler on platforms not supported by LLVM.\n\nImproving this codegen backend could allow Rust to be used in more places, speeding up the language's adoption.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/KmfCY0i6",
+          "proposal_id": "i8ZQ8OIl",
+          "short_description": "Currently, the new, experimental GCC based compiler backend for Rust(`rustc_codegeng_gcc`) is not able to build the Rust compiler. The goal of this...",
+          "slug": "bootstrap-of-rustc-with-rustc_codegen_gcc",
+          "status": "in-progress",
+          "student_name": "Fractal Fir",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "backend"
+          ],
+          "title": "Bootstrap of rustc with rustc_codegen_gcc"
+        },
+        {
+          "code_url": null,
+          "description": "Rustup is the official toolchain installer and version manager for the Rust programming language. The current implementation of Rustup processes operations sequentially, downloading components one at a time and performing extraction and installation in order. This approach does not fully leverage the capabilities of modern hardware, particularly on systems with multi-core processors and high-bandwidth connections. A potential solution is to introduce concurrency into the implementation, enabling parallel processing of these tasks to better utilize system resources, leading to a more performant Rustup.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/CpXV4kzH",
+          "proposal_id": "zF6wjcjj",
+          "short_description": "Rustup is the official toolchain installer and version manager for the Rust programming language. The current implementation of Rustup processes...",
+          "slug": "make-rustup-concurrent",
+          "status": "in-progress",
+          "student_name": "Francisco Gouveia",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Make Rustup Concurrent"
+        },
+        {
+          "code_url": null,
+          "description": "The current implementation of cargo fix is quite slow and makes extra calls to rustc slowing down the process. A simplified architecture would also make it easier to add features to cargo fix. This project aims to create a new prototype version of cargo fix that uses cargo check instead of calling rustc directly.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fBOCR2Sp",
+          "proposal_id": "Dxonkkz4",
+          "short_description": "The current implementation of cargo fix is quite slow and makes extra calls to rustc slowing down the process. A simplified architecture would also...",
+          "slug": "prototype-an-alternative-architecture-for-cargo-fix-using-cargo-check",
+          "status": "in-progress",
+          "student_name": "Glen Thalakottur",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Prototype an alternative architecture for cargo fix using cargo check"
+        },
+        {
+          "code_url": null,
+          "description": "Reduce CI time in verify-rust-std repo by offloading proof verification to multiple Github Runner machines to run verification in parallel, and more importantly only verifying needed proofs by skipping proofs where no code related is modified as more and more proofs are added.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/5677hd6S",
+          "proposal_id": "aTmqiED2",
+          "short_description": "Reduce CI time in verify-rust-std repo by offloading proof verification to multiple Github Runner machines to run verification in parallel, and more...",
+          "slug": "distributed-and-resource-efficient-verification",
+          "status": "in-progress",
+          "student_name": "Jiping Zhou",
+          "student_profile": null,
+          "tags": [],
+          "title": "Distributed and resource-efficient verification"
+        },
+        {
+          "code_url": null,
+          "description": "cargo-semver-checks is a development tool that allows rust libraries to check whether a release breaks semver by running lints on the API. For example, it can detect whether an enum not marked #[non_exhaustive] has additional members added, and warn that this is a major breaking change. However, cargo-semver-checks can take a long time to run, and for many users, is the longest step in their CI. On top of that, the number of lints implemented is nearly doubling each year. \n\nThe core of this project's work is:\n(1) Constructing a performance tracing tool that is capable of identifying bottlenecks and hotspots in trustfall’s execution model, and \n(2) Using this tool to implement performance improvements, most likely in the database adapter level in trustfall-rustdoc-adapter, with the goal of reducing runtime by 50-80%.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/qs2rDLG4",
+          "proposal_id": "BjZ1rpWu",
+          "short_description": "cargo-semver-checks is a development tool that allows rust libraries to check whether a release breaks semver by running lints on the API. For...",
+          "slug": "make-cargo-semver-checks-faster",
+          "status": "in-progress",
+          "student_name": "Joseph Chung",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "database"
+          ],
+          "title": "Make cargo-semver-checks faster"
+        },
+        {
+          "code_url": null,
+          "description": "Despite `tests/ui`'s usefulness to maintainers, it acts as a barrier to new contributors - with how expansive it is, major pull requests can break tiny, unexpected checks among the thousands of tests. The process of finding which part of your PR is breaking the test written 10 years ago with no documentation is commonly known as \"very fun\".\n\nThis project will reorganize the UI directory with measures such as metadata tagging by category, identification of duplicate tests, as well as detection of tests which do not do anything or do not test what they are trying to.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/KP02lKL4",
+          "proposal_id": "Vjb0T1sk",
+          "short_description": "Despite `tests/ui`'s usefulness to maintainers, it acts as a barrier to new contributors - with how expansive it is, major pull requests can break...",
+          "slug": "mapping-the-maze-of-rusts-ui-test-suite-with-established-continuous-integration-practices",
+          "status": "in-progress",
+          "student_name": "Julien Robert",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Mapping the Maze of Rust's UI Test Suite with Established Continuous Integration Practices"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the testing of the Wild linker by leveraging existing linker test suites, providing strong support for its development. Develop some programs that apply existing linker test suites to Wild, automatically categorizes the results to some extent, and visualizes them in a format that allows Wild developers to easily review them.\nSubsequent work will focus on a variety of improvements to Wild, including adding support for new architectures, fixing existing bugs, implementing new features, and more.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ps99Kaqk",
+          "proposal_id": "Oxj4azl3",
+          "short_description": "This project aims to enhance the testing of the Wild linker by leveraging existing linker test suites, providing strong support for its development....",
+          "slug": "improve-wild-linker-test-suites",
+          "status": "in-progress",
+          "student_name": "Kei Akiyama",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Wild linker test suites"
+        },
+        {
+          "code_url": null,
+          "description": "A lot of work has been done to parallelize the Rust compiler frontend, with notable success in code generation and some post-HIR lowering stages. Other critical components, such as lexical parsing and macro expansion, are still implemented serially. Macro expansion is fundamental in Rust, enabling code generation at compile-time based on patterns and user-defined rules in the source code itself. However, due to dependencies between macros and the strict ordering of name resolution, its inherently sequential nature poses a significant challenge for parallelization.\nCurrently, macro expansion and import resolution are tightly coupled and executed sequentially, making parallel execution difficult. This project aims to develop a parallel and order-independent algorithm for these two processes, improving compiler performance while maintaining correctness. Addressing the dependencies and execution order constraints could significantly reduce compilation time and enhance the compiler's overall compilation speed.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/SBW3GMno",
+          "proposal_id": "hsG6Nh5f",
+          "short_description": "A lot of work has been done to parallelize the Rust compiler frontend, with notable success in code generation and some post-HIR lowering stages....",
+          "slug": "parallel-macro-expansion",
+          "status": "in-progress",
+          "student_name": "Lorrens Pantelis",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "frontend"
+          ],
+          "title": "Parallel Macro Expansion"
+        },
+        {
+          "code_url": null,
+          "description": "Rust's std::arch module houses vendor-specific intrinsics (low-level functions that typically correspond to single machine instructions) which are intended to be used by other libraries.\n\nCurrently, there is good coverage of type-based tests and instruction-based tests (checking if the assembly instruction generated is correct) in std::arch, however behavioural tests (checking if the Rust implementation of the intrinsic has the same behaviour as the C implementation) cover only the aarch32 and aarch64 targets.\n\nThis project intends to restructure the way behavioral testing is performed, so that it is simpler to extend coverage to more targets in future. Additionally this project also intends to extend behavioral testing to x86, Wasm32 and LoongArch targets.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/DeMQAjwi",
+          "proposal_id": "rfAtzzAz",
+          "short_description": "Rust's std::arch module houses vendor-specific intrinsics (low-level functions that typically correspond to single machine instructions) which are...",
+          "slug": "extend-behavioural-testing-of-stdarch-intrinsics",
+          "status": "in-progress",
+          "student_name": "Madhav Madhusoodanan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extend behavioural testing of std::arch intrinsics"
+        },
+        {
+          "code_url": null,
+          "description": "StableMIR aims to provide a stable Rust compiler interface via a stable_mir crate on crates.io, shielding external tools from internal changes. Currently, the dependency between stable_mir and rustc_smir requires hard-coded versions in the rustc_smir crate, making it harder for the user to select which stable_mir crate to depend on. This project will invert the dependency, refactor the crates, and establish infrastructure—including build checks, testing workflows, and automation, easing maintenance for rustc developers and future contributors.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/3y9x5X8O",
+          "proposal_id": "2pRTlIy6",
+          "short_description": "StableMIR aims to provide a stable Rust compiler interface via a stable_mir crate on crates.io, shielding external tools from internal changes....",
+          "slug": "prepare-stable_mir-crate-for-publishing",
+          "status": "in-progress",
+          "student_name": "Makai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Prepare stable_mir crate for publishing"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to overcome the limitations of the current Build Script system by allowing multiple, well-organised build scripts, that are optional and run only when required. This approach will require less auditing, will enhance the build transparency and reduce the compile-time overhead.\n\nBuild scripts in Rust facilitate compiling and linking 3rd party code, such as existing C/C++ libraries, before building a package. They are immensely important for interoperability since it prevents replacing/rewriting the already existing tools that are well-optimized for their tasks. \n\nHowever, the current build system has certain limitations. Only one build script is allowed per package, and it must be run before building the package, often causing unnecessary computation (e.g., during unit tests). Single Large script needs extra auditing, increase compile-time, and reduce transparency for third-party build tools, especially while passing parameters. They also cannot run unit tests within themselves.\n\nThis project aims to overcome the above limitations by allowing multiple, well-organized build scripts that can be run directly from the Cargo.toml. These scripts are optional and run only when required, avoiding unnecessary expensive logic. With this, only the shared build scripts will need auditing. This approach enhances build transparency, reduces compile-time overhead, and even enables unit testing of build scripts if they are treated as a dedicated package.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/nUt4PdAA",
+          "proposal_id": "lDLOfMGc",
+          "short_description": "This project aims to overcome the limitations of the current Build Script system by allowing multiple, well-organised build scripts, that are...",
+          "slug": "cargo-build-script-delegation",
+          "status": "in-progress",
+          "student_name": "Naman Garg ( namanlp )",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Cargo: Build script delegation"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Rust-analyzer expands procedural macros using a client/server architecture, where a separate proc-macro server process loads and executes procedural macro dynamic libraries. Communication occurs via a unidirectional JSON-RPC interface, with the client sending requests and the server responding. \n\nHowever, this design has drawbacks: bulky JSON serialization introduces significant overhead due to deeply nested data structures, and the unidirectional messaging model limits certain proc-macro APIs that require the server to request additional information from the client. This constraint is a major obstacle to implementing new proc-macro APIs.\n\nI plan to overcome these limitations by:\n\n1. Adopting Postcard, a binary serialization format which is a more  compact and efficient alternative to JSON.\n2. Implementing bidirectional communication between the client and server, enabling the server to ask for additional data from the client during execution.\n3. Refactoring the relevant crates to support both the existing and new protocols. \n4. Extending proc-macro support, by implementing some of the unimplemented proc-macro APIs in the new communication mode.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/76ekEjd1",
+          "proposal_id": "sv4x0dZx",
+          "short_description": "Currently, Rust-analyzer expands procedural macros using a client/server architecture, where a separate proc-macro server process loads and executes...",
+          "slug": "new-proc-macro-server-api-for-rust-analyzer",
+          "status": "in-progress",
+          "student_name": "Neil Wang",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "New proc-macro Server API for Rust-Analyzer"
+        },
+        {
+          "code_url": null,
+          "description": "The integration of automatic differentiation (autodiff) into the Rust compiler via Enzyme faces challenges due to ABI adjustments that alter function signatures. These transformations, while beneficial for performance, interfere with autodiff functionality, leading to incorrect differentiation.\n\nThis project aims to prevent unwanted ABI adjustments for functions marked with #[rustc_autodiff], ensuring autodiff functions maintain their intended behavior without affecting other optimizations. The approach involves modifying Rust’s function ABI handling to recognize and preserve differentiation-related information. Key steps include identifying problematic transformations, encoding autodiff metadata in FnAbi, and preventing ABI changes that break autodiff.\n\nBy addressing these challenges, the project will improve autodiff support in Rust, making it more reliable and consistent while preserving compiler efficiency.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/USQvru7i",
+          "proposal_id": "a6pq51Th",
+          "short_description": "The integration of automatic differentiation (autodiff) into the Rust compiler via Enzyme faces challenges due to ABI adjustments that alter function...",
+          "slug": "abilayout-handling-for-the-automatic-differentiation-feature",
+          "status": "in-progress",
+          "student_name": "Sa4dUs",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "ABI/Layout handling for the automatic differentiation feature"
+        },
+        {
+          "code_url": null,
+          "description": "Various Rust repositories under the rust-lang organization use a merge queue bot, bors, for testing and merging pull requests. This project aims to complete the remaining functionality required to make the new bors bot usable on the rust-lang/rust repository, replacing the legacy bot homu. This includes implementing PR merges, rollup support, and the queue website.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_016",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/HlR12jqX",
+          "proposal_id": "5dB7oEle",
+          "short_description": "Various Rust repositories under the rust-lang organization use a merge queue bot, bors, for testing and merging pull requests. This project aims to...",
+          "slug": "implement-merge-functionality-in-bors",
+          "status": "in-progress",
+          "student_name": "Sakibul Islam",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Implement merge functionality in bors"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the testability of Bootstrap and make it faster, the Rust build system, by improving its architecture, refining its configuration handling, and establishing a robust testing framework. It will ublock on centralizing command execution, minimizing unnecessary I/O operations and implementing testing framework. These improvements will make Bootstrap more maintainable, fast, and easier to develop and test.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_017",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/2KNHAlKz",
+          "proposal_id": "7Vv1Pm6B",
+          "short_description": "This project aims to enhance the testability of Bootstrap and make it faster, the Rust build system, by improving its architecture, refining its...",
+          "slug": "improve-bootstrap",
+          "status": "in-progress",
+          "student_name": "Shourya Sharma",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve bootstrap"
+        },
+        {
+          "code_url": null,
+          "description": "The crate cargo-semver-checks provides feedback to user based on what possible breaking changes they may have made, which as per semantic versioning may require that the user accordingly update the semantic version of their library. This ensures that major breaking changes do not occur without notice. However, the feedback from cargo-semver-checks is not always the easiest to understand, in that whatever problem may actually be present is not always obvious. Additionally, cargo-semver-checks sometimes suffers from false-positive, where it detects a breaking change where there is none. \n\nThis project proposes to remedy many of these issues by leveraging the existing lint data to implement so-called \"witness programs\", which are designed to demonstrate the breaking change by compiling successfully on a baseline version of the crate being tested, but failing to compile on the new version, due to the error caused by the breaking change.\n\nThe plan is, following some research at the start, to implement a basic witness system that allows for additional internal queries and generation of a witness program from a template. Following that, implement automated testing of these witness programs to verify they do fail when expected. In the event of an unexpected behaviour, the system should be designed to provide the user with diagnostic information and an easy way to submit an issue to the cargo-semver-checks team. Lastly, these witness program templates then need to be written en masse, utilizing the now created system to provide these witness programs to as many lints as possible. Ideally, by the end of the Google Summer of Code program, 80% of the current lints should have witness program templates. \n\nAdditionally, it is planned to continuously engage with the Rust community so as to both inform members of the progress of this proposal, but also to encourage accountability over the process of developing this project.",
+          "difficulty": "beginner",
+          "id": "proj_the-rust-foundation_2025_018",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/MMRSG9WU",
+          "proposal_id": "ac3wp2Fb",
+          "short_description": "The crate cargo-semver-checks provides feedback to user based on what possible breaking changes they may have made, which as per semantic versioning...",
+          "slug": "enable-witness-generation-in-cargo-semver-checks",
+          "status": "in-progress",
+          "student_name": "Talyn Veugelers",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enable Witness Generation in cargo-semver-checks"
+        },
+        {
+          "code_url": null,
+          "description": "This project prototypes a new set of Cargo plumbing commands, aligned with Rust’s 2025H1 project goals. Plumbing commands are lower-level, less opinionated commands to interact with the Cargo API. By focusing on lower-level functionality, this project aims to better support Cargo users’ specific processes and use cases. Moreover, the introduction of these new Cargo plumbing commands aims to fix current issues of existing commands and improve their integration.",
+          "difficulty": null,
+          "id": "proj_the-rust-foundation_2025_019",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fTDzc0sk",
+          "proposal_id": "1DfblSyM",
+          "short_description": "This project prototypes a new set of Cargo plumbing commands, aligned with Rust’s 2025H1 project goals. Plumbing commands are lower-level, less...",
+          "slug": "prototype-cargo-plumbing-commands",
+          "status": "in-progress",
+          "student_name": "Vito Secona",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Prototype Cargo Plumbing Commands"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-rust-foundation"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/rust-lang/google-summer-of-code/blob/main/gsoc/proposal-guide.md",
+    "ideas_url": "https://github.com/rust-lang/google-summer-of-code",
+    "irc_channel": null,
+    "mailing_list": "https://rust-lang.zulipchat.com/#narrow/stream/421156-gsoc"
+  },
+  "social": {
+    "blog": "https://blog.rust-lang.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/rustlang",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.394Z"
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "id": "692251eb53dd9d7326d33ef0",
+  "slug": "urban-energy-systems-laboratory-empa",
+  "name": "Urban Energy Systems Laboratory, Empa",
+  "category": "Science and medicine",
+  "description": "HUES is a platform for modeling & analysis of distributed energy systems",
+  "image_url": "https://lh3.googleusercontent.com/2ZeU3O2oOvAkneIhXFjY_bIuvV0vRzmyAgzKDM7UP5a2LP6TwohTU5MpYR43-zd7pfpjhBVYzIRlap8fkpY8RJwhJwABEGvD",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/urban-energy-systems-laboratory-empa.webp",
+  "logo_r2_url": null,
+  "url": "https://hues-platform.github.io/",
+  "active_years": [
+    2016,
+    2017
+  ],
+  "first_year": 2016,
+  "last_year": 2017,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "gis",
+    "milp",
+    "fast fluid dynamics"
+  ],
+  "topics": [
+    "simulation",
+    "data analysis",
+    "energy",
+    "distributed energy systems",
+    "modeling & optimization",
+    "data portal"
+  ],
+  "total_projects": 6,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": 3,
+      "year_2017": 3,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 3,
+      "year_2017": 3,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 6
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Khushboo1192/d5214e25fb3f9e5d2eff8938641b6f59",
+          "description": "<p>This project involves the development of an open source database to enable the linked exploration of data in the platform, including energy demand, supply and technology data. Data in the HUES platform is\nhighly diverse and rapidly growing. Currently, this data is stored in separate platform modules using\ndifferent data structures and file formats, making it difficult to explore holistically. We will migrate this\ndata using a tool Mongify to migrate database from MySQL to MongoDB. The development of server based scripts to automatically extract relevant data from the modules of the HUES platform, and write this data to a common database. In the new database everything can be retrieved in the form of JSON objects. The development of a web-based portal for querying, visualizing and downloading data will be the last part of the project development.</p>\n",
+          "difficulty": null,
+          "id": "proj_urban-energy-systems_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4780796011347968/",
+          "proposal_id": null,
+          "short_description": "This project involves the development of an open source database to enable the linked exploration of data in the platform, including energy demand,...",
+          "slug": "open-source-energy-simulation-database-using-mean-stack",
+          "status": "completed",
+          "student_name": "Khushboo Mandlecha",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "database"
+          ],
+          "title": "Open source energy simulation database : using MEAN Stack"
+        },
+        {
+          "code_url": "https://bitbucket.org/Jazzpilz/modular-energy-hub-modeling-framework.git",
+          "description": "<p>Energy system components are modular in nature and interact across multiple scales. There is a need for a modelling framework that can easily construct and configure systems of modular entities (energy demands, sources, converters, storages and network links). These systems should be hierarchically nestable, facilitating the construction of large systems at high levels of detail. The framework should also facilitate the approximation of sub-systems, to aid model solvability. The above framework should be implemented in an object-oriented fashion, making use of the modular &gt;&gt;Open Energy System Modelling Framework&lt;&lt; (Oemof). Components should be specified in a common format that integrates with a database of available entities. The implementation should allow particular systems to be duplicated and reconfigured as well as reused as subsystems in larger models. Configuration parameters of multiple sub-systems should be readable from an external table.</p>\n",
+          "difficulty": null,
+          "id": "proj_urban-energy-systems_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4906260059127808/",
+          "proposal_id": null,
+          "short_description": "Energy system components are modular in nature and interact across multiple scales. There is a need for a modelling framework that can easily...",
+          "slug": "modular-energy-hub-modelling-framework",
+          "status": "completed",
+          "student_name": "Jazzpilz",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Modular Energy Hub Modelling Framework"
+        },
+        {
+          "code_url": "https://github.com/lukasbystricky/GSoC_FFD",
+          "description": "<p>Modelling wind flow through a city has many applications, such as studying the effect of natural ventilation or looking at pollution levels. Solving the full Navier-Stokes equations over a domain the size of a city in 3D would be prohibitively expensive. Fast fluid dynamics (FFD) present an opportunity to solve a simplified version of the incompressible Navier-Stokes equations very quickly. In this project I would like to implement FFD to model wind flow through a city, and then apply FFD to solve an optimization problem. Unfortunately I didn't have enough time to come with a specific optimization problem, but there are no doubt several that would be interesting.</p>\n",
+          "difficulty": null,
+          "id": "proj_urban-energy-systems_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6313634942681088/",
+          "proposal_id": null,
+          "short_description": "Modelling wind flow through a city has many applications, such as studying the effect of natural ventilation or looking at pollution levels. Solving...",
+          "slug": "real-time-wind-flow-in-cities",
+          "status": "completed",
+          "student_name": "Lukas Bystricky",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Real-time Wind Flow in Cities"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5408616613937152/"
+    },
+    "year_2017": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://bitbucket.org/empa_lbst/gui-gis",
+          "description": "<p>The HUES platform is a set of open source computational resources that support distributed energy systems (DES) design and control. It provides models to simulate and optimize energy systems, as well as modelling tool to design and optimize these energy systems.</p>\n<p>A GIS interface for the energy hubs and the related network definitions would help to understand and visualize the spatial aspects related to effectively develop an energy hub configuration. Parameters like placement of hubs and their interconnections can be done through this GIS interface (QGIS plugin), which would enable to effectively describe and compare one configuration with the other.</p>\n<p>This project would provide the researchers with a GUI based tool for creating their network configuration along with the type of energy technologies to be used and connect these entities together,  and thus finally simulate and analyze the results. This plugin would be utilizing a python based energy hub modelling environment (Modular Energy Hub Modelling Framework), which would help in modelling energy systems and perform optimizations and simulations on the energy network configuration created using the plugin.</p>\n",
+          "difficulty": null,
+          "id": "proj_urban-energy-systems_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5625793514307584/",
+          "proposal_id": null,
+          "short_description": "The HUES platform is a set of open source computational resources that support distributed energy systems (DES) design and control. It provides...",
+          "slug": "gis-interface-for-energy-hub-and-network-definitions",
+          "status": "completed",
+          "student_name": "Rachit Kansal",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "GIS Interface for Energy Hub and Network Definitions"
+        },
+        {
+          "code_url": "https://gist.github.com/gmomo/040f0728cbe94171e9b95a836ac6f9ed",
+          "description": "<p>The Energy Hub (Ehub) Modeling Tool is a set of MATLAB scripts for writing and executing a district energy system optimization. The purpose of the tool is to aid the design of decentralized energy systems at the building and district level. It can be used for creating, executing and visualizing the results of an energy hub model for a given case study and a set of technologies. The Ehub Modeling Tool takes as input case study data and technology data in defined formats and outputs an AMS file which is executed in the optimization package Aimms. The Ehub Modeling Tool also includes R code for visualizing the results of the energy hub model.</p>\n<p>This project focuses on developing a Python-based visualization module for the Ehub Modeling Tool. The results from a run of the model include the optimal dispatch schedule of different technologies, the technologies to be installed and the optimal capacities of these technologies, and other data. This project involves developing a set of scripts to import and visualize the results data from a set of experiments.</p>\n",
+          "difficulty": null,
+          "id": "proj_urban-energy-systems_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6482668749324288/",
+          "proposal_id": null,
+          "short_description": "The Energy Hub (Ehub) Modeling Tool is a set of MATLAB scripts for writing and executing a district energy system optimization. The purpose of the...",
+          "slug": "visualization-module-for-the-ehub-modeling-tool",
+          "status": "completed",
+          "student_name": "Soumyadip Ghosh",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Visualization Module for the Ehub Modeling Tool"
+        },
+        {
+          "code_url": "https://github.com/arugarg/GSOC2017-VisualizationDashboard-EmpaNest",
+          "description": "<p>The aim of this project is to develop a visualization dashboard based on node-red and javascript charting library Highcharts which will have a connection to the Microsoft SQL Database and OPC UA server and can be integrated into a Website. The trend data is logged into a SQL Database in the NEST-Cloud, which is accessible for researchers and technicians from all over the world. And the live data which will be accessible via OPC UA server. To bring the big data to life it is essential to have attractive visualization charts.</p>\n",
+          "difficulty": null,
+          "id": "proj_urban-energy-systems_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5143085629571072/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to develop a visualization dashboard based on node-red and javascript charting library Highcharts which will have a...",
+          "slug": "visualization-dashboard-for-empa-nest-using-node-red",
+          "status": "completed",
+          "student_name": "Arushee Garg",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web",
+            "ai",
+            "database"
+          ],
+          "title": "Visualization Dashboard for Empa-NEST using node-red"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4513544758362112/"
+    },
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "andrew.bollinger@empa.ch",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.430Z"
+  }
+}

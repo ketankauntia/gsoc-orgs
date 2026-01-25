@@ -1,0 +1,165 @@
+{
+  "id": "692251e053dd9d7326d33e55",
+  "slug": "open3d-team",
+  "name": "Open3D team",
+  "category": "Data",
+  "description": "A Modern Library for 3D Data Processing",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/open3d-team/yhzlqgd1qkcypvrw-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/open3d-team.webp",
+  "logo_r2_url": null,
+  "url": "http://www.open3d.org/",
+  "active_years": [
+    2022
+  ],
+  "first_year": 2022,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "c++",
+    "cuda",
+    "tensorflow",
+    "pytorch"
+  ],
+  "topics": [
+    "3D machine learning",
+    "3D data processing",
+    "3D visualization",
+    "physically based rendering"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 3,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/isl-org/Open3D/pull/5418",
+          "description": "Open3D is an open-source library that supports the rapid development of software that deals with 3D data. The Open3D frontend exposes a set of carefully selected data structures and algorithms in both C++ and Python. Open3D visualization does not work consistently on cloud notebooks such as Google Colab. This is due to a need to modernize the Open3D Jupyter widget as well as use CPU rendering when a GPU with graphics capability is not available in the cloud notebook. This will enable new users to start working with Open3D visualization quickly by directly opening tutorial notebooks in the cloud with no GPU devices.\nThis proposal is based on the original GSoC idea in https://github.com/isl-org/Open3D/wiki/Google-Summer-of-Code-2022#3-open3d-visualization-on-cloud-notebooks.",
+          "difficulty": null,
+          "id": "proj_open3d-team_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/a01Kzs28/",
+          "proposal_id": null,
+          "short_description": "Open3D is an open-source library that supports the rapid development of software that deals with 3D data. The Open3D frontend exposes a set of...",
+          "slug": "open3d-visualization-on-cloud-notebooks",
+          "status": "completed",
+          "student_name": "fanxiaolin",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "cloud",
+            "ui"
+          ],
+          "title": "Open3D visualization on cloud notebooks"
+        },
+        {
+          "code_url": "https://github.com/ZhengyuDiao/GSoC2022-Open3D",
+          "description": "The proposal aims to enhance the functionality of Open3D tensor-based geometry processing algorithms. First of all, functions related to surface reconstruction and geometry sampling will be wrapped to support the tensor-based module. Secondly, I will enhance the functionality of tensor-based geometry file IO capabilities, including geometry file IO module and geometry creation APIs. Besides, I intend to wrap other classes and functions to make the tensor-based APIs reach feature parity with the old APIs if time permits.",
+          "difficulty": null,
+          "id": "proj_open3d-team_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/uDb1lTU7/",
+          "proposal_id": null,
+          "short_description": "The proposal aims to enhance the functionality of Open3D tensor-based geometry processing algorithms. First of all, functions related to surface...",
+          "slug": "geometry-processing-algorithms-for-tensor-based-geometry",
+          "status": "completed",
+          "student_name": "Zhengyu",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Geometry processing algorithms for tensor-based geometry"
+        },
+        {
+          "code_url": "https://github.com/isl-org/Open3D-ML/pull/556",
+          "description": "The objective of the project is to implement a new state-of-the-art 3D Object detection model (PV-RCNN++) in PyTorch and TensorFlow and train it on large-scale datasets such as Waymo to reproduce the original author’s results. The expected outcomes of the project are:\n• Implement PV-RCNN++ training and evaluation with PyTorch.\n• Train and reproduce results on the Waymo dataset.\n• Port the PyTorch implementation to TensorFlow and ensure results can be reproduced.\n• Proper documentation about model usage and config customizations with tutorials and examples.\nThe implementation plan is as follows:\n• Using OpenPCDet implementation as a reference, implement PV-RCNN++ in PyTorch and benchmark on Waymo Open Dataset.\n• Using this implemented PyTorch model as a reference, implement each corresponding layer in Tensorflow and test it. Convert the PyTorch model to TensorFlow and verify the metrics on the Waymo dataset.\n• Once verified, train the model from scratch in TensorFlow and verify the results.",
+          "difficulty": null,
+          "id": "proj_open3d-team_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ZXypCRIl/",
+          "proposal_id": null,
+          "short_description": "The objective of the project is to implement a new state-of-the-art 3D Object detection model (PV-RCNN++) in PyTorch and TensorFlow and train it on...",
+          "slug": "open3d-ml-3d-object-detection-model-pv-rcnn",
+          "status": "completed",
+          "student_name": "Narayanan E.R.",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Open3D-ML 3D Object detection model (PV-RCNN++)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/open3d-team/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "sameer.sheorey@ivcl.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": null,
+    "mailing_list": "https://github.com/isl-org/Open3D/discussions/categories/gsoc"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.857Z"
+  }
+}

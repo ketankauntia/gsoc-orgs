@@ -1,0 +1,2389 @@
+{
+  "id": "692251da53dd9d7326d33e07",
+  "slug": "llvm-compiler-infrastructure",
+  "name": "LLVM Compiler Infrastructure",
+  "category": "Programming languages",
+  "description": "LLVM Compiler Infrastructure",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/llvm-compiler-infrastructure/ize6lrlftlvdxtqe-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/llvm-compiler-infrastructure.webp",
+  "logo_r2_url": null,
+  "url": "http://www.llvm.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "llvm",
+    "c++",
+    "clang",
+    "mlir"
+  ],
+  "topics": [
+    "optimization",
+    "static code analysis‎",
+    "compiler",
+    "backend",
+    "frontend",
+    "compilers",
+    "compiler api",
+    "code analysis",
+    "programming languages and development tools",
+    "debuggers",
+    "development tools",
+    "libraries"
+  ],
+  "total_projects": 122,
+  "stats": {
+    "avg_projects_per_appeared_year": 12.2,
+    "projects_by_year": {
+      "year_2016": 7,
+      "year_2017": 8,
+      "year_2018": 8,
+      "year_2019": 8,
+      "year_2020": 15,
+      "year_2021": 16,
+      "year_2022": 13,
+      "year_2023": 20,
+      "year_2024": 12,
+      "year_2025": 15
+    },
+    "students_by_year": {
+      "year_2016": 7,
+      "year_2017": 8,
+      "year_2018": 8,
+      "year_2019": 8,
+      "year_2020": 15,
+      "year_2021": 16,
+      "year_2022": 13,
+      "year_2023": 20,
+      "year_2024": 12,
+      "year_2025": 15
+    },
+    "total_students": 108
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1V54-X3hXt_kZ91c4NHPn-k0kAYO230b8zFhIdwGpYy0/edit?usp=sharing",
+          "description": "<p>Copy-pasted code is dangerous because it introduced bugs and makes projects harder to maintain. This proposal is about creating tools for finding copy-pasted code and report bugs that are caused by this practice. These tools include a checker for clang’s static analyzer that analyses a single translation unit and a standalone tool that performs a project-wide analysis.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5307118483668992/",
+          "proposal_id": null,
+          "short_description": "Copy-pasted code is dangerous because it introduced bugs and makes projects harder to maintain. This proposal is about creating tools for finding...",
+          "slug": "finding-and-analysing-copy-pasted-code-with-clang",
+          "status": "completed",
+          "student_name": "Teemperor",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Finding and analysing copy-pasted code with clang"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1v-R7gB7Or4bPn0LW7d-yb1yla8jK3DVmTJNFVNYNu6k/edit?usp=sharing",
+          "description": "<p>The objective of this project is to implement a simple interprocedural register allocation that attempts to minimize register spill code by propagating register usage information through the program call graph. By examining the register usage information at each call site, the intraprocedural register allocator can avoid assigning registers already used in the called routines and minimizing spill code.\nStretch goal for this project would be a link time register allocator. In this register allocation is deferred till linking of the code to optimize the allocation.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6189040357343232/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to implement a simple interprocedural register allocation that attempts to minimize register spill code by...",
+          "slug": "interprocedural-register-allocation-in-llvm",
+          "status": "completed",
+          "student_name": "Vivek Pandya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Interprocedural Register Allocation in LLVM"
+        },
+        {
+          "code_url": "https://github.com/zhengyangl/safecode-llvm37/commits?author=zhengyangl",
+          "description": "<p>Monolithic kernels, like linux, did not provide a hardening mechanism on the kernel modules’ memory access. Modules in Linux could do almost everything. Arbitary write and read may cause system crash, information leak, and even rootkit injection. There is a great need to implement a memory hardening mechanism to limit the behavior of a kernel module.</p>\n<p>This projects will enhance the ‘Baggy Bounds with Accurate Checking’ (BBAC). By adding information to the memory object’s padding area, we can perform various safety checks with limited overhead. I will mainly focus on providing runtime access policy hardening. This work will prevent most of illegal memory accesses efficiently.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4811739371667456/",
+          "proposal_id": null,
+          "short_description": "Monolithic kernels, like linux, did not provide a hardening mechanism on the kernel modules’ memory access. Modules in Linux could do almost...",
+          "slug": "safecodes-memory-policy-hardening",
+          "status": "completed",
+          "student_name": "Zhengyang Liu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "SAFECode’s Memory Policy Hardening"
+        },
+        {
+          "code_url": "http://lists.llvm.org/pipermail/llvm-dev/2016-August/103986.html",
+          "description": "<p>Polly can perform classical loop transformations, exploit OpenMP level parallelism, expose SIMDization opportunities. However, due to the lack of a machine-specific performance model and missing optimizations, these transformations sometimes lead to compile and execution time regressions, and the generated code is at least one order of magnitude off in comparison to the corresponding vendor implementations. The goal of the project is to reduce such influence through implementation of optimizations aimed to produce code compatible with the best implementations of BLAS and an attempt to avoid vectorization of loops, when it is not profitable for the target architecture. It could be a step in transformation of Polly into an optimization pass used in standard -O3 optimizations.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4902396467609600/",
+          "proposal_id": null,
+          "short_description": "Polly can perform classical loop transformations, exploit OpenMP level parallelism, expose SIMDization opportunities. However, due to the lack of a...",
+          "slug": "improvement-of-vectorization-process-in-polly",
+          "status": "completed",
+          "student_name": "groman",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improvement of vectorization process in Polly"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1Y2D9HjiFGrbZOOKd33sDbo-N0MJ1MVA2vZ8EQWfghnc/edit?usp=sharing",
+          "description": "<p>A Module System for C++ is on its way to the C++ standard.</p>\n<p>The current state of the Module System, although fairly stable, it has a few bugs for C++ support. The most common reason for the bugs is the semantic merging of C++ entities. Currently, the method for ensuring no regressions is a buildbot for libc++, which builds llvm in modules self-hosted mode. Its main purpose is to find bugs in clang’s implementation and ensure no regression for the ongoing development.</p>\n<p>Since the Module Systems is meant to be generic, the project aims to improve the stability and coverage of the Module System by finding as many issues as possible. One approach is to add a buildbot for libstdc++, because this would change the merging model for the modules, and in this way, it will point out different issues which would not be observed by using libc++. The choice for libstdc++ is motivated by its wider use in Unix and, more importantly, the benefits it will bring to supporting modules for third party projects that rely on libstdc++.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5766827892277248/",
+          "proposal_id": null,
+          "short_description": "A Module System for C++ is on its way to the C++ standard.\nThe current state of the Module System, although fairly stable, it has a few bugs for C++...",
+          "slug": "enabling-llvms-self-hosted-modules-builds-using-libstdc",
+          "status": "completed",
+          "student_name": "CrisCristescu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enabling llvm’s self-hosted modules builds using libstdc++"
+        },
+        {
+          "code_url": "http://utpalbora.com/gsoc/2016.html",
+          "description": "<p>The Polyhedral framework provides an exact dependence analysis, which is more powerful than conventional dependence testing algorithms. Currently, LLVM mainline lacks a powerful dependence analysis framework, and at the same time, Polly’s (a high level data locality optimizer based on polyhedral framework) dependence analysis is suitable for many transformation passes in LLVM like Loop Vectorization, Loop Versioning, Modulo Scheduling, Loop Nest Optimizations, etc. I want to provide an API to Polly such that its precise dependence analysis can be used as an Analysis pass within LLVM's transformation passes.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5932114339954688/",
+          "proposal_id": null,
+          "short_description": "The Polyhedral framework provides an exact dependence analysis, which is more powerful than conventional dependence testing algorithms. Currently,...",
+          "slug": "polly-as-an-analysis-pass-in-llvm",
+          "status": "completed",
+          "student_name": "Utpal",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Polly as an Analysis Pass in LLVM"
+        },
+        {
+          "code_url": "https://github.com/grievejia/GSoC2016",
+          "description": "<p>The cfl-aa pass implemented by Gerorge Burgess IV back in GSoC 2014 is a fast, precise and interprocedural analyses that overcomes many deficiencies in the alias analyses currently used in LLVM. It is also easily extensible to add support for field-, flow-, and context- sensitivity. However, the pass is not enabled in today’s LLVM build due to (1) various self-hosting miscompilation bugs, and (2) not sufficiently tuned for existing optimization passes that uses it. \nThe goal of this GSoC project is to bring cfl-aa to a usable state and make it a good complement, if not a replacement, of the existing alias analysis pipeline.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6292280902156288/",
+          "proposal_id": null,
+          "short_description": "The cfl-aa pass implemented by Gerorge Burgess IV back in GSoC 2014 is a fast, precise and interprocedural analyses that overcomes many deficiencies...",
+          "slug": "better-alias-analysis-by-default",
+          "status": "completed",
+          "student_name": "grievejia",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Better Alias Analysis By Default"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5806108052553728/"
+    },
+    "year_2017": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/charles-l/d764ba4b4da9868cc92c400d9f701944",
+          "description": "<p>I would like to work on ThinLTO to improve and tune performance. This will require some analysis to determine what optimizations to add, as well as implementing some known optimizations that haven’t been included yet. Specifically, I would like to add more attributes to the ThinLTO indexes’ global variable and function summaries to increase performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6604432145907712/",
+          "proposal_id": null,
+          "short_description": "I would like to work on ThinLTO to improve and tune performance. This will require some analysis to determine what optimizations to add, as well as...",
+          "slug": "thinlto-optimizations",
+          "status": "completed",
+          "student_name": "Charles Saternos",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "ThinLTO Optimizations"
+        },
+        {
+          "code_url": "https://github.com/krobelus/clang-diff-playground",
+          "description": "<p>I want to implement a structural diff tool atop of clang APIs that finds changes to the AST between two versions of a file. This would enable better visualizations of changes as well as semantic-aware merge tools.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5575260673933312/",
+          "proposal_id": null,
+          "short_description": "I want to implement a structural diff tool atop of clang APIs that finds changes to the AST between two versions of a file. This would enable better...",
+          "slug": "clang-based-cc-diff-tool",
+          "status": "completed",
+          "student_name": "Johannes Altmanninger",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Clang-based C/C++ diff tool"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1OL4w0HrvjgPY-zQb_p4yTMFDrYcjvxu0frcAjedLJs8/edit?usp=sharing",
+          "description": "<p>In C++, virtual functions let instances of related classes have different behavior at run time. Pure function called from constructors and destructors will make the C++ program crash and virtual function called from constructors and destructors may not do what you expect. This proposal is about implementing a path-sensitive checker to find virtual calls  made from constructors and destructors.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4512343912349696/",
+          "proposal_id": null,
+          "short_description": "In C++, virtual functions let instances of related classes have different behavior at run time. Pure function called from constructors and...",
+          "slug": "warn-if-virtual-calls-are-made-from-constructors-or-destructors",
+          "status": "completed",
+          "student_name": "Xin Wang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Warn if virtual calls are made from constructors or destructors"
+        },
+        {
+          "code_url": "http://pollylabs.org/gsoc2017/Enable-Polyhedral-Optimizations-in-XLA-through-LLVM-Polly.html",
+          "description": "<p>TensorFlow is a popular machine learning and deep learning framework developed by Google. Despite its recent launch in late 2015, it has been widely adopted both in industry and academia. The TensorFlow community recently (in Jan ’17) open sourced a JIT Compiler for linear algebra computations (XLA) to improve speed of execution and reduce memory usage of the program.</p>\n<p>The LLVM and Polly Labs community has developed an optimization tool, Polly, that works on Polyhedral representations of programs, performing automatic parallelization and data locality optimizations. Polly directly extracts this polyhedral representation of the program and then performs a number of loop optimizations, including tiling and vectorization.</p>\n<p>The problem statement I am proposing is, to enable Polly's optimizations for XLA. It is well understood that Polly's optimizations work especially well on programs involving deeply nested array update codes like stencils, dense linear algebra kernels, etc, and hence, have applicability in a machine learning library like TensorFlow.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4648576248446976/",
+          "proposal_id": null,
+          "short_description": "TensorFlow is a popular machine learning and deep learning framework developed by Google. Despite its recent launch in late 2015, it has been widely...",
+          "slug": "enable-polyhedral-optimizations-in-xla-through-llvmpolly",
+          "status": "completed",
+          "student_name": "Annanay Agarwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enable Polyhedral Optimizations in XLA through LLVM/Polly"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1oC3qxh_q-Ly8DVsijcb4U5H8pkcA-19OR8NCeYthBN8/edit?usp=sharing",
+          "description": "<p>Maintaining consistency while manual reference counting is very difficult. Languages like Java, C#, Go and other scripting languages employ garbage collection which automatically performs memory management. On the other hand, there are certain libraries like ISL (Integer Set Library) which use memory annotations in function declarations to declare what happens to an object’s ownership, thereby  specifying the  responsibility of  releasing it as well. However, improper memory management in ISL leads to invocations of runtime errors. Hence, my proposal is to employ a robust static analyzer in clang which raises warnings in case there is a possibility of a memory leak, double free, etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6018159446327296/",
+          "proposal_id": null,
+          "short_description": "Maintaining consistency while manual reference counting is very difficult. Languages like Java, C#, Go and other scripting languages employ garbage...",
+          "slug": "isl-memory-management-using-clang-static-analyzer",
+          "status": "completed",
+          "student_name": "malhar1995",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "ISL Memory Management Using Clang Static Analyzer"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1ivQ3fkj5QmkFfwL4rTt2vDzo1WivegrJYemUCXZPols/edit?usp=sharing",
+          "description": "<p>Shell completion is a function which developers use everyday. Typing \"<em>ls -</em>\" and pressing <em>[tab]</em> will return a list of probable options, and typing \"<em>sudo apt ins</em>\" and pressing <em>[tab]</em> will complete the last argument (in this case \"install\"). Since each command takes different arguments, shells need to be taught how to complete arguments for each command.</p>\n<p>The aim of this proposal is twofold:</p>\n<ul>\n<li>There’s no bash autocompletion support for clang at the moment. Therefore I will build bash-completion which <strong> works not only for the current version but for all future versions of clang.</strong></li>\n<li>Not merely implement completion for bash, but also <strong> make this project highly portable to any other shells (zsh, fish..etc) by implementing completion behavior in clang internals.</strong></li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6028167256997888/",
+          "proposal_id": null,
+          "short_description": "Shell completion is a function which developers use everyday. Typing \"ls -\" and pressing [tab] will return a list of probable options, and typing...",
+          "slug": "building-bash-completion-for-clang",
+          "status": "completed",
+          "student_name": "Yuka Takahashi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Building bash-completion for clang"
+        },
+        {
+          "code_url": "http://lists.llvm.org/pipermail/cfe-dev/2017-August/055259.html",
+          "description": "<p>The current implementation of modeling a loop is quite simple in the Clang Static Analyzer. This simple approach results a loss of coverage, which indicates false negatives. There is already an implemented loop widening method in the Clang Static Analyzer.[1] However, it comes at the price that (almost) all of the MemRegions values will be invalidated. Hence, the false positive rate is relatively high in these paths. That is the reason it is not turned on by default but hidden behind a flag.\nMy project would aim to improve the simulation of the loops in general. Moreover, it would provide an extensible and incremental way of loop widening in which only the relevant regions are invalidated, and thus can be turned on by default.</p>\n<p>[1] <a href=\"https://reviews.llvm.org/D12358\" target=\"_blank\">https://reviews.llvm.org/D12358</a></p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6071606019358720/",
+          "proposal_id": null,
+          "short_description": "The current implementation of modeling a loop is quite simple in the Clang Static Analyzer. This simple approach results a loss of coverage, which...",
+          "slug": "improved-loop-execution-modeling-in-clang-static-analyzer",
+          "status": "completed",
+          "student_name": "Péter Szécsi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improved Loop Execution Modeling in Clang Static Analyzer"
+        },
+        {
+          "code_url": "http://hpc-thoughts.blogspot.in/2017/08/wrapping-up-my-gsoc.html",
+          "description": "<p>Polly can now automatically offload suitable kernels to GPUs in the form of Polly-ACC, saving a lot of developer time and effort. Julia, a modern language built just for scientific computing from scratch, has much to gain from the productivity offered by Polly’s GPU offload capabilities which makes it appealing to seasoned researchers and novice programmers who’d want to leverage a GPU’s computational power with the least amount of effort. This project aims to integrate Polly-ACC into Julia and ensure it is able to accelerate compute-intensive parts of Julia programs by focusing on a set of representative benchmarks. It also aims to better optimise code using cues from run-time parameters, leveraging the opportunities that JIT compilation has to offer. This could be a stepping stone into making an LLVM powered language a preferred platform to program heterogeneous systems.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4839028788559872/",
+          "proposal_id": null,
+          "short_description": "Polly can now automatically offload suitable kernels to GPUs in the form of Polly-ACC, saving a lot of developer time and effort. Julia, a modern...",
+          "slug": "enabling-julia-to-target-gpgpus-using-polly",
+          "status": "completed",
+          "student_name": "Singapuram Sanjay S.V.",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enabling Julia to target GPGPUs using Polly"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6215410651234304/"
+    },
+    "year_2018": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1hubvaiQxQSBR9H9TOnH1nrtSusEr3vg5sXVLGj7xrHE/edit?usp=sharing",
+          "description": "<p>Dominance relationship is used widely in many compiler analyses and optimizations. The current API provided by LLVM to update the dominator tree and the post dominator tree is fragmented and different functions using these data structures have to decide how to perform incremental updates.</p>\n<p>The aim of this project is:</p>\n<ul>\n<li>The API to update the dominator tree and the post dominator tree using different strategies (lazily/eagerly) is fragmented. Therefore, a single class for abstracting away the tree update strategies and which trees are actually being updated need to be developed.</li>\n<li>By implementing a single updater class, performing faster incremental updates will become possible. First, we can convert functions to update the data structure lazily. Second, we can use the updated dominator tree to prune unnecessary updates to the post dominator tree.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6626660145168384/",
+          "proposal_id": null,
+          "short_description": "Dominance relationship is used widely in many compiler analyses and optimizations. The current API provided by LLVM to update the dominator tree and...",
+          "slug": "implement-a-single-updater-class-for-dominators",
+          "status": "completed",
+          "student_name": "Chijun Sima",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Implement a single updater class for Dominators"
+        },
+        {
+          "code_url": "https://apolyakov.github.io/GSoC-2018/",
+          "description": "<p>The project goal is to re-implement lldb-mi to avoid using of HandleCommand and regular expressions to parse commands results.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5703595034935296/",
+          "proposal_id": null,
+          "short_description": "The project goal is to re-implement lldb-mi to avoid using of HandleCommand and regular expressions to parse commands results.",
+          "slug": "re-implement-lldb-mi-on-top-of-the-lldb-public-api",
+          "status": "completed",
+          "student_name": "Alexander Polyakov",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Re-implement lldb-mi on top of the LLDB public API"
+        },
+        {
+          "code_url": "https://gist.github.com/mikhailramalho/1f7813e8add0b2fbe4aba6e2977fd121",
+          "description": "<p>The goal of this project is to provide a new option in the clang static analyzer to validate (or refute) reported bugs, by using an SMT solver. The implementation consists of an extra step, after the bug is found by the built-in solver (RangedConstraintManager) but before reporting it to the user; the path and the constraints that trigger the bug will be encoded in SMT and checked for satisfiability using the SMT solver Z3. The expected result of the project is to reduce the number of false bugs reported by the analyzer and evaluate the overhead introduced by Z3 during validation.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5711866470858752/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to provide a new option in the clang static analyzer to validate (or refute) reported bugs, by using an SMT solver. The...",
+          "slug": "using-the-z3-smt-solver-to-validate-bugs-reported-by-the-clang-static-analyzer",
+          "status": "completed",
+          "student_name": "Mikhail Y R Gadelha",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Using the Z3 SMT Solver to Validate Bugs Reported by the Clang Static Analyzer"
+        },
+        {
+          "code_url": "https://resharma.github.io/GSoC-18-LLVM/",
+          "description": "<p>LLVM uses a Jenkins instance and Jenkins-Debian-Glue to build LLVM, Clang, clang extra tools, compiler-rt, polly, LLDB and LLD packages for the stable, stabilization and development branches. These Debian and Ubuntu repositories are hosted on apt[dot]llvm[dot]org. This GSoC I plan to deploy an instance of Open Build Service (OBS) and port the various scripts and packages to this platform such that it don't change the present user interaction.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5249693294526464/",
+          "proposal_id": null,
+          "short_description": "LLVM uses a Jenkins instance and Jenkins-Debian-Glue to build LLVM, Clang, clang extra tools, compiler-rt, polly, LLDB and LLD packages for the...",
+          "slug": "move-the-aptllvmorg-ci-to-obs",
+          "status": "completed",
+          "student_name": "Reshabh Sharma",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Move the apt.llvm.org CI to OBS"
+        },
+        {
+          "code_url": "https://rnkovacs.github.io/gsoc2018/",
+          "description": "<p>The C++ std::string class provides a c_str() method that returns a raw pointer to a string's inner character buffer. When a std::string is destroyed, the character buffer is deallocated. A common bug is to access a dangling raw pointer to the buffer after string deallocation. These \"use after free\" bugs can cause crashes or other unexpected behavior.\nThis project will add a new checker to the static analyzer to find when a dangling inner string pointer is used. This will help find bugs not only with std::string and c_str() but also with LLVM's StringRef class and the new C++17 std::string_view.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6487597828276224/",
+          "proposal_id": null,
+          "short_description": "The C++ std::string class provides a c_str() method that returns a raw pointer to a string's inner character buffer. When a std::string is destroyed,...",
+          "slug": "a-checker-for-dangling-string-pointers-in-c",
+          "status": "completed",
+          "student_name": "Réka Nikolett Kovács",
+          "student_profile": null,
+          "tags": [],
+          "title": "A checker for dangling string pointers in C++"
+        },
+        {
+          "code_url": "https://gramanas.github.io/llvm-devlog/posts/gsoc-2018-improving-debugging-of-optimized-code/",
+          "description": "<ul>\n<li>Measure DebugInfo loss statistics.</li>\n<li>Find the cause.</li>\n<li>Fix the culprit transformations starting from the most used areas of the compiler.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6319383085318144/",
+          "proposal_id": null,
+          "short_description": "Measure DebugInfo loss statistics.\nFind the cause.\nFix the culprit transformations starting from the most used areas of the compiler.",
+          "slug": "improve-debugging-of-optimized-code",
+          "status": "completed",
+          "student_name": "gramanas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Debugging of Optimized Code"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1EndNPLxBQIoibVRzwmxgdJQ3VeDs9RSGJsbiQd3kSrU/edit?usp=sharing",
+          "description": "<p>In this project I would like to implement proposal “RFC: C++ Devirtualization v2” that I was working on for a quite some time with help from other people. The proposal can be seen\nhere: <a href=\"https://docs.google.com/document/d/16GVtCpzK8sIHNc2qZz6RN8amICNBtvjWUod2SujZVEo/edit?usp=sharing\" target=\"_blank\">https://docs.google.com/document/d/16GVtCpzK8sIHNc2qZz6RN8amICNBtvjWUod2SujZVEo/edit?usp=sharing</a></p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5138380291571712/",
+          "proposal_id": null,
+          "short_description": "In this project I would like to implement proposal “RFC: C++ Devirtualization v2” that I was working on for a quite some time with help from other...",
+          "slug": "devirtualization-v2",
+          "status": "completed",
+          "student_name": "Piotr Padlewski",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Devirtualization v2"
+        },
+        {
+          "code_url": "http://paulsemel.org/posts/command-line-replacements-in-llvm-binutils/",
+          "description": "<p>A lot of GNU binutils have their equivalent in the LLVM project. As the majority of people are already accustomed to the GNU ones, it would be great to make the LLVM binutils command lines compliant. The goal of this project is that people would be able to integrate LLVM tools in their existing toolchains without any efforts, and thus increase the number of projects using LLVM binutils.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2018_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5171359936151552/",
+          "proposal_id": null,
+          "short_description": "A lot of GNU binutils have their equivalent in the LLVM project. As the majority of people are already accustomed to the GNU ones, it would be great...",
+          "slug": "command-line-replacements-for-gnu-binutils",
+          "status": "completed",
+          "student_name": "Paul Semel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Command line replacements for GNU Binutils"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5263452624912384/"
+    },
+    "year_2019": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1exOTzVC9NoLk9do_hVpezPVim7Kq63-3TyJOOkrK-eg/edit?usp=sharing",
+          "description": "<p>Working on librarifying llvm-objcopy for use throughout binutils. Creating a good base for a library such that many object file formats can be added later. I think we can create a much better and more ergonomic object file library than GNU's bfd considering we can use it as an example. Also, I find C++ is much better suited for creating ergonomic and easy to use libraries than C, obviously. If the library exists internally for LLVM and by use of its binutils, then we can create a much better library. If done correctly, many of the binutils will just have to interface with the command line and with the library and do little work with the underlying object file on their own.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_llvm-compiler-infras_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6456990732124160/",
+          "proposal_id": null,
+          "short_description": "Working on librarifying llvm-objcopy for use throughout binutils. Creating a good base for a library such that many object file formats can be added...",
+          "slug": "libobjectcopy",
+          "status": "completed",
+          "student_name": "Alex Brachet",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "libObjectcopy"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1CYOIST6X8VYknVvMTaW8dBdhaPbHu1r6oDb_FmJ8t7M/edit?usp=sharing",
+          "description": "<p>LLVM functions can be tagged with several attributes. These attributes are used in optimizations to decide whether a particular transformation is valid or not. Functions attributes can be either given by the frontend or be inferred by LLVM. There are some attributes which can not be inferred now. If we could infer them, more optimization would be done.\nIn addition to this, there are a lot of problems in current implementation. First of all, each algorithm is very similar but implemented separately. If we extend these implementations to infer other attributes, there would be a lot of code duplication and it is hard to maintain consistency. Therefore, it is better to replace them with a more designed implementation. We have a new framework for deducing attribute called “Attributor” developed by Johannes Doerfert. So I propose to extend this framework and deduce attributes.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6690711963959296/",
+          "proposal_id": null,
+          "short_description": "LLVM functions can be tagged with several attributes. These attributes are used in optimizations to decide whether a particular transformation is...",
+          "slug": "improve-function-attribute-inference",
+          "status": "completed",
+          "student_name": "Hideto Ueno",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "frontend"
+          ],
+          "title": "Improve (function) attribute inference"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/18xCzG8gCI-oCzGSXeKsmCODaXG0RQ0q8R5pH2bJVkYc/edit?usp=sharing",
+          "description": "<p>LLVM functions, as well as arguments and other entities, can be tagged with several attributes such as the function only reads memory, or the function cannot throw exceptions. These attributes are used by many optimizations when deciding if a particular transformation is valid or not.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5003353329762304/",
+          "proposal_id": null,
+          "short_description": "LLVM functions, as well as arguments and other entities, can be tagged with several attributes such as the function only reads memory, or the...",
+          "slug": "improve-function-attribute-inference",
+          "status": "completed",
+          "student_name": "Stefan Stipanovic",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve (function) attribute inference"
+        },
+        {
+          "code_url": "https://preejackie.github.io/GSoC-2019-LLVM/",
+          "description": "<p>One of the selling points of new LLVM ORC Concurrent JIT APIs is we can speculatively compile functions before we need it, with the hope that when we call it in run-time it is already compiled. However, if we speculatively compile the whole module and its transitive dependencies we’re quickly going to overload the CPU/Memory resources and increase the start-up time of the application. To avoid this, we can select the functions ahead of time which are likely going to execute next and compile them speculatively, using runtime profiles from previous app executions and/or static program analysis.</p>\n<p>It helps to use leverage the performance of Just-in-time compilation using modern multi-core machine. It also helps to reduce the JIT compilation latency.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4511410007048192/",
+          "proposal_id": null,
+          "short_description": "One of the selling points of new LLVM ORC Concurrent JIT APIs is we can speculatively compile functions before we need it, with the hope that when we...",
+          "slug": "speculative-compilation-in-llvm-orc-just-in-time-apis",
+          "status": "completed",
+          "student_name": "PreeJackie",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Speculative compilation in LLVM ORC - Just in time APIs"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1o9-xEWbzivUGKIOXp9jUNZYq0mkecd5KH5dBN5Hdlu8/",
+          "description": "<p>The idea is to improve the Clang Static Analyzer so that it is useful for developers who work on Clang and LLVM themselves, as well as on other LLVM-based projects, like Swift. LLVM makes use of C++ language features that the Static Analyzer has not yet been taught to understand. The analyzer also has false positives on some C++ idioms commonly used in the LLVM codebase.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4876350878384128/",
+          "proposal_id": null,
+          "short_description": "The idea is to improve the Clang Static Analyzer so that it is useful for developers who work on Clang and LLVM themselves, as well as on other...",
+          "slug": "apply-the-clang-static-analyzer-to-llvm-based-projects",
+          "status": "completed",
+          "student_name": "Charusso",
+          "student_profile": null,
+          "tags": [],
+          "title": "Apply the Clang Static Analyzer to LLVM-based projects"
+        },
+        {
+          "code_url": "https://github.com/wsmoses/LLVM-HTO",
+          "description": "<p>LLVM automatically derives facts that are only used while the respective translation unit, or LLVM module, is processed (i.e. constant function, error-throwing, etc). This is true both in standard compilation but also link-time-optimization (LTO) in which the module is (partially) merged with others in the same project at link time. LTO is able to take advantage of this to optimize functions calls to outside the translation unit. Code compiled without LTO for all of its dependencies, however, does not have this information and therefore is unable to perform such optimizations. To remedy this issue, one might propose always compiling programs with LTO enabled. This doesn’t solve the problem for two reasons of practicality: LTO comes with a nontrivial compile-time investment; and many libraries upon which a program could depend, do not ship with LTO information, simply headers and binaries. In this project, we propose solving the problem by generating annotated versions of the source code that also include this derived information. Such an approach has the benefits of both worlds: allowing optimizations previously limited to LTO without running LTO and only providing headers.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5802146514075648/",
+          "proposal_id": null,
+          "short_description": "LLVM automatically derives facts that are only used while the respective translation unit, or LLVM module, is processed (i.e. constant function,...",
+          "slug": "generation-of-annotated-sources",
+          "status": "completed",
+          "student_name": "William Moses",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generation of Annotated Sources"
+        },
+        {
+          "code_url": "https://seiya.me/gsoc19",
+          "description": "<p>LLVM includes binary utilities equivalent to GNU binutils. Basic functionalities are done but there are incomplete ones such as Mach-O support. This project aims to support those missing functionalities and improve usability for those who crave for an alternative to GNU binutils.</p>\n<p>The goal of proposal is twofold:</p>\n<ul>\n<li>llvm-objcopy: Improve Mach-O support</li>\n<li>llvm-objdump: More human-friendly disassembly</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5871651231629312/",
+          "proposal_id": null,
+          "short_description": "LLVM includes binary utilities equivalent to GNU binutils. Basic functionalities are done but there are incomplete ones such as Mach-O support. This...",
+          "slug": "improve-llvm-binary-utilities",
+          "status": "completed",
+          "student_name": "Seiya Nuta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improve LLVM binary utilities"
+        },
+        {
+          "code_url": "https://szelethus.github.io/gsoc2019/",
+          "description": "<p>The Clang Static Analyzer (analyzer) can discover errors in a code by a technique called symbolic execution. Its core essentially interprets C, C++, Objective C or Objective C++ code, and at several program points allows it’s modules, or checkers to emit reports. Later, it will construct a bug report, that shows how the error can be reproduced. These steps (such as that the analyzer modeled a call to function, assumed a variable is positive, etc.) are collectively referred to as a bug path. Ideally, this contains every information needed to reproduce the error, but is minimal. However, it can contain either too little or too much information.</p>\n<p>In my proposed project, I indent to use static backward program slicing to enhance bug report generation. Instead of doing a fix-point algorithm on the control flow graph (CFG) though, my solution would be implemented on the abstract syntax tree (AST). This solution would only be an estimation, so I only propose to add more information to the bug reports, and research whether program slicing could be used for bug path shortening as a followup work.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5955012805525504/",
+          "proposal_id": null,
+          "short_description": "The Clang Static Analyzer (analyzer) can discover errors in a code by a technique called symbolic execution. Its core essentially interprets C, C++,...",
+          "slug": "enhancing-bug-reports-in-the-clang-static-analyzer",
+          "status": "completed",
+          "student_name": "Kristóf Umann",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhancing bug reports in the Clang Static Analyzer"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5682474363912192/"
+    },
+    "year_2020": {
+      "num_projects": 15,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1kLauQ34abH6S3fqMdamuywliLiKQ0wHkBM67VVJ9AwE/edit?usp=sharing",
+          "description": "<p>Parallelism is used to improve performance. In sequential languages, parallelism is introduced with parallel constructs. However, it doesn’t come without a downside. Early outlining by the frontend is preventing existing optimization passes. The intent is to enhance and improve the existing “OpenMPOpt” optimization pass, thus improving performance of parallel programs.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6353920667942912/",
+          "proposal_id": null,
+          "short_description": "Parallelism is used to improve performance. In sequential languages, parallelism is introduced with parallel constructs. However, it doesn’t come...",
+          "slug": "improve-parallelism-aware-analyses-and-optimizations",
+          "status": "completed",
+          "student_name": "Stefan Stipanovic",
+          "student_profile": null,
+          "tags": [
+            "frontend"
+          ],
+          "title": "Improve Parallelism-Aware Analyses and Optimizations"
+        },
+        {
+          "code_url": "https://higuoxing.com/archives/my-journey-with-llvm-iii/",
+          "description": "<p>LLVM offers 2 useful YAML tools, yaml2obj and obj2yaml. The former one reads YAML files and emits object files, e.g., ELF, COFF and MachO. The latter one does the reverse, reads object files and emits YAML files. We use these tools to write unit tests for binary tools, e.g., llvm-objdump, llvm-nm, llvm-readelf, as YAML is easier to read and edit than raw assembly codes and pre-built binaries. More importantly, YAML keeps our tests code base maintainable. However, yaml2obj currently doesn’t support generating DWARF sections very well (we have to hardcode the Content field of DWARF sections and it is not intuitive). This project aims to add DWARF support for yaml2obj (ELF part), which will ease our pain crafting DWARF tests.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5664891983101952/",
+          "proposal_id": null,
+          "short_description": "LLVM offers 2 useful YAML tools, yaml2obj and obj2yaml. The former one reads YAML files and emits object files, e.g., ELF, COFF and MachO. The latter...",
+          "slug": "add-dwarf-support-for-yaml2obj",
+          "status": "completed",
+          "student_name": "Xing GUO",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Add DWARF Support for yaml2obj"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1pbUPRSjYL5QHLEkwNTjnvdYvgiKaYO_LpyNaTKhTWEA/edit?usp=sharing",
+          "description": "<p>Selecting optimization passes for given application is very important but non-trivial problem because of the huge size of the compiler transformation space (incl. pass ordering). While the existing heuristics can provide high-performance code for certain applications, they cannot easily benefit a wide range of application codes. The goal of the project is to learn the interplay between LLVM transformation passes and code structures, then improve the existing heuristics (or replace the heuristics with machine learning-based models) so that the LLVM compiler can provide a superior order of the passes customized per application.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5744246235070464/",
+          "proposal_id": null,
+          "short_description": "Selecting optimization passes for given application is very important but non-trivial problem because of the huge size of the compiler transformation...",
+          "slug": "advanced-heuristics-for-ordering-compiler-optimization-passes",
+          "status": "completed",
+          "student_name": "Hideto Ueno",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Advanced Heuristics for Ordering Compiler Optimization Passes"
+        },
+        {
+          "code_url": "https://tr5.org/~ruijie/gsoc20_hcs/index.xhtml",
+          "description": "<p>This project aims at enhancing the ability to detect and split small cold blocks (for example, __assert_rtn, throws) to the existing hot/cold splitting pass in LLVM. We will utilize both static analysis and experimental data from code profiling to identify patterns of small cold blocks that are splittable, and aim to implement these splitting capabilities without inducing superlinear compile-time overhead in the existing hot/cold splitting pass. We will also aim at fine-tuning the existing cost model of LLVM’s hot/cold splitting pass, such that the optimizer can “bail out” should superlinear compile-time overhead occur.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5461277146611712/",
+          "proposal_id": null,
+          "short_description": "This project aims at enhancing the ability to detect and split small cold blocks (for example, __assert_rtn, throws) to the existing hot/cold...",
+          "slug": "improve-hot-cold-splitting-to-aggressively-outline-small-blocks",
+          "status": "completed",
+          "student_name": "Ruijie Fang",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve hot cold splitting to aggressively outline small blocks"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1W6Q2mh4kV38aNVm9V49COGIHTVw6z4JK2tsVNj6yGiU/edit?usp=sharing",
+          "description": "<p>LLVM transformation passes use code motion in different types of transformations. All these passes have some embedded code motion safety checks and mechanisms to move code. This project aims to identify different mechanisms for checking code motion safety and for moving code and then tries to unify them into one place. This will eventually provide a standardized way for different transformation passes to use code motion checks and to move code. The initial groundwork has already started in CodeMoverUtils. This project will focus on the code motion safety checks and the ways to move code in different loop passes, keeping CodeMoverUtils independent of any loop information. This will help to increase the maintainability of code motion safety checks and will reduce the redundancy and inconsistency of code motion safety checks and ways to move code.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5488234206855168/",
+          "proposal_id": null,
+          "short_description": "LLVM transformation passes use code motion in different types of transformations. All these passes have some embedded code motion safety checks and...",
+          "slug": "unify-ways-to-move-code-or-check-if-code-is-safe-to-be-moved",
+          "status": "completed",
+          "student_name": "Rithik Sharma",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Unify ways to move code or check if code is safe to be moved"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1voJUm6VkrD6eeXshO-heiVCFMHD4dSpegNK2X5Go8mU/edit?usp=sharing",
+          "description": "<p>Tab completion in LLDB is a very useful function for users. However, it is needed that users press  [tab] key to confirm completion. If they can confirm completion without press it, LLDB will become a more useful debugger. In addition to it, tab completion is not based on command history. Therefore, the same completion is suggested if the user presses [tab] key when the same characters are typed. If the completion function is based on history, completion is suggested depending on the situation, and LLDB will be easy to use. Then I will implement autosuggestions function to make LLDB better in this project.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_llvm-compiler-infras_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4998656656146432/",
+          "proposal_id": null,
+          "short_description": "Tab completion in LLDB is a very useful function for users. However, it is needed that users press  [tab] key to confirm completion. If they can...",
+          "slug": "support-autosuggestions-in-lldbs-command-line",
+          "status": "completed",
+          "student_name": "Shu Anzai",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support autosuggestions in LLDB's command line"
+        },
+        {
+          "code_url": "https://github.com/tarinduj/Google-Summer-of-Code-2020/blob/gh-pages/index.md",
+          "description": "<p>Compilers come with hundreds of optimization passes, making it difficult to select which passes to run and deciding the order in which to execute them. Typically, compilers achieve this by running the standard optimization pass pipelines. However, customized sequences of passes for a particular program can significantly improve the performance compared to the standard optimizations.</p>\n<p>So it is important to study the dependencies between these optimizations passes, and how they affect the code structure. This will pave the way to improve the existing heuristics for ordering the compiler optimization passes; heuristics that can select the optimal pass order depending on the code structure.</p>\n<p>Another interesting approach is to use machine learning to optimize the compiler rather than rely on heuristics. Making machines learn how to optimize the compiler, is a faster approach to produce target-specific optimizations for the underlying platform, as well as for the code structure. For instance, machine learning can be used to identify patterns in code structure and then select the ideal optimization sequences specific to those patterns to get high performance for that program.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4686518431514624/",
+          "proposal_id": null,
+          "short_description": "Compilers come with hundreds of optimization passes, making it difficult to select which passes to run and deciding the order in which to execute...",
+          "slug": "advanced-heuristics-for-ordering-compiler-optimization-passes",
+          "status": "completed",
+          "student_name": "Tarindu Jayatilaka",
+          "student_profile": null,
+          "tags": [],
+          "title": "Advanced Heuristics for Ordering Compiler Optimization Passes"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1iZ4ZzGMhAwFYqFByd0mrj_K8E9qwlvT3HcikiU5WrJU/edit?usp=sharing",
+          "description": "<p>To implement the missing tab completions for LLDB's command line as the title goes, I dug out possible commands as targets and provided a list of implementation solutions for them. Things remained are coding and testing.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4788006629670912/",
+          "proposal_id": null,
+          "short_description": "To implement the missing tab completions for LLDB's command line as the title goes, I dug out possible commands as targets and provided a list of...",
+          "slug": "implement-the-missing-tab-completions-for-lldbs-command-line",
+          "status": "completed",
+          "student_name": "Gongyu Deng",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implement the missing tab completions for LLDB's command line"
+        },
+        {
+          "code_url": "https://github.com/georgemitenkov/GSoC-2020",
+          "description": "<p>MLIR is a novel compiler infrastructure that enables multi-level abstraction and therefore enhances reusability and extensibility. The core concept that allows to extend MLIR is a dialect. This project focuses on the implementation of SPIR-V to LLVM IR dialect conversion within MLIR. Some benefits of this conversion path include generating CPU machine code for SPIR-V and JITing SPIR-V.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4834194204655616/",
+          "proposal_id": null,
+          "short_description": "MLIR is a novel compiler infrastructure that enables multi-level abstraction and therefore enhances reusability and extensibility. The core concept...",
+          "slug": "spir-v-to-llvm-ir-dialect-conversion-in-mlir",
+          "status": "completed",
+          "student_name": "George Mitenkov",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "SPIR-V to LLVM IR dialect conversion in MLIR"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1WZSt45kZUhg0UbOv0HXBhyEYaHrb-G-TpEhj_nU041Q/edit?usp=sharing",
+          "description": "<p>The Clang Static Analyzer is used to find bugs in the program by analyzing source code without compiling and executing. It uses symbolic computations to find the defects. The Clang Static Analyzer already has a checker to find the null pointer dereference in code, however it is not sufficient for complicated cases such as C++ smart pointers or optionals. By explicitly teaching the C++ standard class behaviors we can make the Analyzer to find more bugs related to modern C++ code.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6569507994206208/",
+          "proposal_id": null,
+          "short_description": "The Clang Static Analyzer is used to find bugs in the program by analyzing source code without compiling and executing. It uses symbolic computations...",
+          "slug": "find-null-smart-pointer-dereferences-with-the-static-analyzer",
+          "status": "completed",
+          "student_name": "Nithin V Rajendrakumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Find null smart pointer dereferences with the Static Analyzer"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/129OA2613huaNWVVKBAvYZU02IzFAC2oDx9JKabrkLfk/edit?usp=sharing",
+          "description": "<p>LLVM IR has some attributes which can be attached to function, argument, callsite, et cetera. These attributes guarantee a property corresponding to each attribute and its position, and such information is used to decide to apply a particular transformation in other optimization passes. These attributes are given by the frontend or inferred by LLVM passes.</p>\n<p>A framework for unified attribute inference named “Attributor” was introduced and implemented. In a GSoC project last year, various attributes can be inferred with Attributor. However, there is room for improvement of inference.</p>\n<p>The Attributor can not only deduce attributes but also connect attribute deduction and other analyses to each other. We can take advantage of this potential of Attributor. One of such optimizations is “value simplification”. It has been implemented, but it also can be improved.</p>\n<p>The purpose of this project is two-fold.</p>\n<ol>\n<li>To make some inference stronger and make it possible for more optimizations to be applied.</li>\n<li>To improve value simplification from various perspectives.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6072445691232256/",
+          "proposal_id": null,
+          "short_description": "LLVM IR has some attributes which can be attached to function, argument, callsite, et cetera. These attributes guarantee a property corresponding to...",
+          "slug": "improve-inter-procedural-analyses-and-optimizations",
+          "status": "completed",
+          "student_name": "Shinji Okumura",
+          "student_profile": null,
+          "tags": [
+            "frontend"
+          ],
+          "title": "Improve inter-procedural analyses and optimizations"
+        },
+        {
+          "code_url": "https://hamax97.github.io/projects/gsoc2020-llvm/",
+          "description": "<p>Given the increasing number of use cases for massively parallel devices (GPUs), solving the problems they bring have become an important research field. One of the main problems that needs to be solved is the long time (latency) that it takes to move data from the computer’s main memory to the device’s memory. Therefore, using the LLVM compiler infrastructure, the proposed solution consists of adding a new functionality to the current OpenMP interprocedural optimization pass, OpenMPOpt, such that the OpenMP runtime calls that involve host to device memory transfers are split into “issue” and “wait” functions. The “issue” function will contain the code necessary to transfer the data from the host to the device in an asynchronous manner, returning a handle in which the “wait” function will wait for completion. The “issue” and “wait” functions will be moved upwards and downwards respectively, until it is illegal to do so. Doing this, the instructions between the “issue” and the “wait” can be executed, while separately doing the data transfer to the device, hence, reducing the time the process is blocked waiting for the transfer to finish.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6001003540774912/",
+          "proposal_id": null,
+          "short_description": "Given the increasing number of use cases for massively parallel devices (GPUs), solving the problems they bring have become an important research...",
+          "slug": "latency-hiding-for-host-to-device-memory-transfers",
+          "status": "completed",
+          "student_name": "Hamilton Tobon Mosquera",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Latency Hiding for Host to Device Memory Transfers"
+        },
+        {
+          "code_url": "https://gist.github.com/vish99/7f1454a03d78d466989b6c982ccf59dc",
+          "description": "<p>The project aims at providing the MergeFunctions pass in LLVM to have feature parity with the MergeSimilarFunctions pass, which can merge functions which are similar beyond a user specified similarity threshold. It also deals with providing MergeFunctions pass with ThinLTO support, thereby gaining in the code size optimisation.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6264661214756864/",
+          "proposal_id": null,
+          "short_description": "The project aims at providing the MergeFunctions pass in LLVM to have feature parity with the MergeSimilarFunctions pass, which can merge functions...",
+          "slug": "improve-mergefunctions-to-incorporate-mergesimilarfunctions-patches-and-thinlto-support",
+          "status": "completed",
+          "student_name": "Vishal Chebrolu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve MergeFunctions to incorporate MergeSimilarFunctions patches and ThinLTO Support"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1Lc9ffBoyDX-aTf_vA-rs2G_3kj9e3PUc278mcwTxzxg/edit?usp=sharing",
+          "description": "<p>In this project we aim to improve the deduction capabilities of the Attributor framework.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6328558382743552/",
+          "proposal_id": null,
+          "short_description": "In this project we aim to improve the deduction capabilities of the Attributor framework.",
+          "slug": "improve-inter-procedural-analyses-and-optimizations",
+          "status": "completed",
+          "student_name": "Kuter Dinel",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve inter-procedural analyses and optimizations"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1NBU0tj9PV8KNo8RXyYV0RZoT1irnb7-8zN6eKP9fScc/edit?usp=sharing",
+          "description": "<p>A function that is non-exactly defined is a function that could be replaced at link time. Usually most of the non-inlining IPOs are inhibited. For the attributor, we do fix-point analysis for attributes and if we found the function to which the abstract attribute is related has non-exact definition, we immediately reach pessimistic fix-point without analyzing it. However, many of the LLVM IR functions are non-exact, so we propose a way to \"wrap\" the function up, so that the function can be seen as if it has exact definition, and by doing so, we can do fix-point analysis on this function</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2020_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5185795092119552/",
+          "proposal_id": null,
+          "short_description": "A function that is non-exactly defined is a function that could be replaced at link time. Usually most of the non-inlining IPOs are inhibited. For...",
+          "slug": "deduce-attributes-for-non-exact-functions",
+          "status": "completed",
+          "student_name": "Luofan Chen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Deduce attributes for non-exact functions"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5902726635978752/"
+    },
+    "year_2021": {
+      "num_projects": 16,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1vRMB8QUCbF7finJbnzqxrattTr61ZVRyyv1rQqD7abo/edit?usp=sharing",
+          "description": "<p>LLVM Project is a collection of modular and reusable compiler and toolchain technologies. It supports various high-level languages and hardware architectures. LLVM IR is an SSA-based intermediate representation whose design helps in the easy and efficient implementation of various compiler optimizations and transformations. \nAlive2 is a tool that checks whether the transformation of an instruction set into another instruction set is semantically correct or not. It is a verification framework for LLVM IR, which checks whether the source and target IR are equivalent or disproves by providing a counterexample. Alive2 can reason about a wide variety of intraprocedural optimization problems, including control flow, memory, vectors, and floating-point. Alive2 has detected some fundamental issues in the LLVM-IR, which lead to mis-compilation and unsound optimizations. In this project, I propose to solve some of these issues in the LLVM IR by making some changes to the LLVM compiler infrastructure code.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_llvm-compiler-infras_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6381677898629120/",
+          "proposal_id": null,
+          "short_description": "LLVM Project is a collection of modular and reusable compiler and toolchain technologies. It supports various high-level languages and hardware...",
+          "slug": "fix-fundamental-issues-in-llvm-ir",
+          "status": "completed",
+          "student_name": "Krishna Kariya",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Fix Fundamental Issues in LLVM IR"
+        },
+        {
+          "code_url": "https://github.com/tarinduj/GSoC2021/blob/master/README.md",
+          "description": "<p>Developers generally use standard optimization pipelines like -O2 and -O3 to optimize their code. Manually crafted heuristics are used to determine which optimization passes to select and how to order the execution of those passes. However, this process is not tailored for a particular application, or kind of application, as it is designed to perform “reasonably well” for any input.</p>\n<p>We want to improve the existing heuristics or replace the heuristics with machine learning-based models so that the LLVM compiler can provide a superior order of the passes customized per application.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6411038932598784/",
+          "proposal_id": null,
+          "short_description": "Developers generally use standard optimization pipelines like -O2 and -O3 to optimize their code. Manually crafted heuristics are used to determine...",
+          "slug": "machine-learning-guided-ordering-of-compiler-optimization-passes",
+          "status": "completed",
+          "student_name": "Tarindu Jayatilaka",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Machine Learning Guided Ordering of Compiler Optimization Passes"
+        },
+        {
+          "code_url": "https://reddocmd.github.io/sturdy-octo-sniffle/docs/report/",
+          "description": "<p>The Clang Static Analyzer currently has checkers for <code>std::unique_ptr</code>. These checkers are currently in the experimental (alpha) group of checkers. I intend to complete the <code>unique_ptr</code> checker so that it can be included in the default list of checkers and be enabled by default. In addition, I would like to add a checker for <code>std::shared_ptr</code> and <code>std::weak_ptr</code>, which would be an alpha checker.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5706576819650560/",
+          "proposal_id": null,
+          "short_description": "The Clang Static Analyzer currently has checkers for std::unique_ptr. These checkers are currently in the experimental (alpha) group of checkers. I...",
+          "slug": "making-smart-pointer-checkers-default-checkers-in-the-static-analyzer",
+          "status": "completed",
+          "student_name": "Deep Majumder",
+          "student_profile": null,
+          "tags": [],
+          "title": "Making Smart Pointer Checkers default checkers in the Static Analyzer"
+        },
+        {
+          "code_url": "https://reviews.llvm.org/D106001",
+          "description": "<p>In this project we will look at loop transformation heuristics, such as the unroll factor.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5732097817313280/",
+          "proposal_id": null,
+          "short_description": "In this project we will look at loop transformation heuristics, such as the unroll factor.",
+          "slug": "learning-loop-transformation-heuristics",
+          "status": "completed",
+          "student_name": "Ali Sedaghati",
+          "student_profile": null,
+          "tags": [],
+          "title": "Learning Loop Transformation Heuristics"
+        },
+        {
+          "code_url": "https://gist.github.com/reikdas/ee0f2f3244afc8a6efba659232722b92",
+          "description": "<p>Enzyme performs automatic differentiation (in the calculus sense) of LLVM programs. This enables users to use Enzyme to perform various algorithms such as back-propagation in ML or scientific simulation on existing code for any language that lowers to LLVM. Enzyme does so by applying the chain rule to every instruction in every function called by the original function to be differentiated. While functional, this is not necessarily optimal for high-level matrix operations which may have algebraic properties for faster derivative computation. Many programs use BLAS libraries to efficiently compute matrix and tensor operations. This project would enable high-performance automatic differentiation of BLAS and similar libraries (such as Eigen) by specifying custom derivative rules for their operations.</p>\n<p>At the end of this Google Summer of Code project, Enzyme should be able to automatically calculate the optimal derivatives of several common linear algebra functions, thereby implicitly allowing easier integration of Enzyme in several mathematical computing libraries.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5386593837252608/",
+          "proposal_id": null,
+          "short_description": "Enzyme performs automatic differentiation (in the calculus sense) of LLVM programs. This enables users to use Enzyme to perform various algorithms...",
+          "slug": "integrate-custom-derivatives-of-numerical-computing-routines-like-blas-and-eigen-into-enzyme",
+          "status": "completed",
+          "student_name": "Pratyush Das",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Integrate custom derivatives of Numerical Computing routines like BLAS and Eigen into Enzyme"
+        },
+        {
+          "code_url": "https://reviews.llvm.org/D103770",
+          "description": "<p>The performance of the code generated for the GPU heavily depends on runtime parameters such as the number of thread blocks and threads per thread block. For this reason, a proper choice of such parameters based on both the IR information and runtime information can give a tangible improvement of the performance of the generated code. In this project, we will explore the ML-based approach to this problem which uses machine learning models for making a decision on the runtime parameter values given the IR and runtime features.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5115523116826624/",
+          "proposal_id": null,
+          "short_description": "The performance of the code generated for the GPU heavily depends on runtime parameters such as the number of thread blocks and threads per thread...",
+          "slug": "improving-openmp-code-generation-with-prediction-of-runtime-parameters",
+          "status": "completed",
+          "student_name": "Konstantin Sidorov",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Improving OpenMP code generation with prediction of runtime parameters"
+        },
+        {
+          "code_url": "https://gist.github.com/sohamdixit81/4044f90ae9b4954879c63a39f163f417",
+          "description": "<p>The LLVM lit test suites consist of thousands of small independent tests. Due to the number of tests, it can take a long time to run the full suite, even on a high-spec computer. Builds are already distributable across multiple computers available on the same network, using software such as distcc or icecream, so running tests on a single machine becomes a potential bottleneck. One way to speed up running of the tests could be to distribute test execution across many computers too. Lit provides a test sharding mechanism, which allows multiple computers to run parts of the same testsuite in tandem, but this currently assumes access to a single common filesystem, which may not be possible in all cases and a knowledge of which machines the suite can currently be run on.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5371580141535232/",
+          "proposal_id": null,
+          "short_description": "The LLVM lit test suites consist of thousands of small independent tests. Due to the number of tests, it can take a long time to run the full suite,...",
+          "slug": "distributed-lit-testing",
+          "status": "completed",
+          "student_name": "Soham Dixit",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Distributed lit testing"
+        },
+        {
+          "code_url": "https://github.com/hyeongyukim/GSoC2021/blob/main/report.md",
+          "description": "<p>Optimizations have been the cause of multiple miscompilations as well. It is difficult to determine whether an optimization is correct because bugs occur in corner cases and it’s hard to test them all for each optimization. But, thanks to Alive2, we can formally check the correctness of optimizations. Many of the bugs found are related to the notion of undef and poison values in LLVM. The semantics of these values has been formalized recently, and existing optimizations are being fixed to match the semantics. For example, branching on undef is now defined as undefined behavior (UB), and several branch-related optimizations are being fixed. However, fixing some of the optimizations requires further work, mainly due to performance concerns. One representative example is loop unswitch: it is incorrect, but still unfixed because fixing it causes big regressions in some benchmarks. Our goal is to fix such miscompilations with minimal-to-no performance regression. This project will investigate what is necessary to recover slowdowns and upstream the patches to LLVM.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4737459627229184/",
+          "proposal_id": null,
+          "short_description": "Optimizations have been the cause of multiple miscompilations as well. It is difficult to determine whether an optimization is correct because bugs...",
+          "slug": "fix-miscompilation-issues-in-llvm-ir-using-the-freeze-instruction",
+          "status": "completed",
+          "student_name": "Hyeongyu Kim",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Fix miscompilation issues in LLVM IR using the ‘Freeze’ instruction"
+        },
+        {
+          "code_url": "https://github.com/wsmoses/Enzyme/pull/307",
+          "description": "<p>With a surge of machine learning, especially the neural network model which needs to compute a huge amount of gradients, more and more languages' users begin to call for the ability to do high-performance and convenient <em>automatic differentiation</em> (hereafter AD) on functions,  whereupon many AD tools are developed, among which is Enzyme. Enzyme is made as a plugin of LLVM and synthesizes differentiated functions directly on optimized LLVM IR code, which provides it with advantages in efficiency and universality. From another aspect, Rust is an emerging high-performance and safe language. Many of its users are trying to bring machine learning to it, thus an high-performance and user-friendly AD tool needed. Enzyme is a good option for this demand. However, without a deep integration into Rust, Enzyme's user experience with Rust is not so good, and more importantly, it may suffer from performance reduction due to wasted Rust meta-information. These problems hamper Enzyme from being widely used in Rust. This project will tackle the aforementioned problems through integrating Enzyme into Rust and then provide high-performance differentiation in Rust.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4740220553003008/",
+          "proposal_id": null,
+          "short_description": "With a surge of machine learning, especially the neural network model which needs to compute a huge amount of gradients, more and more languages'...",
+          "slug": "integrate-enzyme-into-rust-to-provide-high-performance-differentiation-in-rust",
+          "status": "completed",
+          "student_name": "Chuyang Chen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate Enzyme into Rust to Provide High-performance Differentiation in Rust"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1ASGejJIL7rzEDwX2qZZqT4ATR2x3sd_aOTuMSCh2YTE/edit?usp=sharing",
+          "description": "<p>A newly added idea of LoopNest pass enables to handle a loop nest efficiently, unlike function pass or loop pass.</p>\n<p>The goals of this project are:</p>\n<ol>\n<li>Utilizing LoopNest pass for some existing passes intended to run on loop nest</li>\n<li>Collecting data on the utilized passes (e.g. compiling time)</li>\n<li>Improving the current implementation of LoopNest (pass) itself as necessary</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6011558420807680/",
+          "proposal_id": null,
+          "short_description": "A newly added idea of LoopNest pass enables to handle a loop nest efficiently, unlike function pass or loop pass.\nThe goals of this project are:\n...",
+          "slug": "utilize-loopnest-pass",
+          "status": "completed",
+          "student_name": "Toshiki Maekawa",
+          "student_profile": null,
+          "tags": [],
+          "title": "Utilize LoopNest Pass"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1WvxhPMxtrnGG9mECusY5JyAdf-QOBKVJhSW_B1yEy2I/edit?usp=sharing",
+          "description": "<p>In this project we aim to improve the deduction capabilities of the Attributor framework.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5921497922666496/",
+          "proposal_id": null,
+          "short_description": "In this project we aim to improve the deduction capabilities of the Attributor framework.",
+          "slug": "improve-inter-procedural-analyses-and-optimizations",
+          "status": "completed",
+          "student_name": "Kuter Dinel",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve inter-procedural analyses and optimizations"
+        },
+        {
+          "code_url": "https://pollylabs.org/gsoc2021/Use-official-isl-C++-bindings-for-polly.html",
+          "description": "<p>Polly uses custom C++ bindings for isl (Integer Set Library) which is a library written in C. I aim to replace at least partially the usage of these custom bindings in favor of the official isl ones. Unfortunately, this is not an in-place replacement. Differences include how errors are checked, method names, which functions are considered as operator/constructor overloads and the set of exported functions.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5967653486723072/",
+          "proposal_id": null,
+          "short_description": "Polly uses custom C++ bindings for isl (Integer Set Library) which is a library written in C. I aim to replace at least partially the usage of these...",
+          "slug": "use-official-isl-c-bindings-for-polly",
+          "status": "completed",
+          "student_name": "Riccardo Mori",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Use official isl C++ bindings for polly"
+        },
+        {
+          "code_url": "https://github.com/georgemitenkov/GSoC-2021",
+          "description": "<p>It is common for compilers, and LLVM in particular, to transform calls to memcpy or memmove to a number of integer loads and stores of the corresponding bit width. After, load and store instructions can be optimised further. However, semantics of memcpy and memmove specify that the memory is copied as-is in bytes, and LLVM does not have a type to represent the handle to the raw memory (like unsigned char or std::byte in C/C++). This leads to incorrect transformations and miscompilations.</p>\n<p>This project aims at introducing a new byte type to LLVM IR to fix miscompilation issues and to make the semantics of type punning in LLVM consistent.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6303218073600000/",
+          "proposal_id": null,
+          "short_description": "It is common for compilers, and LLVM in particular, to transform calls to memcpy or memmove to a number of integer loads and stores of the...",
+          "slug": "fixing-fundamental-issues-in-llvm-ir-introducing-a-byte-type-to-solve-load-type-punning",
+          "status": "completed",
+          "student_name": "George Mitenkov",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fixing fundamental issues in LLVM IR: Introducing a byte type to solve load type punning"
+        },
+        {
+          "code_url": "https://github.com/ZuseZ4/gsoc",
+          "description": "<p>Integrate Enzyme into Rust to provide high-performance differentiation of generic Rust code.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5150056566489088/",
+          "proposal_id": null,
+          "short_description": "Integrate Enzyme into Rust to provide high-performance differentiation of generic Rust code.",
+          "slug": "integrating-enzyme-into-rust",
+          "status": "completed",
+          "student_name": "Manuel Drehwald",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrating Enzyme into Rust"
+        },
+        {
+          "code_url": "https://gist.github.com/OmarEmaraDev/dfc31f292e87a58e9380a55e0e8ce984",
+          "description": "<p>The project aims to improve the LLDB curses GUI to provide a complete and intuitive IDE-like debugging experience without having to resort to the command line interface.</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5182227582812160/",
+          "proposal_id": null,
+          "short_description": "The project aims to improve the LLDB curses GUI to provide a complete and intuitive IDE-like debugging experience without having to resort to the...",
+          "slug": "evolving-the-lldb-gui",
+          "status": "completed",
+          "student_name": "Omar Emara",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Evolving the LLDB GUI"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1S9GA088UU5kci57Enww0IRP7qixQTq1Ia2dabn0KvjE/edit?usp=sharing",
+          "description": "<p>Improve inlining: using subgraph analyze and locally optimal inlining decisions</p>\n",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2021_016",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5195658885070848/",
+          "proposal_id": null,
+          "short_description": "Improve inlining: using subgraph analyze and locally optimal inlining decisions",
+          "slug": "inlining-using-locally-optimal-inlining-decisions",
+          "status": "completed",
+          "student_name": "Liq Tao",
+          "student_profile": null,
+          "tags": [],
+          "title": "Inlining: using locally optimal inlining decisions"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5738954464165888/"
+    },
+    "year_2022": {
+      "num_projects": 13,
+      "projects": [
+        {
+          "code_url": "https://github.com/EnzymeAD/Enzyme/pull/616",
+          "description": "Enzyme plugin project  aims to automatically find derivatives of LLVM IR which is pretty helpful for ML related works.Enzyme code base still uses the legacy pass manager and  does not currently automatically register its transformation passes when using the new pass manager.This creates problems for users on LLVM 13 or above, where the new pass manager is run by default and user may not understand why they get linker errors. Currently they must add a flag to specify the old pass manager. In this project I will integrate the new pass manager in the enzyme code thus making Enzyme callable by the new pass manager. The behavior of the plugin to the legacy pass manager will stay the same .",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/MCtBxvoq/",
+          "proposal_id": null,
+          "short_description": "Enzyme plugin project aims to automatically find derivatives of LLVM IR which is pretty helpful for ML related works.Enzyme code base still uses the...",
+          "slug": "make-enzyme-plugin-callable-from-the-new-pass-manager-in-llvm",
+          "status": "completed",
+          "student_name": "Shakil",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Make Enzyme plugin callable from The  New Pass Manager in LLVM"
+        },
+        {
+          "code_url": "https://github.com/boomanaiden154/gsoc2022-notes/blob/master/september/9/gsoc-final-submission.md",
+          "description": "Within this project, I aim to create a new ML model based on the already existing MLGO work in register allocation to further enhance the performance of the ML-enabled live range eviction heuristic. I plan on utilizing graph based features, particularly a program dependence graph and the live range incidence graph to improve performance over the currently engineered features. Starting off, graph data will be exposed to MlRegAllocEvictAdvisor (first deliverable), then an initial model will be trained in the same manner as the previous ML model for live range eviction (second deliverable), and finally the model will be fine tuned and optimized for use in production (third deliverable).",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/z1hZ31sv/",
+          "proposal_id": null,
+          "short_description": "Within this project, I aim to create a new ML model based on the already existing MLGO work in register allocation to further enhance the performance...",
+          "slug": "graph-based-features-for-better-ml-guided-live-range-eviction-heuristics",
+          "status": "completed",
+          "student_name": "Aiden Grossman",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Graph Based Features for Better ML Guided Live Range Eviction Heuristics"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1agRY6OSH0AvtOmH9M2EU3teiYqEoikde/edit",
+          "description": "Improving the clang diagnostics focuses on the diagnostic section of clang. This proposal is meant to make clang diagnostic more user friendly and efficient. we will be comparing with gcc and also trying to taking surveys to improve the diagnostic tab of clang. Thus will mainly focus on the betterment of Diagnostic tab of clang.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/X9ex5Ots/",
+          "proposal_id": null,
+          "short_description": "Improving the clang diagnostics focuses on the diagnostic section of clang. This proposal is meant to make clang diagnostic more user friendly and...",
+          "slug": "improving-clang-diagnostics",
+          "status": "completed",
+          "student_name": "Muhammad Usman",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Clang Diagnostics"
+        },
+        {
+          "code_url": "https://github.com/ZuseZ4/gsoc2022",
+          "description": "Enzyme performs automatic differentiation (in the calculus sense) of LLVM programs. \nThe support for an increasing number of LLVM Versions (7-main), AD modes (Reverse, Forward, Forward-Vector, Reverse-Vector, Jacobian), and libraries (BLAS, OpenMP, MPI, CUDA, ROCm, …) leads to a steadily increasing code base. In order to limit complexity and help new contributors it is desirable to express the core logic using LLVM Tablegen.\nThis should allow us to replace large code sections with simpler rules. \nDuring my project I will work on creating or transferring rules in order to handle BLAS calls, OpenMP parallel for sections, and CUDA kernels.",
+          "difficulty": "advanced",
+          "id": "proj_llvm-compiler-infras_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ul9Uz9LK/",
+          "proposal_id": null,
+          "short_description": "Enzyme performs automatic differentiation (in the calculus sense) of LLVM programs. The support for an increasing number of LLVM Versions (7-main),...",
+          "slug": "moving-instruction-rules-to-tablegen",
+          "status": "completed",
+          "student_name": "Manuel Drehwald",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Moving Instruction Rules to Tablegen"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1liYazQ0vUg-0faFSi6i9MOi8ME-b6BD-9aD_YJ2JvsM/edit",
+          "description": "Problem : Optimize Parallel Programs by employing Non-Determinacy based optimizations.\n\nPlan :\n1. Perform static code analysis to identify program points for potential code optimizations.\n\t\n2. Implement the optimizations as passes which will transform the source of the previously chosen program points. Following are the list of optimizations that are planned.\n    a. Non-deterministic Loop Invariant Code Motion\n    b. Loop interchange/reordering\n    c. Non-deterministic Vectorization\n    d. Non-deterministic Memory to Register\n\n3. Evaluate the generated code for the optimizations against the benchmarks.\n\n4. Documentation and Report \n     a. Document the details with respect to the assumptions in the optimizations.\n     b. Document the relevance of the optimization across the chosen benchmarks.\n\nDeliverables :\n\na. Analysis to decide on the program segments to perform optimization\nb. Optimization passes on the previously chosen code segments.\nc. Optimization bench marking\nd. Documentation towards theory and implementation of optimizations",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/OewpiPMm/",
+          "proposal_id": null,
+          "short_description": "Problem : Optimize Parallel Programs by employing Non-Determinacy based optimizations. Plan : 1. Perform static code analysis to identify program...",
+          "slug": "non-determinacy-based-optimizations-in-parallel-programs",
+          "status": "completed",
+          "student_name": "Abhishekvu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Non-Determinacy based optimizations in Parallel Programs"
+        },
+        {
+          "code_url": "https://gist.github.com/sunho/36d6400a00498507bc2cae0b9d5c15a3",
+          "description": "JITLink is LLVM’s new JIT linker designed to support a variety of new features, which includes full static initializer, thread local storage, and small code model, that were not possible in RuntimeDyld, the old JIT linker API. JITLink’s generic linker algorithm needs to be specialized to support the target object format (COFF, ELF, MachO), and architecture (arm, arm64, i386, x86-64). This project aims to implement the JITLink specialization for ELF/aarch64 and COFF/x86-64.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/UEJ1lgrT/",
+          "proposal_id": null,
+          "short_description": "JITLink is LLVM’s new JIT linker designed to support a variety of new features, which includes full static initializer, thread local storage, and...",
+          "slug": "write-jitlink-support-for-new-formatarchitecture",
+          "status": "completed",
+          "student_name": "Sunho Kim",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Write JITLink support for new format/architecture"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/14qBu2srgRSkq0jAbWx3BeEP4YW5WNbi9LNyal9HP0lE/edit?usp=sharing",
+          "description": "This project is based on the proposed project (Learning Loop Transformation Policies) by the mentors Johannes Doerfert, Mircea Trofin. This project would like to experiment on how the compiler may learn for improvements by observing from the back-end. We can try it on RISC-V, an open instruction set architecture.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/1GYAahvL/",
+          "proposal_id": null,
+          "short_description": "This project is based on the proposed project (Learning Loop Transformation Policies) by the mentors Johannes Doerfert, Mircea Trofin. This project...",
+          "slug": "learning-loop-transformation-policy-and-its-effect-on-risc-v",
+          "status": "completed",
+          "student_name": "eopXD",
+          "student_profile": null,
+          "tags": [],
+          "title": "Learning loop transformation policy and it's effect on RISC-V"
+        },
+        {
+          "code_url": "https://github.com/jmciver/gsoc22-RemoveUndef",
+          "description": "Current memory semantics of the LLVM-IR use undef when dereferencing an uninitialized memory location. This prevents optimizations within scalar replacement of aggregates (SROA) and memory to register (mem2reg) from being performed. The solution is to convert uninitialized memory location loads to poison. This proposal outlines implementation methodologies for bit-field loading and storing, replace phi-undef with phi-poison for conditional stores in SROA and mem2reg, and the automatic conversion of previous LLVM-bitcode for compliance with the new memory load semantics. This work will increase use of poison semantics further contributing to the eventual deprecation of undef. Once poison based memory semantics are implemented InstSimplify, SSAUpdater, and other optimizations can be refactored.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/1RRyDYVG/",
+          "proposal_id": null,
+          "short_description": "Current memory semantics of the LLVM-IR use undef when dereferencing an uninitialized memory location. This prevents optimizations within scalar...",
+          "slug": "remove-undef-move-uninitialized-memory-to-poison",
+          "status": "completed",
+          "student_name": "John McIver",
+          "student_profile": null,
+          "tags": [],
+          "title": "Remove undef: Move Uninitialized Memory to Poison"
+        },
+        {
+          "code_url": "https://isuckatcs.github.io/gsoc2022/",
+          "description": "Even though a lot of new C++ features are supported by the static analyzer automatically by the virtue of clang AST doing all the work under the hood, the C++17 \"structured binding\" syntax\n\n    auto [x, y] = ...;\n\nrequires some extra work on the Static Analyzer side. The analyzer's transfer functions need to be taught about the new AST nodes, BindingDecl and DecompositionDecl, to work correctly in all three interpretations described by the Standard.\n\nIncomplete support for structured bindings is a common source of false positives in the uninitialized variable checker on modern C++ code, such as #42387.\n\nIt is likely that the Clang CFG also needs to be updated. Such changes in the CFG may improve quality of clang warnings outside of the Static Analyzer.\n\nThe expected result is that the Static Analyzer correctly models structured binding and decomposition declarations. In particular, binding variables no longer appear uninitialized to the Static Analyzer's uninitialized variable checker.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/dsXyCnNA/",
+          "proposal_id": null,
+          "short_description": "Even though a lot of new C++ features are supported by the static analyzer automatically by the virtue of clang AST doing all the work under the...",
+          "slug": "implement-support-for-c17-structured-bindings-in-the-clang-static-analyzer",
+          "status": "completed",
+          "student_name": "Domján Dániel",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Implement support for C++17 structured bindings in the Clang Static Analyzer"
+        },
+        {
+          "code_url": "https://gist.github.com/argentite/b265db7604a5ba3c48783c42cefc6908",
+          "description": "When a separate executor process is used with LLVM JIT, the generated code needs to be transferred to the executor process which is done by the JITLinkMemoryManager. The current implementation uses ExecutorProcessControl API (an RPC scheme) to send the generated code which goes through pipes or network sockets.\n\nThe goal of the project is to transfer it through an operating system provided shared memory regions for better performance, when both the JIT process and the executor process are sharing the same underlying physical memory. It should be done by allocating large chunks of memory and distributing it to reduce memory allocation overheads and inter process communication.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/peDPYCpm/",
+          "proposal_id": null,
+          "short_description": "When a separate executor process is used with LLVM JIT, the generated code needs to be transferred to the executor process which is done by the...",
+          "slug": "shared-memory-based-jitlink-memory-manager",
+          "status": "completed",
+          "student_name": "Anubhab Ghosh",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Shared Memory Based JITLink Memory Manager"
+        },
+        {
+          "code_url": "https://reviews.llvm.org/rGd8a2d3f7d4a250aac44e7484f5035b859e4ef556",
+          "description": "This project is a practical application under the umbrella of the MLGO framework. While the previous work focuses on inlining and eviction policy of regAlloc, the project will explore a new application of MLGO on the priority policy of regAlloc, which could be a potential alternative to the manual-maintained heuristic.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/SvHk1WgO/",
+          "proposal_id": null,
+          "short_description": "This project is a practical application under the umbrella of the MLGO framework. While the previous work focuses on inlining and eviction policy of...",
+          "slug": "learning-live-ranges-priority-policy",
+          "status": "completed",
+          "student_name": "Eric Wang",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Learning Live Ranges Priority Policy"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1zsTR9f01eW1RgN5RIm8ImoVc7-fkAYOZry2_b2giKZ4/edit?usp=sharing",
+          "description": "GSoC Project \"Instrumentation of Clang/LLVM for Compile Time\" aims to solve a simple but interesting question: Why is the compilation taking so long? We will improve the existing timing infrastructure to make the timing tools more efficient. Specifically, we improve the timing trace model to effectively time nearly all compilation stages. After that we can make statistical analysis based on the trace data, such as hotspots identification and so on. Finally, we implement the timing information collecting mechanism based on the library use case. This helps LLVM based languages or tools use related functions to easily troubleshoot its performance bottlenecks.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/et60aPvR/",
+          "proposal_id": null,
+          "short_description": "GSoC Project \"Instrumentation of Clang/LLVM for Compile Time\" aims to solve a simple but interesting question: Why is the compilation taking so long?...",
+          "slug": "instrumentation-of-clangllvm-for-compile-time",
+          "status": "completed",
+          "student_name": "Junduo Dong",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Instrumentation of Clang/LLVM for Compile Time"
+        },
+        {
+          "code_url": "https://gist.github.com/mizvekov/3dd1b76b2b90cd3d7c4759c1d47cbf42",
+          "description": "For an example like:\r\ntemplate<class T> struct Foo { using type = T; };\r\nusing Bar = int;\r\nFoo<Bar>::type baz;\r\nIn clang, baz’s type will not desugar to Bar, as the member access in\r\nFoo<Bar>::type will go directly for the canonical type of the template\r\ninstantiation. This will cause any diagnostics printed from this type to miss this\r\ninformation. If there were an attribute attached to the Bar typedef, such as\r\nalignment, this would be lost on the baz declaration.\r\nIn this proposal, we want to lift this restriction by implementing the missing\r\nfunctionality in clang.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2022_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/1D6NXYH0/",
+          "proposal_id": null,
+          "short_description": "For an example like: template<class T> struct Foo { using type = T; }; using Bar = int; Foo<Bar>::type baz; In clang, baz’s type will not desugar to...",
+          "slug": "extend-clang-to-preserve-type-sugar-when-performing-member-access-on-template-specialization",
+          "status": "completed",
+          "student_name": "mizvekov",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extend clang to preserve type sugar when performing member access on template specialization"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/llvm-compiler-infrastructure/"
+    },
+    "year_2023": {
+      "num_projects": 20,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Arsenic-ATG/65fa1d38d2677dc29d33191f47af66d4",
+          "description": "This project aims to give LLVM-clang the ability to generate ExtractAPI symbol graph files as a side-effect of a regular compilation job. This can enable using the symbol graph format as a lightweight alternative to do code intelligence offline and outside of an interactive context.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/lAxUTgOM",
+          "proposal_id": "BK50uact",
+          "short_description": "This project aims to give LLVM-clang the ability to generate ExtractAPI symbol graph files as a side-effect of a regular compilation job. This can...",
+          "slug": "extractapi-while-building",
+          "status": "completed",
+          "student_name": "Ankur Saini",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "ExtractAPI while building"
+        },
+        {
+          "code_url": "https://gist.github.com/argentite/c0852d3e178c4770a429f14291e83475",
+          "description": "Clang includes libInterpreter, a framework for incrementally JIT compiling and executing C++ code. The goal of the project is to port this to WebAssembly and run inside a Javascript engine in a browser. This would involve modification to libInterpreter to run in WASM and produce WASM JIT code. These separate WASM modules need to be linked together and executed in the JS engine. If possible, the final goal is to integrate this with JupyterLite, a version of Jupyter that runs WASM kernels entirely on the client side.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/X0cFgJkY",
+          "proposal_id": "rwQywNm4",
+          "short_description": "Clang includes libInterpreter, a framework for incrementally JIT compiling and executing C++ code. The goal of the project is to port this to...",
+          "slug": "webassembly-support-for-clang-repl",
+          "status": "completed",
+          "student_name": "Anubhab Ghosh",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web"
+          ],
+          "title": "WebAssembly Support for clang-repl"
+        },
+        {
+          "code_url": "https://github.com/cpsughrue/llvm-contributions",
+          "description": "This project aims to implement a daemon that serves as a build system manager for modules, providing support for explicitly built modules irrespective of the build system. By simply incorporating a single command line flag, each Clang invocation registers its translation unit with the daemon, which then scans the unit's dependencies. As translation units are registered and analyzed, the daemon constructs a dependency graph for the entire project. Concurrently, it utilizes the emerging graph to schedule and build each module's AST. This approach allows for a single, comprehensive entity to effectively coordinate and manage the build of modules throughout the entire build process.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/XvbLGMbT",
+          "proposal_id": "rZxv0ACK",
+          "short_description": "This project aims to implement a daemon that serves as a build system manager for modules, providing support for explicitly built modules...",
+          "slug": "modules-build-daemon-build-system-agnostic-support-for-explicitly-built-modules",
+          "status": "completed",
+          "student_name": "Connor Sughrue",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Modules Build Daemon: Build System Agnostic Support for Explicitly Built Modules"
+        },
+        {
+          "code_url": "https://devajith.com/blog/gsoc-2023",
+          "description": "This project aims to create an interactive query language for MLIR that will allow developers to dynamically query the MLIR IR. The tool will provide a REPL or command-line interface for users to query various properties of MLIR code. The goal is to create a tool similar to clang-query, with autocomplete and other features. The project's objective is to make it easier understand the MLIR IR representation, implement a REPL for executing queries over MLIR IR, and deliver a standalone tool for interactively exploring IR with common matchers. A stretch goal is to enable extracting parts of the IR matched by queries into self-contained IR snippets.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/bdePp9VD",
+          "proposal_id": "IE91MopX",
+          "short_description": "This project aims to create an interactive query language for MLIR that will allow developers to dynamically query the MLIR IR. The tool will provide...",
+          "slug": "interactive-mlir-query-tool-to-make-exploring-the-ir-easier",
+          "status": "completed",
+          "student_name": "Devajith Valaparambil Sreeramaswamy",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Interactive MLIR query tool to make exploring the IR easier"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1gsOYrFOZlJ-RCHsb-MZzZyIYrGm9Esh4unjTioo58L4/edit?usp=sharing",
+          "description": "This project aims to reduce the amount of time that LLVM spend on compiling code by focusing on hotspots in the code identified by profiling workloads both with and without optimization passes enabled.\n\nThe main possibilities for improvements are identified in SelectionDAGISel (specifically DAGCombine), InstCombinePass and InlinerPass. Aside from these, the analysis passes and some machine passes are also identified as good opportunities for optimization.\n\nAt the end of this project, there will be a noticeable improvement in compile times for the test cases considered and an overall improvement (if small) in general compile times for all inputs. Fatal cases from the LLVM GitHub issues page where compile time explosions occur will also be considered to fix edge cases where super-linearity of the optimizations come into play or where an extreme amount of input causes outliers in the compile time share of certain passes.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/JdqGUwNq",
+          "proposal_id": "tt7EjOpV",
+          "short_description": "This project aims to reduce the amount of time that LLVM spend on compiling code by focusing on hotspots in the code identified by profiling...",
+          "slug": "improving-compile-times",
+          "status": "completed",
+          "student_name": "Dhruv Chawla",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Compile Times"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1ta5Fc0uOIUV7R7gMTTXALgql6rV8CrDon9u2IIHCT4E/edit?usp=sharing",
+          "description": "Clang’s ExtractAPI extracts information from C and Objective-C codebases to describe public API symbols and the relationships between them. It is currently able to serialize these relationships into the Symbol Graph file format. The goal of this project is to extend ExtractAPI’s functionality to mapping C++ symbols. This will allow for the extraction of relationships in C++ code into an intermediate format (in this case, Symbol Graph), allowing for the analysis of APIs without users needing to conduct low-level operations. Users will be able to feed C++ header files to clang via the command line where a Symbol Graph JSON file will be produced containing the relationships of C++ symbols and other contextual details.",
+          "difficulty": "medium",
+          "id": "proj_llvm-compiler-infras_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/uBg3dUrw",
+          "proposal_id": "kZNkD8Cd",
+          "short_description": "Clang’s ExtractAPI extracts information from C and Objective-C codebases to describe public API symbols and the relationships between them. It is...",
+          "slug": "adding-c-support-to-clangs-extractapi",
+          "status": "completed",
+          "student_name": "Erick Velez",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Adding C++ Support to Clang's ExtractAPI"
+        },
+        {
+          "code_url": "https://github.com/gilsaia/GSoC-2023/tree/main",
+          "description": "MLIR’s Presburger Library, FPL, provides mathematical abstractions for polyhedral compilation and analysis. When many set operations are performed in sequence, the constraints can become very large, and the goal of the project is to find a balance between the additional time costs and the appropriate constraint system size.\nTo achieve this, this project will implement a benchmark tool to measure the running time and constraint system size, and a series of heuristic simplifications to reduce the constraint system size. Ultimately, the benchmark tool will be used to choose the appropriate simplifications.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/AtKA6GoV",
+          "proposal_id": "GirH6iXz",
+          "short_description": "MLIR’s Presburger Library, FPL, provides mathematical abstractions for polyhedral compilation and analysis. When many set operations are performed in...",
+          "slug": "optimizing-mlirs-presburger-library",
+          "status": "completed",
+          "student_name": "gilsaia",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Optimizing MLIR’s Presburger library"
+        },
+        {
+          "code_url": "https://github.com/jmciver/gsoc23-RemoveUndef",
+          "description": "This proposal outlines a continuation of the Google Summer of Code (GSoC) 2022 topic to move uninitialized memory to poison semantics. Starting with GSoC 2022 and continuing over the last year several potential solutions have been developed and shared with the community via patches and RFCs. This has helped to build further understanding of both front-end and internal LLVM limitations. Based on the latest RFC two possible semantic solutions have been identified that allow loads to migrate to poison by default and provide backward compatibility with the current load undef semantics. This is accomplished by either freezing all bits regardless of initialization state or byte-level freezing based on initialization state. By implementing both solutions real-world performance metrics and maintenance impact can be evaluated by the LLVM community. This work will increase use of poison semantics further contributing to the eventual deprecation of undef.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/sc4OauXM",
+          "proposal_id": "XSCbd2sx",
+          "short_description": "This proposal outlines a continuation of the Google Summer of Code (GSoC) 2022 topic to move uninitialized memory to poison semantics. Starting with...",
+          "slug": "adapting-ir-load-semantics-to-freeze-all-or-freeze-only-uninitialized-data",
+          "status": "completed",
+          "student_name": "John McIver",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Adapting IR Load Semantics to Freeze All or Freeze Only Uninitialized Data"
+        },
+        {
+          "code_url": "https://khei4.github.io/gsoc2023/",
+          "description": "Rust is a popular system programming language that relies on LLVM for its compilation. \nRust has a variety of features and paradigms and states “Zero cost abstractions” as a core value, and a variety of optimization failure issues have been discovered and reported by the language community. By addressing these issues, we can not only improve the performance of Rust binaries but also help LLVM develop more robust optimization pipelines.\nThe goal of this project is to analyze and fix the optimization issues, especially on InstCombine/InstSimplify, SimplifyCFG, MemCpyOptimizer, and Vectorizer-related pass.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/a16FfPnb",
+          "proposal_id": "rEyPRDiG",
+          "short_description": "Rust is a popular system programming language that relies on LLVM for its compilation. Rust has a variety of features and paradigms and states “Zero...",
+          "slug": "addressing-rust-optimization-failures-in-llvm",
+          "status": "completed",
+          "student_name": "Kohei Asano",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Addressing Rust optimization failures in LLVM"
+        },
+        {
+          "code_url": "https://github.com/Krishna-13-cyber/GSoC23-LLVM/blob/main/README.md",
+          "description": "This project aims to develop tutorials demostrating the current capabilities of clang-repl. It also aims to investigate and research the requirements for adding clang-repl as a backend to xeus-cling. Add support for Xeus with the newly added clang-repl which\nis inspired from cling. The need for clang-repl is that it presents opportunities for\nrigorous open source development. However even though it is inspired by cling,\nnot all of clang-repl and cling are same i.e. they are similar but work needs to be\ndone to add xeus protocol support for clang-repl.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/qxuEqL8W",
+          "proposal_id": "inGsZDL0",
+          "short_description": "This project aims to develop tutorials demostrating the current capabilities of clang-repl. It also aims to investigate and research the requirements...",
+          "slug": "tutorial-development-with-clang-repl",
+          "status": "completed",
+          "student_name": "Krishna Narayanan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Tutorial development with clang-repl"
+        },
+        {
+          "code_url": "https://github.com/ManuelJBrito/GSoC-2023-NewGVN",
+          "description": "NewGVN was introduced to LLVM to cope with the limitations of the old\nGVN. It hasn't, however, seen widespread adoption, due to its bugs and\nmissing features in relation to the old GVN. One source of issues with\nNewGVN is its handling of undefined behavior (UB). We are either too\npermissive, which can lead to correction issues, or we try to disable\nit, which makes us lose potential optimizations, while also not making\nit completely correct.\n\nMajor steps:\n\n1. Compile test cases showing NewGVN's failure to handle UB\n\n2. Write pseudocode for NewGVN\n\n3. Fix pseudocode\n\n4. Implement changes\n\nExpected result: An improved version of NewGVN with better handling of\nUB and more awareness of its overall limitations.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/oQUfcx89",
+          "proposal_id": "Izhr5dHN",
+          "short_description": "NewGVN was introduced to LLVM to cope with the limitations of the old GVN. It hasn't, however, seen widespread adoption, due to its bugs and missing...",
+          "slug": "fix-handling-of-undefined-behavior-in-newgvn",
+          "status": "completed",
+          "student_name": "Manuel Brito",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Fix Handling of Undefined Behavior in NewGVN"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1t1K6vzCYDnFBTH8d1NIJInhxRe5mc1FxkMaX_2WVcmc/edit?usp=sharing",
+          "description": "This project aims to improve the accuracy of compiler-generated remarks and analysis reports by including corresponding source-level expressions in addition to line and column numbers. The project will leverage the intrinsic functions used by LLVM to map LLVM program objects to source-level expressions, and propose solutions to generate source expressions when the existing information is insufficient. The focus will be on optimizing memory accesses in a program by reporting memory access dependences that inhibit vectorization. \nThe expected result is an interface that takes an LLVM value and returns the equivalent source-level expression, with a specific emphasis on mapping addresses used in load/store instructions to source-level memory references.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/JToY28Mf",
+          "proposal_id": "BR603za8",
+          "short_description": "This project aims to improve the accuracy of compiler-generated remarks and analysis reports by including corresponding source-level expressions in...",
+          "slug": "map-llvm-values-to-corresponding-source-level-expressions",
+          "status": "completed",
+          "student_name": "phyBrackets",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Map LLVM values to corresponding source-level expressions"
+        },
+        {
+          "code_url": "https://github.com/Puneeth-A-R/GSoC2023/blob/main/README.md",
+          "description": "Standard optimization pipelines are used by developers to compile programs in LLVM clang like (O1, O2, O3, etc…). These are based on heuristics that follow a one size fits all approach. These are not specifically tailored to any one type of program such as call heavy, pointer heavy, etc… which leads to suboptimal binaries being generated. \r\nWe want to improve the optimization phases of the LLVM Clang compiler through the use of Machine Learning to select the minimum optimization pipeline, from a pre-set of options, that produces the exact same optimized code. Integrating the machine learning model into the existing LLVM compiler infrastructure is one of the key areas of this project.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/T8rB84Sr",
+          "proposal_id": "IWijfpHM",
+          "short_description": "Standard optimization pipelines are used by developers to compile programs in LLVM clang like (O1, O2, O3, etc…). These are based on heuristics that...",
+          "slug": "machine-learning-guided-ordering-of-compiler-optimization-passes",
+          "status": "completed",
+          "student_name": "Puneeth A R",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Machine Learning Guided Ordering of Compiler Optimization Passes"
+        },
+        {
+          "code_url": "https://gist.github.com/xgupta/a601723644d28406bc019842ba316aa7",
+          "description": "Most of the day to day tests in LLVM are regression tests executed by Lit, structured as source code or IR to be passed to some binary, rather than test code directly calling the code to be tested. This has many advantages but can make it difficult to predict which code path is executed when the compiler is invoked with a certain test input, especially for edge cases where error handling is involved. The goal of this project is to help developers create good test coverage for their patch and enable reviewers to verify that they have done so. To accomplish this we would like to introduce a tool that can be fed a patch as input, add coverage instrumentation for the affected source files, runs Lit tests, and records which test cases cause each counter to be executed. For each counter we can then report the number of test cases executing the counter, but perhaps more importantly we can also report the number of test cases executing the counter that are also changed in some way by the patch, since a modified line that results in the same test results isn’t properly tested, unless it’s intended to be a non-functional change.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/TMnF4MqC",
+          "proposal_id": "zhSKJm1v",
+          "short_description": "Most of the day to day tests in LLVM are regression tests executed by Lit, structured as source code or IR to be passed to some binary, rather than...",
+          "slug": "patch-based-test-coverage-for-quick-test-feedback",
+          "status": "completed",
+          "student_name": "ShivamGupta123",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Patch based test coverage for quick test feedback"
+        },
+        {
+          "code_url": "https://gist.github.com/sunho/bbbf7c415ea4e16d37bec5cea8adce5a",
+          "description": "In Just-In-Time compilers we often choose a low optimization level to minimize compile time and improve launch times and latencies, however some functions (which we call hot functions) are used very frequently and for these functions it is worth optimizing more heavily. In general hot functions can only be identified at runtime (different inputs will cause different functions to become hot), so the aim of the reoptimization project is to build infrastructure to (1) detect hot functions at runtime and (2) compile them a second time at a higher optimization level, hence the name \"re-optimization\".\n\nThere are many possible approaches to both parts of this problem. E.g. hot functions could be identified by sampling, or using existing profiling infrastructure, or by implementing custom instrumentation. Reoptimization could be applied to whole functions, or outlining could be used to enable optimization of portions of functions. Re-entry into the JIT infrastructure from JIT’d code might be implemented on top of existing lazy compilation, or via a custom path.\n\nWhatever design is adopted, the goal is that the infrastructure should be generic so that it can be used by other LLVM API clients, and should support out-of-process JIT-compilation (so some of the solution will be implemented in the ORC runtime).",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/4vqXC8Ez",
+          "proposal_id": "26qIMFfR",
+          "short_description": "In Just-In-Time compilers we often choose a low optimization level to minimize compile time and improve launch times and latencies, however some...",
+          "slug": "re-optimization-using-jitlink",
+          "status": "completed",
+          "student_name": "Sunho Kim",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Re-optimization using JITLink"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1k4Jxh6ATzpFSaDgfkT7ALBCcuj6lRE-PKblt9UGuYu8/edit?usp=sharing",
+          "description": "Clang diagnostic is an interface for programmers that assists them in writing bug-free, efficient source codes. The aim of this proposal is to improve overall clang diagnostics and its usability by resolving existing issues labeled clang:diagnostics and possibly uncovering and resolving new issues we encounter throughout the project.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_016",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/wxRFR261",
+          "proposal_id": "6YNbmyLV",
+          "short_description": "Clang diagnostic is an interface for programmers that assists them in writing bug-free, efficient source codes. The aim of this proposal is to...",
+          "slug": "improvements-in-clang-diagnostics",
+          "status": "completed",
+          "student_name": "Takuya Shimizu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improvements in Clang Diagnostics"
+        },
+        {
+          "code_url": "https://github.com/llvm/clangir/pulls?q=is%3Apr+author%3Asitio-couto",
+          "description": "ClangIR is the newest attempt to tackle the lack of a higher-level intermediate representation for C++. Said representation would greatly benefit the community by enabling a myriad of passes that are either impossible or too complex to execute in LLVM IR, benefiting thousands of developers and legacy code. Ensuring ClangIR's success, however, requires coverage, correctness, performance, and an acceptable build time overhead. This proposal aims to increment the ClangIR compiler to compile part of the LLVM’s SingleSource test suite, further advancing its development. This includes but is not limited to, implementing missing AST visitors, operations/instructions, types, and testing. After sufficient implementations, it should be possible to use the SingleSource programs to analyze the compilation through ClangIR, evaluating its trade-offs against the traditional lowering process.",
+          "difficulty": "advanced",
+          "id": "proj_llvm-compiler-infras_2023_017",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Yofn8VfG",
+          "proposal_id": "595mS1iL",
+          "short_description": "ClangIR is the newest attempt to tackle the lack of a higher-level intermediate representation for C++. Said representation would greatly benefit the...",
+          "slug": "build-run-singlesource-benchmarks-with-clangir",
+          "status": "completed",
+          "student_name": "Vinicius Espindola",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Build & Run SingleSource Benchmarks with ClangIR"
+        },
+        {
+          "code_url": "https://drive.google.com/drive/folders/1b_mtJy2cNkZypNavUYW-HPvLymXrkKMA",
+          "description": "This project aims to improve the reward signal used in the RL-based training of MLGO models. I plan to integrate an existing GNN-based performance estimation model into the training process to generate said reward signal, with some key improvements to facilitate better modelling of the execution environment and runtime related behaviors, such as branch mispredictions and cache misses.\n\nAn outline of those improvements would be to create a corpus of blocks with a variety of enhancements over the original (first deliverable), modifying the model to be compatible with the new dataset (second deliverable), and experiment with feeding the model additional context beyond what is available within individual basic blocks to allow the model to factor in aforementioned runtime behaviors to gain valuable insights on where to go forward.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_018",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/wiTzRdnV",
+          "proposal_id": "NP85l4vI",
+          "short_description": "This project aims to improve the reward signal used in the RL-based training of MLGO models. I plan to integrate an existing GNN-based performance...",
+          "slug": "better-performance-models-for-mlgo-training",
+          "status": "completed",
+          "student_name": "Viraj Shah",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Better Performance Models for MLGO Training"
+        },
+        {
+          "code_url": "https://docs.google.com/presentation/d/1G9HG_L3ATLsBRLyYuVpMWO5JqJEwm6FWwyl2S3HRGBQ",
+          "description": "Clang supports source-based coverage that shows which lines of code are covered by the executed tests. It uses llvm-cov to generate coverage reports. llvm-cov currently generates a single top-level index HTML/TEXT file. This causes rendering scalability issues in large projects. This project adds a new option `-show-directory-coverage` to llvm-cov which enables the generation of a hierarchical report mirroring the directory structure and solve scalability issues.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_019",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ghJRTsUJ",
+          "proposal_id": "lwzP6f2w",
+          "short_description": "Clang supports source-based coverage that shows which lines of code are covered by the executed tests. It uses llvm-cov to generate coverage reports....",
+          "slug": "enhancing-llvm-cov-to-generate-hierarchical-coverage-reports",
+          "status": "completed",
+          "student_name": "Yuhao Gu",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Enhancing llvm-cov to Generate Hierarchical Coverage Reports"
+        },
+        {
+          "code_url": "https://www.syntaxforge.net/clang-repl-cc/",
+          "description": "Clang-REPL enables developers to program in C++ in an exploratory manner via a read-eval-print-loop. Developers, however, have to type each letter or symbol in the REPL, which likely causes typos. The auto-completion we are proposing aims to assist developers in avoiding that laborious typing, and it is also type-directed in that completion candidates are well-typed with respect to cursor positions. The project incorporates the completion infrastructure of Cling into Clang-REPL. Next, we build components that handle type contexts and subtyping. Lastly, we combine the completion and type-related components to deliver the type-directed auto-completion in Clang-REPL.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2023_020",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Gxg82Pvd",
+          "proposal_id": "fvAuNKTx",
+          "short_description": "Clang-REPL enables developers to program in C++ in an exploratory manner via a read-eval-print-loop. Developers, however, have to type each letter or...",
+          "slug": "autocompletion-in-clang-repl",
+          "status": "completed",
+          "student_name": "Yuquan Fu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Autocompletion in Clang-REPL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/llvm-compiler-infrastructure"
+    },
+    "year_2024": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1XXyhV6b5iFczX9hUu776RK4vKOqDOTFwqpZCna5u-q8/edit?usp=sharing",
+          "description": "The LLVM libc project was designed as an alternative to glibc that aims to be modular, configurable, and sanitizer-friendly. Currently, LLVM libc is being ported to Nvidia and AMD GPUs to give libc functionality to code running on GPUs. As of March 2024, programs can use GPU libc in offloading languages (CUDA, OpenMP) or through direct compilation and linking with the libc library. This project aims to provide accurate benchmarking features for libc for GPUs (Both Nvidia and AMD) to find a baseline timing for libc functions running on the GPU.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/HkRoz49I/",
+          "proposal_id": null,
+          "short_description": "The LLVM libc project was designed as an alternative to glibc that aims to be modular, configurable, and sanitizer-friendly. Currently, LLVM libc is...",
+          "slug": "gpu-libc-benchmarking",
+          "status": "completed",
+          "student_name": "James Hu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "GPU Libc Benchmarking"
+        },
+        {
+          "code_url": "https://github.com/llvm/llvm-project/issues/109483",
+          "description": "This project aims to allow using dynamically loaded Clang plugins on windows by adding support for building LLVM and Clang as shared libraries on Windows with all the public c++ API exported and dynamically linking to them. Part of the process will be automated with a tool built using the Clang tooling API to automatically add export macros on the appropriate class and functions declarations in llvm public headers. \nDeliverables: End users can use custom clang plugins with official windows build of Clang. The llvm windows binary install size can be greatly decreased by dynamically linking llvm tools to the LLVM and Clang shared libraries.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/scEcKEqX/",
+          "proposal_id": null,
+          "short_description": "This project aims to allow using dynamically loaded Clang plugins on windows by adding support for building LLVM and Clang as shared libraries on...",
+          "slug": "support-clang-plugins-on-windows",
+          "status": "completed",
+          "student_name": "thomas fransham",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Support clang plugins on Windows"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/14ESc1PasY0PJ4yqXNQIUUmloGIs4kptYI_Sb8AIrQ28/edit?tab=t.0",
+          "description": "Clang-Doc is a documentation generator developed on top of libtooling developed as an alternative to Doxygen. Development started in 2018, and continued through 2019, however it has since stalled. Currently, the tool can generate HTML and markdown but the generated output has usability issues. Issues include, not supporting all C++ constructs, lack of ability to render in markdown and many more. This project aims to address the pain points regarding Clang-Doc, which will improve the output of Clang-Doc significantly.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/QxXUJDJH/",
+          "proposal_id": null,
+          "short_description": "Clang-Doc is a documentation generator developed on top of libtooling developed as an alternative to Doxygen. Development started in 2018, and...",
+          "slug": "improve-clang-doc",
+          "status": "completed",
+          "student_name": "Peter Chou",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Improve Clang-Doc"
+        },
+        {
+          "code_url": "https://github.com/seven-mile/clangir-ocl-ae/blob/master/GSoC-Project-Card.md",
+          "description": "Optimizing code for heterogeneous hardware like GPUs requires specialized approaches. While LLVM/Clang supports various GPU programming interfaces, LLVM IR hinders effective analysis for GPU code with its SIMT model. Clang's mid-level IR (ClangIR) based on MLIR is better suited to capture this information from source code.\n\nThis project proposes adding basic OpenCL C support to ClangIR.\n\nChallenges and Solutions:\n\n1. Code Generation Paradigm Shift: CodeGen and Lowering (ClangIR's compilation passes) employ distinct coding paradigms due to their underlying infrastructure (AST reflection vs. MLIR Pass Rewriter). Migrating existing CodeGen code to the Lowering framework could be complex.\nWe will actively debate the trade-off between optimization potential and implementation complexity to propose and execute well-designed, achievable plans.\n\n2. Scattered OpenCL Support Code: Current OpenCL support code is dispersed throughout the codebase, hindering development quality control.\nStrategies will be developed to address this issue, such as extracting key information from flags like getLangOpts().OpenCL and getOpenCLRuntime(), or implementing systematic code searches to consolidate functionalities and address issues in a structured manner.\n\nThe final deliverables of this project include\n\na) A set of testcases that combines unit tests with integration tests\nb) An AST Consumer for OpenCL C (extension of CIRGen)\nc) A set of MLIR Passes for properly generating SPIR Kernels\nd) A functional and performance test report (optional)\ne) Detailed development documentation for all the above parts",
+          "difficulty": "advanced",
+          "id": "proj_llvm-compiler-infras_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/aC7xQWmT/",
+          "proposal_id": null,
+          "short_description": "Optimizing code for heterogeneous hardware like GPUs requires specialized approaches. While LLVM/Clang supports various GPU programming interfaces,...",
+          "slug": "opencl-c-support-for-clangir",
+          "status": "completed",
+          "student_name": "7mile",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "OpenCL C Support for ClangIR"
+        },
+        {
+          "code_url": "https://gist.github.com/SahilPatidar/ab3e2c54a05a56351cb32bfd1576a773",
+          "description": "Clang, part of LLVM, supports multiple languages and functions as a library, fostering a compiler-assisted ecosystem. Its accessible codebase and LLVM's JIT advancements enable innovative C++ processing methods, though challenges like incremental compilation and compile/link-time optimizations persist.\n\nIncremental compilation processes code in segments, building translation units and enabling efficient interpreters. Clang-Repl, using Orcv2 JIT within the same process, exemplifies this concept but faces limitations on resource-constrained devices and risks process-wide crashes on user code failure.\n\nThis project aims to transition Clang-Repl from an in-process to an out-of-process execution model to address:\n\n1. **Resource Constraints**: The current model requires substantial resources, limiting use on devices like Arduino Due.\n2. **Crash Resilience**: In-process crashes can bring down the entire Clang-Repl process, affecting stability and user experience.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/3ZHG7joV/",
+          "proposal_id": null,
+          "short_description": "Clang, part of LLVM, supports multiple languages and functions as a library, fostering a compiler-assisted ecosystem. Its accessible codebase and...",
+          "slug": "out-of-process-execution-for-clang-repl",
+          "status": "completed",
+          "student_name": "Sahil Patidar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Out of process execution for Clang-Repl"
+        },
+        {
+          "code_url": "https://github.com/ManuelJBrito/GSoC-Report2024",
+          "description": "Value numbering is a key compiler optimization. Currently, LLVM’s optimizer offers two implementations, GVN and NewGVN, neither of which is entirely satisfactory. While GVN suffers from performance issues and lacks extensibility, NewGVN, although potentially superior, remains unstable for production use. This project aims to address these shortcomings by focusing on improving NewGVN. By enhancing its performance and optimization power, our goal is to surpass GVN and establish NewGVN as the default value numbering implementation in LLVM’s optimization pipeline.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/peuQNXLB/",
+          "proposal_id": null,
+          "short_description": "Value numbering is a key compiler optimization. Currently, LLVM’s optimizer offers two implementations, GVN and NewGVN, neither of which is entirely...",
+          "slug": "reviving-newgvn",
+          "status": "completed",
+          "student_name": "Manuel Brito",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Reviving NewGVN"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1Y48EKXeTnjIV5Go8iVN5VkAeEdpjAMfEsdQ1bQ01zEE/edit?usp=sharing",
+          "description": "This project aims to provide an analysis of the causes of unexpected compilation times. By conducting a statistical analysis on IR files available on the LLVM ComPile dataset, outlying files that yield unexpected compilation times can be detected. Python scripts will assist in the extraction and subsequent analysis of the IR files at multiple optimization levels. Identification of those outlying files will lead to an analysis of features in or related to the IR using available tools for analyzing LLVM code. Available flags for the compiler of a given language, say Clang, can be used to identify statistics, such as pass times, related to the compilation pipeline. Pinpointing what features are specific to code compilation, such as certain passes, and how IR features relate to the compilation pipeline will inform compiler implementers and LLVM developers as to what specifically causes an unexpected compilation time. Implementers can then modify the compilers accordingly, and developers can write code in conformance with specific programming structures, in order to minimize compilation times.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hquDyVBK/",
+          "proposal_id": null,
+          "short_description": "This project aims to provide an analysis of the causes of unexpected compilation times. By conducting a statistical analysis on IR files available on...",
+          "slug": "statistical-analysis-of-llvm-ir-compilation",
+          "status": "completed",
+          "student_name": "Andrew K",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Statistical Analysis of LLVM-IR Compilation"
+        },
+        {
+          "code_url": "https://gist.github.com/Chaitanya-Shahare/729343d0ff27e19c0486292ed6c3fcf8/",
+          "description": "Problem Statement: \nRedesigning and migrating the llvm.org website to enhance\nuser experience, accessibility, and community engagement.\n\nSolution Approach: \nI will begin by creating a design mockup, refining it based\non feedback from the community. Once finalized, I'll implement this design\nusing Hugo, leveraging modern web technologies to create a reusable theme\nadaptable for other LLVM sub-projects. Central to this effort is the use of\nYAML data files, separating content management from visualization. This\nempowers the community to update and add content seamlessly, without the need\nfor HTML coding. I'll ensure a smooth transition by migrating existing content\nand adding new material. Automated deployment and hosting setups will be\nestablished to maintain the website's currency. Additionally, I'll meticulously\ndocument design decisions, implementation strategies, and maintenance practices\nfor future reference.\n\n\nDeliverables: \n1. Content Audit: Analyze existing content and structure to identify areas for improvement.\n2. Design Mockups: Create modern and user-friendly design mockups for the new\n\t website.\n3. Implementing Chosen Design: Develop the new website using Hugo, a static site\n\t generator, and modern web technologies.\n4. Utilizing YAML Data Files: Utilize YAML data files to manage content and\n\t separate data and visualization.\n5. Migrating Content: Migrate existing content to the new website and ensure\n\t no data loss, also updating and adding new content.\n6. Deployment & hosting: Deploy the new website on a suitable hosting platform\n\t and ensure it is accessible to the community.\n7. Documentation: Document the design decisions, implementation details, and\n\t best practices for maintaining the website.\n\t \nImpact: \nEnhanced user experience, improved site visibility, and community\nempowerment through a modern and accessible llvm.org website.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/IgY3QoiE/",
+          "proposal_id": null,
+          "short_description": "Problem Statement: Redesigning and migrating the llvm.org website to enhance user experience, accessibility, and community engagement. Solution...",
+          "slug": "llvmorg-website-redesign",
+          "status": "completed",
+          "student_name": "Chaitanya Shahare",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "LLVM.org Website Redesign"
+        },
+        {
+          "code_url": "https://gist.github.com/overmighty/d55382ab88d24180e606c907e420c5d8",
+          "description": "This proposal is based on the open LLVM project with the same title, from Tue Ly and Joseph Huber. See https://discourse.llvm.org/t/libc-gsoc-2024-half-precision-in-llvm-libc/77027.\n\nThe IEEE 754 binary16 format (also known as “half precision”) has most recently gained popularity in machine learning, which often does not require higher precision, and can benefit from increased performance when using smaller data types. It has been standardized as the _Float16 type in the drafts of the C23 standard. This project aims to implement support for this new floating-point data type and the associated variants of the C library’s math functions, in LLVM’s libc.\n\nDeliverables:\n\n1. Add support for usage of the new type in generated headers through the float16 alias on supported compilers, compiler versions, and architectures.\n2. Add generic implementations of the C23 half precision basic math operations for supported architectures.\n3. Add possible specialized, higher-performance implementations of the C23 half precision basic math operations for individual supported architectures using hardware instructions and compiler builtins.\n4. Add generic implementations of C23 half precision higher math functions for supported architectures. (Not all higher math functions can be implemented in the amount of time we have.)",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/1vPVUj93/",
+          "proposal_id": null,
+          "short_description": "This proposal is based on the open LLVM project with the same title, from Tue Ly and Joseph Huber. See...",
+          "slug": "half-precision-in-llvm-libc",
+          "status": "completed",
+          "student_name": "OverMighty",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Half precision in LLVM libc"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1vihSKPwm016J0_0MVCZ0cZS1B0ij8k44DA7YQlg3kCA/edit?usp=sharing",
+          "description": "Three-way comparisons are present in many high-level programming languages, such as C++ with its spaceship (<=>) comparison operator or Rust via the Ord/PartialOrd traits. Currently, there is no way to express such a comparison using a single operation in LLVM, which means that instead frontends can emit many different sequences of instructions instead. LLVM does not necessarily produce the most optimal machine code for each of such sequences. The goal of this project is to add an instrinsic to the LLVM IR language that would perform this comparison for integers, which can then be used by the frontends and which can have all the optimizations tailored to it, allowing more optimal machine code to be produced.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/tqzvhY0X/",
+          "proposal_id": null,
+          "short_description": "Three-way comparisons are present in many high-level programming languages, such as C++ with its spaceship (<=>) comparison operator or Rust via the...",
+          "slug": "addition-of-3-way-comparison-intrinsic-to-llvm",
+          "status": "completed",
+          "student_name": "Volodymyr Vasylkun",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "frontend"
+          ],
+          "title": "Addition of 3-way comparison intrinsic to LLVM"
+        },
+        {
+          "code_url": "https://github.com/llvm/clangir/pulls?q=is%3Apr+is%3Aclosed+author%3Asitio-couto+closed%3A%3E2024-05-01",
+          "description": "ClangIR is the newest attempt to tackle the lack of a higher-level intermediate representation for C++. Said representation would greatly benefit the community by enabling a myriad of passes that are either impossible or too complex to execute in LLVM IR, benefiting thousands of developers and legacy code. Ensuring ClangIR's success, however, requires coverage, correctness, performance, and an acceptable build time overhead. This proposal aims to continue incrementing the ClangIR compiler to compile part of the LLVM’s SingleSource test suite, a project that started last year. Like last year, this includes continuing to implement missing codegen bits, CIR operations & types, as well as testing. One notable difference is that this time around, there will be a greater focus on lowering CIR to be ABI-compatible with X86. At the end of this project, we should be able to compile even more SingleSource tests.",
+          "difficulty": "advanced",
+          "id": "proj_llvm-compiler-infras_2024_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/bPswvABY/",
+          "proposal_id": null,
+          "short_description": "ClangIR is the newest attempt to tackle the lack of a higher-level intermediate representation for C++. Said representation would greatly benefit the...",
+          "slug": "build-run-singlesource-benchmarks-with-clangir-part-2",
+          "status": "completed",
+          "student_name": "Vinicius Espindola",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Build & Run SingleSource Benchmarks with ClangIR - Part 2"
+        },
+        {
+          "code_url": "https://sh0g0-1758.github.io/GSOC-X-LLVM/",
+          "description": "LLVM has lots of thresholds and flags to avoid “costly cases”. However, it is unclear if these thresholds are useful, their value is reasonable, and what impact they really have. Since there are a lot, one cannot do a simple exhaustive search. An example of work in this direction includes the introduction of a C++ class that can replace hardcoded values which offers control over the threshold, e.g., one can increase the recursion limit via a command line flag from the hardcoded “6” to a different number. In this project I will explore the thresholds when they are hit, what it means if they are hit, how we should select their values, and if we need different “profiles”.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2024_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/MnheN07A/",
+          "proposal_id": null,
+          "short_description": "LLVM has lots of thresholds and flags to avoid “costly cases”. However, it is unclear if these thresholds are useful, their value is reasonable, and...",
+          "slug": "the-1001-thresholds-in-llvm",
+          "status": "completed",
+          "student_name": "Sh0g0",
+          "student_profile": null,
+          "tags": [],
+          "title": "The 1001 thresholds in LLVM"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/llvm-compiler-infrastructure/"
+    },
+    "year_2025": {
+      "num_projects": 15,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to enhance LLDB's disassembler by annotating machine instructions with source-level variable information, such as variable locations and lifetimes, based on debug data like DWARF.\n\nCurrently, LLDB’s disassembler outputs only low-level instructions, requiring users to manually infer where source variables are located. By enriching disassembly output with variable annotations (e.g., which register or constant a variable is stored in), this project will make debugging optimized and low-level code significantly easier.\n\nThe solution involves extending LLDB’s disassembly printing pipeline to query live variables at each instruction address, limited to variables that reside in CPU registers or are represented as constants, ensuring efficiency and clarity.\n\nDeliverables include:\nAnnotated disassembly output in the LLDB command-line interface.\nFull test coverage against optimized and unoptimized binaries.\nDocumentation and usage examples for developers and users.\n\nThis work will be designed to be debug information format-agnostic wherever possible, making it extensible across formats like DWARF and PDB.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/dCPV3zhW",
+          "proposal_id": "JgwrP6nV",
+          "short_description": "This project aims to enhance LLDB's disassembler by annotating machine instructions with source-level variable information, such as variable...",
+          "slug": "rich-disassembler-for-lldb",
+          "status": "in-progress",
+          "student_name": "Abdullah_Amin",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Rich Disassembler for LLDB"
+        },
+        {
+          "code_url": null,
+          "description": "ClangIR is a new, MLIR-based intermediate representation of C and C++ code. It has been developed in an LLVM incubator project, but work is now underway to migrate the code from the incubator to the main LLVM repository. So I can start upstreaming StructType, ComplexType, Go to statement and libc functions support",
+          "difficulty": "advanced",
+          "id": "proj_llvm-compiler-infras_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uMSjfmTF",
+          "proposal_id": "tCQ1W4Kv",
+          "short_description": "ClangIR is a new, MLIR-based intermediate representation of C and C++ code. It has been developed in an LLVM incubator project, but work is now...",
+          "slug": "clangir-upstreaming",
+          "status": "in-progress",
+          "student_name": "Amr Hesham Gaber",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "ClangIR upstreaming"
+        },
+        {
+          "code_url": null,
+          "description": "This project strives to enhance the Input-Gen tool to extend coverage and compatibility with LLVM-supported languages, including C, C++, Julia, Rust, and Swift. By utilizing the LLVM ComPile dataset, a large amount of inputs can be generated and evaluated for determining the accuracy of the Input-Gen. Furthermore, numerical statistics can be gathered for determining the accuracy of the tool by numerical methods. Additionally, by installing the tool in a Debug configuration of LLVM, issues with the tool can be analyzed and documented. Successive development over the period of the standard GSoC timeline will allow the tool to be enhanced. Furthermore, the percentage of coverage, which can be defined as the successful instrumentation and execution of generated inputs from IR bitcode files or modules, will be expected to increase for the dataset from the previous 90% coverage. Ideal coverage is thus 100%, where all of the files are used as input to Input-Gen, which in return instruments the files so that they can be replayed and executed as a new file. New files created by Input-Gen can further be used as input to ML models or any testing mechanisms previously described. Thus, the goal of this project is to enhance the accuracy of the Input-Gen tool when executing with arbitrary IR files. This will then enable the tool to be adopted for practical purposes defined by LLVM developers.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/oaIAqU02",
+          "proposal_id": "4VrB03uo",
+          "short_description": "This project strives to enhance the Input-Gen tool to extend coverage and compatibility with LLVM-supported languages, including C, C++, Julia, Rust,...",
+          "slug": "input-gen-a-scalable-framework-for-stateful-input-generation",
+          "status": "in-progress",
+          "student_name": "Andrew K",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Input-Gen: A Scalable Framework for Stateful Input Generation"
+        },
+        {
+          "code_url": null,
+          "description": "The primary vision is to enhance clang’s UBSan trap mode by tackling the three main goals, which include adding a warning to the -fsanitize-trap=undefined, teaching clang to emit the UBSan trap reasons, and confirm LLDB is able to recognize the UBSan trap reasons. The deliverables are: implementing a check to properly emit a warning for when -fsanitize-trap=undefined is passed alone, creating an enumeration to list out all possible UBSan trap reasons, adding functionality to encode those trap reasons, and display the trap reasons to the user with LLDB. If time permits, work can be conducted on emitting more precise trap reasons from information that may be available within the compiler.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/I5x5BdbP",
+          "proposal_id": "yTvTWCyV",
+          "short_description": "The primary vision is to enhance clang’s UBSan trap mode by tackling the three main goals, which include adding a warning to the...",
+          "slug": "usability-improvements-for-trapping-undefined-behavior-sanitizer",
+          "status": "in-progress",
+          "student_name": "Anthony Tran",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Usability Improvements for trapping Undefined Behavior Sanitizer"
+        },
+        {
+          "code_url": null,
+          "description": "Clang-Doc leverages Clang’s robust tooling to generate documentation. It can interpret Doxygen commands to add more detailed documentation. Clang-Doc does not support all C++ constructs, does not support all of the Doxygen commands used in Clang, and does not render Markdown. These are core functionalities that should be implemented to allow complete documentation generation.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/OXcKUH3X",
+          "proposal_id": "ah3SPOgs",
+          "short_description": "Clang-Doc leverages Clang’s robust tooling to generate documentation. It can interpret Doxygen commands to add more detailed documentation. Clang-Doc...",
+          "slug": "improving-core-clang-doc-functionality",
+          "status": "in-progress",
+          "student_name": "Erick Velez",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Core Clang-Doc Functionality"
+        },
+        {
+          "code_url": null,
+          "description": "Memory safety related bugs represent one of the biggest challenges and are the source for many security vulnerabilities today. Lifetime annotations offer a mechanism to prevent dangling references, but their full potential remains unrealized. Currently, the Clang Static Analyzer (CSA) rely on hardcoded knowledge about specific APIs to detect temporal memory errors. This project aims to enhance the CSA by teaching it to understand and leverage Clang's lifetime annotations ([[clang::lifetimebound]] and [[clang::lifetime_capture_by(X)]]) to perform more comprehensive inter-procedural analysis of object lifetimes and detect subtle temporal memory errors that cross function boundaries.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/xEYQx202",
+          "proposal_id": "otRRcMMU",
+          "short_description": "Memory safety related bugs represent one of the biggest challenges and are the source for many security vulnerabilities today. Lifetime annotations...",
+          "slug": "teach-the-clang-static-analyzer-to-understand-lifetime-annotations",
+          "status": "in-progress",
+          "student_name": "imadij",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Teach the Clang Static Analyzer to understand lifetime annotations"
+        },
+        {
+          "code_url": null,
+          "description": "Enzyme, Rust's automatic differentiation tool, faces challenges with reliability and performance due to limited type information in LLVM-IR. This project proposes to enhance Enzyme by extending the Rust compiler to lower richer type information from MIR into LLVM-IR metadata. This will involve improving the MIR type parser and generating accurate metadata. Deliverables include an extended MIR parser, new Rust compiler LIT tests demonstrating improved Enzyme functionality, comprehensive documentation, and a final report. This work aims to significantly improve the reliability and efficiency of automatic differentiation in Rust.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/GjIzkThY",
+          "proposal_id": "iY8JzAW9",
+          "short_description": "Enzyme, Rust's automatic differentiation tool, faces challenges with reliability and performance due to limited type information in LLVM-IR. This...",
+          "slug": "improve-rust-enzyme-reliability-and-compile-times",
+          "status": "in-progress",
+          "student_name": "Karan Janthe",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve Rust-Enzyme Reliability and Compile Times"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal is based on the LLVM project for GSoC 2025 with the same title, from Tue Ly and Nicolas Celik. Discourse: https://discourse.llvm.org/t/libc-gsoc-2025-bfloat16-in-llvm-libc/84469.\nBfloat16 (aka \"Brain Floating Point\") is a recently developed floating point format by Google. Similar to IEEE 754 binary16, it is applicable in machine learning and AI providing significant improvements in training and performance. It is officially standardized as std::bfloat_t in the latest C++23 standard. The goal of this project is to implement support for this type in LLVM libc.\nDeliverables:\n- Implement the type in a compiler and architecture agnostic way.\n- Implement generic basic math operations that work on all supported architectures.\n- Implement specialized hardware specific optimizations and compiler built-ins for higher performance.\n- Investigate higher math functions if time permits.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/KvfIM1m7",
+          "proposal_id": "ZBBR2N4I",
+          "short_description": "This proposal is based on the LLVM project for GSoC 2025 with the same title, from Tue Ly and Nicolas Celik. Discourse:...",
+          "slug": "bfloat16-in-llvm-libc",
+          "status": "in-progress",
+          "student_name": "Krishna Pandey",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Bfloat16 in LLVM libc"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to refine and expand the testing infrastructure in the LLVM C library to help users balance speed and accuracy of math functions on GPUs. On the performance side, the proposal intends to improve the existing benchmarks that compare the LLVM C library’s implementations to vendor libraries, and add new math functions to the test suite. On the accuracy side, the proposal seeks to develop an exhaustive (brute force) test suite that verifies conformance to error tolerances, such as those defined in the OpenCL standard. The resulting deliverables include an enhanced performance test suite, a new accuracy test suite, and a consolidated report of performance and accuracy results for the covered functions.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/xBm3IS1C",
+          "proposal_id": "pbSq0LV9",
+          "short_description": "This proposal aims to refine and expand the testing infrastructure in the LLVM C library to help users balance speed and accuracy of math functions...",
+          "slug": "performance-and-exhaustive-testing-of-c-standard-math-functions-on-gpus",
+          "status": "in-progress",
+          "student_name": "Leandro Lacerda",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Performance and Exhaustive Testing of C Standard Math Functions on GPUs"
+        },
+        {
+          "code_url": null,
+          "description": "LLVM generates valuable information through remarks, profiling, and runtime annotations that becomes difficult to navigate as projects grow. This project aims to create a unified infrastructure to collect, organize, and visualize compilation data from the LLVM offloading toolchain. The tool will function as a compiler wrapper that captures JSON-formatted information and presents it through an interactive web interface. By providing accessible visualization of optimization decisions, profiling data, and compilation metrics, the tool will help developers make data-driven decisions rather than relying on trial and error.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/nGLC8Sd5",
+          "proposal_id": "k3OgxR66",
+          "short_description": "LLVM generates valuable information through remarks, profiling, and runtime annotations that becomes difficult to navigate as projects grow. This...",
+          "slug": "llvm-compiler-remarks-visualization-tool-for-offloading",
+          "status": "in-progress",
+          "student_name": "Miguel Cárdenas",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "LLVM Compiler Remarks Visualization Tool for Offloading"
+        },
+        {
+          "code_url": null,
+          "description": "The current implementations of the LLVM Project, have a drawback that every\nlanguage frontend that wants to support Foreign Function Interface(FFI) into C\ncode needs to implement Application Binary Interface(ABI) handling logic by\nitself. This leads to tremendous duplication of efforts and leaves the chance of\npotential inconsistencies.\nThe aim of this project is to create a comprehensive ABI library housed within\nLLVM which would encapsulate the details of various platform specific calling\nconventions, argument passing strategies and return value handling.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/BAWJ3Z6i",
+          "proposal_id": "0LsyXnKN",
+          "short_description": "The current implementations of the LLVM Project, have a drawback that every language frontend that wants to support Foreign Function Interface(FFI)...",
+          "slug": "introduce-an-abi-lowering-library",
+          "status": "in-progress",
+          "student_name": "Narayan Sreekumar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "frontend"
+          ],
+          "title": "Introduce an ABI lowering library"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal seeks to extend the build system in Clang's driver to natively support module-based builds by leveraging Clang's existing support for scanning C++20 module dependencies between source files and adding support for generating the appropriate build steps.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/JfOGwzdP",
+          "proposal_id": "Lidrhzp4",
+          "short_description": "This proposal seeks to extend the build system in Clang's driver to natively support module-based builds by leveraging Clang's existing support for...",
+          "slug": "support-simple-c-modules-use-from-the-clang-driver-without-a-build-system",
+          "status": "in-progress",
+          "student_name": "Naveen Seth Hanig",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Support simple C++ modules use from the Clang Driver without a Build System"
+        },
+        {
+          "code_url": null,
+          "description": "LLVM currently lacks a type capable of representing raw memory, similar to unsigned char, char and std::byte in C/C++. The absence of such a type is the root cause of many unsound optimizations, such as the lowering of calls to memcpy/memmove/memcmp to integer loads of the corresponding bitwidth. This optimization is incompatible with the use of pointer provenance, as loading a pointer from memory as an integer discards provenance information, leading to miscompilations.\n\nThis project aims to introduce a new byte type to the IR, capable of representing raw memory, and lower the char, unsigned char and std::byte C/C++ types to the new type. It also addresses the incorrect lowerings of memory related intrinsics, providing a way to natively implement such intrinsics in the IR, fixes optimizations that do not correctly account for type punning, and adds support for the byte type in the Alive2 optimization verifier.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/F3yLFcWR",
+          "proposal_id": "QtpwoGb9",
+          "short_description": "LLVM currently lacks a type capable of representing raw memory, similar to unsigned char, char and std::byte in C/C++. The absence of such a type is...",
+          "slug": "byte-type",
+          "status": "in-progress",
+          "student_name": "Pedro Lobo",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Byte type"
+        },
+        {
+          "code_url": null,
+          "description": "Many HPC applications rely on GPUs for fast and efficient computation. At the same time, there is an effort to bring more programmability and portability when writing code for the GPU. One of such efforts is the implementation of the libc and libc++ in LLVM project for execution on the accelerator itself. This allows standard host applications to run on the GPU automatically, without modification to the user code. One consideration of such an approach is that some functions are not natively supported on the GPU and rely on RPC calls to the host. This poses a limitation on the bandwidth of data transfer.\r\nThus, this project aims to improve current file operations triggered by GPU, leveraging the new Linux io_uring interface. io_uring allows the program to register a queue to asynchronously request file operations and pool the completion by interacting with such a queue. Apart from registering the queue, requesting and polling operations do not require a syscall, making it faster and more flexible than regular POSIX operations or Linux AIO calls. We will map and register/pin a memory region on the GPU side and use that region for io_uring interaction, driven by the GPU. \r\nWe expect such a process to deliver more performance than current RPC round-trips to complete I/O transfers, which require a CPU polling thread for each request and do not come close to the theoretical bandwidth of PCIe interfaces.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/oRouV5VX",
+          "proposal_id": "N0UuAy6Z",
+          "short_description": "Many HPC applications rely on GPUs for fast and efficient computation. At the same time, there is an effort to bring more programmability and...",
+          "slug": "improve-io-performance-in-the-libc-implementation-for-gpu-using-io_uring",
+          "status": "in-progress",
+          "student_name": "Rodrigo Ceccato",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Improve I/O performance in the libc implementation for GPU using io_uring"
+        },
+        {
+          "code_url": null,
+          "description": "Clang-REPL is an incremental compiler that enables interactive programming in C and C++, combining the flexibility of a REPL with the performance of compiled languages.\n\nCurrently, users must manually load dynamic libraries when Clang-REPL encounters unresolved external symbols. This project aims to improve the user experience by implementing an Auto-Loading mechanism that automatically loads the required libraries when missing symbols are detected.\n\nIn addition to auto-loading, the project will introduce Runtime Re-Optimization using Profile-Guided Optimizations (PGO). By collecting profiling information at runtime, Clang-REPL will be able to re-optimize initializers dynamically, leading to better performance without user intervention.\n\nDeliverables:\n\n1. An Auto-Loading system that seamlessly resolves missing external symbols.\n2. Runtime Re-Optimization support based on profiling data to improve execution performance.",
+          "difficulty": null,
+          "id": "proj_llvm-compiler-infras_2025_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/WAGNDXHx",
+          "proposal_id": "Uzo39pkf",
+          "short_description": "Clang-REPL is an incremental compiler that enables interactive programming in C and C++, combining the flexibility of a REPL with the performance of...",
+          "slug": "advanced-symbol-resolution-and-reoptimization-for-clang-repl",
+          "status": "in-progress",
+          "student_name": "Sahil Patidar",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Advanced symbol resolution and reoptimization for clang-repl"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/llvm-compiler-infrastructure"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "llvm-dev@lists.llvm.org",
+    "guide_url": "https://discourse.llvm.org/t/gsoc-2025-projects-proposals-and-other-information/85035",
+    "ideas_url": "https://llvm.org/OpenProjects.html",
+    "irc_channel": "https://discord.com/channels/636084430946959380/642374147640524831",
+    "mailing_list": "https://discourse.llvm.org/c/community/gsoc/32"
+  },
+  "social": {
+    "blog": "https://blog.llvm.org/",
+    "discord": "https://discord.com/channels/636084430946959380/642374147640524831",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/llvmorg",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.353Z"
+  }
+}

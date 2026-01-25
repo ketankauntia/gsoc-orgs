@@ -1,0 +1,313 @@
+{
+  "id": "692251e553dd9d7326d33e9a",
+  "slug": "rizin",
+  "name": "Rizin",
+  "category": "Security",
+  "description": "Rizin reverse engineering framework and toolset",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/rizin/7ageygqfyv7wzlee-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/rizin.webp",
+  "logo_r2_url": null,
+  "url": "https://rizin.re",
+  "active_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2021,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "c++",
+    "qt",
+    "go"
+  ],
+  "topics": [
+    "reverse engineering",
+    "computer security",
+    "debugging",
+    "emulation",
+    "disassembly"
+  ],
+  "total_projects": 10,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 1,
+      "year_2024": 1,
+      "year_2025": 3
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": 2,
+      "year_2023": 1,
+      "year_2024": 1,
+      "year_2025": 3
+    },
+    "total_students": 10
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/08A/acf80d47562ad91cc9a05819039ce994",
+          "description": "<p>Currently, Rizin is able to load segments and sections as well as fetch all symbols and relocations and extract everything we need to analyse the binary. However, those features are biased. Indeed, during the loading of the new binary, Rizin uses various information that aren't relevant as default loading data. For example, Rizin loads sections information at the start. But it is common knowledge that section information can be manipulated without modifying the program execution. With this issue comes the fact that Rizin uses section information to deduct imported functions, strings and for other various analyses. Therefore, we need to make the section loading optional. The second problem is how Rizin loads PLT data. Currently, the PLT is linked to the GOT using hard coded values, which should be replaced by a dynamic analysis like in Ghidra.</p>\n",
+          "difficulty": null,
+          "id": "proj_rizin_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6372408285462528/",
+          "proposal_id": null,
+          "short_description": "Currently, Rizin is able to load segments and sections as well as fetch all symbols and relocations and extract everything we need to analyse the...",
+          "slug": "reworking-rizins-binary-loading",
+          "status": "completed",
+          "student_name": "Alexis Ehret",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reworking Rizin's binary loading"
+        },
+        {
+          "code_url": "https://officialcjunior.github.io/blog/gsoc-2021/",
+          "description": "<p>Rizin currently relies upon manually writing code for adding a new CPU or an IO port. This implementation is unfit as the vast and growing ecology of hardware components such as CPUs and SoCs regularly implement a part of architecture with custom instructions, registers, and address configurations with trivial differences, making it infeasible to maintain all of them inside Rizin.</p>\n<p>Providing a level of abstraction in handling this entropy in embedded systems, by supporting editable CPU and platform profiles is the goal of this project. This will also make adding and maintaining these ports easier with less interaction with Rizin’s core. This project also aims to add more flexibility in having a way of importing existing hardware data description documents so that reverse engineering on particular chipsets is easier. This will also help us to memory map the peripheral accesses and registers to provide a better reverse engineering experience. This, in turn, could also be extended to benefit Rizin in terms of compatibility and the end users in terms of user experience.</p>\n",
+          "difficulty": null,
+          "id": "proj_rizin_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6125873907892224/",
+          "proposal_id": null,
+          "short_description": "Rizin currently relies upon manually writing code for adding a new CPU or an IO port. This implementation is unfit as the vast and growing ecology of...",
+          "slug": "support-for-cpu-and-platform-profiles",
+          "status": "completed",
+          "student_name": "Aswin C",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Support for CPU and Platform Profiles"
+        },
+        {
+          "code_url": "https://pulakiiit.github.io/posts/gsoc-report/",
+          "description": "<p>Currently, there are no heap-specific widgets in Cutter to get information about the heap while debugging a program. This project aims to solve this by providing various heap visualization widgets and memory maps to provide information about the state of the heap. Another issue with the heap parsing in Rizin is that it depends on how Rizin is compiled and fails for cases of non-native and remote debugging cases. The project will also try to expand the number of heap allocators that Rizin supports. After completing this project, users would be able to get information about the state of the heap in Cutter and do this for cases of remote debugging and a variety of allocators. \nAs part of the project, the following are the key features that will be added and changed:</p>\n<ul>\n<li>Widgets in Cutter for the following:</li>\n<li>Bins Info (Fastbins, Unsorted, Small, Large)</li>\n<li>T-cache Info for each thread</li>\n<li>Arenas Info (chunks, top, last remainder)</li>\n<li>Graph visualization for bins and tcache</li>\n<li>Improve the implementation of heap related commands like <code>dmh</code> in Rizin</li>\n<li>Refactor the Rizin code to make heap parsing work for non-native code</li>\n<li>Add heap parsing for other allocators like MacHeap.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_rizin_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4646304013090816/",
+          "proposal_id": null,
+          "short_description": "Currently, there are no heap-specific widgets in Cutter to get information about the heap while debugging a program. This project aims to solve this...",
+          "slug": "heap-viewer",
+          "status": "completed",
+          "student_name": "Pulak Malhotra",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Heap Viewer"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5119563070439424/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/wingdeans/8203a694beaa1ae3b2a40d2c8635375a",
+          "description": "Rizin's currently exposes its functionality through the rz-pipe command-based API. However, for more complex applications, direct access to the C API is preferred. Creating Python bindings for this API would allow users to quickly create robust scripts.\n    This project would include the creation of idiomatic Python bindings for all mature parts of the Rizin C API, as well as abstractions to increase developer ergonomics. Integration with the current command-based API will help existing rz-pipe users to incrementally add more advanced functionality to their projects. This project will also help with exposing C APIs to Cutter Python plugins.",
+          "difficulty": "advanced",
+          "id": "proj_rizin_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/cUPgOrvY/",
+          "proposal_id": null,
+          "short_description": "Rizin's currently exposes its functionality through the rz-pipe command-based API. However, for more complex applications, direct access to the C API...",
+          "slug": "automated-python-bindings",
+          "status": "completed",
+          "student_name": "wingdeans",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ui"
+          ],
+          "title": "Automated Python Bindings"
+        },
+        {
+          "code_url": "https://dmaroo.github.io/gsocx86lifting",
+          "description": "Rizin had been using ESIL as its IL for analyzing the ISA of many architectures. RzIL was developed because ESIL was deemed to be not very user-friendly or developer-friendly. RzIL is yet to be implemented for all the supported architectures. Many of the supported architectures still use ESIL for analysis. It is an essential part of my project to implement and test the RzIL uplifting for a major architecture (x86). This will improve the analysis for that architecture. I also intend to provide a generic user-interface to interact with the RzIL, both for Rizin (through commands) and Cutter (through a GUI widget).",
+          "difficulty": null,
+          "id": "proj_rizin_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/iHkY96U9/",
+          "proposal_id": null,
+          "short_description": "Rizin had been using ESIL as its IL for analyzing the ISA of many architectures. RzIL was developed because ESIL was deemed to be not very...",
+          "slug": "rzil-uplifting-migration",
+          "status": "completed",
+          "student_name": "DMaroo",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "RzIL uplifting migration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/rizin/"
+    },
+    "year_2023": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/rizinorg/rizin/pull/3703",
+          "description": "The proposal outlines a project to improve the debug information handling in Rizin, an open-source reverse engineering framework. The project aims to enhance the parsing support for DWARF and PDB formats, enable loading of DWARF information from separate files and debuginfod, and integrate source line and types/variables information with analysis, printing, and breakpoint commands in debug mode. The end goal is to provide a smoother debugging experience for reverse engineers using Rizin.",
+          "difficulty": null,
+          "id": "proj_rizin_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/JGpphQHN",
+          "proposal_id": "pOpWg4JW",
+          "short_description": "The proposal outlines a project to improve the debug information handling in Rizin, an open-source reverse engineering framework. The project aims to...",
+          "slug": "debug-information-handling-improvements",
+          "status": "completed",
+          "student_name": "billow",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Debug information handling improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/rizin"
+    },
+    "year_2024": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/moste00/riscv_disasm_from_sail",
+          "description": "The aim of this project is to lift one of the last high priority instruction sets to RzIL, namely the RISC-V instruction set. This instruction set, along with the MIPS instruction set, is one of the two remaining high-priority instruction sets that still don’t have a RzIL lifter. This project aims to rectify that.\n\nRzIL is  a common intermediate language that serves as an executable description of several real-world instruction sets and bytecode formats. This has multiple benefits, like enabling a human reverse-engineering professional to audit and read code written in a machine language which the professional isn’t familiar with and - more importantly - enabling the execution of a code format even if no \"native\" interpreter or VM or emulator is available for it, by first compiling it to RzIL (a per-architecture work) and then executing it on the RzIL VM (which is write-once).",
+          "difficulty": "medium",
+          "id": "proj_rizin_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/jX5dWGou/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to lift one of the last high priority instruction sets to RzIL, namely the RISC-V instruction set. This instruction set,...",
+          "slug": "lifting-risc-v-instructions-to-the-rzil-ir-language",
+          "status": "completed",
+          "student_name": "Mostafa-M-K",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Lifting RISC-V Instructions to the RzIL IR Language"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/rizin/"
+    },
+    "year_2025": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to improve the thread safety of the Rizin reverse engineering framework by eliminating global static variables and encapsulating shared state within dedicated context structures. The goal is to prepare Rizin for safe, reliable multi-threaded and asynchronous operation, enabling seamless future integrations with tools like Cutter Desktop.\n\nKey areas of focus include refactoring utility modules (RzUtil), core components (RzCore, AGraph), IO plugins, libmagic integration, the console interface (RzCons), the Terminal UI, and SDB. By the end of the project, Rizin will be structurally equipped for multi-threaded workloads, enhancing its performance, stability, and extensibility for the reverse engineering and security communities.",
+          "difficulty": null,
+          "id": "proj_rizin_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/aZEBUZrE",
+          "proposal_id": "09CcibIe",
+          "short_description": "This project aims to improve the thread safety of the Rizin reverse engineering framework by eliminating global static variables and encapsulating...",
+          "slug": "thread-safety-improvement",
+          "status": "in-progress",
+          "student_name": "Ahmed Kamal Karim",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Thread safety improvement"
+        },
+        {
+          "code_url": null,
+          "description": "Adding native debugger support for Linux x86, x64 and PPC64, and x86, x64 and AArch64 support for FreeBSD, OpenBSD and NetBSD along with automated testing.\nImprovements to the already existing Rizin debugger.",
+          "difficulty": null,
+          "id": "proj_rizin_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ibmAy4NN",
+          "proposal_id": "DqDexjKK",
+          "short_description": "Adding native debugger support for Linux x86, x64 and PPC64, and x86, x64 and AArch64 support for FreeBSD, OpenBSD and NetBSD along with automated...",
+          "slug": "debugger-improvements-and-portability",
+          "status": "in-progress",
+          "student_name": "Taksh Patel",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Debugger improvements and portability"
+        },
+        {
+          "code_url": null,
+          "description": "Rizin is a famous reverse engineering tool that analyses binaries of various types and\r\nvarious architectures. As of now, the support for reverse engineering of Object Oriented Languages has been limited. Currently, Rizin supports Vtables in C++ binaries.\r\nSince modern systems have a heavy usage of Object Oriented Languages like C++, Dlang, Java, ObjectiveC, Swift and many more, it is evident that Rizin should support eﬃcient and accurate reversing of the specialized structures (Classes, Vtables etc) in these languages. Hence, the aim of this project is to improve the analysis of these specialized structures in major OOP languages like C++, Swift, ObjectiveC, Rust & Java.",
+          "difficulty": null,
+          "id": "proj_rizin_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/cLuPEQYI",
+          "proposal_id": "yaWVXpna",
+          "short_description": "Rizin is a famous reverse engineering tool that analyses binaries of various types and various architectures. As of now, the support for reverse...",
+          "slug": "classes-analysis-for-cswiftobjectivecrustjava",
+          "status": "in-progress",
+          "student_name": "tushar3q34",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ai"
+          ],
+          "title": "Classes analysis for C++/Swift/ObjectiveC/Rust/Java"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/rizin"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@rizin.re",
+    "guide_url": "https://rizin.re/gsoc/2024",
+    "ideas_url": "https://rizin.re/gsoc/2025/",
+    "irc_channel": "https://im.rizin.re",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://rizin.re/posts/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://bsky.app/profile/rizin.re",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.114Z"
+  }
+}

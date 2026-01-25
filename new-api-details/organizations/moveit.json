@@ -1,0 +1,317 @@
+{
+  "id": "692251dd53dd9d7326d33e30",
+  "slug": "moveit",
+  "name": "MoveIt",
+  "category": "Science and medicine",
+  "description": "Moving robots into the future",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/moveit/zmatlwnrrfqcdsjo-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/moveit.webp",
+  "logo_r2_url": null,
+  "url": "https://moveit.ros.org",
+  "active_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2020,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "ros",
+    "c++",
+    "c",
+    "python 3",
+    "robotics",
+    "python",
+    "rust"
+  ],
+  "topics": [
+    "robotics",
+    "motion planning",
+    "trajectory generation",
+    "kinematics"
+  ],
+  "total_projects": 10,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": 1,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 2,
+      "year_2021": 1,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": null
+    },
+    "total_students": 10
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/AdamPettinger/GSoC-Report",
+          "description": "<p>In this project, I will take a MoveIt package that allows a user to send end-effector velocity streaming commands to a robotic manipulator and port it to ROS2. While making the developments to use the package in ROS2, I will take the opportunity to make improvements in these areas: lowering the technical barrier of entry for the user, improving the Inverse Kinematics especially near kinematic singularities, and allowing the user to customize the package by making it more modular. The development work will be accompanied by extensive documentation, tutorials, and examples. Additionally, the package will be thoroughly tested and will support testing for future updates.</p>\n",
+          "difficulty": null,
+          "id": "proj_moveit_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4667773348741120/",
+          "proposal_id": null,
+          "short_description": "In this project, I will take a MoveIt package that allows a user to send end-effector velocity streaming commands to a robotic manipulator and port...",
+          "slug": "moveit_jog_arm-improvements-implementation-in-ros2",
+          "status": "completed",
+          "student_name": "Adam Pettinger",
+          "student_profile": null,
+          "tags": [],
+          "title": "MoveIt_Jog_Arm Improvements & Implementation in ROS2"
+        },
+        {
+          "code_url": "https://gist.github.com/JeroenDM/426e3a7e083049295bbcb660c9a98e63",
+          "description": "<p>Many industrial robot applications specify a Cartesian end-effector path, that could be under-constrained. The MoveIt’s RobotState function, “computeCartesianPath”, fulfills only a small part of this demand. OMPL has advanced capabilities to handle constraints that are not integrated with MoveIt yet. Examples of applications that can benefit from this integration are robot welding, grinding, painting, and many more.</p>\n<p>Concretely this would mean integrating OMPL’s Cartesian planning capabilities in the existing planning plugin. If time allows it, I would like to add support for Cartesian path constraints in TrajOpt. All deliverables should include documentation, tutorials, and tests.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_moveit_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6551293910319104/",
+          "proposal_id": null,
+          "short_description": "Many industrial robot applications specify a Cartesian end-effector path, that could be under-constrained. The MoveIt’s RobotState function,...",
+          "slug": "cartesian-motion-planning-with-constraints-in-moveit",
+          "status": "completed",
+          "student_name": "Jeroen De Maeyer",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Cartesian motion planning with constraints in MoveIt"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5486699158700032/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/ros-planning/moveit/issues/2717",
+          "description": "<p>Hello MoveIt maintainers and potential mentors! I am Captain Yoshi and this summer will be the beginning of my first year as a PhD student with the IntroLab group at the University of Sherbrooke in Canada. Personally, I would extend the benchmark package so that it could be used by the Benchmark Suite and also by everyone who wants to do benchmarks. Additionally, the trajectories should also be kept so that someone could visualize the trajectory. The seed used in sampling based planners should also be kept. This could be used directly to compare two collision detection algorithms and also for benchmarking CHOMP as a post-processor. We could also do benchmarks on different mesh qualities. I think MTC could be used to setup benchmark easily by adding the desired scenes, start pose and end goal or path constraints in the database in one click.</p>\n",
+          "difficulty": null,
+          "id": "proj_moveit_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6662801057120256/",
+          "proposal_id": null,
+          "short_description": "Hello MoveIt maintainers and potential mentors! I am Captain Yoshi and this summer will be the beginning of my first year as a PhD student with the...",
+          "slug": "creation-of-a-benchmark-suite",
+          "status": "completed",
+          "student_name": "Captain Yoshi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Creation of a Benchmark Suite"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5449155236855808/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/ros-planning/moveit/issues/3156",
+          "description": "MoveIt currently only supports the execution of one robot trajectory (although the trajectory can involve multiple planning groups, e.g. two arms). However, to run e.g. a robot works cell efficiently, each robot arm has to move independently.\nI have started working on this project last year during an internship at OMRON SINIC X. However, there is still plenty of work to do before this feature is mature enough and compatible with MoveIt's mainstream branch.\nConcrete steps: \n1) Use MoveIt's code standards. \n2) Address the compatibility issue. Define a workflow to allow users to use this new feature without enforcing it on everyone. \n3) Optimize our previous approach to make it faster and safer to use with robots moving at high speeds. \n4) Document the approach, as well as, generate test cases for MoveIt's Continuous Integration system.",
+          "difficulty": null,
+          "id": "proj_moveit_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/mpusZVc2/",
+          "proposal_id": null,
+          "short_description": "MoveIt currently only supports the execution of one robot trajectory (although the trajectory can involve multiple planning groups, e.g. two arms)....",
+          "slug": "simultaneous-trajectory-execution",
+          "status": "completed",
+          "student_name": "Cristian C. Beltran-Hernandez",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Simultaneous Trajectory Execution"
+        },
+        {
+          "code_url": "https://peterdavidfagan.com/gsoc_prs.html",
+          "description": "In this project, I plan to develop Python bindings for the core functionalities of MoveIt 2. \n\nIn the initial phase of this project, I am creating a library called moveit_py that provides a Python API for the core functionalities of the moveit_cpp library. Using the created moveit_py library I plan to curate a number of tutorials that leverage the Python library. Finally, I plan to work on creating libraries that help enable the use of MoveIt for learning-based approaches.   \n\nI also hope to take on some feature requests for the Python API from the MoveIt 2 community during this time. Feel free to reach out to me at peterdavidfagan@gmail.com if you have any questions relating to this project and have a great rest of the day.",
+          "difficulty": null,
+          "id": "proj_moveit_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/AICLMf2p/",
+          "proposal_id": null,
+          "short_description": "In this project, I plan to develop Python bindings for the core functionalities of MoveIt 2. In the initial phase of this project, I am creating a...",
+          "slug": "creating-python-bindings-for-moveit-2",
+          "status": "completed",
+          "student_name": "Peter David Fagan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Creating Python Bindings for MoveIt 2"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/moveit/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/ibrahiminfinite/0f60fcf0717ca87263c72c0fcf6bd3ff",
+          "description": "The current MoveIt Servo has enabled users to utilize reactive control. However, in its current implementation MoveIt Servo only provides a ROS interface to users. While the ROS interface is very versatile, it can also be a bottleneck for users who need harder real-time performance guarantees. There are also many aspects of the software design of the package itself that can be improved.\n\nThis project proposes to re-implement MoveIt Servo with the following:\n\n- Improved readability\n- Extensibility\n- Performance\n- Support for end-effector pose as input.\n- Improved C++ Interface support",
+          "difficulty": null,
+          "id": "proj_moveit_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/WgY2PZu9",
+          "proposal_id": "pErfhihp",
+          "short_description": "The current MoveIt Servo has enabled users to utilize reactive control. However, in its current implementation MoveIt Servo only provides a ROS...",
+          "slug": "improved-realtime-control-with-moveit-servo-moveit-2",
+          "status": "completed",
+          "student_name": "ibrahiminfinite",
+          "student_profile": null,
+          "tags": [
+            "react"
+          ],
+          "title": "Improved Realtime Control with MoveIt Servo [MoveIt 2]"
+        },
+        {
+          "code_url": "https://gist.github.com/Robotawi/7e2150801977751aebf4eb442c2d1538",
+          "description": "Problem: MoveIt Servo is a powerful tool for real-time robot control, but its current ROS-only interface limits its accessibility to C++ applications. Additionally, there is a need for better documentation and features, such as the ability to pause and resume motion.\n\nSolution: In this project, I propose to improve MoveIt Servo's accessibility to C++ applications and develop callbacks for pausing Servo. I will also document how to create and use custom IK goal functions and implement real-time IK cost function updates. \n\nDeliverables:\nImplement a C++ interface for MoveIt Servo.\nDevelop callbacks for pausing Servo in relevant scenarios.\nDocument how to create and use custom IK goal functions with the pick_ik package.\nImplement real-time IK cost function updates.\nProvide well-documented code and tutorials with visualizations for the MoveIt community.",
+          "difficulty": null,
+          "id": "proj_moveit_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/2FZAv9Y7",
+          "proposal_id": "BK7wC43p",
+          "short_description": "Problem: MoveIt Servo is a powerful tool for real-time robot control, but its current ROS-only interface limits its accessibility to C++...",
+          "slug": "improved-realtime-control-with-moveit-servo-moveit-2",
+          "status": "completed",
+          "student_name": "Mohamed Raessa",
+          "student_profile": null,
+          "tags": [
+            "ios"
+          ],
+          "title": "Improved Realtime Control with MoveIt Servo [MoveIt 2]"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/moveit"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/moveit/moveit.ros.org/pull/860",
+          "description": "The problem I'm addressing is the lack of simulator options in MoveIt. I propose  to conduct a comparative analysis of available simulation backends with a particular focus on the MuJoCo simulator as a potential alternative. There will be primarily two deliverables: a report comparing available simulation backends and repositories consisting of MuJoCo ROS plugin and the examples built on top of that.",
+          "difficulty": null,
+          "id": "proj_moveit_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/tVGym4TK/",
+          "proposal_id": null,
+          "short_description": "The problem I'm addressing is the lack of simulator options in MoveIt. I propose to conduct a comparative analysis of available simulation backends...",
+          "slug": "mujoco-rosmoveit-integration",
+          "status": "completed",
+          "student_name": "Sangtaek",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "MuJoCo ROS/MoveIt integration"
+        },
+        {
+          "code_url": "https://github.com/moveit/moveit_drake",
+          "description": "This document details a proposal to integrate the Kinematic Trajectory Optimization\ncapabilities of Drake with Moveit! It proposes three projects that build on top of each other to expose Drake’s powerful optimization specification language to perform local planning - DiffIK, Inverse Kinematics - Optimization based IK and global planning - Kinematic Trajectory Optimization. It proposes implementing these functionalities as Moveit! plugins, and details the exact classes in Drake that need to be exposed via these plugins.",
+          "difficulty": null,
+          "id": "proj_moveit_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/U43331TS/",
+          "proposal_id": null,
+          "short_description": "This document details a proposal to integrate the Kinematic Trajectory Optimization capabilities of Drake with Moveit! It proposes three projects...",
+          "slug": "kinematic-trajectory-optimization-based-motion-planning-using-drake-for-moveit",
+          "status": "completed",
+          "student_name": "Aditya kami",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Kinematic Trajectory Optimization based Motion Planning using Drake for Moveit!"
+        },
+        {
+          "code_url": "https://moveit.ros.org/moveit/gsoc/2024/08/19/GSoC-2024-Zenoh-Support-and-Benchmarking.html",
+          "description": "Project aims to integrate rmw_zenoh middleware to MoveIt2 and benchmark its effects on MoveIt2 project in points of message latency, performance of large data like pointcloud and how affects performance in situation number of topic etc. is changed. To modify CI jobs in a way being able to make it testable and benchmarkable for each ros middleware is also one of the aims of this project.",
+          "difficulty": null,
+          "id": "proj_moveit_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/sOm8rgZf/",
+          "proposal_id": null,
+          "short_description": "Project aims to integrate rmw_zenoh middleware to MoveIt2 and benchmark its effects on MoveIt2 project in points of message latency, performance of...",
+          "slug": "zenoh-support-benchmarking",
+          "status": "completed",
+          "student_name": "Cihat Kurtuluş Altıparmak",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud"
+          ],
+          "title": "Zenoh Support & Benchmarking"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/moveit/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "henningkayser@picknik.ai",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://moveit.ros.org/about/get_involved/",
+    "mailing_list": "https://discourse.ros.org/c/moveit"
+  },
+  "social": {
+    "blog": "https://moveit.ros.org/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.623Z"
+  }
+}

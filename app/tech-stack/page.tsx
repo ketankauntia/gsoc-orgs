@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Search, TrendingUp, BarChart3, Users, Rocket, ArrowUpDown } from "lucide-react";
+import { TrendingUp, BarChart3, Users, Rocket } from "lucide-react";
 import {
   SectionHeader,
   Grid,
@@ -7,7 +6,7 @@ import {
   Heading,
   Text,
 } from "@/components/ui";
-import { loadTechStackIndexData, TechStackIndexData, TechSummary } from "@/lib/tech-stack-page-types";
+import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import { TechStackClientWrapper } from "./tech-stack-client-wrapper";
 import { StackPopularityChart, TopStacksChart, MostSelectionsChart, MostProjectsChart, PopularityGrowthChart } from "./charts";
 

@@ -1,0 +1,169 @@
+{
+  "id": "692251e853dd9d7326d33eca",
+  "slug": "tarantool",
+  "name": "Tarantool",
+  "category": "Data",
+  "description": "Lighting fast in-memory DBMS with JIT onboard",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/tarantool/npjtqad5oa15tkps-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/tarantool.webp",
+  "logo_r2_url": null,
+  "url": "https://www.tarantool.io/en/",
+  "active_years": [
+    2021,
+    2022
+  ],
+  "first_year": 2021,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "lua",
+    "sql",
+    "python",
+    "c++"
+  ],
+  "topics": [
+    "distributed systems",
+    "algorithms",
+    "high performance data processing",
+    "in-memory data grid",
+    "sql",
+    "In-memory",
+    "JIT",
+    "IMDG",
+    "NoSQL Database"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 1.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": 0,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": 0,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/tarantool/tarantool/wiki/Google-Summer-of-Code-2021.-Tarantool-connector-enhancement",
+          "description": "<p>Tarantool’s team has released a new C++ connector, which is based on compile-time MsgPack encoder/decoder. Reaching the limits of C++, this library is really state of the art, eliminating any possible overheads.\nThe project idea aims related to it is:\nComplete providing support of Tarantool features (pushes and SQL statements)</p>\n",
+          "difficulty": null,
+          "id": "proj_tarantool_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5715645072670720/",
+          "proposal_id": null,
+          "short_description": "Tarantool’s team has released a new C++ connector, which is based on compile-time MsgPack encoder/decoder. Reaching the limits of C++, this library...",
+          "slug": "c-connector-enhancement",
+          "status": "completed",
+          "student_name": "Anastasiy Belyaev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "C++ connector enhancement"
+        },
+        {
+          "code_url": "https://github.com/tarantool/tarantool/wiki/LLVM-JIT-engine-for-Tarantool%27s-DQL",
+          "description": "<p>Tarantool's SQLite-derivative VM code for SQL engine known as 'vdbe' is creating a performance bottleneck: self-execution of the main part of the VM's opcode dispatcher is mostly half of total CPU time.</p>\n<p>My proposal is to implement an embedded LLVM JIT engine solution which would replace part of vdbe responsible for DQL. In the future perspective, vdbe could be completely migrated to this engine. This solution is anticipated to give 20% performance boost for DQL compared to vdbe.</p>\n<p>The goal of this project is to develop the solution described in the proposal, making it scalable, and  integrate it with vdbe, afterwards benchmark it and compare its performance to that of original vdbe.</p>\n",
+          "difficulty": null,
+          "id": "proj_tarantool_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5346192522739712/",
+          "proposal_id": null,
+          "short_description": "Tarantool's SQLite-derivative VM code for SQL engine known as 'vdbe' is creating a performance bottleneck: self-execution of the main part of the...",
+          "slug": "llvm-jit-engine-for-tarantools-dql",
+          "status": "completed",
+          "student_name": "Georgiy Lebedev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "LLVM JIT engine for Tarantool's DQL"
+        },
+        {
+          "code_url": "https://github.com/tarantool/tarantool/wiki/Threaded-interpretation-and-instruction-merging",
+          "description": "<p>Tarantool uses SQL VM with conventional interpretation technique: loop over instruction, inside which dispatching switch-case executes logic of current opcode. Beyond introduction of JIT to SQL subsystem there are multiple smaller improvements which might be developed for SQL virtual machine:</p>\n<ul>\n<li>merge CHECKs bytecode into a monolithic program;</li>\n<li>add VDBE assembler;</li>\n<li>use threaded interpretation.\nThe easiest approach in its implementation is 'threaded-code'. Threaded code is a programming technique where the code has a form that essentially consists entirely of calls to subroutines. It is often used in compilers, which may generate code in that form or be implemented in that form themselves. The code may be processed by an interpreter or it may simply be a sequence of machine code call instructions.\nAnother optimization is instruction merging: a sequence of opcodes is replaced by a single mega opcode. There is a proposal to create a single VDBE running all the CHECK constraints.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_tarantool_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5947375067070464/",
+          "proposal_id": null,
+          "short_description": "Tarantool uses SQL VM with conventional interpretation technique: loop over instruction, inside which dispatching switch-case executes logic of...",
+          "slug": "various-sql-vm-improvements-threaded-interpretation-and-instruction-merging",
+          "status": "completed",
+          "student_name": "Anastasia Neklepaeva",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Various SQL VM improvements: threaded interpretation and instruction merging"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6336686404927488/"
+    },
+    "year_2022": {
+      "num_projects": 0,
+      "projects": [],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/tarantool/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "admin@tarantool.io",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://t.me/+T7iUBVmNd3sxNjcy",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://habr.com/ru/hub/tarantool/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/tarantooldb",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.329Z"
+  }
+}

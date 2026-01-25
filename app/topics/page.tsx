@@ -1,17 +1,10 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { Search, TrendingUp } from "lucide-react";
 import {
-  SectionHeader,
-  Grid,
-  CardWrapper,
   Heading,
   Text,
-  Badge,
-  Input,
 } from "@/components/ui";
 import { getFullUrl } from "@/lib/constants";
-import { loadTopicsIndexData, filterTopics } from "@/lib/topics-page-types";
+import { loadTopicsIndexData } from "@/lib/topics-page-types";
 import { TopicsClient } from "./topics-client";
 
 /**

@@ -7,7 +7,6 @@ import { getFullUrl } from "@/lib/constants";
 import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import {
   loadOrganizationsIndexData,
-  indexDataToPaginatedResponse,
   filterOrganizations,
 } from "@/lib/organizations-page-types";
 

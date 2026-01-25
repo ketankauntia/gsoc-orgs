@@ -1,0 +1,1308 @@
+{
+  "id": "692251e853dd9d7326d33ec1",
+  "slug": "sympy",
+  "name": "SymPy",
+  "category": "Science and medicine",
+  "description": "SymPy is a Python library for symbolic mathematics",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/sympy/iz2tcxocrknp1sm0-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/sympy.webp",
+  "logo_r2_url": null,
+  "url": "https://www.sympy.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "c++",
+    "numpy",
+    "jupyter"
+  ],
+  "topics": [
+    "mathematics",
+    "math",
+    "science",
+    "physics",
+    "computer algebra",
+    "symbolic mathematics"
+  ],
+  "total_projects": 63,
+  "stats": {
+    "avg_projects_per_appeared_year": 6.3,
+    "projects_by_year": {
+      "year_2016": 7,
+      "year_2017": 8,
+      "year_2018": 7,
+      "year_2019": 10,
+      "year_2020": 6,
+      "year_2021": 6,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": 5,
+      "year_2025": 6
+    },
+    "students_by_year": {
+      "year_2016": 7,
+      "year_2017": 8,
+      "year_2018": 7,
+      "year_2019": 10,
+      "year_2020": 6,
+      "year_2021": 6,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": 5,
+      "year_2025": 6
+    },
+    "total_students": 63
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://gxyd.github.io/gsoc2016/gsoc2016_project.html",
+          "description": "<p>It would be awesome to have a Group Theory module. Presently only Combinatorics module has been implemented in SymPy, which is fairly well developed. My intention is to create a module for computation with Finite Groups and Finitely Presented Groups. I will focus upon:</p>\n<ul>\n<li>How to represent the Finitely Presented Groups, Free Groups, SemiGroup, Monoids and their related Groups?</li>\n<li>How to represent the elements of respective Groups?</li>\n<li>If respective groups of infinite order are there, then How to deal with those groups?</li>\n<li>Respective algorithms for the computation of \"Normailizers\", \"Centeralizer\", \"Center\", \"Order\", \"Subgroups\", \"Orbit\" etc.</li>\n</ul>\n<p>After taking a basic course in Abstract Algebra, i realised that computations in even the \"small\" (i.e small order) FpGroup is difficult to do manually. Also i have been contributing to SymPy for almost 1 year now, so i think adding its functionality to it would be good to SymPy and Python world in general. On the way i came across Magma software, i enjoyed reading its documentation (i haven't used it). Alas! it's a proprietary software, so i would like to add that functionality that i could use in further studies.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6593494743252992/",
+          "proposal_id": null,
+          "short_description": "It would be awesome to have a Group Theory module. Presently only Combinatorics module has been implemented in SymPy, which is fairly well developed....",
+          "slug": "gsoc-2016-application-gaurav-dhingra-group-theory",
+          "status": "completed",
+          "student_name": "Gaurav Dhingra",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "GSoC 2016 Application Gaurav Dhingra: Group Theory"
+        },
+        {
+          "code_url": "https://gist.github.com/srajangarg/5a56d9e7400ca0ab9bdeb6ce0e49b432",
+          "description": "<p>This project deals with introducing much needed functionality to the SymEngine polynomial module. It improves upon the already existing univariate polynomial class, and also implementing a new multivariate polynomial class. Along the way, I also want to implement classes for rational coefficients for both these classes, and benchmark their performance against the integer class.</p>\n<p>Also, as discussed with the potential mentors, polynomial manipulation should also be provided by dedicated polynomial libraries like FLINT &amp; Piranha. So, I propose to implement interfaces with these libraries, to use the functions they provide.</p>\n<p>Rest of the details are explained in the project proposal.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6695921391763456/",
+          "proposal_id": null,
+          "short_description": "This project deals with introducing much needed functionality to the SymEngine polynomial module. It improves upon the already existing univariate...",
+          "slug": "adding-to-symengines-polynomial-functionality-and-interfacing-it-with-flint-piranha",
+          "status": "completed",
+          "student_name": "srajangarg",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Adding to SymEngine's Polynomial functionality and interfacing it with FLINT & Piranha"
+        },
+        {
+          "code_url": "http://shekharrajak.github.io/",
+          "description": "<p><code>SymPy</code> is a Python library for symbolic mathematics. <code>Solvers</code> module is mostly used module, so it is very important that <code>Solver</code> works perfectly and give all solution. Harsh Gupta( GSoC 2014) and Amit Kumar (GSoC 2015) have worked on <code>Solveset</code> submodule. <code>Solveset</code> returns a set object and a set object takes care of all types of output.\nBut to make <code>Solveset</code> fully functional, need to implement Non-linear multivariate Equation and System of multivariate Equation solver, System of Inequality solvers, Transcendental Equation solver and have to improve <code>solve_trig</code>, <code>_invert</code> methods .\nSo in this summer I want to implement these remaining things, to complete <code>Solveset</code>.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6728916672708608/",
+          "proposal_id": null,
+          "short_description": "SymPy is a Python library for symbolic mathematics. Solvers module is mostly used module, so it is very important that Solver works perfectly and...",
+          "slug": "gsoc-2016-application-shekhar-prasad-rajak-solvers-completing-solveset",
+          "status": "completed",
+          "student_name": "Shekhar Prasad Rajak",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "GSoC 2016 Application Shekhar Prasad Rajak: Solvers - Completing Solveset"
+        },
+        {
+          "code_url": "https://github.com/symengine/symengine/commits/master?author=nishnik",
+          "description": "<p>Polynomial factorization is one of the fundamental tools of the computer algebra systems. And in symbolic mathematics, it is one of the basic requirement over which other algorithms can be implemented. Currently, SymEngine has the implementation of Univariate Polynomial class, which provides us the basic functionality to add, multiply and subtract two polynomials.</p>\n<p>Now, comes the problem of factoring the polynomials and then other modular arithmetics and, <code>gcd</code> and <code>lcm</code>.</p>\n<p>Therefore, we need to have a module, which can convert the polynomial into a finite field (or <a href=\"https://en.wikipedia.org/wiki/Galois_field\" target=\"_blank\">Galois Field</a>), do basic operations of <code>add</code>, <code>mul</code>, <code>div</code> etc. on them and then the algorithms for factorization like:</p>\n<ul>\n<li><a href=\"https://en.wikipedia.org/wiki/Cantor%E2%80%93Zassenhaus_algorithm\" target=\"_blank\">Cantor–Zassenhaus algorithm</a></li>\n<li><a href=\"https://en.wikipedia.org/wiki/Berlekamp's_algorithm\" target=\"_blank\">Berlekamp's algorithm</a></li>\n</ul>\n<p>After doing factorization, we will be able to find roots, which in turn will help us to solve univariate polynomial equations. Then for returning solution, <code>Set</code> are the simplest and most intuitive way. Like in real pen-paper exam, we are supposed to return solutions in form of sets. So, here also, following the way sympy has been adapting to <code>solveset</code>, we should develop a basic infrastructure, over which <code>solveset</code> can be developed.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5419004260777984/",
+          "proposal_id": null,
+          "short_description": "Polynomial factorization is one of the fundamental tools of the computer algebra systems. And in symbolic mathematics, it is one of the basic...",
+          "slug": "implementing-finite-fields-and-set-module-in-symengine",
+          "status": "completed",
+          "student_name": "Nishant Nikhil",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Implementing Finite Fields and Set module in SymEngine"
+        },
+        {
+          "code_url": "https://gist.github.com/kshitij10496/02239931fd59e510e03f5ee7ffe33788",
+          "description": "<p>Solving equation is a quintessential feature of any Computer Algebra System. And having the ability to solve a variety of equations, with accuracy, adds new dimensions to the system. Currently, SymPy has two different APIs for solving equations- the old <code>solve</code> and the new <code>solveset</code>. The <code>solveset</code> module is based on a <code>Set</code> based results while the <code>solve</code> uses a <code>list</code> for the same. Recently, there has been a lot of development around the <code>solveset</code> to replace <code>solve</code>. The major issues with merging <code>solveset</code> with <code>solve</code> are that the lack of solvers for univariate Transcendental Equations and Multivariate equations. I, on my part, intend to implement these solvers to extend the solveset module and make it more robust.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6056916694335488/",
+          "proposal_id": null,
+          "short_description": "Solving equation is a quintessential feature of any Computer Algebra System. And having the ability to solve a variety of equations, with accuracy,...",
+          "slug": "extending-solveset",
+          "status": "completed",
+          "student_name": "kshitij10496",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Extending solveset"
+        },
+        {
+          "code_url": "https://gist.github.com/shubhamtibra/37fd0ebeeda094ed1b57508c8b8484b7",
+          "description": "<p>The Goal of this project is to implement operations on Holonomic functions in SymPy. Holonomic functions cover a very large set of functions, and have algorithmic closure properties and are also easily represented on a computer. These are of great use in Computer Algebra and have applications in Integration and Series Expansions.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6325197531512832/",
+          "proposal_id": null,
+          "short_description": "The Goal of this project is to implement operations on Holonomic functions in SymPy. Holonomic functions cover a very large set of functions, and...",
+          "slug": "implementation-of-holonomic-functions-in-sympy",
+          "status": "completed",
+          "student_name": "shubhamtibra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementation of Holonomic Functions in SymPy"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/commits/master?author=sampadsaha5",
+          "description": "<p>My proposal aims at designing and implementing a singularity functions module in a pure mathematical way. This module is further utilised in implementing a module which would only focus on solving beam bending problems. There will be a CAS implementation of  the singularity functions and some high level abstractions for solving beam bending problems.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5169362239488000/",
+          "proposal_id": null,
+          "short_description": "My proposal aims at designing and implementing a singularity functions module in a pure mathematical way. This module is further utilised in...",
+          "slug": "implementation-of-singularity-functions-to-solve-beam-bending-problems",
+          "status": "completed",
+          "student_name": "Sampad Kumar Saha",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of Singularity  Functions to solve Beam Bending problems"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6281948016148480/"
+    },
+    "year_2017": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2017-Report-Valeriia-Gladkova:-Group-Theory",
+          "description": "<p>SymPy currently has limited support for subgroups of finitely presented groups. For finite FpGroups, this can be greatly extended by defining an isomorphism to a Permutation Group since the latter has much more functionality already implemented. This calls for the general implementation of group homomorphisms which in turn requires implementation of rewriting systems for groups. Another issue is infinite FpGroups for which better treatment can be provided, in particular, there are certain techniques that allow to determine if a group is infinite before passing it to a function that wouldn't be able to terminate successfully while processing an infinite group.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6337426108710912/",
+          "proposal_id": null,
+          "short_description": "SymPy currently has limited support for subgroups of finitely presented groups. For finite FpGroups, this can be greatly extended by defining an...",
+          "slug": "group-theory-subgroups-homomorphisms-and-presentations",
+          "status": "completed",
+          "student_name": "Valeriia Gladkova",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Group Theory: Subgroups, Homomorphisms and Presentations"
+        },
+        {
+          "code_url": "https://szymag.github.io/post/report/",
+          "description": "<p>In my proposal I present idea of introducing different curvilinear coordinate system to <code>vector</code> package.\n My concept is based on Lame coefficient, which are scaling factor between curvilinear coordinate system.</p>\n<p>I present on examples how we can calculate gradient, curl and divergence using Lame coefficient\nand I propose possible structural solution for this problem.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6575124094386176/",
+          "proposal_id": null,
+          "short_description": "In my proposal I present idea of introducing different curvilinear coordinate system to vector package.\n My concept is based on Lame coefficient,...",
+          "slug": "implementation-of-multiple-types-of-coordinate-systems-for-vectors",
+          "status": "completed",
+          "student_name": "Szymon Mieszczak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementation of multiple types of coordinate systems for vectors"
+        },
+        {
+          "code_url": "https://gist.github.com/Abdullahjavednesar/5e5100296042a646b52c69b7ce79c6ea",
+          "description": "<p>A <strong>Ru</strong>le <strong>b</strong>ased <strong>i</strong>ntegrator nicknamed <strong>Rubi</strong> is an entirely new module in SymPy, Integrals. It is an implementation of more than 6000 rules to cover a wide variety of indefinite integration. Currently SymPy uses algorithms for indefinite integration which are too slow and presents results which are not simplified. Rubi utilizes a set of well defined rules which makes it smart to present the results in a more symmetric and simplified manner. The Pattern Matcher along with transformation rules plays an important role in making Rubi more robust and fast. As it works on the given set of rules, it can be modified easily to include more rules and cover more number of integrations.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5411801063751680/",
+          "proposal_id": null,
+          "short_description": "A Rule based integrator nicknamed Rubi is an entirely new module in SymPy, Integrals. It is an implementation of more than 6000 rules to cover a wide...",
+          "slug": "rubi-integrator",
+          "status": "completed",
+          "student_name": "Abdullah Javed Nesar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rubi Integrator"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2017-Report-Arif-Ahmed-:-Integration-over-Polytopes",
+          "description": "<p>This project is to implement a module in SymPy which will provide the ability to integrate arbitrary polynomials over 2D and 3D polytopes.\nUsing Generalized Stokes' Theorem and Euler's Theorem the integration over a given polytope is reduced to integration over it's faces and then edges. This technique avoids using a 3D quadrature which would otherwise be computationally expensive.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5455209492905984/",
+          "proposal_id": null,
+          "short_description": "This project is to implement a module in SymPy which will provide the ability to integrate arbitrary polynomials over 2D and 3D polytopes.\nUsing...",
+          "slug": "implementing-a-sympy-module-for-integration-of-polynomials-over-23-polytopes",
+          "status": "completed",
+          "student_name": "Arif Ahmed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing a SymPy module for Integration of Polynomials over 2/3-Polytopes"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2017-Report-Bj%C3%B6rn-Dahlgren:-Improved-code-generation-facilities",
+          "description": "<p>The code-generation facilities in SymPy are already in active use in the research community.\nThere are, however, still many exciting opportunities for further improvements.\nAs a CAS, SymPy has access to far more information than a compiler processing typical source code in languages such C/C++/Fortran. SymPy uses arbitrary precision\narithmetics which means that the size and precision of numbers represented are only\nlimited by the amount of memory the computer has access too.\nHowever, operations with arbitrary precision are inherently slow, which is why high performance code\nrelies on floating-point arithmetic (which has dedicated hardware in modern CPUs).\nTherefore, any code generation for a programming language which maps mathematical expressions to finite precision floating point instructions, would benefit greatly if\nthat code-generation was made in such a way to minimize loss of significance, risk of\nunder-/overflow etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5493001178578944/",
+          "proposal_id": null,
+          "short_description": "The code-generation facilities in SymPy are already in active use in the research community.\nThere are, however, still many exciting opportunities...",
+          "slug": "improved-code-generation-facilities",
+          "status": "completed",
+          "student_name": "Björn Dahlgren",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved code-generation facilities"
+        },
+        {
+          "code_url": "https://parsoyaarihant.github.io/blog/gsoc/2017/08/28/GSoC17-Final-Report.html",
+          "description": "<p>Rule based integration (Rubi) consists of ~10,000 transformation rules which have been tabulated since last two centuries. Computer Algebra System(CAS) can match the integrand with the right rule to directly solve the integration without using general integration algorithms.</p>\n<p>Adding Rubi to SymPy can be very helpful to SymPy's integration module since it frees developers of algorithms from having to worry about the annoying and trivial problems and the special cases, and instead focus on the genuinely hard and interesting problems.</p>\n<p>Reference:</p>\n<ul>\n<li><a href=\"http://www.apmaths.uwo.ca/%7Earich/A%20Rule-based%20Knowledge%20Repository.pdf\" target=\"_blank\">A Knowledge Repository for Indefinite Integration Based on Transformation Rules by D.J. Jeffrey and A.D. Rich</a></li>\n<li><a href=\"http://www.apmaths.uwo.ca/%7Earich/\" target=\"_blank\">Albert D. Rich website</a></li>\n<li><a href=\"https://people.eecs.berkeley.edu/~fateman/papers/partition-new2.pdf\" target=\"_blank\">Partitioning of algebraic subexpressions in computer algebra systems: an alternative to matching with an application to symbolic integration by Richard Fateman</a></li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5013988039458816/",
+          "proposal_id": null,
+          "short_description": "Rule based integration (Rubi) consists of ~10,000 transformation rules which have been tabulated since last two centuries. Computer Algebra...",
+          "slug": "rule-based-integration-module-for-sympy",
+          "status": "completed",
+          "student_name": "Arihant Parsoya",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Rule Based Integration Module for SymPy"
+        },
+        {
+          "code_url": "https://gist.github.com/ranjithkumar007/1511475bcc2079ef77844c693a179aca",
+          "description": "<p>Solving equations and system of equations is a crucial feature of Computer Algebra Systems and Polynomial factorization is one of the fundamental tools to implement solvers. Currently, SymEngine has an implementation of Univariate Polynomials, MultiVariate Polynomials, Sets and Finite Fields.</p>\n<p>SymPy has a robust solvers module. I would like to port basic solvers like univariate solvers, trigonometric solvers and System of linear Equations to SymEngine. SymEngine's Set module is not matured enough, So I will also improve Sets to facilitate Solvers. In SymPy, Currently Major work is going around replacing solve with solveset. So, rather that porting solve, I would port solveset to SymEngine. After implementing basic solvers module, I would also implement some applications of solvers like eigenvectors and eigenvalues of a matrix.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4519758099644416/",
+          "proposal_id": null,
+          "short_description": "Solving equations and system of equations is a crucial feature of Computer Algebra Systems and Polynomial factorization is one of the fundamental...",
+          "slug": "implementing-solvers-for-symengine",
+          "status": "completed",
+          "student_name": "Adha Ranjith Kumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing Solvers for SymEngine"
+        },
+        {
+          "code_url": "https://github.com/ShikharJ/GSoC-2017-Work-Report",
+          "description": "<p>Speed is of the utmost importance for any Computer Algebra System.</p>\n<p><code>SymEngine</code>, was initially developed with the aim of serving as an optional core for the <code>SymPy</code> CAS in the future. Over the years, it has matured enough to be used as a symbolic backend.\nUsing <code>SymEngine</code> can significantly increase speeds of various symbolic operations, and hence make <code>SymPy</code> an ideal choice for projects requiring fast manipulations, by giving them the option to switch over to <code>SymEngine</code>’s routines.</p>\n<p>On the other hand, this will also lead to the development of a number of features currently lacking in <code>SymEngine</code> and its Python wrapper, which would be ported over from <code>SymPy</code> in order to provide smooth wrappers for optional use.</p>\n<p>The rest of the details are explained in the project  proposal.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5925654977576960/",
+          "proposal_id": null,
+          "short_description": "Speed is of the utmost importance for any Computer Algebra System.\nSymEngine, was initially developed with the aim of serving as an optional core for...",
+          "slug": "improving-symengines-python-wrappers-and-sympy-symengine-integration",
+          "status": "completed",
+          "student_name": "Shikhar Jaiswal",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Improving SymEngine's Python Wrappers and SymPy-SymEngine Integration"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5228947662962688/"
+    },
+    "year_2018": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://nkhlpappu.wordpress.com/2018/08/11/gsoc-2018-autolev-parser-using-antlrv4-final-report/",
+          "description": "<p>Autolev(now superseded by <a href=\"http://www.motiongenesis.com/index.html\" target=\"_blank\">MotionGenesis</a>) is a domain specific language used for symbolic multibody dynamics. The SymPy mechanics module now has enough power and functionality to be a fully featured symbolic dynamics module. The PyDy package extends the SymPy output to the numerical domain for simulation, analyses, and visualization.\nThis project is about creating a parser that would translate Autolev code to SymPy code using the ANTLR framework. This would help users of Autolev to familiarize themselves with SymPy Mechanics. The project will also involve writing a lot of tests and documentation examples to demonstrate the functionality of the parser.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6339390586486784/",
+          "proposal_id": null,
+          "short_description": "Autolev(now superseded by MotionGenesis) is a domain specific language used for symbolic multibody dynamics. The SymPy mechanics module now has...",
+          "slug": "autolev-parser-using-antlr-v4",
+          "status": "completed",
+          "student_name": "Nikhil Pappu",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Autolev Parser (using ANTLR v4)"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2018-Report-Ravicharan-:-Group-Theory",
+          "description": "<p>The project mainly aims in improvising the Group Theory part of the combinatorics module. The project is mainly divided into 3 phases. The first phase deals with word reduction and the isomorphism between groups. The second and the third phases deal with Polycyclic groups and Quotient groups respectively.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5419636560494592/",
+          "proposal_id": null,
+          "short_description": "The project mainly aims in improvising the Group Theory part of the combinatorics module. The project is mainly divided into 3 phases. The first...",
+          "slug": "group-theory",
+          "status": "completed",
+          "student_name": "Ravicharan Nudurupati",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Group Theory"
+        },
+        {
+          "code_url": "https://gist.github.com/Yathartha22/416990ceacca18b20cf1a64687e34125",
+          "description": "<p>One of the major features of any Computer Algebra System is solving equations. Sympy too have a powerful <code>solve</code> function that can solve a lot of equations, but due to its complex API and inability to give infinite solutions, <code>solveset</code> was implemented. Solveset is under development since 2014 and since then solveset is being developed to solve varied type of equations. But there is a lot of work that needs to be done to make <code>solveset</code> complete. For this, one of the major equation solver, i.e. transcendental equation solver needs to be implemented. Currently <code>solveset</code> is unable to handle such equations, therefore, to make <code>solveset</code> powerful and versatile <code>transolve</code> needs to be implemented. <code>transolve</code> will mainly cover equations like logarithmic, exponential, equations solvable by LambertW and trigonometric.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6261947964063744/",
+          "proposal_id": null,
+          "short_description": "One of the major features of any Computer Algebra System is solving equations. Sympy too have a powerful solve function that can solve a lot of...",
+          "slug": "solvers-completing-solveset",
+          "status": "completed",
+          "student_name": "Yathartha Anirudh Joshi",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Solvers: Completing Solveset"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2018-Report-Sidhant-Nagpal:-Discrete-Transforms,-Convolutions-&-Recurrences",
+          "description": "<p>Discrete transforms, convolutions and recurrences modules are implemented for SymPy, a computer algebra system (CAS) written purely in Python.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4589448641642496/",
+          "proposal_id": null,
+          "short_description": "Discrete transforms, convolutions and recurrences modules are implemented for SymPy, a computer algebra system (CAS) written purely in Python.",
+          "slug": "transforms-convolution-linear-recurrence-evaluation",
+          "status": "completed",
+          "student_name": "Sidhant Nagpal",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Transforms, Convolution & Linear Recurrence Evaluation"
+        },
+        {
+          "code_url": "https://github.com/jashan498/GSoC/wiki/GSoC-2018-Report-Jashanpreet-Singh:-Create-a-Rich-Beam-Solving-System",
+          "description": "<p>The project aims at improving SymPy 2D beam module so that it can solve more beam problems,  along with the implementation of beam problems in 3D and plotting capabilities.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4762509986758656/",
+          "proposal_id": null,
+          "short_description": "The project aims at improving SymPy 2D beam module so that it can solve more beam problems,  along with the implementation of beam problems in 3D and...",
+          "slug": "create-a-rich-beam-solving-system",
+          "status": "completed",
+          "student_name": "Jashanpreet Singh Sraw",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Create a Rich Beam Solving System"
+        },
+        {
+          "code_url": "https://github.com/akash9712/GSoC-Report/wiki/GSoC-2018:-Improving-Probability-and-Random-processes:-Report",
+          "description": "<p>SymPy statistics module supports a variety of probability distributions, including finite, continuous, discrete distributions. The aim of this project is to make the module support a variety of new features, by building upon the already existing ones. This involves implementing joint distributions and compound distributions, which will in turn allow the assumption of dependence between random variables. The project also aims to implement the random processes Markov Chains and random walks, which are not implemented at all. Finally, the ability to export SymPy random variable objects to other Statistical libraries is also something that will be achieved during the course of the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6015784866283520/",
+          "proposal_id": null,
+          "short_description": "SymPy statistics module supports a variety of probability distributions, including finite, continuous, discrete distributions. The aim of this...",
+          "slug": "improving-probability-and-random-processes",
+          "status": "completed",
+          "student_name": "Akash Vaish",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving Probability and Random Processes"
+        },
+        {
+          "code_url": "https://github.com/ashishkg0022/Gsoc-proposal-Rubi/wiki/GSoC-2018-Rubi-Final-Report",
+          "description": "<p>This project aims to complete rubi (rule based integration) module of sympy, which is in very unstable condition.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5203005523623936/",
+          "proposal_id": null,
+          "short_description": "This project aims to complete rubi (rule based integration) module of sympy, which is in very unstable condition.",
+          "slug": "completing-rubi-integrator",
+          "status": "completed",
+          "student_name": "Ashish Kumar Gaurav",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Completing RUBI Integrator"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5672591746400256/"
+    },
+    "year_2019": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Report-of-Tensor-Core:-Linear-Algebra",
+          "description": "<p>Add more functionalities like NumPy-like operators, lazy-evaluation, code generation, etc. to tensor module, especially to array module</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6619268605542400/",
+          "proposal_id": null,
+          "short_description": "Add more functionalities like NumPy-like operators, lazy-evaluation, code generation, etc. to tensor module, especially to array module",
+          "slug": "gsoc-2019-proposal-of-linear-algebra-tensor-core",
+          "status": "completed",
+          "student_name": "kangzhiq",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSoC 2019 Proposal of Linear Algebra: Tensor core"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Report-Shubham-Kumar-Jha:-Improving-Assumptions",
+          "description": "<p>This project aims to improve the capabilities of the assumptions handling sub-system in SymPy. Currently, SymPy has two such systems (the old and the new assumptions). The <strong>Old Assumptions</strong> is time-tested and fast while <strong>New Assumptions</strong> is slow but provide better logical inferences. This project targets to improve the new system in SymPy and make it faster.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5724140848283648/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve the capabilities of the assumptions handling sub-system in SymPy. Currently, SymPy has two such systems (the old and the...",
+          "slug": "improving-assumptions",
+          "status": "completed",
+          "student_name": "Shubham Kumar Jha",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Assumptions"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Final-Report-Ishan-Joshi:-Creating-a-rich-beam-solving-system-and-extending-continuum-mechanics-module",
+          "description": "<p>The project aims at creating a rich beam module and also extending the current continuum mechanics module by integrating cross-sectional geometries in beam module and enabling it to draw the basic diagram of the beam using matplotlib. Further, it aims at implementing Column Buckling and its corresponding calculations. Finally, Truss structure analysis using the method of joints has to be implemented as a part of the continuum mechanics module.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5351176374059008/",
+          "proposal_id": null,
+          "short_description": "The project aims at creating a rich beam module and also extending the current continuum mechanics module by integrating cross-sectional geometries...",
+          "slug": "continuum-mechanics-creating-a-rich-beam-solver-and-extending-continuum-mechanics-module",
+          "status": "completed",
+          "student_name": "Ishan Joshi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Continuum Mechanics: Creating a Rich Beam Solver and Extending continuum mechanics module"
+        },
+        {
+          "code_url": "https://gist.github.com/ritesh99rakesh/3bcf890df9eecc5d626531a243b245f2",
+          "description": "<p>SymPy basic stats module is fairly developed but it would be able to reach its true potential and find wide applicability only when advanced features like compound distributions, different stochastic processes, random matrices and ability to export expression to external libraries are developed. I plan to implement these features with others for the stats module.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5571523094511616/",
+          "proposal_id": null,
+          "short_description": "SymPy basic stats module is fairly developed but it would be able to reach its true potential and find wide applicability only when advanced features...",
+          "slug": "probability-compound-distributions-stochastic-processes-and-random-matrices",
+          "status": "completed",
+          "student_name": "Ritesh Kumar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Probability: Compound Distributions, Stochastic Processes and Random Matrices"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Report-Divyanshu-Thakur:-Group-Theory",
+          "description": "<p>The project aims at adding additional functionalities to Group Theory section of combinatorics module.\nCreating capability to do computation with Polycyclic Groups.\nImplementation of Composition series, Abelian invariants algorithm for permutation groups.\nInduced-pcgs, Exponent vector algorithm for computation with polycyclic subgroups.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4597015869128704/",
+          "proposal_id": null,
+          "short_description": "The project aims at adding additional functionalities to Group Theory section of combinatorics module.\nCreating capability to do computation with...",
+          "slug": "group-theory",
+          "status": "completed",
+          "student_name": "Divyanshu Thakur",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Group Theory"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Report-Nikhil-Maan:-Creating-a-C-and-Fortran-parser-for-SymPy",
+          "description": "<p>The project is aimed at making SymPy able to convert code from Fortran/C into SymPy expressions. After completion and implementation of this project, SymPy would be able to take a block of Fortran or C code. convert it into a sympy expression, perform all the desired operations and convert the code back to original language source code to be implemented in that language. SymPy already has the features of generating source code for other languages from SymPy syntax. This would allow SymPy to easily read in, alter, and write out computational code. Sympy can easily be implemented in other programs as a computing engine because it's fast as compared to many other libraries and languages for computation. \nThe other objective of this project is to improve Lfortran and implement it as an interactive computational environment in Fortran and a library with an effective API in Python. It also increases the usability of Lfortran. The project can be extended further after the program is over by creating a parser for converting their code in sympy syntax and can also be expanded to process natural language instructions.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4653063850164224/",
+          "proposal_id": null,
+          "short_description": "The project is aimed at making SymPy able to convert code from Fortran/C into SymPy expressions. After completion and implementation of this project,...",
+          "slug": "creating-a-c-and-fortran-parser-for-sympy",
+          "status": "completed",
+          "student_name": "Nikhil Maan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Creating a C and Fortran Parser for SymPy"
+        },
+        {
+          "code_url": "https://gist.github.com/czgdp1807/199ae335a28bcfc4a6bcd02138c4108e",
+          "description": "<p>Currently the stats module lacks some useful features as suggested on the ideas page, like Random Walks, Random Matrices, etc. There is also a scope of completing the work of GSoC 2018 by Akash Vaish like, exporting expressions of random variables to external libraries. There are also certain issues with results being produced by various functions and methods, like, sometimes unwanted complex results are produced for simple probability expressions or, unevaluated results are given as output.\nI would divide my project into the following broad categories:</p>\n<ol>\n<li>Implementing additional multivariate distributions.</li>\n<li>Implementing Markov Chains, Random Walks, Bernoulli Process(extending PR #15058), and Poisson Process.</li>\n<li>Implementing Random Matrices.</li>\n<li>Implementing mechanism to export random variables to PyStan, PyMC3, NumPy, etc. </li>\n<li>Adding support for assumptions of dependence among random variables.</li>\n<li>Adding support to enhance result generation by statistics module.</li>\n</ol>\n",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4697311945424896/",
+          "proposal_id": null,
+          "short_description": "Currently the stats module lacks some useful features as suggested on the ideas page, like Random Walks, Random Matrices, etc. There is also a scope...",
+          "slug": "enhancement-of-statistics-module",
+          "status": "completed",
+          "student_name": "Gagandeep Singh-1",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhancement of Statistics Module"
+        },
+        {
+          "code_url": "https://jmig5776.github.io/gsoc-final-report",
+          "description": "<p>SymPy is a Python library for symbolic mathematics. Sympy has a powerful <code>solve</code> function that can solve a lot of equations, but due to its complex API and inability to give efficient output, <code>solveset</code> was implemented and is under development since 2014. A lot of work is needed to complete <code>solveset</code>. For <code>transolve</code>, Lambert solver needs to be completed. Handling modular equations will also be added. Proper use of Decomposition and Rewriting principle also needs to be implemented to solve nested trigonometric equations. Enhancing the set infrastructure to give simplified output for trigonometric equations is also needed along with integrating helper solvers with <code>solveset</code>.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4722757948932096/",
+          "proposal_id": null,
+          "short_description": "SymPy is a Python library for symbolic mathematics. Sympy has a powerful solve function that can solve a lot of equations, but due to its complex API...",
+          "slug": "solvers-extending-solveset",
+          "status": "completed",
+          "student_name": "Jogi Miglani",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api"
+          ],
+          "title": "Solvers: Extending solveset"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Report-Ankit-Pandey:-Extending-Codegen",
+          "description": "<p>The purpose of this project is to extend SymPy's ability to generate code\ninvolving matrix expressions by allowing the transformation of SymPy's AST\nbefore generation. Through extensions to the codegen AST, this interface will\nallow SymPy to be easily extended to generate highly optimized library calls\n(such as to BLAS/LAPACK).</p>\n<p>A second portion of this project is to integrate SymPy with the LFortran project\nby generating intermediate representations understandable by the tool. Code\ngeneration for Fortran can then be offloaded to the LFortran backend.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_sympy_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6494831994470400/",
+          "proposal_id": null,
+          "short_description": "The purpose of this project is to extend SymPy's ability to generate code\ninvolving matrix expressions by allowing the transformation of SymPy's AST...",
+          "slug": "extending-codegen",
+          "status": "completed",
+          "student_name": "anpandey",
+          "student_profile": null,
+          "tags": [
+            "backend"
+          ],
+          "title": "Extending Codegen"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2019-Report-Arighna-Chakrabarty-:-Improving-Series-Expansions",
+          "description": "<p>Currently, SymPy has a well-established series package in sympy/series.py. The goal\nof this project would be to improve the existing series package, and introduce other optimizable functionality and algorithms in the module. I would like to unify the various existing series expansions, and plan to give it a concrete structure for further development and improvement. The aim of this project would be to -:</p>\n<p>1.) Implement more operations and improve the existing Formal Power Series methods and classes.</p>\n<p>2.) Ring implementation of Formal Power, Laurent and Puiseux Series to make rs_series() the ultimate series function.</p>\n<p>3.) Improving and optimizing existing limit algorithms.</p>\n<p>4.) Unifying all the existing series expansions under one class base.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2019_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6559571731021824/",
+          "proposal_id": null,
+          "short_description": "Currently, SymPy has a well-established series package in sympy/series.py. The goal\nof this project would be to improve the existing series package,...",
+          "slug": "improving-series-expansions",
+          "status": "completed",
+          "student_name": "Arighna Chakrabarty",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Improving Series Expansions"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5652307671252992/"
+    },
+    "year_2020": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/namannimmo10/Google-Summer-of-Code-with-SymPy",
+          "description": "<p>The main aim of this project is to implement in SymPy, a basic control system functionality that would be beneficial for engineers trying to solve Control problems. It will make use of some of the sympy's existing features and core classes and will be a candidate for a full symbolic model rather than just being a simple solver.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5417784797822976/",
+          "proposal_id": null,
+          "short_description": "The main aim of this project is to implement in SymPy, a basic control system functionality that would be beneficial for engineers trying to solve...",
+          "slug": "control-theory-implement-a-control-systems-package",
+          "status": "completed",
+          "student_name": "Naman Gera",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Control Theory - Implement a control systems package"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2020-Report-Sachin-Agarwal:-Series-and-Limits",
+          "description": "<p>SymPy is a Python library for symbolic mathematics. SymPy has a powerful \"series\" module, which is the backbone of all the limit evaluations performed by the library. A drawback is that the limit evaluation is highly dependent on the Gruntz algorithm making it inefficient, because of the highly recursive nature of the algorithm. \nHence, the aim of this project is to improve the performance (speeding-up) of limit evaluation, by reducing the dependency on the Gruntz algorithm and implementing a structured way to evaluate limits. A structured implementation will make it easy to debug, in case of any wrong evaluation, depending on the type of function present in the limit expression.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_sympy_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5438053587353600/",
+          "proposal_id": null,
+          "short_description": "SymPy is a Python library for symbolic mathematics. SymPy has a powerful \"series\" module, which is the backbone of all the limit evaluations...",
+          "slug": "amendments-to-limit-evaluation-and-series-expansion",
+          "status": "completed",
+          "student_name": "SACHIN AGARWAL",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Amendments to Limit Evaluation and Series Expansion"
+        },
+        {
+          "code_url": "https://gist.github.com/Smit-create/3aa66e9200a4667dfffd2fb0ba444449",
+          "description": "<p>Sympy is currently supporting Stochastic Processes, Random matrices, Joint, Continuous,\nand Discrete distributions in its stats module. Compound Distributions introduced in 2018,\ndoes not provide complete support. Therefore, I plan to do the following during this summer.</p>\n<p>• Sampling from external libraries.</p>\n<p>• Adding and testing currently implemented Stochastic Processes.</p>\n<p>• Assumptions of dependence between Random Variables.</p>\n<p>• Improving and adding support for Compound Distributions.</p>\n<p>• Improving Joint Distributions Framework and adding more distributions.</p>\n<p>• Adding support for Mixture Distributions.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4549744795320320/",
+          "proposal_id": null,
+          "short_description": "Sympy is currently supporting Stochastic Processes, Random matrices, Joint, Continuous,\nand Discrete distributions in its stats module. Compound...",
+          "slug": "improving-and-extending-stats-module",
+          "status": "completed",
+          "student_name": "Smit Lunagariya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving and Extending stats module"
+        },
+        {
+          "code_url": "https://gist.github.com/abh2k/bae97b40af1abff42a8a17db14ff7bc6",
+          "description": "<p>Implement sub-exponential factorization algorithms - \n(1.) Lenstra's Elliptic Curve factorization Algorithm and\n(2.) Self-Initializing Quadratic Sieve with Single Large Prime Variation\nAlso implement elliptic curve primality test</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4831219772030976/",
+          "proposal_id": null,
+          "short_description": "Implement sub-exponential factorization algorithms - \n(1.) Lenstra's Elliptic Curve factorization Algorithm and\n(2.) Self-Initializing Quadratic...",
+          "slug": "enhancement-of-number-theory-module",
+          "status": "completed",
+          "student_name": "Abhinav Anand",
+          "student_profile": null,
+          "tags": [],
+          "title": "ENHANCEMENT OF NUMBER THEORY MODULE"
+        },
+        {
+          "code_url": "https://gist.github.com/friyaz/2a5e4b53214775b41076e142bf4b9fa8",
+          "description": "<p>My project aims at adding the functionality of vector integration over Curves, Surfaces and Volumes.</p>\n<p>Currently sympy.vector package supports basic integration of vectors like we integrate expressions. But integration over curves and surfaces is not supported. Vector calculus has many applications in the field of physics and mathematics. The project will involve implementing classes to represent Curves, Surface and Volume.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4906175541280768/",
+          "proposal_id": null,
+          "short_description": "My project aims at adding the functionality of vector integration over Curves, Surfaces and Volumes.\nCurrently sympy.vector package supports basic...",
+          "slug": "implementation-of-vector-integration",
+          "status": "completed",
+          "student_name": "Faisal Riyaz",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of Vector Integration"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2020-Report-Milan-Jolly:-Improving-and-Extending-ODE-Module",
+          "description": "<p>In this project, 5 new general solvers that can solve specific cases of system of ODEs and two techniques, namely, division of system of ODEs into subsequent subsystems and reduction of higher order ODEs to first order ODEs are added to the ODE module of SymPy to greatly enhance SymPy's capabilities to solve system of ODEs. These capabilities not only make the ODE module compact, by eliminating a significant number of special case solvers which mostly handle 2 to 3 equations per system, but it also manages to expand SymPy's current capabilities as there are many cases of systems of ODEs that the library can't handle right now, which will be possible after these solvers and functionalities are added.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5867789056737280/",
+          "proposal_id": null,
+          "short_description": "In this project, 5 new general solvers that can solve specific cases of system of ODEs and two techniques, namely, division of system of ODEs into...",
+          "slug": "improving-and-extending-ode-module",
+          "status": "completed",
+          "student_name": "Milan Jolly",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving and Extending ODE Module"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5669371197784064/"
+    },
+    "year_2021": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/akshanshbhatt/GSoC-2021-Final-Report",
+          "description": "<p>My project aims to improve the existing API of the control system module in <code>sympy.physics</code>. Not to mention <code>sympy.physics.control</code> utilizes the state-of-the-art symbolic features of SymPy, making it more beginner-friendly than any other controls module present. Basic functionalities of a Linear Time-Invariant (LTI) control system package were added last year by Naman as part of his GSoC project. These included <code>TransferFunction</code>, <code>Feedback</code>, <code>Series</code> and <code>Parallel</code> classes. Although being available in the latest release of SymPy (v1.8), these functionalities require further improvements before becoming fully useful for an engineer or a student. Apart from these modifications in the original implementation, I plan to add some of the missing features to complete the LTI submodule. These include-</p>\n<ul>\n<li><code>TransferFunctionMatrix</code> for MIMO systems. Quality examples will also be added to the documentation covering the various possibilities before any further development is carried on.</li>\n<li>Stability analysis plots.</li>\n</ul>\n",
+          "difficulty": "beginner",
+          "id": "proj_sympy_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5382109522296832/",
+          "proposal_id": null,
+          "short_description": "My project aims to improve the existing API of the control system module in sympy.physics. Not to mention sympy.physics.control utilizes the...",
+          "slug": "improving-and-expanding-functionalities-in-control-module",
+          "status": "completed",
+          "student_name": "Akshansh Bhatt",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Improving and Expanding Functionalities in Control Module"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2021-Report:-Naveen-Sai---Rational-Solutions-of-Riccati-ODEs",
+          "description": "<p>In this project, a solver for Riccati ODEs will be added to the ODE module of SymPy. The solver finds all rational solutions of the equation. A rational riccati solver is very important for solvers that solve second order differential equations and a general solver for any first order algebraic ODE. An extensive database of ODEs from famous books like Kamke, Murphy will also be prepared. This database will then be used to test the new solver and the existing solvers.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5537734642368512/",
+          "proposal_id": null,
+          "short_description": "In this project, a solver for Riccati ODEs will be added to the ODE module of SymPy. The solver finds all rational solutions of the equation. A...",
+          "slug": "rational-solutions-of-riccati-odes",
+          "status": "completed",
+          "student_name": "Naveen Sai",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Rational Solutions of Riccati ODEs"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2021-Report:-Improving-Series-Expansion-(Sidharth-Mundhra)",
+          "description": "<p>The current implementation of series expansions in SymPy is developed to a large extent, but not complete. There are a few limit failures that need to be addressed, for which the <code>series</code> module is the backbone. This project aims to fix the computation of leading term methods and make them more robust, which will fix many outstanding issues. This project will also add series and asymptotic expansions support to all special functions, and fix some long standing issues with AccumulationBounds and Order terms.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5636749543342080/",
+          "proposal_id": null,
+          "short_description": "The current implementation of series expansions in SymPy is developed to a large extent, but not complete. There are a few limit failures that need...",
+          "slug": "improving-series-expansions",
+          "status": "completed",
+          "student_name": "Sidharth Mundhra",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Series Expansions"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2021-Report-Prakhar-Saxena-:-Creating-a-Rich-Beam-Solver-and-Extending-Continuum-Mechanics-Module",
+          "description": "<p>The continuum mechanics of Sympy is in its early stage of development. During this summer,  I plan on adding the following features:</p>\n<h3>Adding plotting functions in Beam 3D class</h3>\n<h3>Adding support for calculating equations of Influence Line Diagrams</h3>\n<h3>Adding functions to plot the above Influence Line Diagrams</h3>\n<h3>Adding functions for max deflection, bending moment, and shear in Beam 3D class</h3>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6229963111399424/",
+          "proposal_id": null,
+          "short_description": "The continuum mechanics of Sympy is in its early stage of development. During this summer,  I plan on adding the following features:\nAdding plotting...",
+          "slug": "continuum-mechanics-creating-a-rich-beam-solver-and-extending-continuum-mechanics-module",
+          "status": "completed",
+          "student_name": "Prakhar Saxena",
+          "student_profile": null,
+          "tags": [],
+          "title": "Continuum Mechanics: Creating a Rich Beam Solver and Extending Continuum Mechanics Module"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2021-Report:-Mohit-Balwani-Refactor-the-ODE-module-and-make-it-fast",
+          "description": "<p>The idea is to organise each of the solvers into a class with a consistent interface. Then the main part of dsolve can loop over these classes rather than having a monolothic matching function.</p>\n<p>This will make the code easier to maintain and understand and eliminate the need for global variables.</p>\n<p>This can also make dsolve much faster. Currently all the matching code for all of the methods runs for every ODE before a solution is returned. Some of the methods can return a solution much faster than other methods can run their matching code. Once everything is neatly organised into classes the main match and solve code can be changed to return the first solution that matches.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6513145773817856/",
+          "proposal_id": null,
+          "short_description": "The idea is to organise each of the solvers into a class with a consistent interface. Then the main part of dsolve can loop over these classes rather...",
+          "slug": "refactor-the-ode-module-and-make-it-fast",
+          "status": "completed",
+          "student_name": "Mohit Balwani",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Refactor the ODE module and make it fast"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2021-Report-Sudeep-Sidhu-:-Implement-JointsMethod",
+          "description": "<p>The main aim of this project is to implement Joints Method in Sympy under mechanics in physics module as it would open up the use of the library to a much wider set of users because they will be able to construct dynamic models with less knowledge of underlying mathematics. Currently to solve kinematical differential equations, users need to define those equations and solve them using Kane’s or Lagrange’s method. With the help of JointsMethod, users would just need to define the system with joints and bodies and JointsMethod would form and solve kinematic differential equations all by itself , without the user doing any mathematics.</p>\n",
+          "difficulty": null,
+          "id": "proj_sympy_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5844105195683840/",
+          "proposal_id": null,
+          "short_description": "The main aim of this project is to implement Joints Method in Sympy under mechanics in physics module as it would open up the use of the library to a...",
+          "slug": "implement-jointsmethod",
+          "status": "completed",
+          "student_name": "Sudeep Sidhu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implement JointsMethod"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5401117973807104/"
+    },
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2022-Report-Advait-Pote-:-Extending-the-Continuum-Mechanics-Module",
+          "description": "The current Continuum Mechanics module is very useful and has been developed to a good extent. However, there are many more concepts that are prevalent in the field of Solid Mechanics and have not been implemented in SymPy. This project aims to implement some new classes that would bring these utilities into the module. This way a wider range of engineering problems can be solved using SymPy. The two features that are planned to be implemented are solving Torsional problems due to the presence of torque along the direction of the shaft and calculating internal forces & reactions for a given Truss under external forces and moments. This project also plans to add some functions to the geometry module to add some flexibility to the way one can form composite shapes so that it is easier to define complex cross-sectional geometries for the beam module. Implementing the above-mentioned features will expand SymPy to a great extent and help users solve a wider range of problems with ease and precision.",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/A1oPEjHH/",
+          "proposal_id": null,
+          "short_description": "The current Continuum Mechanics module is very useful and has been developed to a good extent. However, there are many more concepts that are...",
+          "slug": "extending-the-continuum-mechanics-module",
+          "status": "completed",
+          "student_name": "Advait Pote",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ai"
+          ],
+          "title": "Extending the Continuum Mechanics module"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2022-Report-Timo-Stienstra-:-Enhancing-the-Joints-Framework",
+          "description": "The aim of this project is to further develop the construction of systems from bodies and joints. This involves fixing existing bugs, which will also be discovered by creating more examples (and their accompanying documentation). The next step will be implementing intermediate frames in combination with a joint axis, which will give the possibility for more complex joint definitions. After fixing the current implementation and documentation the focus will be on adding joints, starting with a planar and cylindrical joint. Next up will be the spherical joint.",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/7V7IoGNf/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to further develop the construction of systems from bodies and joints. This involves fixing existing bugs, which will also...",
+          "slug": "classical-mechanics-extending-the-construction-of-systems-from-bodies-and-joints",
+          "status": "completed",
+          "student_name": "TJStienstra",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Classical Mechanics: Extending the Construction of Systems From Bodies and Joints"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2022-:-Improving-Series-Expansions-and-Limit-Computations-Report-by-Anutosh-Bhat",
+          "description": "Series expansions, in the field of symbolic computation, is an area of major study in mathematical analysis. The current implementation of series expansions in SymPy is developed to a large extent, but not yet complete . This proposal aims to tackle a good chunk of the remaining work through the following proposed ideas\n\n1) Improve leading term & series method for functions involving branch cuts/ branch points\n2) Adding leading term and series support to elementary/special functions\n3) Fixing limit errors through gruntz algorithm and improving the algorithm overall\n4) Refactoring written code for order term\n5) Addressing  miscellaneous bugs and implementation ideas related to the series module",
+          "difficulty": null,
+          "id": "proj_sympy_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Ue4ftqH2/",
+          "proposal_id": null,
+          "short_description": "Series expansions, in the field of symbolic computation, is an area of major study in mathematical analysis. The current implementation of series...",
+          "slug": "improving-series-expansions-and-limit-computations",
+          "status": "completed",
+          "student_name": "Anutosh Surendra Bhat",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Series Expansions and Limit Computations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/sympy/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2023-Report-Abhishek-Patidar-:-Improving-Polynomial-GCD",
+          "description": "The project aims to add new algorithms for computing the greatest common divisor (GCD) of polynomials in the sparse representation in order to improve the speed of many parts of sympy such as matrices, solvers, integration, and simplification functions. Currently, the slow speed of polynomial GCD impacts many operations in SymPy, leading to heavy performance penalties and avoiding the use of domain elements in some algorithms. By improving the speed of polynomial GCD algorithms, many parts of SymPy could become faster, and the use of GCD could become more widespread. This project could significantly enhance the overall performance and usability of SymPy.",
+          "difficulty": null,
+          "id": "proj_sympy_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/JBxiR5tN",
+          "proposal_id": "KJ0RRZAk",
+          "short_description": "The project aims to add new algorithms for computing the greatest common divisor (GCD) of polynomials in the sparse representation in order to...",
+          "slug": "improving-polynomial-gcd",
+          "status": "completed",
+          "student_name": "AbhishekPatidar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Polynomial GCD"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2023-:-Improving-and-Expanding-the-Functionalities-of-SymPy's-Control-Module-by-Anurag-Bhat",
+          "description": "In this project, I aim to improve and expand the functionalities of the physics control module. This module was introduced to SymPy 2 years ago. The work done is commendable but has a good scope for improvement. There are many incomplete areas and there is a lot of potential for new implementations. \nI plan to learn the relevant theoretical aspects of control systems required to complete this project by referring to course textbooks and other CST packages available in the open literature.\nBy the end of this summer SymPy will have a complete Control toolkit, so that it can match the functionalities of MATLAB and other popular software toolkits in this domain.",
+          "difficulty": null,
+          "id": "proj_sympy_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/1LZE1JYa",
+          "proposal_id": "zTb3Si1V",
+          "short_description": "In this project, I aim to improve and expand the functionalities of the physics control module. This module was introduced to SymPy 2 years ago. The...",
+          "slug": "improving-and-expanding-functionalities-of-sympys-control-module",
+          "status": "completed",
+          "student_name": "Anurag Surendra Bhat",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving And Expanding Functionalities Of SymPy's Control Module"
+        },
+        {
+          "code_url": "https://tinyurl.com/gsoc23IshanP",
+          "description": "The project aims at Extending the continuum mechanics module. The primary aim of the project is : \n1) Improving methods for Truss class - The project will aim to improve Truss class by optimizing its methods and adding some new functionalities.\n2) Introducing Cables class - Cable, another important structure in continuum mechanics, will be implemented in this project as a class. This would extend the module and add to the list of structures which already include truss and beams.",
+          "difficulty": null,
+          "id": "proj_sympy_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ESmmn5ye",
+          "proposal_id": "sYLMHfeT",
+          "short_description": "The project aims at Extending the continuum mechanics module. The primary aim of the project is : 1) Improving methods for Truss class - The project...",
+          "slug": "extending-continuum-mechanics-module-introducing-classes-for-cables-and-improving-the-truss-class",
+          "status": "completed",
+          "student_name": "Ishan Pandhare",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Extending Continuum mechanics module: Introducing classes for Cables and Improving the Truss class"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2023-Report-Tilo-Reneau%E2%80%90Cardoso:-Improving-Relational-Assumptions-in-SymPy%E2%80%99s-New-Assumptions",
+          "description": "The assumption system underlying SymPy is very important to the library's function. However, it has several flaws, including sluggish performance and being overly interconnected with the core of SymPy. As a result of its flaws, a new assumption system, the \"new assumptions,\" was proposed about a decade ago. Since then, the community has made slow but incremental progress in transitioning to and improving this new system. One of the main reasons for this change is that the old assumption system doesn't allow for relation assumptions to be expressed. While the new assumption system does support relational assumptions, the current implementation is very limited. My project aims to address this limitation by enabling the new assumption system to make inferences based on equalities and inequalities, such as \"if x > 0, then x must be positive.\"",
+          "difficulty": null,
+          "id": "proj_sympy_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/vqchZ67V",
+          "proposal_id": "0TbIBXiQ",
+          "short_description": "The assumption system underlying SymPy is very important to the library's function. However, it has several flaws, including sluggish performance and...",
+          "slug": "improving-relational-assumptions-in-sympys-new-assumptions",
+          "status": "completed",
+          "student_name": "Tilo Reneau-Cardoso",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Relational Assumptions in SymPy’s New Assumptions"
+        },
+        {
+          "code_url": "https://wermos.github.io/blog/gsoc/sympy/gsoc-2-the-final-status-report/",
+          "description": "The current LaTeX parser is implemented in Antlr, which is a big dependency to have for a project such as SymPy. Apart from that, the current parser is also difficult to maintain and lacking in some features.\n\nThis project aims to rewrite the project in Lark, which is a parser written entirely in Python, and also fix some bugs in the LaTeX parser.",
+          "difficulty": null,
+          "id": "proj_sympy_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/apj3AeJL",
+          "proposal_id": "3PJriQIG",
+          "short_description": "The current LaTeX parser is implemented in Antlr, which is a big dependency to have for a project such as SymPy. Apart from that, the current parser...",
+          "slug": "rewrite-latex-parser",
+          "status": "completed",
+          "student_name": "Tirthankar Mazumder",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Rewrite LaTeX Parser"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/sympy"
+    },
+    "year_2024": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSOC-2024-Report-Arnab-Nandi-:-Improving-Series-Expansions-and-Limit-Computations",
+          "description": "The proposal seeks to expand the already mature series module in sympy by making improvements in sections like fixes for some fundamental changes in conventions and bugs in important files like gruntz thesis, implementing limit computations for piecewise functions and related problems, Adding a dedicated class for the series module, making the order computations better and adding series methods for the remaining functions.",
+          "difficulty": null,
+          "id": "proj_sympy_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/bn7U0YD4/",
+          "proposal_id": null,
+          "short_description": "The proposal seeks to expand the already mature series module in sympy by making improvements in sections like fixes for some fundamental changes in...",
+          "slug": "improving-series-expansions-and-limit-computations",
+          "status": "completed",
+          "student_name": "Arnab Nandi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Series Expansions and Limit Computations"
+        },
+        {
+          "code_url": "https://github.com/abhiphile/GSoC-2024-SymPy-Final-Report",
+          "description": "This project focuses on enhancing the existing functionalities of the control module in SymPy. While the current control module has been significantly developed, there are still several areas that require attention. This proposal aims to address a substantial portion of the remaining work. The project will involve adding interconnections between state space classes, implementing solvers utilizing the ODE module to find the state vector and output vector, integrating a PID controller into the control module, and refactoring old control plots while introducing new ones.",
+          "difficulty": null,
+          "id": "proj_sympy_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hKxju3OT/",
+          "proposal_id": null,
+          "short_description": "This project focuses on enhancing the existing functionalities of the control module in SymPy. While the current control module has been...",
+          "slug": "improving-and-expanding-the-functionalities-of-the-sympys-control-module",
+          "status": "completed",
+          "student_name": "AbhishekKr",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving and Expanding the functionalities of the SymPy's Control Module."
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2024-Report-Hwayeon-Kang:-Implementing-Specific-Forces-and-Torques",
+          "description": "The project aims to develop a comprehensive library of predefined force and torque models. These models are crucial for a wide range of scenarios in computational physics and engineering simulations. Traditionally, users have had to manually generate various forces and torques, a process that is often complex and error-prone. Our library will streamline this process by including commonly used models such as the Duffing Spring, Coulomb Friction, Hill-Type Muscle, and Aerodynamic Forces. This will greatly enhance the functionality and efficiency of SymPy.",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/kPT4IkQI/",
+          "proposal_id": null,
+          "short_description": "The project aims to develop a comprehensive library of predefined force and torque models. These models are crucial for a wide range of scenarios in...",
+          "slug": "implementing-specific-forces-and-torques",
+          "status": "completed",
+          "student_name": "Hwayeon Kang",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ml",
+            "ai"
+          ],
+          "title": "Implementing Specific Forces and Torques"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSOC-2024-Report-Shishir-Kushwaha-:-Extending-Continuum-Mechanics-Module",
+          "description": "The current Continuum Mechanics has been undergoing continuous developments in the past years and has developed functionalities for solving and analyzing various structures which are important in the field of Mechanics like Beam, Truss and Cable.\n \nThis project aims to improve the existing classes by implementing additional functionalities for plotting various graphs and diagram related to the existing structures in the Cable Module and introducing new classes to solve and analyze the Arch structure and introducing some new features for other existing classes.\n\nThe features planned to be implemented for the Arch structure is a solver for finding the internal forces, reactions, bending moment developed in the Arch under external forces and moments and methods to get a detailed diagram and plot forces generated in the structure. \n\nThe improvements in the Cable class would allow the user to plot the tensions developed in the Cable under various types of external loads and also get a detailed diagram which would be helpful in analyzing various details like the position and shape of the cable.\n\nThe project's implementation will expand Sympy's capabilities, allowing users to tackle a broader range of engineering problems with ease.",
+          "difficulty": null,
+          "id": "proj_sympy_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Ha8dhB4L/",
+          "proposal_id": null,
+          "short_description": "The current Continuum Mechanics has been undergoing continuous developments in the past years and has developed functionalities for solving and...",
+          "slug": "extending-continuum-mechanics-module",
+          "status": "completed",
+          "student_name": "Shishir Kushwaha",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ai"
+          ],
+          "title": "Extending Continuum Mechanics Module"
+        },
+        {
+          "code_url": "https://github.com/sympy/sympy/wiki/GSoC-2024-Report-Riccardo-Di-Girolamo:-Enhancing-Performance--in-SymPy-Mechanics-and-Vector-Modules",
+          "description": "SymPy's physics/mechanics and physics/vector modules are powerful tools for modeling and analyzing the dynamics of multi-body systems. These modules allow users to set up models of physical systems and automatically generate the corresponding equations of motion. In SymPy, these equations can be derived using two primary methods: Lagrange's Method and Kane’s Method. This automation greatly simplifies the process of deriving these equations. However, as models grow more complex, the computational cost of generating the equations of motion can increase significantly, highlighting several opportunities to improve the performance of SymPy’s routines. My goal during this project was to identify these performance bottlenecks through benchmarking and community feedback, and to develop solutions that ensure SymPy remains efficient even with large and complex systems. A significant portion of the work involved developing a function to more quickly compute Jacobian matrices, thereby speeding up system linearization.",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/cZQI2EYr/",
+          "proposal_id": null,
+          "short_description": "SymPy's physics/mechanics and physics/vector modules are powerful tools for modeling and analyzing the dynamics of multi-body systems. These modules...",
+          "slug": "enhancing-performance-in-sympy-phyiscsmechanics-and-phyiscsvector-modules",
+          "status": "completed",
+          "student_name": "Riccardo Di Girolamo",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing Performance  in SymPy Phyiscs/Mechanics and Phyiscs/Vector Modules"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/sympy/"
+    },
+    "year_2025": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "SymPy currently lacks an efficient backend for dense and sparse multivariate polynomials over ℤ and ℚ, leading to performance bottlenecks in many core functions such as solve, linsolve, simplify, cancel, and polynomial GCD computations. This project aims to address this by integrating FLINT’s highly optimized multivariate polynomial arithmetic into SymPy via python-flint. To achieve this, we will implement: FLINT-backed Sparse Polynomial Support – FlintPolyRing (FLINT-backed equivalent of PolyRing), FlintPolyElement (FLINT-backed equivalent of PolyElement), comprehensive tests and documentation. FLINT-backed Dense Polynomial Support – DMP_Flint (FLINT-backed dense multivariate polynomial class), comprehensive tests and documentation. Performance Analysis and Optimization – Benchmarking against SymPy’s existing implementations, optimizing operations. This is a high-priority task in SymPy's development roadmap, and achieving this can make SymPy reach \"state-of-the-art\" levels of speed and performance. Since multivariate polynomial operations are involved across various modules in SymPy, this project significantly strengthens the library.",
+          "difficulty": null,
+          "id": "proj_sympy_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/LP8TlBsJ",
+          "proposal_id": "BjPDhBWn",
+          "short_description": "SymPy currently lacks an efficient backend for dense and sparse multivariate polynomials over ℤ and ℚ, leading to performance bottlenecks in many...",
+          "slug": "flint-backed-multivariate-polynomials-in-sympy",
+          "status": "in-progress",
+          "student_name": "Aasim Ali",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "FLINT-Backed Multivariate Polynomials in SymPy"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements a domain system for formal power series in SymPy, enhancing the ring_series module with PowerSeriesRing (Domain), PowerSeriesPolyRing, and PowerSeriesElement classes. It enables efficient series expansions, domain integration, and arithmetic over diverse coefficient domains (e.g., QQ, RR). Key deliverables include a robust API, Taylor expansions (e.g., sin, exp), and documentation. Extended goals involve optimizing ring_series and fixing bugs for better performance.",
+          "difficulty": null,
+          "id": "proj_sympy_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/8VslkGZ9",
+          "proposal_id": "ZglBZU72",
+          "short_description": "This project implements a domain system for formal power series in SymPy, enhancing the ring_series module with PowerSeriesRing (Domain),...",
+          "slug": "implementing-a-domain-for-formal-power-series-in-sympy",
+          "status": "in-progress",
+          "student_name": "Jatin Bhardwaj",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Implementing a Domain for Formal Power Series in SymPy"
+        },
+        {
+          "code_url": null,
+          "description": "This GSoC project focuses on strengthening SymPy's assumptions system through a two-fold approach. The first component targets relational reasoning by addressing key inference gaps, without needing explicit real assumptions. Additionally, it involves integrating an incremental SAT solver to significantly improve the performance of ask and satask by enabling clause reuse across queries.\nThe second part of the project introduces support for quantified logical reasoning. By implementing universal and existential quantifiers (Q.forall, Q.exists), SymPy users will be able to express and evaluate rich, domain-spanning mathematical statements. This will be realized using a hybrid strategy, combining Z3-style pattern-based instantiation with SymPy's symbolic, declarative assumptions system.\nTogether, these enhancements aim to make SymPy's logic engine more expressive, efficient, and mathematically powerful.",
+          "difficulty": null,
+          "id": "proj_sympy_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/yUxTkz46",
+          "proposal_id": "MJe0xZmS",
+          "short_description": "This GSoC project focuses on strengthening SymPy's assumptions system through a two-fold approach. The first component targets relational reasoning...",
+          "slug": "improving-relational-reasoning-and-introducing-quantifier-support-in-sympys-assumptions-framework",
+          "status": "in-progress",
+          "student_name": "Krishnav Bajoria",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Relational Reasoning and Introducing Quantifier Support in SymPy's Assumptions Framework"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to upgrade the control module of SymPy by adding support for discrete-time systems. The focus will be on developing efficient methods for the Z-transform and its inverse, alongside the application of discrete-time stability criteria like the Jury criterion.",
+          "difficulty": null,
+          "id": "proj_sympy_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/cpykfo3t",
+          "proposal_id": "XGK5vFpL",
+          "short_description": "This project aims to upgrade the control module of SymPy by adding support for discrete-time systems. The focus will be on developing efficient...",
+          "slug": "extending-sympys-control-module-to-discrete-time-systems",
+          "status": "in-progress",
+          "student_name": "leomanga",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Extending Sympy’s Control Module to Discrete-Time Systems"
+        },
+        {
+          "code_url": null,
+          "description": "Musculoskeletal forces from muscles and tendons often wrap around bones and joints along curved surfaces. Current tools rely on numerical approximations for these wrapping paths, which require intensive computation. This project will extend SymPy’s mechanics module by introducing three new wrapping geometry classes: WrappingCone, WrappingEllipsoid, and WrappingToroid each providing symbolic geodesic-length calculations and endpoint tangent vectors. Using closed‑form derivations for cones, series expansions for spheroids, and local unfolding approximations for tori, the new classes will enable users to model complex biomechanical interactions symbolically, offering both exact expressions (where ever available) and good approximations. This extension will empower researchers and educators to explore musculoskeletal pathways analytically within the familiar SymPy ecosystem.",
+          "difficulty": "advanced",
+          "id": "proj_sympy_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uvXG3nzX",
+          "proposal_id": "aCYdx8NN",
+          "short_description": "Musculoskeletal forces from muscles and tendons often wrap around bones and joints along curved surfaces. Current tools rely on numerical...",
+          "slug": "symbolic-wrapping-geometries-for-musculoskeletal-modeling-in-sympy",
+          "status": "in-progress",
+          "student_name": "Rushabh_Mehta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Symbolic Wrapping Geometries for Musculoskeletal Modeling in SymPy"
+        },
+        {
+          "code_url": null,
+          "description": "This project enhances SymPy’s structure2d module in continuum_mechanics by addressing missing load types, limited visualization, and analytical gaps in 2D structural analysis. The upgraded Beam class will include robust input validation, support for ramp, triangular, and parabolic loads, and a stability pre-check for under-constrained systems. Structure2d will gain an improved apply_load method, automatic reaction detection, analytical tools like max_deflection(), max_bmoment(), max_shearforce(), pure_bending(), and geometric utilities like compute_centroid() and compute_moment_of_inertia(). Visualization will feature clear, unit-labeled shear force and bending moment diagrams with distinct support symbols. Executed in five structured stages across 12 weeks, the project will culminate in a feature-complete module backed by extensive automated test coverage and strong, grade validation. Deliverables include comprehensive and well-structured documentation and detailed usage examples, ensuring reliability, clarity, and ease of use for students, engineers, and researchers.",
+          "difficulty": null,
+          "id": "proj_sympy_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/K6y23OZP",
+          "proposal_id": "KmWq3lPt",
+          "short_description": "This project enhances SymPy’s structure2d module in continuum_mechanics by addressing missing load types, limited visualization, and analytical gaps...",
+          "slug": "enhancing-the-structure2d-module-in-sympys-continuum-mechanics",
+          "status": "in-progress",
+          "student_name": "Sai Udayagiri",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "react",
+            "ai"
+          ],
+          "title": "Enhancing the Structure2d Module in SymPy’s Continuum Mechanics"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sympy"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://github.com/sympy/sympy/wiki/GSoC-Student-Instructions",
+    "ideas_url": "https://github.com/sympy/sympy/wiki/GSoC-Ideas",
+    "irc_channel": "https://gitter.im/sympy/sympy",
+    "mailing_list": "https://groups.google.com/g/sympy"
+  },
+  "social": {
+    "blog": "https://planet.sympy.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/sympy",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.308Z"
+  }
+}

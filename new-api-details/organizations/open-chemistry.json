@@ -1,0 +1,1123 @@
+{
+  "id": "692251df53dd9d7326d33e45",
+  "slug": "open-chemistry",
+  "name": "Open Chemistry",
+  "category": "Science and medicine",
+  "description": "Advancing Open Source & Open Science for Chemistry",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/open-chemistry/esda0gvsxomll6my-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/open-chemistry.webp",
+  "logo_r2_url": null,
+  "url": "https://openchemistry.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "first_year": 2016,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "javascript",
+    "opengl",
+    "c++",
+    "webgl",
+    "java",
+    "html",
+    "c",
+    "c++14",
+    "c++17"
+  ],
+  "topics": [
+    "visualization",
+    "chemistry",
+    "graphics",
+    "materials science",
+    "data science",
+    "scientific visualization",
+    "science",
+    "scientific computing",
+    "computational chemistry",
+    "cheminformatics",
+    "quantum chemistry"
+  ],
+  "total_projects": 51,
+  "stats": {
+    "avg_projects_per_appeared_year": 5.67,
+    "projects_by_year": {
+      "year_2016": 2,
+      "year_2017": 6,
+      "year_2018": 7,
+      "year_2019": 6,
+      "year_2020": 5,
+      "year_2021": 7,
+      "year_2022": 9,
+      "year_2023": 8,
+      "year_2024": 1,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 2,
+      "year_2017": 6,
+      "year_2018": 7,
+      "year_2019": 6,
+      "year_2020": 5,
+      "year_2021": 7,
+      "year_2022": 9,
+      "year_2023": 8,
+      "year_2024": 1,
+      "year_2025": null
+    },
+    "total_students": 48
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "http://avogadro2crystals.blogspot.com/2016/08/gsoc-summary.html",
+          "description": "<p>As a Ph. D. student in a computational chemistry research group involving crystallography, I’m very familiar with many of the features and functions that crystallography groups need from a molecular editor. Although Avogadro 2 has some basic unit cell building and visualizing, it is missing a lot of key functions that crystallographers use in Avogadro 1. Identifying the spacegroup of a crystal, converting a crystal to a conventional or primitive cell, symmetrizing a crystal, and filling a unit cell are all important features that crystallographers need when working with crystals. Thus, while being careful to avoid licensing issues with external libraries, my primary goal is to advance the materials applications in Avogadro 2 by first incorporating these features that were present in Avogadro 1 and then eventually incorporating new features that can be useful for crystallographers.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5746821397741568/",
+          "proposal_id": null,
+          "short_description": "As a Ph. D. student in a computational chemistry research group involving crystallography, I’m very familiar with many of the features and functions...",
+          "slug": "materials-science-advances-in-avogadro-2",
+          "status": "completed",
+          "student_name": "Patrick Avery",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Materials Science Advances in Avogadro 2"
+        },
+        {
+          "code_url": "https://schamnad.github.io/blog/2016/08/21/gsoc-2016-summary",
+          "description": "<p>This project proposes to integrate the cclib data parsing library with Avogadro-2 using the Chemical JSON format. Chemical JSON is a standard JSON format being developed by the OpenChemistry group across different applications. \nWith integration of cclib, Avogadro-2 will acquire the ability to efficiently parse various types of output files and render any one of the 45 data points (wherever feasible) which cclib can extract. The project aims to extend the Chemical JSON format with the different data points that cclib can parse, and have cclib pass this extended Chemical JSON to Avogadro-2 via a simple command call. To display the information being provided by the Chemical JSON, the functionality to read and render specific data points will have to be implemented in Avogadro-2. \nThis abstraction of restricting the data exchange to Chemical JSON greatly limits the dependency of Avogadro-2 on cclib. In the future, this interface can be extended by another data parsing library to provide information in a standard format (i.e. Chemical JSON); building upon the powerful plugin architecture on which Avogadro-2 is designed upon.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6523710383063040/",
+          "proposal_id": null,
+          "short_description": "This project proposes to integrate the cclib data parsing library with Avogadro-2 using the Chemical JSON format. Chemical JSON is a standard JSON...",
+          "slug": "avogadro-2-integration-of-cclib-data-parser-using-chemical-json",
+          "status": "completed",
+          "student_name": "Sanjeed Schamnad",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Avogadro-2: Integration of cclib data parser using Chemical JSON"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6038224459792384/"
+    },
+    "year_2017": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/malithakabir/RDKitGSoC2017",
+          "description": "<p>Although RDKit is a widely used extremely versatile chemoinformatics software package, it still lacks efficient 3D molecule visualization capability. In this circumstance, 3Dmol.js is easy to use and an excellent molecule visualization library that works in web browser. Another important platform is jupyter that allows communication with python from web browser through notebook like interface. Jupyter has also made the codes easily readable with clean output by dint of markdown. So, keeping python as operational core engine that expectedly works as interface of RDKit while utilizing support from jupyter notebook and 3Dmol.js should be a very good combination to ensure high productivity in drug discovery settings. In this project, I would like to turn these combination to more viable solution by binding 3D molecule visualization (protein-ligand complex), ligand editing panel, conformer scrolling system, and channel for sending ligand from jupyter interface to force field that exists in RDKit for energy minimization. Needless to say, I would like to use openbabel for file format conversion and molecular data extraction system.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_open-chemistry_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6332750499938304/",
+          "proposal_id": null,
+          "short_description": "Although RDKit is a widely used extremely versatile chemoinformatics software package, it still lacks efficient 3D molecule visualization capability....",
+          "slug": "rdkit-3dmoljs-integration",
+          "status": "completed",
+          "student_name": "Malitha Humayun Kabir",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "web"
+          ],
+          "title": "RDKIt - 3Dmol.js integration"
+        },
+        {
+          "code_url": "https://medium.com/@nitish6174/google-summer-of-code-with-open-chemistry-7c998e2442ed",
+          "description": "<p>This project aims at creating a framework consisting of following modules :</p>\n<ul>\n<li>Script to setup MongoDB based database storing parsed results from computational chemistry output files (using cclib to parse data from files).</li>\n<li>Web API to perform search and calculation queries over this database.</li>\n<li>A web interface allowing researchers/students to query details about molecules from this data repository and add files to it.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5044640952614912/",
+          "proposal_id": null,
+          "short_description": "This project aims at creating a framework consisting of following modules :\n\nScript to setup MongoDB based database storing parsed results from...",
+          "slug": "computational-chemistry-web-repository",
+          "status": "completed",
+          "student_name": "nitish6174",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Computational Chemistry Web repository"
+        },
+        {
+          "code_url": "http://gaursagar.github.io/gsoc-cclib-2017.html",
+          "description": "<p>The project aims to bridge the AIMALL and Molden programs with cclib by adding support for writing wfx/wfn files and Molden format files.</p>\n<p>Molden program supports reading input from GAMESS, Gaussian and MOPAC and some user written scripts add support for some other programs. cclib being the largest parsing library for QM program outputs could provide a one stop solution for making Molden files.</p>\n<p>Bader's Atom in Molecule is a popular method to characterize individual atomic contributions to the electron density to much more intuitive atoms and bonds. AIMALL is the go-to program for doing AIM analysis. Having a wfx/wfn writer within cclib would bridge the two programs.</p>\n<p>As stretch goals, I propose implementing either updating write support for .cube files which can be used with Henkelman group’s fast implementation for Bader charge integration or start building a parser for Molcas. The former is in-line with cclib's attempt to include modules for advanced analysis of quantum chemistry data, while support for the latter is a requested in cclib's github repository.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5051218426593280/",
+          "proposal_id": null,
+          "short_description": "The project aims to bridge the AIMALL and Molden programs with cclib by adding support for writing wfx/wfn files and Molden format files.\nMolden...",
+          "slug": "cclib-project-implement-new-writers",
+          "status": "completed",
+          "student_name": "Sagar Gaur",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "cclib Project: Implement New Writers"
+        },
+        {
+          "code_url": "https://github.com/msdk/msdk/tree/master/msdk-featdet/msdk-featdet-ADAP-3D",
+          "description": "<p>This project aims at developing efficient algorithm to analyze complex 3D data obtained from the Liquid Chromatography Mass Spectrometry (LCMS). The algorithm is optimized for direct processing of the data by overcoming redundant parameters such as user defined parameters. Moreover, it is also intended to make an algorithm adaptive and compatible with existing mass spectrometry software.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5238154999103488/",
+          "proposal_id": null,
+          "short_description": "This project aims at developing efficient algorithm to analyze complex 3D data obtained from the Liquid Chromatography Mass Spectrometry (LCMS). The...",
+          "slug": "intelligent-lcms-feature-detection",
+          "status": "completed",
+          "student_name": "Dharak Tushar Shah",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Intelligent LC/MS Feature Detection"
+        },
+        {
+          "code_url": "https://gist.github.com/Manohar-94/3149fd43eb2bcd4b3759c057f0e752b0",
+          "description": "<p>Virtual reality has become a rage with Oculus Rift VR headsets and Google Daydream View headsets hitting the markets. More importantly, with the introduction of google cardboard, even a smartphone can now be used to visualize stereoscopic images and videos for literally no extra cost. This has potential applications in the field of education as well. The idea is to extend 3dmol.js to be able to project stereoscopic images so that it can be viewed using a phone browser through any low cost cardboard headset. Stereoscopic rendering will make the visualization of simulation results much clearer, especially while explaining interesting atomic scale phenomena such as bonds breaking or denaturation of proteins etc. to students in class. The users can download any of their simulation data using 3dmol.js, which will convert their files to a pair of side-by-side images providing a stereoscopic effect.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6504792394301440/",
+          "proposal_id": null,
+          "short_description": "Virtual reality has become a rage with Oculus Rift VR headsets and Google Daydream View headsets hitting the markets. More importantly, with the...",
+          "slug": "visualization-of-md-trajectory-files-using-google-cardboard",
+          "status": "completed",
+          "student_name": "Manohar Karigerasi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Visualization of MD trajectory files using Google cardboard"
+        },
+        {
+          "code_url": "https://adhi1419.github.io/msdk-gsoc-17/",
+          "description": "<p>There are many file formats in use for mass spectrometry data. For interoperability of algorithms in Java-based processing workflows, there is an urgent need for a high-performance Java library that would provide support for reading and writing these common formats. In the past, several projects have developed custom parsers for various formats, however, none of the existing libraries provide a high-performance, random access to the data with multi-threading support and caching.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4863665526276096/",
+          "proposal_id": null,
+          "short_description": "There are many file formats in use for mass spectrometry data. For interoperability of algorithms in Java-based processing workflows, there is an...",
+          "slug": "msdk-io-library",
+          "status": "completed",
+          "student_name": "Adhithya Rajagopal",
+          "student_profile": null,
+          "tags": [
+            "java"
+          ],
+          "title": "MSDK-IO library"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5928781713768448/"
+    },
+    "year_2018": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/kunalsharma05/c95b1d53ed1bcdf347fb0cbf43d0c014",
+          "description": "<p>In this project I aim to implement new parsers for MOLCAS and TURBOMOLE. They will be a part of the cclib.parser module and will be implemented along with unit tests and output file test data for both the softwares.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6369521124245504/",
+          "proposal_id": null,
+          "short_description": "In this project I aim to implement new parsers for MOLCAS and TURBOMOLE. They will be a part of the cclib.parser module and will be implemented along...",
+          "slug": "implementing-new-parsers",
+          "status": "completed",
+          "student_name": "Kunal Sharma",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing new parsers"
+        },
+        {
+          "code_url": "https://medium.com/@blog_945/imaging-tools-google-summer-of-code-2018-8cdd71fa3a20",
+          "description": "<p>DeepChem has been great library for the application of deep learning for drug/chemical discovery. As of now there is no imaging models implemented in DeepChem that would facilitate the use of medical data (like images of brain scans, or UltraSound images etc). This project proposes to build an API for data augmentation for imaging which in recent times has shown to make models invariant slight data transformations like rotation, translation, noise etc. and as well as to  build 2 models : one being the U-Net for bio-medical image segmentation and the other being the ResNet-50 model (trained on the imagenet), that would allow users/researchers to use these pre-trained models and extend it to implement their own networks with much ease.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5441464590925824/",
+          "proposal_id": null,
+          "short_description": "DeepChem has been great library for the application of deep learning for drug/chemical discovery. As of now there is no imaging models implemented in...",
+          "slug": "imaging-tools",
+          "status": "completed",
+          "student_name": "Skand Vishwanath Peri",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Imaging Tools"
+        },
+        {
+          "code_url": "https://github.com/rdkit/rdkit/pull/2005",
+          "description": "<p>Chemical fingerprints are very important for both querying chemical data (using similarity in fingerprint space) and the use of molecular entities in machine learning. The RDKit already supports a broad variety of fingerprinting functionality but is limited by the fact that the current fingerprint implementations are all independent and have slightly different APIs. This makes things unnecessarily complicated for users and requires people who are interested in exploring new types of fingerprints to write far more code than it seems like they should have to. In this project we will create a generic decoupled fingerprinting module with a consistent and flexible API.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6066783307956224/",
+          "proposal_id": null,
+          "short_description": "Chemical fingerprints are very important for both querying chemical data (using similarity in fingerprint space) and the use of molecular entities in...",
+          "slug": "create-a-generalized-fingerprinting-api",
+          "status": "completed",
+          "student_name": "Boran Adas",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Create a generalized fingerprinting API"
+        },
+        {
+          "code_url": "https://gist.github.com/badarsh2/f72c115062154022020ebc57607e31cb",
+          "description": "<p>This project aims to implement support for <strong>Molecular Dynamics</strong> in Avogadro.</p>\n<p>Molecular dynamics (MD) is a computer simulation method for studying the physical movements of atoms and molecules. The atoms and molecules are allowed to interact for a fixed period of time, giving a view of the dynamic evolution of the system. In the most common version, the trajectories of atoms and molecules are determined by numerically solving Newton's equations of motion for a system of interacting particles. In this project, we aim to provide support in Avogadro for reading MD trajectory files and analyzing the various aspects of the MD calculation like temporal evolution, particle movement characterization (eg. pair distribution functions) etc. Also, input generation and support for running MD calculations in common packages like OpenMM and GROMACS shall be focused upon in the later stages of the project.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4861646958755840/",
+          "proposal_id": null,
+          "short_description": "This project aims to implement support for Molecular Dynamics in Avogadro.\nMolecular dynamics (MD) is a computer simulation method for studying the...",
+          "slug": "avogadro-2-molecular-dynamics",
+          "status": "completed",
+          "student_name": "Adarsh Balasubramanian",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Avogadro 2: Molecular Dynamics"
+        },
+        {
+          "code_url": "https://github.com/rdkit/rdkit/pull/2002",
+          "description": "<p>MolVS (<a href=\"https://molvs.readthedocs.io/en/latest/\" target=\"_blank\">https://molvs.readthedocs.io/en/latest/</a>) provides very useful functionality for molecular validation and standardization. MolVS is built using the RDKit framework, but in this project we will expand its capabilities and integrate it into the RDKit project. An eventual end goal, though not necessarily one for this project, will be to have a C++ implementation of the algorithm that is part of the core RDKit. Matt Swain (the original author of MolVS) will collaborate with us on this.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4878514637504512/",
+          "proposal_id": null,
+          "short_description": "MolVS (https://molvs.readthedocs.io/en/latest/) provides very useful functionality for molecular validation and standardization. MolVS is built using...",
+          "slug": "rdkit-molvs-integration-project-gsoc-2018",
+          "status": "completed",
+          "student_name": "Susan Leung",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "RDKit-MolVS Integration Project - GSoC 2018"
+        },
+        {
+          "code_url": "https://github.com/mzmine/mzmine2/tree/81582619348600be5c7caaa86abfebe67fc68c43/src/main/java/net/sf/mzmine/modules/peaklistmethods/identification/sirius",
+          "description": "<p>The goal is to implement a wrapper (common interface) for the identification algorithms’ logic in MSDK (that will allow to invoke tools like SIRIUS or CSPP) and add a GUI to MZmine, which will invoke the algorithms.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5955915236769792/",
+          "proposal_id": null,
+          "short_description": "The goal is to implement a wrapper (common interface) for the identification algorithms’ logic in MSDK (that will allow to invoke tools like SIRIUS...",
+          "slug": "msms-identification-module-for-mzmine",
+          "status": "completed",
+          "student_name": "Evgeny Sorokin",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "MS/MS identification module for MZmine."
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1pvAt8ykIDNs9GWTGVUgjvw4-JyHzykBn13jRKGErW_o/",
+          "description": "<p>Chemical information is provided in various formats. Open Babel is a tool to convert file formats. When we translate a format which does not include 3-D coordinate information into a format which requires it, we must predict coordinates. Open Babel implements a rule-based coordinate prediction method, but the current implementation is problematic. It sometimes fails when we treat inorganic and organometallic molecules, and by relying on force field geometry optimization, it is slower than distance-geometry or fragment-based methods.</p>\n<p>This is a proposal to implement a fast and efficient method to calculate 3-D coordinates using fragment information. Since fragments can decide the position of many atoms at once and minimize the need for conformer sampling, this approach is more efficient. <a href=\"https://pubs.acs.org/doi/abs/10.1021/ci4005282\" target=\"_blank\">P. Baldi's paper in 2013</a> reports that their fragment-based method is more accurate and 10 times faster than Open Babel. Implementing a better prediction method is beneficial for chemistry and leads to new discoveries in the field of drug design.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5957928301363200/",
+          "proposal_id": null,
+          "short_description": "Chemical information is provided in various formats. Open Babel is a tool to convert file formats. When we translate a format which does not include...",
+          "slug": "fast-efficient-fragment-based-coordinate-generation",
+          "status": "completed",
+          "student_name": "Naruki Yoshikawa",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Fast, Efficient Fragment-Based Coordinate Generation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/4981977648201728/"
+    },
+    "year_2019": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/RMeli/gsoc19",
+          "description": "<p>Molecular docking—the prediction of binding modes and binding affinity of a molecule to a target of known structure—is a great computational tool for structure-based drug design. However, docking scoring functions are mostly empirical or knowledge-based and the flexibility of the receptor is completely neglected in most docking studies. Recent advances in the field showed that scoring functions can be effectively learnt by convolutional neural networks (CNNs). Here we want to build on top of these findings and develop a CNN scoring function for flexible docking by extending the capabilities of <em>gnina</em>—a state-of-the-art deep learning framework for molecular docking—and by building an high-quality training dataset for flexible docking.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5721769153921024/",
+          "proposal_id": null,
+          "short_description": "Molecular docking—the prediction of binding modes and binding affinity of a molecule to a target of known structure—is a great computational tool for...",
+          "slug": "cnn-scoring-for-flexible-docking",
+          "status": "completed",
+          "student_name": "Rocco Meli",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "CNN Scoring for Flexible Docking"
+        },
+        {
+          "code_url": "https://github.com/3dmol/3Dmol.js/pull/423/files#diff-c6aa741fec7ca98965f45a569edbd358",
+          "description": "<p>Volumetric viewing of scientific phenomena is an important feature in modern scientific visualizing tools because it can express specific phenomena which can’t be visualized using the default vertex based geometric renderers/rasterizers; as electron clouds and Van der Waals interactions, as well it’s been proposed in Molecular Graphics journal in 1989; so now is a proper time to integrate it into 3Dmol.js rendering system as It has already gained the level of maturity when volume rendering becomes an essential milestone.\nDuring my work I will investigate different approaches of visualizing volumes, select the techniques that are modern, efficient and fit the best to the existing code.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5107415219961856/",
+          "proposal_id": null,
+          "short_description": "Volumetric viewing of scientific phenomena is an important feature in modern scientific visualizing tools because it can express specific phenomena...",
+          "slug": "volumetric-rendering-for-3dmoljs",
+          "status": "completed",
+          "student_name": "Bassem Samir",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud"
+          ],
+          "title": "Volumetric rendering for 3Dmol.js"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1AIGeAmo1pNlsvWUfTm3THHHgkjejO44NLO8h-VWgbN4/edit?usp=sharing",
+          "description": "<p>Open Babel is a widely used open source toolkit for cheminformatics. One of its important functions is 3D structure prediction of input molecules. Open Babel’s coordinate generation function was improved in speed and stereochemical accuracy by the new fragment-based coordinate generation method implemented as a GSoC 2018 project. However, the stereochemistry accuracy is not as high as the distance geometry method of RDKit.</p>\n<p>In this project, I will improve the coordinate generation of Open Babel by implementing a new method which combines the fragment-based method of Open Babel and the distance geometry method of RDKit. This new implementation is expected to be faster than current RDKit and more accurate in stereochemistry than current Open Babel. Implementing a better prediction method could be beneficial for a wide range of applications such as drug design.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5300703310905344/",
+          "proposal_id": null,
+          "short_description": "Open Babel is a widely used open source toolkit for cheminformatics. One of its important functions is 3D structure prediction of input molecules....",
+          "slug": "more-improved-coordinate-generation-for-open-babel-combining-fragment-based-method-and-distance-geometry",
+          "status": "completed",
+          "student_name": "Naruki Yoshikawa",
+          "student_profile": null,
+          "tags": [],
+          "title": "More Improved Coordinate Generation for Open Babel: Combining Fragment-based Method and Distance Geometry"
+        },
+        {
+          "code_url": "https://github.com/rdkit/neo4j-rdkit/tree/966391ae6e4d96defa6710f7f296560ce6c46184",
+          "description": "<p>The project will be focused on development of extension for neo4j graph database for querying knowledge graphs storing molecular and chemical information.  That would be implemented on top of neo4j-java-driver.</p>\n<p>Task is to enable identification of entry points into the graph via exact/substructure/similarity searches (UC1). UC2 is closely related to UC1, but here the intention is to use chemical structures as limiting conditions in graph traversals originating from different entry points. Both use cases rely on the same integration of RDkit and Neo4j and will only differ in their CYPHER statements.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6567101345562624/",
+          "proposal_id": null,
+          "short_description": "The project will be focused on development of extension for neo4j graph database for querying knowledge graphs storing molecular and chemical...",
+          "slug": "project-neo4j-integration",
+          "status": "completed",
+          "student_name": "Evgeny Sorokin",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "database"
+          ],
+          "title": "Project: neo4j integration"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/summer-of-code-with-deepchem/55",
+          "description": "<p>Even though chemistry has become a more data driven discipline in the recent years, the amount of data available for training deep learning models is limited when compared to their imaging counterparts (ImageNet, for example). Transfer learning is a strategy that aims to leverage representations learnt, by training deep learning models on larger datasets with available labels, and then using the trained network for fine-tuning on smaller, costly to label datasets.</p>\n<p>This project is about porting a Transfer Learning Framework, ChemNet into DeepChem. This would involve reproducing the results of the paper and a blog-post, Jupyter notebook detailing its use. A ChemNet API will also be developed to allow any DeepChem TensorGraph model to use this framework.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6115389082173440/",
+          "proposal_id": null,
+          "short_description": "Even though chemistry has become a more data driven discipline in the recent years, the amount of data available for training deep learning models is...",
+          "slug": "transfer-learning-framework",
+          "status": "completed",
+          "student_name": "Vignesh Ram Somnath",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Transfer Learning Framework"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/19XWL5JvC3FHIvMguenLDBxk2Mcq-UM8gt0cTNOPEXg8/edit?usp=sharing",
+          "description": "<p>The 3D structures of protein and organic molecules are tough to understand since not all can visualize their structures in the mind. The project aims to build a <strong>real-time</strong> web application using socket programming(just like in online multiplayer games) that shall facilitate an active learning environment to visualize and learn the functions of each component in the 3D structure. This one of a kind software that brings in the best of online multiplayer gaming and virtual labs will be used by teachers, students, and researchers all across the world.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4875385718702080/",
+          "proposal_id": null,
+          "short_description": "The 3D structures of protein and organic molecules are tough to understand since not all can visualize their structures in the mind. The project aims...",
+          "slug": "active-learning-environment-in-3dmoljs",
+          "status": "completed",
+          "student_name": "Keshavan Seshadri",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Active Learning Environment In 3Dmol.js"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4508112394911744/"
+    },
+    "year_2020": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://mscho527.github.io/gsoc2020/cclib/2020/08/24/final-words.html",
+          "description": "<p>The usual approach taken in computational chemistry is to first run a simulation, which can often be long, on a target molecule and then to analyze the results to obtain an insight about the molecule. Usually, electron density assigned in the atoms that constitute the molecule is a key element in this process. This partitioning of the electrons itself do not suggest any observable properties of a molecule. However, many observable features of a molecule are derived directly from the electron densities, hence motivating chemists to relentlessly improve this <em>noumena</em> step by step.\nCurrently, cclib can calculate some common atomic charge potential methods, including C-squared Population Analysis, Mulliken Population Analysis, and Lowdin Population Analysis. Because Mulliken Population Analysis and Lowdin Population Analysis are similar in its theory (Lowdin uses a different basis set to reduce the basis set dependence observed in Mulliken Analysis), it would be advantageous to have other modern calculation methods implemented in cclib. Some examples of the methods that can be implemented include DDEC6, Hirshfeld method, Bader analysis, ISA (through a bridge to Horton) and so on.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6654533616271360/",
+          "proposal_id": null,
+          "short_description": "The usual approach taken in computational chemistry is to first run a simulation, which can often be long, on a target molecule and then to analyze...",
+          "slug": "implementation-of-modern-quantum-chemical-analysis-in-cclib",
+          "status": "completed",
+          "student_name": "Minsik Cho",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of Modern Quantum Chemical Analysis in cclib"
+        },
+        {
+          "code_url": "https://github.com/rdkit/rdkit/pull/3377",
+          "description": "<ul>\n<li>RDKit is a collection of cheminformatics and machine learning tools written in C++ and Python. Which is more important, it allows you to work with many representations of chemical data and has a power to extract almost each chemical descriptor from the data you have. An added functionality to this would be to be able to find chemical insights from the molecules. This includes being able to find properties of the molecules which are required quite often.</li>\n<li>This project aims to add using trained neural networks for property prediction of molecules. Quantum Chemical calculations / Molecular Dynamics / Monte Carlo Simulations for finding out molecular properties have proven to be extremely time consuming and alternate “Neural Network Potentials” have been proposed instead. I aim to add property prediction NNPs like ANI which provide accuracy comparable to Quantum Mechanical Approaches like Density Functional Theory / MD / MC but do the job in a fraction of the time to the existing ML package of RDKit. Having a dependable and accurate tool as a part of the library would remove a significant bottleneck from the pipeline.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6241569088208896/",
+          "proposal_id": null,
+          "short_description": "RDKit is a collection of cheminformatics and machine learning tools written in C++ and Python. Which is more important, it allows you to work with...",
+          "slug": "integrating-trained-neural-networks-with-rdkit",
+          "status": "completed",
+          "student_name": "Manan Goel-1",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Integrating Trained Neural Networks with RDKit"
+        },
+        {
+          "code_url": "https://chriswzou.github.io/2020/08/27/gsoc2020/",
+          "description": "<p>Chemical databases involve great heterogeneity. They are often variably indexed and represent chemical structures using custom data structures. This makes them suited for more flexible schemes to store and query data. One such scheme is MongoDB, a document-oriented, NoSQL database solution. Researchers have already demonstrated MongoDB’s potential for extraordinary query performance and rich information storage in genomics and materials science.</p>\n<p>This is a proposal for an integration between RDKit, a chemoinformatics library, and MongoDB. MongoDB's aggregation pipeline and distributed computing, or \"sharding\" features could lead to high-performance similarity and substructure searches over large, complex datasets, while its aggregation framework and document-oriented nature lend themselves well to storing a multitude of chemical information types.</p>\n<p>This integration could allow businesses and scientists to screen very large chemical collections, such as the Real Database, with high speed and specificity, identifying candidate compounds for drug development, research, agriculture, and more.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4684208779296768/",
+          "proposal_id": null,
+          "short_description": "Chemical databases involve great heterogeneity. They are often variably indexed and represent chemical structures using custom data structures. This...",
+          "slug": "creating-a-chemically-intelligent-mongodb-integration-for-rdkit",
+          "status": "completed",
+          "student_name": "cwzou",
+          "student_profile": null,
+          "tags": [
+            "database",
+            "ui"
+          ],
+          "title": "Creating a Chemically Intelligent MongoDB Integration for RDKit"
+        },
+        {
+          "code_url": "https://github.com/rdkit/rdkit/pull/3363",
+          "description": "<p>The goal is to implement a flexible generic interface for reading molecular file formats (for example .smi, .sdf, and the compressed versions thereof). This will simplify the end-users' code significantly since they won’t have to include code to detect the file types themselves every time they process a file.</p>\n<p>The expected results are a C++ implementation of a naive and a multi-threaded implementation of the generalized file reader for the RDKit along with a robust set of test cases. We implement a multi-threaded version of the reader since it will read files faster on modern computer hardware. Finally, I will implement wrappers for the reader so that it is accessible from within the Python, Java, and C#</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4807972187799552/",
+          "proposal_id": null,
+          "short_description": "The goal is to implement a flexible generic interface for reading molecular file formats (for example .smi, .sdf, and the compressed versions...",
+          "slug": "implement-a-generalized-file-reader",
+          "status": "completed",
+          "student_name": "Shrey Aryan",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "ai"
+          ],
+          "title": "Implement a generalized file reader"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/summary-of-2020-gsoc/249",
+          "description": "<p>In recent years, deep learning has made remarkable progress in the area of NLP and CV with big data. In the area of chemistry, Graph Convolutional Networks, in which compounds and crystals are regarded as graphs, have attracted much attention.Deep learning frameworks for molecules such as DeepChem, Chainer Chemistry, and Deep Graph Library have emerged to more easily exploit these models of deep learning. On the other hand,  these frameworks did not support inorganic crystal and the model support was biased towards Graph Convolutional Networks.JAX Chem is a JAX-based deep learning library for complex and diverse chemical modeling. JAX Chem’s motivation is to support not only models of Graph Convolutional Networks, but also Attention-based models like Transformer,  and  even models for wave functions involving complex physical equations like SchNetOrb or FermiNet. JAX is suitable  for  such  complex  modeling  because  JAX’s  API allows you to write models declaratively.  In the period of GSoC, I will implement the  standard  GNN  model,  the  dataset  utilities  and  the  GCN  model  for  MaterialInformatics, and the Attention-based model, as the beginning of JAX Chem.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5967290597638144/",
+          "proposal_id": null,
+          "short_description": "In recent years, deep learning has made remarkable progress in the area of NLP and CV with big data. In the area of chemistry, Graph Convolutional...",
+          "slug": "jax-chem-jax-based-deep-learning-library-for-complex-and-versatile-chemical-modelings",
+          "status": "completed",
+          "student_name": "Daiki Nishikawa",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "JAX Chem : JAX-based Deep Learning Library for complex and versatile chemical modelings"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5796522697949184/"
+    },
+    "year_2021": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://forum.deepchem.io/t/google-summer-of-code-2021-large-scale-protein-modeling-in-deepchem/507/5?u=alat-rights",
+          "description": "<p>DeepChem has enabled powerful and practical applications for machine learning in many disciplines of the natural sciences. While its name recognizes its historical origins as a tool for analyzing chemical molecules, its reach has more recently broadened to encompass neighboring fields such as materials science and biology. The goal of this proposal is to expand DeepChem’s burgeoning infrastructure to better support protein modeling.</p>\n<p>This proposal will add a simple codon featurizer to DeepChem, which will be the first DeepChem featurizer capable of directly processing RNAs and protein sequences.</p>\n<p>It will also add new model classes to DeepChem’s models directory. These classes will act as wrappers for models in Facebook’s Evolutionary Scale Modeling (ESM) repository. They will enable DeepChem users to use ESM’s Multiple Sequence Alignment transformer and Protein BERT models to perform efficient, scalable transformer learning.</p>\n<p>Also including carefully planned additions to DeepChem’s documentation, unit tests, tutorials, and the MoleculeNet benchmarking suite, this proposal will empower DeepChem users to perform large scale protein modeling while staying within our ecosystem.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6417344884113408/",
+          "proposal_id": null,
+          "short_description": "DeepChem has enabled powerful and practical applications for machine learning in many disciplines of the natural sciences. While its name recognizes...",
+          "slug": "large-scale-protein-modeling-in-deepchem",
+          "status": "completed",
+          "student_name": "Alana Xiang",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Large Scale Protein Modeling in DeepChem"
+        },
+        {
+          "code_url": "https://serk12.github.io/gsoc.html",
+          "description": "<p>Data visualization is a key aspect to understand complex models. In biology they work with complex structures composed of atoms, a common structure may have between 1k and 1000k (e.g. 6VSB “2019-nCoV glycoprotein” have 22854 atoms). Because of this amount of information, biologist work with different style representations (i.e. backbones, cartons…), labeling and painting to distinct between structures and understand more easily the molecular component.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6688823861313536/",
+          "proposal_id": null,
+          "short_description": "Data visualization is a key aspect to understand complex models. In biology they work with complex structures composed of atoms, a common structure...",
+          "slug": "tools-for-visualization-and-efficient-editing",
+          "status": "completed",
+          "student_name": "Marc P. Masó",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Tools for visualization and efficient editing"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/summary-of-gsoc-21-deepchem-retrosynthesis/560",
+          "description": "<p>Synthesis is at the heart of organic chemistry. It is the process of constructing a molecule through a series of reactions. Efficient molecular synthesis is significant, especially in areas like medicinal chemistry. However, it can be challenging to plan a synthesis for a complex molecule.</p>\n<p>Retrosynthesis is an iterative process of breaking down a target molecule into a series of simpler molecules which are readily available. It provides a systematic way to plan a chemical synthesis. But, as the space of possible chemical reactions is vast, it is hard for chemists to make the right disconnections while optimizing for multiple factors such as the cost of precursors and efficiency of the reaction.</p>\n<p>At its heart, the challenge of making a single retrosynthesis prediction can be recast as a Machine Translation task. Consequently, Natural Language Processing techniques can be leveraged to tackle this using Deep Learning.</p>\n<p>This project is focused on extending the DeepChem Library to support Retrosynthesis models, specifically to make single step predictions. This will be achieved by implementing a Molecular Transformer model and enhancing support for Reaction datasets.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5663013100584960/",
+          "proposal_id": null,
+          "short_description": "Synthesis is at the heart of organic chemistry. It is the process of constructing a molecule through a series of reactions. Efficient molecular...",
+          "slug": "deepchem-retrosynthesis",
+          "status": "completed",
+          "student_name": "Ashwin M",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "ai"
+          ],
+          "title": "DeepChem Retrosynthesis"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1w2S8eWSnMmReYxDCkdtBn_lrDR6Kj9j0tZeJff6293A/edit?usp=sharing",
+          "description": "<p>3Dmol has most of the necessary features that make it a good visualization plugin for application and web. But this tool becomes difficult for the audience that is not familiar with web technology. Making its features inaccessible and making it harder to use as compared to similar applications like VMD, Visit, ChimeraX, PyMol etc. \nHence there is a requirement of an UI that can make 3Dmol more accessible to the audience. To achieve this a layout for UI and additional controls for camera are proposed. That can expose all the features of 3Dmol. This will make 3Dmol easier to use and increase its application in general discussion, teaching and presentations.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6049879964516352/",
+          "proposal_id": null,
+          "short_description": "3Dmol has most of the necessary features that make it a good visualization plugin for application and web. But this tool becomes difficult for the...",
+          "slug": "3dmol-ui-design-and-improved-controls",
+          "status": "completed",
+          "student_name": "Jaxmatrix",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "3Dmol UI Design and Improved Controls"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/summary-of-gsoc-21-make-deepchem-more-robust-by-implementing-cutting-edge-models-and-other-features/561",
+          "description": "<p>Deepchem is one of the premier open-source deep learning libraries for chemistry. It is used by people worldwide, thus there is a need to develop and provide access to updated cutting-edge models, more metrics and tests for model performance evaluation and more recently developed loss functions. My GSoC ‘21 Project proposal is to add the Molecule Attention Transformer and a protein structure model to Deepchem and/or Jaxchem.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5908299085512704/",
+          "proposal_id": null,
+          "short_description": "Deepchem is one of the premier open-source deep learning libraries for chemistry. It is used by people worldwide, thus there is a need to develop and...",
+          "slug": "make-deepchem-more-robust-implement-cutting-edge-models-and-other-features",
+          "status": "completed",
+          "student_name": "Atreya Majumdar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Make Deepchem More Robust: Implement Cutting-Edge Models and Other Features"
+        },
+        {
+          "code_url": "https://github.com/theochem/chemtools/pull/46",
+          "description": "<p>ChemTools is an open-source Python library for interpreting quantum chemistry calculations. It is currently the only library capable of interpreting those calculations using Conceptual Density Functional Theory – a framework that has matured over the last four decades but still lacks exposure to practicing chemists.</p>\n<p>In this project, I will contribute to ChemTools library by breaking its dependency on HORTON2 - a library reliant on Python 2. The functionality fulfilled by the latter will be replaced using libraries developed by the QC-Devs team: IOData, gbasis, grid, and denspart.</p>\n<p>Additionally, I will incorporate the functionality of PySCF - a popular library for quantum chemistry calculations. This will result in a much better cross-functionality and any computational bottlenecks present in ChemTools.</p>\n",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5956766482825216/",
+          "proposal_id": null,
+          "short_description": "ChemTools is an open-source Python library for interpreting quantum chemistry calculations. It is currently the only library capable of interpreting...",
+          "slug": "extended-interoperability-of-chemtools-and-quantum-chemistry-software",
+          "status": "completed",
+          "student_name": "Victor Hugo Cano Gil",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Extended Interoperability of ChemTools and Quantum Chemistry Software"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/summary-of-gsoc-21-jax-integeration-into-deepchem/559",
+          "description": "<p>In this proposed project we build JaxModel, which provides a high-level API for training and deploying Machine Learning Models using JAX framework. The main goal for JaxModel will be to provide an API for building, training, and testing deep learning models which are compatible with the existing DeepChem code base which already provides features like Molnet, Featurisers, Splitters, Transformers, and other deep learning infrastructures. During the period of GSOC, I will also be adding a notebook tutorial specifying the usage of JaxModel. If time permits, In the same tutorial I will also use an advanced JAX-based model preferably (Graph-based model or Physics Informed Neural Networks). This will be the beginning of implementing JAX-based models into the main DeepChem repo.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_open-chemistry_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6322685180641280/",
+          "proposal_id": null,
+          "short_description": "In this proposed project we build JaxModel, which provides a high-level API for training and deploying Machine Learning Models using JAX framework....",
+          "slug": "jaxmodel-a-high-level-api-for-building-purely-functional-models-suitable-for-molecular-predictions-simulations",
+          "status": "completed",
+          "student_name": "M. Vignesh Venkataraman",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "JaxModel: A high level API for building purely functional models suitable for Molecular Predictions & Simulations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5838773731983360/"
+    },
+    "year_2022": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://aerkiaga.github.io/gsoc2022",
+          "description": "Last year  there was some work regarding Avogadro's usability as a tool for bioinformatics. My proposal is working along the same line, giving Avogadro the ability to display molecular surfaces, non-covalent bonds, and handle other molecular features like coordination, all while improving the existing code's speed and quality.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/oPDlDO6e/",
+          "proposal_id": null,
+          "short_description": "Last year there was some work regarding Avogadro's usability as a tool for bioinformatics. My proposal is working along the same line, giving...",
+          "slug": "enhancing-avogadro-for-biomolecular-modeling",
+          "status": "completed",
+          "student_name": "Aritz Erkiaga",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Avogadro for Biomolecular Modeling"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/summary-google-summer-of-code-2022-deepchem-pytorch-lightning/802",
+          "description": "Pytorch Lightning provides framework and functionalities for building and training PyTorch models. If integrated with deepchem, PyTorch-lightning will reduce the workload of implementing ML model functionalities for the deepchem library and will also enable useful functionalities like distributed training, easy model configuration and experimentation.",
+          "difficulty": "beginner",
+          "id": "proj_open-chemistry_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/kT8zbn8O/",
+          "proposal_id": null,
+          "short_description": "Pytorch Lightning provides framework and functionalities for building and training PyTorch models. If integrated with deepchem, PyTorch-lightning...",
+          "slug": "deepchem-pytorch-lightning",
+          "status": "completed",
+          "student_name": "Princy chahal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Deepchem - Pytorch Lightning"
+        },
+        {
+          "code_url": "https://banrovegrie.github.io/files/GSOC.pdf",
+          "description": "Procrustes (a part of Theochem by QC-Devs) is a library for finding the optimal transformation that makes two matrices as close as possible to each other. The main idea of this project is to solve and implement the problem of finding this optimal transformation when it is constrained to be a positive semi-definite matrix.\n\nPSDP and its analog problems (like the nearest correlation matrix problem) have applications in molecular alignment, structure analysis, quantitative finance and machine learning.\n\nAs a part of the project, the intended contributions are two-fold. Firstly, the aim is to extend the Procrustes library to include algorithms solving PSDP as a new class of Procrustes problems along with benchmarking the implementations. Secondly, the plan is to introduce additional extensions to the library involving solutions to the PSDP problem where the trace, diagonal elements, or other linear constraints over the transformation (i.e., the matrix) are imposed.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/HPZ1bacs/",
+          "proposal_id": null,
+          "short_description": "Procrustes (a part of Theochem by QC-Devs) is a library for finding the optimal transformation that makes two matrices as close as possible to each...",
+          "slug": "positive-semi-definite-procrustes-psdp-problem",
+          "status": "completed",
+          "student_name": "Alapan Chaudhuri (Arjo)",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Positive Semi-definite Procrustes (PSDP) Problem"
+        },
+        {
+          "code_url": "https://medium.com/@aryan.barsainyan/google-summer-of-code-2022-8ad4a5c93668",
+          "description": "The DeepChem project aims to create high-quality, open-source tools to democratize the use of deep learning in drug discovery, materials science, quantum chemistry, and biology. Among its suite of various machine learning models, it has a wide range of graphs-based neural network model implementations aimed to solve the applications such as predicting the solubility of small drug-like molecules, binding affinity for small molecule to protein targets, analyzing protein structures, and extracting useful descriptors. \n\nThis project seeks to bring a new tool to the DeepChem suite for solving message passing problems based on the recent advancements in GCNs research. This project aims to implement a Directed – Message Passing Neural Network (D-MPNN) model, a graph convolution network (GCN) built upon the existing Message Passing Neural Network (MPNN) model based on the base implementation in Chemprop.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/TKDPK1ZV/",
+          "proposal_id": null,
+          "short_description": "The DeepChem project aims to create high-quality, open-source tools to democratize the use of deep learning in drug discovery, materials science,...",
+          "slug": "d-mpnn-model-implementation-for-deepchem",
+          "status": "completed",
+          "student_name": "Aryan Amit Barsainyan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "D-MPNN Model Implementation for DeepChem"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-22-final-report-the-porting-of-normalizing-flow-model-from-tensorflow-to-pytorch/806",
+          "description": "TensorFlow, Keras, and PyTorch are the most prominent libraries used for building DL and ML models. The use of PyTorch, as the primary backend for building algorithms, is growing due to its sustainability. Lately, DeepChem has decided to port some TensorFlow models to PyTorch. This project aims to successfully migrate one of the organization's 20 models.\n\nThis model will perform a mix of invertible transformations between the base and target distribution. In order to optimize the results, a Normalizing Flow object initialized with the flow layers and base distribution would be iterated computing the loss for each epoch.\n\nFor this reason, transformations and flows layers will be created with their respective unittests. Finally, the implementation will include the respective documentation and a tutorial, if applicable, following DeepChem's API.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/h8XjLIlI/",
+          "proposal_id": null,
+          "short_description": "TensorFlow, Keras, and PyTorch are the most prominent libraries used for building DL and ML models. The use of PyTorch, as the primary backend for...",
+          "slug": "the-porting-of-normalizing-flow-model-from-tensorflow-to-pytorch",
+          "status": "completed",
+          "student_name": "José A. Sigüenza",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "The Porting of Normalizing Flow model from TensorFlow to PyTorch"
+        },
+        {
+          "code_url": "https://github.com/cyllab/CalcUS/pull/15",
+          "description": "CalcUS aims to democratize access to computational chemistry by providing a user-friendly web interface to simplify running and analyzing quantum mechanical calculations. These calculations allow the researchers to better understand the properties of molecules or the underlying mechanisms of chemical reactions. Multiple distinct calculations have to be performed for calculating the molecular geometry, energy, possible vibrations and optical properties, etc of the molecules. But, Quantum chemistry projects often involve the same series of sequential calculations. Currently, each calculation has to be launched manually, which is often not necessary. \r\nThis project aims to implement a multi-step calculation protocol to create the data structures to store these protocols and their progress, integrate the automated launch of subsequent steps using the current calculation handling code, add simple verifications after each step completion, and write relevant unit and/or integration tests.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/hoXKGeec/",
+          "proposal_id": null,
+          "short_description": "CalcUS aims to democratize access to computational chemistry by providing a user-friendly web interface to simplify running and analyzing quantum...",
+          "slug": "implement-multi-step-calculation-protocols",
+          "status": "completed",
+          "student_name": "Divyam Agarwal",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "ai"
+          ],
+          "title": "Implement multi-step calculation protocols"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-22-final-report-strengthening-deepchem-s-bioinformatics-arm/805",
+          "description": "The project I am proposing would expand DeepChem’s tools for working with genomic datasets for drug discovery thus strengthening DeepChem’s new Bioinformatics initiatives. I will be implementing a state-of-the-art predictive model for regulatory genomics and adding the relevant datasets for testing. As part of my project, I would compose a tutorial overview on interpreting regulatory sequence data using deep learning. I will figure out what loaders and featurizers to use to translate genomics data into numerical representations that machine learning models can understand. I will also implement gkm-SVM so that it is easier to develop other models down the road that have this dependency. A big part of my project will be identifying how to leverage DeepChem's infrastructure towards biomedical questions informed by genomics as well as identifying future areas for development.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ZfwjXeDu/",
+          "proposal_id": null,
+          "short_description": "The project I am proposing would expand DeepChem’s tools for working with genomic datasets for drug discovery thus strengthening DeepChem’s new...",
+          "slug": "democratizing-deep-learning-models-for-genomic-data",
+          "status": "completed",
+          "student_name": "Paulina",
+          "student_profile": null,
+          "tags": [],
+          "title": "Democratizing deep learning models for genomic data"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-22-ferminet-model-for-deepchem-report/815",
+          "description": "Implementation of Ferminet with PyTorch. Ferminet is a neural-network-based Variational Monte-Carlo technique that aims to minimize the local energy of the molecule system and finds the electronic configuration with as much accuracy as possible. This project adds support for further ab initio based DNNs in Deepchem and adds second-order optimizers like natural gradient descent and K-FAC into the Depchem's codebase.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/4r2YA3FP/",
+          "proposal_id": null,
+          "short_description": "Implementation of Ferminet with PyTorch. Ferminet is a neural-network-based Variational Monte-Carlo technique that aims to minimize the local energy...",
+          "slug": "implementing-ferminet-an-ab-initio-solution-to-many-electron-systems-using-dnns",
+          "status": "completed",
+          "student_name": "Shai_pranesh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing Ferminet, an Ab initio solution to many-electron systems using DNNs"
+        },
+        {
+          "code_url": "https://github.com/rdkit/rdkit/pull/5557",
+          "description": "This project aims to construct a C++ implementation of the Python package xyz2mol from Prof. Jan H. Jensen’s research group (https://github.com/jensengroup/xyz2mol) and integrate it into the RDKit alongside wrappers. The program will be able to convert the atomic coordinates and charge of an organic molecule presented as an xyz file to an RDKit molecule object. Once the tool is equipped, RDKit users will have another way to construct a molecule.\n\nThe core work of the project will involve working on reimplementation of the Python programs function's. The main two steps of the program are 1) deriving atomic connectivities from coordinates and 2) determining the most favorable bond ordering from atomic connectivities. Atomic connectivities are found using either the Huckel method or through consideration of van der Waals radii. Favorable bond ordering is determined by considering different possible valences. The project is hence split up into these subparts. Bond ordering, atomic connectivity, formal charges, and the molecule’s conformation, among a few other factors, are combined to create an RDKit mol object.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2022_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ugO4HoEX/",
+          "proposal_id": null,
+          "short_description": "This project aims to construct a C++ implementation of the Python package xyz2mol from Prof. Jan H. Jensen’s research group...",
+          "slug": "porting-xyz2mol-to-the-rdkit-core",
+          "status": "completed",
+          "student_name": "Sreya G",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Porting xyz2mol to the RdKit core"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/open-chemistry/"
+    },
+    "year_2023": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/adithyaakrishna/33c35519edaa8cac130ec4a96800c93f",
+          "description": "The 3DMol.js library size is quite large, but can be optimized by using const instead of var, array destructuring, global constants, and the Float32Array class. Functions can be made more performant by reusing variables, using default function arguments, and caching repeated values. Reducing conditional checks, using switch statements, and avoiding redundant calculations can also improve performance. Using squared distance, subarray method, and reducing branching can also help optimize the library. CodeQL workflow can be added for security purposes.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/r2fhQb5e",
+          "proposal_id": "7UOLddFT",
+          "short_description": "The 3DMol.js library size is quite large, but can be optimized by using const instead of var, array destructuring, global constants, and the...",
+          "slug": "improve-and-enhance-3dmoljs",
+          "status": "completed",
+          "student_name": "Adithya Krishna V Sharma",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Improve and enhance 3DMol.js"
+        },
+        {
+          "code_url": "https://gist.github.com/anchalm03/75bf9c8e288b2478f116f4ffee906f4c",
+          "description": "CalcUS aims to democratize access to computational chemistry by providing a\nuser-friendly web interface to simplify running and analyzing quantum mechanical\ncalculations. These calculations allow the researchers to better understand the properties of\nmolecules or the underlying mechanisms of chemical reactions. Quantum chemistry projects\ncan involve performing calculations on a large number of structures (10-100) with\ndifferent parameters(1-10). Currently, these calculations have to be launched individuallyand sequentially. This project aims to add the feature to make this process seamless and\nhighly automated, from launching the calculations to reporting the results.\nThis is a proposal to implement;\n\n● Variation of the calculation web UI, aimed specifically at batch calculations with\nvariable parameters\n\n● Design and implement the workflow to handle these batch calculations\n\n● Implement results gathering and reporting in a convenient format\n\n● Write relevant unit and/or integration tests.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/7GV3rZJU",
+          "proposal_id": "saIhEzGJ",
+          "short_description": "CalcUS aims to democratize access to computational chemistry by providing a user-friendly web interface to simplify running and analyzing quantum...",
+          "slug": "developing-large-scale-calculation-management-tools-for-calcus",
+          "status": "completed",
+          "student_name": "Anchal Malani",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Developing Large-Scale Calculation Management Tools for CalcUS"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to develop an Active Learning based Bayesian Geometry Optimizer(ALBGO) using PyTorch and BoTorch for optimizing the conformers locally and globally in internal coordinates, with support for several computational models like force fields, quantum chemistry and ML-based force fields.\n\nBayesian Optimization is a highly effective technique for global optimization of \"black box\" functions and tuning hyperparameters. Since it does not require gradients, it can efficiently optimize hyper parameters for a Deep neural network or even electronic structure methods without derivatives. The project involves using Bayesian Optimization with an active learning approach to optimize conformers. The major work involves finding the right set of kernels for the Gaussian Process model for different types of molecular variables like Vibrational energy, bond lengths etc. and tuning them. We also an active learning approach to help the algorithm converge towards the solution much more quickly. Finally, we benchmark and compare the performance of our optimizer against other conformer optimization methods in use, like BFGS and gradient-based optimization algorithms.\n\nThis project has the potential to significantly improve the optimization capabilities of researchers in several fields by reducing the cost of optimization and improving optimization performance. The ALBGO algorithm will be a valuable addition to the optimization landscape, and its PyTorch-based implementation will make it easily accessible to a wide range of users including non-chemists.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/kHh0ki8k",
+          "proposal_id": "C1uClJzn",
+          "short_description": "The goal of this project is to develop an Active Learning based Bayesian Geometry Optimizer(ALBGO) using PyTorch and BoTorch for optimizing the...",
+          "slug": "active-learning-based-bayesian-geometry-optimizer",
+          "status": null,
+          "student_name": "Mayank Goel",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Active Learning based Bayesian Geometry Optimizer"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-23-porting-dtnn-and-seqtoseq-model-to-pytorch-report/1013",
+          "description": "PyTorch is becoming increasingly popular as the preferred backend for developing algorithms, thanks to its sustainability. DeepChem has decided to port its TensorFlow and Jax Models to PyTorch. This project aims to successfully port two of DeepChem's models. SeqToSeq and DTNN Model are being ported under this project. SeqToSeq is a neural network that maps variable-length input sequences to variable-length output sequences. DTNN stands for Deep Tensor Neural Network, which is a deep learning architecture that uses tensors to represent molecular structures for predicting chemical properties and activities. The implementation will include documentation changes, usage examples, and a tutorial if required.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/Pu8up6x4",
+          "proposal_id": "pjv9mPoF",
+          "short_description": "PyTorch is becoming increasingly popular as the preferred backend for developing algorithms, thanks to its sustainability. DeepChem has decided to...",
+          "slug": "porting-seqtoseq-and-dtnn-model-to-pytorch",
+          "status": "completed",
+          "student_name": "Rakshit Kumar Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "Porting SeqToSeq and DTNN Model to PyTorch"
+        },
+        {
+          "code_url": "https://medium.com/@riya-singh28/google-summer-of-code-2023-60391fda5a35",
+          "description": "The DeepChem project aims to create high-quality, open-source tools to democratize the use of deep learning in drug discovery, materials science, quantum chemistry, and biology. Among its suite of various machine learning models, it has a wide variety of graphs-based neural network model implementations aimed to solve the applications such as predicting the solubility of small drug-like molecules, binding affinity for small molecules to protein targets, analyzing protein structures, and existing useful descriptors.\n\nThis project seeks to bring a new tool to the DeepChem suite for solving message passing\nproblems based on the recent advancements in the GNNs research. The project aims to\nimplement a Multiplex Molecular Graph Neural Network (MXMNet) model, a Graph Neural\nNetwork (GNN) to Deepchem.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/TFXdEVvm",
+          "proposal_id": "k4x0UJrS",
+          "short_description": "The DeepChem project aims to create high-quality, open-source tools to democratize the use of deep learning in drug discovery, materials science,...",
+          "slug": "mxmnet-model-implementation-for-deepchem",
+          "status": "completed",
+          "student_name": "RiyaSingh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "MXMNet Model Implementation for DeepChem"
+        },
+        {
+          "code_url": "https://weronika.link/2023/Google-Summer-of-Code/",
+          "description": "The goal of this GSoC project is to address outstanding issues on GitHub for supporting additional programs and formats that are not currently supported by cclib, such as GAMESS .dat, or NBO. The expected results of this project are the implementation of parsers for two new formats, the generation of test data, and the writing of unit and regression tests for each parser. The implementation of new parsers will enhance the capabilities of cclib, making it a more comprehensive tool for researchers to analyze their computational chemistry data.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/RH7FRHUZ",
+          "proposal_id": "BRXm9nSp",
+          "short_description": "The goal of this GSoC project is to address outstanding issues on GitHub for supporting additional programs and formats that are not currently...",
+          "slug": "implementation-of-gamess-dat-and-nbo-parsers",
+          "status": "completed",
+          "student_name": "Veronika Zak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementation of GAMESS .dat and NBO Parsers"
+        },
+        {
+          "code_url": "https://gist.github.com/vcanogil/fc779aa066f5dd2063686688551d361f",
+          "description": "The Cclib library is a popular tool used in computational chemistry for parsing and interpreting output files from software packages such as Gaussian, NWChem, ORCA, and PSI4. It allows for the extraction of a variety of information, including molecular orbitals, atomic charges, and vibrational frequencies.\n\nThis project aims to create a bridge between Cclib and the Julia programming language, which is increasingly used in scientific research and has several active cheminformatics packages such as ChemistryFeaturization.jl, DFTK.jl, and Molly.jl. The porting will enable seamless integration of Cclib with other cheminformatics packages in Julia, such as AtomsBase.jl, which facilitates interoperability between different cheminformatics libraries.\n\nAdditionally, the project will provide comprehensive documentation and tutorial examples to ensure that users can easily utilize Cclib in Julia.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2023_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/xoj739kx",
+          "proposal_id": "V4tduh6M",
+          "short_description": "The Cclib library is a popular tool used in computational chemistry for parsing and interpreting output files from software packages such as...",
+          "slug": "julia-bindings-for-cclib",
+          "status": "completed",
+          "student_name": "Victor Hugo Cano Gil",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Julia Bindings for Cclib"
+        },
+        {
+          "code_url": "https://gist.github.com/zarkoivkovicc/c3c54b1dcba202d03cb06c12b0f0f356",
+          "description": "The necessity of having an application for the automated generation of input files for computational chemistry codes is evident. The ccinput is an open-source command line tool and a python library. NW Chem is a popular, open-source software used in computational chemistry for many different areas. It’s free, easy to install, and can perform the vast majority of calculations any chemist might need. Therefore, I propose contributing to ccinput by adding a possibility to generate input files for NW Chem for main calculations.",
+          "difficulty": "beginner",
+          "id": "proj_open-chemistry_2023_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/8EJMdhl3",
+          "proposal_id": "6CeuV8ro",
+          "short_description": "The necessity of having an application for the automated generation of input files for computational chemistry codes is evident. The ccinput is an...",
+          "slug": "addition-of-support-for-nwchem-to-the-ccinput-package",
+          "status": "completed",
+          "student_name": "Žarko Ivković",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Addition of support for NWChem to the ccinput package"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/open-chemistry"
+    },
+    "year_2024": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/perminder-17/fea694c006ed4aa98efd1fe447e795b1",
+          "description": "In avogadrolibs repo, there are ambient occlusion / shading but nothing for fog or blur effects.  Moreover, we currently lack real-time structure generation and efficient rendering. The overall goal is to bring new features like adding depth-of-field for fog\nand blur rendering options, adding tessellation shaders for efficient rendering and real time secondary structure generation.",
+          "difficulty": null,
+          "id": "proj_open-chemistry_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/yGb9JsdA/",
+          "proposal_id": null,
+          "short_description": "In avogadrolibs repo, there are ambient occlusion / shading but nothing for fog or blur effects. Moreover, we currently lack real-time structure...",
+          "slug": "improved-rendering-with-tessellation-shaders",
+          "status": "completed",
+          "student_name": "Perminder Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved Rendering with Tessellation Shaders"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/open-chemistry/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "openchemistry-developers@public.kitware.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://openchemistry.slack.com/",
+    "mailing_list": "https://public.kitware.com/mailman/listinfo/openchemistry-developers"
+  },
+  "social": {
+    "blog": "https://blog.kitware.com/tag/open-chemistry/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://openchemistry.slack.com/",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/openchem",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.815Z"
+  }
+}

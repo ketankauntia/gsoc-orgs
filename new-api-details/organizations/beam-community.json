@@ -1,0 +1,477 @@
+{
+  "id": "692251cd53dd9d7326d33d54",
+  "slug": "beam-community",
+  "name": "Beam Community",
+  "category": "Programming languages",
+  "description": "From distributed systems, to robust servers and language design on the Erlang VM",
+  "image_url": "https://lh3.googleusercontent.com/3NTyFksUJY1s5wfOoxtTI_ky6T1sLQtQsXFwPKtQ6eCsTBu4sEaUSh6QSbeSATr20rZYKwqrEoUkgFhXEmcXznn8rvST0Os",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/beam-community.webp",
+  "logo_r2_url": null,
+  "url": "http://beamcommunity.github.io",
+  "active_years": [
+    2016,
+    2017,
+    2018
+  ],
+  "first_year": 2016,
+  "last_year": 2018,
+  "is_currently_active": false,
+  "technologies": [
+    "xmpp",
+    "erlang",
+    "elixir",
+    "beam",
+    "mqtt",
+    "lisp"
+  ],
+  "topics": [
+    "real time",
+    "cloud",
+    "messaging",
+    "scalability",
+    "database",
+    "realtime",
+    "communication system",
+    "clustering",
+    "iot",
+    "instant messaging",
+    "distributed computing",
+    "distributed databases"
+  ],
+  "total_projects": 19,
+  "stats": {
+    "avg_projects_per_appeared_year": 6.33,
+    "projects_by_year": {
+      "year_2016": 6,
+      "year_2017": 7,
+      "year_2018": 6,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 6,
+      "year_2017": 7,
+      "year_2018": 6,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 18
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/gyounes/de1709f254e84812713079d34786afc8",
+          "description": "<p>Conflict-free Replicated Data Types (CRDTs) make the design of eventually consistent systems non ad-hoc and anomaly-free by formalizing the reconciliation mechanism of diverging replicas. Pure operation-based (aka op-based) CRDTs are variants of CRDTs that are generic and more efficient as they allow for compact solutions in both the sent messages and the state size. On the other hand, Lasp is a new programming model designed to simplify large scale, fault-tolerant, distributed programming using state-based CRDTs. It would be very interesting to implement the operation-based approach in Lasp and compare it with the currently implemented state-based approach.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6443343760326656/",
+          "proposal_id": null,
+          "short_description": "Conflict-free Replicated Data Types (CRDTs) make the design of eventually consistent systems non ad-hoc and anomaly-free by formalizing the...",
+          "slug": "implementing-op-based-crdts-in-lasp",
+          "status": "completed",
+          "student_name": "g_unis",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing op-based CRDTs in Lasp"
+        },
+        {
+          "code_url": "https://gist.github.com/Amuhar/e319ba56ba52bf62f1f5ad29b03c7b74",
+          "description": "<p>Writing XMPP components is a good way to enhance the functionality of XMPP servers like ejabberd.  Jabber Component Protocol (XEP-0114) is used today for this goal. However, this protocol is quite limited. The goal of this project is to implement XEP-0356 Privileged entity and XEP-0355 Namespace delegation server extensions to XMPP that will allow to run more powerful component on ejabberd. Implementation of these extensions can help to extend ejabberd functionality with existing powerful components like Collecta or SàT and give an impulse to create new services.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6611252822409216/",
+          "proposal_id": null,
+          "short_description": "Writing XMPP components is a good way to enhance the functionality of XMPP servers like ejabberd.  Jabber Component Protocol (XEP-0114) is used today...",
+          "slug": "privileged-entity-support-to-write-powerful-external-components-for-ejabberd",
+          "status": "completed",
+          "student_name": "AnnaMuharram",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Privileged Entity Support to Write Powerful External Components for ejabberd"
+        },
+        {
+          "code_url": "https://github.com/sivsushruth/gsoc/wiki/GSoC-report-for--Barrel-BEAM-Community",
+          "description": "<p><strong>Barrel</strong> is a distributed database built on top of <strong>Erlang</strong> and <strong>CouchDB</strong>. There are provisions in Barrel to extend the database with user defined modules and hooking them to database events like database creation, deletion, updates etc. Barrel now uses <strong>Hooks</strong> to let modules subscribe to the events and register a callable that can return and modify results.</p>\n<p>Secondary indexes can also be created using functions that accept a <strong>Doc</strong> and return a <strong>Key/Value tuple</strong>.</p>\n<p>Right now there is provision only for functions written in <strong>Erlang</strong> or <strong>Javscript</strong>.</p>\n<p>The aim of the proposal is to add <strong>Elixir</strong> to the list of languages supported by Erlang.  This would allow more developers to extend barrel and also brings a whole bunch of libraries and support from the Elixir ecosystem.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6734232231608320/",
+          "proposal_id": null,
+          "short_description": "Barrel is a distributed database built on top of Erlang and CouchDB. There are provisions in Barrel to extend the database with user defined modules...",
+          "slug": "implement-an-elixir-backend-for-indexing-and-extending-the-database",
+          "status": "completed",
+          "student_name": "sivsushruth",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database",
+            "ui",
+            "backend"
+          ],
+          "title": "Implement an elixir backend for indexing and extending the database"
+        },
+        {
+          "code_url": "https://github.com/tahteche/zotonic/commits/mod_admin_statistics?author=tahteche",
+          "description": "<p>Implement a module which will help give insight into the traffic of a Zotonic server/site through visualization of the stats in real-time. The system already knows a lot about the visitors (user-agent, referrer, ip-address etc) and it would be nice to leverage this into a real-time display per site or aggregated over the whole server. Including historical views for later analysis.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5266916516036608/",
+          "proposal_id": null,
+          "short_description": "Implement a module which will help give insight into the traffic of a Zotonic server/site through visualization of the stats in real-time. The system...",
+          "slug": "implementation-of-real-time-statistics-in-zotonic",
+          "status": "completed",
+          "student_name": "tex",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementation of Real-time Statistics in Zotonic"
+        },
+        {
+          "code_url": "https://ergl.github.io/gsoc2016.html",
+          "description": "<p>Lasp computations are formed using a small subset of a functional language. In functional languages, it is very common to see intermediate lists—and, more generally, intermediate trees—serve as glue between functions. If these intermediate structures, however, are not used by any other part of the program, replicating them in the underlying network that supports the Lasp language exacts a non-negligible cost at run-time.</p>\n<p>This project aims to enable Lasp to generate efficient reductions of these intermediate trees into a single value that represents the combination of multiple functions.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_beam-community_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5343745964769280/",
+          "proposal_id": null,
+          "short_description": "Lasp computations are formed using a small subset of a functional language. In functional languages, it is very common to see intermediate lists—and,...",
+          "slug": "distributed-intermediate-tree-elimination-in-lasp",
+          "status": "completed",
+          "student_name": "Borja",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Distributed Intermediate Tree Elimination in Lasp"
+        },
+        {
+          "code_url": "https://gist.github.com/gabrielgatu/7aae9fa01f6640946324e33aad2e609c",
+          "description": "<p>This project aims to improve the ejabberd configuration, extensions and plugins writing using the Elixir programming language and its DSL capabilities. The project is relative to the #4 idea proposed by the ejabberd community.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6013787169619968/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve the ejabberd configuration, extensions and plugins writing using the Elixir programming language and its DSL...",
+          "slug": "improve-ejabberd-configuration-and-extensibility-with-configuration-dsl",
+          "status": "completed",
+          "student_name": "Gabriel Gatu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improve ejabberd configuration and extensibility with configuration DSL"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6384003686858752/"
+    },
+    "year_2017": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://github.com/uohzxela/ex_format",
+          "description": "<p>By leaving tedious formatting to the machine, code formatters provide a substantial increase in engineering productivity and a consistent style across teams. Hence, this project implements a code formatter that can take a piece of Elixir code and format it automatically according to a standard style guide. It is very similar to tools such as <code>rustfmt</code> and <code>gofmt</code>.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6463694657552384/",
+          "proposal_id": null,
+          "short_description": "By leaving tedious formatting to the machine, code formatters provide a substantial increase in engineering productivity and a consistent style...",
+          "slug": "a-code-formatter-for-elixir",
+          "status": "completed",
+          "student_name": "alexjiao",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "A code formatter for Elixir"
+        },
+        {
+          "code_url": "https://github.com/processone/ejabberd/pull/1959",
+          "description": "<p>The Automatic Certificate Management Environment (ACME) protocol is a communications protocol for automating interactions between certificate authorities and their users' web servers, allowing the automated deployment of public key infrastructure at very low cost. Supporting this protocol will reduce the complexity of acquiring certificates for TLS encryption, via the \"Let's encrypt\" certificate authority.</p>\n<p>The final goal of this project is for ejabberd to fully support the ACME protocol and thus provide an easy and cheap way of acquiring security certificates.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_beam-community_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6727670863757312/",
+          "proposal_id": null,
+          "short_description": "The Automatic Certificate Management Environment (ACME) protocol is a communications protocol for automating interactions between certificate...",
+          "slug": "ejabberd-support-for-lets-encrypt-acme-protocol",
+          "status": "completed",
+          "student_name": "Konstantinos Kallas",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "Ejabberd support for \"let's encrypt\" ACME protocol"
+        },
+        {
+          "code_url": "https://github.com/mkacper/erlangpl/wiki/GSOC-Work-Product-Submission",
+          "description": "<p>Erlang Lab (<a href=\"https://github.com/erlanglab\" target=\"_blank\">https://github.com/erlanglab</a>) is an Open Source project aimed at analysing the performance of Erlang and Elixir systems. The project provides web-based visualisations of the analysis. It can help developers to better understand their systems, observe the system behaviour and identify weaknesses.</p>\n<p>The Erlang Lab project is still developing and lots of its features are missing. The feature I would like to implement is a plugin for ETS (Erlang Term Storage) tables. The OTP team keeps working on the performance of ETS but Erlang and Elixir programmers, especially the newcomers, are prone to make mistakes which can cause e.g. lock contention on an ETS. Although it is possible to trace this kind of problems using Erlang tracing or dedicated profilers it can be difficult and time-consuming.</p>\n<p>The plugin I would like to deliver will rely on tracing techniques and the Erlang system introspection API. Information collected in this way will be presented through the web UI. I believe it will enable developers to quickly identify problems and understand them better.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5300436051427328/",
+          "proposal_id": null,
+          "short_description": "Erlang Lab (https://github.com/erlanglab) is an Open Source project aimed at analysing the performance of Erlang and Elixir systems. The project...",
+          "slug": "ets-support-for-erlang-lab",
+          "status": "completed",
+          "student_name": "Kacper Mentel",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "ETS support for Erlang Lab"
+        },
+        {
+          "code_url": "https://gist.github.com/goncalotomas/a1ac942dc6fbb4a21b1203b7d251baf3",
+          "description": "<p>The nature of distributed systems and their fault model is chaotic: replicas can fail temporarily or just stop working, and the complexity of adding defensive code against all possible scenarios is unrealistic if complex applications are to be designed. Despite several techniques that try to mitigate this issue (e.g. RPC), a more opaque abstraction layer is needed in order to avoid long implementation times as well as incorrect behaviour driven from faulty or careless code. I believe that providing a programming-language-level abstraction layer is an effective approach to significantly reduce the amount of time focused on how systems can fail, rather than how they should work. Such an approach should mainly consist in supplying systems programmers with basic functionalities in the following areas: node distribution, data replication and partition tolerance.\nBeing in an early adoption stage, Lasp needs applications that can serve as proof of concept in order to increase awareness of its capabilities as well as user adoption. This proposal is about the implementation of a real world application based on previous work published recently at PaPoC'17 - an EuroSys workshop.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_beam-community_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4917747754467328/",
+          "proposal_id": null,
+          "short_description": "The nature of distributed systems and their fault model is chaotic: replicas can fail temporarily or just stop working, and the complexity of adding...",
+          "slug": "implementing-a-real-world-application-in-the-lasp-programming-language",
+          "status": "completed",
+          "student_name": "goncalotomas",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai"
+          ],
+          "title": "Implementing a Real World Application in the Lasp Programming Language"
+        },
+        {
+          "code_url": "https://gist.github.com/Amuhar/d238f4cc3974d8f946cbe9d0ef035175",
+          "description": "<p>Reliability is essential for communication using XMPP. Although basic XMPP is not reliable in some situations. One of these situations is losing long-lived TCP connection between client and server or server and server because of network or destination failure. If this connection isn’t properly closed, sender will be unaware of the loss and connection will appear as open to server until TCP timeout is reached. All messages which will be sent by server during this time will be lost.</p>\n<p>The goal of this project is to implement XEP-0198 for server-to-server communication in ejabberd. This extension allows to request  stanza acknowledgement and quickly resume session.  Any messages that were not delivered over previous connection will be retransmitted during session resumption without duplication.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5766531002662912/",
+          "proposal_id": null,
+          "short_description": "Reliability is essential for communication using XMPP. Although basic XMPP is not reliable in some situations. One of these situations is losing...",
+          "slug": "server-to-server-stream-management-support-for-ejabberd",
+          "status": "completed",
+          "student_name": "Anna Mukharram",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Server-to-Server Stream Management Support for ejabberd"
+        },
+        {
+          "code_url": "https://medium.com/@tahteche/google-summer-of-code-2017-wrap-up-48d2268b0cd0",
+          "description": "<p>All changes in the Barrel databases and indexes (updates, creations and deletions) can be retrieved in Barrel using the HTTP API. There are many usages for such a log. The replication in barrel is based on it. Having a way to send these changes via RabbitMQ would open it to more applications and usages.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5826739599048704/",
+          "proposal_id": null,
+          "short_description": "All changes in the Barrel databases and indexes (updates, creations and deletions) can be retrieved in Barrel using the HTTP API. There are many...",
+          "slug": "implementation-of-a-rabbitmq-plugin-for-barreldb",
+          "status": "completed",
+          "student_name": "Tah Teche Tende",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "database"
+          ],
+          "title": "Implementation of a RabbitMQ Plugin for BarrelDB"
+        },
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1p9tYUJ3_JmTD1xbZ6fl6d-1foZ0iVR1CvcmsoxZKqMA/edit?usp=sharing",
+          "description": "<p>Currently Zotonc uses shell scripts for the command line functionality e.g starting Zotonic, installing modules, etc.\nThese command line scripts are fragile and non-portable hence they should be replaced with either Escript or Erlang modules. This would also create opportunities for exposing the script functionalities in a web interface.\nThe following will be done:</p>\n<ul>\n<li>Check on speed of Erlang scripting.</li>\n<li>Design the architecture for the Erlang implementation.</li>\n<li>Ensure hooks/modules that can be used from within Zotonic itself.</li>\n<li>Rewrite the scripts in Erlang.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5926176681885696/",
+          "proposal_id": null,
+          "short_description": "Currently Zotonc uses shell scripts for the command line functionality e.g starting Zotonic, installing modules, etc.\nThese command line scripts are...",
+          "slug": "port-zotonic-shell-scripts-to-erlang-escript",
+          "status": "completed",
+          "student_name": "Mbeh",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "Port Zotonic Shell Scripts to Erlang EScript."
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5344914732744704/"
+    },
+    "year_2018": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/goncalotomas/3a821cca8bf07b8a159abba4df72ca89",
+          "description": "<p>Riak KV is an open source database with a strong focus on low latency, reliability and fault tolerance. Like any well tested computer system, batteries of tests are run to make sure that the database behaves correctly in typical but also adverse conditions such as network partitions, or even the deployment and upgrade process of nodes running different versions in the same cluster. To this end, one of the resources used by the Riak team is <a href=\"https://github.com/basho/riak_test\" target=\"_blank\">riak_test</a>. Its main function is to provide a test running framework that overlaps significantly with Common Test, but it also contains cluster management and code intercept functionalities. We propose to break up this repository into its discrete components, making important contributions to the Erlang community and adapting the test runner framework into Common Test suites, vastly increasing the reporting ability of current Riak tests.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5536566172712960/",
+          "proposal_id": null,
+          "short_description": "Riak KV is an open source database with a strong focus on low latency, reliability and fault tolerance. Like any well tested computer system,...",
+          "slug": "improving-riak-testing-suites-using-common-test-and-intercepts",
+          "status": "completed",
+          "student_name": "Gonçalo Tomás",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Improving Riak testing suites using Common Test and Intercepts"
+        },
+        {
+          "code_url": "https://github.com/anshuman23/tensorflex",
+          "description": "<p>Currently, there is a lack of machine learning tools and frameworks for Elixir. With the number of programmers learning/using machine learning only set to grow, supporting machine learning capabilities is <em>essential</em> for any programming language. Moreover, there are discussions on elixirforum.com regarding this and recent talks given at ElixirConf that reflect the need for Elixir to provide machine learning capabilities.\nI thus propose to work on <em>Tensorflex</em>,  an Elixir framework similar to <em>Keras</em> (for Python). Keras uses <em>Tensorflow</em> as a backend for doing all the ML. Using Native Implemented Functions (NIF) and the Tensorflow C API as a backend, a low-level wrapper will be written in Elixir. This low-level API will then be used to write a Keras-like framework in the form of a high-level API. This will allow Elixir developers to write expedient and efficient machine learning code in Elixir.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5361302180462592/",
+          "proposal_id": null,
+          "short_description": "Currently, there is a lack of machine learning tools and frameworks for Elixir. With the number of programmers learning/using machine learning only...",
+          "slug": "tensorflex-tensorflow-bindings-for-the-elixir-programming-language",
+          "status": "completed",
+          "student_name": "Anshuman Chhabra",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ml",
+            "backend"
+          ],
+          "title": "Tensorflex: Tensorflow bindings for the Elixir programming language"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1FALaT9tAzQueKY67aUU2J_qFb0WV6fIe9Ca4-EbdMFQ/edit?usp=sharing",
+          "description": "<p>Make a BarrelDB client in idiomatic Elixir with its tests and documentation.\nThe project scope depending on the progress done may also involve:</p>\n<ul>\n<li>creating a client-enforced schema and document changeset similar to the one in Ecto</li>\n<li>writing an aggregation framework for the client\n. creating a GraphQL API for BarrelDB</li>\n<li>adding a statistics and health service</li>\n<li>supporting rate limiting and throttling</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6228633513361408/",
+          "proposal_id": null,
+          "short_description": "Make a BarrelDB client in idiomatic Elixir with its tests and documentation.\nThe project scope depending on the progress done may also involve:\n...",
+          "slug": "create-an-elixir-client-for-barreldb",
+          "status": "completed",
+          "student_name": "Jakub Janarek",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Create an Elixir client for BarrelDB"
+        },
+        {
+          "code_url": "https://gist.github.com/tallysmartins/83bbe000cbc385e8b651e650248e8192",
+          "description": "<p>ElixirBench platform is a proof of concept that already showed its value, the key deliverable is to bring it up and running for nightly performance monitoring for significant Elixir projects. Given a project in the Github, it will be possible to activate the benchmark service and to automatically monitor the performance of the new released versions by setting up a bench/config.yml file and the benchmark scripts to be run for that project.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4837414216400896/",
+          "proposal_id": null,
+          "short_description": "ElixirBench platform is a proof of concept that already showed its value, the key deliverable is to bring it up and running for nightly performance...",
+          "slug": "monitoring-performance-of-elixir-packages-with-elixirbench",
+          "status": "completed",
+          "student_name": "Tallys Martins",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Monitoring performance of Elixir packages with ElixirBench"
+        },
+        {
+          "code_url": "https://github.com/njichev/type-generators",
+          "description": "<h5>Project Description</h5>\n<p><a href=\"https://github.com/whatyouhide/stream_data\" target=\"_blank\">StreamData</a> is a library that adds\ndata generation and property-based testing to Elixir. The goal of this project\nis to read <code>@type</code> declarations from BEAM code and automatically get generators\nout of them. Once that is done, we should use this information to automatically\nvalidate <code>@spec</code> annotations with data generators.</p>\n<h6>Goal 1 - Getting data generators out of <code>@types</code></h6>\n<p>First part - Provide a simple way to generate all simple types(int, atom,\nall, etc.).  Maybe a way to compose different generators and getting new ones\nwould be useful for union/all types.</p>\n<p>Second part -  generators for recursive/recursively dependant/parameterized types  which will be a greater challenge.</p>\n<h6>Goal 2 - Automatically validate function <code>@specs</code></h6>\n<p>If we have a function spec, we can automatically feed the function it's\narguments and check that the result always belongs to the return type of the\nfunction.</p>\n<p>To check whether a result belong to the correct type generator, we should\nprobably extend the StreamData struct to include a member function as a\nfield. We would check whether different types belong to a data through it.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4875067859140608/",
+          "proposal_id": null,
+          "short_description": "Project Description\nStreamData is a library that adds\ndata generation and property-based testing to Elixir. The goal of this project\nis to read @type...",
+          "slug": "elixir-idea-1-typespecs-to-streamdata-generators",
+          "status": "completed",
+          "student_name": "njichev",
+          "student_profile": null,
+          "tags": [],
+          "title": "Elixir Idea #1: Typespecs to StreamData generators"
+        },
+        {
+          "code_url": "https://github.com/gabrielgatu/mix-dialyzer",
+          "description": "<p>Dialyzer is a discrepancy analyzer that ships as part of the Erlang VM. There are two projects that adds Dialyzer support to Elixir applications: dialyxir and dialyzex. The goal of this project is to bring the ideas of both projects with two main new features: better usability (in particular, better error messages and formatting) and the ability to dialyze projects incrementally.</p>\n",
+          "difficulty": null,
+          "id": "proj_beam-community_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5817190813007872/",
+          "proposal_id": null,
+          "short_description": "Dialyzer is a discrepancy analyzer that ships as part of the Erlang VM. There are two projects that adds Dialyzer support to Elixir applications:...",
+          "slug": "add-dialyzer-task-to-elixir",
+          "status": "completed",
+          "student_name": "Gabriel Gatu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add dialyzer task to Elixir"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5082029850886144/"
+    },
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "contact@process-one.net",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "http://beamcommunity.github.io",
+    "mailing_list": "https://groups.google.com/d/forum/beam-community"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.954Z"
+  }
+}

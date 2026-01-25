@@ -1,0 +1,1556 @@
+{
+  "id": "692251ee53dd9d7326d33f10",
+  "slug": "freifunk",
+  "name": "freifunk",
+  "category": "Operating systems",
+  "description": "Free and open wireless networks",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/freifunk/bpcbaeecusvfzbzk-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/freifunk.webp",
+  "logo_r2_url": null,
+  "url": "https://freifunk.net/en",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "lua",
+    "openwrt",
+    "olsr",
+    "batman",
+    "javascript",
+    "shell script",
+    "html",
+    "css",
+    "lede/openwrt",
+    "python",
+    "ruby",
+    "shell",
+    "c++",
+    "json",
+    "rust",
+    "gnu/linux"
+  ],
+  "topics": [
+    "monitoring",
+    "user interface",
+    "wifi",
+    "mesh",
+    "routing protocols",
+    "wireless",
+    "routing",
+    "firmware development",
+    "embedded systems",
+    "network",
+    "web applications",
+    "software-defined networking",
+    "web apps",
+    "software defined networking",
+    "wireless communications",
+    "open hardware",
+    "wireless networks",
+    "decentralized",
+    "federation",
+    "security"
+  ],
+  "total_projects": 74,
+  "stats": {
+    "avg_projects_per_appeared_year": 8.22,
+    "projects_by_year": {
+      "year_2016": 8,
+      "year_2017": 12,
+      "year_2018": 12,
+      "year_2019": 10,
+      "year_2020": null,
+      "year_2021": 7,
+      "year_2022": 8,
+      "year_2023": 6,
+      "year_2024": 6,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": 8,
+      "year_2017": 12,
+      "year_2018": 12,
+      "year_2019": 10,
+      "year_2020": null,
+      "year_2021": 7,
+      "year_2022": 8,
+      "year_2023": 6,
+      "year_2024": 6,
+      "year_2025": 5
+    },
+    "total_students": 69
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "http://blog.freifunk.net/2016/swoon-simultaneous-wireless-organic-optimization-within-nodewatcher-final-steps",
+          "description": "<p>In modern urban areas it is very common to experience a lot of Wi-Fi spectrum congestion in the 2.4GHz and 5GHz bands. High density of omnidirectional antennae per unit area directly translates to low SNR and thus bad wireless performance of our nodes. In the case where we only control one wireless node, not much can be done. We can scan the surroundings and choose the channel with a maximal SNR. But with a node database system, we can simultaneously optimize the spectrum allocation (both in terms of bandwidth as well as the center frequency, i.e. channel) across different nodes. SWOON is an algorithm that would maximize channel capacities over multiple nodes in close proximity.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5110178932326400/",
+          "proposal_id": null,
+          "short_description": "In modern urban areas it is very common to experience a lot of Wi-Fi spectrum congestion in the 2.4GHz and 5GHz bands. High density of...",
+          "slug": "swoon-simultaneous-wireless-organic-optimization-within-nodewatcher",
+          "status": "completed",
+          "student_name": "marn",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "SWOON: Simultaneous Wireless Organic Optimization within Nodewatcher"
+        },
+        {
+          "code_url": "http://blog.freifunk.net/2016/implementing-poprouting-final-evaluation",
+          "description": "<p>OONF (OLSRv2) is a link state routing protocol. It works sending periodical messages to his neighbors with the aim of transmitting information about topology changes. With these information each node of the network is able calculate the paths to reach any other destination. \nThese messages are periodically generated, based on the configuration parameter that regulates the sending interval. A short period will make the network react rapidly but it will also cause a large overhead due to control messages.\nPop Routing is a recent technique that takes advantage of the knowledge of the network topology to find the optimal value for the OONF’s timers. Using Pop Routing every node computes its own “betweenness centrality” and uses it to calculate the optimal trade-off between convergence and overhead. The  algorithm has been developed at the UniTN and the needed libraries to compute the BC are available as free software.\nMy goal is to build a daemon that can calculate autonomously the BC of the network, together with a plugin for OONF that will use this value to tune its timers.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5374689325088768/",
+          "proposal_id": null,
+          "short_description": "OONF (OLSRv2) is a link state routing protocol. It works sending periodical messages to his neighbors with the aim of transmitting information about...",
+          "slug": "implementing-pop-routing",
+          "status": "completed",
+          "student_name": "Gabriel_unname",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Implementing Pop-Routing"
+        },
+        {
+          "code_url": "http://blog.freifunk.net/2016/gsoc-ece-configuration-system-summary",
+          "description": "<p>I'd like to create an alternative to OpenWrt's UCI configuration system, improving on the following points:</p>\n<ul>\n<li>Structured (JSON-based) configuration inspired by gconf/dconf (instead of flat package/section/option config of UCI)</li>\n<li>Configuration schema that defines which keys with which value types are valid</li>\n<li>Saner upgrade behaviour (separate default values and user configurations, allow to upgrade defaults wichout overwriting user config; possibility to clean up obsolete configuration on upgrades based on the schema)</li>\n<li>Handling of different configuration sources (package defaults, firmware defaults, user settings, ...)</li>\n<li>Efficient configuration storage (binary database instead of text files; one single file instead of one per package; store only differences from default values)</li>\n</ul>\n<p>While the technical realization of this plan is not set in stone yet, I think this project will consist of the following parts (and their corresponding documentation):</p>\n<ul>\n<li>Configuration daemon</li>\n<li>C library (using ubus to communicate with the daemon)</li>\n<li>CLI configuration tool</li>\n<li>Lua binding for the C library</li>\n<li>(UCI config generator to allow using the new configuration system for normal UCI-based OpenWrt packages)</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6011300383555584/",
+          "proposal_id": null,
+          "short_description": "I'd like to create an alternative to OpenWrt's UCI configuration system, improving on the following points:\n\nStructured (JSON-based) configuration...",
+          "slug": "a-schema-based-configuration-system-for-openwrt",
+          "status": "completed",
+          "student_name": "NeoRaider",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "A schema-based configuration system for OpenWrt"
+        },
+        {
+          "code_url": "https://spacekookie.de/gsoc2016/what-i-have-done-in-gsoc-2016/",
+          "description": "<p>The Qaul,net project provides a mesh-wifi network for people to connect and share information to other people on the network, helping them avoid potentially compromised or censored channels of communication. It does however currently do so without any cryptographic layer, exposing potentially personal data to the public in clear text via wireless channels as well as not allow users to verify other users and messages identities.\nProviding a cryptographic layer for Qaul.net, implementing not only public/ private key method encryption (either via RSA or ECC) but verifiable identities would make Qaul.net a much safer and more private channel of communication for everybody.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6078005789065216/",
+          "proposal_id": null,
+          "short_description": "The Qaul,net project provides a mesh-wifi network for people to connect and share information to other people on the network, helping them avoid...",
+          "slug": "provide-a-cryptographic-implementation-for-qaulnet",
+          "status": "completed",
+          "student_name": "spacekookie",
+          "student_profile": null,
+          "tags": [],
+          "title": "Provide a cryptographic implementation for Qaul.net"
+        },
+        {
+          "code_url": "https://github.com/thuehn/dynapoint",
+          "description": "<p>Find an easily configurable solution for making the wireless access ssid in OpenWrt/LEDE dependent on a set of network conditions.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5759497725280256/",
+          "proposal_id": null,
+          "short_description": "Find an easily configurable solution for making the wireless access ssid in OpenWrt/LEDE dependent on a set of network conditions.",
+          "slug": "dynapoint-a-dynamic-access-point-validator-and-creator-for-openwrtlede",
+          "status": "completed",
+          "student_name": "Asco",
+          "student_profile": null,
+          "tags": [],
+          "title": "DynaPoint - A dynamic access point validator and creator for OpenWrt/LEDE"
+        },
+        {
+          "code_url": "http://blog.freifunk.net/2016/google-summer-code-2016-external-netifd-device-handlers-final-milestone",
+          "description": "<p>In this project, we will extend netifd by a generic device handler interface, which is exposed via the ubus IPC system to enable interaction with external device handlers. In other words, the goal is to decouple the device management functionality from netifd to other separately maintained device managers to allow both sides to evolve independently. Moreover, the decoupling will allow netifd to manage devices of types which may even be unknown to netifd without the need to change the central UCI network device configuration in /etc/config/network. In this project, we will present a basic proof-of-concept module which outsources the control over Open vSwitch in OpenWrt to an external device handling entity. Specifically, we will realize a small daemon acting as a relay between the ovs command line tools and netifd's ubus device handler interface. Native support of Open vSwitch in OpenWRT will open a wide range of different use-cases.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5944457270657024/",
+          "proposal_id": null,
+          "short_description": "In this project, we will extend netifd by a generic device handler interface, which is exposed via the ubus IPC system to enable interaction with...",
+          "slug": "netifd-extension-external-device-handlers",
+          "status": "completed",
+          "student_name": "arkap",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "netifd extension: external device handlers"
+        },
+        {
+          "code_url": "http://blog.freifunk.net/2016/monitoring-and-quality-assurance-open-wifi-networks-out-client-view-final-evaluation",
+          "description": "<p>Running a huge open wifi network that is split into different network areas needs monitoring to assure an appropriate quality of service to it's users. Until now we just monitor our servers to recognize network bottlenecks and failures. But to assure an appropriate quality of service we also need the users view onto the network.</p>\n<p>The goal of this task is to build a software running on low budget OpenWRT-Routers like WR841ND that acts like a client and regulary gathers status data from the clients view onto the network. Some common tasks of this software would be:</p>\n<ul>\n<li>connect the router as client to a wifi network</li>\n<li>connect the router to a fallback lan network</li>\n<li>get a list of network segments from Netmon-SC JSON REST API</li>\n<li>detect which network segment of the open wifi network the router is in</li>\n<li>get a list of resources to check based on which network segment the router is in</li>\n<li>check resources</li>\n<li>send the data that has been gathered to the Netmon-SC JSON REST API</li>\n</ul>\n<p>The software should be build as OpenWRT package and should contain a user interface for the Luci web interface</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5172789354954752/",
+          "proposal_id": null,
+          "short_description": "Running a huge open wifi network that is split into different network areas needs monitoring to assure an appropriate quality of service to it's...",
+          "slug": "monitoring-and-quality-assurance-of-open-wifi-networks-the-client-view",
+          "status": "completed",
+          "student_name": "Jan-Tarek Butt",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Monitoring and quality assurance of open wifi networks: the client view"
+        },
+        {
+          "code_url": "http://blog.freifunk.net/neez-el-sayed",
+          "description": "<p>Sustainable energy production and consumption are crucial for a prospering life on earth. Decentralized energy production is one of the next big challenges, which will influence the energy production in the future years. The emerging smart grids include an inherent need for communication for monitoring and control purposes in a more and more dynamic environment. One of the major challenges is monitoring the power quality parameters in a decentralized manner. The Freifunk mesh network is an outstanding example for a decentralized infrastructure that could be augmented with grid related functionalities to cope with future energy challenges. The main goal of this project is to enable power quality measurements on OpenWrt. Voltage samples from the electric socket are retrieved at the router. Next power quality parameters are calculated, and finally made available for retrieval over IP networks.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2016_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5178692250632192/",
+          "proposal_id": null,
+          "short_description": "Sustainable energy production and consumption are crucial for a prospering life on earth. Decentralized energy production is one of the next big...",
+          "slug": "openwrt-powquty-power-quality",
+          "status": "completed",
+          "student_name": "Neez",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "OpenWrt - poWquty (poWer quality)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6540884078231552/"
+    },
+    "year_2017": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/29/gsoc-libremesh-spectrum-analyzer-summary/",
+          "description": "<p>I believe that Community Networks' Operating Systems could use the Spectrum Analysis a lot to make better decisions on how they use the electromagnetic field wisely and efficiently.</p>\n<p>As of now, no Free OS has been using Spectrum Analysis, so they can't know whether the radios are being used efficiently or not.</p>\n<p>This module would allow all routers that use Atheros radios (the main radio manufaturer around) to see how is the spectrum and take better decisions on which channels they use.</p>\n<p>Deliverables</p>\n<ul>\n<li>Create an OpenWRT/LEDE package to get Spectrum info from the radio.</li>\n<li>Create a LuCI interface to visualize the Spectrum information retrieved.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6581109399748608/",
+          "proposal_id": null,
+          "short_description": "I believe that Community Networks' Operating Systems could use the Spectrum Analysis a lot to make better decisions on how they use the...",
+          "slug": "spectrum-analyzer",
+          "status": "completed",
+          "student_name": "Nicolas Andres Pace",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai"
+          ],
+          "title": "Spectrum Analyzer"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/25/attended-sysupgrade-final-evaluation-update/",
+          "description": "<p>Performing updates on routers is quite different from full Linux distribution. It's not sustainable to do release upgrade via a packet manager. Instead it's usually required to re-flash the system image. \nDepending on the installed packages an image rebuild may be to complex for regular users. A more convenient way is needed.</p>\n<p>This project will implement an \"image as a service\" server side which provides custom build images depending on installed packages. A notification in the web interface will notify about the new release.\nAfter image creation a one-click installation is offered within the web interface.</p>\n<p>The server side implementation will use established tools like LEDE's ImageBuilder to provide an generic approach for image creating. In this way the entire OpenWrt/LEDE community including several community-mesh firmware projects will benefit from that new update routine.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_freifunk_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6718970065321984/",
+          "proposal_id": null,
+          "short_description": "Performing updates on routers is quite different from full Linux distribution. It's not sustainable to do release upgrade via a packet manager....",
+          "slug": "libremesh-attended-sysupgrade",
+          "status": "completed",
+          "student_name": "Paul Spooren",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "LibreMesh Attended Sysupgrade"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/28/powquty-live-log-gsoc-2017-final-update/",
+          "description": "<p>PowQuty provides statistics from measurements taken by a USB oscilloscope. The statistics provide information about the power distribution network, but don't highlight the most important information. Power networks need to comply with EN50160, if this norm is violated, damage to connected devices is possible.\nTo avoid damage, powqutyd will log violations and notify users on occurrence.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6727994328481792/",
+          "proposal_id": null,
+          "short_description": "PowQuty provides statistics from measurements taken by a USB oscilloscope. The statistics provide information about the power distribution network,...",
+          "slug": "powquty-live-log",
+          "status": "completed",
+          "student_name": "Stefan Venz",
+          "student_profile": null,
+          "tags": [],
+          "title": "Powquty Live-Log"
+        },
+        {
+          "code_url": "https://spyff.github.io/mptcp/2017/08/27/transparent-mptcp-proxy/",
+          "description": "<p>Create an MPTCP supported OpenWRT/LEDE trunk and ensure its operation in a multipath Wi-Fi aggregation environment.  The trunk should contain the tooling for establish a SOCKS proxy for operating systems without MPTCP support.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5379317957656576/",
+          "proposal_id": null,
+          "short_description": "Create an MPTCP supported OpenWRT/LEDE trunk and ensure its operation in a multipath Wi-Fi aggregation environment.  The trunk should contain the...",
+          "slug": "add-mptcp-support-in-ledeopenwrt-trunk",
+          "status": "completed",
+          "student_name": "SPYFF",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Add MPTCP support in LEDE/OpenWRT trunk"
+        },
+        {
+          "code_url": "https://gist.github.com/gmarcos87/e77759463bed026884a279a55e243087",
+          "description": "<p>Make an inventory of all LuCI components that LibreMesh uses and that will not be compatible with LuCI2. Analyze which dependencies must be replaced or rewritten and generate the views according to the new framework selected.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4560102203850752/",
+          "proposal_id": null,
+          "short_description": "Make an inventory of all LuCI components that LibreMesh uses and that will not be compatible with LuCI2. Analyze which dependencies must be replaced...",
+          "slug": "lime-webui-port-to-luci2",
+          "status": "completed",
+          "student_name": "Marcos Gutierrez",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "lime-webui: port to LuCI2"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/26/netjsongraph-js-google-summer-code-gsoc-2017-summary/",
+          "description": "<p>NetJSON is a great work attracted some interest from around the world, but there are a lot of defects. And I’m a front-end developer and now focus on Data Visualization, so I want to contribute to NetJSON. In my proposal, I come up with my idea and list some tasks and schedules.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4599822061404160/",
+          "proposal_id": null,
+          "short_description": "NetJSON is a great work attracted some interest from around the world, but there are a lot of defects. And I’m a front-end developer and now focus on...",
+          "slug": "netjsongraphjs-visualization-of-netjson-data",
+          "status": "completed",
+          "student_name": "GeekPlux",
+          "student_profile": null,
+          "tags": [],
+          "title": "netjsongraph.js: visualization of netjson data"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/29/geolocator-software-defined-gps-final-evaluation/",
+          "description": "<p>A dynamical and flexible geolocator, which should give a GPS position based on WiFi information for devices which doesn't have GPS hardware but WiFi. This concept considers 2 main components:\nthe web backend and a package for devices like LEDE (Linux Embedded Development Environment) routers. Especially for Gluon which is a popular framework in the Freifunk community it can be a nice feature to enhance the quality of public maps where Freufunk routers will be visible for the public. Even for geobase routing protocols in the field of the Embedded devices.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6061657130270720/",
+          "proposal_id": null,
+          "short_description": "A dynamical and flexible geolocator, which should give a GPS position based on WiFi information for devices which doesn't have GPS hardware but WiFi....",
+          "slug": "geolocator-software-defined-gps",
+          "status": "completed",
+          "student_name": "Jan-Tarek Butt",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ux",
+            "backend"
+          ],
+          "title": "geolocator (Software defined GPS)"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/28/openwifi-gsoc-2017-final-report/",
+          "description": "<p>Improve the proof-of-conecpt version of a OpenWRT/LEDE configuration software.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4873250551103488/",
+          "proposal_id": null,
+          "short_description": "Improve the proof-of-conecpt version of a OpenWRT/LEDE configuration software.",
+          "slug": "openwrtlede-configuration-management",
+          "status": "completed",
+          "student_name": "Johannes Wegener",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenWRT/LEDE Configuration Management"
+        },
+        {
+          "code_url": "https://gist.github.com/rasovica/67bfbd2d5985a6ee2261f983ffbb7d68",
+          "description": "<p>Currently nodewatcher has very limited overview of used IP space without more precise division of existing and used subnets. This could be improved using  compact and colorful matrix with IP ranges and links to nodes. I would display data about used ips similar to the <a href=\"http://census2012.sourceforge.net/images/hilbert_icmp_map_lowquality.jpg\" target=\"_blank\">IP Census 2014</a>, better tables and other data representation that would help explain the network structure, it would help in explaining the network and its statistics even to an uninformed observer. I would also update the look and functionality of other graphs and tables representing statistical data from nodewatcher</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5924917853814784/",
+          "proposal_id": null,
+          "short_description": "Currently nodewatcher has very limited overview of used IP space without more precise division of existing and used subnets. This could be improved...",
+          "slug": "improving-nodewatcher-data-representation-capability",
+          "status": "completed",
+          "student_name": "rasovica",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving nodewatcher data representation capability"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/29/implementing-pop-routing-ospf-final-evaluation-updates/",
+          "description": "<p>Prince is a network daemon that continuosly monitors the network topology  and  sets  the  timers  for  OLSRv2,  it  is  developed  in  C  and  we  are  currently deploying it in the Ninux community network in Florence. This year\nwe  want  to  implement  Pop-Routing  for  another  link-state  routing  protocol:  OSPF.  OSPF  is  the  state-of-the-art  interior  routing  protocol  for  wired networks  and  it  is  used  also  in  some  wireless  community  networks.  This\nproject consists in realizing a plug-in of the OSPF open source routing daemon (Quagga or Bird) that will:</p>\n<ul>\n<li>Expose the network topology to Prince using NetJson</li>\n<li>Receive and re-set the network parameters from Prince</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6288671921668096/",
+          "proposal_id": null,
+          "short_description": "Prince is a network daemon that continuosly monitors the network topology  and  sets  the  timers  for  OLSRv2,  it  is  developed  in  C  and  we ...",
+          "slug": "implementing-pop-routing-in-ospf",
+          "status": "completed",
+          "student_name": "Gabriele Gemmi",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "Implementing Pop-Routing in OSPF"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2017/08/26/gsoc-2017-final-milestone/",
+          "description": "<p>LoxiGen is a tool by the Floodlight project to generate OpenFlow libraries for several programming languages including Java and C. The goal of this project is to extend LoxiGen to include messages for controlling wireless switches using OpenFlow.\nIt will include the necessary extensions to LoxiGen as well as a proof-of-concept implementation of the control channel. This encompasses an application for the ONOS SDN controller and an agent for the LEDE router operating system.</p>\n<p>SDN-enabled wireless switches offer comfortable centralized management of larger deployments and may provide the basis for more complex use-cases in the future such as network slicing and seamless mobility.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_freifunk_2017_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5150861667860480/",
+          "proposal_id": null,
+          "short_description": "LoxiGen is a tool by the Floodlight project to generate OpenFlow libraries for several programming languages including Java and C. The goal of this...",
+          "slug": "extending-loxigen-and-onos-to-enable-sdn-control-of-wireless-switches-via-openflow",
+          "status": "completed",
+          "student_name": "Arne Kappen",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ml"
+          ],
+          "title": "Extending LoxiGen and ONOS to enable SDN control of wireless switches via OpenFlow"
+        },
+        {
+          "code_url": "https://gitlab.com/angesoc/RetroShare-GSoC-2017-Report/uploads/a393c3361ebbcdea4dc5a736f2ed8ec6/GSoC_2017_RetroShare_Report-RC3.pdf",
+          "description": "<p>The aim of this proposal is to improve RetroShare incrementally during the summer in the following work lines:</p>\n<ul>\n<li>Semi-automatic RetroShare friendship suggestion based on phone contacts</li>\n<li>Semi-automatize JSON API code and documentation generation</li>\n<li>Multiple simultaneous heterogeneous network connection for each peer</li>\n<li>Improve RetroShare Android usability and performances</li>\n<li>Seamless key exchange via Quiet Modem</li>\n<li>Chat and messages multiple device synchronization</li>\n<li>Directories multiple device synchronization</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2017_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5162289770528768/",
+          "proposal_id": null,
+          "short_description": "The aim of this proposal is to improve RetroShare incrementally during the summer in the following work lines:\n\nSemi-automatic RetroShare friendship...",
+          "slug": "retroshare-improvements",
+          "status": "completed",
+          "student_name": "ange",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "RetroShare Improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6004756195573760/"
+    },
+    "year_2018": {
+      "num_projects": 12,
+      "projects": [
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/14/gsoc-2018-kernel-space-socks-proxy-for-linux-final/",
+          "description": "<p>Currently no open source SOCKS proxy available for recent kernel versions. In fact router proxification depends on user-space proxy applications. This makes the operation much slower because of the intensive packet copy between kernel space and user-space. With this kernel module low-cost embedded devices can do the proxy function entirely in kernel space which makes the whole operation much faster, avoiding copies.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5526632785772544/",
+          "proposal_id": null,
+          "short_description": "Currently no open source SOCKS proxy available for recent kernel versions. In fact router proxification depends on user-space proxy applications....",
+          "slug": "kernel-space-socks-proxy-for-linux-4x",
+          "status": "completed",
+          "student_name": "Fejes Ferenc",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Kernel space SOCKS proxy for Linux 4.x"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/13/gsoc-2018-qaul-net-changes-and-experiences-final-report/",
+          "description": "<p>My goal is to design a new protocol for qaul.net. The current protocol is very heavily coupled to olsr which is used for all networking tasks. To move away from olsr for compatibility reasons on Android means to create a protocol which qaul.net can then use to find networks, manage client discovery as well as all payload communication and user negotiation.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6160409165824000/",
+          "proposal_id": null,
+          "short_description": "My goal is to design a new protocol for qaul.net. The current protocol is very heavily coupled to olsr which is used for all networking tasks. To...",
+          "slug": "design-network-agnostic-communication-protocol",
+          "status": "completed",
+          "student_name": "Katharina Sabel",
+          "student_profile": null,
+          "tags": [
+            "android"
+          ],
+          "title": "Design network agnostic communication protocol"
+        },
+        {
+          "code_url": "https://github.com/dakhnod/Meshenger/releases/tag/v1.0.0",
+          "description": "<p>The project consists of constructing an android app which allows a quick exchange of contact data through a QR-code and thus serverless p2p voice- as well as video-communication through the local network.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5559204609785856/",
+          "proposal_id": null,
+          "short_description": "The project consists of constructing an android app which allows a quick exchange of contact data through a QR-code and thus serverless p2p voice- as...",
+          "slug": "local-phone-app",
+          "status": "completed",
+          "student_name": "Daniel Dakhno",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ui"
+          ],
+          "title": "Local Phone App"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/13/gsoc-2018-better-map-for-nodewatcher-final-update/",
+          "description": "<p>The idea is to replace the original map with a new one that looks better and represents nodes in a better way. Currently the map is very basic and there are a lot of things to add. But the main additions to make are: a full screen map, better color representation of nodes which are online or offline and possibly if they went offline a day ago, list of all nodes and accessibility to every node individually and to show some basic information about the node. This would greatly reduce the time when a node goes offline and a technician fixing it. Also users will be able to see how the network is working or if there is a problem they could alert someone or even fix the problem themselves.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6226691114401792/",
+          "proposal_id": null,
+          "short_description": "The idea is to replace the original map with a new one that looks better and represents nodes in a better way. Currently the map is very basic and...",
+          "slug": "better-map-for-nodewatcher",
+          "status": "completed",
+          "student_name": "Marin Stević",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Better map for nodewatcher"
+        },
+        {
+          "code_url": "https://libremesh.github.io/librenet6/",
+          "description": "<p><a href=\"https://projects.freifunk.net/#/projects?project=libremesh_librenet6_integrations&amp;lang=en\" target=\"_blank\">https://projects.freifunk.net/#/projects?project=libremesh_librenet6_integrations&amp;lang=en</a></p>\n<p>LibreMesh already does extensive use of IPv6 technology, we even have an IPv6 mesh tunnel broker provider based on Tinc VPN. It works very well but configuring the tunnel is a manual work that requires specific skills which are not common in the majority of communities. Because of this, communities often are not taking advantage on IPv6 while their routers already support and make good use of it. To improve this situation the student should design a semi-automatic system to grant access to trusted routers to LibreNet6 (this may include key exchange) and code a tiny LiMe module that take care of tunnel configuration.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4554077438476288/",
+          "proposal_id": null,
+          "short_description": "https://projects.freifunk.net/#/projects?project=libremesh_librenet6_integrations&lang=en\nLibreMesh already does extensive use of IPv6 technology, we...",
+          "slug": "librenet6",
+          "status": "completed",
+          "student_name": "Paul Spooren",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "LibreNet6"
+        },
+        {
+          "code_url": "https://gitlab.com/vrconfig",
+          "description": "<p>Improve the usability and beginner-friendliness of OpenWrt's LuCI Web Interface by creating a picture-based visual router configuration</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_freifunk_2018_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4877220174626816/",
+          "proposal_id": null,
+          "short_description": "Improve the usability and beginner-friendliness of OpenWrt's LuCI Web Interface by creating a picture-based visual router configuration",
+          "slug": "vrconfig-visual-router-config-for-openwrt",
+          "status": "completed",
+          "student_name": "Tobias Ilte",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "VRConfig - Visual Router Config for OpenWrt"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/13/nodewatcher-build-system-rework-and-package-upstreaming-final-update/",
+          "description": "<p>Nodewatcher currently uses Dockerized OpenWrt firmware builders which are manually generated.\nCurrently, their generation is slow and complicated which does not allow quick bug fixing.\nThey are configured here:<a href=\"https://github.com/wlanslovenija/firmware-core\" target=\"_blank\">https://github.com/wlanslovenija/firmware-core</a></p>\n<p>Packages that are crucial to the functioning of Nodewatcher configured nodes are mostly not upstreamed and are also compiled with the OpenWrt source code.</p>\n<p>The idea of this is to simplify and speed up the whole building process.\nWhile we are at it also upstream all necessary packages to ease their maintenance.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/4921530546913280/",
+          "proposal_id": null,
+          "short_description": "Nodewatcher currently uses Dockerized OpenWrt firmware builders which are manually generated.\nCurrently, their generation is slow and complicated...",
+          "slug": "nodewatcher-build-system-rework-and-package-upstreaming",
+          "status": "completed",
+          "student_name": "Robert Marko",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "docker",
+            "ui"
+          ],
+          "title": "nodewatcher: Build system rework and package upstreaming"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/13/dawn-final-post/",
+          "description": "<h4>Decentralized WiFi controller</h4>\n<p>DAWN is a decentralized WiFi controller. So far the daemon concentrates on load balancing to distribute the network traffic among different Access Points to maximize the network performance. I want to improve the daemon by simplifying the configuration, extending the functionally and improving the usability.</p>\n<h5>Milestones</h5>\n<ul>\n<li>Implement Bootstrapping</li>\n<li>Implement Graphical User Interface</li>\n<li>Extend Controller Functionality</li>\n<li>Improve Load Balancing</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5829027742875648/",
+          "proposal_id": null,
+          "short_description": "Decentralized WiFi controller\nDAWN is a decentralized WiFi controller. So far the daemon concentrates on load balancing to distribute the network...",
+          "slug": "realizing-a-decentralized-wifi-controller",
+          "status": "completed",
+          "student_name": "nick.power",
+          "student_profile": null,
+          "tags": [],
+          "title": "Realizing a decentralized WiFi Controller"
+        },
+        {
+          "code_url": "https://turnantenna.readthedocs.io/en/latest/",
+          "description": "<p>Turnantenna is now a prototype, and the code was written for a specific driver and for a specific motor.\nMy project includes:<br>\n• 1 more motor, in order to allow the Turnantenna to change the pitch angle too;<br>\n• write new code compatible with different motors and drivers, and not only a single type;<br>\n• configure an API interface compatible with JSON format;<br>\n• a dedicated website where full documentation, how-tos, and test's results can be found.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5997754593574912/",
+          "proposal_id": null,
+          "short_description": "Turnantenna is now a prototype, and the code was written for a specific driver and for a specific motor.\nMy project includes:\n• 1 more motor, in...",
+          "slug": "re-write-the-turnantenna-code",
+          "status": "completed",
+          "student_name": "Marco Musumeci",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api"
+          ],
+          "title": "Re-write the Turnantenna code"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/12/gsoc-2018-easily-expandable-wids-final-report/",
+          "description": "<p>While analyzing already available Open Source Wireless Intrusion Detection Systems (WIDS), we realized that there is no full-featured solution yet. We expect a WIDS to fulfill the following needs</p>\n<ul>\n<li>detect most of the known Wi-Fi attacks,</li>\n<li>scale easily and thus be able to work within big organizations and</li>\n<li>be easily expandable.</li>\n</ul>\n<p>It is the objective of the 'Easily Expandable Wireless Intrusion Detection System' (Eewids) to provide an environment which ensures the scalability and the expandability. The actual detection methods shall get added one after another later on. To achieve this a microservice approach is used. Different tasks at stake are done by different services instead of creating a monolithic software. Adding a new detection method, does not involve thinking about the actual capturing of data or storing and parsing the data. Even the presentation of the detection results is already provided by Eewids. This shall make the creation of a full-featured solution much more easier in future.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6003342211809280/",
+          "proposal_id": null,
+          "short_description": "While analyzing already available Open Source Wireless Intrusion Detection Systems (WIDS), we realized that there is no full-featured solution yet....",
+          "slug": "easily-expandable-wireless-intrusion-detection-system",
+          "status": "completed",
+          "student_name": "Alexander Paetzelt",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Easily Expandable Wireless Intrusion Detection System"
+        },
+        {
+          "code_url": "https://gist.github.com/gmarcos87/51eb831c714911d7ef4d0d803d016e6f",
+          "description": "<p>Create a user interface for lime-hwd-ground-routing that is easy to use and understand.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_freifunk_2018_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6299152380067840/",
+          "proposal_id": null,
+          "short_description": "Create a user interface for lime-hwd-ground-routing that is easy to use and understand.",
+          "slug": "libremesh-ground-routing-user-friendly-interface",
+          "status": "completed",
+          "student_name": "Marcos Gutierrez",
+          "student_profile": null,
+          "tags": [],
+          "title": "LibreMesh ground routing user friendly interface"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2018/08/14/openwlanmap-app-final-update/",
+          "description": "<p>The goal of this project is to develop a new OpenWLANMap wardriver app to replace the old one, which is not working anymore in order to save and expand the OpenWifi.su community</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2018_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5160138260348928/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to develop a new OpenWLANMap wardriver app to replace the old one, which is not working anymore in order to save and...",
+          "slug": "openwlanmap-app",
+          "status": "completed",
+          "student_name": "Thi Huyen (Lilli) Cao",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenWLANMap App"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5072753191288832/"
+    },
+    "year_2019": {
+      "num_projects": 10,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/spiccinini/6ddd5e18ce49bd47886e112b42f3e4e0",
+          "description": "<p>Integrate a testing and mocking framework to LibreMesh and provide the functionality needed to easily write new tests for actual or new code. Add tests for the core functions of LibreMesh.</p>\n<p>LibreMesh as an embedded Operating System usually depends a lot on the underlying hardware. But, there are some parts of the code that don’t have that dependency, neither they depend on the network, or any particular state that the device could have.\nAlso, there are many other cases were the states that one would like to achieve in order to reproduce a situation are complex or impractical.\nUnit testing the LibreMesh codebase will greatly help on approaching this two situations, and help having a much more robust solution for the communities it serves.\nHaving automated unit testing integration test may improve the quality, the development speed, and shorten the release cycles of the LibreMesh software.\nAlso, having tests that safeguard the core functionality may allow new developers to engage with the codebase with more confidence.\nFor reviewers, it is also easier to understand and maintain code that has unit tests.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_freifunk_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6614034516803584/",
+          "proposal_id": null,
+          "short_description": "Integrate a testing and mocking framework to LibreMesh and provide the functionality needed to easily write new tests for actual or new code. Add...",
+          "slug": "unit-testing-libremesh",
+          "status": "completed",
+          "student_name": "Santiago Piccinini",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Unit testing LibreMesh"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/26/retroshare-for-android-update-3-final/",
+          "description": "<p>Retroshare is a highly sophisticated communication platform which is accessible only on desktops. This project aims to develop a mobile application focusing on chat rooms, which is the main function of this platform, giving users the ability to communicate also beyond the reach of their computer. This application is to be the basis, which will give the possibility of further development of other functionalities offered by Reroshare.</p>\n<p>The main task will be to design the application in a user-friendly way, so that the use of this platform, whose advanced architecture may cause problems, especially for less technically advanced users, is easier. The new logo, which is also part of this project, should reflect the new direction of this software. As an additional part, the backend of the chat will be improved to meet the high expectations of users.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_freifunk_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6743200104972288/",
+          "proposal_id": null,
+          "short_description": "Retroshare is a highly sophisticated communication platform which is accessible only on desktops. This project aims to develop a mobile application...",
+          "slug": "designing-retroshare-for-android-with-chat-backend-improvements",
+          "status": "completed",
+          "student_name": "Konrad Dębiec",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "mobile",
+            "ai",
+            "backend"
+          ],
+          "title": "Designing RetroShare for Android with chat backend improvements"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/25/retroshare-web-interface-final-update/",
+          "description": "<p>Retroshare has an existing WebUI interface which covers the basic functionality of the client. However it has limited functionality and does not make full use of the web platform.</p>\n<p>The project aims to replace the old WebUI for a new and modern web interface which works by leveraging Retroshare's Json API which is already part of Retroshare internals. It will be made entirely usable on a web browser, and will make use of modern web functionalities, flexibility, and approachability.</p>\n<p>Projects page link: <a href=\"https://projects.freifunk.net/#/projects?project=retroshare_port_web_interface_to_json_api&amp;lang=en\" target=\"_blank\">https://projects.freifunk.net/#/projects?project=retroshare_port_web_interface_to_json_api&amp;lang=en</a></p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5715146800889856/",
+          "proposal_id": null,
+          "short_description": "Retroshare has an existing WebUI interface which covers the basic functionality of the client. However it has limited functionality and does not make...",
+          "slug": "retroshare-port-web-interface-to-json-api",
+          "status": "completed",
+          "student_name": "Saud",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "RetroShare port web interface to JSON API"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/26/bmx7-wireguard-tunneling-final-report/",
+          "description": "<p>BMX7 offers plugins which are used for the distribution of small files, settings up tunnels or offer stats of the network structure. Currently the connection between a client node and the gateway are established via IPIP (IPv4/6 over IPv6), which is unencrypted and therefore possibly readable by attackers. As mesh networks usually operate on unencrypted wireless connections, the attack vector is considerably big.</p>\n<p>Our solution is to combine the current cryptographic stack of BMX7 with the one used by WireGuard. The process via which this will be achieved will be iterative; meaning that first binary calls from bmx7 to userland WG will be introduced, afterwards the efforts will be centered in the creation of a new plugin implementing WireGuard routing by using part of the existing cryptographic primitives and at last the effort to combine the tunnel plugin with the wg one.</p>\n<p>The detail that distinguishes our approach’s difficulty from hard to medium is cryptographic keys. It’s simpler to announce new public keys for WireGuard and have a separate plugin than replacing the existing BMX7 keys to allow signing of descriptive updates and encryption of traffic.</p>\n",
+          "difficulty": "medium",
+          "id": "proj_freifunk_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6127762010537984/",
+          "proposal_id": null,
+          "short_description": "BMX7 offers plugins which are used for the distribution of small files, settings up tunnels or offer stats of the network structure. Currently the...",
+          "slug": "wireguard-tunneling-for-bmx7",
+          "status": "completed",
+          "student_name": "Harry Pantazis",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "WireGuard Tunneling for BMX7"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/18/load-correlated-distributed-bandwidth-analysis-for-libremesh-networks-4-conclusions-and-further-work/",
+          "description": "<p>Performance tests are key for identifying the bottlenecks and optimize the network topology.\nThe main indicator is the bandwidth, but also other values can be useful like latency, number of active users for each node, load average and RAM consumption of each node.\nThe value of these quantities can vary greatly between the peak time and the night time, for this reason some of the measurements should be carried on in both these two moments.\nSome other measurements, which can affect the user experience, could instead be run just in the night time.\nTo identify the night time we can’t relay on the router’s internal clock which could be years away from the actual time.\nSo a method for getting the network-wide peak time will be sought.\nEach router in the network should separately run these tests, and for avoiding to influence each others’ results they should run at different times.\nThis synchronization should be possible taking advantage of the LibreMesh architecture and the shared-state service.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6129391480864768/",
+          "proposal_id": null,
+          "short_description": "Performance tests are key for identifying the bottlenecks and optimize the network topology.\nThe main indicator is the bandwidth, but also other...",
+          "slug": "load-correlated-distributed-bandwidth-analysis-for-libremesh-networks",
+          "status": "completed",
+          "student_name": "Ilario Gelmetti",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Load-correlated distributed bandwidth analysis for LibreMesh networks"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/20/gsoc-2019-building-a-testing-framework-for-qaul-net/",
+          "description": "<p>qual.net’s Rust rewrite will enable improved modularity, performance, and security, but rewriting an entire system in a new and rapidly evolving language is a difficult task. A network simulator able to mock out the entire world of devices and connections on which qual.net will have to operate is an important step in ensuring functionality is implemented as intended.</p>\n<p>This project will result in a working MVP of a dual layer network simulator. This simulator will provide hooks for the netlink and HTTP API levels, into which tests can inject behavior and from which metrics and test results can be extracted.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6141611669454848/",
+          "proposal_id": null,
+          "short_description": "qual.net’s Rust rewrite will enable improved modularity, performance, and security, but rewriting an entire system in a new and rapidly evolving...",
+          "slug": "build-a-qualnet-network-simulator-to-enable-automated-testing",
+          "status": "completed",
+          "student_name": "NoraCodes",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Build a qual.net network simulator to enable automated testing"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/author/ikstream/",
+          "description": "<p>This project provides a framework for reproducible wireless resource allocation algorithm testing. This will ease the benchmarking and the development of new and well known algorithms.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5092953410764800/",
+          "proposal_id": null,
+          "short_description": "This project provides a framework for reproducible wireless resource allocation algorithm testing. This will ease the benchmarking and the...",
+          "slug": "contest-wireless-resource-allocation-algorithm-testing-framework",
+          "status": "completed",
+          "student_name": "ikstream",
+          "student_profile": null,
+          "tags": [],
+          "title": "ConTest - Wireless resource allocation algorithm testing framework"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/26/gsoc-2019-openwrt-firmware-wizard-final-update/",
+          "description": "<p>The Project has 3 sub-parts which are described as:</p>\n<ol>\n<li><strong>Initial Firmware Retrieval:  </strong>  People who want to update their device, often do not know what firmware file to download. So far the best option is the Wiki, but it is often loaded with too much information. The file download organizes all images files by architecture, but that is what most user usually do not know beforehand. </li>\n<li><strong>Firmware Upgrades: </strong> Create a router web interface package for LuCI to check and apply new images.</li>\n<li><strong>Creating meta-data for each target: </strong> To get the data for both projects, the OpenWrt build system needs to modified to create json files with the necessary metadata.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4588038850609152/",
+          "proposal_id": null,
+          "short_description": "The Project has 3 sub-parts which are described as:\n\nInitial Firmware Retrieval:    People who want to update their device, often do not know what...",
+          "slug": "openwrt-firmware-wizard",
+          "status": "completed",
+          "student_name": "Sudhanshu Gautam",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "OpenWrt Firmware Wizard"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2019/08/26/qaul-net-a-framework-a-service-a-plan/",
+          "description": "<p>Regarding the development of an API for the qaul.net rewrite along with a configuration and message management system.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2019_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4752125056253952/",
+          "proposal_id": null,
+          "short_description": "Regarding the development of an API for the qaul.net rewrite along with a configuration and message management system.",
+          "slug": "qaulnet-http-api",
+          "status": "completed",
+          "student_name": "Jess Rogers",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "qaul.net HTTP API"
+        },
+        {
+          "code_url": "https://gitlab.com/jpascualsana/gsoc-2019-report",
+          "description": "<p>I would to create a reference library capable to interact bidirectionally with RS and outside it, engaging people to create apps, bots, and other stuff on the RS network. Making easy way to import/export data from Retroshare network.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_freifunk_2019_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4827205262114816/",
+          "proposal_id": null,
+          "short_description": "I would to create a reference library capable to interact bidirectionally with RS and outside it, engaging people to create apps, bots, and other...",
+          "slug": "library-to-exportimport-public-datasets-to-retroshare-network",
+          "status": "completed",
+          "student_name": "Joan Pascual Sanahuja",
+          "student_profile": null,
+          "tags": [],
+          "title": "Library to export/import public datasets to Retroshare network"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6609278192844800/"
+    },
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://github.com/Neelaksh-Singh/OpenWRT_PPA",
+          "description": "<p>Building a platform to support users and compile openwrt packages on the fly by building an executable,  code ready docker image , ready to be shipped on K3S cluster.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5712260906876928/",
+          "proposal_id": null,
+          "short_description": "Building a platform to support users and compile openwrt packages on the fly by building an executable,  code ready docker image , ready to be...",
+          "slug": "openwrt-ppa",
+          "status": "completed",
+          "student_name": "Neelaksh Singh",
+          "student_profile": null,
+          "tags": [
+            "docker",
+            "ui"
+          ],
+          "title": "OpenWRT PPA"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2021/08/22/gsoc-final-blog-openwrt-device-page/",
+          "description": "<p>Create an overview of OpenWrt supported devices to simplify user choice of acquiring new devices</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5256259665657856/",
+          "proposal_id": null,
+          "short_description": "Create an overview of OpenWrt supported devices to simplify user choice of acquiring new devices",
+          "slug": "openwrt-device-page",
+          "status": "completed",
+          "student_name": "Aditi-Singh",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "OpenWrt Device Page"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2021/08/21/gsoc21-irdest-android-client-work-report/",
+          "description": "<p><a href=\"https://irde.st\" target=\"_blank\">irde.st</a> is a software suite that allows users to create an internet-independent, decentralized &amp; ad-hoc wireless mesh network. It removes all the dependencies of a user from a specific service and enables users to create a local network mesh of their own. It does not expose data or information of the user, even the IPs of the peers present in the mesh are not known, they communicate via routers and the entire communication is end-to-end encrypted between the users, thereby increasing privacy in user data.\nAs of now, Irdest supports various functionalities to users like sharing files over the network created, call between users, and messaging.</p>\n<p>This summer I plan to package and implement some of these core functionalities in an android application. The project aims at first building the FFI layer for interaction between the rust lib and android, a strong, robust &amp; unbreakable CI with cross-compilation enabled, and then implementing the features required.\nThe final product/deliverable of this project will be an android application that'll support the features which are provided by Irdest in the upstream, and a robust plus <em>modern</em> application codebase.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4542577163894784/",
+          "proposal_id": null,
+          "short_description": "irde.st is a software suite that allows users to create an internet-independent, decentralized & ad-hoc wireless mesh network. It removes all the...",
+          "slug": "irdest-android-client",
+          "status": "completed",
+          "student_name": "Ayush Shrivastava",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ai",
+            "ui"
+          ],
+          "title": "Irdest Android Client"
+        },
+        {
+          "code_url": "https://gist.github.com/AngiieOG/5a5108a378e527729140cf49279570f7",
+          "description": "<p>This proposal seeks to improve the implementation of the administration interface of the Pirania captive portal which is implemented in LibreMesh.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4694365368221696/",
+          "proposal_id": null,
+          "short_description": "This proposal seeks to improve the implementation of the administration interface of the Pirania captive portal which is implemented in LibreMesh.",
+          "slug": "libremesh-pirania-ui",
+          "status": "completed",
+          "student_name": "Angie Ortiz Giraldo",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "LibreMesh Pirania UI"
+        },
+        {
+          "code_url": "https://github.com/RetroShare/retroshare-mobile",
+          "description": "<p>RetroShare provides a decentralized, encrypted connection with maximum security between nodes where they can chat, share files, mail, etc. Retroshare uses GXS (Generic eXchange System) that provides Asynchronous distribution, authentication, privacy, security of generic data.\nMy Project aim is to add more feature support into the retro-share Mobile app.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6100684595789824/",
+          "proposal_id": null,
+          "short_description": "RetroShare provides a decentralized, encrypted connection with maximum security between nodes where they can chat, share files, mail, etc. Retroshare...",
+          "slug": "retroshare-mobile",
+          "status": "completed",
+          "student_name": "Avinash",
+          "student_profile": null,
+          "tags": [
+            "mobile",
+            "ai"
+          ],
+          "title": "Retroshare Mobile"
+        },
+        {
+          "code_url": "https://sh15h4nk.github.io/gsoc21-freifunk/",
+          "description": "<p>Updating the JSON schema to the latest version (2020-12)/draft7 and updating the tools which uses JSON schema to generate forms and validate form data to get compatible with the updated JSON schema.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5802146250883072/",
+          "proposal_id": null,
+          "short_description": "Updating the JSON schema to the latest version (2020-12)/draft7 and updating the tools which uses JSON schema to generate forms and validate form...",
+          "slug": "updation-of-the-json-schema-to-latest-version-2020-12draft7-along-with-the-form-generation-and-validation-with-the-updated-schema-of-the-tools",
+          "status": "completed",
+          "student_name": "sh15h4nk",
+          "student_profile": null,
+          "tags": [],
+          "title": "Updation of the Json Schema to latest version (2020-12)/draft7 along with the form generation and validation with the updated schema of the tools"
+        },
+        {
+          "code_url": "https://github.com/Patacon13/LimeApp/tree/GSoC-2021-RB1.0",
+          "description": "<p>One practical barrier for the usage of local network web-based applications (such as the LimeApp) in Android devices is that browsers don't allow the user to navigate local network resources when the network doesn't have a working gateway to the Internet, forcing the user to switch between mobile and wifi network to use local network resources and keep communicating over external services such as WhatsApp.\nThe only way around this issue as of today is to develop a native android application that in fact can specify which network to use for fetching resources. We would like to develop a tiny native application to wrap web-based applications to accomplish this goal.</p>\n",
+          "difficulty": null,
+          "id": "proj_freifunk_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5150144445546496/",
+          "proposal_id": null,
+          "short_description": "One practical barrier for the usage of local network web-based applications (such as the LimeApp) in Android devices is that browsers don't allow the...",
+          "slug": "android-native-app-for-network-selection-capability-in-libremesh-routers",
+          "status": "completed",
+          "student_name": "Tomás Assenza",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "web",
+            "mobile"
+          ],
+          "title": "Android native app for network selection capability in LibreMesh routers"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5663378709676032/"
+    },
+    "year_2022": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://blog.freifunk.net/2022/09/09/gsoc-2022-implement-elrepo-io-unit-testing-final-evaluation/",
+          "description": "ElRepo.io is an Android app that combines the RetroShare JSON API with a Flutter frontend aimed to share content into the RetroShare F2F network.\n\nActually elRepo.io is on a beta state and need a series of feature implementation and unit testing to improve the user experience and scalability of the project.\n\nTogether with my mentors I expect to implement desired features and unit testing, learning how Flutter works together with a first landing into RetroShare decentralized world.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/CdegMgzn/",
+          "proposal_id": null,
+          "short_description": "ElRepo.io is an Android app that combines the RetroShare JSON API with a Flutter frontend aimed to share content into the RetroShare F2F network....",
+          "slug": "implement-elrepoio-unit-testing",
+          "status": "completed",
+          "student_name": "AndreaRuru",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "api",
+            "ai",
+            "frontend"
+          ],
+          "title": "Implement elRepo.io unit testing"
+        },
+        {
+          "code_url": "https://github.com/meshenger-app/meshenger-android/tree/GSOC-22_new",
+          "description": "I will be working on converting the app source codes from java to kotlin, I’ll remove the extra features that the mentor suggests to be removed and also have constant discussions about what else can be improved/added in the core functionality of the app. I will work on redesigning the UI of the app to make it easier to use. I will update the webRTC library, investigate the connection bug, do consistent testing to find out if we are missing out on any bugs and at the end make a new release for the app.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/nTkppSfR/",
+          "proposal_id": null,
+          "short_description": "I will be working on converting the app source codes from java to kotlin, I’ll remove the extra features that the mentor suggests to be removed and...",
+          "slug": "call-a-friend",
+          "status": "completed",
+          "student_name": "AdiCoder",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "web",
+            "ui"
+          ],
+          "title": "Call a Friend"
+        },
+        {
+          "code_url": "https://github.com/menmazqj/GSoC2022-Freifunk-XDP-eBPF",
+          "description": "1. Analysis of different approaches to run XDP and eBPF on openWrt devices\n\n2. Integration of the tools and drivers into OpenWrt\n\n3. Description of different use cases that leverage the capabilities of XDP/eBPF on OpenWrt devices\n\n4. Implementation of a dedicated use case that demonstrates the benefits of the XDP/eBPF",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/5wmAYhSk/",
+          "proposal_id": null,
+          "short_description": "1. Analysis of different approaches to run XDP and eBPF on openWrt devices 2. Integration of the tools and drivers into OpenWrt 3. Description of...",
+          "slug": "traffic-monitoring-and-classification-via-xdpebpf",
+          "status": "completed",
+          "student_name": "Zheng Qijia",
+          "student_profile": null,
+          "tags": [],
+          "title": "Traffic Monitoring and Classification via XDP/eBPF"
+        },
+        {
+          "code_url": "https://github.com/irina556/lime-packages/tree/easing-libremesh-virtualization",
+          "description": "LibreMesh is a framework for creating OpenWrt- based firmware for Wireless mesh nodes.\nLibreMesh works in a decentralized way and is used as a base for community networks. These mesh networks allow all nodes to  router the traffic of the other ones.\nCurrently, using and testing LibreMesh requires having two or more routers, downloading the images and configuring them, which slows down development times. With the use of virtualization tools, the nodes could be set up virtually, forming a virtual mesh network, which would allow new contributors to try LibreMesh more quickly.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/rqCSy7fn/",
+          "proposal_id": null,
+          "short_description": "LibreMesh is a framework for creating OpenWrt- based firmware for Wireless mesh nodes. LibreMesh works in a decentralized way and is used as a base...",
+          "slug": "try-libremesh-without-having-a-router",
+          "status": "completed",
+          "student_name": "Irina Argañaras",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Try LibreMesh without having a router"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2022/09/06/completing-the-retroshare-web-interface-gsoc22-final-report/",
+          "description": "This proposal seeks to develop the Web Interface of Retroshare application. The primary goal is to develop as many features as in the RetroShare Qt interface and provide a user-friendly web interface using MitrhilJS framework and Retroshare JSON API.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/ALJxiVDx/",
+          "proposal_id": null,
+          "short_description": "This proposal seeks to develop the Web Interface of Retroshare application. The primary goal is to develop as many features as in the RetroShare Qt...",
+          "slug": "complete-the-retroshare-web-interface",
+          "status": "completed",
+          "student_name": "Sukhamjot Singh",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api"
+          ],
+          "title": "Complete the Retroshare Web Interface"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2022/09/12/final-report-on-minstrel-tx-rate-control-in-user-space-gsoc-22/",
+          "description": "Considering the wide deployment of IEEE 802.11 wireless networks and their shared use of the ISM band, there have been significant efforts in research and development of WiFi rate control algorithms. A notable example of such a rate control algorithm is Minstrel HT, the default for Linux-based OpenWRT access points. In Linux, the rate control is handled in the mac80211 kernel subsystem. As such, the development of rate control algorithms is restricted to the kernel space which includes Minstrel HT. This restriction has posed limitations and challenges in the research and development of rate control algorithms. To this end, this project aims to implement Minstrel HT in user space for OpenWRT access points.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/vLnsukoX/",
+          "proposal_id": null,
+          "short_description": "Considering the wide deployment of IEEE 802.11 wireless networks and their shared use of the ISM band, there have been significant efforts in...",
+          "slug": "minstrel-tx-rate-control-in-user-space",
+          "status": "completed",
+          "student_name": "Prashiddha",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Minstrel-TX Rate Control in User space"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2022/09/10/final-gsoc22-report-tx-power-control-in-mac80211/",
+          "description": "Wireless communication and in particular WiFi networks are becoming more and more important. Research already focuses on improving reliability, performance of such networks and also efficiency of the underlying hardware. One promising candidate for improvements is TX-Power Control (TPC). Adjusting the transmit power per packet basically promises improvements in overall throughput in wireless networks and/or the efficiency by improved resource allocation in wireless networks.\nDated back to 2007, Atheros IEEE 802.11a/b/g/n chipsets driven by ath5k and ath9k Linux drivers did first and Mediatek joined recently with hardware support for tx-power control. Those also allow access to set the tx-power per packet, but yet do not provide a driver interface for this. Unfortunately, also the mac80211 subsystem, which is responsible for WiFi communication in the Linux kernel, does not provide an appropriate API to support TPC and per-packet annotation of tx-power.\n\nThe goal of this project is to implement the missing three-tier software parts: (1) mac80211 structs to annotate tx-power levels per packet, (2) mac80211 structs to account tx-power status information once transmitted and (3) a transmit power control (TPC) API for TPC algorithms. This is achieved by developing and implementing the required structs in the mac80211 subsystem, modifying  Linux WiFi drivers to make use of this API, and testing and validating the implementation in several experiments.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/e4hhNVvP/",
+          "proposal_id": null,
+          "short_description": "Wireless communication and in particular WiFi networks are becoming more and more important. Research already focuses on improving reliability,...",
+          "slug": "tx-power-control-in-wifi-networks",
+          "status": "completed",
+          "student_name": "Jonas Jelonek",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui",
+            "ux"
+          ],
+          "title": "TX-Power Control in WiFi Networks"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2022/10/17/gsoc22-final-report-videoodyssee/",
+          "description": "Improving the video upload workflow and reimplementing the video processing pipeline using a better and maintainable CI/CD tool to support parallel video processing.",
+          "difficulty": null,
+          "id": "proj_freifunk_2022_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/zPxrHSCN/",
+          "proposal_id": null,
+          "short_description": "Improving the video upload workflow and reimplementing the video processing pipeline using a better and maintainable CI/CD tool to support parallel...",
+          "slug": "videoodyssee-system-refactoring",
+          "status": "completed",
+          "student_name": "Vijay",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Videoodyssee : System Refactoring"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/freifunk/"
+    },
+    "year_2023": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://blog.freifunk.net/2023/08/15/gsoc23-final-report-luci-migrate-to-javascript-based-framework/",
+          "description": "LuCI is a framework used to build web interfaces for configuration and monitoring on embedded devices such as WiFi routers, etc. In the old CBI based system, pages were rendered on the router and delivered as HTML to the browser, leading to a higher load on the embedded devices. To address this issue, LuCI applications must be migrated to JavaScript-based framework to reduce the load on embedded devices and improve performance. This migration involves rendering pages on the client-side using JavaScript, rather than on the router. To facilitate this migration, LuCI provides a JavaScript API that will be used to build web interfaces that can be rendered in the browser. To make this migration possible, new RPCD services will be developed to provide data to the client side that was formerly used directly on the router. This data will be provided in JSON format via RPCD (Remote Procedure Call Daemon) and UBUS. These new RPCD services will need to provide the same functionality as the old system but in a format that can be used by client-side JavaScript.\nThe migration of LuCI to JavaScript-based framework will offer several benefits to OpenWrt community and other users of OpenWrt-based devices. One of the primary benefits is improved performance and reduced load on embedded devices such as WiFi routers. By rendering pages on the client-side using JavaScript, rather than on the router, this will reduce the workload on the router and improve the UX for those interacting with the LuCI web interface. This will be particularly beneficial for users with lower-specification routers etc. Another benefit of the new system is increased flexibility for developers. The use of a client-side JavaScript framework provides developers with more options for customizing and extending the LuCI web interface. And this also provides a standardized way for developers to interact with the router's services which should make it easier to develop and maintain LuCI-based applications.",
+          "difficulty": null,
+          "id": "proj_freifunk_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/zBkmcw7X",
+          "proposal_id": "thSGQdFH",
+          "short_description": "LuCI is a framework used to build web interfaces for configuration and monitoring on embedded devices such as WiFi routers, etc. In the old CBI based...",
+          "slug": "luci-migration-to-javascript-based-framework-improved-ux-and-performance-on-openwrt-based-devices",
+          "status": "completed",
+          "student_name": "Ayushman",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript",
+            "web",
+            "api",
+            "ml"
+          ],
+          "title": "LuCI Migration to JavaScript based Framework: Improved UX and Performance on OpenWrt-based Devices"
+        },
+        {
+          "code_url": "https://gist.github.com/Harshil-Jani/281ab3c38b5786a3b8b4a0ab6b7086c5",
+          "description": "Qaul is an Internet independent wireless mesh communication app. With qaul, you can communicate directly from one device to another. The aim of this project is to create a matrix bridge between Matrix and qaul which can further help us to broadcast messages over many mediums of communication which are supported by Matrix. Main aim is to implement the relay bridge and double puppeting.",
+          "difficulty": "medium",
+          "id": "proj_freifunk_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/z3BpcR6Z",
+          "proposal_id": "R9LrPZUQ",
+          "short_description": "Qaul is an Internet independent wireless mesh communication app. With qaul, you can communicate directly from one device to another. The aim of this...",
+          "slug": "qaul-matrix-bridge",
+          "status": "completed",
+          "student_name": "Harshil Jani",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Qaul Matrix Bridge"
+        },
+        {
+          "code_url": "https://gist.github.com/ndren/399c5e7c86658a4f1cdfcf43b191de2f",
+          "description": "Original project proposal: https://projects.freifunk.net/#/projects?project=openwrt_ppa_part_2&lang=en\n\nCurrently, compiling OpenWRT packages for a device router requires dealing with the non-standard build system SDK. It would be very useful if this could be abstracted away by a generic build system. This project proposes integration with OpenSUSE's OpenBuildService, which also provides automation and remote compilation.\n\nThe plan currently looks like the following:\n1. Document the existing approaches on automating the build system.\n2. Write a build script that integrates with the obs-build repository.\n3. Get security approval, as documented in https://github.com/openSUSE/obs-build/blob/master/HOWTO.add_another_format.\n4. Verify the system works by testing on https://openbuildservice.org.\n\n\nI have already contacted zoobab (Benjamin Henrion), the mentor for this project and I have successfully verified that cascading Docker images successfully compile a package.",
+          "difficulty": null,
+          "id": "proj_freifunk_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/bN4xJR6h",
+          "proposal_id": "EKFW8kPz",
+          "short_description": "Original project proposal: https://projects.freifunk.net/#/projects?project=openwrt_ppa_part_2&lang=en Currently, compiling OpenWRT packages for a...",
+          "slug": "openwrt-ppa-part-2",
+          "status": "completed",
+          "student_name": "Mr. Andrei",
+          "student_profile": null,
+          "tags": [
+            "docker",
+            "ui"
+          ],
+          "title": "OpenWRT PPA Part 2"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2023/09/25/gsoc-23-final-report-on-joint-power-and-rate-control-in-userspace/",
+          "description": "The IEEE 802.11 specification for Wireless Local Area Networking (WLAN) has been\nwidely deployed worldwide due to its low cost and convenience in providing internet access. As such, the performance of WiFi networks is far from optimal, especially when multiple participants share the same channel in an uncoordinated manner. Hence, resource allocation in wireless transmission plays a vital role in optimizing the throughput of a link.\n\nThe aim of this project is to implement a joint power and rate controller in user space using the Rateman Python package. As a rate control algorithm in user space has already been developed at SupraCoNeX, namely \"py_minstrel_ht\", this variant of Minstrel-HT can be extended with power tuning capability to better manage interference and increase spatial reuse. In general, the proposed joint controller will consist of a power tuning module that tweaks the power level of the set of best rates, selected by the Minstrel-HT, to an optimal value. Furthermore, the joint controller could also be extended to support modes such as fixed power and low power.",
+          "difficulty": null,
+          "id": "proj_freifunk_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/InnsjFBU",
+          "proposal_id": "bEjkfqNL",
+          "short_description": "The IEEE 802.11 specification for Wireless Local Area Networking (WLAN) has been widely deployed worldwide due to its low cost and convenience in...",
+          "slug": "joint-power-and-rate-control-in-user-space-for-freifunk-openwrt-mesh-access-networks",
+          "status": "completed",
+          "student_name": "Prashiddha",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Joint Power and Rate Control in User space for Freifunk OpenWrt Mesh & Access Networks"
+        },
+        {
+          "code_url": "https://gitlab.com/a-gave/libremesh-ansible-playbooks",
+          "description": "Create a set of automated tasks to install services on a Raspberry Pi to meet the needs of small community-network with an administration/tech team, e.g. a set of commonly needed monitoring tools, such as Prometheus, Prometheus-node-exporter, Blackbox-exporter, Altermanager, Grafana, VPN and an editing map service.\nCreate a set of tasks to replicate the OpenWrt build-system, to provide a reproducible and automated set of instructions, to speed-up the process of self-building images for OpenWrt and/or LibreMesh for newcomers, and to easily setup a dedicated machine. These Ansible roles would include tasks to build for: different architecture and targets, different Openwrt and Libremesh versions, keeping trace of devices with specific packages or particular needs and related patches; keeping a local list of supported targets. With the possibility to later extend the process of build to other automated tasks, like a pub-keys-exchange needed for configuring a VPN, update documentations, or to update the configurations of monitoring services.",
+          "difficulty": null,
+          "id": "proj_freifunk_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/JXudSn3E",
+          "proposal_id": "tuPYDZvc",
+          "short_description": "Create a set of automated tasks to install services on a Raspberry Pi to meet the needs of small community-network with an administration/tech team,...",
+          "slug": "automation-tools-for-libremesh-firmware-build-and-monitoring",
+          "status": "completed",
+          "student_name": "samlo",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Automation tools for LibreMesh firmware build and monitoring"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2023/08/27/gsoc23-implementation-of-web-interface-of-retroshare-final-report/",
+          "description": "RetroShare is a C++ software program that comprises a headless lib called \"libretroshare\". This lib is utilized to implement Retroshare application for various platforms. Retroshare also has a web interface which communicates with libretroshare using a JSON API that is automatically generated and contains all necessary functions for sending and receiving data from the software.\n\nThe aim of my involvement in this year’s GSoC program is to create the remaining interface of the Retroshare's Web Interface. I will develop a list of features such as creating panels for software configuration, managing shared files, directories etc and will also fix the existing ones such as Files, Mail, Forums, Channel section etc.",
+          "difficulty": null,
+          "id": "proj_freifunk_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/tFSIOQNm",
+          "proposal_id": "RJAxmzQN",
+          "short_description": "RetroShare is a C++ software program that comprises a headless lib called \"libretroshare\". This lib is utilized to implement Retroshare application...",
+          "slug": "implementation-of-web-interface-of-retroshare",
+          "status": "completed",
+          "student_name": "Sumit Kumar Soni",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ai"
+          ],
+          "title": "Implementation of Web Interface of Retroshare"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/freifunk"
+    },
+    "year_2024": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://blog.freifunk.net/2024/09/23/gsoc-2024-libremesh-cable-purpose-autodetection-2/",
+          "description": "When a community network router ethernet port is acting as a gateway to the Internet or as a border to neighboring networks, the network configuration usually needs to be changed from the default settings to accommodate for the specific role.\nA router ethernet port can be connected to the Internet, or connected to a dummy wifi device for a point to point link, or connected to another router of the same mesh network to expand mesh coverage. All these cases would benefit of specific configuration.\nAs of today handling those configuration manually represents a barrier for communities without technical experts who could understand and optimize the devices ethernet ports configuration appropriately. Most of the described situation could be detected at runtime through automatic tests and the required configuration applied automatically, the goal of this project is to develop the software needed to accomplish automatically to the described needs.",
+          "difficulty": null,
+          "id": "proj_freifunk_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/WuHxzDCO/",
+          "proposal_id": null,
+          "short_description": "When a community network router ethernet port is acting as a gateway to the Internet or as a border to neighboring networks, the network...",
+          "slug": "libremesh-cable-purpose-autodetection",
+          "status": "completed",
+          "student_name": "Nemael",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "LibreMesh Cable Purpose Autodetection"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2024/08/26/gsoc-2024-ebpf-performance-optimizations-for-a-new-openwrt-firewall-final-report/",
+          "description": "Project Description\n\nWhile the Linux network stack evolved throughout the past years with support for new protocols and features, it has become more complex, which introduces overhead and currently hampers its throughput potential.\nThe idea in this proposal is to intercept an incoming data package as soon as possible inside or even before the Linux network stack through the eBPF XDP or TC hook.\nTo implement this, a combination of an eBPF kernel space and a user space program is needed. While the user space will parse OpenWrt Firewall rules and pass them through a BPF map to the eBPF program, the eBPF program will parse incoming packages, apply the rules for matching packages, and redirect or drop the package.\n\n\nBenefits to community networks\n\nThe OpenWrt community could possibly benefit from higher throughput for traffic on their (CPU-limited) embedded devices. Especially since current WiFi chips are going to provide above 1GBit/s wireless throughput, the need for an efficient data plan for rule-based packet processing (forwarding, mangling, and dropping) is needed. Within this project, we address this with the offloading capabilities from eBPF within the Linux network stack.\n\n\nMilestones\n\n * Creation of an eBPF package forwarder\n * Creation of a user space program for loading and communicating with the eBPF program\n * Extend the user space program with a Firewall rule parser\n * Apply the parsed rules on incoming packages in the eBPF program\n * Evaluate the performance of the implementation (XDP and TC)",
+          "difficulty": "advanced",
+          "id": "proj_freifunk_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/u79z1qYm/",
+          "proposal_id": null,
+          "short_description": "Project Description While the Linux network stack evolved throughout the past years with support for new protocols and features, it has become more...",
+          "slug": "ebpf-performance-optimisations-for-a-new-openwrt-firewall",
+          "status": "completed",
+          "student_name": "Til",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "eBPF performance optimisations for a new OpenWrt Firewall"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2024/09/20/gsoc-2024-final-insights-on-throughput-based-dynamic-wifi-power-control-for-real-networks/",
+          "description": "Implementation of a novel TPC algorithm in the user space to develop a dynamic power controller, and then in the mac80211 subsystem of the Linux Kernel for the WiFi networks",
+          "difficulty": null,
+          "id": "proj_freifunk_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/yR1qJus0/",
+          "proposal_id": null,
+          "short_description": "Implementation of a novel TPC algorithm in the user space to develop a dynamic power controller, and then in the mac80211 subsystem of the Linux...",
+          "slug": "new-transmit-power-control-approach-for-ieee-80211ax-wifi-chips",
+          "status": "completed",
+          "student_name": "Raul Shahi",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "New Transmit Power Control approach for IEEE 802.11ax Wifi chips"
+        },
+        {
+          "code_url": "https://gist.github.com/henmohr/6a1903f14fdd081e8b0560af2e8b7850",
+          "description": "After the publication of the New Pirania API, a lot has been gained with Pirania in Libremesh. Many communities could be used and even today they use it as a very important tool for the collection of funds, for the payment of the provider and sometimes even for people who work. Everybody can manage the system with Pirania UI. each router has access to the Captive Portal system and this makes it be distributed and extremely used in a community and of different types of governance. Pirania has different options of governance, this means that each community can understand the best use that it can make with the system and different cases of use. but for it to be more complete it is important to raise the different ideas that have already been raised by the community. And after the latest versions of lime-packages, pirania is not included, mainly because the basis of pirania’s operation is the iptables rules contained in ./usr/bin/captive-portal. As iptables ends up creating a very large file, the new version of libremesh decided to migrate from iptables to nftables. This and other changes need to be made to fit pirania into a new release.",
+          "difficulty": null,
+          "id": "proj_freifunk_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/J7QlUBlx/",
+          "proposal_id": null,
+          "short_description": "After the publication of the New Pirania API, a lot has been gained with Pirania in Libremesh. Many communities could be used and even today they use...",
+          "slug": "project-libremesh-pirania-new-release",
+          "status": "completed",
+          "student_name": "Henrique Mohr",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Project Libremesh Pirania, new release."
+        },
+        {
+          "code_url": "https://github.com/qaul/qaul.net/pull/641",
+          "description": "Qaul is an internet-independent wireless mesh communication app. With qaul, you can communicate directly from one device to another. This project aims to establish a Bluetooth low-energy connection between Linux to Linux and Linux to other supported devices using the BlueR library.",
+          "difficulty": null,
+          "id": "proj_freifunk_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ydglU9hY/",
+          "proposal_id": null,
+          "short_description": "Qaul is an internet-independent wireless mesh communication app. With qaul, you can communicate directly from one device to another. This project...",
+          "slug": "qaul-ble-module-for-linux-with-bluer",
+          "status": "completed",
+          "student_name": "Sukhman Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "qaul BLE Module for Linux with BlueR"
+        },
+        {
+          "code_url": "https://blog.freifunk.net/2024/08/25/gsoc-2024-visualise-community-data-final-report/",
+          "description": "The Freifunk project collects a snapshot of data from community groups every hour.\nThis has been going on since 2014, and so far the project has amassed a large historical archive of data, available in compressed JSON files.\n\nThis project will take that historical data, provide some time-series visualisations, and make it available to query through a GraphQL interface.",
+          "difficulty": null,
+          "id": "proj_freifunk_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/tQ01hkSG/",
+          "proposal_id": null,
+          "short_description": "The Freifunk project collects a snapshot of data from community groups every hour. This has been going on since 2014, and so far the project has...",
+          "slug": "visualise-community-data",
+          "status": "completed",
+          "student_name": "Pierre Marshall",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Visualise community data"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/freifunk/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "LibreMesh has grown over the past decade with valuable community contributions, but some of its features now duplicate tools available in OpenWrt. \n\nThis project proposes replacing key LibreMesh modules with OpenWrt-native equivalents (e.g., replacing deferrable-reboot with watchcat, and dnsmasq with odhcpd for DHCP), reducing code redundancy and improving upstream compatibility. It also aims to simplify the system by removing VLANs from routing protocols and creating a lightweight layer-2-only firmware variant for low-resource devices.\nThe result will be a leaner, more maintainable LibreMesh aligned with OpenWrt standards.\n\nDeliverables include: migrating to upstream tools, simplifying configurations, testing in both virtual and physical environments, and engaging the community for feedback and adoption.",
+          "difficulty": null,
+          "id": "proj_freifunk_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NivhKPOA",
+          "proposal_id": "ghuJIhmH",
+          "short_description": "LibreMesh has grown over the past decade with valuable community contributions, but some of its features now duplicate tools available in OpenWrt....",
+          "slug": "simplifying-libremesh-with-openwrt-native-solutions",
+          "status": "in-progress",
+          "student_name": "Agustin Trachta",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Simplifying LibreMesh with OpenWrt-Native Solutions"
+        },
+        {
+          "code_url": null,
+          "description": "The qaul RPC user authentication layer project aims to implement a secure and scalable authentication system for the qaul network, enabling multiple users per node and ensuring secure communication between libqaul and the user interface (CLI and future Flutter GUI). The primary objective is to develop an authentication and session management system based on public key cryptography, token-based sessions, and encryption through the Noise protocol.\n\nTo achieve this, the project will focus on several key components: designing a robust authentication system, implementing token-based session management, integrating encryption for secure communication, and building a command-line interface (qauld-ctl) to manage user identities, sessions, and secure communication. Additionally, the project will establish a protobuf communication structure to facilitate these features between the user interface and libqaul.",
+          "difficulty": null,
+          "id": "proj_freifunk_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/3s6IePJd",
+          "proposal_id": "s6SAISRc",
+          "short_description": "The qaul RPC user authentication layer project aims to implement a secure and scalable authentication system for the qaul network, enabling multiple...",
+          "slug": "qaul-rpc-user-authentication-layer",
+          "status": "in-progress",
+          "student_name": "claddy",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "qaul RPC user authentication layer"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Wi-Fi rate adaptation by integrating Deep Q-Networks (DQN) with the ORCA and RateMan frameworks. Traditional rate adaptation algorithms like Minstrel-HT struggle in dynamic wireless environments, especially in fast-changing conditions. By using machine learning, specifically DQN, the project will dynamically optimize Wi-Fi transmission rates based on real-time metrics such as SNR, RSSI, retry counts, and throughput. The system will be tested and compared against existing algorithms to assess improvements in throughput, latency, and packet loss. Deliverables include a fully integrated DQN-based rate adaptation model, detailed simulation results, and code contributions to the open-source community.",
+          "difficulty": null,
+          "id": "proj_freifunk_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/S9jb6evA",
+          "proposal_id": "WPFdncu4",
+          "short_description": "This project aims to enhance Wi-Fi rate adaptation by integrating Deep Q-Networks (DQN) with the ORCA and RateMan frameworks. Traditional rate...",
+          "slug": "deep-q-network-based-rate-adaptation-for-ieee-80211ac-networks",
+          "status": "in-progress",
+          "student_name": "Raul Shahi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Deep Q Network-based Rate Adaptation for IEEE 802.11ac Networks"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to build a static, user-friendly site that serves as an archive explorer for Freifunk’s historical social media posts. These posts were archived as HTML files and a SQLite3 database. Processing the HTML and SQLite3 data will happen through an extraction tool that will be documented and set up for others in future projects. The website allows users to search for historical posts in a user-friendly fashion. An engaging node-inspired front-end component will be implemented in the site deliverable. Through this project, the archive will function as a positive reflection of the past and a welcoming introduction for new people discovering the history of the Freifunk community.",
+          "difficulty": null,
+          "id": "proj_freifunk_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/EJ7jWFK9",
+          "proposal_id": "3dgRKSCA",
+          "short_description": "This project aims to build a static, user-friendly site that serves as an archive explorer for Freifunk’s historical social media posts. These posts...",
+          "slug": "social-media-archive-explorer-frontend-nodes",
+          "status": "in-progress",
+          "student_name": "Sandra Taskovic",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Social Media Archive Explorer + Frontend Nodes"
+        },
+        {
+          "code_url": null,
+          "description": "LibreMesh relies on continuous testing to ensure its robustness across various network conditions and hardware setups. Currently, testing new firmware images lacks a standardized method to include Wi-Fi simulations within a virtualized environment. This project aims to add Wi-Fi support to existing QEMU simulations for LibreMesh, allowing near-realistic network testing using virtual Wi-Fi interfaces. By leveraging the mac80211_hwsim module and integrating existing OpenWrt-friendly virtual Wi-Fi tools, we can enhance testing automation and reproducibility.\n\nBenefits to the Community\n\n- Improved Testing Framework: This project will enable LibreMesh developers to run “almost real” tests in a virtualized environment, improving debugging and validation before deploying changes to physical hardware.\n- Enhanced Automation: By integrating virtual Wi-Fi support into QEMU, developers can automate complex test scenarios without requiring physical routers.\n- A set of scripted tests that can be run on real hardware: Currently, real tests on physical hardware are performed manually at each release. With this new set of test scripts for QEMU and Wi-Fi, many tests will be automated and easily adapted to real hardware.\n- Collaboration with OpenWrt: Given that OpenWrt is also working on virtual Wi-Fi support, this project can align efforts with the broader open-source networking community, benefiting multiple projects.\n- Lower Barrier to Entry: New contributors will find it easier to test their changes without needing specialized hardware.",
+          "difficulty": "advanced",
+          "id": "proj_freifunk_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/yBmMMWDN",
+          "proposal_id": "tNfPAaPy",
+          "short_description": "LibreMesh relies on continuous testing to ensure its robustness across various network conditions and hardware setups. Currently, testing new...",
+          "slug": "adding-wi-fi-support-to-qemu-simulations-in-libremesh",
+          "status": "in-progress",
+          "student_name": "Victor Spehar",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Adding Wi-Fi Support to QEMU Simulations in LibreMesh"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/freifunk"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc-org-admins@freifunk.net",
+    "guide_url": "https://projects.freifunk.net/#/faq",
+    "ideas_url": "https://projects.freifunk.net",
+    "irc_channel": "https://matrix.to/#/#freifunk-gsoc2021:bau-ha.us",
+    "mailing_list": "https://lists.freifunk.net/mailman/listinfo/wlanware-freifunk.net"
+  },
+  "social": {
+    "blog": "https://blog.freifunk.net",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://social.freifunk.net/@freifunk",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.536Z"
+  }
+}

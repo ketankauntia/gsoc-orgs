@@ -1,0 +1,444 @@
+{
+  "id": "692251db53dd9d7326d33e12",
+  "slug": "mdanalysis",
+  "name": "MDAnalysis",
+  "category": "Science and medicine",
+  "description": "Analysis of molecular simulations data with Python",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/mdanalysis/kf8rugznsqeskumi-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/mdanalysis.webp",
+  "logo_r2_url": null,
+  "url": "https://www.mdanalysis.org",
+  "active_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2020,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "cython",
+    "c",
+    "c++",
+    "numpy"
+  ],
+  "topics": [
+    "computational chemistry",
+    "cheminformatics",
+    "biophysics",
+    "molecular simulation",
+    "molecular dynamics",
+    "simulation",
+    "trajectory analysis",
+    "soft matter physics",
+    "materials",
+    "biochemistry",
+    "science",
+    "computational-chemistry",
+    "high-performance-computing",
+    "molecular-simulation",
+    "soft-matter-physics",
+    "machine-learning"
+  ],
+  "total_projects": 16,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 3,
+      "year_2021": 2,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": 4
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 3,
+      "year_2021": 2,
+      "year_2022": 2,
+      "year_2023": 2,
+      "year_2024": 3,
+      "year_2025": 4
+    },
+    "total_students": 16
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://www.mdanalysis.org/2020/08/29/gsoc-report-cbouy/",
+          "description": "<p>The aim of the RDKit interoperability project is to give MDAnalysis the ability to use RDKit’s <code>Chem.Mol</code> structure as an input to an MDAnalysis’ <code>Universe</code>, but also to convert a <code>Universe</code> or <code>AtomGroup</code> to an RDKit molecule.\nRDKit is one of the most complete and one of the most commonly used chemoinformatics package, yet it lacks file readers for formats typically encountered in MD simulations. Adding to MDAnalysis the ability to switch back and forth between a Universe and an RDKit molecule to perform typical chemoinformatics calculations would add a lot of value to both packages.</p>\n",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5646492108324864/",
+          "proposal_id": null,
+          "short_description": "The aim of the RDKit interoperability project is to give MDAnalysis the ability to use RDKit’s Chem.Mol structure as an input to an MDAnalysis’...",
+          "slug": "from-rdkit-to-the-universe-and-back",
+          "status": "completed",
+          "student_name": "Cédric Bouysset",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "From RDKit to the Universe and back"
+        },
+        {
+          "code_url": "https://yuxuanzhuang.github.io/final-remarks/",
+          "description": "<p>MDAnalysis is a flexible and relatively fast framework for complex analysis tasks in molecular dynamics (MD) simulations. To achieve a flawless implementation of parallelism,  I will implement serialization support for Universe, the core of MDAnalysis. Furthermore, I will adapt this new serialization functionality into Dask, multiprocessing, or MPI. Additionally, I will run tests, write documentation, and run benchmarks.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_mdanalysis_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5738338742435840/",
+          "proposal_id": null,
+          "short_description": "MDAnalysis is a flexible and relatively fast framework for complex analysis tasks in molecular dynamics (MD) simulations. To achieve a flawless...",
+          "slug": "serialize-universes-for-parallel",
+          "status": "completed",
+          "student_name": "Yuxuan Zhuang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Serialize Universes for parallel"
+        },
+        {
+          "code_url": "https://hmacdope.github.io/2020/08/22/Final-Submission.html",
+          "description": "<p>Trajectory storage has always proved problematic for the molecular simulation community, as large volumes of data can be generated quickly. Traditional trajectory formats suffer from poor portability, large file sizes and limited ability to include metadata relevant to simulation. The  Trajectory New Generation format developed by the GROMACS team represents the first trajectory format with small file sizes, metadata storage, archive integrity verification and user/software signatures. The refactoring of this code into C++  will provide clarity and usability for both the GROMACS project and for other simulation packages and analysis tools and is the primary goal of this project. Thin FORTRAN and Python layers are also desirable to encourage widespread adoption and are a secondary goal of the project. An efficient and transferable implementation of the TNG format will represent a major step forward for the computational molecular sciences community, enabling easy storage and replication of simulations.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_mdanalysis_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4718336220332032/",
+          "proposal_id": null,
+          "short_description": "Trajectory storage has always proved problematic for the molecular simulation community, as large volumes of data can be generated quickly....",
+          "slug": "trajectory-new-generation-the-trajectory-format-for-the-future-of-simulation",
+          "status": "completed",
+          "student_name": "Hugo MacDermott-Opeskin",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "Trajectory New Generation: the trajectory format for the future of simulation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5997649305534464/"
+    },
+    "year_2021": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://ojeda-e.github.io/blog/GSoC-journey-summary/",
+          "description": "<p>Elements of differential geometry enable us to quantify the curvature of a surface. The core elements of biological membranes, phospholipids, provide tridimensional configurations from which a surface can be derived to calculate curvature descriptors. We would like to integrate to MDAnalysis an analysis module to calculate averaged mean and Gaussian curvature from Molecular Dynamics simulations. By integrating a membrane curvature analysis module in MDAnalysis, users will benefit from a tool that enables rapid extraction of relevant properties of lipid bilayers in biomolecular systems. Our approach extracts key elements of the membrane using phospholipid head groups to define a surface, followed by a transformation into NumPy arrays. In this way, the functionality offered by NumPy and SciPy can be used to derive values of mean and gaussian curvature of biological membranes. Since MDAnalysis already works very well to explore data interactively, visualization of the membrane curvature analysis outputs in 2D-maps can be easily performed.</p>\n",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5740558735114240/",
+          "proposal_id": null,
+          "short_description": "Elements of differential geometry enable us to quantify the curvature of a surface. The core elements of biological membranes, phospholipids, provide...",
+          "slug": "mdanalysis-module-to-calculate-membrane-curvature",
+          "status": "completed",
+          "student_name": "Estefania Barreto-Ojeda",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "MDAnalysis module to calculate membrane curvature"
+        },
+        {
+          "code_url": "https://orioncohen.com/blog/2021_08_20_gsoc_conclusion/",
+          "description": "<p>MDanalysis (MDA) is a powerful open-source package for exploring and performing calculations on molecular dynamics trajectories. Despite MDAs broad utility, especially for biomolecular simulations, it does not implement many common operations for studying ion solvation. I propose adding a robust and cohesive set of methods for solvation analysis that would be widely useful in both biomolecular and battery electrolyte simulations. The core of the solvation module will be a cohesive set of functions for easily working with ionic solvation shells. Using that core functionality, I will implement several analysis methods for analyzing ion pairing, ion speciation, residence times, and shell association and dissociation.</p>\n",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5192155835924480/",
+          "proposal_id": null,
+          "short_description": "MDanalysis (MDA) is a powerful open-source package for exploring and performing calculations on molecular dynamics trajectories. Despite MDAs broad...",
+          "slug": "a-solvation-module-for-mdanalysis",
+          "status": "completed",
+          "student_name": "orion cohen",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "A Solvation Module for MDAnalysis"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4692476220145664/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://bfedder.github.io/jekyll/update/2022/09/26/the-end.html",
+          "description": "In molecular dynamics simulations, users frequently have to inspect energy-like terms such as potential or kinetic energy, temperature, or pressure. This is so common a task that even small inefficiencies add up. This project aims to make this task more convenient by integrating energy readers for output files of a number of MD engines into the auxiliary data framework of MDAnalysis. An in-depth tutorial of how future auxiliary data readers can be written, based on the lessons learned in this project, will also be provided to assist further development of this system of MDAnalysis.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/wbLbZmGk/",
+          "proposal_id": null,
+          "short_description": "In molecular dynamics simulations, users frequently have to inspect energy-like terms such as potential or kinetic energy, temperature, or pressure....",
+          "slug": "adding-energy-readers-to-mdanalysis",
+          "status": "completed",
+          "student_name": "BFedder",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Adding Energy Readers to MDAnalysis"
+        },
+        {
+          "code_url": "https://sites.google.com/pharma.asu.edu.eg/aya-gsoc/final-week-of-gsoc",
+          "description": "MDAnalysis deals with various topologies with different structures, each of which has its specifications for presenting its data. The challenge is that not every piece of data exists explicitly in the file, which brings an extra task on MDAnalysis to guess those data. This mission of guessing have the main problem of dealing with different formats that don’t speak the same language, and its representation of the same data may happen in a completely different way. That’s why we need a guesser class that is aware of the language of the universe of which it is a part.\nProject idea\nThe project has three main deliverables:\n•\tadd a convenient way to provide the guessing context to the universe.\n•\tbuild a robust guesser for the PDB file format.\n•\tbuild a robust guesser for the Martini force field.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/B1Y0nTh2/",
+          "proposal_id": null,
+          "short_description": "MDAnalysis deals with various topologies with different structures, each of which has its specifications for presenting its data. The challenge is...",
+          "slug": "context-aware-guesser-implementing-pdb-and-martini-guessers",
+          "status": "completed",
+          "student_name": "Aya M. Alaa",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Context-aware guesser (implementing PDB and Martini guessers)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/mdanalysis/"
+    },
+    "year_2023": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://marinegor.github.io/posts/2023/06/gsoc-summary",
+          "description": "The proposal introduces parallel backend based on `dask` for MDAnalysis package. Potentially, it will allow researchers to run analysis of the molecular dynamics trajectories much faster, depending on their access to HPC facilities, hence increasing the speed of obtaining valuable insights from large-scale molecular simulations.\n\nBriefly, the proposal aims to re-write protocol for `MDAnalysis.AnalysisBase.run()` method to use a scheduler-based approach. This is supposed to be done with gradually increasing complexity, covering each steps with respective tests to ensure backward compatibility:\n - simply re-write the protocol without adding additional complexity such as multiple processes\n - add multiple cores for a single node\nAt this point, a mid-project checkpoint is set.\n - introduce cluster support that allows user to run analysis in an HPC environment with a `dask` backend\n - (optional) add tests for subclasses of the base class, and mark those that don't support such parallelization\n - (optional) add example jupyter notebook showing that a large-scale molecular dynamics trajectory can be analyzed in a parallel fashion much faster than before",
+          "difficulty": "advanced",
+          "id": "proj_mdanalysis_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/cOTjpLid",
+          "proposal_id": "P3hniVwn",
+          "short_description": "The proposal introduces parallel backend based on `dask` for MDAnalysis package. Potentially, it will allow researchers to run analysis of the...",
+          "slug": "project-5-implementation-of-parallel-analysis-in-mdanalysis",
+          "status": "completed",
+          "student_name": "Egor Marin",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Project 5: Implementation of parallel analysis in MDAnalysis"
+        },
+        {
+          "code_url": "https://xhgchen.github.io/posts/add-calculations-self-diffusivity-viscosity/",
+          "description": "MDAnalysis provides minimal support for calculating transport properties, measurable values which define the transfer of mass, heat, momentum, or charge. These properties are vital for biomolecular research and chemical engineering. This project aims to add methods for calculating self-diffusivity and shear viscosity, the two most widely used transport properties in the literature, with three main deliverables:\n\n• Construct a class to calculate self-diffusivity via the Green-Kubo method\n\n• Build a class to calculate shear viscosity via the Einstein-Helfand method\n\n• Test and document the new features thoroughly, ensuring the calculations are reliable and easy to use",
+          "difficulty": "beginner",
+          "id": "proj_mdanalysis_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/4vt9npUg",
+          "proposal_id": "0OonTBHW",
+          "short_description": "MDAnalysis provides minimal support for calculating transport properties, measurable values which define the transfer of mass, heat, momentum, or...",
+          "slug": "add-calculations-for-self-diffusivity-and-viscosity",
+          "status": "completed",
+          "student_name": "Xu Hong Chen",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Add Calculations for Self-Diffusivity and Viscosity"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/mdanalysis"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://github.com/talagayev/MDonatello",
+          "description": "The proposed project will revolve around the 2D visualization of chemical molecules. Currently MDAnalysis has a tool, which allows the conversion of AtomGroup Objects into RDKit Mol, which would allow us to use the available RDKit functions to display the 2D Depictions of the molecules.\n\nThe main approach of this project would be to allow the user to easily visualize the molecules in an interactive way.\n\nThe main objectives would be to create a class that would use an input of the user and display the 2D depiction of the molecule with the user being able to select a range of options in regards to the display of the specific features of the molecule, starting from the different substructres of the ligand to highlighting the interacting atoms of the ligand with the protein, with the occurence of the interaction being represented by the color of the highlighted atoms.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/sfy3kuqc/",
+          "proposal_id": null,
+          "short_description": "The proposed project will revolve around the 2D visualization of chemical molecules. Currently MDAnalysis has a tool, which allows the conversion of...",
+          "slug": "2d-visualization-for-small-molecules",
+          "status": "completed",
+          "student_name": "Valerij Talagayev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "2D visualization for small molecules"
+        },
+        {
+          "code_url": "https://ljwoods2.github.io/zarrtraj/2024/07/13/gsoc.html",
+          "description": "Adding support for streaming and cloud storage is one of the major themes of improvement for MDAnalysis 3.0. Achieving this goal will improve the accessibility and reusability of data generated by simulations by allowing analysis of trajectories on computers with only modest disk and memory sizes. \n\nEarly prototypes of the Zarrtraj reader and writer show promise as performant and flexible solutions to the MDAnalysis streaming goal. However, after receiving community feedback, we've realized that adding streaming capabilities for an existing format will lead to more sustainable code and make it easier to drive tool adoption.\n\nThe goal of this project is to make the existing H5MD trajectory format cloud-streamable into MDAnalysis by using Kerchunk to reformat HDF5 metadata and Zarr to handle IO with different storage backends.\n\nWith this overarching goal in mind, major milestones will include: \n\n1. Building a trajectory reader that can read from AWS S3, Google Cloud Buckets, and Azure Blob storage and data lakes.\n\n2. Benchmarking streaming performance in iteration and basic analysis as compared to locally-stored H5MD trajectories.\n\n3. Achieving an overall repository test coverage of >80%.\n\n4. Documenting the process of uploading and streaming an H5MD trajectory for users.\n\n5. Building and distributing the package via Conda Forge.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/BYYAE9MR/",
+          "proposal_id": null,
+          "short_description": "Adding support for streaming and cloud storage is one of the major themes of improvement for MDAnalysis 3.0. Achieving this goal will improve the...",
+          "slug": "zarrtraj-streaming-h5md-trajectories-from-cloud-services-into-mdanalysis-using-zarr",
+          "status": "completed",
+          "student_name": "Lawson",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud",
+            "ui",
+            "backend"
+          ],
+          "title": "Zarrtraj: Streaming H5MD trajectories from cloud services into MDAnalysis using Zarr"
+        },
+        {
+          "code_url": "https://lunamorrow.github.io/2024/10/30/final-submission.html",
+          "description": "Direct interoperability between molecular dynamics software is critical for enabling collaboration, data transfer and easy use by scientists. OpenBabel is a popular toolbox for chemical molecular modelling as it enables searching, conversions, analysis and data storage. The ability to interconvert chemical file formats with OpenBabel, in particular, opens up the ability to utilise and work with other packages, as OpenBabel enables input and writing of over 100 chemical data file formats. Therefore, expanding to OpenBabel will hugely increase the ability of MDAnalysis to handle a variety of data formats and encourage greater adoption of MDAnalysis as an “all-in-one” package for molecular dynamics analysis.\n\n\nThe converters already established in the MDAnalysis package for OpenMM, ParmED and RDKit either read coordinate files into their respective objects before using them to create a MDAnalysis Universe or convert Universes in the reverse direction. I plan to take a similar approach to these existing converters. I will utilise OpenBabel Python bindings to make my task of introducing interoperability much easier, since Python code in the MDAnalysis package can easily access OpenBabel attributes (as long as the user has installed OpenBabel in an appropriate directory). I will start with conversion of MDAnalysis AtomGroup objects to OpenBabel OBMol objects, then work on conversion in the reverse direction. This means access to alternative formats and file type export options will be prioritised. Then, I will create a second converter file to convert OpenBabel OBMols to MDAnalysis Topologies, or adds them  to a pre-existing Topology.",
+          "difficulty": "beginner",
+          "id": "proj_mdanalysis_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/yLzX6MjS/",
+          "proposal_id": null,
+          "short_description": "Direct interoperability between molecular dynamics software is critical for enabling collaboration, data transfer and easy use by scientists....",
+          "slug": "extend-mdanalysis-interoperability-with-openbabel",
+          "status": "completed",
+          "student_name": "Luna Morrow",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Extend MDAnalysis Interoperability with OpenBabel"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/mdanalysis/"
+    },
+    "year_2025": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Weighted ensemble (WE) simulations enhance the exploration of a molecular system’s phase space by running numerous short, parallel simulations and selectively replicating trajectories that enter under-sampled regions. This approach improves sampling efficiency compared to traditional long, continuous simulations. However, a potential bottleneck arises from the need to analyze each iteration’s trajectories before starting the next round of simulations. Typically, this involves loading and processing trajectory data after each iteration, which can introduce significant delays due to disk I/O. To address this issue, my project focuses on integrating trajectory streaming into WESTPA using MDAnalysis. Instead of waiting for full trajectories to be written and reloaded for analysis, this implementation will enable real-time, on-the-fly analysis of simulation data as it is generated. By eliminating post-processing delays, this modification will streamline the weighted ensemble workflow.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/SvFaSgr5",
+          "proposal_id": "LNYoLsOS",
+          "short_description": "Weighted ensemble (WE) simulations enhance the exploration of a molecular system’s phase space by running numerous short, parallel simulations and...",
+          "slug": "integrating-mdanalysis-streaming-analysis-within-westpa-propagators",
+          "status": "in-progress",
+          "student_name": "Jamie Rowe",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Integrating MDAnalysis streaming analysis within WESTPA propagators"
+        },
+        {
+          "code_url": null,
+          "description": "ProLIF’s current 2D interaction diagrams often suffer from overlapping protein residues and tangled edges due to reliance on a default physics engine of vis.js. I propose to enhance ProLIF by developing an automated residue layout system that computes optimal 2D coordinates using graph-based algorithms (e.g., force-directed, radial, or circular layouts via NetworkX). This system will integrate into ProLIF’s visualization framework, allowing users to select and refine layouts interactively. Additionally, I will implement an export function to convert interaction fingerprints into a NetworkX graph for further analysis. Deliverables include a coordinate generation function, updates to the visualization module, comprehensive testing, and detailed documentation.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/XWsglxQM",
+          "proposal_id": "jwWjwKlG",
+          "short_description": "ProLIF’s current 2D interaction diagrams often suffer from overlapping protein residues and tangled edges due to reliance on a default physics engine...",
+          "slug": "enhancing-prolif-visualizations-a-hybrid-approach-for-automated-customizable-2d-interaction-layout",
+          "status": "in-progress",
+          "student_name": "Nilay Verma",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhancing ProLIF Visualizations: A Hybrid Approach for Automated, Customizable 2D Interaction Layout"
+        },
+        {
+          "code_url": null,
+          "description": "Blender is an industry leading open-source 3D modelling and animation software. MDAnalysis is an open-source Python library for analyzing molecuar dynamics (MD) trajectories across multiple formats. MDAnalysis has a basic interface with Blender through a popular extension called Molecular Nodes which allows importing MDAnalysis universes and provides advanced rendering capabilities through a GUI.\n\nThe ability to script and support advanced visualizations of MDAnalysis results is currently lacking. This project attempts to define, prototype and implement various APIs along with an integrated GUI within Blender that will together provide advanced visualization capabilities for MDAnalysis.",
+          "difficulty": "advanced",
+          "id": "proj_mdanalysis_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/9BR8jbvV",
+          "proposal_id": "lJaY5qzB",
+          "short_description": "Blender is an industry leading open-source 3D modelling and animation software. MDAnalysis is an open-source Python library for analyzing molecuar...",
+          "slug": "better-interfacing-of-blender-and-mdanalysis",
+          "status": "in-progress",
+          "student_name": "Pardhav Maradani",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ui"
+          ],
+          "title": "Better interfacing of Blender and MDAnalysis"
+        },
+        {
+          "code_url": null,
+          "description": "ProLIF, a tool for identifying protein-molecule interactions in molecular dynamics trajectories, lacks a straightforward method for evaluating hydrogen bonds when only heavy atoms are present. Many users usually compare experimental and computational structures without explicit hydrogens, but the existing protonation tools are cumbersome and error-prone for beginner-level programming users. This proposal introduces an \"implicit hydrogen bond (H-bond) interaction method\" directly using heavy atom positions to detect H-bonds.  The goal is to strike a balance between efficiency and accuracy and increase ProLIF's usability. The method will leverage distance-based calculations with geometrical constraints, similar to Mol* and Chimera, and incorporate a confidence score based on AutoDock Vina's hydrogen bond term.  Standardizing residue names from various force fields (CHARMM, AMBER, GROMOS, OPLS-AA) and assigning their associated protonation/hybridization states will be crucial for the new \"Protein helper function” before the H-bond detection.  Lastly, I plan to use the PINDER and PLINDER datasets (protein-protein and protein-ligand interactions, respectively) to validate the implicit H-bond interaction method by comparing the results from the standard H-bond method.",
+          "difficulty": "beginner",
+          "id": "proj_mdanalysis_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/5Otkx8vp",
+          "proposal_id": "5YgE67yN",
+          "short_description": "ProLIF, a tool for identifying protein-molecule interactions in molecular dynamics trajectories, lacks a straightforward method for evaluating...",
+          "slug": "mdanalysis-x-prolif-project-5-h-bond-interactions-from-implicit-hydrogens",
+          "status": "in-progress",
+          "student_name": "Yu-Yuan (Stuart) Yang",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "MDAnalysis x ProLIF Project 5:  H-Bond interactions from implicit hydrogens"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/mdanalysis"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "mdanalysis@numfocus.org",
+    "guide_url": "https://github.com/MDAnalysis/mdanalysis/wiki/Google-Summer-Of-Code",
+    "ideas_url": "https://github.com/MDAnalysis/mdanalysis/wiki/GSoC-2025-Project-Ideas",
+    "irc_channel": "https://discord.com/channels/807348386012987462/",
+    "mailing_list": "https://github.com/MDAnalysis/mdanalysis/discussions"
+  },
+  "social": {
+    "blog": "https://www.mdanalysis.org/blog/",
+    "discord": "https://discord.com/channels/807348386012987462/",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/mdanalysis",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.394Z"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "id": "692251db53dd9d7326d33e0e",
+  "slug": "linkerd",
+  "name": "Linkerd",
+  "category": "Infrastructure and cloud",
+  "description": "Linkerd is the ultralight service mesh for Kubernetes and beyond",
+  "image_url": "https://lh3.googleusercontent.com/OC5OtAHv88jewoffOwBhWygdW4jb-33_nrW_BGZSol_KnQGNLwuQg51nvG89fjCqXNl5Ry82c6txYdW3xzBknr41sJ4PHio",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/linkerd.webp",
+  "logo_r2_url": null,
+  "url": "https://linkerd.io/",
+  "active_years": [
+    2019,
+    2020
+  ],
+  "first_year": 2019,
+  "last_year": 2020,
+  "is_currently_active": false,
+  "technologies": [
+    "prometheus",
+    "react",
+    "rust",
+    "golang",
+    "kubernetes",
+    "linkerd"
+  ],
+  "topics": [
+    "networking",
+    "kubernetes",
+    "service mesh",
+    "cloud native",
+    "dev-ops",
+    "containers",
+    "microservices",
+    "cloud infrastructure"
+  ],
+  "total_projects": 4,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": 2,
+      "year_2020": 2,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 4
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/Pothulapati/gsoc-meta-linkerd",
+          "description": "<p><a href=\"https://github.com/deislabs/smi-metrics\" target=\"_blank\">SMI-Metrics</a> aims to have a commen interface to get metrics from servish mesh implementations. Applications, Tools can be built targeting this interface without having to write anything specific to an implementation. Users also don't have to learn the APIs of each mesh but rather have this shim in their kubernetes cluster which provides a common API. As the <a href=\"https://github.com/deislabs/smi-metrics\" target=\"_blank\">smi-metrics</a> repo is pretty new, my work is to take care of this whole repository i.e CI, bugs, etc while also implementing the support for Istio and Consul Connect Service Meshes.</p>\n",
+          "difficulty": null,
+          "id": "proj_linkerd_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4829112898682880/",
+          "proposal_id": null,
+          "short_description": "SMI-Metrics aims to have a commen interface to get metrics from servish mesh implementations. Applications, Tools can be built targeting this...",
+          "slug": "service-mesh-interface-metrics",
+          "status": "completed",
+          "student_name": "Tarun Reddy",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "kubernetes",
+            "ui"
+          ],
+          "title": "Service Mesh Interface Metrics"
+        },
+        {
+          "code_url": "https://github.com/ruig2/KafkaRustCodec/blob/master/gsoc.md",
+          "description": "<p>In this proposal, we aim to implement the detection and analysis of the Kafka traffic in Linkerd so that users can watch their Kafka service in a better way. For this purpose, we will write a Kafka codec and integrate it with Linkerd, design metrics for Kafka service, and then create corresponding charts and forms on the web dashboard.</p>\n",
+          "difficulty": null,
+          "id": "proj_linkerd_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6482651198783488/",
+          "proposal_id": null,
+          "short_description": "In this proposal, we aim to implement the detection and analysis of the Kafka traffic in Linkerd so that users can watch their Kafka service in a...",
+          "slug": "support-kafka-metrics-in-linkerd",
+          "status": "completed",
+          "student_name": "Rui (Ray) Guo",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Support Kafka metrics in Linkerd"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6364232440872960/"
+    },
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/aliariff/gsoc-report",
+          "description": "<p>This project goal is to make Linkerd officially support ARM architecture</p>\n",
+          "difficulty": null,
+          "id": "proj_linkerd_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4783780381851648/",
+          "proposal_id": null,
+          "short_description": "This project goal is to make Linkerd officially support ARM architecture",
+          "slug": "arm-support",
+          "status": "completed",
+          "student_name": "Ali Ariff",
+          "student_profile": null,
+          "tags": [],
+          "title": "ARM Support"
+        },
+        {
+          "code_url": "https://github.com/mayankshah1607/gsoc20-linkerd",
+          "description": "<p>This project proposes a new test suite that shall be used for conformance validation. The new test suite shall be used to validate non-trivial network communication (HTTP, gRPC, websocket) among stateless and stateful workloads in the Linkerd data plane. The correctness of the interaction between the Linkerd control plane and the Kubernetes API Server will also be tested. This shall be done by carrying out extensive e2e tests of Linkerd features using a sample distributed application (data plane).</p>\n",
+          "difficulty": null,
+          "id": "proj_linkerd_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5138761307914240/",
+          "proposal_id": null,
+          "short_description": "This project proposes a new test suite that shall be used for conformance validation. The new test suite shall be used to validate non-trivial...",
+          "slug": "conformance-validation",
+          "status": "completed",
+          "student_name": "Mayank Shah",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "kubernetes",
+            "ui"
+          ],
+          "title": "Conformance Validation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6500210139725824/"
+    },
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "thomas@buoyant.io",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "http://linkerd.slack.com",
+    "mailing_list": "https://lists.cncf.io/g/cncf-linkerd-users"
+  },
+  "social": {
+    "blog": "https://blog.linkerd.io",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "http://linkerd.slack.com",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/linkerd",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.382Z"
+  }
+}

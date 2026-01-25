@@ -1,0 +1,246 @@
+{
+  "id": "692251ec53dd9d7326d33ef5",
+  "slug": "waycrate",
+  "name": "Waycrate",
+  "category": "End user applications",
+  "description": "Writing robust tools for the Wayland protocol",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/waycrate/u6pnvceiilur7iqy-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/waycrate.webp",
+  "logo_r2_url": null,
+  "url": "https://waycrate.github.io/",
+  "active_years": [
+    2024,
+    2025
+  ],
+  "first_year": 2024,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "c++",
+    "rust",
+    "wayland",
+    "Zig"
+  ],
+  "topics": [
+    "security",
+    "graphics",
+    "Wayland",
+    "ScreenCapture",
+    "Desktop Portals"
+  ],
+  "total_projects": 7,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.5,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": 4
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 3,
+      "year_2025": 4
+    },
+    "total_students": 7
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://cheerfulpianissimo.github.io/notes/GSOC/GSOC.html",
+          "description": "I propose to work on the creation of a DMA-BUF backend for waycrate’s libwayshot screen capture library. Presently libwayshot’s method of screen-capture requires copying from graphics memory to system memory via CPU using the shared memory methods of the wlr-screencopy protocol. This method has too much overhead for uses like high resolution streaming: any further transforms and processing of the image will either be performed on CPU (inefficient) or require another copy back onto graphics memory. There is a better way to do this.\n\nThe DMA-BUF (short for Direct Memory Access Buffer) is a Linux kernel framework that allows for efficiently sharing buffers of memory between multiple graphics devices or subsystems. Using the DMA-BUF export mechanisms in wlroots we can completely avoid downloads and uploads between graphics memory and the CPU, thus allowing for increased efficiency and performance. This will be especially noticeable on higher resolution screen-captures where individual frame buffers become too large to be efficiently dealt with on a CPU compared to how they can be handled on the GPU.\n\nThe Deliverables for this project are: Complete implementation of a high-performance DMA-BUF based screen capture backend in libwayshot, Documentation for using it.",
+          "difficulty": null,
+          "id": "proj_waycrate_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/LMc5wi9n/",
+          "proposal_id": null,
+          "short_description": "I propose to work on the creation of a DMA-BUF backend for waycrate’s libwayshot screen capture library. Presently libwayshot’s method of...",
+          "slug": "dma-buf-based-high-performance-backend-for-screen-capture-in-the-libwayshot-library",
+          "status": "completed",
+          "student_name": "Sooraj S",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "ux",
+            "backend"
+          ],
+          "title": "DMA-BUF based high performance backend for screen capture in the libwayshot library"
+        },
+        {
+          "code_url": "https://waycrate.github.io/outreach/gsoc/2024/submissions/project-3-himadri/",
+          "description": "This project aims to improve code quality and portability by implementing a new parser using EBNF grammar. We enhance the robustness of the parser with human friendly errors and a clear representation of the syntax for our domain-specific language. The new parser will be implemented using the Pest crate for Rust, with three core blocks: include, unbind, and binding. Modes can be created for additional functionality. Most importantly, we addresses edge cases by narrowing possible values for each block.",
+          "difficulty": null,
+          "id": "proj_waycrate_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/qkFDwSOk/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve code quality and portability by implementing a new parser using EBNF grammar. We enhance the robustness of the parser...",
+          "slug": "formalization-of-swhkd-parser-using-context-free-ebnf-notation",
+          "status": "completed",
+          "student_name": "Himadri Bhattacharjee",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Formalization of SWHKD parser using context-free EBNF notation"
+        },
+        {
+          "code_url": "https://waycrate.github.io/outreach/gsoc/2024/submissions/project-2-ishan/",
+          "description": "The current privilege model of the daemon SWHKD is a bit rough and has issues concerning the security and the UX ascepts related with it. The current problem revolves around gaining access to hardware safely and efficiently, essentially to replace the current privilege model with a simpler and robust system.\n\nTo do this, I plan on replacing the current IPC oriented model with an ITC (Inter Thread Communication) based, main / child thread model that is known to be more secure and would vastly improve SWHKD",
+          "difficulty": null,
+          "id": "proj_waycrate_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/uqDBJcJY/",
+          "proposal_id": null,
+          "short_description": "The current privilege model of the daemon SWHKD is a bit rough and has issues concerning the security and the UX ascepts related with it. The current...",
+          "slug": "reiterating-swhkd-security-model-to-achieve-simpler-ux",
+          "status": "completed",
+          "student_name": "IshanJoshi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Reiterating SWHKD security model to achieve simpler UX"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/waycrate/"
+    },
+    "year_2025": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to replace the current backend of swhkd, which uses evdev, to replace it with libinput.\nLibinput provides better support for common devices that interact with a desktop interface, this can with getting better input handling support and fix issues like debouncing, mouse acceleration, etc which cannot be handled directly by evdev.\nThe final deliverable would be a version of swhkd with an alternative libinput backend, whichs supports all the features of swhkd.",
+          "difficulty": null,
+          "id": "proj_waycrate_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/CGVE5TAy",
+          "proposal_id": "UkEZWJWt",
+          "short_description": "This project aims to replace the current backend of swhkd, which uses evdev, to replace it with libinput. Libinput provides better support for common...",
+          "slug": "swhkd-provide-libinput-as-an-alternative-input-backend",
+          "status": "in-progress",
+          "student_name": "Aadil",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "swhkd: Provide Libinput as an Alternative Input Backend"
+        },
+        {
+          "code_url": null,
+          "description": "Xdg-desktop-portal-luminous is a high performance capture portal for wayland compositors that supports frame capture and gpu-copy based frame streaming. The goal of this idea is to introduce support for remote-desktop protocol to enable applications like teamviewer and anydesk to work seamlessly on wayland compositors using our custom portal backends.\n\nThis will improve adoption and UX, users will no longer need to depend on other portals for this particular usecase and all usecases can be consolidated into 1 portal.",
+          "difficulty": null,
+          "id": "proj_waycrate_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/CKArO252",
+          "proposal_id": "7M9WRVF9",
+          "short_description": "Xdg-desktop-portal-luminous is a high performance capture portal for wayland compositors that supports frame capture and gpu-copy based frame...",
+          "slug": "introduce-rdp-support-into-xdg-desktop-portal-luminous",
+          "status": "in-progress",
+          "student_name": "nicolo-mn",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ux",
+            "backend"
+          ],
+          "title": "Introduce RDP support into xdg-desktop-portal-luminous"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Wayshot by implementing the newly standardized ext_image_capture_source_v1 Wayland protocol, which provides a standardized method for display and window capture, replacing the current dependency on the non-standard wlr-screencopy protocol. I will develop a new backend that fully utilizes this official protocol while maintaining the existing wlr backend for backwards compatibility, enabling native top-level window capture capabilities and improving user experience. The implementation will include a security notification system utilizing D-Bus to alert users which applications were captured by Wayshot clients, enhancing transparency and user privacy. Additionally, I will integrate the standardized protocol with xdg-desktop-portal-luminous to enable WebRTC streaming capabilities, \nThe deliverables of this project are: a complete solution that includes the new backend, backwards compatibility, security notifications, WebRTC streaming support, and comprehensive documentation.",
+          "difficulty": null,
+          "id": "proj_waycrate_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Rh2pW6uW",
+          "proposal_id": "u7xYRJTv",
+          "short_description": "This project aims to enhance Wayshot by implementing the newly standardized ext_image_capture_source_v1 Wayland protocol, which provides a...",
+          "slug": "introduce-ext_image_capture_source_v1-protocol-support-in-wayshot-and-improve-security-features",
+          "status": "in-progress",
+          "student_name": "Rishik Y",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "backend"
+          ],
+          "title": "Introduce ext_image_capture_source_v1 protocol support in Wayshot and improve security features"
+        },
+        {
+          "code_url": null,
+          "description": "The project is to build a fully functional GUI tool for Waycrate using iced-rs for configuring hotkeys visually, rather than editing the configuration files, which can be cumbersome for first-time users. The tool's purpose will be to simplify setting up and managing hotkeys in SWHKD.\nThe Graphical User Interface (GUI) will allow users to view the applications in a list format, and on selecting an application, the hotkeys for that application will be displayed in a table-like format with editable rows and buttons. Users will be able to modify pre-existing hotkeys, delete them, and build hotkeys from scratch.",
+          "difficulty": null,
+          "id": "proj_waycrate_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/RO6lw1Lc",
+          "proposal_id": "zbcFHMHC",
+          "short_description": "The project is to build a fully functional GUI tool for Waycrate using iced-rs for configuring hotkeys visually, rather than editing the...",
+          "slug": "functional-gui-tool-for-configuring-hotkeys-visually",
+          "status": "in-progress",
+          "student_name": "Shreya Santra",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Functional GUI tool for configuring hotkeys visually"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/waycrate"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "waycrate@gmail.com",
+    "guide_url": "https://waycrate.github.io/outreach/gsoc/2024/contributor-proposal-guidance/",
+    "ideas_url": "https://waycrate.github.io/outreach/gsoc/2025/idea-list/",
+    "irc_channel": "https://discord.gg/KKZRDYrRYW",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": null,
+    "discord": "https://discord.gg/KKZRDYrRYW",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/waycrate",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.441Z"
+  }
+}

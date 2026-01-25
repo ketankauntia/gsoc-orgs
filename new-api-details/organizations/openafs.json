@@ -1,0 +1,192 @@
+{
+  "id": "692251e053dd9d7326d33e56",
+  "slug": "openafs",
+  "name": "OpenAFS",
+  "category": "Operating systems",
+  "description": "An opensource distributed filesystem product.",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/openafs/hhf0h2zemmqes7kt-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/openafs.webp",
+  "logo_r2_url": null,
+  "url": "https://www.openafs.org",
+  "active_years": [
+    2022,
+    2025
+  ],
+  "first_year": 2022,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "git",
+    "ansible",
+    "filesystems",
+    "javascript",
+    "tcp/udp"
+  ],
+  "topics": [
+    "testing",
+    "network",
+    "storage",
+    "filesystems",
+    "kernel"
+  ],
+  "total_projects": 4,
+  "stats": {
+    "avg_projects_per_appeared_year": 2,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": 2
+    },
+    "total_students": 4
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1LU8FTm5_ZqmoM2XhfZe1YtQUYcV__rDqaQtulWlXS-s/edit?usp=sharing",
+          "description": "[Problem]\nOpenAFS is a distributed file system. Currently, it has \"File ID\" or FID to \"entry\" or name lookup functionality, AKA, reverse lookup and also normal lookup, which is “name” for a given FID [afs_dir_Lookup and afs_dir_InverseLookup]. afs_dir_InverseLookup is currently computationally expensive because the algorithm scans a hash index data structure embedded within a \"Directory object\" [src/dir/dir.h] looking for a name that matches the given FID. It is not performant as it's merely brute-forcing the search.[src/dir/dir.c]\n\n[Solution]\nMaintain a separate hash table to store reverse lookup information with key: FID and value: name, the opposite of the existing hash table within in the Directory object. I would create this hash table within the Directory object again because it could avoid the penalty of maintaining a global data structure where all the information could be stored, and would also avoid the unnecessary loading of information of the entire volume, if only one file is looked up. Global table for all directories could also perhaps not scale to really large volumes. A \"lazy\" allocation of this table, that is, fill it in only when the first request is made per Directory Object for a \"reverse\" lookup would be efficient.\n\n[Deliverables]\n1. Code\n - Update the existing data structures [DirHeader], hereby referred to as DS.\n - Change the afs_dir_InverseLookup code to use the new DS\n - Lazy load* the information into the DS when the first request is made to “reverse” lookup.\n - Update the code* wherever directory updates are present (like adding and deleting a file inside the directory)\n * Ensure the synchronization primitives are correctly used\n \n2. Tests\n - Correctness tests: check if the written code is working as expected. Asserts can be added to ensure both the hash tables are coherent.\n - Performance tests: check the speed of execution of the current code vs the new code in the same environment (HW and OS)\n\n3. Documentation updates.",
+          "difficulty": null,
+          "id": "proj_openafs_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/GmhQaSN2/",
+          "proposal_id": null,
+          "short_description": "[Problem] OpenAFS is a distributed file system. Currently, it has \"File ID\" or FID to \"entry\" or name lookup functionality, AKA, reverse lookup and...",
+          "slug": "per-volume-reverse-name-lookup-index",
+          "status": "completed",
+          "student_name": "Vikramraj Sitpal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Per volume reverse name lookup index"
+        },
+        {
+          "code_url": "https://github.com/openafs-contrib/openafs-filesystem-stress-test-framework/wiki/Google-Summer-of-Code-2022---OpenAFS-Filesystem-Stress-Tester",
+          "description": "OpenAFS identified a need for load testing. Often in large systems, corner conditions can be met during a stress testing situation and designing a testing framework to seamlessly initiate a stress test would be ideal. \n\nProject Proposal \nFor finding bugs under stress testing of openAFS, I would propose Google’s monkey test framework designed for stress testing POSIX filesystems for read writes and metadata operations. \n\nDeliverables \nBuild the list of filesystem operations for the monkey test tool \nBuild the client tool to play the list of operations based on a random distribution function \nGather all the errors and exceptions and create a  list of bugs\nBuild a regression toolkit for further bug finding",
+          "difficulty": null,
+          "id": "proj_openafs_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/OctjqIBP/",
+          "proposal_id": null,
+          "short_description": "OpenAFS identified a need for load testing. Often in large systems, corner conditions can be met during a stress testing situation and designing a...",
+          "slug": "stress-testing-framework-for-openafs",
+          "status": "completed",
+          "student_name": "Arnie Jhingran",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Stress testing framework for openAFS"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/openafs/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project enhances the OpenAFS Linux kernel module with multi-page folio support, addressing a key performance limitation in the current implementation. OpenAFS currently interacts with the Linux kernel's memory management system through single-page operations, despite recent kernel versions offering folio APIs capable of managing multiple contiguous pages as a single unit.\n\nI will implement comprehensive multi-page folio support in OpenAFS by modifying key components of the cache manager, particularly focusing on the VFS interface layer where the largest performance benefits can be realized. The implementation will optimize read and write paths to efficiently handle larger memory regions while maintaining backward compatibility with older kernel versions through autoconf detection and conditional compilation.\n\nBy the end of the project, I will deliver: (1) A complete implementation of multi-page folio support that improves performance, especially for sequential read operations common in application deployment; (2) A comprehensive testing framework verifying functionality across multiple kernel versions; (3) Detailed performance benchmarks demonstrating throughput and resource utilization improvements; and (4) Thorough documentation of implementation details to facilitate future maintenance. All code will be submitted as incremental, well-structured patches adhering to OpenAFS coding standards.",
+          "difficulty": null,
+          "id": "proj_openafs_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ChCleqd6",
+          "proposal_id": "5qLpnxuN",
+          "short_description": "This project enhances the OpenAFS Linux kernel module with multi-page folio support, addressing a key performance limitation in the current...",
+          "slug": "implementing-multi-page-folio-support-in-openafs-linux-kernel-module",
+          "status": "in-progress",
+          "student_name": "Sushil Pandey",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ux"
+          ],
+          "title": "Implementing Multi-page Folio Support in OpenAFS Linux Kernel Module"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a GNOME Shell extension that provides a user-friendly graphical interface for managing the OpenAFS client on Linux desktops. OpenAFS, a distributed file system widely used in academic and research environments, currently relies on command-line tools, which can be intimidating for users accustomed to graphical interfaces. The extension will integrate into the GNOME Shell top bar, offering a dropdown menu to start/stop the OpenAFS client, acquire and manage authentication tokens, and display key status information such as token expiration and cell connectivity. Deliverables include a fully functional extension with client control, token management, status indicators, and notifications, all developed using GJS and GNOME Shell APIs. The project will be completed over 12 weeks, with iterative development and testing to ensure a polished, user-friendly tool.",
+          "difficulty": null,
+          "id": "proj_openafs_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/dS7QYyMI",
+          "proposal_id": "PEI60rdE",
+          "short_description": "This project aims to develop a GNOME Shell extension that provides a user-friendly graphical interface for managing the OpenAFS client on Linux...",
+          "slug": "develop-a-gnome-shell-extension-for-openafs",
+          "status": "in-progress",
+          "student_name": "Tejas Sonawane",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Develop a GNOME Shell Extension for OpenAFS"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openafs"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "foundation@openafs.org",
+    "guide_url": "https://www.openafs.org/gsoc.html",
+    "ideas_url": "https://www.openafs.org/gsoc/project-ideas.html",
+    "irc_channel": "https://www.openafs.org/support.html",
+    "mailing_list": "https://lists.openafs.org/mailman/listinfo"
+  },
+  "social": {
+    "blog": "https://www.openafs.org",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.859Z"
+  }
+}

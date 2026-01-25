@@ -1,0 +1,251 @@
+{
+  "id": "692251d353dd9d7326d33da4",
+  "slug": "flare",
+  "name": "FLARE",
+  "category": "Security",
+  "description": "Industry leading malware analysis",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/flare/6so0wjs76qeewe9v-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/flare.webp",
+  "logo_r2_url": null,
+  "url": "https://www.mandiant.com/",
+  "active_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2023,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "ida-pro",
+    "Ghidra"
+  ],
+  "topics": [
+    "emulation",
+    "disassembly",
+    "decompilation",
+    "malware-analysis",
+    "reverse-engineering"
+  ],
+  "total_projects": 7,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.33,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 4,
+      "year_2024": 1,
+      "year_2025": 2
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 4,
+      "year_2024": 1,
+      "year_2025": 2
+    },
+    "total_students": 7
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Arker123/7e513d38cc13e57a43cb95ee6e4a3421",
+          "description": "The FLOSS: Language Specific Strings project aims to enhance the FLARE tool called FLOSS, which is used to deobfuscate protected strings found in malware. The proposed framework will extract language and runtime-specific strings from executables. The project will develop a language identification module, with initial focus on Go and Rust. We will research language string embeddings and create extractor code, leveraging existing knowledge and code to bootstrap this. The project will identify strings related to runtime and library code for targeted programming languages and extend standard output format to render the results. The successful completion of this project will make FLOSS more useful for security analysts and manifest its success as the default tool used for malware analysis.",
+          "difficulty": null,
+          "id": "proj_flare_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/pANVOvV7",
+          "proposal_id": "Gok627i4",
+          "short_description": "The FLOSS: Language Specific Strings project aims to enhance the FLARE tool called FLOSS, which is used to deobfuscate protected strings found in...",
+          "slug": "extracting-language-and-runtime-specific-strings-in-go-rust-and-beyond",
+          "status": "completed",
+          "student_name": "Arnav Kharbanda",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Extracting Language and Runtime-Specific Strings in Go, Rust, and Beyond"
+        },
+        {
+          "code_url": "https://gist.github.com/3V3RYONE/9685fd0e6960df140cb9127268cc1523",
+          "description": "FakeNet-NG is a tool that is used to simulate the internet which is useful in malware analysis. Currently, FakeNet-NG displays its output by either printing it to the console or writing it to a log file. However, malware with a lot of activity can generate long\nFakeNet logs. To save analysts from having to read or grep long FakeNet logs,\nthis project aims in providing a user-friendly interface for viewing the output of\nFakeNet-NG in a more organized and detailed manner. It would also be supported with\nfeatures like search, filter and copy which would further help the user in\ngenerating effective malware reports.",
+          "difficulty": null,
+          "id": "proj_flare_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/fRVAltDd",
+          "proposal_id": "ktPE60BC",
+          "short_description": "FakeNet-NG is a tool that is used to simulate the internet which is useful in malware analysis. Currently, FakeNet-NG displays its output by either...",
+          "slug": "fakenet-ng-implementing-an-interactive-graphical-summary-of-nbis",
+          "status": "completed",
+          "student_name": "Beleswar Prasad Padhi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "FakeNet-NG: Implementing an Interactive Graphical Summary of NBIs"
+        },
+        {
+          "code_url": "https://colton-gabertan.github.io/Google-Summer-of-Code-2023/",
+          "description": "CAPA is the FLARE team’s open-source tool to identify program capabilities using an extensible rule set. Each rule is matched against features that CAPA extracts from a program. Extracted features include file-level features such as strings, section names, imports, and exports and function-level features such as API calls, string and byte references, instruction mnemonics, and number constants.\n\nCAPA uses feature extractors, called \"backends\", to extract features from supported file types (PE, ELF, and .NET) and architectures (32- and 64-bit x86). Each backend is built around an existing tool or library that provides file parsing and disassembly capabilities. CAPA uses this to extract features. CAPA currently implements backends using Vivisect, IDA Pro, and dnfile.\n\nGhidra is a popular open-source disassembly framework with a robust API to access its analysis. Programs can interact with a wealth of information that includes parsed file formats and disassembled code. The goal of this project is to develop a Ghidra backend for CAPA using Python 3 (via Ghidrathon) and Ghidra’s scripting API. Users should be able to invoke CAPA such that it uses Ghidra’s analysis engine and/or invoke CAPA from within Ghidra.",
+          "difficulty": null,
+          "id": "proj_flare_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/7RBMLaJD",
+          "proposal_id": "Jx4ZAJ2s",
+          "short_description": "CAPA is the FLARE team’s open-source tool to identify program capabilities using an extensible rule set. Each rule is matched against features that...",
+          "slug": "capa-ghidra-integration",
+          "status": "completed",
+          "student_name": "Colton G",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "CAPA: Ghidra Integration"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1F9OMuHujR60m13dYnIIfYtGGSd6XxQLTqwnEls-vX5U",
+          "description": "capa is an open-source tool that identifies program capabilities using an extensible rule set. Currently, the project relies purely on static analysis of code structures to identify patterns. This project extends capa to work on dynamic execution data such as sandbox run traces or code emulation analysis.\n\nThe introduction of dynamic analysis to capa is set to make analyzing samples that feature anti-analysis techniques a much easier task. This is an issue of concern since a large number of distributed software nowadays gets packed with commercial or private packers, which means that capa would fail to profile these executables' capabilities successfully. However, this can be circumvented by introducing dynamic analysis to the problem, which it would enable capa to get a view of the program after it had been unpacked in memory, thereby making it possible to extract the capabilities from the executable at hand.\n\nDeliverables:\n1. Add support for the future integration of several sandbox solutions by means of an associated feature extractor.\n2. Implement a feature extractor for the Cuckoo-based CAPE Malware Configuration and Payload Extractor.\n3. Introduce capa features that are specific to dynamic analysis (such as captured network traffic).\n4. Add dynamic-based support for function call arguments.\n5. Write novel rules that make use of the newly introduced dynamic capability extraction.",
+          "difficulty": null,
+          "id": "proj_flare_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/OEjr8OJU",
+          "proposal_id": "9tBiUN7x",
+          "short_description": "capa is an open-source tool that identifies program capabilities using an extensible rule set. Currently, the project relies purely on static...",
+          "slug": "capa-capabilities-from-dynamic-analysis",
+          "status": "completed",
+          "student_name": "yelhamer",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "capa: Capabilities from Dynamic Analysis"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/flare"
+    },
+    "year_2024": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1c0o0E0e7caCBONzduDRENa_kEeYAGWpk7sVwox2vRNo/edit?usp=sharing",
+          "description": "The project aims to introduce capa explorer web for capa, a reverse engineering tool developed by Mandiant's FLARE team. Capa automates the process of identifying capabilities of a given malware sample by extracting program features and matching them against predefined rules.\n\nThe deliverables of this project will be an improved version of capa with better usability, and a browser-based GUI, along with a blog post summarizing the work and improvements.",
+          "difficulty": null,
+          "id": "proj_flare_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/cR3hjbsq/",
+          "proposal_id": null,
+          "short_description": "The project aims to introduce capa explorer web for capa, a reverse engineering tool developed by Mandiant's FLARE team. Capa automates the process...",
+          "slug": "capa-introduce-capa-explorer-for-web",
+          "status": "completed",
+          "student_name": "Soufiane Fariss",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "capa: introduce capa explorer for web"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/flare/"
+    },
+    "year_2025": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Xrefer currently functions as an IDA plugin for static binary feature extraction. The goal of this project is to abstract Xrefer’s core functionality into a flexible multi-backend pipeline supporting static analysis on IDA, Ghidra and Binary Ninja.",
+          "difficulty": null,
+          "id": "proj_flare_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/BXcLum6o",
+          "proposal_id": "jQ0EQ30E",
+          "short_description": "Xrefer currently functions as an IDA plugin for static binary feature extraction. The goal of this project is to abstract Xrefer’s core functionality...",
+          "slug": "multi-backend-abstraction-layer-with-binary-ninjaghidra-support",
+          "status": "in-progress",
+          "student_name": "__mike__",
+          "student_profile": null,
+          "tags": [
+            "backend"
+          ],
+          "title": "Multi-Backend Abstraction Layer with Binary Ninja/Ghidra Support"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend the FLARE team's capa malware capability detection tool by adding dynamic analysis support for the Android platform. Capa is an effective tool for identifying malware capabilities on the Windows platform, but currently lacks support for Android threats. With the surge in Android malware, attackers increasingly combine code obfuscation, native libraries (.so files), and anti-analysis techniques, limiting the effectiveness of traditional static analysis methods in detecting Android malware.\r\nI will extend capa by developing a new component called AndroidFeatureExtractor, which uses the Frida dynamic instrumentation framework to monitor Java and native code layer behaviors at runtime. The extracted behavioral features will be seamlessly mapped to capa's existing feature model, allowing security analysts to leverage the rule system they are already familiar with, while making appropriate adjustments for Android-specific execution environments. This project provides security researchers with a systematic feature extraction tool that can be used to design rules for identifying complex Android malware capabilities specifically designed to evade traditional detection.",
+          "difficulty": "advanced",
+          "id": "proj_flare_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/E61CThH6",
+          "proposal_id": "I1FANDNa",
+          "short_description": "This project aims to extend the FLARE team's capa malware capability detection tool by adding dynamic analysis support for the Android platform. Capa...",
+          "slug": "extending-capa-to-android-dynamic-analysis-of-java-and-native-code-for-malware-capability-detection",
+          "status": "in-progress",
+          "student_name": "Xukun Zhang",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "android",
+            "ml",
+            "ai"
+          ],
+          "title": "Extending capa to Android: Dynamic Analysis of Java and Native Code for Malware Capability Detection"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/flare"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "flare-gsoc-2023@mandiant.com",
+    "guide_url": "https://github.com/mandiant/flare-gsoc/blob/2025/doc/contributor-guidance.md",
+    "ideas_url": "https://github.com/mandiant/flare-gsoc/blob/2025/doc/project-ideas.md",
+    "irc_channel": null,
+    "mailing_list": "https://github.com/mandiant/flare-gsoc/discussions"
+  },
+  "social": {
+    "blog": "https://www.mandiant.com/resources/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/Mandiant",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.112Z"
+  }
+}

@@ -1,0 +1,732 @@
+{
+  "id": "692251cf53dd9d7326d33d76",
+  "slug": "ceph-foundation",
+  "name": "Ceph Foundation",
+  "category": "Data",
+  "description": "The Future of Storage",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/ceph/rvqqprqtyq0rfrcc-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/ceph-foundation.webp",
+  "logo_r2_url": null,
+  "url": "https://ceph.io/en/",
+  "active_years": [
+    2016,
+    2017,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "c",
+    "c++",
+    "object-storage",
+    "javascript",
+    "shell script",
+    "jenkins",
+    "angular",
+    "typescript"
+  ],
+  "topics": [
+    "cloud",
+    "distributed systems",
+    "network storage",
+    "storage",
+    "cloud storage",
+    "software defined storage",
+    "Software-Defined-Storage"
+  ],
+  "total_projects": 31,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.88,
+    "projects_by_year": {
+      "year_2016": 4,
+      "year_2017": 4,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 4,
+      "year_2021": 7,
+      "year_2022": 1,
+      "year_2023": 3,
+      "year_2024": 3,
+      "year_2025": 5
+    },
+    "students_by_year": {
+      "year_2016": 4,
+      "year_2017": 4,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": 4,
+      "year_2021": 7,
+      "year_2022": 1,
+      "year_2023": 3,
+      "year_2024": 3,
+      "year_2025": 5
+    },
+    "total_students": 29
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "http://vears91.github.io/babeltrace-zipkin/",
+          "description": "<h3>Abstract</h3>\n<p>Tracing support with annotation-based traces is a promising approach to allow developers to get a view into the performance behavior of Ceph components. Past efforts have used the blkin library to instrument some parts of Ceph's codebase, and some plugins have been created to allow these traces to be visualized in Twitter's Zipkin platform.</p>\n<p>This project would add value to the Ceph community by extending the tracing capabilities and integrating the Zipkin visualizations in Ceph's continuous integration processes, allowing developers to quickly get performance information after changes or after testing particular scenarios.</p>\n<p>The objectives would be achieved by performing the following tasks:</p>\n<ol>\n<li>Have a well documented and modern implementation of an infrastructure that can generate and visualize tracepoints in Zipkin from Ceph. </li>\n<li>Integrate the infrastructure into CBT and Teuthology as well as anywhere else the Ceph Community is interested in having it.</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5689128981102592/",
+          "proposal_id": null,
+          "short_description": "Abstract\nTracing support with annotation-based traces is a promising approach to allow developers to get a view into the performance behavior of Ceph...",
+          "slug": "end-to-end-performance-visualization",
+          "status": "completed",
+          "student_name": "vear91",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ui"
+          ],
+          "title": "End-to-end Performance Visualization"
+        },
+        {
+          "code_url": "https://gist.github.com/onyb/e5c282d3368631f5d46d62b37bc0ef0d",
+          "description": "<p>This project aims to improve Ceph’s Python infrastructure, making the codebase clean, modern, and maintainable. A major part of this improvement would be migrating to advanced Pythonic idioms and porting all the components written in Python 2 to the new, and more feature-rich Python 3 version. This will be done while also maintaining support for Python 2 using a project-wide compatibility layer.</p>\n<p>With Ceph’s growing codebase and complexity, it is imperative to structure the Python code into independent packages for easy maintenance. The build system of Cython bindings for Ceph libraries like RADOS, RBD, and Ceph FS will be improved, making them ready to be deployed to PyPI. Some other open-ended goals of the project are to refactor and rewrite components of Ceph which have seen very little maintenance in the past.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_ceph-foundation_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5472707458105344/",
+          "proposal_id": null,
+          "short_description": "This project aims to improve Ceph’s Python infrastructure, making the codebase clean, modern, and maintainable. A major part of this improvement...",
+          "slug": "improve-cephs-python-infrastructure",
+          "status": "completed",
+          "student_name": "Ani",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Ceph’s Python Infrastructure"
+        },
+        {
+          "code_url": "https://gist.github.com/zhjwpku/1bc4202671ed06c799f0bf4739416429",
+          "description": "<p>Ceph does a cryptographic handshake when establishing a connection in order to mutually authenticate the client and server, but the actual data is not encrypted. This project would use the existing session key to encrypt that traffic. Obviously this will provide ceph with a more safe transmission mode.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6068323590602752/",
+          "proposal_id": null,
+          "short_description": "Ceph does a cryptographic handshake when establishing a connection in order to mutually authenticate the client and server, but the actual data is...",
+          "slug": "on-the-wire-encryption-support",
+          "status": "completed",
+          "student_name": "Zhao Junwang",
+          "student_profile": null,
+          "tags": [],
+          "title": "ON-THE-WIRE ENCRYPTION SUPPORT"
+        },
+        {
+          "code_url": "https://gist.github.com/BlaXpirit/82dc8b81e4e94bdb4ee3d3ec436faa53#file-gsoc-2016-md",
+          "description": "<p>Ceph is coded mostly in C++, however many of its high-level parts are written in Python. Currently they support only Python 2.6 and 2.7.</p>\n<p>The purpose of this project is to port Ceph and its additional components to Python 3.x, which is the current version of the language, while keeping compatibility with the previous versions.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4926120524775424/",
+          "proposal_id": null,
+          "short_description": "Ceph is coded mostly in C++, however many of its high-level parts are written in Python. Currently they support only Python 2.6 and 2.7.\nThe purpose...",
+          "slug": "python-3-support-for-ceph",
+          "status": "completed",
+          "student_name": "Oleh Prypin",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Python 3 Support for Ceph"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5408317308403712/"
+    },
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/ceph/ceph/pull/17321",
+          "description": "<p>The main idea of the project is to provide an efficient algorithm for fast verification of the validity of RADOS block device diffs against an image/snapshot using rolling checksums. Since calculating the checksum of an entire image would be too slow and inefficient, I came up with the pretty trivial solution to use a rolling hash checksum algorithm.</p>\n<p>Rolling hash algorithms reduce computational complexity (i.e. save time and memory) at the price of weaker hashing (i.e. larger risk of collisions). They split the input into chunks, and calculate the hash of each chunk using a simple (i.e. fast) hashing algorithm. What is important to note here is that the hash for the whole string is calculated incrementally, beginning from zero (or some known constant value), and for each chunk the checksum of the string including that chunk is calculated only using the old checksum (of the string without the new chunk) and the difference between the last chunk and the current one.</p>\n<p>Some useful rolling hash algorithms that could be employed are Fletcher’s checksum algorithms or the Adler-32 checksum.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_ceph-foundation_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6243190499704832/",
+          "proposal_id": null,
+          "short_description": "The main idea of the project is to provide an efficient algorithm for fast verification of the validity of RADOS block device diffs against an...",
+          "slug": "implementation-of-rbd-diff-verification-using-a-rolling-checksum-algorithm",
+          "status": "completed",
+          "student_name": "Radoslav Georgiev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of RBD diff verification using a rolling checksum algorithm"
+        },
+        {
+          "code_url": "https://medium.com/@saumay.agrawal/gsoc-17-work-product-142c2bf5a76b",
+          "description": "<p>Under this project idea, I will be working on the development of a web-based application, Cluster Status Dashboard. This application fetches the real-time statistics from a Ceph Cluster with the help of ceph-mgr daemon. It uses Flask, a Python-based web framework, to transfer the data from cluster to the frontend. It also uses D3.js, a javascript library, for visualization of the collected data.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6008616565866496/",
+          "proposal_id": null,
+          "short_description": "Under this project idea, I will be working on the development of a web-based application, Cluster Status Dashboard. This application fetches the...",
+          "slug": "ceph-mgr-cluster-status-dashboard",
+          "status": "completed",
+          "student_name": "Saumay Agrawal",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "javascript",
+            "web",
+            "frontend"
+          ],
+          "title": "ceph-mgr: Cluster Status Dashboard"
+        },
+        {
+          "code_url": "https://spandankumarsahu.wordpress.com/2017/08/25/google-summer-of-code-work-product-submission/",
+          "description": "<p>The project involves designing an evaluation model, for assessing the relative efficiency of various reweight_by_utilisation algorithms and attempts to revamp the existing reweight_by_utilisation, so as to improve upon the general performance of Ceph. The proposal tries to address the first part, by an algorithm to develop a normalised, weighted evaluation procedure and the second part, by an algorithm that relies on an iterative feedback mechanism to improve upon the efficiency (better distribution, faster convergence and less network clog).</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6121644267405312/",
+          "proposal_id": null,
+          "short_description": "The project involves designing an evaluation model, for assessing the relative efficiency of various reweight_by_utilisation algorithms and attempts...",
+          "slug": "smarter-reweight-by-utilisation",
+          "status": "completed",
+          "student_name": "Spandan Kumar Sahu",
+          "student_profile": null,
+          "tags": [],
+          "title": "SMARTER REWEIGHT BY UTILISATION"
+        },
+        {
+          "code_url": "https://gist.github.com/forumulator/cb5ee5f3ca08b9ba7ded4fe8948d5415",
+          "description": "<p>RGW, or Rados Gateway is a RESTful gateway that is one of the primary components of ceph, providing both S3 and SWIFT frontend as an interface for the Ceph object storage. Most of RGW should be, in theory, useable with any storage backend, however currently RGW can only use the Ceph object storage. This project implements a file backend for Rados Gateway(RGW).  The project would a.) Create a file backed layer that can replace <code>librados</code> and b.) Create an abstraction between RGW and object storage so that either backend can be used.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6325122638020608/",
+          "proposal_id": null,
+          "short_description": "RGW, or Rados Gateway is a RESTful gateway that is one of the primary components of ceph, providing both S3 and SWIFT frontend as an interface for...",
+          "slug": "file-backend-for-rados-gateway",
+          "status": "completed",
+          "student_name": "Pranjal Agrawal",
+          "student_profile": null,
+          "tags": [
+            "frontend",
+            "backend"
+          ],
+          "title": "File backend for Rados Gateway"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6399849700261888/"
+    },
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/ceph/ceph/pull/36062",
+          "description": "<p>Bucket notifications are an important enabler for integration of Ceph Object Storage with other systems, enabling complex workflows for AI/ML, monitoring, security and more.\nThis ideas proposes adding native support for some AWS and Kubernetes services endpoints in bucket notification.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_ceph-foundation_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6712213986869248/",
+          "proposal_id": null,
+          "short_description": "Bucket notifications are an important enabler for integration of Ceph Object Storage with other systems, enabling complex workflows for AI/ML,...",
+          "slug": "cloud-endpoints-for-bucket-notification",
+          "status": "completed",
+          "student_name": "Prateek Sachan",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "kubernetes",
+            "cloud"
+          ],
+          "title": "Cloud Endpoints for bucket notification"
+        },
+        {
+          "code_url": "https://github.com/ceph/ceph/pull/36878",
+          "description": "<p>Implementing tracing in Rados gateway to measure its accurate performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5386221183827968/",
+          "proposal_id": null,
+          "short_description": "Implementing tracing in Rados gateway to measure its accurate performance.",
+          "slug": "tracing-rgw-with-jaeger",
+          "status": "completed",
+          "student_name": "Abhinav Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Tracing RGW with jaeger"
+        },
+        {
+          "code_url": "https://shraddhaag.dev/posts/improving-teuthology-scheduling-gsoc-2020-with-ceph-foundation/",
+          "description": "<p>Enhance scheduling in Ceph’s testing framework, Teuthology, to enable ease of running\nlarge scale tests with reliable prioritizing of different tasks in such a manner that\nfairness and efficiency is achieved with minimum turnaround and maximum\nthroughput.\nTo that effect, replace the existing worker framework by developing a dispatcher responsible for getting jobs from a queue, allocating nodes for these jobs to run on and executing them.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5396341972271104/",
+          "proposal_id": null,
+          "short_description": "Enhance scheduling in Ceph’s testing framework, Teuthology, to enable ease of running\nlarge scale tests with reliable prioritizing of different tasks...",
+          "slug": "teuthology-scheduling-improvements",
+          "status": "completed",
+          "student_name": "Shraddha Agrawal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Teuthology Scheduling Improvements"
+        },
+        {
+          "code_url": "https://ishanrai05.github.io/blog/2020-08-29-gsoc/",
+          "description": "<p>Ceph Dashboard is the built-in web-based management application for the Ceph distributed storage project. It consists of a Python-based backend that runs as a Ceph Manager module and an Angular-based web frontend that communicates via the backend with a REST API. There are a number of user interface improvements that are high on the “nice to have” side, but always fall behind due to other priorities, especially new features. The goal of this project is to implement some of these ideas and also documents these in a style guide that other developers can refer to.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6519627653316608/",
+          "proposal_id": null,
+          "short_description": "Ceph Dashboard is the built-in web-based management application for the Ceph distributed storage project. It consists of a Python-based backend that...",
+          "slug": "ceph-dashboard-ui-enhancement-and-improved-community-branding",
+          "status": "completed",
+          "student_name": "Ishan Rai",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "python",
+            "web",
+            "api",
+            "ui"
+          ],
+          "title": "Ceph Dashboard UI Enhancement and Improved Community Branding"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6273779027673088/"
+    },
+    "year_2021": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/EFS86340/95e06c40e3ba0305451c350666dd7696",
+          "description": "<p>Nowadays, Ceph supports Kafka, HTTP and AMQP(ver 0.9.1) endpoints natively from the Ceph Rados Gateway. However, to allow for a large variety of endpoint types to integrate with Ceph, we are encountered with some inconvenience on these various protocols from different service infrastructure. The workaround for the notification brings the burden of adaptor deployment, communication and translation overhead.AMQP 1.0 is the latest standard for AMQP. It focuses on core features which are necessary for interoperability at Internet scale, and it contains less explicit routing than previous versions. Even though Ceph has supported the AMQP(ver 0.9.1) natively, the gap between these two protocol specifications cannot be ignored. The next level AMQP(ver 1.0) requires a completely different client library.  AMQP 1.0 brokers are supported by Apache Qpid/ActiveMQ project and Azure platform, etc. To address this problem, we should support the AMQP 1.0 natively in the Ceph Rados Gateway. This requires adding the qpid-proton client library to the Rados Gateway code base, and use it to send notifications to AMQP 1.0 compatible brokers.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5734731907334144/",
+          "proposal_id": null,
+          "short_description": "Nowadays, Ceph supports Kafka, HTTP and AMQP(ver 0.9.1) endpoints natively from the Ceph Rados Gateway. However, to allow for a large variety of...",
+          "slug": "next-level-amqp",
+          "status": "completed",
+          "student_name": "Xu Wang",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "NEXT LEVEL AMQP"
+        },
+        {
+          "code_url": "https://sudhanaruna.github.io/ceph/gsoc/summer-coding/bdd/behave/2021/08/21/GSoC-2021-Ceph-Project-Work-Product-Submisson.html",
+          "description": "<p>The project idea is focused on creating integration test cases using Gherkin language to take care of creating laboratory environments using virtual machines. Aims to provide an easy way to create integration tests for Ceph orchestrator.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_ceph-foundation_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5121787091746816/",
+          "proposal_id": null,
+          "short_description": "The project idea is focused on creating integration test cases using Gherkin language to take care of creating laboratory environments using virtual...",
+          "slug": "implementing-integration-tests-using-gherkin-language",
+          "status": "completed",
+          "student_name": "ArunagirinadanSudharshan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementing integration tests using Gherkin language"
+        },
+        {
+          "code_url": "https://cypherean.github.io/blog/ceph-gsoc21/",
+          "description": "<p>This project aims to provide Ceph users with the ability to report issues directly from the Ceph-Dashboard UI and attach all the available information to the report.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4622940968058880/",
+          "proposal_id": null,
+          "short_description": "This project aims to provide Ceph users with the ability to report issues directly from the Ceph-Dashboard UI and attach all the available...",
+          "slug": "reporting-ceph-issues-from-the-ceph-dashboard",
+          "status": "completed",
+          "student_name": "SS",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Reporting Ceph issues from the Ceph-Dashboard"
+        },
+        {
+          "code_url": "https://iraj465.github.io/2021-08-18-gsoc-2021-final-report/",
+          "description": "<p>As it stands today, S3-tests uses a limited fraction of the Boto S3 functionality. By\ninstrumenting code coverage of Boto SDKs and s3-tests, gaps in S3-tests can be identified.</p>\n<p>The aim is to write new tests that attempt to cover all lines of various S3 SDKs to test compatibility issues by identifying parts of unused code using code coverage tools. We will try to implement S3-tests by leveraging code coverage for as many S3 SDKs as possible.</p>\n<p><code>Mentor</code> : Robin H. Johnson</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4745467795079168/",
+          "proposal_id": null,
+          "short_description": "As it stands today, S3-tests uses a limited fraction of the Boto S3 functionality. By\ninstrumenting code coverage of Boto SDKs and s3-tests, gaps in...",
+          "slug": "rgws3-sdk-compatibility",
+          "status": "completed",
+          "student_name": "Saptarshi Majumder",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "RGW:S3 SDK Compatibility"
+        },
+        {
+          "code_url": "https://matan-b.github.io/2021/08/13/google-summer-of-code-2021-with-Ceph/",
+          "description": "<p>This project aims to add the NATS messaging system to the current list of CEPH’s bucket notifications endpoints. Bucket notifications provide a mechanism for sending information when certain events are happening on the bucket to external systems. Adding NATS as a cloud native messaging solution will be useful as CEPH can run inside Kubernetes.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4876455707672576/",
+          "proposal_id": null,
+          "short_description": "This project aims to add the NATS messaging system to the current list of CEPH’s bucket notifications endpoints. Bucket notifications provide a...",
+          "slug": "going-nats",
+          "status": "completed",
+          "student_name": "Matan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "kubernetes",
+            "cloud"
+          ],
+          "title": "GOING NATS"
+        },
+        {
+          "code_url": "https://pleiadesian.github.io/2021/08/21/GSoC-2021-project-Using-BALANCED-READS-on-RGW-Calls-to-RADOS/",
+          "description": "<p>Add a config and the ability to use balanced reads when RGW sends a RADOS op</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5772203919933440/",
+          "proposal_id": null,
+          "short_description": "Add a config and the ability to use balanced reads when RGW sends a RADOS op",
+          "slug": "using-balanced_reads-on-rgw-calls-to-rados",
+          "status": "completed",
+          "student_name": "Zulai Wang",
+          "student_profile": null,
+          "tags": [],
+          "title": "USING BALANCED_READS ON RGW CALLS TO RADOS"
+        },
+        {
+          "code_url": "https://github.com/ceph/ceph/pulls?q=is%3Apr+author%3Aaaryanporwal+is%3Aclosed",
+          "description": "<p>This project aims to implement Automated Visual Regression Testing alongside the current testing infrastructure to ensure robust testing coverage.</p>\n",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5152801855897600/",
+          "proposal_id": null,
+          "short_description": "This project aims to implement Automated Visual Regression Testing alongside the current testing infrastructure to ensure robust testing coverage.",
+          "slug": "visual-regression-testing-of-ceph-dashboard",
+          "status": "completed",
+          "student_name": "Aaryan Porwal",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Visual Regression Testing of Ceph-Dashboard"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6259684285087744/"
+    },
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://ceph.io/en/news/blog/2022/improving-dashboard-accessibility-for-blind-and-visually-impaired-ceph-users/",
+          "description": "Web accessibility ensures people with disabilities can navigate and use the web like every other person. Currently the level of compliance of ceph dashboard to the WCAG 2.1 web accessibility standards is unknown. This makes it difficult for blind and visually impaired users to use the dashboard comfortably. This project aims to make ceph dashboard more accessible and compliant with WCAG 2.1 standards so that users with disabilities can also use it without challenges",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/RA1hcxal/",
+          "proposal_id": null,
+          "short_description": "Web accessibility ensures people with disabilities can navigate and use the web like every other person. Currently the level of compliance of ceph...",
+          "slug": "improving-dashboard-accessibility-for-blind-and-visually-impaired-ceph-users",
+          "status": "completed",
+          "student_name": "Ngwa Sedrick Meh",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Improving Dashboard Accessibility for Blind and Visually-Impaired Ceph Users"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/ceph/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Devansh3712/1ef38690b94141c27437a3d1363e76c6",
+          "description": "Teuthology commands, in general, require a bit of a learning curve and usually requires someone who's a veteran with teuthology to help out, this can interrupt the productivity of the engineering team. The complexity of teuthology can lead to new users scheduling bad runs that can hold up the queue and block other jobs.\n\nBy creating an API and integrating it with Pulpito, developers can directly schedule or kill jobs without SSH-ing into teuthology through the website. The API will have endpoints based on the teuthology modules, and widgets for login, logout, scheduling and killing job(s) will be added to Pulpito.",
+          "difficulty": "advanced",
+          "id": "proj_ceph-foundation_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/qaRHjXNC",
+          "proposal_id": "8lefTpFT",
+          "short_description": "Teuthology commands, in general, require a bit of a learning curve and usually requires someone who's a veteran with teuthology to help out, this can...",
+          "slug": "making-teuthology-friendly",
+          "status": "completed",
+          "student_name": "Devansh Singh",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ui"
+          ],
+          "title": "Making Teuthology Friendly"
+        },
+        {
+          "code_url": "https://github.com/ceph/ceph/pulls?q=is%3Apr+Fragmentation+author%3APosrabi+",
+          "description": "The goal of the simulator is to observe possible emerging patterns, and observe increasing costs as fragmentation progresses. It is to be a tool to invent better allocator strategies, propose defragmentation strategies, and mechanisms to control them.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/pfQonMep",
+          "proposal_id": "9vktXx68",
+          "short_description": "The goal of the simulator is to observe possible emerging patterns, and observe increasing costs as fragmentation progresses. It is to be a tool to...",
+          "slug": "disk-fragmentation-simulator",
+          "status": "completed",
+          "student_name": "Tri Dao",
+          "student_profile": null,
+          "tags": [],
+          "title": "Disk Fragmentation Simulator"
+        },
+        {
+          "code_url": "https://gist.github.com/vedanshbhartia/52fe3c44ef70185e553793220a7b3a69",
+          "description": "Ceph is an open-source, distributed storage system that provides scalable object, block, and file storage. One of the key components of Ceph is the RADOS Gateway (RGW), which provides an interface for storing and retrieving objects using the S3 and Swift APIs. The RGW codebase has grown significantly over time, and as a result, it is prone to bugs and other issues that can impact performance and stability.\r\n\r\nThe goal of this project is to use the Coverity static analysis tool to clean up issues from the RGW code. Coverity is a powerful tool that can identify potential bugs, security vulnerabilities, and other issues in software code. By running Coverity on the RGW codebase, we can identify and fix issues that may be impacting performance, stability, or security.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/xH6uVLYA",
+          "proposal_id": "dKmVxyU2",
+          "short_description": "Ceph is an open-source, distributed storage system that provides scalable object, block, and file storage. One of the key components of Ceph is the...",
+          "slug": "using-coverity-static-analysis-tool-to-clean-up-issues-from-the-rgw-code",
+          "status": "completed",
+          "student_name": "Vedansh Bhartia",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Using Coverity Static Analysis Tool to Clean up Issues from the RGW Code"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/ceph"
+    },
+    "year_2024": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://diagnostic-surf-23c.notion.site/Ceph-Tidy-Up-Song-GSoC-2024-21fe602568b24b6985af9284ca0fcb5c",
+          "description": "The Ceph project has a huge codebase, and it faces the risk of containing suboptimal code that could jeopardize storage reliability or induce performance bottlenecks or cause resource inefficiencies. Identifying and rectifying such code issues is important to maintain the integrity and efficiency of the Ceph storage system. clang-tidy, a powerful static analysis tool, offers a systematic approach to uncover critical issues within the codebase and generate comprehensive reports highlighting potential vulnerabilities.\n\n\nDeliverables:\n1. Finding critical issues in the entire Ceph project using clang-tidy and fixing them\n2. Create Jenkins pipeline for analyzing pull requests.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/SG1yEXSM/",
+          "proposal_id": null,
+          "short_description": "The Ceph project has a huge codebase, and it faces the risk of containing suboptimal code that could jeopardize storage reliability or induce...",
+          "slug": "tidy-up-song",
+          "status": "completed",
+          "student_name": "Suyash Dongre",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Tidy Up Song"
+        },
+        {
+          "code_url": "https://gist.github.com/dynamic-entropy/6b3c9cde352096cc860ad32e671117ee",
+          "description": "Persistent bucket notifications play a crucial role in the object storage landscape, serving as a cornerstone element. Specifically, they offer resilience against broker outages, which is vital for system stability. However, the use of RADOS queues to support persistent notifications comes with its drawbacks. Not only does it impose additional strain on the RADOS cluster, but it also renders the system non-functional in environments lacking a RADOS backend.\nIn this project we propose the implementation of persistent bucket notifications within the RADOS Gateway, leveraging a Redis Queue instead. This approach offers several advantages, including compatibility with various backends such as posix, dbstore, and daos, facilitated by integrating with the \"zipper\" project. As a result, we can achieve robust bucket notifications while enhancing versatility across different storage environments.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/KaBwWCHA/",
+          "proposal_id": null,
+          "short_description": "Persistent bucket notifications play a crucial role in the object storage landscape, serving as a cornerstone element. Specifically, they offer...",
+          "slug": "rados-to-redis",
+          "status": "completed",
+          "student_name": "rahulchauhan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Rados To Redis"
+        },
+        {
+          "code_url": "https://gist.github.com/Devansh3712/b059b00ebc82c8c0a837c443f2fe14d8",
+          "description": "In the current testing workflow,  after pushing a branch to ceph-ci the developers can run integration tests using teuthology only after Ceph binaries are built, which takes a few hours. With this project, they will be able to queue commands using teuthology-api before the Jenkins build is completed. Once the build is complete, the queued commands will get executed automatically. New endpoints for auto-scheduling and saving commands commonly used by a developer will be added to teuthology-api.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/EkPC6ZZW/",
+          "proposal_id": null,
+          "short_description": "In the current testing workflow, after pushing a branch to ceph-ci the developers can run integration tests using teuthology only after Ceph binaries...",
+          "slug": "shaman-scheduling-for-success",
+          "status": "completed",
+          "student_name": "Devansh Singh",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ui"
+          ],
+          "title": "Shaman Scheduling for Success"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/ceph/"
+    },
+    "year_2025": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "In brief, this project deals with persistent bucket notifications, a feature first rolled out in Ceph Pacific, as a part of the Rados Gateway Project. The current implementation doesn’t use the full extensive capabilities of RADOS tying one topic to a single RADOS object  (a 2 Phase Commit Queue Rados Object). A sharded queue implementation of persisting bucket notifications would allow for better performance - allowing for parallel writes to multiple OSDs.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ppcKvem6",
+          "proposal_id": "8OegTUJc",
+          "short_description": "In brief, this project deals with persistent bucket notifications, a feature first rolled out in Ceph Pacific, as a part of the Rados Gateway...",
+          "slug": "the-more-the-merrier-sharded-queues-for-persisent-bucket-notifications-in-rados-gw",
+          "status": "in-progress",
+          "student_name": "Adarsh Ashokan",
+          "student_profile": null,
+          "tags": [],
+          "title": "The More The Merrier - Sharded Queues for Persisent Bucket Notifications in Rados GW"
+        },
+        {
+          "code_url": null,
+          "description": "Proposal Summary:\n\nCeph Dashboard is a web-based management and monitoring tool for Ceph, utilizing Angular/TypeScript for the frontend and Python for the backend. This project aims to improve the dashboard’s usability by refining the notification system and adding a structured workflow for managing NVMe-oF devices. These enhancements will simplify monitoring and device management, making Ceph more user-friendly and efficient.\n\nDeliverables\nBy the end of the project, the following deliverables will be completed:\n\nEnhanced Notification System\n\nImprove the notification framework to ensure better alert visibility and management.\n\nImplement customization options for filtering, grouping, and prioritizing notifications.\n\nEnsure seamless backend integration and optimized frontend display.\n\nNVMe-oF Device Management Workflow\n\nDesign and develop a user-friendly interface for managing NVMe-oF devices.\n\nImplement backend logic to support NVMe-oF device operations within the Ceph Dashboard.\n\nEnsure proper testing and documentation for maintainability.\n\nFirst Two Weeks Plan\nDuring the initial two weeks, the focus will be on:\n\nWeek 1: Reviewing the existing notification system, identifying pain points, and drafting an improvement plan. Conducting discussions with the community to gather feedback and finalize design considerations.\n\nWeek 2: Researching NVMe-oF integration requirements, setting up development environments, and drafting an initial workflow design.\n\nThese structured improvements will enhance Ceph Dashboard’s usability and provide a smoother user experience for storage administrators.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/SnSh5sFr",
+          "proposal_id": "XOsUyX3H",
+          "short_description": "Proposal Summary: Ceph Dashboard is a web-based management and monitoring tool for Ceph, utilizing Angular/TypeScript for the frontend and Python for...",
+          "slug": "enhancing-ceph-dashboard-usability-advanced-notifications-nvme-of-management-workflow",
+          "status": "in-progress",
+          "student_name": "Anikait Sehwag",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "python",
+            "typescript",
+            "web",
+            "ml"
+          ],
+          "title": "Enhancing Ceph Dashboard Usability: Advanced Notifications & NVMe-oF Management Workflow"
+        },
+        {
+          "code_url": null,
+          "description": "smartmontools (smartctl) is a widely used tool for collecting SMART metrics from storage devices (SATA, SAS, NVMe). However, its runtime metadata file, drivedb.h, suffers from inconsistent labeling of attributes such as SSD wear level, which hinders meaningful data analysis and monitoring. These inconsistencies make it challenging to integrate smartctl metrics into observability tools used in Ceph and other environments.\n\nThis project proposes a two-part solution. First, I will add an interpretation primitive in smartmontools’ C++ codebase to handle transformations such as converting wear remaining to wear used (e.g., 100 - value). Second, I will develop a regex-based postprocessor tool to normalize and map freeform SMART attribute labels from drivedb.h to a consistent and defined set. This tool will help standardize outputs and facilitate reliable data ingestion for observability dashboards.\n\nDeliverables include:\n\nInterpretation logic enhancement in the smartmontools C++ source\n\nA standalone normalization tool (in Python, Go, or C++)\n\nDocumentation and guidelines for community usage and extension\n\nOptional test suite to validate attribute normalization",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/pqUXYPjf",
+          "proposal_id": "gnnHzMsb",
+          "short_description": "smartmontools (smartctl) is a widely used tool for collecting SMART metrics from storage devices (SATA, SAS, NVMe). However, its runtime metadata...",
+          "slug": "normalization-and-interpretation-enhancement-of-drivedbh-in-smartmontools",
+          "status": "in-progress",
+          "student_name": "Anusha Singh",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Normalization and Interpretation Enhancement of drivedb.h in smartmontools"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, ceph-devstack runs a testnode container with only one OSD per node using a loop\nblock created on the host system as a storage device. To be closer to a production-like\nenvironment, it is important to make ceph-devstack run many OSD per testnode. To do that we need to : enable support for arbitrary number of OSDs and define size of storage devices. The deliverable will be a new version of ceph-devstack with listed features.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/VpxBIJmv",
+          "proposal_id": "sMwSPpGd",
+          "short_description": "Currently, ceph-devstack runs a testnode container with only one OSD per node using a loop block created on the host system as a storage device. To...",
+          "slug": "proposal-for-teuthology-on-podman",
+          "status": "in-progress",
+          "student_name": "Parfait Detchenou",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "PROPOSAL FOR TEUTHOLOGY ON PODMAN"
+        },
+        {
+          "code_url": null,
+          "description": "RESTler is a REST API fuzzing tool designed to automatically test cloud services via their\nREST APIs to uncover security and reliability issues. The primary goal of this project is to\nleverage fuzzing tools like RESTler to identify and resolve as many bugs and vulnerabilities as possible within Ceph's RADOS Gateway (RGW). Alongside bug discovery and resolution, the project also aims to integrate these fuzzing tests into Ceph’s automated testing framework, Teuthology.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ESULZGqh",
+          "proposal_id": "vC0iTM70",
+          "short_description": "RESTler is a REST API fuzzing tool designed to automatically test cloud services via their REST APIs to uncover security and reliability issues. The...",
+          "slug": "warm-and-fuzzy",
+          "status": "in-progress",
+          "student_name": "Suyash Dongre",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "cloud"
+          ],
+          "title": "Warm And Fuzzy"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ceph"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "dev@ceph.io",
+    "guide_url": "https://docs.ceph.com/en/latest/dev/developer_guide/",
+    "ideas_url": "https://ceph.io/en/developers/google-summer-of-code/",
+    "irc_channel": "https://join.slack.com/t/ceph-storage/shared_invite/zt-1n8yigss2-yYg099VlTiGMCLIziG_h4Q",
+    "mailing_list": "https://ceph.io/en/community/connect/"
+  },
+  "social": {
+    "blog": "https://ceph.io/en/news/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://join.slack.com/t/ceph-storage/shared_invite/zt-1n8yigss2-yYg099VlTiGMCLIziG_h4Q",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/ceph",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.009Z"
+  }
+}

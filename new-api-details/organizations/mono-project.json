@@ -1,0 +1,272 @@
+{
+  "id": "692251dd53dd9d7326d33e2e",
+  "slug": "mono-project",
+  "name": "Mono Project",
+  "category": "Programming languages",
+  "description": "Cross-platform C#/F#/.NET runtime and tools",
+  "image_url": "https://lh3.googleusercontent.com/Wnx2UKIIjXTvvrIgRrPHvnIbw6WXjSbBGOleTchd-Kv0D9gbrdmf21-x9IpyXYONEza_KVi1TkwcIiyUpn8kOQV2wD3PGmo",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/mono-project.webp",
+  "logo_r2_url": null,
+  "url": "http://www.mono-project.com/",
+  "active_years": [
+    2017
+  ],
+  "first_year": 2017,
+  "last_year": 2017,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "c#",
+    ".net",
+    "f#"
+  ],
+  "topics": [
+    "web development",
+    "programming tools",
+    "ide",
+    "mobile development",
+    "compiler"
+  ],
+  "total_projects": 9,
+  "stats": {
+    "avg_projects_per_appeared_year": 9,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 9,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 9,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 9
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://github.com/mono/mono/pull/5054#issue-236569175",
+          "description": "<p>The goal is to replace Mono's BCL implementation of <strong>System.Threading.EventWaitHandle</strong>, <strong>System.Threading.Mutex</strong> and\n<strong>System.Threading.Semaphore</strong> synchronization primitives by CoreRT ones. This would allow us to get closer to .NET Core code quality and behaviour.</p>\n<p><strong>System.Threading.EventWaitHandle</strong> – class allows threads to communicate with each other by signaling and by waiting for signals. Event wait handles are wait handles that can be signaled in order to release one or more waiting threads. After it is signaled, an event wait handle is reset either manually or automatically.</p>\n<p><strong>System.Threading.Mutex</strong>  – one of the synchronization primitive that is an implementation of synchronization mechanism for enforcing limits on access to a resource in an environment where there are many threads of execution.</p>\n<p><strong>System.Threading.Semaphore</strong> – one of the synchronization primitive used to control access to a common resource by multiple processes in a concurrent system such as a multiprogramming operating system.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6462738356240384/",
+          "proposal_id": null,
+          "short_description": "The goal is to replace Mono's BCL implementation of System.Threading.EventWaitHandle, System.Threading.Mutex and\nSystem.Threading.Semaphore...",
+          "slug": "import-some-synchronization-primitives-from-corert-into-mono",
+          "status": "completed",
+          "student_name": "Alexander Efremov",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Import Some Synchronization Primitives from CoreRT into Mono"
+        },
+        {
+          "code_url": "https://gist.github.com/dcalance/1c00325484abbff4e4dfcf422d12d0f4",
+          "description": "<h4>When you think about it ccache is a simple feature, however we shouldn't underestimate it's power. This tool is very handy for improving waiting time and resource usage. Even if nowadays a lot of computational power and resources a simple tool like this can make a huge difference in big or even small projects. In my opinion this tool is a MUST in every compiler.</h4>\n<p>After looking at the tool that is available for C/C++ i can say for sure that we can implement this in Mono. Thanks to the deterministic inputs from Roslyn this won't be a pain in the back and we can simply port the libraries from C++ or make our own.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6644152808767488/",
+          "proposal_id": null,
+          "short_description": "When you think about it ccache is a simple feature, however we shouldn't underestimate it's power. This tool is very handy for improving waiting time...",
+          "slug": "a-ccache-tool-for-managed-languages",
+          "status": "completed",
+          "student_name": "Daniel Calancea",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "A ccache tool for managed languages"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1OFOPZu8uDrZPxyrVuw7QADznypkX1sOIvTG4OmcAmW4/edit?usp=sharing",
+          "description": "<p>I’d like to add a lambda support in Immediate Pad. There are roughly 2 tasks:</p>\n<p> Task1. Compile lambda expression locally using Roslyn API along with the current context of debuggee\n  Task2. Add a new wire protocol command type for bytecode for the lambda expression. The debugger agent registers the bytecode in Mono Runtime and sends back its handle to the debugger.</p>\n<p>We have to compile the body of a lambda expression and resolve some difficulties such as variable references and substitutions in the body. Then, compiled bytecode should be sent to the debugger agent with the protocol for lambda. A challenging thing of this project would be injecting new bytecode which either refer or change variables in the debuggee’s context.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4995744360562688/",
+          "proposal_id": null,
+          "short_description": "I’d like to add a lambda support in Immediate Pad. There are roughly 2 tasks:\n Task1. Compile lambda expression locally using Roslyn API along with...",
+          "slug": "lambda-support-in-debugger-expression-evaluator",
+          "status": "completed",
+          "student_name": "Haruka Matsumoto",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Lambda support in debugger expression evaluator"
+        },
+        {
+          "code_url": "https://gist.github.com/mohtamohit/0f25af3fdc6633af8d51d19f5281f99f",
+          "description": "<p>CppSharp is a tool and set of libraries which allows programmers to use C/C++ libraries with high-level programming languages (such as C#). It is a tool that takes C/C++ header and library files and generates the necessary glue to surface the native API as a managed API. Such an API can be used to consume an existing native library in your high-level code or add scripting support to a native codebase. The supported target languages at present are C# and C++/CLI. It can also be used as a library to parse native code into a syntax tree with a rich declaration and type information model. This, thus, demands a lot of improvements and maintenance tasks as per the feedback from the users over the course of time. So, I'll try to fix as many bugs as I can and add as many new useful features that I can.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4836388860067840/",
+          "proposal_id": null,
+          "short_description": "CppSharp is a tool and set of libraries which allows programmers to use C/C++ libraries with high-level programming languages (such as C#). It is a...",
+          "slug": "cppsharp-maintenance-improvement-tasks",
+          "status": "completed",
+          "student_name": "Mohit Mohta",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "CppSharp / Maintenance & Improvement tasks"
+        },
+        {
+          "code_url": "https://gist.github.com/Geotha/cdf874466248e4230439923ea24bb4d0",
+          "description": "<p>Mono is a open source development platform based on the <code>.Net Framework</code> and allows developers to build cross-platform applications. Mono's .NET implementation is based on the ECMA standards for <code>C#</code> and the <code>Common Language Infrastructure</code>. It includes both developer tools and the infrastructure needed to run .NET client and server applications on <code>Linux, Microsoft Windows, Mac OS X, BSD, Sun Solaris, Nintendo Wii, Sony PlayStation 3, Apple iPhone and Android</code>.</p>\n<p>The implementation of Pipe Streams in <code>Mono</code> doesn't support some functionalities such as parallel builds on msbuild. <code>CoreFX</code> is the foundational libraries for .NET Core. The implementation of Pipe Streams in CoreFx fixes the previous problems. So, the goal of the project was to import <code>System.IO.Pipes.PipeStream</code> from CoreFX to Mono. Doing this, new features are offered by Mono.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4850405351620608/",
+          "proposal_id": null,
+          "short_description": "Mono is a open source development platform based on the .Net Framework and allows developers to build cross-platform applications. Mono's .NET...",
+          "slug": "import-systemiopipespipestream-from-corefx",
+          "status": "completed",
+          "student_name": "GEORGIOS ATHANASOPOULOS",
+          "student_profile": null,
+          "tags": [
+            "android",
+            "ui",
+            "ux"
+          ],
+          "title": "Import System.IO.Pipes.PipeStream from CoreFX"
+        },
+        {
+          "code_url": "https://gist.github.com/ktopouzi/4eea6da89b1277c451d4358a55510298",
+          "description": "<p>An introduction to myself to the Mono team and a planning about the CppSharp / Maintenance &amp; Improvement tasks\nproject. I tried to explain the way that i am thinking of working on the tasks and i am willing to implement as many as i can.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4950860073271296/",
+          "proposal_id": null,
+          "short_description": "An introduction to myself to the Mono team and a planning about the CppSharp / Maintenance &amp; Improvement tasks\nproject. I tried to explain the...",
+          "slug": "cppsharp-maintenance-improvement-tasks",
+          "status": "completed",
+          "student_name": "Kimon Topouzidis",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "CppSharp / Maintenance & Improvement tasks"
+        },
+        {
+          "code_url": "http://monosoc.blogspot.com/2017/08/student-post-monodevelop-cc-extension.html",
+          "description": "<p>Addin system of MonoDevelop/Xamarin Studio (<a href=\"http://www.monodevelop.com/download\" target=\"_blank\">http://www.monodevelop.com/download</a>) is very flexible and allow the developers to add or extend any feature in the IDE .CBinding addin allow the developers to use C/C++ for writing the solution. However, there are still many features that are missing, some of them are :-</p>\n<p>1) Ability of the CBinding to use compilers present on Windows (GCC/MSVC/MinGW32), this will also require support for CMake as that's the only project format CBinding currently has .</p>\n<p>2) Implement support and switching between various Toolchains available in CMake.</p>\n<p>3) Detect missing dependencies (libclang, CMake etc) and prompt the user to install them.</p>\n<p>4) Adding various refactoring features .</p>\n<p>There are many other things that can be done to make it even more better like improving project and file templates, improving code completion, adding a test suite etc . Since old \"MD1\" project system is no longer supported so it can also be removed.</p>\n<p>Main purpose of this proposal is to come up with an idea to implement some of these features and make changes to the existing ones.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5874545135190016/",
+          "proposal_id": null,
+          "short_description": "Addin system of MonoDevelop/Xamarin Studio (http://www.monodevelop.com/download) is very flexible and allow the developers to add or extend any...",
+          "slug": "overhaul-monodevelop-cc-addin",
+          "status": "completed",
+          "student_name": "Anubhav",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Overhaul MonoDevelop C/C++ Addin"
+        },
+        {
+          "code_url": "http://www.mono-project.com/community/google-summer-of-code/reports/2017/clang-sanitizers/",
+          "description": "<p>Unlike proposed, I will evaluate Clang's ThreadSanitizer as well as the AddressSanitizer as these two sanitizers seem more pressing to the Mono community. First, I will look into ways to inject these sanitizers into the Mono runtime and get a feeling for the feedback that they provide. Depending on the feedback, I will then try to fix races / overflows myself or - at least - file bug reports and discuss those issues with the community. Besides working on the races and overflows themselves, I plan to write two articles for the website; one of the articles should explain using the ThreadSanitizer in combination with the Mono runtime and the other one should explain the AddressSanitizer.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5976305258463232/",
+          "proposal_id": null,
+          "short_description": "Unlike proposed, I will evaluate Clang's ThreadSanitizer as well as the AddressSanitizer as these two sanitizers seem more pressing to the Mono...",
+          "slug": "clang-sanitizers",
+          "status": "completed",
+          "student_name": "Armin Hasitzka",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Clang Sanitizers"
+        },
+        {
+          "code_url": "https://gist.github.com/ddobrev/7f75b5685f652c091a13643bcbe5ec9e",
+          "description": "<p>I would like to complete the QtSharp project which aims to provide Mono/.NET bindings for Qt.</p>\n",
+          "difficulty": null,
+          "id": "proj_mono-project_2017_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6266305476820992/",
+          "proposal_id": null,
+          "short_description": "I would like to complete the QtSharp project which aims to provide Mono/.NET bindings for Qt.",
+          "slug": "qtsharp-mononet-bindings-for-qt",
+          "status": "completed",
+          "student_name": "Dimitar Dobrev",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "QtSharp - Mono/.NET bindings for Qt"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4814565460148224/"
+    },
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "soc@xamarin.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "http://www.mono-project.com/community/help/irc/",
+    "mailing_list": "https://lists.dot.net/mailman/listinfo/mono-list"
+  },
+  "social": {
+    "blog": "https://monosoc.blogspot.com",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/monosoc",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.613Z"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "id": "692251d153dd9d7326d33d90",
+  "slug": "deeppavlov",
+  "name": "DeepPavlov",
+  "category": "Other",
+  "description": "Open-source Conversational AI Stack",
+  "image_url": "https://lh3.googleusercontent.com/8My3sdK_IV-eO8auuG5u2b4zAtqDSkh8w6IyZFa11hZ9prbIGV6wI_Scgj87kUDcfFI15s9DsVNVyR4n_iY5g4Qnk-QEJzxJQEhB1y900k6c",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/deeppavlov.webp",
+  "logo_r2_url": null,
+  "url": "https://deeppavlov.ai/",
+  "active_years": [
+    2021
+  ],
+  "first_year": 2021,
+  "last_year": 2021,
+  "is_currently_active": false,
+  "technologies": [
+    "python",
+    "tensorflow",
+    "docker",
+    "python deep learning frameworks",
+    "pytorch"
+  ],
+  "topics": [
+    "nlp",
+    "conversational",
+    "agent"
+  ],
+  "total_projects": 3,
+  "stats": {
+    "avg_projects_per_appeared_year": 3,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": 3,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 3
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/Muennighoff/5675250e830f9a0c847a57e2df5bc770",
+          "description": "<p>The TripPy architecture brings transformer models to Goal-oriented Chatbots. While setting new SoTA results on MultiWOZ among others, TripPy also simplifies the previous standard architecture. A better + simpler solution is what we strive for in all fields. This project implements TripPy in DeepPavlov to allow anybody to build fully functional Dialog Bots on top of TripPy leveraging the DeepPavlov ecosystem. Further, the project includes a simple demo in the form of a WeatherBot as well as a more complex chatbot demo built on the new model in DeepPavlov.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_deeppavlov_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5658708167622656/",
+          "proposal_id": null,
+          "short_description": "The TripPy architecture brings transformer models to Goal-oriented Chatbots. While setting new SoTA results on MultiWOZ among others, TripPy also...",
+          "slug": "trippy-deeppavlov",
+          "status": "completed",
+          "student_name": "Niklas Muennighoff",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "TripPy + DeepPavlov"
+        },
+        {
+          "code_url": "https://gist.github.com/rimijoker/e9d950e39314fd08202aed0c9dcfb885",
+          "description": "<p>Multi-task learning shares information between related tasks, reducing the number of parameters required. State of the art results across natural language understanding tasks in the GLUE benchmark has been previously used transfer learning from a large task: unsupervised training with BERT, where a separate BERT model was fine-tuned for each task.</p>\n<p>In the current state of DeepPavlov, multi-task BERT is implemented in Tensorflow which need to be refactored such that DeepPavlov uses new frameworks such as PyTorch. The refactored code also needs to incorporate techniques such as PAL-BERT within the DeepPavlov library by matching the results of the GLUE benchmark on the respective techniques.</p>\n",
+          "difficulty": null,
+          "id": "proj_deeppavlov_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4977973869936640/",
+          "proposal_id": null,
+          "short_description": "Multi-task learning shares information between related tasks, reducing the number of parameters required. State of the art results across natural...",
+          "slug": "refactor-multi-task-bert",
+          "status": "completed",
+          "student_name": "Anshuman Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Refactor Multi-Task BERT"
+        },
+        {
+          "code_url": "https://gist.github.com/anasedova/0cdcf8588f73873c5d7c4998cec90b37",
+          "description": "<p>The main goal of the project is to provide the user of DeepPavlov Framework with an out-of-box solution for relation extraction. I would consider relation extraction as a multi-label classification task and design a pipeline that could reuse the existing DeepPavlov components (such as NER with incorporated tokenizer, already implemented MT-BERT, and others) as much as possible. I would train several relation extraction models with different parameters (for example, different training data, classifier, classifier inputs, inputs encoding, number of relations to be extracted, etc), add them to the  DeepPavlov storage, and give the user an opportunity to load them (and, occasionally, additionally train with his/her own training data) and find the one that would suit his/her data the best way. The user's input would be a text and a config with RE parameters, and relational triples would be the output. Thus, the whole preprocessing, data encoding and model application would happen inside the module, while the overall relation extraction component remains clear and convenient for the user.</p>\n",
+          "difficulty": null,
+          "id": "proj_deeppavlov_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6210130160386048/",
+          "proposal_id": null,
+          "short_description": "The main goal of the project is to provide the user of DeepPavlov Framework with an out-of-box solution for relation extraction. I would consider...",
+          "slug": "relation-extraction",
+          "status": "completed",
+          "student_name": "Anastasiia Sedova",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Relation Extraction"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6618455117135872/"
+    },
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "gsoc@deeppavlov.ai",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://t.me/DeepPavlovDreamDiscussions",
+    "mailing_list": "https://mailchi.mp/a570023a6136/news"
+  },
+  "social": {
+    "blog": "https://deeppavlov.ai/blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/deeppavlov",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.047Z"
+  }
+}

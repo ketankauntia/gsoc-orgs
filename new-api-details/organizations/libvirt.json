@@ -1,0 +1,521 @@
+{
+  "id": "692251ee53dd9d7326d33f1a",
+  "slug": "libvirt",
+  "name": "libvirt",
+  "category": "End user applications",
+  "description": "Virtualization abstraction library",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/libvirt/8xb4f5zwejage5pf-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/libvirt.webp",
+  "logo_r2_url": null,
+  "url": "https://libvirt.org/",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2024
+  ],
+  "first_year": 2016,
+  "last_year": 2024,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "xen",
+    "qemu",
+    "containers",
+    "kvm",
+    "hypervisor",
+    "lxc",
+    "python",
+    "virtualization"
+  ],
+  "topics": [
+    "virtualization",
+    "cloud",
+    "library",
+    "virtual machine",
+    "container",
+    "libraries"
+  ],
+  "total_projects": 19,
+  "stats": {
+    "avg_projects_per_appeared_year": 2.38,
+    "projects_by_year": {
+      "year_2016": 4,
+      "year_2017": 1,
+      "year_2018": 2,
+      "year_2019": 3,
+      "year_2020": 4,
+      "year_2021": 1,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": 2,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": 4,
+      "year_2017": 1,
+      "year_2018": 2,
+      "year_2019": 3,
+      "year_2020": 4,
+      "year_2021": 1,
+      "year_2022": 2,
+      "year_2023": null,
+      "year_2024": 2,
+      "year_2025": null
+    },
+    "total_students": 19
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "http://wiki-libvirt.rhcloud.com/page/Google_Summer_of_Code_2016/lxc_migration",
+          "description": "<p>Migration has become an important feature in the virtualization world. In severs, it is used for load balancing, updating and replacing hardware, periodic snapshots in HPC world, and many others. When dealing with container virtulization though things are different in migration procedure, compared to VMs. Here comes a  tool named CRIU, that helps at checkpointing and restoring a linux container. In this project, I am going to add libvirt support for migration of linux containers.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5273377220591616/",
+          "proposal_id": null,
+          "short_description": "Migration has become an important feature in the virtualization world. In severs, it is used for load balancing, updating and replacing hardware,...",
+          "slug": "add-libvirt-support-for-lxc-migration",
+          "status": "completed",
+          "student_name": "Katerina Koukiou",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ux"
+          ],
+          "title": "Add libvirt support for LXC migration."
+        },
+        {
+          "code_url": "http://wiki-libvirt.rhcloud.com/page/Google_Summer_of_Code_2016/Asynchronous_lifecycle_events_for_storage_objects",
+          "description": "<p>The purpose of the project is to implement asynchronous lifecycle events for libvirt’s storage API.  Lifecycle events allow applications to get notifications about the state of the object, as well as for object creation, deletion etc, without having to pull libvirt at regular intervals asking for the state of the VM. This implementation will also include adding support to virt-manager for  storage events.\nAlso, part of the project is extending event-test.py from libvirt-python to watch for storage events and print messages about them, as well as add asynchronous event support for nodedev objects. Also extending the python API for the implementation in virt-manager and libvirt-python.\nAfter the implementation of the storage API, project includes implementation of asynchronous event support for nodedev objects, followed by extending the python API, implementation in virt-manager and in libvirt-python. When this part is finished, I'll continue working on nodedev, and add event support for udev and netcf drivers.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5359079803322368/",
+          "proposal_id": null,
+          "short_description": "The purpose of the project is to implement asynchronous lifecycle events for libvirt’s storage API.  Lifecycle events allow applications to get...",
+          "slug": "asynchronous-lifecycle-events-for-storage-objects",
+          "status": "completed",
+          "student_name": "gulic",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api"
+          ],
+          "title": "Asynchronous lifecycle events for storage objects"
+        },
+        {
+          "code_url": "http://wiki-libvirt.rhcloud.com/page/Google_Summer_of_Code_2016/Abstracting_device_address_allocation",
+          "description": "<p>Libvirt provides a common and stable layer to securely manage domains (instances of operating systems) on a node (single physical machine). When creating a virtualized guest, one needs to tell libvirt, among other things, what one wants the virtualized hardware to look like. \nTo achieve this, one provides an XML file in the domain XML format. In these files, device addresses show up in many places. In order to make libvirt convenient to use, device addresses are sometimes autogenerated. There are also some constraints on these addresses.\nCurrently, code to deal with device addresses is scattered across the codebase. The project is to create an abstract structure that handles different types of addresses, assigns them and properly handles duplicates.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4577232009822208/",
+          "proposal_id": null,
+          "short_description": "Libvirt provides a common and stable layer to securely manage domains (instances of operating systems) on a node (single physical machine). When...",
+          "slug": "abstracting-device-address-allocation",
+          "status": "completed",
+          "student_name": "Tomasz Flendrich",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Abstracting device address allocation"
+        },
+        {
+          "code_url": "http://wiki.libvirt.org/page/Google_Summer_of_Code_2016/Making_virsh_more_bash_like",
+          "description": "<p>If you have ever used virsh, you certainly reached the point where you struggle with its user friendliness. Virsh is missing a lot of bash functionality that users consider natural: from automatic completion of object names, through redirecting command outputs through piping commands together. The aim would be to make these functions available in virsh and thus make user experience better, in both interactive and non-interactive mode.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4855751780597760/",
+          "proposal_id": null,
+          "short_description": "If you have ever used virsh, you certainly reached the point where you struggle with its user friendliness. Virsh is missing a lot of bash...",
+          "slug": "making-virsh-more-bash-like",
+          "status": "completed",
+          "student_name": "nishithshah2211",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Making virsh more bash like"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5512427315658752/"
+    },
+    "year_2017": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://www.redhat.com/archives/virt-tools-list/2017-August/msg00248.html",
+          "description": "<p>Creating containers for libvirt LXC driver is a pain since there is no simple way to setup the root file system. A new workflow around container images is presented in <a href=\"http://bosdonnat.fr/system-container-images.html\" target=\"_blank\">http://bosdonnat.fr/system-container-images.html</a>. This project is about moving the virt-bootstrap tool further, that is add more features to it and integrate it with virt-manager and virt-install for a smooth user experience.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5915720986656768/",
+          "proposal_id": null,
+          "short_description": "Creating containers for libvirt LXC driver is a pain since there is no simple way to setup the root file system. A new workflow around container...",
+          "slug": "ease-creation-of-containers",
+          "status": "completed",
+          "student_name": "Radostin Stoyanov",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Ease creation of containers"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6082542885142528/"
+    },
+    "year_2018": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://skrtbhtngr.github.io/2018/08/13/gsoc18-final-blog.html",
+          "description": "<p>Writing cleanup code for every variable in large-scale open-source projects makes the code difficult to comprehend. The cleanup tasks like releasing resources are necessary and without them, there may be leaks. GNU C provides a variable attribute <code>cleanup</code> that runs a specified function automatically when the associated variable goes out of scope. The aim of this project is to incorporate this cleanup functionality into the libvirt code base. Another aspect of this project will be to ensure that adding this functionality does not change the intended behaviour of the code.\nThe deliverable will be an integration of cleanup code into the libvirt code base which does not interfere with the main logic, making the code more concise and comprehensible while maintaining intended functionality.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5323025029267456/",
+          "proposal_id": null,
+          "short_description": "Writing cleanup code for every variable in large-scale open-source projects makes the code difficult to comprehend. The cleanup tasks like releasing...",
+          "slug": "automatic-freeing-of-resources",
+          "status": "completed",
+          "student_name": "Sukrit Bhatnagar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Automatic freeing of resources"
+        },
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1s2rhAwCvNu8DUJx1wIf4SC_FOZxYxLzAbMah2fn2hdo/edit?usp=sharing",
+          "description": "<p>Currently there is an iSCSI storage pool in libvirt. However, all the management communication is done by spawning iscsiadm binary. The aim of this project would be to rework the storage driver backend so that it uses libiscsi directly.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5806571170824192/",
+          "proposal_id": null,
+          "short_description": "Currently there is an iSCSI storage pool in libvirt. However, all the management communication is done by spawning iscsiadm binary. The aim of this...",
+          "slug": "introduce-libiscsi-pool",
+          "status": "completed",
+          "student_name": "Clem",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Introduce Libiscsi pool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6037767851081728/"
+    },
+    "year_2019": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://iliaswrites.wordpress.com/2019/08/13/final-gsoc-2019-report/",
+          "description": "<p>The libvirt library provides a stable API for managing platform virtualization utilizing different hypervisors or virtual machine monitors. Each hypervisor requires its own driver inside libvirt, but not all API functions are supported by all drivers or hypervisors yet. In addition to the standard drivers, there is a supplementary fake driver, called test driver, designed to let applications test against libvirt with fake data and not have any effect on the host. As of today, there are still a lot of API functions not implemented by the test driver. The goal of this project is to expand the API coverage of the test libvirt driver.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6355995113029632/",
+          "proposal_id": null,
+          "short_description": "The libvirt library provides a stable API for managing platform virtualization utilizing different hypervisors or virtual machine monitors. Each...",
+          "slug": "expand-libvirt-test-driver-api-coverage",
+          "status": "completed",
+          "student_name": "Ilias Stamatis",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Expand libvirt test driver API coverage"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1ytlVEuGMlHMlN06AkzNFLDD58zHzOGYrFX_f_fNVNLM/edit",
+          "description": "<p>Libguestfs provides a set of tools for communicating with virtual machine disk images. By using this, you can view or edit a file on almost any disk images. Anyone can use this functionality through a scriptable shell called ‘guestfish,' or an interactive rescue shell 'virt-rescue.’</p>\n<p>Libguestfs also provides a C library, which allows you to create applications involving communications with VM disks efficiently. Bindings of the library are available in many languages such as Python, Java, OCaml, Perl, Ruby. However, the implementation in Rust does not exist yet. Rust is a rising programming language that has been used more and more in every situation including system’s programming thanks to its advantages: strong type system, memory safety, safe concurrency and yet availability for low-level high-performance programming.</p>\n<p>This is a proposal to implement stable and comprehensive bindings for Rust so that Rust developers and projects come to be able to use libguestfs easily and safely.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5735547409006592/",
+          "proposal_id": null,
+          "short_description": "Libguestfs provides a set of tools for communicating with virtual machine disk images. By using this, you can view or edit a file on almost any disk...",
+          "slug": "create-rust-bindings-for-libguestfs",
+          "status": "completed",
+          "student_name": "Hiroyuki Katsura",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "ml",
+            "ai"
+          ],
+          "title": "Create Rust bindings for libguestfs"
+        },
+        {
+          "code_url": "https://athinapl.home.blog/2019/08/25/gsoc-2019-cloud-init-configuration-for-virt-manager-virt-install/",
+          "description": "<p>Cloud-init configuration through virt-install/virt-manager input arguments at VM initial setup. Cloud-init is a package that contains utilities for early initialization of cloud instances. The idea behind my proposal is to use cloud-init for injecting multiple user-data configuration options during the first steps of cloud image installations, making this whole process more automated through specific command line arguments when using virt-install.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6236550378029056/",
+          "proposal_id": null,
+          "short_description": "Cloud-init configuration through virt-install/virt-manager input arguments at VM initial setup. Cloud-init is a package that contains utilities for...",
+          "slug": "cloud-init-configuration-for-virt-installvirt-manager",
+          "status": "completed",
+          "student_name": "Athina Plaskasoviti",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud"
+          ],
+          "title": "Cloud-init configuration for virt-install/virt-manager"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4556574457069568/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://drive.google.com/drive/folders/19KMJhUUp1WdXGl7slk9hLqXSwK8aG4di",
+          "description": "<p>Currently, libvirt support job cancellation and progress reporting on domains. That is, if there's a long running job on a domain, e.g. migration, libvirt reports how much data has already been transferred to the destination and how much still needs to be transferred. However, libvirt lacks such information reporting in storage area, to which libvirt developers refer to as the storage driver. The aim is to report progress on several storage tasks, like volume wiping, file allocation an others.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6612599065542656/",
+          "proposal_id": null,
+          "short_description": "Currently, libvirt support job cancellation and progress reporting on domains. That is, if there's a long running job on a domain, e.g. migration,...",
+          "slug": "introducing-job-control-to-the-storage-driver",
+          "status": "completed",
+          "student_name": "Prathamesh Chavan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Introducing Job control to the storage driver"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1nf_zQe-3CI6c0Rioj7h3Vzrg99l1wyhfJ__wIQQXv4c/edit?usp=sharing",
+          "description": "<p>Jailhouse is a lightweight static partitioning hypervisor based on Linux, which is more concerned with isolation than virtualization. It’s able to run bare-metal applications or (adapted) operating systems besides Linux. This means Jailhouse doesn't emulate the resources you have, instead, it splits the hardware into isolated components. This project aims to add support for Jailhouse in the libvirt API to make it easier to use the Jailhouse hypervisor using the well-known libvirt API or through applications using libvirt like Openstack, Eucalyptus, etc.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5436033845428224/",
+          "proposal_id": null,
+          "short_description": "Jailhouse is a lightweight static partitioning hypervisor based on Linux, which is more concerned with isolation than virtualization. It’s able to...",
+          "slug": "libvirt-driver-for-jailhouse",
+          "status": "completed",
+          "student_name": "Prakhar",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ux"
+          ],
+          "title": "Libvirt driver for Jailhouse"
+        },
+        {
+          "code_url": "https://gist.github.com/gqlo/10860ffea5b25272ac37d1a8f0b6b22f",
+          "description": "<p>SaltStackis an open-source software that facilitates configuration management for IT infrastructures. Salt Virt is a component of SaltStack which functions as a cloud controller that offers a high level view of the cloud resources to assist cloud management.  It supports a handful of core cloud operations such as virtual machine deployment, inspection, migration, network profiling etc. \nI propose to make some existing Libvirt API domain properties configurable in Salt Virt in order to provide advanced performance tuning options.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_libvirt_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6094282445815808/",
+          "proposal_id": null,
+          "short_description": "SaltStackis an open-source software that facilitates configuration management for IT infrastructures. Salt Virt is a component of SaltStack which...",
+          "slug": "salt-virt-advanced-performance-tuning-support",
+          "status": "completed",
+          "student_name": "GUOQING LI",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "cloud"
+          ],
+          "title": "Salt Virt advanced performance tuning support"
+        },
+        {
+          "code_url": "https://www.redhat.com/archives/libvir-list/2020-August/msg01094.html",
+          "description": "<p>Salt offers a nice wrapper around libvirt. However the migration functions are calling virsh and not exposing all options. This project is about rewriting the salt migration functions to use the python-libvirt API, but also to expose as much as possible of the libvirt migration options.</p>\n<p>Salt also allows users to describe the guests using a state. Once the migration functions are exposed, the virt.running state would need to be modified to handle migrating the guest to another host.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4913175331340288/",
+          "proposal_id": null,
+          "short_description": "Salt offers a nice wrapper around libvirt. However the migration functions are calling virsh and not exposing all options. This project is about...",
+          "slug": "take-migration-in-salt-virt-module-to-the-next-level",
+          "status": "completed",
+          "student_name": "- Radostin Stoyanov",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api"
+          ],
+          "title": "Take migration in Salt virt module to the next level"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5067783886340096/"
+    },
+    "year_2021": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://write.as/lukedyue/google-summer-of-code-2021-3",
+          "description": "<h4>Expand API coverage in the test driver</h4>\n<p>The test driver (as accessed via the test:/// URI scheme) is a fake virt driver designed to let applications test against libvirt with fake data and not have any effect on the host. As can be seen from the API coverage report <a href=\"http://libvirt.org/hvsupport.html\" target=\"_blank\">http://libvirt.org/hvsupport.html</a> there are quite a few APIs not yet implemented in the test driver. Ideally the test driver would have 100% API coverage, and so the goal of the project is to address gaps in the API coverage.</p>\n<p>So the work is trying to expand API coverage as much as possible.</p>\n",
+          "difficulty": null,
+          "id": "proj_libvirt_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4735718219317248/",
+          "proposal_id": null,
+          "short_description": "Expand API coverage in the test driver\nThe test driver (as accessed via the test:/// URI scheme) is a fake virt driver designed to let applications...",
+          "slug": "test-driver-api-coverage",
+          "status": "completed",
+          "student_name": "Luke Yue",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Test driver API coverage"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4791907464511488/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://bazzan.hashnode.dev/gsoc22-final-report",
+          "description": "Libvirt has a tool called lcitool which is used for managing the CI need for libvirt and related projects. Improvements will be made to the system toward extending the container functionality to build a container locally, and execute workloads in the container. This will give libvirt developers and maintainers the ability to debug in a project specific manner among other use cases.\n\nThe goal of the project is to use podman-py, a python binding for the RESTful API of podman services , to implement this feature.",
+          "difficulty": null,
+          "id": "proj_libvirt_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/VQiBk1ub/",
+          "proposal_id": null,
+          "short_description": "Libvirt has a tool called lcitool which is used for managing the CI need for libvirt and related projects. Improvements will be made to the system...",
+          "slug": "libvirt-ci-support-for-container-executions-in-libvirts-lcitool-using-a-container-library-binding",
+          "status": "completed",
+          "student_name": "Abdulwasiu Apalowo",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "libvirt-CI: Support for container executions  in libvirt's lcitool using a container library binding"
+        },
+        {
+          "code_url": "https://weirdnatto.in/posts/gsoc-2022.html",
+          "description": "Since QEMU is gaining introspectable QMP statistics, it will now be possible to fetch more statistics using the QEMU api. This project aims to integrate this into libvirt to report more user specified statistics in as detailed and efficient manner as possible.",
+          "difficulty": null,
+          "id": "proj_libvirt_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/d5LqzcfU/",
+          "proposal_id": null,
+          "short_description": "Since QEMU is gaining introspectable QMP statistics, it will now be possible to fetch more statistics using the QEMU api. This project aims to...",
+          "slug": "extend-reported-statistics-on-given-guests",
+          "status": "completed",
+          "student_name": "natto1784",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Extend reported statistics on given guests"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/libvirt/"
+    },
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/Skryptonyte/libvirt-gsoc-finalreport",
+          "description": "There are a huge number of potential variants of XML documents that can be fed into libvirt. Only a subset of these are valid for generating QEMU command lines. It is likely that there are cases where omitting certain attributes or XML elements will cause the QEMU command line generator to crash. Using fuzzing techniques to generate unusual XML documents which could then be fed through the test suite may identify crashes.\n\nThis project also visits the fuzzing of QEMU device XML hotplugging, CH domain, VMX domain, Xen domain and NWFilter XML.",
+          "difficulty": null,
+          "id": "proj_libvirt_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/2xfyY1Q4/",
+          "proposal_id": null,
+          "short_description": "There are a huge number of potential variants of XML documents that can be fed into libvirt. Only a subset of these are valid for generating QEMU...",
+          "slug": "qemu-command-line-generator-xml-fuzzing",
+          "status": "completed",
+          "student_name": "Rayhan Faizel",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "QEMU command line generator XML fuzzing"
+        },
+        {
+          "code_url": "https://gitlab.com/-/snippets/3740079",
+          "description": "This project is dedicated to the systematic execution of diverse fuzzing\ntechniques employing an array of specialized fuzzers. Its principal goal is the\ndetection of vulnerabilities within the libvirt binaries, particularly those\ntasked with parsing XML input.\n\nThis project holds substantial significance due to the utility of\nfuzzing being a prevalent approach for identifying vulnerabilities within the\ncybersecurity domain.",
+          "difficulty": null,
+          "id": "proj_libvirt_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/xUsYfZuv/",
+          "proposal_id": null,
+          "short_description": "This project is dedicated to the systematic execution of diverse fuzzing techniques employing an array of specialized fuzzers. Its principal goal is...",
+          "slug": "qemu-command-line-generator-xml-fuzzing",
+          "status": "completed",
+          "student_name": "Abhiram",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "QEMU command line generator XML fuzzing"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/libvirt/"
+    },
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "libvirt-users@redhat.com",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://libvirt.org/contact.html#irc",
+    "mailing_list": "https://libvirt.org/contact.html#email"
+  },
+  "social": {
+    "blog": "http://planet.virt-tools.org/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/#libvirt",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.595Z"
+  }
+}

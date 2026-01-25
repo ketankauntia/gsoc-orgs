@@ -1,0 +1,125 @@
+{
+  "id": "692251d353dd9d7326d33daa",
+  "slug": "flashrom",
+  "name": "Flashrom",
+  "category": "Operating systems",
+  "description": "Reading, writing, verifying, erasing flash chips",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/flashrom/lbs8lwrrtukrpznk-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/flashrom.webp",
+  "logo_r2_url": null,
+  "url": "https://www.flashrom.org/",
+  "active_years": [
+    2022
+  ],
+  "first_year": 2022,
+  "last_year": 2022,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "x86",
+    "bios",
+    "rom",
+    "spi"
+  ],
+  "topics": [
+    "hardware",
+    "drivers",
+    "firmware",
+    "flash chips",
+    "low level programming"
+  ],
+  "total_projects": 1,
+  "stats": {
+    "avg_projects_per_appeared_year": 1,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": 1,
+      "year_2023": null,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 1
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://blogs.coreboot.org/blog/2022/09/08/gsoc-optimize-erase-function-selection-wrap-up/",
+          "description": "The write operation in flash can only change bits in a specific way and the erase operation changes all the bits of a block to 1s. So to modify any bit the whole block needs to be copied to another memory, erased on the flash, and then copied again from the other memory with the change. Due to this “erase overhead” write operations may require copying a lot of data to modify a small amount. Most flash chips support multiple erase-block sizes and flashrom keeps a list of these sizes and ranges for all supported flash chips. Currently, flashrom tries these functions one by one and uses the same function until the operation is completed or an error occurs. Usually, the first function works correctly but this function erases the smallest erase-block so flashrom would have to use it multiple times to complete the erase operation on a large region, which could have been done more efficiently using functions using larger erase-blocks, thus resulting in a transaction overhead. If a large erase-block size to erase a small region is chosen it would result in a larger erase overhead. So the erase-block size should be picked according to the size of the region left to be erased. Also checking in advance to tell if the programmer supports the given erase function and then sorting the supported functions in order of the erase-block sizes can further help the function selection.",
+          "difficulty": null,
+          "id": "proj_flashrom_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/upN80V5b/",
+          "proposal_id": null,
+          "short_description": "The write operation in flash can only change bits in a specific way and the erase operation changes all the bits of a block to 1s. So to modify any...",
+          "slug": "gsoc-project-proposal-for-flashrom",
+          "status": "completed",
+          "student_name": "Aarya",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "GSoC Project Proposal for Flashrom"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/flashrom/"
+    },
+    "year_2023": null,
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "flashrom@flashrom.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://www.flashrom.org/Contact",
+    "mailing_list": "https://www.flashrom.org/Contact"
+  },
+  "social": {
+    "blog": null,
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/flashrom_org",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.134Z"
+  }
+}

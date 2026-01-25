@@ -1,0 +1,1327 @@
+{
+  "id": "692251cd53dd9d7326d33d5b",
+  "slug": "blender-foundation",
+  "name": "Blender Foundation",
+  "category": "End user applications",
+  "description": "The Freedom to Create",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/blender-foundation/vdfgx9yyygdjjvym-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/blender-foundation.webp",
+  "logo_r2_url": null,
+  "url": "https://www.blender.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "python",
+    "opengl",
+    "c++",
+    "opencl",
+    "vulkan"
+  ],
+  "topics": [
+    "games",
+    "3d",
+    "rendering",
+    "animation",
+    "tools",
+    "graphics",
+    "vfx",
+    "modeling",
+    "simulation",
+    "virtual reality",
+    "artist tools",
+    "3d tools",
+    "3d animation"
+  ],
+  "total_projects": 64,
+  "stats": {
+    "avg_projects_per_appeared_year": 6.4,
+    "projects_by_year": {
+      "year_2016": 8,
+      "year_2017": 5,
+      "year_2018": 5,
+      "year_2019": 7,
+      "year_2020": 9,
+      "year_2021": 8,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": 6,
+      "year_2025": 8
+    },
+    "students_by_year": {
+      "year_2016": 8,
+      "year_2017": 5,
+      "year_2018": 5,
+      "year_2019": 7,
+      "year_2020": 9,
+      "year_2021": 8,
+      "year_2022": 3,
+      "year_2023": 5,
+      "year_2024": 6,
+      "year_2025": 8
+    },
+    "total_students": 59
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Julianeisel/GSoC-2016",
+          "description": "<p>An improved layer management system that adds industry standard features for organizing display of scene content Blender. This includes the ability to use as many layers as needed and tools for layer organization, such as naming, grouping and ordering.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6406819358441472/",
+          "proposal_id": null,
+          "short_description": "An improved layer management system that adds industry standard features for organizing display of scene content Blender. This includes the ability...",
+          "slug": "layer-manager",
+          "status": "completed",
+          "student_name": "Severin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Layer Manager"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Sebbas/GSoC_2016",
+          "description": "<p>Liquids and smoke are both fluids and share properties. It therefore makes sense to have one single fluid solver in Blender which handles all fluid simulations.</p>\n<p>In this project I plan to add liquid simulations to the existing Mantaflow (smoke) integration. More specifically, I would like to achieve the same functionality from the Elbeem code base with Mantaflow. Besides smaller Mantaflow specific features, the novel NB FLIP will be implemented as well.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6446945761492992/",
+          "proposal_id": null,
+          "short_description": "Liquids and smoke are both fluids and share properties. It therefore makes sense to have one single fluid solver in Blender which handles all fluid...",
+          "slug": "blender-mantaflow-integration-single-code-fluid-solver",
+          "status": "completed",
+          "student_name": "sebbas",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Blender Mantaflow Integration: Single Code Fluid Solver"
+        },
+        {
+          "code_url": "http://hlzz.github.io/blender3/",
+          "description": "<p>The estimation of camera motion plays an important role in visual effects (VFX) industry, which enables the interaction between the virtual and the reality. Currently Blender only supports solving camera motion from a single view, which sometimes does not give satisfactory solutions. In this project, I will implement a generic-purpose multi-view tracking system that incorporates witness cameras to strengthen the estimation result. This project is composed of a front-end UI integration mainly for users to specify matched marks across cameras, and back-end optimization engine that operates on the user input. This multi-view reconstruction system will increase the stability of the camera tracking solver and help artists create high-quality visual works.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6588179184353280/",
+          "proposal_id": null,
+          "short_description": "The estimation of camera motion plays an important role in visual effects (VFX) industry, which enables the interaction between the virtual and the...",
+          "slug": "multi-view-reconstruction-with-witness-camera-for-blender",
+          "status": "completed",
+          "student_name": "tianwei37",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Multi-view Reconstruction with Witness Camera for Blender"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Genio84/gsoc2016/reports#Final_reports",
+          "description": "<p>Most architectural and engineering projects nowadays involve a strong part of surface modeling. To do this kind of modeling objects like Bezier or NURBS curves are required. These provide a great amount of editing freedom. However, current limitations require these objects to be converted to meshes in order to perform tasks such as multiple material assignment. With this project I propose to improve curve editing by adding features that currently require the curve to be converted to mesh, or cannot be performed at all. I will also improve the documentation of the code related to curve editing (by editing documentation and by improving the comments on the code).</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5039885886947328/",
+          "proposal_id": null,
+          "short_description": "Most architectural and engineering projects nowadays involve a strong part of surface modeling. To do this kind of modeling objects like Bezier or...",
+          "slug": "improvements-for-bezier-curves",
+          "status": "completed",
+          "student_name": "João Araújo",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Improvements for Bezier Curves"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Lukasstockner97/GSoC_2016",
+          "description": "<p>The goal of this project is to implement an optional denoising step in Cycles, which would be executed between the actual pathtracing and the Compositor and remove remaining noise from the image, at the cost of some accuracy.</p>\n<p>In the last few years, a lot of great research regarding denoising the output of pathtracers has been published, but these algorithms rely on additional information provided by the renderer, which makes an integration in the Compositor very memory-intensive and a challenge in UI design.</p>\n<p>Because of that, this proposal is about having a denoiser right in Cycles - where all the additional information (like feature passes and variance info) is available and can be used to produce results that are far better than general image denoising, often allowing to cut render times by 75% or more.</p>\n<p>The workflow will be as simple as possible: An additional panel in the rendering properties will allow to switch denoising on and off, along with further options for advanced users to fine-control the behavior of the filter.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_blender-foundation_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4588777955655680/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to implement an optional denoising step in Cycles, which would be executed between the actual pathtracing and the...",
+          "slug": "implementing-a-denoising-filter-in-cycles",
+          "status": "completed",
+          "student_name": "Lukas Stockner",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Implementing a Denoising Filter in Cycles"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:SaphireS/gsoc2016/finalreport",
+          "description": "<p>As someone who uses Blender as his main tool on a daily basis I know just how cabale Blenders UV Editor is ...But I also know about its shortcomings and areas for improvement regarding the current tool-set. In this project I aim to improve the UV Editing workflow by improving the current tools as well as adding new ones. Improvements to a UV tool could mean enhancing its features, working on usability or both of course.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6041636006002688/",
+          "proposal_id": null,
+          "short_description": "As someone who uses Blender as his main tool on a daily basis I know just how cabale Blenders UV Editor is ...But I also know about its shortcomings...",
+          "slug": "uv-tools",
+          "status": "completed",
+          "student_name": "SaphireS",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "UV Tools"
+        },
+        {
+          "code_url": "https://developer.blender.org/D2150",
+          "description": "<p>Vertex painting is an essential part of 3D animation, especially in Blender. Often used in skin weighting, vertex painting provides an intuitive way for 3D artists to define how bones deform the vertices of a polygonal mesh.</p>\n<p>Currently, Blender uses OpenGL selection when painting vertices. Although convenient for painting only visible vertices, this technique has several problems.</p>\n<p>OpenGL selection:</p>\n<ul>\n<li>is unable to paint occluded vertices. </li>\n<li>makes mirrored vertex painting difficult to develop.</li>\n<li>is prone to paint splashing.</li>\n<li>is slow.</li>\n</ul>\n<p>These shortcomings and more can be resolved by adding a “paint occluded vertices” option, which would use Blender’s Paint Bounding Volume Hierarchies for vertex painting.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5900898517647360/",
+          "proposal_id": null,
+          "short_description": "Vertex painting is an essential part of 3D animation, especially in Blender. Often used in skin weighting, vertex painting provides an intuitive way...",
+          "slug": "p-bvh-enhanced-vertex-painting",
+          "status": "completed",
+          "student_name": "Nathan Vollmer",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "P-BVH enhanced vertex painting"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:DingTo/GSoC_2016/User_Documentation",
+          "description": "<p>This project is about improving Cycles' texture system on CPU and GPU, by removing limitations and making it more memory efficient. Furthermore the user feedback should be improved, informing users more visible about (V)RAM usage.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2016_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5211918117634048/",
+          "proposal_id": null,
+          "short_description": "This project is about improving Cycles' texture system on CPU and GPU, by removing limitations and making it more memory efficient. Furthermore the...",
+          "slug": "cycles-texture-system-improvements-and-better-user-feedback",
+          "status": "completed",
+          "student_name": "DingTo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cycles: Texture system improvements and better user feedback"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/6317853942743040/"
+    },
+    "year_2017": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Darshan/GSoC2017",
+          "description": "<p>Currently the vertex painting lacks the features like vertex masking, don’t have many blend options, color choice is only limited to rgb and not to rgba. With this project I propose to improve vertex painting toolkit, adding lacking tools and functionality so that artists will be able to use  vertex painting tools as easily as texture painting tools</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6715177072328704/",
+          "proposal_id": null,
+          "short_description": "Currently the vertex painting lacks the features like vertex masking, don’t have many blend options, color choice is only limited to rgb and not to...",
+          "slug": "improvement-of-vertex-painting",
+          "status": "completed",
+          "student_name": "Darshan Kadu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improvement of Vertex Painting"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Witt/GSoC2017/Reports/FinalReport",
+          "description": "<p>Improve the sculpting tools by adding a silhouette brush and other minor improvements to the toolset. Giving the sculptor the freedom to add and subtract new geometry contrary to just shaping the existing.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5680240546283520/",
+          "proposal_id": null,
+          "short_description": "Improve the sculpting tools by adding a silhouette brush and other minor improvements to the toolset. Giving the sculptor the freedom to add and...",
+          "slug": "sculpting-tool-improvements",
+          "status": "completed",
+          "student_name": "Sebastian Witt",
+          "student_profile": null,
+          "tags": [
+            "api"
+          ],
+          "title": "Sculpting Tool Improvements"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:RohanRathi/GSoC_2017/Final_Report",
+          "description": "<p>A Normal Editing mode to facilitate editing of vertex normals with toolset to provide users an ability to manipulate normals of a mesh. This is especially useful in game development. Several studio quality games have been developed with custom edited normals and the importance of normal editing tools is growing since the past few years. Normals in Blender are currently only editable through modifiers and there is no way to directly edit and control normals of a mesh. I wish to provide creative as well as editing freedom to artists and uncap the potential for game development in blender with the improvements I propose. \nOf course along with providing the described functionality I will also be documenting the code to help developers understand the code and artists familiarise themselves with the features.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6126827219189760/",
+          "proposal_id": null,
+          "short_description": "A Normal Editing mode to facilitate editing of vertex normals with toolset to provide users an ability to manipulate normals of a mesh. This is...",
+          "slug": "normals-editing-tools",
+          "status": "completed",
+          "student_name": "Rohan Rathi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Normals Editing Tools"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Sebbas/GSoC_2017",
+          "description": "<p>In this project I would like to improve the existing Mantaflow integration by adding support for secondary particles and by implementing a novel technique on fluid flow guiding from a recent research paper (Primal-Dual Optimization for Fluids). Furthermore, I would like to incorporate more user feedback to get the integration ready for Blender 2.8.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4771511365795840/",
+          "proposal_id": null,
+          "short_description": "In this project I would like to improve the existing Mantaflow integration by adding support for secondary particles and by implementing a novel...",
+          "slug": "fluid-guiding-and-secondary-particle-systems",
+          "status": "completed",
+          "student_name": "sebbas",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Fluid guiding and secondary particle systems"
+        },
+        {
+          "code_url": "https://wiki.blender.org/index.php/User:Gandalf3/GSoC_2017/Final_Report",
+          "description": "<p>This project will add a package manager to Blender’s current addon system with the goal of providing functionality similar to that found in <a href=\"https://atom.io\" target=\"_blank\">Atom</a> (the text editor).</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2017_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4882716659023872/",
+          "proposal_id": null,
+          "short_description": "This project will add a package manager to Blender’s current addon system with the goal of providing functionality similar to that found in Atom (the...",
+          "slug": "python-package-manager",
+          "status": "completed",
+          "student_name": "gandalf3",
+          "student_profile": null,
+          "tags": [
+            "python"
+          ],
+          "title": "Python Package Manager"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6461479528169472/"
+    },
+    "year_2018": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/wiki//User:Rohanrathi/GSoC_2018/Final_Report",
+          "description": "<p>The bevel modifier is widely used in modelling to chamfer edges and smoothen them out. Bevels are used to correct the shading of mesh, so as to make the edges blunt to give a solid and realistic look as opposed to non beveled objects. However the current modifier does not ensure correct normals and has various listed bugs which slows down artists workflow. Having written my own Weighted Normals modifier in last years Google Summer of Code. I am familiar with the modifier stack and its implementation and can work to provide good quality functionality on the modifier and tool.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6389001955049472/",
+          "proposal_id": null,
+          "short_description": "The bevel modifier is widely used in modelling to chamfer edges and smoothen them out. Bevels are used to correct the shading of mesh, so as to make...",
+          "slug": "bevel-improvements",
+          "status": "completed",
+          "student_name": "Rohan Rathi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bevel Improvements"
+        },
+        {
+          "code_url": "http://www.wellobserve.com/#!NPR/2018Summer/Conclusion.md",
+          "description": "<p>To improve blender's NPR line rendering for stylized image generation, such as manga-styled animation. The main target is to <strong>greatly improve the performance</strong> of this stage (with realtime techniques or multithreading for freestyle), and it also aimed to <strong>improve the quality</strong> of the generated lines.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6219263236898816/",
+          "proposal_id": null,
+          "short_description": "To improve blender's NPR line rendering for stylized image generation, such as manga-styled animation. The main target is to greatly improve the...",
+          "slug": "blender-npr-line-rendering-improvement",
+          "status": "completed",
+          "student_name": "Yiming Wu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Blender NPR Line Rendering Improvement"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Erikenglesson/GSoC_2018/Reports/WorkProduct/",
+          "description": "<p>This project will implement the following paper, \"Importance Sampling of Many Lights with Adaptive Tree Splitting\" by Alejandro Conty and Christopher Kulla. This method reduces the time for Blender's in-house renderer Cycles to generate images of scenes with a large number of light sources in them. This gives more freedom for the lighting artists to create the scenes they imagine without having to worry about performance.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5921713137123328/",
+          "proposal_id": null,
+          "short_description": "This project will implement the following paper, \"Importance Sampling of Many Lights with Adaptive Tree Splitting\" by Alejandro Conty and Christopher...",
+          "slug": "many-light-sampling",
+          "status": "completed",
+          "student_name": "Erik Englesson",
+          "student_profile": null,
+          "tags": [],
+          "title": "Many Light Sampling"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Gskchua/GSoC2018/Final_Report",
+          "description": "<p>Traditionally, solid objects are represented as meshes: a set of vertices, edges, and faces. This interpretation of real-life objects into 3D space is sufficient for typically solid media such as teapots and chairs. However, this model faces many issues when used to represent dynamic materials such as smoke or clouds, which have innumerable and constant shifts in number and location of vertices, edges, and faces. These types of objects are typically classed and implemented separately as Volumes.</p>\n<p>Due to the nature of the materials involved, Volume rendering requires a different set of solutions in regards to data structuring, light sampling, and so on. Quickly becoming an industry standard, OpenVDB is a Volume rendering framework developed by Dreamworks that sees wide usage throughout the graphics industry such as in Pixar's RenderMan and Houdini. It is known for its efficiency in handling sparse data sets and its wide range of filters, transformation operators, compositing tools, and many other features for the creation and robust manipulation of Volumes. Its integration into Cycles will surely further Blender's usage in the 3D graphics scene.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6266351580610560/",
+          "proposal_id": null,
+          "short_description": "Traditionally, solid objects are represented as meshes: a set of vertices, edges, and faces. This interpretation of real-life objects into 3D space...",
+          "slug": "further-development-for-cycles-volume-rendering",
+          "status": "completed",
+          "student_name": "Geraldine Chua",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "cloud",
+            "ui"
+          ],
+          "title": "Further Development for Cycles' Volume Rendering"
+        },
+        {
+          "code_url": "https://developer.blender.org/T54796#525053",
+          "description": "<p>Realistic hair or fur is essential when creating a plausible virtual world. In feature animation, this is often used to define the signature look of characters; examples include Pixar’s <em>Brave</em> (Iben et al. 2013), and Walt Disney Animation Studios’ <em>Tangled</em> (Sadeghi et al. 2010; also Ward et al. 2010) and <em>Zootopia</em> (Chiang et al. 2016).</p>\n<p>Currently, Cycles has a working hair shader (<a href=\"https://docs.blender.org/manual/en/dev/render/cycles/nodes/types/shaders/hair.html\" target=\"_blank\">wiki page</a>, <a href=\"https://git.blender.org/gitweb/gitweb.cgi/cycles.git/blob/HEAD:/src/kernel/closure/bsdf_hair.h\" target=\"_blank\">sources</a>), based on Marschner et al. (2003)’s model. Its several assumptions and simplifications make it inaccurate for light colored hair (d’Eon et al. 2011) as well as for most types of fur (Yan et al. 2015). Furthermore, d’Eon et al. (2011) and Khungurn and Marschner (2017) demonstrated it to not be energy conserving.</p>\n<p>This project intends to upgrade Cycles’ hair shader to the aforementioned <em>Zootopia</em> shader by Chiang et al. (2016), by porting Pharr (2017)’s implementation. Lukas Stockner has made available <a href=\"https://github.com/lukasstockner/blender/tree/hairshader\" target=\"_blank\">a WIP patch </a>, which may also serve as a basis for this work.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2018_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6280192850919424/",
+          "proposal_id": null,
+          "short_description": "Realistic hair or fur is essential when creating a plausible virtual world. In feature animation, this is often used to define the signature look of...",
+          "slug": "implementing-a-hair-shader-for-cycles",
+          "status": "completed",
+          "student_name": "L. E. Segovia (amyspark)",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "web",
+            "ml",
+            "ai"
+          ],
+          "title": "Implementing a Hair Shader for Cycles"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6251240207941632/"
+    },
+    "year_2019": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:HooglyBoogly/GSoC2019/Final_Report",
+          "description": "<p>The bevel modifier is extremely powerful, but there is constantly a list of requested improvements that could expand its use case and speed up the modeling process. One of these is user-drawn profiles, which is a commonly requested feature that is somewhat separate from the main functionality of the bevel operation, which makes it a good candidate for a GSoC project. There has been successful GSoC projects with the Bevel modifier in the past few years, and I hope with this project I can continue that success.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6426308341399552/",
+          "proposal_id": null,
+          "short_description": "The bevel modifier is extremely powerful, but there is constantly a list of requested improvements that could expand its use case and speed up the...",
+          "slug": "bevel-custom-profiles",
+          "status": "completed",
+          "student_name": "Hans Goudey",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Bevel Custom Profiles"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Ishbosamiya/GSoC2019/FinalReport",
+          "description": "<p>Blender has had a cloth simulator for quite a while now. It is based on a system that now needs\nmajor changes.\nA lot of research has been done in adaptive cloth simulation (which is the next big step towards\nbeing able to do realistic cloth simulation in reasonable computation time). By introducing adaptive\ncloth simulation into Blender, we can decrease the computation time per frame, thereby leading to a\nbetter quality of simulation in the same amount of time. Furthermore, it would then be possible to\nbuild really powerful cloth production pipelines. The current cloth production pipeline is slow and\nrequires a lot of user interaction (for example, for adding the correct level of topology and\nredefining the stitches each time the topology changes). With the introduction of adaptive cloth\nsimulation, the algorithm can automatically determine the necessary topology to get the correct\ncollisions and realistic folds and wrinkles. Additionally, this project would act as the base for future\nimprovements, such as adding contact friction and dynamic tearing of cloth.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5399232209485824/",
+          "proposal_id": null,
+          "short_description": "Blender has had a cloth simulator for quite a while now. It is based on a system that now needs\nmajor changes.\nA lot of research has been done in...",
+          "slug": "cloth-simulator-improvement",
+          "status": "completed",
+          "student_name": "Ish Hitesh Bosamiya",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Cloth Simulator Improvement"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Zachman/GSoC2019/Report",
+          "description": "<p>With an increased focus on the outliner in Blender 2.8x, many improvements could be implemented to increase the outliner's usability. Synced selection between the outliner and other editors, arrow key navigation, range selection, and other standard interactions will be implemented to make the outliner more intuitive. Other various UI tweaks, operator improvements, and menu organization will also be added in this project.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5416561530109952/",
+          "proposal_id": null,
+          "short_description": "With an increased focus on the outliner in Blender 2.8x, many improvements could be implemented to increase the outliner's usability. Synced...",
+          "slug": "outliner-improvements",
+          "status": "completed",
+          "student_name": "Nathan Craddock",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Outliner Improvements"
+        },
+        {
+          "code_url": "https://developer.blender.org/T68823",
+          "description": "<p>The project hopes to refactor and add Cycles/EEVEE nodes to improve the workflow of technical/shading artists. This is done by providing; more streamline nodes for vector math and numerical computations, more noise types, and wider access to Blender’s data like object properties and spline info.</p>\n<p>The projects hopes to achieve the following:</p>\n<ul>\n<li>Implement dynamic socket hiding for nodes that may benefit from it.</li>\n<li>Allow variable inputs for the Mapping node. Take care of UI considerations.</li>\n<li>Provide more vector math operations. Entrywise multiplication, snap, reflect, etc.</li>\n<li>Provide a random generator, often referred to as White Noise.</li>\n<li>Provide a Clamp node as an alternative to the Clamp option in the math node.</li>\n<li>Provide a Map Range node similar to that of the compositor’s.</li>\n<li>Provide more basic noise functions based on feedback from the community.</li>\n<li>Investigate accessing custom properties through the Attribute node.</li>\n<li>Expose information about splines in a Spline Info node.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5037979842641920/",
+          "proposal_id": null,
+          "short_description": "The project hopes to refactor and add Cycles/EEVEE nodes to improve the workflow of technical/shading artists. This is done by providing; more...",
+          "slug": "improve-cycleseevee-for-procedural-content-creation",
+          "status": "completed",
+          "student_name": "Omar Ahmad",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ui"
+          ],
+          "title": "Improve Cycles/EEVEE For Procedural Content Creation"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Yiming/GSoC2019/Summary",
+          "description": "<p>LANPR is a fast and accurate 3D NPR feature line rendering engine developed for Blender 2.8 NPR branch. This project is aimed to complete the rendering workflow and make it more production ready. If time permits, more functions might also be implemented, such as to integrate LANPR with existing Freestyle line modifier compatibility.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4618006666149888/",
+          "proposal_id": null,
+          "short_description": "LANPR is a fast and accurate 3D NPR feature line rendering engine developed for Blender 2.8 NPR branch. This project is aimed to complete the...",
+          "slug": "continued-development-on-lanpr-engine-for-blender",
+          "status": "completed",
+          "student_name": "Yiming Wu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Continued development on LANPR engine for Blender"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Severin/GSoC-2019/Final_Report",
+          "description": "<p>Implementation of core features needed for XR (virtual, augmented and mixed reality) headsets via the new OpenXR specification (currently in provisional state).</p>\n<p>While virtual reality has reached mainstream adoption, it is still not possible to use this technology directly within Blender. There is great potential in the new XR workflows however. This project aims to introduce the core features necessary to build immersive experiences in the Blender viewport through OpenXR. Namely this concerns rendering and interaction with head-mounted displays (HMDs).</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/6310655743754240/",
+          "proposal_id": null,
+          "short_description": "Implementation of core features needed for XR (virtual, augmented and mixed reality) headsets via the new OpenXR specification (currently in...",
+          "slug": "core-support-of-virtual-reality-headsets-through-openxr",
+          "status": "completed",
+          "student_name": "Julian Eisel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Core Support of Virtual Reality Headsets through OpenXR"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Qmatillat/GSoC2019/FinalReport",
+          "description": "<p>Nobody likes waiting for hours whilst blender is busy rendering. Cycle, one of the render engine of blender, is a heavy user of ray-tracing. The usage of ray-tracing require to build a BVH (Bounding Volume Hierarchy). The construction of such a tree is complicated. Currently blender use it's own BVH Builder.</p>\n<p>Currently, Embree can be used only if rendering on CPU, and it requires that an optional flag is set at compilation time (which is not enabled for pre-built binary).</p>\n<p>The goal of this proposal is to make Embree also usable on GPU.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5190984076361728/",
+          "proposal_id": null,
+          "short_description": "Nobody likes waiting for hours whilst blender is busy rendering. Cycle, one of the render engine of blender, is a heavy user of ray-tracing. The...",
+          "slug": "intel-embree-bvh-for-gpu",
+          "status": "completed",
+          "student_name": "Quentin MATILLAT",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Intel Embree BVH for GPU"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4524507157495808/"
+    },
+    "year_2020": {
+      "num_projects": 9,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Samkottler/GSoC2020/FinalReport",
+          "description": "<p>This project will continue development on the Many Light Sampling project from GSoC 2018. It will add support for importance sampling of more features and make that project production ready by stabilizing the existing implementation. The goal of the original Many Light Sampling project was to use multiple importance sampling to avoid having to sample every light source directly for every shading point. The implantation is based on a paper and makes efficient use of a BVH data structure to choose which light source(s) a shading point should sample.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5734927665987584/",
+          "proposal_id": null,
+          "short_description": "This project will continue development on the Many Light Sampling project from GSoC 2018. It will add support for importance sampling of more...",
+          "slug": "production-ready-many-light-sampling",
+          "status": "completed",
+          "student_name": "Sam Kottler",
+          "student_profile": null,
+          "tags": [],
+          "title": "Production Ready Many Light Sampling"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Zachman/GSoC2020/Report",
+          "description": "<p>This will be a continuation of the previous summer’s <strong>Outliner Improvements</strong> project. With selection now syncing between the outliner and other editors, other improvements can be made to the outliner to increase usability. These include changes to the context menu, a connection with the properties editor tabs, manual object sorting, and increased control over selection and activation of data types.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5735262606327808/",
+          "proposal_id": null,
+          "short_description": "This will be a continuation of the previous summer’s Outliner Improvements project. With selection now syncing between the outliner and other...",
+          "slug": "continued-improvements-to-the-outliner",
+          "status": "completed",
+          "student_name": "Nathan Craddock",
+          "student_profile": null,
+          "tags": [],
+          "title": "Continued Improvements to the Outliner"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Filedescriptor/GSoC_2020/Report",
+          "description": "<p>Since the Blender 2.8 update, that introduced the Grease Pencil object type, there are a couple of primitives that can be added in the Grease Pencil draw mode. The user can draw a shape (e.g. a circle, arc, rectangle, etc.) using the respective tool, edit it and confirm the creation of the stroke. After this step, the shape can no longer be manipulated as a curve. I propose to add an interactive edit mode tool, that allows the user to manipulate any Grease Pencil stroke using curve handles.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5468513495416832/",
+          "proposal_id": null,
+          "short_description": "Since the Blender 2.8 update, that introduced the Grease Pencil object type, there are a couple of primitives that can be added in the Grease Pencil...",
+          "slug": "editing-grease-pencil-strokes-using-curves",
+          "status": "completed",
+          "student_name": "Falk David",
+          "student_profile": null,
+          "tags": [],
+          "title": "Editing Grease Pencil Strokes Using Curves"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Tempo/GSoC2020/Final_Report",
+          "description": "<p>The project goal is to add an editor menu for the quick favourites in the preferences and to give the possibilities to create more personal menu and to be able to display them on screen like the editors menu (3D viewports, properties, ...).</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6149264033447936/",
+          "proposal_id": null,
+          "short_description": "The project goal is to add an editor menu for the quick favourites in the preferences and to give the possibilities to create more personal menu and...",
+          "slug": "custom-menus",
+          "status": "completed",
+          "student_name": "Alexia Legrand",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Custom Menus"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:HimanshiKalra/Report",
+          "description": "<p>Testing is a nice-to-have tool/utility for developers to check for breaks in early stages of development cycle which is less expensive. Automated testing makes the whole process less time time consuming. The goal of this project is to:</p>\n<ul>\n<li>Extend the framework and write tests for Physics modifiers, Curve types and remaining Deform and Generate modifiers.</li>\n<li>Generalization and refactoring of the framework to have non-duplicated code and classes.</li>\n<li>Working on a test object generation script to \"fully\" automate the testing procedure as there will be no need for interaction with the UI(Blender).</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6220442009862144/",
+          "proposal_id": null,
+          "short_description": "Testing is a nice-to-have tool/utility for developers to check for breaks in early stages of development cycle which is less expensive. Automated...",
+          "slug": "regression-testing-frameworks",
+          "status": "completed",
+          "student_name": "Himanshi Kalra",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Regression Testing Frameworks"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Grzelins/GSoC2020/Report#Details",
+          "description": "<p>Show logs and debugs in info editor. Add UI features to make it comfortable to work with logs such as filtering, searching, enable/disable on the fly.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4669455767961600/",
+          "proposal_id": null,
+          "short_description": "Show logs and debugs in info editor. Add UI features to make it comfortable to work with logs such as filtering, searching, enable/disable on the fly.",
+          "slug": "info-editor-improvements",
+          "status": "completed",
+          "student_name": "Mateusz Grzeliński",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Info Editor Improvements"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Mattoverby/GSoC2020/mattoverby_final_report",
+          "description": "<p>Elastic deformation is an essential component of animation pipelines. Volumetric soft body simulation can be used to capture the complex details of muscle and skin, e.g. volume preservation under collision/compression. In visual effects, such methods must also be robust to extreme deformation (no numerical blow-ups) and fast enough for interactive manipulation. Moreover, many of the underlying material models are nonlinear and computationally expensive, such as hyper-elastic models for realistic tissue or artistically-defined deformation. Toward these challenges I propose the implementation of a volumetric soft body solver in Blender, that is not only rapid and robust, but is general to hyper-elastic materials. The solver will also be capable of robustly resolving self-collisions and possibly other constraints. This would greatly improve the use of physics in Blender for animation pipelines.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_blender-foundation_2020_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4736546747449344/",
+          "proposal_id": null,
+          "short_description": "Elastic deformation is an essential component of animation pipelines. Volumetric soft body simulation can be used to capture the complex details of...",
+          "slug": "volumetric-soft-body-simulation",
+          "status": "completed",
+          "student_name": "Matt Overby",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Volumetric Soft Body Simulation"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Sriharsha/GSoC2020/Final_Report",
+          "description": "<p>The goal of this project is to make the viewport more informative by adding options to visualise liquid simulation grids and improving existing fluid display options in Workbench.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6016737583038464/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to make the viewport more informative by adding options to visualise liquid simulation grids and improving existing fluid...",
+          "slug": "liquid-simulation-display-options",
+          "status": "completed",
+          "student_name": "Sriharsha Kotcharlakot",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Liquid Simulation Display Options"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Ankitm/GSoC_2020/Final_report",
+          "description": "<p>Among the 3D formats available, some are simple in theory, yet effective for a lot of different use cases and supported by a multitude of software in the industry. The challenge they offer is the number of iterables. Stanford PLY, for example, quickly gets over a million vertices. STL being a lossy format, has to be stored with extra details, making it enormous. Importing such models faster and doing so in the memory limits is the aim of this project.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2020_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6002923122720768/",
+          "proposal_id": null,
+          "short_description": "Among the 3D formats available, some are simple in theory, yet effective for a lot of different use cases and supported by a multitude of software in...",
+          "slug": "improving-io-performance-for-big-files",
+          "status": "completed",
+          "student_name": "Ankit Meel",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving IO performance for big files"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/4852657564418048/"
+    },
+    "year_2021": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Dilithjay/GSoC_2021/Final_Report",
+          "description": "<p>Curves in blender have been subject to a number of user requests for improvement from several different aspects. One such request was a new tool that makes the workflow for dealing with curves much smoother by enabling the editing of curves using simple and intuitive shortcuts instead of taking multiple steps to achieve the same. Another suggestion was the ability to create bevels at bends of a curve. The goal of this project is to address and develop solutions for these suggestions.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5706701138821120/",
+          "proposal_id": null,
+          "short_description": "Curves in blender have been subject to a number of user requests for improvement from several different aspects. One such request was a new tool that...",
+          "slug": "curve-improvements",
+          "status": "completed",
+          "student_name": "Dilith Jayakody",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Curve Improvements"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:HimanshiKalra/GSoC21/FinalReport",
+          "description": "<p>Following the spirit of Everything Nodes in Blender, the project aims at developing a Testing Framework in place for the Geometry Nodes.  Geometry Nodes project is still new and under development so a lot of changes happen, having a testing framework in place early on will give developers a sense of security to focus more on development. This will help in quickly detecting bugs and would facilitate in detecting if existing feature or functionality breaks.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4576362584604672/",
+          "proposal_id": null,
+          "short_description": "Following the spirit of Everything Nodes in Blender, the project aims at developing a Testing Framework in place for the Geometry Nodes.  Geometry...",
+          "slug": "regression-testing-of-geometry-nodes",
+          "status": "completed",
+          "student_name": "Himanshi Kalra",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Regression Testing of Geometry Nodes"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Sidd017/FinalReport",
+          "description": "<p>This project aims at improving certain existing UV editor tools and also adding some new features to better support workflows involving UDIM textures. Operations such as packing selected UV islands will be improved and new features for grid snapping will be added to the UV Editor.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4730589390831616/",
+          "proposal_id": null,
+          "short_description": "This project aims at improving certain existing UV editor tools and also adding some new features to better support workflows involving UDIM...",
+          "slug": "blender-uv-editor-improvements",
+          "status": "completed",
+          "student_name": "Siddhartha Jejurkar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Blender - UV editor improvements"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Fabian_Schempp/FinalReport",
+          "description": "<p>For a long time, the modifier system was the main way to procedurally generate and modify 3D data in Blender. While modifiers can be stacked to produce a large variety of results it has limited control over the flow of data. The Geometry Nodes system, introduced in version 2.92 of Blender allows the user to go way beyond these limitations by building complex processing graphs with an advanced attribute system that allows storing data into geometry to be available for later nodes in the graph to operate on. At the time of writing, only a small set of basic functionality is available as nodes. This project will port a selection of functionality from the old modifier system to the new nodes system, taking into account the atomic design, the attributes system, and the variety of geometry types it operates on.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_blender-foundation_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4830866575982592/",
+          "proposal_id": null,
+          "short_description": "For a long time, the modifier system was the main way to procedurally generate and modify 3D data in Blender. While modifiers can be stacked to...",
+          "slug": "porting-popular-modifiers-to-geometry-nodes",
+          "status": "completed",
+          "student_name": "Fabian Schempp",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Porting popular modifiers to Geometry Nodes"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Ishbosamiya/GSoC2021/FinalReport",
+          "description": "<p>My GSoC project in 2019, on the Adaptive Cloth Simulator, was an exploration in adding support for parametric on-the-fly remeshing for Blender's Cloth Simulator in order to provide high-resolution-equivalent fidelity at reduced computational cost. During GSoC 2021, I will utilize the insights gained, as well as previously fleshed-out core ideas, to stabilize this feature for production. This will involve introducing a new mesh structure, fixing bugs and regressions, refactoring to integrate well with the latest Blender updates, etc. As a stretch goal, I would improve Blender's cloth caching system to introduce support for Adaptive Remeshing.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6044661042380800/",
+          "proposal_id": null,
+          "short_description": "My GSoC project in 2019, on the Adaptive Cloth Simulator, was an exploration in adding support for parametric on-the-fly remeshing for Blender's...",
+          "slug": "continued-development-on-adaptive-cloth-simulator-for-blender",
+          "status": "completed",
+          "student_name": "Ish Bosamiya",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Continued Development on Adaptive Cloth Simulator for Blender"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Quantimoney/GSoC2021/Final_Report",
+          "description": "<p>The project focuses on the strips (video and image/sequence) in the video sequencer. The main goal is to add a preview of the clip in the corresponding strip of the sequencer to replace the current flat color rectangles and to provide visible icons on the strip for any strip modifications.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/4859236512694272/",
+          "proposal_id": null,
+          "short_description": "The project focuses on the strips (video and image/sequence) in the video sequencer. The main goal is to add a preview of the clip in the...",
+          "slug": "video-sequence-editor-improvements-individual-strip-previews-and-modification-indicators",
+          "status": "completed",
+          "student_name": "Aditya Jeppu",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Video Sequence Editor Improvements - Individual strip previews and modification indicators"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:HobbesOS/GSOC2021/FinalReport",
+          "description": "<p>This proposal aims to bring a selection of much needed improvements to the knife tool in Blender which will better the modelling workflow of the tool. It proposes such changes as the ability to undo individual steps of the cutting process, a visual measure of distance and angles per cut, more precise angle control in constrained angle mode, the ability to snap cuts to global or local orientation, knife usage in multi-object edit mode and an edge removal mode.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5906109021290496/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to bring a selection of much needed improvements to the knife tool in Blender which will better the modelling workflow of the...",
+          "slug": "blender-knife-tool-improvements",
+          "status": "completed",
+          "student_name": "Cian Jinks",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Blender Knife Tool Improvements"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:Forest/Final_Report",
+          "description": "<p>The project is about displaying data about the simulations in the view-port so that users and developers can easily understand what is going on. Data such as the individual forces acting on a rigid body, acceleration, velocity, etc. will be displayed. Constraints and cloth spring data will also be visualised in the view-port.</p>\n",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2021_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6325176798543872/",
+          "proposal_id": null,
+          "short_description": "The project is about displaying data about the simulations in the view-port so that users and developers can easily understand what is going on. Data...",
+          "slug": "display-simulation-data-for-rigid-bodies-and-cloth",
+          "status": "completed",
+          "student_name": "Soumya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Display simulation data for rigid bodies and cloth"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5672605809377280/"
+    },
+    "year_2022": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:YashDabhade/GSoC2022/FinalReport",
+          "description": "The need for more easy-to-use features to edit text has been felt with the increased use of 3D text in blender. This project aims at enhancing the usability of 3D text by providing easier ways to select and format text.\nThe improvements made will provide the text editor more flexibility and allow for easier text formatting. New tools and features will be added for better and faster formatting of text.",
+          "difficulty": "beginner",
+          "id": "proj_blender-foundation_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/sGAaFNqJ/",
+          "proposal_id": null,
+          "short_description": "The need for more easy-to-use features to edit text has been felt with the increased use of 3D text in blender. This project aims at enhancing the...",
+          "slug": "3d-text-usability-improvements",
+          "status": "completed",
+          "student_name": "yashdabhade",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "3D Text Usability Improvements"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:JeffreyLiu/GSoC2022/FinalReport",
+          "description": "The Many Lights Sampling project has been a long-standing project over the course of Blender’s development. It is meant to improve Cycles render times in scenes with many lights, so that artists may be more flexible when it comes to creating and lighting environments. Although a lot of work has already been completed in regards to the Many Lights Sampling algorithm, the goal of this project is to merge this work into the main branch after sufficient testing and user feedback.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Yxzsywh0/",
+          "proposal_id": null,
+          "short_description": "The Many Lights Sampling project has been a long-standing project over the course of Blender’s development. It is meant to improve Cycles render...",
+          "slug": "integrating-many-lights-sampling-into-cycles-x",
+          "status": "completed",
+          "student_name": "Jebbly",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Integrating Many Lights Sampling into Cycles X"
+        },
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:AarnavDhanuka/GSoC2022/FinalReport",
+          "description": "We are surrounded by deformable objects that can’t be accurately simulated in Blender yet. It is proposed in this project to build a new solver that would take as input a surface mesh and simulate the object as a soft body. The goal is to build a modular pipeline that will convert a surface mesh into a volumetric tetrahedral mesh using “Incremental Delaunay Method” that will be passed to the “Extended Position Based Dynamics (XPBD)” solver to simulate soft bodies.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/f4HjtVlV/",
+          "proposal_id": null,
+          "short_description": "We are surrounded by deformable objects that can’t be accurately simulated in Blender yet. It is proposed in this project to build a new solver that...",
+          "slug": "soft-bodies-simulation-using-extended-position-based-dynamics-xpbd",
+          "status": "completed",
+          "student_name": "Aarnav Dhanuka",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Soft Bodies Simulation using Extended Position-Based Dynamics (XPBD)"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/blender-foundation/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://wiki.blender.org/wiki/User:ColinMarmond/GSoC_2023/Final_Report",
+          "description": "The node previews in the shader editor had been removed when Eevee replaced the Internal render engine. This project ’s aim is to bring it back. Indeed, the demand of a preview area under selected nodes to preview the effects is high. I will write code to put back this feature in the blender sources, taking into account the specificities of the Cycles engine (tricking with AOV).",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/XE2KH2vE",
+          "proposal_id": "PjrYvxTx",
+          "short_description": "The node previews in the shader editor had been removed when Eevee replaced the Internal render engine. This project ’s aim is to bring it back....",
+          "slug": "node-preview-in-the-shader-editor",
+          "status": "completed",
+          "student_name": "Colin Marmond",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Node preview in the shader editor"
+        },
+        {
+          "code_url": "https://projects.blender.org/Evelinealy/Final_Report",
+          "description": "Summary from Official Website description:\nLast year Flamenco had a major release. It is more popular than ever, but still missing certain key features. Now that the basics are there, with some guidance, it is relatively simple to add new functionality.\n\nSummary from my proposal:\nAround a year ago, Flamenco—a rendering-farm Blender addon—was released to improve the workflow for animation artists across the globe. It is extremely successful, but still has many key functionalities that can greatly improve it. The goal of this project is to build upon the foundation of Flamenco, such as designing a web interface for the manager configuration, introducing RNA overrides, and improving stability, to bring it to its full potential.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/qXHThOYm",
+          "proposal_id": "jCOYXTDl",
+          "short_description": "Summary from Official Website description: Last year Flamenco had a major release. It is more popular than ever, but still missing certain key...",
+          "slug": "improve-distributed-rendering-task-execution-under-flamenco",
+          "status": "completed",
+          "student_name": "Eveline Anderson",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Improve Distributed Rendering & Task Execution under Flamenco."
+        },
+        {
+          "code_url": "https://www.lucastadeu.com/p/improving-waveform-drawing-speed",
+          "description": "Blender supports video editing through its video sequence editor. While the editor allows users to load videos and audio files, computing the audio waveforms for the audio tracks can take a really long time when working with large files (multiple gigabytes). This makes for a degraded user experience.\n\nThis project will reduce the time taken to see the waveforms by:\n● Processing multiple audio sequences in parallel in the background,\n● Only computing the waveforms of sequences that are visible in the user\ninterface\n\nOnce these initial speed ups are achieved, I'll explore improvement opportunities lower down the audio processing stack.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/tYsdcgpI",
+          "proposal_id": "XHqnFWLa",
+          "short_description": "Blender supports video editing through its video sequence editor. While the editor allows users to load videos and audio files, computing the audio...",
+          "slug": "improve-waveform-drawing-speed",
+          "status": "completed",
+          "student_name": "Lucas Tadeu Teixeira",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Waveform drawing speed"
+        },
+        {
+          "code_url": "https://devtalk.blender.org/t/gsoc-2023-uv-editor-improvements/29329/14?u=melissa_goon",
+          "description": "The goal of this project is to implement user-suggested improvements to the UV Editor tools in order to help users create UV maps more easily. The main focus of the project would be incorporating more Mesh Edit tools into the 2d UV Editor such as Edge Slide, adding optional visible outlines to the UV islands as well as including the number of vertices removed by the Merge by Distance operator. Additionally, other small features that improve the user experience may be worked on if time allows.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/GiNuS5Qn",
+          "proposal_id": "0onXExhJ",
+          "short_description": "The goal of this project is to implement user-suggested improvements to the UV Editor tools in order to help users create UV maps more easily. The...",
+          "slug": "uv-editor-improvements",
+          "status": "completed",
+          "student_name": "MelissaGoon",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "UV Editor Improvements"
+        },
+        {
+          "code_url": "https://devtalk.blender.org/t/gsoc-2023-outliner-tree-refactoring/29355/14?u=shinbay",
+          "description": "This project aims to port the remaining tree elements to the new object-oriented design of the Outliner codebase. The project will involve creating new subclasses, modifying existing code, thoroughly testing changes, and documenting the modifications made. The deliverables for this project include a detailed report and updated code of new AbstractTreeElement sub-classes representing the remaining tree elements. The project will contribute to the ongoing development efforts of the Outliner by providing a necessary refactoring that will make future development work easier and more efficient, and the Outliner module's documentation will be improved.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/GkBeWVCw",
+          "proposal_id": "cdzSHCnq",
+          "short_description": "This project aims to port the remaining tree elements to the new object-oriented design of the Outliner codebase. The project will involve creating...",
+          "slug": "outliner-tree-element-refactoring",
+          "status": "completed",
+          "student_name": "shinbay",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Outliner Tree Element Refactoring"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/blender-foundation"
+    },
+    "year_2024": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://devtalk.blender.org/t/gsoc-2024-improvements-to-the-blender-macos-user-interface-experience-weekly-reports/34505/23",
+          "description": "In recent years, Blender support for macOS specific features has drastically improved. With the introduction of the Metal Viewport, features such as HDR support and development support from Apple, Blender can now be easily regarded as one of the best 3D applications available for the Mac. However, when it comes to its user interface, Blender still doesn’t feel quite properly integrated within the macOS environment. This GSoC proposal aims to change this, with the goal of making Blender feel closer to a fully native macOS application.\n\nThis proposal plans to improve the Blender macOS user experience by incorporating part of the Blender interface into the macOS interface. Effectively making it closer to the macOS Human Interface Guidelines, and providing macOS Blender users with a familiar experience, more tightly integrated into their operating system.\n\nTo achieve this goal, this proposal will focus on the improvements of two main UI elements: the macOS menu bar and title bar. While this proposal will focus on macOS implementation, a byproduct of it will be the creation of an unified interface for native menu bar items, which will then make it possible to implement such functionality on other OS and Desktop Environments in the future.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/FhlG8K5p/",
+          "proposal_id": null,
+          "short_description": "In recent years, Blender support for macOS specific features has drastically improved. With the introduction of the Metal Viewport, features such as...",
+          "slug": "improvements-to-the-blender-macos-user-interface-experience",
+          "status": "completed",
+          "student_name": "Jonas Holzman",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improvements to the Blender macOS User Interface Experience"
+        },
+        {
+          "code_url": "https://devtalk.blender.org/t/gsoc-2024-geometry-nodes-file-import-nodes/34482/18",
+          "description": "In Blender, geometry nodes provide the user with a visual scripting interface to manipulate 3D geometry, allowing the creation of custom modifiers and procedural tools. In most cases, the input of geometry nodes is the source geometry to which the geometry node is attached. File import nodes would allow more source data to be fed into geometry nodes, expanding the use case for geometry nodes. \nCurrently, Blender has source nodes for primitive shapes, allowing the user to inject more geometric data into the geometry nodes graph. The user can inject data into the geometry node graph with dedicated file import nodes. \n\nDynamically loading file formats like STL, OBJ, Alembic, and CSV with a geometry node would simplify everyday data visualization tasks. Also, it would reduce memory consumption on disks because the data would not have to be stored in a .blend file.\n\nAs part of this year's Google Summer of Code, I'll be aiming to deliver the following\n1) Multiple file import nodes for STL, OBJ, Alembic, PLY, and CSV formats\n2) Refactoring for existing bf_io_* projects to expose Mesh loading functions\n3) New importer project for CSV import support\n4) Technical and user documentation Integrated tests",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/OoGEKFsC/",
+          "proposal_id": null,
+          "short_description": "In Blender, geometry nodes provide the user with a visual scripting interface to manipulate 3D geometry, allowing the creation of custom modifiers...",
+          "slug": "geometry-nodes-file-import-nodes",
+          "status": "completed",
+          "student_name": "CodeBlaze",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Geometry Nodes: File Import Nodes"
+        },
+        {
+          "code_url": "https://devtalk.blender.org/t/gsoc-2024-sample-sound-node/34489/14",
+          "description": "This project adds a Sample Sound node that retrieves audio from sound files, and provides their frequency response over time for use in Geometry Nodes.\r\n\r\nIt will primarily be based on Audaspace—Blender's all-purpose audio engine—for its actual functionalities.\r\n\r\nThe following deliverables are expected:\r\n1. Sample Sound node;\r\n2. Sound socket type;\r\n3. Sound input node;\r\n4. Series of examples and documentation.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/eTB9qq4E/",
+          "proposal_id": null,
+          "short_description": "This project adds a Sample Sound node that retrieves audio from sound files, and provides their frequency response over time for use in Geometry...",
+          "slug": "sample-sound-node",
+          "status": "completed",
+          "student_name": "Lleu Yang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sample Sound Node"
+        },
+        {
+          "code_url": "https://kirilswenson.netlify.app/posts/blender-vse",
+          "description": "Blender's video sequence editor currently contains a number of \"papercuts\", or isolated frustrations that can degrade the overall experience and dissuade new users. I intend to implement a wide variety of changes to the video sequencer that I believe will improve UX and promote open-source video editing as a whole, including snapping support for the preview window and marker snapping in the sequencer, options to link or unlink strips, and adding \"active\" channels to make pasting more intuitive.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/n7IBAnRA/",
+          "proposal_id": null,
+          "short_description": "Blender's video sequence editor currently contains a number of \"papercuts\", or isolated frustrations that can degrade the overall experience and...",
+          "slug": "sprucing-up-the-sequencer",
+          "status": "completed",
+          "student_name": "John Kiril Swenson",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Sprucing Up the Sequencer"
+        },
+        {
+          "code_url": "https://devtalk.blender.org/t/gsoc-2024-improve-distributed-rendering-task-execution/34566",
+          "description": "The objective of this project is to enhance the distributed rendering and task execution capabilities within Blender through several key improvements.\nFirstly, we introduce the ability to pause jobs and submit them in a paused state, providing users with increased control over their rendering workflow and resource allocation. This feature will be particularly advantageous during peak usage periods or when prioritizing specific tasks.\nFurthermore, we address the challenge of distributed rendering of single images by adopting a sample-based rendering approach. This method ensures more efficient utilization of computational resources across nodes, minimizing memory usage and avoiding artifacts caused by boundary dependencies.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/cMXuvkFW/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to enhance the distributed rendering and task execution capabilities within Blender through several key...",
+          "slug": "improve-distributed-rendering-task-execution",
+          "status": "completed",
+          "student_name": "David Zhang 2002",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Distributed Rendering & Task Execution"
+        },
+        {
+          "code_url": "https://drive.google.com/file/d/1K8Mzu1d5t4DA9jKVH57SYrfXlpE6Z5GB/view?usp=sharing",
+          "description": "The project focuses on enhancing UV mapping workflows by introducing a user-friendly weld-seams utility for efficient UV island merging, drawing inspiration from community suggestions. It will further develop an advanced welding operation that adjusts surrounding geometry to reduce distortion, alongside exploring sophisticated fitting techniques for improved accuracy. Additionally, the initiative will broaden its toolset to include specialized welding tools for both shared vertex and arbitrary island merging, aiming to streamline and refine the UV mapping process for users.",
+          "difficulty": "advanced",
+          "id": "proj_blender-foundation_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/fNBMiMs1/",
+          "proposal_id": null,
+          "short_description": "The project focuses on enhancing UV mapping workflows by introducing a user-friendly weld-seams utility for efficient UV island merging, drawing...",
+          "slug": "uv-stitch-tool-improvements",
+          "status": "completed",
+          "student_name": "Anishb00",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "UV stitch Tool Improvements"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/blender-foundation/"
+    },
+    "year_2025": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to improve the compositor's sampling situation. This includes exposing the interpolation option to all nodes reliant on it. The interpolation options are already partially implemented, as seen in this issue: https://projects.blender.org/blender/blender/issues/119592.\n\nFurthermore, sampling requires boundary conditions, such as zero, extend, or wrap. Currently, these conditions are not exposed to the user, but use the wrap condition across different sampling methods. The conditions should also be selectable in the node giving more freedom to the users.\n\nLastly, there is one sampling method that requires some special attention – BLI_ewa_filter. \nCurrently, the EWA sampling uses different implementations across CPU and GPU, leading to different results on different devices/OSs. Blender uses EWA sampling primarily for anisotropic texture sampling. The goal is to write an implementation of the EWA filter for the CPU, which is transferable to the GPU, aiming for similar/equal results for CPU and GPU versions, allowing it to be used in the compositor to enable anisotropic compositing.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NbWXDomc",
+          "proposal_id": "39OVu1Bq",
+          "short_description": "The goal of this project is to improve the compositor's sampling situation. This includes exposing the interpolation option to all nodes reliant on...",
+          "slug": "improving-sampling-in-the-compositor",
+          "status": "in-progress",
+          "student_name": "Benjamin Beilharz",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving Sampling in the Compositor"
+        },
+        {
+          "code_url": null,
+          "description": "This project will improve compositor regression testing by adding tests to expand code coverage. The compositor is being actively developed, so ensuring that new changes do not introduce bugs is very important for users. The goal is to have a straightforward, simple, and useful feature implemented by the end of the program. Deliverables will include a comprehensive survey of current code coverage, target nodes, and new regression tests based on the priority from the survey.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NvO9JBt7",
+          "proposal_id": "OHyWhdA1",
+          "short_description": "This project will improve compositor regression testing by adding tests to expand code coverage. The compositor is being actively developed, so...",
+          "slug": "improving-regression-test-coverage-for-the-compositor",
+          "status": "in-progress",
+          "student_name": "Ian Yoo",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Improving Regression Test Coverage for the Compositor"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Blender’s Glare node by addressing UX and technical limitations, improving usability, and performance. By resolving long-standing issues such as unintuitive controls, resolution dependency, and bad performance particularly in modes like Simple Star and Streaks. The updated Glare node will offer a more intuitive and efficient implementation.\nThe general improvements I aim to implement are stated in the following task:\nIssue: Compositor: Future of Glare node #124176",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/t1j0P0IB",
+          "proposal_id": "CobBXsKq",
+          "short_description": "This project aims to enhance Blender’s Glare node by addressing UX and technical limitations, improving usability, and performance. By resolving...",
+          "slug": "compositor-glare-node-enhancement",
+          "status": "in-progress",
+          "student_name": "Mohamed-Hassan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "Compositor: Glare Node Enhancement"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to improve the performance of Blender’s sculpting system, particularly when working with high-resolution meshes. Sculpting can become unresponsive on dense geometry, especially on lower-end hardware, so this effort focuses on optimizing performance at a low level.\n\nKey areas of development include spatially sorting mesh vertex data to enhance cache coherence, implementing smarter undo data storage through compression techniques, and introducing multithreading within nodes to make better use of CPU resources.\n\nThe intended outcome is a noticeably more responsive sculpting experience for artists, with faster interaction and improved overall performance.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/kSM1BuKa",
+          "proposal_id": "CxW5bmIR",
+          "short_description": "The goal of this project is to improve the performance of Blender’s sculpting system, particularly when working with high-resolution meshes....",
+          "slug": "optimizing-mesh-and-multires-sculpting-performance-in-blender",
+          "status": "in-progress",
+          "student_name": "Namit Bhutani",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimizing Mesh and Multires Sculpting Performance in Blender"
+        },
+        {
+          "code_url": null,
+          "description": "This project seeks to introduce the functionality of creating keyframes directly in the VSE preview by using the “I” or “K” key, adhering to the same rules and preferences as the 3D viewport, including keysets. This feature will allow users to keyframe sequences directly in the preview area, thereby improving the video editing workflow and facilitating quicker story-boarding.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Tr1Cr4Ta",
+          "proposal_id": "9e1hcb2f",
+          "short_description": "This project seeks to introduce the functionality of creating keyframes directly in the VSE preview by using the “I” or “K” key, adhering to the same...",
+          "slug": "create-keyframes-in-vse-preview",
+          "status": "in-progress",
+          "student_name": "Ramón_1",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Create Keyframes in VSE Preview"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses Blender’s edit-mode mirror limitations by enhancing its functionality to support multiple axes and operators.  It will enable artists to edit symmetrically without relying on workarounds like deleting half the model to apply a mirror modifier which is a method impractical for nearly finished models and incompatible with shape keys, which require actual vertex positions rather than modifier-driven symmetry. I’ll analyze the transformation system, refine the mirroring utilities, and extend support to operators that do not support mirroring. The deliverables include these enhancements, detailed documentation for users and developers, and a set of tests to ensure consistent operation. This will make symmetrical modeling more efficient for artists.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NRPXeA2r",
+          "proposal_id": "gIGDzAJx",
+          "short_description": "This project addresses Blender’s edit-mode mirror limitations by enhancing its functionality to support multiple axes and operators. It will enable...",
+          "slug": "edit-mesh-mirror-improvements",
+          "status": "in-progress",
+          "student_name": "Tariq",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Edit-Mesh Mirror Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to integrate pitch-correction into Blender's video sequence editor (VSE). While the editor supports retiming video and audio through the retiming keys, one particular feature that is missing for audio clips is being to preserve the original pitch of the audio when it is sped up or slowed down. So, this project will add a \"Pitch Correction\" toggle option to the audio strips in the editor, allowing the audio to retain its natural tonal quality if retimed.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/pJUULEjM",
+          "proposal_id": "xDJ7Wz8F",
+          "short_description": "The goal of this project is to integrate pitch-correction into Blender's video sequence editor (VSE). While the editor supports retiming video and...",
+          "slug": "pitch-correction-for-sound-playback-in-sequencer",
+          "status": "in-progress",
+          "student_name": "TheKaceFiles",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Pitch Correction for Sound Playback in Sequencer"
+        },
+        {
+          "code_url": null,
+          "description": "Flamenco, whose target audience is small studios of artists and Blender users, could benefit by adding features that enhance the user-friendliness and speed up the workflow. The main features to be implemented for this project are: 1) a configuration editor page with simple form inputs that lets users visualize, edit, and save the settings directly to/from the YAML file 2) a mass deletion function for unneeded/unwanted render jobs and 3) UI-related bug fixes to improve the overall user experience.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/oxlTyZNy",
+          "proposal_id": "kn6HpcoJ",
+          "short_description": "Flamenco, whose target audience is small studios of artists and Blender users, could benefit by adding features that enhance the user-friendliness...",
+          "slug": "adding-handy-features-and-ui-improvements-to-flamenco",
+          "status": "in-progress",
+          "student_name": "Vivian Leung (vivz753)",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Adding handy features and  UI improvements to Flamenco"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/blender-foundation"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "foundation@blender.org",
+    "guide_url": "https://developer.blender.org/docs/programs/gsoc/",
+    "ideas_url": "https://developer.blender.org/docs/programs/gsoc/ideas/",
+    "irc_channel": "https://blender.chat/channel/gsoc-2025",
+    "mailing_list": "https://devtalk.blender.org/c/contributing-to-blender/summer-of-code/15"
+  },
+  "social": {
+    "blog": "https://devtalk.blender.org/c/contributing-to-blender/summer-of-code/15",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/blender",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:52.964Z"
+  }
+}

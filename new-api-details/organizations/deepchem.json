@@ -1,0 +1,375 @@
+{
+  "id": "692251d153dd9d7326d33d8f",
+  "slug": "deepchem",
+  "name": "DeepChem",
+  "category": "Science and medicine",
+  "description": "Democratize AI for drug discovery.",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/deepchem/ffdofoxp3ba1qqmh-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/deepchem.webp",
+  "logo_r2_url": null,
+  "url": "https://www.deepchem.io",
+  "active_years": [
+    2024,
+    2025
+  ],
+  "first_year": 2024,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "numpy",
+    "pytorch",
+    "HuggingFace"
+  ],
+  "topics": [
+    "artificial intelligence",
+    "chemistry",
+    "biology",
+    "materials science",
+    "Drug Discovery"
+  ],
+  "total_projects": 14,
+  "stats": {
+    "avg_projects_per_appeared_year": 7,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 8,
+      "year_2025": 6
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": null,
+      "year_2024": 8,
+      "year_2025": 6
+    },
+    "total_students": 14
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": null,
+    "year_2024": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-24-protein-language-modeling-final-report/1445",
+          "description": "The project aims to integrate a protein language model (PLM) into the DeepChem library through HuggingFace APIs and PyTorch. The project would involve wrapping the chosen PLM via HuggingFace APIs into DeepChem's workflow, allowing users to access the PLM via DeepChem. One of the main goals of the project is to establish the necessary skeleton structure in DeepChem to support future protein language models in DeepChem. The project would involve building on top of the existing DeepChem model class used to package HuggingFace LLMs by extending support to PLMs.",
+          "difficulty": null,
+          "id": "proj_deepchem_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/lpCjiX2J/",
+          "proposal_id": null,
+          "short_description": "The project aims to integrate a protein language model (PLM) into the DeepChem library through HuggingFace APIs and PyTorch. The project would...",
+          "slug": "protein-language-modeling",
+          "status": "completed",
+          "student_name": "Shivasankaran Vanaja Pandi",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "ui"
+          ],
+          "title": "Protein Language Modeling"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1eY8fVvQrRPlLaQjkbnwKBamR8KLPa7oLgmoLk-mTkP0/edit?usp=sharing",
+          "description": "PROTACs represent a very promising emerging drug modalities. Traditional modalities, small-molecule drugs, for example, or monoclonal antibodies, are limited to certain modes of action, like targeting specific receptors or blocking particular pathways.  Due to its ability to target proteins that have been traditionally difficult to target with conventional methods, PROTACs have attracted substantial interest from both academic researchers and pharmaceutical companies, with several PROTACs currently in clinical trials for various indications, including cancer and neurodegenerative disorders. \n\nHowever, the exploration of PROTACs is still relatively in its infancy. With many open research questions, my proposal implements a tutorial, a common feature in DeepChem, to explore how to computational investigate PROTACs. More specifically, I provide a guide towards exploring available PROTAC datasets, developing featurization capabilities, and a multimodal sequence and structure model to infer protein degradation abilities of PROTACs, a clinically relevant  biopharmaceutical property. My  tutorial will be implemented through a Jupyter notebook which highlights the convenience and low-code capabilities of DeepChem for the scientific community. To demonstrate this, I will implement a few under-the-hood features to process available PROTAC datasets. My tutorial notebook can easily load data and build upon available models in DeepChem to develop a multimodal model for downstream inference. I hope this project provides a strong foundational understanding for researchers and the scientific community to explore computational methods for PROTAC design and optimization, possibly contributing to more effective research and development with downstream clinical benefits.  Overall, I believe this project will contribute to the overall mission of DeepChem by democratizing computational life science research for all.",
+          "difficulty": null,
+          "id": "proj_deepchem_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/HadcZO5q/",
+          "proposal_id": null,
+          "short_description": "PROTACs represent a very promising emerging drug modalities. Traditional modalities, small-molecule drugs, for example, or monoclonal antibodies, are...",
+          "slug": "developing-modality-support-for-protacs",
+          "status": "completed",
+          "student_name": "David_Zhang",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Developing Modality Support for PROTACs"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-24-final-report-target-conditioned-antibody-sequence-generation-using-protein-language-models/1449?u=dxk_23",
+          "description": "Monoclonal antibodies (mAbs) are a potent therapeutic because of their ability to precisely target molecular surfaces at a sub-protein level resolution. They are used in cancer checkpoint blockades, treatments for viral infection, and useful in situations of snakebites as anti-venom. Current methods of antibody discovery involve inoculating various chimeric animal constructs with specific antigens and isolating and purifying antigen-specific molecules. As such there has been a significant interest in designing antibodies in-silico. A growing number of large language models have been employed to capture the sequence distributions of these proteins, with varying degrees of success. However, the vast majority of language models are encoder-only transformers whose target-conditioned sequence generation capabilities are limited, and their code is prototypical rather than production ready. This project aims to integrate and finetune a target-conditioned LLM for eptiope-specific antibody design. Extending DeepChem's codebase to include support for this class of therapeutics would not only help democratize this technology for resource constrained operations, but also bring these groups onto a platform with a lively user base and healthy collaborative environment.",
+          "difficulty": null,
+          "id": "proj_deepchem_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/drmMTzsC/",
+          "proposal_id": null,
+          "short_description": "Monoclonal antibodies (mAbs) are a potent therapeutic because of their ability to precisely target molecular surfaces at a sub-protein level...",
+          "slug": "target-conditioned-antibody-sequence-generation-using-protein-language-models",
+          "status": "completed",
+          "student_name": "Dhuvi Karthikeyan",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Target Conditioned Antibody Sequence Generation Using Protein Language Models"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/project-report-torch-compile-and-pytorch-2-2-0-gsoc-2024/1441",
+          "description": "This project aims to integrate the torch.compile function released in PyTorch 2.0 into DeepChem's PyTorch models, unlocking significant performance improvements for training and inference. By leveraging advanced JIT compilation techniques used in torch.compile, this project will enable DeepChem users to optimize their models for faster execution without requiring code modifications. Initial benchmarks demonstrate promising speedups for various architectures, and further testing will be conducted to ensure broad compatibility and optimal performance gains across DeepChem's diverse model library. This project will ultimately empower researchers and developers with faster and more efficient tools for scientific discovery and innovation.",
+          "difficulty": "advanced",
+          "id": "proj_deepchem_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Xwr0Z1tZ/",
+          "proposal_id": null,
+          "short_description": "This project aims to integrate the torch.compile function released in PyTorch 2.0 into DeepChem's PyTorch models, unlocking significant performance...",
+          "slug": "torch-compile-and-pytorch-220",
+          "status": "completed",
+          "student_name": "Gautham Krishnan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Torch compile and PyTorch 2.2.0"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-24-porting-smiles2vec-model-from-tensorflow-to-pytorch-final-report/1443",
+          "description": "In this project, we aim to port DeepChem Models from Tensorflow to Pytorch. I want to select Chemnet Models model to work with. I want to put the Smiles2Vec model as my first priority.",
+          "difficulty": null,
+          "id": "proj_deepchem_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/GgASHSpj/",
+          "proposal_id": null,
+          "short_description": "In this project, we aim to port DeepChem Models from Tensorflow to Pytorch. I want to select Chemnet Models model to work with. I want to put the...",
+          "slug": "porting-the-smiles2vec-model-from-tensorflow-to-pytorch",
+          "status": "completed",
+          "student_name": "Harishwar Adithya S",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Porting the Smiles2Vec Model from Tensorflow to Pytorch"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc24-final-report-incorporating-polymer-representation-in-deepchem-for-drug-delivery-and-material-science-support/1444",
+          "description": "Current methods in the DeepChem library struggle to understand complex polymers, limiting their application in drug delivery and materials science. This project proposes a solution: two new representation methods for these molecules. One utilizes a detailed graph structure, capturing the intricate connections within the polymer, while the other leverages a special text format (BigSMILES) for efficient storage and retrieval. By implementing these methods, DeepChem will be significantly better equipped to handle these repetitive and complex molecules. To achieve this, the project will deliver a comprehensive toolkit: new graph-based and BigSMILES featurizers for polymer data, code for data loaders and integration with DeepChem's MoleculeNet framework, trained and evaluated GCN and MAT models utilizing the new representations, and finally, tutorials, documentation, and a public dataset of polymers represented using the new methods – all to empower the scientific community for further research in this field. The proposer has experience in relevant areas like machine learning and working with polymers.",
+          "difficulty": "advanced",
+          "id": "proj_deepchem_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/Vf2iK2zs/",
+          "proposal_id": null,
+          "short_description": "Current methods in the DeepChem library struggle to understand complex polymers, limiting their application in drug delivery and materials science....",
+          "slug": "incorporating-polymer-representation-in-deepchem-for-drug-delivery-and-material-science-support",
+          "status": "completed",
+          "student_name": "Debasish Mohanty",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Incorporating Polymer Representation in DeepChem for Drug Delivery and Material Science Support"
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-24-final-report-integration-of-protein-language-model-esm-2-with-deepchem-for-predicting-binding-sites/1446",
+          "description": "Protein-ligand interactions play a crucial role in various biological processes, and accurately predicting protein binding sites, where ligand molecules interact, is essential for drug discovery and understanding protein function. Current approaches integrated in DeepChem, such as the use of (geometric) deep learning or molecules fingerprints, mainly focus on predicting protein-ligand binding affinity, and require complex data and/or are computationally expensive.\n\nThis project focuses integrating ESM-2 (a state-of-the-art protein language model from Hugging Face) with DeepChem, for the purpose of protein binding site prediction. This integration will enable DeepChem library to utilize powerful protein representations learned by ESM-2. A detailed tutorial will be written to provide not only a workflow for streamlined binding site prediction, but a guide that empowers researchers to use protein language models for further tasks within DeepChem. This project broadens DeepChem's toolbox, making it more versatile for the drug discovery community, and ultimately accelerating progress in this area. \n\nThe main deliverables are:\nA function for feature extraction using the pre-trained ESM-2 model.\nIntegration of extracted features with binding site information.\nDeepChem model architecture for protein binding site prediction.\nReports for model performance and evaluation metrics.\nTutorial documenting the complete workflow, including code, data pre-processing steps, model training details, and visualizations of predicted binding sites (if possible).\n\nIf time allows, an additional tutorial showcasing the application of ESM-2 protein representations for a different task (e.g., generating peptide binders for target proteins), or implementation of a LoRA wrapper for the ESM-2 model, along with a corresponding tutorial explaining its functionality will be developed. Alternatively, both will be documented as open issues on the DeepChem GitHub repository for future development.",
+          "difficulty": "advanced",
+          "id": "proj_deepchem_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/554MrMl8/",
+          "proposal_id": null,
+          "short_description": "Protein-ligand interactions play a crucial role in various biological processes, and accurately predicting protein binding sites, where ligand...",
+          "slug": "deepchem-meets-hugging-face-plm-esm-2-predicting-protein-binding-sites-a-tutorial",
+          "status": "completed",
+          "student_name": "Elisa Gómez de Lope",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "DeepChem meets Hugging Face pLM ESM-2: Predicting protein binding sites. A tutorial."
+        },
+        {
+          "code_url": "https://forum.deepchem.io/t/gsoc-final-report-drug-target-selection-and-validation/1467",
+          "description": "The project aims to integrate ConPLex for target selection and ESM for target validation into DeepChem, addressing the need for target selection and validation pipeline in DeepChem. By enhancing DeepChem with these capabilities, the project aims to streamline the drug discovery process, offering high accuracy in drug-target interaction predictions and insightful structural and functional analyses of potential targets. This integration is poised to significantly benefit the scientific machine learning and drug discovery communities by offering a more efficient, scalable, and interpretable method for identifying and validating drug targets, thereby accelerating the path from research to clinical application.",
+          "difficulty": null,
+          "id": "proj_deepchem_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/j6C7hnpW/",
+          "proposal_id": null,
+          "short_description": "The project aims to integrate ConPLex for target selection and ESM for target validation into DeepChem, addressing the need for target selection and...",
+          "slug": "drug-target-selection-and-validation",
+          "status": "completed",
+          "student_name": "Anamika_Yadav",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Drug Target Selection and Validation"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/deepchem/"
+    },
+    "year_2025": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to significantly enhance the DeepChem library by integrating PyTorch Lightning to enable efficient multi-GPU training. Currently, DeepChem is primarily limited to single-GPU use, hindering work with large models and datasets common in scientific machine learning. The project will introduce wrapper classes for DeepChem's datasets and PyTorch-based models, making them compatible with Lightning's distributed training paradigms and also with the base classes of deepchem. This will provide users with a seamless way to scale their training across multiple GPUs, drastically reducing computation time and enabling research on more complex problems within the DeepChem ecosystem.",
+          "difficulty": "advanced",
+          "id": "proj_deepchem_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/TQng0tTL",
+          "proposal_id": "cDzTeHH4",
+          "short_description": "This project aims to significantly enhance the DeepChem library by integrating PyTorch Lightning to enable efficient multi-GPU training. Currently,...",
+          "slug": "model-parallel-deepchem-model-training",
+          "status": "in-progress",
+          "student_name": "Bhuvanmdev",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Model-Parallel DeepChem Model Training"
+        },
+        {
+          "code_url": null,
+          "description": "This project ports the Chemception model—a deep CNN for molecular property prediction—from TensorFlow to PyTorch.DeepChem has been shifting its backend from TensorFlow to PyTorch. This transition requires the porting of models that were previously built in TensorFlow to PyTorch.",
+          "difficulty": null,
+          "id": "proj_deepchem_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/M5sBGg3d",
+          "proposal_id": "cvylHyCF",
+          "short_description": "This project ports the Chemception model—a deep CNN for molecular property prediction—from TensorFlow to PyTorch.DeepChem has been shifting its...",
+          "slug": "porting-chemception-model-to-pytorch",
+          "status": "in-progress",
+          "student_name": "Bibhusundar Mohapatra",
+          "student_profile": null,
+          "tags": [
+            "ui",
+            "backend"
+          ],
+          "title": "Porting Chemception Model to PyTorch"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes integrating ACTINN, a neural network for automated cell type identification in single-cell RNA sequencing (scRNA-seq) data, into the DeepChem framework. \n\n​Integrating ACTINN into DeepChem would mark the framework's inaugural inclusion of a single-cell deep learning model, significantly expanding its capabilities in the burgeoning field of single-cell analysis.\n\nBy incorporating ACTINN, DeepChem can offer researchers a powerful tool for automated cell type identification, streamlining workflows in single-cell analysis and fostering deeper insights into cellular heterogeneity.",
+          "difficulty": null,
+          "id": "proj_deepchem_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/y70fgXcU",
+          "proposal_id": "Y6une4zu",
+          "short_description": "This project proposes integrating ACTINN, a neural network for automated cell type identification in single-cell RNA sequencing (scRNA-seq) data,...",
+          "slug": "integrating-single-cell-rna-seq-modeling-into-deepchem",
+          "status": "in-progress",
+          "student_name": "Harindhar",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "Integrating Single Cell RNA-seq modeling into Deepchem"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement the Fourier Neural Operator (FNO) in DeepChem, expanding its support for solving complex partial differential equations (PDEs) in scientific machine learning. Traditional neural networks often struggle with PDEs due to their reliance on fixed-grid discretization. FNO addresses this by operating in the frequency domain, learning resolution-invariant mappings between function spaces using the Fourier transform, making it both scalable and efficient.\nThe project involves developing a new SpectralConv layer and a high-level FourierNeuralOperator class compatible with DeepChem’s PyTorch backend. The implementation will be modular, enabling future extensions such as Physics-Informed Neural Operators (PINO). Deliverables include the FNO model, unit tests, comprehensive tutorials, and benchmark comparisons with existing DeepChem models.",
+          "difficulty": "advanced",
+          "id": "proj_deepchem_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/pCUg5nMr",
+          "proposal_id": "12kztAE7",
+          "short_description": "This project aims to implement the Fourier Neural Operator (FNO) in DeepChem, expanding its support for solving complex partial differential...",
+          "slug": "implement-a-wishlist-model-fourier-neural-operator",
+          "status": "in-progress",
+          "student_name": "Shrisharanyan Vasu",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "backend"
+          ],
+          "title": "Implement a Wishlist Model - Fourier Neural Operator"
+        },
+        {
+          "code_url": null,
+          "description": "Cancer has become one of the leading causes of morbidity and mortality worldwide. One of the critical drawbacks of current cancer treatment has been the lack of target selectivity, as the drug effects should be exclusively on cancer cells without affecting healthy cells. In addition, their mechanism of action should be rapid enough to prevent the spread of cancer cells to adjacent healthy cells. The use of conventional chemotherapeutic agents and other traditional therapies, such as surgery and radiotherapy, leads to off-target interactions with serious side effects. Also, traditional drug modalities, such as small-molecule drugs and monoclonal antibodies (mAbs), act upon either blocking specific pathways or inhibiting certain enzymes. Therefore, the need to overcome this limitation has driven the development of novel drug modalities like Antibody-drug conjugates, protacs, and oligonucleotides. In this respect, recently developed target-selective Antibody-Drug Conjugates (ADCs) are more effective than traditional therapies, presumably due to their modular structures that combine many chemical properties simultaneously. ADCs are typically made up of three different units: a highly selective Monoclonal antibody (mAb) which is developed against a tumor-associated antigen, the payload (cytotoxic agent), and the linker. In this case, the latter should be stable enough during circulation, and allow the release of cytotoxic agents on target cells.",
+          "difficulty": null,
+          "id": "proj_deepchem_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/5Kf7jqft",
+          "proposal_id": "CrhqvG2Q",
+          "short_description": "Cancer has become one of the leading causes of morbidity and mortality worldwide. One of the critical drawbacks of current cancer treatment has been...",
+          "slug": "improving-new-drug-modality-support-for-antibody-drug-conjugate",
+          "status": "in-progress",
+          "student_name": "Sonali Lipsa Patra",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai"
+          ],
+          "title": "Improving New Drug Modality Support for Antibody Drug Conjugate"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement Hamiltonian Neural Networks (HNN) within the DeepChem framework using PyTorch. HNNs are designed to model physical systems where energy conservation and structured dynamics are essential. Instead of learning system dynamics directly, HNNs learn a scalar Hamiltonian function and compute derivatives using Hamilton’s equations, offering better generalization and long-term stability.",
+          "difficulty": null,
+          "id": "proj_deepchem_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/NBfvsztr",
+          "proposal_id": "tvupICqa",
+          "short_description": "This project aims to implement Hamiltonian Neural Networks (HNN) within the DeepChem framework using PyTorch. HNNs are designed to model physical...",
+          "slug": "hamiltonian-neural-networks",
+          "status": "in-progress",
+          "student_name": "ZapBot",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Hamiltonian Neural Networks"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/deepchem"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": null,
+    "guide_url": "https://forum.deepchem.io/t/gsoc-proposal-guidelines-2024/1102",
+    "ideas_url": "https://forum.deepchem.io/t/deepchem-gsoc-2025-project-ideas/1568",
+    "irc_channel": "https://discord.gg/RYTrUY8Ssn",
+    "mailing_list": "https://forum.deepchem.io/"
+  },
+  "social": {
+    "blog": null,
+    "discord": "https://discord.gg/RYTrUY8Ssn",
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/deep_chem",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.046Z"
+  }
+}

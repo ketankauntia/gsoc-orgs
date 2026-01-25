@@ -1,0 +1,705 @@
+{
+  "id": "692251e653dd9d7326d33ea2",
+  "slug": "spdx",
+  "name": "SPDX",
+  "category": "Other",
+  "description": "An open ISO standard for SBOMs",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/spdx/ggw7mdbriw97mzmu-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/spdx.webp",
+  "logo_r2_url": null,
+  "url": "https://spdx.dev",
+  "active_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "first_year": 2017,
+  "last_year": 2023,
+  "is_currently_active": false,
+  "technologies": [
+    "c",
+    "python",
+    "java",
+    "github",
+    "rdf",
+    "json",
+    "golang",
+    "xml",
+    "node.js",
+    "go"
+  ],
+  "topics": [
+    "compliance",
+    "licensing",
+    "opensource",
+    "open source",
+    "security",
+    "standards",
+    "data",
+    "vulnerabilities"
+  ],
+  "total_projects": 29,
+  "stats": {
+    "avg_projects_per_appeared_year": 4.14,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 4,
+      "year_2019": 8,
+      "year_2020": 4,
+      "year_2021": 4,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": 4,
+      "year_2018": 4,
+      "year_2019": 8,
+      "year_2020": 4,
+      "year_2021": 4,
+      "year_2022": 2,
+      "year_2023": 3,
+      "year_2024": null,
+      "year_2025": null
+    },
+    "total_students": 26
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "http://all3fox.github.io/2017/08/23/gsoc17-at-spdx.html",
+          "description": "<p>Software Package Data Exchange (SPDX) is “a set of standards for communicating the components, licenses, and copyrights associated with software”. You can find the latest (as well as the previous) standards at:</p>\n<p><a href=\"https://spdx.org/specifications\" target=\"_blank\">https://spdx.org/specifications</a></p>\n<p>One idea is to accompany software with special files that hold certain meta information: authorship, copyrights, licenses, etc. These files currently come in two major formats: TAG and RDF. There are parsing tools available for these formats in Python and Go:</p>\n<p><a href=\"https://github.com/spdx/tools-python\" target=\"_blank\">https://github.com/spdx/tools-python</a></p>\n<p><a href=\"https://github.com/spdx/tools-go\" target=\"_blank\">https://github.com/spdx/tools-go</a></p>\n<p>These tools do not support the latest SPDX-2.1 standard (instead, they can handle SPDX-1.2) which makes it logical to add support for the latest standard.</p>\n<p>However, personally I am not happy with the specification which is why I would rather develop an online validation tool with the <a href=\"https://github.com/nexB/license-expression\" target=\"_blank\">license-expression</a> [pyLE] library which heavily relies on the <a href=\"https://github.com/bastikr/boolean.py\" target=\"_blank\">boolean.py</a> library [BP].</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6460361226059776/",
+          "proposal_id": null,
+          "short_description": "Software Package Data Exchange (SPDX) is “a set of standards for communicating the components, licenses, and copyrights associated with software”....",
+          "slug": "online-validation-tools",
+          "status": "completed",
+          "student_name": "Aleksandr Lisianoi",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Online Validation Tools"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-online-tools/wiki/Online-SPDX-Tool,-Google-Summer-of-Code-2017",
+          "description": "<p>Building an easy all-in-one portal  to upload and parse SPDX documents for validation, comparison and conversion and search SPDX license list by forming a Python-Java bridge for integrating various methods from the SPDX JAVA tools library.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_spdx_2017_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5578262453420032/",
+          "proposal_id": null,
+          "short_description": "Building an easy all-in-one portal  to upload and parse SPDX documents for validation, comparison and conversion and search SPDX license list by...",
+          "slug": "online-spdx-tool",
+          "status": "completed",
+          "student_name": "Rohit Lodha",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "ui"
+          ],
+          "title": "Online SPDX Tool"
+        },
+        {
+          "code_url": "https://github.com/spdx/license-coverage-grader/wiki",
+          "description": "<p>There have been several talks about the need for a package level License Coverage Grade. This project will come up with an initial set of heuristics based on MIME types for what file types should have automatically detectable license identifiers. Then create a command line tool that will accept and parse an SPDX document and a pointer to sources that created it, and come up with license coverage \"grade\" for the package.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2017_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/5801104952524800/",
+          "proposal_id": null,
+          "short_description": "There have been several talks about the need for a package level License Coverage Grade. This project will come up with an initial set of heuristics...",
+          "slug": "license-coverage-grader",
+          "status": "completed",
+          "student_name": "Nuvadga Christian Tete",
+          "student_profile": null,
+          "tags": [],
+          "title": "License Coverage Grader"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-github/wiki/Google-Summer-of-Code-SPDX-GitHub-Project",
+          "description": "<p>Design, develop, and implement an application that, when provided with a GitHub repository's URL, generates SPDX (<a href=\"https://spdx.org/\" target=\"_blank\">https://spdx.org/</a>) documents based on that repository. These documents can be placed back into the repository or downloaded directly. In creating SPDX documents, repositories can be better understood with respect to OSS Community Health risk-related metrics (<a href=\"https://wiki.linuxfoundation.org/oss-health-metrics/metrics\" target=\"_blank\">https://wiki.linuxfoundation.org/oss-health-metrics/metrics</a>).</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2017_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/6328148979351552/",
+          "proposal_id": null,
+          "short_description": "Design, develop, and implement an application that, when provided with a GitHub repository's URL, generates SPDX (https://spdx.org/) documents based...",
+          "slug": "github-integration-proposal",
+          "status": "completed",
+          "student_name": "Anna Buhman",
+          "student_profile": null,
+          "tags": [
+            "ux"
+          ],
+          "title": "GitHub Integration Proposal"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6300304437936128/"
+    },
+    "year_2018": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/ndip007/spdx-build-tool/wiki/Build-tool-spdx-file-generators-(GSoC-2018)",
+          "description": "<p>Support a continuous integration (CI) generation of SPDX files by creating a plugins or extensions to build tools. These plugins or extensions will generate valid SPDX documents based on the build file metadata and source files.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6354963802357760/",
+          "proposal_id": null,
+          "short_description": "Support a continuous integration (CI) generation of SPDX files by creating a plugins or extensions to build tools. These plugins or extensions will...",
+          "slug": "build-tool-spdx-file-generators",
+          "status": "completed",
+          "student_name": "Ndip Tanyi",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Build tool SPDX file generators"
+        },
+        {
+          "code_url": "https://github.com/spdx/tools-python/wiki/Update-Python-SPDX-library-to-SPDX-2.1,-Google-Summer-of-Code-2018",
+          "description": "<p>Software Package Data Exchange (SPDX) is “a set of standards for communicating the components, licenses, and copyrights associated with software”. You can find the latest (as well as the previous) standards at: <a href=\"https://spdx.org/specifications\" target=\"_blank\">https://spdx.org/specifications</a>. The Python SPDX library does not support the latest SPDX-2.1 standard (instead, it can handle SPDX-1.2) which makes it logical to add support for the latest standard. The aim of the project is to update the python SPDX library to SPDX 2.1 specification with a better Error Management system and an improved internal model.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2018_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/6404798978981888/",
+          "proposal_id": null,
+          "short_description": "Software Package Data Exchange (SPDX) is “a set of standards for communicating the components, licenses, and copyrights associated with software”....",
+          "slug": "update-python-spdx-library-to-spdx-21",
+          "status": "completed",
+          "student_name": "Yash Nisar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Update Python SPDX library to SPDX 2.1"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-online-tools/wiki/Online-SPDX-New-License-Requests-Submittal,-Google-Summer-of-Code-2018",
+          "description": "<p>The aim of this project is to design and develop new features to an existing SPDX web application (<a href=\"https://github.com/spdx/spdx-online-tools\" target=\"_blank\">https://github.com/spdx/spdx-online-tools</a>), that will allow software licenses producers to generate new license requests submissions in a more robust and user-friendly way. These new features are going to enhance the process that the SPDX legal team follows to check new license request submissions as well as to generate the new licenses XML files. These improvements will reduce the time the process of enriching the SPDX licenses list takes (<a href=\"https://github.com/spdx/license-list-XML\" target=\"_blank\">https://github.com/spdx/license-list-XML</a>).</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2018_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5653041055268864/",
+          "proposal_id": null,
+          "short_description": "The aim of this project is to design and develop new features to an existing SPDX web application (https://github.com/spdx/spdx-online-tools), that...",
+          "slug": "add-new-license-submittal-feature-to-online-tools",
+          "status": "completed",
+          "student_name": "Galo Castillo",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai"
+          ],
+          "title": "Add New License Submittal Feature to Online Tools"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-online-tools/wiki/Online-XML-Editor-for-SPDX-Licenses,-Google-Summer-of-Code-2018",
+          "description": "<p>All the licenses of the SPDX License List are stored in the license-list-XML repository in XML format. So, creating or editing an XML license is a manual process and requires the editing of XML files by the SPDX team members. This can be challenging for the person who wants to contribute but is not familiar with XML and working with XML files can sometimes be a tedious job.</p>\n<p>The aim of this project is to create a web-based XML editor using which anyone can create and edit the license XML files, download the newly edited XML file and can create a pull request in the license-list-XML repository to get his changes merged.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2018_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5100791207559168/",
+          "proposal_id": null,
+          "short_description": "All the licenses of the SPDX License List are stored in the license-list-XML repository in XML format. So, creating or editing an XML license is a...",
+          "slug": "add-a-license-xml-editor-to-the-online-tools",
+          "status": "completed",
+          "student_name": "Tushar Mittal",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Add a License XML Editor to the Online Tools"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5081879929683968/"
+    },
+    "year_2019": {
+      "num_projects": 8,
+      "projects": [
+        {
+          "code_url": "https://github.com/spdx/tools-python/wiki/Additional-format-support-for-the-Python-Libraries,-Google-Summer-of-Code-2019",
+          "description": "<p>Due to its need to programmatically handle SPDX Documents, SPDX has developed Python tools that parse and write SPDX Documents in RDF and TAG/VALUE formats.\nThis project consists in extending the format support to include JSON, XML and YAML formats. Additionally, as an extra part of the project, support for parsing SPDX license expressions will be implemented.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5681972473495552/",
+          "proposal_id": null,
+          "short_description": "Due to its need to programmatically handle SPDX Documents, SPDX has developed Python tools that parse and write SPDX Documents in RDF and TAG/VALUE...",
+          "slug": "additional-format-support-for-the-python-libraries",
+          "status": "completed",
+          "student_name": "Xavier Figueroa",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml"
+          ],
+          "title": "Additional Format Support for the Python Libraries"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-online-tools/wiki/Enhance-the-workflow-of-License-Submittal-feature,-Google-Summer-of-Code-2019",
+          "description": "<p>The aim of this proposal is to extend the functionalities of the new license requests submittal by adding checks for duplicate license requests and checks for near matches of licenses which would greatly improve the efficiency of the approval process of the license. This project will take some workload off the SPDX legal team as they won’t have to take care of duplicate license requests. Thus, the project will make the license submittal feature more robust.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5687492043341824/",
+          "proposal_id": null,
+          "short_description": "The aim of this proposal is to extend the functionalities of the new license requests submittal by adding checks for duplicate license requests and...",
+          "slug": "enhance-workflow-for-online-license-request",
+          "status": "completed",
+          "student_name": "Umang Taneja",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhance workflow for Online license request"
+        },
+        {
+          "code_url": "https://gist.github.com/nitish81299/ea39d79594339581650b025343690a9e",
+          "description": "<p>The primary objective of the project is to generate both HTML and PDF versions of the SPDX Specification from markdown. The HTML and PDF version will be generated for each draft and release version of the specification. A tool which would help in easy circulation of the the SPDX specifications by creating a HTML and PDF version of the same along with language conversion capabilities. The default language is English but going forward we envision other language translations as well for the HTML and PDF. Conversion is important for the sharing capability of the specifications.</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_spdx_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5520671537364992/",
+          "proposal_id": null,
+          "short_description": "The primary objective of the project is to generate both HTML and PDF versions of the SPDX Specification from markdown. The HTML and PDF version will...",
+          "slug": "spdx-specification-in-pdf-and-html",
+          "status": "completed",
+          "student_name": "Nitish Sharma",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "SPDX Specification in PDF and HTML"
+        },
+        {
+          "code_url": "https://github.com/salicodes/wp-spec/blob/master/readme.txt",
+          "description": "<p>The 2.1 SPDX specification source files exist in markdown and now generates an HTML version\nThe goal in this GSoC will be to find an approach to generate both HTML and PDF versions of the SPDX Specification from Markdown (MD) such that changes to the source files(MD) in this repository are automatically reflected in both versions.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5017088366739456/",
+          "proposal_id": null,
+          "short_description": "The 2.1 SPDX specification source files exist in markdown and now generates an HTML version\nThe goal in this GSoC will be to find an approach to...",
+          "slug": "spdx-specification-in-pdf-and-html",
+          "status": "completed",
+          "student_name": "Rouhiyyeh",
+          "student_profile": null,
+          "tags": [
+            "ml"
+          ],
+          "title": "SPDX Specification in PDF and HTML"
+        },
+        {
+          "code_url": "https://github.com/ndip007/spdx-tools-js/wiki/Porting-the-spdx-libraries-to-Javascript-Node-GSOC-2019",
+          "description": "<p>This project will focus on implementing a JavaScript library to parse, validate and create SPDX documents. This library will implement an SPDX tag/value and RDF parser, validator and handler in JavaScript.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2019_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/4506763171201024/",
+          "proposal_id": null,
+          "short_description": "This project will focus on implementing a JavaScript library to parse, validate and create SPDX documents. This library will implement an SPDX...",
+          "slug": "porting-the-spdx-libraries-to-javascriptnode",
+          "status": "completed",
+          "student_name": "ndip007",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "javascript"
+          ],
+          "title": "Porting the SPDX libraries to JavaScript/Node"
+        },
+        {
+          "code_url": "https://github.com/ekongobie/spdx_id_doc_gen/wiki/SPDX-Document-Generator-for-projects-using-SPDXIDs",
+          "description": "<p>Forward thinking open source projects are adopting SPDXIDs in source files (initially U-Boot, but now much wider use like Zephyr, Linux Kernel, etc.) With these easy to find \"SPDX-License-Identifier:\" strings, generating an SPDX document for a project is a matter of iterating over the files in a project and extracting the information from these SPDXIDs and calculating checksums. Creating an open source tool to do this will aid these projects in generating accurate SBOM information at release time. This tool should be implemented as a command line, so it can be incorporated into builds, and options can be added. Goal is that projects that use SPDX identifiers can automatically generate a SPDX document as a Software Bill of Materials (SBOM) on demand (build, release, etc.).</p>\n",
+          "difficulty": "beginner",
+          "id": "proj_spdx_2019_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5799296081854464/",
+          "proposal_id": null,
+          "short_description": "Forward thinking open source projects are adopting SPDXIDs in source files (initially U-Boot, but now much wider use like Zephyr, Linux Kernel, etc.)...",
+          "slug": "spdx-document-generator-for-projects-using-spdxids",
+          "status": "completed",
+          "student_name": "Ekong Obie Philip",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui",
+            "ux"
+          ],
+          "title": "SPDX Document Generator for projects using SPDXIDs"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-online-tools/wiki/Registry-and-repository-of-License-List-Namespaces:-GSOC-2019",
+          "description": "<p>SPDX provides a license list for commonly used open source license - the SPDX License List. SPDX also supports defining licenses within the SPDX document using a LicenseRef syntax defined in section 6 of the SPDX specification. In the next release of SPDX, we plan to introduce a mechanism for other organizations or individuals to maintain lists of licenses outside of the SPDX license list, but allow those licenses to be valid without requiring the text to be in the SPDX document itself. This enhancement has been documented in the SPDX specification issues list. This project automates the registration and management of the namespaces.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2019_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5806125079855104/",
+          "proposal_id": null,
+          "short_description": "SPDX provides a license list for commonly used open source license - the SPDX License List. SPDX also supports defining licenses within the SPDX...",
+          "slug": "registry-for-license-list-namespaces",
+          "status": "completed",
+          "student_name": "Tanjong Agbor Smith",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Registry for License List Namespaces"
+        },
+        {
+          "code_url": "https://github.com/spdx/tools-golang/wiki/Upgrade-Parser-Libraries-for-Golang-Tools,-Google-Summer-of-Code-2019",
+          "description": "<p>The project tools-golang is a set of packages in Golang intended to assist the programmers of Go language to work with SPDX files. At Present, the tools-golang only handles SPDX files which are in tag-value format. It should also be capable of reading, writing and modifying SPDX files in RDF format, as an RDF format is also officially defined by the SPDX specs. Thus, the primary objective of this project is to add support for the official RDF format. Also, enabling compatibility for parsing and generation of documents under pre-2.1 versions of the SPDX specs is another aim of of this project. If time permits, support for other formats like XML, YAML and JSON can be incorporated as well.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2019_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5162336644497408/",
+          "proposal_id": null,
+          "short_description": "The project tools-golang is a set of packages in Golang intended to assist the programmers of Go language to work with SPDX files. At Present, the...",
+          "slug": "upgrade-parser-libraries-for-golang",
+          "status": "completed",
+          "student_name": "Abhishek Gaur",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "Upgrade Parser Libraries for Golang"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6051311592669184/"
+    },
+    "year_2020": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/tjasmith/LicenseListPublisher/wiki/GSOC-2020:-Validate-license-cross-references",
+          "description": "<p>Enhance the SPDX LicenseListPublisher to validate the cross reference / seeAlso URL's for the license. One check would be to validate the link is still valid. This would need to be done in a way that has reasonably good performance (e.g. a long timeout would not work). Another check would be to identify the license text in the linked URL and compare it to the license text for the license itself to make sure they match. If either of these tests fail, a validity attribute should be added to the license output files (e.g. the license JSON files).</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/4810365323444224/",
+          "proposal_id": null,
+          "short_description": "Enhance the SPDX LicenseListPublisher to validate the cross reference / seeAlso URL's for the license. One check would be to validate the link is...",
+          "slug": "validate-license-cross-references",
+          "status": "completed",
+          "student_name": "Tanjong Agbor Smith",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Validate License Cross-References"
+        },
+        {
+          "code_url": "https://github.com/spdx/schema-to-java/wiki/Generate-Java-SPDX-Model-Classes-from-XML-XSD-file,-Google-Summer-of-Code-2020",
+          "description": "<p>The project aims at generating the Java Model Classes for proposed XML XSD files of repositories. This involves mapping the elements of XML Schema to members of a java class using the tool, which would enable conversion. Conversion is important for the sharing capability of the specifications. Importing packages and customization of tools enabled modification of generated classes. The generated classes would be used as part of a re-designed Java tool for SPDX. This could be used by the organization, whenever required, to map XSD to java classes.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5757561170558976/",
+          "proposal_id": null,
+          "short_description": "The project aims at generating the Java Model Classes for proposed XML XSD files of repositories. This involves mapping the elements of XML Schema to...",
+          "slug": "generate-java-spdx-model-classes-from-xml-xsd-file",
+          "status": "completed",
+          "student_name": "Anisha Srivastava",
+          "student_profile": null,
+          "tags": [
+            "java",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Generate Java SPDX Model Classes from XML XSD file."
+        },
+        {
+          "code_url": "https://github.com/spdx/gordf/wiki",
+          "description": "<p>The project focuses on building a GoLang RDF reader in native GoLang which not only would be useful for the SPDX community but also might help the golang community as a whole. RDF files being tag-based structures make it easier to chunk the files in separate processable blocks which can be serviced concurrently. With RDF licenses, there are many repetitive structures and parsing patterns that exist in the files. Using golang,  a concurrent parsing using go-routines can be achieved which will definitely help in reducing the time required to parse each file.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2020_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/5890725960482816/",
+          "proposal_id": null,
+          "short_description": "The project focuses on building a GoLang RDF reader in native GoLang which not only would be useful for the SPDX community but also might help the...",
+          "slug": "concurrent-rdf-parser-in-golang",
+          "status": "completed",
+          "student_name": "Rishabh Bhatnagar",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Concurrent RDF Parser in GoLang"
+        },
+        {
+          "code_url": "https://github.com/ekongobie/spdx-py-build-tool/wiki/SPDX-Plugins-for-package-managers",
+          "description": "<p>Create a native plug-in or extension to a well-known package manager to generate valid SPDX documents based on the information provided in the build metadata files. Examples of package managers include Node Package Manager (NPM), Gradle, Rust Cargo, Ruby Gems, Python pip, and Cocoa Pods. A plugin for Maven has already been developed and can be used as an example.</p>\n<p>The plugin should generate a valid SPDX document with minimal configuration required by the user.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2020_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6280458775560192/",
+          "proposal_id": null,
+          "short_description": "Create a native plug-in or extension to a well-known package manager to generate valid SPDX documents based on the information provided in the build...",
+          "slug": "spdx-plugins-for-package-managers",
+          "status": "completed",
+          "student_name": "Ekong Obie Philip",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ui"
+          ],
+          "title": "SPDX Plugins for Package Managers"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/6283949946437632/"
+    },
+    "year_2021": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/m1kit/yalm-python/wiki/gsoc-final-report",
+          "description": "<p>Detecting the contents of license documents is a major task for software that automatically analyzes software metadata, such as package managers. OSS licenses can be detected automatically by comparing the license document with templates of major OSS licenses managed by SPDX using a string algorithm. However, typical string comparison algorithms are vulnerable to small additions of malicious wording.</p>\n<p>For this reason, SPDX has provided <a href=\"https://spdx.dev/license-list/matching-guidelines/\" target=\"_blank\">the guideline</a> for matching license documents. In addition, several license detection algorithms have been implemented. Among them, <a href=\"https://github.com/spdx/spdx_python_licensematching\" target=\"_blank\">spdx_python_licensematching</a> aims to faithfully reproduce the guidelines.</p>\n<p>The project is to implement the algorithm of spdx_python_licensematching with some improvements, so that package managers can actually use this algorithm as a library. The planned improvements are as follows:</p>\n<ul>\n<li>Make it x100 faster, ~100ms</li>\n<li>Output more useful data like confidence</li>\n<li>Refactor it and publish on PyPI</li>\n<li>Make it more accurate</li>\n<li>Port it to Java and other languages</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5387245866975232/",
+          "proposal_id": null,
+          "short_description": "Detecting the contents of license documents is a major task for software that automatically analyzes software metadata, such as package managers. OSS...",
+          "slug": "fast-and-precise-license-matching-library",
+          "status": "completed",
+          "student_name": "mikit",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "ai",
+            "ui"
+          ],
+          "title": "Fast and Precise License Matching Library"
+        },
+        {
+          "code_url": "https://github.com/spdx/spec-parser",
+          "description": "<p>This project aims to build a program that end users can use as:</p>\n<ul>\n<li>Validating and reporting all possible parsing errors (in any) in the incoming markdown files.</li>\n<li>Auto generating Pretty markdowns for documentation purposes.</li>\n<li>Performing processing on top of parsed information like adding defaults, cross-references.</li>\n<li>Generating RDF like output (Turtle format).</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6083704610357248/",
+          "proposal_id": null,
+          "short_description": "This project aims to build a program that end users can use as:\n\nValidating and reporting all possible parsing errors (in any) in the incoming...",
+          "slug": "validate-and-generate-multiple-representations-of-specifications",
+          "status": "completed",
+          "student_name": "Nirmal Praveen Suthar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Validate and Generate multiple representations of Specifications"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/12GKZxZm-3jLKWLubMtaQGD3vd-CNjhMOWQCUJaZRLV4/edit?usp=sharing",
+          "description": "<p>After the introduction of SPDX Specifications v2.2 JSON, YAML, and a development version of XML had been added as supported file formats. However , the tools-golang packages currently does not have the support to parse the SPDX files nor has the support to save a SPDX document in JSON format .</p>\n<p>The main objective of this project is to add support in the tools-golang package so that it can parse as well as save <a href=\"https://spdx.org/\" target=\"_blank\">SPDX® v2.2</a> files in JSON format .</p>\n<p>To add JSON support to the <a href=\"https://github.com/spdx/tools-golang\" target=\"_blank\">tools-golang</a> package the project will make use of the official go <a href=\"https://golang.org/pkg/encoding/json/\" target=\"_blank\">JSON package</a>  . The SPDX specification has a <a href=\"https://github.com/spdx/spdx-spec/blob/master/schemas/spdx-schema.json\" target=\"_blank\">JSON schema</a> defined for the specification and has also provided a sample spdx document in <a href=\"https://github.com/spdx/spdx-spec/blob/master/examples/SPDXJSONExample-v2.2.spdx.json\" target=\"_blank\">JSON example</a> format .\nThe Project mainly comprises the JSON loader and the JSON saver .  The former converts JSON to SPDX Document struct while the later generates JSON from SPDX Document struct  .</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5139312538025984/",
+          "proposal_id": null,
+          "short_description": "After the introduction of SPDX Specifications v2.2 JSON, YAML, and a development version of XML had been added as supported file formats. However ,...",
+          "slug": "json-support-for-golang-libraries",
+          "status": "completed",
+          "student_name": "Ujjwal Agarwal",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai"
+          ],
+          "title": "JSON Support for Golang libraries"
+        },
+        {
+          "code_url": "https://github.com/spdx/spdx-online-tools/wiki/Migrate-online-tools-to-Django-3-and-add-additional-features-to-python3-branch",
+          "description": "<p>Since we have a working python 3 branch for SPDX Online Tools, it is necessary to keep the app updated to latest Django versions and at the same time update any other third party libraries as the new version of libraries would have new features and improvements along with bug fixes. This change is necessary as the older version of Django will eventually stop receiving security updates and would make the application vulnerable to security threats.</p>\n<p>The application code of the SPDX Online Tools which serves the current purpose of client-side consumption and its API doesn’t have a common utility which makes it difficult to maintain as well as test both of these services at the same time. This project will develop a common utility for both app and api by improving the overall structure of the codebase by rewriting the code if needed and make sure test cases run correctly. This would trade off the extra cost and efforts from the developers’ shoulders.</p>\n",
+          "difficulty": null,
+          "id": "proj_spdx_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5162625083637760/",
+          "proposal_id": null,
+          "short_description": "Since we have a working python 3 branch for SPDX Online Tools, it is necessary to keep the app updated to latest Django versions and at the same time...",
+          "slug": "migrate-spdx-online-tools-to-django-3",
+          "status": "completed",
+          "student_name": "Umang Taneja",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "MIGRATE SPDX ONLINE TOOLS TO DJANGO 3"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/4886205283434496/"
+    },
+    "year_2022": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://github.com/spdx/ntia-conformance-checker/wiki",
+          "description": "The minimum constituent parts of an overall Software Bill of Material (SBOM) – referred to as NTIA’s minimum elements – are three broad, interrelated areas (Data Fields, Automation Support, and Practices and Processes). These elements will enable an evolving approach to software transparency, capturing both the technology and the functional operation. The purpose of this project is to check if an SBOM document contains the minimum required data fields such as the supplier name, component name, component version, unique identifiers, dependency relationships, author of the SBOM, and timestamps.",
+          "difficulty": null,
+          "id": "proj_spdx_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/J8JDnuoM/",
+          "proposal_id": null,
+          "short_description": "The minimum constituent parts of an overall Software Bill of Material (SBOM) – referred to as NTIA’s minimum elements – are three broad, interrelated...",
+          "slug": "sbom-conformance-checker-proposal",
+          "status": "completed",
+          "student_name": "Joshua Lin",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "SBOM Conformance Checker Proposal"
+        },
+        {
+          "code_url": "https://rc-002.github.io/GSoCSubmission/",
+          "description": "The project involves web-based system for managing license texts; similar to the SPDX License List but oriented towards other private collections of licenses. My proposal here is to build a scalable, secure Private license management system with a 3-tier architecture:\n\n1) Thin front end with HTML, CSS and Java script\n2) SOA(Service Oriented Architecture) based middle tier with Python based REST APIs\n3) A Secure persistent data storage\n\nWith SOA we plan to build a scalable software and along with the RDBMS system we ensure a reliable and secure data solution. The solution encompasses Checking if the namespaces and license format is in accordance with the SPDX License List Matching Guidelines, v2.1, Deduplication to eliminate any duplicate licenses in the system and also converting the license information uploaded to user into a Canonical format using a Mapping function and store it in the Secure database.",
+          "difficulty": null,
+          "id": "proj_spdx_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Ei7GxLFw/",
+          "proposal_id": null,
+          "short_description": "The project involves web-based system for managing license texts; similar to the SPDX License List but oriented towards other private collections of...",
+          "slug": "a-scalable-secure-and-service-oriented-private-license-management-system",
+          "status": "completed",
+          "student_name": "Rohan Chandrashekar",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "web",
+            "api",
+            "ml"
+          ],
+          "title": "A Scalable, Secure and Service-Oriented Private License Management System"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/spdx/"
+    },
+    "year_2023": {
+      "num_projects": 3,
+      "projects": [
+        {
+          "code_url": "https://basscoder2808.github.io/GSocSubmission/",
+          "description": "This project aims to enhance the SPDX Online Tool by improving its functionality and efficiency for license submissions. The project proposes adding features such as automatic creation of pull requests and .txt test files, improving error handling, adding unit tests and GitHub API interaction tests with mock, and creating a base reusable Django app to reduce development efforts. The objective is to streamline the license submission process, reduce manual effort, save time, and enhance productivity. The project proposes clear deliverables such as generating a .txt test file, differentiating exceptions from license submissions, adding or fixing unit tests, and improving error handling. The project will contribute to the open-source community and will provide a learning experience for the software engineering student working on the project. The choice of SPDX as the organization to work with is motivated by its mission to create a standard format for communicating the components, licenses, and copyrights of software packages and its strong community of developers, contributors, and users committed to driving innovation in the field of software licensing.",
+          "difficulty": null,
+          "id": "proj_spdx_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/neMaWSyM",
+          "proposal_id": "K46Uy70f",
+          "short_description": "This project aims to enhance the SPDX Online Tool by improving its functionality and efficiency for license submissions. The project proposes adding...",
+          "slug": "enhancing-the-spdx-license-submission-online-tool-improving-streamlined-license-compliance",
+          "status": "completed",
+          "student_name": "BassCoder2808",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Enhancing the SPDX License Submission Online Tool: Improving Streamlined License Compliance"
+        },
+        {
+          "code_url": "https://github.com/HarshvMahawar/GSoC-23-SPDX-SWH/blob/main/README.md",
+          "description": "The SoftWare Heritage provides each part of the archive (be it any single file, directory\nor collection of lines of code) or archive itself a stable identifier and these identifiers are\ncalled SoftWare Heritage persistent IDentifiers (SWHIDs) which acts as a reference to\nretrieve them through the Command-line interface(CLI) or Web-API of SWH. Problem\nstatement is that the license and copyright information (license, author, package version\netc.) of the project is stored in various different files and there is no single file\nrepresenting all this information. Therefore developing a tool which can give the\nSoftware bill of materials (SBOM) of any referenced file/directory in SPDX format is\nproposed. Approach is to develop a package to do this task by first parsing the metadata achieved from SWHIDs and forming an logic/algorithm for taking the necessary fields according to spdx format from retrieved data to generate valid spdx-document.",
+          "difficulty": null,
+          "id": "proj_spdx_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/72OrdevO",
+          "proposal_id": "2647wjHS",
+          "short_description": "The SoftWare Heritage provides each part of the archive (be it any single file, directory or collection of lines of code) or archive itself a stable...",
+          "slug": "software-heritage-spdx-generation-generate-spdx-documents-from-software-heritage-identifiers",
+          "status": "completed",
+          "student_name": "Harsh Vardhan Mahawar",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api"
+          ],
+          "title": "SoftWare Heritage SPDX generation : Generate SPDX documents from Software Heritage Identifiers."
+        },
+        {
+          "code_url": "https://gist.github.com/ba11b0y/a9c7e76f5cace805340edc739ceb0f18",
+          "description": "The spdx-sbom-generator tool helps generating SBOM information complying with the SPDX standard and relies heavily on the parsers project. This GSoC project aims at improving the existing parsers for Python's package managers namely pipenv, poetry and pyenv. The project also aims to add initial support for conda which is another dependency and environment manager for Python and other languages.",
+          "difficulty": null,
+          "id": "proj_spdx_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/cOOOA6XX",
+          "proposal_id": "3vAImTsB",
+          "short_description": "The spdx-sbom-generator tool helps generating SBOM information complying with the SPDX standard and relies heavily on the parsers project. This GSoC...",
+          "slug": "fixing-manifest-parsers-for-sbom-generator",
+          "status": "completed",
+          "student_name": "Rahul Tiwari",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Fixing manifest parsers for SBOM generator"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/spdx"
+    },
+    "year_2024": null,
+    "year_2025": null
+  },
+  "first_time": false,
+  "contact": {
+    "email": "spdx-tech@lists.spdx.org",
+    "guide_url": null,
+    "ideas_url": null,
+    "irc_channel": "https://gitter.im/spdx-org/Lobby",
+    "mailing_list": "https://lists.spdx.org/g/spdx-tech"
+  },
+  "social": {
+    "blog": "https://spdx.dev/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": null,
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.164Z"
+  }
+}

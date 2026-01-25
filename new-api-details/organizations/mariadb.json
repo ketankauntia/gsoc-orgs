@@ -1,0 +1,862 @@
+{
+  "id": "692251db53dd9d7326d33e1b",
+  "slug": "mariadb",
+  "name": "MariaDB",
+  "category": "Data",
+  "description": "The fastest growing Open Source Database",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/mariadb/0nbzguld3ntsgeqv-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/mariadb.webp",
+  "logo_r2_url": null,
+  "url": "https://mariadb.org",
+  "active_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2016,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "c",
+    "mysql",
+    "mariadb",
+    "perl",
+    "java",
+    "c++",
+    "python",
+    "javascript",
+    "databases"
+  ],
+  "topics": [
+    "databases",
+    "database",
+    "sql",
+    "distributed systems",
+    "performance",
+    "cloud",
+    "Database Engines",
+    "SQL Features"
+  ],
+  "total_projects": 39,
+  "stats": {
+    "avg_projects_per_appeared_year": 3.9,
+    "projects_by_year": {
+      "year_2016": 5,
+      "year_2017": 1,
+      "year_2018": 1,
+      "year_2019": 4,
+      "year_2020": 2,
+      "year_2021": 4,
+      "year_2022": 6,
+      "year_2023": 5,
+      "year_2024": 4,
+      "year_2025": 7
+    },
+    "students_by_year": {
+      "year_2016": 5,
+      "year_2017": 1,
+      "year_2018": 1,
+      "year_2019": 4,
+      "year_2020": 2,
+      "year_2021": 4,
+      "year_2022": 6,
+      "year_2023": 5,
+      "year_2024": 4,
+      "year_2025": 7
+    },
+    "total_students": 39
+  },
+  "years": {
+    "year_2016": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://sites.google.com/site/shubhamgsoc2016/",
+          "description": "<p>MyISAM  supports special kinds of indexes that only store the hash of the data in the index tree.This is used in internal temporary tables that the optimizer creates to resolve SELECT DISTINCT queries.So, MyISAM can do it internally, but there is no way for the end user to create such a unique constraint explicitly. The goal of the project is about giving the access to this MyISAM feature to the SQL layer and allowing the end user to create long unique constraint explicitly.\nCurrently, InnoDB doesn't support long unique constraints.So the 2nd goal of this project is to implement this feature in InnoDB.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2016_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6474232896684032/",
+          "proposal_id": null,
+          "short_description": "MyISAM  supports special kinds of indexes that only store the hash of the data in the index tree.This is used in internal temporary tables that the...",
+          "slug": "unique-indexes-for-blobs",
+          "status": "completed",
+          "student_name": "Shubham2",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Unique Indexes for blobs"
+        },
+        {
+          "code_url": "http://sachin1001gsoc.blogspot.in/2016/08/gsoc-2016.html",
+          "description": "<p>First project is about creating unique indexes for blob and\nvarchar in Aria, MyISAM storage engine. It will provide user a direct\ninterface for creating index for blobs , varchars .By this way user can\nalso have unique constraint for blobs and very long strings.Second\nproject will optimize it further by reducing time complexity of equal\nquery from O(log b n) to O(1).\nBy doing this we can also reduce time complexity of distinct query for\nany storage engine from O(n*log(n)) to O(n).So innodb will also benefit\nfrom this project because it internally uses maria for finding distinct\nblob.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_mariadb_2016_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/4971887159410688/",
+          "proposal_id": null,
+          "short_description": "First project is about creating unique indexes for blob and\nvarchar in Aria, MyISAM storage engine. It will provide user a direct\ninterface for...",
+          "slug": "unique-index-for-blobs-and-adaptive-hashing-for-generated-hash",
+          "status": "completed",
+          "student_name": "Sachin Setiya",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Unique Index for BLOBs And Adaptive Hashing for Generated Hash"
+        },
+        {
+          "code_url": "http://gsocmariadbshagalla.blogspot.ru/2016/08/final-evaluation.html",
+          "description": "<p>The main goal of this project is to add the following optimization of the queries that use non-mergeable views and/or derived tables. The conditions in the where clause of such a query that depend only on the columns of non-mergable view/derived tables are pushed into the query defining this view/derived table. This project will cover simple cases with pushing separable condition as well as more complicated cases with pushing non-separable conditions. It will resolve the problem of extracting pushable conditions by using equality predicates. It also will detect separable pushable conditions that can be extracted by using the basic properties of comparison predicates.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2016_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5040437790244864/",
+          "proposal_id": null,
+          "short_description": "The main goal of this project is to add the following optimization of the queries that use non-mergeable views and/or derived tables. The conditions...",
+          "slug": "pushing-conditions-into-non-mergeable-views-and-derived-tables-in-mariadb",
+          "status": "completed",
+          "student_name": "shagalla",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Pushing conditions into non-mergeable views and derived tables in MariaDB"
+        },
+        {
+          "code_url": "http://varunraiko.github.io/aggregate-functions/",
+          "description": "<p>Most of the current databases like Oracle, PostgreSQL, HSQL support the notion of CREATING AGGREGATE FUNCTIONS . This notion is missing from MariaDB, so this project deals with creating the support for aggregate functions for MariaDB. To incorporate the support for the aggregate stored functions first we have to form the syntax (discussed with the mentor and decided) and then analyse the changes that are needed to be made in the current CREATE FUNCTION implementation , so that it incorporates the implementation for the stored aggregate functions. The syntax for the aggregate stored functions takes in account of cursors , which are used as iterators and help to fetch rows from the database and the store the aggregate results.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2016_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/6517553815879680/",
+          "proposal_id": null,
+          "short_description": "Most of the current databases like Oracle, PostgreSQL, HSQL support the notion of CREATING AGGREGATE FUNCTIONS . This notion is missing from MariaDB,...",
+          "slug": "aggregate-stored-funtions",
+          "status": "completed",
+          "student_name": "varun_raiko",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "Aggregate Stored Funtions"
+        },
+        {
+          "code_url": "https://github.com/medvdanil/server/commits/10.2?author=medvdanil",
+          "description": "<p>There are 3 main string types in MariaDB: CHAR, VARCHAR and TEXT. They vary storage methods, but they are using same comparision functions. MariaDB supports a lot of character sets and each character set supports many ways to comparison (for different languages and case sensetivity). Set of rules for comparing characters in a character set named collation.</p>\n<p>Now all collations have a one common rule: ignoring trailing spaces. So strings ‘aa   ‘ and ‘aa’ are equal. And the purpose of my proposal to add NO PAD collations, i. e way to take trailing spaces into account.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2016_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2016/projects/5810025062727680/",
+          "proposal_id": null,
+          "short_description": "There are 3 main string types in MariaDB: CHAR, VARCHAR and TEXT. They vary storage methods, but they are using same comparision functions. MariaDB...",
+          "slug": "no-pad-collations",
+          "status": "completed",
+          "student_name": "D.M.",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "NO PAD collations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2016/organizations/4961683122421760/"
+    },
+    "year_2017": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "http://gsocmariadbshagalla.blogspot.ru/2017/08/gsoc-2017-final-evaluation.html",
+          "description": "<p>Now in MariaDB if in a query [NOT] IN predicate is used with a long list of values, SEL_TREE structures are built to check if the range access based on this predicate can be used. Building SEL_TREE structures takes a huge amount of memory. In this case it will be better to transform the predicate into [NOT] IN subquery with \n built over the list of values in its FROM list.</p>\n<p>This project includes addition of \n to SQL of MariaDB and implementation of the above-mentioned transformation.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2017_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2017/projects/4816368004235264/",
+          "proposal_id": null,
+          "short_description": "Now in MariaDB if in a query [NOT] IN predicate is used with a long list of values, SEL_TREE structures are built to check if the range access based...",
+          "slug": "transformation-of-in-predicate-into-in-subquery-based-on-implementation-of-table-value-constructor",
+          "status": "completed",
+          "student_name": "Galina Shalygina",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Transformation of IN predicate into IN subquery based on implementation of table value constructor"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4752192066027520/"
+    },
+    "year_2018": {
+      "num_projects": 1,
+      "projects": [
+        {
+          "code_url": "https://github.com/teodorniculescu/server/compare/62b88aa77e9d28d97c821b9999cb4c69958e0c6b~4...62b88aa77e9d28d97c821b9999cb4c69958e0c6b",
+          "description": "<p>This project implements a method of approximating histograms with equal-width bins. Such a feature is useful in cases when the tables have too many records and producing a full histogram would take too much time.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2018_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2018/projects/5440392258387968/",
+          "proposal_id": null,
+          "short_description": "This project implements a method of approximating histograms with equal-width bins. Such a feature is useful in cases when the tables have too many...",
+          "slug": "histograms-with-equal-width-bins-project",
+          "status": "completed",
+          "student_name": "Teodor Niculescu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Histograms with equal-width bins Project"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5785567371460608/"
+    },
+    "year_2019": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://gist.github.com/ZeroICQ/f0c35a20cae7065368dae31d7ad9b001",
+          "description": "<p>Add support for Indexes on Expressions</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2019_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5352537325043712/",
+          "proposal_id": null,
+          "short_description": "Add support for Indexes on Expressions",
+          "slug": "an-ambitious-step-into-mariadb-developers-society",
+          "status": "completed",
+          "student_name": "Alexey Mogilyovkin",
+          "student_profile": null,
+          "tags": [],
+          "title": "An ambitious step into mariadb developers society"
+        },
+        {
+          "code_url": "https://medium.com/@ruchad1998/google-summer-of-code-2019-add-returning-to-insert-statement-b876a63fa7e5",
+          "description": "<p>Hello! \nI am Rucha Deodhar. The task I've picked is to add RETURNING clause to INSERT statement which will return the listed fields after the insert query runs successfully. This will make it library first and also might improve compatibility with Oracle RDBMS. It also eliminates the need of additional query. This feature already exists in other DBMS like PostgreSQL. More information about my project can be found in the proposal. \nThanks!</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2019_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5846287033827328/",
+          "proposal_id": null,
+          "short_description": "Hello! \nI am Rucha Deodhar. The task I've picked is to add RETURNING clause to INSERT statement which will return the listed fields after the insert...",
+          "slug": "add-returning-to-insert",
+          "status": "completed",
+          "student_name": "Rucha Deodhar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add returning to insert"
+        },
+        {
+          "code_url": "https://gist.github.com/Mup0c/43c781e2135e55bf5126e0f8c60e2a24",
+          "description": "<p>The task is about adding RETURNING option to UPDATE clause in MariaDB server, that returns a set of the changed rows to the client. This feature already exists in other DBMSs such as PostgreSQL. So having this in MariaDB might improve compatibility.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2019_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5154206892163072/",
+          "proposal_id": null,
+          "short_description": "The task is about adding RETURNING option to UPDATE clause in MariaDB server, that returns a set of the changed rows to the client. This feature...",
+          "slug": "implementing-update-with-result-set",
+          "status": "completed",
+          "student_name": "Miroslav Koberskii",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing UPDATE with result set"
+        },
+        {
+          "code_url": "https://github.com/MariaDB/server/pull/1378",
+          "description": "<p>The project I prefer to do is <code>“Implement EXCEPT ALL and INTERSECT ALL operations”</code> from idea list. I choose this because in my perspective this project is suit for my capacity and can give me a chance to both take part in developing a open source project and know database system more deep going.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2019_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2019/projects/5172597455585280/",
+          "proposal_id": null,
+          "short_description": "The project I prefer to do is “Implement EXCEPT ALL and INTERSECT ALL operations” from idea list. I choose this because in my perspective this...",
+          "slug": "proposal-for-gsoc-2019-implement-except-all-and-intersect-all-operations",
+          "status": "completed",
+          "student_name": "Ruihang Xia",
+          "student_profile": null,
+          "tags": [
+            "database",
+            "ui"
+          ],
+          "title": "Proposal for GSoC 2019 - Implement EXCEPT ALL and INTERSECT ALL operations"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5215339158175744/"
+    },
+    "year_2020": {
+      "num_projects": 2,
+      "projects": [
+        {
+          "code_url": "https://gitlab.com/KartikSoneji/gsoc-2020-mariadb",
+          "description": "<p>This project aims to remove the compile time dependencies on compression libraries and defer them to run time.<br>\nRight now, the MariaDB server needs all supported libraries to be preset during startup.<br>\nFor example, the Ubuntu build (<code>MariaDB: 10.3.22</code>) only supports <code>LZ4</code>, and <code>Snappy</code>. The server <em>can</em> use other libraries, like <code>LZMA</code> and <code>BZip2</code>, but needs to be recompiled.<br>\nInstead, we can load libraries dynamically at runtime, so using a new library is as simple as installing a package.</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2020_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6487571795804160/",
+          "proposal_id": null,
+          "short_description": "This project aims to remove the compile time dependencies on compression libraries and defer them to run time.\nRight now, the MariaDB server needs...",
+          "slug": "load-compression-libraries-at-runtime",
+          "status": "completed",
+          "student_name": "Kartik Soneji",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Load Compression Libraries at Runtime"
+        },
+        {
+          "code_url": "https://gist.github.com/sapiest/d9bc42f3d28d713f070b91ed9b974759",
+          "description": "<p>This project aims to deploy the Thread Pool algorithm to MariaDB structure. At the moment, in tpool MariaDB the size is set by the classical formula 2 *k - number of cores. But in .NET the HillClimbing optimization algorithm was used in attempts to fight against throttling. The researches show the results where the number of threads is normalized in relation to the required tasks. It becomes clear that this algorithm can be implemented for any standard treadpool and see how this changes the performance profile(look how it testing in .NET)\n<a href=\"https://mattwarren.org/2017/04/13/The-CLR-Thread-Pool-Thread-Injection-Algorithm/\" target=\"_blank\">https://mattwarren.org/2017/04/13/The-CLR-Thread-Pool-Thread-Injection-Algorithm/</a>\n<a href=\"https://research.google/pubs/pub35085/\" target=\"_blank\">https://research.google/pubs/pub35085/</a></p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2020_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2020/projects/6065359330738176/",
+          "proposal_id": null,
+          "short_description": "This project aims to deploy the Thread Pool algorithm to MariaDB structure. At the moment, in tpool MariaDB the size is set by the classical formula...",
+          "slug": "optimizing-the-distribution-of-tasks-in-a-treadpool",
+          "status": "completed",
+          "student_name": "Anton Mikhailenko",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Optimizing the distribution of tasks in a treadpool"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5950846174494720/"
+    },
+    "year_2021": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/a97410985/GSoC2021_MariaDB_autocomplete_and_related_feature_report",
+          "description": "<p>The main goal of this project is to create a component that has a clear API that can provide autocomplete feature for the jupyter kernel - mariadb_kernel. And also I hope that component \ncan be easily integrated with not just jupyter, but also VSCode and Atom … etc popular editor.\nThe main feature has two:</p>\n<ol>\n<li>can get the latest MariaDB keywords and functions for autocompletion. (implement new table in MariaDB's information schema, and can use SQL command to get the information)</li>\n<li>provide an introspection feature that can inspect the word's info and some real data.</li>\n</ol>\n<p>And this project autocompletion feature is based on mycli's autocompletion engine. Then do some enhancement on that. Such as:</p>\n<ol>\n<li>Database suggestion before 「.」. Ex: 「insert into db_name_to_be_completed.table_name\nVALUES\n(...) 」</li>\n<li>add global and session variable suggestions</li>\n<li>can suggest system default database, table, column. Ex: add column suggest for system table like mysql.user.</li>\n<li>Autocompletion about database_name.table_name_to_be_completed could suggest the table, which not in the currently selected database</li>\n<li>fix some bugs related to the word of the user is the column name and also is the keyword</li>\n</ol>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2021_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/6374646231859200/",
+          "proposal_id": null,
+          "short_description": "The main goal of this project is to create a component that has a clear API that can provide autocomplete feature for the jupyter kernel -...",
+          "slug": "autocomplete-and-related-feature",
+          "status": "completed",
+          "student_name": "xing-zhi jiang",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "autocomplete and related feature"
+        },
+        {
+          "code_url": "https://gist.github.com/idoqo/ac520943e53f64034beaed4258b62ba5",
+          "description": "<p>Histograms in databases are compact summaries of the data distribution in a column. They are usually used by the query optimizer on non-indexed columns to produce efficient query plans, which then determine how many rows are read during query execution.</p>\n<p>This project aims to:</p>\n<ul>\n<li>Add support for storing precise histogram bucket bounds (similar to PostgreSQL and MySQL).</li>\n<li>Switch the MariaDB histogram storage to JSON which will in turn enable other histogram formats such as most-common-values (MCV), allow DBAs to examine the histograms on their own, and improve the overall histogram precision.</li>\n</ul>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2021_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5703033438076928/",
+          "proposal_id": null,
+          "short_description": "Histograms in databases are compact summaries of the data distribution in a column. They are usually used by the query optimizer on non-indexed...",
+          "slug": "use-json-as-on-disk-format-for-histograms",
+          "status": "completed",
+          "student_name": "michaeokoko",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Use JSON as on-disk format for Histograms"
+        },
+        {
+          "code_url": "https://gist.github.com/MagHErmit/418644ae7c1424bc860baef7afee0cb5",
+          "description": "<p>Development and implementation new kind of io_cache for optimization's purposes</p>\n",
+          "difficulty": null,
+          "id": "proj_mariadb_2021_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5260380485451776/",
+          "proposal_id": null,
+          "short_description": "Development and implementation new kind of io_cache for optimization's purposes",
+          "slug": "non-blocking-multi-thread-io_cache",
+          "status": "completed",
+          "student_name": "Vladislav Kakurin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Non-blocking multi-thread IO_CACHE"
+        },
+        {
+          "code_url": "https://github.com/MariaDB/server/pull/1862",
+          "description": "<p>The objective of this project is to create a new string formatting function, similar to printf in C and format in Python, in MariaDB to avoid complex select statements full of CONCAT() and FORMAT() functions.</p>\n<p>The idea of this function is to format each field with existing formatting functions available in MariaDB, so the syntax has to be designed in a smart way to easily accommodate future additions.</p>\n",
+          "difficulty": "advanced",
+          "id": "proj_mariadb_2021_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2021/projects/5640122367737856/",
+          "proposal_id": null,
+          "short_description": "The objective of this project is to create a new string formatting function, similar to printf in C and format in Python, in MariaDB to avoid complex...",
+          "slug": "custom-formatting-of-strings-in-mariadb-queries",
+          "status": "completed",
+          "student_name": "Alan Cueva",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai"
+          ],
+          "title": "Custom formatting of strings in MariaDB queries"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2021/organizations/6249801833775104/"
+    },
+    "year_2022": {
+      "num_projects": 6,
+      "projects": [
+        {
+          "code_url": "https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2528",
+          "description": "We aim to improve the previous implementation of UNION\nALL and develop the feature set operations as operators to a production-ready status, and research the topic as far as we can. I have a two-staged task,\nwhere the first stage is an improvement the previous implementation of UNION\nALL and the second stage is an implementation of set operations as operators.",
+          "difficulty": null,
+          "id": "proj_mariadb_2022_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/LZ5Te7cU/",
+          "proposal_id": null,
+          "short_description": "We aim to improve the previous implementation of UNION ALL and develop the feature set operations as operators to a production-ready status, and...",
+          "slug": "researchimplement-union-processing-in-columnstore",
+          "status": "completed",
+          "student_name": "Jigao Luo",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Research/implement UNION processing in Columnstore"
+        },
+        {
+          "code_url": "https://github.com/MariaDB/server/pull/2191",
+          "description": "To restore a partial backup done using mariabackup, we have to create the table again using the \"CREATE TABLE\" statement. A situation might arise where the DBA (Database Administrator) may not have the DDL code previously used for creating the table. Without the DDL code, we can't restore the table from its physical backup. Hence, we need a tool that can help us generate table DDL from .frm files.",
+          "difficulty": null,
+          "id": "proj_mariadb_2022_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/8sWfKkiU/",
+          "proposal_id": null,
+          "short_description": "To restore a partial backup done using mariabackup, we have to create the table again using the \"CREATE TABLE\" statement. A situation might arise...",
+          "slug": "create-a-utility-to-parse-frm-files-and-print-the-table-ddl",
+          "status": "completed",
+          "student_name": "Prashant",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database"
+          ],
+          "title": "Create a utility to parse .frm files and print the table DDL."
+        },
+        {
+          "code_url": "https://weijun-h.github.io/tags/gsoc/",
+          "description": "MariaDB is a fork of MySQL that was created by the community. Currently, MariaDB has some aggregation functions like min and max. However, it lacks regression functions that have been implemented in other DBMSs, such as Oracle and PostgreSQL.\n\nThis problem is divided into four steps, including researching and choosing a dedicated regression function implementation that best matches user expectations, implementing many of the regression functions mentioned in MDEV-17467, implementing test cases for regression functions, and writing a summary article for users.",
+          "difficulty": null,
+          "id": "proj_mariadb_2022_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/bNj9kMRL/",
+          "proposal_id": null,
+          "short_description": "MariaDB is a fork of MySQL that was created by the community. Currently, MariaDB has some aggregation functions like min and max. However, it lacks...",
+          "slug": "add-linear-regression-functions",
+          "status": "completed",
+          "student_name": "Weijun Huang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add linear regression functions"
+        },
+        {
+          "code_url": "https://github.com/Ziy1-Tan/GSoC-2022-MariaDB-Report",
+          "description": "The goal of this project is to add the JSON_* functions support in Select Handler\nmode. After the project, we can use json function with Columnstore in Select\nHandler mode.\n\n\nWe can design and implement JSON functions. My implementation idea is as follows(take the JSON_VALID function as example):\n\n● Related files and classes: define the relevant files required by the JSON_VALID function according to the specification of the SQL function definition in Columnstore\n\n1. functor_json.cpp: According to the return value of the function, create new class Func_json_valid derived from class Func_bool.\n\n2. func_json_valid.cpp: the JSON_VALID function is implemented here. Implement any other methods that behave\ndifferently from the default.\n\n3. funcexp.{h,cpp}: in FuncExp::FuncExp(), add a new entry fFuncMap[\"json_valid\"] = new Func_json_valid().\n\n4. CMakeLists.txt: Add any source files to build.\n\n● Borrow and translate:\n1. JSON_* functions are already implemented in MariaDB leveraging its own JSON format parser\n\n2. The parser itself is couple files only library. Here is the main file.\n\n3. So the next step is to read/understand this implementation and translate the code into Columnstore using the mentioned JSON format parser.",
+          "difficulty": null,
+          "id": "proj_mariadb_2022_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/VIJfR79a/",
+          "proposal_id": null,
+          "short_description": "The goal of this project is to add the JSON_* functions support in Select Handler mode. After the project, we can use json function with Columnstore...",
+          "slug": "mariadb-mcol-785-implement-distributed-json-functions",
+          "status": "completed",
+          "student_name": "Ziyi Tan",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "MariaDB - [MCOL-785] Implement DISTRIBUTED JSON functions"
+        },
+        {
+          "code_url": "https://github.com/NTH19/GSoC_2022_Report",
+          "description": "This project goal is to implement basic vectorized filtering for ARM platforms.The bootstrap script is right when the project is build in arm platforms.So we can skip the first  step.And the main  task are getting familiar with vector extensions(NEON, SVE) for ARM platforms and implement vectorization on ARM\nI plan to spend three months to complete this project. In the first month, understand the basic code structure and the architecture of 128bit arm neon extension and SVE. In the second month, I will go to get family with vector extensions (neon, SVE) for arm platforms and implementation vectorization on arm. Continue to complete testing and bug fixes in the third month",
+          "difficulty": null,
+          "id": "proj_mariadb_2022_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/Pizkj3Lg/",
+          "proposal_id": null,
+          "short_description": "This project goal is to implement basic vectorized filtering for ARM platforms.The bootstrap script is right when the project is build in arm...",
+          "slug": "mariadb-columnstoremcol-4995",
+          "status": "completed",
+          "student_name": "Hongdong He",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "MariaDB ColumnStoreMCOL-4995"
+        },
+        {
+          "code_url": "https://github.com/tanruixiang/GSoC_2022_MariaDB_Report",
+          "description": "This project will add the JSON_INTERSECT() function. This function can find the intersection of two json objects or two json arrays. We will try to implement this function in a way with low time and space complexity.",
+          "difficulty": "advanced",
+          "id": "proj_mariadb_2022_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2022/projects/hGEjconb/",
+          "proposal_id": null,
+          "short_description": "This project will add the JSON_INTERSECT() function. This function can find the intersection of two json objects or two json arrays. We will try to...",
+          "slug": "proposal-for-mdev-26182-create-a-function-to-check-for-json-intersection",
+          "status": "completed",
+          "student_name": "Ruixiang Tan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Proposal for MDEV-26182 Create a function to check for JSON intersection"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2022/organizations/mariadb/"
+    },
+    "year_2023": {
+      "num_projects": 5,
+      "projects": [
+        {
+          "code_url": "https://github.com/HanpyBin/mariadb-columnstore-engine/tree/MCOL-5505-7",
+          "description": "The task is to make cpimport support parquet files as input or design a general framework to add new input formats. \n    Considering cpimport finish its workflow by two stages, read and parse, so I plan to solve this problem from these two stages. For read stage, I will use some external library to help finish reading like `parquet-cpp`, `arrow` and so on. By using parquet-cpp, I can directly read parquet file and by using `arrow::table` I can store data in table format. Later, in parse stage, I plan to use table format data and parse it to insert data into target table.\n    After finishing the task, cpimport can handle parquet file input or other poplular formats like arrow, avro and successfully insert data into the database.",
+          "difficulty": null,
+          "id": "proj_mariadb_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/w0LzyrnO",
+          "proposal_id": "Wxas5las",
+          "short_description": "The task is to make cpimport support parquet files as input or design a general framework to add new input formats. Considering cpimport finish its...",
+          "slug": "mariadb-columnstore-parquet-support-in-cpimport-proposal-bin-ruan",
+          "status": "completed",
+          "student_name": "BinRuan",
+          "student_profile": null,
+          "tags": [
+            "database"
+          ],
+          "title": "MariaDB Columnstore - Parquet support in cpimport - proposal - Bin Ruan"
+        },
+        {
+          "code_url": "https://jira.mariadb.org/browse/MDEV-30610",
+          "description": "RocksDB is an embeddable persistent key-value store for fast storage. MariaDB has integrated this engine into the database since version 10.2.5. However, the ported engine, MariaRocks, is currently lagging behind the main branch of RocksDB. The goal of this project is to update MariaRocks to the latest release of RocksDB by incorporating changes from Facebook’s MyRocks. This update will include API changes, bug fixes, and improvements.",
+          "difficulty": null,
+          "id": "proj_mariadb_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/slotQabK",
+          "proposal_id": "AnRcMeWf",
+          "short_description": "RocksDB is an embeddable persistent key-value store for fast storage. MariaDB has integrated this engine into the database since version 10.2.5....",
+          "slug": "update-rocksdb-to-the-latest-upstream-version",
+          "status": "completed",
+          "student_name": "Junqi Xie",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Update RocksDB to the latest upstream version"
+        },
+        {
+          "code_url": "https://gist.github.com/MuHe03/7f3829fe68bd8f2d3364229154be8da1",
+          "description": "Current Mariadb ColumnStore engine doesn’t support vectorized evaluation\nof SQL functions and expressions. This project want to cover this by adding row/col transformation before the evaluation and evaluate the performance improvement. Furthermore, this project will also try to accomplish a delayed projection into RowGroup, which store data in vertical stored buffers and optimize the transformation part.",
+          "difficulty": null,
+          "id": "proj_mariadb_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/846SqnAJ",
+          "proposal_id": "r8xPog1C",
+          "short_description": "Current Mariadb ColumnStore engine doesn’t support vectorized evaluation of SQL functions and expressions. This project want to cover this by adding...",
+          "slug": "simd-for-sql-expressions-and-functions",
+          "status": "completed",
+          "student_name": "Mu He",
+          "student_profile": null,
+          "tags": [],
+          "title": "SIMD for SQL expressions and functions"
+        },
+        {
+          "code_url": "https://phoeinx.github.io/gsoc-blog/2023/09/25/final-submission.html",
+          "description": "This project optimized the GROUP BY operator in MariaDB ColumnStore for workloads requiring disk-based aggregation. To achieve this a) unnecessary I/O operations in the aggregation algorithm were reduced, b) bugs in the previous implementation of disk-based aggregation were fixed and c) vectorized access to the internal hash map used for aggregation was tested.\nAdditionally, Theresa fixed other bugs and improved documentation and the development setup, especially for new developers.",
+          "difficulty": null,
+          "id": "proj_mariadb_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/IxEtmCln",
+          "proposal_id": "MWxmQW1D",
+          "short_description": "This project optimized the GROUP BY operator in MariaDB ColumnStore for workloads requiring disk-based aggregation. To achieve this a) unnecessary...",
+          "slug": "optimize-group-by-in-mariadb-columnstore",
+          "status": "completed",
+          "student_name": "phoeinx",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Optimize GROUP BY in MariaDB ColumnStore"
+        },
+        {
+          "code_url": "https://github.com/mariadb-corporation/mariadb-columnstore-engine/pull/2891",
+          "description": "MCS uses interepreted execution to calculate SQL expressions results. Here is an example of a SQL expression 'table1.col1 + FLOOR(table2.col1)'. Given that table1.col1 is DECIMAL and table2.col1 is DOUBLE there is a number of conditions that drives the calculation of this relatively simple example in runtime. Given that SQL types and expression tree are known before the query begins it is possible to replace interpretation with JIT to produce specialized compiled bytecode that is:\n\nsmall\nhas no or almost no branches\noptimized for the specific platform it is run at\nThis is a research mostly project which goal is to produce a set of microbenchmarks that:\n\nleverages any JIT compiler available, e.g. LLVM, MIR\ndemonstrates a negative and positive effects of using JIT",
+          "difficulty": null,
+          "id": "proj_mariadb_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/hLufFI1y",
+          "proposal_id": "e7AjPjl2",
+          "short_description": "MCS uses interepreted execution to calculate SQL expressions results. Here is an example of a SQL expression 'table1.col1 + FLOOR(table2.col1)'....",
+          "slug": "jit-compiled-sql-expressions",
+          "status": "completed",
+          "student_name": "Xie Qijun",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "JIT compiled SQL expressions"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/mariadb"
+    },
+    "year_2024": {
+      "num_projects": 4,
+      "projects": [
+        {
+          "code_url": "https://github.com/MariaDB/server/pull/3380",
+          "description": "implementing the IVFFlat indexing strategy for MariaDB Vector to enhance performance. including support of key features like support different distance metrics, and support choosing between HNSW and IVFFLAt.also optimizations on the searching time building indexer time, and benchmarking metrics.",
+          "difficulty": null,
+          "id": "proj_mariadb_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/4WGDeLSR/",
+          "proposal_id": null,
+          "short_description": "implementing the IVFFlat indexing strategy for MariaDB Vector to enhance performance. including support of key features like support different...",
+          "slug": "implement-ivfflat-indexing-strategy-for-mariadb-vector-and-evaluate-the-performance",
+          "status": "completed",
+          "student_name": "Ahmed Sayed Sayed Madbouly",
+          "student_profile": null,
+          "tags": [
+            "ui"
+          ],
+          "title": "Implement IVFFlat indexing strategy for MariaDB Vector and evaluate the performance"
+        },
+        {
+          "code_url": "https://www.andrealves.dev/blog/gsoc24-final-submission/",
+          "description": "In summary, the project is about supporting generalized triggers in MariaDB. The main focus will be on adding triggers for STARTUP/SHUTDOWN and making CREATE TRIGGER ... ON SCHEDULE a synonym for CREATE EVENT.",
+          "difficulty": null,
+          "id": "proj_mariadb_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/pzFvEfQA/",
+          "proposal_id": null,
+          "short_description": "In summary, the project is about supporting generalized triggers in MariaDB. The main focus will be on adding triggers for STARTUP/SHUTDOWN and...",
+          "slug": "implement-generalized-triggers",
+          "status": "completed",
+          "student_name": "André Alves",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implement Generalized Triggers"
+        },
+        {
+          "code_url": "https://github.com/MariaDB/server/pull/3360",
+          "description": "MariaDB provides `my_vsnprintf` (& `my_snprintf`) as a C `vsnprintf` alternative with platform-consistent results and custom extensions.\nHowever, these extension specifiers are incompatible with `printf` format checks in tools such as GCC.\n\nThis project reworks these extensions to use suffixes to resemble ordinary C and removes the old syntaxes due to incompatibility.\nIt also enables and utilizes said format checks to upgrade existing uses and catch up on mistakes sneaked in while these checks were inactive.",
+          "difficulty": null,
+          "id": "proj_mariadb_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/BNEGRwkS/",
+          "proposal_id": null,
+          "short_description": "MariaDB provides `my_vsnprintf` (& `my_snprintf`) as a C `vsnprintf` alternative with platform-consistent results and custom extensions. However,...",
+          "slug": "migrating-my_vsnprintf-format-extensions-for-compatibility-with-c-printf-family-syntax",
+          "status": "completed",
+          "student_name": "Jimmy “ParadoxV5” Hú",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Migrating my_vsnprintf Format Extensions for Compatibility with C printf-family Syntax"
+        },
+        {
+          "code_url": "https://jira.mariadb.org/browse/MDEV-34120",
+          "description": "As MariaDB continues to evolve and improve, MySQL users may consider it as a better alternative. The absence of some spatial functions could be a drawback for some of them and potentially make the migration process difficult.\nMy goal is to implement the following spatial functions: ST_IsValid, ST_Validate, - MBRCoveredBy, ST_Collect, ST_GeoHash, ST_Simplify, ST_LatFromGeoHash,  ST_LatFromGeoHash and ST_PointFromGeoHash.\n\nFor each new function to implement, I will start by importing the corresponding tests from the MySQL test suite. These tests serve as an optimal starting point. Given that the primary goal is to ensure compatibility between MySQL and MariaDB, passing the same set of tests on both codebases ensures uniform behaviour. Additionally, these tests serve as a valuable supplement to the documentation, offering detailed insights into the expected behaviour of each function while also documenting edge cases. Moreover, as new tests are written when fixing a bug, we can mitigate the risk of encountering previously resolved issues by the MySQL developers.\n\nThe spatial functions already implemented, are defined in the sql/item_geofunc.h file. The new functions will also be placed in the same file and will be implemented by extending the interfaces that are already defined. For instance, ST_IsValid will extend Item_bool_func_args_geometry which is the class that defines the interface for all the MariaDB native functions returning boolean measurements of a single GEOMETRY argument.\n\nIn MySQL, the functions ST_GeoHash(longitude, latitude, max_length) and\nST_GeoHash(point, max_length) do not return a special datatype but a string. I want to make a more in-depth analysis regarding this function and evaluate if defining a\ncustom datatype would be a viable option and if it would grant meaningful performance improvements.",
+          "difficulty": null,
+          "id": "proj_mariadb_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/DInZx53F/",
+          "proposal_id": null,
+          "short_description": "As MariaDB continues to evolve and improve, MySQL users may consider it as a better alternative. The absence of some spatial functions could be a...",
+          "slug": "spatial-gis-functions-in-mariadb",
+          "status": "completed",
+          "student_name": "Stefano Petrilli",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Spatial (GIS) functions in MariaDB"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/mariadb/"
+    },
+    "year_2025": {
+      "num_projects": 7,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Implement an efficient Bloom Filter to reduce JOIN's computations. Idea is to apply Bloom filter on columns to filter the data as much as possible, and then feed the data to JOIN. This will significantly reduce the amount of memory taken by JOIN operation and increase its performance.",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/DSvUKctm",
+          "proposal_id": "JT1BeYZa",
+          "short_description": "Implement an efficient Bloom Filter to reduce JOIN's computations. Idea is to apply Bloom filter on columns to filter the data as much as possible,...",
+          "slug": "reduce-computations-in-joins-by-using-bloom-filter-based-pre-joins",
+          "status": "in-progress",
+          "student_name": "Akhmad Oripov",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reduce computations in JOINs by using Bloom-filter-based pre-joins"
+        },
+        {
+          "code_url": null,
+          "description": "MariaDB ColumnStore (MCS) does not currently reclaim disk space from empty records left behind by DELETE operations or bulk imports. These empty records accumulate over time and waste both storage and CPU resources during query execution.\n\nThis project aims to address the issue by implementing manual vacuum functionality in MCS. It introduces User-Defined Functions (UDFs) for analyzing and vacuuming table and partition-level bloat. The core vacuum process involves identifying non-empty records and copying them to new extents.\n\nDeliverables include:\n- UDFs to analyze and report table and partition bloat.\n- UDFs to vacuum empty records from partitions and tables.\n- Support for table-level vacuuming with parallelism.\n- Documentation and testing for all features.\n- Autovacuum process (stretch goal).",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/B08vjsoS",
+          "proposal_id": "MldethpF",
+          "short_description": "MariaDB ColumnStore (MCS) does not currently reclaim disk space from empty records left behind by DELETE operations or bulk imports. These empty...",
+          "slug": "vacuum-cleaning-for-empty-on-disk-records-in-mariadb-columnstore",
+          "status": "in-progress",
+          "student_name": "Amr Elmohamady",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Vacuum cleaning for empty on-disk records in MariaDB ColumnStore"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, there is no plugin in MariDB that can generate vector embeddings. If the user wishes to store vector embeddings for a document, they have to use a separate solution and then manually insert them into the database. This is inefficient and complicates related pipelines.\n\nThe goal of this project is twofold:\n1. Create a function plugin that implements a function to query OpenAI’s API to generate vector embeddings for a given input.\n2. Implement a concept of “expensive” functions in the MariaDB server. When expensive functions are used in stored generated columns, they should not be recomputed whenever possible (for example during ALTER TABLE commands). Instead, the old values should be copied to the new table, just like with regular columns\n\nFor this project to be successfully completed, the goal would be to create a PR to MariaDB’s server repository that:\n1. Implements a function plugin for generating vector embeddings via API calls to OpenAI\n2. Introduces and implements the concept of “expensive” functions, to avoid recomputing them whenever possible \n3. Ensures the quality of the newly developed features is up to standards, via appropriate testing and documentation",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/8n0c6PsY",
+          "proposal_id": "6gamHA8H",
+          "short_description": "Currently, there is no plugin in MariDB that can generate vector embeddings. If the user wishes to store vector embeddings for a document, they have...",
+          "slug": "plugin-for-automatic-embedding-generation-and-introduction-of-expensive-functions-concept",
+          "status": "in-progress",
+          "student_name": "Apostolis Stamatis",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ai",
+            "database"
+          ],
+          "title": "Plugin for automatic embedding generation and introduction of expensive functions concept"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to transform MariaDB's INTERVAL keyword into a first-class data type, enabling its use in table columns, stored routines, and hybrid functions.",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/2Q6aPhXV",
+          "proposal_id": "Jdx0IC6E",
+          "short_description": "This project aims to transform MariaDB's INTERVAL keyword into a first-class data type, enabling its use in table columns, stored routines, and...",
+          "slug": "implementation-of-native-interval-data-type",
+          "status": "in-progress",
+          "student_name": "Hazem Alrawi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Implementation of Native INTERVAL Data Type"
+        },
+        {
+          "code_url": null,
+          "description": "FRM files are what MariaDB uses to store metadata about tables. These files can be used to generate DDL statements (CREATE TABLE ...). We are lacking a utility to parse these files which could in turn make DBAs lives easier. The task of this project is to have this utility implemented, making use of MariaDB's FRM parsing logic. You may have to carry out some refactoring to extract the parsing code into a reusable library, once for MariaDB Server, once for the FRM parsing tool.",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/vAVydntH",
+          "proposal_id": "hZI2Q6I4",
+          "short_description": "FRM files are what MariaDB uses to store metadata about tables. These files can be used to generate DDL statements (CREATE TABLE ...). We are lacking...",
+          "slug": "frm-parser-utility-for-mariadb",
+          "status": "in-progress",
+          "student_name": "hp77",
+          "student_profile": null,
+          "tags": [],
+          "title": "FRM parser Utility for MariaDB"
+        },
+        {
+          "code_url": null,
+          "description": "The mysqltest tool is a core component of MariaDB’s testing infrastructure. Currently, it has two limitations that restrict the flexibility and expressiveness of test scripts:\n1. Limited Variable Substitution: The tool only supports basic variable access patterns.\n2. Lack of Expression Support: It lacks support for arithmetic, comparison, and boolean\noperations.\nThis project addresses both limitations by implementing SQL-like function support and expression evaluation to the mysqltest language. It also enables users to write more concise, maintainable, and powerful test scripts while ensuring backward compatibility with existing tests.",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/lkS4SUrA",
+          "proposal_id": "ijQusMdh",
+          "short_description": "The mysqltest tool is a core component of MariaDB’s testing infrastructure. Currently, it has two limitations that restrict the flexibility and...",
+          "slug": "enhanced-mysqltest-language-with-expressions-and-variable-substitutions",
+          "status": "in-progress",
+          "student_name": "Khaled Riyad",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhanced mysqltest Language with Expressions and Variable Substitutions"
+        },
+        {
+          "code_url": null,
+          "description": "Currently there are two ways of replication filters in MariaDB. \n\nOne method filters data on the primary node by not writing unwanted events to the binary log, However, this approach risks losing important data and can cause issues with point-in-time recovery. \nThe alternative is to send all data from the primary node to the replicas and let them filter out what they don't need although this method not only increases network traffic and resource usage but also creates a risk of inconsistent data if replicas are misconfigured.\n\nThis proposal suggests adding a filter on the primary node that checks which data should be sent to the replicas, while still logging all events in the binary log. The filter will help control what gets replicated without affecting the ability to recover data. \n\nThis would lead to less network bandwidth being used, less work needed on the replicas, and more consistent replicas by applying the same filtering rules in one place (primary filter instead of replica filter).",
+          "difficulty": null,
+          "id": "proj_mariadb_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uzgYlzc5",
+          "proposal_id": "Ryn8CiJk",
+          "short_description": "Currently there are two ways of replication filters in MariaDB. One method filters data on the primary node by not writing unwanted events to the...",
+          "slug": "replication-to-enable-filtering-on-master",
+          "status": "in-progress",
+          "student_name": "Mohanad Khaled",
+          "student_profile": null,
+          "tags": [],
+          "title": "Replication to Enable Filtering on Master"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/mariadb"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "maria-discuss@lists.launchpad.net",
+    "guide_url": "https://mariadb.org/gsoc2022-instructions/",
+    "ideas_url": "https://mariadb.com/kb/en/google-summer-of-code-2025/",
+    "irc_channel": "https://mariadb.zulipchat.com/",
+    "mailing_list": "https://mariadb.com/kb/en/mailing-lists/"
+  },
+  "social": {
+    "blog": "https://mariadb.org/blog/",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": null,
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/mariadb_org",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:53.436Z"
+  }
+}

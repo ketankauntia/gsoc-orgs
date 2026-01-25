@@ -1,0 +1,1034 @@
+{
+  "id": "692251eb53dd9d7326d33eea",
+  "slug": "uc-ospo",
+  "name": "UC OSPO",
+  "category": "Science and medicine",
+  "description": "Amplifying Research Impact through Open Source",
+  "image_url": "https://summerofcode.withgoogle.com/media/org/center-for-research-in-open-source-software-cross/ndbkr7fqcqp4nguq-360.png",
+  "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/uc-ospo.webp",
+  "logo_r2_url": null,
+  "url": "https://ucsc-ospo.github.io/osre25/",
+  "active_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "first_year": 2023,
+  "last_year": 2025,
+  "is_currently_active": true,
+  "technologies": [
+    "python",
+    "c",
+    "c++",
+    "visualization",
+    "VLSI",
+    "ros/gazebo",
+    "javascript",
+    "machine learning"
+  ],
+  "topics": [
+    "hardware",
+    "data science",
+    "reproducibility",
+    "storage systems",
+    "data management",
+    "education",
+    "bioinformatics",
+    "AI/ML"
+  ],
+  "total_projects": 47,
+  "stats": {
+    "avg_projects_per_appeared_year": 15.67,
+    "projects_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 14,
+      "year_2024": 16,
+      "year_2025": 17
+    },
+    "students_by_year": {
+      "year_2016": null,
+      "year_2017": null,
+      "year_2018": null,
+      "year_2019": null,
+      "year_2020": null,
+      "year_2021": null,
+      "year_2022": null,
+      "year_2023": 14,
+      "year_2024": 16,
+      "year_2025": 17
+    },
+    "total_students": 47
+  },
+  "years": {
+    "year_2016": null,
+    "year_2017": null,
+    "year_2018": null,
+    "year_2019": null,
+    "year_2020": null,
+    "year_2021": null,
+    "year_2022": null,
+    "year_2023": {
+      "num_projects": 14,
+      "projects": [
+        {
+          "code_url": "https://uccross.github.io/open-source-autonomous-vehicle-controller/",
+          "description": "The OSAVC documentation project for GSoC 2023 aims to create comprehensive documentation for a new user of the OSAVC controller. The project will involve working closely with one of the mentors and incrementally documenting the various procedures starting from a fresh OSAVC controller to a fully-implemented application for a vehicle. To address the global supply chain issues, a new board on a networked device will be set up that can program the OSAVC remotely. The project will begin with testing each sensor and interface and move on to more complex applications, with documentation created at each step.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2023_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/xAHWdWNV",
+          "proposal_id": "LDX5ct7v",
+          "short_description": "The OSAVC documentation project for GSoC 2023 aims to create comprehensive documentation for a new user of the OSAVC controller. The project will...",
+          "slug": "osavc-technical-documentation",
+          "status": "completed",
+          "student_name": "Aniruddha Thakre",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "OSAVC : Technical Documentation"
+        },
+        {
+          "code_url": "https://damodardatta.github.io/blog/2023/report_gsoc2023/",
+          "description": "Existing frameworks for simulation autonomous vehicles use a gazebo simulator with ROS, which limits the development to only Python and C++ programming languages. I intend to develop an unreal engine-based simulator which the OSAVC team can use for development, taking inspiration from Airsim. This allows us to do high-fidelity simulation with the support of programming languages,i.e. Python and C++. In this project, I will add an example of simulating a custom-built CAD model and additionally controlling it using Matlab (Simulink). So that in future, the Vehicle control algorithm design and validation process will become easier. I intend to add detailed documentation of the weekly development period and examples to smoothen future development. Upon successful completion, the project will deliver a powerful simulator with realistic simulation using an unreal engine and the ability to test different vehicles like cars, UAVs and Rovers in future.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/hVIFSHa7",
+          "proposal_id": "eweGu8cS",
+          "short_description": "Existing frameworks for simulation autonomous vehicles use a gazebo simulator with ROS, which limits the development to only Python and C++...",
+          "slug": "high-fidelity-simulation-using-unreal-engine",
+          "status": "completed",
+          "student_name": "damodardatta",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "High Fidelity simulation using Unreal engine"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/16CoooUcUrmb7V7f5lqAemy8Aio12A_Yb6dc-mHwjUEE/edit?usp=sharing",
+          "description": "Scalable systems lay essential foundations of the modern information industry. HPC data centers tend to have hundreds to thousands of nodes in their clusters. The use of “extreme-scale” distributed systems has given birth to a new type of bug: scalability bugs. As its name suggests, scalability bugs may be presented depending on the scale of a run, and thus, symptoms may only be observable in large-scale deployments, but not in small or median deployments. For example, Cassandra-6127 is a scalability bug detected in the popular distributed database Cassandra. The scalability bug causes unnecessary CPU usage, however, the symptom is not observed unless ~1000 nodes are deployed. This demonstrates the main challenge of studying scalability bugs: it is extremely challenging to reproduce without deploying the system at a large scale.\n\nThe project goal is to build a dataset of reproducible scalability bugs. Achieving this will involve analyzing bug reports from popular distributed systems like (e.g., Cassandra, HDFS, Ignite, Kafka) and determining if the reported bug depends on the scale of the run, such as the number of nodes utilized, the size of files, and the number of requests. Identified bugs will be used to build a dataset of bug artifacts that contain the buggy and fixed versions of the scalability system, a runtime environment that ensures reproducibility, and a workload shell script that would trigger some system functionalities and demonstrate the symptoms of the bug under different configurations. For example, a successful reproduction should be able to show the performance drop along with an increasing number of nodes.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/pBo3OM0n",
+          "proposal_id": "FKraRVdA",
+          "short_description": "Scalable systems lay essential foundations of the modern information industry. HPC data centers tend to have hundreds to thousands of nodes in their...",
+          "slug": "scalebugs-scalebugs-reproducible-scalability-bugs",
+          "status": "completed",
+          "student_name": "Goodness Ay",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "[ScaleBugs] ScaleBugs: Reproducible Scalability Bugs"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1m-IMRiGGdPluaSobX7j1jUtzfKBNwdUu4bFIfBq75XA/edit?usp=sharing",
+          "description": "This project aims to review and update missing documentation and tutorials in OpenROAD-flow-scripts. A key focus will be on increasing ease-of-setup by updating documentation, setup scripts and docker-based commands.  Next, we will also update documentation for the following OpenROAD components: Makefile flow variable, distributed detailed routing, Hier-RTLMP, Autotuner. If time permits, cloud enablement will be implemented, alongside notebook-based packaging to further increase ease of adoption.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/PO7wgKkw",
+          "proposal_id": "LnWYgeq4",
+          "short_description": "This project aims to review and update missing documentation and tutorials in OpenROAD-flow-scripts. A key focus will be on increasing ease-of-setup...",
+          "slug": "update-openroad-documentation-and-tutorials",
+          "status": "completed",
+          "student_name": "Jack Luar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "docker",
+            "cloud"
+          ],
+          "title": "Update OpenROAD Documentation and Tutorials"
+        },
+        {
+          "code_url": "https://github.com/kirandeol/PolyGlot_GSoC_Final_Work_Submission",
+          "description": "PolyPhy is an interpretability tool which identifies network structures in both 2 and 3-dimensional data using the novel MCPM algorithm. Users can view and rotate the resulting network. A web app, Polyglot, enables users to navigate a map of the network, hover for detailed views of points, and filter sections of the network based on a novel similarity metric. Despite its excellent interactivity, Polyglot is limited to three precomputed networks. We propose to combine the two tools such that a user can upload any of their own networks from PolyPhy and thus greatly increase the ability of users to interact with their networks from PolyPhy.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/GOnlyhmO",
+          "proposal_id": "OL2Uhfp6",
+          "short_description": "PolyPhy is an interpretability tool which identifies network structures in both 2 and 3-dimensional data using the novel MCPM algorithm. Users can...",
+          "slug": "polyphy-interactive-exploration-of-high-dimensional-datasets-with-polyphy-and-polyglot",
+          "status": "completed",
+          "student_name": "Kiran Deol",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "[PolyPhy] Interactive Exploration of High-dimensional Datasets with PolyPhy and Polyglot"
+        },
+        {
+          "code_url": "https://gist.github.com/LuHesketh/d5138b28c75ae5ec79648e8ebac6d7fd",
+          "description": "The project aims to develop a Python-to-Python conversor for LabOP-written Laboratory protocols to be executed by Hamilton Machines using PyHamilton as a the main bridge. The project will benefit scientists by providing open-source protocols for replicating experiments through an open-source software stack. PyHamilton is an open-source Python package that allows its user to control Hamilton liquid handling robots without its native software constraints. The Protocol used as model is a DNA purification protocol and its integration with LabOP came to fruition with the goal of making the protocol as reproducible as possible since the translation process can be done in different ways by different sites using distinct machines.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/nrezQTSy",
+          "proposal_id": "neHxx5PN",
+          "short_description": "The project aims to develop a Python-to-Python conversor for LabOP-written Laboratory protocols to be executed by Hamilton Machines using PyHamilton...",
+          "slug": "advancing-reproducible-science-through-open-source-laboratory-protocols-as-software",
+          "status": "completed",
+          "student_name": "Luiza Zucchi Hesketh",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ai",
+            "ui"
+          ],
+          "title": "Advancing Reproducible Science through Open Source Laboratory Protocols as Software"
+        },
+        {
+          "code_url": "https://mahnoorismail011.medium.com/the-lvs-visualizer-your-ultimate-circuit-design-companion-2dc5cbc7caa2",
+          "description": "This project aims to develop a comprehensive Python-based graphical user interface (GUI) with a robust backend system to effectively analyze, visualize, and debug layout versus schematic (LVS) mismatches in the OpenRAM framework. The proposed solution focuses on efficiently processing LVS report files in JSON format, identifying mismatched nets in the layout, and visually representing extra nets in the schematic graph using advanced backend algorithms. By implementing a powerful backend system, the GUI will streamline the debugging process and improve overall productivity, while maintaining high performance and reliability. The deliverables for this project include a fully-functional GUI with a performant backend, features for visualizing and navigating through LVS mismatches, comprehensive documentation, and user guides.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2023_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/f9rIZ3dm",
+          "proposal_id": "7b7YXRFy",
+          "short_description": "This project aims to develop a comprehensive Python-based graphical user interface (GUI) with a robust backend system to effectively analyze,...",
+          "slug": "openram-layout-verses-schematic-lvs-visualization",
+          "status": "completed",
+          "student_name": "Mahnoor_Ismail",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "ml",
+            "ai",
+            "ui",
+            "backend"
+          ],
+          "title": "OpenRAM Layout verses Schematic (LVS) visualization"
+        },
+        {
+          "code_url": "https://ucsc-ospo.github.io/report/osre23/ucsc/kvstore/20230825-manank/",
+          "description": "The project involves implementing io_uring based communication backend for network based key-value store. The current implementation in the KTLI (Kinetic transport layer interface) uses traditional sockets and POSIX APIs to communicate with the backend.\nio_uring offers a new kernel interface that can improve performance through  zero copy network transmission capabilities and avoid the overhead of system calls.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/7WPESTT0",
+          "proposal_id": "Ofyo0Hae",
+          "short_description": "The project involves implementing io_uring based communication backend for network based key-value store. The current implementation in the KTLI...",
+          "slug": "efficient-communication-with-keyvalue-storage-devices",
+          "status": "completed",
+          "student_name": "Manank Patel",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "backend"
+          ],
+          "title": "Efficient Communication with Key/Value Storage Devices"
+        },
+        {
+          "code_url": "https://gist.github.com/Nandinisaagar/2e97ec06204adbe70e66bc4d9e8d8f8f",
+          "description": "Contributing to an open-source project offers novices the opportunity to join a community of practitioners, build a technical portfolio, gain experience with industry tools and technologies, and have a real-world impact. This project seeks to invite and support broader, more diverse participation in open source by supporting early contributors – especially those who have been historically minoritised within tech.\n\nThe project will aim to accomplish the following tasks:\n\nCreating content that anyone with some Open Source experience can use to help and guide other completely new students to the journey of OpenSource, GitHub, and all the relevant technologies. This step would involve creating content in the form of transcripts, markdown guides, blogs, and some video content, which would serve as instruction manuals or workshop notes.\n\nProviding a medium and a platform for all contributors to share their various OpenSource experiences and testimonials. The same can be done in textual or multimedia formats like videos and photographs.\n\nConducting an Open Source Themed Hackathon/Scavenger Hunt: We can organise a simple scavenger hunt for students on GitHub, where they can be provided simple tasks like creating issues and commits!  GitHub workflows are an excellent tool for auto-evaluation of the same. Technical documentation will also be provided on how other users can create their own hunts.\n\nSocial Media Engagement: Social media is where most youngsters are these days. Thus, we should be leveraging the power of the same to get young minds acquainted with the technical and open-source world at a young age so they can consciously choose to explore it further.",
+          "difficulty": "medium",
+          "id": "proj_uc-ospo_2023_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/URv3ovZT",
+          "proposal_id": "IjPckdkH",
+          "short_description": "Contributing to an open-source project offers novices the opportunity to join a community of practitioners, build a technical portfolio, gain...",
+          "slug": "susosp-increasing-the-reach-of-open-source-among-high-schoolers-and-teenagers",
+          "status": "completed",
+          "student_name": "Nandini Saagar",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "[SUSOSP] Increasing the Reach of Open Source among High-Schoolers and Teenagers"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/12ukDTJ5jv9fUjNwoRGZvp92vTTUXKI82fx3obwlFN8s/edit",
+          "description": "This proposal aims to enhance the infrastructure of PolyPhy by developing new architecture and maintaining existing codebases. The project will involve refactoring the current codebase, creating interfaces for PolyPhy that enable access to its features through Python/Jupyter code and command line, configuring the codebase according to the team's needs, and improving the performance, security, and documentation of PolyPhy. \n\nTo achieve these goals, I will refactor existing codebase and enhance the PolyPhy package, create a common API to allow multiple and dynamic changes to the pipeline, implement efficient CI/CD workflows for the PolyPhy repository, including unit and integration tests, and create a public pip package release for PolyPhy. Additionally, I will implement a monitoring and logging system to detect and diagnose issues with the software in production, perform profiling and load testing to improve code quality and performance, and establish security best practices such as code reviews, vulnerability scanning, and penetration testing.\n\nThe expected result of this project is a robust and user-friendly PolyPhy package that can handle different parts of the pipeline, has an efficient CI/CD workflow, and adheres to security best practices. The package should be Dockerized, and the build process should be automated using Docker tools, which will help in maintaining consistency across multiple platforms. Moreover, there should be a Github page workflow for the PolyPhy website deployment, and an issues template should be created to promote people from opening issues on the repos. Finally, the documentation should be improved, and a release management process should be established that includes versioning, release notes, and changelogs.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/lyUInSPD",
+          "proposal_id": "F5RS0pzL",
+          "short_description": "This proposal aims to enhance the infrastructure of PolyPhy by developing new architecture and maintaining existing codebases. The project will...",
+          "slug": "polyphy-polyphorm-polyphy-polyphy-infrastructure-engineering-and-practices",
+          "status": "completed",
+          "student_name": "Prashant Jha",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "web",
+            "api",
+            "ai",
+            "docker"
+          ],
+          "title": "[PolyPhy] Polyphorm / PolyPhy - PolyPhy infrastructure engineering and practices"
+        },
+        {
+          "code_url": "https://bitbucket.org/rishabhballabh/fasttensor/src/master/",
+          "description": "My project proposal aims to optimize the FasTensor tensor computing library to work efficiently on GPUs to enable efficient tensor contraction while maintaining the structure-locality of tensor data. This project involves creating custom-defined computational operations on GPUs and is essential for many scientific applications, including advanced AI model training. My expected deliverables include a working implementation of FasTensor on GPUs, a report on the performance of the execution engine, and documentation of the execution mechanism. My implementation plan involves using a combination of programming languages, including C++ and CUDA, and managing memory and data movement efficiently. My project timeline includes research, planning, implementation, testing, documentation, and reporting. I have a relevant academic background and professional experience in software engineering and machine learning.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2023_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/1fYINR6E",
+          "proposal_id": "tNzQit1T",
+          "short_description": "My project proposal aims to optimize the FasTensor tensor computing library to work efficiently on GPUs to enable efficient tensor contraction while...",
+          "slug": "tensor-execution-engine-on-gpu",
+          "status": "completed",
+          "student_name": "Rishabh Ballabh Singh",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Tensor Execution engine on GPU"
+        },
+        {
+          "code_url": "https://medium.com/@shahzaibceo/decoding-power-analysis-livehd-vs-sta-in-vlsi-design-11a756c921c1",
+          "description": "The primary goal of this project is to enhance and validate LiveHD's power modeling flow, a critical feature for estimating power consumption in modern hardware designs. The existing flow requires further refinement to ensure its stability, accuracy, compatibility with a wider range of netlists and VCD files, and overall performance. To address these challenges, the project will focus on methodically debugging the current implementation, establishing a comprehensive validation methodology for verifying the accuracy of power estimates, and optimizing the flow to handle larger netlists and VCD files efficiently. Additionally, the project aims to improve existing documentation by providing detailed explanations, examples, and tutorials to facilitate user adoption and understanding.\n\nUpon successful completion, the project will deliver a more reliable, accurate, and efficient power modeling flow within LiveHD, contributing to the development of energy-efficient hardware designs. This refined flow will not only enhance the capabilities of LiveHD but also encourage wider adoption and utilization by the hardware design community, fostering innovation in the field of energy-efficient devices and systems.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/ua987TH3",
+          "proposal_id": "LAMSL8np",
+          "short_description": "The primary goal of this project is to enhance and validate LiveHD's power modeling flow, a critical feature for estimating power consumption in...",
+          "slug": "enhancing-and-validating-livehds-power-modeling-flow",
+          "status": "completed",
+          "student_name": "Shahzaibkashif",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Enhancing and Validating LiveHD's Power Modeling Flow"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1CS6qakeO63ZcAtZqTFCesazY4FJ73DOk3-1nBh-JYMw/edit?usp=sharing",
+          "description": "High-performance computing (HPC) data centers tend to have hundreds to thousands of nodes in their clusters. The use of “extreme-scale” distributed systems has given birth to a new type of bug: scalability bugs, bugs that depending on the scale of a run, and thus, symptoms may only be observable in large-scale deployments, but not in small or median deployments. The symptom is not observed unless ~1000 nodes are deployed, making scalability bugs challenging to reproduce and fix. The goal of this project is to build a dataset of reproducible scalability bugs. To achieve this, studying the bugs in detail to understand the root causes, behavior and impact on the performance system and craft workloads designed to trigger the functionalities of the system under different configurations (e.g.different numbers of nodes) is needed to reproduce these scalability bugs. Having a dataset of reproducible bugs can help in developing better testing and validation strategies for scalable systems to ensure that they work as expected under different scales. Also to provide a resource for researchers and developers to study and address scalability bugs and contribute to the improvement of the reliability and efficiency of scalable distributed systems.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/gRTEbm7c",
+          "proposal_id": "nMcS8oN1",
+          "short_description": "High-performance computing (HPC) data centers tend to have hundreds to thousands of nodes in their clusters. The use of “extreme-scale” distributed...",
+          "slug": "scalebugs-reproducible-scalability-bugs",
+          "status": "completed",
+          "student_name": "Zahra Nabila",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "ScaleBugs: Reproducible Scalability Bugs"
+        },
+        {
+          "code_url": "https://github.com/jlab-sensing/DirtViz/tree/reformat-charts",
+          "description": "DirtViz 2.0 is a proposed project that aims to enhance the capabilities of DirtViz 1.0, a data visualization tool for sensor networks. The new version will have an enhanced user interface, improved visualization capabilities, and a secure data upload system. The project will be implemented using a combination of JavaScript, Python, and other relevant technologies. We believe that this project will benefit the community by providing an open-source tool for visualizing data from sensor networks.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2023_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2023/projects/wCyITjfo",
+          "proposal_id": "sSDQ6372",
+          "short_description": "DirtViz 2.0 is a proposed project that aims to enhance the capabilities of DirtViz 1.0, a data visualization tool for sensor networks. The new...",
+          "slug": "dirtviz-20-a-web-based-dataviz-tool-for-sensor-networks",
+          "status": "completed",
+          "student_name": "Zhouyixian Li",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "java",
+            "javascript",
+            "web",
+            "ai"
+          ],
+          "title": "DirtViz 2.0 - A web-based dataviz tool for sensor networks"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2023/organizations/uc-ospo"
+    },
+    "year_2024": {
+      "num_projects": 16,
+      "projects": [
+        {
+          "code_url": "https://docs.google.com/document/d/1TgbRXLLYLmrKy5iMW2Q-t2niLzQMfQLQmopAD0gs4bw/edit?usp=sharing",
+          "description": "Polyglot, a web application revolutionizing data exploration, offers dynamic 3D visualizations. Imagine zooming and rotating through a complex dataset, where each data point is a unique element. Polyglot empowers researchers to delve deeper into intricate relationships hidden within their data. This project proposes leveraging Polyglot's strengths to unlock hidden connections in medicine. By creating custom medicine embeddings that capture the relationships between drugs based on their shared salts (beyond just active ingredients), we can explore a massive dataset of over 600,000 medicines. Visualizing these embeddings in Polyglot's 3D space could allow researchers to identify previously unknown connections between medicines based on their salt compositions, potentially leading to breakthroughs in drug discovery, pharmacology, and personalized medicine.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2024_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/DzttCJw1/",
+          "proposal_id": null,
+          "short_description": "Polyglot, a web application revolutionizing data exploration, offers dynamic 3D visualizations. Imagine zooming and rotating through a complex...",
+          "slug": "polyphy-unveiling-medicine-patterns-3d-clustering-with-polyphypolyglot",
+          "status": "completed",
+          "student_name": "Ayush_Sharma_",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "[PolyPhy] Unveiling Medicine Patterns: 3D Clustering with Polyphy/Polyglot"
+        },
+        {
+          "code_url": "https://github.com/The-OpenROAD-Project/ORAssistant",
+          "description": "This project aims to build a conversational assistant designed around OpenROAD to answer user queries. The goal is to build a complete pipeline that includes dataset updates, model training, and model deployment. The pipeline's architecture will be able to adapt to evolving datasets, with metrics to regularly keep track of the model’s performance.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/DSo6kvA5/",
+          "proposal_id": null,
+          "short_description": "This project aims to build a conversational assistant designed around OpenROAD to answer user queries. The goal is to build a complete pipeline that...",
+          "slug": "llm-assistant-for-openroad-model-architecture-and-prototype",
+          "status": "completed",
+          "student_name": "Palaniappan R",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "LLM Assistant for OpenROAD - Model Architecture and Prototype"
+        },
+        {
+          "code_url": "https://github.com/edulinq/autograder-py",
+          "description": "The project aims to address a common challenge faced by both beginner and advanced programmers: understanding and learning from mistakes in code submissions. Traditional autograding systems often provide generic feedback, which may not be sufficient for students to grasp the root causes of their errors and improve their coding skills effectively.\n\nTo overcome this limitation, the project proposes the development of a sophisticated system that can analyze code submissions comprehensively. This system will consist of custom drivers designed for each programming problem, capable of detecting various types of errors and providing tailored explanations for them. These explanations will cover not only low-level syntax errors but also higher-level issues such as algorithmic design flaws or incorrect usage of data structures.\n\nMoreover, the project includes the creation of an intuitive interface with a structured roadmap covering programming topics from basic to advanced levels. This interface will offer a gamified learning experience, complete with progress indicators and visual feedback mechanisms to keep users engaged and motivated. By integrating the custom drivers and feedback pipeline into this interface, the project aims to provide a seamless learning experience for users at all skill levels.\n\nUtilizing open-source tools like Monaco code editor and Judge0 for code execution ensures compatibility and accessibility across different platforms. Additionally, the project emphasizes continuous feedback and refinement through interactions with mentors, instructors, and users. This iterative approach allows for the continuous improvement of the system, ensuring its effectiveness in assisting learners in understanding programming concepts and improving their coding skills.",
+          "difficulty": "beginner",
+          "id": "proj_uc-ospo_2024_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/hMNxeu1b/",
+          "proposal_id": null,
+          "short_description": "The project aims to address a common challenge faced by both beginner and advanced programmers: understanding and learning from mistakes in code...",
+          "slug": "benchmark-suite-for-explaining-failures-in-autograding-ai-explainability-accountability",
+          "status": "completed",
+          "student_name": "Shaburu",
+          "student_profile": null,
+          "tags": [
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Benchmark Suite for Explaining failures in autograding - AI Explainability Accountability"
+        },
+        {
+          "code_url": "https://github.com/skyFzz/h5bench/tree/compression-feature",
+          "description": "The problem I am trying to solve is to implement multiple data compression algorithms in h5bench core access patterns through HDF5 filters. This capability should grant users the flexibility to configure the parameters and methods of compression applied to their datasets according to their specific needs and preferences. My solution primarily involves using a user-defined HDF5 filter mechanism to implement lossless and lossy compression algorithms, such as ZFP, SZ3, and cuSZ. Throughout the process, I will deliver one C source code implementing compression configuration settings, one C source code implementing lossless and lossy algorithms, a set of performance reports before and after data compression in CSV and standard output files, and a technical documentation on h5bench user manual website.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/n0H28Z40/",
+          "proposal_id": null,
+          "short_description": "The problem I am trying to solve is to implement multiple data compression algorithms in h5bench core access patterns through HDF5 filters. This...",
+          "slug": "enhancing-h5bench-with-hdf5-compression-capability",
+          "status": "completed",
+          "student_name": "Henry Zhou",
+          "student_profile": null,
+          "tags": [
+            "web"
+          ],
+          "title": "Enhancing h5bench with HDF5 Compression Capability"
+        },
+        {
+          "code_url": "https://github.com/StatTag/StatWrap/tree/gsoc24",
+          "description": "StatWrap is a free, open-source tool to document research projects. It inventories research assets like code files, data files, and manuscripts, organizing information without user input, and add searchable notes to files, help communicate metadata about intent and analysis steps. \nThis proposal aims to integrate customizable reproducibility checklists into StatWrap, leveraging metadata and user input to automate checklist generation. This functionality will enable researchers to produce comprehensive documentation detailing their adherence to reproducibility practices, facilitating transparency and reliability in research undertakings. The problem statement thus asks us to create user interface in StatWrap to configure Reproducibility Checklists. Tasks include identifying relevant checklists, structuring checklist data for configurations, integrating them into the UI, storing user responses, and generating comprehensive reproducibility reports within StatWrap.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/YnQC8YyE/",
+          "proposal_id": null,
+          "short_description": "StatWrap is a free, open-source tool to document research projects. It inventories research assets like code files, data files, and manuscripts,...",
+          "slug": "statwrap-automated-reproducibility-checklists-generation",
+          "status": "completed",
+          "student_name": "Adi Akhilesh Singh",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "StatWrap: Automated Reproducibility Checklists Generation"
+        },
+        {
+          "code_url": "https://gist.github.com/ujjwal-shekhar/46f872ca5b194a014cc6f16b0825261a",
+          "description": "In hardware compilers, scalability issues often arise due to inefficient tree data structures. To tackle this challenge, the proposed project aims to optimize these structures by creating an efficient hhds::tree<> class with a novel tree flattening policy. This initiative targets improved runtime performance, especially for common operations like sibling and parent queries.\n\nThe deliverables include the fully implemented hhds::tree<> class, benchmarking results, documentation, unit tests, usage examples, and a future plan for a hhds::graph<> class. The implementation plan is divided into two phases with specific targets and timelines for each phase.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/ggfpoLfF/",
+          "proposal_id": null,
+          "short_description": "In hardware compilers, scalability issues often arise due to inefficient tree data structures. To tackle this challenge, the proposed project aims to...",
+          "slug": "hardware-hierarchical-dynamical-systems",
+          "status": "completed",
+          "student_name": "UjjwalShekhar",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Hardware Hierarchical Dynamical Systems"
+        },
+        {
+          "code_url": "https://github.com/jlab-sensing/ENTS-node-firmware/pull/143",
+          "description": "This proposal aims to improve an outdoor sensor platform by focusing on usability and expandability. To achieve this, the project will integrate a new type of sensor, allowing researchers to collect a wider range of data.  A user-friendly interface will also be developed using PyQt5, so researchers can configure the device without writing code. Finally, the project will contribute to a more efficient and well-documented codebase by using Protobuf for data storage and potentially improving the code's structure.  The proposal highlights a clear plan with a detailed timeline and showcases the proposer's experience in relevant areas like embedded systems and sensor interfacing.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/QAXhjvwE/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to improve an outdoor sensor platform by focusing on usability and expandability. To achieve this, the project will integrate a...",
+          "slug": "enhancing-usability-and-expandability-of-the-open-sensing-platform",
+          "status": "completed",
+          "student_name": "Ahmed Falah",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Enhancing Usability and Expandability of the Open Sensing Platform"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1mXvh296d-nYklyKJC8qPfUPu5kolXFQQIQ4hy0aRkz4",
+          "description": "Benchmarking is designed to tackle the issue of incomplete data in the field of spatial transcriptomics. The project aims to develop a benchmarking framework that evaluates a variety of gene imputation methods, aiding the scientific community in selecting the most accurate techniques for their research. Through the aggregation of spatial transcriptomic datasets from different platforms and species, organs, and the subsequent development of an accessible software suite, BenchmarkST will provide critical insights and resources. The end deliverable will be a user-friendly set of tools accompanied by a comprehensive report that benchmarks the effectiveness of each method, enhancing the integrity of spatial transcriptomics data and thereby facilitating more informed biological discoveries.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/WHnUWgTG/",
+          "proposal_id": null,
+          "short_description": "Benchmarking is designed to tackle the issue of incomplete data in the field of spatial transcriptomics. The project aims to develop a benchmarking...",
+          "slug": "benchmarkst-cross-platform-multi-species-spatial-transcriptomics-gene-imputation-benchmarking",
+          "status": "completed",
+          "student_name": "Qianru Zhang",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "BenchmarkST: Cross-Platform, Multi-Species Spatial Transcriptomics Gene Imputation Benchmarking"
+        },
+        {
+          "code_url": "https://github.com/hpc-io/drishti-io/pull/25",
+          "description": "The increasing adoption of AI/ML applications has led to new I/O access patterns and bottlenecks that differ from traditional scientific applications. Drishti, an interactive web-based framework for visualizing I/O traces and highlighting bottlenecks, needs to be extended to support these AI/ML workloads effectively. This project aims to make I/O behavior more accessible and interpretable for AI/ML applications by modularizing Drishti's codebase for improved maintainability, building a layer to process multiple trace files per job (common in AI/ML), and providing AI/ML application-specific recommendations to optimize I/O behavior tailored to popular ML frameworks. Deliverables include a modularized codebase, functionality to process multiple traces, AI/ML-specific I/O optimization recommendations, updated documentation for AI/ML use cases, and documentation on challenges faced and solutions when using Drishti with AI/ML applications. Ultimately, this will help AI application developers better understand and enhance their applications' I/O performance.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/H7OzlMb6/",
+          "proposal_id": null,
+          "short_description": "The increasing adoption of AI/ML applications has led to new I/O access patterns and bottlenecks that differ from traditional scientific...",
+          "slug": "drishti-visualization-and-analysis-of-ai-based-applications",
+          "status": "completed",
+          "student_name": "Joel Tony",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Drishti: Visualization and Analysis of AI-based Applications"
+        },
+        {
+          "code_url": "https://docs.google.com/document/d/1BCG6Y-6Usz0hMo11OM5TZY5B8hKTD43wgXSq2s5OcK4/edit",
+          "description": "PolyPhy is an advanced toolkit utilizing the Monte Carlo Physarum Machine (MCPM) algorithm for reconstructing networks from sparse 2D or 3D data. The current web portal for it faces challenges with limited content management, ineffective multi-platform connectivity, and performance issues, hindering its potential for wider reach and user engagement. To address these challenges, the proposal aims to implement a Modern CMS, streamlining content management to facilitate efficient updates to new materials, use cases, and publications, especially beneficial for PolyPhy's community. Additionally, code refactoring will improve and optimize the existing codebase, enhancing performance, scalability, and maintainability. Furthermore, enabling Multi-Platform Integration by integrating with APIs for LinkedIn, Twitter, and email will automate update dissemination, ensuring consistency and timeliness. These improvements will not only enhance the overall user experience but also establish a solid foundation for PolyPhy's growth and impact in the community.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2024_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/m4b29QQg/",
+          "proposal_id": null,
+          "short_description": "PolyPhy is an advanced toolkit utilizing the Monte Carlo Physarum Machine (MCPM) algorithm for reconstructing networks from sparse 2D or 3D data. The...",
+          "slug": "streamlining-polyphys-web-portal-with-cms-and-multi-platform-connectivity",
+          "status": "completed",
+          "student_name": "Mohit Goyal",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "api",
+            "ml",
+            "ai"
+          ],
+          "title": "Streamlining PolyPhy’s Web Portal with CMS and Multi-Platform Connectivity"
+        },
+        {
+          "code_url": "https://gsoc-causeway.vercel.app/",
+          "description": "The proposed project aims to enhance the platform by integrating logging and analytics features, implementing a learning dashboard, potentially introducing new modules for database management, and conducting usability studies for future open-sourcing. Responsibilities include implementing various login options like Google, GitHub, email/password, and passwordless login using Firebase Authentication, enhancing the landing page with an about section and improved UI design, introducing quizzes after each section using Firebase Firestore and Cloud Functions, developing user and learning dashboards with Angular Material UI and Firebase Cloud Functions, improving overall UI design and including walkthroughs for application implementation, providing an introductory demo for new users, integrating Vercel Bot for automation of deployment and monitoring processes, and including contact and feedback options for user inquiries. This comprehensive approach aims to modernize the platform, enhance user engagement, and improve usability for an optimized learning experience.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/wTxAXxEz/",
+          "proposal_id": null,
+          "short_description": "The proposed project aims to enhance the platform by integrating logging and analytics features, implementing a learning dashboard, potentially...",
+          "slug": "causeway-improving-the-core-infrastructure-and-experience-mentor-david-lee",
+          "status": "completed",
+          "student_name": "Rishi Mondal",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ai",
+            "database",
+            "cloud",
+            "ui"
+          ],
+          "title": "Causeway / Improving the Core Infrastructure and Experience , Mentor David Lee"
+        },
+        {
+          "code_url": "https://docs.google.com/spreadsheets/d/1ix1eFSVhW4GqwQMrHpeDEprL65i2YQSM/edit?gid=2026771728#gid=2026771728",
+          "description": "Recently, research has been made into the process in which we could tune an existing generalized LLM (such as ChatGPT 3.5, 4) for the purposes of generating HDL (especially Verilog/Chisel) code from English. However, we still need a method of evaluating these models so that we can assure that they have full coverage over the language. To this effect, we create multiple large benchmarks in both Verilog and Chisel along with a respective set of prompts. In addition, we produce a program to test the syntax, functionality, and quality of the generated code against our benchmarks.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/1hd3HYX9/",
+          "proposal_id": null,
+          "short_description": "Recently, research has been made into the process in which we could tune an existing generalized LLM (such as ChatGPT 3.5, 4) for the purposes of...",
+          "slug": "livehd-benchmarking-llms-that-generate-verilogchisel-modules-from-natural-language",
+          "status": "completed",
+          "student_name": "Ashwin Bardhwaj",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "LiveHD: Benchmarking LLMs that Generate Verilog/Chisel Modules From Natural Language"
+        },
+        {
+          "code_url": "https://github.com/aditya-narayan5/GSoC24-Final_Report",
+          "description": "I will implement stream processing support for FasTensor library. Stream processing enables online processing of live data as it arrives on the File System from various data producers.\n\nTh Big Plan:\n1. A directory monitoring service will monitor file addition or removals of specified pattern.\n2. A dynamic stream object which provides iterators that return file in a stream in specified order and also combine multiple streams.\n3. A rich set of stream handling components, each with a unique set of concerns and guarantees, that enables stream-specific functions like read and write in a fault-tolerant and robust manner.\n\nDeliverables:\n1. A rich interface to compose streams from various data producers.\n2. A fault-tolerant and robust mechanism to read, write, and manage streams in a big data environment.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/RMdOjkNk/",
+          "proposal_id": null,
+          "short_description": "I will implement stream processing support for FasTensor library. Stream processing enables online processing of live data as it arrives on the File...",
+          "slug": "stream-processing-support-for-fastensor-library",
+          "status": "completed",
+          "student_name": "Aditya N.",
+          "student_profile": null,
+          "tags": [],
+          "title": "Stream processing support for FasTensor library."
+        },
+        {
+          "code_url": "https://trustworthy-superintelligence.github.io/",
+          "description": "LLM hallucinations have been tackled using various techniques, including modern retrieval methods such as  Retrieval-Augmented Generation (RAGs). These techniques show that combining non-parametric memory, which is retrieved and ranked from sources like knowledge graphs and/or databases, with the LLMs' parametric memory helps generate less factually incorrect information. However, hallucination explainability still remains unsolved, especially on logical reasoning tasks. Additionally, the impact of uncertainty caused by these hallucinations on human trust and decision-making still remains unexplained.\n\nTo address these problems, we propose two solutions: 1. Conduct a first-of-its-kind study that develops a new conversational explanation paradigm under compositional uncertainty and performs human evaluation. 2. In parallel, develop a neuro-symbolic framework for explaining hallucinations in large language models by utilizing agentic Prolog knowledge-base rules.\n\nTo accomplish these objectives, we first build a lightweight full-stack web application that collects quantitative and qualitative human feedback for model alignment. We also design LLM explanation paradigms grounded simultaneously in multiple sources (open and closed source), develop models (LLMs and agents), and build a pipeline for storing the human feedback in common data format to a secure database, which can be used to further adjust the weights of the reward model.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/9WBTC535/",
+          "proposal_id": null,
+          "short_description": "LLM hallucinations have been tackled using various techniques, including modern retrieval methods such as Retrieval-Augmented Generation (RAGs)....",
+          "slug": "trustworthy-large-language-models-llms-and-agents",
+          "status": "completed",
+          "student_name": "Nikhil Wani",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "database",
+            "ui"
+          ],
+          "title": "Trustworthy Large Language Models (LLMs) and Agents"
+        },
+        {
+          "code_url": "https://github.com/The-OpenROAD-Project/ORAssistant",
+          "description": "This proposal provides a detailed overview of the development of an LLM-based conversational assistant with domain-specific knowledge about the OpenROAD project. The primary focus is on data engineering and testing to enhance the model’s capabilities. The assistant is designed to improve user interaction by providing accurate responses to queries regarding OpenROAD’s tools and features. We will be leveraging Fine-Tuning and Retrieval-Augmented Generation (RAG) architecture and we will address key LLM challenges.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/J8uAFNCu/",
+          "proposal_id": null,
+          "short_description": "This proposal provides a detailed overview of the development of an LLM-based conversational assistant with domain-specific knowledge about the...",
+          "slug": "llm-assistant-for-openroad-data-engineering-and-testing",
+          "status": "completed",
+          "student_name": "Aviral Kaintura",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "LLM assistant for OpenROAD - Data Engineering and testing"
+        },
+        {
+          "code_url": "https://github.com/BanisharifM/GNN_4_IO",
+          "description": "This proposal aims to address the challenge of I/O bottlenecks in High-Performance Computing (HPC) systems by developing a Graph Neural Network (GNN) model for accurate and interpretable I/O performance predictions. The approach includes creating a data pre-processing pipeline for I/O logs, constructing a GNN model tailored to the intricacies of HPC I/O, and implementing SHAP value analysis for insightful feature contribution understanding. Deliverables encompass the GNN model, integration with the AIIO framework, and a SHAP-based evaluation methodology to enhance diagnostic precision and accountability in I/O performance assessments.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2024_016",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/archive/2024/projects/LqVFJiCE/",
+          "proposal_id": null,
+          "short_description": "This proposal aims to address the challenge of I/O bottlenecks in High-Performance Computing (HPC) systems by developing a Graph Neural Network (GNN)...",
+          "slug": "heterogeneous-graph-neural-networks-for-io-performance-bottleneck-diagnosis",
+          "status": "completed",
+          "student_name": "Mahdi Banisharifdehkordi",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "Heterogeneous Graph Neural Networks for I/O Performance Bottleneck Diagnosis"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/uc-ospo/"
+    },
+    "year_2025": {
+      "num_projects": 17,
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Peersky browser currently lacks a unified system for managing both user-installed WebExtensions and core browser preferences. This project will implement full WebExtension support alongside a customizable peersky://settings page, creating a modular and privacy-focused experience within Peersky’s Electron-based environment.\n\nDeliverables include support for installing .zip and Git-based extensions, a persistent extension loader, Manifest V3 validation, CSP-based sandboxing, and a toolbar for pinning and managing extensions. The settings page will also allow users to change themes, set search engines, configure the home page, and manage built-in privacy tools like uBlock Origin and DScan. By the end of the project, Peersky will support a secure, extensible, and decentralized customization system—without relying on centralized extension stores.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_001",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uG3PzQyV",
+          "proposal_id": "zOAXT1ll",
+          "short_description": "The Peersky browser currently lacks a unified system for managing both user-installed WebExtensions and core browser preferences. This project will...",
+          "slug": "implement-web-extensions-system-settings-integration-to-peersky-browser",
+          "status": "in-progress",
+          "student_name": "6cobi",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "Implement Web Extensions & System Settings Integration to Peersky Browser"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a system that detects whether code was written by a student or generated by AI tools like ChatGPT or GitHub Copilot. With AI becoming common in academia, especially in programming, distinguishing genuine student work from AI-generated code is increasingly challenging. Existing tools like MOSS are ineffective against AI-generated content. The proposed system will assign a confidence score to indicate the likelihood of AI involvement, supporting educators in maintaining academic integrity.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_002",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/jxBUpvoM",
+          "proposal_id": "tX7xfav4",
+          "short_description": "This project aims to develop a system that detects whether code was written by a student or generated by AI tools like ChatGPT or GitHub Copilot....",
+          "slug": "linqs-autograder",
+          "status": "in-progress",
+          "student_name": "Anvi",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "LINQS: Autograder"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to add support for rectilinear floorplans in OpenROAD, an open-source EDA tool used for digital chip design. Currently, OpenROAD only supports rectangular floorplans, which limits its use in modern designs that often require more complex shapes—especially in advanced packaging, chiplet architectures, and 3D ICs.\n\nThe project will allow users to define floorplans using arbitrary rectilinear shapes made of 90° corners. It involves three main components: accepting polygonal input during floorplan setup, generating standard cell rows and routing tracks that follow the shape boundaries, and updating the pin placement logic to work with irregular outlines.\n\nBy enabling these capabilities, OpenROAD will become more flexible and suitable for real-world designs where blocks may need to fit together like puzzle pieces. This can lead to better area utilization and potentially shorter interconnects. The project will also include comprehensive testing, documentation, and example scripts.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2025_003",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/mcv3Hbgk",
+          "proposal_id": "w6JKxkzM",
+          "short_description": "This proposal aims to add support for rectilinear floorplans in OpenROAD, an open-source EDA tool used for digital chip design. Currently, OpenROAD...",
+          "slug": "rectilinear-floorplans-in-openroad",
+          "status": "in-progress",
+          "student_name": "Chaitanya Gambali",
+          "student_profile": null,
+          "tags": [
+            "angular",
+            "ai",
+            "ui"
+          ],
+          "title": "Rectilinear Floorplans in OpenROAD"
+        },
+        {
+          "code_url": null,
+          "description": "In today's world sequential recommendation systems are used in various domains-- from life sciences to e-commerce and business. For example, within biology and ecology, recommendation systems help track a species behavior by suggesting research on migration patterns, and within e-commerce these systems are used to better a user's online experience. As such, recommendation systems are vital to systems today and is a important field of research.\n\nDespite widespread use, traditional sequential recommendation systems face limitations. They primarily on historical user interactions to predict future preferences however struggle to capture contextual dependencies and adapting to dynamic user behaviors. Similarly, existing models predefined embeddings which restrict the ability to adapt and generalize. As such these problems lead to reduced recommendation accuracy, typically for example in cold-start users.\n\nAs such, the LLMSeqRec proposal will lead to a more personalized recommendation by interpreting and augmenting sequences with semantic context. Through this, LLMSeqRec can make up for the traditional difficulties-- making more accurate and adaptable recommendations personalized for each user.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_004",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/TGUFCzZy",
+          "proposal_id": "G5W37pEG",
+          "short_description": "In today's world sequential recommendation systems are used in various domains-- from life sciences to e-commerce and business. For example, within...",
+          "slug": "llmseqrec-llm-enhanced-contextual-sequential-recommender",
+          "status": "in-progress",
+          "student_name": "connorlee",
+          "student_profile": null,
+          "tags": [
+            "ai"
+          ],
+          "title": "LLMSeqRec: LLM Enhanced Contextual Sequential Recommender"
+        },
+        {
+          "code_url": null,
+          "description": "The Environmental NeTworked Sensor (ENTS) platform is an open-source web portal designed for collecting, visualizing, and analyzing data from large-scale environmental sensor networks. It enables researchers and citizen scientists to monitor sensors measuring soil moisture, temperature, current, and voltage in outdoor settings, supporting critical environmental research.\n\nThis project aims to enhance the ENTS platform through two key initiatives. The first focuses on system stabilization to address existing visualization and reliability issues, ensuring that data presentation is accurate and consistent. The second initiative will implement a comprehensive Logger Registration System, allowing users to easily add, configure, and monitor their logging devices, with potential integration to The Things Network for LoRaWAN connectivity.\n\nBy the end of this project, ENTS will feature improved chart synchronization, reliable data point selection, robust error handling, and an intuitive interface for registering and managing logging devices. These enhancements will transform ENTS into a more stable, user-friendly platform that better supports researchers in collecting and analyzing environmental data at scale.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_005",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/OPlG0KHV",
+          "proposal_id": "qkn7NHv8",
+          "short_description": "The Environmental NeTworked Sensor (ENTS) platform is an open-source web portal designed for collecting, visualizing, and analyzing data from...",
+          "slug": "ents-web-portal-for-large-scale-sensor-networks",
+          "status": "in-progress",
+          "student_name": "Devansh Kukreja",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "ENTS : Web portal for large-scale sensor networks"
+        },
+        {
+          "code_url": null,
+          "description": "AIDRIN (AI Data Readiness INspector) is an open-source tool designed to assess the quality, fairness, and readiness of datasets before they are used in AI workflows. However, its current implementation supports only basic evaluations for tabular data and lacks both privacy-aware assessments and the ability to handle unstructured data formats like images.\n\nThis project proposes to address these limitations in two structured phases. In Phase 1, I will enhance AIDRIN’s capabilities for tabular datasets by implementing essential privacy-preserving metrics—such as k-Anonymity, l-Diversity, t-Closeness, MM Risk Score, and Entropy-Based Disclosure Risk—alongside other key checks for class imbalance, feature correlation, and model evaluation. These assessments will be supported by intuitive visualizations to help users make informed decisions about data quality and compliance.\n\nIn Phase 2, I will extend AIDRIN to support image datasets by integrating pretrained vision models to generate semantic embeddings. These embeddings will enable readiness evaluations such as duplicate and outlier detection, class imbalance analysis, completeness checks, and fairness diagnostics (when label or attribute metadata is available). The goal is to replicate AIDRIN’s structured readiness evaluation pipeline for visual data in a modular and reusable manner.\n\nDeliverables include:\n\nPrivacy and imbalance metric suite for tabular data with visual summaries\nEmbedding-based readiness evaluation pipeline for image datasets\nIntegration with pretrained vision models (ViT, CLIP, DINOv2)\nCLI tool for executing and exporting assessment results\nDocumentation, testing, and demonstration notebooks\nBy the end of the program, AIDRIN will support robust and privacy-aware readiness assessments for both structured and unstructured datasets, helping researchers and practitioners build more transparent, reliable, and ethical AI systems.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_006",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/X4FJR5x9",
+          "proposal_id": "e7Z8oZjP",
+          "short_description": "AIDRIN (AI Data Readiness INspector) is an open-source tool designed to assess the quality, fairness, and readiness of datasets before they are used...",
+          "slug": "improving-ai-data-pipelines-in-aidrin-a-privacy-centric-and-multimodal-expansion",
+          "status": "in-progress",
+          "student_name": "Harish Balaji",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Improving AI Data Pipelines in AIDRIN: A Privacy-Centric and Multimodal Expansion"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to explore and develop allocentric interfaces for WebXR, focusing on enhancing user interaction in virtual reality environments. The proposal involves a phased approach—starting with learning and documenting fundamental WebXR interaction patterns, followed by building a multi-user pong game to understand shared allocentric spaces. Finally, designing and implement one or more custom allocentric interfaces that demonstrate creative and effective user experiences in VR. The project will result in a set of well-documented, interactive VR components, offering valuable contributions to the WebXR community.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_007",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/Czdoqv0c",
+          "proposal_id": "jJtSFQJN",
+          "short_description": "This project aims to explore and develop allocentric interfaces for WebXR, focusing on enhancing user interaction in virtual reality environments....",
+          "slug": "brahma-allocentric-webxr-interfaces",
+          "status": "in-progress",
+          "student_name": "Kajal Jotwani",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai",
+            "ui"
+          ],
+          "title": "Brahma / Allocentric WebXR Interfaces"
+        },
+        {
+          "code_url": null,
+          "description": "Operating complex scientific workloads on the National Research Platform (NRP) via the Seam interface presents monitoring challenges; identifying performance anomalies or potential failures proactively and diagnosing them quickly is difficult using standard tools, impacting researchers and operators. This project aims to enhance the resilience and usability of the Seam/NRP environment by building a custom Machine Learning (ML) service tailored to its operational context. The service will analyze monitoring data (starting with Prometheus metrics) to automatically detect anomalies and will leverage NRP's GPU and managed LLM resources to provide Generative AI-powered insights, including human-readable explanations and root cause analysis assistance, accessible via Seam's portal.\n\nKey deliverables include the open-source anomaly detection service code, a container image for deployment on NRP, API documentation, baseline ML models, integrated GenAI features for explanation and RCA, and a final project report/presentation. This will provide the Seam/NRP community with an intelligent tool for proactive monitoring and faster troubleshooting.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2025_008",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/fPp1JXbl",
+          "proposal_id": "10LDl5Bc",
+          "short_description": "Operating complex scientific workloads on the National Research Platform (NRP) via the Seam interface presents monitoring challenges; identifying...",
+          "slug": "intelligent-observability-for-seam-a-genai-approach",
+          "status": "in-progress",
+          "student_name": "Manish K Reddy",
+          "student_profile": null,
+          "tags": [
+            "api",
+            "ml",
+            "ai",
+            "ui"
+          ],
+          "title": "Intelligent Observability for Seam: A GenAI Approach"
+        },
+        {
+          "code_url": null,
+          "description": "My proposal is to create and control computer-generated images of breast cancer tissues. I'll spend my first four weeks building basic models called VAEs that can learn what cancer looks like. Then I'll spend four weeks making better, sharper images using GANs. In my final four weeks, I'll try the newest technology called diffusion models to make the most realistic images.\nI'm using 400 real cancer tissue images that doctors have labeled from normal to severe cancer. My goal is to help train doctors and improve cancer detection systems by creating realistic fake images we can control. This matters because real cancer images are hard to get, and doctors sometimes disagree on what they see. If I succeed, my computer models will let users adjust how severe the cancer looks in an image, which could help with teaching and testing new cancer detection software.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_009",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/cn7fmk7a",
+          "proposal_id": "HOKYlehT",
+          "short_description": "My proposal is to create and control computer-generated images of breast cancer tissues. I'll spend my first four weeks building basic models called...",
+          "slug": "proposal-for-disentangled-generation-and-editing-of-pathology-images",
+          "status": "in-progress",
+          "student_name": "Mingyuan Shao",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Proposal for Disentangled Generation and Editing of Pathology Images"
+        },
+        {
+          "code_url": null,
+          "description": "The University of California Open Source Repository Browser (UC ORB) is a discovery platform that maps and categorizes open source projects across the UC system. It offers a comprehensive web interface with intuitive search, advanced filtering capabilities, responsive design, and integrated visualizations of project metrics.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2025_010",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/XZ9zEll1",
+          "proposal_id": "FWTwI0uM",
+          "short_description": "The University of California Open Source Repository Browser (UC ORB) is a discovery platform that maps and categorizes open source projects across...",
+          "slug": "uc-open-source-repository-browser-uc-orb",
+          "status": "in-progress",
+          "student_name": "Param Arora",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ui"
+          ],
+          "title": "UC Open Source Repository Browser [UC ORB]"
+        },
+        {
+          "code_url": null,
+          "description": "To benchmark vector search algorithms (aka ANN algorithms), existing datasets fail to represent actual real-world workloads. Current benchmarks usually use small vectors with only a few hundred dimensions unlike modern embedding models like OpenAI's text-embedding series. This project aims to create a comprehensive dataset with 1 billion embeddings that's generated from Wikipedia using open-source models. We will produce three distinct versions of the dataset with embeddings sized at 1024, 4096, and 8192 dimensions to help us get more realistic and robust vector search algorithm benchmark scores across different dimensional requirements.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_011",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/GcstSGAO",
+          "proposal_id": "h3sRmmWP",
+          "short_description": "To benchmark vector search algorithms (aka ANN algorithms), existing datasets fail to represent actual real-world workloads. Current benchmarks...",
+          "slug": "building-a-billion-scale-vector-embeddings-dataset-for-real-world-ann-benchmarking",
+          "status": "in-progress",
+          "student_name": "Prathamesh Devadiga",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Building a Billion-Scale Vector Embeddings Dataset for Real-World ANN Benchmarking"
+        },
+        {
+          "code_url": null,
+          "description": "Our project addresses the challenge of high memory usage and slow performance in large language models, which happens mainly because of the huge key-value (KV) cache needed during inference. This cache grows as the model size increases, causing issues, especially on GPUs with limited memory. To solve this, we plan to use CXL-attached memory to offload model weights and KV cache data, reducing the load on local memory. In addition, we'll develop a smart batching system that groups input texts with similar lengths together, minimizing wasted space from padding and speeding up processing. Our deliverables include a fully integrated solution with the vLLM inference engine, real-time performance dashboards using Grafana, detailed benchmarks on latency and throughput, and open-source documentation and guides.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_012",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/uz2qQ8sN",
+          "proposal_id": "YyPqqBeQ",
+          "short_description": "Our project addresses the challenge of high memory usage and slow performance in large language models, which happens mainly because of the huge...",
+          "slug": "smart-batching-using-cxl-for-large-language-models",
+          "status": "in-progress",
+          "student_name": "Rushil Nagpal",
+          "student_profile": null,
+          "tags": [
+            "ai",
+            "ui"
+          ],
+          "title": "Smart Batching Using CXL For Large Language Models"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to integrate Scenic—a probabilistic programming language for scenario specification—with Robosuite, a simulation framework for robotic manipulation. By developing a comprehensive interface that includes a robust world model, simulator, controller mapping, and behavior library, the project overcomes integration limitations and enables systematic testing of diverse manipulation scenarios. The enhanced integration improves simulation accuracy, controller compatibility, and safety verification, thereby supporting more advanced and reliable robotic research. Moreover, by leveraging the rising functionality of an open-source simulator like Robosuite and combining it with the power of Scenic, the project enriches the open-source robotics ecosystem, expanding access to sophisticated simulation tools and fostering a collaborative environment for innovation.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2025_013",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/ePG8e6ZN",
+          "proposal_id": "x0EmQ9Gw",
+          "short_description": "This proposal aims to integrate Scenic—a probabilistic programming language for scenario specification—with Robosuite, a simulation framework for...",
+          "slug": "interfacing-scenic-to-new-simulators",
+          "status": "in-progress",
+          "student_name": "Sahil Mandi",
+          "student_profile": null,
+          "tags": [
+            "ios",
+            "ai",
+            "ui"
+          ],
+          "title": "Interfacing Scenic to New Simulators"
+        },
+        {
+          "code_url": null,
+          "description": "WildBerryEye leverages edge computing (Raspberry Pi) and object detection (YOLO) to monitor pollinators like bees and hummingbirds. My project focused on developing a clean, intuitive, and responsive web-based interface to support real-time pollinator detection, data visualization, and system configuration. The final result empowers researchers and contributors to engage with environmental data in an accessible and meaningful way.\nSpecific tasks:\n- Frontend Development: Continue development to enhance the user interface using React and CSS, ensuring a responsive and user-friendly design.\n-  Backend Development: Expand functionality using Flask, focusing on efficient API endpoints and seamless interaction with the frontend.\n- Real-Time Communication: Implement and refine real-time updates between the frontend and backend to enhance system responsiveness.\n- Usability & Design Optimization: Research and propose improvements to the system’s usability, design, and overall user experience.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_014",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/jnriJNbw",
+          "proposal_id": "bzPuW7O1",
+          "short_description": "WildBerryEye leverages edge computing (Raspberry Pi) and object detection (YOLO) to monitor pollinators like bees and hummingbirds. My project...",
+          "slug": "wildberryeye-proposal",
+          "status": "in-progress",
+          "student_name": "Sophie Tao",
+          "student_profile": null,
+          "tags": [
+            "react",
+            "web",
+            "api",
+            "ml",
+            "ui"
+          ],
+          "title": "WildberryEye Proposal"
+        },
+        {
+          "code_url": null,
+          "description": "PyLops is a Python package with a simple yet flexible interface for solving linear inverse problems. Previous GSoC-sponsored projects laid the foundation for PyLops-MPI. The current missing piece is the support of high-bandwidth communication in the multi-GPUs environment. This project aims to do just that. Specifically, this project will extend the current PyLops-MPI with NVIDIA’s NCCL API to optimize collective communication speed - a bottleneck in many applications. The project consists of four parts: NCCL integration,\ncorrectness tests, performance benchmark, and comprehensive tutorials.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_015",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/C2XSZp2E",
+          "proposal_id": "ackdpNyS",
+          "short_description": "PyLops is a Python package with a simple yet flexible interface for solving linear inverse problems. Previous GSoC-sponsored projects laid the...",
+          "slug": "optimizing-and-benchmarking-gpu-collective-communication-of-pylops-mpi-with-nccl",
+          "status": "in-progress",
+          "student_name": "tharitt",
+          "student_profile": null,
+          "tags": [
+            "python",
+            "api",
+            "ai"
+          ],
+          "title": "Optimizing and Benchmarking GPU Collective Communication of PyLops-MPI with NCCL"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to broaden the geographical scope and enhance the functionality of CarbonCast, a tool dedicated to forecasting and visualizing the carbon intensity of electrical grids. Presently servicing select regions including parts of the US, Germany, Netherlands, Spain, Sweden, Poland, and Queensland, Australia, this project proposes to extend coverage to additional global regions. The expansion will enable CarbonCast to offer more comprehensive and timely insights into carbon emissions worldwide. Other key enhancements will include the development of a web interface that improves the accessibility and visualization of carbon data, making it easier for users to interact with and derive meaningful insights from the information. This project will transform CarbonCast into a more globally inclusive tool, providing critical data that supports informed decisions on energy consumption and carbon emission reduction.",
+          "difficulty": null,
+          "id": "proj_uc-ospo_2025_016",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/7yvAix3k",
+          "proposal_id": "BBw31TmX",
+          "short_description": "This proposal aims to broaden the geographical scope and enhance the functionality of CarbonCast, a tool dedicated to forecasting and visualizing the...",
+          "slug": "global-carboncast-expanding-real-time-carbon-intensity-forecasting-and-visualization",
+          "status": "in-progress",
+          "student_name": "Tobin Sia",
+          "student_profile": null,
+          "tags": [
+            "web",
+            "ai"
+          ],
+          "title": "Global CarbonCast – Expanding Real-Time Carbon Intensity Forecasting and Visualization"
+        },
+        {
+          "code_url": null,
+          "description": "Spatial transcriptomics (ST) is a powerful and emerging technology that captures gene expression profileswith spatial resolution, providing unprecedented insight into cellular organization and tissue microenviron\u0002ments. However, widespread adoption of ST is limited by its high cost and technical complexity.\r\nHistology imaging, in contrast, is inexpensive and widely accessible. If we could accurately predictgene expression from histology images, we could enable broader access to high-resolution biological insights without the need for costly experiments.\r\nThis project proposes RAG-ST, a novel Retrieval-Augmented Generation framework for predicting spatial gene expression from histology images, combining vision-based encoders with interpretable retrieval\u0002based gene expression generation. Our framework emphasizes biological interpretability, prior knowledge\r\nutilization, and modular design for flexible and scalable deployment.",
+          "difficulty": "advanced",
+          "id": "proj_uc-ospo_2025_017",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2025/projects/m3s8fWxd",
+          "proposal_id": "pwS1IvGi",
+          "short_description": "Spatial transcriptomics (ST) is a powerful and emerging technology that captures gene expression profileswith spatial resolution, providing...",
+          "slug": "rag-st-retrieval-augmented-generation-for-spatial-transcriptomics",
+          "status": "in-progress",
+          "student_name": "Zeyu Zou",
+          "student_profile": null,
+          "tags": [],
+          "title": "RAG-ST: Retrieval-Augmented Generation for Spatial Transcriptomics"
+        }
+      ],
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/uc-ospo"
+    }
+  },
+  "first_time": false,
+  "contact": {
+    "email": "ospo-info-group@ucsc.edu",
+    "guide_url": "https://ucsc-ospo.github.io/osre25/#forstudents",
+    "ideas_url": "https://ucsc-ospo.github.io/osre25/#projects",
+    "irc_channel": "https://osre2024.slack.com/home",
+    "mailing_list": null
+  },
+  "social": {
+    "blog": "https://ucsc-ospo.github.io/#blog",
+    "discord": null,
+    "facebook": null,
+    "github": null,
+    "gitlab": null,
+    "instagram": null,
+    "linkedin": null,
+    "mastodon": null,
+    "medium": null,
+    "reddit": null,
+    "slack": "https://osre2024.slack.com/home",
+    "stackoverflow": null,
+    "twitch": null,
+    "twitter": "https://twitter.com/UC_OSPO",
+    "youtube": null
+  },
+  "meta": {
+    "version": 1,
+    "generated_at": "2026-01-25T15:28:54.419Z"
+  }
+}
