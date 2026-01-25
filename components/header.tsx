@@ -13,6 +13,7 @@ const menuItems = [
     { name: 'Projects', href: '/projects' },
     { name: 'Technologies', href: '/tech-stack' },
     { name: 'Topics', href: '/topics' },
+    { name: 'Trending', href: '/trending/organizations' },
     { name: 'Yearly', href: '/yearly' },
     // { name: 'Resources', href: '#resources' },
     // { name: 'About Us', href: '#about' },

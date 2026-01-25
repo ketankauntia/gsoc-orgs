@@ -51,6 +51,14 @@ export const FOOTER_NAVIGATION_ITEMS = [
         href: "/organizations",
       },
       {
+        title: "GSoC Yearly Stats",
+        href: "/yearly",
+      },
+      {
+        title: "GSoC Projects",
+        href: "/projects",
+      },
+      {
         title: "GSoC Tech Stack",
         href: "/tech-stack",
       },
@@ -58,62 +66,70 @@ export const FOOTER_NAVIGATION_ITEMS = [
         title: "GSoC Topics",
         href: "/topics",
       },
-      // { // will add when projects route is done
-      //   title: "GSoC Projects",
-      //   href: "/gsoc-projects",
-      // },
-      // {
-      //   title: "GSoC Yearly Stats",
-      //   href: "/gsoc-previous-years",
-      // },
-    ],
-  },
-  {
-    title: "GSoC Yearly",
-    description: "Yearly GSoC Organizations",
-    items: [
       {
-        title: "GSoC 2025",
-        href: "/yearly/google-summer-of-code-2025",
+        title: "Trending Organizations",
+        href: "/trending/organizations",
       },
       {
-        title: "GSoC 2024",
-        href: "/yearly/google-summer-of-code-2024",
+        title: "Trending Projects",
+        href: "/trending/projects",
       },
       {
-        title: "GSoC 2023",
-        href: "/yearly/google-summer-of-code-2023",
+        title: "Trending Tech Stack",
+        href: "/trending/tech-stack",
       },
       {
-        title: "GSoC 2022",
-        href: "/yearly/google-summer-of-code-2022",
-      },
-      {
-        title: "GSoC 2021",
-        href: "/yearly/google-summer-of-code-2021",
-      },
-      {
-        title: "GSoC 2020",
-        href: "/yearly/google-summer-of-code-2020",
-      },
-      {
-        title: "GSoC 2019",
-        href: "/yearly/google-summer-of-code-2019",
-      },
-      {
-        title: "GSoC 2018",
-        href: "/yearly/google-summer-of-code-2018",
-      },
-      {
-        title: "GSoC 2017",
-        href: "/yearly/google-summer-of-code-2017",
-      },
-      {
-        title: "GSoC 2016",
-        href: "/yearly/google-summer-of-code-2016",
+        title: "Trending Topics",
+        href: "/trending/topics",
       },
     ],
   },
+  // {
+  //   title: "GSoC Yearly",
+  //   description: "Yearly GSoC Organizations",
+  //   items: [
+  //     {
+  //       title: "GSoC 2025",
+  //       href: "/yearly/google-summer-of-code-2025",
+  //     },
+  //     {
+  //       title: "GSoC 2024",
+  //       href: "/yearly/google-summer-of-code-2024",
+  //     },
+  //     {
+  //       title: "GSoC 2023",
+  //       href: "/yearly/google-summer-of-code-2023",
+  //     },
+  //     {
+  //       title: "GSoC 2022",
+  //       href: "/yearly/google-summer-of-code-2022",
+  //     },
+  //     {
+  //       title: "GSoC 2021",
+  //       href: "/yearly/google-summer-of-code-2021",
+  //     },
+  //     {
+  //       title: "GSoC 2020",
+  //       href: "/yearly/google-summer-of-code-2020",
+  //     },
+  //     {
+  //       title: "GSoC 2019",
+  //       href: "/yearly/google-summer-of-code-2019",
+  //     },
+  //     {
+  //       title: "GSoC 2018",
+  //       href: "/yearly/google-summer-of-code-2018",
+  //     },
+  //     {
+  //       title: "GSoC 2017",
+  //       href: "/yearly/google-summer-of-code-2017",
+  //     },
+  //     {
+  //       title: "GSoC 2016",
+  //       href: "/yearly/google-summer-of-code-2016",
+  //     },
+  //   ],
+  // },
   {
     title: "Community",
     description: "GSoC Organizations Guide Community Links",
@@ -134,10 +150,14 @@ export const FOOTER_NAVIGATION_ITEMS = [
         title: "Terms and Conditions",
         href: "/terms-and-conditions",
       },
-      // {
-      //   title: "Blog",
-      //   href: "/blog",
-      // },        
+      {
+        title: "Blog",
+        href: "/blog",
+      },        
+      {
+        title: "Sitemap",
+        href: "/sitemap.xml",
+      },        
     ],
   },
 ];

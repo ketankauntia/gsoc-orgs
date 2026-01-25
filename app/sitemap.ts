@@ -139,6 +139,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog',
   ]
 
+  // Trending routes - one per entity (default monthly range)
+  const trendingRoutes = [
+    '/trending/organizations',
+    '/trending/projects',
+    '/trending/tech-stack',
+    '/trending/topics',
+  ]
+
   // Generate year-based routes (2016 to current year - 1, excluding future years)
   // Only include years that have actually completed GSoC
   // Using new /yearly/google-summer-of-code-YYYY format for SEO
@@ -160,6 +168,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: route === '' ? 'daily' as const : 'weekly' as const,
       priority: route === '' ? 1.0 : route === '/organizations' ? 0.9 : 0.8,
+    })),
+    
+    // Trending routes - medium priority (updated frequently)
+    ...trendingRoutes.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.75,
     })),
     
     // Organization detail pages - high priority (money pages for SEO)
