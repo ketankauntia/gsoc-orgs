@@ -433,7 +433,7 @@ export default async function YearlyPage({
               
               <MentorsContributorsTable 
                 data={data.projects.map(p => ({
-                   org_name: organizations.find(o => o.slug === p.org_slug)?.name || p.org_slug,
+                   org_name: organizations.find(o => o.slug === p.org_slug)?.name || p.title,
                    org_slug: p.org_slug,
                    mentors: p.mentors || [],
                    contributors: p.contributor ? [p.contributor] : []
