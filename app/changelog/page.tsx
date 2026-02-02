@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import { getFullUrl } from '@/lib/constants';
+import { chartColors } from '@/lib/theme';
 
 export const metadata: Metadata = {
   title: "Changelog | GSoC Orgs",
@@ -35,7 +36,8 @@ export default function ChangelogPage() {
           href={match[2]}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-600 dark:text-teal-400 hover:underline font-medium transition-colors"
+          style={{ color: chartColors.accent.primary }}
+          className="hover:underline font-medium transition-colors"
         >
           {match[1]}
         </a>
@@ -64,8 +66,8 @@ export default function ChangelogPage() {
           {/* The Timeline Line */}
           <div className="absolute left-[11px] md:left-[155px] top-2 bottom-0 w-px bg-border hidden sm:block" />
 
-          {sortedEntries.map((entry, idx) => (
-            <article key={idx} className="relative grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-12 pb-16 border-b border-border last:border-0">
+          {sortedEntries.map((entry) => (
+            <article key={entry.timeStamp} className="relative grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-12 pb-16 border-b border-border last:border-0">
 
               {/* Left Column: Date & Version */}
               <div className="md:sticky md:top-24 h-fit">
@@ -82,9 +84,10 @@ export default function ChangelogPage() {
                       href={pr.link}
                       target="_blank"
                       rel='noopener noreferrer'
-                      className="flex items-center gap-1.5 text-xs text-accent-foreground hover:underline hover:text-teal-600 transition-colors group"
+                      style={{ color: chartColors.accent.primary }}
+                      className="flex items-center gap-1.5 text-xs text-accent-foreground hover:underline transition-colors group"
                     >
-                      <GitHubIcon className="w-3 h-3 text-accent-foreground hover:text-teal-600" />
+                      <GitHubIcon className="w-3 h-3" />
                       <span>{pr.number}</span>
                     </a>
                   ))}
@@ -113,6 +116,7 @@ export default function ChangelogPage() {
                     <a
                       key={i}
                       href={pr.link}
+                      style={{ color: chartColors.accent.primary }}
                       className="flex items-center gap-2 text-sm text-accent-foreground font-medium"
                     >
                       <GitHubIcon className="w-4 h-4" />
