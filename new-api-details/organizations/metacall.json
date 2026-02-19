@@ -3,7 +3,7 @@
   "slug": "metacall",
   "name": "MetaCall",
   "category": "Programming languages",
-  "description": "Simplifying the embedding of programming languages",
+  "description": "When working with different technologies and developers of different programming languages, the productivity of the entire team worsens due to the lack of interoperability and communication between them. If the developers need two technologies which are written in different programming languages, for instance, a C/C++ library called from NodeJS, the team usually needs to port to one of the two languages or write a wrapper around them. Maintaining a port of a library or the plumbing code is frequently error-prone, time-consuming, and does not add any value to the final product.\n\nThe main objective of MetaCall is to provide a transparent interoperability in both ways, no matter what language you are using, so you feel like you are using a library written in the same language but in fact, it may be written in C, NodeJS or any other language.\n\nMetaCall currently provides a mechanism to introspect the types and function signatures, which allows us to provide this type info to the caller language. You can have type safety and at the same time avoid boilerplate in both directions.\n\nIt addresses the main shortcomings of embedding independent languages separately. Having a common implementation with a plugin architecture allows you to implement newer languages without rewriting more code. With a single solution you get C#, Ruby, Python or any other language you prefer. We can improve the core continuously and add new languages.\n\nFinally, we are using the polyglot runtime in cloud computing so we take advantage of the interoperability capabilities and allow to build complex polyglot distributed systems with ease. It is possible to build monolithic and mono-repo projects that can be distributed and scaled separately through our Function as a Service built on top of MetaCall, allowing the developer to maximize the productivity without the need of DevOps plumbing or thinking about intercommunication protocols and architectural details.",
   "image_url": "https://summerofcode.withgoogle.com/media/org/metacall/rezoq3uue7dpdzw5-360.png",
   "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/metacall.webp",
   "logo_r2_url": null,
@@ -12,11 +12,12 @@
     2021,
     2022,
     2023,
-    2024
+    2024,
+    2026
   ],
   "first_year": 2021,
-  "last_year": 2024,
-  "is_currently_active": false,
+  "last_year": 2026,
+  "is_currently_active": true,
   "technologies": [
     "python",
     "javascript",
@@ -26,7 +27,8 @@
     "guix",
     "rust",
     "node.js",
-    "docker"
+    "docker",
+    "nodejs"
   ],
   "topics": [
     "programming languages",
@@ -52,7 +54,8 @@
       "year_2022": 5,
       "year_2023": 4,
       "year_2024": 7,
-      "year_2025": null
+      "year_2025": null,
+      "year_2026": null
     },
     "students_by_year": {
       "year_2016": null,
@@ -64,7 +67,8 @@
       "year_2022": 5,
       "year_2023": 4,
       "year_2024": 7,
-      "year_2025": null
+      "year_2025": null,
+      "year_2026": null
     },
     "total_students": 18
   },
@@ -469,21 +473,22 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/metacall/"
     },
-    "year_2025": null
+    "year_2025": null,
+    "year_2026": null
   },
   "first_time": false,
   "contact": {
     "email": "contact@metacall.io",
-    "guide_url": null,
-    "ideas_url": null,
-    "irc_channel": "https://matrix.to/#/#metacall:matrix.org",
+    "guide_url": "https://github.com/metacall/gsoc-2026",
+    "ideas_url": "https://github.com/metacall/gsoc-2026",
+    "irc_channel": "https://discord.gg/upwP4mwJWa",
     "mailing_list": null
   },
   "social": {
     "blog": null,
     "discord": null,
     "facebook": null,
-    "github": null,
+    "github": "https://github.com/metacall",
     "gitlab": null,
     "instagram": null,
     "linkedin": null,
@@ -498,6 +503,6 @@
   },
   "meta": {
     "version": 1,
-    "generated_at": "2026-01-25T15:28:53.512Z"
+    "generated_at": "2026-02-19T13:46:24.131Z"
   }
 }

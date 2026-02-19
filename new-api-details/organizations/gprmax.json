@@ -3,7 +3,7 @@
   "slug": "gprmax",
   "name": "gprMax",
   "category": "Science and medicine",
-  "description": "Simulating electromagnetic wave propagation",
+  "description": "gprMax is open source software that simulates electromagnetic wave propagation. It uses Yee's algorithm to solve Maxwell’s equations in 3D using the Finite-Difference Time-Domain (FDTD) method.\n\nIt is designed for simulating Ground Penetrating Radar (GPR) and is used to model electromagnetic wave propagation in fields such as engineering, geophysics, archaeology, and medicine. There are a wide range of applications from assessing infrastructure such as bridges and roads, locating buried utilities, mapping glaciers, finding anti-personnel landmines, to detecting tumours in the human body, and exploring the sub-surface of Mars and the Moon.\n\ngprMax is command-line-driven software written in Python with performance-critical parts written in Cython. It does not currently feature a graphical user interface (GUI) which allows it to be very flexible and scriptable software that can run in high-performance computing (HPC) environments, i.e. on supercomputers.\n\ngprMax can be run on either CPU or GPU. The CPU solver has been parallelised using OpenMP which enables it to run on multi-core CPUs. The GPU solver has been developed using the NVIDIA CUDA programming model. gprMax also features a Messaging Passing Interface (MPI) task farm, which can operate with CPU nodes or multiple GPUs.",
   "image_url": "https://summerofcode.withgoogle.com/media/org/gprmax/vm8kavyxz3csja8f-360.png",
   "img_r2_url": "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/gprmax.webp",
   "logo_r2_url": null,
@@ -13,10 +13,11 @@
     2021,
     2023,
     2024,
-    2025
+    2025,
+    2026
   ],
   "first_year": 2019,
-  "last_year": 2025,
+  "last_year": 2026,
   "is_currently_active": true,
   "technologies": [
     "python",
@@ -47,7 +48,8 @@
       "year_2022": null,
       "year_2023": 4,
       "year_2024": 4,
-      "year_2025": 4
+      "year_2025": 4,
+      "year_2026": null
     },
     "students_by_year": {
       "year_2016": null,
@@ -59,7 +61,8 @@
       "year_2022": null,
       "year_2023": 4,
       "year_2024": 4,
-      "year_2025": 4
+      "year_2025": 4,
+      "year_2026": null
     },
     "total_students": 18
   },
@@ -440,21 +443,22 @@
         }
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gprmax"
-    }
+    },
+    "year_2026": null
   },
   "first_time": false,
   "contact": {
     "email": "info@gprmax.com",
     "guide_url": "https://github.com/gprMax/GSoC/blob/main/project-template.md",
-    "ideas_url": "https://github.com/gprMax/GSoC/blob/main/project-ideas-2025.md",
-    "irc_channel": "https://gprmax.zulipchat.com/join/rdr3ibeupg6nz5c4eu7oo2z4/",
+    "ideas_url": "https://github.com/gprMax/GSoC/blob/main/project-ideas-2026.md",
+    "irc_channel": "https://gprmax.zulipchat.com/join/gkhcp65r3zin6rfoqdhhhbu3/",
     "mailing_list": "https://groups.google.com/g/gprmax"
   },
   "social": {
     "blog": null,
     "discord": null,
     "facebook": null,
-    "github": null,
+    "github": "https://github.com/gprMax/gprMax",
     "gitlab": null,
     "instagram": null,
     "linkedin": null,
@@ -469,6 +473,6 @@
   },
   "meta": {
     "version": 1,
-    "generated_at": "2026-01-25T15:28:54.550Z"
+    "generated_at": "2026-02-19T13:46:24.131Z"
   }
 }
