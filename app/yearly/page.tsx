@@ -18,11 +18,12 @@ export const revalidate = false;
 
 export const metadata = {
   title: "GSoC Yearly Stats & Trends",
-  description: "Explore Google Summer of Code statistics, trends, and insights by year. Historical data from 2016 to 2025.",
+  description: "Explore Google Summer of Code statistics, trends, and insights by year. Historical data from 2016 to 2026.",
 };
 
 // Available years with their slugs
 const yearlyPages = [
+  { year: 2026, slug: "google-summer-of-code-2026" },
   { year: 2025, slug: "google-summer-of-code-2025" },
   { year: 2024, slug: "google-summer-of-code-2024" },
   { year: 2023, slug: "google-summer-of-code-2023" },
@@ -57,7 +58,7 @@ export default function YearlyIndexPage() {
                 <StatCard
                   icon={<Calendar className="w-5 h-5 text-primary" />}
                   label="Years Covered"
-                  value="10"
+                  value="11"
                 />
                 <StatCard
                   icon={<Building2 className="w-5 h-5 text-primary" />}
@@ -67,12 +68,12 @@ export default function YearlyIndexPage() {
                 <StatCard
                   icon={<Users className="w-5 h-5 text-primary" />}
                   label="Projects"
-                  value="10,000+"
+                  value="11,000+"
                 />
                 <StatCard
                   icon={<TrendingUp className="w-5 h-5 text-primary" />}
                   label="Latest Year"
-                  value="2025"
+                  value="2026"
                 />
               </div>
             </div>
@@ -115,9 +116,9 @@ export default function YearlyIndexPage() {
               </Text>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
                 <Button asChild size="lg">
-                  <Link href="/yearly/google-summer-of-code-2025">
+                  <Link href="/yearly/google-summer-of-code-2026">
                     <Calendar className="w-4 h-4 mr-2" />
-                    View 2025 Stats
+                    View 2026 Stats
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">

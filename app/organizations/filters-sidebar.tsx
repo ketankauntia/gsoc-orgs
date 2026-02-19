@@ -23,9 +23,10 @@ interface FiltersSidebarProps {
   onFilterChange: (filters: FilterState) => void
   filters: FilterState
   availableTechs: Array<{ name: string; count: number }>
+  firstTimeCount?: number
 }
 
-const YEARS = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
+const YEARS = [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012]
 const CATEGORIES = [
   'Artificial Intelligence',
   'Data',
@@ -49,7 +50,7 @@ const TOPICS = [
   'Database',
 ]
 
-export function FiltersSidebar({ onFilterChange, filters, availableTechs }: FiltersSidebarProps) {
+export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstTimeCount }: FiltersSidebarProps) {
 
   const [sidebarSearch] = useState('')
   const [expandedSections, setExpandedSections] = useState({
@@ -225,7 +226,7 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs }: Filt
               onChange={toggleFirstTime}
             />
             <span className="text-sm text-gray-700 dark:text-foreground">First-time organizations only</span>
-            <span className="text-xs text-gray-400">(14)</span>
+            {firstTimeCount !== undefined && <span className="text-xs text-gray-400">({firstTimeCount})</span>}
           </label>
         </div>
       </div>      
