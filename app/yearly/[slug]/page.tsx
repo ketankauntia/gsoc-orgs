@@ -21,6 +21,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import { loadYearlyPageData } from "@/lib/yearly-page-types";
 import { getFullUrl } from "@/lib/constants";
+import { getAvailableProjectYears } from "@/lib/projects-page-types";
 import { ExpandableOrgList, ExpandableProjectList, MentorsContributorsTable } from "./client-components";
 import {
   StudentSlotsBarChart,
@@ -32,21 +33,12 @@ import {
 // Static Generation - cache forever
 export const revalidate = false;
 
-// Generate static params for all known yearly pages
+// Derived from the single source of truth in getAvailableProjectYears().
+// Adding a year there auto-updates yearly pages, project pages, and sitemap.
 export async function generateStaticParams() {
-  // Add more years as JSON files are created
-  return [
-    { slug: "google-summer-of-code-2025" },
-    { slug: "google-summer-of-code-2024" },
-    { slug: "google-summer-of-code-2023" },
-    { slug: "google-summer-of-code-2022" },
-    { slug: "google-summer-of-code-2021" },
-    { slug: "google-summer-of-code-2020" },
-    { slug: "google-summer-of-code-2019" },
-    { slug: "google-summer-of-code-2018" },
-    { slug: "google-summer-of-code-2017" },
-    { slug: "google-summer-of-code-2016" },
-  ];
+  return getAvailableProjectYears().map(year => ({
+    slug: `google-summer-of-code-${year}`,
+  }));
 }
 
 export async function generateMetadata({
