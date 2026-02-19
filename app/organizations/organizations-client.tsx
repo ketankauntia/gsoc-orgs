@@ -16,9 +16,10 @@ interface OrganizationsClientProps {
   initialData: PaginatedResponse<Organization>
   initialPage: number
   initialTechs: Array<{ name: string; count: number }>
+  firstTimeCount?: number
 }
 
-export function OrganizationsClient({ initialData, initialPage, initialTechs }: OrganizationsClientProps) {
+export function OrganizationsClient({ initialData, initialPage, initialTechs, firstTimeCount }: OrganizationsClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [data, setData] = useState<PaginatedResponse<Organization>>(initialData)
@@ -27,6 +28,14 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs }: 
   const isInitialMount = useRef(true)
   const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
+
+  // Sync server-rendered data when initialData/initialPage change after navigation.
+  // Without this, router.push() re-renders on the server but the client keeps stale state.
+  useEffect(() => {
+    setData(initialData)
+    setCurrentPage(initialPage)
+    setIsLoading(false)
+  }, [initialData, initialPage])
   
   // Memoize filters from URL using primitives to avoid unnecessary recalculations
   const urlFilters = useMemo<FilterState>(() => {
@@ -207,53 +216,26 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs }: 
     }
   }, [])
 
-  // Handle page changes from URL
-  // Only fetch if page actually changed AND we're not on initial mount
-  useEffect(() => {
-    if (isInitialMount.current) {
-      return
-    }
-    
-    const page = Number(searchParams.get('page')) || 1
-    if (page !== currentPage) {
-      setCurrentPage(page)
-      // Only fetch if we have dynamic filters (search or complex filters)
-      // Otherwise, pagination should be handled client-side with static data
-      const hasDynamicFilters = filters.search || 
-        filters.yearsLogic === 'AND' || 
-        filters.categoriesLogic === 'AND' ||
-        filters.techsLogic === 'AND' ||
-        filters.topicsLogic === 'AND' ||
-        (filters.years.length > 0 && filters.categories.length > 0 && filters.techs.length > 0)
-      
-      if (hasDynamicFilters) {
-        fetchOrganizations(page, filters)
-      }
-    }
-  }, [searchParams, currentPage, filters, fetchOrganizations])
+  // Page changes are handled via router.push() → server re-render → initialData sync.
+  // No client-side fetch needed for pagination.
 
-  // Only fetch when filters change (not on initial mount, as we have initialData)
-  // Only fetch if we have dynamic filters that require API (search or complex filters)
+  // Filters and search are handled server-side via router.push() → server re-render → initialData sync.
+  // Only need client-side API fetch for AND logic filters (rare edge case).
   useEffect(() => {
     if (isInitialMount.current) {
       return
     }
     
-    // Determine if we need API (same logic as server)
     const needsAPI = 
-      filters.search.trim().length > 0 ||
       filters.yearsLogic === 'AND' ||
       filters.categoriesLogic === 'AND' ||
       filters.techsLogic === 'AND' ||
-      filters.topicsLogic === 'AND' ||
-      (filters.years.length > 0 && filters.categories.length > 0 && filters.techs.length > 0 && filters.topics.length > 0)
+      filters.topicsLogic === 'AND'
     
-    // Only fetch if we need API, otherwise filters are handled client-side with static data
     if (!needsAPI) {
       return
     }
     
-    // Reset to page 1 when filters change
     const page = 1
     setCurrentPage(page)
     fetchOrganizations(page, filters)
@@ -341,7 +323,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs }: 
     <div className="flex">
       {/* Sidebar - Fixed left, 280px width */}
       <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
-        <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} />
+        <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} firstTimeCount={firstTimeCount} />
       </aside>
 
       {/* Main Content - with left margin for sidebar */}

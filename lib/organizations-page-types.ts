@@ -192,6 +192,7 @@ export function indexDataToPaginatedResponse(
 export function filterOrganizations(
   organizations: OrganizationsIndexData['organizations'],
   filters: {
+    query?: string;
     years?: number[];
     categories?: string[];
     techs?: string[];
@@ -200,6 +201,19 @@ export function filterOrganizations(
   }
 ): OrganizationsIndexData['organizations'] {
   let filtered = [...organizations];
+
+  // Text search (case-insensitive match on name, description, technologies, topics)
+  if (filters.query && filters.query.trim().length > 0) {
+    const q = filters.query.toLowerCase().trim();
+    filtered = filtered.filter(org => {
+      if (org.name.toLowerCase().includes(q)) return true;
+      if (org.description?.toLowerCase().includes(q)) return true;
+      if (org.technologies?.some(t => t.toLowerCase().includes(q))) return true;
+      if (org.topics?.some(t => t.toLowerCase().includes(q))) return true;
+      if (org.category?.toLowerCase().includes(q)) return true;
+      return false;
+    });
+  }
 
   // Years filter (OR logic - org must have participated in ANY selected year)
   if (filters.years && filters.years.length > 0) {

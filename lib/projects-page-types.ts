@@ -105,5 +105,5 @@ export async function loadProjectsYearData(year: number): Promise<ProjectYearPag
  * Get list of available years
  */
 export function getAvailableProjectYears(): number[] {
-  return [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+  return [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 }

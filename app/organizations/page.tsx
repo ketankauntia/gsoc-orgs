@@ -96,14 +96,6 @@ function shouldUseAPI(params: {
   techsLogic?: string;
   topicsLogic?: string;
 }): boolean {
-  // Always use API for search (text search requires DB)
-  if (params.q && params.q.trim().length > 0) {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[ORGS] Using API: search query detected');
-    }
-    return true;
-  }
-
   // Use API for complex filter logic (AND mode requires DB)
   if (params.yearsLogic === 'AND' || params.categoriesLogic === 'AND' ||
       params.techsLogic === 'AND' || params.topicsLogic === 'AND') {
@@ -113,26 +105,10 @@ function shouldUseAPI(params: {
     return true;
   }
 
-  // Use API if multiple filter types are combined (complex combinations)
-  const filterCount = [
-    params.years && params.years.trim().length > 0,
-    params.categories && params.categories.trim().length > 0,
-    params.techs && params.techs.trim().length > 0,
-    params.topics && params.topics.trim().length > 0,
-    params.firstTimeOnly === 'true',
-  ].filter(Boolean).length;
-
-  // If more than 2 filter types, use API for better performance
-  if (filterCount > 2) {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[ORGS] Using API: multiple filter types detected', filterCount);
-    }
-    return true;
-  }
-
-  // Otherwise, use static JSON
+  // All other cases (including text search) use static JSON.
+  // Text search over ~500 orgs in memory is fast and includes new orgs not yet in DB.
   if (process.env.NODE_ENV === 'development') {
-    console.log('[ORGS] Using static JSON: simple filters or no filters');
+    console.log('[ORGS] Using static JSON');
   }
   return false;
 }
@@ -204,12 +180,13 @@ async function getOrganizations(params: {
     );
   }
 
-  // Filter organizations in memory
+  // Filter organizations in memory (supports text search + all filters)
   let filtered = indexData.organizations;
 
-  // Apply filters
-  if (params.years || params.categories || params.techs || params.topics || params.firstTimeOnly) {
+  const hasFilters = params.q || params.years || params.categories || params.techs || params.topics || params.firstTimeOnly || params.tech;
+  if (hasFilters) {
     filtered = filterOrganizations(indexData.organizations, {
+      query: params.q,
       years: params.years ? params.years.split(',').map(y => parseInt(y)).filter(n => !isNaN(n)) : undefined,
       categories: params.categories ? params.categories.split(',') : undefined,
       techs: params.techs ? params.techs.split(',') : params.tech ? [params.tech] : undefined,
@@ -239,8 +216,8 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = Number(params.page) || 1;
   
-  // Parallel data fetching: Orgs + Tech Stack
-  const [data, techStackIndex] = await Promise.all([
+  // Parallel data fetching: Orgs + Tech Stack + Org index (for first-time count)
+  const [data, techStackIndex, orgIndex] = await Promise.all([
     getOrganizations({ 
       page, 
       limit: 20,
@@ -257,7 +234,8 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
       techsLogic: params.techsLogic,
       topicsLogic: params.topicsLogic,
     }),
-    loadTechStackIndexData()
+    loadTechStackIndexData(),
+    loadOrganizationsIndexData()
   ]);
 
   // Transform tech stack data for sidebar
@@ -265,6 +243,10 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
     name: t.name,
     count: t.org_count
   })) || [];
+
+  const firstTimeCount = orgIndex?.organizations.filter(
+    (o: { first_time: boolean | null }) => o.first_time === true
+  ).length ?? 0;
 
   return (
     <Suspense fallback={
@@ -279,6 +261,7 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
         initialData={data} 
         initialPage={page} 
         initialTechs={initialTechs}
+        firstTimeCount={firstTimeCount}
       />
     </Suspense>
   );
