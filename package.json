@@ -13,7 +13,12 @@
     "prepare": "husky",
     "generate:organizations": "node scripts/generate-organizations-data.js",
     "generate:tech-stack": "node scripts/generate-tech-stack-data.js",
-    "generate:topics": "node scripts/generate-topics-data.js"
+    "generate:topics": "node scripts/generate-topics-data.js",
+    "gsoc:fetch": "npx tsx scripts/fetch-year-data.ts",
+    "gsoc:transform": "npx tsx scripts/transform-year-organizations.ts",
+    "gsoc:yearly": "npx tsx scripts/generate-yearly-page-from-json.ts",
+    "gsoc:regen": "npx tsx scripts/regenerate-tech-topics-from-json.ts",
+    "gsoc:sync": "npx tsx scripts/fetch-year-data.ts && npx tsx scripts/transform-year-organizations.ts && npx tsx scripts/generate-yearly-page-from-json.ts && npx tsx scripts/regenerate-tech-topics-from-json.ts"
   },
   "dependencies": {
     "@prisma/client": "5.22.0",
