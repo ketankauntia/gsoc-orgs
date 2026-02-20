@@ -150,7 +150,7 @@ async function main() {
 
   // 2. Read existing index & build name→slug map for fuzzy matching
   let existingIndex: {
-    organizations: Array<{ slug: string; name: string; [key: string]: unknown }>;
+    organizations: Array<{ slug: string; name: string;[key: string]: unknown }>;
   } = { organizations: [] };
   if (fs.existsSync(INDEX_FILE)) {
     existingIndex = JSON.parse(fs.readFileSync(INDEX_FILE, "utf-8"));
@@ -340,7 +340,7 @@ async function main() {
         category: raw.categories?.[0] || "Other",
         description: raw.description || raw.tagline || "",
         image_url: raw.logo_url || "",
-        img_r2_url: raw.logo_url || "",
+        img_r2_url: "",
         logo_r2_url: null,
         url: raw.website_url || "",
         active_years: [YEAR],
