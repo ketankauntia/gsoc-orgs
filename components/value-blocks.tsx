@@ -7,7 +7,7 @@ export function OrganizationsBlock() {
   return (
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col items-center lg:flex-row gap-10 lg:items-center lg:justify-center">
+        <div className="flex flex-col items-center lg:flex-row gap-10 lg:justify-center">
           <div className="flex gap-4 flex-col items-center flex-1 lg:items-end lg:text-right">
             <div>
               <Badge variant="outline" className="gap-2">
@@ -48,7 +48,7 @@ export function PreviousEditionsBlock() {
   return (
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col-reverse items-center lg:flex-row gap-10 lg:items-center lg:justify-center">
+        <div className="flex flex-col-reverse items-center lg:flex-row gap-10 lg:justify-center">
           <div className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden">
             <Image
               src="/gsoc-previous-year-insights.webp"
@@ -90,7 +90,7 @@ export function TechStackBlock() {
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         {/* Added items-center for mobile layout */}
-        <div className="flex flex-col items-center lg:flex-row gap-10 lg:items-center lg:justify-center">
+        <div className="flex flex-col items-center lg:flex-row gap-10 lg:justify-center">
           {/* Base mobile: centered | Desktop: right-aligned */}
           <div className="flex gap-4 flex-col items-center flex-1 lg:items-end lg:text-right">
             <div>
@@ -133,7 +133,7 @@ export function AnalyticsBlock() {
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         {/* Added items-center for mobile layout */}
-        <div className="flex flex-col-reverse items-center lg:flex-row gap-10 lg:items-center lg:justify-center">
+        <div className="flex flex-col-reverse items-center lg:flex-row gap-10 lg:justify-center">
           <div className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden">
             <Image
               src="/google-summer-of-code-insights-trends.webp"
