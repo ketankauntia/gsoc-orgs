@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Organization } from "@/lib/api";
 import { Badge } from "@/components/ui";
 import { cn } from "@/lib/utils";
+import { fadeInUp, defaultViewport } from "@/lib/animations";
 
 interface OrganizationCardProps {
   org: Organization;
@@ -39,15 +43,21 @@ export function OrganizationCard({
   const effectiveShowTechStack = isCompact ? false : showTechStack;
 
   return (
-    <Link 
-      href={`/organizations/${org.slug}`}
-      prefetch={true}
-      className={cn(
-        "block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all w-full",
-        "dark:bg-card dark:border-border dark:hover:border-gray-600",
-        className
-      )}
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={defaultViewport}
     >
+      <Link 
+        href={`/organizations/${org.slug}`}
+        prefetch={true}
+        className={cn(
+          "block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all w-full",
+          "dark:bg-card dark:border-border dark:hover:border-gray-600",
+          className
+        )}
+      >
       {/* Header with Logo */}
       <div className="flex items-start gap-4 mb-3">
         <div className="w-12 h-12 rounded-lg bg-gray-100 dark:bg-muted flex items-center justify-center overflow-hidden shrink-0">
@@ -119,6 +129,7 @@ export function OrganizationCard({
           </div>
         </div>
       )}
-    </Link>
+      </Link>
+    </motion.div>
   );
 }

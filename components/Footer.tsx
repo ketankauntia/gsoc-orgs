@@ -1,14 +1,24 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Section, Heading, Text } from "@/components/ui";
 import { SocialLinks } from "@/components/social-links";
 import { FOOTER_NAVIGATION_ITEMS, FOOTER_COPYRIGHT } from "@/components/footer-common";
+import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 
 export const Footer = () => {
 
   return (                                        
     <Section className="bg-foreground text-background dark:bg-card dark:text-white">
-      <div className="grid lg:grid-cols-2 gap-18 items-center">
-        <div className="flex gap-8 flex-col items-start">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
+        className="grid lg:grid-cols-2 gap-18 items-center"
+      >
+        <motion.div variants={staggerItem} className="flex gap-8 flex-col items-start">
           <div className="flex gap-2 flex-col">
             <Heading>GSoC Organizations Guide</Heading>
             <Text className="max-w-lg text-background/75 dark:text-white">
@@ -27,8 +37,8 @@ export const Footer = () => {
             className="flex items-center gap-4 text-black"
             textColor="white"
           />
-        </div>
-        <div className="grid lg:grid-cols-3 gap-10 items-start">
+        </motion.div>
+        <motion.div variants={staggerItem} className="grid lg:grid-cols-3 gap-10 items-start">
           {FOOTER_NAVIGATION_ITEMS.map((item) => (
             <div
               key={item.title}
@@ -51,8 +61,8 @@ export const Footer = () => {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 };

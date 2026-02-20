@@ -1,10 +1,12 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Code, Eye } from "lucide-react";
 import { Badge, Button, CardWrapper, Heading, Text } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { getTechIcon, isTechnology } from "@/lib/tech-icons";
 import { getDifficultyColor } from "@/lib/theme";
+import { fadeInUp, defaultViewport } from "@/lib/animations";
 
 interface ProjectCardProps {
   project: {
@@ -41,7 +43,13 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
   const codeUrl = project.code_url || project.project_code_url;
 
   return (
-    <CardWrapper padding="md" hover className={cn("flex flex-col relative", className)}>
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={defaultViewport}
+    >
+      <CardWrapper padding="md" hover className={cn("flex flex-col relative", className)}>
       {/* Difficulty Badge */}
       {project.difficulty && (
         <div className="absolute top-4 left-4 flex items-center gap-2">
@@ -128,7 +136,8 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
           </Button>
         )}
       </div>
-    </CardWrapper>
+      </CardWrapper>
+    </motion.div>
   );
 }
 

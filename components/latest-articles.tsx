@@ -1,7 +1,11 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 
 interface Article {
   id: string;
@@ -50,7 +54,13 @@ export function LatestArticles() {
     <section className="w-full py-12 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col gap-14">
-          <div className="flex w-full flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="flex w-full flex-col sm:flex-row sm:justify-between sm:items-center gap-8"
+          >
             <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular">
               Latest articles
             </h2>
@@ -59,14 +69,20 @@ export function LatestArticles() {
                 View all articles <MoveRight className="w-4 h-4" />
               </Link>
             </Button>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          </motion.div>
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
             {COMING_SOON_ARTICLES.map((article) => (
-              <Link
-                key={article.id}
-                href="/blog"
-                className="flex flex-col gap-2 hover:opacity-75 cursor-pointer transition-opacity"
-              >
+              <motion.div key={article.id} variants={staggerItem}>
+                <Link
+                  href="/blog"
+                  className="flex flex-col gap-2 hover:opacity-75 cursor-pointer transition-opacity"
+                >
                 <div className="bg-muted rounded-md aspect-video mb-4 overflow-hidden">
                   <Image
                     src={ARTICLE_IMAGES[article.id]}
@@ -82,8 +98,9 @@ export function LatestArticles() {
                   {article.description}
                 </p>
               </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { Button } from "@/components/ui"
 import React from 'react'
@@ -7,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
 import { GitHubIcon,  XIcon } from '@/components/icons'
 import { ModeToggle } from './ModeToggle'
+import { fadeInUp } from '@/lib/animations'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -32,7 +34,10 @@ export const Header = () => {
     }, [])
     return (
         <header suppressHydrationWarning>
-            <nav
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 data-state={menuState && 'active'}
                 className="fixed z-20 w-full px-2"
                 suppressHydrationWarning>
@@ -156,7 +161,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
-            </nav>
+            </motion.nav>
         </header>
     )
 }

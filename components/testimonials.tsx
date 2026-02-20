@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselApi,
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { Quote } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations";
 
 interface Testimonial {
   id: string;
@@ -96,11 +98,23 @@ export function Testimonials() {
     <section className="w-full py-12 lg:py-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col gap-10">
-          <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-left">
+          <motion.h2
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular text-left"
+          >
             Trusted by GSoC aspirants worldwide
-          </h2>
-          <Carousel setApi={setApi} className="w-full">
-            <CarouselContent>
+          </motion.h2>
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+          >
+            <Carousel setApi={setApi} className="w-full">
+              <CarouselContent>
               {TESTIMONIALS.map((testimonial) => (
                 <CarouselItem className="lg:basis-1/2" key={testimonial.id}>
                   <div className="bg-muted rounded-md h-full lg:col-span-2 p-6 aspect-video flex justify-between flex-col">
@@ -131,7 +145,8 @@ export function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-          </Carousel>
+            </Carousel>
+          </motion.div>
         </div>
       </div>
     </section>
