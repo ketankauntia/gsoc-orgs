@@ -134,6 +134,10 @@ export const FOOTER_NAVIGATION_ITEMS = [
         title: "Terms and Conditions",
         href: "/terms-and-conditions",
       },
+      {
+        title: "Changelog",
+        href: "/changelog",
+      },
       // {
       //   title: "Blog",
       //   href: "/blog",
