@@ -14,6 +14,7 @@ import fs from "fs";
 import path from "path";
 import { downloadImage, compressToWebP, sleep } from "./lib/image-processor";
 import { uploadToR2 } from "./lib/r2-client";
+import { SLUG_ALIASES } from "./lib/slug-aliases";
 
 const args = process.argv.slice(2);
 const yearFlagIdx = args.indexOf("--year");
@@ -47,11 +48,6 @@ const R2_URL_PREFIX =
     "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev";
 const DOWNLOAD_DELAY_MS = 500;
 
-// Manual alias map — must stay in sync with transform-year-organizations.ts
-const SLUG_ALIASES: Record<string, string> = {
-    "ceph": "ceph-foundation",
-    "openms-inc": "openms",
-};
 
 interface RawOrg {
     name: string;
@@ -115,11 +111,8 @@ async function main() {
         return;
     }
 
-    if (!fs.existsSync(IMAGES_DIR)) {
-        fs.mkdirSync(IMAGES_DIR, { recursive: true });
-    }
+    fs.mkdirSync(IMAGES_DIR, { recursive: true });
     let processed = 0;
-    let failed = 0;
     const failures: Array<{ slug: string; error: string }> = [];
 
     for (let i = 0; i < toProcess.length; i++) {
@@ -155,7 +148,6 @@ async function main() {
             const errorMsg = err instanceof Error ? err.message : String(err);
             console.error(`${progress} FAILED ${raw.slug}: ${errorMsg}`);
             failures.push({ slug: raw.slug, error: errorMsg });
-            failed++;
         }
 
         if (i < toProcess.length - 1) {
@@ -165,7 +157,7 @@ async function main() {
     console.log("\n[DONE] Image processing complete!");
     console.log(`  Processed: ${processed}`);
     console.log(`  Skipped:   ${skipped.length}`);
-    console.log(`  Failed:    ${failed}`);
+    console.log(`  Failed:    ${failures.length}`);
 
     if (failures.length > 0) {
         console.log("\n[FAILURES]");

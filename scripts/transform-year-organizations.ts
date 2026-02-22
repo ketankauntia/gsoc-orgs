@@ -18,6 +18,7 @@
 
 import fs from "fs";
 import path from "path";
+import { SLUG_ALIASES } from "./lib/slug-aliases";
 
 // ---------------------------------------------------------------------------
 // CLI args
@@ -163,12 +164,6 @@ async function main() {
     nameToSlug.set(org.name.toLowerCase().trim(), org.slug);
   }
 
-  // Manual alias map for known rebrands / renamed orgs.
-  // Maps 2026-API-slug → existing slug in our dataset.
-  const SLUG_ALIASES: Record<string, string> = {
-    "ceph": "ceph-foundation",
-    "openms-inc": "openms",
-  };
 
   // Guard: detect duplicate names in existing index (would cause ambiguous matches)
   const nameOccurrences = new Map<string, string[]>();
