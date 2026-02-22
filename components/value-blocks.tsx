@@ -59,14 +59,14 @@ export function PreviousEditionsBlock() {
               unoptimized
             />
           </div>
-          <div className="flex gap-4 flex-col flex-1 items-center text-center">
+          <div className="flex gap-4 flex-col flex-1 items-center text-center lg:items-start lg:text-left">
             <div>
               <Badge variant="outline" className="gap-2">
                 <History className="size-3" />
                 Previous Editions
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center">
+            <div className="flex gap-2 flex-col items-center text-center lg:items-start">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Learn from Past GSoC Years
               </h2>
@@ -141,14 +141,14 @@ export function AnalyticsBlock() {
               unoptimized
             />
           </div>
-          <div className="flex gap-4 flex-col flex-1 items-center text-center">
+          <div className="flex gap-4 flex-col flex-1 items-center text-center lg:items-start lg:text-left">
             <div>
               <Badge variant="outline" className="gap-2">
                 <BarChart3 className="size-3" />
                 Analytics
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center">
+            <div className="flex gap-2 flex-col items-center text-center lg:items-start">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Data-Driven Insights
               </h2>
