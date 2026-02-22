@@ -17,7 +17,7 @@ interface TrendingOrgsProps {
 
 /**
  * TrendingOrgs Client Component
- * 
+ *
  * This component receives pre-loaded data from the server.
  * NO API calls - data is passed as props from static JSON.
  */
@@ -51,7 +51,7 @@ export function TrendingOrgsClient({ organizations }: TrendingOrgsProps) {
   return (
     <Section noPadding className="py-12 lg:py-16">
       <div className="grid grid-cols-5 gap-10 items-center">
-        <Heading variant="small" className="lg:max-w-xl">
+        <Heading variant="small" className="lg:max-w-xl relative z-20">
           Trending GSoC Organizations
         </Heading>
         <div className="relative w-full col-span-4">
