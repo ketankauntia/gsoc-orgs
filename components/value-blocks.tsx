@@ -15,7 +15,7 @@ export function OrganizationsBlock() {
                 Organizations
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-end">
+            <div className="flex gap-2 flex-col items-center text-center lg:items-end lg:text-right">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Explore 200+ GSoC Organizations
               </h2>
@@ -66,7 +66,7 @@ export function PreviousEditionsBlock() {
                 Previous Editions
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-start">
+            <div className="flex gap-2 flex-col items-center text-center lg:items-start lg:text-left">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Learn from Past GSoC Years
               </h2>
@@ -97,7 +97,7 @@ export function TechStackBlock() {
                 Tech Stack
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-end">
+            <div className="flex gap-2 flex-col items-center text-center lg:items-end lg:text-right">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Find Orgs by Technology
               </h2>
@@ -148,7 +148,7 @@ export function AnalyticsBlock() {
                 Analytics
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-start">
+            <div className="flex gap-2 flex-col items-center text-center lg:items-start lg:text-left">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Data-Driven Insights
               </h2>
