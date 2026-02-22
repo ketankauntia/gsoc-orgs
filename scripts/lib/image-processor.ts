@@ -11,13 +11,17 @@ import sharp from "sharp";
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 1000;
+const FETCH_TIMEOUT_MS = 30_000;
 
 export async function downloadImage(url: string): Promise<Buffer> {
     let lastError: Error | null = null;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
         try {
-            const response = await fetch(url);
+            const response = await fetch(url, { signal: controller.signal });
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status} ${response.statusText}`);
@@ -30,6 +34,8 @@ export async function downloadImage(url: string): Promise<Buffer> {
             if (attempt < MAX_RETRIES) {
                 await sleep(RETRY_DELAY_MS * attempt);
             }
+        } finally {
+            clearTimeout(timer);
         }
     }
 
@@ -55,12 +61,18 @@ export async function compressToWebP(
         .toBuffer();
 }
 
+export interface ProcessResult {
+    outputPath: string;
+    originalSize: number;
+    compressedSize: number;
+}
+
 export async function processAndSaveLocally(
     url: string,
     outputDir: string,
     slug: string,
     options?: CompressOptions,
-): Promise<string> {
+): Promise<ProcessResult> {
     const raw = await downloadImage(url);
     const webp = await compressToWebP(raw, options);
 
@@ -70,7 +82,11 @@ export async function processAndSaveLocally(
 
     const outputPath = path.join(outputDir, `${slug}.webp`);
     fs.writeFileSync(outputPath, webp);
-    return outputPath;
+    return {
+        outputPath,
+        originalSize: raw.length,
+        compressedSize: webp.length,
+    };
 }
 
 export function sleep(ms: number): Promise<void> {

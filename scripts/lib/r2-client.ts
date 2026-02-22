@@ -7,6 +7,7 @@
  */
 
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { NodeHttpHandler } from "@smithy/node-http-handler";
 
 function getEnvOrThrow(name: string): string {
     const value = process.env[name];
@@ -30,6 +31,10 @@ function getClient(): S3Client {
             accessKeyId: getEnvOrThrow("R2_ACCESS_KEY_ID"),
             secretAccessKey: getEnvOrThrow("R2_SECRET_ACCESS_KEY"),
         },
+        requestHandler: new NodeHttpHandler({
+            socketTimeout: 30_000,
+            connectionTimeout: 10_000,
+        }),
     });
 
     return _client;

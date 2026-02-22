@@ -42,8 +42,16 @@ const RAW_FILE = path.join(
 );
 const IMAGES_DIR = path.join(ROOT, "images", String(YEAR));
 
-const R2_URL_PREFIX = "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev/";
+const R2_URL_PREFIX =
+    process.env.R2_PUBLIC_URL?.replace(/\/+$/, "") ||
+    "https://pub-268c3a1efc8b4f8a99115507a760ca14.r2.dev";
 const DOWNLOAD_DELAY_MS = 500;
+
+// Manual alias map — must stay in sync with transform-year-organizations.ts
+const SLUG_ALIASES: Record<string, string> = {
+    "ceph": "ceph-foundation",
+    "openms-inc": "openms",
+};
 
 interface RawOrg {
     name: string;
@@ -73,7 +81,8 @@ async function main() {
             continue;
         }
 
-        const orgFile = path.join(ORGS_DIR, `${raw.slug}.json`);
+        const resolvedSlug = SLUG_ALIASES[raw.slug] || raw.slug;
+        const orgFile = path.join(ORGS_DIR, `${resolvedSlug}.json`);
         if (fs.existsSync(orgFile)) {
             try {
                 const orgData = JSON.parse(fs.readFileSync(orgFile, "utf-8"));
@@ -111,6 +120,7 @@ async function main() {
     for (let i = 0; i < toProcess.length; i++) {
         const raw = toProcess[i];
         const progress = `[${i + 1}/${toProcess.length}]`;
+        const resolvedSlug = SLUG_ALIASES[raw.slug] || raw.slug;
 
         try {
             console.log(`${progress} Downloading ${raw.slug}...`);
@@ -126,13 +136,13 @@ async function main() {
 
             let r2Url = "";
             if (!LOCAL_ONLY) {
-                const r2Key = `${raw.slug}.webp`;
+                const r2Key = `${YEAR}/${raw.slug}.webp`;
                 r2Url = await uploadToR2(r2Key, webpBuffer, "image/webp");
                 console.log(`${progress} Uploaded to R2: ${r2Url}`);
             }
 
             if (!LOCAL_ONLY) {
-                updateOrgJson(raw.slug, r2Url);
+                updateOrgJson(resolvedSlug, r2Url);
             }
 
             processed++;
@@ -160,6 +170,10 @@ async function main() {
     if (LOCAL_ONLY) {
         console.log(`\n  Local files saved to: ${IMAGES_DIR}`);
         console.log("  Re-run without --local-only to upload to R2.");
+    }
+
+    if (failures.length > 0) {
+        process.exit(1);
     }
 }
 
