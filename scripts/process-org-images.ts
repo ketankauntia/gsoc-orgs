@@ -59,6 +59,11 @@ interface RawOrg {
     logo_url: string;
 }
 
+/**
+ * Main pipeline entry point. Reads the raw org list, skips orgs that
+ * already have an R2 URL, downloads and compresses logos to WebP,
+ * optionally uploads to R2, and updates org JSON files.
+ */
 async function main() {
     console.log(`\n[IMAGES] GSoC ${YEAR} — Image Processing Pipeline`);
     console.log(`  Mode: ${DRY_RUN ? "DRY RUN" : LOCAL_ONLY ? "LOCAL ONLY" : "FULL (download + upload)"}\n`);
@@ -177,6 +182,12 @@ async function main() {
     }
 }
 
+/**
+ * Updates an organization's JSON file with the new R2 image URL.
+ *
+ * @param slug - The resolved (canonical) slug of the organization.
+ * @param r2Url - The public R2 URL of the uploaded image.
+ */
 function updateOrgJson(slug: string, r2Url: string) {
     const orgFile = path.join(ORGS_DIR, `${slug}.json`);
     if (!fs.existsSync(orgFile)) return;
