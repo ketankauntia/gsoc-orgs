@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Search, X } from 'lucide-react'
+import { Search, SlidersHorizontal, X } from 'lucide-react'
 import { Button, Input, SectionHeader } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
@@ -25,6 +25,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
   const [data, setData] = useState<PaginatedResponse<Organization>>(initialData)
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(initialPage)
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false)
   const isInitialMount = useRef(true)
   const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
@@ -35,7 +36,16 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     setData(initialData)
     setCurrentPage(initialPage)
     setIsLoading(false)
+    setIsMobileFiltersOpen(false)
   }, [initialData, initialPage])
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    document.body.style.overflow = isMobileFiltersOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileFiltersOpen])
   
   // Memoize filters from URL using primitives to avoid unnecessary recalculations
   const urlFilters = useMemo<FilterState>(() => {
@@ -309,6 +319,8 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     filters.difficulties.length > 0 ||
     filters.firstTimeOnly
 
+  const totalActiveFilters = filters.years.length + filters.techs.length + filters.topics.length + filters.categories.length + filters.difficulties.length + (filters.firstTimeOnly ? 1 : 0)
+
   // Sidebar-only filters (those without inline X buttons) to show as chips
   const sidebarFilters = [
     ...filters.years.map((year: string) => ({ key: 'years' as const, label: `Year: ${year}`, value: year })),
@@ -338,15 +350,25 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
             className="max-w-3xl mx-auto mb-8"
           />
           {/* Search Bar */}
-          <div className="relative max-w-xl mx-auto mb-5">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search organizations by name, technology, or keyword..."
-              className="pl-10 h-12 text-base"
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-            />
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center mb-5">
+            <div className="relative w-full max-w-xl mx-auto">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search organizations by name, technology, or keyword..."
+                className="pl-10 h-12 text-base"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+            </div>
+            <Button
+              variant="outline"
+              className="h-12 w-full sm:w-auto sm:min-w-[140px] flex items-center justify-center gap-2 lg:hidden"
+              onClick={() => setIsMobileFiltersOpen(true)}
+            >
+              <SlidersHorizontal className="h-4 w-4" />
+              Filters{totalActiveFilters > 0 ? ` (${totalActiveFilters})` : ''}
+            </Button>
           </div>
 
           {/* Filter Chips Row */}
@@ -556,6 +578,40 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
           )}
         </div>
       </div>
+
+      {/* Mobile Filters Panel */}
+      {isMobileFiltersOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <div
+            className="absolute inset-0 bg-black/60"
+            onClick={() => setIsMobileFiltersOpen(false)}
+          />
+          <div className="relative h-full w-full bg-background flex flex-col">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-border">
+              <div>
+                <p className="text-sm text-muted-foreground">Explore</p>
+                <h3 className="text-lg font-semibold">Filters</h3>
+              </div>
+              <Button variant="ghost" onClick={() => setIsMobileFiltersOpen(false)}>
+                Close
+              </Button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4 pb-10">
+              <FiltersSidebar
+                onFilterChange={handleFilterChange}
+                filters={filters}
+                availableTechs={initialTechs}
+                firstTimeCount={firstTimeCount}
+              />
+            </div>
+            <div className="border-t border-border bg-background px-5 py-3 shadow-[0_-8px_20px_-12px_rgba(0,0,0,0.3)]">
+              <Button className="w-full" onClick={() => setIsMobileFiltersOpen(false)}>
+                Update results
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
