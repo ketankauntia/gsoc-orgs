@@ -1,6 +1,10 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Building2, History, Code2, BarChart3 } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, scaleIn, defaultViewport } from "@/lib/animations";
 
 // Right-image block: Text flows right-to-left (right-aligned, towards the image)
 export function OrganizationsBlock() {
@@ -8,14 +12,20 @@ export function OrganizationsBlock() {
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-10 lg:items-center lg:justify-center">
-          <div className="flex gap-4 flex-col flex-1 items-center text-center lg:items-end lg:text-right">
+          <motion.div
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="flex gap-4 flex-col flex-1 lg:items-end lg:text-right"
+          >
             <div>
               <Badge variant="outline" className="gap-2">
                 <Building2 className="size-3" />
                 Organizations
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-end lg:text-right">
+            <div className="flex gap-2 flex-col lg:items-end">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Explore 200+ GSoC Organizations
               </h2>
@@ -26,8 +36,14 @@ export function OrganizationsBlock() {
                 beginner-friendliness to find your perfect match.
               </p>
             </div>
-          </div>
-          <div className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden">
+          </motion.div>
+          <motion.div
+            variants={scaleIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden"
+          >
             <Image
               src="/gsoc-organizations-data.webp"
               alt="GSoC Organizations Data"
@@ -36,7 +52,7 @@ export function OrganizationsBlock() {
               className="w-full h-full object-cover"
               unoptimized
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -49,7 +65,13 @@ export function PreviousEditionsBlock() {
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col-reverse lg:flex-row gap-10 lg:items-center lg:justify-center">
-          <div className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden">
+          <motion.div
+            variants={scaleIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden"
+          >
             <Image
               src="/gsoc-previous-year-insights.webp"
               alt="GSoC Previous Year Insights"
@@ -58,15 +80,21 @@ export function PreviousEditionsBlock() {
               className="w-full h-full object-cover"
               unoptimized
             />
-          </div>
-          <div className="flex gap-4 flex-col flex-1 items-center text-center lg:items-start lg:text-left">
+          </motion.div>
+          <motion.div
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="flex gap-4 flex-col flex-1"
+          >
             <div>
               <Badge variant="outline" className="gap-2">
                 <History className="size-3" />
                 Previous Editions
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="flex gap-2 flex-col">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Learn from Past GSoC Years
               </h2>
@@ -77,7 +105,7 @@ export function PreviousEditionsBlock() {
                 success rates.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -90,14 +118,20 @@ export function TechStackBlock() {
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-10 lg:items-center lg:justify-center">
-          <div className="flex gap-4 flex-col flex-1 items-center text-center lg:items-end lg:text-right">
+          <motion.div
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="flex gap-4 flex-col flex-1 lg:items-end lg:text-right"
+          >
             <div>
               <Badge variant="outline" className="gap-2">
                 <Code2 className="size-3" />
                 Tech Stack
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-end lg:text-right">
+            <div className="flex gap-2 flex-col lg:items-end">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Find Orgs by Technology
               </h2>
@@ -108,8 +142,14 @@ export function TechStackBlock() {
                 right opportunities.
               </p>
             </div>
-          </div>
-          <div className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden">
+          </motion.div>
+          <motion.div
+            variants={scaleIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden"
+          >
             <Image
               src="/gsoc-organizations-ai-filter.webp"
               alt="GSoC Organizations AI Filter"
@@ -118,7 +158,7 @@ export function TechStackBlock() {
               className="w-full h-full object-cover"
               unoptimized
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -131,7 +171,13 @@ export function AnalyticsBlock() {
     <section className="w-full py-12 lg:py-12">
       <div className="max-w-5xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col-reverse lg:flex-row gap-10 lg:items-center lg:justify-center">
-          <div className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden">
+          <motion.div
+            variants={scaleIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="bg-muted rounded-md w-full aspect-video flex items-center justify-center max-w-sm lg:max-w-md shrink-0 overflow-hidden"
+          >
             <Image
               src="/google-summer-of-code-insights-trends.webp"
               alt="Google Summer of Code Insights and Trends"
@@ -140,15 +186,21 @@ export function AnalyticsBlock() {
               className="w-full h-full object-cover"
               unoptimized
             />
-          </div>
-          <div className="flex gap-4 flex-col flex-1 items-center text-center lg:items-start lg:text-left">
+          </motion.div>
+          <motion.div
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="flex gap-4 flex-col flex-1"
+          >
             <div>
               <Badge variant="outline" className="gap-2">
                 <BarChart3 className="size-3" />
                 Analytics
               </Badge>
             </div>
-            <div className="flex gap-2 flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="flex gap-2 flex-col">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular">
                 Data-Driven Insights
               </h2>
@@ -159,7 +211,7 @@ export function AnalyticsBlock() {
                 your selection chances.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

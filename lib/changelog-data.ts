@@ -1,51 +1,37 @@
-export interface ChangelogEntry {
-  date: string,
-  timeStamp: number,
-  version: string,
-  title: string,
-  summary: string,
-  prLinks: { link: string, number: string }[],
-  changes: {
-    type: 'feat' | 'fix' | 'docs' | 'style' | 'refactor' | 'perf' | 'test' | 'chore',
-    text: string
-  }[],
-
+export interface ChangelogPRLink {
+  number: string;
+  link: string;
 }
+
+export interface ChangelogChange {
+  text: string;
+}
+
+export interface ChangelogEntry {
+  timeStamp: number;
+  date: string;
+  version: string;
+  title: string;
+  summary: string;
+  changes: ChangelogChange[];
+  prLinks: ChangelogPRLink[];
+}
+
 export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
   {
-    date: "Jan 29, 2026",
-    timeStamp: 20260129,
-    version: "v1.1.0",
-    title: "Dark Mode & UI Stabilization",
-    summary: "Refined the dashboard's visual hierarchy by introducing a refined color system and fixing high-contrast issues in dark mode.",
-    prLinks: [
-      { link: "https://github.com/...", number: "#1" },
-      { link: "https://github.com/...", number: "#2" },
-      { link: "https://github.com/...", number: "#3" },
-    ],
-
+    timeStamp: Date.parse("2026-02-25"),
+    date: "Feb 25, 2026",
+    version: "v2.0.0",
+    title: "GSoC 2026 Data Integration",
+    summary: "Complete integration of Google Summer of Code 2026 organization data with new data pipeline scripts and UI updates.",
     changes: [
-      { type: 'fix', text: 'Sidebar background now correctly renders black in dark mode' },
-      { type: 'feat', text: 'Added new [filtering system](https://github.com/...) for better organization discovery.' },
-      { type: 'refactor', text: 'Standardized border variables across all card components' }
-    ]
+      { text: "Added 4 new data pipeline scripts for fetching and transforming GSoC year data" },
+      { text: "Integrated 185 active organizations for GSoC 2026 (156 returning + 29 new)" },
+      { text: "Updated tech-stack and topics data to include 2026 statistics" },
+      { text: "Added 2026 to year filter in organizations page" },
+      { text: "Updated homepage metrics: 533 total orgs, 185 active orgs" },
+      { text: "Added new npm scripts for GSoC data management" },
+    ],
+    prLinks: [],
   },
-  {
-    date: "Feb 15, 2026",
-    timeStamp: 20260215,
-    version: "v1.1.0",
-    title: "Dark Mode & UI Stabilization",
-    summary: "Refined the dashboard's visual hierarchy by introducing a refined color system and fixing high-contrast issues in dark mode.",
-    prLinks: [
-      { link: "https://github.com/...", number: "#3" },
-      { link: "https://github.com/...", number: "#4" },
-      { link: "https://github.com/...", number: "#5" },
-      { link: "https://github.com/...", number: "#6" },
-    ],
-    changes: [
-      { type: 'fix', text: 'Sidebar background now correctly renders black in dark mode' },
-      { type: 'feat', text: ' Added new [filtering system](https://github.com/...) for better organization discovery.' },
-      { type: 'refactor', text: 'Standardized border variables across all card components' }
-    ]
-  }
 ];

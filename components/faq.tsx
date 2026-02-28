@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +9,7 @@ import {
   Section,
   SectionHeader,
 } from "@/components/ui";
+import { fadeInLeft, fadeInRight, defaultViewport } from "@/lib/animations";
 
 export const gsocFaq = [
   {
@@ -64,14 +68,26 @@ export const gsocFaq = [
 export const FaqComponent = () => (
   <Section>
     <div className="grid lg:grid-cols-2 gap-10">
-      <div className="flex gap-10 flex-col">
+      <motion.div
+        variants={fadeInLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
+        className="flex gap-10 flex-col"
+      >
         <SectionHeader
           badge="FAQ"
           title="Google Summer of Code Related Queries"
           description="Understanding GSoC organizations, project ideas, timelines, and proposal requirements can be challenging. This FAQ gives you clear, concise answers to the most common GSoC queries helping you prepare smarter and avoid confusion."
         />
-      </div>
-      <Accordion type="single" collapsible className="w-full">
+      </motion.div>
+      <motion.div
+        variants={fadeInRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
+      >
+        <Accordion type="single" collapsible className="w-full">
         {gsocFaq.map((faq, index) => (
           <AccordionItem key={index} value={"index-" + index}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>
@@ -79,6 +95,7 @@ export const FaqComponent = () => (
           </AccordionItem>
         ))}
       </Accordion>
+      </motion.div>
     </div>
   </Section>
 );

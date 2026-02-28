@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { Button, Section, Heading, Text } from "@/components/ui";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 
 export const HeroComponent = () => {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -26,13 +27,18 @@ export const HeroComponent = () => {
 
   return (
     <Section>
-      <div className="flex gap-8 items-center justify-center flex-col mt-20">
-        <div>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="flex gap-8 items-center justify-center flex-col mt-20"
+      >
+        <motion.div variants={staggerItem}>
           <Button variant="secondary" size="sm" className="gap-4">
             Read our launch article <MoveRight className="w-4 h-4" />
           </Button>
-        </div>
-        <div className="flex gap-4 flex-col">
+        </motion.div>
+        <motion.div variants={staggerItem} className="flex gap-4 flex-col">
           <Heading as="h1" variant="hero" className="max-w-2xl text-center">
             <span className="text-spektr-cyan-50">Making GSOC</span>
             <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
@@ -64,15 +70,15 @@ export const HeroComponent = () => {
           <Text variant="lead" className="max-w-2xl text-center">
             Find the right GSoC organizations, understand what they expect, explore project ideas, study previous GSoC projects, and prepare smarter with curated resources, timelines, and guides all in one place.
           </Text>
-        </div>
-        <div className="flex flex-row gap-3">
+        </motion.div>
+        <motion.div variants={staggerItem} className="flex flex-row gap-3">
           <Button asChild size="lg" className="gap-4">
             <Link href="/organizations" prefetch={true}>
               View All GSoC Orgs <MoveRight className="w-4 h-4" />
             </Link>
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 };

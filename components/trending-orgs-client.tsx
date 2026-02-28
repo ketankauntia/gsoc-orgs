@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -10,6 +11,7 @@ import {
 import type { CarouselApi } from "@/components/ui/carousel";
 import { Section, Heading } from "@/components/ui";
 import type { FeaturedOrg } from "@/lib/homepage-types";
+import { fadeInUp, defaultViewport } from "@/lib/animations";
 
 interface TrendingOrgsProps {
   organizations: FeaturedOrg[];
@@ -50,8 +52,14 @@ export function TrendingOrgsClient({ organizations }: TrendingOrgsProps) {
 
   return (
     <Section noPadding className="py-12 lg:py-16">
-      <div className="grid grid-cols-5 gap-10 items-center">
-        <Heading variant="small" className="lg:max-w-xl relative z-20">
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
+        className="grid grid-cols-5 gap-10 items-center"
+      >
+        <Heading variant="small" className="lg:max-w-xl">
           Trending GSoC Organizations
         </Heading>
         <div className="relative w-full col-span-4">
@@ -84,7 +92,7 @@ export function TrendingOrgsClient({ organizations }: TrendingOrgsProps) {
             </CarouselContent>
           </Carousel>
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }

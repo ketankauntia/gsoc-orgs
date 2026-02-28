@@ -1,6 +1,6 @@
 import { GitHubIcon } from '@/components/icons'
 import { Badge, Heading, Text } from "@/components/ui";
-import { CHANGELOG_ENTRIES } from "@/lib/changelog-data";
+import { CHANGELOG_ENTRIES, type ChangelogEntry } from "@/lib/changelog-data";
 import { Metadata } from "next";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 };
 
 export default function ChangelogPage() {
-
-  const sortedEntries = [...CHANGELOG_ENTRIES].sort((a, b) => b.timeStamp - a.timeStamp);
+  const sortedEntries: ChangelogEntry[] = [...CHANGELOG_ENTRIES]
+    .sort((a, b) => b.timeStamp - a.timeStamp);
 
   // Helper to parse [Text](URL) into Teal Links
   const formatChangelogText = (text: string) => {
@@ -65,7 +65,12 @@ export default function ChangelogPage() {
           {/* The Timeline Line */}
           <div className="absolute left-[11px] md:left-[155px] top-2 bottom-0 w-px bg-border hidden sm:block" />
 
-          {sortedEntries.map((entry) => (
+          {sortedEntries.length === 0 ? (
+            <div className="text-center py-12">
+              <Text className="text-muted-foreground">Changelog entries will appear here soon.</Text>
+            </div>
+          ) : (
+            sortedEntries.map((entry) => (
             <article key={entry.timeStamp} className="relative grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-12 pb-16 border-b border-border last:border-0">
 
               {/* Left Column: Date & Version */}
@@ -77,7 +82,7 @@ export default function ChangelogPage() {
                   </Badge>
                 </div>
                 <div className="hidden md:flex flex-col items-end gap-2 mt-4">
-                  {entry.prLinks.map((pr, i) => (
+                  {entry.prLinks.map((pr: { link: string; number: string }, i: number) => (
                     <a
                       key={i}
                       href={pr.link}
@@ -100,7 +105,7 @@ export default function ChangelogPage() {
                 </div>
 
                 <ul className="space-y-3">
-                  {entry.changes.map((change, i) => (
+                  {entry.changes.map((change: { text: string }, i: number) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="mt-2 w-1.5 h-1.5 rounded-full shrink-0 bg-foreground" />
                       <span className="text-[15px] text-foreground/90">{formatChangelogText(change.text)}</span>
@@ -110,7 +115,7 @@ export default function ChangelogPage() {
 
                 {/* Mobile PR Link */}
                 <div className="flex md:hidden flex-wrap gap-x-4 gap-y-2 pt-4 border-t border-border">
-                  {entry.prLinks.map((pr, i) => (
+                  {entry.prLinks.map((pr: { link: string; number: string }, i: number) => (
                     <a
                       key={i}
                       href={pr.link}
@@ -123,7 +128,7 @@ export default function ChangelogPage() {
                 </div>
               </div>
             </article>
-          ))}
+          )))}
         </div>
 
       </div>
