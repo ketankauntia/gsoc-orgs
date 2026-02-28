@@ -1,56 +1,37 @@
 /**
  * Generate Tech Stack Page JSON Data
- * 
+ *
  * This script queries all organizations and generates:
  * 1. index.json - For /tech-stack index page
  * 2. {slug}.json - One file per technology
- * 
- * Run with: node scripts/generate-tech-stack-data.js
+ *
+ * Run with: npx tsx scripts/generate-tech-stack-data.ts
  */
 
-const { PrismaClient } = require('@prisma/client');
-const fs = require('fs');
-const path = require('path');
+import { PrismaClient } from "@prisma/client";
+import fs from "fs";
+import path from "path";
+import { getStandardTechName } from "./normalize-data.js";
 
 const prisma = new PrismaClient();
 
-const OUTPUT_DIR = path.join(__dirname, '..', 'new-api-details', 'tech-stack');
+const OUTPUT_DIR = path.join(process.cwd(), "new-api-details", "tech-stack");
 const YEARS = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
 
-// Tech name normalization map
-const TECH_NORMALIZATIONS = {
-    'c++': 'cpp',
-    'c/c++': 'cpp',
-    'c #': 'csharp',
-    'c#': 'csharp',
-    '.net': 'dotnet',
-    'node.js': 'nodejs',
-    'node': 'nodejs',
-    'react.js': 'react',
-    'reactjs': 'react',
-    'vue.js': 'vue',
-    'vuejs': 'vue',
-    'angular.js': 'angular',
-    'angularjs': 'angular',
-};
-
-function normalizeSlug(techName) {
-    const lower = techName.toLowerCase().trim();
-    // Check normalization map first
-    if (TECH_NORMALIZATIONS[lower]) {
-        return TECH_NORMALIZATIONS[lower];
-    }
-    // Generate slug
-    return lower.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+function normalizeSlug(techName: string): string {
+    const standard = getStandardTechName(techName);
+    return standard
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
 }
 
-function normalizeName(techName) {
-    // Capitalize properly
-    return techName.trim();
+function normalizeName(techName: string): string {
+    return getStandardTechName(techName);
 }
 
 async function generateTechStackData() {
-    console.log('[START] Generating tech stack data...');
+    console.log("[START] Generating tech stack data...");
 
     // Ensure output directory exists
     if (!fs.existsSync(OUTPUT_DIR)) {
@@ -58,7 +39,7 @@ async function generateTechStackData() {
     }
 
     // 1. Fetch all organizations with tech data
-    console.log('[FETCH] Loading organizations from database...');
+    console.log("[FETCH] Loading organizations from database...");
     const organizations = await prisma.organizations.findMany({
         select: {
             id: true,
@@ -78,8 +59,16 @@ async function generateTechStackData() {
     console.log(`[FETCH] Loaded ${organizations.length} organizations`);
 
     // 2. Build tech map with normalized names
-    console.log('[PROCESS] Building technology index...');
-    const techMap = new Map(); // slug -> { name, orgs, byYear }
+    console.log("[PROCESS] Building technology index...");
+    const techMap = new Map<
+        string,
+        {
+            name: string;
+            slug: string;
+            orgs: Map<string, object>;
+            byYear: Record<number, { orgCount: number; projectCount: number }>;
+        }
+    >();
 
     organizations.forEach((org) => {
         (org.technologies || []).forEach((tech) => {
@@ -90,12 +79,12 @@ async function generateTechStackData() {
                 techMap.set(slug, {
                     name: name,
                     slug: slug,
-                    orgs: new Map(), // slug -> org data
-                    byYear: {}, // year -> { orgCount, projectCount }
+                    orgs: new Map(),
+                    byYear: {},
                 });
             }
 
-            const techData = techMap.get(slug);
+            const techData = techMap.get(slug)!;
 
             // Add org if not already added
             if (!techData.orgs.has(org.slug)) {
@@ -103,7 +92,7 @@ async function generateTechStackData() {
                     slug: org.slug,
                     name: org.name,
                     logo_url: org.logo_r2_url || org.img_r2_url || org.image_url,
-                    category: org.category || 'Other',
+                    category: org.category || "Other",
                     total_projects: org.total_projects || 0,
                     is_currently_active: org.is_currently_active || false,
                     active_years: org.active_years || [],
@@ -121,7 +110,7 @@ async function generateTechStackData() {
                     // Get project count for this year
                     if (org.years) {
                         const yearKey = `year_${year}`;
-                        const yearData = org.years[yearKey];
+                        const yearData = (org.years as Record<string, { num_projects?: number } | null>)[yearKey];
                         if (yearData && yearData.num_projects) {
                             techData.byYear[year].projectCount += yearData.num_projects;
                         }
@@ -134,16 +123,22 @@ async function generateTechStackData() {
     console.log(`[PROCESS] Found ${techMap.size} unique technologies`);
 
     // 3. Generate per-tech JSON files
-    console.log('[GENERATE] Creating per-technology JSON files...');
-    const allTechs = [];
+    console.log("[GENERATE] Creating per-technology JSON files...");
+    const allTechs: { name: string; slug: string; org_count: number; project_count: number }[] = [];
     let generatedCount = 0;
 
     for (const [slug, techData] of techMap.entries()) {
-        const orgsArray = Array.from(techData.orgs.values());
+        const orgsArray = Array.from(techData.orgs.values()) as {
+            slug: string;
+            name: string;
+            total_projects: number;
+        }[];
         const totalProjects = orgsArray.reduce((sum, o) => sum + (o.total_projects || 0), 0);
 
         // Calculate metrics
-        const activeYears = Object.keys(techData.byYear).map(Number).filter(y => techData.byYear[y].orgCount > 0);
+        const activeYears = Object.keys(techData.byYear)
+            .map(Number)
+            .filter((y) => techData.byYear[y].orgCount > 0);
         const firstYear = activeYears.length > 0 ? Math.min(...activeYears) : 2016;
         const latestYear = activeYears.length > 0 ? Math.max(...activeYears) : 2025;
 
@@ -155,9 +150,8 @@ async function generateTechStackData() {
             metrics: {
                 org_count: orgsArray.length,
                 project_count: totalProjects,
-                avg_projects_per_org: orgsArray.length > 0
-                    ? Math.round((totalProjects / orgsArray.length) * 10) / 10
-                    : 0,
+                avg_projects_per_org:
+                    orgsArray.length > 0 ? Math.round((totalProjects / orgsArray.length) * 10) / 10 : 0,
                 first_year_used: firstYear,
                 latest_year_used: latestYear,
             },
@@ -194,16 +188,15 @@ async function generateTechStackData() {
     console.log(`[GENERATE] Created ${generatedCount} technology files`);
 
     // 4. Generate index.json
-    console.log('[GENERATE] Creating index.json...');
+    console.log("[GENERATE] Creating index.json...");
 
-    // Sort for various charts
     const sortedByOrgs = [...allTechs].sort((a, b) => b.org_count - a.org_count);
     const sortedByProjects = [...allTechs].sort((a, b) => b.project_count - a.project_count);
 
     // Build popularity by year for top techs
-    const popularityByYear = {};
+    const popularityByYear: Record<string, { year: number; count: number }[]> = {};
     sortedByOrgs.slice(0, 20).forEach((tech) => {
-        const techData = techMap.get(tech.slug);
+        const techData = techMap.get(tech.slug)!;
         popularityByYear[tech.slug] = YEARS.map((year) => ({
             year,
             count: techData.byYear[year]?.orgCount || 0,
@@ -213,12 +206,15 @@ async function generateTechStackData() {
     // Calculate fastest growing (compare 2020 vs 2025)
     const fastestGrowing = allTechs
         .map((tech) => {
-            const techData = techMap.get(tech.slug);
+            const techData = techMap.get(tech.slug)!;
             const count2020 = techData.byYear[2020]?.orgCount || 0;
             const count2025 = techData.byYear[2025]?.orgCount || 0;
-            const growth = count2020 > 0
-                ? ((count2025 - count2020) / count2020) * 100
-                : count2025 > 5 ? 500 : 0; // Only show high growth for new significant techs
+            const growth =
+                count2020 > 0
+                    ? ((count2025 - count2020) / count2020) * 100
+                    : count2025 > 5
+                        ? 500
+                        : 0;
             return {
                 slug: tech.slug,
                 name: tech.name,
@@ -227,40 +223,42 @@ async function generateTechStackData() {
                 last_year_count: count2025,
             };
         })
-        .filter((t) => t.last_year_count >= 3) // Must have at least 3 orgs in 2025
+        .filter((t) => t.last_year_count >= 3)
         .sort((a, b) => b.growth_pct - a.growth_pct)
         .slice(0, 10);
 
-    // Most selections (org selections over years)
     const mostSelections = sortedByOrgs.slice(0, 10).map((tech) => {
-        const techData = techMap.get(tech.slug);
+        const techData = techMap.get(tech.slug)!;
         return {
             name: tech.name,
             slug: tech.slug,
             total: tech.org_count,
-            byYear: YEARS.slice(-6).reverse().map((year) => ({
-                year,
-                count: techData.byYear[year]?.orgCount || 0,
-            })),
+            byYear: YEARS.slice(-6)
+                .reverse()
+                .map((year) => ({
+                    year,
+                    count: techData.byYear[year]?.orgCount || 0,
+                })),
         };
     });
 
-    // Most projects
     const mostProjects = sortedByProjects.slice(0, 10).map((tech) => {
-        const techData = techMap.get(tech.slug);
+        const techData = techMap.get(tech.slug)!;
         return {
             name: tech.name,
             slug: tech.slug,
             total: tech.project_count,
-            byYear: YEARS.slice(-6).reverse().map((year) => ({
-                year,
-                count: techData.byYear[year]?.projectCount || 0,
-            })),
+            byYear: YEARS.slice(-6)
+                .reverse()
+                .map((year) => ({
+                    year,
+                    count: techData.byYear[year]?.projectCount || 0,
+                })),
         };
     });
 
     const indexData = {
-        slug: 'tech-stack-index',
+        slug: "tech-stack-index",
         published_at: new Date().toISOString(),
 
         metrics: {
@@ -268,7 +266,7 @@ async function generateTechStackData() {
             total_organizations: organizations.length,
         },
 
-        all_techs: sortedByOrgs, // Pre-sorted by org count
+        all_techs: sortedByOrgs,
 
         charts: {
             top_tech_by_orgs: sortedByOrgs.slice(0, 15).map((t) => ({
@@ -293,12 +291,11 @@ async function generateTechStackData() {
         },
     };
 
-    const indexPath = path.join(OUTPUT_DIR, 'index.json');
+    const indexPath = path.join(OUTPUT_DIR, "index.json");
     fs.writeFileSync(indexPath, JSON.stringify(indexData, null, 2));
-    console.log('[GENERATE] Created index.json');
+    console.log("[GENERATE] Created index.json");
 
-    // Summary
-    console.log('\n[DONE] Tech stack data generation complete!');
+    console.log("\n[DONE] Tech stack data generation complete!");
     console.log(`  - Total technologies: ${allTechs.length}`);
     console.log(`  - Total organizations: ${organizations.length}`);
     console.log(`  - Files created: ${generatedCount + 1}`);
@@ -306,8 +303,8 @@ async function generateTechStackData() {
     await prisma.$disconnect();
 }
 
-// Run
-generateTechStackData().catch((error) => {
-    console.error('[ERROR]', error);
+generateTechStackData().catch(async (error) => {
+    console.error("[ERROR]", error);
+    await prisma.$disconnect();
     process.exit(1);
 });
