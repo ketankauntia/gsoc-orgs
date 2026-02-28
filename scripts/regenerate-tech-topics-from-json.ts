@@ -16,6 +16,7 @@
 
 import fs from "fs";
 import path from "path";
+import { getStandardTechName, getStandardOrgName } from "./normalize-data.js";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -52,28 +53,11 @@ interface OrgData {
 }
 
 // ---------------------------------------------------------------------------
-// Tech name normalization (mirrors generate-tech-stack-data.js)
+// Tech name normalization
 // ---------------------------------------------------------------------------
-const TECH_NORMALIZATIONS: Record<string, string> = {
-  "c++": "cpp",
-  "c/c++": "cpp",
-  "c #": "csharp",
-  "c#": "csharp",
-  ".net": "dotnet",
-  "node.js": "nodejs",
-  node: "nodejs",
-  "react.js": "react",
-  reactjs: "react",
-  "vue.js": "vue",
-  vuejs: "vue",
-  "angular.js": "angular",
-  angularjs: "angular",
-};
-
 function normalizeSlug(techName: string): string {
-  const lower = techName.toLowerCase().trim();
-  if (TECH_NORMALIZATIONS[lower]) return TECH_NORMALIZATIONS[lower];
-  return lower.replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const standard = getStandardTechName(techName);
+  return standard.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
 function topicSlug(topicName: string): string {
@@ -124,7 +108,7 @@ function generateTechStack(orgs: OrgData[], YEARS: number[]) {
   orgs.forEach((org) => {
     (org.technologies || []).forEach((tech) => {
       const slug = normalizeSlug(tech);
-      const name = tech.trim();
+      const name = getStandardTechName(tech);
       if (!slug) return;
 
       if (!techMap.has(slug)) {

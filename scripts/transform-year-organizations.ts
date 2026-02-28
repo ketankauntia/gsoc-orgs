@@ -18,6 +18,7 @@
 
 import fs from "fs";
 import path from "path";
+import { getStandardTechName, getStandardOrgName, TECH_ALIASES, ORG_ALIASES } from "./normalize-data.js";
 
 // ---------------------------------------------------------------------------
 // CLI args
@@ -150,7 +151,7 @@ async function main() {
 
   // 2. Read existing index & build name→slug map for fuzzy matching
   let existingIndex: {
-    organizations: Array<{ slug: string; name: string; [key: string]: unknown }>;
+    organizations: Array<{ slug: string; name: string;[key: string]: unknown }>;
   } = { organizations: [] };
   if (fs.existsSync(INDEX_FILE)) {
     existingIndex = JSON.parse(fs.readFileSync(INDEX_FILE, "utf-8"));
@@ -230,6 +231,37 @@ async function main() {
   const newCount = rawOrgs.filter((o) => resolveExistingSlug(o) === null).length;
   console.log(`[ANALYSIS] ${returningCount} returning orgs, ${newCount} first-time orgs`);
 
+  // Detect and Warn about Unknown/Unnormalized Data
+  console.log("\n[VALIDATION] Checking for unmapped standardizations...");
+  const knownTechs = new Set(TECH_ALIASES.map(a => a[0].toLowerCase()));
+  const knownOrgs = new Set(ORG_ALIASES.map(a => a[0].toLowerCase()));
+  const newTechsFound = new Set<string>();
+  const unmappedOrgsFound = new Set<string>();
+
+  for (const raw of rawOrgs) {
+    const stdOrg = getStandardOrgName(raw.name);
+    if (!knownOrgs.has(stdOrg.toLowerCase()) && !existingSlugs.has(raw.slug)) {
+      unmappedOrgsFound.add(stdOrg);
+    }
+    for (const tech of (raw.tech_tags || [])) {
+      const stdTech = getStandardTechName(tech);
+      if (!knownTechs.has(stdTech.toLowerCase())) {
+        newTechsFound.add(stdTech);
+      }
+    }
+  }
+
+  if (unmappedOrgsFound.size > 0) {
+    console.warn(`[WARN] Found ${unmappedOrgsFound.size} new/unmapped Organizations. Consider adding them to ORG_ALIASES in normalize-data.ts:`);
+    Array.from(unmappedOrgsFound).forEach(o => console.warn(`   - "${o}"`));
+  }
+  if (newTechsFound.size > 0) {
+    console.warn(`[WARN] Found ${newTechsFound.size} unmapped Technologies. Consider adding them to TECH_ALIASES in normalize-data.ts:`);
+    Array.from(newTechsFound).slice(0, 20).forEach(t => console.warn(`   - "${t}"`));
+    if (newTechsFound.size > 20) console.warn(`   ...and ${newTechsFound.size - 20} more.`);
+  }
+  console.log("");
+
   // Log all non-trivial matches (alias + name)
   console.log("[MATCHING] Non-trivial slug resolutions:");
   let matchLogCount = 0;
@@ -265,6 +297,7 @@ async function main() {
 
       existing.last_year = Math.max(existing.last_year || 0, YEAR);
       existing.is_currently_active = true;
+      existing.name = getStandardOrgName(raw.name);
 
       // Refresh description if the new one is more substantial
       if (raw.description && raw.description.length > (existing.description?.length || 0)) {
@@ -273,7 +306,7 @@ async function main() {
 
       // Merge technologies (union, preserving existing)
       const techSet = new Set([...(existing.technologies || [])]);
-      (raw.tech_tags || []).forEach((t: string) => techSet.add(t));
+      (raw.tech_tags || []).forEach((t: string) => techSet.add(getStandardTechName(t)));
       existing.technologies = Array.from(techSet);
 
       // Merge topics (union, preserving existing)
@@ -336,7 +369,7 @@ async function main() {
       const newOrg = {
         id: `new_${YEAR}_${raw.slug}`,
         slug: raw.slug,
-        name: raw.name,
+        name: getStandardOrgName(raw.name),
         category: raw.categories?.[0] || "Other",
         description: raw.description || raw.tagline || "",
         image_url: raw.logo_url || "",
@@ -347,7 +380,7 @@ async function main() {
         first_year: YEAR,
         last_year: YEAR,
         is_currently_active: true,
-        technologies: raw.tech_tags || [],
+        technologies: (raw.tech_tags || []).map(getStandardTechName),
         topics: raw.topic_tags || [],
         total_projects: 0,
         stats: {
