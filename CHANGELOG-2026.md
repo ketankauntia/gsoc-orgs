@@ -70,7 +70,7 @@ Regenerated:
 
 ---
 
-## UI fixes
+
 
 ### `app/organizations/filters-sidebar.tsx`
 Added 2026 to the `YEARS` filter array.

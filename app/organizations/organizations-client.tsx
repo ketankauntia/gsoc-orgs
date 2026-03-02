@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Search, SlidersHorizontal, X } from 'lucide-react'
-import { Button, Input, SectionHeader } from '@/components/ui'
+import { SlidersHorizontal, X } from 'lucide-react'
+import { Button, SearchBar, SectionHeader } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
 import { FiltersSidebar, FilterState } from './filters-sidebar'
@@ -41,9 +41,10 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
 
   useEffect(() => {
     if (typeof document === 'undefined') return
-    document.body.style.overflow = isMobileFiltersOpen ? 'hidden' : ''
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = isMobileFiltersOpen ? 'hidden' : prevOverflow
     return () => {
-      document.body.style.overflow = ''
+      document.body.style.overflow = prevOverflow
     }
   }, [isMobileFiltersOpen])
   
@@ -349,18 +350,17 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
             align="center"
             className="max-w-3xl mx-auto mb-8"
           />
-          {/* Search Bar */}
+          {/* Search Bar and Mobile Filters */}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center mb-5">
-            <div className="relative w-full max-w-xl mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search organizations by name, technology, or keyword..."
-                className="pl-10 h-12 text-base"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-              />
-            </div>
+            <SearchBar
+              value={searchInput}
+              onChange={setSearchInput}
+              placeholder="Search organizations by name, technology, or keyword..."
+              className="w-full max-w-xl mx-auto"
+              size="lg"
+              showIcon={true}
+              clearable={true}
+            />
             <Button
               variant="outline"
               className="h-12 w-full sm:w-auto sm:min-w-[140px] flex items-center justify-center gap-2 lg:hidden"
@@ -579,7 +579,6 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
         </div>
       </div>
 
-      {/* Mobile Filters Panel */}
       {isMobileFiltersOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div
@@ -596,15 +595,18 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
                 Close
               </Button>
             </div>
-            <div className="flex-1 overflow-y-auto p-4 pb-10">
+            <div className="flex-1 overflow-y-auto p-4 pb-20">
               <FiltersSidebar
-                onFilterChange={handleFilterChange}
+                onFilterChange={(newFilters) => {
+                  handleFilterChange(newFilters)
+                  setIsMobileFiltersOpen(false)
+                }}
                 filters={filters}
                 availableTechs={initialTechs}
                 firstTimeCount={firstTimeCount}
               />
             </div>
-            <div className="border-t border-border bg-background px-5 py-3 shadow-[0_-8px_20px_-12px_rgba(0,0,0,0.3)]">
+            <div className="border-t border-border bg-background px-5 py-3 shadow-lg">
               <Button className="w-full" onClick={() => setIsMobileFiltersOpen(false)}>
                 Update results
               </Button>
