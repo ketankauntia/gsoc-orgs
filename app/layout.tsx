@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/og/gsoc-organizations-guide.jpg`],
   },
   // themeColor: "#000000", // Commented out - should be moved to viewport export per Next.js recommendation
-  
+
 };
 
 export default function RootLayout({
@@ -64,9 +64,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > 
-        <ThemeProvider 
-          attribute="class" 
+      >
+        <ThemeProvider
+          attribute="class"
           defaultTheme="light"
           storageKey="gsoc-theme"
           disableTransitionOnChange={false}
