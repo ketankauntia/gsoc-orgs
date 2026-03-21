@@ -36,7 +36,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     setCurrentPage(initialPage)
     setIsLoading(false)
   }, [initialData, initialPage])
-  
+
   // Memoize filters from URL using primitives to avoid unnecessary recalculations
   const urlFilters = useMemo<FilterState>(() => {
     const urlSearch = searchParams.get('q') || ''
@@ -65,10 +65,10 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       topicsLogic: urlTopicsLogic,
     }
   }, [searchParams])
-  
+
   const [filters, setFilters] = useState<FilterState>(urlFilters)
   const [searchInput, setSearchInput] = useState(urlFilters.search)
-  
+
   // Debounce search input to avoid excessive navigation
   const debouncedSearch = useDebouncedSearch(searchInput, 300)
 
@@ -76,23 +76,23 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
   // Use URL string comparison instead of object comparison
   useEffect(() => {
     const currentUrlString = searchParams.toString()
-    
+
     if (isInitialMount.current) {
       isInitialMount.current = false
       lastUrlString.current = currentUrlString
       setSearchInput(urlFilters.search)
       return
     }
-    
+
     // Only update if URL actually changed
     if (currentUrlString === lastUrlString.current) {
       return
     }
-    
+
     lastUrlString.current = currentUrlString
-    
+
     // Only update if filters actually changed
-    const filtersChanged = 
+    const filtersChanged =
       filters.search !== urlFilters.search ||
       !arraysEqual(filters.years, urlFilters.years) ||
       !arraysEqual(filters.categories, urlFilters.categories) ||
@@ -100,17 +100,17 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       !arraysEqual(filters.topics, urlFilters.topics) ||
       !arraysEqual(filters.difficulties, urlFilters.difficulties) ||
       filters.firstTimeOnly !== urlFilters.firstTimeOnly
-    
+
     if (filtersChanged) {
       setFilters(urlFilters)
       setSearchInput(urlFilters.search)
     }
   }, [urlFilters, searchParams, filters])
-  
+
   // handleFilterChange must be declared before useEffect that uses it
   const handleFilterChange = useCallback((newFilters: FilterState) => {
     // Prevent unnecessary updates if filters haven't changed
-    const filtersChanged = 
+    const filtersChanged =
       filters.search !== newFilters.search ||
       !arraysEqual(filters.years, newFilters.years) ||
       !arraysEqual(filters.categories, newFilters.categories) ||
@@ -122,9 +122,9 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       filters.categoriesLogic !== newFilters.categoriesLogic ||
       filters.techsLogic !== newFilters.techsLogic ||
       filters.topicsLogic !== newFilters.topicsLogic
-    
+
     if (!filtersChanged) return
-    
+
     // Build URL params first
     const params = new URLSearchParams()
     // Reset to page 1 when filters change
@@ -147,9 +147,9 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     }
     if (newFilters.difficulties.length > 0) params.set('difficulties', newFilters.difficulties.join(','))
     if (newFilters.firstTimeOnly) params.set('firstTimeOnly', 'true')
-    
+
     const newUrl = `/organizations?${params.toString()}`
-    
+
     // Update state and navigate - use startTransition to keep UI responsive
     setFilters(newFilters)
     // Use startTransition to make navigation non-blocking (especially helpful on low-end devices)
@@ -157,11 +157,11 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       router.push(newUrl, { scroll: false })
     })
   }, [filters, router])
-  
+
   // Handle debounced search input
   useEffect(() => {
     if (isInitialMount.current) return
-    
+
     if (debouncedSearch !== filters.search) {
       handleFilterChange({ ...filters, search: debouncedSearch })
     }
@@ -193,17 +193,17 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       }
       if (filterState.difficulties.length > 0) params.set('difficulties', filterState.difficulties.join(','))
       if (filterState.firstTimeOnly) params.set('firstTimeOnly', 'true')
-      
+
       const paramsString = params.toString()
-      
+
       // Prevent duplicate fetches with same parameters
       if (lastFetchParams.current === paramsString) {
         setIsLoading(false)
         return
       }
-      
+
       lastFetchParams.current = paramsString
-      
+
       const response = await fetch(`/api/organizations?${paramsString}`)
       const newData = await response.json()
       setData(newData)
@@ -225,17 +225,17 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     if (isInitialMount.current) {
       return
     }
-    
-    const needsAPI = 
+
+    const needsAPI =
       filters.yearsLogic === 'AND' ||
       filters.categoriesLogic === 'AND' ||
       filters.techsLogic === 'AND' ||
       filters.topicsLogic === 'AND'
-    
+
     if (!needsAPI) {
       return
     }
-    
+
     const page = 1
     setCurrentPage(page)
     fetchOrganizations(page, filters)
@@ -246,7 +246,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
 
   const handlePageChange = useCallback((page: number) => {
     if (page === currentPage || isLoading || page < 1) return
-    
+
     const params = new URLSearchParams()
     if (page > 1) params.set('page', page.toString())
     if (filters.search) params.set('q', filters.search)
@@ -268,12 +268,12 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     }
     if (filters.difficulties.length > 0) params.set('difficulties', filters.difficulties.join(','))
     if (filters.firstTimeOnly) params.set('firstTimeOnly', 'true')
-    
+
     const url = `/organizations?${params.toString()}`
     // Prevent duplicate navigation to same URL
     const currentUrl = window.location.pathname + window.location.search
     if (currentUrl === url) return
-    
+
     // Use startTransition to keep UI responsive during navigation
     startTransition(() => {
       router.push(url, { scroll: false })
@@ -322,7 +322,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
   return (
     <div className="flex">
       {/* Sidebar - Fixed left, 280px width */}
-      <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+      <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-32 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
         <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} firstTimeCount={firstTimeCount} />
       </aside>
 
@@ -385,7 +385,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
             </button>
             <button
               disabled
-              className="px-3 py-1.5 text-[13px] font-medium rounded-full border border bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
+              className="px-3 py-1.5 text-[13px] font-medium rounded-full border  bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
               title="Coming soon"
             >
               <span className="inline-flex items-center gap-1">
@@ -398,7 +398,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
             </button>
             <button
               disabled
-              className="px-3 py-1.5 text-[13px] font-medium rounded-full border border bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
+              className="px-3 py-1.5 text-[13px] font-medium rounded-full border  bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
               title="Coming soon"
             >
               <span className="inline-flex items-center gap-1">
@@ -469,14 +469,14 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
               >
                 Previous
               </Button>
-              
+
               {/* First few pages */}
               {(() => {
                 const pages: (number | string)[] = []
                 const showFirst = 2
                 const showLast = 2
                 const showAround = 2
-                
+
                 // Always show first page
                 if (currentPage > showFirst + showAround + 1) {
                   pages.push(1)
@@ -489,7 +489,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
                     pages.push(i)
                   }
                 }
-                
+
                 // Show pages around current
                 if (currentPage > showFirst + showAround + 1 && currentPage < data.pages - showLast - showAround) {
                   for (let i = currentPage - showAround; i <= currentPage + showAround; i++) {
@@ -498,7 +498,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
                     }
                   }
                 }
-                
+
                 // Show last few pages
                 if (currentPage < data.pages - showLast - showAround) {
                   if (currentPage < data.pages - showLast - showAround - 1) {
@@ -518,7 +518,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
                     }
                   }
                 }
-                
+
                 return pages.map((page, idx) => {
                   if (page === '...') {
                     return (
@@ -542,7 +542,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
                   )
                 })
               })()}
-              
+
               <Button
                 variant="outline"
                 size="sm"

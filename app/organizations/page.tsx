@@ -13,7 +13,7 @@ import {
 /**
  * Organizations Listing Page
  * Route: /organizations
- * 
+ *
  * Hybrid approach:
  * - Static JSON for default list (no search, simple filters)
  * - API for search and complex filter combinations
@@ -43,9 +43,9 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const params = await searchParams;
   const page = Number(params.page) || 1;
-  
+
   return {
-    title: page === 1 
+    title: page === 1
       ? "All GSoC Organizations - Google Summer of Code Organizations Guide"
       : `GSoC Organizations - Page ${page} - Google Summer of Code Organizations Guide`,
     description: "Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests.",
@@ -134,7 +134,7 @@ async function getOrganizations(params: {
 }): Promise<PaginatedResponse<Organization>> {
   // Use API for search or complex filters
   const useAPI = shouldUseAPI(params);
-  
+
   if (useAPI) {
     if (process.env.NODE_ENV === 'development') {
       console.log('[ORGS] Using API - complex filters/search detected');
@@ -215,11 +215,11 @@ async function getOrganizations(params: {
 export default async function OrganizationsPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = Number(params.page) || 1;
-  
+
   // Parallel data fetching: Orgs + Tech Stack + Org index (for first-time count)
   const [data, techStackIndex, orgIndex] = await Promise.all([
-    getOrganizations({ 
-      page, 
+    getOrganizations({
+      page,
       limit: 20,
       q: params.q,
       category: params.category,
@@ -257,9 +257,9 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
         </div>
       </div>
     }>
-      <OrganizationsClient 
-        initialData={data} 
-        initialPage={page} 
+      <OrganizationsClient
+        initialData={data}
+        initialPage={page}
         initialTechs={initialTechs}
         firstTimeCount={firstTimeCount}
       />
