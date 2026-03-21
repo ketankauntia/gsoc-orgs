@@ -9,6 +9,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Link from "next/link";
+import React from "react";
 
 export function BreadcrumbBasic() {
   const pathname = usePathname();
@@ -19,7 +21,9 @@ export function BreadcrumbBasic() {
       <Breadcrumb className="py-2 px-4 bg-background">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            <BreadcrumbLink asChild>
+            <Link href='/'>Home</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
 
           {paths.map((segment, index) => {
@@ -31,16 +35,16 @@ export function BreadcrumbBasic() {
               segment.slice(1).replace(/-/g, " ");
 
             return (
-              <span key={href} className="flex items-center">
+              <React.Fragment key={href}  >
                 <BreadcrumbSeparator />
-                <BreadcrumbItem>
+                <BreadcrumbItem className="flex items-center">
                   {index === paths.length - 1 ? (
                     <BreadcrumbPage >{label}</BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink href={href}>{label}</BreadcrumbLink>
                   )}
                 </BreadcrumbItem>
-              </span>
+              </React.Fragment>
             );
           })}
         </BreadcrumbList>
