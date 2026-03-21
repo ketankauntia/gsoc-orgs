@@ -17,9 +17,9 @@ export function BreadcrumbBasic() {
   const paths = pathname.split("/").filter(Boolean);
   if (paths.length === 0) return null;
   return (
-    <div className="mx-auto  max-w-4xl px-4">
-      <Breadcrumb className="py-2 px-4 bg-background">
-        <BreadcrumbList>
+    <div className=" max-w-4xl ">
+      <Breadcrumb className="bg-background">
+        <BreadcrumbList >
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
             <Link href='/'>Home</Link>

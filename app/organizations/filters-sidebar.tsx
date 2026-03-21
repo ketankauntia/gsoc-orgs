@@ -187,7 +187,7 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
   const visibleTechs = showAllTechs ? filteredTechs : filteredTechs.slice(0, 10)
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
+    <div className="rounded-xl border border-border p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-base font-semibold text-gray-900 dark:text-foreground">Filters</h3>
@@ -229,7 +229,7 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
             {firstTimeCount !== undefined && <span className="text-xs text-gray-400">({firstTimeCount})</span>}
           </label>
         </div>
-      </div>      
+      </div>
 
       {/* Years Section */}
       <div className="mb-4 border-t border-border pt-3">
