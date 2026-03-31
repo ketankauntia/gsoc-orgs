@@ -2,9 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MoveRight, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Button, Section, Heading, Text } from "@/components/ui";
+import { Button, Section } from "@/components/ui";
 
 export const HeroComponent = () => {
   const [titleNumber, setTitleNumber] = useState(0);
