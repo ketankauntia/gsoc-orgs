@@ -1,12 +1,7 @@
 import { Header } from "@/components/header";
 import { HeroComponent } from "@/components/hero-component";
 import { BrandsGrid } from "@/components/ui";
-import {
-  OrganizationsBlock,
-  PreviousEditionsBlock,
-  TechStackBlock,
-  AnalyticsBlock,
-} from "@/components/value-blocks";
+import { ValueBlocks } from "@/components/value-blocks";
 import { TrendingOrgs } from "@/components/trending-orgs";
 import { Testimonials } from "@/components/testimonials";
 import { WaitlistCTA } from "@/components/waitlist-cta";
@@ -103,10 +98,7 @@ export default function Home() {
         ]}
       />
       {/* Primary Value Blocks */}
-      <OrganizationsBlock />
-      <PreviousEditionsBlock />
-      <TechStackBlock />
-      <AnalyticsBlock />
+      <ValueBlocks />
       {/* Social Proof & Discovery */}
       <TrendingOrgs />
       <Testimonials />
