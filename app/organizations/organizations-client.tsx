@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
+import { useState, useEffect, useCallback, useMemo, useRef, startTransition, useId } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Search, X, Filter } from 'lucide-react'
 import { Button, Input, SectionHeader } from '@/components/ui'
@@ -22,6 +22,7 @@ interface OrganizationsClientProps {
 export function OrganizationsClient({ initialData, initialPage, initialTechs, firstTimeCount }: OrganizationsClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const filtersTitleId = useId()
   const [data, setData] = useState<PaginatedResponse<Organization>>(initialData)
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(initialPage)
@@ -575,15 +576,25 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
         <div className="fixed inset-0 z-50 flex lg:hidden">
           {/* Overlay backdrop */}
           <div
-            className="fixed inset-0 bg-black/50"
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm"
             onClick={() => setIsMobileFiltersOpen(false)}
             aria-hidden="true"
           />
           {/* Sidebar Drawer */}
-          <div className="relative flex flex-col w-full max-w-xs bg-background h-full shadow-xl">
+          <div
+            className="relative flex flex-col w-full max-w-xs bg-background h-full shadow-xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={filtersTitleId}
+          >
             <div className="flex items-center justify-between px-4 py-3 border-b">
-              <h2 className="text-lg font-semibold">Filters</h2>
-              <Button variant="ghost" size="icon" onClick={() => setIsMobileFiltersOpen(false)}>
+              <h2 id={filtersTitleId} className="text-lg font-semibold">Filters</h2>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Close filters"
+                onClick={() => setIsMobileFiltersOpen(false)}
+              >
                 <X className="h-5 w-5" />
               </Button>
             </div>
