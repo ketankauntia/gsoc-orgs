@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Search, X } from 'lucide-react'
+import { Search, X, Filter } from 'lucide-react'
 import { Button, Input, SectionHeader } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
@@ -25,6 +25,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
   const [data, setData] = useState<PaginatedResponse<Organization>>(initialData)
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(initialPage)
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false)
   const isInitialMount = useRef(true)
   const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
@@ -338,15 +339,27 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
             className="max-w-3xl mx-auto mb-8"
           />
           {/* Search Bar */}
-          <div className="relative max-w-xl mx-auto mb-5">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search organizations by name, technology, or keyword..."
-              className="pl-10 h-12 text-base"
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-            />
+          <div className="max-w-xl mx-auto mb-5 space-y-3">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search organizations by name, technology, or keyword..."
+                className="pl-10 h-12 text-base"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+            </div>
+            <div className="flex justify-center lg:hidden">
+              <Button
+                variant="outline"
+                className="h-10 px-5 rounded-full transition-colors bg-background"
+                onClick={() => setIsMobileFiltersOpen(true)}
+              >
+                <Filter className="h-4 w-4 mr-2" />
+                Filters
+              </Button>
+            </div>
           </div>
 
           {/* Filter Chips Row */}
@@ -556,6 +569,42 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
           )}
         </div>
       </div>
+
+      {/* Mobile Filters Overlay */}
+      {isMobileFiltersOpen && (
+        <div className="fixed inset-0 z-50 flex lg:hidden">
+          {/* Overlay backdrop */}
+          <div
+            className="fixed inset-0 bg-black/50"
+            onClick={() => setIsMobileFiltersOpen(false)}
+            aria-hidden="true"
+          />
+          {/* Sidebar Drawer */}
+          <div className="relative flex flex-col w-full max-w-xs bg-background h-full shadow-xl">
+            <div className="flex items-center justify-between px-4 py-3 border-b">
+              <h2 className="text-lg font-semibold">Filters</h2>
+              <Button variant="ghost" size="icon" onClick={() => setIsMobileFiltersOpen(false)}>
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
+            <div className="flex-1 overflow-y-auto w-full custom-scrollbar">
+              <div className="p-4">
+                <FiltersSidebar
+                  onFilterChange={handleFilterChange}
+                  filters={filters}
+                  availableTechs={initialTechs}
+                  firstTimeCount={firstTimeCount}
+                />
+              </div>
+            </div>
+            <div className="p-4 border-t bg-background">
+              <Button className="w-full" onClick={() => setIsMobileFiltersOpen(false)}>
+                Show Results
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
