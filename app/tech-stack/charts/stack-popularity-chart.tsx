@@ -39,6 +39,7 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
   })
   const [searchQuery, setSearchQuery] = useState("")
   const [showDropdown, setShowDropdown] = useState(false)
+  const [activeTech, setActiveTech] = useState<string | null>(null)
 
   // Get all available techs from data if not provided
   const allTechs = useMemo(() => {
@@ -64,7 +65,7 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
 
   if (!data || Object.keys(data).length === 0) {
     return (
-      <div className="h-[280px] flex items-center justify-center text-muted-foreground text-sm">
+      <div className="h-70 flex items-center justify-center text-muted-foreground text-sm">
         No popularity data available
       </div>
     );
@@ -211,7 +212,7 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
 
       {/* Chart */}
       {stacks.length > 0 ? (
-        <div className="h-[280px] w-full">
+        <div className="h-70 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={chartData}
@@ -243,13 +244,39 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
                 }}
               />
               <Legend 
-                wrapperStyle={{ fontSize: "11px" }}
+                wrapperStyle={{ fontSize: "11px", paddingTop: "16px" }}
                 iconType="circle"
                 iconSize={8}
-                formatter={(value: string) => {
-                  const displayName = allTechs.find(t => t.name === value)?.displayName || value
-                  return displayName
-                }}
+                content={({ payload }) => (
+                  <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-2">
+                    {payload?.map((entry) => {
+                      const techName = String(entry.value)
+                      const displayName = allTechs.find(t => t.name === techName)?.displayName || techName
+                      const isActive = activeTech === techName
+
+                      return (
+                        <button
+                          key={techName}
+                          type="button"
+                          onMouseEnter={() => setActiveTech(techName)}
+                          onMouseLeave={() => setActiveTech(null)}
+                          onFocus={() => setActiveTech(techName)}
+                          onBlur={() => setActiveTech(null)}
+                          className={`inline-flex items-center gap-2 rounded-md px-2 py-1 text-xs font-medium transition-colors ${
+                            isActive ? "bg-teal-100 text-teal-900" : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                          }`}
+                          aria-label={`Highlight ${displayName}`}
+                        >
+                          <span
+                            className="inline-block h-2.5 w-2.5 rounded-full"
+                            style={{ backgroundColor: entry.color }}
+                          />
+                          <span>{displayName}</span>
+                        </button>
+                      )
+                    })}
+                  </div>
+                )}
               />
               {stacks.map((stack, index) => (
                 <Line
@@ -258,16 +285,22 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
                   dataKey={stack}
                   name={stack}
                   stroke={LINE_COLORS[index % LINE_COLORS.length]}
-                  strokeWidth={2}
-                  dot={{ fill: LINE_COLORS[index % LINE_COLORS.length], strokeWidth: 0, r: 4 }}
-                  activeDot={{ r: 6 }}
+                  strokeWidth={activeTech === stack ? 4 : 2}
+                  strokeOpacity={activeTech && activeTech !== stack ? 0.2 : 1}
+                  dot={{
+                    fill: LINE_COLORS[index % LINE_COLORS.length],
+                    strokeWidth: 0,
+                    r: activeTech === stack ? 5 : 4,
+                    fillOpacity: activeTech && activeTech !== stack ? 0.2 : 1,
+                  }}
+                  activeDot={{ r: activeTech === stack ? 8 : 6 }}
                 />
               ))}
             </LineChart>
           </ResponsiveContainer>
         </div>
       ) : (
-        <div className="h-[280px] flex items-center justify-center text-muted-foreground text-sm border border-dashed rounded-md">
+        <div className="h-70 flex items-center justify-center text-muted-foreground text-sm border border-dashed rounded-md">
           Select technologies to compare
         </div>
       )}

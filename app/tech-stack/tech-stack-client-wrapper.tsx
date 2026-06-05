@@ -188,7 +188,11 @@ export function TechStackClientWrapper({ techs }: TechStackClientWrapperProps) {
 /**
  * Tech Stack Card Component
  */
-function TechStackCard({ stack }: { stack: TechSummary }) {
+function TechStackCard({
+  stack,
+}: {
+  stack: TechSummary;
+}) {
   // Generate a color based on the tech name for consistency
   const getColor = (name: string) => {
     const colors = [
