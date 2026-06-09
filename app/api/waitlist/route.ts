@@ -5,9 +5,8 @@ export const dynamic = "force-dynamic";
 
 // Simple in-memory rate limiting (per-instance, resets on cold start)
 // For production at scale, consider edge-based rate limiting (Vercel Edge Config / KV)
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-//alreadyExitsSet for avoiding unnecessay db calls for same payload
-const alreadyExitsSet  = new Set<string>();
+const rateLimitMap = new Map<string, { count: number; resetAt: number,payload?:string }>();
+
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX_REQUESTS = 5; // 5 requests per minute per IP
 
@@ -100,15 +99,13 @@ export async function POST(request: NextRequest) {
 
     const interests = validateInterests(body.interests);
 
-    //create alreadyExistsKey and set it to the alreadyExistsSet to avoid unnecessary db operation for the same payload
     
+    const getRateLimitData = rateLimitMap.get(ip) 
     const alreadyExistsKey = `${email}_${interests.sort().join('')}`
-
-    //check if alreadyExistsKey is present then directly return the response as this paylod already exists in the db so no db operation required.   
-    const isPresent = alreadyExitsSet.has(alreadyExistsKey);
+    const isPresent = getRateLimitData?.payload === alreadyExistsKey
 
     if (isPresent) return NextResponse.json(
-      { success: true },
+      { success: true},
       { status: 200, headers: { "Cache-Control": "no-store" } }
     );
 
@@ -127,8 +124,9 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    //push this key to the alreadyExitsSet
-    alreadyExitsSet.add(alreadyExistsKey)
+    if(getRateLimitData){
+      rateLimitMap.set(ip,{...getRateLimitData,payload:alreadyExistsKey})
+    }
 
     // Always return success - prevents email enumeration
     return NextResponse.json(
