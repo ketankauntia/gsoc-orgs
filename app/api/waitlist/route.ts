@@ -5,7 +5,8 @@ export const dynamic = "force-dynamic";
 
 // Simple in-memory rate limiting (per-instance, resets on cold start)
 // For production at scale, consider edge-based rate limiting (Vercel Edge Config / KV)
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const rateLimitMap = new Map<string, { count: number; resetAt: number,payload?:string }>();
+
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX_REQUESTS = 5; // 5 requests per minute per IP
 
@@ -98,6 +99,17 @@ export async function POST(request: NextRequest) {
 
     const interests = validateInterests(body.interests);
 
+    
+    const getRateLimitData = rateLimitMap.get(ip) 
+    const alreadyExistsKey = `${email}_${interests.sort().join('')}`
+    const isPresent = getRateLimitData?.payload === alreadyExistsKey
+
+    if (isPresent) return NextResponse.json(
+      { success: true},
+      { status: 200, headers: { "Cache-Control": "no-store" } }
+    );
+
+
     // Upsert to handle duplicates gracefully - no error, no indication of existence
     await prisma.waitlist_entries.upsert({
       where: { email },
@@ -111,6 +123,10 @@ export async function POST(request: NextRequest) {
         source: "website",
       },
     });
+
+    if(getRateLimitData){
+      rateLimitMap.set(ip,{...getRateLimitData,payload:alreadyExistsKey})
+    }
 
     // Always return success - prevents email enumeration
     return NextResponse.json(
