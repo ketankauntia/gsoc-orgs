@@ -604,7 +604,7 @@ npm run validate     # Full validation
 | `lib/db.cached.ts` | Cached database queries |
 | `lib/prisma.ts` | Database client |
 | `.cursorrules` | AI coding rules |
-| `docs/CACHING_ARCHITECTURE.md` | Caching docs |
+| `docs/caching/CACHING_ARCHITECTURE.md` | Caching docs |
 
 ### DO NOT
 

@@ -1,16 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import matter from "gray-matter";
 import { PostEditor, type EditablePost } from "@/components/editor/post-editor";
 import { authors } from "@/lib/blog/authors";
 
 export const metadata: Metadata = {
-  title: "Post Editor — GSoC Organizations Blog",
+  title: "Post Editor - GSoC Organizations Blog",
   robots: { index: false, follow: false },
 };
 
-/** Loads every post (drafts included) with raw bodies for editing. */
 function loadEditablePosts(): EditablePost[] {
   const dir = path.join(process.cwd(), "content", "posts");
   return fs
@@ -26,7 +26,7 @@ function loadEditablePosts(): EditablePost[] {
         tags: (data.tags as string[]) ?? [],
         publishedAt: normalizeDate(data.publishedAt),
         updatedAt: data.updatedAt ? normalizeDate(data.updatedAt) : "",
-        author: (data.author as string) ?? "GSoC Organizations-team",
+        author: (data.author as string) ?? "gsoc-orgs-team",
         featured: Boolean(data.featured),
         draft: Boolean(data.draft),
         cornerstone: Boolean(data.cornerstone),
@@ -53,14 +53,16 @@ export default async function EditorPage({
 }: {
   searchParams: Promise<{ slug?: string }>;
 }) {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
   const { slug } = await searchParams;
-  const posts = loadEditablePosts();
-  const canSave = process.env.NODE_ENV === "development";
   return (
     <PostEditor
-      posts={posts}
+      posts={loadEditablePosts()}
       authorSlugs={authors.map((a) => a.slug)}
-      canSave={canSave}
+      canSave={process.env.NODE_ENV === "development"}
       initialSlug={slug}
     />
   );

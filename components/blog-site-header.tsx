@@ -4,6 +4,8 @@ import { BlogThemeToggle } from "@/components/blog-theme-toggle";
 import { HeaderSearch } from "@/components/blog/header-search";
 
 export function BlogSiteHeader() {
+  const showDashboard = process.env.NODE_ENV !== "production";
+
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-shell items-center justify-between px-4 sm:px-6">
@@ -16,9 +18,11 @@ export function BlogSiteHeader() {
           </span>
         </Link>
         <nav className="flex items-center gap-1">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/dashboard">Dashboard</Link>
-          </Button>
+          {showDashboard ? (
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/dashboard">Dashboard</Link>
+            </Button>
+          ) : null}
           <HeaderSearch />
           <BlogThemeToggle />
         </nav>

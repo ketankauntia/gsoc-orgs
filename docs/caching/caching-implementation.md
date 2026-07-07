@@ -11,7 +11,7 @@ Implemented a comprehensive, production-grade caching strategy optimized for the
 | `lib/cache.ts` | Core caching utilities, tags, durations, headers |
 | `lib/db.cached.ts` | Cached Prisma query wrappers using `unstable_cache` |
 | `app/api/admin/invalidate-cache/route.ts` | Admin endpoint for manual cache invalidation |
-| `docs/CACHING_ARCHITECTURE.md` | Complete caching documentation |
+| `docs/caching/CACHING_ARCHITECTURE.md` | Complete caching documentation |
 
 ## Files Modified
 
