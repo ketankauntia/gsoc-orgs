@@ -357,7 +357,7 @@ return NextResponse.json(data, {
 
 ```bash
 # Start production build locally
-pnpm build && pnpm start
+npm run build && npm run start
 
 # Check API response headers
 curl -I http://localhost:3000/api/v1/organizations/apache

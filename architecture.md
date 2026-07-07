@@ -70,7 +70,7 @@ Vercel Analytics
 
 ### Development Tools
 ```
-pnpm (package manager)
+npm (package manager)
 ESLint 9.x
 Husky + lint-staged (pre-commit hooks)
 Commitlint (commit message validation)
@@ -557,9 +557,9 @@ ADMIN_KEY=your-secret-admin-key
 ### Build Pipeline
 
 ```
-1. pnpm install
+1. npm install
 2. prisma generate
-3. pnpm build
+3. npm run build
 4. Deploy to Vercel
 ```
 
@@ -588,12 +588,12 @@ ADMIN_KEY=your-secret-admin-key
 ### Common Commands
 
 ```bash
-pnpm dev          # Development server
-pnpm build        # Production build
-pnpm start        # Production server
-pnpm lint         # Run linter
-pnpm type-check   # TypeScript check
-pnpm validate     # Full validation
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # Run linter
+npm run type-check   # TypeScript check
+npm run validate     # Full validation
 ```
 
 ### Key Files

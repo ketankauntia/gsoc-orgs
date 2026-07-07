@@ -29,13 +29,13 @@ All pre-commit hooks are working correctly and will prevent CI/CD failures.
 
 ### ✅ Test 3: Pre-commit Hook - Type Checking
 **Test:** Commit with TypeScript files  
-**Result:** ✅ **PASSED** - `pnpm type-check` ran successfully:
+**Result:** ✅ **PASSED** - `npm run type-check` ran successfully:
 - No TypeScript errors found
 - Type checking completed in ~1 second
 
 ### ✅ Test 4: Pre-commit Hook - Build Check
 **Test:** Full Next.js build during commit  
-**Result:** ✅ **PASSED** - `pnpm build` completed successfully:
+**Result:** ✅ **PASSED** - `npm run build` completed successfully:
 - Build completed in ~10 seconds
 - All pages generated correctly
 - Build warnings present but non-blocking (expected):
@@ -83,15 +83,15 @@ fi
 
 # Run lint-staged (lints and fixes staged files)
 echo "🔍 Running linter on staged files..."
-pnpm lint-staged
+npx lint-staged
 
 # Run TypeScript type checking (catches type errors before build)
 echo "🔍 Running TypeScript type check..."
-pnpm type-check
+npm run type-check
 
 # Run build check (ensures code compiles before commit)
 echo "🔍 Running build check..."
-pnpm build
+npm run build
 
 echo "✅ All checks passed! Proceeding with commit..."
 ```
@@ -130,9 +130,9 @@ The pre-commit hooks run **exactly the same checks** as CI/CD:
 
 | Check | Pre-commit | CI/CD |
 |-------|-----------|-------|
-| Linting | ✅ `pnpm lint-staged` | ✅ `pnpm lint` |
-| Type Check | ✅ `pnpm type-check` | ✅ (via build) |
-| Build | ✅ `pnpm build` | ✅ `pnpm build` |
+| Linting | ✅ `npx lint-staged` | ✅ `npm run lint` |
+| Type Check | ✅ `npm run type-check` | ✅ (via build) |
+| Build | ✅ `npm run build` | ✅ `npm run build` |
 
 **Result:** If your commit succeeds locally, CI/CD will pass! 🎉
 

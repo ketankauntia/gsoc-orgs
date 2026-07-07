@@ -64,7 +64,7 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 ### Prerequisites
 
 - **Node.js** 18.x or higher
-- **pnpm** package manager (install via `npm install -g pnpm`)
+- **npm** package manager
 - **MongoDB** database (local or cloud instance like MongoDB Atlas)
 
 ### Installation
@@ -77,7 +77,7 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 
 2. **Install dependencies**
    ```bash
-   pnpm install
+   npm install
    ```
    This will automatically run `prisma generate` to set up the Prisma client.
 
@@ -101,7 +101,7 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 
 5. **Start the development server**
    ```bash
-   pnpm dev
+   npm run dev
    ```
 
 6. **Open your browser**
@@ -110,12 +110,12 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 
 ### Available Scripts
 
-- `pnpm dev` - Start development server on http://localhost:3000
-- `pnpm build` - Build the application for production
-- `pnpm start` - Start the production server (requires `pnpm build` first)
-- `pnpm lint` - Run ESLint to check code quality
-- `pnpm type-check` - Run TypeScript type checking
-- `pnpm validate` - Run lint, type-check, and build validation
+- `npm run dev` - Start development server on http://localhost:3000
+- `npm run build` - Build the application for production
+- `npm run start` - Start the production server (requires `npm run build` first)
+- `npm run lint` - Run ESLint to check code quality
+- `npm run type-check` - Run TypeScript type checking
+- `npm run validate` - Run lint, type-check, and build validation
 
 ## 🤝 Contributing
 
@@ -154,13 +154,13 @@ git checkout -b fix/your-bug-fix
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Set up environment variables (see Getting Started section)
 # Create .env.local with DATABASE_URL
 
 # Verify everything works
-pnpm dev
+npm run dev
 ```
 
 #### 4. Make Your Changes
@@ -175,13 +175,13 @@ pnpm dev
 
 ```bash
 # Run validation before committing
-pnpm validate
+npm run validate
 ```
 
 This runs:
-- Linting (`pnpm lint`)
-- Type checking (`pnpm type-check`)
-- Build check (`pnpm build`)
+- Linting (`npm run lint`)
+- Type checking (`npm run type-check`)
+- Build check (`npm run build`)
 
 #### 6. Commit Your Changes
 

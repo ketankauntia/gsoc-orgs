@@ -845,7 +845,7 @@ const OrganizationsList = () => {
 
 ## Prerequisites
 
-- Dev server running: `pnpm dev`
+- Dev server running: `npm run dev`
 - Database connected (check `.env` for `DATABASE_URL`)
 
 ## Quick Tests
@@ -958,7 +958,7 @@ curl "http://localhost:3000/api/v1/stats"
 ```bash
 # Stop server (Ctrl+C)
 rm -rf .next
-pnpm dev
+npm run dev
 ```
 
 ### Issue: "Cannot connect to server"
@@ -967,7 +967,7 @@ pnpm dev
 
 **Fix:**
 ```bash
-pnpm dev
+npm run dev
 # Wait for: ✓ Ready in ...ms
 ```
 

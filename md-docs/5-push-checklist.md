@@ -97,7 +97,7 @@ All API development is **complete and production-ready**. Here's what you're pus
    ```bash
    # Stop server: Ctrl+C
    rm -rf .next
-   pnpm dev
+   npm run dev
    ```
 
 2. **Run test script**
@@ -119,7 +119,7 @@ All API development is **complete and production-ready**. Here's what you're pus
 ```bash
 # 1. Clean build
 rm -rf .next
-pnpm dev
+npm run dev
 
 # 2. Wait for server to be ready
 # Look for: ✓ Ready in ...ms

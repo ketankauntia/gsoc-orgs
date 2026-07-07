@@ -56,7 +56,7 @@ export default async function TopicsPage() {
         <div className="text-center">
           <Heading variant="section">Failed to load topics</Heading>
           <Text className="mt-4 text-muted-foreground">
-            Please try again later or run: pnpm generate:topics
+            Please try again later or run: npm run generate:topics
           </Text>
         </div>
       </div>

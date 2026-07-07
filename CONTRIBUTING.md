@@ -23,7 +23,7 @@ When you commit, the following checks run **automatically**:
    - Catches type errors that would break the build
    - Fast check that prevents most build failures
 
-4. **Build Check** (`pnpm build`)
+4. **Build Check** (`npm run build`)
    - Ensures code compiles successfully
    - Catches build errors before they reach CI/CD
    - **Same check that runs in CI/CD**
@@ -35,13 +35,13 @@ When you commit, the following checks run **automatically**:
 You can also run validation manually before committing:
 
 ```bash
-pnpm validate
+npm run validate
 ```
 
 This runs the same checks:
-- ✅ Linting (`pnpm lint`)
-- ✅ Type checking (`pnpm type-check`)
-- ✅ Build check (`pnpm build`)
+- ✅ Linting (`npm run lint`)
+- ✅ Type checking (`npm run type-check`)
+- ✅ Build check (`npm run build`)
 
 ### Troubleshooting
 
@@ -49,7 +49,7 @@ This runs the same checks:
 
 1. **Install dependencies:**
    ```bash
-   pnpm install
+   npm install
    ```
    This runs `husky` setup automatically via the `prepare` script.
 
@@ -61,7 +61,7 @@ This runs the same checks:
 
 3. **Manually install Husky (if needed):**
    ```bash
-   pnpm exec husky install
+   npx husky install
    ```
 
 #### Can't commit to main branch?
@@ -145,8 +145,8 @@ The commit-msg hook validates your commit message format automatically.
 
 The GitHub Actions workflow (`.github/workflows/ci.yml`) runs:
 
-1. ✅ Linting (`pnpm lint`)
-2. ✅ Build (`pnpm build`)
+1. ✅ Linting (`npm run lint`)
+2. ✅ Build (`npm run build`)
 
 **Good news:** These are the same checks that run in your pre-commit hook! If your commit succeeds locally, CI/CD will pass. ✅
 

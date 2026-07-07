@@ -8,7 +8,7 @@ This document describes how to test all the API endpoints that were modified or 
 
 1. **Start the development server:**
    ```bash
-   pnpm dev
+   npm run dev
    ```
 
 2. **Set environment variable (for admin endpoints):**

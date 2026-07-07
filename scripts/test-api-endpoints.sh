@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Test script for API endpoints
-# Make sure your dev server is running: pnpm dev
+# Make sure your dev server is running: npm run dev
 
 BASE_URL="${API_BASE:-http://localhost:3000}"
 ADMIN_KEY="${ADMIN_KEY:-test-admin-key}"
@@ -86,6 +86,6 @@ echo ""
 
 echo "✅ Testing complete!"
 echo ""
-echo "Note: Make sure your dev server is running (pnpm dev)"
+echo "Note: Make sure your dev server is running (npm run dev)"
 echo "Note: Set ADMIN_KEY environment variable to test admin endpoints"
 

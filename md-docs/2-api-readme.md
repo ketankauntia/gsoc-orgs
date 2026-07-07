@@ -26,7 +26,7 @@ This file contains everything you need:
 ### 1. Start the Server
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 ### 2. Test the API
@@ -265,7 +265,7 @@ function OrganizationsList() {
 curl http://localhost:3000/api/v1/health
 
 # If not, start it
-pnpm dev
+npm run dev
 ```
 
 ### Getting errors?
@@ -273,7 +273,7 @@ pnpm dev
 ```bash
 # Clear Next.js cache and restart
 rm -rf .next
-pnpm dev
+npm run dev
 ```
 
 ### Want to see database counts?

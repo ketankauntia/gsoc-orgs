@@ -85,7 +85,7 @@ async function runTests() {
     }
   } catch {
     console.log('❌ Cannot connect to server');
-    console.log(`   Make sure server is running: pnpm dev`);
+    console.log(`   Make sure server is running: npm run dev`);
     process.exit(1);
   }
   

@@ -4,6 +4,13 @@ import { loadOrganizationsIndexData } from '@/lib/organizations-page-types'
 import { loadTechStackIndexData } from '@/lib/tech-stack-page-types'
 import { loadTopicsIndexData } from '@/lib/topics-page-types'
 import { getAvailableProjectYears } from '@/lib/projects-page-types'
+import {
+  categoryToSlug,
+  getCategories,
+  getIndexablePosts,
+  getAllTags,
+  tagToSlug,
+} from '@/lib/blog/content'
 
 /**
  * All sitemap data is sourced from static JSON files —
@@ -61,6 +68,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const yearlySlugs = getYearlySlugs()
   const projectYears = getAvailableProjectYears()
+  const blogPosts = getIndexablePosts()
+  const blogCategories = getCategories()
+  const blogTags = getAllTags()
 
   const staticRoutes = [
     '',
@@ -117,6 +127,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.75,
+    })),
+
+    ...blogPosts.map((post) => ({
+      url: `${baseUrl}/blog/post/${post.slug}`,
+      lastModified: new Date(post.updatedAt ?? post.publishedAt),
+      changeFrequency: 'monthly' as const,
+      priority: post.featured ? 0.8 : 0.7,
+    })),
+
+    ...blogCategories.map((category) => ({
+      url: `${baseUrl}/blog/category/${categoryToSlug(category)}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    })),
+
+    ...blogTags.map((tag) => ({
+      url: `${baseUrl}/blog/tag/${tagToSlug(tag)}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
     })),
   ]
 

@@ -143,7 +143,7 @@ This ensures search engines can discover the sitemap automatically. No additiona
 
 The sitemap **automatically updates** when you:
 
-1. **Rebuild the application** (`pnpm build`)
+1. **Rebuild the application** (`npm run build`)
    - New organizations → automatically included
    - New tech stacks → automatically included
    - New projects → automatically included
@@ -232,12 +232,12 @@ Modify the mapping functions:
 
 1. **Build the application:**
    ```bash
-   pnpm build
+   npm run build
    ```
 
 2. **Start the server:**
    ```bash
-   pnpm start
+   npm run start
    ```
 
 3. **Visit the sitemap:**
@@ -386,7 +386,7 @@ Potential enhancements:
 - **Years:** Update `getAvailableProjectYears()` for project year pages
 
 **When it updates:**
-- Every build (`pnpm build`)
+- Every build (`npm run build`)
 - Automatically includes new organizations, tech stacks, projects, topics
 - Yearly pages auto-include when year completes
 
