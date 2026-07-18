@@ -40,6 +40,7 @@ export function LanguagesBarChart({ data }: { data: LanguageData[] }) {
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
+              accessibilityLayer
               data={topLanguages}
               layout="vertical"
               margin={{ top: 5, right: 50, left: 0, bottom: 5 }}
@@ -130,6 +131,7 @@ export function StudentSlotsBarChart({
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
+              accessibilityLayer
               data={topOrgs}
               layout="vertical"
               margin={{ top: 5, right: 50, left: 0, bottom: 5 }}
@@ -211,6 +213,7 @@ export function OrganizationsProjectsChart({
     <div className="h-[300px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+          accessibilityLayer
           data={topOrgs}
           margin={{ top: 20, right: 5, left: -25, bottom: 5 }}
         >
@@ -271,6 +274,7 @@ export function SimpleSelectionChart({
     <div className="h-[320px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+          accessibilityLayer
           data={topItems}
           layout="vertical"
           margin={{ top: 5, right: 50, left: 0, bottom: 5 }}

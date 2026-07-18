@@ -51,6 +51,7 @@ export function PopularityGrowthChart({ data }: PopularityGrowthChartProps) {
     <div className="h-[450px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <ComposedChart
+          accessibilityLayer
           data={chartData}
           margin={{ top: 20, right: 30, left: 0, bottom: 60 }}
         >
@@ -134,4 +135,3 @@ export function PopularityGrowthChart({ data }: PopularityGrowthChartProps) {
     </div>
   );
 }
-

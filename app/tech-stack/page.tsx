@@ -46,7 +46,7 @@ export default async function TechStackPage() {
           />
 
           {/* Analytics Section */}
-          <section className="space-y-8">
+          <section className="deferred-section space-y-8">
             <div className="flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-teal-600" />
               <Heading variant="subsection">Technology Analytics</Heading>

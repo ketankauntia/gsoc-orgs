@@ -37,6 +37,7 @@ export function MostProjectsChart({ data }: MostProjectsChartProps) {
     <div className="h-[320px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+          accessibilityLayer
           data={chartData}
           layout="vertical"
           margin={{ top: 5, right: 50, left: 0, bottom: 5 }}
@@ -86,4 +87,3 @@ export function MostProjectsChart({ data }: MostProjectsChartProps) {
     </div>
   );
 }
-

@@ -172,7 +172,7 @@ export default async function ProjectsYearPage({
           </CardWrapper>
 
           {/* 3️⃣ Charts Section */}
-          <div className="space-y-8">
+          <div className="deferred-section space-y-8">
             <Heading variant="subsection" className="text-center">
               <TrendingUp className="w-5 h-5 inline mr-2" />
               {year} Statistics & Trends

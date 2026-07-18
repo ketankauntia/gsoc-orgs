@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown, ArrowUp } from "lucide-react";
-import { Button, Badge, Grid, Text } from "@/components/ui";
+import { Button, Grid, Text } from "@/components/ui";
 import { OrganizationSnapshot, ProjectSnapshot } from "@/lib/yearly-page-types";
 
 interface ExpandableOrgListProps {
@@ -37,7 +37,7 @@ export function ExpandableOrgList({
                   {org.logo_url ? (
                     <Image
                       src={org.logo_url}
-                      alt={org.name}
+                      alt=""
                       width={32}
                       height={32}
                       className="w-full h-full object-cover"

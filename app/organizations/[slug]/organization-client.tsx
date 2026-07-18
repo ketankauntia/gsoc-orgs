@@ -581,7 +581,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
           </div>
 
           {/* Right Column - Sidebar */}
-          <div className="space-y-6">
+          <div className="deferred-section space-y-6">
             {/* Participation Chart */}
             <CardWrapper padding="md">
               <div className="flex items-center justify-between mb-4">

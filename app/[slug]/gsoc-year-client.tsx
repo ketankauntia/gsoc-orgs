@@ -95,6 +95,7 @@ export function GSoCYearClient({
             <div className="h-[320px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
+                  accessibilityLayer
                   data={highestSelectionsByTech.slice(0, 10)}
                   layout="vertical"
                   margin={{ top: 5, right: 50, left: 0, bottom: 5 }}
@@ -157,6 +158,7 @@ export function GSoCYearClient({
             <div className="h-[320px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
+                  accessibilityLayer
                   data={highestSelectionsByOrg.slice(0, 10)}
                   layout="vertical"
                   margin={{ top: 5, right: 50, left: 0, bottom: 5 }}
@@ -242,7 +244,7 @@ export function GSoCYearClient({
                           {logoUrl ? (
                             <Image
                               src={logoUrl}
-                              alt={org.name}
+                              alt=""
                               width={32}
                               height={32}
                               className="w-full h-full object-cover"
@@ -426,4 +428,3 @@ export function GSoCYearClient({
     </div>
   );
 }
-

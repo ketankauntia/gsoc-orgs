@@ -32,6 +32,7 @@ export function DifficultyByTechChart({ data }: DifficultyByTechChartProps) {
     <div className="h-[280px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+          accessibilityLayer
           data={data}
           margin={{ top: 20, right: 30, left: 0, bottom: 40 }}
         >
@@ -84,4 +85,3 @@ export function DifficultyByTechChart({ data }: DifficultyByTechChartProps) {
     </div>
   );
 }
-

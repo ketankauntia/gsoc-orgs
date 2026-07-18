@@ -132,7 +132,7 @@ export function TechStackDetailClient({ data }: TechStackDetailClientProps) {
       </section>
 
       {/* Charts - NO API CALLS, pre-computed data */}
-      <section>
+      <section className="deferred-section">
         <Heading variant="section" className="mb-6">
           {data.name} Analytics
         </Heading>
@@ -150,7 +150,7 @@ export function TechStackDetailClient({ data }: TechStackDetailClientProps) {
             </div>
             <div className="h-[250px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data.charts.popularity_by_year}>
+                <LineChart accessibilityLayer data={data.charts.popularity_by_year}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                   <XAxis
                     dataKey="year"
@@ -198,7 +198,7 @@ export function TechStackDetailClient({ data }: TechStackDetailClientProps) {
             </div>
             <div className="h-[250px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data.charts.popularity_by_year}>
+                <BarChart accessibilityLayer data={data.charts.popularity_by_year}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                   <XAxis
                     dataKey="year"

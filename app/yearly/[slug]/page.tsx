@@ -191,7 +191,7 @@ export default async function YearlyPage({
           </div>
 
           {/* Charts Section */}
-          <div className="space-y-8">
+          <div className="deferred-section space-y-8">
             <Heading variant="subsection" className="text-center">
               <Sparkles className="w-5 h-5 inline mr-2" />
               {year} Year Insights & Statistics
@@ -364,7 +364,7 @@ export default async function YearlyPage({
                       {org.logo_url && (
                         <Image
                           src={org.logo_url}
-                          alt={org.name}
+                          alt=""
                           width={16}
                           height={16}
                           className="w-4 h-4 mr-2 rounded"

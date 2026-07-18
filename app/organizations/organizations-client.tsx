@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ArrowUpDown, Search, X } from 'lucide-react'
+import { ArrowUpDown, Search, SlidersHorizontal, X } from 'lucide-react'
 import { Button, Input, SectionHeader } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
 import { FiltersSidebar, FilterState } from './filters-sidebar'
 import { useDebouncedSearch } from '@/hooks'
+import { MobileFiltersDialog } from './mobile-filters-dialog'
 
 const arraysEqual = (a: string[], b: string[]) =>
   a.length === b.length && a.every((val, idx) => val === b[idx])
@@ -29,6 +30,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
   const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
   const sortBy = searchParams.get('sort') || 'name'
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   // Sync server-rendered data when initialData/initialPage change after navigation.
   // Without this, router.push() re-renders on the server but the client keeps stale state.
@@ -327,6 +329,13 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     filters.difficulties.length > 0 ||
     filters.firstTimeOnly
 
+  const activeFilterCount = filters.years.length +
+    filters.techs.length +
+    filters.topics.length +
+    filters.categories.length +
+    filters.difficulties.length +
+    (filters.firstTimeOnly ? 1 : 0)
+
   // Sidebar-only filters (those without inline X buttons) to show as chips
   const sidebarFilters = [
     ...filters.years.map((year: string) => ({ key: 'years' as const, label: `Year: ${year}`, value: year })),
@@ -365,6 +374,20 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
+          </div>
+
+          <div className="mb-5 flex justify-center lg:hidden">
+            <Button
+              type="button"
+              variant="outline"
+              className="h-11 min-w-36"
+              onClick={() => setMobileFiltersOpen(true)}
+              aria-haspopup="dialog"
+              aria-expanded={mobileFiltersOpen}
+            >
+              <SlidersHorizontal className="size-4" aria-hidden="true" />
+              Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
+            </Button>
           </div>
 
           {/* Filter Chips Row */}
@@ -594,6 +617,16 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
           )}
         </div>
       </div>
+      {mobileFiltersOpen && (
+        <MobileFiltersDialog
+          appliedCount={activeFilterCount}
+          availableTechs={initialTechs}
+          filters={filters}
+          firstTimeCount={firstTimeCount}
+          onClose={() => setMobileFiltersOpen(false)}
+          onFilterChange={handleFilterChange}
+        />
+      )}
     </div>
   )
 }

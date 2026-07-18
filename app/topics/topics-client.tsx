@@ -11,6 +11,7 @@ import {
   Text,
   Badge,
   Input,
+  Button,
 } from "@/components/ui";
 import { TopicsIndexData } from "@/lib/topics-page-types";
 
@@ -22,6 +23,7 @@ interface TopicsClientProps {
 
 export function TopicsClient({ topics, trendingTopics, total }: TopicsClientProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(60);
 
   // Filter topics based on search (client-side)
   const filteredTopics = useMemo(() => {
@@ -35,6 +37,8 @@ export function TopicsClient({ topics, trendingTopics, total }: TopicsClientProp
         topic.slug.toLowerCase().includes(searchLower)
     );
   }, [topics, searchQuery]);
+
+  const visibleTopics = filteredTopics.slice(0, visibleCount);
 
   return (
     <div className="space-y-12">
@@ -56,7 +60,11 @@ export function TopicsClient({ topics, trendingTopics, total }: TopicsClientProp
             placeholder="Search topics by name or keyword..."
             className="pl-10 h-12 text-base"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setVisibleCount(60);
+            }}
+            aria-label="Search topics"
           />
         </div>
       </div>
@@ -94,13 +102,25 @@ export function TopicsClient({ topics, trendingTopics, total }: TopicsClientProp
         ) : (
           <>
             <Text variant="small" className="text-muted-foreground mb-6">
-              Showing {filteredTopics.length} of {total} topic{total !== 1 ? "s" : ""}
+              Showing {visibleTopics.length} of {filteredTopics.length} matching topic{filteredTopics.length !== 1 ? "s" : ""}
             </Text>
             <Grid cols={{ default: 1, md: 2, lg: 3 }} gap="lg">
-              {filteredTopics.map((topic) => (
+              {visibleTopics.map((topic) => (
                 <TopicCard key={topic.slug} topic={topic} />
               ))}
             </Grid>
+            {visibleCount < filteredTopics.length && (
+              <div className="mt-8 flex justify-center">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="h-11 min-w-40"
+                  onClick={() => setVisibleCount((count) => count + 60)}
+                >
+                  Show 60 more
+                </Button>
+              </div>
+            )}
           </>
         )}
       </section>

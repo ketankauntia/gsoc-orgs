@@ -92,7 +92,7 @@ export function ExpandableBeginnerOrgs({
                   {org.logo ? (
                     <Image
                       src={org.logo}
-                      alt={org.name}
+                      alt=""
                       width={32}
                       height={32}
                       className="w-full h-full object-cover"
@@ -196,4 +196,3 @@ export function ExpandableTechStacks({
     </div>
   );
 }
-

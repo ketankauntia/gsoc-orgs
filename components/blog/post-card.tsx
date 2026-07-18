@@ -18,6 +18,7 @@ export function PostCard({
   className?: string;
 }) {
   const author = getAuthor(post.authorSlug);
+  const TitleTag = featured ? "h2" : "h3";
 
   return (
     <Link
@@ -34,14 +35,14 @@ export function PostCard({
       />
       <div className="flex flex-1 flex-col gap-2">
         {featured && <Badge variant="secondary">Featured</Badge>}
-        <h3
+        <TitleTag
           className={cn(
             "font-heading font-semibold leading-snug tracking-tight group-hover:text-primary",
             featured ? "text-xl md:text-2xl" : "text-lg",
           )}
         >
           {post.title}
-        </h3>
+        </TitleTag>
         <p className={cn("text-sm text-muted-foreground", featured ? "line-clamp-3" : "line-clamp-2")}>
           {post.description}
         </p>

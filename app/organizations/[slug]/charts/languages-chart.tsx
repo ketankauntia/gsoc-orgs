@@ -35,6 +35,7 @@ export function LanguagesChart({ data }: LanguagesChartProps) {
     <div className="h-[250px] w-full">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+          accessibilityLayer
           data={chartData}
           layout="vertical"
           margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
@@ -73,4 +74,3 @@ export function LanguagesChart({ data }: LanguagesChartProps) {
     </div>
   );
 }
-

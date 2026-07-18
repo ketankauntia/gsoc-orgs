@@ -37,7 +37,7 @@ export function ProjectsChart({ data }: ProjectsChartProps) {
   return (
     <div className="h-[180px] w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={chartData} margin={{ top: 20, right: 5, left: -25, bottom: 5 }}>
+        <BarChart accessibilityLayer data={chartData} margin={{ top: 20, right: 5, left: -25, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
           <XAxis
             dataKey="year"
