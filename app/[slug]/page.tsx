@@ -27,6 +27,7 @@ import {
 } from "./year-charts";
 import { GSoCYearClient } from "./gsoc-year-client";
 import { AllOrganizationsSection } from "./all-organizations-section";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 /**
  * ISR Configuration for Year Pages
@@ -393,6 +394,12 @@ export default async function GSoCYearOrganizationsPage({
     <div className="w-full">
       <Container size="default" className="py-8 lg:py-16">
         <div className="space-y-12 lg:space-y-16">
+          <SiteBreadcrumbs
+            items={[
+              { label: "Yearly", href: "/yearly" },
+              { label: `GSoC ${year}`, href: `/${slug}` },
+            ]}
+          />
           {/* Header Section */}
           <div className="space-y-6">
             <SectionHeader
@@ -685,4 +692,3 @@ export default async function GSoCYearOrganizationsPage({
     </div>
   );
 }
-

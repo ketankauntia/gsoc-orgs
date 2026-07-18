@@ -75,14 +75,15 @@ export function PostJsonLd({ post, author }: { post: Post; author: Author }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Blog", item: absoluteUrl("/blog") },
+          { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
           {
             "@type": "ListItem",
-            position: 2,
+            position: 3,
             name: post.category,
             item: absoluteUrl(`/blog/category/${categoryToSlug(post.category)}`),
           },
-          { "@type": "ListItem", position: 3, name: post.title, item: url },
+          { "@type": "ListItem", position: 4, name: post.title, item: url },
         ],
       },
     ],

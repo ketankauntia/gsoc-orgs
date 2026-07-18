@@ -7,6 +7,7 @@ import { BlogListing } from "@/components/blog/templates/blog-listing";
 import { categoryToSlug, getAllPosts, getCategories, paginate } from "@/lib/blog/content";
 import { getSettings } from "@/lib/settings";
 import { siteConfig } from "@/lib/site";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // ISR: regenerate hourly so scheduled posts + content changes surface without a rebuild.
 export const revalidate = 3600;
@@ -30,7 +31,8 @@ export default function BlogIndexPage() {
   return (
     <main className="mx-auto w-full max-w-shell flex-1 px-4 py-10 sm:px-6">
       <ListingJsonLd posts={posts} name="The GSoC Organizations Blog" />
-      <header className="max-w-2xl">
+      <SiteBreadcrumbs items={[{ label: "Blog", href: "/blog" }]} />
+      <header className="mt-8 max-w-2xl">
         <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
           The GSoC Organizations Blog
         </h1>

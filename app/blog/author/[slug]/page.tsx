@@ -58,7 +58,12 @@ export default async function AuthorPage({
   return (
     <main className="mx-auto w-full max-w-shell flex-1 px-4 py-10 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: personJsonLd }} />
-      <PostBreadcrumbs trail={[{ label: "Blog", href: "/blog" }, { label: author.name }]} />
+      <PostBreadcrumbs
+        trail={[
+          { label: "Blog", href: "/blog" },
+          { label: author.name, href: `/blog/author/${slug}` },
+        ]}
+      />
       <div className="mx-auto mt-6 max-w-content">
         <AuthorCard author={author} />
       </div>

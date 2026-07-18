@@ -50,7 +50,12 @@ export default async function BlogPaginatedPage({
 
   return (
     <main className="mx-auto w-full max-w-shell flex-1 px-4 py-10 sm:px-6">
-      <PostBreadcrumbs trail={[{ label: "Blog", href: "/blog" }, { label: `Page ${pageNum}` }]} />
+      <PostBreadcrumbs
+        trail={[
+          { label: "Blog", href: "/blog" },
+          { label: `Page ${pageNum}`, href: `/blog/page/${pageNum}` },
+        ]}
+      />
       <header className="mt-6 max-w-2xl">
         <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
           The GSoC Organizations Blog

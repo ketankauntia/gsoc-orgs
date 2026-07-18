@@ -6,6 +6,8 @@ import { OrganizationClient } from "./organization-client";
 import { FooterSmall } from "@/components/footer-small";
 import { getFullUrl } from "@/lib/constants";
 import { loadOrganizationData } from "@/lib/organizations-page-types";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
+import { Container } from "@/components/ui";
 
 /**
  * Organization Detail Page
@@ -134,6 +136,14 @@ export default async function OrganizationDetailPage({
 
   return (
     <>
+      <Container size="default" className="pb-2">
+        <SiteBreadcrumbs
+          items={[
+            { label: "Organizations", href: "/organizations" },
+            { label: org.name, href: `/organizations/${slug}` },
+          ]}
+        />
+      </Container>
       <OrganizationClient organization={org} />
       <FooterSmall />
     </>

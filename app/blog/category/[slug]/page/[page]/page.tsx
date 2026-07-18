@@ -65,7 +65,7 @@ export default async function CategoryPaginatedPage({
         trail={[
           { label: "Blog", href: "/blog" },
           { label: category, href: `/blog/category/${slug}` },
-          { label: `Page ${pageNum}` },
+          { label: `Page ${pageNum}`, href: `/blog/category/${slug}/page/${pageNum}` },
         ]}
       />
       <header className="mt-6 max-w-2xl">

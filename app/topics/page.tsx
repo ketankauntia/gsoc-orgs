@@ -6,6 +6,7 @@ import {
 import { getFullUrl } from "@/lib/constants";
 import { loadTopicsIndexData } from "@/lib/topics-page-types";
 import { TopicsClient } from "./topics-client";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 /**
  * Topics Index Page
@@ -69,10 +70,13 @@ export default async function TopicsPage() {
     .filter(topic => topic.organizationCount >= 10);
 
   return (
-    <TopicsClient 
-      topics={indexData.topics}
-      trendingTopics={trendingTopics}
-      total={indexData.total}
-    />
+    <div className="space-y-8">
+      <SiteBreadcrumbs items={[{ label: "Topics", href: "/topics" }]} />
+      <TopicsClient
+        topics={indexData.topics}
+        trendingTopics={trendingTopics}
+        total={indexData.total}
+      />
+    </div>
   );
 }

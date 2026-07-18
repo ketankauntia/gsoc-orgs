@@ -9,6 +9,7 @@ import {
 import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import { TechStackClientWrapper } from "./tech-stack-client-wrapper";
 import { StackPopularityChart, TopStacksChart, MostSelectionsChart, MostProjectsChart, PopularityGrowthChart } from "./charts";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Static Generation - cache forever, NO dynamic behavior
 export const revalidate = false;
@@ -33,6 +34,7 @@ export default async function TechStackPage() {
 
   return (
     <div className="space-y-12">
+          <SiteBreadcrumbs items={[{ label: "Tech Stack", href: "/tech-stack" }]} />
           
           {/* Page Header */}
           <SectionHeader

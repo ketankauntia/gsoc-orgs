@@ -95,6 +95,7 @@ export default async function BlogPostPage({
 
   const breadcrumbs = (
     <PostBreadcrumbs
+      includeJsonLd={false}
       trail={[
         { label: "Blog", href: "/blog" },
         {
@@ -103,7 +104,7 @@ export default async function BlogPostPage({
             ? `/blog/category/${categoryToSlug(post.category)}`
             : undefined,
         },
-        { label: post.title },
+        { label: post.title, href: `/blog/post/${post.slug}` },
       ]}
     />
   );

@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 import { getFullUrl } from "@/lib/constants";
 import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import {
@@ -249,20 +250,28 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
   ).length ?? 0;
 
   return (
-    <Suspense fallback={
-      <div className="min-h-[600px] flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]" />
-          <p className="mt-4 text-muted-foreground">Loading organizations...</p>
-        </div>
+    <>
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SiteBreadcrumbs
+          items={[{ label: "Organizations", href: "/organizations" }]}
+          className="pb-6"
+        />
       </div>
-    }>
-      <OrganizationsClient 
-        initialData={data} 
-        initialPage={page} 
-        initialTechs={initialTechs}
-        firstTimeCount={firstTimeCount}
-      />
-    </Suspense>
+      <Suspense fallback={
+        <div className="min-h-[600px] flex items-center justify-center">
+          <div className="text-center">
+            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent motion-reduce:animate-[spin_1.5s_linear_infinite]" />
+            <p className="mt-4 text-muted-foreground">Loading organizations...</p>
+          </div>
+        </div>
+      }>
+        <OrganizationsClient
+          initialData={data}
+          initialPage={page}
+          initialTechs={initialTechs}
+          firstTimeCount={firstTimeCount}
+        />
+      </Suspense>
+    </>
   );
 }

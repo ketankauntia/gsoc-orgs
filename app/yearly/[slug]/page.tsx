@@ -29,6 +29,7 @@ import {
   OrganizationsProjectsChart,
   SimpleSelectionChart,
 } from "../../[slug]/year-charts";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Static Generation - cache forever
 export const revalidate = false;
@@ -122,6 +123,12 @@ export default async function YearlyPage({
       <div className="w-full pt-16">
       <Container size="default" className="py-8 lg:py-16">
         <div className="space-y-12 lg:space-y-16">
+          <SiteBreadcrumbs
+            items={[
+              { label: "Yearly", href: "/yearly" },
+              { label: `GSoC ${year}`, href: `/yearly/${slug}` },
+            ]}
+          />
 
           {/* Header Section */}
           <div className="space-y-6">
@@ -562,4 +569,3 @@ function ChartCard({
     </CardWrapper>
   );
 }
-

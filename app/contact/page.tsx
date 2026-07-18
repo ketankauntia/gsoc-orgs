@@ -13,6 +13,7 @@ import {
   Button,
 } from "@/components/ui";
 import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -69,6 +70,7 @@ export default function ContactPage() {
       <main className="flex-1 pt-20 lg:pt-24">
         <Container size="default" className="py-8 lg:py-16">
           <div className="space-y-12">
+            <SiteBreadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
             {/* Header Section */}
             <SectionHeader
               badge="Contact Us"
@@ -254,4 +256,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

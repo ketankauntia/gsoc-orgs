@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 import { loadTopicData } from "@/lib/topics-page-types";
 import { TopicPageClient } from "./topic-client";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 /**
  * Topic Detail Page
@@ -68,5 +69,15 @@ export default async function TopicPage({
     notFound();
   }
 
-  return <TopicPageClient topic={topicData} />;
+  return (
+    <div className="space-y-8">
+      <SiteBreadcrumbs
+        items={[
+          { label: "Topics", href: "/topics" },
+          { label: topicData.name, href: `/topics/${topicSlug}` },
+        ]}
+      />
+      <TopicPageClient topic={topicData} />
+    </div>
+  );
 }

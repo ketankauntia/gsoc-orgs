@@ -3,6 +3,7 @@ import { FooterSmall } from "@/components/footer-small";
 import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/components/ui";
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Force revalidation to ensure footer links stay updated
 /**
@@ -131,6 +132,11 @@ export default function TermsAndConditionsPage() {
       <main className="flex-1 pt-20 lg:pt-24">
         <Container size="default" className="py-8 lg:py-16">
           <div className="space-y-8">
+            <SiteBreadcrumbs
+              items={[
+                { label: "Terms and Conditions", href: "/terms-and-conditions" },
+              ]}
+            />
             {/* Header Section */}
             <SectionHeader
               badge="Legal"
@@ -185,4 +191,3 @@ export default function TermsAndConditionsPage() {
     </div>
   );
 }
-

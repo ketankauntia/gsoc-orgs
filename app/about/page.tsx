@@ -4,6 +4,7 @@ import { Container, SectionHeader, Heading, Text, CardWrapper, Grid } from "@/co
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 import { Users, Target, Heart, Code, Globe } from "lucide-react";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Force revalidation to ensure footer links stay updated
 /**
@@ -94,6 +95,7 @@ export default function AboutPage() {
       <main className="flex-1 pt-20 lg:pt-24">
         <Container size="default" className="py-8 lg:py-16">
           <div className="space-y-16">
+            <SiteBreadcrumbs items={[{ label: "About", href: "/about" }]} />
             {/* Hero Section */}
             <SectionHeader
               badge="About Us"
@@ -206,4 +208,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

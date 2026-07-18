@@ -19,6 +19,7 @@ import {
   CardWrapper,
   Grid,
 } from "@/components/ui";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 /**
  * Individual Project Detail Page
@@ -251,23 +252,20 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <div className="space-y-8">
-      {/* Breadcrumb Navigation */}
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/organizations" className="hover:text-foreground" prefetch={true}>
-          Organizations
-        </Link>
-        <span>/</span>
-        <Link
-          href={`/organizations/${project.organization.slug}`}
-          className="hover:text-foreground"
-          prefetch={true}
-        >
-          {project.organization.name}
-        </Link>
-        <span>/</span>
-        <span className="text-foreground">Projects</span>
-      </nav>
+    <div className="mx-auto w-full max-w-6xl space-y-8 px-4 pb-12 sm:px-6 lg:px-8">
+      <SiteBreadcrumbs
+        items={[
+          { label: "Organizations", href: "/organizations" },
+          {
+            label: project.organization.name,
+            href: `/organizations/${project.organization.slug}`,
+          },
+          {
+            label: project.title,
+            href: `/organizations/${slug}/projects/${projectId}`,
+          },
+        ]}
+      />
 
       {/* Back Button */}
       <Button variant="ghost" size="sm" asChild>
@@ -554,4 +552,3 @@ export default async function ProjectDetailPage({
     </div>
   );
 }
-

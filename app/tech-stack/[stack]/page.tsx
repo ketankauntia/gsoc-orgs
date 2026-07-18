@@ -4,6 +4,7 @@ import {
   loadTechStackIndexData,
 } from "@/lib/tech-stack-page-types";
 import { TechStackDetailClient } from "./tech-stack-detail-client";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Static Generation - cache forever, NO dynamic behavior
 export const revalidate = false;
@@ -57,6 +58,14 @@ export default async function TechStackDetailPage({
   }
 
   return (
-    <TechStackDetailClient data={data} />
+    <div className="space-y-8">
+      <SiteBreadcrumbs
+        items={[
+          { label: "Tech Stack", href: "/tech-stack" },
+          { label: data.name, href: `/tech-stack/${stack}` },
+        ]}
+      />
+      <TechStackDetailClient data={data} />
+    </div>
   );
 }

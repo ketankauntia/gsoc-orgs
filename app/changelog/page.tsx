@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import { getFullUrl } from '@/lib/constants';
+import { SiteBreadcrumbs } from '@/components/site-breadcrumbs';
 
 
 export const metadata: Metadata = {
@@ -55,8 +56,12 @@ export default function ChangelogPage() {
     <>
       <Header />
       <div className="max-w-5xl mx-auto py-12 px-6">
+        <SiteBreadcrumbs
+          items={[{ label: "Changelog", href: "/changelog" }]}
+          className="mt-[60px]"
+        />
 
-        <header className="mb-16 mt-[60px] border-b border-border pb-8">
+        <header className="mb-16 mt-8 border-b border-border pb-8">
           <Heading className="text-3xl md:text-5xl tracking-tighter font-regular max-w-xl">Changelog</Heading>
           <Text className="text-base leading-relaxed text-muted-foreground max-w-xl lg:max-w-lg mt-4">The latest updates and improvements.</Text>
         </header>

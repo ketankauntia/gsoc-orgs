@@ -28,6 +28,7 @@ import {
   LanguagesBarChart,
   OrganizationsProjectsChart,
 } from "../../[slug]/year-charts";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Static Generation - cache forever
 export const revalidate = false;
@@ -85,6 +86,12 @@ export default async function ProjectsYearPage({
       <div className="w-full pt-16">
       <Container size="default" className="py-8 lg:py-16">
         <div className="space-y-12 lg:space-y-16">
+          <SiteBreadcrumbs
+            items={[
+              { label: "Projects", href: "/projects" },
+              { label: `GSoC ${year}`, href: `/projects/${year}` },
+            ]}
+          />
 
           {/* 1️⃣ Hero / Summary Block */}
           <div className="space-y-6">

@@ -13,6 +13,7 @@ import {
 import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import { getAvailableProjectYears, loadProjectsYearData } from "@/lib/projects-page-types";
+import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
 // Static Generation - cache forever
 export const revalidate = false;
@@ -48,6 +49,7 @@ export default async function ProjectsIndexPage() {
       <div className="w-full pt-16">
       <Container size="default" className="py-8 lg:py-16">
         <div className="space-y-12 lg:space-y-16">
+          <SiteBreadcrumbs items={[{ label: "Projects", href: "/projects" }]} />
 
           {/* Hero Section */}
           <div className="space-y-6">
