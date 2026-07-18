@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { Search, X } from 'lucide-react'
+import { ArrowUpDown, Search, X } from 'lucide-react'
 import { Button, Input, SectionHeader } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
@@ -28,6 +28,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
   const isInitialMount = useRef(true)
   const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
+  const sortBy = searchParams.get('sort') || 'name'
 
   // Sync server-rendered data when initialData/initialPage change after navigation.
   // Without this, router.push() re-renders on the server but the client keeps stale state.
@@ -147,6 +148,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     }
     if (newFilters.difficulties.length > 0) params.set('difficulties', newFilters.difficulties.join(','))
     if (newFilters.firstTimeOnly) params.set('firstTimeOnly', 'true')
+    if (sortBy !== 'name') params.set('sort', sortBy)
     
     const newUrl = `/organizations?${params.toString()}`
     
@@ -156,7 +158,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     startTransition(() => {
       router.push(newUrl, { scroll: false })
     })
-  }, [filters, router])
+  }, [filters, router, sortBy])
   
   // Handle debounced search input
   useEffect(() => {
@@ -174,6 +176,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       const params = new URLSearchParams()
       params.set('page', page.toString())
       params.set('limit', '20')
+      if (sortBy !== 'name') params.set('sort', sortBy)
       if (filterState.search) params.set('q', filterState.search)
       if (filterState.years.length > 0) {
         params.set('years', filterState.years.join(','))
@@ -214,7 +217,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     } finally {
       setIsLoading(false)
     }
-  }, [])
+  }, [sortBy])
 
   // Page changes are handled via router.push() → server re-render → initialData sync.
   // No client-side fetch needed for pagination.
@@ -268,6 +271,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     }
     if (filters.difficulties.length > 0) params.set('difficulties', filters.difficulties.join(','))
     if (filters.firstTimeOnly) params.set('firstTimeOnly', 'true')
+    if (sortBy !== 'name') params.set('sort', sortBy)
     
     const url = `/organizations?${params.toString()}`
     // Prevent duplicate navigation to same URL
@@ -279,7 +283,21 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       router.push(url, { scroll: false })
     })
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [currentPage, filters, isLoading, router])
+  }, [currentPage, filters, isLoading, router, sortBy])
+
+  const handleSortChange = useCallback((sort: string) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.delete('page')
+    if (sort === 'name') {
+      params.delete('sort')
+    } else {
+      params.set('sort', sort)
+    }
+
+    startTransition(() => {
+      router.push(`/organizations?${params.toString()}`, { scroll: false })
+    })
+  }, [router, searchParams])
 
   const removeFilter = useCallback((key: keyof FilterState, value?: string) => {
     const newFilters: FilterState = { ...filters }
@@ -442,6 +460,26 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
               ))}
             </div>
           )}
+
+          <div className="mb-5 flex items-center justify-between gap-3 border-y border-border py-3">
+            <p className="text-sm text-muted-foreground" aria-live="polite">
+              {data.total.toLocaleString()} organization{data.total === 1 ? '' : 's'}
+            </p>
+            <label className="flex items-center gap-2 text-sm font-medium text-foreground">
+              <ArrowUpDown className="size-4 text-muted-foreground" aria-hidden="true" />
+              <span className="sr-only sm:not-sr-only">Sort by</span>
+              <select
+                value={sortBy}
+                onChange={(event) => handleSortChange(event.target.value)}
+                className="h-9 rounded-md border border-input bg-background px-3 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                aria-label="Sort organizations"
+              >
+                <option value="name">Name, A to Z</option>
+                <option value="projects">Most projects</option>
+                <option value="recent">Most recently active</option>
+              </select>
+            </label>
+          </div>
 
           {/* Organizations Grid */}
           <div className="mb-8">

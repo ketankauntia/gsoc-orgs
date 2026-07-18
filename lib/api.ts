@@ -112,6 +112,7 @@ export interface Organization {
   image_url: string;
   img_r2_url?: string;
   logo_r2_url?: string | null;
+  url?: string | null;
   technologies: string[];
   topics: string[];
   total_projects: number;

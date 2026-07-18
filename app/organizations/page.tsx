@@ -36,6 +36,7 @@ interface PageProps {
     categoriesLogic?: string;
     techsLogic?: string;
     topicsLogic?: string;
+    sort?: string;
   }>;
 }
 
@@ -132,6 +133,7 @@ async function getOrganizations(params: {
   categoriesLogic?: string;
   techsLogic?: string;
   topicsLogic?: string;
+  sort?: string;
 }): Promise<PaginatedResponse<Organization>> {
   // Use API for search or complex filters
   const useAPI = shouldUseAPI(params);
@@ -143,6 +145,7 @@ async function getOrganizations(params: {
     const queryParams = new URLSearchParams();
     if (params.page) queryParams.set("page", params.page.toString());
     if (params.limit) queryParams.set("limit", params.limit.toString());
+    if (params.sort) queryParams.set("sort", params.sort);
     if (params.q) queryParams.set("q", params.q);
     if (params.category) queryParams.set("category", params.category);
     if (params.tech) queryParams.set("tech", params.tech);
@@ -175,6 +178,7 @@ async function getOrganizations(params: {
     const queryParams = new URLSearchParams();
     if (params.page) queryParams.set("page", params.page.toString());
     if (params.limit) queryParams.set("limit", params.limit.toString());
+    if (params.sort) queryParams.set("sort", params.sort);
     const query = queryParams.toString();
     return apiFetchServer<PaginatedResponse<Organization>>(
       `/api/organizations${query ? `?${query}` : ""}`
@@ -195,6 +199,17 @@ async function getOrganizations(params: {
       firstTimeOnly: params.firstTimeOnly === 'true',
     });
   }
+
+  const sort = params.sort || "name";
+  filtered = [...filtered].sort((a, b) => {
+    if (sort === "projects") {
+      return b.total_projects - a.total_projects || a.name.localeCompare(b.name);
+    }
+    if (sort === "recent") {
+      return b.last_year - a.last_year || a.name.localeCompare(b.name);
+    }
+    return a.name.localeCompare(b.name);
+  });
 
   // Convert filtered data to paginated response
   const page = params.page || 1;
@@ -234,6 +249,7 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
       categoriesLogic: params.categoriesLogic,
       techsLogic: params.techsLogic,
       topicsLogic: params.topicsLogic,
+      sort: params.sort,
     }),
     loadTechStackIndexData(),
     loadOrganizationsIndexData()

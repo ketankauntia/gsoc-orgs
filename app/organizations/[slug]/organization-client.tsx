@@ -202,15 +202,12 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
     if (org.social?.blog) {
       links.push({ name: 'Blogs', url: org.social.blog, icon: socialIcons.blog });
     }
-    if (org.contact?.guide_url) {
-      links.push({ name: 'Contribution Guidelines', url: org.contact.guide_url, icon: FileText });
-    }
-    
     return links;
-  }, [org.social, org.contact]);
+  }, [org.social]);
 
-  const websiteUrl = org.social?.blog || org.contact?.guide_url;
-  const githubUrl = org.social?.github;
+  const websiteUrl = org.url || org.social?.blog;
+  const codeHostUrl = org.social?.github || org.social?.gitlab;
+  const codeHostName = org.social?.github ? 'GitHub' : 'GitLab';
 
   // Calculate visible technologies and topics
   const maxVisibleTech = ITEMS_PER_ROW * VISIBLE_ROWS;
@@ -282,16 +279,50 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                         </a>
                       </Button>
                     )}
-                    {githubUrl && (
+                    {codeHostUrl && (
                       <Button variant="outline" size="sm" asChild>
                         <a
-                          href={githubUrl}
+                          href={codeHostUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <Github className="w-4 h-4" />
-                          GitHub
+                          {codeHostName}
                           <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </Button>
+                    )}
+                    {org.contact?.guide_url && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a
+                          href={org.contact.guide_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FileText className="w-4 h-4" />
+                          Contribution guide
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </Button>
+                    )}
+                    {org.contact?.ideas_url && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a
+                          href={org.contact.ideas_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <BookOpen className="w-4 h-4" />
+                          Ideas list
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </Button>
+                    )}
+                    {availableYears.length > 0 && (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href="#past-projects">
+                          <TrendingUp className="w-4 h-4" />
+                          Past projects
                         </a>
                       </Button>
                     )}
@@ -416,7 +447,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
             )}
 
             {/* Past Projects */}
-            <section className="space-y-6">
+            <section id="past-projects" className="scroll-mt-28 space-y-6">
               <Heading variant="small" className="text-lg text-center">
                 Past Projects
               </Heading>
@@ -600,4 +631,3 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
     </div>
   );
 }
-

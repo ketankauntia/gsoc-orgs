@@ -34,6 +34,7 @@ export async function GET(request: NextRequest) {
     const topics = parseList(searchParams.get('topics'))
     const difficulties = parseList(searchParams.get('difficulties'))
     const firstTimeOnly = searchParams.get('firstTimeOnly') === 'true'
+    const sort = searchParams.get('sort') || 'name'
     
     // Parse logic modes (AND or OR for each filter category)
     const yearsLogic = (searchParams.get('yearsLogic') || 'OR') as 'AND' | 'OR'
@@ -166,11 +167,18 @@ export async function GET(request: NextRequest) {
       whereConditions.length > 0 ? { AND: whereConditions } : {}
 
     // Fetch organizations with pagination
+    const orderBy: Prisma.organizationsOrderByWithRelationInput[] =
+      sort === 'projects'
+        ? [{ total_projects: 'desc' }, { name: 'asc' }]
+        : sort === 'recent'
+          ? [{ last_year: 'desc' }, { name: 'asc' }]
+          : [{ name: 'asc' }]
+
     const items = await prisma.organizations.findMany({
       where,
       skip,
       take: limit,
-      orderBy: { name: 'asc' },
+      orderBy,
       select: {
         id: true,
         slug: true,
