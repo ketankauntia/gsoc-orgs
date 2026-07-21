@@ -32,6 +32,7 @@ function loadEditablePosts(): EditablePost[] {
         cornerstone: Boolean(data.cornerstone),
         noindex: Boolean(data.noindex),
         canonical: (data.canonical as string) ?? "",
+        ogImage: (data.ogImage as string) ?? "",
         coverTone: (data.coverTone as string) ?? "primary",
         keyphrase: (data.keyphrase as string) ?? "",
         tldr: ((data.tldr as string) ?? "").trim(),

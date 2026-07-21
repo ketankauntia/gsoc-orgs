@@ -121,7 +121,7 @@ export function runSeoChecks(draft: DraftInput): SeoCheck[] {
     status: statTotal >= statTarget ? "pass" : statTotal >= 1 ? "warn" : "fail",
     detail:
       statTotal >= statTarget
-        ? `${statTotal} concrete figure${statTotal === 1 ? "" : "s"} — statistics lift AI citations most`
+        ? `${statTotal} concrete figure${statTotal === 1 ? "" : "s"}; verify every figure against its source`
         : `Add ${statTarget} concrete stat${statTarget === 1 ? "" : "s"} (a %, count, or measured number). Statistics are the #1 GEO lever.`,
   });
 
@@ -159,7 +159,7 @@ export function runSeoChecks(draft: DraftInput): SeoCheck[] {
 
   // ---- Structure group (GEO blocks) ----
   const tldrLen = draft.tldr.trim().length;
-  checks.push({ id: "tldr", group: "structure", label: "TL;DR summary", status: tldrLen === 0 ? "fail" : tldrLen >= 150 && tldrLen <= 500 ? "pass" : "warn", detail: tldrLen === 0 ? "Missing — the highest-leverage block for AI citations" : `${tldrLen} chars — aim for 150–500 (2–4 answer-first sentences)` });
+  checks.push({ id: "tldr", group: "structure", label: "In brief summary", status: tldrLen === 0 ? "fail" : tldrLen >= 150 && tldrLen <= 500 ? "pass" : "warn", detail: tldrLen === 0 ? "Missing; give readers a concise orientation before the article" : `${tldrLen} chars; aim for 150–500 across 2–4 direct sentences` });
 
   checks.push({ id: "takeaways", group: "structure", label: "Key takeaways", status: draft.keyTakeaways.length >= 3 ? "pass" : draft.keyTakeaways.length >= 1 ? "warn" : "fail", detail: `${draft.keyTakeaways.length} — aim for 3–5 extractable bullets` });
 

@@ -50,6 +50,7 @@ export type EditablePost = {
   cornerstone: boolean;
   noindex: boolean;
   canonical: string;
+  ogImage: string;
   coverTone: string;
   keyphrase: string;
   tldr: string;
@@ -73,6 +74,7 @@ function blankPost(): EditablePost {
     cornerstone: false,
     noindex: false,
     canonical: "",
+    ogImage: "",
     coverTone: "primary",
     keyphrase: "",
     tldr: "",
@@ -236,6 +238,7 @@ export function PostEditor({
       cornerstone: rest.cornerstone || undefined,
       noindex: rest.noindex || undefined,
       canonical: rest.canonical || undefined,
+      ogImage: rest.ogImage || undefined,
       coverTone: rest.coverTone,
       keyphrase: rest.keyphrase,
       tldr: rest.tldr,
@@ -341,7 +344,7 @@ export function PostEditor({
           <TabsList className="w-full">
             <TabsTrigger value="content" className="flex-1">Content</TabsTrigger>
             <TabsTrigger value="meta" className="flex-1">Meta &amp; SEO</TabsTrigger>
-            <TabsTrigger value="blocks" className="flex-1">TL;DR / FAQs</TabsTrigger>
+            <TabsTrigger value="blocks" className="flex-1">Summary / FAQs</TabsTrigger>
           </TabsList>
 
           <TabsContent value="content" className="space-y-4">
@@ -458,6 +461,16 @@ export function PostEditor({
                 placeholder="https://GSoC Organizations.in/blog/post/original-slug"
               />
             </Field>
+            <Field label="Hero and social image path (optional)">
+              <Input
+                value={draft.ogImage}
+                onChange={(e) => set("ogImage", e.target.value)}
+                placeholder="/blog/my-post/hero.jpg"
+              />
+              <p className="text-xs text-muted-foreground">
+                Upload the approved 1200 x 630 image in the content editor, then paste its returned path here.
+              </p>
+            </Field>
             <label className="flex items-center gap-2 text-sm">
               <Switch checked={draft.noindex} onCheckedChange={(v) => set("noindex", v)} />
               No-index this post (emits robots noindex + kept out of the sitemap; still reachable by URL)
@@ -465,7 +478,7 @@ export function PostEditor({
           </TabsContent>
 
           <TabsContent value="blocks" className="space-y-4">
-            <Field label={`TL;DR — answer-first summary (${draft.tldr.length} chars)`}>
+            <Field label={`In brief (${draft.tldr.length} chars)`}>
               <Textarea value={draft.tldr} onChange={(e) => set("tldr", e.target.value)} className="min-h-28" />
             </Field>
             <Field label="Key takeaways (one per line)">
@@ -555,8 +568,8 @@ export function PostEditor({
                 <p className="mt-2 text-muted-foreground">{draft.description}</p>
               </div>
               {draft.tldr && <TldrBlock text={draft.tldr} />}
-              <KeyTakeaways items={draft.keyTakeaways} />
               <PostBody sections={sections} />
+              <KeyTakeaways items={draft.keyTakeaways} />
               <FaqSection faqs={draft.faqs.filter((f) => f.q).map((f) => ({ question: f.q, answer: f.a }))} />
             </div>
           </TabsContent>

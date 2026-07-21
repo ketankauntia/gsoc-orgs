@@ -77,10 +77,13 @@ export function PreviewClient() {
         </div>
 
         <article className="mt-8 space-y-8">
-          <PostCover post={{ coverTone, category: draft.category || "Category" }} className="h-56 sm:h-72" />
+          <PostCover
+            post={{ coverTone, category: draft.category || "Category", ogImage: draft.ogImage || undefined }}
+            className="h-56 sm:h-72"
+          />
           {draft.tldr && <TldrBlock text={draft.tldr} />}
-          <KeyTakeaways items={draft.keyTakeaways} />
           <PostBody sections={sections} />
+          <KeyTakeaways items={draft.keyTakeaways} />
           <Separator />
           <FaqSection faqs={draft.faqs.filter((f) => f.q).map((f) => ({ question: f.q, answer: f.a }))} />
         </article>

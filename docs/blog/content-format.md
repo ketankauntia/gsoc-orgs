@@ -19,10 +19,10 @@ Posts are markdown files in `content/posts/<slug>.md`. The filename becomes the 
 | `noindex` | no | Excludes from sitemap and emits robots noindex. |
 | `canonical` | no | Override the self-canonical URL. |
 | `coverTone` | no | `primary`, `chart-2`, `chart-3`, or `chart-5`. |
-| `ogImage` | no | Per-post OG image path; falls back to the site default. |
-| `tldr` | yes | Answer-first summary shown near the top of the article. |
+| `ogImage` | no | Per-post hero and OG image path; falls back to the site default and gradient cover. |
+| `tldr` | yes | Short reader-facing "In brief" summary shown near the top of the article. |
 | `keyphrase` | no | Focus keyphrase for editor checks; not rendered. |
-| `keyTakeaways` | no | List of bullets. |
+| `keyTakeaways` | no | List of concluding bullets rendered after the article body. |
 | `faqs` | no | List of `{q, a}` entries. |
 
 Reading time is computed automatically.

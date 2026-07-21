@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { Post } from "@/lib/blog/types";
 
@@ -8,12 +9,12 @@ const tones: Record<Post["coverTone"], string> = {
   "chart-5": "from-chart-5/90 to-chart-5/40",
 };
 
-/** Gradient placeholder cover until real post imagery exists. Reused by cards and the post hero. */
+/** Uses approved post art when available and falls back to the branded gradient. */
 export function PostCover({
   post,
   className,
 }: {
-  post: Pick<Post, "coverTone" | "category">;
+  post: Pick<Post, "coverTone" | "category" | "ogImage">;
   className?: string;
 }) {
   return (
@@ -25,7 +26,17 @@ export function PostCover({
         className,
       )}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,white_0%,transparent_45%)] opacity-20" />
+      {post.ogImage ? (
+        <Image
+          src={post.ogImage}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 768px, 100vw"
+          className="object-cover"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,white_0%,transparent_45%)] opacity-20" />
+      )}
       <span className="relative m-4 rounded-md bg-background/85 px-2 py-1 text-xs font-medium text-foreground">
         {post.category}
       </span>

@@ -60,7 +60,7 @@ export type Post = {
   /** Optional per-post OG image path; falls back to the site default. */
   ogImage?: string;
   authorSlug: string;
-  /** Answer-first AI summary shown in the TL;DR block — the text LLMs should lift. */
+  /** Short reader-facing orientation shown in the "In brief" block. */
   tldr: string;
   keyTakeaways: string[];
   sections: PostSection[];

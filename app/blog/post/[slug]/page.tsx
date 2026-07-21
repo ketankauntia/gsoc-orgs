@@ -161,6 +161,7 @@ export default async function BlogPostPage({
 
   const articleTail = (
     <>
+      <KeyTakeaways items={post.keyTakeaways} />
       <div className="flex flex-wrap gap-2">
         {post.tags.map((tag) =>
           features.tagPages ? (
@@ -203,7 +204,6 @@ export default async function BlogPostPage({
         <article className="mt-8 space-y-8">
           <PostCover post={post} className="h-56 sm:h-72" />
           <TldrBlock text={post.tldr} />
-          <KeyTakeaways items={post.keyTakeaways} />
           {tocCard}
           <PostBody sections={post.sections} />
           {articleTail}
@@ -246,7 +246,6 @@ export default async function BlogPostPage({
           </header>
           <article className="mt-8 space-y-8">
             <TldrBlock text={post.tldr} />
-            <KeyTakeaways items={post.keyTakeaways} />
             {tocCard}
             <PostBody sections={post.sections} />
             {articleTail}
@@ -279,7 +278,6 @@ export default async function BlogPostPage({
           <article className="mt-8 space-y-8">
             <PostCover post={post} className="h-56 sm:h-72" />
             <TldrBlock text={post.tldr} />
-            <KeyTakeaways items={post.keyTakeaways} />
             {/* Mobile TOC — sidebar is hidden below lg */}
             <div className="lg:hidden">{tocCard}</div>
             <PostBody sections={post.sections} />
