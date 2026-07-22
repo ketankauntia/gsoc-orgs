@@ -1,5 +1,5 @@
-import { IconBrandLinkedin, IconBrandX, IconWorld } from "@tabler/icons-react";
-import { Avatar, AvatarFallback } from "@/components/blog-ui/avatar";
+import { IconBrandGithub, IconBrandLinkedin, IconBrandX, IconWorld } from "@tabler/icons-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/blog-ui/avatar";
 import { Button } from "@/components/blog-ui/button";
 import type { Author } from "@/lib/blog/types";
 
@@ -12,6 +12,7 @@ export function AuthorCard({ author, profileHref }: { author: Author; profileHre
   const rel = author.followLinks ? "noreferrer" : "nofollow noreferrer";
   const links = [
     { url: author.websiteUrl, label: `${author.name}'s website`, Icon: IconWorld },
+    { url: author.githubUrl, label: `${author.name} on GitHub`, Icon: IconBrandGithub },
     { url: author.linkedinUrl, label: `${author.name} on LinkedIn`, Icon: IconBrandLinkedin },
     { url: author.twitterUrl, label: `${author.name} on X`, Icon: IconBrandX },
   ].filter((l): l is { url: string; label: string; Icon: typeof IconWorld } => Boolean(l.url));
@@ -19,6 +20,7 @@ export function AuthorCard({ author, profileHref }: { author: Author; profileHre
   return (
     <aside aria-label="About the author" className="flex gap-4 rounded-xl border bg-card p-5">
       <Avatar className="size-12">
+        {author.avatarUrl && <AvatarImage src={author.avatarUrl} alt={author.name} />}
         <AvatarFallback className="bg-primary/10 font-semibold text-primary">
           {author.initials}
         </AvatarFallback>

@@ -4,6 +4,8 @@ export type Author = {
   role: string;
   bio: string;
   initials: string;
+  avatarUrl?: string;
+  githubUrl?: string;
   linkedinUrl?: string;
   twitterUrl?: string;
   /** Author's personal/company website. */

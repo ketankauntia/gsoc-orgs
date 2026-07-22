@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import {
   IconAlertTriangle,
   IconChevronDown,
@@ -27,6 +28,7 @@ import { Switch } from "@/components/blog-ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/blog-ui/tabs";
 import { Textarea } from "@/components/blog-ui/textarea";
 import { FaqSection } from "@/components/blog/faq-section";
+import { AuthorCard } from "@/components/blog/author-card";
 import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { PostBody } from "@/components/blog/post-body";
 import { TldrBlock } from "@/components/blog/tldr-block";
@@ -34,6 +36,8 @@ import { parseSections, slugify } from "@/lib/blog/parse";
 import { runSeoChecks, seoScore, type SeoCheck } from "@/lib/editor/seo-checks";
 import { suggestInternalLinks, type LinkCandidate } from "@/lib/editor/link-suggestions";
 import { RichEditor } from "@/components/editor/rich-editor";
+import { AuthorManager } from "@/components/editor/author-manager";
+import type { Author } from "@/lib/blog/types";
 import { cn } from "@/lib/utils";
 
 export type EditablePost = {
@@ -68,7 +72,7 @@ function blankPost(): EditablePost {
     tags: [],
     publishedAt: new Date().toISOString().slice(0, 10),
     updatedAt: "",
-    author: "GSoC Organizations-team",
+    author: "gsoc-orgs-team",
     featured: false,
     draft: true,
     cornerstone: false,
@@ -97,12 +101,12 @@ function moveItem<T>(arr: T[], from: number, to: number): T[] {
 
 export function PostEditor({
   posts,
-  authorSlugs,
+  authors,
   canSave,
   initialSlug,
 }: {
   posts: EditablePost[];
-  authorSlugs: string[];
+  authors: Author[];
   canSave: boolean;
   initialSlug?: string;
 }) {
@@ -114,6 +118,7 @@ export function PostEditor({
   const [saveMessage, setSaveMessage] = useState("");
   const [restorable, setRestorable] = useState<EditablePost | null>(null);
   const [editMode, setEditMode] = useState<"rich" | "markdown">("rich");
+  const [availableAuthors, setAvailableAuthors] = useState(authors);
 
   const autosaveKey = (slug: string) => `be-editor:autosave:${slug || "__new__"}`;
 
@@ -135,7 +140,9 @@ export function PostEditor({
       const saved = localStorage.getItem(autosaveKey(draft.slug));
       if (saved) {
         const parsed = JSON.parse(saved) as EditablePost;
-        if (JSON.stringify(parsed) !== JSON.stringify(draft)) setRestorable(parsed);
+        if (JSON.stringify(parsed) !== JSON.stringify(draft)) {
+          queueMicrotask(() => setRestorable(parsed));
+        }
       }
     } catch {
       /* ignore */
@@ -162,6 +169,7 @@ export function PostEditor({
     [draft],
   );
   const score = seoScore(checks);
+  const selectedAuthor = availableAuthors.find((author) => author.slug === draft.author) ?? availableAuthors[0];
 
   const linkSuggestions = useMemo(
     () =>
@@ -305,7 +313,7 @@ export function PostEditor({
 
         <div className="ml-auto flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="/dashboard">Dashboard</a>
+            <Link href="/dashboard">Dashboard</Link>
           </Button>
           <ScoreBadge score={score} />
           <Button variant="outline" onClick={openPreview}>
@@ -428,14 +436,13 @@ export function PostEditor({
                 />
               </Field>
               <Field label="Author">
-                <Select value={draft.author} onValueChange={(v) => set("author", v)}>
-                  <SelectTrigger><SelectValue /></SelectTrigger>
-                  <SelectContent>
-                    {authorSlugs.map((slug) => (
-                      <SelectItem key={slug} value={slug}>{slug}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <AuthorManager
+                  authors={availableAuthors}
+                  value={draft.author}
+                  onChange={(value) => set("author", value)}
+                  onCreated={(author) => setAvailableAuthors((current) => [...current, author])}
+                  canSave={canSave}
+                />
               </Field>
               <Field label="Cover tone">
                 <Select value={draft.coverTone} onValueChange={(v) => set("coverTone", v)}>
@@ -570,6 +577,7 @@ export function PostEditor({
               {draft.tldr && <TldrBlock text={draft.tldr} />}
               <PostBody sections={sections} />
               <KeyTakeaways items={draft.keyTakeaways} />
+              {selectedAuthor && <AuthorCard author={selectedAuthor} />}
               <FaqSection faqs={draft.faqs.filter((f) => f.q).map((f) => ({ question: f.q, answer: f.a }))} />
             </div>
           </TabsContent>

@@ -50,7 +50,7 @@ export default async function AuthorPage({
     description: author.bio,
     ...(author.websiteUrl && { url: author.websiteUrl }),
     ...((() => {
-      const sameAs = [author.websiteUrl, author.linkedinUrl, author.twitterUrl].filter(Boolean);
+      const sameAs = [author.websiteUrl, author.githubUrl, author.linkedinUrl, author.twitterUrl].filter(Boolean);
       return sameAs.length > 0 ? { sameAs } : {};
     })()),
   });

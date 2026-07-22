@@ -6,6 +6,7 @@ import { IconCalendar, IconClock } from "@tabler/icons-react";
 import { Badge } from "@/components/blog-ui/badge";
 import { Separator } from "@/components/blog-ui/separator";
 import { FaqSection } from "@/components/blog/faq-section";
+import { AuthorCard } from "@/components/blog/author-card";
 import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { PostBody } from "@/components/blog/post-body";
 import { PostBreadcrumbs } from "@/components/blog/post-breadcrumbs";
@@ -13,6 +14,7 @@ import { PostCover } from "@/components/blog/post-cover";
 import { TldrBlock } from "@/components/blog/tldr-block";
 import { parseSections, estimateReadingMinutes } from "@/lib/blog/parse";
 import type { EditablePost } from "@/components/editor/post-editor";
+import { getAuthor } from "@/lib/blog/authors";
 
 /** Renders the editor's autosaved draft exactly as the live post page would. */
 export function PreviewClient() {
@@ -23,7 +25,7 @@ export function PreviewClient() {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(`be-editor:autosave:${key === "__new__" ? "__new__" : key}`);
-      if (raw) setDraft(JSON.parse(raw) as EditablePost);
+      if (raw) queueMicrotask(() => setDraft(JSON.parse(raw) as EditablePost));
     } catch {
       /* ignore */
     }
@@ -84,6 +86,7 @@ export function PreviewClient() {
           {draft.tldr && <TldrBlock text={draft.tldr} />}
           <PostBody sections={sections} />
           <KeyTakeaways items={draft.keyTakeaways} />
+          <AuthorCard author={getAuthor(draft.author)} />
           <Separator />
           <FaqSection faqs={draft.faqs.filter((f) => f.q).map((f) => ({ question: f.q, answer: f.a }))} />
         </article>

@@ -62,7 +62,7 @@ export default async function EditorPage({
   return (
     <PostEditor
       posts={loadEditablePosts()}
-      authorSlugs={authors.map((a) => a.slug)}
+      authors={authors}
       canSave={process.env.NODE_ENV === "development"}
       initialSlug={slug}
     />
