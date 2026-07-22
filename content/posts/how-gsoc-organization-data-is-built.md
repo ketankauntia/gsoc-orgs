@@ -10,6 +10,31 @@ draft: true
 cornerstone: true
 noindex: false
 coverTone: chart-2
+images:
+  - id: gsoc-data-lineage-hero
+    kind: hero
+    purpose: Explain the data pipeline and its review points without presenting a generic analytics dashboard.
+    filename: gsoc-data-lineage.webp
+    placement: hero
+    prompt: >-
+      Sophisticated editorial data-lineage illustration. Raw structured records flow through identity matching, transformation, and validation checkpoints, then branch into five clean destination datasets. Precise pipes and document nodes, one human-review checkpoint shown abstractly, one restrained warning marker for limitations, deep navy, muted indigo, teal, warm off-white, coral only for warnings, flat vector information design, subtle grid texture, no words, no dashboards, no people, no logos, no glowing database cylinders, no random charts. 1200 by 630.
+    status: brief
+    alt: GSoC source records flowing through matching, transformation, validation, and published data views.
+    caption: Organization pages combine source records, identity matching, transformations, and validation controls.
+    width: 1200
+    height: 630
+  - id: data-source-lineage
+    kind: diagram
+    purpose: Distinguish implemented data steps, derived site analysis, unknown values, and planned provenance controls.
+    filename: data-source-lineage.svg
+    placement: after-section:current-validation-controls
+    prompt: >-
+      Create a clean 1600 by 900 SVG data-lineage diagram. Sources: Official GSoC current-year organization API, Compiled historical archive, Documented third-party enrichment. Pipeline: Raw snapshot, Identity match, Transform, Validation, Release manifest. Outputs: Organizations, Years, Projects, Technologies, Topics. Include badges for Official source, Site analysis, Unknown, and Not finalized. Use solid lines only for implemented steps and dashed lines for the planned release manifest and field-level provenance. Use deep navy, muted indigo, teal, warm off-white, and restrained coral warnings, with accessible contrast and manually proofread labels. No dashboards, people, logos, glowing database cylinders, gradients, or decorative charts.
+    status: brief
+    alt: Data-lineage diagram separating GSoC sources, transformations, validation, outputs, and planned controls.
+    caption: Solid paths show implemented processing, while dashed paths identify provenance controls that still need to be built.
+    width: 1600
+    height: 900
 keyphrase: gsoc data
 tldr: This site combines official GSoC organization records with a compiled historical archive, then builds organization, year, technology, topic, and project views from that dataset. Current-year organization ingestion is reproducible, but historical field-level provenance and tag normalization are not yet complete, so archive metrics must be treated as site analysis rather than official Google statistics.
 keyTakeaways:

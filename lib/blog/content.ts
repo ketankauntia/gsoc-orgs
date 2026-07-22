@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { cache } from "react";
 import matter from "gray-matter";
-import type { Faq, Post, PostBlock } from "./types";
+import type { Faq, Post, PostBlock, PostImage } from "./types";
 import { estimateReadingMinutes, parseSections, slugify } from "./parse";
 
 /**
@@ -27,6 +27,7 @@ type Frontmatter = {
   canonical?: string;
   coverTone?: Post["coverTone"];
   ogImage?: string;
+  images?: PostImage[];
   tldr: string;
   keyTakeaways?: string[];
   faqs?: { q: string; a: string }[];
@@ -38,6 +39,10 @@ function loadPost(file: string): Post {
   const { data, content } = matter(raw);
   const fm = data as Frontmatter;
   const faqs: Faq[] = (fm.faqs ?? []).map((f) => ({ question: f.q, answer: f.a }));
+  const images = fm.images ?? [];
+  const approvedHero = images.find(
+    (image) => image.placement === "hero" && image.src && ["approved", "placed"].includes(image.status),
+  );
 
   return {
     slug,
@@ -55,7 +60,8 @@ function loadPost(file: string): Post {
     canonical: fm.canonical,
     authorSlug: fm.author ?? "gsoc-orgs-team",
     coverTone: fm.coverTone ?? "primary",
-    ogImage: fm.ogImage,
+    ogImage: fm.ogImage ?? approvedHero?.src,
+    images,
     tldr: fm.tldr,
     keyTakeaways: fm.keyTakeaways ?? [],
     sections: parseSections(content),
@@ -191,9 +197,13 @@ export function paginate<T>(items: T[], page: number, perPage = POSTS_PER_PAGE):
 
 /** All image srcs used in a post body (for ImageObject + image sitemap). */
 export function getPostImages(post: Post): { src: string; alt: string; caption?: string }[] {
-  return post.sections.flatMap((s) =>
+  const bodyImages = post.sections.flatMap((s) =>
     s.blocks.filter((b) => b.type === "image").map((b) => (b.type === "image" ? b : null)),
   ).filter((b): b is Extract<PostBlock, { type: "image" }> => b !== null);
+  const plannedImages = post.images
+    .filter((image) => image.src && ["approved", "placed"].includes(image.status))
+    .map((image) => ({ src: image.src!, alt: image.alt, caption: image.caption }));
+  return [...bodyImages, ...plannedImages];
 }
 
 /**

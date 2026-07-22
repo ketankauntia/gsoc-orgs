@@ -10,6 +10,31 @@ featured: true
 draft: true
 cornerstone: true
 coverTone: chart-3
+images:
+  - id: organization-shortlist-hero
+    kind: hero
+    purpose: Show how evidence narrows a broad organization list into a defensible shortlist.
+    filename: organization-evidence-shortlist.webp
+    placement: hero
+    prompt: >-
+      Elegant editorial data-visual illustration of a large field of abstract open-source organization cards narrowing through several evidence filters into a focused shortlist of three candidates. Filters represented by precise translucent bands and check markers, deep navy, indigo, teal, warm off-white and restrained coral, flat vector geometry, generous negative space, subtle paper grain, analytical and calm, no words, no logos, no trophy, no ranking podium, no people, no generic AI glow. 1200 by 630.
+    status: brief
+    alt: A broad set of open-source organizations narrowing through evidence filters into three candidates.
+    caption: Historical data is most useful for discovery before current evidence determines the final shortlist.
+    width: 1200
+    height: 630
+  - id: organization-selection-scorecard
+    kind: chart
+    purpose: Make the article's weighted selection rubric easy to apply without inventing organization scores.
+    filename: organization-selection-scorecard.svg
+    placement: after-section:step-9-score-evidence-with-a-transparent-rubric
+    prompt: >-
+      Create a clean 1600 by 900 SVG weighted scorecard using the six exact categories and weights from the article section Step 9: Score Evidence With a Transparent Rubric. Include a separate confidence scale labeled Low, Medium, and High. Do not fill in or imply a score for any real or fictional organization. Use accessible deep navy, muted indigo, teal, warm off-white, and restrained coral. Use precise horizontal bars, clear alignment, manually proofread labels, generous spacing, and no logos, people, podiums, gradients, or decorative charts.
+    status: brief
+    alt: Blank weighted scorecard for comparing GSoC organizations using evidence and confidence levels.
+    caption: Score the quality of current evidence separately from the apparent fit of an organization.
+    width: 1600
+    height: 900
 keyphrase: choose a gsoc organization
 tldr: Choose a GSoC organization by testing fit in stages. Use historical data to discover candidates, then verify each candidate against its current ideas page, contributor guide, repository activity, communication quality, project scope, and your ability to make a useful contribution before the deadline.
 keyTakeaways:

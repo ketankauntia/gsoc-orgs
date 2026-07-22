@@ -9,6 +9,31 @@ author: gsoc-orgs-team
 draft: true
 cornerstone: true
 coverTone: primary
+images:
+  - id: proposal-blueprint-hero
+    kind: hero
+    purpose: Show a proposal as an evidence-backed engineering plan rather than a generic essay.
+    filename: proposal-blueprint.webp
+    placement: hero
+    prompt: >-
+      Premium editorial blueprint illustration for a technical open-source proposal. A modular plan assembled from connected sections, strong foundation blocks leading to technical architecture, deliverables, validation checks, risks, and milestones. Deep navy blueprint lines on warm off-white rather than bright blue, muted indigo and teal modules, restrained coral risk markers, crisp flat vector geometry, generous space, no readable words, no people, no clipboards, no light bulbs, no logos, no fake code. 1200 by 630.
+    status: brief
+    alt: Modular GSoC proposal blueprint connecting evidence, technical work, validation, risks, and milestones.
+    caption: A strong proposal connects the problem, approach, deliverables, validation, risks, and schedule.
+    width: 1200
+    height: 630
+  - id: proposal-evidence-chain
+    kind: diagram
+    purpose: Show how proposal claims become reviewable milestone exit conditions.
+    filename: proposal-evidence-chain.svg
+    placement: after-section:turn-deliverables-into-acceptance-criteria
+    prompt: >-
+      Create a clean 1600 by 900 SVG evidence chain with these exact connected stages: Problem evidence, Technical approach, Deliverables, Acceptance criteria, Tests and docs, Milestone exit condition. Add supporting inputs below: Related work, Risks, Experience, Outside commitments. Use deep navy, muted indigo, teal, warm off-white, and restrained coral for risk inputs. Use crisp flat geometry, accessible contrast, manually proofread labels, generous spacing, and no people, clipboards, logos, fake code, gradients, or decorative icons.
+    status: brief
+    alt: Proposal evidence chain from problem evidence to a measurable milestone exit condition.
+    caption: Each proposal deliverable should end in evidence that reviewers can observe and verify.
+    width: 1600
+    height: 900
 keyphrase: gsoc proposal template
 tldr: A strong GSoC proposal follows the organization's required format and shows evidence that you understand its problem, codebase, community, and constraints. Use this template as a planning scaffold, replace every prompt with original project-specific evidence, and submit early enough to receive mentor feedback.
 keyTakeaways:

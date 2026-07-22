@@ -31,13 +31,15 @@ import { FaqSection } from "@/components/blog/faq-section";
 import { AuthorCard } from "@/components/blog/author-card";
 import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { PostBody } from "@/components/blog/post-body";
+import { PostCover } from "@/components/blog/post-cover";
 import { TldrBlock } from "@/components/blog/tldr-block";
 import { parseSections, slugify } from "@/lib/blog/parse";
 import { runSeoChecks, seoScore, type SeoCheck } from "@/lib/editor/seo-checks";
 import { suggestInternalLinks, type LinkCandidate } from "@/lib/editor/link-suggestions";
 import { RichEditor } from "@/components/editor/rich-editor";
 import { AuthorManager } from "@/components/editor/author-manager";
-import type { Author } from "@/lib/blog/types";
+import { PostImagesEditor } from "@/components/editor/post-images-editor";
+import type { Author, Post, PostImage } from "@/lib/blog/types";
 import { cn } from "@/lib/utils";
 
 export type EditablePost = {
@@ -55,6 +57,7 @@ export type EditablePost = {
   noindex: boolean;
   canonical: string;
   ogImage: string;
+  images: PostImage[];
   coverTone: string;
   keyphrase: string;
   tldr: string;
@@ -79,6 +82,7 @@ function blankPost(): EditablePost {
     noindex: false,
     canonical: "",
     ogImage: "",
+    images: [],
     coverTone: "primary",
     keyphrase: "",
     tldr: "",
@@ -165,11 +169,14 @@ export function PostEditor({
         body: draft.body,
         updatedAt: draft.updatedAt || draft.publishedAt,
         cornerstone: draft.cornerstone,
+        images: draft.images,
       }),
     [draft],
   );
   const score = seoScore(checks);
   const selectedAuthor = availableAuthors.find((author) => author.slug === draft.author) ?? availableAuthors[0];
+  const previewHero = draft.images.find((image) => image.placement === "hero" && image.src)?.src;
+  const previewTone = (COVER_TONES.includes(draft.coverTone) ? draft.coverTone : "primary") as Post["coverTone"];
 
   const linkSuggestions = useMemo(
     () =>
@@ -247,6 +254,7 @@ export function PostEditor({
       noindex: rest.noindex || undefined,
       canonical: rest.canonical || undefined,
       ogImage: rest.ogImage || undefined,
+      images: rest.images,
       coverTone: rest.coverTone,
       keyphrase: rest.keyphrase,
       tldr: rest.tldr,
@@ -353,6 +361,7 @@ export function PostEditor({
             <TabsTrigger value="content" className="flex-1">Content</TabsTrigger>
             <TabsTrigger value="meta" className="flex-1">Meta &amp; SEO</TabsTrigger>
             <TabsTrigger value="blocks" className="flex-1">Summary / FAQs</TabsTrigger>
+            <TabsTrigger value="images" className="flex-1">Images</TabsTrigger>
           </TabsList>
 
           <TabsContent value="content" className="space-y-4">
@@ -553,6 +562,16 @@ export function PostEditor({
               ))}
             </div>
           </TabsContent>
+
+          <TabsContent value="images" className="space-y-4">
+            <PostImagesEditor
+              images={draft.images}
+              sections={sections}
+              slug={draft.slug}
+              canUpload={canSave}
+              onChange={(images) => set("images", images)}
+            />
+          </TabsContent>
         </Tabs>
 
         {/* Right: live preview + SEO checks */}
@@ -574,8 +593,16 @@ export function PostEditor({
                 </h1>
                 <p className="mt-2 text-muted-foreground">{draft.description}</p>
               </div>
+              <PostCover
+                post={{
+                  coverTone: previewTone,
+                  category: draft.category || "Category",
+                  ogImage: draft.ogImage || previewHero || undefined,
+                }}
+                className="h-56"
+              />
               {draft.tldr && <TldrBlock text={draft.tldr} />}
-              <PostBody sections={sections} />
+              <PostBody sections={sections} images={draft.images} showUnapproved />
               <KeyTakeaways items={draft.keyTakeaways} />
               {selectedAuthor && <AuthorCard author={selectedAuthor} />}
               <FaqSection faqs={draft.faqs.filter((f) => f.q).map((f) => ({ question: f.q, answer: f.a }))} />

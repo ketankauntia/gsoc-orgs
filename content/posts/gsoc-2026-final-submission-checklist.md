@@ -10,6 +10,31 @@ featured: true
 draft: true
 cornerstone: false
 coverTone: primary
+images:
+  - id: final-submission-hero
+    kind: hero
+    purpose: Show the final work product as a verifiable evidence package, not a ceremonial submission.
+    filename: final-submission-evidence-map.webp
+    placement: hero
+    prompt: >-
+      Premium editorial information-design illustration for an open-source engineering guide. A single structured final work-product dossier at the center, connected to five precise abstract artifacts representing source code, automated tests, documentation, merge status, and remaining work. Deep navy and muted indigo on warm off-white, restrained teal and coral accents, thin crisp lines, generous negative space, subtle grid texture, balanced asymmetrical composition, no people, no logos, no words, no random code, no 3D cartoon style, no glowing effects. 1200 by 630.
+    status: brief
+    alt: Final work-product dossier connected to code, tests, documentation, merge status, and remaining work.
+    caption: A complete final submission connects every project claim to evidence a mentor can verify.
+    width: 1200
+    height: 630
+  - id: final-work-product-structure
+    kind: diagram
+    purpose: Give contributors a scannable structure for their final work-product page.
+    filename: final-work-product-structure.svg
+    placement: after-section:build-one-stable-work-product-page
+    prompt: >-
+      Create a clean 1600 by 900 SVG information diagram titled Final work product. Connect the center node to Goals and status, Merged work, Unmerged work, Validation, and Remaining work. Add a footer strip with Stable public link and Mentor can verify without guessing. Use deep navy, muted indigo, teal, warm off-white, and one restrained coral accent. Use crisp geometry, generous spacing, accessible contrast, and manually proofread labels. No icons without meaning, gradients, shadows, logos, people, or decorative clutter.
+    status: brief
+    alt: Diagram showing the sections of a verifiable GSoC final work-product page.
+    caption: A stable final page should separate status, shipped work, unmerged work, validation, and remaining work.
+    width: 1600
+    height: 900
 keyphrase: gsoc 2026 final work product
 tldr: For a standard GSoC 2026 project, submit your final work product and final evaluation between August 17 and August 24 at 18:00 UTC. Your work link should let a reviewer identify what you completed, what was merged, what remains unmerged, and what is left to do without reconstructing the project from scattered chats and pull requests.
 keyTakeaways:

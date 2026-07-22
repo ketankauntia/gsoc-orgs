@@ -19,6 +19,23 @@ export type Faq = {
   answer: string;
 };
 
+export type PostImageStatus = "brief" | "generating" | "generated" | "approved" | "placed" | "rejected";
+
+export type PostImage = {
+  id: string;
+  kind: "hero" | "diagram" | "chart" | "screenshot" | "illustration";
+  purpose: string;
+  filename: string;
+  placement: "hero" | "after-intro" | `after-section:${string}` | "before-takeaways";
+  prompt: string;
+  status: PostImageStatus;
+  src?: string;
+  alt: string;
+  caption?: string;
+  width: number;
+  height: number;
+};
+
 /** One renderable block inside a section. Keeps content structured so the UI, TOC and (later) JSON-LD all derive from the same source. */
 export type PostBlock =
   | { type: "paragraph"; text: string }
@@ -61,6 +78,8 @@ export type Post = {
   canonical?: string;
   /** Optional per-post OG image path; falls back to the site default. */
   ogImage?: string;
+  /** Production briefs and approved assets associated with this post. */
+  images: PostImage[];
   authorSlug: string;
   /** Short reader-facing orientation shown in the "In brief" block. */
   tldr: string;

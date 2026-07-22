@@ -45,6 +45,7 @@ export function PreviewClient() {
     ? draft.coverTone
     : "primary") as "primary" | "chart-2" | "chart-3" | "chart-5";
   const readingMinutes = estimateReadingMinutes(draft.body);
+  const heroImage = draft.images.find((image) => image.placement === "hero" && image.src)?.src;
 
   return (
     <main className="mx-auto w-full max-w-shell flex-1 px-4 py-8 sm:px-6">
@@ -80,11 +81,11 @@ export function PreviewClient() {
 
         <article className="mt-8 space-y-8">
           <PostCover
-            post={{ coverTone, category: draft.category || "Category", ogImage: draft.ogImage || undefined }}
+            post={{ coverTone, category: draft.category || "Category", ogImage: draft.ogImage || heroImage || undefined }}
             className="h-56 sm:h-72"
           />
           {draft.tldr && <TldrBlock text={draft.tldr} />}
-          <PostBody sections={sections} />
+          <PostBody sections={sections} images={draft.images} showUnapproved />
           <KeyTakeaways items={draft.keyTakeaways} />
           <AuthorCard author={getAuthor(draft.author)} />
           <Separator />

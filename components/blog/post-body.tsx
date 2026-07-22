@@ -1,29 +1,74 @@
 import { IconInfoCircle } from "@tabler/icons-react";
-import type { PostBlock, PostSection } from "@/lib/blog/types";
+import type { PostBlock, PostImage, PostSection } from "@/lib/blog/types";
 import { Inline } from "./inline";
 
 /** Renders structured sections. Headings carry ids so the TOC and deep links work; sections are self-contained for LLM extractability. */
-export function PostBody({ sections }: { sections: PostSection[] }) {
+export function PostBody({
+  sections,
+  images = [],
+  showUnapproved = false,
+}: {
+  sections: PostSection[];
+  images?: PostImage[];
+  showUnapproved?: boolean;
+}) {
+  const renderable = images.filter(
+    (image) => image.src && image.placement !== "hero" && (showUnapproved || ["approved", "placed"].includes(image.status)),
+  );
+
   return (
     <div className="space-y-section">
-      {sections.map((section) => (
-        <section key={section.id} aria-labelledby={section.heading ? section.id : undefined}>
-          {section.heading && (
-            <h2
-              id={section.id}
-              className="scroll-mt-24 font-heading text-2xl font-semibold tracking-tight"
-            >
-              {section.heading}
-            </h2>
-          )}
-          <div className="mt-4 space-y-4">
-            {section.blocks.map((block, i) => (
-              <Block key={i} block={block} />
+      {sections.map((section) => {
+        const placement = section.heading ? `after-section:${section.id}` : "after-intro";
+        return (
+          <div key={section.id} className="space-y-6">
+            <section aria-labelledby={section.heading ? section.id : undefined}>
+              {section.heading && (
+                <h2
+                  id={section.id}
+                  className="scroll-mt-24 font-heading text-2xl font-semibold tracking-tight"
+                >
+                  {section.heading}
+                </h2>
+              )}
+              <div className="mt-4 space-y-4">
+                {section.blocks.map((block, i) => (
+                  <Block key={i} block={block} />
+                ))}
+              </div>
+            </section>
+            {renderable.filter((image) => image.placement === placement).map((image) => (
+              <PostImageFigure key={image.id} image={image} />
             ))}
           </div>
-        </section>
+        );
+      })}
+      {renderable.filter((image) => image.placement === "before-takeaways").map((image) => (
+        <PostImageFigure key={image.id} image={image} />
       ))}
     </div>
+  );
+}
+
+function PostImageFigure({ image }: { image: PostImage }) {
+  return (
+    <figure>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+        decoding="async"
+        className="h-auto w-full rounded-lg border bg-card object-contain"
+      />
+      {image.caption && (
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          Fig: {image.caption}
+        </figcaption>
+      )}
+    </figure>
   );
 }
 

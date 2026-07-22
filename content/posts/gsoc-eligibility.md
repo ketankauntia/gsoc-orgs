@@ -9,6 +9,31 @@ author: gsoc-orgs-team
 draft: true
 cornerstone: true
 coverTone: chart-5
+images:
+  - id: eligibility-path-hero
+    kind: hero
+    purpose: Present eligibility as a sequence of checks while directing uncertain cases to official rules.
+    filename: eligibility-decision-path.webp
+    placement: hero
+    prompt: >-
+      Refined editorial decision-path illustration with five orderly gates and branching checkpoints, representing age, work eligibility, student or beginner status, prior participation, and residence rules. Clear geometric flow, calm trustworthy visual language, deep navy and muted indigo with teal valid paths and restrained coral review paths, warm off-white background, subtle grid, no text, no people, no passport, no flags, no legal symbols, no logos, no 3D. 1200 by 630.
+    status: brief
+    alt: Five-stage GSoC eligibility path with valid and review-required branches.
+    caption: Eligibility depends on all current program conditions, not student status alone.
+    width: 1200
+    height: 630
+  - id: gsoc-eligibility-decision-tree
+    kind: diagram
+    purpose: Let readers follow the official eligibility checks in the right order without turning uncertain cases into guessed outcomes.
+    filename: gsoc-eligibility-decision-tree.svg
+    placement: after-section:a-step-by-step-eligibility-decision-tree
+    prompt: >-
+      Create a clean 1600 by 900 SVG decision tree that follows the exact decision order in the article: age at registration, work eligibility in country of residence, student or open-source beginner status, prior GSoC acceptance, disqualifying prior roles, and current residence restrictions. Every ambiguous legal or rules branch must end with Check official rules or contact GSoC. Use deep navy, muted indigo, teal, warm off-white, and restrained coral for review-required paths. Use accessible contrast, concise manually proofread labels, and no flags, passports, legal symbols, people, logos, gradients, or 3D effects.
+    status: brief
+    alt: Decision tree for checking each current GSoC contributor eligibility requirement.
+    caption: Unclear legal or rules cases should end in an official check, not a guessed eligibility result.
+    width: 1600
+    height: 900
 keyphrase: gsoc eligibility
 tldr: GSoC applicants must be at least 18 at registration, eligible to work in their country of residence, either a student or an open-source beginner, accepted into GSoC no more than once before, and resident outside restricted locations. These conditions work together, and official rules decide edge cases.
 keyTakeaways:

@@ -205,7 +205,7 @@ export default async function BlogPostPage({
           <PostCover post={post} className="h-56 sm:h-72" />
           <TldrBlock text={post.tldr} />
           {tocCard}
-          <PostBody sections={post.sections} />
+          <PostBody sections={post.sections} images={post.images} />
           {articleTail}
         </article>
         <div className="mt-16">
@@ -247,7 +247,7 @@ export default async function BlogPostPage({
           <article className="mt-8 space-y-8">
             <TldrBlock text={post.tldr} />
             {tocCard}
-            <PostBody sections={post.sections} />
+            <PostBody sections={post.sections} images={post.images} />
             {articleTail}
           </article>
           <div className="mt-16">
@@ -280,7 +280,7 @@ export default async function BlogPostPage({
             <TldrBlock text={post.tldr} />
             {/* Mobile TOC — sidebar is hidden below lg */}
             <div className="lg:hidden">{tocCard}</div>
-            <PostBody sections={post.sections} />
+            <PostBody sections={post.sections} images={post.images} />
             {articleTail}
           </article>
         </div>

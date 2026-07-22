@@ -1,5 +1,5 @@
 import { parseSections } from "@/lib/blog/parse";
-import type { PostBlock, PostSection } from "@/lib/blog/types";
+import type { PostBlock, PostImage, PostSection } from "@/lib/blog/types";
 
 /**
  * Yoast-style SEO/readability checks. Pure functions over draft fields —
@@ -26,6 +26,7 @@ export type DraftInput = {
   faqs: { q: string; a: string }[];
   tags: string[];
   body: string;
+  images?: PostImage[];
   /** ISO date (updatedAt || publishedAt) — for the freshness check. Optional. */
   updatedAt?: string;
   /** Pillar page → stricter thresholds. */

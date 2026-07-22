@@ -10,6 +10,31 @@ featured: true
 draft: true
 cornerstone: true
 coverTone: chart-2
+images:
+  - id: gsoc-program-hero
+    kind: hero
+    purpose: Explain the relationship between a contributor, an open-source organization, mentorship, and a scoped project.
+    filename: gsoc-program-connection.webp
+    placement: hero
+    prompt: >-
+      Sophisticated editorial systems illustration showing three clearly connected elements: an individual contributor, an open-source community, and a scoped software project with mentorship. Abstract geometric profile and community forms, precise connection lines, subtle global online network, deep navy, muted indigo, teal, warm off-white, one coral accent, clean flat vector aesthetic with slight tactile texture, lots of negative space, no logos, no words, no laptops, no robots, no corporate stock style. 1200 by 630.
+    status: brief
+    alt: Contributor, open-source organization, and mentored project connected within the GSoC program.
+    caption: GSoC connects contributors with open-source organizations to complete scoped, mentored projects.
+    width: 1200
+    height: 630
+  - id: gsoc-program-phases
+    kind: diagram
+    purpose: Show the full program flow without implying that annual dates are fixed.
+    filename: gsoc-program-phases.svg
+    placement: after-section:how-gsoc-works-from-start-to-finish
+    prompt: >-
+      Create a clean 1600 by 900 SVG timeline with seven phases from left to right: Organizations apply, Organizations announced, Research and discussion, Contributor proposals, Community bonding, Project work, Evaluations and final work product. Add the note Exact dates change each year. Use deep navy and muted indigo on warm off-white, teal for active progress, one restrained coral checkpoint, crisp flat geometry, accessible contrast, and manually proofread labels. No Google logo, people, calendar dates, gradients, 3D effects, or decorative clutter.
+    status: brief
+    alt: Timeline of the seven main phases in a Google Summer of Code cycle.
+    caption: The sequence stays broadly consistent, but applicants must verify the exact dates for each program year.
+    width: 1600
+    height: 900
 keyphrase: what is gsoc
 tldr: Google Summer of Code, commonly called GSoC, is a global online program that introduces eligible students and open-source beginners to established open-source communities. Contributors work on a scoped project with mentors and may receive a stipend after passing evaluations, but they are not Google interns or employees.
 keyTakeaways:
