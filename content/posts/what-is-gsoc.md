@@ -54,6 +54,8 @@ faqs:
     a: Projects can run for 8 to 22 weeks. Official project sizes are approximately 90 hours for small, 175 hours for medium, and 350 hours for large projects.
   - q: Can I submit more than one GSoC proposal?
     a: You may submit up to three proposals, but only one can be accepted. A smaller number of well-researched proposals is usually more useful than three weak applications.
+  - q: Do GSoC contributors receive a stipend?
+    a: Eligible contributors receive a stipend when they pass the required evaluations. The stipend is tied to program evaluation outcomes, not an employment relationship with Google or the mentoring organization, and participants must complete the required payment and tax steps.
 ---
 
 Google Summer of Code, or GSoC, is a structured way for people who are new to open source to work with established open-source communities. Google operates the program, open-source organizations define and mentor projects, and accepted contributors carry out the work online.

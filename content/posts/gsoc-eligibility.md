@@ -53,6 +53,8 @@ faqs:
     a: No. Google says you must be at least 18 at registration. Turning 18 later in the program does not make you eligible for that cycle.
   - q: Do a few open-source pull requests make me ineligible?
     a: Not necessarily. Google lists a small number, fewer than ten, of issues or pull requests across various packages as experience that can still fit its beginner examples. Regular contribution is different, so consider the substance and continuity of your experience.
+  - q: Can I be a GSoC mentor and contributor in the same year?
+    a: No. The official FAQ says a participant must choose one role. It also says that someone who has previously been a GSoC mentor or organization administrator cannot later return as a contributor, so check your complete participation history.
 ---
 
 GSoC eligibility is a set of conditions, not a single question such as "Am I a student?" A student can be ineligible because of age, residence, work authorization, prior participation, or a conflicting program role. A working developer can be eligible if they qualify as an open-source beginner and meet the remaining rules.

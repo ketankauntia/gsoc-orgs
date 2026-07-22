@@ -53,6 +53,8 @@ faqs:
     a: Check the organization's policy first. Google warns that some organizations automatically reject AI-generated proposal material. Your submission must follow the policy and represent understanding you can personally explain.
   - q: How many GSoC proposals can I submit?
     a: Google currently permits up to three proposals, but only one can be accepted. Prioritize the number you can research and discuss properly.
+  - q: Can I edit my GSoC proposal after submitting it?
+    a: Yes, the official proposal guide says you can edit a submitted proposal before the application deadline. Submit a serious draft early enough for review, keep improving it, and verify that the final PDF and web-app submission are complete before the hard deadline.
 ---
 
 A GSoC proposal is a technical and community plan, not an essay about enthusiasm. Reviewers need to decide whether the project is valuable, whether the scope can be completed, whether the approach fits the codebase, and whether you can collaborate with the community for the full project period.

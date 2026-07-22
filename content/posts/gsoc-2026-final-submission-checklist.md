@@ -52,6 +52,8 @@ faqs:
     a: The official guide explicitly asks contributors to identify both merged and unmerged work. Your organization and mentor decide how the work is evaluated, so make the status of every deliverable unambiguous and discuss unmerged work before submission week.
   - q: Is the final evaluation optional?
     a: No. The official contributor guide says the final evaluation, including the work-product link, is required. Missing it results in failing the program.
+  - q: Where do I submit the GSoC final work product?
+    a: Submit the public work-product URL as part of your final evaluation in the official GSoC web app. A repository link, email, chat message, or organization report does not replace that required web-app submission, so verify the saved URL before the deadline.
 ---
 
 The last week of Google Summer of Code is not the right time to discover that your work is spread across an inaccessible fork, an expired demo, a private document, and twelve pull requests with unclear status. A strong final submission is a small, durable evidence package. It tells a reviewer what you promised, what you delivered, where the work lives, how it was validated, and what remains.

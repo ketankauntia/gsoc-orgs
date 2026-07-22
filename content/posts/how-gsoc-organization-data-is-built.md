@@ -54,6 +54,8 @@ faqs:
     a: Not always. A current year can be marked unfinished before project records are populated. Check the year's finalized status and official GSoC pages before interpreting zero.
   - q: How can I report incorrect data?
     a: Open an issue in the project's public GitHub repository with the page URL, field, expected value, primary source, and date checked. Do not include private personal data.
+  - q: How does the site decide whether an organization is new or returning?
+    a: The site matches current records to historical organizations using approved aliases, exact slugs, and unambiguous normalized names. A returning label is therefore a site-derived classification, not an official Google designation, and uncertain identity matches should remain unresolved until reviewed.
 ---
 
 A directory becomes misleading when polished charts hide uncertain inputs. This methodology page explains what the site currently does, what each class of data can support, and where the pipeline still needs stronger provenance and validation.

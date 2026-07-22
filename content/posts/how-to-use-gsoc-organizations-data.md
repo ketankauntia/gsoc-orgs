@@ -52,6 +52,8 @@ faqs:
     a: Applicant attention and available slots vary, but public popularity is not enough to estimate your odds. Choose based on project and community fit, then build evidence of readiness.
   - q: Can historical GSoC data predict acceptance?
     a: No. Historical data can reveal participation patterns, technologies, topics, and past project shapes. It cannot reveal the quality of current applicants, final slot allocation, mentor capacity, or whether your proposal will be selected.
+  - q: Does appearing in a past GSoC year mean an organization is participating now?
+    a: No. Historical participation only confirms that the organization appeared in an earlier program year. Use the current official accepted-organizations list and the organization's current ideas page before treating it as an active application target.
 ---
 
 The best GSoC organization is not the one with the most famous name, the longest history, or the technology tag you searched first. It is the community where a useful project, your current abilities, your learning runway, and available mentorship line up at the same time.
