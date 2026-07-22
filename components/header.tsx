@@ -12,7 +12,7 @@ const menuItems = [
     { name: 'Organizations', href: '/organizations' },
     { name: 'Projects', href: '/projects' },
     { name: 'Technologies', href: '/tech-stack' },
-    { name: 'Topics', href: '/topics' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Yearly', href: '/yearly' },
     // { name: 'Resources', href: '#resources' },
     // { name: 'About Us', href: '#about' },
