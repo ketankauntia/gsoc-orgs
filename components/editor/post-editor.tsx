@@ -170,6 +170,9 @@ export function PostEditor({
         updatedAt: draft.updatedAt || draft.publishedAt,
         cornerstone: draft.cornerstone,
         images: draft.images,
+        canonical: draft.canonical,
+        author: draft.author,
+        ogImage: draft.ogImage,
       }),
     [draft],
   );
@@ -354,7 +357,7 @@ export function PostEditor({
       )}
 
       {/* Split pane: editor left, live preview right */}
-      <div className="mt-4 grid gap-6 lg:grid-cols-2">
+      <div className="mt-4 grid items-stretch gap-6 lg:grid-cols-2">
         {/* Left: editing */}
         <Tabs defaultValue="content">
           <TabsList className="w-full">
@@ -511,6 +514,9 @@ export function PostEditor({
                   Add FAQ
                 </Button>
               </div>
+              <p className="text-xs text-muted-foreground">
+                Add any number when each question reflects real user intent and its answer is useful on its own. Do not add filler for a score.
+              </p>
               {draft.faqs.map((faq, i) => (
                 <div key={i} className="space-y-2 rounded-lg border p-3">
                   <div className="flex gap-2">
@@ -536,7 +542,7 @@ export function PostEditor({
                     </div>
                     <Input
                       value={faq.q}
-                      placeholder="Question — phrased the way people ask it"
+                      placeholder="Question phrased the way people actually search or ask it"
                       onChange={(e) =>
                         set("faqs", draft.faqs.map((f, j) => (j === i ? { ...f, q: e.target.value } : f)))
                       }
@@ -552,7 +558,7 @@ export function PostEditor({
                   </div>
                   <Textarea
                     value={faq.a}
-                    placeholder="Standalone answer (40–80 words)"
+                    placeholder="Answer directly, then add enough context for it to stand alone"
                     className="min-h-20"
                     onChange={(e) =>
                       set("faqs", draft.faqs.map((f, j) => (j === i ? { ...f, a: e.target.value } : f)))
@@ -575,7 +581,7 @@ export function PostEditor({
         </Tabs>
 
         {/* Right: live preview + SEO checks */}
-        <Tabs defaultValue="preview">
+        <Tabs defaultValue="preview" className="h-full min-h-[60vh] lg:min-h-0">
           <TabsList className="w-full">
             <TabsTrigger value="preview" className="flex-1">Preview</TabsTrigger>
             <TabsTrigger value="seo" className="flex-1">
@@ -584,8 +590,8 @@ export function PostEditor({
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="preview">
-            <div className="max-h-[75vh] space-y-6 overflow-y-auto rounded-xl border bg-background p-6">
+          <TabsContent value="preview" className="min-h-0">
+            <div className="h-full max-h-[75vh] space-y-6 overflow-y-auto rounded-xl border bg-background p-6 lg:max-h-none">
               <div>
                 <Badge variant="secondary">{draft.category || "Category"}</Badge>
                 <h1 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight">
@@ -604,13 +610,13 @@ export function PostEditor({
               {draft.tldr && <TldrBlock text={draft.tldr} />}
               <PostBody sections={sections} images={draft.images} showUnapproved />
               <KeyTakeaways items={draft.keyTakeaways} />
-              {selectedAuthor && <AuthorCard author={selectedAuthor} />}
               <FaqSection faqs={draft.faqs.filter((f) => f.q).map((f) => ({ question: f.q, answer: f.a }))} />
+              {selectedAuthor && <AuthorCard author={selectedAuthor} />}
             </div>
           </TabsContent>
 
-          <TabsContent value="seo">
-            <div className="max-h-[75vh] space-y-5 overflow-y-auto rounded-xl border bg-background p-4">
+          <TabsContent value="seo" className="min-h-0">
+            <div className="h-full max-h-[75vh] space-y-5 overflow-y-auto rounded-xl border bg-background p-4 lg:max-h-none">
               <SeoScoreMeter checks={checks} score={score} />
               <SerpPreview title={draft.title} slug={draft.slug} description={draft.description} />
               {(["seo", "geo", "structure", "readability"] as const).map((group) => (
