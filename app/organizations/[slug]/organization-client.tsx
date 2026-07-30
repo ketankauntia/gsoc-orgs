@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Globe,
   ExternalLink,
@@ -35,9 +34,10 @@ import { Organization } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { ParticipationChart } from "./charts/participation-chart";
 import { ProjectsChart } from "./charts/projects-chart";
-import { LanguagesChart } from "./charts/languages-chart";
 import { DifficultyChart } from "./charts/difficulty-chart";
 import { ProjectCard } from "@/components/project-card";
+import { OrganizationLogo } from "@/components/organization-logo";
+import { technologyToSlug, topicToSlug } from "@/lib/taxonomy-slugs";
 
 // Extended organization type with stats
 interface OrganizationWithStats extends Organization {
@@ -110,12 +110,8 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
   // Generate FAQ based on organization
   const orgFaq = useMemo(() => [
     {
-      question: `Is ${org.name} beginner friendly?`,
-      answer: org.technologies.some(t => 
-        ['Python', 'JavaScript', 'HTML', 'CSS'].includes(t)
-      ) 
-        ? `${org.name} uses technologies like ${org.technologies.slice(0, 3).join(', ')} which are commonly recommended for beginners. Check their contribution guidelines and starter issues to get started.`
-        : `${org.name} primarily works with ${org.technologies.slice(0, 3).join(', ')}. While these may require some experience, many organizations welcome beginners who show dedication and willingness to learn.`,
+      question: `How should I assess whether ${org.name} is a good fit?`,
+      answer: `The archive does not label organizations as easy or beginner friendly. Review ${org.name}'s contribution guide, current communication channels, technologies, and recent project history, then talk to the community before deciding.`,
     },
     {
       question: `What tech stack does ${org.name} use in GSoC?`,
@@ -123,7 +119,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
     },
     {
       question: `How many projects has ${org.name} completed in GSoC?`,
-      answer: `${org.name} has successfully completed ${org.total_projects} projects across ${org.active_years.length} years of GSoC participation (${org.first_year}-${org.last_year}).`,
+      answer: `The current archive records ${org.total_projects} projects across ${org.active_years.length} participation years (${org.first_year}-${org.last_year}). This is historical context, not a prediction of future participation.`,
     },
     {
       question: `How can I contribute to ${org.name}?`,
@@ -151,18 +147,6 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
       .filter(d => d.projects > 0)
       .sort((a, b) => parseInt(a.year) - parseInt(b.year));
   }, [org.stats]);
-
-  // Calculate technology usage for languages chart
-  const languagesData = useMemo(() => {
-    const langMap: Record<string, number> = {};
-    org.technologies.forEach((tech, index) => {
-      // Weight earlier technologies higher
-      langMap[tech] = org.technologies.length - index;
-    });
-    return Object.entries(langMap)
-      .map(([name, weight]) => ({ name, count: weight }))
-      .slice(0, 10);
-  }, [org.technologies]);
 
   // Calculate difficulty distribution from projects
   const difficultyData = useMemo(() => {
@@ -223,46 +207,38 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
   return (
     <div className="min-h-screen">
       {/* Main Content */}
-      <Section noPadding className="pt-8 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <Section noPadding className="pb-16 pt-5">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-10">
             {/* Organization Header */}
-            <header className="space-y-6">
+            <header className="atlas-grid overflow-hidden rounded-2xl bg-ink p-6 text-[#f5eee9] sm:p-8">
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Logo */}
-                <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-sky-100 flex items-center justify-center shrink-0 border-2 border-sky-200 overflow-hidden shadow-sm">
-                  {org.img_r2_url ? (
-                    <Image
-                      src={org.img_r2_url}
-                      alt={`${org.name} logo`}
-                      width={144}
-                      height={144}
-                      className="w-full h-full object-contain p-2"
-                      unoptimized={true}
-                      priority={false}
-                    />
-                  ) : (
-                    <span className="text-5xl font-bold text-sky-600">
-                      {org.name.charAt(0)}
-                    </span>
-                  )}
-                </div>
+                <OrganizationLogo
+                  name={org.name}
+                  src={org.img_r2_url || org.logo_r2_url || org.image_url}
+                  size={144}
+                  className="size-28 rounded-2xl border-white/10 md:size-36"
+                />
 
                 {/* Info */}
                 <div className="flex-1 space-y-3">
                   <div>
-                    <Heading as="h1" variant="section" className="text-3xl md:text-4xl mb-2">
+                    <p className="mb-3 font-data text-[10px] uppercase tracking-[0.18em] text-primary">
+                      Organization profile · latest record {org.last_year}
+                    </p>
+                    <Heading as="h1" variant="section" className="mb-2 text-3xl text-[#f5eee9] md:text-5xl">
                       {org.name}
                     </Heading>
                   </div>
                   
-                  <Text className="text-foreground/80 line-clamp-4">
+                  <Text className="line-clamp-4 text-[#b9b1ac]">
                     {org.description}
                   </Text>
 
                   {/* Separator */}
-                  <div className="border-b border-foreground/20 pt-2" />
+                  <div className="border-b border-white/15 pt-2" />
 
                   {/* Primary Links - conditionally render */}
                   <div className="flex flex-wrap gap-3 pt-2">
@@ -380,7 +356,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {visibleTechnologies.map((tech) => (
-                    <Link href={`/tech-stack/${encodeURIComponent(tech.toLowerCase())}`} key={tech} prefetch={true}>
+                    <Link href={`/tech-stack/${technologyToSlug(tech)}`} key={tech} prefetch={true}>
                       <Badge 
                         variant="secondary" 
                         className="px-3 py-1.5 text-sm cursor-pointer hover:bg-secondary/80 transition-colors"
@@ -417,7 +393,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {visibleTopics.map((topic) => (
-                    <Link href={`/topics/${encodeURIComponent(topic.toLowerCase().replace(/\s+/g, '-'))}`} key={topic} prefetch={true}>
+                    <Link href={`/topics/${topicToSlug(topic)}`} key={topic} prefetch={true}>
                       <Badge 
                         variant="outline" 
                         className="px-3 py-1.5 text-sm cursor-pointer hover:bg-accent transition-colors"
@@ -503,7 +479,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                         title: project.title,
                         short_description: project.short_description,
                         description: project.description,
-                        student_name: project.student_name,
+                        contributor: project.student_name,
                         difficulty: project.difficulty,
                         tags: project.tags,
                         project_url: project.project_url,
@@ -556,8 +532,8 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="flex items-center gap-2">
                       <Text variant="small" className="text-muted-foreground">Category:</Text>
-                      <Link href={`/organizations?category=${encodeURIComponent(org.category)}`} prefetch={true}>
-                        <Badge variant="default" className="bg-sky-500 hover:bg-sky-600">
+                      <Link href={`/organizations?categories=${encodeURIComponent(org.category)}`} prefetch={true}>
+                        <Badge variant="category">
                           {org.category}
                         </Badge>
                       </Link>
@@ -572,9 +548,11 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                     </Text>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" className="shrink-0">
-                  <Search className="w-4 h-4" />
-                  Search
+                <Button variant="outline" size="sm" className="shrink-0" asChild>
+                  <Link href={`/organizations?q=${encodeURIComponent(org.name)}`}>
+                    <Search className="w-4 h-4" />
+                    Search similar organizations
+                  </Link>
                 </Button>
               </div>
             </section>
@@ -582,6 +560,38 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
 
           {/* Right Column - Sidebar */}
           <div className="deferred-section space-y-6">
+            <CardWrapper padding="none" className="overflow-hidden">
+              <div className="grid grid-cols-3 divide-x divide-border">
+                <div className="p-4">
+                  <p className="font-data text-2xl font-semibold tracking-[-0.04em]">
+                    {org.total_projects}
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                    Projects
+                  </p>
+                </div>
+                <div className="p-4">
+                  <p className="font-data text-2xl font-semibold tracking-[-0.04em]">
+                    {org.active_years.length}
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                    Years
+                  </p>
+                </div>
+                <div className="p-4">
+                  <p className="font-data text-2xl font-semibold tracking-[-0.04em]">
+                    {org.last_year}
+                  </p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.1em] text-muted-foreground">
+                    Latest
+                  </p>
+                </div>
+              </div>
+              <p className="border-t border-border bg-muted px-4 py-3 font-data text-[10px] leading-5 text-muted-foreground">
+                Historical archive values · not a prediction of future participation
+              </p>
+            </CardWrapper>
+
             {/* Participation Chart */}
             <CardWrapper padding="md">
               <div className="flex items-center justify-between mb-4">
@@ -604,18 +614,22 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
               <ProjectsChart data={projectsData} />
             </CardWrapper>
 
-            {/* Top Programming Languages */}
+            {/* Recorded technologies: order is preserved without inventing usage weights. */}
             <CardWrapper padding="md">
-              <div className="mb-4">
-                <Heading variant="small" className="text-base">
-                  Top Programming Languages
-                </Heading>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
-                  <TrendingUp className="w-3 h-3" />
-                  <span className="font-medium">{org.technologies[0]}</span> dominates with primary adoption
-                </div>
+              <Heading variant="small" className="text-base">
+                Recorded technologies
+              </Heading>
+              <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                The archive lists technologies but does not provide reliable
+                usage percentages for this organization.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {org.technologies.slice(0, 8).map((technology) => (
+                  <Badge key={technology} variant="tech" size="xs">
+                    {technology}
+                  </Badge>
+                ))}
               </div>
-              <LanguagesChart data={languagesData} />
             </CardWrapper>
 
             {/* Project Difficulty Distribution */}

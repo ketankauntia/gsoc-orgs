@@ -13,9 +13,9 @@ import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions | GSoC Organizations Guide",
+  title: "Terms and Conditions",
   description:
-    "Read our terms and conditions to understand the rules and guidelines for using GSoC Organizations Guide website and services.",
+    "Read the terms and conditions for using the independent GSoC Atlas website and archive.",
   keywords: [
     "terms and conditions",
     "terms of service",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "website terms",
   ],
   openGraph: {
-    title: "Terms and Conditions | GSoC Organizations Guide",
+    title: "GSoC Atlas Terms and Conditions",
     description: "Read our terms and conditions for using our platform.",
     url: getFullUrl("/terms-and-conditions"),
     images: ["/og.webp"],

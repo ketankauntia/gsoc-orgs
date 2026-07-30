@@ -37,11 +37,11 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
   const technologies = project.tags?.filter(tag => isTechnology(tag)) || [];
   const topics = project.tags?.filter(tag => !isTechnology(tag)).slice(0, 5) || [];
 
-  const projectUrl = project.project_url || project.project_code_url || '#';
+  const projectUrl = project.project_url || project.project_code_url;
   const codeUrl = project.code_url || project.project_code_url;
 
   return (
-    <CardWrapper padding="md" hover className={cn("flex flex-col relative", className)}>
+    <CardWrapper padding="md" hover className={cn("relative flex min-h-[20rem] flex-col", className)}>
       {/* Difficulty Badge */}
       {project.difficulty && (
         <div className="absolute top-4 left-4 flex items-center gap-2">
@@ -102,8 +102,9 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
       </div>
 
       {/* Action Buttons */}
-      <div className="pt-4 mt-auto flex gap-2">
-        <Button variant="default" size="sm" asChild className="flex-1 bg-teal-600 hover:bg-teal-700">
+      <div className="mt-auto flex gap-2 pt-5">
+        {projectUrl ? (
+        <Button variant="default" size="sm" asChild className="flex-1">
           <a
             href={projectUrl}
             target="_blank"
@@ -114,6 +115,7 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
             View Project
           </a>
         </Button>
+        ) : null}
         {codeUrl && (
           <Button variant="outline" size="sm" asChild className="flex-1">
             <a
@@ -131,4 +133,3 @@ export function ProjectCard({ project, className = "" }: ProjectCardProps) {
     </CardWrapper>
   );
 }
-

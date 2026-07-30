@@ -143,3 +143,8 @@ export async function loadYearlyPageData(slug: string): Promise<YearlyPageData |
     return null;
   }
 }
+
+/** Years with a generated yearly overview document. */
+export function getAvailableYearlyYears(): number[] {
+  return [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+}

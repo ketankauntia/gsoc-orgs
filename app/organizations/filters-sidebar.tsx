@@ -187,14 +187,14 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
   const visibleTechs = showAllTechs ? filteredTechs : filteredTechs.slice(0, 10)
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
+    <div className="filter-rail max-h-[calc(100vh-8rem)] overflow-y-auto rounded-xl border border-border bg-card p-4 pb-6 shadow-[0_1px_1px_rgb(23_22_21/0.04)] custom-scrollbar">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-base font-semibold text-gray-900 dark:text-foreground">Filters</h3>
+        <h3 className="text-base font-semibold tracking-[-0.02em] text-foreground">Research filters</h3>
         {hasActiveFilters && (
           <button
             onClick={clearAllFilters}
-            className="text-[13px] text-gray-500 hover:text-gray-700 hover:underline"
+            className="text-[13px] font-medium text-muted-foreground hover:text-foreground hover:underline"
           >
             Clear all
           </button>
@@ -443,7 +443,7 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
                 placeholder="Search technologies..."
                 value={techSearch}
                 onChange={(e) => setTechSearch(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 text-sm bg-card text-foreground border border-border rounded-lg outline-none focus:border-border focus:ring-1 focus:ring-white/20 transition-all placeholder:text-muted-foreground"
+                className="w-full rounded-lg border border-border bg-card py-2 pl-9 pr-3 text-sm text-foreground outline-none transition-[border-color,box-shadow] placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/20"
               />
             </div>
             <div className="space-y-0.5 max-h-52 overflow-y-auto custom-scrollbar pr-1">

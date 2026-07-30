@@ -77,12 +77,12 @@ export function MobileFiltersDialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby="mobile-filters-title"
-        className="absolute inset-x-0 bottom-0 flex max-h-[88dvh] flex-col rounded-t-2xl border border-border bg-background shadow-2xl"
+        className="absolute inset-x-0 bottom-0 flex max-h-[90dvh] flex-col rounded-t-[1.5rem] border border-border bg-background shadow-[0_-20px_60px_rgb(0_0_0/0.2)]"
       >
         <div className="flex items-center justify-between border-b border-border px-4 py-3">
           <div>
-            <h2 id="mobile-filters-title" className="font-semibold text-foreground">
-              Filter organizations
+            <h2 id="mobile-filters-title" className="font-semibold tracking-[-0.02em] text-foreground">
+              Research filters
             </h2>
             <p className="text-xs text-muted-foreground" aria-live="polite">
               {appliedCount} applied
@@ -108,8 +108,8 @@ export function MobileFiltersDialog({
           />
         </div>
         <div className="border-t border-border bg-background p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
-          <Button type="button" className="h-11 w-full" onClick={onClose}>
-            Show results
+          <Button type="button" className="h-12 w-full" onClick={onClose}>
+            Show matching organizations
           </Button>
         </div>
       </div>

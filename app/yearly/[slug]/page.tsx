@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import {
   Users,
@@ -9,7 +8,6 @@ import {
 } from "lucide-react";
 import {
   Container,
-  SectionHeader,
   Button,
   Badge,
   Grid,
@@ -19,9 +17,13 @@ import {
 } from "@/components/ui";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
-import { loadYearlyPageData } from "@/lib/yearly-page-types";
+import { ArchiveYearHero } from "@/components/archive-year-hero";
+import { OrganizationLogo } from "@/components/organization-logo";
+import {
+  getAvailableYearlyYears,
+  loadYearlyPageData,
+} from "@/lib/yearly-page-types";
 import { getFullUrl } from "@/lib/constants";
-import { getAvailableProjectYears } from "@/lib/projects-page-types";
 import { ExpandableOrgList, ExpandableProjectList, MentorsContributorsTable } from "./client-components";
 import {
   StudentSlotsBarChart,
@@ -34,10 +36,8 @@ import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 // Static Generation - cache forever
 export const revalidate = false;
 
-// Derived from the single source of truth in getAvailableProjectYears().
-// Adding a year there auto-updates yearly pages, project pages, and sitemap.
 export async function generateStaticParams() {
-  return getAvailableProjectYears().map(year => ({
+  return getAvailableYearlyYears().map(year => ({
     slug: `google-summer-of-code-${year}`,
   }));
 }
@@ -54,7 +54,7 @@ export async function generateMetadata({
   
   if (!data) {
     return {
-      title: "GSoC Organizations | Google Summer of Code",
+      title: "Year archive not found",
       description: "Explore organizations participating in Google Summer of Code.",
     };
   }
@@ -63,7 +63,7 @@ export async function generateMetadata({
   const canonicalUrl = getFullUrl(`/yearly/${slug}`);
   
   return {
-    title: `${title} | GSoC Organizations Guide`,
+    title,
     description,
     robots: {
       index: true,
@@ -74,13 +74,13 @@ export async function generateMetadata({
       description,
       url: canonicalUrl,
       type: "website",
-      siteName: "GSoC Organizations Guide",
+      siteName: "GSoC Atlas",
       images: [
         {
           url: getFullUrl("/og/gsoc-organizations-guide.jpg"),
           width: 1200,
           height: 630,
-          alt: "GSoC Organizations Guide",
+          alt: "GSoC Atlas year archive",
         },
       ],
     },
@@ -112,11 +112,6 @@ export default async function YearlyPage({
 
   const { year, metrics, organizations, charts, first_time_orgs, insights } = data;
 
-  // Determine page context
-  const currentYear = new Date().getFullYear();
-  const isUpcoming = year > currentYear;
-  const isPast = year < currentYear;
-
   return (
     <>
       <Header />
@@ -130,65 +125,36 @@ export default async function YearlyPage({
             ]}
           />
 
-          {/* Header Section */}
-          <div className="space-y-6">
-            <SectionHeader
-              badge={
-                isUpcoming
-                  ? `Upcoming GSoC ${year}`
-                  : isPast
-                  ? `GSoC ${year} Archive`
-                  : `GSoC ${year}`
-              }
-              title={data.title}
-              description={data.description}
-              align="center"
-            />
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <StatCard
-                label="Organizations"
-                value={metrics.total_organizations}
-                subtitle={`${metrics.returning_organizations} veterans`}
-              />
-              <StatCard
-                label="New Orgs"
-                value={metrics.first_time_organizations}
-                subtitle={`${Math.round((metrics.first_time_organizations / metrics.total_organizations) * 100)}% of total`}
-              />
-              <StatCard
-                label="Total Projects"
-                value={metrics.total_projects}
-                subtitle={`~${metrics.avg_projects_per_org} avg/org`}
-              />
-              <StatCard
-                label="Participants"
-                value={metrics.total_participants}
-                subtitle={`~${metrics.avg_participants_per_org} per org`}
-              />
-              <StatCard
-                label="Mentors"
-                value={metrics.total_mentors}
-                subtitle={`~${metrics.avg_mentors_per_org} per org`}
-              />
-              <StatCard
-                label="Countries"
-                value={metrics.countries_participated ?? "N/A"}
-                subtitle={metrics.countries_participated ? "Participating" : "Data unavailable"}
-              />
-              <StatCard
-                label="Top Language"
-                value={charts.top_languages[0]?.label || "N/A"}
-                subtitle="Most projects"
-              />
-               <StatCard
-                label="Edition"
-                value={`#${year - 2005 + 1}`}
-                subtitle={`Year ${year}`}
-              />
-            </div>
-          </div>
+          <ArchiveYearHero
+            context="Year overview"
+            year={year}
+            title={data.title}
+            description={data.description}
+            publishedAt={data.published_at}
+            finalized={data.finalized}
+            metrics={[
+              {
+                value: metrics.total_organizations,
+                label: "Organizations",
+                note: `${metrics.first_time_organizations} first appear in this archive year`,
+              },
+              {
+                value: metrics.total_projects.toLocaleString(),
+                label: "Recorded projects",
+                note: `${metrics.avg_projects_per_org} average per organization`,
+              },
+              {
+                value: metrics.total_participants.toLocaleString(),
+                label: "Contributors",
+                note: "Contributor records in the generated archive",
+              },
+              {
+                value: metrics.total_mentors.toLocaleString(),
+                label: "Mentor records",
+                note: "Names may repeat across projects",
+              },
+            ]}
+          />
 
           {/* Charts Section */}
           <div className="deferred-section space-y-8">
@@ -218,74 +184,7 @@ export default async function YearlyPage({
               />
             </Grid>
 
-            {/* Difficulty and Projects Side-by-Side */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Project Difficulty Distribution - Pie Chart Matches Reference */}
-              <CardWrapper className="p-6">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Heading variant="small" className="text-lg">
-                        Project Difficulty Distribution
-                      </Heading>
-                      <Text variant="muted" className="text-sm mt-1">
-                        Breakdown of project difficulty levels
-                      </Text>
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {metrics.total_projects} total projects
-                    </Badge>
-                  </div>
-                  
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="relative w-48 h-48">
-                      <div
-                        className="w-full h-full rounded-full"
-                        style={{
-                          background: `conic-gradient(
-                            from 0deg,
-                            #0d9488 0% ${charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0}%,
-                            #14b8a6 ${charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0}% ${(charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0) + (charts.project_difficulty_distribution.data.find(d => d.label === "Intermediate")?.percentage || 0)}%,
-                            #2dd4bf ${(charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0) + (charts.project_difficulty_distribution.data.find(d => d.label === "Intermediate")?.percentage || 0)}% 100%
-                          )`,
-                        }}
-                      />
-                      <div className="absolute inset-[30%] bg-background rounded-full flex items-center justify-center">
-                        <div className="text-center">
-                          <Text className="text-2xl font-bold">{metrics.total_organizations}</Text>
-                          <Text variant="small" className="text-muted-foreground">orgs</Text>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2 mt-4">
-                      {charts.project_difficulty_distribution.data.map((diff: { label: string; value: number; percentage?: number }) => {
-                        const tealColors = ["#0d9488", "#14b8a6", "#2dd4bf"];
-                        // Map labels to match colors if order is guaranteed, typically Beginner/Intermediate/Advanced
-                        // Our JSON has "Beginner", "Intermediate", "Advanced"
-                        const colorIndex = diff.label === "Beginner" ? 0 : diff.label === "Intermediate" ? 1 : 2;
-                        
-                        // We need to calculate percentage if it's missing or 0 in JSON (script sets 0 for beginner/advanced currently, need to rely on what's there)
-                        const percentage = diff.percentage || Math.round((diff.value / metrics.total_projects) * 100) || 0;
-
-                        return (
-                          <div key={diff.label} className="flex items-center gap-3">
-                            <div 
-                              className="w-4 h-4 rounded-sm"
-                              style={{ backgroundColor: tealColors[colorIndex] }}
-                            />
-                            <Text variant="small">
-                              {diff.label}: {diff.value} ({percentage}%)
-                            </Text>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </CardWrapper>
-
-              {/* Organizations with Most Projects */}
+            <div>
               <CardWrapper className="p-6">
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
@@ -309,10 +208,9 @@ export default async function YearlyPage({
               </CardWrapper>
             </div>
 
-            {/* Highest Selections */}
             <ChartCard
-              title={`Highest Selections in GSoC ${year}`}
-              description="Top selections by tech stack and organization"
+              title={`Largest recorded project groups in ${year}`}
+              description="Project counts grouped by recorded technology and organization"
             >
               <Grid cols={{ default: 1, md: 2 }} gap="lg">
                 <CardWrapper padding="md" className="border-0 shadow-none ring-0">
@@ -359,18 +257,14 @@ export default async function YearlyPage({
                   <Link key={org.slug} href={`/organizations/${org.slug}`}>
                     <Badge
                       variant="outline"
-                      className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-all py-2 px-3"
+                      className="cursor-pointer px-3 py-2 transition-[background-color,color,border-color] hover:border-foreground/30 hover:bg-muted"
                     >
-                      {org.logo_url && (
-                        <Image
-                          src={org.logo_url}
-                          alt=""
-                          width={16}
-                          height={16}
-                          className="w-4 h-4 mr-2 rounded"
-                          unoptimized
-                        />
-                      )}
+                      <OrganizationLogo
+                        src={org.logo_url}
+                        name={org.name}
+                        size={18}
+                        className="mr-1.5 rounded-md"
+                      />
                       {org.name}
                     </Badge>
                   </Link>
@@ -510,30 +404,6 @@ export default async function YearlyPage({
       </div>
       <Footer />
     </>
-  );
-}
-
-// --- Helper Components ---
-
-function StatCard({
-  label,
-  value,
-  subtitle,
-}: {
-  label: string;
-  value: string | number;
-  subtitle: string;
-}) {
-  return (
-    <div className="p-4 rounded-lg border bg-card">
-      <Text variant="small" className="text-muted-foreground mb-2">
-        {label}
-      </Text>
-      <Text className="text-3xl font-bold mb-1">{value}</Text>
-      <Text variant="small" className="text-muted-foreground">
-        {subtitle}
-      </Text>
-    </div>
   );
 }
 

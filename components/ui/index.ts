@@ -2,9 +2,12 @@
 export { Section } from "./section";
 export { Container } from "./container";
 export { Grid } from "./grid";
+export { PageRail } from "./page-rail";
 
 // Typography Components
 export { Heading, Text } from "./typography";
+export { MetricCell } from "./metric-cell";
+export { SourceNote } from "./source-note";
 
 // Section Components
 export { SectionHeader } from "./section-header";

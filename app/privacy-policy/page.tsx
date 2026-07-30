@@ -13,9 +13,9 @@ import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | GSoC Organizations Guide",
+  title: "Privacy Policy",
   description:
-    "Read our privacy policy to understand how GSoC Organizations Guide collects, uses, and protects your personal information.",
+    "Read how GSoC Atlas handles analytics, contact information, and other personal data.",
   keywords: [
     "privacy policy",
     "data protection",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "data security",
   ],
   openGraph: {
-    title: "Privacy Policy | GSoC Organizations Guide",
+    title: "GSoC Atlas Privacy Policy",
     description: "Learn how we protect your privacy and handle your data.",
     url: getFullUrl("/privacy-policy"),
     images: ["/og.webp"],

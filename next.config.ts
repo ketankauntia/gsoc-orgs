@@ -28,6 +28,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/blog/post/:slug.md",
+        destination: "/api/markdown/:slug",
+      },
+    ];
+  },
   async redirects() {
     // 301 redirects from old /gsoc-YYYY-organizations to new /yearly/google-summer-of-code-YYYY
     // This preserves SEO link equity and ensures Google indexes only the new URLs

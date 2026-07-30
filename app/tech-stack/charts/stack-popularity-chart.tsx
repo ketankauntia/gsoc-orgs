@@ -13,23 +13,17 @@ import {
 } from "recharts";
 import { Button, Input } from "@/components/ui";
 import { X, Search } from "lucide-react";
+import {
+  CHART_AXIS_COLOR,
+  CHART_GRID_COLOR,
+  CHART_TOOLTIP_STYLE,
+  getAtlasChartColor,
+} from "./chart-theme";
 
 interface StackPopularityChartProps {
   data: Record<string, Array<{ year: number; count: number }>>;
   availableTechs?: Array<{ name: string; slug: string }>;
 }
-
-// Teal-based color palette for lines
-const LINE_COLORS = [
-  "#0d9488", // teal-600
-  "#14b8a6", // teal-500
-  "#2dd4bf", // teal-400
-  "#5eead4", // teal-300
-  "#0891b2", // cyan-600
-  "#7c3aed", // violet-600
-  "#f59e0b", // amber-500
-  "#f97316", // orange-500
-];
 
 export function StackPopularityChart({ data, availableTechs = [] }: StackPopularityChartProps) {
   const [selectedTechs, setSelectedTechs] = useState<string[]>(() => {
@@ -99,15 +93,16 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
   )
 
   const handleAddTech = (tech: string) => {
-    if (!selectedTechs.includes(tech) && selectedTechs.length < 8) {
-      setSelectedTechs([...selectedTechs, tech])
-      setSearchQuery("")
-      setShowDropdown(false)
-    }
+    setSelectedTechs((current) => {
+      if (current.includes(tech) || current.length >= 8) return current;
+      return [...current, tech];
+    });
+    setSearchQuery("")
+    setShowDropdown(false)
   }
 
   const handleRemoveTech = (tech: string) => {
-    setSelectedTechs(selectedTechs.filter(t => t !== tech))
+    setSelectedTechs((current) => current.filter((item) => item !== tech))
   }
 
   const handleReset = () => {
@@ -122,7 +117,9 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
       {/* Tech Selection Controls */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-muted-foreground">Compare Technologies:</span>
+          <span className="text-sm font-medium text-muted-foreground">
+            Compare technologies
+          </span>
           <Button
             variant="outline"
             size="sm"
@@ -136,17 +133,23 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
         {/* Selected Techs */}
         {selectedTechs.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {selectedTechs.map(tech => {
+            {selectedTechs.map((tech, index) => {
               const displayName = allTechs.find(t => t.name === tech)?.displayName || tech
               return (
                 <div
                   key={tech}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-teal-100 text-teal-800 rounded-md text-xs font-medium"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-xs font-medium text-accent-foreground"
                 >
+                  <span
+                    aria-hidden="true"
+                    className="size-2 rounded-full"
+                    style={{ backgroundColor: getAtlasChartColor(index) }}
+                  />
                   <span>{displayName}</span>
                   <button
+                    type="button"
                     onClick={() => handleRemoveTech(tech)}
-                    className="hover:bg-teal-200 rounded-full p-0.5 transition-colors"
+                    className="rounded-full p-0.5 transition-colors duration-150 hover:bg-primary/15"
                     aria-label={`Remove ${displayName}`}
                   >
                     <X className="w-3 h-3" />
@@ -163,36 +166,52 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                type="text"
-                placeholder="Search and add technology to compare..."
+                type="search"
+                placeholder="Search and add a technology"
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value)
                   setShowDropdown(true)
                 }}
                 onFocus={() => setShowDropdown(true)}
+                onKeyDown={(event) => {
+                  if (event.key === "Escape") setShowDropdown(false);
+                }}
                 className="pl-9 pr-3 h-9 text-sm"
+                role="combobox"
+                aria-controls="technology-comparison-options"
+                aria-expanded={showDropdown}
+                aria-autocomplete="list"
               />
             </div>
             
             {/* Dropdown List */}
-            {showDropdown && filteredTechs.length > 0 && (
+            {showDropdown && (
               <>
-                <div 
-                  className="fixed inset-0 z-10" 
+                <button
+                  type="button"
+                  className="fixed inset-0 z-10 cursor-default"
                   onClick={() => setShowDropdown(false)}
-                  aria-hidden="true"
-                  style={{ pointerEvents: 'auto' }}
+                  aria-label="Close technology options"
+                  tabIndex={-1}
                 />
-                <div className="absolute z-20 w-full mt-1 bg-background border rounded-md shadow-lg max-h-60 overflow-auto">
+                <div
+                  id="technology-comparison-options"
+                  role="listbox"
+                  aria-label="Technology options"
+                  className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-lg"
+                >
                   {filteredTechs
                     .filter(tech => !selectedTechs.includes(tech.name))
                     .slice(0, 50) // Limit to 50 for performance
                     .map(tech => (
                       <button
+                        type="button"
                         key={tech.name}
                         onClick={() => handleAddTech(tech.name)}
-                        className="w-full text-left px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="w-full rounded-md px-3 py-2 text-left text-sm transition-colors duration-150 hover:bg-accent hover:text-accent-foreground"
+                        role="option"
+                        aria-selected="false"
                       >
                         {tech.displayName}
                       </button>
@@ -218,26 +237,21 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
               data={chartData}
               margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <CartesianGrid strokeDasharray="3 3" stroke={CHART_GRID_COLOR} />
               <XAxis
                 dataKey="year"
-                tick={{ fontSize: 11, fill: "#6b7280" }}
+                tick={{ fontSize: 11, fill: CHART_AXIS_COLOR }}
                 tickLine={false}
                 axisLine={false}
               />
               <YAxis
-                tick={{ fontSize: 10, fill: "#6b7280" }}
+                tick={{ fontSize: 10, fill: CHART_AXIS_COLOR }}
                 tickLine={false}
                 axisLine={false}
                 domain={[0, Math.ceil(maxCount * 1.2)]}
               />
               <Tooltip
-                contentStyle={{
-                  backgroundColor: "white",
-                  border: "1px solid #e5e7eb",
-                  borderRadius: "8px",
-                  fontSize: "12px",
-                }}
+                contentStyle={CHART_TOOLTIP_STYLE}
                 formatter={(value: number, name: string) => {
                   const displayName = allTechs.find(t => t.name === name)?.displayName || name
                   return [value, displayName]
@@ -258,9 +272,13 @@ export function StackPopularityChart({ data, availableTechs = [] }: StackPopular
                   type="monotone"
                   dataKey={stack}
                   name={stack}
-                  stroke={LINE_COLORS[index % LINE_COLORS.length]}
+                  stroke={getAtlasChartColor(index)}
                   strokeWidth={2}
-                  dot={{ fill: LINE_COLORS[index % LINE_COLORS.length], strokeWidth: 0, r: 4 }}
+                  dot={{
+                    fill: getAtlasChartColor(index),
+                    strokeWidth: 0,
+                    r: 4,
+                  }}
                   activeDot={{ r: 6 }}
                 />
               ))}

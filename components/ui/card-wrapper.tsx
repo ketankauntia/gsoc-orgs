@@ -28,9 +28,10 @@ export const CardWrapper = ({
   return (
     <div
       className={cn(
-        "rounded-lg border bg-card text-card-foreground shadow-sm",
+        "rounded-xl border border-border bg-card text-card-foreground shadow-[0_1px_1px_rgb(23_22_21/0.04)]",
         paddingClasses[padding],
-        hover && "transition-all duration-200 hover:shadow-md hover:scale-[1.02]",
+        hover &&
+          "transition-[border-color,box-shadow,transform] duration-[180ms] hover:-translate-y-0.5 hover:border-foreground/25 hover:shadow-[0_10px_30px_rgb(23_22_21/0.08)] motion-reduce:transform-none",
         className
       )}
     >
@@ -38,4 +39,3 @@ export const CardWrapper = ({
     </div>
   );
 };
-

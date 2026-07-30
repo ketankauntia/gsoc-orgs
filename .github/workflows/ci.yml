@@ -7,33 +7,34 @@ on:
       - main
 
 jobs:
-  build-and-lint:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # `actions/setup-node` with `cache: pnpm` needs `pnpm` available on PATH
-      # so we install pnpm first.
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Lint
-        run: pnpm lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run type-check
 
       - name: Build
         env:
           DATABASE_URL: "mongodb://localhost:27017/ci-dummy"
-        run: pnpm build
+        run: npm run build
 
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser smoke and link tests
+        run: npm run test:e2e

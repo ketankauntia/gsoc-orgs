@@ -5,17 +5,6 @@ import { loadTopicData } from "@/lib/topics-page-types";
 import { TopicPageClient } from "./topic-client";
 import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 
-/**
- * Topic Detail Page
- * Route: /topics/[topic]
- * 
- * Shows all organizations with a specific topic/tag:
- * - Topic overview with stats
- * - List of organizations
- * - Yearly statistics
- * 
- * Uses static JSON by default, falls back to API if JSON not available.
- */
 export const revalidate = 2592000; // 30 days
 
 export async function generateMetadata({
@@ -34,14 +23,14 @@ export async function generateMetadata({
 
   return {
     title: `${topicData.name} - GSoC Topics - Google Summer of Code Organizations Guide`,
-    description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}. Find projects, opportunities, and resources.`,
+    description: `Browse ${topicData.organizationCount} Google Summer of Code organization records and ${topicData.projectCount} projects tagged ${topicData.name}.`,
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
       title: `${topicData.name} - GSoC Topics`,
-      description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
+      description: `Browse archived organization and project records tagged ${topicData.name}.`,
       url: getFullUrl(`/topics/${topicSlug}`),
       type: "website",
       siteName: "GSoC Organizations Guide",
@@ -49,7 +38,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${topicData.name} - GSoC Topics`,
-      description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
+      description: `Browse archived organization and project records tagged ${topicData.name}.`,
     },
     alternates: {
       canonical: getFullUrl(`/topics/${topicSlug}`),
@@ -70,12 +59,13 @@ export default async function TopicPage({
   }
 
   return (
-    <div className="space-y-8">
+    <div>
       <SiteBreadcrumbs
         items={[
           { label: "Topics", href: "/topics" },
           { label: topicData.name, href: `/topics/${topicSlug}` },
         ]}
+        className="pb-6 pt-1"
       />
       <TopicPageClient topic={topicData} />
     </div>

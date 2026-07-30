@@ -21,10 +21,10 @@ export const Section = ({
   noPadding = false,
 }: SectionProps) => {
   return (
-    <section className={cn("w-full", !noPadding && "py-12 lg:py-20", className)}>
+    <section className={cn("w-full", !noPadding && "py-16 lg:py-24", className)}>
       <div
         className={cn(
-          !fullWidth && "max-w-6xl mx-auto px-6 lg:px-12",
+          !fullWidth && "mx-auto max-w-shell px-4 sm:px-6 lg:px-8",
           containerClassName
         )}
       >
@@ -33,4 +33,3 @@ export const Section = ({
     </section>
   );
 };
-

@@ -4,6 +4,7 @@ import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
 import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
+import { FooterSmall } from "@/components/footer-small";
 import { getFullUrl } from "@/lib/constants";
 import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import {
@@ -188,12 +189,16 @@ async function getOrganizations(params: {
   // Filter organizations in memory (supports text search + all filters)
   let filtered = indexData.organizations;
 
-  const hasFilters = params.q || params.years || params.categories || params.techs || params.topics || params.firstTimeOnly || params.tech;
+  const hasFilters = params.q || params.years || params.category || params.categories || params.techs || params.topics || params.firstTimeOnly || params.tech;
   if (hasFilters) {
     filtered = filterOrganizations(indexData.organizations, {
       query: params.q,
       years: params.years ? params.years.split(',').map(y => parseInt(y)).filter(n => !isNaN(n)) : undefined,
-      categories: params.categories ? params.categories.split(',') : undefined,
+      categories: params.categories
+        ? params.categories.split(',')
+        : params.category
+          ? [params.category]
+          : undefined,
       techs: params.techs ? params.techs.split(',') : params.tech ? [params.tech] : undefined,
       topics: params.topics ? params.topics.split(',') : undefined,
       firstTimeOnly: params.firstTimeOnly === 'true',
@@ -267,10 +272,10 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8">
         <SiteBreadcrumbs
           items={[{ label: "Organizations", href: "/organizations" }]}
-          className="pb-6"
+          className="pb-3 pt-1"
         />
       </div>
       <Suspense fallback={
@@ -288,6 +293,7 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
           firstTimeCount={firstTimeCount}
         />
       </Suspense>
+      <FooterSmall />
     </>
   );
 }

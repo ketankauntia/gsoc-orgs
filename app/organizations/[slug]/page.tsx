@@ -96,24 +96,24 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${org.name} - GSoC Organizations Guide`,
-    description: org.description || `Learn about ${org.name} and their Google Summer of Code projects, technologies, and opportunities.`,
+    title: `${org.name} — Projects, Technologies & GSoC History`,
+    description: org.description || `Explore ${org.name}'s recorded Google Summer of Code projects, technologies, topics, and participation history.`,
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
-      title: `${org.name} - GSoC Organizations Guide`,
-      description: org.description || `Learn about ${org.name} and their Google Summer of Code projects.`,
+      title: `${org.name} — GSoC Atlas`,
+      description: org.description || `Explore ${org.name}'s recorded Google Summer of Code projects and history.`,
       url: getFullUrl(`/organizations/${slug}`),
       type: "website",
-      siteName: "GSoC Organizations Guide",
+      siteName: "GSoC Atlas",
       images: org.img_r2_url ? [org.img_r2_url] : [],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${org.name} - GSoC Organizations Guide`,
-      description: org.description || `Learn about ${org.name} and their Google Summer of Code projects.`,
+      title: `${org.name} — GSoC Atlas`,
+      description: org.description || `Explore ${org.name}'s recorded Google Summer of Code projects and history.`,
       images: org.img_r2_url ? [org.img_r2_url] : [],
     },
     alternates: {
@@ -136,7 +136,7 @@ export default async function OrganizationDetailPage({
 
   return (
     <>
-      <Container size="default" className="pb-2">
+      <Container size="default" className="pb-2 pt-1">
         <SiteBreadcrumbs
           items={[
             { label: "Organizations", href: "/organizations" },

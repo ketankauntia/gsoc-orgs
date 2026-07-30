@@ -16,15 +16,15 @@ interface TextProps {
 }
 
 const headingVariants = {
-  hero: "text-5xl md:text-7xl tracking-tighter font-regular",
-  section: "text-3xl md:text-5xl tracking-tighter font-regular",
-  subsection: "text-2xl md:text-3xl tracking-tighter font-medium",
-  small: "text-xl md:text-2xl tracking-tight font-medium",
+  hero: "text-[clamp(3rem,8vw,7.5rem)] leading-[0.9] tracking-[-0.055em] font-medium text-balance",
+  section: "text-[clamp(2.25rem,5vw,4.75rem)] leading-[0.98] tracking-[-0.045em] font-medium text-balance",
+  subsection: "text-[clamp(1.75rem,3vw,3rem)] leading-[1.02] tracking-[-0.035em] font-medium text-balance",
+  small: "text-xl md:text-2xl leading-tight tracking-[-0.025em] font-semibold text-balance",
 };
 
 const textVariants = {
   body: "text-base leading-relaxed",
-  lead: "text-lg md:text-xl leading-relaxed tracking-tight",
+  lead: "text-lg md:text-xl leading-[1.55] tracking-[-0.012em] text-pretty",
   muted: "text-base leading-relaxed text-muted-foreground",
   small: "text-sm leading-relaxed",
 };
@@ -60,4 +60,3 @@ export const Text = ({
     </Component>
   );
 };
-

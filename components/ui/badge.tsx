@@ -5,29 +5,29 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center border font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  "inline-flex w-fit shrink-0 items-center justify-center overflow-hidden whitespace-nowrap border font-medium transition-[background-color,color,border-color,box-shadow] [&>svg]:pointer-events-none",
   {
     variants: {
       variant: {
         default:
-          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-brand-hover",
         secondary:
-          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/88",
         destructive:
           "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
-          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+          "border-border bg-card text-foreground [a&]:hover:border-foreground/30 [a&]:hover:bg-muted",
         // Semantic variants for domain-specific badges
-        tech: "border-transparent bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
-        year: "border-transparent bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300",
-        topic: "border-transparent bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300",
-        category: "border-transparent bg-orange-50 text-orange-700 dark:bg-orange-950 dark:text-orange-300",
-        neutral: "border-gray-200 bg-white text-gray-600 dark:bg-gray-800 dark:text-gray-300",
+        tech: "border-[#cbd8fb] bg-[#edf2ff] text-[#244d9d] dark:border-[#36549a] dark:bg-[#1e2a47] dark:text-[#b9ccff]",
+        year: "border-[#bfe3da] bg-[#eaf7f3] text-[#12644d] dark:border-[#276b5a] dark:bg-[#1b3730] dark:text-[#a9e4d4]",
+        topic: "border-[#d8cff5] bg-[#f3efff] text-[#5d45a7] dark:border-[#59498f] dark:bg-[#2d2742] dark:text-[#d3c7ff]",
+        category: "border-[#ffd2bf] bg-accent text-accent-foreground dark:border-[#74402c] dark:bg-[#3a251d] dark:text-[#ffd8c6]",
+        neutral: "border-border bg-muted text-muted-foreground",
       },
       size: {
-        xs: "px-1.5 py-0.5 text-[10px] rounded gap-0.5 [&>svg]:size-2.5",
-        sm: "px-2 py-0.5 text-xs rounded-md gap-1 [&>svg]:size-3",
-        md: "px-2.5 py-1 text-sm rounded-lg gap-1.5 [&>svg]:size-3.5",
+        xs: "rounded-md px-1.5 py-0.5 text-[10px] gap-0.5 [&>svg]:size-2.5",
+        sm: "rounded-md px-2 py-1 text-xs gap-1 [&>svg]:size-3",
+        md: "rounded-lg px-2.5 py-1.5 text-sm gap-1.5 [&>svg]:size-3.5",
       },
     },
     defaultVariants: {

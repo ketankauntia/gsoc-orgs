@@ -3,7 +3,10 @@ import { notFound, redirect } from "next/navigation";
 import { Pagination } from "@/components/blog/pagination";
 import { CategoryChips } from "@/components/blog/category-chips";
 import { PostBreadcrumbs } from "@/components/blog/post-breadcrumbs";
-import { BlogListing } from "@/components/blog/templates/blog-listing";
+import {
+  BlogListing,
+  BlogListingHeader,
+} from "@/components/blog/templates/blog-listing";
 import { categoryToSlug, getAllPosts, getCategories, paginate } from "@/lib/blog/content";
 import { getSettings } from "@/lib/settings";
 
@@ -56,12 +59,7 @@ export default async function BlogPaginatedPage({
           { label: `Page ${pageNum}`, href: `/blog/page/${pageNum}` },
         ]}
       />
-      <header className="mt-6 max-w-2xl">
-        <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-          The GSoC Organizations Blog
-        </h1>
-        <p className="mt-2 text-muted-foreground">Page {pageNum} of {totalPages}</p>
-      </header>
+      <BlogListingHeader page={pageNum} totalPages={totalPages} />
 
       <CategoryChips categories={categories} />
 

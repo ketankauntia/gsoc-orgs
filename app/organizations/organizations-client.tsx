@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useMemo, useRef, startTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { ArrowUpDown, Search, SlidersHorizontal, X } from 'lucide-react'
-import { Button, Input, SectionHeader } from '@/components/ui'
+import { Button, Input } from '@/components/ui'
 import { Organization, PaginatedResponse } from '@/lib/api'
 import { OrganizationCard } from '@/components/organization-card'
 import { FiltersSidebar, FilterState } from './filters-sidebar'
@@ -347,30 +347,36 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
 
 
   return (
-    <div className="flex">
-      {/* Sidebar - Fixed left, 280px width */}
-      <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+    <div className="mx-auto flex w-full max-w-[90rem] gap-6 px-4 pb-20 sm:px-6 lg:px-8">
+      {/* Persistent desktop filter rail */}
+      <aside className="sticky top-24 hidden h-[calc(100vh-7rem)] w-[280px] shrink-0 self-start overflow-y-auto pb-4 custom-scrollbar lg:block">
         <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} firstTimeCount={firstTimeCount} />
       </aside>
 
-      {/* Main Content - with left margin for sidebar */}
-      <div className="flex-1 lg:ml-[280px]">
-        <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="min-w-0 flex-1">
+        <div className="mx-auto max-w-6xl py-4 lg:py-8">
           {/* Header Section */}
-          <SectionHeader
-            badge="GSoC 2026"
-            title="All Organizations"
-            description="Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests."
-            align="center"
-            className="max-w-3xl mx-auto mb-8"
-          />
+          <div className="atlas-grid overflow-hidden rounded-2xl bg-ink px-6 py-9 text-[#f5eee9] sm:px-9 sm:py-11">
+            <p className="font-data text-[10px] uppercase tracking-[0.18em] text-primary">
+              Organization explorer · archive snapshot
+            </p>
+            <h1 className="mt-4 text-[clamp(2.75rem,6vw,5.5rem)] font-medium leading-[0.92] tracking-[-0.055em] text-balance">
+              Find an organization worth researching.
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#aaa29d]">
+              Filter recorded organizations by participation year, technology,
+              topic, and category. Then validate the fit using projects and
+              official community links.
+            </p>
+          </div>
           {/* Search Bar */}
-          <div className="relative max-w-xl mx-auto mb-5">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <div className="relative mx-auto -mt-5 mb-5 w-[calc(100%-2rem)] max-w-3xl">
+            <Search className="absolute left-4 top-1/2 z-10 size-5 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search organizations by name, technology, or keyword..."
-              className="pl-10 h-12 text-base"
+              placeholder="Search organizations, technologies, topics, or keywords"
+              aria-label="Search organizations"
+              className="h-14 rounded-xl border-border bg-card pl-12 pr-4 text-base shadow-[0_12px_35px_rgb(23_22_21/0.12)]"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
@@ -391,12 +397,13 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
           </div>
 
           {/* Filter Chips Row */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
+          <div className="mb-5 flex flex-wrap items-center gap-2">
             <button
-              className={`px-3 py-1.5 text-[13px] font-medium rounded-full border transition-colors ${
+              type="button"
+              className={`min-h-9 rounded-full border px-3 py-1.5 text-[13px] font-medium transition-[background-color,border-color,color] ${
                 !hasActiveFilters && filters.difficulties.length === 0 && !filters.search
-                  ? 'bg-gray-800 text-white border-gray-800'
-                  : 'bg-background text-gray-600 border-gray-200 hover:border-gray-300 dark:bg-card dark:text-muted-foreground dark:border-t dark:hover:border-border'
+                  ? 'border-primary bg-primary text-primary-foreground'
+                  : 'border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground'
               }`}
               onClick={() => handleFilterChange({
                 ...filters,
@@ -411,6 +418,8 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
               All
             </button>
             {/* Difficulty filters - Coming soon */}
+            {false && (
+              <>
             <button
               disabled
               className="px-3 py-1.5 text-[13px] font-medium rounded-full border bg-muted text-muted-foreground border-border cursor-not-allowed opacity-60 relative group"
@@ -450,9 +459,12 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
                 Coming soon
               </span>
             </button>
+              </>
+            )}
             {hasActiveFilters && (
               <button
-                className="px-2 py-1.5 text-[13px] text-gray-400 hover:text-gray-600"
+                type="button"
+                className="min-h-9 px-2 py-1.5 text-[13px] font-medium text-muted-foreground hover:text-foreground"
                 onClick={() => handleFilterChange({
                   search: '',
                   years: [],
@@ -470,22 +482,24 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
 
           {/* Sidebar Filters as Chips (for year, tech, topic) */}
           {sidebarFilters.length > 0 && (
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
+            <div className="mb-5 flex flex-wrap items-center gap-2">
               {sidebarFilters.map((filter) => (
-                <span
+                <button
+                  type="button"
                   key={`${filter.key}-${filter.value}`}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] bg-muted text-muted-foreground rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-card transition-colors"
+                  aria-label={`Remove ${filter.label} filter`}
+                  className="inline-flex min-h-9 items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1.5 text-[13px] text-foreground transition-[background-color,border-color] hover:border-foreground/25 hover:bg-card"
                   onClick={() => removeFilter(filter.key, filter.value)}
                 >
                   {filter.label}
                   <X className="h-3.5 w-3.5" />
-                </span>
+                </button>
               ))}
             </div>
           )}
 
-          <div className="mb-5 flex items-center justify-between gap-3 border-y border-border py-3">
-            <p className="text-sm text-muted-foreground" aria-live="polite">
+          <div className="mb-5 flex flex-col gap-3 border-y border-border py-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-data text-xs text-muted-foreground" aria-live="polite">
               {data.total.toLocaleString()} organization{data.total === 1 ? '' : 's'}
             </p>
             <label className="flex items-center gap-2 text-sm font-medium text-foreground">
@@ -494,7 +508,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
               <select
                 value={sortBy}
                 onChange={(event) => handleSortChange(event.target.value)}
-                className="h-9 rounded-md border border-input bg-background px-3 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="h-10 rounded-lg border border-input bg-card px-3 text-sm shadow-[0_1px_0_rgb(23_22_21/0.04)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/30"
                 aria-label="Sort organizations"
               >
                 <option value="name">Name, A to Z</option>
@@ -508,8 +522,37 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
           <div className="mb-8">
             {isLoading ? (
               <OrganizationsGridSkeleton />
+            ) : data.items.length === 0 ? (
+              <div className="atlas-corner-marks flex min-h-80 flex-col items-center justify-center border border-border bg-card p-8 text-center text-muted-foreground">
+                <Search className="size-7 text-accent-foreground" strokeWidth={1.5} />
+                <h2 className="mt-5 text-2xl font-semibold tracking-[-0.035em] text-foreground">
+                  No organizations match this research path.
+                </h2>
+                <p className="mt-3 max-w-md text-sm leading-6">
+                  Remove a filter or broaden the search. Your current filters
+                  stay visible above so the result is easy to recover.
+                </p>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="mt-6"
+                  onClick={() =>
+                    handleFilterChange({
+                      search: '',
+                      years: [],
+                      categories: [],
+                      techs: [],
+                      topics: [],
+                      difficulties: [],
+                      firstTimeOnly: false,
+                    })
+                  }
+                >
+                  Reset filters
+                </Button>
+              </div>
             ) : (
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,270px),1fr))] gap-4">
                 {data.items.map((org) => (
                   <OrganizationCard key={org.id} org={org} />
                 ))}
@@ -520,7 +563,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
 
           {/* Pagination */}
           {data.pages > 1 && (
-            <div className="flex items-center justify-center gap-2 py-6 border-t border-gray-100">
+            <div className="flex flex-wrap items-center justify-center gap-2 border-t border-border py-8">
               <Button
                 variant="outline"
                 size="sm"
@@ -634,23 +677,23 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
 
 function OrganizationsGridSkeleton() {
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-5">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,270px),1fr))] gap-4">
       {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="bg-white border border-gray-200 rounded-xl p-5 animate-pulse">
+        <div key={i} className="min-h-[21rem] animate-pulse rounded-xl border border-border bg-card p-5">
           <div className="flex items-start gap-4 mb-3">
-            <div className="w-12 h-12 rounded-lg bg-gray-200" />
+            <div className="size-12 rounded-xl bg-muted" />
             <div className="flex-1">
-              <div className="h-4 bg-gray-200 rounded w-3/4 mb-2" />
-              <div className="h-3 bg-gray-200 rounded w-1/4" />
+              <div className="mb-2 h-4 w-3/4 rounded bg-muted" />
+              <div className="h-3 w-1/4 rounded bg-muted" />
             </div>
           </div>
           <div className="space-y-2 mb-4">
-            <div className="h-3 bg-gray-200 rounded" />
-            <div className="h-3 bg-gray-200 rounded w-5/6" />
+            <div className="h-3 rounded bg-muted" />
+            <div className="h-3 w-5/6 rounded bg-muted" />
           </div>
           <div className="flex gap-2">
-            <div className="h-6 bg-gray-200 rounded w-16" />
-            <div className="h-6 bg-gray-200 rounded w-20" />
+            <div className="h-6 w-16 rounded bg-muted" />
+            <div className="h-6 w-20 rounded bg-muted" />
           </div>
         </div>
       ))}

@@ -1,27 +1,34 @@
 "use client";
 
-import { useState, useCallback, FormEvent } from "react";
-import { Sparkles, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
-import { Button, Input, Section } from "@/components/ui";
+import { useCallback, useId, useState, type FormEvent } from "react";
+import { ArrowRight, CheckCircle2, Loader2, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
 interface WaitlistCTAProps {
   className?: string;
+  embedded?: boolean;
 }
 
-export function WaitlistCTA({ className }: WaitlistCTAProps) {
+export function WaitlistCTA({
+  className,
+  embedded = false,
+}: WaitlistCTAProps) {
+  const emailId = useId();
+  const messageId = useId();
   const [email, setEmail] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = useCallback(
-    async (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
 
       if (!email.trim()) {
-        setErrorMessage("Please enter your email address.");
+        setErrorMessage("Enter an email address to join the roadmap list.");
         setSubmitState("error");
         return;
       }
@@ -35,109 +42,132 @@ export function WaitlistCTA({ className }: WaitlistCTAProps) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email: email.trim(),
-            interests: ["ai-features"],
+            interests: ["ai-features", "gsoc-tools"],
           }),
         });
+        const result = await response.json();
 
-        const data = await response.json();
-
-        if (!response.ok || !data.success) {
-          setErrorMessage(data.error || "Something went wrong. Please try again.");
+        if (!response.ok || !result.success) {
+          setErrorMessage(
+            result.error ?? "We could not save your email. Try again.",
+          );
           setSubmitState("error");
           return;
         }
 
-        setSubmitState("success");
         setEmail("");
+        setSubmitState("success");
       } catch {
-        setErrorMessage("Network error. Please check your connection and try again.");
+        setErrorMessage("Check your connection and try again.");
         setSubmitState("error");
       }
     },
-    [email]
+    [email],
   );
 
-  const isSuccess = submitState === "success";
   const isLoading = submitState === "loading";
+  const content = (
+    <div
+      className={cn(
+        "flex h-full flex-col justify-between p-7 sm:p-10 lg:p-12",
+        className,
+      )}
+    >
+      <div>
+        <div className="flex size-12 items-center justify-center rounded-xl border border-ink/15 bg-white/24">
+          <Mail className="size-5" strokeWidth={1.6} />
+        </div>
+        <p className="mt-8 font-data text-[10px] uppercase tracking-[0.18em]">
+          Early product updates
+        </p>
+        <h3 className="mt-4 max-w-xl text-3xl font-medium leading-[1.02] tracking-[-0.045em] sm:text-4xl">
+          Join the roadmap list.
+        </h3>
+        <p className="mt-4 max-w-lg text-sm leading-6 text-ink/72">
+          Get notified when citation-backed AI briefs, local shortlists, and the
+          proposal workspace are ready to test. No promise of selection. No
+          weekly marketing sequence.
+        </p>
+      </div>
 
-  return (
-    <Section className={cn("py-12 lg:py-20", className)} noPadding>
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
-        <div className="rounded-2xl bg-muted/50 border border-border p-8 sm:p-10 lg:p-12">
-          <div className="flex flex-col items-center text-center gap-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-grey px-4 py-2 text-xs font-semibold text-black">
-              <Sparkles className="size-4" />
-              <span>Coming Soon</span>
-            </div>
-
-            {/* Heading with highlighted text */}
-            <div className="flex flex-col gap-4 max-w-2xl">
-              <h2 className="text-3xl md:text-5xl tracking-tighter font-regular text-foreground">
-                Unlock AI Insights for GSoC 
-              </h2>
-              <p className="text-md md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-xxl mx-auto">
-                Join the waitlist to get early access to AI-powered GSoC indepth insights on seleting organizations, choosing a tech-stack, writing & evaluating proposals and smart analytics to maximize your selection chances for GSoC 2026.
+      <div className="mt-10">
+        {submitState === "success" ? (
+          <div
+            id={messageId}
+            role="status"
+            className="flex items-start gap-3 rounded-xl border border-ink/15 bg-white/30 p-4"
+          >
+            <CheckCircle2 className="mt-0.5 size-5 shrink-0" strokeWidth={1.8} />
+            <div>
+              <p className="text-sm font-semibold">You are on the roadmap list.</p>
+              <p className="mt-1 text-xs leading-5 text-ink/65">
+                We will only email when there is something real to test.
               </p>
             </div>
-
-            {/* Form or Success Message */}
-            {isSuccess ? (
-              <div className="flex items-center gap-3 rounded-xl bg-green-50 border border-green-200 px-6 py-4">
-                <CheckCircle2 className="size-5 text-green-600 shrink-0" />
-                <p className="text-green-700 font-medium">
-                  You&apos;re on the list! We&apos;ll notify you when we launch.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col gap-4">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      if (submitState === "error") setSubmitState("idle");
-                    }}
-                    disabled={isLoading}
-                    aria-label="Email address"
-                    autoComplete="email"
-                    className="flex-1 h-12"
-                  />
-                  <Button 
-                    type="submit" 
-                    disabled={isLoading} 
-                    className="h-12 px-6 bg-zinc-900 hover:bg-zinc-800 text-white gap-2"
-                  >
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="size-4 animate-spin" />
-                        Joining...
-                      </>
-                    ) : (
-                      <>
-                        Join Waitlist
-                        <ArrowRight className="size-4" />
-                      </>
-                    )}
-                  </Button>
-                </div>
-
-                {submitState === "error" && errorMessage && (
-                  <p className="text-destructive text-sm text-center">
-                    {errorMessage}
-                  </p>
-                )}
-
-                <p className="text-sm text-muted-foreground">
-                  No spam, ever. Unsubscribe anytime.
-                </p>
-              </form>
-            )}
           </div>
-        </div>
+        ) : (
+          <form onSubmit={handleSubmit} noValidate>
+            <label htmlFor={emailId} className="text-sm font-semibold">
+              Email address
+            </label>
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+              <Input
+                id={emailId}
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                placeholder="you@example.com"
+                value={email}
+                disabled={isLoading}
+                aria-describedby={submitState === "error" ? messageId : undefined}
+                aria-invalid={submitState === "error"}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                  if (submitState === "error") setSubmitState("idle");
+                }}
+                className="h-12 flex-1 border-ink/18 bg-white text-ink placeholder:text-ink/45"
+              />
+              <Button
+                type="submit"
+                variant="secondary"
+                size="lg"
+                disabled={isLoading}
+                className="sm:min-w-40"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="size-4 animate-spin" />
+                    Joining
+                  </>
+                ) : (
+                  <>
+                    Join the list
+                    <ArrowRight className="size-4" />
+                  </>
+                )}
+              </Button>
+            </div>
+            <div
+              id={messageId}
+              aria-live="polite"
+              className="mt-3 min-h-5 text-xs font-medium"
+            >
+              {submitState === "error" ? errorMessage : "Unsubscribe at any time."}
+            </div>
+          </form>
+        )}
       </div>
-    </Section>
+    </div>
+  );
+
+  if (embedded) return content;
+
+  return (
+    <section className="bg-primary px-3 py-3 text-primary-foreground sm:px-5 sm:py-5">
+      <div className="mx-auto max-w-shell overflow-hidden rounded-[1.5rem] border border-ink/15">
+        {content}
+      </div>
+    </section>
   );
 }
+

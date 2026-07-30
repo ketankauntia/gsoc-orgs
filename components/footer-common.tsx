@@ -1,147 +1,72 @@
-/**
- * Shared footer constants and data
- * Used by both Footer and FooterSmall components
- */
-
+/** Shared navigation and social destinations for public footer surfaces. */
 export const FOOTER_COPYRIGHT = {
-  text: "Built with ❤️ for the Google Summer of Code (GSoC) open source community",
+  text: "Built for the open-source contributor community",
   year: "2026",
-  organization: "GSoCOrganizationsGuide",
+  organization: "GSoC Atlas",
   organizationUrl: "/",
 };
 
 export const SOCIAL_LINKS = {
   github: {
     href: "https://github.com/ketankauntia/gsoc-orgs/",
-    label: "GSoC Organizations Guide GitHub",
+    label: "GSoC Atlas on GitHub",
   },
   twitter: {
     href: "https://www.x.com/gsoc_orgs_guide",
-    label: "X - GSoC",
+    label: "GSoC Atlas on X",
   },
-  twitter2:{
-    href: "https://www.x.com/kauntiaketan", 
-    label: "X - kauntiaketan",    
+  twitter2: {
+    href: "https://www.x.com/kauntiaketan",
+    label: "Ketan Kauntia on X",
   },
   linkedin: {
     href: "https://www.linkedin.com/company/gsoc-organizations-guide/",
-    label: "LinkedIn",
+    label: "GSoC Atlas on LinkedIn",
   },
   facebook: {
     href: "https://www.facebook.com/people/Gsoc-Organizations-Guide/61586071196146/",
-    label: "Facebook",
+    label: "GSoC Atlas on Facebook",
   },
   pinterest: {
     href: "https://www.pinterest.com/gsocorganizationsguide/",
-    label: "Pinterest",
+    label: "GSoC Atlas on Pinterest",
   },
   quora: {
     href: "https://www.quora.com/profile/GSoC-Organizations-Guide",
-    label: "Quora",
+    label: "GSoC Atlas on Quora",
   },
 };
 
 export const FOOTER_NAVIGATION_ITEMS = [
   {
-    title: "Quick Links",
-    description: "GSoC Related Quick Links",
+    title: "Explore",
+    description: "Browse the dataset",
     items: [
-      {
-        title: "GSoC Organizations",
-        href: "/organizations",
-      },
-      {
-        title: "GSoC Tech Stack",
-        href: "/tech-stack",
-      },
-      {
-        title: "GSoC Topics",
-        href: "/topics",
-      },
-      {
-        title: "GSoC Blog",
-        href: "/blog",
-      },
-      // { // will add when projects route is done
-      //   title: "GSoC Projects",
-      //   href: "/gsoc-projects",
-      // },
-      // {
-      //   title: "GSoC Yearly Stats",
-      //   href: "/gsoc-previous-years",
-      // },
+      { title: "Organizations", href: "/organizations" },
+      { title: "Projects", href: "/projects" },
+      { title: "Technologies", href: "/tech-stack" },
+      { title: "Topics", href: "/topics" },
     ],
   },
   {
-    title: "GSoC Yearly",
-    description: "Yearly GSoC Organizations",
+    title: "Understand",
+    description: "Read the evidence",
     items: [
-      {
-        title: "GSoC 2025",
-        href: "/yearly/google-summer-of-code-2025",
-      },
-      {
-        title: "GSoC 2024",
-        href: "/yearly/google-summer-of-code-2024",
-      },
-      {
-        title: "GSoC 2023",
-        href: "/yearly/google-summer-of-code-2023",
-      },
-      {
-        title: "GSoC 2022",
-        href: "/yearly/google-summer-of-code-2022",
-      },
-      {
-        title: "GSoC 2021",
-        href: "/yearly/google-summer-of-code-2021",
-      },
-      {
-        title: "GSoC 2020",
-        href: "/yearly/google-summer-of-code-2020",
-      },
-      {
-        title: "GSoC 2019",
-        href: "/yearly/google-summer-of-code-2019",
-      },
-      {
-        title: "GSoC 2018",
-        href: "/yearly/google-summer-of-code-2018",
-      },
-      {
-        title: "GSoC 2017",
-        href: "/yearly/google-summer-of-code-2017",
-      },
-      {
-        title: "GSoC 2016",
-        href: "/yearly/google-summer-of-code-2016",
-      },
+      { title: "Yearly insights", href: "/yearly" },
+      { title: "Guides & articles", href: "/blog" },
+      { title: "Public API", href: "/api/v1" },
+      { title: "Changelog", href: "/changelog" },
     ],
   },
   {
-    title: "Community",
-    description: "GSoC Organizations Guide Community Links",
+    title: "Project",
+    description: "About this guide",
     items: [
-      {
-        title: "About Us",
-        href: "/about",
-      },
-      {
-        title: "Contact Us",
-        href: "/contact",
-      },
-      {
-        title: "Privacy Policy",
-        href: "/privacy-policy",
-      },
-      {
-        title: "Terms and Conditions",
-        href: "/terms-and-conditions",
-      },
-      {
-        title: "Changelog",
-        href: "/changelog",
-      },
+      { title: "About", href: "/about" },
+      { title: "Contact", href: "/contact" },
+      { title: "GitHub", href: SOCIAL_LINKS.github.href },
+      { title: "RSS feed", href: "/rss.xml" },
     ],
   },
 ];
+

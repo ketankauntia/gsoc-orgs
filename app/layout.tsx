@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -20,10 +20,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
-    template: "%s | GSoC Organizations Guide",
+    default: "GSoC Atlas — Explore Organizations, Projects & Technologies",
+    template: "%s | GSoC Atlas",
   },
-  description: "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
+  description:
+    "Explore Google Summer of Code organizations, projects, technologies, topics, and participation history in one independent research guide.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -32,28 +33,33 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    siteName: "GSoC Organizations Guide",
+    siteName: "GSoC Atlas",
     locale: "en_US",
     url: SITE_URL,
-    title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
-    description: "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
+    title: "GSoC Atlas — Google Summer of Code, mapped",
+    description:
+      "Explore organizations, projects, technologies, topics, and participation history.",
     images: [
       {
         url: `${SITE_URL}/og/gsoc-organizations-guide.jpg`,
         width: 1200,
         height: 630,
-        alt: "GSoC Organizations Guide",
+        alt: "GSoC Atlas",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
-    description: "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
+    title: "GSoC Atlas — Google Summer of Code, mapped",
+    description:
+      "Explore organizations, projects, technologies, topics, and participation history.",
     images: [`${SITE_URL}/og/gsoc-organizations-guide.jpg`],
   },
-  // themeColor: "#000000", // Commented out - should be moved to viewport export per Next.js recommendation
-  
+};
+
+export const viewport: Viewport = {
+  themeColor: "#171615",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({
@@ -62,20 +68,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <a
           href="#main-content"
-          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-background px-4 py-2 font-medium text-foreground shadow-lg ring-2 ring-ring transition-transform focus:translate-y-0 motion-reduce:transition-none"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-transform focus:translate-y-0 motion-reduce:transition-none"
         >
           Skip to main content
         </a>
-        <ThemeProvider 
-          attribute="class" 
+        <ThemeProvider
+          attribute="class"
           defaultTheme="light"
           storageKey="gsoc-theme"
+          enableSystem
           disableTransitionOnChange={false}
         >
           <div id="main-content" tabIndex={-1}>
@@ -89,3 +94,4 @@ export default function RootLayout({
     </html>
   );
 }
+

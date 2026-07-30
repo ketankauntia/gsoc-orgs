@@ -8,6 +8,7 @@ Project documentation is grouped by topic:
 - `caching/` - caching architecture and implementation notes.
 - `deployment/` - deployment steps, deployment fixes, and release checklists.
 - `development/` - local admin setup, hooks, and development workflow checks.
+- `design-system/` - product principles, visual foundations, and reusable component contracts.
 - `features/` - feature-specific implementation notes.
 - `security/` - extended security documentation.
 - `changelog/` - dated release and change logs.

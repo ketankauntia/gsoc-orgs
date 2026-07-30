@@ -1,18 +1,15 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Code2,
   Users,
   ArrowRight,
   TrendingUp,
   Sparkles,
-  Building2,
   Calendar,
 } from "lucide-react";
 import {
   Container,
-  SectionHeader,
   Button,
   Badge,
   Grid,
@@ -22,6 +19,8 @@ import {
 } from "@/components/ui";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
+import { ArchiveYearHero } from "@/components/archive-year-hero";
+import { OrganizationLogo } from "@/components/organization-logo";
 import { loadProjectsYearData, getAvailableProjectYears } from "@/lib/projects-page-types";
 import { ExpandableProjectList } from "./client-components";
 import {
@@ -94,42 +93,36 @@ export default async function ProjectsYearPage({
           />
 
           {/* 1️⃣ Hero / Summary Block */}
-          <div className="space-y-6">
-            <SectionHeader
-              badge={`GSoC ${year}`}
-              title={data.title}
-              description={data.description}
-              align="center"
-            />
-
-            {/* Key Metrics Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <StatCard
-                icon={<Code2 className="w-5 h-5 text-primary" />}
-                label="Total Projects"
-                value={metrics.total_projects}
-                subtitle="accepted"
-              />
-              <StatCard
-                icon={<Building2 className="w-5 h-5 text-primary" />}
-                label="Organizations"
-                value={metrics.total_organizations}
-                subtitle="participating"
-              />
-              <StatCard
-                icon={<TrendingUp className="w-5 h-5 text-primary" />}
-                label="Avg Projects/Org"
-                value={metrics.avg_projects_per_org}
-                subtitle="per organization"
-              />
-              <StatCard
-                icon={<Sparkles className="w-5 h-5 text-primary" />}
-                label="First-Time Org Projects"
-                value={metrics.first_time_org_projects}
-                subtitle={`${insights.first_time_org_percentage}% of orgs are new`}
-              />
-            </div>
-          </div>
+          <ArchiveYearHero
+            context="Project archive"
+            year={year}
+            title={data.title}
+            description={data.description}
+            publishedAt={data.published_at}
+            finalized={data.finalized}
+            metrics={[
+              {
+                value: metrics.total_projects.toLocaleString(),
+                label: "Recorded projects",
+                note: "Accepted archive records",
+              },
+              {
+                value: metrics.total_organizations,
+                label: "Organizations",
+                note: "Represented in this project archive",
+              },
+              {
+                value: metrics.avg_projects_per_org,
+                label: "Average projects per org",
+                note: "Calculated from recorded projects",
+              },
+              {
+                value: metrics.first_time_org_projects,
+                label: "Projects from first-time orgs",
+                note: `${insights.first_time_org_percentage}% of organizations first appear this year`,
+              },
+            ]}
+          />
 
           {/* 2️⃣ Key Insights Block */}
           <CardWrapper className="p-6 bg-gradient-to-r from-primary/5 to-primary/10">
@@ -159,12 +152,6 @@ export default async function ProjectsYearPage({
                   <InsightCard
                     title="Tech Stack Complexity"
                     content={`Average project used ${insights.avg_tech_stack_size} core technologies`}
-                  />
-                )}
-                {insights.difficulty_summary && (
-                  <InsightCard
-                    title="Project Difficulty"
-                    content={insights.difficulty_summary}
                   />
                 )}
               </div>
@@ -212,68 +199,6 @@ export default async function ProjectsYearPage({
               </CardWrapper>
             </Grid>
 
-            {/* Difficulty Distribution */}
-            {charts.project_difficulty_distribution && (
-              <CardWrapper className="p-6">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <Heading variant="small" className="text-lg">
-                        Project Difficulty Distribution
-                      </Heading>
-                      <Text variant="muted" className="text-sm mt-1">
-                        Breakdown of project difficulty levels in {year}
-                      </Text>
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {metrics.total_projects} total projects
-                    </Badge>
-                  </div>
-                  
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="relative w-48 h-48">
-                      <div
-                        className="w-full h-full rounded-full"
-                        style={{
-                          background: `conic-gradient(
-                            from 0deg,
-                            #0d9488 0% ${charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0}%,
-                            #14b8a6 ${charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0}% ${(charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0) + (charts.project_difficulty_distribution.data.find(d => d.label === "Intermediate")?.percentage || 0)}%,
-                            #2dd4bf ${(charts.project_difficulty_distribution.data.find(d => d.label === "Beginner")?.percentage || 0) + (charts.project_difficulty_distribution.data.find(d => d.label === "Intermediate")?.percentage || 0)}% 100%
-                          )`,
-                        }}
-                      />
-                      <div className="absolute inset-[30%] bg-background rounded-full flex items-center justify-center">
-                        <div className="text-center">
-                          <Text className="text-2xl font-bold">{metrics.total_projects}</Text>
-                          <Text variant="small" className="text-muted-foreground">projects</Text>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2 mt-4">
-                      {charts.project_difficulty_distribution.data.map((diff) => {
-                        const tealColors = ["#0d9488", "#14b8a6", "#2dd4bf"];
-                        const colorIndex = diff.label === "Beginner" ? 0 : diff.label === "Intermediate" ? 1 : 2;
-                        const percentage = diff.percentage || Math.round((diff.value / metrics.total_projects) * 100) || 0;
-
-                        return (
-                          <div key={diff.label} className="flex items-center gap-3">
-                            <div 
-                              className="w-4 h-4 rounded-sm"
-                              style={{ backgroundColor: tealColors[colorIndex] }}
-                            />
-                            <Text variant="small">
-                              {diff.label}: {diff.value} ({percentage}%)
-                            </Text>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </CardWrapper>
-            )}
           </div>
 
           {/* 4️⃣ First-Time Organizations Section */}
@@ -298,18 +223,14 @@ export default async function ProjectsYearPage({
                     <Link key={org.slug} href={`/organizations/${org.slug}`}>
                       <Badge
                         variant="outline"
-                        className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-all py-2 px-3"
+                        className="cursor-pointer py-2 px-3 transition-[background-color,color,border-color] hover:border-foreground/30 hover:bg-muted"
                       >
-                        {org.logo_url && (
-                          <Image
-                            src={org.logo_url}
-                            alt={org.name}
-                            width={16}
-                            height={16}
-                            className="w-4 h-4 mr-2 rounded"
-                            unoptimized
-                          />
-                        )}
+                        <OrganizationLogo
+                          src={org.logo_url}
+                          name={org.name}
+                          size={18}
+                          className="mr-1.5 rounded-md"
+                        />
                         {org.name}
                         <span className="ml-1 text-muted-foreground">
                           ({org.project_count})
@@ -385,35 +306,6 @@ export default async function ProjectsYearPage({
       </div>
       <Footer />
     </>
-  );
-}
-
-// --- Helper Components ---
-
-function StatCard({
-  icon,
-  label,
-  value,
-  subtitle,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string | number;
-  subtitle: string;
-}) {
-  return (
-    <div className="p-4 rounded-lg border bg-card">
-      <div className="flex items-center gap-2 mb-2">
-        {icon}
-        <Text variant="small" className="text-muted-foreground">
-          {label}
-        </Text>
-      </div>
-      <Text className="text-3xl font-bold mb-1">{value}</Text>
-      <Text variant="small" className="text-muted-foreground">
-        {subtitle}
-      </Text>
-    </div>
   );
 }
 

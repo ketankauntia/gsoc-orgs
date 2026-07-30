@@ -1,10 +1,20 @@
+import Link from "next/link";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
-import { Container, SectionHeader, Heading, Text, CardWrapper, Grid } from "@/components/ui";
+import {
+  Button,
+  Heading,
+  MetricCell,
+  PageRail,
+  SourceNote,
+  Text,
+} from "@/components/ui";
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
-import { Users, Target, Heart, Code, Globe } from "lucide-react";
+import { ArrowUpRight, Code, Globe, Heart, Target } from "lucide-react";
 import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
+import { SOCIAL_LINKS } from "@/components/footer-common";
+import { loadHomepageData } from "@/lib/homepage-types";
 
 // Force revalidation to ensure footer links stay updated
 /**
@@ -16,9 +26,9 @@ import { SiteBreadcrumbs } from "@/components/site-breadcrumbs";
 export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = {
-  title: "About Us | GSoC Organizations Guide",
+  title: "About",
   description:
-    "Learn about GSoC Organizations Guide - your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities. Our mission is to help students find the perfect open-source organization.",
+    "Learn how the independent GSoC Atlas organizes public Google Summer of Code history for organization and project research.",
   keywords: [
     "about GSoC",
     "Google Summer of Code guide",
@@ -27,24 +37,24 @@ export const metadata: Metadata = {
     "student developer resources",
   ],
   openGraph: {
-    title: "About Us | GSoC Organizations Guide",
+    title: "About GSoC Atlas",
     description:
       "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
     url: getFullUrl("/about"),
     type: "website",
-    siteName: "GSoC Organizations Guide",
+    siteName: "GSoC Atlas",
     images: [
       {
         url: getFullUrl("/og/gsoc-organizations-guide.jpg"),
         width: 1200,
         height: 630,
-        alt: "GSoC Organizations Guide",
+        alt: "GSoC Atlas",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | GSoC Organizations Guide",
+    title: "About GSoC Atlas",
     description:
       "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
     images: [getFullUrl("/og/gsoc-organizations-guide.jpg")],
@@ -57,152 +67,222 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: Target,
-    title: "Our Mission",
+    title: "Evidence first",
     description:
-      "To empower students worldwide by providing comprehensive resources and tools to discover, explore, and prepare for Google Summer of Code opportunities.",
+      "Every count comes from a dated archive snapshot, and every page should make missing or partial data visible.",
   },
   {
     icon: Heart,
-    title: "Our Vision",
+    title: "Research, not ranking",
     description:
-      "To become the go-to platform for students seeking open-source opportunities, making GSoC more accessible and approachable for everyone.",
+      "The atlas supports better questions and stronger shortlists without inventing selection odds or community-fit scores.",
   },
   {
     icon: Code,
-    title: "What We Do",
+    title: "Connected records",
     description:
-      "We curate and organize information about GSoC organizations, helping students find projects that match their skills, interests, and experience level.",
+      "Organizations, projects, technologies, topics, and years link together so a useful discovery never becomes a dead end.",
   },
   {
     icon: Globe,
-    title: "Community Focus",
+    title: "Independent and open",
     description:
-      "We believe in the power of open-source communities and work to bridge the gap between students and organizations.",
+      "GSoC Atlas is not affiliated with Google. Its source and feedback channels stay open to the community.",
   },
 ];
 
-const stats = [
-  { label: "Organizations", value: "200+", description: "Curated GSoC organizations" },
-  { label: "Technologies", value: "50+", description: "Programming languages & frameworks" },
-  { label: "Projects", value: "1000+", description: "Open source projects listed" },
-  { label: "Students Helped", value: "10K+", description: "Students using our platform" },
-];
+export default async function AboutPage() {
+  const homepageData = await loadHomepageData();
+  const snapshotDate = homepageData
+    ? new Intl.DateTimeFormat("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }).format(new Date(homepageData.published_at))
+    : null;
 
-export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
-      <main className="flex-1 pt-20 lg:pt-24">
-        <Container size="default" className="py-8 lg:py-16">
-          <div className="space-y-16">
-            <SiteBreadcrumbs items={[{ label: "About", href: "/about" }]} />
-            {/* Hero Section */}
-            <SectionHeader
-              badge="About Us"
-              title="Empowering Students in Open Source"
-              titleAs="h1"
-              description="GSoC Organizations Guide is dedicated to helping students discover and prepare for Google Summer of Code opportunities. We provide comprehensive resources, detailed organization profiles, and tools to help you find your perfect match."
-              align="center"
-              className="max-w-3xl mx-auto"
+      <main className="flex-1 pb-20 pt-28">
+        <PageRail as="div">
+          <SiteBreadcrumbs items={[{ label: "About", href: "/about" }]} />
+
+          <section className="atlas-corner-marks relative mt-8 overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink px-6 py-14 text-[#f5eee9] sm:px-8 sm:py-18 lg:px-12 lg:py-24">
+            <div
+              aria-hidden="true"
+              className="atlas-grid absolute inset-0 text-white opacity-20 [mask-image:linear-gradient(to_bottom_right,black,transparent_72%)]"
             />
+            <div className="relative max-w-4xl">
+              <p className="flex items-center gap-2 font-data text-[10px] uppercase tracking-[0.2em] text-[#aaa29d]">
+                <span aria-hidden="true" className="size-2 bg-primary" />
+                Independent GSoC research guide
+              </p>
+              <Heading
+                as="h1"
+                variant="section"
+                className="mt-5 max-w-4xl text-[#f5eee9]"
+              >
+                Making the GSoC archive easier to investigate.
+              </Heading>
+              <Text
+                variant="lead"
+                className="mt-7 max-w-2xl text-[#c8c0bb]"
+              >
+                GSoC Atlas organizes public program history into practical
+                paths for exploring organizations, projects, technologies, and
+                topics before you decide where to contribute.
+              </Text>
+            </div>
+          </section>
 
-            {/* Stats Section */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <CardWrapper key={index} className="text-center p-6">
-                  <Text className="text-3xl font-bold text-primary mb-2">{stat.value}</Text>
-                  <Heading variant="small" className="mb-1">
-                    {stat.label}
-                  </Heading>
-                  <Text variant="small" className="text-muted-foreground">
-                    {stat.description}
-                  </Text>
-                </CardWrapper>
-              ))}
+          {homepageData && snapshotDate ? (
+            <section aria-labelledby="dataset-heading" className="py-16">
+              <div className="flex flex-col justify-between gap-5 border-b border-border pb-7 sm:flex-row sm:items-end">
+                <div>
+                  <p className="font-data text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                    What the atlas contains
+                  </p>
+                  <div id="dataset-heading">
+                    <Heading
+                      variant="subsection"
+                      className="mt-3 max-w-2xl"
+                    >
+                      A navigable record, not a promise of selection.
+                    </Heading>
+                  </div>
+                </div>
+                <SourceNote date={snapshotDate} />
+              </div>
+              <div className="grid border-b border-border sm:grid-cols-3">
+                <MetricCell
+                  value={homepageData.metrics.total_organizations.toLocaleString()}
+                  label="Recorded organizations"
+                  note="Across available program years"
+                  className="border-b sm:border-b-0 sm:border-r"
+                />
+                <MetricCell
+                  value={homepageData.metrics.active_organizations.toLocaleString()}
+                  label="Active snapshot organizations"
+                  note="Latest generated dataset"
+                  className="border-b sm:border-b-0 sm:border-r"
+                />
+                <MetricCell
+                  value={homepageData.metrics.total_projects.toLocaleString()}
+                  label="Recorded projects"
+                  note="Public archive entries"
+                />
+              </div>
+            </section>
+          ) : null}
+
+          <section className="grid gap-10 border-t border-border py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:py-20">
+            <div>
+              <p className="font-data text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                How we work
+              </p>
+              <Heading variant="subsection" className="mt-3">
+                Four principles behind the guide.
+              </Heading>
+              <Text className="mt-5 max-w-md text-muted-foreground">
+                The product is designed to reduce research friction while
+                keeping the evidence, limits, and next action visible.
+              </Text>
             </div>
 
-            {/* Values Section */}
-            <div className="space-y-8">
-              <div className="text-center space-y-2">
-                <Heading variant="section">Our Values</Heading>
-                <Text className="text-muted-foreground max-w-2xl mx-auto">
-                  The principles that guide everything we do
-                </Text>
-              </div>
-              <Grid cols={{ default: 1, md: 2 }} gap="lg">
-                {values.map((value, index) => {
-                  const Icon = value.icon;
-                  return (
-                    <CardWrapper key={index} className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-primary/10 shrink-0">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <Heading variant="small" className="mb-2">
-                            {value.title}
-                          </Heading>
-                          <Text className="text-muted-foreground">{value.description}</Text>
-                        </div>
-                      </div>
-                    </CardWrapper>
-                  );
-                })}
-              </Grid>
+            <div className="grid overflow-hidden rounded-xl border border-border bg-card sm:grid-cols-2">
+              {values.map((value, index) => {
+                const Icon = value.icon;
+                return (
+                  <article
+                    key={value.title}
+                    className={[
+                      "min-h-64 p-6 sm:p-8",
+                      index < 3 ? "border-b border-border" : "",
+                      index === 2 ? "sm:border-b-0" : "",
+                      index % 2 === 0 ? "sm:border-r sm:border-border" : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                  >
+                    <span className="flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+                      <Icon aria-hidden="true" className="size-5" strokeWidth={1.75} />
+                    </span>
+                    <h3 className="mt-8 text-xl font-semibold tracking-[-0.025em]">
+                      {value.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {value.description}
+                    </p>
+                  </article>
+                );
+              })}
             </div>
+          </section>
 
-            {/* Story Section */}
-            <CardWrapper className="p-8 lg:p-12">
-              <div className="space-y-6 max-w-3xl mx-auto">
-                <div className="text-center space-y-2">
-                  <Heading variant="section">Our Story</Heading>
-                </div>
-                <div className="space-y-4 text-center">
-                  <Text>
-                    Google Summer of Code is an incredible opportunity for students to contribute to
-                    open-source projects, learn from experienced mentors, and build their portfolio.
-                    However, finding the right organization and project can be overwhelming with
-                    hundreds of options available.
-                  </Text>
-                  <Text>
-                    That&apos;s where we come in. GSoC Organizations Guide was created to simplify this
-                    process. We&apos;ve curated comprehensive information about participating
-                    organizations, their technologies, project difficulty levels, and more. Our goal
-                    is to help you make informed decisions and find opportunities that align with
-                    your skills and interests.
-                  </Text>
-                  <Text>
-                    Whether you&apos;re a beginner looking for your first open-source contribution or an
-                    experienced developer seeking challenging projects, we&apos;re here to support your
-                    GSoC journey.
-                  </Text>
-                </div>
-              </div>
-            </CardWrapper>
-
-            {/* Team Section */}
-            <div className="space-y-8">
-              <div className="text-center space-y-2">
-                <Heading variant="section">Built by the Community, for the Community</Heading>
-                <Text className="text-muted-foreground max-w-2xl mx-auto">
-                  GSoC Organizations Guide is an open-source project maintained by passionate
-                  developers who believe in making open-source opportunities more accessible.
-                </Text>
-              </div>
-              <CardWrapper className="p-8 text-center">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Users className="w-8 h-8 text-primary" />
-                  <Heading variant="subsection">Open Source Contributors</Heading>
-                </div>
-                <Text className="text-muted-foreground max-w-2xl mx-auto">
-                  We welcome contributions from the community! If you&apos;d like to help improve the
-                  platform, add new features, or update organization information, check out our
-                  repository on GitHub.
-                </Text>
-              </CardWrapper>
+          <section className="grid gap-10 border-t border-border py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:py-20">
+            <div>
+              <p className="font-data text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Why it exists
+              </p>
+              <Heading variant="subsection" className="mt-3">
+                Research should lead to contribution.
+              </Heading>
             </div>
-          </div>
-        </Container>
+            <div className="max-w-2xl space-y-5 text-base leading-7 text-foreground/82">
+              <p>
+                Google Summer of Code gives contributors a path into real
+                open-source work, but the archive can be difficult to read when
+                hundreds of organizations, technologies, and project histories
+                compete for attention.
+              </p>
+              <p>
+                GSoC Atlas brings that public information into one research
+                surface. It helps people compare recorded participation, inspect
+                project history, and move from browsing toward informed
+                contribution.
+              </p>
+              <p>
+                The guide does not predict selection. It makes the available
+                evidence easier to inspect and leaves the important work —
+                learning the codebase, talking to communities, and contributing
+                consistently — with the applicant.
+              </p>
+            </div>
+          </section>
+
+          <section className="atlas-corner-marks rounded-[1.5rem] border border-border bg-cream px-6 py-12 sm:px-8 lg:flex lg:items-end lg:justify-between lg:gap-12 lg:px-12 lg:py-16">
+            <div className="max-w-2xl">
+              <p className="font-data text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Open-source project
+              </p>
+              <Heading variant="subsection" className="mt-3">
+                Built by the community, for the community.
+              </Heading>
+              <Text className="mt-5 text-muted-foreground">
+                Explore the dataset, report gaps, or help make the research
+                experience clearer for the next contributor.
+              </Text>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0">
+              <Button asChild>
+                <Link href="/organizations">
+                  Explore the atlas
+                  <ArrowUpRight aria-hidden="true" className="size-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline">
+                <a
+                  href={SOCIAL_LINKS.github.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contribute on GitHub
+                </a>
+              </Button>
+            </div>
+          </section>
+        </PageRail>
       </main>
       <FooterSmall />
     </div>

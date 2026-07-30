@@ -4,6 +4,7 @@ import { loadOrganizationsIndexData } from '@/lib/organizations-page-types'
 import { loadTechStackIndexData } from '@/lib/tech-stack-page-types'
 import { loadTopicsIndexData } from '@/lib/topics-page-types'
 import { getAvailableProjectYears } from '@/lib/projects-page-types'
+import { getAvailableYearlyYears } from '@/lib/yearly-page-types'
 import {
   categoryToSlug,
   getCategories,
@@ -53,7 +54,7 @@ async function getAllTopicSlugs(): Promise<string[]> {
 }
 
 function getYearlySlugs(): string[] {
-  const years = getAvailableProjectYears()
+  const years = getAvailableYearlyYears()
   return years.map(y => `google-summer-of-code-${y}`)
 }
 

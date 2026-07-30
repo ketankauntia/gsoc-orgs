@@ -1,27 +1,36 @@
 import Link from "next/link";
-import { Section } from "@/components/ui";
-import { SocialLinks } from "@/components/social-links";
+import { AtlasMark } from "@/components/brand/atlas-mark";
 import { FOOTER_COPYRIGHT } from "@/components/footer-common";
 
-/**
- * Minimal footer component for organizations pages
- * Single line with copyright and social links
- */
-export const FooterSmall = () => {
+/** Compact footer for dense explorer and detail routes. */
+export function FooterSmall() {
   return (
-    <Section
-      noPadding
-      className="py-8 bg-gray-100 bg-card text-black border-t dark:text-foreground"
-    >
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-        {/* Copyright */}
-        <p className="text-sm text-center sm:text-left">
-          {FOOTER_COPYRIGHT.text} | © {FOOTER_COPYRIGHT.year} <Link href={FOOTER_COPYRIGHT.organizationUrl} className="hover:underline">{FOOTER_COPYRIGHT.organization}</Link>
+    <footer className="border-t border-border bg-ink px-4 py-7 text-[#aaa29d]">
+      <div className="mx-auto flex max-w-shell flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#f5eee9]"
+        >
+          <AtlasMark className="size-5 text-primary" />
+          GSoC Atlas
+        </Link>
+        <p className="font-data text-[10px] uppercase tracking-[0.12em]">
+          © {FOOTER_COPYRIGHT.year} · Independent guide · Not affiliated with
+          Google
         </p>
-        {/* Social Links */}
-        <SocialLinks className="flex items-center gap-4 text-black dark:text-foreground" />
+        <div className="flex gap-4 text-xs">
+          <Link href="/about" className="hover:text-white">
+            About
+          </Link>
+          <Link href="/contact" className="hover:text-white">
+            Contact
+          </Link>
+          <Link href="/privacy-policy" className="hover:text-white">
+            Privacy
+          </Link>
+        </div>
       </div>
-    </Section>
+    </footer>
   );
-};
+}
 

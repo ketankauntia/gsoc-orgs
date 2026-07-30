@@ -1,189 +1,335 @@
-'use client'
-import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
-import { Button } from "@/components/ui"
-import React from 'react'
-import { cn } from '@/lib/utils'
-import { SOCIAL_LINKS } from '@/components/footer-common'
-import { GitHubIcon,  XIcon } from '@/components/icons'
-import { ModeToggle } from './ModeToggle'
+"use client";
 
-const menuItems = [
-    { name: 'Organizations', href: '/organizations' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Technologies', href: '/tech-stack' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Yearly', href: '/yearly' },
-    // { name: 'Resources', href: '#resources' },
-    // { name: 'About Us', href: '#about' },
-    // { name: 'Contact', href: '#contact' },
-]
+import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight, Database, Github, Menu, X } from "lucide-react";
+import { AtlasMark } from "@/components/brand/atlas-mark";
+import { Button } from "@/components/ui/button";
+import { SOCIAL_LINKS } from "@/components/footer-common";
+import { cn } from "@/lib/utils";
 
-export const Header = () => {
-    const [menuState, setMenuState] = React.useState(false)
-    const [isScrolled, setIsScrolled] = React.useState(false)
-    const menuButtonRef = React.useRef<HTMLButtonElement>(null)
-    const firstMobileLinkRef = React.useRef<HTMLAnchorElement>(null)
+const navigation = [
+  { name: "Organizations", href: "/organizations" },
+  { name: "Projects", href: "/projects" },
+  { name: "Technologies", href: "/tech-stack" },
+  { name: "Topics", href: "/topics" },
+  { name: "Yearly", href: "/yearly" },
+  { name: "Guides", href: "/blog" },
+];
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
-        }
-        handleScroll()
-        window.addEventListener('scroll', handleScroll, { passive: true })
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+interface HeaderProps {
+  variant?: "default" | "home";
+}
 
-    React.useEffect(() => {
-        if (!menuState) return
+export function Header({ variant = "default" }: HeaderProps) {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const menuButtonRef = React.useRef<HTMLButtonElement>(null);
+  const firstMobileLinkRef = React.useRef<HTMLAnchorElement>(null);
 
-        firstMobileLinkRef.current?.focus()
-        const handleEscape = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                setMenuState(false)
-                menuButtonRef.current?.focus()
-            }
-        }
-        document.addEventListener('keydown', handleEscape)
-        return () => document.removeEventListener('keydown', handleEscape)
-    }, [menuState])
+  React.useEffect(() => {
+    if (!menuOpen) return;
 
-    const closeMenu = () => setMenuState(false)
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    firstMobileLinkRef.current?.focus();
 
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [menuOpen]);
+
+  const isActive = (href: string) =>
+    href === "/"
+      ? pathname === href
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  if (variant === "home") {
     return (
-        <header suppressHydrationWarning>
-            <nav
-                aria-label="Primary navigation"
-                data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2"
-                suppressHydrationWarning>
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="GSoC Guide home"
-                                className="flex items-center space-x-2 font-semibold text-xl">
-                                <span>GSoC Guide</span>
-                            </Link>
+      <header className="relative z-50 bg-white px-4 text-[#242424] sm:px-5">
+        <nav
+          aria-label="Primary navigation"
+          className="mx-auto flex h-[4.5rem] w-full max-w-[87rem] items-center"
+        >
+          <Link
+            href="/"
+            aria-label="GSoC Atlas home"
+            className="group inline-flex shrink-0 items-center gap-3 rounded-md"
+          >
+            <span className="flex size-10 items-center justify-center text-[#ff5e1f]">
+              <AtlasMark className="size-9" />
+            </span>
+            <span className="text-sm font-extrabold uppercase tracking-[0.18em] sm:text-base">
+              GSoC Atlas
+            </span>
+          </Link>
 
-                            <button
-                                ref={menuButtonRef}
-                                type="button"
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState ? 'Close menu' : 'Open menu'}
-                                aria-expanded={menuState}
-                                aria-controls="mobile-navigation"
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu aria-hidden="true" className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200 motion-reduce:transition-none" />
-                                <X aria-hidden="true" className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200 motion-reduce:transition-none" />
-                            </button>
-                        </div>
+          <div className="mx-auto hidden items-center lg:flex">
+            {navigation.map((item) => {
+              const active = isActive(item.href);
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            prefetch={true}
-                                            className="hover:text-accent-foreground hover:font-semibold block duration-150">
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative inline-flex min-h-11 items-center px-3 text-sm font-medium text-[#625e59] transition-colors duration-[180ms] hover:text-[#242424]",
+                    active && "text-[#242424]",
+                  )}
+                >
+                  {item.name}
+                  {active ? (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-3 bottom-1 h-0.5 bg-[#ff5e1f]"
+                    />
+                  ) : null}
+                </Link>
+              );
+            })}
+          </div>
 
-                        <div id="mobile-navigation" className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                ref={index === 0 ? firstMobileLinkRef : undefined}
-                                                href={item.href}
-                                                prefetch={true}
-                                                onClick={closeMenu}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                {/* <Button
-                                    disabled
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <span>Login</span>
-                                </Button>
-                                <Button
-                                    disabled
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <span>Sign Up</span>
-                                </Button> */}                               
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <a
-                                        href={SOCIAL_LINKS.github.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={SOCIAL_LINKS.github.label}
-                                    >
-                                        <GitHubIcon className="w-4 h-4" />
-                                        <span>GitHub</span>
-                                    </a>
-                                </Button>                                
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <a
-                                        href={SOCIAL_LINKS.twitter.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={SOCIAL_LINKS.twitter.label}
-                                    >
-                                        <XIcon className="w-4 h-4" />
-                                        <span>X</span>
-                                    </a>
-                                </Button>
-                                <ModeToggle />
-                                
-                                {/* <Button
-                                    disabled
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <span>Get Started</span>
-                                </Button> */}
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <a
-                                        href={SOCIAL_LINKS.github.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={SOCIAL_LINKS.github.label}
-                                    >
-                                        <GitHubIcon className="w-4 h-4" />
-                                        <span>GitHub</span>
-                                    </a>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    )
+          <div className="ml-auto hidden items-center gap-2 lg:flex">
+            <Link
+              href="/about"
+              className="hidden min-h-11 items-center gap-2 px-3 text-sm font-medium text-[#dc4f21] transition-colors duration-[180ms] hover:text-[#9c3211] xl:inline-flex"
+            >
+              <Database aria-hidden="true" className="size-4" />
+              Archive notes
+            </Link>
+            <Button asChild variant="ghost" size="icon-sm">
+              <a
+                href={SOCIAL_LINKS.github.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open the GSoC Atlas GitHub repository"
+              >
+                <Github aria-hidden="true" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="sm">
+              <Link href="/organizations">Explore the atlas</Link>
+            </Button>
+          </div>
+
+          <Button
+            asChild
+            variant="outline"
+            size="sm"
+            className="ml-auto mr-2 lg:hidden"
+          >
+            <Link href="/organizations">Explore</Link>
+          </Button>
+          <button
+            ref={menuButtonRef}
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="home-mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="flex size-11 items-center justify-center rounded-full border border-[#dedbd5] text-[#242424] transition-[background-color,border-color] duration-[180ms] hover:border-[#aaa49c] hover:bg-[#f5f3ef] lg:hidden"
+          >
+            {menuOpen ? (
+              <X aria-hidden="true" className="size-5" />
+            ) : (
+              <Menu aria-hidden="true" className="size-5" />
+            )}
+          </button>
+        </nav>
+
+        <div
+          id="home-mobile-navigation"
+          hidden={!menuOpen}
+          className="mx-auto w-full max-w-[87rem] border-t border-[#e7e4df] pb-4 pt-3 lg:hidden"
+        >
+          <div className="grid gap-1 sm:grid-cols-2">
+            {navigation.map((item, index) => (
+              <Link
+                key={item.href}
+                ref={index === 0 ? firstMobileLinkRef : undefined}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="flex min-h-12 items-center justify-between rounded-xl px-4 text-sm font-semibold transition-colors duration-[180ms] hover:bg-[#f5f3ef]"
+              >
+                {item.name}
+                <ArrowUpRight aria-hidden="true" className="size-4 text-[#8d8881]" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </header>
+    );
+  }
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+      {menuOpen ? (
+        <button
+          type="button"
+          aria-label="Close navigation"
+          className="fixed inset-0 z-[-1] bg-black/45 backdrop-blur-sm lg:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      ) : null}
+
+      <nav
+        aria-label="Primary navigation"
+        className="mx-auto w-full min-w-0 max-w-shell overflow-hidden rounded-2xl border border-white/12 bg-ink text-[#f5eee9] shadow-[0_16px_50px_rgb(0_0_0/0.2)]"
+      >
+        <div className="flex h-16 items-center gap-4 px-4 sm:px-5">
+          <Link
+            href="/"
+            aria-label="GSoC Atlas home"
+            className="group flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none"
+          >
+            <span className="flex size-9 items-center justify-center rounded-[10px] bg-primary text-primary-foreground transition-transform duration-[180ms] group-hover:rotate-3 motion-reduce:transform-none">
+              <AtlasMark className="size-6" />
+            </span>
+            <span className="leading-none">
+              <span className="block text-sm font-semibold tracking-[-0.02em]">
+                GSoC Atlas
+              </span>
+              <span className="mt-1 hidden font-data text-[9px] uppercase tracking-[0.18em] text-[#9a9390] sm:block">
+                Independent guide
+              </span>
+            </span>
+          </Link>
+
+          <div className="mx-auto hidden items-center lg:flex">
+            {navigation.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  prefetch
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative flex h-10 items-center rounded-full px-3 text-[13px] font-medium text-[#b9b1ac] transition-[background-color,color] duration-[180ms] hover:bg-white/7 hover:text-white",
+                    active && "bg-white/10 text-white",
+                  )}
+                >
+                  {item.name}
+                  {active ? (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-3 -bottom-[13px] h-0.5 bg-primary"
+                    />
+                  ) : null}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="ml-auto hidden items-center gap-2 lg:flex">
+            <Button
+              asChild
+              variant="ghost"
+              size="icon-sm"
+              className="text-[#c8c0bb] hover:bg-white/10 hover:text-white"
+            >
+              <a
+                href={SOCIAL_LINKS.github.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open the GSoC Atlas GitHub repository"
+              >
+                <Github className="size-4" strokeWidth={1.75} />
+              </a>
+            </Button>
+            <Button asChild size="sm">
+              <Link href="/organizations">
+                Explore the atlas
+                <ArrowUpRight className="size-3.5" strokeWidth={2} />
+              </Link>
+            </Button>
+          </div>
+
+          <button
+            ref={menuButtonRef}
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="ml-auto flex size-11 items-center justify-center rounded-full border border-white/15 text-white transition-[background-color,border-color] duration-[180ms] hover:border-white/30 hover:bg-white/8 lg:hidden"
+          >
+            {menuOpen ? (
+              <X aria-hidden="true" className="size-5" strokeWidth={1.75} />
+            ) : (
+              <Menu aria-hidden="true" className="size-5" strokeWidth={1.75} />
+            )}
+          </button>
+        </div>
+
+        <div
+          id="mobile-navigation"
+          hidden={!menuOpen}
+          className="border-t border-white/10 px-3 pb-4 pt-3 lg:hidden"
+        >
+          <div className="grid gap-1 sm:grid-cols-2">
+            {navigation.map((item, index) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  ref={index === 0 ? firstMobileLinkRef : undefined}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "flex min-h-12 items-center justify-between rounded-xl px-4 text-sm font-medium text-[#c8c0bb] transition-[background-color,color] duration-[180ms] hover:bg-white/8 hover:text-white",
+                    active && "bg-white/10 text-white",
+                  )}
+                >
+                  {item.name}
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-4 text-[#77716d]"
+                    strokeWidth={1.5}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="mt-3 flex flex-col gap-2 border-t border-white/10 px-1 pt-4 sm:flex-row">
+            <Button asChild className="w-full sm:flex-1">
+              <Link
+                href="/organizations"
+                onClick={() => setMenuOpen(false)}
+              >
+                Explore organizations
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="w-full border-white/15 bg-transparent text-white hover:border-white/30 hover:bg-white/8 sm:w-auto"
+            >
+              <a
+                href={SOCIAL_LINKS.github.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="size-4" />
+                GitHub
+              </a>
+            </Button>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 }

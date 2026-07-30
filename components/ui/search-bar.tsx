@@ -79,9 +79,9 @@ export function SearchBar({
   };
 
   const sizeClasses = {
-    sm: "h-8 text-sm pl-8 pr-8",
-    md: "h-10 text-base pl-10 pr-10",
-    lg: "h-12 text-lg pl-12 pr-12",
+    sm: "h-10 text-sm pl-9 pr-9",
+    md: "h-11 text-base pl-10 pr-10",
+    lg: "h-14 text-base pl-12 pr-12",
   };
 
   const iconSizeClasses = {
@@ -120,8 +120,8 @@ export function SearchBar({
         placeholder={placeholder}
         disabled={disabled}
         className={cn(
-          "w-full rounded-lg border border-input bg-background",
-          "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+          "w-full rounded-xl border border-input bg-card shadow-[0_1px_0_rgb(23_22_21/0.04)]",
+          "focus:outline-none focus:border-ring focus:ring-2 focus:ring-ring/20",
           "placeholder:text-muted-foreground",
           "disabled:cursor-not-allowed disabled:opacity-50",
           "transition-colors",
@@ -135,8 +135,8 @@ export function SearchBar({
           type="button"
           onClick={handleClear}
           className={cn(
-            "absolute top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground",
-            "transition-colors focus:outline-none",
+            "absolute top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground",
+            "transition-[background-color,color] focus:outline-none",
             clearPositionClasses[size]
           )}
           aria-label="Clear search"

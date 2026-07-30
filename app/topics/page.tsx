@@ -24,7 +24,8 @@ export const revalidate = 3600; // 1 hour
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "GSoC Topics & Categories - Google Summer of Code Organizations Guide",
-    description: "Explore Google Summer of Code organizations and projects organized by topic. Find the perfect match for your skills and interests.",
+    description:
+      "Browse topic labels recorded across Google Summer of Code organizations and projects. Review organization coverage, project totals, and active years.",
     alternates: {
       canonical: getFullUrl("/topics"),
     },
@@ -34,7 +35,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title: "GSoC Topics & Categories",
-      description: "Explore Google Summer of Code organizations and projects organized by topic",
+      description:
+        "Browse topic labels recorded across Google Summer of Code organizations and projects",
       url: getFullUrl("/topics"),
       type: "website",
       siteName: "GSoC Organizations Guide",
@@ -42,7 +44,8 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: "GSoC Topics & Categories",
-      description: "Explore Google Summer of Code organizations and projects organized by topic",
+      description:
+        "Browse topic labels recorded across Google Summer of Code organizations and projects",
     },
   };
 }
@@ -53,29 +56,47 @@ export default async function TopicsPage() {
 
   if (!indexData) {
     return (
-      <div className="min-h-[600px] flex items-center justify-center">
+      <div
+        className="atlas-corner-marks flex min-h-[28rem] items-center justify-center border border-border bg-card p-8"
+        role="alert"
+      >
         <div className="text-center">
-          <Heading variant="section">Failed to load topics</Heading>
+          <Heading as="h1" variant="subsection">
+            Topic data is unavailable.
+          </Heading>
           <Text className="mt-4 text-muted-foreground">
-            Please try again later or run: npm run generate:topics
+            The generated topic index could not be loaded.
           </Text>
         </div>
       </div>
     );
   }
 
-  // Get top topics by organization count (for trending section)
-  const trendingTopics = indexData.topics
-    .slice(0, 6)
-    .filter(topic => topic.organizationCount >= 10);
+  const topTopics = [...indexData.topics]
+    .sort(
+      (a, b) =>
+        b.organizationCount - a.organizationCount ||
+        a.name.localeCompare(b.name),
+    )
+    .slice(0, 6);
+  const snapshotDate = new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(indexData.published_at));
 
   return (
-    <div className="space-y-8">
-      <SiteBreadcrumbs items={[{ label: "Topics", href: "/topics" }]} />
+    <div>
+      <SiteBreadcrumbs
+        items={[{ label: "Topics", href: "/topics" }]}
+        className="pb-6 pt-1"
+      />
       <TopicsClient
         topics={indexData.topics}
-        trendingTopics={trendingTopics}
+        topTopics={topTopics}
         total={indexData.total}
+        snapshotDate={snapshotDate}
       />
     </div>
   );

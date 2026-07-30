@@ -35,10 +35,10 @@ export async function generateMetadata({
 
   return {
     title: `${data.name} | GSoC Organizations`,
-    description: `Explore ${data.metrics.org_count} Google Summer of Code organizations using ${data.name}. View projects, trends, and find opportunities.`,
+    description: `Browse ${data.metrics.org_count} Google Summer of Code organization records and ${data.metrics.project_count} projects associated with the ${data.name} technology label.`,
     openGraph: {
       title: `${data.name} | GSoC Organizations`,
-      description: `Explore ${data.metrics.org_count} organizations using ${data.name} in Google Summer of Code`,
+      description: `Browse archived organization and project records associated with ${data.name} in Google Summer of Code.`,
     },
   };
 }
@@ -58,12 +58,13 @@ export default async function TechStackDetailPage({
   }
 
   return (
-    <div className="space-y-8">
+    <div>
       <SiteBreadcrumbs
         items={[
           { label: "Tech Stack", href: "/tech-stack" },
           { label: data.name, href: `/tech-stack/${stack}` },
         ]}
+        className="pb-6 pt-1"
       />
       <TechStackDetailClient data={data} />
     </div>

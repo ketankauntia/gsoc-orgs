@@ -8,9 +8,9 @@ interface ContainerProps {
 }
 
 const sizeClasses = {
-  default: "max-w-6xl",
-  small: "max-w-4xl",
-  large: "max-w-7xl",
+  default: "max-w-shell",
+  small: "max-w-content",
+  large: "max-w-[90rem]",
   full: "max-w-full",
 };
 
@@ -23,9 +23,8 @@ export const Container = ({
   size = "default",
 }: ContainerProps) => {
   return (
-    <div className={cn("mx-auto px-6 lg:px-12", sizeClasses[size], className)}>
+    <div className={cn("mx-auto px-4 sm:px-6 lg:px-8", sizeClasses[size], className)}>
       {children}
     </div>
   );
 };
-

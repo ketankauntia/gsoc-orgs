@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Us | GSoC Organizations Guide",
+  title: "Contact",
   description:
-    "Get in touch with GSoC Organizations Guide. Have questions, suggestions, or feedback? We'd love to hear from you!",
+    "Send feedback, corrections, or questions to the independent GSoC Atlas project.",
   keywords: [
     "contact GSoC",
     "GSoC support",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "GSoC questions",
   ],
   openGraph: {
-    title: "Contact Us | GSoC Organizations Guide",
+    title: "Contact GSoC Atlas",
     description: "Get in touch with us. We'd love to hear from you!",
     url: getFullUrl("/contact"),
     images: ["/og.webp"],
@@ -27,4 +27,3 @@ export const metadata: Metadata = {
 export default function ContactLayout({ children }: { children: ReactNode }) {
   return <>{children}</>;
 }
-

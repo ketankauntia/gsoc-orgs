@@ -10,7 +10,12 @@ import {
   Cell,
   LabelList,
 } from "recharts";
-import { getChartBarColor } from "@/lib/theme";
+import {
+  CHART_AXIS_COLOR,
+  CHART_LABEL_COLOR,
+  CHART_TOOLTIP_STYLE,
+  getAtlasChartColor,
+} from "./chart-theme";
 
 interface TopStacksChartProps {
   data: Array<{ name: string; slug: string; count: number }>;
@@ -40,7 +45,7 @@ export function TopStacksChart({ data }: TopStacksChartProps) {
         >
           <XAxis
             type="number"
-            tick={{ fontSize: 10, fill: "#6b7280" }}
+            tick={{ fontSize: 10, fill: CHART_AXIS_COLOR }}
             tickLine={false}
             axisLine={false}
             domain={[0, maxCount]}
@@ -48,18 +53,13 @@ export function TopStacksChart({ data }: TopStacksChartProps) {
           <YAxis
             type="category"
             dataKey="name"
-            tick={{ fontSize: 12, fill: "#374151", fontWeight: 500 }}
+            tick={{ fontSize: 12, fill: CHART_LABEL_COLOR, fontWeight: 500 }}
             tickLine={false}
             axisLine={false}
             width={80}
           />
           <Tooltip
-            contentStyle={{
-              backgroundColor: "white",
-              border: "1px solid #e5e7eb",
-              borderRadius: "8px",
-              fontSize: "12px",
-            }}
+            contentStyle={CHART_TOOLTIP_STYLE}
             formatter={(value: number) => [value, "Organizations"]}
           />
           <Bar 
@@ -68,12 +68,12 @@ export function TopStacksChart({ data }: TopStacksChartProps) {
             maxBarSize={28}
           >
             {chartData.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={getChartBarColor(index)} />
+              <Cell key={`cell-${index}`} fill={getAtlasChartColor(index)} />
             ))}
             <LabelList
               dataKey="count"
               position="right"
-              fill="#374151"
+              fill={CHART_LABEL_COLOR}
               fontSize={11}
               fontWeight={600}
             />
