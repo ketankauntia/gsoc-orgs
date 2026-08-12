@@ -37,7 +37,7 @@ function ClassicListing({ posts, isFirstPage }: { posts: Post[]; isFirstPage: bo
   return (
     <div className="space-y-6">
       {featured && <PostCard post={featured} featured />}
-      <PostGrid posts={rest} />
+      {rest.length > 0 ? <PostGrid posts={rest} /> : null}
     </div>
   );
 }
@@ -55,7 +55,13 @@ function MagazineListing({ posts, isFirstPage }: { posts: Post[]; isFirstPage: b
     <div className="space-y-8">
       {hero && (
         <Link href={`/blog/post/${hero.slug}`} className="group relative block overflow-hidden rounded-xl">
-          <PostCover post={hero} className="h-72 sm:h-96" />
+          <PostCover
+            post={hero}
+            decorative
+            preload
+            sizes="(min-width: 1280px) 1216px, 100vw"
+            className="h-72 sm:h-96"
+          />
           <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-background/95 via-background/60 to-transparent p-6 sm:p-8">
             <Badge variant="secondary" className="w-fit">{hero.category}</Badge>
             <h2 className="mt-2 max-w-3xl font-heading text-2xl font-bold leading-tight tracking-tight group-hover:text-primary sm:text-4xl">
@@ -83,7 +89,7 @@ function MagazineListing({ posts, isFirstPage }: { posts: Post[]; isFirstPage: b
               href={`/blog/post/${post.slug}`}
               className="group flex items-center gap-4 p-4 transition-colors hover:bg-accent/40"
             >
-              <PostCover post={post} className="h-20 w-32 shrink-0" />
+              <PostCover post={post} decorative sizes="128px" className="h-20 w-32 shrink-0" />
               <div className="min-w-0">
                 <p className="truncate font-heading font-semibold group-hover:text-primary">{post.title}</p>
                 <p className="mt-0.5 line-clamp-1 text-sm text-muted-foreground">{post.description}</p>

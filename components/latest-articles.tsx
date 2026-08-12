@@ -1,88 +1,22 @@
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-
-interface Article {
-  id: string;
-  title: string;
-  description: string;
-  slug: string;
-}
-
-const COMING_SOON_ARTICLES: Article[] = [
-  {
-    id: "1",
-    title: "How to Write a Winning GSoC Proposal",
-    description: "Learn the key elements that make a GSoC proposal stand out and increase your chances of selection.",
-    slug: "how-to-write-winning-gsoc-proposal",
-  },
-  {
-    id: "2",
-    title: "Top 10 Beginner-Friendly GSoC Organizations",
-    description: "Discover organizations that welcome first-time contributors and offer great mentorship.",
-    slug: "top-beginner-friendly-gsoc-organizations",
-  },
-  {
-    id: "3",
-    title: "GSoC Timeline 2026: Key Dates",
-    description: "Stay on track with important deadlines and milestones for Google Summer of Code 2026.",
-    slug: "gsoc-timeline-2026-key-dates",
-  },
-  {
-    id: "4",
-    title: "Choosing the Right Tech Stack for GSoC",
-    description: "How to match your skills with the right organizations and project ideas.",
-    slug: "choosing-right-tech-stack-gsoc",
-  },
-];
-
-// Map articles to their corresponding images
-const ARTICLE_IMAGES: Record<string, string> = {
-  "1": "/blogs/google-summer-of-code-insights-trends.webp",
-  "2": "/blogs/gsoc-organizations-data.webp",
-  "3": "/blogs/gsoc-previous-year-insights.webp",
-  "4": "/blogs/gsoc-organizations-ai-filter.webp",
-};
+import { PostCover } from "@/components/blog/post-cover";
+import { getAllPosts } from "@/lib/blog/content";
 
 export function LatestArticles() {
+  const posts = getAllPosts().slice(0, 4);
+  if (posts.length === 0) return null;
   return (
     <section className="w-full py-12 lg:py-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+      <div className="mx-auto max-w-6xl px-6 lg:px-12">
         <div className="flex flex-col gap-14">
-          <div className="flex w-full flex-col sm:flex-row sm:justify-between sm:items-center gap-8">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular">
-              Latest articles
-            </h2>
-            <Button asChild className="gap-4 w-fit">
-              <Link href="/blog">
-                View all articles <MoveRight className="w-4 h-4" />
-              </Link>
-            </Button>
+          <div className="flex w-full flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+            <div><p className="text-sm font-medium text-primary">From the blog</p><h2 className="mt-2 max-w-xl text-3xl tracking-tighter md:text-5xl">Latest articles</h2></div>
+            <Button asChild className="w-fit gap-4"><Link href="/blog">View all articles <MoveRight className="size-4" /></Link></Button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {COMING_SOON_ARTICLES.map((article) => (
-              <Link
-                key={article.id}
-                href="/blog"
-                className="flex flex-col gap-2 hover:opacity-75 cursor-pointer transition-opacity"
-              >
-                <div className="bg-muted rounded-md aspect-video mb-4 overflow-hidden">
-                  <Image
-                    src={ARTICLE_IMAGES[article.id]}
-                    alt={article.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover"
-                    unoptimized
-                  />
-                </div>
-                <h3 className="text-xl tracking-tight">{article.title}</h3>
-                <p className="text-muted-foreground text-base">
-                  {article.description}
-                </p>
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {posts.map((post) => <Link key={post.slug} href={`/blog/post/${post.slug}`} className="group flex flex-col gap-2 transition-opacity hover:opacity-80"><PostCover post={post} decorative sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw" className="mb-4 aspect-video w-full" /><p className="text-xs font-medium text-primary">{post.category}</p><h3 className="text-xl tracking-tight group-hover:underline">{post.title}</h3><p className="line-clamp-3 text-base text-muted-foreground">{post.description}</p></Link>)}
           </div>
         </div>
       </div>

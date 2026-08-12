@@ -31,9 +31,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (only the empty template is committed)
 .env*
-special exception for the .env.example file
 !.env.example
 
 # vercel
@@ -53,3 +52,8 @@ logo-manager/package-lock.json
 
 # data backups (local safety net, not for version control)
 /new-api-details-backup-*/
+
+# local migration exports and Supabase CLI state
+/migration/mongo-export/
+/supabase/.temp/
+*.dump

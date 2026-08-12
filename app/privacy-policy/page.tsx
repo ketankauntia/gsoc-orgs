@@ -40,6 +40,17 @@ const sections = [
       "We collect information that you provide directly to us, such as when you use our search functionality, filter organizations, or contact us through our contact form.",
       "We automatically collect certain information about your device and how you interact with our website, including your IP address, browser type, and pages you visit.",
       "We use cookies and similar tracking technologies to enhance your experience and analyze website usage.",
+      "If you sign in to share a proposal, Google and Supabase provide an account identifier, email address, display name, and profile image. Email is retained for private authentication and administration and is never included in public proposal data.",
+      "Proposal PDFs, contributor claims, private verification notes, evidence links, moderation history, and profile visibility choices are stored only as needed to operate the proposal library.",
+    ],
+  },
+  {
+    title: "Proposal Library and Public Choices",
+    content: [
+      "Proposal PDFs and claim evidence remain private while a submission is in draft or moderation. Only approved proposals are publicly accessible.",
+      "An approved proposal always includes the attribution name and archived GSoC selection. You separately control whether your Google avatar, bio, and each profile link are public.",
+      "Cloudflare R2 stores uploaded PDFs and imported Google profile images. Supabase stores authentication, profile, catalog, claim, and moderation records. Vercel hosts the application.",
+      "We do not send proposal PDFs or private evidence to a third-party malware scanning service. Files receive format and structural validation and are delivered using restricted URLs.",
     ],
   },
   {
@@ -129,7 +140,7 @@ export default function PrivacyPolicyPage() {
               badge="Legal"
               title="Privacy Policy"
               titleAs="h1"
-              description="Last updated: December 2024. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
+              description="Last updated: August 12, 2026. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
               align="center"
               className="max-w-3xl mx-auto"
             />
@@ -166,7 +177,7 @@ export default function PrivacyPolicyPage() {
             {/* Effective Date */}
             <CardWrapper className="p-6 bg-muted/50">
               <Text variant="small" className="text-muted-foreground text-center">
-                This privacy policy is effective as of December 2024 and will remain in effect
+                This privacy policy is effective as of August 12, 2026 and will remain in effect
                 except with respect to any changes in its provisions in the future.
               </Text>
             </CardWrapper>

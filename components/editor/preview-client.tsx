@@ -77,7 +77,18 @@ export function PreviewClient() {
         </div>
 
         <article className="mt-8 space-y-8">
-          <PostCover post={{ coverTone, category: draft.category || "Category" }} className="h-56 sm:h-72" />
+          <PostCover
+            post={{
+              title: draft.title || "Untitled post",
+              category: draft.category || "Category",
+              coverTone,
+              coverImage: draft.coverImage || undefined,
+              coverAlt: draft.coverAlt || undefined,
+              ogImage: draft.ogImage || undefined,
+            }}
+            sizes="(min-width: 1024px) 704px, 100vw"
+            className="h-56 sm:h-72"
+          />
           {draft.tldr && <TldrBlock text={draft.tldr} />}
           <KeyTakeaways items={draft.keyTakeaways} />
           <PostBody sections={sections} />

@@ -6,14 +6,14 @@ import { ListingJsonLd } from "@/components/blog/listing-json-ld";
 import { BlogListing } from "@/components/blog/templates/blog-listing";
 import { categoryToSlug, getAllPosts, getCategories, paginate } from "@/lib/blog/content";
 import { getSettings } from "@/lib/settings";
-import { siteConfig } from "@/lib/site";
 
 // ISR: regenerate hourly so scheduled posts + content changes surface without a rebuild.
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog — GSoC Organizations",
-  description: siteConfig.description,
+  title: "GSoC Guide 2027, Organizations and Proposal Resources",
+  description:
+    "Research-backed GSoC guides for 2027 preparation, organization lists, choosing GSoC orgs, open-source contributions and project proposals.",
   alternates: { canonical: "/blog" },
 };
 
@@ -29,14 +29,14 @@ export default function BlogIndexPage() {
 
   return (
     <main className="mx-auto w-full max-w-shell flex-1 px-4 py-10 sm:px-6">
-      <ListingJsonLd posts={posts} name="The GSoC Organizations Blog" />
+      <ListingJsonLd posts={posts} name="GSoC Guides and Organization Research" />
       <header className="max-w-2xl">
         <h1 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-          The GSoC Organizations Blog
+          GSoC Guides, Organizations and Open Source Research
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Practical guides for comparing organizations, reading project history, and preparing
-          stronger Google Summer of Code applications.
+          Research-backed guides for GSoC 2027 preparation, comparing organizations, reading
+          project history and contributing to open source before proposal season.
         </p>
       </header>
 

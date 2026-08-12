@@ -1,4 +1,4 @@
-import type { PostBlock, PostSection } from "./types";
+import type { PostSection } from "./types";
 
 /**
  * Parser for the constrained authoring format described in docs/blog/content-format.md.

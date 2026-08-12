@@ -61,9 +61,19 @@ const sections = [
   {
     title: "User Content",
     content: [
-      "If you submit any content to us (such as feedback or suggestions), you grant us a non-exclusive, royalty-free license to use, modify, and display that content.",
+      "Feedback and suggestions grant us a non-exclusive, royalty-free license to use and display that content for operating and improving the service.",
       "You represent that you have the right to submit such content and that it does not violate any third-party rights.",
       "We reserve the right to remove any user content that violates these terms or is otherwise objectionable.",
+    ],
+  },
+  {
+    title: "Contributor Proposals",
+    content: [
+      "You may claim only GSoC contributor records that belong to you. Claims are manually reviewed and false claims may be rejected or lead to account suspension.",
+      "You must own an uploaded proposal or have permission to publish it. Upon submission, you agree that an approved proposal is published under Creative Commons Attribution 4.0 (CC BY 4.0).",
+      "A contributor account may hold at most two valid selection claims, with one proposal per archived selection year. Replacements before approval are versions of the same proposal.",
+      "Draft, pending, rejected, withdrawn, and changes-requested files are not public. Approval is discretionary and may be revoked if a record is reopened or violates these terms.",
+      "GSoC Organizations Guide is independent and is not affiliated with or endorsed by Google or participating organizations. Verification means only that we matched the submitter to the archived record.",
     ],
   },
   {
@@ -136,7 +146,7 @@ export default function TermsAndConditionsPage() {
               badge="Legal"
               title="Terms and Conditions"
               titleAs="h1"
-              description="Last updated: December 2024. Please read these terms carefully before using GSoC Organizations Guide."
+              description="Last updated: August 12, 2026. Please read these terms carefully before using GSoC Organizations Guide."
               align="center"
               className="max-w-3xl mx-auto"
             />
@@ -173,7 +183,7 @@ export default function TermsAndConditionsPage() {
             {/* Effective Date */}
             <CardWrapper className="p-6 bg-muted/50">
               <Text variant="small" className="text-muted-foreground text-center">
-                These terms and conditions are effective as of December 2024. By using our website,
+                These terms and conditions are effective as of August 12, 2026. By using our website,
                 you acknowledge that you have read, understood, and agree to be bound by these
                 terms.
               </Text>

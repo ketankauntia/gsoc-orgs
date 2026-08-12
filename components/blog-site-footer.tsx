@@ -2,7 +2,9 @@ import Link from "next/link";
 import { IconRss } from "@tabler/icons-react";
 
 const FOOTER_LINKS = [
+  { label: "Main site", href: "/" },
   { label: "Blog", href: "/blog" },
+  { label: "Proposals", href: "/proposals" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import {
   IconAlertTriangle,
   IconChevronDown,
@@ -29,6 +30,7 @@ import { Textarea } from "@/components/blog-ui/textarea";
 import { FaqSection } from "@/components/blog/faq-section";
 import { KeyTakeaways } from "@/components/blog/key-takeaways";
 import { PostBody } from "@/components/blog/post-body";
+import { PostCover } from "@/components/blog/post-cover";
 import { TldrBlock } from "@/components/blog/tldr-block";
 import { parseSections, slugify } from "@/lib/blog/parse";
 import { runSeoChecks, seoScore, type SeoCheck } from "@/lib/editor/seo-checks";
@@ -51,6 +53,9 @@ export type EditablePost = {
   noindex: boolean;
   canonical: string;
   coverTone: string;
+  coverImage: string;
+  coverAlt: string;
+  ogImage: string;
   keyphrase: string;
   tldr: string;
   keyTakeaways: string[];
@@ -74,6 +79,9 @@ function blankPost(): EditablePost {
     noindex: false,
     canonical: "",
     coverTone: "primary",
+    coverImage: "",
+    coverAlt: "",
+    ogImage: "",
     keyphrase: "",
     tldr: "",
     keyTakeaways: [],
@@ -82,7 +90,13 @@ function blankPost(): EditablePost {
   };
 }
 
-const COVER_TONES = ["primary", "chart-2", "chart-3", "chart-5"];
+const COVER_TONES = ["primary", "chart-2", "chart-3", "chart-5"] as const;
+
+function normalizeCoverTone(value: string): (typeof COVER_TONES)[number] {
+  return (COVER_TONES as readonly string[]).includes(value)
+    ? (value as (typeof COVER_TONES)[number])
+    : "primary";
+}
 
 /** Immutably move an array item from one index to another. */
 function moveItem<T>(arr: T[], from: number, to: number): T[] {
@@ -237,6 +251,9 @@ export function PostEditor({
       noindex: rest.noindex || undefined,
       canonical: rest.canonical || undefined,
       coverTone: rest.coverTone,
+      coverImage: rest.coverImage || undefined,
+      coverAlt: rest.coverAlt || undefined,
+      ogImage: rest.ogImage || undefined,
       keyphrase: rest.keyphrase,
       tldr: rest.tldr,
       keyTakeaways: rest.keyTakeaways,
@@ -302,7 +319,7 @@ export function PostEditor({
 
         <div className="ml-auto flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="/dashboard">Dashboard</a>
+            <Link href="/dashboard">Dashboard</Link>
           </Button>
           <ScoreBadge score={score} />
           <Button variant="outline" onClick={openPreview}>
@@ -444,6 +461,20 @@ export function PostEditor({
                   </SelectContent>
                 </Select>
               </Field>
+              <Field label="Visible cover image (1600×900)">
+                <Input
+                  value={draft.coverImage}
+                  onChange={(e) => set("coverImage", e.target.value)}
+                  placeholder="/blog/post-slug/post-slug-cover.webp"
+                />
+              </Field>
+              <Field label="Social image (1200×630)">
+                <Input
+                  value={draft.ogImage}
+                  onChange={(e) => set("ogImage", e.target.value)}
+                  placeholder="/blog/post-slug/post-slug-og.jpg"
+                />
+              </Field>
               <Field label="Published (YYYY-MM-DD)">
                 <Input value={draft.publishedAt} onChange={(e) => set("publishedAt", e.target.value)} />
               </Field>
@@ -451,6 +482,13 @@ export function PostEditor({
                 <Input value={draft.updatedAt} onChange={(e) => set("updatedAt", e.target.value)} />
               </Field>
             </div>
+            <Field label="Cover alt text">
+              <Input
+                value={draft.coverAlt}
+                onChange={(e) => set("coverAlt", e.target.value)}
+                placeholder="Describe the visible cover image without keyword stuffing"
+              />
+            </Field>
             <Field label="Canonical URL (optional — overrides the default self-canonical)">
               <Input
                 value={draft.canonical}
@@ -554,6 +592,18 @@ export function PostEditor({
                 </h1>
                 <p className="mt-2 text-muted-foreground">{draft.description}</p>
               </div>
+              <PostCover
+                post={{
+                  title: draft.title || "Untitled post",
+                  category: draft.category || "Category",
+                  coverTone: normalizeCoverTone(draft.coverTone),
+                  coverImage: draft.coverImage || undefined,
+                  coverAlt: draft.coverAlt || undefined,
+                  ogImage: draft.ogImage || undefined,
+                }}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="aspect-video w-full"
+              />
               {draft.tldr && <TldrBlock text={draft.tldr} />}
               <KeyTakeaways items={draft.keyTakeaways} />
               <PostBody sections={sections} />

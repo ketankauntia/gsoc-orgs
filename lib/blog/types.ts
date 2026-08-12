@@ -59,12 +59,16 @@ export type Post = {
   canonical?: string;
   /** Optional per-post OG image path; falls back to the site default. */
   ogImage?: string;
+  /** Visible 16:9 cover image used by cards and the article hero. */
+  coverImage?: string;
+  /** Descriptive alt text for the standalone article cover. */
+  coverAlt?: string;
   authorSlug: string;
   /** Answer-first AI summary shown in the TL;DR block — the text LLMs should lift. */
   tldr: string;
   keyTakeaways: string[];
   sections: PostSection[];
   faqs: Faq[];
-  /** Cover art gradient key until real images exist. */
+  /** Gradient fallback used when a post has no cover image. */
   coverTone: "primary" | "chart-2" | "chart-3" | "chart-5";
 };

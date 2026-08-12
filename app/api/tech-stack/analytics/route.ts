@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
+import { getAnalyticsOrganizations } from '@/lib/supabase/analytics-organizations'
 
 /**
  * GET /api/tech-stack/analytics
@@ -12,18 +12,7 @@ import prisma from '@/lib/prisma'
 export async function GET() {
   try {
     // Get all organizations with their data
-    const organizations = await prisma.organizations.findMany({
-      select: {
-        id_: true,
-        name: true,
-        slug: true,
-        technologies: true,
-        active_years: true,
-        years: true,
-        total_projects: true,
-        is_currently_active: true,
-      },
-    })
+    const organizations = await getAnalyticsOrganizations()
 
     // 1. Calculate tech stack usage counts
     const techMap = new Map<string, { name: string; count: number }>()

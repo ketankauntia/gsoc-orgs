@@ -11,6 +11,7 @@ import {
   getAllTags,
   tagToSlug,
 } from '@/lib/blog/content'
+import { getApprovedProposalSitemapEntries } from '@/lib/proposals/queries'
 
 /**
  * All sitemap data is sourced from static JSON files —
@@ -60,10 +61,11 @@ function getYearlySlugs(): string[] {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL.replace(/\/$/, '').replace(/^http:/, 'https:')
 
-  const [orgSlugs, techSlugs, topicSlugs] = await Promise.all([
+  const [orgSlugs, techSlugs, topicSlugs, approvedProposals] = await Promise.all([
     getAllOrganizationSlugs(),
     getAllTechStackSlugs(),
     getAllTopicSlugs(),
+    getApprovedProposalSitemapEntries(),
   ])
 
   const yearlySlugs = getYearlySlugs()
@@ -84,6 +86,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/projects',
     '/yearly',
     '/blog',
+    '/proposals',
   ]
 
   const routes: MetadataRoute.Sitemap = [
@@ -148,6 +151,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.5,
+    })),
+
+    ...approvedProposals.map((proposal) => ({
+      url: `${baseUrl}/proposals/${proposal.public_slug}`,
+      lastModified: new Date(proposal.approved_at),
+      changeFrequency: 'yearly' as const,
+      priority: 0.7,
     })),
   ]
 

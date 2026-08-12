@@ -19,7 +19,9 @@ Posts are markdown files in `content/posts/<slug>.md`. The filename becomes the 
 | `noindex` | no | Excludes from sitemap and emits robots noindex. |
 | `canonical` | no | Override the self-canonical URL. |
 | `coverTone` | no | `primary`, `chart-2`, `chart-3`, or `chart-5`. |
-| `ogImage` | no | Per-post OG image path; falls back to the site default. |
+| `coverImage` | no | Visible 16:9 cover path. Use a local 1600×900 image under the post asset folder. |
+| `coverAlt` | no | Concise description of the visible cover for the standalone article. Do not stuff keywords. |
+| `ogImage` | no | Social-sharing image path. Use 1200×630; falls back to `coverImage`, then the site default. |
 | `tldr` | yes | Answer-first summary shown near the top of the article. |
 | `keyphrase` | no | Focus keyphrase for editor checks; not rendered. |
 | `keyTakeaways` | no | List of bullets. |
@@ -48,3 +50,13 @@ The dashboard editor is available only in development at `/dashboard/editor`. It
 - `:::callout Title` through `:::` renders a callout box.
 
 Uploaded images are stored under `public/blog/<post-slug>/`.
+
+## Image assets
+
+- Keep each post's files in `public/blog/<post-slug>/` and use lowercase descriptive filenames.
+- Use `<post-slug>-cover.webp` at 1600×900 for `coverImage`.
+- Use `<post-slug>-og.jpg` at 1200×630 for `ogImage`; JPEG is the compatibility-first social format.
+- Keep important subjects inside the central safe area because the same cover appears in cards and wide article heroes.
+- Do not bake the article title, category, logos, or keyword lists into generated cover art. The page renders that text in HTML.
+- Body raster images should normally be 1400×788 WebP, include useful alt text and a visible caption, and stay below roughly 300 KB when quality permits.
+- Prefer deterministic HTML, charts, or SVG for factual diagrams and data visualizations. Generated artwork must not invent labels, statistics, interfaces, or official branding.

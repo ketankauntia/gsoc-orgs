@@ -7,7 +7,6 @@ export const dynamic = "force-static";
 export async function POST(req: Request) {
   try {
     const { path, referrer } = (await req.json()) as { path?: string; referrer?: string };
-    // eslint-disable-next-line no-console
     console.warn(`[404] ${path ?? "?"}${referrer ? ` (from ${referrer})` : ""}`);
   } catch {
     // ignore malformed beacons

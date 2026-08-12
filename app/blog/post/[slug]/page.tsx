@@ -35,6 +35,16 @@ import { siteConfig } from "@/lib/site";
 // ISR: regenerate hourly so scheduled posts + content changes surface without a rebuild.
 export const revalidate = 3600;
 
+function imageMimeType(src: string): string {
+  const pathname = src.split(/[?#]/, 1)[0].toLowerCase();
+  if (pathname.endsWith(".png")) return "image/png";
+  if (pathname.endsWith(".webp")) return "image/webp";
+  if (pathname.endsWith(".avif")) return "image/avif";
+  if (pathname.endsWith(".gif")) return "image/gif";
+  if (pathname.endsWith(".svg")) return "image/svg+xml";
+  return "image/jpeg";
+}
+
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
@@ -48,12 +58,25 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return {};
   const url = `/blog/post/${post.slug}`;
-  const image = post.ogImage ?? siteConfig.ogImage;
+  const socialImage = post.ogImage
+    ? { url: post.ogImage, width: 1200, height: 630, type: imageMimeType(post.ogImage) }
+    : post.coverImage
+      ? { url: post.coverImage, width: 1600, height: 900, type: imageMimeType(post.coverImage) }
+      : { url: siteConfig.ogImage, width: 1200, height: 630, type: imageMimeType(siteConfig.ogImage) };
+  const imageAlt = post.coverAlt?.trim() || post.title;
   return {
     title: `${post.title} — GSoC Organizations Blog`,
     description: post.description,
     alternates: { canonical: post.canonical ?? url },
-    ...(post.noindex && { robots: { index: false, follow: true } }),
+    robots: {
+      index: !post.noindex,
+      follow: true,
+      googleBot: {
+        index: !post.noindex,
+        follow: true,
+        "max-image-preview": "large",
+      },
+    },
     openGraph: {
       type: "article",
       url,
@@ -64,13 +87,13 @@ export async function generateMetadata({
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [getAuthor(post.authorSlug).name],
       tags: post.tags,
-      images: [{ url: image, alt: post.title }],
+      images: [{ ...socialImage, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [image],
+      images: [{ url: socialImage.url, alt: imageAlt }],
     },
   };
 }
@@ -200,7 +223,12 @@ export default async function BlogPostPage({
           <div className="mt-5">{actions}</div>
         </header>
         <article className="mt-8 space-y-8">
-          <PostCover post={post} className="h-56 sm:h-72" />
+          <PostCover
+            post={post}
+            preload
+            sizes="(min-width: 1024px) 704px, 100vw"
+            className="h-56 sm:h-72"
+          />
           <TldrBlock text={post.tldr} />
           <KeyTakeaways items={post.keyTakeaways} />
           {tocCard}
@@ -221,7 +249,7 @@ export default async function BlogPostPage({
         <PostJsonLd post={post} author={author} />
         <ReadingProgress />
         <div className="relative">
-          <PostCover post={post} className="h-72 rounded-none sm:h-96" />
+          <PostCover post={post} preload sizes="100vw" className="h-72 rounded-none sm:h-96" />
           <div className="absolute inset-0 flex items-end bg-linear-to-t from-background via-background/50 to-transparent">
             <div className="mx-auto w-full max-w-shell px-4 pb-8 sm:px-6">
               <div className="mx-auto max-w-content">
@@ -276,7 +304,12 @@ export default async function BlogPostPage({
           </header>
 
           <article className="mt-8 space-y-8">
-            <PostCover post={post} className="h-56 sm:h-72" />
+            <PostCover
+              post={post}
+              preload
+              sizes="(min-width: 1024px) 704px, 100vw"
+              className="h-56 sm:h-72"
+            />
             <TldrBlock text={post.tldr} />
             <KeyTakeaways items={post.keyTakeaways} />
             {/* Mobile TOC — sidebar is hidden below lg */}

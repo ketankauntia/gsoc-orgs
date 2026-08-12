@@ -30,6 +30,13 @@ export function PostCard({
     >
       <PostCover
         post={post}
+        decorative
+        preload={featured}
+        sizes={
+          featured
+            ? "(min-width: 768px) 40vw, 100vw"
+            : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        }
         className={cn("h-40 shrink-0", featured && "md:h-auto md:w-2/5")}
       />
       <div className="flex flex-1 flex-col gap-2">

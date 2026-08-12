@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 /**
  * GET /api/v1/years/{year}/stats
@@ -32,19 +32,11 @@ export async function GET(
       )
     }
 
-    const organizations = await prisma.organizations.findMany({
-      where: {
-        active_years: { has: yearNum },
-      },
-      select: {
-        slug: true,
-        name: true,
-        category: true,
-        technologies: true,
-        topics: true,
-        stats: true,
-      },
-    })
+    const { data: organizations, error } = await createAdminClient()
+      .from('organizations')
+      .select('category,source_payload')
+      .contains('active_years', [yearNum])
+    if (error) throw error
 
     // Aggregate stats for the year
     let totalProjects = 0
@@ -55,9 +47,10 @@ export async function GET(
 
     const yearKey = `year_${yearNum}` as 'year_2016' | 'year_2017' | 'year_2018' | 'year_2019' | 'year_2020' | 'year_2021' | 'year_2022' | 'year_2023' | 'year_2024' | 'year_2025'
 
-    organizations.forEach((org) => {
-      const projectsCount = (org.stats.projects_by_year[yearKey] as number) || 0
-      const studentsCount = (org.stats.students_by_year[yearKey] as number) || 0
+    ;(organizations ?? []).forEach((org) => {
+      const source = org.source_payload ?? {}
+      const projectsCount = (source.stats?.projects_by_year?.[yearKey] as number) || 0
+      const studentsCount = (source.stats?.students_by_year?.[yearKey] as number) || projectsCount
 
       totalProjects += projectsCount
       totalStudents += studentsCount
@@ -69,12 +62,12 @@ export async function GET(
       )
 
       // Count technologies
-      org.technologies.forEach((tech) => {
+      ;(source.technologies ?? []).forEach((tech: string) => {
         techCounts.set(tech, (techCounts.get(tech) || 0) + 1)
       })
 
       // Count topics
-      org.topics.forEach((topic) => {
+      ;(source.topics ?? []).forEach((topic: string) => {
         topicCounts.set(topic, (topicCounts.get(topic) || 0) + 1)
       })
     })
@@ -101,11 +94,11 @@ export async function GET(
         data: {
           year: yearNum,
           overview: {
-            total_organizations: organizations.length,
+            total_organizations: organizations?.length ?? 0,
             total_projects: totalProjects,
             total_students: totalStudents,
-            avg_projects_per_org: organizations.length > 0 
-              ? Math.round((totalProjects / organizations.length) * 100) / 100 
+            avg_projects_per_org: (organizations?.length ?? 0) > 0
+              ? Math.round((totalProjects / organizations!.length) * 100) / 100
               : 0,
           },
           categories: topCategories,

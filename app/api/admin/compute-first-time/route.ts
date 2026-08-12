@@ -1,37 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
-
-/**
- * Helper to check admin authentication
- * Uses secure comparison to prevent timing attacks
- */
-function isAuthorized(request: NextRequest): boolean {
-  const adminKey = request.headers.get('x-admin-key')
-  const expectedKey = process.env.ADMIN_KEY
-  
-  if (!expectedKey) {
-    console.warn('ADMIN_KEY environment variable not set. Admin endpoint is unprotected!')
-    return false
-  }
-  
-  if (!adminKey) {
-    return false
-  }
-  
-  // Use secure comparison to prevent timing attacks
-  // Compare lengths first, then use constant-time comparison
-  if (adminKey.length !== expectedKey.length) {
-    return false
-  }
-  
-  // Constant-time string comparison
-  let result = 0
-  for (let i = 0; i < expectedKey.length; i++) {
-    result |= adminKey.charCodeAt(i) ^ expectedKey.charCodeAt(i)
-  }
-  
-  return result === 0
-}
+import { createAdminClient } from '@/lib/supabase/admin'
+import { isAdminKeyAuthorized } from '@/lib/admin-key'
 
 /**
  * POST /api/admin/compute-first-time
@@ -54,7 +23,7 @@ function isAuthorized(request: NextRequest): boolean {
  */
 export async function POST(request: NextRequest) {
   // Check authentication
-  if (!isAuthorized(request)) {
+  if (!isAdminKeyAuthorized(request)) {
     return NextResponse.json(
       {
         success: false,
@@ -91,15 +60,11 @@ export async function POST(request: NextRequest) {
     console.log(`Computing first_time field for year ${targetYear}...`)
 
     // Fetch all organizations
-    const allOrgs = await prisma.organizations.findMany({
-      select: {
-        id: true,
-        slug: true,
-        name: true,
-        first_year: true,
-        active_years: true,
-      },
-    })
+    const admin = createAdminClient()
+    const { data: allOrgs, error: fetchError } = await admin
+      .from('organizations')
+      .select('id,slug,name,first_year,active_years')
+    if (fetchError) throw fetchError
 
     console.log(`Found ${allOrgs.length} organizations to process`)
 
@@ -114,10 +79,11 @@ export async function POST(request: NextRequest) {
       const isFirstTime = org.first_year === targetYear
 
       // Update the organization
-      await prisma.organizations.update({
-        where: { id: org.id },
-        data: { first_time: isFirstTime },
-      })
+      const { error: updateError } = await admin
+        .from('organizations')
+        .update({ first_time: isFirstTime })
+        .eq('id', org.id)
+      if (updateError) throw updateError
 
       updatedCount++
 
@@ -156,7 +122,6 @@ export async function POST(request: NextRequest) {
         error: {
           message: 'Failed to compute first_time field',
           code: 'COMPUTATION_ERROR',
-          details: error instanceof Error ? error.message : 'Unknown error',
         },
       },
       { status: 500 }
@@ -193,19 +158,18 @@ export async function GET(request: NextRequest) {
     }
 
     // Get statistics
-    const totalOrgs = await prisma.organizations.count()
-    const firstTimeOrgs = await prisma.organizations.count({
-      where: {
-        first_time: true,
-        first_year: targetYear,
-      },
-    })
-
-    const orgsForYear = await prisma.organizations.count({
-      where: {
-        active_years: { has: targetYear },
-      },
-    })
+    const admin = createAdminClient()
+    const [totalResult, firstTimeResult, yearResult] = await Promise.all([
+      admin.from('organizations').select('id', { count: 'exact', head: true }),
+      admin.from('organizations').select('id', { count: 'exact', head: true }).eq('first_time', true).eq('first_year', targetYear),
+      admin.from('organizations').select('id', { count: 'exact', head: true }).contains('active_years', [targetYear]),
+    ])
+    if (totalResult.error || firstTimeResult.error || yearResult.error) {
+      throw totalResult.error ?? firstTimeResult.error ?? yearResult.error
+    }
+    const totalOrgs = totalResult.count ?? 0
+    const firstTimeOrgs = firstTimeResult.count ?? 0
+    const orgsForYear = yearResult.count ?? 0
 
     return NextResponse.json(
       {

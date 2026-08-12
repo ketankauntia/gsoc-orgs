@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
+import { createAdminClient } from '@/lib/supabase/admin'
+import { organizationV1 } from '@/lib/supabase/legacy-shapes'
 
 /**
  * GET /api/v1/years/{year}/organizations
@@ -41,40 +42,19 @@ export async function GET(
     const limit = Math.min(100, Number(searchParams.get('limit')) || 50)
     const skip = (page - 1) * limit
 
-    const where = {
-      active_years: { has: yearNum },
-    }
-
-    const [items, total] = await Promise.all([
-      prisma.organizations.findMany({
-        where,
-        skip,
-        take: limit,
-        orderBy: { name: 'asc' },
-        select: {
-          slug: true,
-          name: true,
-          category: true,
-          description: true,
-          image_url: true,
-          img_r2_url: true,
-          logo_r2_url: true,
-          url: true,
-          technologies: true,
-          topics: true,
-          years: true,
-          stats: true,
-          first_year: true,
-          active_years: true,
-        },
-      }),
-      prisma.organizations.count({ where }),
-    ])
+    const { data: items, count: total, error } = await createAdminClient()
+      .from('organizations')
+      .select('*', { count: 'exact' })
+      .contains('active_years', [yearNum])
+      .order('name')
+      .range(skip, skip + limit - 1)
+    if (error) throw error
 
     // Enrich with year-specific data
-    const enrichedItems = items.map((org) => {
+    const enrichedItems = (items ?? []).map((row) => {
+      const org = organizationV1(row)
       const yearKey = `year_${yearNum}` as 'year_2016' | 'year_2017' | 'year_2018' | 'year_2019' | 'year_2020' | 'year_2021' | 'year_2022' | 'year_2023' | 'year_2024' | 'year_2025'
-      const yearData = org.years[yearKey]
+      const yearData = org.years?.[yearKey]
       
       return {
         ...org,
@@ -91,8 +71,8 @@ export async function GET(
           pagination: {
             page,
             limit,
-            total,
-            pages: Math.ceil(total / limit),
+            total: total ?? 0,
+            pages: Math.ceil((total ?? 0) / limit),
           },
         },
         meta: {

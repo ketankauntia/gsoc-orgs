@@ -12,6 +12,10 @@ A comprehensive, open-source web platform that helps students and contributors e
 
 **Official GSoC:** [https://summerofcode.withgoogle.com/](https://summerofcode.withgoogle.com/)
 
+**Contributor and agent context:** [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md)
+
+This is an independent community resource and is not affiliated with or endorsed by Google or Google Summer of Code.
+
 ## 📋 Overview
 
 The GSoC Organizations Guide is an open-source project designed to help students navigate the Google Summer of Code ecosystem. This data-driven platform provides comprehensive insights into GSoC organizations, their tech stacks, historical participation data, and trends to help aspiring contributors make informed decisions when selecting organizations for their GSoC applications.
@@ -30,6 +34,8 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 - **Beginner-Friendly Insights** - Clear visualizations and analytics to help newcomers understand the GSoC landscape
 - **Search and Filter** - Advanced search capabilities to find organizations matching specific criteria
 - **Organization Profiles** - Detailed pages for each organization with projects, statistics, and participation history
+- **Verified Proposal Library** - Google-authenticated contributors can publish moderated, CC BY 4.0 proposal PDFs
+- **Editorial Guides** - Integrated blog with categories, tags, authors, RSS, sitemap, and Markdown output
 
 ## 📸 Screenshots
 
@@ -52,7 +58,7 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 ## 🛠️ Tech Stack
 
 ### Tech-Stack
-[Next.js](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/), [Recharts](https://recharts.org/), [Framer Motion](https://www.framer.com/motion/), [Lucide React](https://lucide.dev/), [Embla Carousel](https://www.embla-carousel.com/), [Prisma](https://www.prisma.io/), [MongoDB](https://www.mongodb.com/), [ESLint](https://eslint.org/), [Husky](https://typicode.github.io/husky/), [Commitlint](https://commitlint.js.org/), [Vercel](https://vercel.com/), [Vercel Analytics](https://vercel.com/analytics), [Cloudflare R2](https://www.cloudflare.com/products/r2/)
+[Next.js](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [Supabase Postgres/Auth](https://supabase.com/), [Cloudflare R2](https://www.cloudflare.com/products/r2/), [Radix UI](https://www.radix-ui.com/), [Recharts](https://recharts.org/), [Framer Motion](https://www.framer.com/motion/), [Vercel](https://vercel.com/), and [ESLint](https://eslint.org/)
 
 ### Data Source
 - Historical Google Summer of Code data (2016-current)
@@ -65,7 +71,8 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 
 - **Node.js** 18.x or higher
 - **npm** package manager
-- **MongoDB** database (local or cloud instance like MongoDB Atlas)
+- **Supabase** project or local Supabase stack
+- **Cloudflare R2** bucket for private proposal and avatar objects
 
 ### Installation
 
@@ -79,24 +86,17 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
    ```bash
    npm install
    ```
-   This will automatically run `prisma generate` to set up the Prisma client.
+   No database client generation is required for installation.
 
 3. **Set up environment variables**
    
    Create a `.env.local` file in the root directory:
-   ```env
-   DATABASE_URL="your_mongodb_connection_string"
-   NEXT_PUBLIC_SITE_URL="http://localhost:3000"
-   ```
-
-   Replace `your_mongodb_connection_string` with your MongoDB connection string. For local development, you can use:
-   ```
-   DATABASE_URL="mongodb://localhost:27017/gsoc-orgs"
-   ```
+   Copy `.env.example` to `.env.local` and configure Supabase, Google OAuth, and R2 values. Service-role and R2 credentials are server-only.
 
 4. **Run database migrations** (if needed)
    ```bash
-   npx prisma db push
+   supabase db reset
+   npm run supabase:import
    ```
 
 5. **Start the development server**
@@ -116,6 +116,11 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 - `npm run lint` - Run ESLint to check code quality
 - `npm run type-check` - Run TypeScript type checking
 - `npm run validate` - Run lint, type-check, and build validation
+- `npm test` - Run proposal/schema compatibility tests
+- `npm run supabase:import:dry-run` - Verify finalized catalog inputs and deterministic checksum
+- `npm run supabase:reconcile` - Compare imported catalog counts with checked-in inputs
+
+Proposal architecture, storage rules, migration/cutover steps, and staging gates are documented in [`docs/features/proposal-library.md`](docs/features/proposal-library.md). API v2 is documented in [`docs/api/v2-proposal-api.md`](docs/api/v2-proposal-api.md).
 
 ## 🤝 Contributing
 

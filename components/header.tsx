@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { SOCIAL_LINKS } from '@/components/footer-common'
 import { GitHubIcon,  XIcon } from '@/components/icons'
 import { ModeToggle } from './ModeToggle'
+import { AuthNav } from '@/components/auth/auth-nav'
 
 const menuItems = [
     { name: 'Organizations', href: '/organizations' },
@@ -14,6 +15,8 @@ const menuItems = [
     { name: 'Technologies', href: '/tech-stack' },
     { name: 'Topics', href: '/topics' },
     { name: 'Yearly', href: '/yearly' },
+    { name: 'Proposals', href: '/proposals' },
+    { name: 'Blog', href: '/blog' },
     // { name: 'Resources', href: '#resources' },
     // { name: 'About Us', href: '#about' },
     // { name: 'Contact', href: '#contact' },
@@ -56,7 +59,7 @@ export const Header = () => {
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
+                            <ul className="flex gap-4 text-sm xl:gap-6">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
@@ -130,6 +133,7 @@ export const Header = () => {
                                     </a>
                                 </Button>
                                 <ModeToggle />
+                                <AuthNav />
                                 
                                 {/* <Button
                                     disabled

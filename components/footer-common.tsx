@@ -58,6 +58,14 @@ export const FOOTER_NAVIGATION_ITEMS = [
         title: "GSoC Topics",
         href: "/topics",
       },
+      {
+        title: "Accepted Proposals",
+        href: "/proposals",
+      },
+      {
+        title: "Blog",
+        href: "/blog",
+      },
       // { // will add when projects route is done
       //   title: "GSoC Projects",
       //   href: "/gsoc-projects",
@@ -138,10 +146,6 @@ export const FOOTER_NAVIGATION_ITEMS = [
         title: "Changelog",
         href: "/changelog",
       },
-      // {
-      //   title: "Blog",
-      //   href: "/blog",
-      // },        
     ],
   },
 ];

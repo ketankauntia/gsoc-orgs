@@ -27,6 +27,8 @@ type Frontmatter = {
   canonical?: string;
   coverTone?: Post["coverTone"];
   ogImage?: string;
+  coverImage?: string;
+  coverAlt?: string;
   tldr: string;
   keyTakeaways?: string[];
   faqs?: { q: string; a: string }[];
@@ -56,6 +58,8 @@ function loadPost(file: string): Post {
     authorSlug: fm.author ?? "gsoc-orgs-team",
     coverTone: fm.coverTone ?? "primary",
     ogImage: fm.ogImage,
+    coverImage: fm.coverImage,
+    coverAlt: fm.coverAlt,
     tldr: fm.tldr,
     keyTakeaways: fm.keyTakeaways ?? [],
     sections: parseSections(content),

@@ -6,7 +6,7 @@ import {
 } from "@/components/blog-ui/accordion";
 import type { Faq } from "@/lib/blog/types";
 
-/** FAQ accordion. Will be mirrored by FAQPage JSON-LD in the structured-data phase. */
+/** Reader-facing FAQ accordion. FAQs are not emitted as obsolete Google FAQ rich-result markup. */
 export function FaqSection({ faqs }: { faqs: Faq[] }) {
   if (faqs.length === 0) return null;
   return (

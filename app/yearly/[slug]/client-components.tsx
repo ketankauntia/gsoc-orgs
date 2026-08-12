@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown, ArrowUp } from "lucide-react";
-import { Button, Badge, Grid, Text } from "@/components/ui";
+import { Button, Grid, Text } from "@/components/ui";
 import { OrganizationSnapshot, ProjectSnapshot } from "@/lib/yearly-page-types";
 
 interface ExpandableOrgListProps {

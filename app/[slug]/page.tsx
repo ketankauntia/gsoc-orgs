@@ -43,6 +43,9 @@ import { AllOrganizationsSection } from "./all-organizations-section";
  * POST /api/admin/invalidate-cache { "type": "year", "year": 2025 }
  */
 export const revalidate = 86400; // 1 day base - individual queries use year-specific TTLs
+// This compatibility route derives its internal API origin from request headers,
+// so it must not be prerendered during the production build.
+export const dynamic = "force-dynamic";
 
 // Fetch organizations for a specific year (handles pagination)
 async function fetchOrganizationsByYear(year: string): Promise<Organization[]> {

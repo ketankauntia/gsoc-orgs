@@ -1,25 +1,14 @@
-import { NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
+import { NextResponse } from "next/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function GET() {
+  const started = Date.now();
   try {
-    // Quick database connectivity check using MongoDB-compatible query
-    await prisma.organizations.count({ take: 1 })
-
-    return NextResponse.json({
-      status: 'ok',
-      timestamp: new Date().toISOString(),
-      database: 'connected',
-    })
+    const { error } = await createAdminClient().from("organizations").select("id", { head: true, count: "exact" }).limit(1);
+    if (error) throw error;
+    return NextResponse.json({ status: "ok", database: "supabase-postgres", response_time_ms: Date.now() - started, timestamp: new Date().toISOString() });
   } catch (error) {
-    console.error('Health check error:', error)
-    return NextResponse.json(
-      {
-        status: 'error',
-        timestamp: new Date().toISOString(),
-        database: 'disconnected',
-      },
-      { status: 503 }
-    )
+    console.error("[health]", error);
+    return NextResponse.json({ status: "error", database: "unavailable", timestamp: new Date().toISOString() }, { status: 503 });
   }
 }

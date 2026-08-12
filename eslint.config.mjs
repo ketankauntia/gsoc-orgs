@@ -15,6 +15,12 @@ const eslintConfig = defineConfig([
   ]),
   {
     ignores: ["scripts/**/*.js", "sample-gsoc-guide/**"],
+    rules: {
+      // These React Compiler diagnostics are not correctness lint rules and
+      // conflict with several existing subscription/URL synchronization effects.
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/refs": "off",
+    },
   },
   {
     files: ["scripts/**/*.js"],

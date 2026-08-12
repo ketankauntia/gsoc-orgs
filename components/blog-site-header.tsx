@@ -18,6 +18,12 @@ export function BlogSiteHeader() {
           </span>
         </Link>
         <nav className="flex items-center gap-1">
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="/">Main site</Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
+            <Link href="/proposals">Proposals</Link>
+          </Button>
           {showDashboard ? (
             <Button variant="ghost" size="sm" asChild>
               <Link href="/dashboard">Dashboard</Link>

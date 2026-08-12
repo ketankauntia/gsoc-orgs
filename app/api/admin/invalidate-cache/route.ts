@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidateTag, revalidatePath } from "next/cache";
 import { CacheTags } from "@/lib/cache";
+import { isAdminKeyAuthorized } from "@/lib/admin-key";
+import { readJsonBody } from "@/lib/security";
 
 /**
  * Admin endpoint for cache invalidation.
@@ -28,33 +30,6 @@ import { CacheTags } from "@/lib/cache";
  * Using "default" for immediate full invalidation.
  */
 const CACHE_PROFILE = "default";
-
-// Secure comparison to prevent timing attacks
-function isAuthorized(request: NextRequest): boolean {
-  const adminKey = request.headers.get("x-admin-key");
-  const expectedKey = process.env.ADMIN_KEY;
-
-  if (!expectedKey) {
-    console.warn("ADMIN_KEY environment variable not set. Admin endpoint is unprotected!");
-    return false;
-  }
-
-  if (!adminKey) {
-    return false;
-  }
-
-  if (adminKey.length !== expectedKey.length) {
-    return false;
-  }
-
-  // Constant-time string comparison
-  let result = 0;
-  for (let i = 0; i < expectedKey.length; i++) {
-    result |= adminKey.charCodeAt(i) ^ expectedKey.charCodeAt(i);
-  }
-
-  return result === 0;
-}
 
 // Invalidation request body types
 interface InvalidateAllRequest {
@@ -90,7 +65,7 @@ type InvalidateRequest =
 
 export async function POST(request: NextRequest) {
   // Check authentication
-  if (!isAuthorized(request)) {
+  if (!isAdminKeyAuthorized(request)) {
     return NextResponse.json(
       {
         success: false,
@@ -104,7 +79,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const body = (await request.json()) as InvalidateRequest;
+    const body = (await readJsonBody(request, 16 * 1024)) as InvalidateRequest;
     const invalidatedTags: string[] = [];
     const invalidatedPaths: string[] = [];
 
@@ -281,7 +256,6 @@ export async function POST(request: NextRequest) {
         error: {
           message: "Failed to invalidate cache",
           code: "INVALIDATION_ERROR",
-          details: error instanceof Error ? error.message : "Unknown error",
         },
       },
       { status: 500 }

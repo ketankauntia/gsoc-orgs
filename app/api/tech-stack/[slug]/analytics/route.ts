@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
+import { getAnalyticsOrganizations } from '@/lib/supabase/analytics-organizations'
 
 /**
  * GET /api/tech-stack/[slug]/analytics
@@ -21,10 +21,7 @@ export async function GET(
     const techName = slug.replace(/-/g, ' ')
 
     // Find tech variations
-    const orgs = await prisma.organizations.findMany({
-      select: { technologies: true },
-      take: 1000,
-    })
+    const orgs = await getAnalyticsOrganizations()
 
     const allTechs = Array.from(
       new Set<string>(orgs.flatMap((org) => org.technologies))
@@ -38,23 +35,11 @@ export async function GET(
     const techVariations = variations.length > 0 ? variations : [techName]
 
     // Get all organizations using this technology
-    const organizations = await prisma.organizations.findMany({
-      where: {
-        technologies: {
-          hasSome: techVariations,
-        },
-      },
-      select: {
-        id_: true,
-        name: true,
-        slug: true,
-        active_years: true,
-        years: true,
-        total_projects: true,
-        is_currently_active: true,
-        technologies: true,
-      },
-    })
+    const organizations = orgs.filter((org) =>
+      org.technologies.some((technology) =>
+        techVariations.some((variation) => technology.toLowerCase() === variation.toLowerCase()),
+      ),
+    )
 
     if (organizations.length === 0) {
       return NextResponse.json(
