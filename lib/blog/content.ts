@@ -7,7 +7,7 @@ import { estimateReadingMinutes, parseSections, slugify } from "./parse";
 
 /**
  * Content loader — posts live as markdown files in content/posts/*.md
- * (format: docs/blog/content-format.md). Server-only: uses fs.
+ * The authoring contract is maintained in private project documentation. Server-only: uses fs.
  */
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");

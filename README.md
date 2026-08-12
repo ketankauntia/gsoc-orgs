@@ -12,8 +12,6 @@ A comprehensive, open-source web platform that helps students and contributors e
 
 **Official GSoC:** [https://summerofcode.withgoogle.com/](https://summerofcode.withgoogle.com/)
 
-**Contributor and agent context:** [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md)
-
 This is an independent community resource and is not affiliated with or endorsed by Google or Google Summer of Code.
 
 ## 📋 Overview
@@ -120,8 +118,6 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 - `npm run supabase:import:dry-run` - Verify finalized catalog inputs and deterministic checksum
 - `npm run supabase:reconcile` - Compare imported catalog counts with checked-in inputs
 
-Proposal architecture, storage rules, migration/cutover steps, and staging gates are documented in [`docs/features/proposal-library.md`](docs/features/proposal-library.md). API v2 is documented in [`docs/api/v2-proposal-api.md`](docs/api/v2-proposal-api.md).
-
 ## 🤝 Contributing
 
 We welcome contributions from the open source community! This project is particularly valuable for students preparing for Google Summer of Code, as contributing here provides hands-on experience with modern web development, open source workflows, and real-world project collaboration.
@@ -151,7 +147,7 @@ git checkout -b fix/your-bug-fix
 **Branch naming conventions:**
 - `feature/` - New features or enhancements
 - `fix/` - Bug fixes
-- `docs/` - Documentation updates
+- `docs/` - Public documentation for a completed major feature, after privacy and security review
 - `refactor/` - Code refactoring
 - `test/` - Adding or updating tests
 
