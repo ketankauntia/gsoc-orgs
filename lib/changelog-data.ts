@@ -76,5 +76,18 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
       { type: 'test', text: 'Added live storage verification for signing, CORS, PDF upload, metadata, download, promotion, and cleanup.' },
       { type: 'chore', text: 'Enabled Google OAuth and aligned generated application types with the live database schema.' },
     ]
+  },
+  {
+    date: "Aug 15, 2026",
+    timeStamp: 20260815,
+    version: "v1.4.2",
+    title: "Analytics and Contributor Documentation",
+    summary: "Added optional GA4 page-view measurement and rewrote the public project documentation around the shipped architecture and contribution workflow.",
+    prLinks: [],
+    changes: [
+      { type: 'feat', text: 'Added opt-in-by-configuration Google Analytics 4 page views, including client-side route changes.' },
+      { type: 'docs', text: 'Reorganized the README around setup, architecture, data boundaries, commands, and contributor workflow.' },
+      { type: 'chore', text: 'Aligned CI with the npm lockfile and the master branch, adding type-check, tests, catalog dry-run, and dependency audit steps.' },
+    ]
   }
 ];

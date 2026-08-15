@@ -1,159 +1,129 @@
-# Contributing Guide
+# Contributing to GSoC Organizations Guide
 
-## Pre-commit Hooks
+Thank you for helping improve the project. Keep pull requests focused, explain the user or maintainer problem they solve, and preserve the boundary between public catalog data and private contributor/moderation data.
 
-This project uses **Husky** to run pre-commit hooks that **automatically validate** your code before every commit. This ensures CI/CD never fails due to code issues.
+## Before you start
 
-### What Runs Automatically on Commit
+- Read the root [README](README.md) for architecture, environment variables, scripts, and data boundaries.
+- Read [docs/proposal-library.md](docs/proposal-library.md) before touching proposal routes, profiles, claims, moderation, RLS, or storage.
+- Read [SECURITY.md](SECURITY.md) before reporting a vulnerability.
+- Check existing issues and pull requests before starting duplicate work.
+- Ask before changing migrations, authentication providers, storage policy, analytics behavior, or deployment configuration.
 
-When you commit, the following checks run **automatically**:
+## Local workflow
 
-1. **Branch Protection** 🛡️
-   - Prevents direct commits to `main` branch
-   - Forces you to work on feature branches
-   - Protects the main branch from accidental commits
+```bash
+git clone https://github.com/ketankauntia/gsoc-orgs.git
+cd gsoc-orgs
+npm ci
+Copy-Item .env.example .env.local  # PowerShell
+# cp .env.example .env.local       # macOS/Linux
+```
 
-2. **Linting** (`lint-staged`)
-   - Runs ESLint on staged files
-   - Auto-fixes fixable issues
-   - Prevents lint errors from reaching CI/CD
+Use a local or disposable Supabase project for schema and RLS work. Do not use production credentials in a pull request, issue, test fixture, or log. MongoDB is a one-time migration source, not a runtime dependency.
 
-3. **Type Checking** (`tsc --noEmit`)
-   - Validates TypeScript types
-   - Catches type errors that would break the build
-   - Fast check that prevents most build failures
+Create a branch from `master`:
 
-4. **Build Check** (`npm run build`)
-   - Ensures code compiles successfully
-   - Catches build errors before they reach CI/CD
-   - **Same check that runs in CI/CD**
+```bash
+git checkout -b feat/short-description
+# or: fix/short-description, docs/short-description, test/short-description
+```
 
-**Result:** If your commit succeeds, it will pass CI/CD! ✅
+## Where changes belong
 
-### Manual Validation (Optional)
+- `app/` — pages, layouts, and route handlers.
+- `components/` — reusable UI and client interactions.
+- `lib/` — server/client boundaries, validation, storage signing, and data helpers.
+- `supabase/migrations/` — forward-only schema, RLS, function, and policy changes.
+- `cloudflare/` — the proposal-storage Worker only.
+- `scripts/` — imports, reconciliation, bootstrap, and disposable verification.
+- `docs/` — reviewed public contributor documentation only.
 
-You can also run validation manually before committing:
+Do not add internal plans, credentials, private context, moderation notes, raw exports, signed URLs, or local `.agents`/`.claude` tooling to this repository.
+
+## Implementation rules
+
+- Keep Supabase Postgres as the runtime source of truth.
+- Keep public catalog reads separate from authenticated contributor and moderator routes.
+- Enforce ownership and workflow transitions in database functions/RLS as well as route handlers.
+- Validate uploaded files before promotion and use the signed Worker gateway; do not add browser-facing bucket credentials.
+- Treat public profile fields as explicit choices. Never expose email, evidence, private notes, or moderation history through public APIs.
+- Use TypeScript and existing component/data patterns.
+- Keep analytics aggregated and disclosed. Do not track proposal contents or build identity-linked contributor profiles.
+- Update the public changelog only for shipped, contributor-relevant changes.
+
+## Tests and validation
+
+Run the complete local gate before opening a pull request:
 
 ```bash
 npm run validate
+npm run security:audit
 ```
 
-This runs the same checks:
-- ✅ Linting (`npm run lint`)
-- ✅ Type checking (`npm run type-check`)
-- ✅ Build check (`npm run build`)
+The validation command runs:
 
-### Troubleshooting
+- ESLint;
+- application and Worker TypeScript checks;
+- the test suite;
+- canonical catalog import dry-run and checksum validation; and
+- the production build.
 
-#### Pre-commit hooks not running?
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-   This runs `husky` setup automatically via the `prepare` script.
-
-2. **Verify hooks are installed:**
-   ```bash
-   git config --get core.hooksPath
-   # Should output: .husky/_
-   ```
-
-3. **Manually install Husky (if needed):**
-   ```bash
-   npx husky install
-   ```
-
-#### Can't commit to main branch?
-
-The hook prevents direct commits to `main`. Create a feature branch first:
+For relevant changes, also run:
 
 ```bash
-git checkout -b feature/your-feature-name
-git commit -m "feat: your changes"
+npm run supabase:reconcile
+npm run r2:verify
 ```
 
-#### Commit fails with type errors?
+If a test needs Supabase, R2, Google Auth, or another external service, document the disposable environment, inputs, and result in the pull request without including secrets.
 
-Fix the TypeScript errors shown in the output. The hook will prevent the commit until all type errors are resolved.
+## Database and migration changes
 
-#### Commit fails with lint errors?
+1. Write a forward migration under `supabase/migrations/`.
+2. Review table exposure, grants, RLS policies, functions, indexes, and rollback implications.
+3. Apply it to a disposable project first.
+4. Regenerate `lib/supabase/database.types.ts` from the linked schema.
+5. Run import dry-run, reconciliation, tests, and security checks.
+6. Explain the data migration and release order in the pull request.
 
-Most lint errors are auto-fixed. If some remain, fix them manually and commit again.
+Never edit production tables manually to make a test pass, delete import audit history, or weaken RLS to silence a warning.
 
-#### Commit fails with build errors?
+## Commit and pull request
 
-Fix the build errors shown in the output. Common issues:
-- TypeScript type errors
-- Missing imports
-- Syntax errors
-- Missing dependencies
+Use Conventional Commit subjects:
 
-The hook will prevent the commit until the build succeeds.
-
-#### Want to skip hooks (not recommended)?
-
-```bash
-git commit --no-verify -m "your message"
+```text
+feat(search): add topic filter
+fix(api): handle empty project results
+docs(proposals): clarify contributor workflow
+test(auth): cover callback rejection
 ```
 
-⚠️ **Warning:** This bypasses all checks and may cause CI/CD to fail.
+Keep one logical change per commit or pull request where practical. Do not add `Co-authored-by`, Codex, Claude, AI-assisted, generated-by, or similar attribution trailers.
 
-### Commit Message Format
+Pull requests should include:
 
-This project uses [Conventional Commits](https://www.conventionalcommits.org/).
+- a concise problem statement and implementation summary;
+- affected routes, components, migrations, or infrastructure;
+- test commands and results;
+- screenshots or recordings for meaningful UI changes;
+- security/privacy implications;
+- required environment or deployment changes; and
+- documentation or changelog updates, if applicable.
 
-Examples:
-- `feat: add new organization filter`
-- `fix: resolve navigation double-click issue`
-- `docs: update contributing guide`
-- `refactor: optimize re-renders in organizations page`
+Push the branch and open a pull request. Do not commit directly to `master`.
 
-The commit-msg hook validates your commit message format automatically.
+## Review checklist
 
----
+- [ ] The change is limited to the stated problem.
+- [ ] No secret, private data, raw export, or local tooling is staged.
+- [ ] Public and authenticated data boundaries are preserved.
+- [ ] Tests and validation pass.
+- [ ] Migration and generated types are included when needed.
+- [ ] Public docs and privacy language are accurate.
+- [ ] The pull request explains deployment or environment changes.
 
-## Development Workflow
+## Need help?
 
-1. **Create a branch:**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. **Make changes and commit:**
-   ```bash
-   git add .
-   git commit -m "feat: your feature description"
-   ```
-   
-   The pre-commit hook will automatically:
-   - ✅ Check you're not on main branch
-   - ✅ Lint your code
-   - ✅ Check TypeScript types
-   - ✅ Build your code
-   
-   If all checks pass, your commit succeeds! 🎉
-
-3. **Push and create PR:**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
----
-
-## CI/CD Pipeline
-
-The GitHub Actions workflow (`.github/workflows/ci.yml`) runs:
-
-1. ✅ Linting (`npm run lint`)
-2. ✅ Build (`npm run build`)
-
-**Good news:** These are the same checks that run in your pre-commit hook! If your commit succeeds locally, CI/CD will pass. ✅
-
----
-
-## Need Help?
-
-- Check existing issues on GitHub
-- Review the codebase for similar patterns
-- Ask in discussions or create an issue
+Open a focused issue for a bug or feature discussion. For security issues, follow [SECURITY.md](SECURITY.md) instead of opening a public issue.

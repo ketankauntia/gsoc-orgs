@@ -1,428 +1,206 @@
-# GSoC Organizations Guide - Data-Driven Google Summer of Code Explorer
+# GSoC Organizations Guide
 
-A comprehensive, open-source web platform that helps students and contributors explore Google Summer of Code organizations, analyze year-by-year trends, filter by tech stack and domain, and discover the best organizations to maximize their GSoC selection chances for GSoC 2026, GSoC 2027, and future years.
+An open-source explorer for Google Summer of Code organizations, projects, technologies, topics, historical participation, editorial guides, and moderated accepted-proposal examples.
 
-## 🔗 Project Links
+This is an independent community project. It is not affiliated with or endorsed by Google or Google Summer of Code.
 
-**Website:** [https://www.gsocorganizationsguide.com](https://www.gsocorganizationsguide.com)
+## Start here
 
-**X (Project):** [https://x.com/gsoc_orgs_guide](https://x.com/gsoc_orgs_guide)
+- Live site: <https://www.gsocorganizationsguide.com>
+- Repository: <https://github.com/ketankauntia/gsoc-orgs>
+- Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Proposal-library guide: [docs/proposal-library.md](docs/proposal-library.md)
+- Security reporting: [SECURITY.md](SECURITY.md)
+- License: [LICENSE](LICENSE)
+- Official GSoC source: <https://summerofcode.withgoogle.com/archive>
 
-**Made by:** [https://x.com/kauntiaketan](https://x.com/kauntiaketan)
+## What the project provides
 
-**Official GSoC:** [https://summerofcode.withgoogle.com/](https://summerofcode.withgoogle.com/)
+- Search and filter 500+ archived GSoC organizations by year, topic, and technology.
+- Browse project, contributor-slot, mentor, organization, yearly, and technology views.
+- Explore historical data currently covering 2016 through 2025.
+- Read first-party GSoC preparation guides with categories, tags, authors, RSS, sitemap, and Markdown output.
+- Use public versioned catalog APIs under `/api/v1` and `/api/v2`.
+- Browse approved proposal examples through the public proposal library.
+- Let past contributors claim an archived project, upload an accepted proposal PDF, choose public profile fields, and submit it for moderation.
 
-This is an independent community resource and is not affiliated with or endorsed by Google or Google Summer of Code.
+## Architecture
 
-## 📋 Overview
+The catalog is served from Supabase. MongoDB is only a one-time migration source and is not a runtime dependency.
 
-The GSoC Organizations Guide is an open-source project designed to help students navigate the Google Summer of Code ecosystem. This data-driven platform provides comprehensive insights into GSoC organizations, their tech stacks, historical participation data, and trends to help aspiring contributors make informed decisions when selecting organizations for their GSoC applications.
+```mermaid
+flowchart LR
+  Browser[Browser] --> Vercel[Next.js on Vercel]
+  Vercel --> Auth[Supabase Auth]
+  Vercel --> DB[Supabase Postgres + RLS]
+  Vercel --> Gateway[Signed Cloudflare Worker]
+  Gateway --> R2[Private Cloudflare R2 proposal bucket]
+  DB --> Catalog[Catalog + claims + profiles + moderation]
+  DB --> Public[Public approved-proposal projection]
+```
 
-Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source opportunities, this platform offers valuable analytics and filtering capabilities to identify organizations that align with your skills and interests.
+Proposal publication is intentionally staged:
 
-## ✨ Key Features
+```mermaid
+flowchart LR
+  SignIn[Google sign-in] --> Profile[Complete public profile]
+  Profile --> Claim[Claim archived contributor slot]
+  Claim --> Upload[Upload accepted PDF to quarantine]
+  Upload --> Validate[Server validation + checksum]
+  Validate --> Review[Moderator review]
+  Review -->|approved| Public[Public CC BY 4.0 proposal]
+  Review -->|changes requested| Upload
+  Review -->|rejected| Closed[Private rejected submission]
+```
 
-- **Comprehensive GSoC Organizations List** - Browse 500+ Google Summer of Code organizations with detailed information
-- **Tech Stack Based Filtering** - Filter organizations by programming languages, frameworks, and technologies
-- **Year-Wise GSoC Data** - Explore historical data from GSoC 2016 through GSoC 2025
-- **Trending Organizations** - Discover popular and emerging GSoC organizations
-- **Visual Analytics** - Interactive charts and graphs showing organization trends, tech stack popularity, and selection statistics
-- **Topic-Based Exploration** - Filter organizations by domain areas and project topics
-- **Public REST API** - Access organization and project data programmatically via versioned API endpoints
-- **Beginner-Friendly Insights** - Clear visualizations and analytics to help newcomers understand the GSoC landscape
-- **Search and Filter** - Advanced search capabilities to find organizations matching specific criteria
-- **Organization Profiles** - Detailed pages for each organization with projects, statistics, and participation history
-- **Verified Proposal Library** - Google-authenticated contributors can publish moderated, CC BY 4.0 proposal PDFs; see the [feature and contributor guide](docs/proposal-library.md)
-- **Editorial Guides** - Integrated blog with categories, tags, authors, RSS, sitemap, and Markdown output
+The storage gateway signs short-lived operations for only three object families: quarantine PDFs, approved proposal PDFs, and imported Google avatars. The browser never receives an R2 credential.
 
-## 📸 Screenshots
+## Repository map
 
-# Homepage Preview
-<img width="1894" height="876" alt="GSoC Organizations Guide" src="https://github.com/user-attachments/assets/41c7d36d-5734-4610-8acf-2aa7abb2f71c" />
+- `app/` — Next.js pages, layouts, route handlers, and API endpoints.
+- `components/` — shared UI, navigation, auth, and analytics components.
+- `lib/` — Supabase clients, proposal rules, storage signing, validation, cache, and data helpers.
+- `supabase/migrations/` — forward database migrations and RLS/database functions.
+- `lib/supabase/database.types.ts` — generated types for the linked Supabase schema.
+- `cloudflare/` — checked-in proposal-storage Worker and Wrangler configuration.
+- `scripts/` — catalog import, Mongo compatibility import, reconciliation, bootstrap, and storage verification.
+- `new-api-details/` — checked-in canonical catalog input used by the importer.
+- `docs/proposal-library.md` — public workflow, security, and contributor reference.
 
-# Organization Page with Filters
-<img width="1895" height="877" alt="image" src="https://github.com/user-attachments/assets/9f35916c-8c56-4354-8b01-5e4fc865334f" />
-
-# Tech Stack Analytics
-![gsoc tech stack analytics](https://github.com/user-attachments/assets/a9329ba2-6779-4d4a-b124-d14b3b6697cf)
-
-# Organization Details
-![gsoc-organization-rocket-chat](https://github.com/user-attachments/assets/819399f2-38c1-4ab4-984d-fbf6bac44bca)
-
-# Year-by-Year View
-![google-summer-of-code-2025-analytics-details](https://github.com/user-attachments/assets/e9b6fa6c-327c-4a09-bbd1-22ce60fbc10c)
-
-
-## 🛠️ Tech Stack
-
-### Tech-Stack
-[Next.js](https://nextjs.org/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [Supabase Postgres/Auth](https://supabase.com/), [Cloudflare R2](https://www.cloudflare.com/products/r2/), [Radix UI](https://www.radix-ui.com/), [Recharts](https://recharts.org/), [Framer Motion](https://www.framer.com/motion/), [Vercel](https://vercel.com/), and [ESLint](https://eslint.org/)
-
-### Data Source
-- Historical Google Summer of Code data (2016-current)
-- Organization information, projects, and statistics from official GSoC archives
-- GSoC Archives : https://summerofcode.withgoogle.com/archive 
-
-## 🚀 Getting Started
+## Local setup
 
 ### Prerequisites
 
-- **Node.js** 18.x or higher
-- **npm** package manager
-- **Supabase** project or local Supabase stack
-- **Cloudflare R2** bucket for private proposal and avatar objects
+- Node.js 20 or newer.
+- npm.
+- A Supabase project for local application work.
+- A Cloudflare R2/Worker setup only if you are exercising proposal storage.
+- Git and a GitHub account for contributions.
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/gsoc-orgs.git
-   cd gsoc-orgs
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-   No database client generation is required for installation.
-
-3. **Set up environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   Copy `.env.example` to `.env.local` and configure Supabase, Google OAuth, and R2 gateway values. Service-role and storage-signing secrets are server-only.
-
-4. **Run database migrations** (if needed)
-   ```bash
-   supabase db reset
-   npm run supabase:import
-   ```
-
-5. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-6. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
-
-### Available Scripts
-
-- `npm run dev` - Start development server on http://localhost:3000
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server (requires `npm run build` first)
-- `npm run lint` - Run ESLint to check code quality
-- `npm run type-check` - Run TypeScript type checking
-- `npm run validate` - Run lint, type-check, and build validation
-- `npm test` - Run proposal/schema compatibility tests
-- `npm run supabase:import:dry-run` - Verify finalized catalog inputs and deterministic checksum
-- `npm run supabase:reconcile` - Compare imported catalog counts with checked-in inputs
-- `npm run r2:deploy` - Deploy the private signed proposal-storage Worker
-- `npm run r2:verify` - Verify signed upload, metadata, download, promotion, and cleanup against the configured R2 gateway
-
-## 🤝 Contributing
-
-We welcome contributions from the open source community! This project is particularly valuable for students preparing for Google Summer of Code, as contributing here provides hands-on experience with modern web development, open source workflows, and real-world project collaboration.
-
-### How to Contribute
-
-#### 1. Fork and Clone
+### Install
 
 ```bash
-# Fork the repository on GitHub, then clone your fork
-git clone https://github.com/yourusername/gsoc-orgs.git
+git clone https://github.com/ketankauntia/gsoc-orgs.git
 cd gsoc-orgs
+npm ci
+Copy-Item .env.example .env.local  # PowerShell
+# cp .env.example .env.local       # macOS/Linux
 ```
 
-#### 2. Create a Branch
+For browsing the catalog, configure `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SUPABASE_URL`, and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. For server-side proposal features, also configure the server-only values described below. Never commit `.env.local`, OAuth JSON, database URLs, signed URLs, or service credentials.
 
-**Important:** This project uses branch protection. You cannot commit directly to the `main` branch. Always work on feature branches.
-
-```bash
-# Create and switch to a new branch
-git checkout -b feature/your-feature-name
-
-# Or for bug fixes
-git checkout -b fix/your-bug-fix
-```
-
-**Branch naming conventions:**
-- `feature/` - New features or enhancements
-- `fix/` - Bug fixes
-- `docs/` - Public documentation for a completed major feature, after privacy and security review
-- `refactor/` - Code refactoring
-- `test/` - Adding or updating tests
-
-#### 3. Set Up Your Development Environment
+Start development:
 
 ```bash
-# Install dependencies
-npm install
-
-# Set up environment variables (see Getting Started section)
-# Create .env.local with DATABASE_URL
-
-# Verify everything works
 npm run dev
 ```
 
-#### 4. Make Your Changes
+Open <http://localhost:3000>.
 
-- Write clean, readable code following existing patterns
-- Use TypeScript for type safety
-- Follow the existing code style (enforced by ESLint)
-- Add comments for complex logic
-- Update documentation if needed
+## Environment variables
 
-#### 5. Test Your Changes
+| Variable | Use | Exposure |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical origin and same-origin checks | Browser-visible |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Browser-visible |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase browser client | Browser-visible |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional GA4 page-view measurement | Browser-visible |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server-side catalog/admin operations | Server-only |
+| `R2_GATEWAY_URL` | Signed storage gateway origin | Server-only |
+| `R2_SIGNING_SECRET` | HMAC signing secret for the gateway | Server-only |
+
+These are setup or migration inputs, not normal browser runtime values: `SUPABASE_DB_URL`, Google OAuth client credentials, `LEGACY_MONGO_DATABASE_URL`, `MONGO_DB`, `ADMIN_BOOTSTRAP_EMAILS`, `R2_ACCOUNT_ID`, `R2_BUCKET_NAME`, and the legacy `ADMIN_KEY`. Keep them out of deployed client code and public documentation.
+
+Google Analytics is enabled only when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is present. It records general page-view usage; it is not used for proposal contents, private evidence, or moderation notes. See the site's [privacy policy](https://www.gsocorganizationsguide.com/privacy-policy).
+
+## Data and migrations
+
+- Supabase Postgres is the runtime source of truth.
+- `supabase/migrations/202608120001_proposal_library.sql` creates proposal, profile, claim, role, moderation, storage, and public-projection boundaries.
+- The canonical importer reads `new-api-details/` and validates organization/project mappings before writing.
+- The Mongo importer is a one-time compatibility merge. Do not add MongoDB reads to application routes.
+- Regenerate live database types after a forward migration:
 
 ```bash
-# Run validation before committing
+npm run supabase:types:linked
+```
+
+Useful data checks:
+
+```bash
+npm run supabase:import:dry-run
+npm run supabase:reconcile
+```
+
+Do not run a production import casually. Review the migration and importer output first, and preserve import audit history.
+
+## Proposal library
+
+The proposal feature is a privacy boundary, not a general file store:
+
+- Google Auth creates the user identity; a contributor completes a public profile.
+- Claims attach a user to an archived contributor slot and are ownership-limited by database functions and RLS.
+- PDFs are structurally validated, checksummed, and promoted only after validation.
+- Drafts, evidence, private notes, rejected submissions, and moderation history are protected.
+- Only approved proposals appear through the narrow public projection.
+- Public proposal PDFs use CC BY 4.0 attribution terms.
+
+Read [docs/proposal-library.md](docs/proposal-library.md) before changing proposal routes, migrations, RLS policies, or storage behavior.
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local Next.js server |
+| `npm run build` | Create the production build |
+| `npm run start` | Serve an existing production build |
+| `npm run lint` | Run ESLint |
+| `npm run type-check` | Check app and Worker TypeScript |
+| `npm test` | Run the test suite |
+| `npm run supabase:import:dry-run` | Validate catalog inputs and checksum without writing |
+| `npm run supabase:import` | Import canonical catalog data |
+| `npm run supabase:import:mongo` | Merge the one-time legacy Mongo export |
+| `npm run supabase:reconcile` | Compare expected and stored catalog counts |
+| `npm run r2:deploy` | Deploy the signed proposal-storage Worker |
+| `npm run r2:verify` | Exercise signed storage operations and cleanup |
+| `npm run validate` | Run lint, type-check, tests, dry-run, and build |
+| `npm run security:audit` | Audit production dependencies |
+
+Before opening a pull request:
+
+```bash
 npm run validate
+npm run security:audit
 ```
 
-This runs:
-- Linting (`npm run lint`)
-- Type checking (`npm run type-check`)
-- Build check (`npm run build`)
+## Contributing
 
-#### 6. Commit Your Changes
+1. Fork the repository and create a branch from `master`.
+2. Use a focused branch name such as `feat/search-filter`, `fix/api-cache`, or `docs/contributing`.
+3. Read the relevant route, component, migration, and public/private-data boundary before editing.
+4. Keep changes small and typed. Add or update tests for behavior changes.
+5. Run `npm run validate` and `npm run security:audit` locally.
+6. Commit with a [Conventional Commit](https://www.conventionalcommits.org/) subject, for example `fix(api): handle empty year data`.
+7. Push your branch and open a pull request. Do not commit directly to `master`.
 
-**Pre-commit Hooks:** This project uses Husky to automatically validate your code before every commit. The following checks run automatically:
+Pull requests should explain:
 
-- ✅ Branch protection (prevents commits to `main`)
-- ✅ Linting (ESLint with auto-fix)
-- ✅ Type checking (TypeScript)
-- ✅ Build check (ensures code compiles)
+- what changed and why;
+- how it was tested;
+- whether a migration, environment variable, or deployment change is required;
+- whether public docs or the changelog need an update; and
+- whether the change touches authentication, RLS, private data, storage, or analytics.
 
-**Commit Message Format:**
+Do not include secrets, private proposal contents, private moderation records, raw database exports, signed URLs, or local agent-tooling directories in a pull request.
 
-This project uses [Conventional Commits](https://www.conventionalcommits.org/). Your commit messages should follow this format:
+## Analytics and privacy
 
-```
-<type>: <description>
+The app uses Vercel Analytics and Speed Insights, plus optional GA4 configured by `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Analytics is limited to aggregate website operation and page-view understanding. Do not add identity-linked contributor monitoring, proposal-content tracking, or hidden behavioral profiles. Update the privacy policy when analytics behavior changes.
 
-[optional body]
+## Reporting security issues
 
-[optional footer]
-```
+Do not open a public issue for a vulnerability. Follow [SECURITY.md](SECURITY.md) and report privately.
 
-**Examples:**
-- `feat: add organization search functionality`
-- `fix: resolve navigation double-click issue`
-- `docs: update contributing guide`
-- `refactor: optimize re-renders in organizations page`
-- `style: format code with prettier`
-- `test: add unit tests for API routes`
+## License
 
-**Types:**
-- `feat` - New feature
-- `fix` - Bug fix
-- `docs` - Documentation changes
-- `style` - Code style changes (formatting, etc.)
-- `refactor` - Code refactoring
-- `test` - Adding or updating tests
-- `chore` - Maintenance tasks
-
-```bash
-# Stage your changes
-git add .
-
-# Commit (hooks will run automatically)
-git commit -m "feat: add organization search functionality"
-```
-
-If the commit succeeds, your code has passed all validation checks and will pass CI/CD!
-
-#### 7. Push and Create Pull Request
-
-```bash
-# Push your branch to GitHub
-git push origin feature/your-feature-name
-```
-
-Then:
-1. Go to the repository on GitHub
-2. Click "New Pull Request"
-3. Select your branch
-4. Fill out the PR template (if available)
-5. Describe your changes clearly
-6. Link any related issues
-7. Submit the PR
-
-### Finding Issues to Work On
-
-**For Beginners:**
-
-1. **Look for "good first issue" labels** - These are specifically marked for newcomers
-2. **Check the Issues tab** - Browse open issues and find something that interests you
-3. **Start Small** - Fix typos, improve documentation, or add small features
-4. **Ask Questions** - Don't hesitate to ask for clarification in issue comments
-
-**Issue Types:**
-- 🐛 Bug fixes
-- ✨ Feature requests
-- 📝 Documentation improvements
-- 🎨 UI/UX enhancements
-- 🔧 Refactoring opportunities
-- 🧪 Test coverage improvements
-
-### Code Style Guidelines
-
-- **TypeScript** - Use TypeScript for all new code
-- **ESLint** - Follow ESLint rules (auto-fixed on commit)
-- **Component Structure** - Follow existing component patterns
-- **Naming** - Use descriptive, camelCase variable names
-- **Comments** - Add comments for complex logic
-- **Formatting** - Code is auto-formatted by ESLint
-
-### Pull Request Guidelines
-
-- **One logical change per PR** - Keep PRs focused and reviewable
-- **Descriptive title** - Use conventional commit format
-- **Clear description** - Explain what and why, not just how
-- **Link issues** - Reference related issues using `#issue-number`
-- **Update documentation** - Update README or docs if needed
-- **Test your changes** - Ensure everything works locally
-- **Keep PRs small** - Easier to review and merge
-
-### Getting Help
-
-- **Check existing issues** - Your question might already be answered
-- **Review the codebase** - Look for similar patterns
-- **Ask in discussions** - Create a discussion thread
-- **Create an issue** - For bugs or feature requests
-
-### What Happens After You Contribute
-
-1. **Review Process** - Maintainers will review your PR
-2. **Feedback** - You may receive suggestions for improvements
-3. **Iteration** - Make requested changes if needed
-4. **Merge** - Once approved, your PR will be merged
-5. **Recognition** - Your contribution will be visible in the project history
-
-Contributing to open source projects like this is excellent preparation for Google Summer of Code, as it demonstrates:
-- Ability to work with existing codebases
-- Understanding of version control and collaboration
-- Code quality and attention to detail
-- Communication skills through PR discussions
-
-## 🎓 Why This Project is Useful for GSoC Aspirants
-
-### Learning Opportunities
-
-**Modern Web Development:**
-- Work with Next.js 16, React 19, and TypeScript - technologies highly valued in the industry
-- Learn server-side rendering, API routes, and modern React patterns
-- Gain experience with Tailwind CSS and component-based architecture
-
-**Open Source Best Practices:**
-- Understand Git workflows, branching strategies, and pull request processes
-- Learn code review practices and collaborative development
-- Experience real-world project structure and organization
-
-**Data Handling & Analytics:**
-- Work with MongoDB and Prisma ORM
-- Build data visualizations with Recharts
-- Understand API design and RESTful principles
-
-### GSoC Preparation Benefits
-
-**Portfolio Building:**
-- Contribute to a real, production-ready project
-- Build a portfolio that demonstrates your skills to GSoC mentors
-- Show experience with the exact technologies many GSoC organizations use
-
-**Understanding the GSoC Ecosystem:**
-- Gain deep insights into GSoC organizations and their tech stacks
-- Understand trends and patterns in GSoC participation
-- Identify organizations that match your skills and interests
-
-**Community Engagement:**
-- Connect with other GSoC aspirants and contributors
-- Build relationships that can help during GSoC applications
-- Demonstrate active participation in open source communities
-
-**Skill Development:**
-- Improve your coding skills through real contributions
-- Learn to read and understand large codebases
-- Develop problem-solving and debugging abilities
-
-### Why Contributing Here is Valuable
-
-1. **Relevant Domain** - Working on a GSoC-related project shows genuine interest and understanding
-2. **Modern Stack** - Technologies used here are common in many GSoC organizations
-3. **Real Impact** - Your contributions help thousands of students prepare for GSoC
-4. **Documentation** - Well-documented codebase makes it easier to learn and contribute
-5. **Beginner Friendly** - Clear contribution guidelines and helpful community
-
-Contributing to this project demonstrates to GSoC mentors that you:
-- Can work independently and collaboratively
-- Understand open source development workflows
-- Are committed to learning and improving
-- Have experience with modern web technologies
-- Can contribute meaningfully to real projects
-
-## 🔍 SEO & Keywords
-
-This project is optimized for search engines and helps students discover valuable resources for Google Summer of Code preparation. The platform provides comprehensive data and insights related to:
-
-- **Google Summer of Code** - Complete guide to GSoC organizations and opportunities
-- **GSoC Organizations** - Extensive database of participating organizations
-- **Open Source Contribution** - Resources for students entering open source
-- **GSoC 2026 Organizations** - Up-to-date information for upcoming GSoC cycles
-- **GSoC Tech Stack** - Technology analysis and filtering capabilities
-- **GSoC Project List** - Comprehensive project database with search and filter
-- **GSoC Year by Year** - Historical data and trends analysis
-- **Trending GSoC Organizations** - Popular and emerging organization insights
-- **GSoC Selection Chances** - Data-driven analytics to improve application success
-- **Student Developer Programs** - Resources for aspiring student developers
-
-The platform serves as a comprehensive resource for anyone interested in Google Summer of Code, open source contribution, and student developer programs.
-
-## 📄 License & Open Source Statement
-
-This project is open source and welcomes community contributions. The project uses a custom non-commercial license. Please review the [LICENSE](LICENSE) file for complete terms.
-
-**Key Points:**
-- ✅ Open source and free to use for non-commercial purposes
-- ✅ Community contributions are welcome and encouraged
-- ✅ Commercial use requires explicit permission from the copyright holder
-- ✅ Contributors grant usage rights for their contributions
-
-**Why Open Source:**
-
-We believe that knowledge and tools for preparing for Google Summer of Code should be accessible to all students, regardless of their background or resources. By making this project open source, we:
-
-- Enable students to learn from real-world codebases
-- Provide a platform for collaborative learning and contribution
-- Support the open source community that GSoC aims to strengthen
-- Create opportunities for students to build their portfolios
-
-**Contributing to Open Source:**
-
-Contributing to this project is an excellent way to:
-- Learn modern web development practices
-- Build your open source portfolio
-- Prepare for Google Summer of Code
-- Help other students in their GSoC journey
-- Gain experience with collaborative development
-
-We encourage students, developers, and anyone interested in GSoC to contribute, learn, and grow with this project.
-
-## 📚 Additional Resources
-
-- **API Documentation** - See [API_COMPLETE_DOCS.md](./API_COMPLETE_DOCS.md) for complete API reference
-- **Contributing Guide** - Detailed contribution guidelines in [CONTRIBUTING.md](./CONTRIBUTING.md)
-- **Security** - Report security issues following [SECURITY.md](./SECURITY.md)
-- **Proposal Library** - Read the [public architecture, workflow, and setup guide](./docs/proposal-library.md)
-
-## 🙏 Acknowledgments
-
-This project is built to serve the Google Summer of Code community and help students navigate the open source ecosystem. Special thanks to all contributors and the GSoC community for their support and feedback.
-
----
-
-**Ready to contribute?** Start by reading the [Contributing Guide](#-contributing) and finding an issue that interests you. Every contribution, no matter how small, makes a difference!
-
-**Questions?** Open an issue or start a discussion. We're here to help!
+This repository uses the custom non-commercial source license in [LICENSE](LICENSE). Read it before reusing the code or submitting a contribution.
