@@ -61,7 +61,7 @@ export const SocialLinks = ({
         style={itemStyle}
       >
       <XIcon />
-        {showLabels && <span>Twitter (X)</span>}
+        {showLabels && <span>Project X</span>}
       </Link>
 
         <Link
@@ -73,7 +73,7 @@ export const SocialLinks = ({
         style={itemStyle}
       >
       <XIcon />
-        {showLabels && <span>Twitter (X)</span>}
+        {showLabels && <span>Maintainer X</span>}
       </Link>
 
       <Link

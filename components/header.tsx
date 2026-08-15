@@ -1,166 +1,165 @@
-'use client'
-import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
-import { Button } from "@/components/ui"
-import React from 'react'
-import { cn } from '@/lib/utils'
-import { SOCIAL_LINKS } from '@/components/footer-common'
-import { GitHubIcon,  XIcon } from '@/components/icons'
-import { ModeToggle } from './ModeToggle'
-import { AuthNav } from '@/components/auth/auth-nav'
+"use client";
+
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import React from "react";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui";
+import { cn } from "@/lib/utils";
+import { SOCIAL_LINKS } from "@/components/footer-common";
+import { GitHubIcon, XIcon } from "@/components/icons";
+import { ModeToggle } from "./ModeToggle";
+import { AuthNav } from "@/components/auth/auth-nav";
+
+const CURRENT_EDITION = "/yearly/google-summer-of-code-2026";
 
 const menuItems = [
-    { name: 'Organizations', href: '/organizations' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Technologies', href: '/tech-stack' },
-    { name: 'Topics', href: '/topics' },
-    { name: 'Yearly', href: '/yearly' },
-    { name: 'Proposals', href: '/proposals' },
-    { name: 'Blog', href: '/blog' },
-    // { name: 'Resources', href: '#resources' },
-    // { name: 'About Us', href: '#about' },
-    // { name: 'Contact', href: '#contact' },
-]
+  { name: "GSoC 2026", href: CURRENT_EDITION, badge: "Current" },
+  { name: "Organizations", href: "/organizations" },
+  { name: "Proposals", href: "/proposals" },
+  { name: "Blog", href: "/blog" },
+  { name: "Past editions", href: "/yearly" },
+];
+
+function isMenuItemActive(pathname: string, href: string) {
+  if (href === "/yearly") {
+    return pathname.startsWith("/yearly") && pathname !== CURRENT_EDITION;
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export const Header = () => {
-    const [menuState, setMenuState] = React.useState(false)
-    const [isScrolled, setIsScrolled] = React.useState(false)
+  const pathname = usePathname();
+  const [menuState, setMenuState] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
-    return (
-        <header suppressHydrationWarning>
-            <nav
-                data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2"
-                suppressHydrationWarning>
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2 font-semibold text-xl">
-                                <span>GSoC Guide</span>
-                            </Link>
+  React.useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
-                        </div>
+  React.useEffect(() => {
+    setMenuState(false);
+  }, [pathname]);
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-4 text-sm xl:gap-6">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            prefetch={true}
-                                            className="hover:text-accent-foreground hover:font-semibold block duration-150">
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+  return (
+    <header suppressHydrationWarning>
+      <nav
+        aria-label="Primary navigation"
+        data-state={menuState ? "active" : "inactive"}
+        className="fixed z-20 w-full px-2"
+        suppressHydrationWarning
+      >
+        <div
+          className={cn(
+            "mx-auto mt-2 max-w-7xl px-4 transition-all duration-300 sm:px-6 lg:px-10",
+            isScrolled && "max-w-6xl rounded-2xl border bg-background/80 shadow-sm backdrop-blur-lg",
+          )}
+        >
+          <div className="relative flex flex-wrap items-center justify-between gap-4 py-3 lg:gap-6 lg:py-4">
+            <div className="flex w-full items-center justify-between lg:w-auto">
+              <Link
+                href="/"
+                aria-label="GSoC Organizations Guide home"
+                className="flex items-center gap-2 font-semibold tracking-tight"
+              >
+                <span className="text-lg sm:text-xl">GSoC Guide</span>
+              </Link>
 
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                prefetch={true}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                {/* <Button
-                                    disabled
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <span>Login</span>
-                                </Button>
-                                <Button
-                                    disabled
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <span>Sign Up</span>
-                                </Button> */}                               
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <a
-                                        href={SOCIAL_LINKS.github.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={SOCIAL_LINKS.github.label}
-                                    >
-                                        <GitHubIcon className="w-4 h-4" />
-                                        <span>GitHub</span>
-                                    </a>
-                                </Button>                                
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <a
-                                        href={SOCIAL_LINKS.twitter.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={SOCIAL_LINKS.twitter.label}
-                                    >
-                                        <XIcon className="w-4 h-4" />
-                                        <span>X</span>
-                                    </a>
-                                </Button>
-                                <ModeToggle />
-                                <AuthNav />
-                                
-                                {/* <Button
-                                    disabled
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <span>Get Started</span>
-                                </Button> */}
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <a
-                                        href={SOCIAL_LINKS.github.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={SOCIAL_LINKS.github.label}
-                                    >
-                                        <GitHubIcon className="w-4 h-4" />
-                                        <span>GitHub</span>
-                                    </a>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    )
-}
+              <button
+                type="button"
+                onClick={() => setMenuState((open) => !open)}
+                aria-expanded={menuState}
+                aria-controls="primary-menu"
+                aria-label={menuState ? "Close menu" : "Open menu"}
+                className="relative z-20 -mr-2 block cursor-pointer rounded-lg p-2 hover:bg-muted lg:hidden"
+              >
+                {menuState ? <X className="size-6" /> : <Menu className="size-6" />}
+              </button>
+            </div>
+
+            <div className="absolute inset-x-0 top-1/2 hidden -translate-y-1/2 lg:block">
+              <ul className="flex justify-center gap-4 text-sm xl:gap-7" aria-label="Site sections">
+                {menuItems.map((item) => {
+                  const active = isMenuItemActive(pathname, item.href);
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        prefetch
+                        aria-current={active ? "page" : undefined}
+                        className={cn(
+                          "flex items-center gap-1.5 rounded-md px-1.5 py-1 transition-colors hover:text-primary",
+                          active ? "font-semibold text-primary" : "text-muted-foreground",
+                        )}
+                      >
+                        <span>{item.name}</span>
+                        {item.badge ? (
+                          <span className="rounded-full bg-primary/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-primary">
+                            {item.badge}
+                          </span>
+                        ) : null}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <div
+              id="primary-menu"
+              className={cn(
+                "w-full rounded-2xl border bg-background p-5 shadow-xl shadow-zinc-300/20 dark:shadow-none lg:flex lg:w-auto lg:items-center lg:gap-3 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
+                menuState ? "block" : "hidden lg:block",
+              )}
+            >
+              <ul className="space-y-2 border-b pb-4 text-base lg:hidden" aria-label="Mobile site sections">
+                {menuItems.map((item) => {
+                  const active = isMenuItemActive(pathname, item.href);
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        prefetch
+                        aria-current={active ? "page" : undefined}
+                        className={cn(
+                          "flex items-center justify-between rounded-lg px-3 py-2.5 transition-colors hover:bg-muted",
+                          active ? "font-semibold text-primary" : "text-muted-foreground",
+                        )}
+                      >
+                        <span>{item.name}</span>
+                        {item.badge ? (
+                          <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-primary">
+                            {item.badge}
+                          </span>
+                        ) : null}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <div className="mt-4 flex flex-wrap items-center gap-2 lg:mt-0">
+                <Button variant="outline" size="sm" asChild>
+                  <a href={SOCIAL_LINKS.github.href} target="_blank" rel="noopener noreferrer" aria-label={SOCIAL_LINKS.github.label}>
+                    <GitHubIcon className="size-4" />
+                    <span className="hidden xl:inline">GitHub</span>
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href={SOCIAL_LINKS.twitter.href} target="_blank" rel="noopener noreferrer" aria-label={SOCIAL_LINKS.twitter.label}>
+                    <XIcon className="size-4" />
+                    <span className="hidden xl:inline">X</span>
+                  </a>
+                </Button>
+                <ModeToggle />
+                <AuthNav />
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
