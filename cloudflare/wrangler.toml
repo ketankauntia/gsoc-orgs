@@ -1,0 +1,12 @@
+name = "gsoc-proposal-storage"
+main = "proposal-storage-worker.ts"
+compatibility_date = "2026-08-15"
+workers_dev = true
+preview_urls = false
+
+[vars]
+ALLOWED_ORIGINS = "http://localhost:3000,https://www.gsocorganizationsguide.com,https://gsocorganizationsguide.com"
+
+[[r2_buckets]]
+binding = "PROPOSALS"
+bucket_name = "gsoc-proposals"

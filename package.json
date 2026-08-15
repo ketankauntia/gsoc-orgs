@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit && tsc -p cloudflare/tsconfig.json",
     "test": "vitest run",
     "supabase:bootstrap-admins": "tsx scripts/bootstrap-admins.ts",
     "supabase:import": "tsx scripts/import-supabase-catalog.ts",
@@ -18,6 +18,8 @@
     "supabase:types:linked": "supabase gen types typescript --linked > lib/supabase/database.types.ts",
     "validate": "npm run lint && npm run type-check && npm test && npm run supabase:import:dry-run && npm run build",
     "security:audit": "npm audit --omit=dev --audit-level=high",
+    "r2:deploy": "wrangler deploy --config cloudflare/wrangler.toml",
+    "r2:verify": "tsx scripts/verify-r2-gateway.ts",
     "postinstall": "node -e \"console.log('Supabase client requires no code generation')\"",
     "prepare": "husky",
     "generate:organizations": "tsx scripts/import-supabase-catalog.ts",
@@ -30,8 +32,6 @@
     "gsoc:sync": "npx tsx scripts/fetch-year-data.ts && npx tsx scripts/transform-year-organizations.ts && npx tsx scripts/generate-yearly-page-from-json.ts && npx tsx scripts/regenerate-tech-topics-from-json.ts"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.1108.0",
-    "@aws-sdk/s3-request-presigner": "^3.1108.0",
     "@icons-pack/react-simple-icons": "^13.11.1",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.11",
@@ -77,12 +77,14 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260815.1",
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "^16.3.0",
     "husky": "^9.1.7",

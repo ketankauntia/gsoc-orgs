@@ -27,7 +27,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   let validated: Awaited<ReturnType<typeof validateQuarantinedPdf>>;
   try {
     validated = await validateQuarantinedPdf(parsed.data.key);
-    promotedKey = await promotePdf(parsed.data.key, id, fileId);
+    promotedKey = await promotePdf(parsed.data.key, id, fileId, validated.bytes);
   } catch (error) {
     if (promotedKey) await deleteR2Object(promotedKey).catch(() => undefined);
     else await deleteR2Object(parsed.data.key).catch(() => undefined);
@@ -43,7 +43,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     new_original_filename: parsed.data.filename,
     new_byte_size: validated.byteSize,
     new_sha256: validated.sha256,
-    new_etag: validated.etag ?? null,
+    new_etag: validated.etag ?? undefined,
   });
   if (error) {
     await deleteR2Object(promotedKey).catch(() => undefined);

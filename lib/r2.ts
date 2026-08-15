@@ -1,15 +1,6 @@
 import "server-only";
 
-import { createHash, randomUUID } from "node:crypto";
-import {
-  CopyObjectCommand,
-  DeleteObjectCommand,
-  GetObjectCommand,
-  HeadObjectCommand,
-  PutObjectCommand,
-  S3Client,
-} from "@aws-sdk/client-s3";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { createHash, createHmac, randomUUID } from "node:crypto";
 import { PDFDocument } from "pdf-lib";
 import { isAllowedGoogleAvatarUrl, matchesImageSignature } from "@/lib/storage-validation";
 
@@ -17,23 +8,39 @@ export const MAX_PROPOSAL_PDF_BYTES = 10 * 1024 * 1024;
 export const PROPOSAL_PDF_MIME = "application/pdf";
 
 function config() {
-  const accountId = process.env.R2_ACCOUNT_ID;
-  const accessKeyId = process.env.R2_ACCESS_KEY_ID;
-  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
-  const bucket = process.env.R2_BUCKET_NAME;
-  if (!accountId || !accessKeyId || !secretAccessKey || !bucket) {
-    throw new Error("Cloudflare R2 environment variables are not configured");
-  }
-  return { accountId, accessKeyId, secretAccessKey, bucket };
+  const gatewayUrl = process.env.R2_GATEWAY_URL;
+  const signingSecret = process.env.R2_SIGNING_SECRET;
+  if (!gatewayUrl || !signingSecret) throw new Error("Cloudflare R2 gateway environment variables are not configured");
+  return { gatewayUrl: gatewayUrl.replace(/\/$/, ""), signingSecret };
 }
 
-function r2() {
-  const { accountId, accessKeyId, secretAccessKey } = config();
-  return new S3Client({
-    region: "auto",
-    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
-    credentials: { accessKeyId, secretAccessKey },
+function objectPath(key: string) {
+  return `/objects/${key.split("/").map(encodeURIComponent).join("/")}`;
+}
+
+function signedObjectUrl(method: "PUT" | "GET" | "HEAD" | "DELETE", key: string, options: { contentType?: string; disposition?: string; expiresIn?: number } = {}) {
+  const { gatewayUrl, signingSecret } = config();
+  const url = new URL(`${gatewayUrl}${objectPath(key)}`);
+  const expires = String(Math.floor(Date.now() / 1000) + (options.expiresIn ?? 300));
+  const contentType = options.contentType ?? "";
+  const disposition = options.disposition ?? "";
+  url.searchParams.set("expires", expires);
+  if (contentType) url.searchParams.set("contentType", contentType);
+  if (disposition) url.searchParams.set("disposition", disposition);
+  const input = `${method}\n${url.pathname}\n${expires}\n${contentType}\n${disposition}`;
+  url.searchParams.set("signature", createHmac("sha256", signingSecret).update(input).digest("hex"));
+  return url.toString();
+}
+
+async function gatewayRequest(method: "PUT" | "GET" | "HEAD" | "DELETE", key: string, options: { body?: BodyInit; contentType?: string; disposition?: string; expiresIn?: number } = {}) {
+  const response = await fetch(signedObjectUrl(method, key, options), {
+    method,
+    body: options.body,
+    headers: options.contentType ? { "Content-Type": options.contentType } : undefined,
+    signal: AbortSignal.timeout(30_000),
   });
+  if (!response.ok) throw new Error(`R2 gateway ${method} failed with status ${response.status}`);
+  return response;
 }
 
 export function newQuarantineKey(userId: string) {
@@ -41,27 +48,12 @@ export function newQuarantineKey(userId: string) {
 }
 
 export async function createPdfUploadUrl(key: string) {
-  const { bucket } = config();
-  return getSignedUrl(
-    r2(),
-    new PutObjectCommand({ Bucket: bucket, Key: key, ContentType: PROPOSAL_PDF_MIME }),
-    { expiresIn: 600 },
-  );
+  return signedObjectUrl("PUT", key, { contentType: PROPOSAL_PDF_MIME, expiresIn: 600 });
 }
 
 export async function createPdfDownloadUrl(key: string, filename: string) {
-  const { bucket } = config();
   const safeName = filename.replace(/[^a-zA-Z0-9._-]/g, "-").slice(0, 120) || "gsoc-proposal.pdf";
-  return getSignedUrl(
-    r2(),
-    new GetObjectCommand({
-      Bucket: bucket,
-      Key: key,
-      ResponseContentType: PROPOSAL_PDF_MIME,
-      ResponseContentDisposition: `inline; filename="${safeName}"`,
-    }),
-    { expiresIn: 300 },
-  );
+  return signedObjectUrl("GET", key, { disposition: `inline; filename="${safeName}"`, expiresIn: 300 });
 }
 
 export type ValidatedPdf = {
@@ -73,23 +65,14 @@ export type ValidatedPdf = {
 };
 
 export async function validateQuarantinedPdf(key: string): Promise<ValidatedPdf> {
-  const { bucket } = config();
-  const client = r2();
-  const head = await client.send(new HeadObjectCommand({ Bucket: bucket, Key: key }));
-  if (head.ContentType !== PROPOSAL_PDF_MIME) throw new Error("Uploaded file is not an application/pdf object");
-  if (!head.ContentLength || head.ContentLength > MAX_PROPOSAL_PDF_BYTES) throw new Error("PDF must be between 1 byte and 10 MiB");
-
-  const object = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }));
-  if (!object.Body) throw new Error("Uploaded PDF could not be read");
-  const chunks: Uint8Array[] = [];
-  let total = 0;
-  for await (const chunk of object.Body as AsyncIterable<Uint8Array>) {
-    total += chunk.byteLength;
-    if (total > MAX_PROPOSAL_PDF_BYTES) throw new Error("PDF must be no larger than 10 MiB");
-    chunks.push(chunk);
-  }
-  const bytes = new Uint8Array(Buffer.concat(chunks.map((chunk) => Buffer.from(chunk)), total));
-  if (bytes.byteLength !== head.ContentLength) throw new Error("PDF changed while it was being validated");
+  const head = await gatewayRequest("HEAD", key);
+  if (head.headers.get("content-type") !== PROPOSAL_PDF_MIME) throw new Error("Uploaded file is not an application/pdf object");
+  const contentLength = Number(head.headers.get("content-length"));
+  if (!Number.isFinite(contentLength) || contentLength < 1 || contentLength > MAX_PROPOSAL_PDF_BYTES) throw new Error("PDF must be between 1 byte and 10 MiB");
+  const object = await gatewayRequest("GET", key);
+  const bytes = new Uint8Array(await object.arrayBuffer());
+  if (bytes.byteLength > MAX_PROPOSAL_PDF_BYTES) throw new Error("PDF must be no larger than 10 MiB");
+  if (bytes.byteLength !== contentLength) throw new Error("PDF changed while it was being validated");
   if (new TextDecoder("ascii").decode(bytes.slice(0, 5)) !== "%PDF-") throw new Error("File does not have a valid PDF signature");
   const document = await PDFDocument.load(bytes, { ignoreEncryption: false, throwOnInvalidObject: true });
   if (document.getPageCount() < 1) throw new Error("PDF must contain at least one page");
@@ -97,29 +80,20 @@ export async function validateQuarantinedPdf(key: string): Promise<ValidatedPdf>
     bytes,
     byteSize: bytes.byteLength,
     sha256: createHash("sha256").update(bytes).digest("hex"),
-    etag: head.ETag?.replaceAll('"', ""),
+    etag: head.headers.get("etag")?.replaceAll('"', ""),
     pageCount: document.getPageCount(),
   };
 }
 
-export async function promotePdf(quarantineKey: string, proposalId: string, fileId: string) {
-  const { bucket } = config();
+export async function promotePdf(quarantineKey: string, proposalId: string, fileId: string, bytes: Uint8Array) {
   const destinationKey = `proposals/${proposalId}/${fileId}.pdf`;
-  const client = r2();
-  await client.send(new CopyObjectCommand({
-    Bucket: bucket,
-    Key: destinationKey,
-    CopySource: `${bucket}/${quarantineKey}`,
-    ContentType: PROPOSAL_PDF_MIME,
-    MetadataDirective: "REPLACE",
-  }));
-  await client.send(new DeleteObjectCommand({ Bucket: bucket, Key: quarantineKey }));
+  await gatewayRequest("PUT", destinationKey, { body: Uint8Array.from(bytes).buffer, contentType: PROPOSAL_PDF_MIME });
+  await gatewayRequest("DELETE", quarantineKey);
   return destinationKey;
 }
 
 export async function deleteR2Object(key: string) {
-  const { bucket } = config();
-  await r2().send(new DeleteObjectCommand({ Bucket: bucket, Key: key }));
+  await gatewayRequest("DELETE", key);
 }
 
 export async function importGoogleAvatar(userId: string, sourceUrl: string) {
@@ -162,12 +136,10 @@ export async function importGoogleAvatar(userId: string, sourceUrl: string) {
   if (!matchesImageSignature(bytes, mimeType)) throw new Error("Google avatar content does not match its image type");
   const digest = createHash("sha256").update(bytes).digest("hex").slice(0, 16);
   const key = `avatars/${userId}/google-${digest}.${extensions[mimeType]}`;
-  const { bucket } = config();
-  await r2().send(new PutObjectCommand({ Bucket: bucket, Key: key, Body: bytes, ContentType: mimeType, CacheControl: "private, max-age=86400" }));
+  await gatewayRequest("PUT", key, { body: Uint8Array.from(bytes).buffer, contentType: mimeType });
   return key;
 }
 
 export async function createObjectDownloadUrl(key: string, expiresIn = 300) {
-  const { bucket } = config();
-  return getSignedUrl(r2(), new GetObjectCommand({ Bucket: bucket, Key: key }), { expiresIn });
+  return signedObjectUrl("GET", key, { expiresIn });
 }

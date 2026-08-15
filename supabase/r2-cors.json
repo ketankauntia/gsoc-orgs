@@ -1,12 +1,16 @@
-[
-  {
-    "AllowedOrigins": [
-      "https://www.gsocorganizationsguide.com",
-      "http://localhost:3000"
-    ],
-    "AllowedMethods": ["PUT"],
-    "AllowedHeaders": ["Content-Type"],
-    "ExposeHeaders": ["ETag"],
-    "MaxAgeSeconds": 3600
-  }
-]
+{
+  "rules": [
+    {
+      "allowed": {
+        "origins": [
+          "https://www.gsocorganizationsguide.com",
+          "http://localhost:3000"
+        ],
+        "methods": ["PUT"],
+        "headers": ["Content-Type"]
+      },
+      "exposeHeaders": ["ETag"],
+      "maxAgeSeconds": 3600
+    }
+  ]
+}
