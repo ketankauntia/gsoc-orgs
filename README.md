@@ -32,7 +32,7 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 - **Beginner-Friendly Insights** - Clear visualizations and analytics to help newcomers understand the GSoC landscape
 - **Search and Filter** - Advanced search capabilities to find organizations matching specific criteria
 - **Organization Profiles** - Detailed pages for each organization with projects, statistics, and participation history
-- **Verified Proposal Library** - Google-authenticated contributors can publish moderated, CC BY 4.0 proposal PDFs
+- **Verified Proposal Library** - Google-authenticated contributors can publish moderated, CC BY 4.0 proposal PDFs; see the [feature and contributor guide](docs/proposal-library.md)
 - **Editorial Guides** - Integrated blog with categories, tags, authors, RSS, sitemap, and Markdown output
 
 ## 📸 Screenshots
@@ -89,7 +89,7 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 3. **Set up environment variables**
    
    Create a `.env.local` file in the root directory:
-   Copy `.env.example` to `.env.local` and configure Supabase, Google OAuth, and R2 values. Service-role and R2 credentials are server-only.
+   Copy `.env.example` to `.env.local` and configure Supabase, Google OAuth, and R2 gateway values. Service-role and storage-signing secrets are server-only.
 
 4. **Run database migrations** (if needed)
    ```bash
@@ -117,6 +117,8 @@ Whether you're preparing for GSoC 2026, GSoC 2027, or exploring open source oppo
 - `npm test` - Run proposal/schema compatibility tests
 - `npm run supabase:import:dry-run` - Verify finalized catalog inputs and deterministic checksum
 - `npm run supabase:reconcile` - Compare imported catalog counts with checked-in inputs
+- `npm run r2:deploy` - Deploy the private signed proposal-storage Worker
+- `npm run r2:verify` - Verify signed upload, metadata, download, promotion, and cleanup against the configured R2 gateway
 
 ## 🤝 Contributing
 
@@ -413,6 +415,7 @@ We encourage students, developers, and anyone interested in GSoC to contribute, 
 - **API Documentation** - See [API_COMPLETE_DOCS.md](./API_COMPLETE_DOCS.md) for complete API reference
 - **Contributing Guide** - Detailed contribution guidelines in [CONTRIBUTING.md](./CONTRIBUTING.md)
 - **Security** - Report security issues following [SECURITY.md](./SECURITY.md)
+- **Proposal Library** - Read the [public architecture, workflow, and setup guide](./docs/proposal-library.md)
 
 ## 🙏 Acknowledgments
 

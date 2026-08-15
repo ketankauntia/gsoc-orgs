@@ -13,39 +13,68 @@ export interface ChangelogEntry {
 }
 export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
   {
-    date: "Jan 29, 2026",
-    timeStamp: 20260129,
-    version: "v1.1.0",
-    title: "Dark Mode & UI Stabilization",
-    summary: "Refined the dashboard's visual hierarchy by introducing a refined color system and fixing high-contrast issues in dark mode.",
+    date: "Jul 7, 2026",
+    timeStamp: 20260707,
+    version: "v1.2.0",
+    title: "Editorial Blog Launch",
+    summary: "Launched the first-party editorial platform for practical, source-backed GSoC guides alongside the organization catalog.",
     prLinks: [
-      { link: "https://github.com/...", number: "#1" },
-      { link: "https://github.com/...", number: "#2" },
-      { link: "https://github.com/...", number: "#3" },
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/efcf2a2", number: "efcf2a2" },
     ],
-
     changes: [
-      { type: 'fix', text: 'Sidebar background now correctly renders black in dark mode' },
-      { type: 'feat', text: 'Added new [filtering system](https://github.com/...) for better organization discovery.' },
-      { type: 'refactor', text: 'Standardized border variables across all card components' }
+      { type: 'feat', text: 'Added article, category, tag, and author pages with reusable editorial components.' },
+      { type: 'feat', text: 'Added RSS, sitemap, search-index, and Markdown representations for published guides.' },
+      { type: 'chore', text: 'Kept editorial management routes unavailable in production until their operational controls were ready.' },
     ]
   },
   {
-    date: "Feb 15, 2026",
-    timeStamp: 20260215,
-    version: "v1.1.0",
-    title: "Dark Mode & UI Stabilization",
-    summary: "Refined the dashboard's visual hierarchy by introducing a refined color system and fixing high-contrast issues in dark mode.",
+    date: "Jul 22, 2026",
+    timeStamp: 20260722,
+    version: "v1.3.0",
+    title: "Editorial Workflow and Priority Guides",
+    summary: "Expanded the blog from its initial launch into a maintained publishing workflow with stronger content quality and visual support.",
     prLinks: [
-      { link: "https://github.com/...", number: "#3" },
-      { link: "https://github.com/...", number: "#4" },
-      { link: "https://github.com/...", number: "#5" },
-      { link: "https://github.com/...", number: "#6" },
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/5681d31", number: "5681d31" },
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/0f85164", number: "0f85164" },
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/d0c3181", number: "d0c3181" },
     ],
     changes: [
-      { type: 'fix', text: 'Sidebar background now correctly renders black in dark mode' },
-      { type: 'feat', text: ' Added new [filtering system](https://github.com/...) for better organization discovery.' },
-      { type: 'refactor', text: 'Standardized border variables across all card components' }
+      { type: 'feat', text: 'Added author management, approved post artwork, and an image-production workflow.' },
+      { type: 'docs', text: 'Published the first priority GSoC guides and strengthened reader-focused FAQs.' },
+      { type: 'feat', text: 'Connected the editorial section to primary navigation and improved publishing quality checks.' },
+    ]
+  },
+  {
+    date: "Aug 12, 2026",
+    timeStamp: 20260812,
+    version: "v1.4.0",
+    title: "Verified Proposal Library",
+    summary: "Implemented a privacy-conscious library where past contributors can claim archived projects and publish accepted proposal PDFs after moderation.",
+    prLinks: [
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/c61a397", number: "c61a397" },
+    ],
+    changes: [
+      { type: 'feat', text: 'Added Google-authenticated profiles, contributor claims, proposal uploads, moderation, and role management.' },
+      { type: 'feat', text: 'Added public approved-proposal pages and APIs with CC BY 4.0 attribution.' },
+      { type: 'fix', text: 'Added ownership-aware RLS, transaction-locked workflow functions, immutable moderation events, and private storage boundaries.' },
+      { type: 'docs', text: 'Published the [proposal library architecture and contributor guide](https://github.com/ketankauntia/gsoc-orgs/blob/master/docs/proposal-library.md).' },
+    ]
+  },
+  {
+    date: "Aug 15, 2026",
+    timeStamp: 20260815,
+    version: "v1.4.1",
+    title: "Proposal Data and Storage Cutover",
+    summary: "Completed the live catalog migration and hardened proposal storage so the new workflow runs on the canonical Supabase dataset and private R2 infrastructure.",
+    prLinks: [
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/bc0dd6f", number: "bc0dd6f" },
+      { link: "https://github.com/ketankauntia/gsoc-orgs/commit/295b1ed", number: "295b1ed" },
+    ],
+    changes: [
+      { type: 'feat', text: 'Imported and reconciled the historical organization, project, contributor, mentor, and waitlist datasets in Supabase.' },
+      { type: 'refactor', text: 'Replaced long-lived browser-facing storage assumptions with an auditable, short-lived signed R2 Worker gateway.' },
+      { type: 'test', text: 'Added live storage verification for signing, CORS, PDF upload, metadata, download, promotion, and cleanup.' },
+      { type: 'chore', text: 'Enabled Google OAuth and aligned generated application types with the live database schema.' },
     ]
   }
 ];
