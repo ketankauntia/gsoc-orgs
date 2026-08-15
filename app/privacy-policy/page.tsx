@@ -38,8 +38,8 @@ const sections = [
     title: "Information We Collect",
     content: [
       "We collect information that you provide directly to us, such as when you use our search functionality, filter organizations, or contact us through our contact form.",
-      "We automatically collect certain information about your device and how you interact with our website, including your IP address, browser type, and pages you visit.",
-      "We use cookies and similar tracking technologies to enhance your experience and analyze website usage.",
+      "We automatically collect limited information about your device and how you interact with our website, such as browser type, approximate technical location, pages visited, and referring page.",
+      "When enabled, Google Analytics 4 and Vercel Analytics process pseudonymous website-usage events such as page views and basic performance signals. They are not used to inspect proposal contents, private evidence, or contributor moderation activity.",
       "If you sign in to share a proposal, Google and Supabase provide an account identifier, email address, display name, and profile image. Email is retained for private authentication and administration and is never included in public proposal data.",
       "Proposal PDFs, contributor claims, private verification notes, evidence links, moderation history, and profile visibility choices are stored only as needed to operate the proposal library.",
     ],
@@ -58,7 +58,7 @@ const sections = [
     content: [
       "To provide, maintain, and improve our services and website functionality.",
       "To respond to your inquiries and provide customer support.",
-      "To analyze usage patterns and understand how visitors use our website.",
+      "To understand aggregated usage patterns, diagnose performance, and improve the public website.",
       "To send you updates and communications (only if you've opted in).",
     ],
   },
@@ -89,17 +89,18 @@ const sections = [
   {
     title: "Cookies and Tracking",
     content: [
-      "We use cookies to enhance your browsing experience and analyze website traffic.",
-      "You can control cookies through your browser settings.",
+      "Google Analytics may use cookies or similar identifiers to measure website traffic. Vercel Analytics and Speed Insights use their own measurement mechanisms.",
+      "You can control cookies through your browser settings or use browser privacy controls and opt-out extensions.",
       "Some features may not function properly if cookies are disabled.",
     ],
   },
   {
     title: "Third-Party Services",
     content: [
-      "We use third-party services like Vercel Analytics for website analytics.",
-      "These services may collect information about your use of our website.",
-      "We encourage you to review their privacy policies.",
+      "We use Google Analytics 4, Vercel Analytics, Vercel Speed Insights, Supabase, Cloudflare R2, and Google Sign-In to operate the site and its optional proposal-library features.",
+      "These providers may process technical request, usage, authentication, or storage metadata according to their own privacy policies.",
+      "We do not send proposal PDFs, private evidence, or moderation notes to Google Analytics.",
+      "Review the providers' privacy policies if you need more detail about their processing.",
     ],
   },
   {
@@ -140,7 +141,7 @@ export default function PrivacyPolicyPage() {
               badge="Legal"
               title="Privacy Policy"
               titleAs="h1"
-              description="Last updated: August 12, 2026. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
+                description="Last updated: August 15, 2026. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
               align="center"
               className="max-w-3xl mx-auto"
             />
@@ -177,7 +178,7 @@ export default function PrivacyPolicyPage() {
             {/* Effective Date */}
             <CardWrapper className="p-6 bg-muted/50">
               <Text variant="small" className="text-muted-foreground text-center">
-                This privacy policy is effective as of August 12, 2026 and will remain in effect
+                This privacy policy is effective as of August 15, 2026 and will remain in effect
                 except with respect to any changes in its provisions in the future.
               </Text>
             </CardWrapper>
