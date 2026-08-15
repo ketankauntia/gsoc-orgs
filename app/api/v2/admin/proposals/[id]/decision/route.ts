@@ -14,7 +14,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   if (!parsed.success) return apiError("VALIDATION_ERROR", "Check the moderation decision", 422, zodFields(parsed.error));
   const { id } = await params;
   const supabase = await createClient();
-  const { error } = await supabase.rpc("moderate_proposal", { target_proposal_id: id, decision: parsed.data.decision, decision_reason: parsed.data.reason || null });
+  const { error } = await supabase.rpc("moderate_proposal", { target_proposal_id: id, decision: parsed.data.decision, decision_reason: parsed.data.reason ?? undefined });
   if (error) return apiError("DECISION_REJECTED", publicDatabaseMessage(error.message, "This moderation decision is not valid for the current state"), 409);
   return privateApiData({ updated: true, decision: parsed.data.decision });
 }

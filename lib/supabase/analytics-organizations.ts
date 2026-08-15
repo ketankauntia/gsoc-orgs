@@ -1,6 +1,7 @@
 import "server-only";
 
 import { createAdminClient } from "@/lib/supabase/admin";
+import { jsonObject, jsonStringArray } from "@/lib/supabase/legacy-shapes";
 
 export type AnalyticsOrganization = {
   id_: string | null;
@@ -19,14 +20,17 @@ export async function getAnalyticsOrganizations() {
     .select("canonical_id,name,slug,active_years,total_projects,is_currently_active,source_payload")
     .order("name");
   if (error) throw error;
-  return (data ?? []).map((row) => ({
+  return (data ?? []).map((row) => {
+    const source = jsonObject(row.source_payload);
+    return {
     id_: row.canonical_id,
     name: row.name,
     slug: String(row.slug),
-    technologies: row.source_payload?.technologies ?? [],
+    technologies: jsonStringArray(source.technologies),
     active_years: row.active_years ?? [],
-    years: row.source_payload?.years ?? {},
+    years: jsonObject(source.years),
     total_projects: row.total_projects ?? 0,
     is_currently_active: row.is_currently_active,
-  })) as AnalyticsOrganization[];
+    };
+  }) as AnalyticsOrganization[];
 }

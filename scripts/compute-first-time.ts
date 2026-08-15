@@ -1,3 +1,5 @@
+import "./load-env";
+
 /**
  * Script to compute and update first_time field for organizations
  * 
@@ -54,4 +56,3 @@ async function computeFirstTime() {
 }
 
 computeFirstTime()
-

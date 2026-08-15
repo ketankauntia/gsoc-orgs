@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const supabase = await createClient();
     const { data, error } = await supabase.rpc("create_contributor_claim", {
       contributor_slot_id: parsed.data.contributorSlotId,
-      private_note: parsed.data.claimantNote || null,
+      private_note: parsed.data.claimantNote ?? undefined,
       private_evidence_urls: parsed.data.evidenceUrls,
     });
     if (error) {

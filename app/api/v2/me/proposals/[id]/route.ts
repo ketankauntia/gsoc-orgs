@@ -15,7 +15,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   const supabase = await createClient();
   const { error: updateError } = await supabase.rpc("update_my_proposal_evidence", {
     target_proposal_id: id,
-    private_note: parsed.data.claimantNote || null,
+    private_note: parsed.data.claimantNote ?? "",
     private_evidence_urls: parsed.data.evidenceUrls ?? [],
     should_update_note: "claimantNote" in parsed.data,
     should_update_evidence: "evidenceUrls" in parsed.data,

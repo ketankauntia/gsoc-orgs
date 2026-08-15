@@ -1,5 +1,7 @@
-type JsonObject = Record<string, unknown>;
-type LegacyRow = JsonObject & { source_payload?: JsonObject };
+import type { Json } from "./database.types";
+
+export type JsonObject = { [key: string]: Json | undefined };
+type LegacyRow = Record<string, unknown> & { source_payload?: Json | null };
 type Contributor = { archived_name?: string };
 type Mentor = { name: string; ordinal: number };
 export type LegacyOrganization = JsonObject & {
@@ -9,8 +11,16 @@ export type LegacyOrganization = JsonObject & {
   topics?: string[];
 };
 
+export function jsonObject(value: Json | null | undefined): JsonObject {
+  return value !== null && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+
+export function jsonStringArray(value: Json | undefined): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+}
+
 export function organizationV1(row: LegacyRow): LegacyOrganization {
-  const source = row.source_payload ?? {};
+  const source = jsonObject(row.source_payload);
   return {
     ...source,
     id: row.legacy_id ?? row.id,
@@ -33,7 +43,7 @@ export function organizationV1(row: LegacyRow): LegacyOrganization {
 }
 
 export function projectV1(row: LegacyRow) {
-  const source = row.source_payload ?? {};
+  const source = jsonObject(row.source_payload);
   const contributors = (row.project_contributors ?? []) as Contributor[];
   const mentors = (row.project_mentors ?? []) as Mentor[];
   const org = (row.organizations ?? {}) as JsonObject;

@@ -1,3 +1,4 @@
+import "./load-env";
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -10,7 +11,11 @@ type OrganizationJson = Record<string, unknown> & {
   logo_bg_color?: string; logo_r2_url?: string; img_r2_url?: string; active_years?: number[];
   years_appeared?: number[]; first_year?: number; last_year?: number; first_time?: boolean;
   is_currently_active?: boolean; total_projects?: number; technologies?: string[]; topics?: string[];
-  years?: Record<string, { num_projects?: number; projects_url?: string }>;
+  years?: Record<string, {
+    num_projects?: number;
+    projects_url?: string;
+    projects?: Array<{ project_url?: string }>;
+  }>;
   stats?: { projects_by_year?: Record<string, number> };
 };
 type ProjectJson = { project_id: string; project_title: string; contributor: string; mentors?: string[]; org_name: string; org_slug: string; year: number; tech_stack?: string[] };
@@ -25,7 +30,38 @@ const supabase = !dryRun ? createClient(url!, serviceRoleKey!, { auth: { persist
 function chunks<T>(items: T[], size = 250) { const result: T[][] = []; for (let index = 0; index < items.length; index += size) result.push(items.slice(index, index + size)); return result; }
 function checksum(value: unknown) { return createHash("sha256").update(JSON.stringify(value)).digest("hex"); }
 function slugify(value: string) { return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || `item-${checksum(value).slice(0, 10)}`; }
+function rowsWithUniqueSlugs(names: string[]) {
+  const used = new Set<string>();
+  return names.map((name) => {
+    const base = slugify(name);
+    let slug = base;
+    let suffixLength = 8;
+    while (used.has(slug)) {
+      slug = `${base}-${checksum(name).slice(0, suffixLength)}`;
+      suffixLength += 2;
+    }
+    used.add(slug);
+    return { name, slug };
+  });
+}
 async function upsertMany(client: SupabaseClient, table: string, rows: Record<string, unknown>[], onConflict: string) { for (const batch of chunks(rows)) { const { error } = await client.from(table).upsert(batch, { onConflict }); if (error) throw new Error(`${table}: ${error.message}`); } }
+async function selectAll<T extends Record<string, unknown>>(client: SupabaseClient, table: string, columns: string): Promise<T[]> {
+  const rows: T[] = [];
+  const pageSize = 1000;
+  for (let offset = 0; ; offset += pageSize) {
+    const { data, error } = await client.from(table).select(columns).order("id", { ascending: true }).range(offset, offset + pageSize - 1);
+    if (error) throw new Error(`${table}: ${error.message}`);
+    const page = (data ?? []) as unknown as T[];
+    rows.push(...page);
+    if (page.length < pageSize) return rows;
+  }
+}
+function organizationYear(org: OrganizationJson, year: number) {
+  return org.years?.[String(year)] ?? org.years?.[`year_${year}`];
+}
+function archivedProjectId(projectUrl: string | undefined) {
+  return projectUrl?.match(/\/projects\/([^/?#]+)\/?$/)?.[1] ?? null;
+}
 
 const orgDirectory = path.join(root, "new-api-details", "organizations");
 const orgFiles = fs.readdirSync(orgDirectory).filter((file) => file.endsWith(".json") && !["index.json", "metadata.json"].includes(file)).sort();
@@ -33,6 +69,24 @@ const organizations: OrganizationJson[] = orgFiles.map((file) => JSON.parse(fs.r
 const projectDirectory = path.join(root, "new-api-details", "projects");
 const projectFiles = fs.readdirSync(projectDirectory).filter((file) => /^(201[6-9]|202[0-5])\.json$/.test(file)).sort();
 const projects: ProjectJson[] = projectFiles.flatMap((file) => JSON.parse(fs.readFileSync(path.join(projectDirectory, file), "utf8")).projects ?? []);
+const organizationSlugByProjectId = new Map<string, string>();
+for (const org of organizations) {
+  for (const year of Object.values(org.years ?? {})) {
+    for (const project of year?.projects ?? []) {
+      const projectId = archivedProjectId(project.project_url);
+      if (!projectId) continue;
+      const existingSlug = organizationSlugByProjectId.get(projectId);
+      if (existingSlug && existingSlug !== org.slug) {
+        throw new Error(`Project ${projectId} is associated with multiple organizations`);
+      }
+      organizationSlugByProjectId.set(projectId, org.slug);
+    }
+  }
+}
+const unresolvedProjects = projects.filter((project) => !organizationSlugByProjectId.has(project.project_id));
+if (unresolvedProjects.length) {
+  throw new Error(`${unresolvedProjects.length} projects are missing an authoritative organization mapping`);
+}
 
 async function main() {
 const counts = { organizationFiles: organizations.length, projectFiles: projectFiles.length, projects: projects.length, contributorSlots: projects.length, mentors: projects.reduce((sum, project) => sum + (project.mentors?.length ?? 0), 0) };
@@ -67,17 +121,20 @@ try {
     source_payload: org,
   }));
   await upsertMany(client, "organizations", organizationRows, "slug");
-  const { data: savedOrgs, error: savedOrgError } = await client.from("organizations").select("id,slug"); if (savedOrgError) throw savedOrgError;
-  const orgIds = new Map((savedOrgs ?? []).map((org) => [String(org.slug).toLowerCase(), org.id]));
+  const savedOrgs = await selectAll<{ id: string; slug: string }>(client, "organizations", "id,slug");
+  const orgIds = new Map(savedOrgs.map((org) => [String(org.slug).toLowerCase(), org.id]));
 
-  const organizationYears = organizations.flatMap((org) => (org.active_years ?? org.years_appeared ?? []).map((year: number) => ({ organization_id: orgIds.get(String(org.slug).toLowerCase()), year, project_count: org.years?.[String(year)]?.num_projects ?? org.stats?.projects_by_year?.[`year_${year}`] ?? 0, archive_url: org.years?.[String(year)]?.projects_url ?? null, source_payload: org.years?.[String(year)] ?? {} }))).filter((row) => row.organization_id);
+  const organizationYears = organizations.flatMap((org) => (org.active_years ?? org.years_appeared ?? []).map((year: number) => {
+    const yearData = organizationYear(org, year);
+    return { organization_id: orgIds.get(String(org.slug).toLowerCase()), year, project_count: yearData?.num_projects ?? org.stats?.projects_by_year?.[`year_${year}`] ?? 0, archive_url: yearData?.projects_url ?? null, source_payload: yearData ?? {} };
+  })).filter((row) => row.organization_id);
   await upsertMany(client, "organization_years", organizationYears, "organization_id,year");
 
-  const projectRows = projects.map((project) => ({ external_id: project.project_id, organization_id: orgIds.get(project.org_slug.toLowerCase()), year: project.year, title: project.project_title, abstract_short: null, source_payload: project })).filter((row) => row.organization_id);
+  const projectRows = projects.map((project) => ({ external_id: project.project_id, organization_id: orgIds.get(organizationSlugByProjectId.get(project.project_id)!.toLowerCase()), year: project.year, title: project.project_title, abstract_short: null, source_payload: project })).filter((row) => row.organization_id);
   if (projectRows.length !== projects.length) throw new Error(`${projects.length - projectRows.length} projects reference unknown organizations`);
   await upsertMany(client, "projects", projectRows, "external_id");
-  const { data: savedProjects, error: savedProjectError } = await client.from("projects").select("id,external_id"); if (savedProjectError) throw savedProjectError;
-  const projectIds = new Map((savedProjects ?? []).map((project) => [project.external_id, project.id]));
+  const savedProjects = await selectAll<{ id: string; external_id: string }>(client, "projects", "id,external_id");
+  const projectIds = new Map(savedProjects.map((project) => [project.external_id, project.id]));
 
   const contributorRows = projects.map((project) => ({ project_id: projectIds.get(project.project_id), archived_name: project.contributor.trim(), ordinal: 1 }));
   await upsertMany(client, "project_contributors", contributorRows, "project_id,ordinal");
@@ -88,9 +145,9 @@ try {
     ...organizations.flatMap((org) => org.technologies ?? []),
     ...projects.flatMap((project) => project.tech_stack ?? []),
   ].filter(Boolean))].sort();
-  await upsertMany(client, "technologies", techNames.map((name) => ({ name, slug: slugify(name) })), "name");
-  const { data: savedTechs, error: savedTechError } = await client.from("technologies").select("id,name"); if (savedTechError) throw savedTechError;
-  const techIds = new Map((savedTechs ?? []).map((tech) => [tech.name, tech.id]));
+  await upsertMany(client, "technologies", rowsWithUniqueSlugs(techNames), "name");
+  const savedTechs = await selectAll<{ id: string; name: string }>(client, "technologies", "id,name");
+  const techIds = new Map(savedTechs.map((tech) => [tech.name, tech.id]));
   const projectTechRows = projects.flatMap((project) => (project.tech_stack ?? []).map((name) => ({ project_id: projectIds.get(project.project_id), technology_id: techIds.get(name) }))).filter((row) => row.project_id && row.technology_id);
   await upsertMany(client, "project_technologies", projectTechRows, "project_id,technology_id");
 
@@ -98,9 +155,9 @@ try {
   await upsertMany(client, "organization_technologies", organizationTechRows, "organization_id,technology_id");
 
   const topicNames = [...new Set(organizations.flatMap((org) => org.topics ?? []).filter(Boolean))].sort();
-  await upsertMany(client, "topics", topicNames.map((name) => ({ name, slug: slugify(name) })), "name");
-  const { data: savedTopics, error: savedTopicError } = await client.from("topics").select("id,name"); if (savedTopicError) throw savedTopicError;
-  const topicIds = new Map((savedTopics ?? []).map((topic) => [topic.name, topic.id]));
+  await upsertMany(client, "topics", rowsWithUniqueSlugs(topicNames), "name");
+  const savedTopics = await selectAll<{ id: string; name: string }>(client, "topics", "id,name");
+  const topicIds = new Map(savedTopics.map((topic) => [topic.name, topic.id]));
   const organizationTopicRows = organizations.flatMap((org) => (org.topics ?? []).map((name: string) => ({ organization_id: orgIds.get(String(org.slug).toLowerCase()), topic_id: topicIds.get(name) }))).filter((row) => row.organization_id && row.topic_id);
   await upsertMany(client, "organization_topics", organizationTopicRows, "organization_id,topic_id");
 

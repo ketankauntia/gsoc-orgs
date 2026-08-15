@@ -34,7 +34,7 @@ export async function PATCH(request: Request) {
     const supabase = await createClient();
     const { error } = await supabase.rpc("update_my_profile", {
       new_display_name: input.displayName,
-      new_bio: input.bio || null,
+      new_bio: input.bio ?? "",
       new_avatar_public: input.avatarPublic,
       new_bio_public: input.bioPublic,
       new_links: input.links.map((link) => ({

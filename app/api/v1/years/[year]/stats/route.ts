@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
 import { createAdminClient } from '@/lib/supabase/admin'
+import { jsonObject, jsonStringArray } from '@/lib/supabase/legacy-shapes'
 
 /**
  * GET /api/v1/years/{year}/stats
@@ -48,9 +49,12 @@ export async function GET(
     const yearKey = `year_${yearNum}` as 'year_2016' | 'year_2017' | 'year_2018' | 'year_2019' | 'year_2020' | 'year_2021' | 'year_2022' | 'year_2023' | 'year_2024' | 'year_2025'
 
     ;(organizations ?? []).forEach((org) => {
-      const source = org.source_payload ?? {}
-      const projectsCount = (source.stats?.projects_by_year?.[yearKey] as number) || 0
-      const studentsCount = (source.stats?.students_by_year?.[yearKey] as number) || projectsCount
+      const source = jsonObject(org.source_payload)
+      const stats = jsonObject(source.stats)
+      const projectsByYear = jsonObject(stats.projects_by_year)
+      const studentsByYear = jsonObject(stats.students_by_year)
+      const projectsCount = typeof projectsByYear[yearKey] === 'number' ? projectsByYear[yearKey] : 0
+      const studentsCount = typeof studentsByYear[yearKey] === 'number' ? studentsByYear[yearKey] : projectsCount
 
       totalProjects += projectsCount
       totalStudents += studentsCount
@@ -62,12 +66,12 @@ export async function GET(
       )
 
       // Count technologies
-      ;(source.technologies ?? []).forEach((tech: string) => {
+      jsonStringArray(source.technologies).forEach((tech) => {
         techCounts.set(tech, (techCounts.get(tech) || 0) + 1)
       })
 
       // Count topics
-      ;(source.topics ?? []).forEach((topic: string) => {
+      jsonStringArray(source.topics).forEach((topic) => {
         topicCounts.set(topic, (topicCounts.get(topic) || 0) + 1)
       })
     })
