@@ -3,7 +3,7 @@
   "slug": "erofs-filesystem",
   "name": "EROFS filesystem",
   "category": "Operating systems",
-  "description": "EROFS [1] is a modern, high-performance block-based immutable Linux filesystem with highly-optimized on-disk format and runtime implementation. Since it's landed upstream, it has been widely deployed to billions of devices, and addresses various target scenarios. Nowadays, almost all Linux mainstream distributions support EROFS.\n\nEROFS has become a recommended filesystem [2] for Android system partitions and has already been adopted by the majority of Android vendors. It has also become popular in the Linux container world. For example, Composefs [3] uses the EROFS format for its metadata tree. Containerd 2.1 [4] also officially includes a built-in EROFS support to boost container launch performance. gVisor now supports EROFS as well [5].\n\n[1] https://erofs.docs.kernel.org\n[2] https://source.android.com/docs/core/architecture/kernel/erofs\n[3] https://github.com/containers/composefs\n[4] https://github.com/containerd/containerd/releases/tag/v2.1.0\n[5] https://github.com/google/gvisor/pull/9486",
+  "description": "EROFS is a modern, high-performance block-based immutable Linux filesystem with highly-optimized on-disk format and runtime implementation. Since it's landed upstream, it has been widely deployed to billions of devices, and addresses various target scenarios. Nowadays, almost all Linux mainstream distributions support EROFS.\n\nEROFS has become an Android recommended filesystem (https://source.android.com/docs/core/architecture/kernel/erofs) for Android system partitions and has already been adopted by the majority of Android vendors. It has also become popular in the Linux container world. For example, Composefs (https://github.com/containers/composefs) uses the EROFS format for its metadata tree. Containerd 2.1+ also officially includes a built-in EROFS support to boost container launch performance. gVisor now supports EROFS as well.",
   "image_url": "https://summerofcode.withgoogle.com/media/org/erofs-filesystem/qrkpvwkzjqmwoyau-360.png",
   "img_r2_url": "https://summerofcode.withgoogle.com/media/org/erofs-filesystem/qrkpvwkzjqmwoyau-360.png",
   "logo_r2_url": null,
@@ -73,11 +73,11 @@
     "year_2026": null
   },
   "contact": {
-    "email": null,
+    "email": "linux-erofs@lists.ozlabs.org",
     "guide_url": null,
-    "ideas_url": "https://erofs.docs.kernel.org/en/latest/roadmap.html",
+    "ideas_url": "https://erofs.docs.kernel.org/en/latest/gsoc.html",
     "irc_channel": null,
-    "mailing_list": "linux-erofs@lists.ozlabs.org"
+    "mailing_list": "https://lists.ozlabs.org/listinfo/linux-erofs"
   },
   "social": {
     "blog": "https://erofs.docs.kernel.org",
@@ -98,6 +98,6 @@
   },
   "meta": {
     "version": 1,
-    "generated_at": "2026-02-19T13:46:24.131Z"
+    "generated_at": "2026-08-16T15:33:28.956Z"
   }
 }
