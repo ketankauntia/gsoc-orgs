@@ -18,6 +18,7 @@
 
 import fs from "fs";
 import path from "path";
+import { SLUG_ALIASES } from "./lib/org-slug-aliases";
 
 // ---------------------------------------------------------------------------
 // CLI args
@@ -163,13 +164,6 @@ async function main() {
     nameToSlug.set(org.name.toLowerCase().trim(), org.slug);
   }
 
-  // Manual alias map for known rebrands / renamed orgs.
-  // Maps 2026-API-slug → existing slug in our dataset.
-  const SLUG_ALIASES: Record<string, string> = {
-    "ceph": "ceph-foundation",
-    "openms-inc": "openms",
-  };
-
   // Guard: detect duplicate names in existing index (would cause ambiguous matches)
   const nameOccurrences = new Map<string, string[]>();
   for (const org of existingIndex.organizations) {
@@ -266,8 +260,11 @@ async function main() {
       existing.last_year = Math.max(existing.last_year || 0, YEAR);
       existing.is_currently_active = true;
 
-      // Refresh description if the new one is more substantial
-      if (raw.description && raw.description.length > (existing.description?.length || 0)) {
+      // Google is the authoritative source, so take its description verbatim --
+      // including when the org SHORTENS it. The previous "only if longer" rule
+      // meant trimmed descriptions never propagated and the dataset drifted
+      // stale (erofs-filesystem and librecube-initiative were both caught this way).
+      if (raw.description) {
         existing.description = raw.description;
       }
 
