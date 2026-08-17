@@ -57,7 +57,7 @@ export const Header = () => {
             isScrolled && "max-w-6xl rounded-2xl border bg-background/80 shadow-sm backdrop-blur-lg",
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-4 py-3 lg:gap-6 lg:py-4">
+          <div className="flex flex-wrap items-center justify-between gap-4 py-3 lg:grid lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6 lg:py-4">
             <div className="flex w-full items-center justify-between lg:w-auto">
               <Link
                 href="/"
@@ -79,24 +79,24 @@ export const Header = () => {
               </button>
             </div>
 
-            <div className="absolute inset-x-0 top-1/2 hidden -translate-y-1/2 lg:block">
-              <ul className="flex justify-center gap-4 text-sm xl:gap-7" aria-label="Site sections">
+            <div className="hidden min-w-0 lg:block">
+              <ul className="flex flex-nowrap justify-center gap-3 text-sm xl:gap-6" aria-label="Site sections">
                 {menuItems.map((item) => {
                   const active = isMenuItemActive(pathname, item.href);
                   return (
-                    <li key={item.href}>
+                    <li key={item.href} className="min-w-0">
                       <Link
                         href={item.href}
                         prefetch
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "flex items-center gap-1.5 rounded-md px-1.5 py-1 transition-colors hover:text-primary",
+                          "flex items-center gap-1.5 whitespace-nowrap rounded-md px-1.5 py-1 transition-colors hover:text-primary",
                           active ? "font-semibold text-primary" : "text-muted-foreground",
                         )}
                       >
-                        <span>{item.name}</span>
+                        <span className="truncate">{item.name}</span>
                         {item.badge ? (
-                          <span className="rounded-full bg-primary/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-primary">
+                          <span className="hidden rounded-full bg-primary/10 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-primary xl:inline">
                             {item.badge}
                           </span>
                         ) : null}
@@ -110,7 +110,7 @@ export const Header = () => {
             <div
               id="primary-menu"
               className={cn(
-                "w-full rounded-2xl border bg-background p-5 shadow-xl shadow-zinc-300/20 dark:shadow-none lg:flex lg:w-auto lg:items-center lg:gap-3 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
+                "w-full rounded-2xl border bg-background p-5 shadow-xl shadow-zinc-300/20 dark:shadow-none lg:flex lg:w-auto lg:shrink-0 lg:items-center lg:justify-end lg:gap-3 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
                 menuState ? "block" : "hidden lg:block",
               )}
             >
@@ -140,7 +140,7 @@ export const Header = () => {
                 })}
               </ul>
 
-              <div className="mt-4 flex flex-wrap items-center gap-2 lg:mt-0">
+              <div className="mt-4 flex flex-wrap items-center gap-2 lg:mt-0 lg:flex-nowrap">
                 <Button variant="outline" size="sm" asChild>
                   <a href={SOCIAL_LINKS.github.href} target="_blank" rel="noopener noreferrer" aria-label={SOCIAL_LINKS.github.label}>
                     <GitHubIcon className="size-4" />
