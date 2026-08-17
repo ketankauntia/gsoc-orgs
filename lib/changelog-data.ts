@@ -103,5 +103,19 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
       { type: 'refactor', text: 'Regenerated technology and topic pages from normalized organization data without rewriting the raw source payloads.' },
       { type: 'test', text: 'Added collision, alias, migration, filter-logic, import, and hosted-database verification coverage.' },
     ]
+  },
+  {
+    date: "Aug 17, 2026",
+    timeStamp: 20260817,
+    version: "v1.6.0",
+    title: "Searchable Proposal Archive",
+    summary: "Turned the verified proposal library into a searchable index of every archived GSoC selection and streamlined contributor submissions into a guided two-step flow.",
+    prLinks: [],
+    changes: [
+      { type: 'feat', text: 'Added public project search by year, organization, technology, and title with dynamic archive totals and paginated results.' },
+      { type: 'feat', text: 'Added claim links that preserve the selected project through sign-in and prefill the contributor submission wizard.' },
+      { type: 'fix', text: 'Hardened archive caching, input normalization, upload validation, API failure handling, and saved-draft PDF restoration.' },
+      { type: 'test', text: 'Added regression coverage for filtering, pagination, empty results, wildcard input, and technology aliases.' },
+    ]
   }
 ];
