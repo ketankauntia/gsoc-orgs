@@ -23,6 +23,7 @@ interface FiltersSidebarProps {
   onFilterChange: (filters: FilterState) => void
   filters: FilterState
   availableTechs: Array<{ name: string; count: number }>
+  availableTopics: Array<{ name: string; count: number }>
   firstTimeCount?: number
 }
 
@@ -40,17 +41,7 @@ const CATEGORIES = [
   'Security',
   'Web Development',
 ]
-const TOPICS = [
-  'Machine Learning',
-  'Web Development',
-  'Security',
-  'Cloud',
-  'Graphics',
-  'Mobile',
-  'Database',
-]
-
-export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstTimeCount }: FiltersSidebarProps) {
+export function FiltersSidebar({ onFilterChange, filters, availableTechs, availableTopics, firstTimeCount }: FiltersSidebarProps) {
 
   const [sidebarSearch] = useState('')
   const [expandedSections, setExpandedSections] = useState({
@@ -64,6 +55,8 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
   // Local state for tech search within sidebar
   const [techSearch, setTechSearch] = useState('')
   const [showAllTechs, setShowAllTechs] = useState(false)
+  const [topicSearch, setTopicSearch] = useState('')
+  const [showAllTopics, setShowAllTopics] = useState(false)
   const [showAllYears, setShowAllYears] = useState(false)
   const [showHelp, setShowHelp] = useState<{ [key: string]: boolean }>({})
   const helpButtonRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
@@ -179,12 +172,13 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
   const filteredCategories = CATEGORIES.filter((cat) =>
     cat.toLowerCase().includes(sidebarSearch.toLowerCase())
   )
-  const filteredTopics = TOPICS.filter((topic) =>
-    topic.toLowerCase().includes(sidebarSearch.toLowerCase())
+  const filteredTopics = availableTopics.filter((topic) =>
+    topic.name.toLowerCase().includes(topicSearch.toLowerCase())
   )
 
   const visibleYears = showAllYears ? YEARS : YEARS.slice(0, 8)
   const visibleTechs = showAllTechs ? filteredTechs : filteredTechs.slice(0, 10)
+  const visibleTopics = showAllTopics ? filteredTopics : filteredTopics.slice(0, 10)
 
   return (
     <div className="rounded-xl border border-border bg-card p-4 pb-6 shadow-md max-h-[calc(100vh-8rem)] overflow-y-auto custom-scrollbar">
@@ -671,19 +665,40 @@ export function FiltersSidebar({ onFilterChange, filters, availableTechs, firstT
         </div>
         {expandedSections.topics && (
           <div className="py-2">
-            <div className="space-y-0.5 max-h-40 overflow-y-auto custom-scrollbar pr-1">
-              {filteredTopics.map((topic) => (
-                <label key={topic} className="flex items-center gap-2 py-1.5 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
-                    checked={filters.topics.includes(topic)}
-                    onChange={() => toggleTopic(topic)}
-                  />
-                  <span className="text-[13px] text-foreground/80">{topic}</span>
+            <div className="relative mb-2">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search topics..."
+                value={topicSearch}
+                onChange={(event) => setTopicSearch(event.target.value)}
+                className="w-full pl-9 pr-3 py-2 text-sm bg-card text-foreground border border-border rounded-lg outline-none focus:border-border focus:ring-1 focus:ring-white/20 transition-all placeholder:text-muted-foreground"
+              />
+            </div>
+            <div className="space-y-0.5 max-h-52 overflow-y-auto custom-scrollbar pr-1">
+              {visibleTopics.map((topic) => (
+                <label key={topic.name} className="flex items-center justify-between py-1.5 cursor-pointer">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
+                      checked={filters.topics.includes(topic.name)}
+                      onChange={() => toggleTopic(topic.name)}
+                    />
+                    <span className="text-[13px] text-foreground/80">{topic.name}</span>
+                  </div>
+                  <span className="text-xs text-gray-400">({topic.count})</span>
                 </label>
               ))}
             </div>
+            {filteredTopics.length > 10 && (
+              <button
+                onClick={() => setShowAllTopics(!showAllTopics)}
+                className="mt-2 text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1"
+              >
+                {showAllTopics ? <><ChevronUp className="h-3 w-3" />Show less</> : <><ChevronDown className="h-3 w-3" />View all</>}
+              </button>
+            )}
           </div>
         )}
       </div>

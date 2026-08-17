@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { jsonObject, jsonStringArray } from '@/lib/supabase/legacy-shapes'
+import { canonicalTechnology, canonicalTopic } from '@/lib/vocabulary/catalog'
 
 /**
  * GET /api/v1/years/{year}/stats
@@ -66,13 +67,19 @@ export async function GET(
       )
 
       // Count technologies
-      jsonStringArray(source.technologies).forEach((tech) => {
-        techCounts.set(tech, (techCounts.get(tech) || 0) + 1)
+      new Map(jsonStringArray(source.technologies).map((raw) => {
+        const canonical = canonicalTechnology(raw)
+        return [canonical.slug, canonical] as const
+      })).forEach((technology) => {
+        techCounts.set(technology.name, (techCounts.get(technology.name) || 0) + 1)
       })
 
       // Count topics
-      jsonStringArray(source.topics).forEach((topic) => {
-        topicCounts.set(topic, (topicCounts.get(topic) || 0) + 1)
+      new Map(jsonStringArray(source.topics).map((raw) => {
+        const canonical = canonicalTopic(raw)
+        return [canonical.slug, canonical] as const
+      })).forEach((topic) => {
+        topicCounts.set(topic.name, (topicCounts.get(topic.name) || 0) + 1)
       })
     })
 

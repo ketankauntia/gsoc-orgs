@@ -16,17 +16,17 @@ interface OrganizationsClientProps {
   initialData: PaginatedResponse<Organization>
   initialPage: number
   initialTechs: Array<{ name: string; count: number }>
+  initialTopics: Array<{ name: string; count: number }>
   firstTimeCount?: number
 }
 
-export function OrganizationsClient({ initialData, initialPage, initialTechs, firstTimeCount }: OrganizationsClientProps) {
+export function OrganizationsClient({ initialData, initialPage, initialTechs, initialTopics, firstTimeCount }: OrganizationsClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [data, setData] = useState<PaginatedResponse<Organization>>(initialData)
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(initialPage)
   const isInitialMount = useRef(true)
-  const lastFetchParams = useRef<string>('')
   const lastUrlString = useRef<string>('')
 
   // Sync server-rendered data when initialData/initialPage change after navigation.
@@ -42,7 +42,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     const urlSearch = searchParams.get('q') || ''
     const urlYears = searchParams.get('years')?.split(',').filter(Boolean) || []
     const urlCategories = searchParams.get('categories')?.split(',').filter(Boolean) || []
-    const urlTechs = searchParams.get('techs')?.split(',').filter(Boolean) || []
+    const urlTechs = (searchParams.get('techs') || searchParams.get('tech') || '').split(',').filter(Boolean)
     const urlTopics = searchParams.get('topics')?.split(',').filter(Boolean) || []
     const urlDifficulties = searchParams.get('difficulties') || ''
     const urlFirstTimeOnly = searchParams.get('firstTimeOnly') === 'true'
@@ -99,7 +99,11 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
       !arraysEqual(filters.techs, urlFilters.techs) ||
       !arraysEqual(filters.topics, urlFilters.topics) ||
       !arraysEqual(filters.difficulties, urlFilters.difficulties) ||
-      filters.firstTimeOnly !== urlFilters.firstTimeOnly
+      filters.firstTimeOnly !== urlFilters.firstTimeOnly ||
+      filters.yearsLogic !== urlFilters.yearsLogic ||
+      filters.categoriesLogic !== urlFilters.categoriesLogic ||
+      filters.techsLogic !== urlFilters.techsLogic ||
+      filters.topicsLogic !== urlFilters.topicsLogic
     
     if (filtersChanged) {
       setFilters(urlFilters)
@@ -167,83 +171,11 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     }
   }, [debouncedSearch, filters, handleFilterChange])
 
-  // Memoize fetch function to avoid recreating on every render
-  const fetchOrganizations = useCallback(async (page: number, filterState: FilterState) => {
-    setIsLoading(true)
-    try {
-      const params = new URLSearchParams()
-      params.set('page', page.toString())
-      params.set('limit', '20')
-      if (filterState.search) params.set('q', filterState.search)
-      if (filterState.years.length > 0) {
-        params.set('years', filterState.years.join(','))
-        params.set('yearsLogic', filterState.yearsLogic || 'OR')
-      }
-      if (filterState.categories.length > 0) {
-        params.set('categories', filterState.categories.join(','))
-        params.set('categoriesLogic', filterState.categoriesLogic || 'OR')
-      }
-      if (filterState.techs.length > 0) {
-        params.set('techs', filterState.techs.join(','))
-        params.set('techsLogic', filterState.techsLogic || 'OR')
-      }
-      if (filterState.topics.length > 0) {
-        params.set('topics', filterState.topics.join(','))
-        params.set('topicsLogic', filterState.topicsLogic || 'OR')
-      }
-      if (filterState.difficulties.length > 0) params.set('difficulties', filterState.difficulties.join(','))
-      if (filterState.firstTimeOnly) params.set('firstTimeOnly', 'true')
-      
-      const paramsString = params.toString()
-      
-      // Prevent duplicate fetches with same parameters
-      if (lastFetchParams.current === paramsString) {
-        setIsLoading(false)
-        return
-      }
-      
-      lastFetchParams.current = paramsString
-      
-      const response = await fetch(`/api/organizations?${paramsString}`)
-      const newData = await response.json()
-      setData(newData)
-    } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Failed to fetch organizations:', error)
-      }
-    } finally {
-      setIsLoading(false)
-    }
-  }, [])
-
   // Page changes are handled via router.push() → server re-render → initialData sync.
   // No client-side fetch needed for pagination.
 
   // Filters and search are handled server-side via router.push() → server re-render → initialData sync.
   // Only need client-side API fetch for AND logic filters (rare edge case).
-  useEffect(() => {
-    if (isInitialMount.current) {
-      return
-    }
-    
-    const needsAPI = 
-      filters.yearsLogic === 'AND' ||
-      filters.categoriesLogic === 'AND' ||
-      filters.techsLogic === 'AND' ||
-      filters.topicsLogic === 'AND'
-    
-    if (!needsAPI) {
-      return
-    }
-    
-    const page = 1
-    setCurrentPage(page)
-    fetchOrganizations(page, filters)
-  }, [
-    filters,
-    fetchOrganizations,
-  ])
-
   const handlePageChange = useCallback((page: number) => {
     if (page === currentPage || isLoading || page < 1) return
     
@@ -323,7 +255,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, fi
     <div className="flex">
       {/* Sidebar - Fixed left, 280px width */}
       <aside className="hidden lg:block w-[280px] shrink-0 bg-background fixed top-20 lg:top-24 left-4 h-[calc(100vh-5rem)] lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
-        <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} firstTimeCount={firstTimeCount} />
+        <FiltersSidebar onFilterChange={handleFilterChange} filters={filters} availableTechs={initialTechs} availableTopics={initialTopics} firstTimeCount={firstTimeCount} />
       </aside>
 
       {/* Main Content - with left margin for sidebar */}

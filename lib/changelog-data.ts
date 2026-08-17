@@ -89,5 +89,19 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
       { type: 'docs', text: 'Reorganized the README around setup, architecture, data boundaries, commands, and contributor workflow.' },
       { type: 'chore', text: 'Aligned CI with the npm lockfile and the master branch, adding type-check, tests, catalog dry-run, and dependency audit steps.' },
     ]
+  },
+  {
+    date: "Aug 17, 2026",
+    timeStamp: 20260817,
+    version: "v1.5.0",
+    title: "Normalized Catalog Taxonomy",
+    summary: "Consolidated duplicate technology and topic spellings into canonical catalog entries while preserving every source label as a reviewed alias.",
+    prLinks: [],
+    changes: [
+      { type: 'feat', text: 'Added canonical technology and topic vocabularies, database alias tables, and idempotent consolidation migrations.' },
+      { type: 'fix', text: 'Corrected organization filters, AND/OR behavior, catalog counts, analytics, icons, and permanent redirects for retired slugs.' },
+      { type: 'refactor', text: 'Regenerated technology and topic pages from normalized organization data without rewriting the raw source payloads.' },
+      { type: 'test', text: 'Added collision, alias, migration, filter-logic, import, and hosted-database verification coverage.' },
+    ]
   }
 ];

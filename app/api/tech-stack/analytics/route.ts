@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getAnalyticsOrganizations } from '@/lib/supabase/analytics-organizations'
+import { canonicalTechnology } from '@/lib/vocabulary/catalog'
 
 /**
  * GET /api/tech-stack/analytics
@@ -17,13 +18,16 @@ export async function GET() {
     // 1. Calculate tech stack usage counts
     const techMap = new Map<string, { name: string; count: number }>()
     organizations.forEach((org) => {
-      org.technologies.forEach((tech) => {
-        const techLower = tech.toLowerCase()
-        const existing = techMap.get(techLower)
+      const technologies = new Map(org.technologies.map((tech) => {
+        const canonical = canonicalTechnology(tech)
+        return [canonical.slug, canonical] as const
+      }))
+      technologies.forEach((canonical) => {
+        const existing = techMap.get(canonical.slug)
         if (existing) {
           existing.count++
         } else {
-          techMap.set(techLower, { name: tech, count: 1 })
+          techMap.set(canonical.slug, { name: canonical.name, count: 1 })
         }
       })
     })
@@ -33,7 +37,7 @@ export async function GET() {
       .slice(0, 10)
       .map((tech) => ({
         name: tech.name,
-        slug: tech.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        slug: canonicalTechnology(tech.name).slug,
         count: tech.count,
       }))
 
@@ -44,13 +48,13 @@ export async function GET() {
     
     // Calculate for ALL unique techs (not just top 20)
     const allUniqueTechs = Array.from(new Set(
-      organizations.flatMap(org => org.technologies.map(t => t.toLowerCase()))
+      organizations.flatMap(org => org.technologies.map(t => canonicalTechnology(t).slug))
     ))
     
     allUniqueTechs.forEach(stackName => {
       stackPopularityByYear[stackName] = years.map(year => {
         const count = organizations.filter(org => {
-          const hasTech = org.technologies.some(t => t.toLowerCase() === stackName)
+          const hasTech = org.technologies.some(t => canonicalTechnology(t).slug === stackName)
           const wasActiveInYear = org.active_years.includes(year)
           return hasTech && wasActiveInYear
         }).length
@@ -61,7 +65,7 @@ export async function GET() {
     // 3. Calculate difficulty distribution for Python (as example)
     // Get orgs that use Python and count their project difficulties
     const pythonOrgs = organizations.filter(org => 
-      org.technologies.some(t => t.toLowerCase() === 'python')
+      org.technologies.some(t => canonicalTechnology(t).slug === 'python')
     )
 
     const difficultyCount: Record<string, number> = {
@@ -95,7 +99,7 @@ export async function GET() {
 
     topTechStacks.slice(0, 6).forEach(tech => {
       const techOrgs = organizations.filter(org => 
-        org.technologies.some(t => t.toLowerCase() === tech.name.toLowerCase())
+        org.technologies.some(t => canonicalTechnology(t).slug === canonicalTechnology(tech.name).slug)
       )
       
       const counts = { beginner: 0, intermediate: 0, advanced: 0 }
@@ -135,14 +139,14 @@ export async function GET() {
     const techSelectionsByYear: Record<string, Record<number, number>> = {}
     
     organizations.forEach(org => {
-      org.technologies.forEach(tech => {
-        const techLower = tech.toLowerCase()
-        if (!techSelectionsByYear[techLower]) {
-          techSelectionsByYear[techLower] = {}
+      const technologies = new Set(org.technologies.map((tech) => canonicalTechnology(tech).slug))
+      technologies.forEach(tech => {
+        if (!techSelectionsByYear[tech]) {
+          techSelectionsByYear[tech] = {}
         }
         past6Years.forEach(year => {
           if (org.active_years.includes(year)) {
-            techSelectionsByYear[techLower][year] = (techSelectionsByYear[techLower][year] || 0) + 1
+            techSelectionsByYear[tech][year] = (techSelectionsByYear[tech][year] || 0) + 1
           }
         })
       })
@@ -164,10 +168,10 @@ export async function GET() {
     const techProjectsByYear: Record<string, Record<number, number>> = {}
     
     organizations.forEach(org => {
-      org.technologies.forEach(tech => {
-        const techLower = tech.toLowerCase()
-        if (!techProjectsByYear[techLower]) {
-          techProjectsByYear[techLower] = {}
+      const technologies = new Set(org.technologies.map((tech) => canonicalTechnology(tech).slug))
+      technologies.forEach(tech => {
+        if (!techProjectsByYear[tech]) {
+          techProjectsByYear[tech] = {}
         }
         past6Years.forEach(year => {
           if (org.years) {
@@ -175,7 +179,7 @@ export async function GET() {
             const yearData = (org.years as Record<string, { num_projects?: number }>)[yearKey]
             if (yearData && org.active_years.includes(year)) {
               const projectCount = yearData.num_projects || 0
-              techProjectsByYear[techLower][year] = (techProjectsByYear[techLower][year] || 0) + projectCount
+              techProjectsByYear[tech][year] = (techProjectsByYear[tech][year] || 0) + projectCount
             }
           }
         })

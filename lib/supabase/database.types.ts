@@ -12,26 +12,98 @@ export type Database = {
   __InternalSupabase: {
     PostgrestVersion: "14.15"
   }
-  graphql_public: {
+  private: {
     Tables: {
-      [_ in never]: never
+      moderation_events: {
+        Row: {
+          action: string
+          actor_id: string
+          created_at: string
+          entity_id: string
+          entity_type: string
+          id: string
+          new_value: Json | null
+          previous_value: Json | null
+          reason: string | null
+        }
+        Insert: {
+          action: string
+          actor_id: string
+          created_at?: string
+          entity_id: string
+          entity_type: string
+          id?: string
+          new_value?: Json | null
+          previous_value?: Json | null
+          reason?: string | null
+        }
+        Update: {
+          action?: string
+          actor_id?: string
+          created_at?: string
+          entity_id?: string
+          entity_type?: string
+          id?: string
+          new_value?: Json | null
+          previous_value?: Json | null
+          reason?: string | null
+        }
+        Relationships: []
+      }
+      rate_limit_buckets: {
+        Row: {
+          action: string
+          bucket_started_at: string
+          request_count: number
+          user_id: string
+        }
+        Insert: {
+          action: string
+          bucket_started_at: string
+          request_count?: number
+          user_id: string
+        }
+        Update: {
+          action?: string
+          bucket_started_at?: string
+          request_count?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          granted_at: string
+          granted_by: string | null
+          role: Database["private"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          granted_at?: string
+          granted_by?: string | null
+          role: Database["private"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          granted_at?: string
+          granted_by?: string | null
+          role?: Database["private"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      graphql: {
-        Args: {
-          extensions?: Json
-          operationName?: string
-          query?: string
-          variables?: Json
-        }
-        Returns: Json
+      has_role: {
+        Args: { required_role: Database["private"]["Enums"]["app_role"] }
+        Returns: boolean
       }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "moderator" | "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -679,6 +751,88 @@ export type Database = {
         }
         Relationships: []
       }
+      technology_aliases: {
+        Row: {
+          alias: string
+          created_at: string
+          id: string
+          normalized_alias: string
+          review_status: string
+          source: string
+          technology_id: string
+          updated_at: string
+        }
+        Insert: {
+          alias: string
+          created_at?: string
+          id?: string
+          normalized_alias: string
+          review_status?: string
+          source: string
+          technology_id: string
+          updated_at?: string
+        }
+        Update: {
+          alias?: string
+          created_at?: string
+          id?: string
+          normalized_alias?: string
+          review_status?: string
+          source?: string
+          technology_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "technology_aliases_technology_id_fkey"
+            columns: ["technology_id"]
+            isOneToOne: false
+            referencedRelation: "technologies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      topic_aliases: {
+        Row: {
+          alias: string
+          created_at: string
+          id: string
+          normalized_alias: string
+          review_status: string
+          source: string
+          topic_id: string
+          updated_at: string
+        }
+        Insert: {
+          alias: string
+          created_at?: string
+          id?: string
+          normalized_alias: string
+          review_status?: string
+          source: string
+          topic_id: string
+          updated_at?: string
+        }
+        Update: {
+          alias?: string
+          created_at?: string
+          id?: string
+          normalized_alias?: string
+          review_status?: string
+          source?: string
+          topic_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "topic_aliases_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       topics: {
         Row: {
           id: string
@@ -777,6 +931,14 @@ export type Database = {
         Returns: string
       }
       bootstrap_admin: { Args: { target_email: string }; Returns: undefined }
+      consolidate_catalog_technologies: {
+        Args: { p_groups: Json }
+        Returns: undefined
+      }
+      consolidate_catalog_topics: {
+        Args: { p_groups: Json }
+        Returns: undefined
+      }
       consume_rate_limit: {
         Args: { requested_action: string }
         Returns: boolean
@@ -968,8 +1130,10 @@ export type CompositeTypes<
     : never
 
 export const Constants = {
-  graphql_public: {
-    Enums: {},
+  private: {
+    Enums: {
+      app_role: ["moderator", "admin"],
+    },
   },
   public: {
     Enums: {

@@ -3,6 +3,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import {
+  assertNoVocabularySlugCollisions,
+  buildVocabularyGroups,
+  canonicalTechnology,
+  canonicalTopic,
+  vocabularyAliasKey,
+} from "../lib/vocabulary/catalog";
 
 type OrganizationJson = Record<string, unknown> & {
   id?: string; id_?: string; canonical_id?: string; slug: string; name: string;
@@ -29,21 +36,6 @@ const supabase = !dryRun ? createClient(url!, serviceRoleKey!, { auth: { persist
 
 function chunks<T>(items: T[], size = 250) { const result: T[][] = []; for (let index = 0; index < items.length; index += size) result.push(items.slice(index, index + size)); return result; }
 function checksum(value: unknown) { return createHash("sha256").update(JSON.stringify(value)).digest("hex"); }
-function slugify(value: string) { return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || `item-${checksum(value).slice(0, 10)}`; }
-function rowsWithUniqueSlugs(names: string[]) {
-  const used = new Set<string>();
-  return names.map((name) => {
-    const base = slugify(name);
-    let slug = base;
-    let suffixLength = 8;
-    while (used.has(slug)) {
-      slug = `${base}-${checksum(name).slice(0, suffixLength)}`;
-      suffixLength += 2;
-    }
-    used.add(slug);
-    return { name, slug };
-  });
-}
 async function upsertMany(client: SupabaseClient, table: string, rows: Record<string, unknown>[], onConflict: string) { for (const batch of chunks(rows)) { const { error } = await client.from(table).upsert(batch, { onConflict }); if (error) throw new Error(`${table}: ${error.message}`); } }
 async function selectAll<T extends Record<string, unknown>>(client: SupabaseClient, table: string, columns: string): Promise<T[]> {
   const rows: T[] = [];
@@ -62,7 +54,6 @@ function organizationYear(org: OrganizationJson, year: number) {
 function archivedProjectId(projectUrl: string | undefined) {
   return projectUrl?.match(/\/projects\/([^/?#]+)\/?$/)?.[1] ?? null;
 }
-
 const orgDirectory = path.join(root, "new-api-details", "organizations");
 const orgFiles = fs.readdirSync(orgDirectory).filter((file) => file.endsWith(".json") && !["index.json", "metadata.json"].includes(file)).sort();
 const organizations: OrganizationJson[] = orgFiles.map((file) => JSON.parse(fs.readFileSync(path.join(orgDirectory, file), "utf8")));
@@ -141,27 +132,55 @@ try {
   const mentorRows = projects.flatMap((project) => (project.mentors ?? []).map((name, index) => ({ project_id: projectIds.get(project.project_id), name, ordinal: index + 1 })));
   await upsertMany(client, "project_mentors", mentorRows, "project_id,ordinal");
 
-  const techNames = [...new Set([
+  const rawTechnologyValues = [
     ...organizations.flatMap((org) => org.technologies ?? []),
     ...projects.flatMap((project) => project.tech_stack ?? []),
-  ].filter(Boolean))].sort();
-  await upsertMany(client, "technologies", rowsWithUniqueSlugs(techNames), "name");
-  const savedTechs = await selectAll<{ id: string; name: string }>(client, "technologies", "id,name");
-  const techIds = new Map(savedTechs.map((tech) => [tech.name, tech.id]));
-  const projectTechRows = projects.flatMap((project) => (project.tech_stack ?? []).map((name) => ({ project_id: projectIds.get(project.project_id), technology_id: techIds.get(name) }))).filter((row) => row.project_id && row.technology_id);
+  ].filter(Boolean);
+  const rawTechNames = [...new Set(rawTechnologyValues)].sort();
+  assertNoVocabularySlugCollisions("technology", rawTechNames);
+  const technologyGroups = buildVocabularyGroups("technology", rawTechnologyValues);
+  const { error: consolidateTechnologiesError } = await client.rpc("consolidate_catalog_technologies", { p_groups: technologyGroups });
+  if (consolidateTechnologiesError) throw new Error(`consolidate_catalog_technologies: ${consolidateTechnologiesError.message}`);
+  const technologyRows = technologyGroups.map(({ name, slug }) => ({ name, slug }));
+  await upsertMany(client, "technologies", technologyRows, "slug");
+  const savedTechs = await selectAll<{ id: string; slug: string }>(client, "technologies", "id,slug");
+  const techIds = new Map(savedTechs.map((tech) => [String(tech.slug).toLowerCase(), tech.id]));
+  const technologyAliasRows = rawTechNames.map((alias) => ({
+    technology_id: techIds.get(canonicalTechnology(alias).slug),
+    alias,
+    normalized_alias: vocabularyAliasKey(alias),
+    source: "google",
+    review_status: "approved",
+  })).filter((row) => row.technology_id);
+  await upsertMany(client, "technology_aliases", technologyAliasRows, "normalized_alias");
+  const projectTechRows = projects.flatMap((project) => (project.tech_stack ?? []).map((name) => ({ project_id: projectIds.get(project.project_id), technology_id: techIds.get(canonicalTechnology(name).slug) }))).filter((row) => row.project_id && row.technology_id);
   await upsertMany(client, "project_technologies", projectTechRows, "project_id,technology_id");
 
-  const organizationTechRows = organizations.flatMap((org) => (org.technologies ?? []).map((name: string) => ({ organization_id: orgIds.get(String(org.slug).toLowerCase()), technology_id: techIds.get(name) }))).filter((row) => row.organization_id && row.technology_id);
+  const organizationTechRows = organizations.flatMap((org) => [...new Set((org.technologies ?? []).map((name: string) => canonicalTechnology(name).slug))].map((slug) => ({ organization_id: orgIds.get(String(org.slug).toLowerCase()), technology_id: techIds.get(slug) }))).filter((row) => row.organization_id && row.technology_id);
   await upsertMany(client, "organization_technologies", organizationTechRows, "organization_id,technology_id");
 
-  const topicNames = [...new Set(organizations.flatMap((org) => org.topics ?? []).filter(Boolean))].sort();
-  await upsertMany(client, "topics", rowsWithUniqueSlugs(topicNames), "name");
-  const savedTopics = await selectAll<{ id: string; name: string }>(client, "topics", "id,name");
-  const topicIds = new Map(savedTopics.map((topic) => [topic.name, topic.id]));
-  const organizationTopicRows = organizations.flatMap((org) => (org.topics ?? []).map((name: string) => ({ organization_id: orgIds.get(String(org.slug).toLowerCase()), topic_id: topicIds.get(name) }))).filter((row) => row.organization_id && row.topic_id);
+  const rawTopicValues = organizations.flatMap((org) => org.topics ?? []).filter(Boolean);
+  const rawTopicNames = [...new Set(rawTopicValues)].sort();
+  assertNoVocabularySlugCollisions("topic", rawTopicNames);
+  const topicGroups = buildVocabularyGroups("topic", rawTopicValues);
+  const { error: consolidateTopicsError } = await client.rpc("consolidate_catalog_topics", { p_groups: topicGroups });
+  if (consolidateTopicsError) throw new Error(`consolidate_catalog_topics: ${consolidateTopicsError.message}`);
+  const topicRows = topicGroups.map(({ name, slug }) => ({ name, slug }));
+  await upsertMany(client, "topics", topicRows, "slug");
+  const savedTopics = await selectAll<{ id: string; slug: string }>(client, "topics", "id,slug");
+  const topicIds = new Map(savedTopics.map((topic) => [String(topic.slug).toLowerCase(), topic.id]));
+  const topicAliasRows = rawTopicNames.map((alias) => ({
+    topic_id: topicIds.get(canonicalTopic(alias).slug),
+    alias,
+    normalized_alias: vocabularyAliasKey(alias),
+    source: "google",
+    review_status: "approved",
+  })).filter((row) => row.topic_id);
+  await upsertMany(client, "topic_aliases", topicAliasRows, "normalized_alias");
+  const organizationTopicRows = organizations.flatMap((org) => [...new Set((org.topics ?? []).map((name: string) => canonicalTopic(name).slug))].map((slug) => ({ organization_id: orgIds.get(String(org.slug).toLowerCase()), topic_id: topicIds.get(slug) }))).filter((row) => row.organization_id && row.topic_id);
   await upsertMany(client, "organization_topics", organizationTopicRows, "organization_id,topic_id");
 
-  await client.from("import_runs").update({ status: "completed", completed_at: new Date().toISOString(), counts: { ...counts, importedOrganizations: organizationRows.length, importedProjects: projectRows.length, technologies: techNames.length, topics: topicNames.length } }).eq("id", run.id);
+  await client.from("import_runs").update({ status: "completed", completed_at: new Date().toISOString(), counts: { ...counts, importedOrganizations: organizationRows.length, importedProjects: projectRows.length, technologies: technologyRows.length, topics: topicRows.length } }).eq("id", run.id);
   console.log("Supabase catalog import completed.");
 } catch (error) {
   await client.from("import_runs").update({ status: "failed", completed_at: new Date().toISOString(), errors: [{ message: error instanceof Error ? error.message : String(error) }] }).eq("id", run.id);

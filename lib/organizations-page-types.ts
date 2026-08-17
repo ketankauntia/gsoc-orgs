@@ -9,6 +9,7 @@
  */
 
 import { Organization, PaginatedResponse } from './api';
+import { canonicalTechnology, canonicalTopic } from './vocabulary/catalog';
 
 // ============================================
 // Index Page Schema (/organizations)
@@ -197,6 +198,10 @@ export function filterOrganizations(
     categories?: string[];
     techs?: string[];
     topics?: string[];
+    yearsLogic?: 'AND' | 'OR';
+    categoriesLogic?: 'AND' | 'OR';
+    techsLogic?: 'AND' | 'OR';
+    topicsLogic?: 'AND' | 'OR';
     firstTimeOnly?: boolean;
   }
 ): OrganizationsIndexData['organizations'] {
@@ -215,32 +220,43 @@ export function filterOrganizations(
     });
   }
 
-  // Years filter (OR logic - org must have participated in ANY selected year)
+  const matchesSelection = <T>(
+    selected: T[],
+    predicate: (value: T) => boolean,
+    logic: 'AND' | 'OR' = 'OR'
+  ) => logic === 'AND' ? selected.every(predicate) : selected.some(predicate);
+
+  // Years filter
   if (filters.years && filters.years.length > 0) {
     filtered = filtered.filter(org =>
-      filters.years!.some(year => org.active_years.includes(year))
+      matchesSelection(filters.years!, year => org.active_years.includes(year), filters.yearsLogic)
     );
   }
 
-  // Categories filter (OR logic - org must be in ANY selected category)
+  // Categories filter. An organization has one category, so AND with multiple
+  // distinct categories intentionally produces no matches.
   if (filters.categories && filters.categories.length > 0) {
     filtered = filtered.filter(org =>
-      filters.categories!.includes(org.category)
+      matchesSelection(filters.categories!, category => category === org.category, filters.categoriesLogic)
     );
   }
 
-  // Technologies filter (OR logic - org must have ANY selected tech)
+  // Technologies filter
   if (filters.techs && filters.techs.length > 0) {
-    filtered = filtered.filter(org =>
-      filters.techs!.some(tech => org.technologies.includes(tech))
-    );
+    const selectedSlugs = [...new Set(filters.techs.map((tech) => canonicalTechnology(tech).slug))];
+    filtered = filtered.filter(org => {
+      const organizationSlugs = new Set(org.technologies.map((tech) => canonicalTechnology(tech).slug));
+      return matchesSelection(selectedSlugs, slug => organizationSlugs.has(slug), filters.techsLogic);
+    });
   }
 
-  // Topics filter (OR logic - org must have ANY selected topic)
+  // Topics filter
   if (filters.topics && filters.topics.length > 0) {
-    filtered = filtered.filter(org =>
-      filters.topics!.some(topic => org.topics.includes(topic))
-    );
+    const selectedSlugs = [...new Set(filters.topics.map((topic) => canonicalTopic(topic).slug))];
+    filtered = filtered.filter(org => {
+      const organizationSlugs = new Set(org.topics.map((topic) => canonicalTopic(topic).slug));
+      return matchesSelection(selectedSlugs, slug => organizationSlugs.has(slug), filters.topicsLogic);
+    });
   }
 
   // First-time organizations filter

@@ -1,9 +1,10 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import {
   loadTechStackPageData,
   loadTechStackIndexData,
 } from "@/lib/tech-stack-page-types";
 import { TechStackDetailClient } from "./tech-stack-detail-client";
+import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
 
 // Static Generation - cache forever, NO dynamic behavior
 export const revalidate = false;
@@ -26,7 +27,8 @@ export async function generateMetadata({
   params: Promise<{ stack: string }>;
 }) {
   const { stack } = await params;
-  const data = await loadTechStackPageData(stack);
+  const canonicalSlug = canonicalSlugForPath("technology", stack) ?? stack;
+  const data = await loadTechStackPageData(canonicalSlug);
 
   if (!data) {
     return { title: "Technology Not Found" };
@@ -48,6 +50,10 @@ export default async function TechStackDetailPage({
   params: Promise<{ stack: string }>;
 }) {
   const { stack } = await params;
+  const canonicalSlug = canonicalSlugForPath("technology", stack);
+  if (canonicalSlug && canonicalSlug !== stack) {
+    permanentRedirect(`/tech-stack/${canonicalSlug}`);
+  }
 
   // Load data from static JSON - SINGLE FILE READ, NO AGGREGATION
   const data = await loadTechStackPageData(stack);

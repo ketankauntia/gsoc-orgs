@@ -16,6 +16,12 @@
 
 import fs from "fs";
 import path from "path";
+import {
+  assertNoVocabularySlugCollisions,
+  canonicalTechnology,
+  canonicalTopic,
+  selectVocabularyDisplayNames,
+} from "../lib/vocabulary/catalog";
 
 // ---------------------------------------------------------------------------
 // Paths
@@ -25,6 +31,7 @@ const ORGS_DIR = path.join(ROOT, "new-api-details", "organizations");
 const TECH_DIR = path.join(ROOT, "new-api-details", "tech-stack");
 const TOPICS_DIR = path.join(ROOT, "new-api-details", "topics");
 const HOMEPAGE_FILE = path.join(ROOT, "new-api-details", "homepage.json");
+const ORGANIZATIONS_METADATA_FILE = path.join(ORGS_DIR, "metadata.json");
 
 // Derive YEARS dynamically from the org data instead of hardcoding
 function deriveYears(orgs: OrgData[]): number[] {
@@ -52,39 +59,6 @@ interface OrgData {
 }
 
 // ---------------------------------------------------------------------------
-// Tech name normalization (mirrors generate-tech-stack-data.js)
-// ---------------------------------------------------------------------------
-const TECH_NORMALIZATIONS: Record<string, string> = {
-  "c++": "cpp",
-  "c/c++": "cpp",
-  "c #": "csharp",
-  "c#": "csharp",
-  ".net": "dotnet",
-  "node.js": "nodejs",
-  node: "nodejs",
-  "react.js": "react",
-  reactjs: "react",
-  "vue.js": "vue",
-  vuejs: "vue",
-  "angular.js": "angular",
-  angularjs: "angular",
-};
-
-function normalizeSlug(techName: string): string {
-  const lower = techName.toLowerCase().trim();
-  if (TECH_NORMALIZATIONS[lower]) return TECH_NORMALIZATIONS[lower];
-  return lower.replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-}
-
-function topicSlug(topicName: string): string {
-  return topicName
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
-// ---------------------------------------------------------------------------
 // Load all org JSON files
 // ---------------------------------------------------------------------------
 function loadAllOrgs(): OrgData[] {
@@ -93,6 +67,36 @@ function loadAllOrgs(): OrgData[] {
     .filter((f) => f.endsWith(".json") && f !== "index.json" && f !== "metadata.json");
 
   return files.map((f) => JSON.parse(fs.readFileSync(path.join(ORGS_DIR, f), "utf-8")));
+}
+
+function removeStaleGeneratedFiles(directory: string, activeSlugs: Set<string>): number {
+  let removed = 0;
+  for (const file of fs.readdirSync(directory)) {
+    if (!file.endsWith(".json") || file === "index.json") continue;
+    const slug = file.slice(0, -".json".length);
+    if (activeSlugs.has(slug)) continue;
+    fs.unlinkSync(path.join(directory, file));
+    removed++;
+  }
+  return removed;
+}
+
+function stablePayload(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(stablePayload);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => key !== "published_at" && key !== "generated_at")
+      .map(([key, child]) => [key, stablePayload(child)]),
+  );
+}
+
+function writeGeneratedJson(file: string, value: unknown): void {
+  if (fs.existsSync(file)) {
+    const existing = JSON.parse(fs.readFileSync(file, "utf-8"));
+    if (JSON.stringify(stablePayload(existing)) === JSON.stringify(stablePayload(value))) return;
+  }
+  fs.writeFileSync(file, JSON.stringify(value, null, 2));
 }
 
 // ---------------------------------------------------------------------------
@@ -121,11 +125,17 @@ function generateTechStack(orgs: OrgData[], YEARS: number[]) {
     }
   >();
 
+  assertNoVocabularySlugCollisions("technology", orgs.flatMap((org) => org.technologies || []));
+  const displayNames = selectVocabularyDisplayNames("technology", orgs.flatMap((org) => org.technologies || []));
+
   orgs.forEach((org) => {
-    (org.technologies || []).forEach((tech) => {
-      const slug = normalizeSlug(tech);
-      const name = tech.trim();
-      if (!slug) return;
+    const technologies = new Map(
+      (org.technologies || []).map((rawTechnology) => {
+        const canonical = canonicalTechnology(rawTechnology);
+        return [canonical.slug, { ...canonical, name: displayNames.get(canonical.slug) ?? canonical.name }] as const;
+      }),
+    );
+    technologies.forEach(({ slug, name }) => {
 
       if (!techMap.has(slug)) {
         techMap.set(slug, { name, slug, orgs: new Map(), byYear: {} });
@@ -192,11 +202,12 @@ function generateTechStack(orgs: OrgData[], YEARS: number[]) {
       meta: { version: 1, generated_at: new Date().toISOString() },
     };
 
-    fs.writeFileSync(path.join(TECH_DIR, `${slug}.json`), JSON.stringify(techPage, null, 2));
+    writeGeneratedJson(path.join(TECH_DIR, `${slug}.json`), techPage);
     fileCount++;
 
     allTechs.push({ name: td.name, slug, org_count: orgsArr.length, project_count: totalProjects });
   }
+  const removedTechFiles = removeStaleGeneratedFiles(TECH_DIR, new Set(techMap.keys()));
 
   // Index file
   const sortedByOrgs = [...allTechs].sort((a, b) => b.org_count - a.org_count);
@@ -270,8 +281,8 @@ function generateTechStack(orgs: OrgData[], YEARS: number[]) {
     meta: { version: 1, generated_at: new Date().toISOString() },
   };
 
-  fs.writeFileSync(path.join(TECH_DIR, "index.json"), JSON.stringify(indexData, null, 2));
-  console.log(`[TECH] Written ${fileCount} tech files + index.json`);
+  writeGeneratedJson(path.join(TECH_DIR, "index.json"), indexData);
+  console.log(`[TECH] Written ${fileCount} tech files + index.json; removed ${removedTechFiles} stale files`);
 }
 
 // ---------------------------------------------------------------------------
@@ -300,13 +311,20 @@ function generateTopics(orgs: OrgData[], YEARS: number[]) {
     }
   >();
 
+  assertNoVocabularySlugCollisions("topic", orgs.flatMap((org) => org.topics || []));
+  const displayNames = selectVocabularyDisplayNames("topic", orgs.flatMap((org) => org.topics || []));
+
   orgs.forEach((org) => {
-    (org.topics || []).forEach((topic) => {
-      const slug = topicSlug(topic);
-      if (!slug) return;
+    const topics = new Map(
+      (org.topics || []).map((rawTopic) => {
+        const canonical = canonicalTopic(rawTopic);
+        return [canonical.slug, { ...canonical, name: displayNames.get(canonical.slug) ?? canonical.name }] as const;
+      }),
+    );
+    topics.forEach(({ slug, name }) => {
 
       if (!topicMap.has(slug)) {
-        topicMap.set(slug, { name: topic.trim(), slug, orgs: new Map(), byYear: {} });
+        topicMap.set(slug, { name, slug, orgs: new Map(), byYear: {} });
       }
       const td = topicMap.get(slug)!;
 
@@ -375,7 +393,7 @@ function generateTopics(orgs: OrgData[], YEARS: number[]) {
       meta: { version: 1, generated_at: new Date().toISOString() },
     };
 
-    fs.writeFileSync(path.join(TOPICS_DIR, `${slug}.json`), JSON.stringify(topicPage, null, 2));
+    writeGeneratedJson(path.join(TOPICS_DIR, `${slug}.json`), topicPage);
     fileCount++;
 
     allTopics.push({
@@ -386,6 +404,7 @@ function generateTopics(orgs: OrgData[], YEARS: number[]) {
       years: activeYears,
     });
   }
+  const removedTopicFiles = removeStaleGeneratedFiles(TOPICS_DIR, new Set(topicMap.keys()));
 
   // Index
   const indexData = {
@@ -396,8 +415,58 @@ function generateTopics(orgs: OrgData[], YEARS: number[]) {
     meta: { version: 1, generated_at: new Date().toISOString() },
   };
 
-  fs.writeFileSync(path.join(TOPICS_DIR, "index.json"), JSON.stringify(indexData, null, 2));
-  console.log(`[TOPICS] Written ${fileCount} topic files + index.json`);
+  writeGeneratedJson(path.join(TOPICS_DIR, "index.json"), indexData);
+  console.log(`[TOPICS] Written ${fileCount} topic files + index.json; removed ${removedTopicFiles} stale files`);
+}
+
+// ---------------------------------------------------------------------------
+// ORGANIZATION FILTER METADATA generation
+// ---------------------------------------------------------------------------
+function generateOrganizationMetadata(orgs: OrgData[]) {
+  const techCounts = new Map<string, { name: string; count: number }>();
+  const topicCounts = new Map<string, { name: string; count: number }>();
+  const categoryCounts = new Map<string, number>();
+  const yearCounts = new Map<number, number>();
+  const technologyNames = selectVocabularyDisplayNames("technology", orgs.flatMap((org) => org.technologies || []));
+  const topicNames = selectVocabularyDisplayNames("topic", orgs.flatMap((org) => org.topics || []));
+
+  for (const org of orgs) {
+    new Map((org.technologies || []).map((raw) => {
+      const canonical = canonicalTechnology(raw);
+      return [canonical.slug, canonical] as const;
+    })).forEach(({ slug }) => {
+      const existing = techCounts.get(slug);
+      techCounts.set(slug, { name: technologyNames.get(slug) ?? slug, count: (existing?.count ?? 0) + 1 });
+    });
+    new Map((org.topics || []).map((raw) => {
+      const canonical = canonicalTopic(raw);
+      return [canonical.slug, canonical] as const;
+    })).forEach(({ slug }) => {
+      const existing = topicCounts.get(slug);
+      topicCounts.set(slug, { name: topicNames.get(slug) ?? slug, count: (existing?.count ?? 0) + 1 });
+    });
+    if (org.category) categoryCounts.set(org.category, (categoryCounts.get(org.category) ?? 0) + 1);
+    for (const year of org.active_years || []) yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
+  }
+
+  const metadata = {
+    slug: "organizations-metadata",
+    published_at: new Date().toISOString(),
+    technologies: [...techCounts.values()].sort((a, b) => a.name.localeCompare(b.name)),
+    topics: [...topicCounts.values()].sort((a, b) => a.name.localeCompare(b.name)),
+    categories: [...categoryCounts].sort(([a], [b]) => a.localeCompare(b)).map(([name, count]) => ({ name, count })),
+    years: [...yearCounts].sort(([a], [b]) => b - a).map(([year, count]) => ({ year, count })),
+    totals: {
+      organizations: orgs.length,
+      technologies: techCounts.size,
+      topics: topicCounts.size,
+      categories: categoryCounts.size,
+      years: yearCounts.size,
+    },
+    meta: { version: 1, generated_at: new Date().toISOString() },
+  };
+  writeGeneratedJson(ORGANIZATIONS_METADATA_FILE, metadata);
+  console.log(`[METADATA] ${techCounts.size} technologies, ${topicCounts.size} topics`);
 }
 
 // ---------------------------------------------------------------------------
@@ -431,7 +500,7 @@ function generateHomepage(orgs: OrgData[]) {
     meta: { version: 1, generated_at: new Date().toISOString() },
   };
 
-  fs.writeFileSync(HOMEPAGE_FILE, JSON.stringify(homepage, null, 2));
+  writeGeneratedJson(HOMEPAGE_FILE, homepage);
   console.log(`[HOMEPAGE] Featured: ${featuredOrgs.length}, Total: ${orgs.length}, Active: ${activeOrgs.length}, Projects: ${totalProjects}`);
 }
 
@@ -449,6 +518,7 @@ async function main() {
 
   generateTechStack(orgs, YEARS);
   generateTopics(orgs, YEARS);
+  generateOrganizationMetadata(orgs);
   generateHomepage(orgs);
 
   console.log("\n[DONE] All regeneration complete!");

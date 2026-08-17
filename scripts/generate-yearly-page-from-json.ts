@@ -15,6 +15,7 @@
 
 import fs from "fs";
 import path from "path";
+import { canonicalTechnology } from "../lib/vocabulary/catalog";
 
 // ---------------------------------------------------------------------------
 // CLI args
@@ -110,21 +111,25 @@ async function main() {
     .sort((a, b) => b.project_count - a.project_count);
 
   // 5. Compute tech stack aggregation
-  const techMap = new Map<string, { orgs: Set<string> }>();
+  const techMap = new Map<string, { name: string; orgs: Set<string> }>();
   fullOrgs.forEach((org) => {
-    (org.technologies || []).forEach((rawTech: string) => {
-      const tech = rawTech.toLowerCase().trim();
-      if (!tech) return;
-      if (!techMap.has(tech)) {
-        techMap.set(tech, { orgs: new Set() });
+    const technologies = new Map(
+      (org.technologies || []).map((rawTech: string) => {
+        const canonical = canonicalTechnology(rawTech);
+        return [canonical.slug, canonical] as const;
+      }),
+    );
+    technologies.forEach((canonical) => {
+      if (!techMap.has(canonical.slug)) {
+        techMap.set(canonical.slug, { name: canonical.name, orgs: new Set() });
       }
-      techMap.get(tech)!.orgs.add(org.slug);
+      techMap.get(canonical.slug)!.orgs.add(org.slug);
     });
   });
 
   const topLanguages = Array.from(techMap.entries())
     .map(([slug, data]) => ({
-      label: slug.charAt(0).toUpperCase() + slug.slice(1),
+      label: data.name,
       slug,
       value: data.orgs.size,
       org_count: data.orgs.size,

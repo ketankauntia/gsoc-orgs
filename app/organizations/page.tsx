@@ -4,9 +4,9 @@ import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
 import { getFullUrl } from "@/lib/constants";
-import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import {
   loadOrganizationsIndexData,
+  loadOrganizationsMetadata,
   filterOrganizations,
 } from "@/lib/organizations-page-types";
 
@@ -84,35 +84,6 @@ export async function generateMetadata({
  * Determine if we should use API (search or complex filters)
  * vs static JSON (simple filters or no filters)
  */
-function shouldUseAPI(params: {
-  q?: string;
-  years?: string;
-  categories?: string;
-  techs?: string;
-  topics?: string;
-  firstTimeOnly?: string;
-  yearsLogic?: string;
-  categoriesLogic?: string;
-  techsLogic?: string;
-  topicsLogic?: string;
-}): boolean {
-  // Use API for complex filter logic (AND mode requires DB)
-  if (params.yearsLogic === 'AND' || params.categoriesLogic === 'AND' ||
-      params.techsLogic === 'AND' || params.topicsLogic === 'AND') {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[ORGS] Using API: AND logic detected');
-    }
-    return true;
-  }
-
-  // All other cases (including text search) use static JSON.
-  // Text search over ~500 orgs in memory is fast and includes new orgs not yet in DB.
-  if (process.env.NODE_ENV === 'development') {
-    console.log('[ORGS] Using static JSON');
-  }
-  return false;
-}
-
 /**
  * Fetch organizations from static JSON or API
  */
@@ -132,36 +103,7 @@ async function getOrganizations(params: {
   techsLogic?: string;
   topicsLogic?: string;
 }): Promise<PaginatedResponse<Organization>> {
-  // Use API for search or complex filters
-  const useAPI = shouldUseAPI(params);
-  
-  if (useAPI) {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[ORGS] Using API - complex filters/search detected');
-    }
-    const queryParams = new URLSearchParams();
-    if (params.page) queryParams.set("page", params.page.toString());
-    if (params.limit) queryParams.set("limit", params.limit.toString());
-    if (params.q) queryParams.set("q", params.q);
-    if (params.category) queryParams.set("category", params.category);
-    if (params.tech) queryParams.set("tech", params.tech);
-    if (params.years) queryParams.set("years", params.years);
-    if (params.categories) queryParams.set("categories", params.categories);
-    if (params.techs) queryParams.set("techs", params.techs);
-    if (params.topics) queryParams.set("topics", params.topics);
-    if (params.firstTimeOnly) queryParams.set("firstTimeOnly", params.firstTimeOnly);
-    if (params.yearsLogic) queryParams.set("yearsLogic", params.yearsLogic);
-    if (params.categoriesLogic) queryParams.set("categoriesLogic", params.categoriesLogic);
-    if (params.techsLogic) queryParams.set("techsLogic", params.techsLogic);
-    if (params.topicsLogic) queryParams.set("topicsLogic", params.topicsLogic);
-
-    const query = queryParams.toString();
-    return apiFetchServer<PaginatedResponse<Organization>>(
-      `/api/organizations${query ? `?${query}` : ""}`
-    );
-  }
-
-  // Use static JSON for simple filters or no filters
+  // The normalized static index is small enough to support every filter mode.
   if (process.env.NODE_ENV === 'development') {
     console.log('[ORGS] Using static JSON');
   }
@@ -191,6 +133,10 @@ async function getOrganizations(params: {
       categories: params.categories ? params.categories.split(',') : undefined,
       techs: params.techs ? params.techs.split(',') : params.tech ? [params.tech] : undefined,
       topics: params.topics ? params.topics.split(',') : undefined,
+      yearsLogic: params.yearsLogic === 'AND' ? 'AND' : 'OR',
+      categoriesLogic: params.categoriesLogic === 'AND' ? 'AND' : 'OR',
+      techsLogic: params.techsLogic === 'AND' ? 'AND' : 'OR',
+      topicsLogic: params.topicsLogic === 'AND' ? 'AND' : 'OR',
       firstTimeOnly: params.firstTimeOnly === 'true',
     });
   }
@@ -216,8 +162,7 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = Number(params.page) || 1;
   
-  // Parallel data fetching: Orgs + Tech Stack + Org index (for first-time count)
-  const [data, techStackIndex, orgIndex] = await Promise.all([
+  const [data, metadata, orgIndex] = await Promise.all([
     getOrganizations({ 
       page, 
       limit: 20,
@@ -234,15 +179,12 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
       techsLogic: params.techsLogic,
       topicsLogic: params.topicsLogic,
     }),
-    loadTechStackIndexData(),
+    loadOrganizationsMetadata(),
     loadOrganizationsIndexData()
   ]);
 
-  // Transform tech stack data for sidebar
-  const initialTechs = techStackIndex?.all_techs.map(t => ({
-    name: t.name,
-    count: t.org_count
-  })) || [];
+  const initialTechs = metadata?.technologies ?? [];
+  const initialTopics = metadata?.topics ?? [];
 
   const firstTimeCount = orgIndex?.organizations.filter(
     (o: { first_time: boolean | null }) => o.first_time === true
@@ -261,6 +203,7 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
         initialData={data} 
         initialPage={page} 
         initialTechs={initialTechs}
+        initialTopics={initialTopics}
         firstTimeCount={firstTimeCount}
       />
     </Suspense>

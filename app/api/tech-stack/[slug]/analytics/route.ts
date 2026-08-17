@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAnalyticsOrganizations } from '@/lib/supabase/analytics-organizations'
+import { canonicalTechnology } from '@/lib/vocabulary/catalog'
 
 /**
  * GET /api/tech-stack/[slug]/analytics
@@ -17,28 +18,16 @@ export async function GET(
   try {
     const { slug } = await params
     
-    // Convert slug back to tech name (handle variations)
-    const techName = slug.replace(/-/g, ' ')
-
-    // Find tech variations
     const orgs = await getAnalyticsOrganizations()
-
-    const allTechs = Array.from(
-      new Set<string>(orgs.flatMap((org) => org.technologies))
-    )
-    
-    const variations = allTechs.filter((tech) =>
-      tech.toLowerCase().includes(techName.toLowerCase()) ||
-      techName.toLowerCase().includes(tech.toLowerCase())
-    )
-
-    const techVariations = variations.length > 0 ? variations : [techName]
+    const matchingValues = orgs
+      .flatMap((org) => org.technologies)
+      .map(canonicalTechnology)
+      .filter((technology) => technology.slug === slug)
+    const canonical = matchingValues[0]
 
     // Get all organizations using this technology
     const organizations = orgs.filter((org) =>
-      org.technologies.some((technology) =>
-        techVariations.some((variation) => technology.toLowerCase() === variation.toLowerCase()),
-      ),
+      org.technologies.some((technology) => canonicalTechnology(technology).slug === slug),
     )
 
     if (organizations.length === 0) {
@@ -47,20 +36,6 @@ export async function GET(
         { status: 404 }
       )
     }
-
-    // Get the most common variation of the tech name
-    const allTechsFromOrgs = organizations.flatMap((org) => 
-      org.technologies?.filter((t: string) => 
-        techVariations.some(v => t.toLowerCase().includes(v.toLowerCase()))
-      ) || []
-    )
-    const mostCommon = allTechsFromOrgs.length > 0
-      ? allTechsFromOrgs.sort(
-          (a: string, b: string) =>
-            allTechsFromOrgs.filter((t: string) => t === b).length -
-            allTechsFromOrgs.filter((t: string) => t === a).length
-        )[0]
-      : techName
 
     // Calculate organization growth over years (2020-2025)
     const years = [2020, 2021, 2022, 2023, 2024, 2025]
@@ -124,7 +99,7 @@ export async function GET(
 
     return NextResponse.json({
       technology: {
-        name: mostCommon,
+        name: canonical?.name ?? slug,
         slug,
         usage_count: organizations.length,
       },

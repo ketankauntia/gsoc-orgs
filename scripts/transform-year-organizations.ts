@@ -18,6 +18,7 @@
 
 import fs from "fs";
 import path from "path";
+import { canonicalTechnology, canonicalTopic } from "../lib/vocabulary/catalog";
 import { SLUG_ALIASES } from "./lib/org-slug-aliases";
 
 // ---------------------------------------------------------------------------
@@ -432,12 +433,10 @@ async function main() {
   const yearCounts = new Map<number, number>();
 
   allOrgs.forEach((org) => {
-    (org.technologies || []).forEach((t: string) => {
-      techCounts.set(t, (techCounts.get(t) || 0) + 1);
-    });
-    (org.topics || []).forEach((t: string) => {
-      topicCounts.set(t, (topicCounts.get(t) || 0) + 1);
-    });
+    const technologies = new Set<string>((org.technologies || []).map((value: string) => canonicalTechnology(value).name));
+    technologies.forEach((name: string) => techCounts.set(name, (techCounts.get(name) || 0) + 1));
+    const topics = new Set<string>((org.topics || []).map((value: string) => canonicalTopic(value).name));
+    topics.forEach((name: string) => topicCounts.set(name, (topicCounts.get(name) || 0) + 1));
     if (org.category) {
       categoryCounts.set(org.category, (categoryCounts.get(org.category) || 0) + 1);
     }
