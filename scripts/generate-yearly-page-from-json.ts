@@ -72,12 +72,13 @@ async function main() {
     img_r2_url: string;
     logo_r2_url: string | null;
     first_year: number;
+    withdrawn_years?: number[];
     technologies: string[];
     total_projects: number;
     stats: {
       projects_by_year?: Record<string, number | null>;
     };
-    years: Record<string, { num_projects?: number } | null>;
+    years: Record<string, { num_projects?: number; status?: "selected" | "withdrawn" } | null>;
   }
 
   const fullOrgs: FullOrg[] = yearOrgs.map((o: { slug: string }) => {
@@ -106,13 +107,16 @@ async function main() {
         logo_url: org.logo_r2_url || org.img_r2_url || org.image_url,
         project_count: projectCount,
         is_first_time: org.first_year === YEAR,
+        status: org.withdrawn_years?.includes(YEAR) ? "withdrawn" as const : "selected" as const,
       };
     })
-    .sort((a, b) => b.project_count - a.project_count);
+    .sort((a, b) => a.status.localeCompare(b.status) || b.project_count - a.project_count || a.name.localeCompare(b.name));
+  const participatingOrgs = processedOrgs.filter((org) => org.status === "selected");
+  const participatingSlugs = new Set(participatingOrgs.map((org) => org.slug));
 
   // 5. Compute tech stack aggregation
   const techMap = new Map<string, { name: string; orgs: Set<string> }>();
-  fullOrgs.forEach((org) => {
+  fullOrgs.filter((org) => participatingSlugs.has(org.slug)).forEach((org) => {
     const technologies = new Map(
       (org.technologies || []).map((rawTech: string) => {
         const canonical = canonicalTechnology(rawTech);
@@ -145,14 +149,16 @@ async function main() {
   }));
 
   // 6. Compute metrics
-  const totalOrgs = yearOrgs.length;
-  const totalProjects = processedOrgs.reduce((sum, o) => sum + o.project_count, 0);
-  const firstTimeOrgsCount = processedOrgs.filter((o) => o.is_first_time).length;
+  const announcedOrgs = processedOrgs.length;
+  const withdrawnOrgs = announcedOrgs - participatingOrgs.length;
+  const totalOrgs = participatingOrgs.length;
+  const totalProjects = participatingOrgs.reduce((sum, o) => sum + o.project_count, 0);
+  const firstTimeOrgsCount = participatingOrgs.filter((o) => o.is_first_time).length;
   const returningOrgsCount = totalOrgs - firstTimeOrgsCount;
   const avgProjects = totalOrgs > 0 ? Number((totalProjects / totalOrgs).toFixed(1)) : 0;
 
   // 7. Build charts
-  const mostStudentSlots = processedOrgs.slice(0, 20).map((o) => ({
+  const mostStudentSlots = participatingOrgs.slice(0, 20).map((o) => ({
     label: o.name,
     slug: o.slug,
     value: o.project_count,
@@ -166,14 +172,14 @@ async function main() {
     value: t.value,
   }));
 
-  const highestSelectionsByOrg = processedOrgs.slice(0, 10).map((o) => ({
+  const highestSelectionsByOrg = participatingOrgs.slice(0, 10).map((o) => ({
     label: o.name,
     slug: o.slug,
     value: o.project_count,
   }));
 
   // 8. First-time orgs list
-  const firstTimeOrgsList = processedOrgs
+  const firstTimeOrgsList = participatingOrgs
     .filter((o) => o.is_first_time)
     .map((o) => ({
       slug: o.slug,
@@ -191,6 +197,12 @@ async function main() {
     description: `A complete overview of Google Summer of Code ${YEAR} including participating organizations, projects, technology trends, and key statistics.`,
     published_at: now,
     finalized: false,
+
+    counts: {
+      announced: announcedOrgs,
+      participating: totalOrgs,
+      withdrawn: withdrawnOrgs,
+    },
 
     metrics: {
       total_organizations: totalOrgs,

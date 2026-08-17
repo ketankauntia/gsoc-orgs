@@ -13,6 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import { SLUG_ALIASES, normalizeOrgName } from "./lib/org-slug-aliases";
+import { withdrawnSlugsForYear, type WithdrawalLedger } from "../lib/withdrawals";
 
 const argv = process.argv.slice(2);
 const yearIdx = argv.indexOf("--year");
@@ -53,6 +54,7 @@ async function main() {
     JSON.parse(fs.readFileSync(rawFile, "utf-8"));
 
   const orgs = await selectAll<{
+    id: string;
     slug: string;
     name: string;
     active_years: number[] | null;
@@ -60,6 +62,25 @@ async function main() {
     description: string | null;
     image_url: string | null;
   }>("organizations", "id,slug,name,active_years,is_currently_active,description,image_url");
+  const ledger: WithdrawalLedger = JSON.parse(fs.readFileSync(path.join(process.cwd(), "new-api-details", "withdrawals.json"), "utf-8"));
+  const expectedWithdrawn = withdrawnSlugsForYear(ledger, YEAR);
+  const { data: organizationYears, error: organizationYearsError } = await supabase
+    .from("organization_years")
+    .select("organization_id,selection_status,withdrawn_at")
+    .eq("year", YEAR);
+  if (organizationYearsError) throw organizationYearsError;
+  const orgById = new Map(orgs.map((org) => [org.id, org.slug]));
+  const actualWithdrawn = new Set(
+    (organizationYears ?? [])
+      .filter((row) => row.selection_status === "withdrawn")
+      .map((row) => orgById.get(row.organization_id))
+      .filter((slug): slug is string => Boolean(slug)),
+  );
+  const withdrawalErrors = [
+    ...[...expectedWithdrawn].filter((slug) => !actualWithdrawn.has(slug)).map((slug) => `${slug} missing withdrawn status`),
+    ...[...actualWithdrawn].filter((slug) => !expectedWithdrawn.has(slug)).map((slug) => `${slug} unexpectedly withdrawn`),
+    ...(organizationYears ?? []).filter((row) => row.selection_status === "withdrawn" && !row.withdrawn_at).map((row) => `${orgById.get(row.organization_id) ?? row.organization_id} missing withdrawn_at`),
+  ];
 
   const inYear = orgs.filter((o) => (o.active_years ?? []).includes(YEAR));
   const active = inYear.filter((o) => o.is_currently_active);
@@ -89,6 +110,9 @@ async function main() {
       continue;
     }
     matchedDbSlugs.add(db.slug);
+    if (actualWithdrawn.has(db.slug)) {
+      withdrawalErrors.push(`${db.slug} is currently listed by Google but marked withdrawn`);
+    }
     if (!(db.active_years ?? []).includes(YEAR)) {
       missingFromDb.push(`${r.slug} (present but missing ${YEAR} in active_years)`);
     }
@@ -128,9 +152,10 @@ async function main() {
   console.log(`\nIn Google but missing from DB  : ${missingFromDb.length ? missingFromDb.join(", ") : "none"}`);
   console.log(`In DB for ${YEAR} but not in Google: ${notInGoogle.length ? notInGoogle.join(", ") : "none"}`);
   console.log(`Stale fields vs Google         : ${staleFields.length ? staleFields.slice(0, 10).join(", ") : "none"}`);
+  console.log(`Withdrawal status errors       : ${withdrawalErrors.length ? withdrawalErrors.join(", ") : "none"}`);
   console.log(`\nLast import run                : ${lastRun?.status ?? "unknown"} @ ${lastRun?.completed_at ?? "n/a"}`);
 
-  const ok = missingFromDb.length === 0 && staleFields.length === 0;
+  const ok = missingFromDb.length === 0 && staleFields.length === 0 && withdrawalErrors.length === 0;
   console.log(`\n${ok ? "PASS" : "FAIL"}: every organization Google lists for ${YEAR} is present and current in the DB.`);
   if (notInGoogle.length) {
     console.log(

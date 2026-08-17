@@ -262,21 +262,27 @@ export type Database = {
           archive_url: string | null
           organization_id: string
           project_count: number
+          selection_status: string
           source_payload: Json
+          withdrawn_at: string | null
           year: number
         }
         Insert: {
           archive_url?: string | null
           organization_id: string
           project_count?: number
+          selection_status?: string
           source_payload?: Json
+          withdrawn_at?: string | null
           year: number
         }
         Update: {
           archive_url?: string | null
           organization_id?: string
           project_count?: number
+          selection_status?: string
           source_payload?: Json
+          withdrawn_at?: string | null
           year?: number
         }
         Relationships: [

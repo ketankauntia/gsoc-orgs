@@ -15,13 +15,14 @@ type OrganizationJson = Record<string, unknown> & {
   id?: string; id_?: string; canonical_id?: string; slug: string; name: string;
   category?: string; description?: string; short_desc?: string; url?: string; website?: string;
   contact?: unknown; social?: unknown; socials?: unknown; image_url?: string; image_background_color?: string;
-  logo_bg_color?: string; logo_r2_url?: string; img_r2_url?: string; active_years?: number[];
+  logo_bg_color?: string; logo_r2_url?: string; img_r2_url?: string; active_years?: number[]; withdrawn_years?: number[];
   years_appeared?: number[]; first_year?: number; last_year?: number; first_time?: boolean;
   is_currently_active?: boolean; total_projects?: number; technologies?: string[]; topics?: string[];
   years?: Record<string, {
     num_projects?: number;
     projects_url?: string;
     projects?: Array<{ project_url?: string }>;
+    withdrawn_at?: string;
   }>;
   stats?: { projects_by_year?: Record<string, number> };
 };
@@ -117,7 +118,8 @@ try {
 
   const organizationYears = organizations.flatMap((org) => (org.active_years ?? org.years_appeared ?? []).map((year: number) => {
     const yearData = organizationYear(org, year);
-    return { organization_id: orgIds.get(String(org.slug).toLowerCase()), year, project_count: yearData?.num_projects ?? org.stats?.projects_by_year?.[`year_${year}`] ?? 0, archive_url: yearData?.projects_url ?? null, source_payload: yearData ?? {} };
+    const withdrawn = org.withdrawn_years?.includes(year) ?? false;
+    return { organization_id: orgIds.get(String(org.slug).toLowerCase()), year, project_count: yearData?.num_projects ?? org.stats?.projects_by_year?.[`year_${year}`] ?? 0, archive_url: yearData?.projects_url ?? null, selection_status: withdrawn ? "withdrawn" : "selected", withdrawn_at: withdrawn ? yearData?.withdrawn_at ?? null : null, source_payload: yearData ?? {} };
   })).filter((row) => row.organization_id);
   await upsertMany(client, "organization_years", organizationYears, "organization_id,year");
 

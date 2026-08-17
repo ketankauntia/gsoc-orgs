@@ -53,6 +53,7 @@ interface OrgData {
   technologies: string[];
   topics: string[];
   active_years: number[];
+  withdrawn_years?: number[];
   total_projects: number;
   is_currently_active: boolean;
   years: Record<string, { num_projects?: number } | null>;
@@ -120,6 +121,7 @@ function generateTechStack(orgs: OrgData[], YEARS: number[]) {
         total_projects: number;
         is_currently_active: boolean;
         active_years: number[];
+        withdrawn_years?: number[];
       }>;
       byYear: Record<number, { orgCount: number; projectCount: number }>;
     }
@@ -151,11 +153,12 @@ function generateTechStack(orgs: OrgData[], YEARS: number[]) {
           total_projects: org.total_projects || 0,
           is_currently_active: org.is_currently_active || false,
           active_years: org.active_years || [],
+          ...(org.withdrawn_years?.length ? { withdrawn_years: org.withdrawn_years } : {}),
         });
       }
 
       YEARS.forEach((year) => {
-        if (org.active_years?.includes(year)) {
+        if (org.active_years?.includes(year) && !org.withdrawn_years?.includes(year)) {
           if (!td.byYear[year]) td.byYear[year] = { orgCount: 0, projectCount: 0 };
           td.byYear[year].orgCount++;
           const yd = org.years?.[`year_${year}`];
@@ -306,6 +309,7 @@ function generateTopics(orgs: OrgData[], YEARS: number[]) {
         total_projects: number;
         is_currently_active: boolean;
         active_years: number[];
+        withdrawn_years?: number[];
       }>;
       byYear: Record<number, { organizationCount: number; projectCount: number }>;
     }
@@ -339,11 +343,12 @@ function generateTopics(orgs: OrgData[], YEARS: number[]) {
           total_projects: org.total_projects || 0,
           is_currently_active: org.is_currently_active || false,
           active_years: org.active_years || [],
+          ...(org.withdrawn_years?.length ? { withdrawn_years: org.withdrawn_years } : {}),
         });
       }
 
       YEARS.forEach((year) => {
-        if (org.active_years?.includes(year)) {
+        if (org.active_years?.includes(year) && !org.withdrawn_years?.includes(year)) {
           if (!td.byYear[year]) td.byYear[year] = { organizationCount: 0, projectCount: 0 };
           td.byYear[year].organizationCount++;
           const yd = org.years?.[`year_${year}`];
@@ -446,7 +451,9 @@ function generateOrganizationMetadata(orgs: OrgData[]) {
       topicCounts.set(slug, { name: topicNames.get(slug) ?? slug, count: (existing?.count ?? 0) + 1 });
     });
     if (org.category) categoryCounts.set(org.category, (categoryCounts.get(org.category) ?? 0) + 1);
-    for (const year of org.active_years || []) yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
+    for (const year of org.active_years || []) {
+      if (!org.withdrawn_years?.includes(year)) yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
+    }
   }
 
   const metadata = {

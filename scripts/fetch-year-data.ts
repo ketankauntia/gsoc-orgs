@@ -22,6 +22,8 @@
 
 import fs from "fs";
 import path from "path";
+import { reconcileWithdrawalEvents, type WithdrawalLedger } from "../lib/withdrawals";
+import { canonicalizeOrganizationSnapshot, createOrganizationIdentityResolver } from "./lib/org-identity";
 
 const args = process.argv.slice(2);
 const yearFlagIdx = args.indexOf("--year");
@@ -72,6 +74,13 @@ const fetchYearData = async () => {
     outputDir,
     `google-summer-of-code-${YEAR}-organizations-raw.json`,
   );
+  const indexFile = path.join(process.cwd(), "new-api-details", "organizations", "index.json");
+  const ledgerFile = path.join(process.cwd(), "new-api-details", "withdrawals.json");
+  const driftFile = path.join(outputDir, `${YEAR}-drift-report.json`);
+  const index = fs.existsSync(indexFile)
+    ? (JSON.parse(fs.readFileSync(indexFile, "utf-8")) as { organizations?: Array<{ slug: string; name: string }> }).organizations ?? []
+    : [];
+  const resolveIdentity = createOrganizationIdentityResolver(index);
 
   // --- Drift detection against the previous snapshot -----------------------
   let drift: {
@@ -83,20 +92,29 @@ const fetchYearData = async () => {
     removed: string[];
     changed: { slug: string; fields: string[] }[];
   } | null = null;
+  let previous: Org[] | null = null;
 
   if (fs.existsSync(outputFile)) {
     try {
-      const previous = JSON.parse(fs.readFileSync(outputFile, "utf-8")) as Org[];
-      const prevBySlug = new Map(previous.map((o) => [String(o.slug), o]));
-      const currBySlug = new Map(sorted.map((o) => [String(o.slug), o]));
+      previous = JSON.parse(fs.readFileSync(outputFile, "utf-8")) as Org[];
+      const prevBySlug = canonicalizeOrganizationSnapshot(
+        previous.map((organization) => ({ slug: String(organization.slug), name: String(organization.name) })),
+        resolveIdentity,
+      );
+      const currBySlug = canonicalizeOrganizationSnapshot(
+        sorted.map((organization) => ({ slug: String(organization.slug), name: String(organization.name) })),
+        resolveIdentity,
+      );
+      const previousRawByName = new Map(previous.map((organization) => [String(organization.name), organization]));
+      const currentRawByName = new Map(sorted.map((organization) => [String(organization.name), organization]));
 
       const added = [...currBySlug.keys()].filter((s) => !prevBySlug.has(s)).sort();
       const removed = [...prevBySlug.keys()].filter((s) => !currBySlug.has(s)).sort();
 
       const changed: { slug: string; fields: string[] }[] = [];
       for (const slug of [...currBySlug.keys()].filter((s) => prevBySlug.has(s)).sort()) {
-        const p = prevBySlug.get(slug)!;
-        const c = currBySlug.get(slug)!;
+        const p = previousRawByName.get(prevBySlug.get(slug)!.name)!;
+        const c = currentRawByName.get(currBySlug.get(slug)!.name)!;
         const fields = [...new Set([...Object.keys(p), ...Object.keys(c)])].filter(
           (k) => JSON.stringify(p[k]) !== JSON.stringify(c[k]),
         );
@@ -117,11 +135,51 @@ const fetchYearData = async () => {
     }
   }
 
+  if (previous) {
+    let program: { is_active?: boolean } | null = null;
+    try {
+      const programResponse = await fetch(`https://summerofcode.withgoogle.com/api/program/${YEAR}/`);
+      if (programResponse.ok) program = await programResponse.json() as { is_active?: boolean };
+    } catch (error) {
+      console.warn(`[WARN] Could not fetch GSoC ${YEAR} program status: ${error instanceof Error ? error.message : String(error)}`);
+    }
+    if (!program) {
+      console.warn(`[WARN] Could not confirm whether GSoC ${YEAR} is live; withdrawal ledger was not changed.`);
+    } else {
+      const ledger: WithdrawalLedger = fs.existsSync(ledgerFile)
+        ? JSON.parse(fs.readFileSync(ledgerFile, "utf-8"))
+        : { version: 1, events: [] };
+      const priorDrift = fs.existsSync(driftFile)
+        ? JSON.parse(fs.readFileSync(driftFile, "utf-8")) as { fetched_at?: string }
+        : null;
+      const canonicalPrevious = canonicalizeOrganizationSnapshot(
+        previous.map((organization) => ({ slug: String(organization.slug), name: String(organization.name) })),
+        resolveIdentity,
+      );
+      const canonicalCurrent = canonicalizeOrganizationSnapshot(
+        sorted.map((organization) => ({ slug: String(organization.slug), name: String(organization.name) })),
+        resolveIdentity,
+      );
+      const reconciled = reconcileWithdrawalEvents({
+        ledger,
+        year: YEAR,
+        previousSlugs: canonicalPrevious.keys(),
+        currentSlugs: canonicalCurrent.keys(),
+        observedAt: new Date().toISOString(),
+        lastSeenAt: priorDrift?.fetched_at ?? fs.statSync(outputFile).mtime.toISOString(),
+        programIsActive: program.is_active === true,
+      });
+      if (reconciled.appended.length) {
+        fs.writeFileSync(ledgerFile, JSON.stringify(reconciled.ledger, null, 2));
+        console.log(`[WITHDRAWALS] Appended ${reconciled.appended.length} durable event(s) to ${ledgerFile}`);
+      }
+    }
+  }
+
   fs.writeFileSync(outputFile, JSON.stringify(sorted, null, 2));
   console.log(`[DONE] Saved ${sorted.length} organizations to ${outputFile}`);
 
   if (drift) {
-    const driftFile = path.join(outputDir, `${YEAR}-drift-report.json`);
     fs.writeFileSync(driftFile, JSON.stringify(drift, null, 2));
 
     const { previous_count, current_count, added, removed, changed } = drift;

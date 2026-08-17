@@ -19,7 +19,8 @@
 import fs from "fs";
 import path from "path";
 import { canonicalTechnology, canonicalTopic } from "../lib/vocabulary/catalog";
-import { SLUG_ALIASES } from "./lib/org-slug-aliases";
+import { latestWithdrawalFor, withdrawnSlugsForYear, type WithdrawalLedger } from "../lib/withdrawals";
+import { createOrganizationIdentityResolver } from "./lib/org-identity";
 
 // ---------------------------------------------------------------------------
 // CLI args
@@ -45,6 +46,7 @@ const YEARLY_DIR = path.join(ROOT, "new-api-details", "yearly");
 const RAW_FILE = path.join(YEARLY_DIR, `google-summer-of-code-${YEAR}-organizations-raw.json`);
 const INDEX_FILE = path.join(ORGS_DIR, "index.json");
 const METADATA_FILE = path.join(ORGS_DIR, "metadata.json");
+const WITHDRAWALS_FILE = path.join(ROOT, "new-api-details", "withdrawals.json");
 
 // ---------------------------------------------------------------------------
 // Types for raw Google API data
@@ -128,11 +130,30 @@ function buildEmptyStatsByYear() {
 }
 
 function buildEmptyYearsDetail() {
-  const obj: Record<string, null> = {};
+  const obj: Record<string, null | { num_projects: number; projects: unknown[]; projects_url: null; status: "selected" | "withdrawn" }> = {};
   for (let y = 2016; y <= YEAR; y++) {
     obj[`year_${y}`] = null;
   }
   return obj;
+}
+
+function stablePayload(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(stablePayload);
+  if (!value || typeof value !== "object") return value;
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([key]) => key !== "published_at" && key !== "generated_at")
+      .map(([key, child]) => [key, stablePayload(child)]),
+  );
+}
+
+function writeJsonIfChanged(file: string, value: unknown): boolean {
+  if (fs.existsSync(file)) {
+    const existing = JSON.parse(fs.readFileSync(file, "utf-8"));
+    if (JSON.stringify(stablePayload(existing)) === JSON.stringify(stablePayload(value))) return false;
+  }
+  fs.writeFileSync(file, JSON.stringify(value, null, 2));
+  return true;
 }
 
 // ---------------------------------------------------------------------------
@@ -157,64 +178,22 @@ async function main() {
   if (fs.existsSync(INDEX_FILE)) {
     existingIndex = JSON.parse(fs.readFileSync(INDEX_FILE, "utf-8"));
   }
-  const existingSlugs = new Set(existingIndex.organizations.map((o) => o.slug));
+  const resolveIdentity = createOrganizationIdentityResolver(existingIndex.organizations);
+  const ledger: WithdrawalLedger = fs.existsSync(WITHDRAWALS_FILE)
+    ? JSON.parse(fs.readFileSync(WITHDRAWALS_FILE, "utf-8"))
+    : { version: 1, events: [] };
+  const withdrawnSlugs = withdrawnSlugsForYear(ledger, YEAR);
 
-  // Build name→slug lookup for matching orgs with changed API slugs
-  const nameToSlug = new Map<string, string>();
-  for (const org of existingIndex.organizations) {
-    nameToSlug.set(org.name.toLowerCase().trim(), org.slug);
-  }
-
-  // Guard: detect duplicate names in existing index (would cause ambiguous matches)
-  const nameOccurrences = new Map<string, string[]>();
-  for (const org of existingIndex.organizations) {
-    const key = org.name.toLowerCase().trim();
-    const list = nameOccurrences.get(key) || [];
-    list.push(org.slug);
-    nameOccurrences.set(key, list);
-  }
-  const duplicateNames = Array.from(nameOccurrences.entries()).filter(([, slugs]) => slugs.length > 1);
-  if (duplicateNames.length > 0) {
-    console.warn(`[WARN] ${duplicateNames.length} duplicate org names detected — name matching skipped for these:`);
-    for (const [name, slugs] of duplicateNames) {
-      console.warn(`  "${name}" → [${slugs.join(", ")}]`);
-    }
-  }
-  const ambiguousNames = new Set(duplicateNames.map(([name]) => name));
-
-  // Resolve each raw org's slug to an existing FILE (alias → exact slug → name match).
+  // Resolve each raw org's slug to an existing file using the shared identity policy.
   // Only returns a slug if its JSON file actually exists on disk.
   // Logs every non-trivial match for debuggability.
   function resolveExistingSlug(raw: RawOrg, log = false): string | null {
-    // 1. Check manual alias first (known rebrands)
-    const alias = SLUG_ALIASES[raw.slug];
-    if (alias) {
-      const f = path.join(ORGS_DIR, `${alias}.json`);
-      if (fs.existsSync(f)) {
-        if (log) console.log(`  [ALIAS]  "${raw.slug}" → "${alias}" (manual alias)`);
-        return alias;
-      }
+    const canonicalSlug = resolveIdentity(raw);
+    const exists = fs.existsSync(path.join(ORGS_DIR, `${canonicalSlug}.json`));
+    if (log && exists && canonicalSlug !== raw.slug) {
+      console.log(`  [IDENTITY] "${raw.slug}" -> "${canonicalSlug}"`);
     }
-    // 2. Exact slug match
-    if (existingSlugs.has(raw.slug)) {
-      const f = path.join(ORGS_DIR, `${raw.slug}.json`);
-      if (fs.existsSync(f)) return raw.slug;
-    }
-    // 3. Name-based match (skip if name is ambiguous)
-    const normalizedName = raw.name.toLowerCase().trim();
-    if (ambiguousNames.has(normalizedName)) {
-      if (log) console.warn(`  [SKIP]   "${raw.slug}" name "${raw.name}" matches multiple existing orgs — add to SLUG_ALIASES`);
-      return null;
-    }
-    const byName = nameToSlug.get(normalizedName);
-    if (byName) {
-      const f = path.join(ORGS_DIR, `${byName}.json`);
-      if (fs.existsSync(f)) {
-        if (log) console.log(`  [NAME]   "${raw.slug}" → "${byName}" (matched by name "${raw.name}")`);
-        return byName;
-      }
-    }
-    return null;
+    return exists ? canonicalSlug : null;
   }
 
   const rawSlugs = new Set(rawOrgs.map((o) => o.slug));
@@ -260,6 +239,9 @@ async function main() {
 
       existing.last_year = Math.max(existing.last_year || 0, YEAR);
       existing.is_currently_active = true;
+      const remainingWithdrawnYears = (existing.withdrawn_years || []).filter((year: number) => year !== YEAR);
+      if (remainingWithdrawnYears.length) existing.withdrawn_years = remainingWithdrawnYears;
+      else delete existing.withdrawn_years;
 
       // Google is the authoritative source, so take its description verbatim --
       // including when the org SHORTENS it. The previous "only if longer" rule
@@ -309,6 +291,10 @@ async function main() {
       if (existing.years && !(`year_${YEAR}` in existing.years)) {
         existing.years[`year_${YEAR}`] = null;
       }
+      if (existing.years?.[`year_${YEAR}`]) {
+        existing.years[`year_${YEAR}`].status = "selected";
+        delete existing.years[`year_${YEAR}`].withdrawn_at;
+      }
 
       // Update logo if we have a fresh one from Google
       if (raw.logo_url) {
@@ -327,8 +313,7 @@ async function main() {
 
       existing.meta = { version: 1, generated_at: now };
 
-      fs.writeFileSync(orgFile, JSON.stringify(existing, null, 2));
-      updatedCount++;
+      if (writeJsonIfChanged(orgFile, existing)) updatedCount++;
     } else {
       // --- CREATE new org ---
       const newOrg = {
@@ -342,6 +327,7 @@ async function main() {
         logo_r2_url: null,
         url: raw.website_url || "",
         active_years: [YEAR],
+        withdrawn_years: [],
         first_year: YEAR,
         last_year: YEAR,
         is_currently_active: true,
@@ -360,23 +346,38 @@ async function main() {
         meta: { version: 1, generated_at: now },
       };
 
-      fs.writeFileSync(orgFile, JSON.stringify(newOrg, null, 2));
-      createdCount++;
+      if (writeJsonIfChanged(orgFile, newOrg)) createdCount++;
     }
   }
 
   // 4. Mark orgs NOT in this year's list as inactive (only if they were active)
   let deactivatedCount = 0;
+  let withdrawnCount = 0;
   for (const existingOrg of existingIndex.organizations) {
     if (!rawSlugs.has(existingOrg.slug) && !resolvedSlugs.has(existingOrg.slug)) {
       const orgFile = path.join(ORGS_DIR, `${existingOrg.slug}.json`);
       if (fs.existsSync(orgFile)) {
         const org = JSON.parse(fs.readFileSync(orgFile, "utf-8"));
+        let changed = false;
         if (org.is_currently_active === true) {
           org.is_currently_active = false;
-          org.meta = { version: 1, generated_at: now };
-          fs.writeFileSync(orgFile, JSON.stringify(org, null, 2));
           deactivatedCount++;
+          changed = true;
+        }
+        if (withdrawnSlugs.has(existingOrg.slug)) {
+          org.withdrawn_years = Array.from(new Set([...(org.withdrawn_years || []), YEAR])).sort((a: number, b: number) => a - b);
+          org.years ||= {};
+          org.years[`year_${YEAR}`] = {
+            ...(org.years[`year_${YEAR}`] || { num_projects: 0, projects: [], projects_url: null }),
+            status: "withdrawn",
+            withdrawn_at: latestWithdrawalFor(ledger, existingOrg.slug, YEAR)?.observed_at,
+          };
+          withdrawnCount++;
+          changed = true;
+        }
+        if (changed) {
+          org.meta = { version: 1, generated_at: now };
+          writeJsonIfChanged(orgFile, org);
         }
       }
     }
@@ -404,6 +405,7 @@ async function main() {
         logo_r2_url: data.logo_r2_url,
         url: data.url,
         active_years: data.active_years,
+        ...(data.withdrawn_years?.length ? { withdrawn_years: data.withdrawn_years } : {}),
         first_year: data.first_year,
         last_year: data.last_year,
         is_currently_active: data.is_currently_active,
@@ -422,7 +424,7 @@ async function main() {
     organizations: allOrgs,
     meta: { version: 1, generated_at: now },
   };
-  fs.writeFileSync(INDEX_FILE, JSON.stringify(indexData, null, 2));
+  writeJsonIfChanged(INDEX_FILE, indexData);
   console.log(`[INDEX] Written with ${allOrgs.length} organizations`);
 
   // 6. Regenerate metadata.json
@@ -440,7 +442,7 @@ async function main() {
     if (org.category) {
       categoryCounts.set(org.category, (categoryCounts.get(org.category) || 0) + 1);
     }
-    (org.active_years || []).forEach((y: number) => {
+    (org.active_years || []).filter((y: number) => !(org.withdrawn_years || []).includes(y)).forEach((y: number) => {
       yearCounts.set(y, (yearCounts.get(y) || 0) + 1);
     });
   });
@@ -469,7 +471,7 @@ async function main() {
     },
     meta: { version: 1, generated_at: now },
   };
-  fs.writeFileSync(METADATA_FILE, JSON.stringify(metadata, null, 2));
+  writeJsonIfChanged(METADATA_FILE, metadata);
   console.log(`[METADATA] ${metadata.totals.technologies} techs, ${metadata.totals.topics} topics, ${metadata.totals.categories} categories, ${metadata.totals.years} years`);
 
   // 7. Summary
@@ -478,6 +480,7 @@ async function main() {
   console.log(`  Returning orgs updated: ${updatedCount}`);
   console.log(`  New orgs created: ${createdCount}`);
   console.log(`  Orgs deactivated: ${deactivatedCount}`);
+  console.log(`  Withdrawn org-years: ${withdrawnCount}`);
   console.log(`  First-time orgs for ${YEAR}: ${newCount}`);
 }
 
