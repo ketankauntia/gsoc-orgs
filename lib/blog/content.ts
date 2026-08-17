@@ -4,6 +4,7 @@ import { cache } from "react";
 import matter from "gray-matter";
 import type { Faq, Post, PostBlock } from "./types";
 import { estimateReadingMinutes, parseSections, slugify } from "./parse";
+import { isoDay } from "./format";
 
 /**
  * Content loader — posts live as markdown files in content/posts/*.md
@@ -67,9 +68,13 @@ function loadPost(file: string): Post {
   };
 }
 
-/** gray-matter parses unquoted YAML dates into Date objects; normalize either form to YYYY-MM-DD. */
+/**
+ * gray-matter parses unquoted YAML dates into Date objects; normalize either form to ISO.
+ * Quoted timestamps (`"2026-05-12T09:15:00+05:30"`) are kept intact so the published
+ * time of day survives into RSS, OpenGraph and JSON-LD.
+ */
 function toIsoDate(value: string | Date): string {
-  return value instanceof Date ? value.toISOString().slice(0, 10) : value;
+  return value instanceof Date ? value.toISOString() : value;
 }
 
 /** Today as YYYY-MM-DD (build date). String compare is safe for ISO dates. */
@@ -89,7 +94,7 @@ export const getAllPosts = cache((): Post[] => {
     .readdirSync(POSTS_DIR)
     .filter((f) => f.endsWith(".md"))
     .map(loadPost)
-    .filter((p) => !isProd || (!p.draft && p.publishedAt <= now))
+    .filter((p) => !isProd || (!p.draft && isoDay(p.publishedAt) <= now))
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 });
 
@@ -109,7 +114,7 @@ export function getRawMarkdown(slug: string): string | undefined {
   const { data, content } = matter(fs.readFileSync(file, "utf8"));
   const fm = data as Frontmatter;
   // Don't expose drafts or not-yet-published posts in production.
-  if (process.env.NODE_ENV === "production" && (fm.draft || toIsoDate(fm.publishedAt) > today())) {
+  if (process.env.NODE_ENV === "production" && (fm.draft || isoDay(toIsoDate(fm.publishedAt)) > today())) {
     return undefined;
   }
   const faqs = (fm.faqs ?? [])

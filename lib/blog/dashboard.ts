@@ -28,9 +28,10 @@ export type PostRow = {
   hasKeyphrase: boolean;
 };
 
+/** Calendar day only — the dashboard lists and compares days, not times of day. */
 function toIso(v: unknown): string {
   if (v instanceof Date) return v.toISOString().slice(0, 10);
-  return String(v ?? "");
+  return String(v ?? "").slice(0, 10);
 }
 
 /** Reads every post (drafts + scheduled included) with the metrics a writer / owner / SEO would want. */

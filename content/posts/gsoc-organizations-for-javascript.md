@@ -3,7 +3,7 @@ title: "GSoC Organizations for JavaScript and TypeScript"
 description: "Find GSoC organizations for JavaScript and TypeScript with verified 2025 tag counts, historical profile data and a repository-first shortlist method."
 category: GSoC Organizations
 tags: [gsoc organizations, javascript, typescript, react, nodejs]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-14T09:30:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: gsoc organizations for javascript

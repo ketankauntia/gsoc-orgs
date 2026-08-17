@@ -3,7 +3,7 @@ title: "GSoC Stipend: 2026 Amounts, PPP and Payment Guide"
 description: "Understand the GSoC stipend for 2026: PPP-based amounts, India figures, 45/55 payment examples, evaluations, Payoneer, fees and tax cautions."
 category: GSoC Applications
 tags: [gsoc stipend, gsoc 2026, payments, ppp, payoneer]
-publishedAt: 2026-08-12
+publishedAt: "2026-06-23T08:55:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: gsoc stipend

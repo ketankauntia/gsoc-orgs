@@ -3,7 +3,7 @@ title: "GSoC Organizations for Python: Data and Shortlisting"
 description: "Explore GSoC organizations for Python using a reproducible 2016–2026 tag analysis, a finalized 2025 snapshot and a practical shortlist scorecard."
 category: GSoC Organizations
 tags: [gsoc organizations, python, open source, data analysis, project selection]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-10T10:50:00+05:30"
 author: gsoc-orgs-team
 coverTone: primary
 keyphrase: gsoc organizations for python

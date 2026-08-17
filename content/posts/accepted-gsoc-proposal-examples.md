@@ -3,7 +3,7 @@ title: "Accepted GSoC Proposal Examples: What to Learn"
 description: "Study accepted GSoC proposal examples with a transparent rubric for problem research, deliverables, milestones, testing, risks and contribution evidence."
 category: GSoC Applications
 tags: [gsoc proposal, accepted proposals, gsoc applications, project planning]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-17T16:45:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: accepted gsoc proposal examples

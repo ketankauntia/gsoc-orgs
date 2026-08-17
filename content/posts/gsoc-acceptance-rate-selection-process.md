@@ -3,7 +3,7 @@ title: "GSoC Acceptance Rate and Selection Process Explained"
 description: "Understand the GSoC acceptance rate with reproducible 2026 calculations, applicant-versus-proposal denominators and the actual mentor, ranking and slot process."
 category: GSoC Applications
 tags: [gsoc acceptance rate, gsoc selection, gsoc applications, gsoc statistics]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-21T11:25:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: gsoc acceptance rate

@@ -20,8 +20,9 @@ function cdata(html: string): string {
   return `<![CDATA[${html.replace(/]]>/g, "]]]]><![CDATA[>")}]]>`;
 }
 
+/** Accepts `YYYY-MM-DD` or a full ISO timestamp with offset. */
 function rfc822(isoDate: string): string {
-  return new Date(isoDate + "T00:00:00Z").toUTCString();
+  return new Date(isoDate.length > 10 ? isoDate : isoDate + "T00:00:00Z").toUTCString();
 }
 
 export function GET() {

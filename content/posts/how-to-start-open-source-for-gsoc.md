@@ -3,7 +3,7 @@ title: "How to Start Open Source for GSoC: First Contribution"
 description: "Start open source for GSoC with a practical workflow for choosing a repository, finding a useful issue, testing a focused change and handling review."
 category: Open Source
 tags: [gsoc, open source, first contribution, pull requests, github]
-publishedAt: 2026-08-12
+publishedAt: "2026-06-30T12:20:00+05:30"
 author: gsoc-orgs-team
 coverTone: primary
 keyphrase: start open source for gsoc

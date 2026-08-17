@@ -3,7 +3,8 @@ title: "What Is GSoC? How Google Summer of Code Works"
 description: "What is GSoC? Learn how Google Summer of Code connects new open-source contributors with organizations, mentors, projects and evaluations."
 category: GSoC Guides
 tags: [gsoc, google summer of code, open source, beginners]
-publishedAt: 2026-08-12
+publishedAt: "2026-05-12T09:40:00+05:30"
+updatedAt: "2026-08-10T15:30:00+05:30"
 author: gsoc-orgs-team
 cornerstone: true
 coverTone: chart-2

@@ -3,7 +3,7 @@ title: "GSoC Community Bonding: A Three-Week Action Plan"
 description: "Use this GSoC community bonding plan to align expectations, finish setup, refine milestones, map risks and enter coding ready to deliver."
 category: GSoC Contributors
 tags: [gsoc, community bonding, mentors, project planning, open source]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-24T08:45:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: gsoc community bonding

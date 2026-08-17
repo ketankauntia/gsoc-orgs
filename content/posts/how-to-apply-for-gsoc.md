@@ -3,7 +3,7 @@ title: "How to Apply for GSoC: Process, Timeline and Checklist"
 description: "Learn how to apply for GSoC step by step: verify eligibility, research organizations, contribute, write a proposal and submit safely before the UTC deadline."
 category: GSoC Applications
 tags: [gsoc application, how to apply for gsoc, proposal, timeline, checklist]
-publishedAt: 2026-08-12
+publishedAt: "2026-06-02T09:15:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: how to apply for gsoc

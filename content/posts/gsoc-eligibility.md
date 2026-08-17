@@ -3,7 +3,7 @@ title: "GSoC Eligibility: Student, Graduate and Beginner Rules"
 description: "Check GSoC eligibility for students, graduates, professionals and open-source beginners with current rules, examples and an annual verification checklist."
 category: GSoC Applications
 tags: [gsoc eligibility, gsoc application, students, open source beginners]
-publishedAt: 2026-08-12
+publishedAt: "2026-05-19T18:25:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: gsoc eligibility

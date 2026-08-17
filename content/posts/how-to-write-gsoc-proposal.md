@@ -3,7 +3,7 @@ title: "How to Write a GSoC Proposal: Research, Scope and Timeline"
 description: "Learn how to write a GSoC proposal with organization-specific research, measurable deliverables, milestones, risks, communication and AI-policy checks."
 category: GSoC Applications
 tags: [gsoc proposal, gsoc guide, gsoc organizations, open source]
-publishedAt: 2026-08-12
+publishedAt: "2026-06-16T10:35:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: write a gsoc proposal

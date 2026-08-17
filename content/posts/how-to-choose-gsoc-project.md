@@ -3,7 +3,7 @@ title: "How to Choose a GSoC Project and Scope It Correctly"
 description: "Choose a GSoC project by testing community value, skill fit, feasibility, dependencies and scope with a practical scorecard and risk register."
 category: GSoC Projects
 tags: [gsoc projects, gsoc ideas, project scoping, gsoc proposal, open source]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-03T09:05:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: choose a gsoc project

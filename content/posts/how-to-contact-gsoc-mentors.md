@@ -3,7 +3,7 @@ title: "How to Contact GSoC Mentors Without Spamming Them"
 description: "Contact GSoC mentors with researched questions, the community's preferred channel, respectful follow-up and message examples that volunteers can answer."
 category: GSoC Guides
 tags: [gsoc, gsoc mentors, open source communication, gsoc guide]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-07T19:15:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: contact gsoc mentors

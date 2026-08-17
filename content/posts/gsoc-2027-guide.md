@@ -3,7 +3,7 @@ title: "GSoC 2027 Guide: Organizations, Timeline and Preparation"
 description: "This GSoC 2027 guide covers a realistic preparation plan, organization research, proposal checks, official sources and useful 2026 benchmarks."
 category: GSoC 2027
 tags: [gsoc 2027, gsoc guide, gsoc organizations, open source]
-publishedAt: 2026-08-12
+publishedAt: "2026-08-07T10:15:00+05:30"
 author: gsoc-orgs-team
 featured: true
 cornerstone: true

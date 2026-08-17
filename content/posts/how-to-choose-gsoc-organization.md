@@ -3,7 +3,7 @@ title: "How to Choose a GSoC Organization: Evidence-Based Guide"
 description: "Choose a GSoC organization using current projects, community activity, contribution fit and mentor expectations—not rankings or unsupported selection odds."
 category: GSoC Organizations
 tags: [gsoc organizations, gsoc orgs, organization selection, beginners]
-publishedAt: 2026-08-12
+publishedAt: "2026-06-09T20:10:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: choose a gsoc organization

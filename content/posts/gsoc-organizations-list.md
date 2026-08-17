@@ -3,7 +3,8 @@ title: "GSoC Organizations List: How to Search 10 Years of Orgs"
 description: "Explore the GSoC organizations list with original 2016–2025 data, participation patterns, research filters and a credible shortlisting method."
 category: GSoC Organizations
 tags: [gsoc organizations, gsoc organization list, gsoc orgs, data]
-publishedAt: 2026-08-12
+publishedAt: "2026-05-26T11:05:00+05:30"
+updatedAt: "2026-08-13T12:05:00+05:30"
 author: gsoc-orgs-team
 cornerstone: true
 coverTone: chart-2

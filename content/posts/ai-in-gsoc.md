@@ -3,7 +3,7 @@ title: "AI in GSoC: Proposal, Code and Disclosure Rules"
 description: "Learn how AI in GSoC is governed across proposals, contributions and coding, with a policy checklist, scenario matrix and verification workflow."
 category: GSoC Applications
 tags: [gsoc, artificial intelligence, proposals, open source, policy]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-31T13:10:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: ai in gsoc

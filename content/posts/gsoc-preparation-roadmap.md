@@ -3,7 +3,7 @@ title: "GSoC Preparation Roadmap: From Zero to Proposal"
 description: "Follow a GSoC preparation roadmap built around readiness evidence, Git, one practical stack, real contributions, organization research and proposal milestones."
 category: GSoC Guides
 tags: [gsoc preparation roadmap, open source, git, first contribution, proposal]
-publishedAt: 2026-08-12
+publishedAt: "2026-06-26T17:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: gsoc preparation roadmap

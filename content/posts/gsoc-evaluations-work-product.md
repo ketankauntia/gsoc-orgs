@@ -3,7 +3,7 @@ title: "GSoC Evaluations and Final Work Product Guide"
 description: "Prepare for GSoC evaluations with a readiness dashboard, feedback and escalation process, scope controls, and a valid final work product template."
 category: GSoC Contributors
 tags: [gsoc, evaluations, work product, mentors, project delivery]
-publishedAt: 2026-08-12
+publishedAt: "2026-07-28T18:05:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: gsoc evaluations

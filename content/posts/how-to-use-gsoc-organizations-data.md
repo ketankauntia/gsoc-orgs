@@ -3,8 +3,8 @@ title: How to Use GSoC Organization Data Without Getting Lost
 description: Use GSoC organization data to compare past years, current technologies, project patterns and contribution fit without inventing selection odds.
 category: GSoC Guides
 tags: [gsoc, organizations, open source, contributors]
-publishedAt: 2026-07-07
-updatedAt: 2026-08-12
+publishedAt: "2026-08-04T09:50:00+05:30"
+updatedAt: "2026-08-12T17:20:00+05:30"
 author: gsoc-orgs-team
 keyphrase: gsoc organization data
 tldr: Use organization history as a map, not a guarantee. Compare repeat participation, project topics, technology overlap, and idea-list quality before choosing where to spend your application time.
