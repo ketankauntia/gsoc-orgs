@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
 import { createAdminClient } from '@/lib/supabase/admin'
-import { organizationV1 } from '@/lib/supabase/legacy-shapes'
+import { jsonObject, organizationV1 } from '@/lib/supabase/legacy-shapes'
 
 /**
  * GET /api/v1/years/{year}/organizations
@@ -42,16 +42,20 @@ export async function GET(
     const limit = Math.min(100, Number(searchParams.get('limit')) || 50)
     const skip = (page - 1) * limit
 
-    const { data: items, count: total, error } = await createAdminClient()
+    const { data: items, error } = await createAdminClient()
       .from('organizations')
-      .select('*', { count: 'exact' })
+      .select('*')
       .contains('active_years', [yearNum])
       .order('name')
-      .range(skip, skip + limit - 1)
     if (error) throw error
+    const participatingItems = (items ?? []).filter((row) => {
+      const withdrawnYears = jsonObject(row.source_payload).withdrawn_years
+      return !Array.isArray(withdrawnYears) || !withdrawnYears.includes(yearNum)
+    })
+    const total = participatingItems.length
 
     // Enrich with year-specific data
-    const enrichedItems = (items ?? []).map((row) => {
+    const enrichedItems = participatingItems.slice(skip, skip + limit).map((row) => {
       const org = organizationV1(row)
       const yearKey = `year_${yearNum}` as 'year_2016' | 'year_2017' | 'year_2018' | 'year_2019' | 'year_2020' | 'year_2021' | 'year_2022' | 'year_2023' | 'year_2024' | 'year_2025'
       const yearData = org.years?.[yearKey]

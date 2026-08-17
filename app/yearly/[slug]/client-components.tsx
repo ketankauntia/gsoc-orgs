@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowDown, ArrowUp } from "lucide-react";
-import { Button, Grid, Text } from "@/components/ui";
+import { Badge, Button, Grid, Text } from "@/components/ui";
 import { OrganizationSnapshot, ProjectSnapshot } from "@/lib/yearly-page-types";
 
 interface ExpandableOrgListProps {
@@ -17,19 +17,34 @@ export function ExpandableOrgList({
   initialCount = 12,
 }: ExpandableOrgListProps) {
   const [showAll, setShowAll] = useState(false);
+  const [hideWithdrawn, setHideWithdrawn] = useState(false);
+  const withdrawnCount = organizations.filter((org) => org.status === "withdrawn").length;
+  const visibleOrganizations = hideWithdrawn
+    ? organizations.filter((org) => org.status !== "withdrawn")
+    : organizations;
 
   const displayedOrgs = showAll
-    ? organizations
-    : organizations.slice(0, initialCount);
+    ? visibleOrganizations
+    : visibleOrganizations.slice(0, initialCount);
 
   return (
     <div className="space-y-6">
+      {withdrawnCount > 0 && (
+        <div className="flex items-center justify-between gap-3 rounded-lg border bg-muted/30 px-3 py-2">
+          <Text variant="small" className="text-muted-foreground">
+            {withdrawnCount} announced {withdrawnCount === 1 ? "organization was" : "organizations were"} later withdrawn.
+          </Text>
+          <Button variant="outline" onClick={() => setHideWithdrawn((value) => !value)}>
+            {hideWithdrawn ? "Show withdrawn" : "Hide withdrawn"}
+          </Button>
+        </div>
+      )}
       <Grid cols={{ default: 2, md: 3, lg: 4 }} gap="md">
         {displayedOrgs.map((org) => (
           <Link
             key={org.slug}
             href={`/organizations/${org.slug}`}
-            className="group"
+            className={`group ${org.status === "withdrawn" ? "opacity-65" : ""}`}
           >
             <div className="p-3 rounded-lg border bg-card hover:border-foreground/50 transition-all h-full">
               <div className="flex items-center gap-2">
@@ -53,8 +68,11 @@ export function ExpandableOrgList({
                   <Text className="font-medium text-sm line-clamp-1">
                     {org.name}
                   </Text>
+                  {org.status === "withdrawn" && (
+                    <Badge variant="outline" className="mt-1 text-[10px]">Withdrawn</Badge>
+                  )}
                   <Text variant="small" className="text-muted-foreground">
-                    {org.project_count} projects
+                    {org.status === "withdrawn" ? "Withdrawn after announcement" : `${org.project_count} projects`}
                   </Text>
                 </div>
               </div>
@@ -63,7 +81,7 @@ export function ExpandableOrgList({
         ))}
       </Grid>
 
-      {organizations.length > initialCount && (
+      {visibleOrganizations.length > initialCount && (
         <div className="flex justify-center">
           <Button
             variant="outline"
@@ -76,7 +94,7 @@ export function ExpandableOrgList({
               </>
             ) : (
               <>
-                Show All ({organizations.length}) <ArrowDown className="w-4 h-4" />
+                Show All ({visibleOrganizations.length}) <ArrowDown className="w-4 h-4" />
               </>
             )}
           </Button>

@@ -6,7 +6,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
     const { slug } = await params;
     const { data, error } = await createAdminClient()
       .from("organizations")
-      .select("id,canonical_id,slug,name,category,description,website,contact,socials,image_url,image_background_color,logo_r2_url,active_years,first_year,last_year,first_time,is_currently_active,total_projects,created_at,updated_at,organization_years(year,project_count,archive_url),organization_technologies(technologies(id,slug,name)),organization_topics(topics(id,slug,name))")
+      .select("id,canonical_id,slug,name,category,description,website,contact,socials,image_url,image_background_color,logo_r2_url,active_years,first_year,last_year,first_time,is_currently_active,total_projects,created_at,updated_at,organization_years(year,project_count,archive_url,selection_status,withdrawn_at),organization_technologies(technologies(id,slug,name)),organization_topics(topics(id,slug,name))")
       .eq("slug", slug)
       .maybeSingle();
     if (error) throw error;

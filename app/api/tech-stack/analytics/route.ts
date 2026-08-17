@@ -55,7 +55,7 @@ export async function GET() {
       stackPopularityByYear[stackName] = years.map(year => {
         const count = organizations.filter(org => {
           const hasTech = org.technologies.some(t => canonicalTechnology(t).slug === stackName)
-          const wasActiveInYear = org.active_years.includes(year)
+          const wasActiveInYear = org.active_years.includes(year) && !org.withdrawn_years.includes(year)
           return hasTech && wasActiveInYear
         }).length
         return { year, count }
@@ -145,7 +145,7 @@ export async function GET() {
           techSelectionsByYear[tech] = {}
         }
         past6Years.forEach(year => {
-          if (org.active_years.includes(year)) {
+          if (org.active_years.includes(year) && !org.withdrawn_years.includes(year)) {
             techSelectionsByYear[tech][year] = (techSelectionsByYear[tech][year] || 0) + 1
           }
         })
@@ -177,7 +177,7 @@ export async function GET() {
           if (org.years) {
             const yearKey = `year_${year}`
             const yearData = (org.years as Record<string, { num_projects?: number }>)[yearKey]
-            if (yearData && org.active_years.includes(year)) {
+            if (yearData && org.active_years.includes(year) && !org.withdrawn_years.includes(year)) {
               const projectCount = yearData.num_projects || 0
               techProjectsByYear[tech][year] = (techProjectsByYear[tech][year] || 0) + projectCount
             }

@@ -63,6 +63,8 @@ interface OrganizationWithStats extends Organization {
       code_url?: string;
       project_url: string;
     }>;
+    status?: "selected" | "withdrawn";
+    withdrawn_at?: string;
   }>;
 }
 
@@ -84,6 +86,11 @@ const socialIcons: Record<string, React.ElementType> = {
 };
 
 export function OrganizationClient({ organization: org }: OrganizationClientProps) {
+  const withdrawnYears = org.withdrawn_years ?? [];
+  const selectedYears = useMemo(
+    () => org.active_years.filter((year) => !(org.withdrawn_years ?? []).includes(year)),
+    [org.active_years, org.withdrawn_years],
+  );
   // Get available years from organization data, sorted descending
   const availableYears = useMemo(() => {
     return [...org.active_years].sort((a, b) => b - a);
@@ -123,7 +130,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
     },
     {
       question: `How many projects has ${org.name} completed in GSoC?`,
-      answer: `${org.name} has successfully completed ${org.total_projects} projects across ${org.active_years.length} years of GSoC participation (${org.first_year}-${org.last_year}).`,
+      answer: `${org.name} has successfully completed ${org.total_projects} projects across ${selectedYears.length} years of GSoC participation (${org.first_year}-${org.last_year}).`,
     },
     {
       question: `How can I contribute to ${org.name}?`,
@@ -131,15 +138,15 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
         ? `Visit their contribution guide to learn how to get started. Start with small contributions, engage with the community, and build familiarity before GSoC applications open.`
         : `Start by exploring their GitHub repository, reading documentation, and joining their communication channels. Look for "good first issue" labels to begin contributing.`,
     },
-  ], [org]);
+  ], [org, selectedYears.length]);
 
   // Prepare chart data
   const participationData = useMemo(() => {
-    return org.active_years.map(year => ({
+    return selectedYears.map(year => ({
       year: year.toString(),
       participated: 1,
     })).sort((a, b) => parseInt(a.year) - parseInt(b.year));
-  }, [org.active_years]);
+  }, [selectedYears]);
 
   const projectsData = useMemo(() => {
     if (!org.stats?.projects_by_year) return [];
@@ -232,6 +239,16 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
           <div className="lg:col-span-2 space-y-10">
             {/* Organization Header */}
             <header className="space-y-6">
+              {withdrawnYears.length > 0 && (
+                <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3">
+                  <Text className="font-medium">
+                    Announced for GSoC {withdrawnYears.join(", ")}, then withdrawn from the official organization list.
+                  </Text>
+                  <Text variant="small" className="mt-1 text-muted-foreground">
+                    The historical listing is retained for accuracy; no withdrawal reason has been published here.
+                  </Text>
+                </div>
+              )}
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Logo */}
                 <div className="w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-sky-100 flex items-center justify-center shrink-0 border-2 border-sky-200 overflow-hidden shadow-sm">
@@ -334,7 +351,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                       variant="outline"
                       className="px-3 py-1.5 text-sm font-medium cursor-pointer hover:bg-accent transition-colors"
                     >
-                      {year}
+                      {year}{withdrawnYears.includes(year) ? " · Withdrawn" : ""}
                     </Badge>
                   </Link>
                 ))}

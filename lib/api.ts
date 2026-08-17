@@ -119,6 +119,7 @@ export interface Organization {
   first_year: number;
   last_year: number;
   active_years: number[];
+  withdrawn_years?: number[];
   stats?: unknown;
   years?: unknown;
   contact?: OrganizationContact;

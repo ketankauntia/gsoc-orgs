@@ -38,6 +38,13 @@ export interface OrganizationSnapshot {
   logo_url: string;
   project_count: number;
   is_first_time: boolean;
+  status?: "selected" | "withdrawn";
+}
+
+export interface YearlyOrganizationCounts {
+  announced: number;
+  participating: number;
+  withdrawn: number;
 }
 
 export interface ProjectSnapshot {
@@ -113,6 +120,7 @@ export interface YearlyPageData {
   description: string;
   published_at: string;
   finalized: boolean;
+  counts?: YearlyOrganizationCounts;
 
   metrics: YearlyMetrics;
   organizations: OrganizationSnapshot[];

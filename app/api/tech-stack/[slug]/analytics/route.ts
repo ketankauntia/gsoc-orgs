@@ -41,7 +41,7 @@ export async function GET(
     const years = [2020, 2021, 2022, 2023, 2024, 2025]
     const orgGrowthByYear = years.map(year => {
       const count = organizations.filter(org => 
-        org.active_years.includes(year)
+        org.active_years.includes(year) && !org.withdrawn_years.includes(year)
       ).length
       return { year, count }
     })
@@ -50,7 +50,7 @@ export async function GET(
     const projectsByYear = years.map(year => {
       let totalProjects = 0
       organizations.forEach(org => {
-        if (org.years && org.active_years.includes(year)) {
+        if (org.years && org.active_years.includes(year) && !org.withdrawn_years.includes(year)) {
           const yearKey = `year_${year}`
           const yearData = (org.years as Record<string, { num_projects?: number }>)[yearKey]
           if (yearData) {

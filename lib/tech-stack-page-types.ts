@@ -110,6 +110,7 @@ export interface TechOrgSnapshot {
   total_projects: number;
   is_currently_active: boolean;
   active_years: number[];
+  withdrawn_years?: number[];
 }
 
 // ============================================

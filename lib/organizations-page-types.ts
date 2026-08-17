@@ -30,6 +30,7 @@ export interface OrganizationsIndexData {
     logo_r2_url?: string | null;
     url: string;
     active_years: number[];
+    withdrawn_years?: number[];
     first_year: number;
     last_year: number;
     is_currently_active: boolean;
@@ -229,7 +230,7 @@ export function filterOrganizations(
   // Years filter
   if (filters.years && filters.years.length > 0) {
     filtered = filtered.filter(org =>
-      matchesSelection(filters.years!, year => org.active_years.includes(year), filters.yearsLogic)
+      matchesSelection(filters.years!, year => org.active_years.includes(year) && !org.withdrawn_years?.includes(year), filters.yearsLogic)
     );
   }
 

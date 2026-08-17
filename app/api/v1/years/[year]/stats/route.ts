@@ -40,6 +40,11 @@ export async function GET(
       .contains('active_years', [yearNum])
     if (error) throw error
 
+    const participatingOrganizations = (organizations ?? []).filter((org) => {
+      const withdrawnYears = jsonObject(org.source_payload).withdrawn_years
+      return !Array.isArray(withdrawnYears) || !withdrawnYears.includes(yearNum)
+    })
+
     // Aggregate stats for the year
     let totalProjects = 0
     let totalStudents = 0
@@ -49,7 +54,7 @@ export async function GET(
 
     const yearKey = `year_${yearNum}` as 'year_2016' | 'year_2017' | 'year_2018' | 'year_2019' | 'year_2020' | 'year_2021' | 'year_2022' | 'year_2023' | 'year_2024' | 'year_2025'
 
-    ;(organizations ?? []).forEach((org) => {
+    participatingOrganizations.forEach((org) => {
       const source = jsonObject(org.source_payload)
       const stats = jsonObject(source.stats)
       const projectsByYear = jsonObject(stats.projects_by_year)
@@ -105,11 +110,11 @@ export async function GET(
         data: {
           year: yearNum,
           overview: {
-            total_organizations: organizations?.length ?? 0,
+            total_organizations: participatingOrganizations.length,
             total_projects: totalProjects,
             total_students: totalStudents,
-            avg_projects_per_org: (organizations?.length ?? 0) > 0
-              ? Math.round((totalProjects / organizations!.length) * 100) / 100
+            avg_projects_per_org: participatingOrganizations.length > 0
+              ? Math.round((totalProjects / participatingOrganizations.length) * 100) / 100
               : 0,
           },
           categories: topCategories,

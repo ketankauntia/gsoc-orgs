@@ -9,11 +9,15 @@ export async function GET(request: NextRequest) {
     const page = Math.max(1, Number(params.get("page")) || 1);
     const limit = Math.min(100, Number(params.get("limit")) || 20);
     const q = params.get("q")?.slice(0, 80); const category = params.get("category"); const technology = params.get("technology"); const year = Number(params.get("year")); const active = params.get("active"); const sort = params.get("sort") ?? "name";
+    const includeWithdrawn = params.get("include_withdrawn") === "true";
     const admin = createAdminClient();
-    let query = admin.from("organizations").select("*", { count: "exact" }).range((page - 1) * limit, page * limit - 1);
+    let query = admin.from("organizations").select("*,organization_years!inner(year,selection_status,withdrawn_at)", { count: "exact" }).range((page - 1) * limit, page * limit - 1);
     if (q) query = query.or(`name.ilike.%${q.replaceAll("%", "")}%,description.ilike.%${q.replaceAll("%", "")}%`);
     if (category) query = query.eq("category", category);
-    if (Number.isFinite(year) && year > 0) query = query.contains("active_years", [year]);
+    if (Number.isFinite(year) && year > 0) {
+      query = query.eq("organization_years.year", year);
+      if (!includeWithdrawn) query = query.eq("organization_years.selection_status", "selected");
+    }
     if (active === "true" || active === "false") query = query.eq("is_currently_active", active === "true");
     if (technology) {
       const canonicalSlug = canonicalTechnology(technology).slug;

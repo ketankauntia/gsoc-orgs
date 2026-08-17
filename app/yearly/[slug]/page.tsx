@@ -110,6 +110,11 @@ export default async function YearlyPage({
   }
 
   const { year, metrics, organizations, charts, first_time_orgs, insights } = data;
+  const counts = data.counts ?? {
+    announced: metrics.total_organizations,
+    participating: metrics.total_organizations,
+    withdrawn: 0,
+  };
 
   // Determine page context
   const currentYear = new Date().getFullYear();
@@ -141,9 +146,9 @@ export default async function YearlyPage({
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <StatCard
-                label="Organizations"
-                value={metrics.total_organizations}
-                subtitle={`${metrics.returning_organizations} veterans`}
+                label="Participating Orgs"
+                value={counts.participating}
+                subtitle={counts.withdrawn > 0 ? `${counts.announced} announced · ${counts.withdrawn} withdrawn` : `${metrics.returning_organizations} veterans`}
               />
               <StatCard
                 label="New Orgs"
@@ -381,7 +386,8 @@ export default async function YearlyPage({
                     Organizations
                   </Heading>
                   <Text variant="muted" className="text-sm mt-1">
-                    All {metrics.total_organizations} organizations participating in GSoC {year}
+                    {counts.participating} participating of {counts.announced} announced
+                    {counts.withdrawn > 0 ? ` · ${counts.withdrawn} withdrawn after announcement` : ""}
                   </Text>
                 </div>
               </div>

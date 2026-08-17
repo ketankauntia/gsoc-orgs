@@ -22,7 +22,7 @@ export function AllOrganizationsSection({ organizations, year }: AllOrganization
       // Check if organization has data for this year
       // The API should already filter, but verify using active_years or year data
       if (org.active_years && Array.isArray(org.active_years)) {
-        return org.active_years.includes(yearNum);
+        return org.active_years.includes(yearNum) && !org.withdrawn_years?.includes(yearNum);
       }
       // Fallback: if active_years is not available, trust the API filtering
       // since the endpoint is year-specific

@@ -41,7 +41,7 @@ export function TopicPageClient({ topic }: TopicPageClientProps) {
     // Year filter
     if (selectedYear !== "all") {
       filtered = filtered.filter((org) =>
-        org.active_years.includes(selectedYear)
+        org.active_years.includes(selectedYear) && !org.withdrawn_years?.includes(selectedYear)
       );
     }
 

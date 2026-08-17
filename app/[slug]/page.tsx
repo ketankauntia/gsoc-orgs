@@ -243,7 +243,7 @@ function calculateHighestSelectionsByTech(
   const yearNum = parseInt(year, 10);
 
   organizations.forEach((org) => {
-    if (org.active_years.includes(yearNum)) {
+    if (org.active_years.includes(yearNum) && !org.withdrawn_years?.includes(yearNum)) {
       org.technologies.forEach((tech) => {
         const count = techMap.get(tech) || 0;
         techMap.set(tech, count + 1);
@@ -265,7 +265,7 @@ function calculateHighestSelectionsByOrg(
   const yearNum = parseInt(year, 10);
 
   return organizations
-    .filter((org) => org.active_years.includes(yearNum))
+    .filter((org) => org.active_years.includes(yearNum) && !org.withdrawn_years?.includes(yearNum))
     .map((org) => ({
       name: org.name,
       slug: org.slug,

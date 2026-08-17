@@ -117,5 +117,19 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
       { type: 'fix', text: 'Hardened archive caching, input normalization, upload validation, API failure handling, and saved-draft PDF restoration.' },
       { type: 'test', text: 'Added regression coverage for filtering, pagination, empty results, wildcard input, and technology aliases.' },
     ]
+  },
+  {
+    date: "Aug 17, 2026",
+    timeStamp: 20260817,
+    version: "v1.6.1",
+    title: "Withdrawn Organization History",
+    summary: "Reconciled the 2026 announcement with Google's current organization list while preserving the two withdrawn listings as historical records.",
+    prLinks: [],
+    changes: [
+      { type: 'feat', text: 'Added an append-only withdrawal ledger and per-year selected or withdrawn status across JSON and Supabase.' },
+      { type: 'fix', text: 'Separated 185 announced, 183 participating, and 2 withdrawn organizations in yearly pages, APIs, filters, and analytics.' },
+      { type: 'feat', text: 'Added clear withdrawn labels and notices without speculating about withdrawal reasons.' },
+      { type: 'test', text: 'Added drift, reinstatement, inactive-program, and unstable-slug regression coverage.' },
+    ]
   }
 ];
