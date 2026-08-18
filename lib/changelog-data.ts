@@ -11,7 +11,7 @@ export interface ChangelogEntry {
   }[],
 
 }
-export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
+const CHANGELOG_ENTRIES_UNSORTED: ChangelogEntry[] = [
   {
     date: "Jul 7, 2026",
     timeStamp: 20260707,
@@ -107,29 +107,37 @@ export const CHANGELOG_ENTRIES: ChangelogEntry[] = [
   {
     date: "Aug 17, 2026",
     timeStamp: 20260817,
-    version: "v1.6.0",
-    title: "Searchable Proposal Archive",
-    summary: "Turned the verified proposal library into a searchable index of every archived GSoC selection and streamlined contributor submissions into a guided two-step flow.",
+    version: "v1.5.1",
+    title: "Searchable Archive and Historical Accuracy",
+    summary: "Made every archived GSoC selection searchable, streamlined contributor submissions, and preserved withdrawn organizations without inflating current participation counts.",
     prLinks: [],
     changes: [
       { type: 'feat', text: 'Added public project search by year, organization, technology, and title with dynamic archive totals and paginated results.' },
       { type: 'feat', text: 'Added claim links that preserve the selected project through sign-in and prefill the contributor submission wizard.' },
       { type: 'fix', text: 'Hardened archive caching, input normalization, upload validation, API failure handling, and saved-draft PDF restoration.' },
       { type: 'test', text: 'Added regression coverage for filtering, pagination, empty results, wildcard input, and technology aliases.' },
-    ]
-  },
-  {
-    date: "Aug 17, 2026",
-    timeStamp: 20260817,
-    version: "v1.6.1",
-    title: "Withdrawn Organization History",
-    summary: "Reconciled the 2026 announcement with Google's current organization list while preserving the two withdrawn listings as historical records.",
-    prLinks: [],
-    changes: [
       { type: 'feat', text: 'Added an append-only withdrawal ledger and per-year selected or withdrawn status across JSON and Supabase.' },
       { type: 'fix', text: 'Separated 185 announced, 183 participating, and 2 withdrawn organizations in yearly pages, APIs, filters, and analytics.' },
       { type: 'feat', text: 'Added clear withdrawn labels and notices without speculating about withdrawal reasons.' },
       { type: 'test', text: 'Added drift, reinstatement, inactive-program, and unstable-slug regression coverage.' },
     ]
+  },
+  {
+    date: "Aug 18, 2026",
+    timeStamp: 20260818,
+    version: "v1.5.2",
+    title: "Curated Proposals and Contributor Progress Blogs",
+    summary: "Added a secure administrator workflow for publishing contributor-authorized proposals and a public directory for selected students' project blogs.",
+    prLinks: [],
+    changes: [
+      { type: 'feat', text: 'Added administrator-only proposal imports tied to real archived contributors, with private permission records and validated PDF publication.' },
+      { type: 'feat', text: 'Added a curated contributor-blog directory with year and organization filters for following project progress.' },
+      { type: 'fix', text: 'Enforced administrator authorization on every content mutation endpoint independently of hidden navigation and UI controls.' },
+      { type: 'test', text: 'Added migration, validation, authorization-boundary, and public-projection regression coverage.' },
+    ]
   }
 ];
+
+export const CHANGELOG_ENTRIES = [...CHANGELOG_ENTRIES_UNSORTED].sort(
+  (left, right) => right.timeStamp - left.timeStamp || right.version.localeCompare(left.version, undefined, { numeric: true }),
+);

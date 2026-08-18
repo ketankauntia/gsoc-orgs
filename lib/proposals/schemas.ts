@@ -55,6 +55,20 @@ export const roleChangeSchema = z.object({
   enabled: z.boolean(),
 });
 
+export const adminProposalImportSchema = z.object({
+  contributorSlotId: z.string().uuid(),
+  displayName: z.string().trim().min(1).max(80),
+  rightsBasis: z.enum(["author_consent", "rights_holder_consent", "public_license"]),
+  permissionNote: z.string().trim().min(3).max(2000),
+  sourceUrl: httpUrl.max(2048).optional().nullable(),
+});
+
+export const contributorBlogSchema = z.object({
+  contributorSlotId: z.string().uuid(),
+  title: z.string().trim().min(1).max(100).optional().nullable(),
+  url: httpUrl.max(2048),
+});
+
 export function zodFields(error: z.ZodError) {
   return Object.fromEntries(error.issues.map((issue) => [issue.path.join(".") || "request", issue.message]));
 }

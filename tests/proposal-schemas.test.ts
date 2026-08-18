@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { moderationDecisionSchema, profileUpdateSchema, uploadRequestSchema } from "../lib/proposals/schemas";
+import { adminProposalImportSchema, contributorBlogSchema, moderationDecisionSchema, profileUpdateSchema, uploadRequestSchema } from "../lib/proposals/schemas";
 
 describe("proposal input contracts", () => {
   it("accepts only PDF uploads of at most 10 MiB", () => {
@@ -18,5 +18,20 @@ describe("proposal input contracts", () => {
     expect(moderationDecisionSchema.safeParse({ decision: "approve" }).success).toBe(true);
     expect(moderationDecisionSchema.safeParse({ decision: "reject" }).success).toBe(false);
     expect(moderationDecisionSchema.safeParse({ decision: "reject", reason: "Identity could not be verified" }).success).toBe(true);
+  });
+
+  it("requires a rights basis and private permission record for admin imports", () => {
+    const valid = { contributorSlotId: "11111111-1111-4111-8111-111111111111", displayName: "Contributor", rightsBasis: "author_consent", permissionNote: "Consent received by email." };
+    expect(adminProposalImportSchema.safeParse(valid).success).toBe(true);
+    expect(adminProposalImportSchema.safeParse({ ...valid, permissionNote: "" }).success).toBe(false);
+    expect(adminProposalImportSchema.safeParse({ ...valid, rightsBasis: "found_online" }).success).toBe(false);
+    expect(adminProposalImportSchema.safeParse({ ...valid, sourceUrl: "file:///private/message" }).success).toBe(false);
+  });
+
+  it("accepts only bounded HTTP(S) contributor blog links", () => {
+    const contributorSlotId = "11111111-1111-4111-8111-111111111111";
+    expect(contributorBlogSchema.safeParse({ contributorSlotId, title: "Weekly updates", url: "https://example.org/gsoc" }).success).toBe(true);
+    expect(contributorBlogSchema.safeParse({ contributorSlotId, url: "javascript:alert(1)" }).success).toBe(false);
+    expect(contributorBlogSchema.safeParse({ contributorSlotId, title: "x".repeat(101), url: "https://example.org" }).success).toBe(false);
   });
 });

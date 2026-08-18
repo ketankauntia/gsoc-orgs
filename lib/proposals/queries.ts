@@ -23,6 +23,7 @@ export type PublicProposal = {
   profile_links: PublicProfileLink[];
   approved_at: string;
   license_code: "CC-BY-4.0";
+  submission_source: "contributor" | "admin_curated";
 };
 
 export const getApprovedProposals = cache(async (filters?: { q?: string; year?: number; organization?: string; project?: string; page?: number }) => {

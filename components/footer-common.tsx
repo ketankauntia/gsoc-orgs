@@ -34,6 +34,7 @@ export const FOOTER_NAVIGATION_ITEMS = [
     description: "Prepare and participate",
     items: [
       { title: "Proposals", href: "/proposals" },
+      { title: "Contributor blogs", href: "/contributor-blogs" },
       { title: "Blog", href: "/blog" },
       { title: "Past editions", href: "/yearly" },
       { title: "About", href: "/about" },

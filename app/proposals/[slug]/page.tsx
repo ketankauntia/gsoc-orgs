@@ -59,11 +59,11 @@ export default async function ProposalDetailPage({ params }: { params: Promise<{
                 {proposal.profile_links.length ? <div className="mt-5 flex flex-wrap gap-2">{proposal.profile_links.map((link) => <a key={`${link.platform}-${link.url}`} href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs hover:bg-accent">{link.label || link.platform}<ExternalLink className="size-3" /></a>)}</div> : null}
               </div>
               <div className="rounded-2xl border bg-card p-6">
-                <div className="flex items-center gap-2 font-medium"><ShieldCheck className="size-5 text-primary" /> Verified submission</div>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">A moderator matched this submission to the archived contributor record. It is not an official endorsement by Google or the organization.</p>
+                <div className="flex items-center gap-2 font-medium"><ShieldCheck className="size-5 text-primary" /> {proposal.submission_source === "admin_curated" ? "Curated with permission" : "Verified submission"}</div>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{proposal.submission_source === "admin_curated" ? "An administrator matched this document to the archived contributor record and recorded a publication-rights basis before publishing it." : "A moderator matched this submission to the archived contributor record."} It is not an official endorsement by Google or the organization.</p>
                 <Button asChild className="mt-5 w-full"><a href={`/api/v2/proposals/${proposal.id}/pdf`}><Download className="size-4" /> Open PDF</a></Button>
               </div>
-              <p className="px-2 text-xs leading-5 text-muted-foreground">The contributor retains copyright and publishes this document under <a className="underline" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">CC BY 4.0</a>.</p>
+              <p className="px-2 text-xs leading-5 text-muted-foreground">The rights holder retains copyright and publishes this document under <a className="underline" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">CC BY 4.0</a>.</p>
             </aside>
           </div>
         </article>

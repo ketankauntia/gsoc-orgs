@@ -17,6 +17,7 @@ const menuItems = [
   { name: "GSoC 2026", href: CURRENT_EDITION, badge: "Current" },
   { name: "Organizations", href: "/organizations" },
   { name: "Proposals", href: "/proposals" },
+  { name: "Progress blogs", href: "/contributor-blogs" },
   { name: "Blog", href: "/blog" },
   { name: "Past editions", href: "/yearly" },
 ];

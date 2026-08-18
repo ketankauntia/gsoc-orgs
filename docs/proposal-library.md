@@ -14,6 +14,12 @@ The proposal library lets past Google Summer of Code contributors share an accep
 
 Claims, draft PDFs, evidence, moderator notes, and rejected submissions are never part of the public API or public pages.
 
+## Administrator-curated imports
+
+An administrator may publish a proposal received directly from a contributor without creating or impersonating a contributor account. The import must reference a real archived contributor slot, record a publication-rights basis and private permission note, and pass the same PDF validation and private-storage pipeline as a contributor upload.
+
+Only the public attribution, archived project context, license, and validated document appear in the public projection. Permission notes, source records, and administrator identities remain private. Both the admin page and every mutation API re-check the administrator role on the server; hiding the controls is not treated as authorization.
+
 ## Architecture
 
 - **Supabase Auth** handles Google OAuth sessions using the server-side PKCE flow.
@@ -23,6 +29,7 @@ Claims, draft PDFs, evidence, moderator notes, and rejected submissions are neve
 - **A Cloudflare Worker gateway** accepts only short-lived HMAC-signed operations for narrowly allowed object paths. The browser never receives a bucket credential.
 - **Next.js route handlers** authenticate users, validate PDF content, record consent, and expose separate contributor, moderator, and public APIs.
 - **`approved_proposals`** is the deliberately limited public database projection. It contains approved proposal metadata and visibility-filtered profile data, but not email, evidence, private notes, storage keys, or moderation history.
+- **`published_contributor_blogs`** exposes only curated public URLs and archived project context. Raw curator records remain inaccessible to anonymous and authenticated clients.
 
 ## Proposal lifecycle
 
@@ -61,6 +68,8 @@ Only the validated bytes are promoted to the proposal path. Abandoned quarantine
 ## Public and protected APIs
 
 Public catalog and approved-proposal reads live under `/api/v2`. Account routes use `/api/v2/me`, and moderation/role routes use `/api/v2/admin`. Protected routes use private, non-cacheable responses and independently verify the current Supabase user.
+
+The administrator proposal-import and contributor-blog endpoints also live under `/api/v2/admin`, so the same operations can be driven by the admin UI or an authenticated HTTP client. They do not accept a shared admin key or expose service credentials.
 
 The older unversioned and `/api/v1` catalog endpoints remain available for compatibility. Their response shapes are derived from the canonical Supabase catalog after the legacy data migration.
 
@@ -119,6 +128,7 @@ Environment-dependent OAuth, RLS ownership, upload CORS, and contributor-versus-
 ## Key implementation locations
 
 - `supabase/migrations/202608120001_proposal_library.sql` — schema, RLS, database functions, and public projection.
+- `supabase/migrations/202608180001_admin_imports_and_contributor_blogs.sql` — isolated curated imports, contributor blog links, role checks, audit writes, and public projections.
 - `app/api/v2/` — public, contributor, and moderator APIs.
 - `lib/proposals/` — proposal validation and query contracts.
 - `lib/r2.ts` — server-side signed storage operations and PDF validation.
