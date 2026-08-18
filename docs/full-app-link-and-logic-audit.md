@@ -4,7 +4,7 @@ Last updated: 2026-08-18
 
 ## Objective
 
-Audit the shipped application end to end, fix broken internal links and route failures, verify that normalized organizations, technologies, and topics are used consistently, and identify broken external destinations before they affect search quality. The sitemap is intentionally excluded because it will be regenerated and resubmitted after the application fixes are complete.
+Audit the shipped application end to end, fix broken internal links and route failures, verify that normalized organizations, technologies, and topics are used consistently, identify broken external destinations before they affect search quality, and then regenerate the sitemap from the repaired canonical route model.
 
 ## Current status
 
@@ -15,10 +15,10 @@ The internal production application is clean. A production build was crawled acr
 - 1 returned an expected HTTP 307 authentication redirect
 - 0 internal 4xx responses
 - 0 internal 5xx responses
-- 18,503 unique rendered external URLs collected for the external audit
-- 18,503/18,503 rendered external destinations verified
+- 18,503 absolute non-local URLs collected and verified in the original external audit (including canonical production-origin URLs emitted while crawling localhost)
 - 117 confirmed HTTP 404/410 destinations removed from rendered data
 - 128 stored occurrences removed across 87 generated/raw data files, plus one normalized Slack URL with two occurrences
+- 4,116 actual third-party URLs reported by the corrected final production crawler
 
 ## Root cause
 
@@ -90,14 +90,27 @@ The fix enforces canonical identity at data generation, URL construction, route 
 
 ## Verification evidence
 
+### Sitemap regeneration
+
+- Replaced the monolithic build-time sitemap with `/sitemap.xml`, an index of 17 focused child sitemaps.
+- Added separate maps for static pages, organizations, cycles, eligible taxonomies, articles, proposals, and every project cycle from 2016 through 2026.
+- Included every canonical project-detail URL instead of only project listing pages.
+- Limited taxonomy entries to data-rich archives with at least 3 organizations or 10 projects, and marked thin taxonomy pages and blog tag archives `noindex,follow`.
+- Removed generated `priority` and `changefreq` hints and omitted `lastmod` when no defensible content timestamp exists.
+- Made proposal sitemap generation degrade to the proposal landing page if Supabase is unavailable.
+- Simplified `robots.txt` to allow crawling and advertise the canonical sitemap index.
+- Added `scripts/audit-sitemaps.ts`, which checks every sitemap entry for canonical form, uniqueness, and HTTP 200 behavior.
+
+The generated index contains 14,397 canonical URLs across 17 child sitemaps. The local production audit fetched every entry successfully with zero duplicates, query strings, fragments, origin mismatches, or non-200 responses.
+
 ### Automated checks
 
-- Vitest: 13 test files passed, 58 tests passed
+- Vitest: 14 test files passed, 61 tests passed
 - ESLint: passed
 - Main TypeScript project: passed
 - Cloudflare TypeScript project: passed
 - Next.js production build: passed
-- Static generation: 1,016 pages generated
+- Static generation: 1,033 pages generated
 
 ### Production route crawl
 
@@ -119,11 +132,11 @@ Latest clean result:
 
 The crawler initially found 520 production organization failures. Controlled retesting showed these were real bundling failures rather than bad slugs. The generated import registry fixed them, and the full crawl then completed with no failures.
 
-After removal of the confirmed dead external links, the final production crawl returned the same clean internal result and collected 18,386 external URLs. Comparison against the pre-cleanup set showed zero newly introduced URLs and zero URLs remaining from the 117-entry confirmed-dead inventory.
+After removal of the confirmed dead external links, the first final production crawl returned the same clean internal result and collected 18,386 absolute non-local URLs. Comparison against the pre-cleanup set showed zero newly introduced URLs and zero URLs remaining from the 117-entry confirmed-dead inventory. The crawler was subsequently corrected to recognize absolute links on the canonical production origin as internal when testing localhost; the final run reports 4,116 actual third-party URLs without changing its 15,108-route result.
 
 ## External-link audit results and methodology
 
-The completed network audit returned:
+The completed network audit returned the following results for the original 18,503-URL input. That input deliberately covered everything rendered as non-local during the localhost crawl, including absolute canonical links to the production site; the final crawler now separates those first-party canonical URLs from the 4,116 actual third-party destinations.
 
 ```json
 {
@@ -157,23 +170,24 @@ Only confirmed 404/410 responses should be treated as broken automatically. A bl
 ## Remaining work
 
 1. Perform interactive browser journeys if a browser runtime becomes available.
-2. Regenerate and resubmit the sitemap separately after the application changes are finalized.
-3. Commit, push, deploy, and run the production smoke matrix when publication is authorized.
+2. Deploy and run the production smoke matrix after publication.
+3. Submit the regenerated sitemap index in Google Search Console after the deployment is live.
 
 ## Known limitations and blockers
 
 - The in-app browser-control runtime reported no available browser instance. HTTP-level production crawling is exhaustive, but visual layout and click-driven browser journeys have not been performed.
 - External sites may block automated requests or become temporarily unavailable. Those results require classification and cannot safely be mass-rewritten.
-- The current changes are local and have not been committed or pushed.
+- Search Console submission must wait until the regenerated sitemap is deployed on the canonical domain.
 
 ## Files and safeguards added
 
 - `scripts/audit-internal-links.ts`
 - `scripts/audit-external-links.ts`
+- `scripts/audit-sitemaps.ts`
 - `scripts/generate-organization-imports.ts`
 - `scripts/normalize-organization-slugs.ts`
 - `scripts/normalize-project-organization-identities.ts`
 - `lib/generated/organization-imports.ts`
 - `tests/project-organization-links.test.ts`
 
-The code and data audit is complete locally. Publication and browser-based visual acceptance remain separate follow-up actions.
+The code, data, and sitemap audits are complete locally. Deployment, Search Console submission, and browser-based visual acceptance remain separate follow-up actions.

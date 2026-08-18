@@ -51,7 +51,7 @@ describe("administrator-curated content boundary", () => {
 
 describe("release order", () => {
   it("shows the current release first and preserves descending release dates", () => {
-    expect(CHANGELOG_ENTRIES.slice(0, 2).map((entry) => entry.version)).toEqual(["v1.5.3", "v1.5.2"]);
+    expect(CHANGELOG_ENTRIES.slice(0, 2).map((entry) => entry.version)).toEqual(["v1.5.4", "v1.5.3"]);
     expect(CHANGELOG_ENTRIES.every((entry, index) => index === 0 || CHANGELOG_ENTRIES[index - 1].timeStamp >= entry.timeStamp)).toBe(true);
   });
 });

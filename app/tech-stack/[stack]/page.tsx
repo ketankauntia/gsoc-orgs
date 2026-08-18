@@ -5,6 +5,8 @@ import {
 } from "@/lib/tech-stack-page-types";
 import { TechStackDetailClient } from "./tech-stack-detail-client";
 import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
+import { getFullUrl } from "@/lib/constants";
+import { isTaxonomyIndexEligible } from "@/lib/search-index-policy";
 
 // Static Generation - cache forever, NO dynamic behavior
 export const revalidate = false;
@@ -31,15 +33,20 @@ export async function generateMetadata({
   const data = await loadTechStackPageData(canonicalSlug);
 
   if (!data) {
-    return { title: "Technology Not Found" };
+    return { title: "Technology Not Found", robots: { index: false, follow: false } };
   }
+
+  const indexable = isTaxonomyIndexEligible(data.metrics.org_count, data.metrics.project_count);
 
   return {
     title: `${data.name} | GSoC Organizations`,
     description: `Explore ${data.metrics.org_count} Google Summer of Code organizations using ${data.name}. View projects, trends, and find opportunities.`,
+    robots: { index: indexable, follow: true },
+    alternates: { canonical: getFullUrl(`/tech-stack/${canonicalSlug}`) },
     openGraph: {
       title: `${data.name} | GSoC Organizations`,
       description: `Explore ${data.metrics.org_count} organizations using ${data.name} in Google Summer of Code`,
+      url: getFullUrl(`/tech-stack/${canonicalSlug}`),
     },
   };
 }

@@ -54,17 +54,22 @@ export const getApprovedProposal = cache(async (slug: string) => {
 
 export const getApprovedProposalSitemapEntries = cache(async () => {
   if (!isSupabaseAdminConfigured()) return [] as Pick<PublicProposal, "public_slug" | "approved_at">[];
-  const entries: Pick<PublicProposal, "public_slug" | "approved_at">[] = [];
-  const pageSize = 1000;
-  for (let from = 0; ; from += pageSize) {
-    const { data, error } = await createAdminClient()
-      .from("approved_proposals")
-      .select("public_slug,approved_at")
-      .order("public_slug")
-      .range(from, from + pageSize - 1);
-    if (error) throw error;
-    entries.push(...((data ?? []) as Pick<PublicProposal, "public_slug" | "approved_at">[]));
-    if (!data || data.length < pageSize) break;
+  try {
+    const entries: Pick<PublicProposal, "public_slug" | "approved_at">[] = [];
+    const pageSize = 1000;
+    for (let from = 0; ; from += pageSize) {
+      const { data, error } = await createAdminClient()
+        .from("approved_proposals")
+        .select("public_slug,approved_at")
+        .order("public_slug")
+        .range(from, from + pageSize - 1);
+      if (error) throw error;
+      entries.push(...((data ?? []) as Pick<PublicProposal, "public_slug" | "approved_at">[]));
+      if (!data || data.length < pageSize) break;
+    }
+    return entries;
+  } catch (error) {
+    console.error("[approved proposal sitemap] database unavailable", error);
+    return [] as Pick<PublicProposal, "public_slug" | "approved_at">[];
   }
-  return entries;
 });

@@ -2,6 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 
 const baseUrl = new URL(process.argv[2] ?? "http://127.0.0.1:3000");
+const canonicalOrigin = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.gsocorganizationsguide.com",
+).origin;
 const concurrency = Number.parseInt(process.argv[3] ?? "8", 10);
 const externalOutputPath = process.argv[4];
 const dataRoot = path.join(process.cwd(), "new-api-details");
@@ -66,6 +69,14 @@ function discoverLinks(html: string, source: URL) {
     if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) continue;
     try {
       const url = new URL(href, source);
+      if (url.origin === canonicalOrigin) {
+        const candidate = `${url.pathname}${url.search}`;
+        if (!seeds.has(candidate)) {
+          seeds.add(candidate);
+          paths.push(candidate);
+        }
+        continue;
+      }
       if (url.origin !== baseUrl.origin) {
         if (url.protocol === "http:" || url.protocol === "https:") {
           externalLinks.set(url.href, source.pathname);
