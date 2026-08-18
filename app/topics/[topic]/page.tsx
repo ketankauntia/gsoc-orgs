@@ -4,6 +4,7 @@ import { getFullUrl } from "@/lib/constants";
 import { loadTopicData } from "@/lib/topics-page-types";
 import { TopicPageClient } from "./topic-client";
 import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
+import { isTaxonomyIndexEligible } from "@/lib/search-index-policy";
 
 /**
  * Topic Detail Page
@@ -30,20 +31,23 @@ export async function generateMetadata({
   if (!topicData) {
     return {
       title: "Topic Not Found - GSoC Organizations Guide",
+      robots: { index: false, follow: false },
     };
   }
+
+  const indexable = isTaxonomyIndexEligible(topicData.organizationCount, topicData.projectCount);
 
   return {
     title: `${topicData.name} - GSoC Topics - Google Summer of Code Organizations Guide`,
     description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}. Find projects, opportunities, and resources.`,
     robots: {
-      index: true,
+      index: indexable,
       follow: true,
     },
     openGraph: {
       title: `${topicData.name} - GSoC Topics`,
       description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
-      url: getFullUrl(`/topics/${topicSlug}`),
+      url: getFullUrl(`/topics/${canonicalSlug}`),
       type: "website",
       siteName: "GSoC Organizations Guide",
     },
@@ -53,7 +57,7 @@ export async function generateMetadata({
       description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
     },
     alternates: {
-      canonical: getFullUrl(`/topics/${topicSlug}`),
+      canonical: getFullUrl(`/topics/${canonicalSlug}`),
     },
   };
 }

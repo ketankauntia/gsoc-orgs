@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/generate-organization-imports.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -24,6 +25,7 @@
     "postinstall": "node -e \"console.log('Supabase client requires no code generation')\"",
     "prepare": "husky",
     "generate:organizations": "tsx scripts/import-supabase-catalog.ts",
+    "generate:organization-imports": "node scripts/generate-organization-imports.mjs",
     "generate:tech-stack": "tsx scripts/regenerate-tech-topics-from-json.ts",
     "generate:topics": "tsx scripts/regenerate-tech-topics-from-json.ts",
     "gsoc:fetch": "npx tsx scripts/fetch-year-data.ts",
@@ -33,7 +35,7 @@
     "gsoc:transform": "npx tsx scripts/transform-year-organizations.ts",
     "gsoc:yearly": "npx tsx scripts/generate-yearly-page-from-json.ts",
     "gsoc:regen": "npx tsx scripts/regenerate-tech-topics-from-json.ts",
-    "gsoc:sync": "npx tsx scripts/fetch-year-data.ts && npx tsx scripts/transform-year-organizations.ts && npx tsx scripts/generate-yearly-page-from-json.ts && npx tsx scripts/regenerate-tech-topics-from-json.ts"
+    "gsoc:sync": "npx tsx scripts/fetch-year-data.ts && npx tsx scripts/transform-year-organizations.ts && npx tsx scripts/generate-yearly-page-from-json.ts && npx tsx scripts/regenerate-tech-topics-from-json.ts && npm run generate:organization-imports"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.11.1",

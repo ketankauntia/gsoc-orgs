@@ -13,6 +13,21 @@ export interface ChangelogEntry {
 }
 const CHANGELOG_ENTRIES_UNSORTED: ChangelogEntry[] = [
   {
+    date: "Aug 18, 2026",
+    timeStamp: 20260818,
+    version: "v1.5.4",
+    title: "Canonical Routes and Crawl-Safe Sitemaps",
+    summary: "Completed an application-wide link audit, repaired historical archive routing, and rebuilt sitemap discovery around canonical, index-eligible pages and truthful update dates.",
+    prLinks: [],
+    changes: [
+      { type: 'fix', text: 'Canonicalized technology, topic, organization, and historical project links and replaced the mock project-detail route with real archive data.' },
+      { type: 'fix', text: 'Removed 117 confirmed dead external destinations after checking all 18,503 rendered external URLs.' },
+      { type: 'feat', text: 'Added a sitemap index with separate static, organization, cycle, project-year, taxonomy, article, and proposal sitemaps.' },
+      { type: 'fix', text: 'Added every canonical project detail, excluded thin taxonomy and tag archives, and replaced build-time timestamps with material source dates or no lastmod value.' },
+      { type: 'test', text: 'Added exhaustive production route, sitemap, canonical identity, and dead-link regression checks.' },
+    ]
+  },
+  {
     date: "Jul 7, 2026",
     timeStamp: 20260707,
     version: "v1.2.0",

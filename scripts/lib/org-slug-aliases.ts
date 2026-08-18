@@ -15,6 +15,7 @@
 export const SLUG_ALIASES: Record<string, string> = {
   ceph: "ceph-foundation",
   "openms-inc": "openms",
+  weaviate: "semi-technologies",
 };
 
 /** Normalized-name key used for suffix-tolerant matching. */

@@ -10,6 +10,22 @@
 
 import { Organization, PaginatedResponse } from './api';
 import { canonicalTechnology, canonicalTopic } from './vocabulary/catalog';
+import { organizationLoaders } from './generated/organization-imports';
+
+const ORGANIZATION_SLUG_ALIASES: Record<string, string> = {
+  'forschungszentrum-jülich': 'forschungszentrum-julich',
+  'institut-für-angewandte-informatik-infai-ev': 'institut-fur-angewandte-informatik-infai-ev',
+};
+
+export function canonicalOrganizationSlug(slug: string): string {
+  let decoded = slug;
+  try {
+    decoded = decodeURIComponent(slug);
+  } catch {
+    // Keep malformed values unchanged so they fall through to a normal 404.
+  }
+  return ORGANIZATION_SLUG_ALIASES[decoded] ?? decoded;
+}
 
 // ============================================
 // Index Page Schema (/organizations)
@@ -117,8 +133,12 @@ export async function loadOrganizationsIndexData(): Promise<OrganizationsIndexDa
  * @returns {Promise<Organization | null>} The organization data, or null if not found
  */
 export async function loadOrganizationData(slug: string): Promise<Organization | null> {
+  const canonicalSlug = canonicalOrganizationSlug(slug);
+  const loader = organizationLoaders[canonicalSlug];
+  if (!loader) return null;
+
   try {
-    const data = await import(`@/new-api-details/organizations/${slug}.json`);
+    const data = await loader();
     return data.default as Organization;
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {

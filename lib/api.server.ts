@@ -37,7 +37,12 @@ export async function apiFetchServer<T = unknown>(
     let errorMessage = res.statusText;
     try {
       const errorData = await res.json();
-      errorMessage = errorData?.error || errorMessage;
+      const apiError = errorData?.error;
+      errorMessage = typeof apiError === "string"
+        ? apiError
+        : typeof apiError?.message === "string"
+          ? apiError.message
+          : errorMessage;
     } catch {
       // ignore
     }

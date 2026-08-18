@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Metadata } from "next";
 import { Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationClient } from "./organization-client";
 import { FooterSmall } from "@/components/footer-small";
 import { getFullUrl } from "@/lib/constants";
-import { loadOrganizationData } from "@/lib/organizations-page-types";
+import { canonicalOrganizationSlug, loadOrganizationData } from "@/lib/organizations-page-types";
 
 /**
  * Organization Detail Page
@@ -85,7 +85,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const org = await getOrganization(slug);
+  const canonicalSlug = canonicalOrganizationSlug(slug);
+  const org = await getOrganization(canonicalSlug);
 
   if (!org) {
     return {
@@ -103,7 +104,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${org.name} - GSoC Organizations Guide`,
       description: org.description || `Learn about ${org.name} and their Google Summer of Code projects.`,
-      url: getFullUrl(`/organizations/${slug}`),
+      url: getFullUrl(`/organizations/${canonicalSlug}`),
       type: "website",
       siteName: "GSoC Organizations Guide",
       images: org.img_r2_url ? [org.img_r2_url] : [],
@@ -115,7 +116,7 @@ export async function generateMetadata({
       images: org.img_r2_url ? [org.img_r2_url] : [],
     },
     alternates: {
-      canonical: getFullUrl(`/organizations/${slug}`),
+      canonical: getFullUrl(`/organizations/${canonicalSlug}`),
     },
   };
 }
@@ -126,7 +127,9 @@ export default async function OrganizationDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const org = await getOrganization(slug);
+  const canonicalSlug = canonicalOrganizationSlug(slug);
+  if (canonicalSlug !== slug) redirect(`/organizations/${canonicalSlug}`);
+  const org = await getOrganization(canonicalSlug);
 
   if (!org) {
     notFound();

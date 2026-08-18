@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ChevronUp, Code } from "lucide-react";
 import { Button, Badge, Grid, Text } from "@/components/ui";
+import { technologyHref } from "@/lib/vocabulary/catalog";
 
 interface Organization {
   slug: string;
@@ -161,7 +162,7 @@ export function ExpandableTechStacks({
             org.techStack.includes(tech)
           ).length;
           return (
-            <Link key={tech} href={`/tech-stack/${tech.toLowerCase()}`}>
+            <Link key={tech} href={technologyHref(tech)}>
               <Button variant="outline" size="sm" className="group">
                 <Code className="w-4 h-4 mr-2 group-hover:text-primary transition-colors" />
                 {tech}

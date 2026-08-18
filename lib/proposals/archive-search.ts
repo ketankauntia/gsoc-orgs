@@ -11,6 +11,9 @@ import {
   type ArchiveQueryInput,
 } from "@/lib/proposals/archive-search-core";
 import { groupTechnologies, type TechnologyGroup } from "@/lib/vocabulary/technology";
+import { canonicalTechnology } from "@/lib/vocabulary/catalog";
+import { loadOrganizationsIndexData, loadOrganizationsMetadata } from "@/lib/organizations-page-types";
+import { getAvailableProjectYears, loadProjectsYearData } from "@/lib/projects-page-types";
 
 /**
  * The public, sign-in-free half of the proposal library: search the archived
@@ -127,7 +130,47 @@ const getCachedArchiveFacets = unstable_cache(loadArchiveFacets, ["proposal-arch
   tags: ["proposal-archive-facets"],
 });
 
-export const getArchiveFacets = cache(getCachedArchiveFacets);
+async function loadStaticArchiveFacets(): Promise<ArchiveFacets> {
+  const years = [...getAvailableProjectYears()].sort((a, b) => b - a);
+  const [index, metadata, ...projectDocuments] = await Promise.all([
+    loadOrganizationsIndexData(),
+    loadOrganizationsMetadata(),
+    ...years.map(loadProjectsYearData),
+  ]);
+  if (!index || !metadata) return EMPTY_FACETS;
+
+  const technologies = groupTechnologies(metadata.technologies.map((technology) => {
+    const canonical = canonicalTechnology(technology.name);
+    return { slug: canonical.slug, name: technology.name, orgCount: technology.count };
+  }));
+
+  return {
+    years,
+    organizations: index.organizations.map((organization) => ({
+      slug: organization.slug,
+      name: organization.name,
+      projectCount: organization.total_projects,
+      years: organization.active_years.filter((year) => !organization.withdrawn_years?.includes(year)),
+    })),
+    technologies,
+    totals: {
+      projects: projectDocuments.reduce((sum, document) => sum + (document?.metrics.total_projects ?? 0), 0),
+      organizations: index.total,
+      technologies: technologies.length,
+      firstYear: years.at(-1) ?? null,
+      lastYear: years[0] ?? null,
+    },
+  };
+}
+
+export const getArchiveFacets = cache(async () => {
+  try {
+    return await getCachedArchiveFacets();
+  } catch (error) {
+    console.error("[proposal archive facets] using static fallback", error);
+    return loadStaticArchiveFacets();
+  }
+});
 
 /**
  * Organizations tagged with a technology group.
@@ -175,7 +218,7 @@ export type ArchiveSearchResponse = {
   technologyOrganizations: number | null;
 };
 
-export async function searchArchive(query: ArchiveQuery): Promise<ArchiveSearchResponse> {
+async function searchArchiveFromDatabase(query: ArchiveQuery): Promise<ArchiveSearchResponse> {
   const normalized = normalizeArchiveQuery(query);
   const { page } = normalized;
   const empty: ArchiveSearchResponse = { data: [], total: 0, page, limit: PAGE_SIZE, technologyOrganizations: null };
@@ -254,4 +297,14 @@ export async function searchArchive(query: ArchiveQuery): Promise<ArchiveSearchR
     limit: PAGE_SIZE,
     technologyOrganizations: organizationSlugs?.length ?? null,
   };
+}
+
+export async function searchArchive(query: ArchiveQuery): Promise<ArchiveSearchResponse> {
+  try {
+    return await searchArchiveFromDatabase(query);
+  } catch (error) {
+    console.error("[proposal archive search] database unavailable", error);
+    const page = normalizeArchiveQuery(query).page;
+    return { data: [], total: 0, page, limit: PAGE_SIZE, technologyOrganizations: null };
+  }
 }

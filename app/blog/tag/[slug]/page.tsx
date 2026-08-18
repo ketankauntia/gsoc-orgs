@@ -26,6 +26,7 @@ export async function generateMetadata({
     title: `#${tag} — GSoC Organizations Blog`,
     description: `Articles tagged "${tag}" on the GSoC Organizations Blog.`,
     alternates: { canonical: `/blog/tag/${slug}` },
+    robots: { index: false, follow: true },
   };
 }
 
