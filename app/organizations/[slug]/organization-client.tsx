@@ -38,6 +38,7 @@ import { ProjectsChart } from "./charts/projects-chart";
 import { LanguagesChart } from "./charts/languages-chart";
 import { DifficultyChart } from "./charts/difficulty-chart";
 import { ProjectCard } from "@/components/project-card";
+import { technologyHref, topicHref } from "@/lib/vocabulary/catalog";
 
 // Extended organization type with stats
 interface OrganizationWithStats extends Organization {
@@ -366,7 +367,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {visibleTechnologies.map((tech) => (
-                    <Link href={`/tech-stack/${encodeURIComponent(tech.toLowerCase())}`} key={tech} prefetch={true}>
+                    <Link href={technologyHref(tech)} key={tech} prefetch={true}>
                       <Badge 
                         variant="secondary" 
                         className="px-3 py-1.5 text-sm cursor-pointer hover:bg-secondary/80 transition-colors"
@@ -403,7 +404,7 @@ export function OrganizationClient({ organization: org }: OrganizationClientProp
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {visibleTopics.map((topic) => (
-                    <Link href={`/topics/${encodeURIComponent(topic.toLowerCase().replace(/\s+/g, '-'))}`} key={topic} prefetch={true}>
+                    <Link href={topicHref(topic)} key={topic} prefetch={true}>
                       <Badge 
                         variant="outline" 
                         className="px-3 py-1.5 text-sm cursor-pointer hover:bg-accent transition-colors"

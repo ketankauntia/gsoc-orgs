@@ -30,14 +30,19 @@ export const getApprovedProposals = cache(async (filters?: { q?: string; year?: 
   const page = Math.max(1, filters?.page ?? 1);
   const limit = 24;
   if (!isSupabaseAdminConfigured()) return { data: [] as PublicProposal[], total: 0, page, limit };
-  let query = createAdminClient().from("approved_proposals").select("*", { count: "exact" }).order("approved_at", { ascending: false }).range((page - 1) * limit, page * limit - 1);
-  if (filters?.q) query = query.ilike("project_title", `%${filters.q.replaceAll("%", "").slice(0, 80)}%`);
-  if (filters?.year) query = query.eq("year", filters.year);
-  if (filters?.organization) query = query.eq("organization_slug", filters.organization);
-  if (filters?.project) query = query.eq("project_external_id", filters.project);
-  const { data, error, count } = await query;
-  if (error) throw error;
-  return { data: (data ?? []) as PublicProposal[], total: count ?? 0, page, limit };
+  try {
+    let query = createAdminClient().from("approved_proposals").select("*", { count: "exact" }).order("approved_at", { ascending: false }).range((page - 1) * limit, page * limit - 1);
+    if (filters?.q) query = query.ilike("project_title", `%${filters.q.replaceAll("%", "").slice(0, 80)}%`);
+    if (filters?.year) query = query.eq("year", filters.year);
+    if (filters?.organization) query = query.eq("organization_slug", filters.organization);
+    if (filters?.project) query = query.eq("project_external_id", filters.project);
+    const { data, error, count } = await query;
+    if (error) throw error;
+    return { data: (data ?? []) as PublicProposal[], total: count ?? 0, page, limit };
+  } catch (error) {
+    console.error("[approved proposals] database unavailable", error);
+    return { data: [] as PublicProposal[], total: 0, page, limit };
+  }
 });
 
 export const getApprovedProposal = cache(async (slug: string) => {

@@ -47,6 +47,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const validSlugs = new Set(getAvailableProjectYears().map((year) => `google-summer-of-code-${year}`));
+  if (!validSlugs.has(slug)) return { title: "GSoC Year Not Found", robots: { index: false, follow: false } };
   
   // Load data from static JSON (cached at build time)
   const data = await loadYearlyPageData(slug);
@@ -101,6 +103,9 @@ export default async function YearlyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  const validSlugs = new Set(getAvailableProjectYears().map((year) => `google-summer-of-code-${year}`));
+  if (!validSlugs.has(slug)) notFound();
 
   // Load data from static JSON
   const data = await loadYearlyPageData(slug);

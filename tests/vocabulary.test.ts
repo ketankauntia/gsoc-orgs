@@ -9,6 +9,8 @@ import {
   canonicalSlugForPath,
   canonicalTechnology,
   canonicalTopic,
+  technologyHref,
+  topicHref,
 } from "../lib/vocabulary/catalog";
 
 describe("catalog vocabulary", () => {
@@ -37,6 +39,17 @@ describe("catalog vocabulary", () => {
     expect(canonicalSlugForPath("technology", "node-js")).toBe("nodejs");
     expect(canonicalSlugForPath("technology", "vuejs")).toBe("vue");
     expect(canonicalSlugForPath("topic", "realtime")).toBe("real-time");
+    expect(canonicalSlugForPath("technology", "text%20mining")).toBe("text-mining");
+    expect(canonicalSlugForPath("technology", "c%2B%2B")).toBe("cpp");
+    expect(canonicalSlugForPath("topic", "bio%2Fneuro-image-processing")).toBe("bio-neuro-image-processing");
+  });
+
+  it("builds taxonomy links from canonical slugs rather than display labels", () => {
+    expect(technologyHref("VueJS")).toBe("/tech-stack/vue");
+    expect(technologyHref("text mining")).toBe("/tech-stack/text-mining");
+    expect(technologyHref("c++")).toBe("/tech-stack/cpp");
+    expect(topicHref("bio/neuro image processing")).toBe("/topics/bio-neuro-image-processing");
+    expect(topicHref("AI/ML")).toBe("/topics/ai-ml");
   });
 
   it("does not assign icons from incidental substrings", () => {
@@ -86,6 +99,26 @@ describe("catalog vocabulary", () => {
 
     expect(() => assertNoVocabularySlugCollisions("technology", organizations.flatMap((org) => org.technologies ?? []))).not.toThrow();
     expect(() => assertNoVocabularySlugCollisions("topic", organizations.flatMap((org) => org.topics ?? []))).not.toThrow();
+  });
+
+  it("resolves every organization taxonomy label to a generated page", () => {
+    const organizations = JSON.parse(fs.readFileSync(
+      path.join(process.cwd(), "new-api-details", "organizations", "index.json"),
+      "utf8",
+    )) as { organizations: Array<{ technologies?: string[]; topics?: string[] }> };
+    const techDirectory = path.join(process.cwd(), "new-api-details", "tech-stack");
+    const topicDirectory = path.join(process.cwd(), "new-api-details", "topics");
+
+    for (const organization of organizations.organizations) {
+      for (const technology of organization.technologies ?? []) {
+        const slug = technologyHref(technology).slice("/tech-stack/".length);
+        expect(fs.existsSync(path.join(techDirectory, `${slug}.json`)), technology).toBe(true);
+      }
+      for (const topic of organization.topics ?? []) {
+        const slug = topicHref(topic).slice("/topics/".length);
+        expect(fs.existsSync(path.join(topicDirectory, `${slug}.json`)), topic).toBe(true);
+      }
+    }
   });
 
   it("publishes corrected distinct counts and removes retired duplicates", () => {

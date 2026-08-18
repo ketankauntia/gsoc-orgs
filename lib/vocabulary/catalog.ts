@@ -184,6 +184,14 @@ export function canonicalTopic(rawValue: string): CanonicalVocabularyValue {
   return canonicalizeVocabulary("topic", rawValue);
 }
 
+export function technologyHref(rawValue: string): string {
+  return `/tech-stack/${canonicalTechnology(rawValue).slug}`;
+}
+
+export function topicHref(rawValue: string): string {
+  return `/topics/${canonicalTopic(rawValue).slug}`;
+}
+
 export function vocabularyDefinitions(kind: VocabularyKind): readonly VocabularyDefinition[] {
   return DEFINITIONS[kind];
 }
@@ -227,12 +235,28 @@ export function buildVocabularyGroups(kind: VocabularyKind, rawValues: Iterable<
 }
 
 export function canonicalSlugForPath(kind: VocabularyKind, pathSlug: string): string | null {
-  const normalizedPath = slugify(pathSlug);
+  let decodedPath = pathSlug;
+  try {
+    decodedPath = decodeURIComponent(pathSlug);
+  } catch {
+    // Leave malformed percent-encoding untouched so it resolves to a safe slug
+    // or reaches the normal not-found path instead of crashing the request.
+  }
+
+  const exactAlias = LOOKUPS[kind].get(vocabularyAliasKey(decodedPath));
+  if (exactAlias) return exactAlias.slug;
+
+  const normalizedPath = slugify(decodedPath);
   for (const item of DEFINITIONS[kind]) {
-    if (item.slug === pathSlug) return item.slug;
+    if (item.slug === decodedPath) return item.slug;
     if (item.aliases.some((alias) => slugify(alias) === normalizedPath)) return item.slug;
   }
-  return null;
+
+  try {
+    return canonicalizeVocabulary(kind, decodedPath).slug;
+  } catch {
+    return null;
+  }
 }
 
 export function assertNoVocabularySlugCollisions(kind: VocabularyKind, rawValues: Iterable<string>): void {

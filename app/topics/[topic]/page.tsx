@@ -43,7 +43,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${topicData.name} - GSoC Topics`,
       description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
-      url: getFullUrl(`/topics/${topicSlug}`),
+      url: getFullUrl(`/topics/${canonicalSlug}`),
       type: "website",
       siteName: "GSoC Organizations Guide",
     },
@@ -53,7 +53,7 @@ export async function generateMetadata({
       description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
     },
     alternates: {
-      canonical: getFullUrl(`/topics/${topicSlug}`),
+      canonical: getFullUrl(`/topics/${canonicalSlug}`),
     },
   };
 }

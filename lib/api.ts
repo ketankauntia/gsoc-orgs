@@ -43,7 +43,12 @@ export async function apiFetch<T = unknown>(
     let errorMessage = res.statusText;
     try {
       const errorData = await res.json();
-      errorMessage = errorData.error || errorMessage;
+      const apiError = errorData?.error;
+      errorMessage = typeof apiError === 'string'
+        ? apiError
+        : typeof apiError?.message === 'string'
+          ? apiError.message
+          : errorMessage;
     } catch {
       // If JSON parsing fails, use statusText
     }

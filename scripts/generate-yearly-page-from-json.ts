@@ -16,6 +16,7 @@
 import fs from "fs";
 import path from "path";
 import { canonicalTechnology } from "../lib/vocabulary/catalog";
+import { SLUG_ALIASES } from "./lib/org-slug-aliases";
 
 // ---------------------------------------------------------------------------
 // CLI args
@@ -79,7 +80,7 @@ async function main() {
     stats: {
       projects_by_year?: Record<string, number | null>;
     };
-    years: Record<string, { num_projects?: number; status?: "selected" | "withdrawn" } | null>;
+    years: Record<string, { num_projects?: number; projects_url?: string; status?: "selected" | "withdrawn" } | null>;
   }
 
   const fullOrgs: FullOrg[] = yearOrgs.map((o: { slug: string }) => {
@@ -123,7 +124,27 @@ async function main() {
   const projectPayload: ProjectsPayload | null = fs.existsSync(PROJECTS_FILE)
     ? JSON.parse(fs.readFileSync(PROJECTS_FILE, "utf-8"))
     : null;
-  const projects = projectPayload?.projects ?? [];
+  const organizationBySlug = new Map(fullOrgs.map((organization) => [organization.slug, organization]));
+  const organizationByArchiveSlug = new Map<string, FullOrg>();
+  for (const organization of fullOrgs) {
+    for (const year of Object.values(organization.years ?? {})) {
+      const archiveSlug = year?.projects_url?.match(/\/organizations\/([^/]+)\/?$/)?.[1];
+      if (archiveSlug) organizationByArchiveSlug.set(archiveSlug, organization);
+    }
+  }
+  for (const [alias, canonicalSlug] of Object.entries(SLUG_ALIASES)) {
+    const organization = organizationBySlug.get(canonicalSlug);
+    if (organization) organizationByArchiveSlug.set(alias, organization);
+  }
+
+  const projects = (projectPayload?.projects ?? []).map((project) => {
+    if (organizationBySlug.has(project.org_slug)) return project;
+    const organization = organizationByArchiveSlug.get(project.org_slug);
+    if (!organization) {
+      throw new Error(`Unable to resolve project organization slug "${project.org_slug}" for ${YEAR}`);
+    }
+    return { ...project, org_slug: organization.slug };
+  });
   const projectCountsByOrg = new Map<string, number>();
   projects.forEach((project) => {
     projectCountsByOrg.set(project.org_slug, (projectCountsByOrg.get(project.org_slug) ?? 0) + 1);

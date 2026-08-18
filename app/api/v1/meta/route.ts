@@ -12,7 +12,7 @@ export async function GET() {
       data: {
         api_version: 'v1',
         description: 'GSoC Organizations Public API',
-        documentation_url: 'https://github.com/yourusername/gsoc-orgs',
+        documentation_url: 'https://github.com/ketankauntia/gsoc-orgs',
         base_url: '/api/v1',
         status: 'stable',
         features: {
@@ -151,8 +151,8 @@ export async function GET() {
           health: 'no-cache',
         },
         contact: {
-          github: 'https://github.com/yourusername/gsoc-orgs',
-          issues: 'https://github.com/yourusername/gsoc-orgs/issues',
+          github: 'https://github.com/ketankauntia/gsoc-orgs',
+          issues: 'https://github.com/ketankauntia/gsoc-orgs/issues',
         },
       },
       meta: {
