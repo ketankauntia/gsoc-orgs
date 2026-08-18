@@ -46,9 +46,9 @@
     "Database Engines",
     "SQL Features"
   ],
-  "total_projects": 39,
+  "total_projects": 47,
   "stats": {
-    "avg_projects_per_appeared_year": 3.9,
+    "avg_projects_per_appeared_year": 4.27,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 1,
@@ -60,7 +60,7 @@
       "year_2023": 5,
       "year_2024": 4,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 5,
@@ -73,9 +73,9 @@
       "year_2023": 5,
       "year_2024": 4,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 39
+    "total_students": 47
   },
   "years": {
     "year_2016": {
@@ -833,7 +833,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/mariadb"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/mariadb",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "MariaDB's HNSW vector index currently builds graphs sequentially, one row at a time. This creates two problems: ALTER TABLE on large tables stalls for hours because every vector insertion runs a CPU-intensive graph traversal on a single thread, and OPTIMIZE TABLE provides no quality improvement because it blindly rebuilds with the same hardcoded parameters, also leaving dead edges from deleted rows in the graph.\nThis proposal addresses both by hooking into MariaDB's bulk insert API to defer all graph construction until after the base table is fully populated, then building the graph in parallel across multiple worker threads. Since OPTIMIZE TABLE already falls back to a table rebuild internally, both operations share the same unified path. The result is significantly faster index construction through parallelization, and meaningfully better graph quality through configurable rebuild parameters, with no changes to the normal single-row insert path.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_iGtC9OQN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iGtC9OQN",
+          "proposal_id": "4Fv0LDtq",
+          "short_description": "MariaDB's HNSW vector index currently builds graphs sequentially, one row at a time. This creates two problems: ALTER TABLE on large tables stalls...",
+          "slug": "parallel-hnsw-index-construction-for-mariadb-vector-search",
+          "status": null,
+          "student_name": "ahmdssh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Parallel HNSW Index Construction for MariaDB Vector Search"
+        },
+        {
+          "code_url": null,
+          "description": "MariaDB currently implements the JSON data type as an alias for LONGTEXT rather than as a distinct type, causing JSON columns to be misreported in schema introspection, client metadata, and the wire protocol. This breaks ORM frameworks such as Ruby on Rails ActiveRecord, which cannot identify the column as JSON and silently corrupts data. It also puts MariaDB out of compliance with the SQL:2016 standard.\nThis project implements JSON as a fully distinct type in MariaDB's type system without changing storage so that JSON columns are correctly identified and reported at every layer: schema commands, the Information Schema, wire protocol metadata, and implicit validation.\nDeliverables include correct SHOW COLUMNS and SHOW CREATE TABLE output, accurate INFORMATION_SCHEMA reporting, proper wire protocol type codes, implicit JSON validation on write, correct JSON function return types, and a full MTR test suite covering all changes.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_sdzsSCYy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sdzsSCYy",
+          "proposal_id": "eajX5UiN",
+          "short_description": "MariaDB currently implements the JSON data type as an alias for LONGTEXT rather than as a distinct type, causing JSON columns to be misreported in...",
+          "slug": "implement-a-distinct-data-type-for-json",
+          "status": null,
+          "student_name": "Hadeer Ramadan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement a distinct data type for JSON"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to resolve significant performance bottlenecks in MariaDB’s INFORMATION_SCHEMA when dealing with a high number of databases or tables. Currently, many INFORMATION_SCHEMA queries require the creation of internal temporary tables and expensive filesystem scans.\n\nThe proposal focuses on two major optimizations:\n\nMDEV-31342: Implementing a mechanism to bypass temporary table creation for simple queries, allowing results to be streamed directly to the client.\n\nMDEV-31535: Optimizing the directory scanning process by leveraging the in-memory privilege cache to filter database/table visibility, thereby reducing redundant and slow I/O operations.\n\nCombined, these changes will drastically improve the responsiveness of metadata queries in large-scale MariaDB deployments.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_oDTq1At7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/oDTq1At7",
+          "proposal_id": "JGpZdvhe",
+          "short_description": "This project aims to resolve significant performance bottlenecks in MariaDB’s INFORMATION_SCHEMA when dealing with a high number of databases or...",
+          "slug": "optimize-information-schema-queries-mdev-31342-mdev-31535",
+          "status": null,
+          "student_name": "Itzanway",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimize INFORMATION_SCHEMA Queries (MDEV-31342 & MDEV-31535)"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement the ANY_VALUE() and GROUPING() functions in MariaDB, addressing longstanding gaps in compatibility with MySQL 8.0 and modern SQL standards. Currently, the absence of these functions limits MariaDB’s usability in applications that rely on advanced GROUP BY semantics, particularly when migrating from MySQL or working with rollup queries.\n\nTo solve this, I will extend MariaDB’s SQL parser and execution engine to support both functions. For ANY_VALUE(), I will implement a new aggregate function that allows safe selection of non-aggregated columns under ONLY_FULL_GROUP_BY. For GROUPING(), I will introduce a function that distinguishes between NULL values originating from rollup aggregation and those present in the underlying data, by tracking rollup state during query execution.\n\nThe primary deliverables of this project include fully functional implementations of ANY_VALUE() and GROUPING() in MariaDB, comprehensive MTR test suites validating correctness and MySQL compatibility, and updated documentation describing their usage and behavior. The final outcome will improve MariaDB’s standards compliance and provide developers with essential tools for writing expressive and portable SQL queries.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_cWZE90p8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cWZE90p8",
+          "proposal_id": "G1XPOvUd",
+          "short_description": "This project aims to implement the ANY_VALUE() and GROUPING() functions in MariaDB, addressing longstanding gaps in compatibility with MySQL 8.0 and...",
+          "slug": "implementing-any-value-and-grouping-in-mariadb",
+          "status": null,
+          "student_name": "Jaeheon Shim",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing ANY_VALUE() and GROUPING() in MariaDB"
+        },
+        {
+          "code_url": null,
+          "description": "This project enhances MariaDB’s SQL engine by introducing native bitwise operations for binary and bit types and implementing the JSON MEMBER OF operator. Currently, bitwise operations are limited to 64-bit integers, restricting flexibility for large binary data, and JSON membership queries require complex workarounds.\n\nThe project will extend the Type_handler framework and Item expression system to support byte-wise binary operations and integrate MEMBER OF into the SQL parser and execution engine.\n\nDeliverables include a new Func_handler_bit_bin for binary operations, full implementation of Item_func_json_member_of, parser extensions, and comprehensive MTR test coverage. These improvements will increase SQL expressiveness, performance, and compatibility with modern database workloads.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_5pbc9jAx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/5pbc9jAx",
+          "proposal_id": "6W5Boxgb",
+          "short_description": "This project enhances MariaDB’s SQL engine by introducing native bitwise operations for binary and bit types and implementing the JSON MEMBER OF...",
+          "slug": "extending-mariadb-sql-capabilities-with-binary-bitwise-operations-and-json-membership-queries",
+          "status": null,
+          "student_name": "Mohd Jarir Noor Khan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending MariaDB SQL Capabilities with Binary Bitwise Operations and JSON Membership Queries"
+        },
+        {
+          "code_url": null,
+          "description": "Window functions in MariaDB are currently always materialized into temporary tables before producing any results, even for simple cases, like ranking with a limit. This prevents index usage, enforces unnecessary sorting, and introduces avoidable I/O overhead.\nFor hybrid search queries that combine vector and full-text search using Reciprocal Rank Fusion (RRF), this limitation forces both result sets to be fully computed before any top results can be returned, significantly impacting performance.\nThis project introduces a streaming execution path for window functions, allowing eligible queries to produce rows incrementally without materialization. Building on this, a dedicated execution node for RRF will merge vector and full-text search streams and return top results early, avoiding full computation of either source and significantly improving hybrid search efficiency.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_9jm92FIi",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9jm92FIi",
+          "proposal_id": "lNCXqpdm",
+          "short_description": "Window functions in MariaDB are currently always materialized into temporary tables before producing any results, even for simple cases, like ranking...",
+          "slug": "streaming-window-functions-and-optimization-of-rrf-queries",
+          "status": null,
+          "student_name": "Omar Gamal 10",
+          "student_profile": null,
+          "tags": [],
+          "title": "Streaming window functions and optimization of RRF queries."
+        },
+        {
+          "code_url": null,
+          "description": "With MDEV-34705, MariaDB introduced the ability to store binary logs inside InnoDB\ntablespace files ( .ibb ) instead of traditional flat sequential files. While this brings\nsignificant performance improvements, it also creates a compatibility challenge: legacy\nservers and tools cannot read the new format. This project will extend mariadb-binlog\nto read InnoDB-format binlogs and generate legacy-format binary log files as output,\nensuring backward compatibility for downgrades, migrations, and third-party tooling.\n\nDeliverables\n- Command line option to generate Legacy Binlog file from InnoDB based Binlog\n- Checksum support\n- Unit and Integration tests\n- Design documentation covering architecture, usage, and known limitations",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_w0j0wIbK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/w0j0wIbK",
+          "proposal_id": "BpzADmjG",
+          "short_description": "With MDEV-34705, MariaDB introduced the ability to store binary logs inside InnoDB tablespace files ( .ibb ) instead of traditional flat sequential...",
+          "slug": "mdev-37605-converting-innodb-based-binary-logs-to-legacy-format",
+          "status": null,
+          "student_name": "Tarun Wadhwa",
+          "student_profile": null,
+          "tags": [],
+          "title": "MDEV-37605 Converting InnoDB-Based Binary Logs to Legacy Format"
+        },
+        {
+          "code_url": null,
+          "description": "MariaDB's HNSW vector index searches the graph layer by layer, isolating each level's connections. This means denser lower-layer edges are invisible until a separate pass reaches them, and the purely flat alternative, which expands all layers unconditionally, wastes distance computations on unproductive regions, degrading performance.\n\nSolution: Implement VF-HNSW (Virtually Flattened HNSW), a new search mode for MariaDB's vector search engine. VF-HNSW searches all layers in a single pass with adaptive descent: for each candidate, it expands neighbors from the top layer downward, using sparse upper layers as cheap probes and stopping early when a layer fails to improve on the one above, avoiding expensive dense-layer expansion for candidates in unproductive regions.\n\nDeliverables:\n\nA vf_hnsw search mode in sql/vector_mhnsw.cc with adaptive descent, including correctness and regression tests.\nA benchmark report comparing hierarchical, flat, and VF-HNSW across ANN-Benchmarks datasets, with recommended defaults and tradeoff analysis.\nPer-query status variables expose upper-layer expansions attempted, layers skipped, and distance computations saved.",
+          "difficulty": null,
+          "id": "proj_mariadb_2026_Sm7YDGQ1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Sm7YDGQ1",
+          "proposal_id": "9Nrpqm6e",
+          "short_description": "MariaDB's HNSW vector index searches the graph layer by layer, isolating each level's connections. This means denser lower-layer edges are invisible...",
+          "slug": "one-pass-hnsw-search-for-mariadb-vector-search",
+          "status": null,
+          "student_name": "ZtuyingChan",
+          "student_profile": null,
+          "tags": [],
+          "title": "ONE-PASS HNSW SEARCH FOR MARIADB VECTOR SEARCH"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

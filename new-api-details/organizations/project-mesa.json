@@ -30,9 +30,9 @@
     "Generative Science",
     "simulation"
   ],
-  "total_projects": 7,
+  "total_projects": 10,
   "stats": {
-    "avg_projects_per_appeared_year": 3.5,
+    "avg_projects_per_appeared_year": 3.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 7
+    "total_students": 10
   },
   "years": {
     "year_2016": null,
@@ -221,7 +221,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/project-mesa"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/project-mesa",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project creates a strong, production-ready Behavioral Framework for Mesa by addressing the limits of hardcoded agent logic. Using iterative prototyping, comparing it to classic models like Sugarscape and Wolf-Sheep, and analyzing across different frameworks such as Agents.jl and GAMA, this initiative provides event-driven decision rules, lazy-evaluated states, and constraint patterns.",
+          "difficulty": null,
+          "id": "proj_project-mesa_2026_ZDJYIXEz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZDJYIXEz",
+          "proposal_id": "r8f1kjYf",
+          "short_description": "This project creates a strong, production-ready Behavioral Framework for Mesa by addressing the limits of hardcoded agent logic. Using iterative...",
+          "slug": "evaluating-and-enhancing-mesa-s-behavioral-framework-support",
+          "status": null,
+          "student_name": "codebreaker",
+          "student_profile": null,
+          "tags": [],
+          "title": "Evaluating and Enhancing Mesa's Behavioral Framework Support"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to design and implement a canonical meta-agent architecture for Mesa. The project addresses the current gap between Mesa’s experimental meta-agent support and the needs of users who want to model overlapping group structures such as households, workplaces, alliances, and teams.\n\nThe work will focus on building a single canonical backend for representing overlapping typed memberships, along with a clean Mesa-facing API for creating groups, updating memberships, handling lifecycle operations, and supporting group-level state aggregation.\n\nThe expected deliverables are a canonical backend, a user-facing API, lifecycle and aggregation support, tests for correctness and overlapping memberships, and documentation with example-driven validation. The result will be a stronger foundation for multi-level modeling in Mesa and a better base for future group-level extensions.",
+          "difficulty": null,
+          "id": "proj_project-mesa_2026_8Rhd5XVJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8Rhd5XVJ",
+          "proposal_id": "m9928TIR",
+          "short_description": "This proposal aims to design and implement a canonical meta-agent architecture for Mesa. The project addresses the current gap between Mesa’s...",
+          "slug": "hypergraph-based-meta-agents-for-mesa",
+          "status": null,
+          "student_name": "falloficaruss",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hypergraph-Based Meta-Agents for Mesa"
+        },
+        {
+          "code_url": null,
+          "description": "Mesa-Geo currently suffers from three structural problems that make it impractical at realistic geographic scale: a memory bottleneck from instantiating one Python object per raster pixel, a fractured coordinate system that silently conflates three incompatible reference frames, and a broken Cell/Agent abstraction that floods the agent registry with millions of ephemeral entries.\n\nThis project resolves all three problems through four focused changes: refactoring RasterLayer onto a PropertyLayer NumPy backend, decoupling Cell from mesa.Agent through a weakref identity cache, delivering a RasterCellCollection aggregation API with scipy.ndimage-powered spatial statistics, and overhauling the visualization pipeline to render rasters as a single ipyleaflet.ImageOverlay instead of millions of polygon draws.\n\nAll work is aligned with Mesa 4.0's unified reactive architecture, positioning Mesa-Geo as the geospatial pillar of Mesa's next generation rather than a legacy bolt-on.\nCore deliverables: PropertyLayer-backed RasterLayer, decoupled Cell with three explicit coordinate properties, RasterCellCollection aggregation API, SolaraViz-compatible make_geospace_component, a geo predator-prey benchmark model, and a full Mesa-Geo 3.x migration guide.\n\nStretch goals: H3 hexagonal grid support, a GeoSpace redesign proof-of-concept (#2585), and a Kalman filter temporal state estimation API for PropertyLayer.",
+          "difficulty": null,
+          "id": "proj_project-mesa_2026_yzrhCVTm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yzrhCVTm",
+          "proposal_id": "thO4n8zX",
+          "short_description": "Mesa-Geo currently suffers from three structural problems that make it impractical at realistic geographic scale: a memory bottleneck from...",
+          "slug": "modernizing-mesa-geo-propertylayer-refactor-cell-agent-decoupling-visualization-overhaul",
+          "status": null,
+          "student_name": "Tejasv Singh Hada",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing Mesa-Geo: PropertyLayer Refactor, Cell/Agent Decoupling & Visualization Overhaul"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

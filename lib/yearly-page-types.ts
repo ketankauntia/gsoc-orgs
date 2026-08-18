@@ -23,12 +23,12 @@ export interface YearlyMetrics {
   total_organizations: number;
   total_projects: number;
   total_participants: number;
-  total_mentors: number;
+  total_mentors: number | null;
   first_time_organizations: number;
   returning_organizations: number;
   countries_participated: number | null;
   avg_projects_per_org: number;
-  avg_mentors_per_org: number;
+  avg_mentors_per_org: number | null;
   avg_participants_per_org: number;
 }
 
@@ -54,6 +54,25 @@ export interface ProjectSnapshot {
   tech_stack: string[];
   mentors?: string[];
   contributor?: string;
+  abstract_short?: string;
+  description?: string;
+  project_url?: string;
+  code_url?: string | null;
+  proposal_id?: string;
+  topic_tags?: string[];
+  status?: string | null;
+}
+
+export interface ProjectDataCompleteness {
+  projects: boolean;
+  contributors: boolean;
+  descriptions: boolean;
+  mentors: boolean;
+  code_urls: boolean;
+  project_tags: boolean;
+  difficulty: boolean;
+  status: boolean;
+  timestamps: boolean;
 }
 
 export interface TechStackEntry {
@@ -69,7 +88,7 @@ export interface ParticipantsData {
 }
 
 export interface MentorsData {
-  total: number;
+  total: number | null;
 }
 
 export interface FirstTimeOrg {
@@ -120,6 +139,7 @@ export interface YearlyPageData {
   description: string;
   published_at: string;
   finalized: boolean;
+  data_completeness?: ProjectDataCompleteness;
   counts?: YearlyOrganizationCounts;
 
   metrics: YearlyMetrics;

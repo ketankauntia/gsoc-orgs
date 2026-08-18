@@ -55,9 +55,9 @@
     "unix",
     "bsd"
   ],
-  "total_projects": 38,
+  "total_projects": 43,
   "stats": {
-    "avg_projects_per_appeared_year": 3.8,
+    "avg_projects_per_appeared_year": 3.91,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": 3,
@@ -69,7 +69,7 @@
       "year_2023": 2,
       "year_2024": 4,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 4,
@@ -82,9 +82,9 @@
       "year_2023": 2,
       "year_2024": 4,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 38
+    "total_students": 43
   },
   "years": {
     "year_2016": {
@@ -833,7 +833,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-netbsd-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-netbsd-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to improve and stabilize the racoon2 IKE daemon in NetBSD, which currently suffers from issues related to Security Association handling, connection management, NAT traversal, and lack of IPv6 support.\n\nThe work will focus on fixing bugs, completing missing functionality, and ensuring correct behavior according to modern standards. Key improvements include reliable SA lifecycle management, proper connection termination, enhanced NAT-T support, IPv6 integration, and better configuration handling.\n\nThe final deliverables will include a more stable and secure IKE daemon, implemented fixes for core networking components, improved tooling, comprehensive testing, and clear documentation for maintainability and future development.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundation_2026_9duZ1dcx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9duZ1dcx",
+          "proposal_id": "XU5of8sI",
+          "short_description": "This project aims to improve and stabilize the racoon2 IKE daemon in NetBSD, which currently suffers from issues related to Security Association...",
+          "slug": "improving-and-stabilizing-the-racoon2-ike-daemon-in-netbsd",
+          "status": null,
+          "student_name": "Artem Belan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving and Stabilizing the racoon2 IKE Daemon in NetBSD"
+        },
+        {
+          "code_url": null,
+          "description": "Enlightenment desktop is a low on resources desktop environment without sacrificing on visuals.\nNetBSD support for this desktop has been left a few versions behind. \nThe aim of this project is to port the newest version of the desktop to pkgsrc and commit upstream portability fixes when necessary to ease future versions updates for NetBSD.\nThe project will also investigate and maybe port the Moksha desktop environment, which is  a fork of an older version of Enlightenment desktop before a major rewrite happened in the project.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundation_2026_mifwPqCq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mifwPqCq",
+          "proposal_id": "hsMtWh26",
+          "short_description": "Enlightenment desktop is a low on resources desktop environment without sacrificing on visuals. NetBSD support for this desktop has been left a few...",
+          "slug": "port-the-enlightenment-desktop-environment-to-netbsd",
+          "status": null,
+          "student_name": "Dimitris Gounaridis",
+          "student_profile": null,
+          "tags": [],
+          "title": "Port the Enlightenment desktop environment to NetBSD"
+        },
+        {
+          "code_url": null,
+          "description": "RAIDFrame is NetBSD’s kernel-level software RAID framework, providing RAID 0, 1, 4, 5, and 6 functionality. Its current implementation has limitations: n-way RAID 1 is limited, RAID 6 performance can be improved, and the system lacks robust scrubbing support to detect and correct silent data corruption. This project will implement n-way RAID 1, RAID scrubbing, and RAID 6 improvements to enhance reliability, performance, and maintainability.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundation_2026_5H1Um3ix",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/5H1Um3ix",
+          "proposal_id": "gU2tIkBF",
+          "short_description": "RAIDFrame is NetBSD’s kernel-level software RAID framework, providing RAID 0, 1, 4, 5, and 6 functionality. Its current implementation has...",
+          "slug": "improving-raidframe",
+          "status": null,
+          "student_name": "Emmanuel Nyarko",
+          "student_profile": null,
+          "tags": [],
+          "title": "improving RAIDframe"
+        },
+        {
+          "code_url": null,
+          "description": "NetBSD is capable of running binaries compiled for Linux through a thin in-kernel translation layer, the Compat Linux. \n\nCurrently, the Linux emulation is not covered by the NetBSD test suite, this project aims to target that area, focusing on testing the syscalls emulations.\nTo achieve this, the syscalls tests from the Linux Test Project will be used. They will be compiled for Linux and the resulting binaries will be run with the Compat Linux.\n\nThis project will focus on the most basic/used syscalls, this allows for a great coverage of use cases, and will make running more complex tests easier in the future.\n\nThe syscalls to be tested are:\nBasic IO: read, write, open, close, lseek, stat, fstat\nProcesses: fork, execve, exit, waitid, dup, dup2, pipe\nMemory: nmap, munmap, mprotect, brk\nSockets: socket, bind, connect, accept",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundation_2026_rqHXsGvy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/rqHXsGvy",
+          "proposal_id": "TO8jWqES",
+          "short_description": "NetBSD is capable of running binaries compiled for Linux through a thin in-kernel translation layer, the Compat Linux. Currently, the Linux emulation...",
+          "slug": "testing-compat-linux-syscall-testing",
+          "status": null,
+          "student_name": "Henrique Brito",
+          "student_profile": null,
+          "tags": [],
+          "title": "Testing Compat Linux: Syscall testing"
+        },
+        {
+          "code_url": null,
+          "description": "The Wi-Fi drivers has been changed to support newer protocols. So all existing wifi drivers needs to be changed and reworked to the new code base. Some of them are already converted and tested but some of them are not yet converted and tested on the real hardware. I am going to convert and test (otus -- Atheros USB IEEE 802.11a/g/n wireless network device (https://man.netbsd.org/otus.4)  on TP-Link TL-WN821N which is a compatible device for this driver.",
+          "difficulty": null,
+          "id": "proj_the-netbsd-foundation_2026_JnN2y1Pq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JnN2y1Pq",
+          "proposal_id": "EhuNjlIw",
+          "short_description": "The Wi-Fi drivers has been changed to support newer protocols. So all existing wifi drivers needs to be changed and reworked to the new code base....",
+          "slug": "convert-a-wi-fi-driver-to-the-new-wi-fi-stack",
+          "status": null,
+          "student_name": "Vishal@88",
+          "student_profile": null,
+          "tags": [],
+          "title": "Convert a Wi-Fi driver to the new Wi-Fi stack"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

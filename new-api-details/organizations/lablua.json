@@ -44,9 +44,9 @@
     "reactive languages",
     "statically-typed languages"
   ],
-  "total_projects": 43,
+  "total_projects": 47,
   "stats": {
-    "avg_projects_per_appeared_year": 5.38,
+    "avg_projects_per_appeared_year": 5.22,
     "projects_by_year": {
       "year_2016": 8,
       "year_2017": 6,
@@ -58,7 +58,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 8,
@@ -71,9 +71,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 43
+    "total_students": 47
   },
   "years": {
     "year_2016": {
@@ -923,7 +923,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/lablua"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/lablua",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "eBPF has become the dominant mechanism for extending the Linux kernel at runtime with verifier-enforced correctness guarantees, but those same verifier constraints limit expressiveness, making dynamic string matching, pattern-based rules, and hot-swappable logic difficult to encode directly. Lua, as a lightweight embeddable scripting layer, is well-suited to fill this gap.\nThis project proposes a generalized eBPF integration layer for Lunatik, built around a clear design principle: eBPF provides the verifier-checked kernel hooks (fast path), while Lua implements the dynamic policy logic that the verifier cannot express. Rather than implementing a single binding in isolation, the goal is reusable infrastructure that multiplies the value of all future bindings.\nConcretely, this project will deliver:\nluatc — a Lunatik binding for the Linux Traffic Control (TC) subsystem, modeled on luaxdp,\neBPF Maps Lua API — a general-purpose interface for eBPF maps within Lunatik, available to all subsystem bindings.\nluasched — a Lua binding for kernel scheduling hooks via eBPF\nExamples and documentation for all modules",
+          "difficulty": null,
+          "id": "proj_lablua_2026_IHF0HPaF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IHF0HPaF",
+          "proposal_id": "65zi1J1q",
+          "short_description": "eBPF has become the dominant mechanism for extending the Linux kernel at runtime with verifier-enforced correctness guarantees, but those same...",
+          "slug": "lunatik-ebpf-abstraction-layer-tc-scheduler-binding-and-ebpf-maps",
+          "status": null,
+          "student_name": "Ashwani Kumar Kamal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Lunatik eBPF Abstraction Layer: TC, Scheduler binding and eBPF Maps"
+        },
+        {
+          "code_url": null,
+          "description": "LuaSQL currently does not support prepared statements, which are widely used in modern database applications for performance, security, and efficient query execution. Without this feature, applications must repeatedly send full SQL queries to the database, which prevents query reuse and makes parameter binding difficult.\n\nThis project will design and implement a minimal and portable prepared statement API for LuaSQL. The API will introduce a new Statement object with methods such as prepare, bind, execute, and close. The design will follow LuaSQL’s existing conventions and ensure that the interface can be implemented consistently across different database drivers.\n\nThe implementation will focus on the Oracle OCI8 driver as the first complete backend. It will support parameter binding, statement reuse, cursor integration, and proper resource management. Special attention will be given to handling cursor lifecycles and ensuring consistent behaviour across different DBMS APIs.\n\nAt the end of the project, LuaSQL will include a working prepared statement API, a full OCI8 driver implementation, comprehensive tests, and updated documentation so that other drivers can implement the same interface in the future.",
+          "difficulty": null,
+          "id": "proj_lablua_2026_CybN2mc4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/CybN2mc4",
+          "proposal_id": "gtpi7LFa",
+          "short_description": "LuaSQL currently does not support prepared statements, which are widely used in modern database applications for performance, security, and efficient...",
+          "slug": "add-support-for-prepared-statements-in-luasql",
+          "status": null,
+          "student_name": "Damin Risho J V",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support for Prepared Statements in LuaSQL"
+        },
+        {
+          "code_url": null,
+          "description": "My work involves porting the game SNKRX from Lua to Atmos, a versatile programming language that is based on concurrency, event-driven programming. The project focuses on replacing imperative Lua patterns—such as manual flag management and nested callbacks—with the main functionalities of Atmos to simplify complex game logic. Specific tasks include refactoring the screen management system into a hierarchy of scoped tasks, converting global variables into linear sequences, and modularizing character ability chains. Throughout the process, the project will measure how these reactive and parallel features improve code maintenance compared to the original implementation.",
+          "difficulty": null,
+          "id": "proj_lablua_2026_tUI6CoLO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tUI6CoLO",
+          "proposal_id": "Dx9fgJu1",
+          "short_description": "My work involves porting the game SNKRX from Lua to Atmos, a versatile programming language that is based on concurrency, event-driven programming....",
+          "slug": "evaluating-structured-reactive-patterns-in-atmos",
+          "status": null,
+          "student_name": "kboltiz",
+          "student_profile": null,
+          "tags": [],
+          "title": "Evaluating Structured Reactive Patterns in Atmos"
+        },
+        {
+          "code_url": null,
+          "description": "The end goal of this GSoC project is to design a simple and portable process for building and installing Pallene on any of the three major operating systems (Windows, macOS, and Linux). The process will not depend on any external services or system-level packages. No dependencies other than Make and a C compiler for building and installing Pallene.\n\nDeliverables:\n\n- Simplified build process.\n- Simplified install process.\n- Eliminating of dependencies on external systems for building and installing Pallene.\n- Updated documentation with the new steps.\n- Updated CI script with separate steps for building, testing, linting, and installing Pallene on all three major operating systems.\n- Reduced dependencies.\n- Removal of old build scripts.",
+          "difficulty": null,
+          "id": "proj_lablua_2026_LJlrW9TY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/LJlrW9TY",
+          "proposal_id": "AbxBWDoL",
+          "short_description": "The end goal of this GSoC project is to design a simple and portable process for building and installing Pallene on any of the three major operating...",
+          "slug": "improve-the-pallene-installer",
+          "status": null,
+          "student_name": "njs0707",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve the Pallene Installer"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

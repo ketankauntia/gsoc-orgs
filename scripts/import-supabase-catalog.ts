@@ -26,7 +26,13 @@ type OrganizationJson = Record<string, unknown> & {
   }>;
   stats?: { projects_by_year?: Record<string, number> };
 };
-type ProjectJson = { project_id: string; project_title: string; contributor: string; mentors?: string[]; org_name: string; org_slug: string; year: number; tech_stack?: string[] };
+type ProjectJson = {
+  project_id: string; proposal_id?: string; project_title: string; project_abstract_short?: string;
+  project_description?: string; project_url?: string; project_code_url?: string | null;
+  contributor: string; contributor_profile_url?: string | null; mentors?: string[];
+  org_name: string; org_slug: string; year: number; tech_stack?: string[]; topic_tags?: string[];
+  difficulty?: string | null; status?: string | null; date_created?: string | null; date_updated?: string | null;
+};
 
 const root = process.cwd();
 const dryRun = process.argv.includes("--dry-run");
@@ -59,9 +65,10 @@ const orgDirectory = path.join(root, "new-api-details", "organizations");
 const orgFiles = fs.readdirSync(orgDirectory).filter((file) => file.endsWith(".json") && !["index.json", "metadata.json"].includes(file)).sort();
 const organizations: OrganizationJson[] = orgFiles.map((file) => JSON.parse(fs.readFileSync(path.join(orgDirectory, file), "utf8")));
 const projectDirectory = path.join(root, "new-api-details", "projects");
-const projectFiles = fs.readdirSync(projectDirectory).filter((file) => /^(201[6-9]|202[0-5])\.json$/.test(file)).sort();
+const projectFiles = fs.readdirSync(projectDirectory).filter((file) => /^20\d{2}\.json$/.test(file)).sort();
 const projects: ProjectJson[] = projectFiles.flatMap((file) => JSON.parse(fs.readFileSync(path.join(projectDirectory, file), "utf8")).projects ?? []);
 const organizationSlugByProjectId = new Map<string, string>();
+const sourceProjectById = new Map<string, Record<string, unknown>>();
 for (const org of organizations) {
   for (const year of Object.values(org.years ?? {})) {
     for (const project of year?.projects ?? []) {
@@ -72,6 +79,7 @@ for (const org of organizations) {
         throw new Error(`Project ${projectId} is associated with multiple organizations`);
       }
       organizationSlugByProjectId.set(projectId, org.slug);
+      sourceProjectById.set(projectId, project as Record<string, unknown>);
     }
   }
 }
@@ -115,23 +123,44 @@ try {
   await upsertMany(client, "organizations", organizationRows, "slug");
   const savedOrgs = await selectAll<{ id: string; slug: string }>(client, "organizations", "id,slug");
   const orgIds = new Map(savedOrgs.map((org) => [String(org.slug).toLowerCase(), org.id]));
+  const importedProjectCounts = new Map<string, number>();
+  projects.forEach((project) => {
+    const key = `${project.org_slug.toLowerCase()}:${project.year}`;
+    importedProjectCounts.set(key, (importedProjectCounts.get(key) ?? 0) + 1);
+  });
 
   const organizationYears = organizations.flatMap((org) => (org.active_years ?? org.years_appeared ?? []).map((year: number) => {
     const yearData = organizationYear(org, year);
     const withdrawn = org.withdrawn_years?.includes(year) ?? false;
-    return { organization_id: orgIds.get(String(org.slug).toLowerCase()), year, project_count: yearData?.num_projects ?? org.stats?.projects_by_year?.[`year_${year}`] ?? 0, archive_url: yearData?.projects_url ?? null, selection_status: withdrawn ? "withdrawn" : "selected", withdrawn_at: withdrawn ? yearData?.withdrawn_at ?? null : null, source_payload: yearData ?? {} };
+    return { organization_id: orgIds.get(String(org.slug).toLowerCase()), year, project_count: importedProjectCounts.get(`${String(org.slug).toLowerCase()}:${year}`) ?? yearData?.num_projects ?? org.stats?.projects_by_year?.[`year_${year}`] ?? 0, archive_url: yearData?.projects_url ?? null, selection_status: withdrawn ? "withdrawn" : "selected", withdrawn_at: withdrawn ? yearData?.withdrawn_at ?? null : null, source_payload: yearData ?? {} };
   })).filter((row) => row.organization_id);
   await upsertMany(client, "organization_years", organizationYears, "organization_id,year");
 
-  const projectRows = projects.map((project) => ({ external_id: project.project_id, organization_id: orgIds.get(organizationSlugByProjectId.get(project.project_id)!.toLowerCase()), year: project.year, title: project.project_title, abstract_short: null, source_payload: project })).filter((row) => row.organization_id);
+  const projectRows = projects.map((project) => {
+    const sourceProject = sourceProjectById.get(project.project_id) ?? {};
+    const organizationSlug = organizationSlugByProjectId.get(project.project_id) ?? project.org_slug;
+    return {
+      external_id: project.project_id,
+      organization_id: organizationSlug ? orgIds.get(organizationSlug.toLowerCase()) : undefined,
+      year: project.year,
+      title: project.project_title,
+      abstract_short: project.project_abstract_short ?? sourceProject.short_description ?? null,
+      info_html: project.project_description ?? sourceProject.description ?? null,
+      project_url: project.project_url ?? sourceProject.project_url ?? null,
+      code_url: project.project_code_url ?? sourceProject.code_url ?? null,
+      source_created_at: project.date_created ?? null,
+      source_updated_at: project.date_updated ?? null,
+      source_payload: { ...sourceProject, ...project },
+    };
+  }).filter((row) => row.organization_id);
   if (projectRows.length !== projects.length) throw new Error(`${projects.length - projectRows.length} projects reference unknown organizations`);
   await upsertMany(client, "projects", projectRows, "external_id");
   const savedProjects = await selectAll<{ id: string; external_id: string }>(client, "projects", "id,external_id");
   const projectIds = new Map(savedProjects.map((project) => [project.external_id, project.id]));
 
-  const contributorRows = projects.map((project) => ({ project_id: projectIds.get(project.project_id), archived_name: project.contributor.trim(), ordinal: 1 }));
+  const contributorRows = projects.map((project) => ({ project_id: projectIds.get(project.project_id), archived_name: project.contributor.trim(), archived_profile_url: project.contributor_profile_url ?? null, ordinal: 1 }));
   await upsertMany(client, "project_contributors", contributorRows, "project_id,ordinal");
-  const mentorRows = projects.flatMap((project) => (project.mentors ?? []).map((name, index) => ({ project_id: projectIds.get(project.project_id), name, ordinal: index + 1 })));
+  const mentorRows = projects.flatMap((project) => (project.mentors ?? []).map((name) => name.trim()).filter(Boolean).map((name, index) => ({ project_id: projectIds.get(project.project_id), name, ordinal: index + 1 })));
   await upsertMany(client, "project_mentors", mentorRows, "project_id,ordinal");
 
   const rawTechnologyValues = [

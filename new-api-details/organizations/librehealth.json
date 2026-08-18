@@ -46,9 +46,9 @@
     "mobile apps",
     "hfoss"
   ],
-  "total_projects": 31,
+  "total_projects": 35,
   "stats": {
-    "avg_projects_per_appeared_year": 4.43,
+    "avg_projects_per_appeared_year": 4.38,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 4,
@@ -60,7 +60,7 @@
       "year_2023": 5,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -73,9 +73,9 @@
       "year_2023": 5,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 29
+    "total_students": 35
   },
   "years": {
     "year_2016": null,
@@ -727,7 +727,88 @@
     },
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/librehealth",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "NeoRoo currently talks to DHIS2 through raw HTTP calls with no offline support, so if a nurse loses connectivity while entering baby data, that data is just gone. I'm proposing to integrate the d2 Android SDK as the primary sync engine and build a Flutter abstraction layer on top of it that works across both Android and iOS. The main deliverables are: a Pigeon-based platform bridge to d2 (Android) and DHIS2 REST API (iOS), an offline-first sync queue using Drift/SQLite with automatic retry, a server-wins conflict resolution system with a review log, real-time sync status indicators in the UI, background sync with battery optimization, push notifications for server-side changes, and a testing + monitoring toolkit. By the end, healthcare workers should be able to use NeoRoo reliably regardless of connectivity.",
+          "difficulty": null,
+          "id": "proj_librehealth_2026_uKqNeRLK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uKqNeRLK",
+          "proposal_id": "AQcp1iWF",
+          "short_description": "NeoRoo currently talks to DHIS2 through raw HTTP calls with no offline support, so if a nurse loses connectivity while entering baby data, that data...",
+          "slug": "enhancement-cross-platform-synchronization-for-neoroo-using-d2-library",
+          "status": null,
+          "student_name": "DevAnuragT",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancement Cross-Platform Synchronization for NeoRoo using d2 library"
+        },
+        {
+          "code_url": null,
+          "description": "LibreHealth EHR manages sensitive patient data but currently has no automated security testing or vulnerability detection integrated into its development workflow. This means security issues like SQL injection, cross-site scripting, and broken access control can go undetected during code reviews.\nThis project builds a four-layer automated security assessment pipeline integrated directly into the CI/CD workflow. The pipeline consists of a static analysis stage using PHPStan, Enlightn, and Composer Audit to catch code-level vulnerabilities; a dynamic testing stage using OWASP ZAP to simulate real-world attacks against a running EHR instance; a custom CVSS scoring engine that adjusts risk scores based on PHI sensitivity of the affected data; and a security gate that automatically blocks merge requests when high-severity vulnerabilities are detected.\nThe key deliverables are a Meaningful Use workflow security test suite covering 7 clinical workflows, a fully configured GitLab CI pipeline, an automated security gate with PHI-aware scoring, and per-build HTML, JSON, and CSV security reports for both humans and machines.",
+          "difficulty": null,
+          "id": "proj_librehealth_2026_B0KA82Dk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/B0KA82Dk",
+          "proposal_id": "o8vADi8M",
+          "short_description": "LibreHealth EHR manages sensitive patient data but currently has no automated security testing or vulnerability detection integrated into its...",
+          "slug": "automated-security-assessment-infrastructure-for-librehealth-ehr-workflows",
+          "status": null,
+          "student_name": "Kishan  Singh 07",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Security Assessment Infrastructure for LibreHealth EHR Workflows"
+        },
+        {
+          "code_url": null,
+          "description": "LibreHealth Toolkit has no visual way for non-developers to build \nhealthcare forms without writing code. I will build a drag-and-drop \nform designer using vanilla Web Components and Lit, consisting of a \nform-designer-canvas, component-palette, properties-panel, and \nFhirDataBinder. The designer will let users visually assemble FHIR-\nbound healthcare forms, export/import JSON schemas, and preview forms \nin real time , all without requiring the end user to write a single line of code.",
+          "difficulty": null,
+          "id": "proj_librehealth_2026_Q5yZv6TT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Q5yZv6TT",
+          "proposal_id": "tESWX0au",
+          "short_description": "LibreHealth Toolkit has no visual way for non-developers to build healthcare forms without writing code. I will build a drag-and-drop form designer...",
+          "slug": "web-component-based-drag-and-drop-form-designer-for-librehealth",
+          "status": null,
+          "student_name": "Sujal Tripathi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Web Component-based Drag-and-Drop Form Designer for LibreHealth"
+        },
+        {
+          "code_url": null,
+          "description": "The radiology Artifact Detection aims to create a system that identifies\nimage artifacts on user selected regions of interest. till now the\nradiologists are manually finding the artifacts . in this project i aim to\ncreate a system that helps the radiologists in this process .\nThe scanning reports will contain 100's of scripts and the traditional\nsegmentation models works on pre trained data and breakdowns when it\nencounters a rare or a completely new data.\n\nThe solution which i have planned is using an MedSAM model as it\nclassify the scanning reports based on the visual signatures of the user's\nselection. A 2.5D volumetric tracking in this once an artifact is identified\non Slice N, the algorithm prioritizes searching the exact spatial\ncoordinates on Slices N-1 and N+1 which reduces the requirement of\ncomputation power. planning of using the human in the loop method in\nwhich out of 10 if the 8 predictions are correct and 2 are wrong if the\nuser deletes 2 wrong predictions then the model learns that these two are\nwrong. i planed of using DICOM for datamanagement.\n\nThe structure: Frontend -> model -> datainput -> MedSAM model ->\nloss calculation and scoring -> datamanagement.",
+          "difficulty": null,
+          "id": "proj_librehealth_2026_hnKarRtf",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hnKarRtf",
+          "proposal_id": "iL6GWX9G",
+          "short_description": "The radiology Artifact Detection aims to create a system that identifies image artifacts on user selected regions of interest. till now the...",
+          "slug": "automated-artifact-detection-and-annotation",
+          "status": null,
+          "student_name": "Tejas S A",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Artifact Detection And Annotation"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

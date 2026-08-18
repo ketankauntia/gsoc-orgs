@@ -30,9 +30,9 @@
     "infrastructure",
     "software"
   ],
-  "total_projects": 8,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 4,
+    "avg_projects_per_appeared_year": 4.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 8
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -247,7 +247,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/data-for-the-common-good"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/data-for-the-common-good",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project proposes a configuration-driven web application that visualizes data completeness across GraphQL datasets using an interactive heatmap. The system dynamically fetches data from GraphQL endpoints, normalizes hierarchical structures, computes attribute-level density metrics, and renders them as a scalable heatmap using D3.js. It enables researchers and data managers to quickly identify sparsity patterns and data quality issues. The project includes a working prototype, supports dynamic schemas, and focuses on performance, usability, and extensibility.",
+          "difficulty": null,
+          "id": "proj_data-for-the-common-good_2026_SaPA4689",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SaPA4689",
+          "proposal_id": "MJOrwoCI",
+          "short_description": "This project proposes a configuration-driven web application that visualizes data completeness across GraphQL datasets using an interactive heatmap....",
+          "slug": "data-density-heatmap-application",
+          "status": null,
+          "student_name": "devSuryansh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Data Density Heatmap Application"
+        },
+        {
+          "code_url": null,
+          "description": "GEARBOx is a clinical decision-support tool that helps clinicians match patients to open clinical trials but its current interface forces users to scroll through all eligibility fields responding to as many questions as possible, creating friction and slowing down the matching process.\nThis project will transform that experience by replacing the long scrolling form with a typeahead search and dropdown with search, where clinicians can search and select only the fields they have data for. Additional enhancements include a category sidebar for direct section navigation across Demographics, Disease, Treatment & Exposure, Organ Function, and Biomarkers, and enhanced trial cards that surface blocking criteria at a glance — no extra clicks needed.",
+          "difficulty": null,
+          "id": "proj_data-for-the-common-good_2026_YdySpDSh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YdySpDSh",
+          "proposal_id": "i5mmtvXp",
+          "short_description": "GEARBOx is a clinical decision-support tool that helps clinicians match patients to open clinical trials but its current interface forces users to...",
+          "slug": "enhance-gearbox-trial-matching-page",
+          "status": null,
+          "student_name": "Manjula",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance GEARBOx trial matching page"
+        },
+        {
+          "code_url": null,
+          "description": "FHIR resources are powerful but difficult to explore in practice because their data is deeply nested, inconsistent across resource types, and hard to analyze in raw JSON form. This project will enhance the existing FHIR Resource Tabular Viewer to make healthcare data easier to search, filter, and interpret for researchers, clinicians, and developers. I will improve the transformation layer that maps nested FHIR structures into stable, readable table columns, strengthen exploration features (global search, column filters, sorting, column visibility, and row-level drill-down), and extend ingestion support to additional sources, specifically local files and Amazon S3.\n\nKey deliverables are: \n(1) an improved and more reliable FHIR-to-table transformation pipeline for common resource types\n(2) upgraded table exploration and visualization workflows\n(3) modular data-source support for local and S3-backed datasets\n(4) performance improvements for larger datasets\n(5) expanded automated tests and documentation. The final outcome will be a more scalable, maintainable, and user-friendly viewer for real-world FHIR data exploration.",
+          "difficulty": null,
+          "id": "proj_data-for-the-common-good_2026_JysaL9zK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JysaL9zK",
+          "proposal_id": "H712OOVD",
+          "short_description": "FHIR resources are powerful but difficult to explore in practice because their data is deeply nested, inconsistent across resource types, and hard to...",
+          "slug": "enhancing-a-fhir-resource-tabular-viewer-for-efficient-data-exploration",
+          "status": null,
+          "student_name": "O-Abdelaziz",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing a FHIR Resource Tabular Viewer for Efficient Data Exploration"
+        },
+        {
+          "code_url": null,
+          "description": "D4CG's SMART on FHIR application gives patients autonomy over their Electronic Health Records, enabling them to share records with researchers. The current backend supports only Epic's sandbox environment, discards OAuth tokens after exchange, and uses in-memory state management that cannot scale. \n\nThis project builds a production-ready multi-provider backend that supports Epic, Cerner, and any generic SMART-compliant provider. It replaces the current in-memory architecture with database-backed token persistence, adds enhanced provider search via the ONC Lantern registry, and delivers a tested, documented, and containerized API.",
+          "difficulty": null,
+          "id": "proj_data-for-the-common-good_2026_A7jQyiS2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/A7jQyiS2",
+          "proposal_id": "G1c3KByS",
+          "short_description": "D4CG's SMART on FHIR application gives patients autonomy over their Electronic Health Records, enabling them to share records with researchers. The...",
+          "slug": "building-a-multi-provider-smart-on-fhir-backend-for-patient-health-record-access",
+          "status": null,
+          "student_name": "Philip Narteh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building a Multi-Provider SMART on FHIR Backend for Patient Health Record Access"
+        },
+        {
+          "code_url": null,
+          "description": "This project enhances an existing LLM-powered chatbot for cohort discovery in the PCDC platform, enabling users to describe patient cohorts in natural language and automatically generate accurate GraphQL or custom queries. Building on last year’s system, the project focuses on improving both usability and reliability for complex query construction.\n\nThe proposed approach introduces a structured and modular architecture to improve query generation quality and system extensibility. It includes a context-aware preprocessing layer, schema-aware candidate retrieval, and a validated structured output pipeline to ensure correctness of generated queries. In addition, the chatbot will be extended into a multi-tool agent capable of handling different user intents, including general inquiry, documentation browsing, GraphQL generation and modification, and cohort-level summary and comparison.\n\nKey deliverables include: (1) an improved NL-to-GraphQL generation pipeline aligned with the PCDC data model; (2) a multi-tool interactive chatbot supporting intent routing and multi-turn interactions; (3) an evaluation framework for benchmarking query accuracy and performance; and (4) enhanced domain-aware term normalization. This project aims to provide a more robust and user-friendly interface for clinical researchers to explore cohort data efficiently.",
+          "difficulty": null,
+          "id": "proj_data-for-the-common-good_2026_MeX8xZIV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MeX8xZIV",
+          "proposal_id": "zOT7KZYq",
+          "short_description": "This project enhances an existing LLM-powered chatbot for cohort discovery in the PCDC platform, enabling users to describe patient cohorts in...",
+          "slug": "enhancing-a-chatbot-for-generating-graphql-and-custom-queries-for-cohort-descriptions",
+          "status": null,
+          "student_name": "YujingDong",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing a Chatbot for Generating GraphQL and Custom Queries for Cohort Descriptions"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

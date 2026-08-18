@@ -44,9 +44,9 @@
     "image processing",
     "images"
   ],
-  "total_projects": 49,
+  "total_projects": 52,
   "stats": {
-    "avg_projects_per_appeared_year": 4.9,
+    "avg_projects_per_appeared_year": 4.73,
     "projects_by_year": {
       "year_2016": 7,
       "year_2017": 6,
@@ -58,7 +58,7 @@
       "year_2023": 3,
       "year_2024": 7,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 7,
@@ -71,9 +71,9 @@
       "year_2023": 3,
       "year_2024": 7,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 47
+    "total_students": 52
   },
   "years": {
     "year_2016": {
@@ -1010,7 +1010,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ffmpeg"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/ffmpeg",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "FFmpeg already supports WHIP, allowing users to publish WebRTC streams using HTTP signaling. This project aims to extend WHIP support by adding support for more codecs, enabling multiple media streams, providing full ICE support, and other related improvements.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2026_M9U6VFDD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/M9U6VFDD",
+          "proposal_id": "JFYoIoqN",
+          "short_description": "FFmpeg already supports WHIP, allowing users to publish WebRTC streams using HTTP signaling. This project aims to extend WHIP support by adding...",
+          "slug": "improve-whip-webrtc-http-ingest-protocol-support",
+          "status": null,
+          "student_name": "Aditya Banavi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve WHIP(WebRTC-HTTP Ingest Protocol) Support"
+        },
+        {
+          "code_url": null,
+          "description": "FFmpeg can send WebRTC streams via WHIP but has no way to receive them. This project fills that gap by implementing a WHEP demuxer in libavformat, built on top of the existing WHIP code. The plan is to reuse SDP, ICE, DTLS, and SRTP as much as possible and just flip the direction. The end goal is making ffplay whep://server/stream work, with a clean patch series ready for ffmpeg-devel.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2026_JhXI42g2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JhXI42g2",
+          "proposal_id": "O9AnCUdi",
+          "short_description": "FFmpeg can send WebRTC streams via WHIP but has no way to receive them. This project fills that gap by implementing a WHEP demuxer in libavformat,...",
+          "slug": "webrtc-http-egress-protocol-whep",
+          "status": null,
+          "student_name": "Nariman Sayed",
+          "student_profile": null,
+          "tags": [],
+          "title": "WebRTC-HTTP Egress Protocol (WHEP)"
+        },
+        {
+          "code_url": null,
+          "description": "Building upon the recently merged asynchronous execution infrastructure in the FFmpeg LibTorch backend, this project targets two high-impact performance improvements: a production-grade zero-copy GPU pipeline and an optional batching engine for throughput scaling. The primary objective is to reduce host-device transfer overhead, improve real-time inference efficiency, and strengthen backend reliability for practical video processing workloads. The project deliverables include implementation, validation, and documentation aligned with FFmpeg quality and integration standards.",
+          "difficulty": null,
+          "id": "proj_ffmpeg_2026_PalUZxqz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PalUZxqz",
+          "proposal_id": "DsdwR2yA",
+          "short_description": "Building upon the recently merged asynchronous execution infrastructure in the FFmpeg LibTorch backend, this project targets two high-impact...",
+          "slug": "modernizing-libtorch-backend-with-zero-copy-and-batching",
+          "status": null,
+          "student_name": "Raja Rathour",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing LibTorch Backend with Zero Copy and Batching"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

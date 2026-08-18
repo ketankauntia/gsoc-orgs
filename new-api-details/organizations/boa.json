@@ -24,9 +24,9 @@
     "performance",
     "interpreters"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -38,7 +38,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -51,9 +51,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -66,7 +66,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/boa",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Boa is an embeddable JavaScript engine written in Rust. JavaScript is\ngarbage collected by specification, meaning the runtime is responsible for\nmanaging memory and reclaiming values once they become unreachable.\nBoa's current collector (boa_gc) works and is well tested, but it was designed\nfor correctness first, and now carries design debt that holds back performance\nand maintainability.\nExperimental redesign work is already underway in the separate Oscars\nrepository. This project focuses on evaluating that work, auditing the current\ndesign, improving the GC where needed (tracing strategy, allocation model,\nrooting) and integrating a production ready collector into Boa's runtime,\nbacked by stress tests, benchmarks and documentation covering the design\ndecisions and tradeoffs. Extensions may include incremental or generational\ncollection, GC aware VM optimizations and heap visualization tooling.",
+          "difficulty": null,
+          "id": "proj_boa_2026_3Td1SaQr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3Td1SaQr",
+          "proposal_id": "0WrXw1DT",
+          "short_description": "Boa is an embeddable JavaScript engine written in Rust. JavaScript is garbage collected by specification, meaning the runtime is responsible for...",
+          "slug": "garbage-collector-redesign-and-integration",
+          "status": null,
+          "student_name": "shruti.dev",
+          "student_profile": null,
+          "tags": [],
+          "title": "Garbage Collector Redesign and Integration"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, the JavaScript engine Boa relies exclusively on a register-based interpreter, which limits its performance. This project proposes implementing the initial version of a Just-in-Time (JIT) compiler for Boa that operates alongside the existing interpreter. Specifically, the JIT compiler will be based on the copy-and-patch technique described by Xu and Kjolstad (2021) and implemented in python/cpython#113464. Unlike traditional JIT approaches that compile code at runtime, copy-and-patch generates executable code by copying precompiled machine code templates and patching them with runtime values such as stack variable offsets. This approach enables measurable performance improvements while avoiding extensive runtime overhead, which is important to Boa’s role as an embeddable engine.\nThe primary goal of this project is to deliver the first JIT compiler for Boa.\nWhile only moderate immediate performance improvements are expected,\nthe project aims to provide a solid foundation for future refinement and\nwork toward higher execution speed.",
+          "difficulty": null,
+          "id": "proj_boa_2026_3nqcgbYe",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3nqcgbYe",
+          "proposal_id": "6l47n3Mt",
+          "short_description": "Currently, the JavaScript engine Boa relies exclusively on a register-based interpreter, which limits its performance. This project proposes...",
+          "slug": "a-copy-and-patch-just-in-time-compiler-for-boa",
+          "status": null,
+          "student_name": "zhuzhu",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Copy-and-Patch Just-in-Time Compiler for Boa"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": null,

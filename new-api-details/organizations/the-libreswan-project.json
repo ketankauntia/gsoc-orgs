@@ -44,9 +44,9 @@
     "ikev2",
     "security"
   ],
-  "total_projects": 10,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 1.67,
+    "avg_projects_per_appeared_year": 1.86,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 2,
@@ -58,7 +58,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -71,9 +71,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 8
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -299,7 +299,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-libreswan-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The host to host ipsec transport mode works on Linux but does not work on any of the BSDs. The problem is a lack of IKE socket bypass , transport mode policies actually catch IKE traffic itself, which causes problems in establishing and tearing down connections. I will add a socket bypass for all three BSD also the API is different on each one. I will fix the SA mode labeling in the PFKEYv2 backend, add proper teardown and on demand testing to the existing test suite, and make sure everything works as expected on FreeBSD, NetBSD, and OpenBSD.",
+          "difficulty": null,
+          "id": "proj_the-libreswan-project_2026_yW1PFL6D",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yW1PFL6D",
+          "proposal_id": "VZRMF3ms",
+          "short_description": "The host to host ipsec transport mode works on Linux but does not work on any of the BSDs. The problem is a lack of IKE socket bypass , transport...",
+          "slug": "add-host-to-host-support-on-bsd",
+          "status": null,
+          "student_name": "Amrinder Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add HOST-TO-HOST Support on BSD"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, during an IKEv2 negotiation in Libreswan, each peer independently selects its authentication method without knowing what the other side supports, which can lead to SA establishment failures when peers are configured with multiple credentials. \nThe goal of this project is to implement RFC 9593, which introduces the SUPPORTED_AUTH_METHODS notification to allow peers to announce their supported authentication methods during SA establishment, enabling Libreswan to adjust its authentication selection to a method both sides support. \nThe deliverables include: \nNew ipsec.conf configuration option.\nModifications to emit and parse SUPPORTED_AUTH_METHODS notification across IKE_SA_INIT, IKE_INTERMEDIATE, and IKE_AUTH exchanges.\nModifications to select the applicable authentication method based on the peer's announced capabilities.\nAdditions to the test-suite.",
+          "difficulty": null,
+          "id": "proj_the-libreswan-project_2026_vT6e1MsJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vT6e1MsJ",
+          "proposal_id": "rPPYH60Z",
+          "short_description": "Currently, during an IKEv2 negotiation in Libreswan, each peer independently selects its authentication method without knowing what the other side...",
+          "slug": "add-support-for-announcing-authentication-methods-to-libreswan",
+          "status": null,
+          "student_name": "Osema Fadhel",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support For Announcing Authentication Methods To Libreswan"
+        },
+        {
+          "code_url": null,
+          "description": "When an IPsec-encrypted packet matches a trap policy in the kernel, the kernel notifies IKE daemon (Pluto) via an ACQUIRE Netlink message. Then Pluto identifies that to which connection does this packet belong to by doing a lookup through all the loaded connections. Currently this is done in O(N) time (scanning through all the connections and the connection with highest priority is choosen). This Project aims to reduce this by using a hashtable to find the connection by using a unqiue id which is passed to the kernel while installing the policy. A complication arises with Opportunistic IPsec. Multiple clones of the same template connection would inherit the same reqid, causing collisions both in the hashtable and in the kernel's SA binding. This is addressed by a global counter that assigns a guaranteed unique reqid to each clone of the template connection. The deliverables would be the following , 1.Unique id placed in the policy before sending it to the kernel. 2.ACQUIRE lookup path using the hashtable 3.Guaranteed unique reqid for opportunistic connection clones via a global counter. 4.Display of the reqid in the status as well. 5. New Tests for functional testing and updating the current testsuites.c",
+          "difficulty": null,
+          "id": "proj_the-libreswan-project_2026_83fdZyze",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/83fdZyze",
+          "proposal_id": "LNu4ZMtf",
+          "short_description": "When an IPsec-encrypted packet matches a trap policy in the kernel, the kernel notifies IKE daemon (Pluto) via an ACQUIRE Netlink message. Then Pluto...",
+          "slug": "optimising-the-lookup-time-for-acquire-messages-sent-by-kernel",
+          "status": null,
+          "student_name": "Vinayak Sandur",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimising the lookup time for ACQUIRE messages sent by kernel"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

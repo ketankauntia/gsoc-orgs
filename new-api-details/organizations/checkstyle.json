@@ -34,9 +34,9 @@
     "coding conventions",
     "artificial-intelligence"
   ],
-  "total_projects": 21,
+  "total_projects": 27,
   "stats": {
-    "avg_projects_per_appeared_year": 3,
+    "avg_projects_per_appeared_year": 3.38,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 5,
@@ -48,7 +48,7 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": null,
@@ -61,9 +61,9 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 20
+    "total_students": 27
   },
   "years": {
     "year_2016": null,
@@ -510,7 +510,120 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/checkstyle"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/checkstyle",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to enhance Checkstyle by providing complete and up-to-date support for the OpenJDK Code Convention and the emerging OpenJDK Java Style Guidelines. The current implementation, based on the outdated sun_checks.xml configuration from 2004, lacks coverage for many modern rules and newly introduced Checkstyle modules. This project will systematically review both old and new guidelines, implement missing checks, refine existing configurations, and resolve known issues.\n\nThe goal is to make OpenJDK coding conventions fully enforceable within Checkstyle, improving code quality and developer experience. Key deliverables include updating configurations, adding new modules where required, improving test coverage, and creating detailed documentation to clearly represent rule coverage and support levels.",
+          "difficulty": null,
+          "id": "proj_checkstyle_2026_T2S28Gn6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/T2S28Gn6",
+          "proposal_id": "O80RWpUf",
+          "short_description": "This project aims to enhance Checkstyle by providing complete and up-to-date support for the OpenJDK Code Convention and the emerging OpenJDK Java...",
+          "slug": "open-jdk-code-convention-coverage",
+          "status": null,
+          "student_name": "Aman Baliyan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Open JDK Code convention coverage"
+        },
+        {
+          "code_url": null,
+          "description": "I will resolve all false negatives present in the modules (checks) used in the Google Style Guide coverage. I will also identify and fix issues related to the modules used for coverage. Additionally, I will address blocking bugs and update the coverage page for the Google Style Guide.",
+          "difficulty": null,
+          "id": "proj_checkstyle_2026_NDqLGMlI",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/NDqLGMlI",
+          "proposal_id": "vuJWdjaq",
+          "short_description": "I will resolve all false negatives present in the modules (checks) used in the Google Style Guide coverage. I will also identify and fix issues...",
+          "slug": "improve-google-style-coverage-on-false-negatives",
+          "status": null,
+          "student_name": "Atharv Chavan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Google Style coverage on false negatives"
+        },
+        {
+          "code_url": null,
+          "description": "Description:\n\nProject will mainly be focusing on automation of Documentation Comments (javadoc) guidelines by Checkstyle Checks. Reliable comments parsing was a major improvement in Checkstyle during GSoC 2014 and 2025, archived results need to be reused to reliably implement automation of Javadoc best practices.\n\nSeparate configuration file with newly created Checks need to be created. Best practices in documentation make sense not for all projects. Javadoc validation matters only for library projects that need to expose online documentation in web publicly.\n\nDeliverables: The result of this project will be a configuration file with the maximum possible coverage of Comment style guide. Report should look like Google's Java Style Checkstyle Coverage. If there will be time left we can focus on coverage of guidelines from https://blog.joda.org/2012/11/javadoc-coding-standards.html",
+          "difficulty": null,
+          "id": "proj_checkstyle_2026_vtTkHKrF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vtTkHKrF",
+          "proposal_id": "deWFG5Vb",
+          "short_description": "Description: Project will mainly be focusing on automation of Documentation Comments (javadoc) guidelines by Checkstyle Checks. Reliable comments...",
+          "slug": "coverage-of-documentation-comments-style-guide",
+          "status": null,
+          "student_name": "Gianmarco Schifone",
+          "student_profile": null,
+          "tags": [],
+          "title": "Coverage of Documentation Comments Style Guide"
+        },
+        {
+          "code_url": null,
+          "description": "Checkstyle plays an important role in maintaining code quality in Java projects, but many of its reported violations are small, repetitive issues that developers tend to overlook. Although these problems are easy to fix, the effort required to manually locate and resolve each one discourages developers from addressing them, resulting in inconsistent code quality and growing technical debt.\n\nThis project focuses on reducing that manual overhead by extending Checkstyle’s auto-fix capabilities using OpenRewrite. The main objective is to develop auto-fix recipes targeting frequently occurring Checkstyle violations. These recipes will automatically apply safe and consistent transformations to the codebase, allowing developers to resolve issues quickly and at scale.\n\nBeyond adding new recipes, the project will improve the internal design of the auto-fix system by transitioning from a position-based approach to a marker-based approach. The current method relies heavily on fixed code positions, which can become unreliable when the code structure changes. A marker-based strategy, on the other hand, enables more stable and context-aware transformations, making the system easier to maintain and extend.\n\nAll implemented recipes will follow consistent design principles, include proper test coverage, and be validated on real-world open-source projects to ensure their correctness and effectiveness in practical scenarios.\n\nOverall, this project aims to streamline the process of fixing style violations, improve developer efficiency, and strengthen Checkstyle’s ecosystem by making automated code corrections more reliable and scalable.",
+          "difficulty": null,
+          "id": "proj_checkstyle_2026_AeM92GdH",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/AeM92GdH",
+          "proposal_id": "X4i51Aue",
+          "short_description": "Checkstyle plays an important role in maintaining code quality in Java projects, but many of its reported violations are small, repetitive issues...",
+          "slug": "implementation-of-auto-fix-recipes",
+          "status": null,
+          "student_name": "Monu Chaudhary",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementation of Auto-fix recipes"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to improve the quality, consistency, and usability of the Checkstyle documentation website by enhancing automation and user experience. Although documentation generation has been partially automated from Java sources, gaps still exist such as missing examples, inconsistent formatting, and difficulty in navigation.\n\nThe project will focus on completing and standardizing documentation for all Checkstyle modules by adding missing examples and enforcing uniform formats through automated validation integrated into the build and CI pipeline. This will reduce manual effort and ensure documentation remains accurate and up-to-date.\n\nAdditionally, the website’s usability will be improved through frontend enhancements, including a client-side search feature based on a pre-generated index, enabling fast and backend-free navigation across the static site. Existing user-reported issues will also be addressed to further enhance the overall experience.\nDeliverables include:\n1. Adding missing examples for all Checkstyle modules and checks\n2. Standardizing and validating documentation formats across the website\n3. Automating documentation checks within the CI/build pipeline\n4. Implementing a client-side search feature for improved navigation\n5. Resolving existing website usability issues and improving UX\n6. Providing clear documentation for contributors on maintaining content",
+          "difficulty": null,
+          "id": "proj_checkstyle_2026_IzQRwMhd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IzQRwMhd",
+          "proposal_id": "G4Jr4spL",
+          "short_description": "This project aims to improve the quality, consistency, and usability of the Checkstyle documentation website by enhancing automation and user...",
+          "slug": "enhancement-for-website",
+          "status": null,
+          "student_name": "Smita Prajapati",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancement For Website"
+        },
+        {
+          "code_url": null,
+          "description": "Developers are enthusiastic about leveraging Java's latest language features, which offer more powerful, declarative, and expressive code; these features include Flexible constructor bodies (JEP 513), JEP 512: Compact Source Files and Instance Main Methods. However, Checkstyle currently lacks robust support for these features. This project aims to bridge this gap by updating existing checks and potentially introducing new ones to ensure thorough coverage of Java 25 syntax and conventions proposed by the JEPs associated with these language advancements. The objective is to deliver comprehensive support for the new language features through revising check modules, exhaustive testing, and detailed documentation updates. This effort not only aligns Checkstyle with cutting-edge best practices in the Java community but also contributes to the project's ongoing evolution",
+          "difficulty": null,
+          "id": "proj_checkstyle_2026_urwc1ZIm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/urwc1ZIm",
+          "proposal_id": "TFVMhlZb",
+          "short_description": "Developers are enthusiastic about leveraging Java's latest language features, which offer more powerful, declarative, and expressive code; these...",
+          "slug": "java-25-language-features-support",
+          "status": null,
+          "student_name": "Vivek Singh Solanki",
+          "student_profile": null,
+          "tags": [],
+          "title": "Java 25 Language Features Support"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

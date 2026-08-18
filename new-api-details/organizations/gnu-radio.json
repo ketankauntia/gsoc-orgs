@@ -54,9 +54,9 @@
     "communication",
     "Software-Defined Radio"
   ],
-  "total_projects": 18,
+  "total_projects": 21,
   "stats": {
-    "avg_projects_per_appeared_year": 1.8,
+    "avg_projects_per_appeared_year": 1.91,
     "projects_by_year": {
       "year_2016": 2,
       "year_2017": 2,
@@ -68,7 +68,7 @@
       "year_2023": 1,
       "year_2024": 2,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 2,
@@ -81,9 +81,9 @@
       "year_2023": 1,
       "year_2024": 2,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 17
+    "total_students": 21
   },
   "years": {
     "year_2016": {
@@ -487,7 +487,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gnu-radio"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnu-radio",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to create OOT module, that uses CyberEther's GPU-accelerated framework which uses low-level graphics APIs to create high-performance sinks to visualize GNU Radio data streams in a normal GRC workflow. current implementations of these sinks rely on `gr-qtgui` which is fine but it would be a better to have the option of choosing CyberEther sinks which would be more optimized for maximum throughput and low latency along with a modern design. Main challenges are: minimizing data movement from the GR scheduler to CyberEther tensors, as in high sampling rates unnecessary copying would be expensive and undermine whole native performance edge. Also, CyberEther's current public plotting path internally manages a shared runtime built around `Jetstream::Instance`, and a normal GNU Radio flowgraph can have multiple sinks which would be tricky to manage safely. My core implementation target is a robust first sink family around lineplot and waterfall, with spectrogram support in the second half of the project if the lower-level CyberEther path is needed. These challenges(and other) can be resolved by architecting new solutions which borrow from past implementations namely `gr-cuda` for custom buffers, `gr-cyber` (an earlier prototype from Luigi, the creator of CyberEther) and `gr-fosphor` for relevant challenges.",
+          "difficulty": null,
+          "id": "proj_gnu-radio_2026_wLfV60LS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wLfV60LS",
+          "proposal_id": "cKe2807d",
+          "short_description": "This project aims to create OOT module, that uses CyberEther's GPU-accelerated framework which uses low-level graphics APIs to create...",
+          "slug": "graphical-interoperability-between-cyberether-and-gnu-radio-oot-module",
+          "status": null,
+          "student_name": "itsYoussef",
+          "student_profile": null,
+          "tags": [],
+          "title": "Graphical interoperability between CyberEther and GNU Radio (OOT module)."
+        },
+        {
+          "code_url": null,
+          "description": "GNU Radio’s current CI system relies on software-based testing, which cannot capture real-world SDR behavior and hardware-specific issues that arise under actual RF conditions. This limits the reliability of validating signal processing blocks before deployment.\n\nThis project proposes a Hardware-in-the-Loop (HIL) Continuous Integration framework using CortexLab to extend GNU Radio’s CI pipeline with automated hardware validation. The system detects hardware-relevant changes in pull requests, maps modified blocks to predefined test configurations via a registry, and generates experiment artifacts (tx.py, rx.py, analyze.py, scenario.yaml) dynamically.\n\nTo ensure efficient resource usage, the pipeline introduces a maintainer-controlled HIL execution step, allowing prioritization of critical PRs instead of fully automatic triggering. After reserving SDR nodes, a lightweight validation test is executed to verify hardware readiness before running full experiments.\n\nEach experiment is executed iteratively across multiple input configurations, and results are analyzed using block-specific metrics such as frequency error, amplitude deviation, SNR, BER, and stability. The system produces structured outputs that determine a final PASS/FAIL decision integrated into the CI workflow. Robust error handling mechanisms are included to manage failures in node allocation, execution, and result analysis.",
+          "difficulty": null,
+          "id": "proj_gnu-radio_2026_XtWlavcb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XtWlavcb",
+          "proposal_id": "MDQ6XBQI",
+          "short_description": "GNU Radio’s current CI system relies on software-based testing, which cannot capture real-world SDR behavior and hardware-specific issues that arise...",
+          "slug": "hardware-in-the-loop-ci",
+          "status": null,
+          "student_name": "Sayantan Maity",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hardware in the loop CI"
+        },
+        {
+          "code_url": null,
+          "description": "GNU radio (GR) is used in a variety of applications, especially with the focus of GR4 on being flexible enough to work on a plethora of systems. Some of which access to a GUI may not be available (e.g Embedded systems, edge computing nodes) or sharing of the output of the GR4 flowgraph remotely is required. \n\nIn GR3.x the solution to this was gr-bokehgui, an OOT module created during GSOC 2017 which allowed for remote access of the output of the GR flowgraph through web based plots & widgets. Currently GR4 is being developed and no equivalent tool exists for it leaving a gap in remote monitoring capabilities.\n\nGR4 also currently does not have built in blocks for local plotting, this OOT can be considered a stop gap such blocks are added\n\nThis proposal outlines the development of a OOT module for GR4, serving as a successor to gr-bokehGUI in functionality.",
+          "difficulty": null,
+          "id": "proj_gnu-radio_2026_002sQ2Ri",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/002sQ2Ri",
+          "proposal_id": "pHlLwKiH",
+          "short_description": "GNU radio (GR) is used in a variety of applications, especially with the focus of GR4 on being flexible enough to work on a plethora of systems. Some...",
+          "slug": "gsoc-26-oot-module-for-web-based-monitoring-of-running-flow-graphs-in-gnu-radio-4",
+          "status": null,
+          "student_name": "Ziad Haithem Fahmi",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSOC’26: OOT Module for web-based monitoring of running flow graphs in GNU Radio 4"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -49,9 +49,9 @@
     "social impact",
     "ai"
   ],
-  "total_projects": 77,
+  "total_projects": 84,
   "stats": {
-    "avg_projects_per_appeared_year": 7.7,
+    "avg_projects_per_appeared_year": 7.64,
     "projects_by_year": {
       "year_2016": 1,
       "year_2017": 3,
@@ -63,7 +63,7 @@
       "year_2023": 5,
       "year_2024": 7,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": 1,
@@ -76,9 +76,9 @@
       "year_2023": 5,
       "year_2024": 7,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 76
+    "total_students": 84
   },
   "years": {
     "year_2016": {
@@ -1604,7 +1604,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/oppia-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/oppia-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project focuses on redesigning the Oppia Topic Page to make it more intuitive and easier for learners to navigate. Currently, lessons are presented in a story-centric layout, while practice and revision content are separated into different tabs, which can cause learners to miss important activities and struggle to decide what to do next.\n\nThe redesign introduces a unified interface where lessons, practice, and revision content are combined into a single continuous flow. Learners will see a structured, scrollable sequence of lesson and practice cards with clear progress indicators and actions such as start, resume, and review. It also improves how language options are displayed and selected directly on the Topic Page.",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_FcDeHy1w",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/FcDeHy1w",
+          "proposal_id": "VqU2bUbW",
+          "short_description": "This project focuses on redesigning the Oppia Topic Page to make it more intuitive and easier for learners to navigate. Currently, lessons are...",
+          "slug": "1-3-re-design-the-topic-page",
+          "status": null,
+          "student_name": "Kartik Suryavanshi",
+          "student_profile": null,
+          "tags": [],
+          "title": "1.3. Re-design the topic page"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to improve Oppia’s acceptance test infrastructure by migrating existing tests from Puppeteer to Playwright to enhance stability, maintainability, and developer experience. The migration will be performed incrementally with dual-framework support to ensure CI stability.\n\nIn addition, the project will address test flakiness by identifying and fixing persistent flaky tests, improving debugging workflows, and enhancing snapshot handling. The project also includes adding safeguards such as lint checks to prevent conflicts in shared utilities during migration.\n\nThe expected outcome is a robust, maintainable, and reliable acceptance testing system with reduced flakiness and improved developer productivity",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_yadlPijj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yadlPijj",
+          "proposal_id": "iONwjlKF",
+          "short_description": "This project aims to improve Oppia’s acceptance test infrastructure by migrating existing tests from Puppeteer to Playwright to enhance stability,...",
+          "slug": "3-1-improve-acceptance-test-infrastructure",
+          "status": null,
+          "student_name": "Mohak Gautam",
+          "student_profile": null,
+          "tags": [],
+          "title": "3.1. Improve acceptance test infrastructure"
+        },
+        {
+          "code_url": null,
+          "description": "Learners are currently recognized for progress at the individual lesson (exploration) level, but there is no structured way to celebrate or assess their understanding across multiple lessons. This limits motivation and fails to capture long-term learning achievements.\n\nTo address this, the project introduces multi-lesson assessments that evaluate a learner's mastery of a group of related skills. Learners will be able to take these assessments at any time to measure their overall progress. Upon completion, they will receive a passing score page that can be showcase their achievement, helping to boost motivation and engagement. This system also lays the foundation for future enhancements such as certificate generation.\n\nDeliverables:\nMilestone 1: Assessment Creation & Management (Lessons Team)\nFrontend interface for creating, editing, viewing, and deleting certificate assessment offerings\nValidation mechanisms to prevent invalid configurations (e.g., insufficient questions per skill, missing descriptions)\nUser feedback system for successful or failed save actions\nBackend infrastructure to store and manage assessment offerings\n\nMilestone 2: Learner Assessment Experience\nFrontend interface for learners to discover, attempt, and view assessment results\nDisplay of assessment attempt history for learners\nBackend systems for generating assessments dynamically\nStorage and management of learner responses and assessment results",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_aN58isLo",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/aN58isLo",
+          "proposal_id": "Y2hUvUWC",
+          "short_description": "Learners are currently recognized for progress at the individual lesson (exploration) level, but there is no structured way to celebrate or assess...",
+          "slug": "1-2-learner-assessments",
+          "status": null,
+          "student_name": "Mosin Shaikh",
+          "student_profile": null,
+          "tags": [],
+          "title": "1.2.  Learner assessments"
+        },
+        {
+          "code_url": null,
+          "description": "The Oppia Android app is missing three features that the web platform already has. Learners have no idea how far they are in a lesson, revision cards are a flat wall of text with no structure, and worked examples in concept cards are completely invisible. This project adds all three. First, a checkpoint based lesson progress indicator that uses the is_checkpoint state property to show learners their progress as X of N through an exploration, with correct behavior during backward navigation, flashbacks, and checkpoint restoring. Second, structured study guides that replace the flat revision card with a sectioned RecyclerView showing headings and content blocks. Third, a worked example tag handler that parses nested HTML inside oppia-noninteractive-workedexample tags and renders inline Question and Answer blocks using styled spannables. All three features are independently gated behind feature flags and built on top of existing infrastructure.",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_tBVtm65a",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tBVtm65a",
+          "proposal_id": "l6CJNTV7",
+          "short_description": "The Oppia Android app is missing three features that the web platform already has. Learners have no idea how far they are in a lesson, revision cards...",
+          "slug": "support-for-lesson-progress-study-guides-and-worked-examples",
+          "status": null,
+          "student_name": "Neer Aryan Bhatta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support for Lesson Progress Study Guides and Worked Examples"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Oppia’s feedback system is disjointed. Users can only submit lesson-specific feedback through the lesson player, which does not allow for screenshots or session logs. This makes it hard for users to report issues on the platform and for developers to fix problems based on that feedback. This project aims to create a feedback system that everyone can access. Users will be able to submit both platform-level and lesson-specific feedback from any page. The system will allow for optional screenshots and capture light session logs. All feedback will be stored in one place and can be reviewed easily through an admin interface. The existing creator feedback tab and the feedback-updates page will also be redesigned to work with the new system.",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_DLicszJv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DLicszJv",
+          "proposal_id": "urcuip3P",
+          "short_description": "Currently, Oppia’s feedback system is disjointed. Users can only submit lesson-specific feedback through the lesson player, which does not allow for...",
+          "slug": "1-1-web-user-feedback",
+          "status": null,
+          "student_name": "NITISH  KUMAR",
+          "student_profile": null,
+          "tags": [],
+          "title": "1.1. Web user feedback"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Oppia translates non-user-generated content via translatewiki and some user-generated content via the contributor dashboard. This project aims to extend the contributor dashboard's infrastructure to support translating exploration metadata (titles, tags) and skill (concept card) content. The solution involves building a highly extensible backend translation framework to display translation opportunities, surface reviewable suggestions, and display accepted translations to learners. Deliverables include migrating existing translation support to this new modular infrastructure (Milestone 1) and adding full support for metadata and skill content while removing legacy code (Milestone 2).",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_PGBqDWHQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PGBqDWHQ",
+          "proposal_id": "YvUQIAer",
+          "short_description": "Currently, Oppia translates non-user-generated content via translatewiki and some user-generated content via the contributor dashboard. This project...",
+          "slug": "extend-translation-infrastructure-to-exploration-metadata-and-skills",
+          "status": null,
+          "student_name": "Rohan Unbeg",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extend translation infrastructure to exploration metadata and skills"
+        },
+        {
+          "code_url": null,
+          "description": "Oppia Android's release process currently relies on a 17-page manual document that release coordinators follow step-by-step, covering everything from cutting branches and building binaries to signing, deploying to Play Console, and writing changelogs. This is slow, error-prone, and has caused QA testers to miss builds due to Play Store sync issues.\nThis project replaces that manual process with six GitHub Actions workflows backed by Kotlin scripts that handle building, Cloud KMS signing, Play Console deployment, Firebase App Distribution for QA, LLM-powered changelog generation, and automated weekly alpha releases. All scripts are designed with interface-based abstractions (CloudSigner, PlayConsoleClient, VertexAiClient, GitHubClient) so they can be thoroughly unit-tested with fakes, requiring no real GCP credentials in tests. Security is handled through Workload Identity Federation (keyless auth) and Cloud KMS HSM-backed signing, ensuring the private key never leaves Google's hardware.\n\nDeliverables: 6 new Kotlin scripts with full test coverage, 6 GitHub Actions workflows, updated wiki documentation (playbook + manual fallback reference), and an end-to-end demo of the complete release cycle running through CI.",
+          "difficulty": null,
+          "id": "proj_oppia-foundation_2026_beDnbp75",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/beDnbp75",
+          "proposal_id": "SFENXEMz",
+          "short_description": "Oppia Android's release process currently relies on a 17-page manual document that release coordinators follow step-by-step, covering everything from...",
+          "slug": "streamlining-release-automation",
+          "status": null,
+          "student_name": "Sandesh Raj",
+          "student_profile": null,
+          "tags": [],
+          "title": "Streamlining Release Automation"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

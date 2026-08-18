@@ -25,9 +25,9 @@
     "game theory",
     "mathematical optimizaton"
   ],
-  "total_projects": 0,
+  "total_projects": 3,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -39,7 +39,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -52,9 +52,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 0
+    "total_students": 3
   },
   "years": {
     "year_2016": null,
@@ -67,7 +67,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gambit-the-package-for-computation-in-game-theory",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to enable SageMath to natively use Gambit’s functionality within its game-theory features, allowing seamless conversion between SageMath and Gambit Game objects and the application of each library’s tools to the other’s representations. A draft SageMath pull request already exists that handles packaging and import updates for pygambit, but the core task of updating SageMath’s game theory code to Gambit’s revised 16.6 API remains open. This project will complete and merge that PR, then produce tutorial and documentation materials that demonstrate what the integration enables and how to leverage it.",
+          "difficulty": null,
+          "id": "proj_gambit-the-package-for-computation-in-game-theory_2026_5bi4nB7H",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/5bi4nB7H",
+          "proposal_id": "CiqVQ1SD",
+          "short_description": "This project aims to enable SageMath to natively use Gambit’s functionality within its game-theory features, allowing seamless conversion between...",
+          "slug": "gambit-interoperability-with-sagemath",
+          "status": null,
+          "student_name": "Amelie Kleber",
+          "student_profile": null,
+          "tags": [],
+          "title": "Gambit Interoperability with SageMath"
+        },
+        {
+          "code_url": null,
+          "description": "The predictive power of game-theoretic analysis in n-person games is frequently undermined by\nthe vast multiplicity of Nash equilibria.\n\nVISION: This project will implement the globally convergent, everywhere differentiable homotopy algorithm proposed by Herings & Peeters (2001) into the Gambit C++ core and expose it via the PyGambit API. It will be the first algorithm in Gambit repository that reaches a Nash Equilibrium taking into account a subjective Prior, which is critical for providing realistic context to game-theoretic models.\n\nDELIVERABLES:\n • Securing the Path-Tracking Foundation (Issue #492): Based on my mentor's feedback regarding my previous work on the logit_solve path-following methods, I will implement a configurable perturbation system, add a bifurcation logging mechanism.\n\n•  Variable Transformation & System Definition.\n\n•  Analytical Jacobian & Path Tracking Engine: I will abstract the existing Allgower-Georg path-tracking code to work with the H&P algorithm, ensuring that it can be easily substituted in the future by alternative solvers such as HOMPACK. I will also code the analytical Jacobian matrix.\n\n• PyGambit API Integration: I will write the necessary bindings to expose the C++ solver to Python.\n\n• Testing & Performance Benchmarking.",
+          "difficulty": null,
+          "id": "proj_gambit-the-package-for-computation-in-game-theory_2026_UDsirYH0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UDsirYH0",
+          "proposal_id": "aPN2reOX",
+          "short_description": "The predictive power of game-theoretic analysis in n-person games is frequently undermined by the vast multiplicity of Nash equilibria. VISION: This...",
+          "slug": "implementing-the-herings-peeters-differentiable-homotopy-in-gambit",
+          "status": null,
+          "student_name": "Andrés Fernández Cervell",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing the Herings & Peeters Differentiable Homotopy in Gambit"
+        },
+        {
+          "code_url": null,
+          "description": "Lemke's algorithm is a method for solving Linear Complementarity Problems (LCPs). Computing equilibria for two-player games can be reduced to solving such problems. The Gambit library already has a C++ implementation of Lemke's algorithm, but the goal of this project is to improve and integrate Bernhard von Stengel's Lemke package written in Python.\n\nThe current package works primarily as a standalone CLI tool, with algorithm logic, file I/O, and console output all tightly coupled. This project will transform it into a dual-purpose package – usable both from the command line and as an importable Python library that Gambit can directly call.",
+          "difficulty": null,
+          "id": "proj_gambit-the-package-for-computation-in-game-theory_2026_LYQiX01q",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/LYQiX01q",
+          "proposal_id": "6CvtPCvh",
+          "short_description": "Lemke's algorithm is a method for solving Linear Complementarity Problems (LCPs). Computing equilibria for two-player games can be reduced to solving...",
+          "slug": "development-and-integration-of-lemke-s-algorithm-package",
+          "status": null,
+          "student_name": "Natalie Mesablishvili",
+          "student_profile": null,
+          "tags": [],
+          "title": "Development and integration of Lemke’s algorithm package"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "gambit.game.theory@gmail.com",

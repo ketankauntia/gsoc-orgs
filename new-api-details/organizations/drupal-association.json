@@ -60,9 +60,9 @@
     "Massive community",
     "Inclusive"
   ],
-  "total_projects": 39,
+  "total_projects": 45,
   "stats": {
-    "avg_projects_per_appeared_year": 4.33,
+    "avg_projects_per_appeared_year": 4.5,
     "projects_by_year": {
       "year_2016": 9,
       "year_2017": 6,
@@ -74,7 +74,7 @@
       "year_2023": 4,
       "year_2024": 6,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": 9,
@@ -87,9 +87,9 @@
       "year_2023": 4,
       "year_2024": 6,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 38
+    "total_students": 45
   },
   "years": {
     "year_2016": {
@@ -899,7 +899,120 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/drupal-association"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/drupal-association",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Drupal's admin interface is powerful, but finding the right configuration page — especially for newer users or developers who don't work in Drupal daily — often means digging through multiple nested menus with no clear path forward. This project builds a Drupal module called Config Navigator that embeds a lightweight AI-powered chat widget into the admin UI, letting users describe what they want to configure in plain English and get back a direct, permission-filtered link to the right page. The module maintains a structured index of Drupal core admin routes with keywords and synonyms, which gets passed as context to an LLM (OpenAI or Claude) so responses stay accurate and Drupal-specific rather than relying on general model knowledge. A plugin API allows contributed module maintainers to register their own admin routes into the index, making the tool extensible across the whole ecosystem. Privacy is treated as a first-class concern — no site content or user data ever leaves the server, and sites with strict data policies can point the module at a local LLM endpoint instead. Deliverables include the full Drupal module on Drupal.org, a plugin API with documentation, a feedback mechanism, test coverage, and a developer guide.",
+          "difficulty": null,
+          "id": "proj_drupal-association_2026_eCW2X5Wd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/eCW2X5Wd",
+          "proposal_id": "fGKCkYid",
+          "short_description": "Drupal's admin interface is powerful, but finding the right configuration page — especially for newer users or developers who don't work in Drupal...",
+          "slug": "configuration-navigator-for-drupal",
+          "status": null,
+          "student_name": "AkshD",
+          "student_profile": null,
+          "tags": [],
+          "title": "Configuration Navigator for Drupal"
+        },
+        {
+          "code_url": null,
+          "description": "Drupal Starshot Recipes speed up site building, but writing them requires deep technical skills. This project introduces an AI Recipe Generator that translates plain natural language requests directly into valid, installable Drupal Recipes. By leveraging the drupal/ai module, the system features Context Injection to map existing site entities and prevent configuration collisions. Furthermore, it utilizes a \"Self-Healing Validation Loop\" integrated with the Symfony YAML parser and the Drupal.org JSON:API to strictly validate module dependencies and eliminate LLM hallucinations. This tool lowers the technical barrier to entry, empowering non-technical users to build complex site features instantly while saving developers hours of manual debugging.",
+          "difficulty": null,
+          "id": "proj_drupal-association_2026_wRuXUxfQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wRuXUxfQ",
+          "proposal_id": "pnaXSfVK",
+          "short_description": "Drupal Starshot Recipes speed up site building, but writing them requires deep technical skills. This project introduces an AI Recipe Generator that...",
+          "slug": "ai-powered-drupal-recipe-generator",
+          "status": null,
+          "student_name": "Hrishikesh Dalal",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Powered Drupal Recipe Generator"
+        },
+        {
+          "code_url": null,
+          "description": "Drupal's AI Content Strategy module does a great job telling editors what to write, but the moment it hands off, editors are left staring at a blank field with no actual help getting words on the page. This project builds a content generation assistant that sits directly inside Drupal field widgets, letting editors prompt an AI model and insert the result without ever leaving the editing interface. The module will be built around a clean plugin architecture that supports OpenAI GPT, Anthropic Claude, Hugging Face, and Google Gemini as interchangeable providers, with a React-based prompt dialog giving editors control over tone, length, and style. A REST endpoint will bridge the frontend widget to the backend provider system, and the module will include generation history tracking, rate limiting, and cost cap controls for site administrators. By the end of GSoC, the project will ship as a fully documented, publicly released Drupal module that closes the gap between strategic content recommendations and actual content creation.",
+          "difficulty": null,
+          "id": "proj_drupal-association_2026_C6CCzhd4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/C6CCzhd4",
+          "proposal_id": "t5j9Ac78",
+          "short_description": "Drupal's AI Content Strategy module does a great job telling editors what to write, but the moment it hands off, editors are left staring at a blank...",
+          "slug": "ai-powered-content-generation-assistant-for-drupal",
+          "status": null,
+          "student_name": "Nik07op",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Powered Content Generation Assistant for Drupal"
+        },
+        {
+          "code_url": null,
+          "description": "Problem: Drupal users frequently struggle to find specific information across site content, configuration, and documentation because traditional keyword search fails to understand user intent or context.\n    Solution: Develop a decoupled Retrieval-Augmented Generation (RAG) AI assistant. The system will use a Python/FastAPI backend to manage vector embeddings (via databases like Milvus, Pinecone, or ChromaDB) and integrate with a custom Drupal module. This allows users to ask plain-English questions and receive accurate, permission-aware answers grounded in the site's actual data.\n    Deliverables: A Python-based embedding and query API, a custom Drupal module (`ai_knowledge_assistant`) with indexing hooks, an admin configuration interface for managing AI/provider settings, and user-facing chat interfaces (a knowledge block and a dedicated page) that include source citations.",
+          "difficulty": null,
+          "id": "proj_drupal-association_2026_tUSkgG1K",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tUSkgG1K",
+          "proposal_id": "gNuropZG",
+          "short_description": "Problem: Drupal users frequently struggle to find specific information across site content, configuration, and documentation because traditional...",
+          "slug": "ai-powered-knowledge-assistant-for-drupal",
+          "status": null,
+          "student_name": "Priyanshu1353",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Powered Knowledge Assistant for Drupal"
+        },
+        {
+          "code_url": null,
+          "description": "The enhancements of the Auto translation module for Drupal 10 in this project include \n(1) individual field level translate buttons for editors to translate based on an individual field preview and accept/discard it, \n(2) a pluggable provider leverage of the Plugin API for swapping out the applicable translation provider (Google Translate, Deeble, or Azure) without having to make source code changes, and \n(3) a translation memory table to cache results that would reduce API expenditure and to ensure consistency in phrases. \nBy the end of the GSoC, all content teams will have an effortless, reversible, and provider agnostic AI powered translation workflow that changes the nature of AI powered translation from an \"batch job\" to an \"interactive and controlled process.\"",
+          "difficulty": null,
+          "id": "proj_drupal-association_2026_mV10OJWD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mV10OJWD",
+          "proposal_id": "kKLrpTTC",
+          "short_description": "The enhancements of the Auto translation module for Drupal 10 in this project include (1) individual field level translate buttons for editors to...",
+          "slug": "one-click-ai-translation-assistant",
+          "status": null,
+          "student_name": "Sanskar Ratandhara",
+          "student_profile": null,
+          "tags": [],
+          "title": "One-Click AI Translation Assistant"
+        },
+        {
+          "code_url": null,
+          "description": "Community-driven Drupal sites currently rely on reactive, manual moderation for spam and toxic content, which is exhausting and difficult to scale. This project introduces a proactive, real-time defense system by building a fully integrated AI Content Moderation module. The solution utilizes a decoupled ContentModerator service that intercepts form submissions on the client side using debounced JavaScript, providing users with instant, WCAG-compliant inline warnings before toxic data ever hits the database. On the backend, it employs a highly performant hybrid approach, checking local administrative keyword lists before securely querying external NLP models (such as Hugging Face) via Drupal's core HTTP client. Deliverables include a production-ready module featuring an intuitive Admin UI for AI provider and threshold configuration, bulletproof server-side validation fallbacks, and comprehensive site builder documentation.",
+          "difficulty": null,
+          "id": "proj_drupal-association_2026_C09HAZpF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/C09HAZpF",
+          "proposal_id": "kPpV3Y4I",
+          "short_description": "Community-driven Drupal sites currently rely on reactive, manual moderation for spam and toxic content, which is exhausting and difficult to scale....",
+          "slug": "ai-powered-toxic-content-and-spam-detection-for-drupal",
+          "status": null,
+          "student_name": "Talha Asif",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Powered Toxic Content and Spam Detection for Drupal"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

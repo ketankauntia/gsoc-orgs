@@ -53,9 +53,9 @@
     "unmanned vehicle",
     "ai"
   ],
-  "total_projects": 38,
+  "total_projects": 41,
   "stats": {
-    "avg_projects_per_appeared_year": 4.22,
+    "avg_projects_per_appeared_year": 4.1,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 3,
@@ -67,7 +67,7 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -80,9 +80,9 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 33
+    "total_students": 41
   },
   "years": {
     "year_2016": null,
@@ -830,7 +830,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ardupilot"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/ardupilot",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to add a practical mesh networking framework to ArduPilot so multiple vehicles can continue sharing telemetry and coordination data even when direct links to the ground station are lost. The proposed solution is a new ArduPilot subsystem, AP_SwarmMesh, which builds standard MAVLink peer streams, wraps them in a lightweight peer routing header for multi-hop forwarding, and exchanges them over a dedicated peer link using both a \"Full\" and \"Lite\" backend. The main deliverables are the AP_SwarmMesh library, peer packet framing and forwarding logic, bounded onboard peer state tracking, SITL validation, and hardware demonstrations showing resilient multi-vehicle communication across both backend types.",
+          "difficulty": null,
+          "id": "proj_ardupilot_2026_kTHHO1JP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kTHHO1JP",
+          "proposal_id": "NbjF85tN",
+          "short_description": "This project aims to add a practical mesh networking framework to ArduPilot so multiple vehicles can continue sharing telemetry and coordination data...",
+          "slug": "ap-swarmmesh-resilient-mavlink-ad-hoc-swarm-networking-for-ardupilot",
+          "status": null,
+          "student_name": "Kwaku Richter",
+          "student_profile": null,
+          "tags": [],
+          "title": "AP_SwarmMesh: Resilient MAVLink Ad-HOC Swarm Networking for ArduPilot"
+        },
+        {
+          "code_url": null,
+          "description": "ArduPilot flies over a million vehicles but has never controlled a humanoid, I intend to change this. I've spent the past several weeks building an 8-DOF humanoid in Gazebo Harmonic with ArduPilot SITL already connected, with the EKF3 reading attitude at 50Hz, joints responding, and the robot standing under real physics. During GSoC I'll extend it into a real platform with stable ZMP-based walking, active arms with reach and grasp, crouch and stand functions, MAVLink navigation commands, and a PR to ArduPilot main. By the end of summer ArduPilot will be able to command a humanoid to walk somewhere and interact with objects, using the same battle-tested infrastructure that already runs drones and rovers.",
+          "difficulty": null,
+          "id": "proj_ardupilot_2026_sdJAUfpM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sdJAUfpM",
+          "proposal_id": "gp2SZQqI",
+          "short_description": "ArduPilot flies over a million vehicles but has never controlled a humanoid, I intend to change this. I've spent the past several weeks building an...",
+          "slug": "arduhumanoid-mavlink-controlled-humanoid-locomotion-via-ardupilot-sitl",
+          "status": null,
+          "student_name": "Neeta Misericordia",
+          "student_profile": null,
+          "tags": [],
+          "title": "ArduHumanoid: MAVLink - Controlled Humanoid Locomotion via ArduPilot SITL"
+        },
+        {
+          "code_url": null,
+          "description": "ArduPilot flight logs are currently analyzed manually, making it difficult to understand why crashes or unexpected behavior occur. Users have to inspect multiple signals across time, which requires experience and is not reliable for most people.\n\nA Python tool that runs locally and takes a .BIN log as input. The data is aligned across time and processed to extract signals such as attitude error, battery behavior, GPS error and other signals. Physics-based checks detect sustained issues based on flight behavior, while a Hidden Markov Model observes patterns over time to filter out short disturbances. Results are treated as reliable when both agree over a consistent duration.\n\nAn LLM based agent coordinates the workflow by running the analysis steps and combining their outputs into a clear explanation, while all calculations follow rule-based logic.\n\nThe analyser adapts to different firmware versions by reading parameters and detecting configuration related issues by comparing them with expected ranges from the ArduPilot codebase. It outputs what happened, when it happened, and why, along with linked telemetry evidence and possible fixes.\n\nDeliverables include a complete Copter focused diagnostic pipeline, ML integration, dynamic parameter lookup, structured output generation, and a packaged command line tool with documentation.",
+          "difficulty": null,
+          "id": "proj_ardupilot_2026_Als6OJep",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Als6OJep",
+          "proposal_id": "FCelTbgv",
+          "short_description": "ArduPilot flight logs are currently analyzed manually, making it difficult to understand why crashes or unexpected behavior occur. Users have to...",
+          "slug": "ai-assisted-ardupilot-log-diagnostics-and-configurator-recommendation-system",
+          "status": null,
+          "student_name": "Omkar Sarkar",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI Assisted ArduPilot Log Diagnostics and Configurator Recommendation System"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

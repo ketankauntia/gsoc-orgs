@@ -51,9 +51,9 @@
     "Music recommendation",
     "music social network"
   ],
-  "total_projects": 60,
+  "total_projects": 67,
   "stats": {
-    "avg_projects_per_appeared_year": 6,
+    "avg_projects_per_appeared_year": 6.09,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": 5,
@@ -65,7 +65,7 @@
       "year_2023": 7,
       "year_2024": 8,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": 4,
@@ -78,9 +78,9 @@
       "year_2023": 7,
       "year_2024": 8,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 56
+    "total_students": 67
   },
   "years": {
     "year_2016": {
@@ -1320,7 +1320,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/metabrainz-foundation-inc"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/metabrainz-foundation-inc",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "MusicBrainz contains data about upcoming and past events. This data is not surfaced, nor available to ListenBrainz users in any way. This data should be utilized in ListenBrainz to provide it's users with an easy way to discover events. This will be achieved by copying over, and caching the event data from MusicBrainz in a suitable format, and creating endpoints, as well as adequate frontend to display this information. The user should be able to discover events, gather event data from ListenBrainz itself, and find events relevant to them based on their preferred artists.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_zxdS1mT4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/zxdS1mT4",
+          "proposal_id": "NsK0SvQJ",
+          "short_description": "MusicBrainz contains data about upcoming and past events. This data is not surfaced, nor available to ListenBrainz users in any way. This data should...",
+          "slug": "integrate-musicbrainz-events-into-listenbrainz",
+          "status": null,
+          "student_name": "failure",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate MusicBrainz events into ListenBrainz"
+        },
+        {
+          "code_url": null,
+          "description": "BookBrainz is currently English-only, limiting its global reach. This project integrates i18next with BookBrainz's React SSR pipeline to enable full internationalization: locale-detection middleware (Accept-Language + cookie), a language selector in the navbar, English translation JSON files, ~620 strings migrated across ~120 files, and a BookBrainz project on translations.metabrainz.org so volunteer translators can contribute immediately — with no rebuild required per translation update.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_8UUWLvil",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8UUWLvil",
+          "proposal_id": "eGQ9rJkc",
+          "short_description": "BookBrainz is currently English-only, limiting its global reach. This project integrates i18next with BookBrainz's React SSR pipeline to enable full...",
+          "slug": "set-up-bookbrainz-for-internationalization",
+          "status": null,
+          "student_name": "Garv Thakre",
+          "student_profile": null,
+          "tags": [],
+          "title": "Set Up BookBrainz for Internationalization"
+        },
+        {
+          "code_url": null,
+          "description": "The MusicBrainz database has a Solr search engine used for both website search and search API.\nMB Search architecture for reference.\n\nAfter solr was upgraded to version 9, the schemas in configsets weren’t updated and still use version 1.5. They need to be upgraded to version 1.7.\n\nSolr currently keeps data in index fields for search and also uses _store field to store the index field data + other non index field’s data for response writer, causing redundancy. To eliminate this redundancy, we need to store all the required data in the fields themselves.\n\nSolr response writer currently reads all the data from _store field of a document and returns it in a valid MB XML/ MB JSON format.\nAfter modifying the configsets and indexer to store data in the fields, we need to create response writers that read from these fields and return data in a valid MB XML/ MB JSON format, along with validation tests for these writers.\n\nSince storing data in individual fields rather than a single _store blob will lead to change in performance,we will start with the artist core and benchmark it before rolling out to all remaining entities.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_RsmtcLVO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RsmtcLVO",
+          "proposal_id": "blq8w9Lm",
+          "short_description": "The MusicBrainz database has a Solr search engine used for both website search and search API. MB Search architecture for reference. After solr was...",
+          "slug": "modernize-search-storage-format-for-the-musicbrainz-database",
+          "status": null,
+          "student_name": "junaid_",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernize search storage format for the MusicBrainz database"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a calibre plugin for bookbrainz. It will be used to update metadata of calibre books and add public collections or editions from bookbrainz directly in calibre.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_DK5pJkwJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DK5pJkwJ",
+          "proposal_id": "k7D1Lv5Z",
+          "short_description": "This project aims to develop a calibre plugin for bookbrainz. It will be used to update metadata of calibre books and add public collections or...",
+          "slug": "development-of-a-new-calibre-plugin-for-bookbrainz",
+          "status": null,
+          "student_name": "Md Waqib Sk",
+          "student_profile": null,
+          "tags": [],
+          "title": "Development of a new Calibre plugin for BookBrainz"
+        },
+        {
+          "code_url": null,
+          "description": "ListenBrainz has an Android app but no iOS version. A previous Swift attempt just duplicated the codebase, meaning every bug fix had to be written twice. This project fixes that by migrating to Kotlin Multiplatform - one shared codebase for both platforms.\nMost of the work is tedious: swapping Android-only libraries for multiplatform equivalents across navigation, dependency injection, paging, and more. Media playback is trickier. ExoPlayer and WorkManager are too Android-specific to share, so both get wrapped behind common interfaces, with ExoPlayer on Android and AVPlayer on iOS underneath.\nOne thing genuinely can't move: the notification listener that reads what's playing in Spotify relies on an Android-only permission iOS doesn't allow. Those screens stay Android-only, no workaround exists.\nEverything else: one codebase, both platforms.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_R5i56XqC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/R5i56XqC",
+          "proposal_id": "GakuXlVB",
+          "short_description": "ListenBrainz has an Android app but no iOS version. A previous Swift attempt just duplicated the codebase, meaning every bug fix had to be written...",
+          "slug": "compose-multiplatform-migration-of-listenbrainz-android",
+          "status": null,
+          "student_name": "Nirvan Jain",
+          "student_profile": null,
+          "tags": [],
+          "title": "Compose Multiplatform Migration of ListenBrainz-Android"
+        },
+        {
+          "code_url": null,
+          "description": "The MusicBrainz XML/JSON API makes you stack inc= parameters just to get related data, and looking up multiple entities of the same type in one request isn't possible at all. This project aims to build a GraphQL server in Rust to fix that properly. It covers five entity types: Artist, Release, Release Group, Recording, and Label with MBID based lookup including transparent redirect handling for merged entities, keyset cursor pagination, and field coverage matching the existing API: aliases, annotations, tags, genres, ratings, ISRCs, IPIs, and release tracklists through the correct Medium and Track chain. Artist credits are exposed as structured types rather than raw joins. DataLoaders batch database queries across all relationship resolvers to prevent N+1 problems. Depth and complexity limits reject expensive requests before they touch the database. Caching is only applied where load testing shows it actually helps, not speculatively. Deliverables include a working server with Docker setup, integration tests, a documented performance baseline, and  API docs auto-generated via magidocs CLI.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_PVkWg0pq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PVkWg0pq",
+          "proposal_id": "OPxLMtIT",
+          "short_description": "The MusicBrainz XML/JSON API makes you stack inc= parameters just to get related data, and looking up multiple entities of the same type in one...",
+          "slug": "graphql-server-as-a-musicbrainz-api-alternative",
+          "status": null,
+          "student_name": "Sreehari Rathish",
+          "student_profile": null,
+          "tags": [],
+          "title": "GraphQL Server as a Musicbrainz API Alternative"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to improve playlist management in ListenBrainz by making it easier for users to search, organize, and interact with their playlists. Currently, while some backend support exists, the user experience lacks intuitive features for managing personal playlists effectively.\n\nTo address this, I plan to implement four main features. First, I will complete and enhance playlist search directly on the user playlists page. Second, I will introduce tag-based organization, allowing users to categorize and filter playlists efficiently. Third, I will add in-playlist track sorting options such as sorting by title, artist, date added, and shuffle. Finally, I will enable users to view their MusicBrainz collections as playlists and optionally save them within ListenBrainz.\n\nThe project will involve backend changes such as adding new database tables and API endpoints, along with frontend integration using React to provide a smooth and consistent user experience.\n\nThe final deliverables will include a fully functional playlist search feature, tag-based organization system, track sorting functionality, and MusicBrainz collection integration, along with tests and documentation for all components.",
+          "difficulty": null,
+          "id": "proj_metabrainz-foundation-inc_2026_eGFJ8YZe",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/eGFJ8YZe",
+          "proposal_id": "kVCBemXX",
+          "short_description": "This project aims to improve playlist management in ListenBrainz by making it easier for users to search, organize, and interact with their...",
+          "slug": "playlists-sorting-and-organization",
+          "status": null,
+          "student_name": "Yateen Dogra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Playlists Sorting and Organization"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

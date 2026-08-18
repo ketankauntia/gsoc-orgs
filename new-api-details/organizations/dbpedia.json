@@ -52,9 +52,9 @@
     "machine learning",
     "largelanguagemodel"
   ],
-  "total_projects": 61,
+  "total_projects": 66,
   "stats": {
-    "avg_projects_per_appeared_year": 6.1,
+    "avg_projects_per_appeared_year": 6,
     "projects_by_year": {
       "year_2016": 8,
       "year_2017": 7,
@@ -66,7 +66,7 @@
       "year_2023": 6,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 8,
@@ -79,9 +79,9 @@
       "year_2023": 6,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 61
+    "total_students": 66
   },
   "years": {
     "year_2016": {
@@ -1281,7 +1281,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/dbpedia"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/dbpedia",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The DBpedia Databus Python Client currently supports downloading, deploying, and deleting datasets but lacks reproducibility, workflow orchestration, and format interoperability. This project extends the client with three tightly integrated features:\nFirst, a Format and Mapping Conversion Layer (Layers 2 and 3 of the Java client pipeline) that enables on-the-fly conversion between RDF triples, RDF quads, and CSV/TSV formats using rdflib — bringing the Python client to feature parity with the Java Databus Client for the first time.\nSecond, a structured Run Manifest System that records every operation as a fixed-format JSON-LD file using the DataID vocabulary. Manifests support replay, summary, and structured error capture — making any Databus operation fully reproducible from a single file.\nThird, a declarative Workflow Engine that executes multi-step pipelines defined as YAML files, with dynamic step chaining, per-step error recovery (fail, continue, retry), and automatic manifest generation for every run.\nDeliverables include a working --convert-format flag with 14 round-trip tests, --manifest flag on all three existing commands with manifest replay and summary commands, a databusclient workflow run command with step chaining and error recovery, five tested real-world example workflows, and full documentation — all fully backward compatible.",
+          "difficulty": null,
+          "id": "proj_dbpedia_2026_kebLcDis",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kebLcDis",
+          "proposal_id": "wcPalO7U",
+          "short_description": "The DBpedia Databus Python Client currently supports downloading, deploying, and deleting datasets but lacks reproducibility, workflow orchestration,...",
+          "slug": "databus-python-client-manifest-driven-reproducible-workflow-orchestration",
+          "status": null,
+          "student_name": "Dhanashree Petare",
+          "student_profile": null,
+          "tags": [],
+          "title": "Databus Python Client: Manifest-Driven Reproducible Workflow Orchestration"
+        },
+        {
+          "code_url": null,
+          "description": "Accessing the billions of facts stored in DBpedia's knowledge graph currently requires writing SPARQL queries, putting this incredible resource out of reach for most people. This project tackles that by building a self-correcting Agentic Question Answering system over DBpedia using LangGraph and Qwen3. Rather than attempting one-shot translation like existing Neural SPARQL Machine approaches, which frequently fail when a model hallucinates a property or misresolves an entity, the system grounds the entire reasoning process through a pipeline of deterministic tools including an Entity Linker with a GraphRAG FAISS fallback for ambiguous mentions, a live Ontology Explorer that discovers what predicates actually exist for a given entity, and a Schema Introspector that validates property types before query construction. The core contribution is a conditional self-correction loop where a Validator node diagnoses exactly what went wrong and dynamically routes the agent back to the specific tool needed to fix it, whether that is the entity linker, the predicate explorer, or the query builder, enabling the system to recover from failures instead of collapsing silently. The final pipeline will be rigorously benchmarked against QALD-9-plus and the DB25 dataset from the Text2SPARQL 2025 challenge, providing open, hallucination-free natural language access to the Semantic Web.",
+          "difficulty": null,
+          "id": "proj_dbpedia_2026_bhnldATH",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/bhnldATH",
+          "proposal_id": "FWd7ncyB",
+          "short_description": "Accessing the billions of facts stored in DBpedia's knowledge graph currently requires writing SPARQL queries, putting this incredible resource out...",
+          "slug": "agentic-question-answering-over-dbpedia-malla-siddharth-reddy",
+          "status": null,
+          "student_name": "Malla Siddharth Reddy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Agentic Question Answering over DBpedia - Malla Siddharth Reddy"
+        },
+        {
+          "code_url": null,
+          "description": "This project scales the DBpedia Neural Extraction Framework into a production-ready system by integrating a Neuro-Symbolic validation layer. Key innovations include an Axiomatic Consistency Checker to eliminate LLM hallucinations using DBpedia OWL constraints, and a high-throughput Redis-backed architecture capable of indexing the full 50GB Databus dump with sub-millisecond latency. By bridging probabilistic neural extraction with deterministic symbolic reasoning, the framework ensures the generation of high-precision, ontologically valid RDF triples for the DBpedia 2026 release.",
+          "difficulty": null,
+          "id": "proj_dbpedia_2026_JUH1W3j3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JUH1W3j3",
+          "proposal_id": "myQIANjg",
+          "short_description": "This project scales the DBpedia Neural Extraction Framework into a production-ready system by integrating a Neuro-Symbolic validation layer. Key...",
+          "slug": "neural-extraction-framework-enhancing-knowledge-graph-extraction-via-neuro-symbolic-integration",
+          "status": null,
+          "student_name": "Nakul156",
+          "student_profile": null,
+          "tags": [],
+          "title": "Neural Extraction Framework: Enhancing Knowledge Graph Extraction via Neuro-Symbolic Integration"
+        },
+        {
+          "code_url": null,
+          "description": "The Amharic DBpedia chapter's past implementation was largely manual, relying on tedious template mapping that has proven impossible to scale given the complexity of the Amharic language and the messy Wikipedia markup. My project's goal is to transition the chapter away from this bottleneck and fully automate the entire Semantic Web pipeline.\n\nI'll build an Agentic Orchestration Pipeline (using LangGraph/Mastra) that fixes the problem in three core areas:\nAI-Powered Mapping: The pipeline will integrate the fine-tuned Afro-XLM-R model to automatically predict and align Amharic properties to the DBpedia Ontology, completely replacing the manual mapping effort. This process is preceded by a Python preprocessor that cleans the raw Wikipedia XML dumps to prevent parser crashes.\nHuman-in-the-Loop Safety (HITL): I will wrap the entire system in a Human-in-the-Loop (HITL) interface, allowing community experts to verify low-confidence predictions to ensure data quality and continuously improve the AI model.\nVisualization and Accessibility: Finally, I will refactor the current am.dbpedia.org website into a dynamic dashboard that hooks into our deployed SPARQL endpoint, letting users actually query and visualize the live Knowledge Graph.\nKey deliverables will include the fully functional, automated extraction framework, the publication of the generated Amharic RDF triples to the DBpedia Databus, the deployment of a public-facing SPARQL endpoint (Tentris/Fuseki) for live querying, and the refactoring of the am.dbpedia.org website into a dynamic dashboard for visualizing the new Knowledge Graph.",
+          "difficulty": null,
+          "id": "proj_dbpedia_2026_rd7jEVeo",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/rd7jEVeo",
+          "proposal_id": "r25QYuv8",
+          "short_description": "The Amharic DBpedia chapter's past implementation was largely manual, relying on tedious template mapping that has proven impossible to scale given...",
+          "slug": "building-the-amharic-dbpedia-language-chapter-with-large-language-models-llms",
+          "status": null,
+          "student_name": "Natnael Yohanes",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building the Amharic DBpedia Language Chapter with Large Language Models (LLMs)"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving how relational triples are extracted from Hindi Wikipedia text for the DBpedia Hindi chapter. Currently, most structured data comes from infoboxes, while a large amount of useful information in free text remains unused. Existing approaches either rely on prompts, which are inconsistent, or rule-based systems that cannot handle the variety of Hindi sentence structures. There is also no proper system to use human feedback to improve results over time.\n\nTo address this, I will fine-tune a small language model specifically for Hindi triple extraction, with a focus on correctly identifying predicates. The system will also include a layer that maps extracted relations to DBpedia ontology properties, ensuring compatibility with the knowledge graph. A simple interface will be built to allow users to review, correct, and improve extracted triples, creating better training data over time.\n\nThe final outcome will be a working pipeline that extracts structured triples from Hindi text, a feedback system for continuous improvement, and a dataset of validated triples. This will help improve the coverage and quality of the Hindi DBpedia knowledge graph.",
+          "difficulty": null,
+          "id": "proj_dbpedia_2026_GI3KcMrR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/GI3KcMrR",
+          "proposal_id": "iiNKsnkN",
+          "short_description": "This project focuses on improving how relational triples are extracted from Hindi Wikipedia text for the DBpedia Hindi chapter. Currently, most...",
+          "slug": "hindi-relational-triple-extraction-with-fine-tuned-indic-models-and-human-in-the-loop-feedback",
+          "status": null,
+          "student_name": "Nitin@123",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hindi Relational Triple Extraction with Fine Tuned Indic Models and Human in the Loop Feedback"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -46,9 +46,9 @@
     "code generation",
     "systems programming"
   ],
-  "total_projects": 41,
+  "total_projects": 45,
   "stats": {
-    "avg_projects_per_appeared_year": 4.56,
+    "avg_projects_per_appeared_year": 4.5,
     "projects_by_year": {
       "year_2016": 6,
       "year_2017": 4,
@@ -60,7 +60,7 @@
       "year_2023": 6,
       "year_2024": null,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 6,
@@ -73,9 +73,9 @@
       "year_2023": 6,
       "year_2024": null,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 40
+    "total_students": 45
   },
   "years": {
     "year_2016": {
@@ -870,7 +870,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/qemu"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/qemu",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "QEMU's current snapshot load blocks until all guest RAM is loaded before \nstarting execution. This project implements on-demand snapshot loading using \nuserfaultfd - loading only device state upfront, then serving guest page \nfaults on-demand while a background thread prefetches remaining pages. \nThe design builds on existing postcopy migration and mapped-ram \ninfrastructure. Deliverables include a working fast snapshot load \nimplementation, unit tests in migration-test.c, and complete \ndocumentation.",
+          "difficulty": null,
+          "id": "proj_qemu_2026_aEV2rnx4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/aEV2rnx4",
+          "proposal_id": "vsWOGTDc",
+          "short_description": "QEMU's current snapshot load blocks until all guest RAM is loaded before starting execution. This project implements on-demand snapshot loading using...",
+          "slug": "fast-snapshot-load-for-qemu",
+          "status": null,
+          "student_name": "Aadesehveer Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Fast Snapshot Load for QEMU"
+        },
+        {
+          "code_url": null,
+          "description": "A guest operating system (OS), running inside a Confidential Virtual Machine (CVM), does not know the state information, such as log data or memory usage, of the secure module COCONUT-SVSM, which is responsible for managing the CVM. This information can be useful for the guest OS to understand the environment it is running in. A new protocol has been defined to enable the retrieval of this information. This project implements this observability protocol. The work is divided into several steps, which are also the deliverables: the implementation of a SVSM-side handler for the protocol, a guest-side handler, which is a Linux device driver, and a user-space tool, which uses the Linux device driver to retrieve and save the information.",
+          "difficulty": null,
+          "id": "proj_qemu_2026_1Q3qWHfa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1Q3qWHfa",
+          "proposal_id": "8l5U0rTv",
+          "short_description": "A guest operating system (OS), running inside a Confidential Virtual Machine (CVM), does not know the state information, such as log data or memory...",
+          "slug": "observability-support-for-coconut-svsm",
+          "status": null,
+          "student_name": "n-ramacciotti",
+          "student_profile": null,
+          "tags": [],
+          "title": "Observability Support for COCONUT-SVSM"
+        },
+        {
+          "code_url": null,
+          "description": "COCONUT-SVSM is a Secure Virtual Machine Service Module running at a privileged level inside Confidential VMs to provide trusted services (e.g., virtual TPM) independent of the host hypervisor. Currently, the SVSM kernel performs full TLB flushes on every context switch, discarding all TLB entries indiscriminately and causing significant runtime TLB miss overhead.\nThis project enhances COCONUT-SVSM to leverage the x86 PCID (Process Context Identifiers) hardware feature to tag TLB entries per task, preserving them across context switches and enabling selective TLB invalidation.\nThe work is structured in three phases:\nPhase 1 builds a code-generated Rust crate (x86-cpuid) from the authoritative x86-cpuid-db v2.4 XML database, replacing all scattered, magic-bit-position CPUID checks across the codebase with a type-safe cpu_has(leaf_0x1::ecx::Pcid) API unified across SNP, TDX, and native platforms via a CpuidReader trait. Phase 2 designs and implements a PCID assignment strategy for all virtual pages in the COCONUT kernel, enabling the CPU to tag TLB entries per task(same for all threads of task) and preserve them across context switches. Phase 3 converts global TLB flush operations in into selective, PCID-aware invalidations: using AMD's INVLPGB broadcast instruction to flush a specific PCID across all cores without IPIs.\nKey Deliverables are x86-cpuid Rust crate with code generator consuming x86-cpuid-db XML, refactored COCONUT-SVSM codebase with all open-coded CPUID checks replaced with new code generated by x86-cpuid Rust crate, PCID allocator, applying the PCIDs in the COCONUT page-tables and selective TLB flush functions (flush_tlb_pcid, flush_tlb_range_pcid) with AMD INVLPGB.",
+          "difficulty": null,
+          "id": "proj_qemu_2026_V58JuDQ7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/V58JuDQ7",
+          "proposal_id": "J81PTx7U",
+          "short_description": "COCONUT-SVSM is a Secure Virtual Machine Service Module running at a privileged level inside Confidential VMs to provide trusted services (e.g.,...",
+          "slug": "support-x86-process-context-identifiers-pcid-in-coconut-svsm",
+          "status": null,
+          "student_name": "Tanish Desai",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support X86 Process Context Identifiers (PCID) in COCONUT-SVSM"
+        },
+        {
+          "code_url": null,
+          "description": "Implement MS-RDPEUSB protocol (client & server) in IronRDP with libusb backend and qemu-rdp integration.\n\nThe goal of this project is to add USB device redirection support to IronRDP, the Rust implementation of the Remote Desktop Protocol. This enables client-attached USB devices (webcams, scanners, security keys, etc.) to be transparently accessed by applications running on the remote server.\n\nMS-RDPEUSB is a Dynamic Virtual Channel (DVC) extension that provides low-level USB packet redirection. Unlike high-level device redirection (like file system or audio), USB redirection transfers raw USB packets, allowing any USB device to work remotely without device-specific driver support on the client.",
+          "difficulty": null,
+          "id": "proj_qemu_2026_ssoc2JtG",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ssoc2JtG",
+          "proposal_id": "8la19e53",
+          "short_description": "Implement MS-RDPEUSB protocol (client & server) in IronRDP with libusb backend and qemu-rdp integration. The goal of this project is to add USB...",
+          "slug": "usb-device-redirection-for-qemu-rdp",
+          "status": null,
+          "student_name": "uchouT",
+          "student_profile": null,
+          "tags": [],
+          "title": "USB Device Redirection for qemu-rdp"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

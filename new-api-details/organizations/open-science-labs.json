@@ -30,9 +30,9 @@
     "web",
     "ai"
   ],
-  "total_projects": 4,
+  "total_projects": 11,
   "stats": {
-    "avg_projects_per_appeared_year": 4,
+    "avg_projects_per_appeared_year": 5.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 4
+    "total_students": 11
   },
   "years": {
     "year_2016": null,
@@ -153,7 +153,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/open-science-labs"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-science-labs",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The AlphaOne Labs platform (alphaonelabs/website) is a Django monolith. This proposal migrates it to a serverless Cloudflare Worker architecture (alphaonelabs/learn), decomposing the monolith into a Python CF Worker, D1 SQLite database, R2 object storage, KV cache, CF Pages frontend, CF Queues for async jobs, and Durable Objects for real-time virtual classrooms. As a secondary deliverable, it implements an AI powered Personalised Learning Lab with a Learner Knowledge Graph, spaced repetition (SM-2), RAG pipeline using Cloudflare Vectorize and Workers AI, and three adaptive tutor modes. The migration is not greenfield, the learn repo is already operational. Deliverables: fully migrated platform on Cloudflare, virtual classroom rebuilt on Durable Objects, and a working adaptive AI tutor module.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_ht2WBljH",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ht2WBljH",
+          "proposal_id": "wIEFZ1sS",
+          "short_description": "The AlphaOne Labs platform (alphaonelabs/website) is a Django monolith. This proposal migrates it to a serverless Cloudflare Worker architecture...",
+          "slug": "django-to-python-cloudflare-workers-migration-and-ai-powered-personalised-learning-lab",
+          "status": null,
+          "student_name": "AnanyaGupta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Django to Python Cloudflare Workers Migration and AI Powered Personalised Learning Lab"
+        },
+        {
+          "code_url": null,
+          "description": "Swarm external secrets project enables Docker Swarm services to consume secrets from external secret managers, but it still lacks several features needed for secure and production ready deployments. At present, some providers rely on older credential models, transport security can be improved, and support for newer secret backends and modern authentication workflows is limited. This project aims to close those gaps by making the plugin more secure, extensible, and operationally reliable.\n\nThe proposed work will focus on adding modern identity-based authentication methods such as JWT and OIDC flows for Vault and related providers, improving TLS and mTLS support with better CA bundle handling, and strengthening secret lifecycle support such as version awareness and rotation compatibility. In parallel, the project will expand provider support by integrating additional backends such as 1Password, Doppler, and Infisical. The deliverables will include secure authentication improvements, stronger transport security, new provider implementations, improved tests and documentation, and better observability so that swarm-external-secrets becomes a more enterprise-ready secret management solution for Docker Swarm.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_fGJRVdjq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fGJRVdjq",
+          "proposal_id": "k9vamXRB",
+          "short_description": "Swarm external secrets project enables Docker Swarm services to consume secrets from external secret managers, but it still lacks several features...",
+          "slug": "implement-enterprise-security-provider-ecosystem-expansion",
+          "status": null,
+          "student_name": "Atharva Mhaske",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement Enterprise Security & Provider Ecosystem Expansion"
+        },
+        {
+          "code_url": null,
+          "description": "HiperHealth's clinical pipeline currently lacks visual diagnostic capabilities. This project adds a modular MedVision skill channel, an external, installable module that brings medical image analysis into the existing pipeline with zero core modifications.\n\nThe project delivers shared infrastructure (MONAI preprocessing, Grad-CAM explainability, structured Pydantic output models, confidence calibration) and two body-region skills: SkinAnalysisSkill (DINOv2 backbone, ISIC 2018 dataset) and a second body-region skill (Eye/Nail) to validate extensibility.\n\n Each skill automatically enriches the DiagnosticsSkill's differential diagnosis via the prompt_fragments mechanism, producing calibrated predictions with saliency maps for clinical transparency. The project includes Fitzpatrick fairness auditing and ≥90% test coverage.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_ShK4q2ak",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ShK4q2ak",
+          "proposal_id": "lAKNabm5",
+          "short_description": "HiperHealth's clinical pipeline currently lacks visual diagnostic capabilities. This project adds a modular MedVision skill channel, an external,...",
+          "slug": "medvision-explainability-medical-image-analysis-with-interpretable-ai",
+          "status": null,
+          "student_name": "Chandan K T",
+          "student_profile": null,
+          "tags": [],
+          "title": "MedVision + Explainability: Medical Image Analysis with Interpretable AI"
+        },
+        {
+          "code_url": null,
+          "description": "The current Alpha One Labs platform (alphaonelabs/website) is feature-rich but built on an older Django-based architecture, while the new alphaonelabs/learn repository introduces a modern Python Cloudflare Workers stack with an encrypted database model that is not yet fully complete. This project focuses on migrating all relevant features from the existing platform into the new Learn repository, while adapting them to the Workers based architecture and ensuring full frontend integration. Along with migration, the project will also strengthen the existing encryption model and ensure secure handling of user data within the constraints of the Cloudflare Workers environment. The goal is to build a fully functional, production-ready system that preserves core learning workflows such as courses, sessions, study groups and communication features. The migration will follow a structured approach starting from backend logic, then database integration using Cloudflare D1 and finally connecting the frontend for complete end-to-end user flows. Along with this, the system will be improved by modularizing backend services, removing unnecessary components and maintaining a clean, scalable and secure architecture for future development.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_c6IVMXpx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/c6IVMXpx",
+          "proposal_id": "P2jFKQOp",
+          "short_description": "The current Alpha One Labs platform (alphaonelabs/website) is feature-rich but built on an older Django-based architecture, while the new...",
+          "slug": "alpha-one-labs-learn-platform",
+          "status": null,
+          "student_name": "Ghanshyam Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Alpha One Labs Learn Platform"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal integrates IRx with the Apache Arrow C Data Interface (CDI) to enable zero-copy interoperability with systems such as PyArrow and DuckDB. Currently, IRx lacks a complete Arrow export path, supports only int32, and contains a critical issue where finish() hardcodes type metadata, leading to silent data corruption for other types.\r\n\r\nThe project introduces a full Arrow lowering pipeline covering all fixed-width types and UTF-8 strings, implements a correct ArrowArray export mechanism, and resolves type handling through a generalized type_id-based runtime design. This ensures that future type additions remain localized and scalable without modifying shared logic.\r\n\r\nThe outcome is a production-ready integration that allows IRx programs to exchange data directly with Arrow-compatible systems without copying or serialization, enabling its use in real-world data processing pipelines.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_nL3y0QpV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nL3y0QpV",
+          "proposal_id": "MzPFjd1S",
+          "short_description": "This proposal integrates IRx with the Apache Arrow C Data Interface (CDI) to enable zero-copy interoperability with systems such as PyArrow and...",
+          "slug": "integrate-irx-with-apache-arrow-c-data-interface",
+          "status": null,
+          "student_name": "Jaskirats7",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate IRx with Apache Arrow (C Data Interface)"
+        },
+        {
+          "code_url": null,
+          "description": "The DU Event Board currently uses manual inputs and basic validation to manage event data. As the number of events grows, this can make it harder to maintain consistency, avoid duplicate entries, and optimize API usage. Event discovery is also primarily based on simple filters and does not yet include offline access. This project improves how event data is processed and maintained. On the backend, it extends the existing GitHub Actions workflow to automatically fetch event metadata (image and description), detect duplicates using title and date similarity, and perform geocoding only once per event by writing coordinates back to the source file. These changes prevent duplicate entries, reduce repeated API calls, and remove the need for manual data fixes. On the frontend, the project adds full-text search, map-based filtering with a time slider, relative date display, and offline support. It also introduces a guided event submission flow that creates structured GitHub Issues, making it easier for contributors to add events. Together, these changes reduce manual review work and make it easier for users to search, filter, and access events.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_0dSuP1ia",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/0dSuP1ia",
+          "proposal_id": "Tnxr9XoH",
+          "short_description": "The DU Event Board currently uses manual inputs and basic validation to manage event data. As the number of events grows, this can make it harder to...",
+          "slug": "automating-event-data-pipelines-and-enhancing-discovery-ux-for-du-event-board",
+          "status": null,
+          "student_name": "Sanvi Shukla",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automating Event Data Pipelines and Enhancing Discovery UX for DU Event Board"
+        },
+        {
+          "code_url": null,
+          "description": "This project integrates IRx with Apache Arrow via the Arrow C Data and C Stream Interfaces, enabling IRx to lower ASTx values into Arrow-compatible columnar memory layouts. The integration provides zero-copy, language-agnostic interoperability with the Arrow ecosystem (PyArrow, Rust Arrow, DuckDB, etc.) without introducing a dependency on Arrow C++ libraries.",
+          "difficulty": null,
+          "id": "proj_open-science-labs_2026_fzD06j1V",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fzD06j1V",
+          "proposal_id": "Rqj9nmrJ",
+          "short_description": "This project integrates IRx with Apache Arrow via the Arrow C Data and C Stream Interfaces, enabling IRx to lower ASTx values into Arrow-compatible...",
+          "slug": "integrate-irx-with-apache-arrow-c-data-interface",
+          "status": null,
+          "student_name": "Yogendra Sankhla",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate IRx with Apache Arrow (C Data Interface)"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

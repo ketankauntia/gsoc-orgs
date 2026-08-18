@@ -31,9 +31,9 @@
     "AI/ML Networking",
     "networking security"
   ],
-  "total_projects": 9,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 4.5,
+    "avg_projects_per_appeared_year": 4.67,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -45,7 +45,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -58,9 +58,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 9
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -261,7 +261,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-p4-language-consortium"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-p4-language-consortium",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "P4TC enables programmable packet processing in the Linux kernel via TC and eBPF, but its control plane is limited to the tc CLI and shell scripts. This project delivers idiomatic Python (cffi) and Rust (bindgen) wrappers for P4TC's C API, covering both provisioning and runtime CRUDSP operations. Deliverables include: (1) a Python package (p4tc_py) with context managers and type hints, (2) a Rust crate (p4tc-rs) with safe ownership semantics and Drop-based cleanup, (3) ported tutorial examples in both languages, and (4) API documentation with a shell-vs-Python-vs-Rust comparison guide.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-consortium_2026_qMVa9F81",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qMVa9F81",
+          "proposal_id": "TDjj67M8",
+          "short_description": "P4TC enables programmable packet processing in the Linux kernel via TC and eBPF, but its control plane is limited to the tc CLI and shell scripts....",
+          "slug": "polyglot-p4tc-python-and-rust-api-wrappers-for-linux-tc-based-p4",
+          "status": null,
+          "student_name": "Attaullah Ansari",
+          "student_profile": null,
+          "tags": [],
+          "title": "Polyglot P4TC: Python and Rust API Wrappers for Linux TC-based P4"
+        },
+        {
+          "code_url": null,
+          "description": "BMv2 currently provides only textual logs for tracing packets through a P4 pipeline, which must be parsed with brittle regex hacks and cannot be easily consumed by automated tools. This project aims to replace that with a structured, programmatic trace API — recording per-packet events such as applied tables, matched entries, and executed actions — and exposing them in a machine-readable format such as protobuf (with JSON serialization support), enabling use cases ranging from human debugging to automated test coverage measurement, test generation, and root cause analysis.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-consortium_2026_DAxIafkq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DAxIafkq",
+          "proposal_id": "v4njeJXO",
+          "short_description": "BMv2 currently provides only textual logs for tracing packets through a P4 pipeline, which must be parsed with brittle regex hacks and cannot be...",
+          "slug": "bmv2-packet-trace-support",
+          "status": null,
+          "student_name": "c8ef",
+          "student_profile": null,
+          "tags": [],
+          "title": "BMv2 packet trace support"
+        },
+        {
+          "code_url": null,
+          "description": "P4-SpecTec provides mechanized formal semantics for the P4 language, but its adoption is currently limited by a lack of accessible learning resources. New users face a steep learning curve in understanding how to write, execute, and utilize mechanized specifications in practice.\n\nThis project proposes to improve the usability of P4-SpecTec by developing a tutorial-style documentation centered around nano-P4, a minimal subset of the language. The tutorial will guide users through writing mechanized specifications, executing them, and generating specification documents, providing a hands-on introduction to the framework.\n\nThe technical scope includes constructing a complete nano-P4 specification within P4-SpecTec, designing detailed examples, and demonstrating workflows for specification execution and document generation. The end result will be a practical and reproducible learning resource for onboarding new users.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-consortium_2026_xySpY7SU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xySpY7SU",
+          "proposal_id": "sCmpIRdq",
+          "short_description": "P4-SpecTec provides mechanized formal semantics for the P4 language, but its adoption is currently limited by a lack of accessible learning...",
+          "slug": "enhancing-p4-spectec-usability-a-mechanized-specification-for-nano-p4",
+          "status": null,
+          "student_name": "Haechan Kwon",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing P4-SpecTec Usability: A Mechanized Specification for Nano-P4"
+        },
+        {
+          "code_url": null,
+          "description": "This project is to improve the P4Sim module by enhancing its Traffic Manager and integrating ns-3's built-in QueueDisc class into it. This will help developers and researchers in testing P4 switches with more complex scenarios and get accurate results for their experiments.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-consortium_2026_mIjAcBVg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mIjAcBVg",
+          "proposal_id": "eT9hSDo5",
+          "short_description": "This project is to improve the P4Sim module by enhancing its Traffic Manager and integrating ns-3's built-in QueueDisc class into it. This will help...",
+          "slug": "improving-the-traffic-manager-of-the-p4sim-switch",
+          "status": null,
+          "student_name": "Vineet Goel",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving The Traffic Manager of the P4Sim Switch"
+        },
+        {
+          "code_url": null,
+          "description": "This project integrates Planter, an in-network machine learning framework, into the P4Pi Raspberry Pi platform. The work includes adding a p4c-dpdk target adapter to Planter, implementing 1–2 additional ML algorithm modules, developing end-to-end example applications on a DPDK-based software switch, and packaging the result as a ready-to-use P4Pi system image with teaching-oriented documentation and tutorials.",
+          "difficulty": null,
+          "id": "proj_the-p4-language-consortium_2026_cuGQCuZO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cuGQCuZO",
+          "proposal_id": "ATdnpRVa",
+          "short_description": "This project integrates Planter, an in-network machine learning framework, into the P4Pi Raspberry Pi platform. The work includes adding a p4c-dpdk...",
+          "slug": "integrating-p4-based-in-network-machine-learning-framework-into-p4pi",
+          "status": null,
+          "student_name": "WeiWei Luo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrating P4 Based In Network Machine Learning Framework into P4Pi"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

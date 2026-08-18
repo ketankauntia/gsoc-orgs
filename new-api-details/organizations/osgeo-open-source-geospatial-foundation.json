@@ -51,9 +51,9 @@
     "databases",
     "routing"
   ],
-  "total_projects": 101,
+  "total_projects": 107,
   "stats": {
-    "avg_projects_per_appeared_year": 10.1,
+    "avg_projects_per_appeared_year": 9.73,
     "projects_by_year": {
       "year_2016": 20,
       "year_2017": 13,
@@ -65,7 +65,7 @@
       "year_2023": 7,
       "year_2024": 7,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": 20,
@@ -78,9 +78,9 @@
       "year_2023": 7,
       "year_2024": 7,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 94
+    "total_students": 107
   },
   "years": {
     "year_2016": {
@@ -2034,7 +2034,120 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/osgeo-open-source-geospatial-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/osgeo-open-source-geospatial-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The istSOS backend already provides strong support for time-travel queries and versioned data through parameters like as_of and from_to. However, these capabilities are currently only accessible through manual API usage, which makes them difficult to use for most users.\n\nThis project focuses on bringing these features into the web administration UI by building an intuitive and accessible interface for exploring historical data. Users will be able to select a specific timestamp or time range, view the exact past state of entities such as Things, Sensors, and Datastreams, and understand how data evolved over time without writing API queries.\n\nThe approach is to design lightweight frontend components that map user input to existing backend parameters, keeping the backend unchanged while making the feature usable. In addition, a Commit History Viewer will be implemented to allow users to browse changes, view metadata like author and timestamp, and load past snapshots directly into the UI.\n\nBy the end of the project, istSOS will have:\n\n- Time selection controls integrated into the UI (instant and range)\n - Historical views for all major entities\n- A commit history explorer for tracking data changes\n- A clean query mapping layer between UI and API\n- Proper testing and documentation for long-term maintainability\n\nOverall, the goal is to make time-travel functionality a first-class feature in istSOS, improving transparency, usability, and accessibility for both technical and non-technical users.",
+          "difficulty": null,
+          "id": "proj_osgeo-open-source-geospatial-foundation_2026_YflwazxR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YflwazxR",
+          "proposal_id": "AfL90BLp",
+          "short_description": "The istSOS backend already provides strong support for time-travel queries and versioned data through parameters like as_of and from_to. However,...",
+          "slug": "time-travel-data-access-and-versioning-ui-for-istsos-web-administration",
+          "status": null,
+          "student_name": "Bhudev Bhanpuriya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Time-Travel Data Access and Versioning UI for istSOS Web Administration"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds proper role-based access control to istSOS4 by making the web administration interface reflect the permissions already enforced in PostgreSQL through Row-Level Security (RLS).\n\nRight now, the backend enforces access correctly, but the UI does not — every user sees the same controls. This project fixes that. Each role (administrator, editor, viewer, sensor) will only see the pages and actions they are allowed to use.\n\nIt also simplifies user and policy management by removing the current two-step workflow. Creating or updating a user will automatically apply the appropriate policies, reducing configuration mistakes and making the system easier to operate.\n\nTo support real deployments, the project adds basic observability and debugging tools. A permission matrix shows what each role can do, and audit logs record access-related events. In addition, small utilities like permission explanation, access simulation, and change impact preview help admins understand and verify changes before applying them.\n\nThe project also explores integration with external authentication providers (OIDC) so istSOS4 can work with single sign-on setups, including Grafana, without changing how permissions are enforced.\n\nOverall, the focus is to make permissions visible, predictable, and manageable for administrators.",
+          "difficulty": null,
+          "id": "proj_osgeo-open-source-geospatial-foundation_2026_945pDu8d",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/945pDu8d",
+          "proposal_id": "yi6E76VR",
+          "short_description": "This project adds proper role-based access control to istSOS4 by making the web administration interface reflect the permissions already enforced in...",
+          "slug": "istsos-role-based-web-administration",
+          "status": null,
+          "student_name": "Kinshuk Sanand",
+          "student_profile": null,
+          "tags": [],
+          "title": "istSOS Role-Based Web Administration"
+        },
+        {
+          "code_url": null,
+          "description": "This project intends to implement a Maximum Weighted Matching algorithm for pgRouting within the OSGeo ecosystem, enabling efficient graph-based optimization for spatial networks. Maximum weighted matching is a fundamental problem that identifies a set of non-overlapping edges with maximum total weight, widely applicable in logistics, vehicle assignment, and supply-demand matching. The implementation will include development of a pgr_maximumWeightedMatching() function with a SQL interface and a high-performance C++ backend leveraging Boost Graph Library or optimized custom routines, integrated seamlessly with existing pgRouting structures. The project will also provide support for weighted graphs, comprehensive documentation, unit testing using pgTap, and performance benchmarking on large-scale and real-world datasets. This addition will enhance pgRouting’s analytical capabilities by introducing advanced matching functionality for transportation and network optimization while adhering to project coding standards.",
+          "difficulty": null,
+          "id": "proj_osgeo-open-source-geospatial-foundation_2026_IdmxfGDK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IdmxfGDK",
+          "proposal_id": "B0sJgNI1",
+          "short_description": "This project intends to implement a Maximum Weighted Matching algorithm for pgRouting within the OSGeo ecosystem, enabling efficient graph-based...",
+          "slug": "implementing-the-maximum-weighted-matching-algorithm-for-pgrouting",
+          "status": null,
+          "student_name": "Mayur Galhate",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing the Maximum Weighted Matching Algorithm for pgRouting"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements pgr_makeBiconnectedPlanar and pgr_makeMaximalPlanar as new pgRouting SQL functions, completing the planar graph preparation. Together they unlock downstream Boost layout algorithms currently inaccessible to pgRouting users. Stretch goal: pgr_findOddCycle. \nEstimated 350 hours.",
+          "difficulty": null,
+          "id": "proj_osgeo-open-source-geospatial-foundation_2026_PPwJseX9",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PPwJseX9",
+          "proposal_id": "RFA1M3y5",
+          "short_description": "This project implements pgr_makeBiconnectedPlanar and pgr_makeMaximalPlanar as new pgRouting SQL functions, completing the planar graph preparation....",
+          "slug": "implement-make-biconnected-planar-and-make-maximal-planar-algorithms-for-pgrouting",
+          "status": null,
+          "student_name": "Mohit242-bit",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement Make Biconnected Planar and Make Maximal Planar Algorithms for pgRouting"
+        },
+        {
+          "code_url": null,
+          "description": "This project brings two new algorithms from the Boost Graph Library into pgRouting: planar face traversal and k-core decomposition. pgr_planarFaces extracts enclosed city block regions from planar street networks using Boyer-Myrvold planarity testing and BGL planar_face_traversal. \nThe output integrates with PostGIS ST_MakePolygon to build polygon geometries directly from road topology. pgr_coreNumbers computes k-core decomposition using the Batagelj-Zaversnik algorithm, assigning each vertex a core number representing its connectivity level. Core 1 vertices are dead-end streets, core 2 are corridors, and core 3+ form the dense urban grid. Together they create a pipeline: pgr_coreNumbers prunes dead-ends before pgr_planarFaces extracts clean faces. Both run in O(V+E) linear time. \nIf time allows, pgr_isKuratowskiSubgraph will extract the exact K5 or K3,3 subdivision causing non-planarity, completing the planar diagnostic toolkit. pgr_isPlanar is included as a standalone companion function.",
+          "difficulty": null,
+          "id": "proj_osgeo-open-source-geospatial-foundation_2026_Dd4a2hsK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Dd4a2hsK",
+          "proposal_id": "MhtWGkAo",
+          "short_description": "This project brings two new algorithms from the Boost Graph Library into pgRouting: planar face traversal and k-core decomposition. pgr_planarFaces...",
+          "slug": "implementing-planar-face-extraction-and-k-core-decomposition-algorithms-for-pgrouting",
+          "status": null,
+          "student_name": "sakir05",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing Planar Face Extraction and K-Core Decomposition Algorithms for pgRouting"
+        },
+        {
+          "code_url": null,
+          "description": "A fundamental gap in the OGC SensorThings API ecosystem is addressed by this project: istSOS4 can serve rich sensor data, but it is difficult to find that data outside of its own API. This project aims to create a lightweight metadata connector that extracts data from istSOS4, transforms it into DCAT-AP 3.0 and SpatioTemporal Asset Catalog(STAC) formats, and exposes it through simple REST endpoints (/stac, /dcat). As a result, istSOS4 deployments are searchable, interoperable, and simple to integrate with contemporary data platforms and geospatial tools thanks to a plug-and-play service.",
+          "difficulty": null,
+          "id": "proj_osgeo-open-source-geospatial-foundation_2026_UmLEBaWM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UmLEBaWM",
+          "proposal_id": "hhFnFTOA",
+          "short_description": "A fundamental gap in the OGC SensorThings API ecosystem is addressed by this project: istSOS4 can serve rich sensor data, but it is difficult to find...",
+          "slug": "istsos-metadata-connector-for-data-spaces-and-stac",
+          "status": null,
+          "student_name": "Vishmayraj",
+          "student_profile": null,
+          "tags": [],
+          "title": "istSOS Metadata Connector for Data Spaces and STAC"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

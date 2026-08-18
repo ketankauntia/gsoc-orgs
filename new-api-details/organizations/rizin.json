@@ -33,9 +33,9 @@
     "emulation",
     "disassembly"
   ],
-  "total_projects": 10,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -47,7 +47,7 @@
       "year_2023": 1,
       "year_2024": 1,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -60,9 +60,9 @@
       "year_2023": 1,
       "year_2024": 1,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 10
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -283,7 +283,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/rizin"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/rizin",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Modern object-oriented binaries depend heavily on vtables, RTTI, and dynamic dispatch. Rizin's current class and vtable analysis is siloed and not integrated with the type system or decompiler.\nThis project finishes the 2025 Objective-C inheritance PR (#5415), then adds field recovery, constructor/destructor identification, exception metadata extraction, and improved devirtualization. The core goal is a bidirectional bridge between class metadata and RzBaseType so recovered structures can be used directly in analysis and the decompiler.",
+          "difficulty": null,
+          "id": "proj_rizin_2026_2nJXboq3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2nJXboq3",
+          "proposal_id": "nPWJJlsK",
+          "short_description": "Modern object-oriented binaries depend heavily on vtables, RTTI, and dynamic dispatch. Rizin's current class and vtable analysis is siloed and not...",
+          "slug": "classes-analysis-for-c-objectivec-swift-dlang-java",
+          "status": null,
+          "student_name": "Alok Kumar Mishra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Classes Analysis for C++ ObjectiveC Swift Dlang Java"
+        },
+        {
+          "code_url": null,
+          "description": "A common problem in binary analysis is function detection. One method is searching for function preludes. Preludes are a sequence of instructions commonly found at the beginning of a function. These preludes perform tasks like setting up the stack, or initializing registers to values as defined in the architecture’s ABI.\n\nIt is very common to hard-code these prelude patterns and match instructions against them. These patterns get outdated, are tedious to update, and have to be written for each architecture. Also because these signatures are generic, they are highly prone to false positives especially on x86/x86_64 binaries.\n\nThis project aims to augment static signature based approach with a dynamic, multi-stage statistical heuristic pipeline. Weighted Prefix Trie will be used for matching  and then filtering through  2-signal validation approach (frequency distribution analysis  + shannon entropy) for removing noise. Hence the plugin will automatically learn directly from functions identified by initial CFG (Control Flow Graph) analysis in the target binary.\n\nThis approach also enables the discovery of orphaned or hidden functions that standard CFG analysis often misses in stripped or obfuscated binaries.",
+          "difficulty": null,
+          "id": "proj_rizin_2026_9X4fkclD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9X4fkclD",
+          "proposal_id": "lxGqYWOU",
+          "short_description": "A common problem in binary analysis is function detection. One method is searching for function preludes. Preludes are a sequence of instructions...",
+          "slug": "function-prelude-detection-plugin",
+          "status": null,
+          "student_name": "Darshan-Patel",
+          "student_profile": null,
+          "tags": [],
+          "title": "Function prelude detection plugin"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend Rizin's OOP binary analysis capabilities across multiple languages. It completes support for Objective-C and Swift binaries, and introduces support for Rust and Java, focusing on vtable detection, devirtualization, and inheritance graph reconstruction. It also adds Windows Structured Exception Handling for both x86 and x64. Demanglers for Swift and D will be integrated into rz-libdemangle.",
+          "difficulty": null,
+          "id": "proj_rizin_2026_VYDNb6QE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VYDNb6QE",
+          "proposal_id": "JzwBKf09",
+          "short_description": "This project aims to extend Rizin's OOP binary analysis capabilities across multiple languages. It completes support for Objective-C and Swift...",
+          "slug": "classes-analysis-for-c-objectivec-swift-dlang-java",
+          "status": null,
+          "student_name": "Naren Sirigere",
+          "student_profile": null,
+          "tags": [],
+          "title": "Classes Analysis For C++/ObjectiveC/Swift/Dlang/Java"
+        },
+        {
+          "code_url": null,
+          "description": "This task focuses on bringing binary diffing directly into Cutter by integrating the core capabilities of rz-diff into its interface. Since binary diffing is a common reverse engineering workflow, the goal is to let users select and compare two binaries within Cutter itself rather than relying on external tools. The project would involve building a user-friendly file selection interface for choosing the binaries to compare, then visually presenting detected differences across Cutter’s major analysis views, including the hexadecimal view, disassembly view, graph view, and pseudocode view, so analysts can inspect structural and behavioral changes seamlessly in one environment.",
+          "difficulty": null,
+          "id": "proj_rizin_2026_ZicrMCYT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZicrMCYT",
+          "proposal_id": "vvYzN7C2",
+          "short_description": "This task focuses on bringing binary diffing directly into Cutter by integrating the core capabilities of rz-diff into its interface. Since binary...",
+          "slug": "diffing-mode",
+          "status": null,
+          "student_name": "Ron Stephen Mathew",
+          "student_profile": null,
+          "tags": [],
+          "title": "Diffing mode"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

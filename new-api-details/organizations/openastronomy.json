@@ -52,9 +52,9 @@
     "image processing",
     "data analysis"
   ],
-  "total_projects": 77,
+  "total_projects": 82,
   "stats": {
-    "avg_projects_per_appeared_year": 7.7,
+    "avg_projects_per_appeared_year": 7.45,
     "projects_by_year": {
       "year_2016": 7,
       "year_2017": 8,
@@ -66,7 +66,7 @@
       "year_2023": 6,
       "year_2024": 8,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 7,
@@ -79,9 +79,9 @@
       "year_2023": 6,
       "year_2024": 8,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 74
+    "total_students": 82
   },
   "years": {
     "year_2016": {
@@ -1607,7 +1607,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openastronomy"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openastronomy",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Spectra.jl already handles UV, optical, and IR spectra, but has no capability for loading spectra like X-ray and gamma-ray, as they are different from UV/optical/IR spectra. X-ray astronomy (and other high energy fields) typically operates on spectra that are binned into channels by the measurement device. An instrument response matrix (RMF) is required to map detector channels to physical energies, and an ancillary response file (ARF) provides the telescope's effective collecting area, and both are needed to correctly convert raw channel counts into physical flux.\n\nSpectralFitting.jl already contains an OGIP parser that handles these formats. It has been agreed upon that the correct long-term architecture is for the spectral types to live in Spectra.jl, with SpectralFitting.jl eventually depending on Spectra.jl rather than duplicating data structures. Beyond data loading, observers also need a standard set of tools before any science can be done, such as rebinning according to different heuristics, adjusting the wavelength or energy shifts, or converting between common units. This project implements those tools in Spectra.jl as well, making it easier for users of Spectra.jl.",
+          "difficulty": null,
+          "id": "proj_openastronomy_2026_SaSD1HOR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SaSD1HOR",
+          "proposal_id": "xD0oAG6I",
+          "short_description": "Spectra.jl already handles UV, optical, and IR spectra, but has no capability for loading spectra like X-ray and gamma-ray, as they are different...",
+          "slug": "spectra-jl-across-the-electromagnetic-spectrum",
+          "status": null,
+          "student_name": "James R Lee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Spectra.jl Across the Electromagnetic Spectrum"
+        },
+        {
+          "code_url": null,
+          "description": "Current radiospectra stores spectral data as plain NumPy arrays with each instrument client handling metadata, axis ordering and coordinate conversions differently. This leads to inconsistencies and requires users to write boilerplate code for common tasks such as slicing by time or frequency, performing background subtraction and working with physical coordinates. It also limits integration with SunPy's coordinate-aware ecosystem like NDCube and WCS.\r\n\r\nThis project proposes developing a single Spectra class that provides a consistent, high-level interface for radio spectrogram data. The class will support intuitive slicing using physical coordinates, built-in background subtraction and simplified visualisation while abstracting underlying array complexities. The project will explore integrating NDCube or alternative approaches such as xarray or a custom WCS layer to ensure the best fit. The goal is to make radiospectra as user-friendly and consistent as sunpy.map, improving usability and interoperability across the SunPy ecosystem.",
+          "difficulty": null,
+          "id": "proj_openastronomy_2026_iZFr1E68",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iZFr1E68",
+          "proposal_id": "ZAUvJk9Y",
+          "short_description": "Current radiospectra stores spectral data as plain NumPy arrays with each instrument client handling metadata, axis ordering and coordinate...",
+          "slug": "modernizing-radiospectra-a-coordinate-aware-and-interoperable-spectral-data-framework",
+          "status": null,
+          "student_name": "Kumar Amityush",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing radiospectra: A Coordinate-Aware and Interoperable Spectral Data Framework"
+        },
+        {
+          "code_url": null,
+          "description": "The PyArrow project currently faces performance bottlenecks when used in astronomy computational work on massive datasets, such as the HATS catalog light curves. Specifically, the Apache Arrow C++ and PyArrow implementations struggle with parsing multi-level nested Parquet files due to underutilized multi-threading, lack the ability to selectively load specific fields from deeply nested structures, and feature compute kernels that do not support nested datatypes. This project aims to resolve these core issues to drastically improve load times and resource efficiency for the astronomy community.",
+          "difficulty": null,
+          "id": "proj_openastronomy_2026_v6LNwOJt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/v6LNwOJt",
+          "proposal_id": "S0jzSeSX",
+          "short_description": "The PyArrow project currently faces performance bottlenecks when used in astronomy computational work on massive datasets, such as the HATS catalog...",
+          "slug": "pyarrow-improvements-for-astronomy",
+          "status": null,
+          "student_name": "Om Biradar",
+          "student_profile": null,
+          "tags": [],
+          "title": "PyArrow Improvements for Astronomy"
+        },
+        {
+          "code_url": null,
+          "description": "While Python Stingray is powerful for X-ray timing, its computational overhead creates a massive bottleneck for processing multi-megabyte event files. My project builds upon Stingray.jl's high-performance foundation by introducing advanced cross-spectral analysis, time lags, and energy-resolved timing tools natively in Julia. To do this It took me Long research Hours and proper Interests matching around my Idea and I Finally came up with the Idea of building structured Powerspectrum and Crossspectrum types, alongside time lag and coherence tools for mapping black hole reverberation. My deliverables also include variability-energy spectroscopy tools, multi-threaded Lomb-Scargle periodograms for unevenly-sampled data, and intuitive one-liner Makie.jl plot recipes. Everything is backed by comprehensive test suites and cross-validated against the Python Stingray package to guarantee absolute scientific accuracy.",
+          "difficulty": null,
+          "id": "proj_openastronomy_2026_0VhXusPh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/0VhXusPh",
+          "proposal_id": "e6RDWLvG",
+          "short_description": "While Python Stingray is powerful for X-ray timing, its computational overhead creates a massive bottleneck for processing multi-megabyte event...",
+          "slug": "spectral-timing-in-julia-extending-stingray-jl-for-x-ray-astronomy",
+          "status": null,
+          "student_name": "Om S Habib",
+          "student_profile": null,
+          "tags": [],
+          "title": "Spectral Timing in Julia: Extending Stingray.jl for X-ray Astronomy"
+        },
+        {
+          "code_url": null,
+          "description": "Astropy’s Python API is well-tested, but its underlying compiled layer (C, C++, Cython) lacks isolated testing. Because performance-critical extensions are currently only tested indirectly via high-level Python calls, deep bugs can easily be masked. This testing blind spot also blocks major architectural milestones, including the APE low-level package split, the Meson build system migration, and support for Python 3.15 free-threaded builds.\n\nThis project will build a dedicated test suite to exercise each compiled extension module directly, entirely bypassing the public Python API. By engineering methods to probe these modules in isolation, including resolving complex runtime circular dependencies like `unit_list_proxy.c`; this work will establish a robust, reliable testing boundary between Python and the compiled code.\n\nDeliverables:\nC-API Audit: A mapped testing surface for active compiled extension modules.\nIsolated Test Suites: Direct pytest suites for compiled modules in astropy/table, time, timeseries, utils/xml, wcs, and erfa.\nDependency Resolution: A C-level refactor (or minimal Python stub) to fix the `unit_list_proxy.c` circular dependency.\nDocumentation: A new TESTING_EXTENSIONS.rst guide in Astropy's docs detailing how to run and extend these direct tests.",
+          "difficulty": null,
+          "id": "proj_openastronomy_2026_o2k6RAjT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/o2k6RAjT",
+          "proposal_id": "PznzfhMN",
+          "short_description": "Astropy’s Python API is well-tested, but its underlying compiled layer (C, C++, Cython) lacks isolated testing. Because performance-critical...",
+          "slug": "hardening-astropy-s-core-stability",
+          "status": null,
+          "student_name": "Reem_Hamraz",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hardening Astropy's Core Stability"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

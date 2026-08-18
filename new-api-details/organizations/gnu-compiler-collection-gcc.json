@@ -38,9 +38,9 @@
     "rust",
     "link time optimization"
   ],
-  "total_projects": 34,
+  "total_projects": 39,
   "stats": {
-    "avg_projects_per_appeared_year": 4.25,
+    "avg_projects_per_appeared_year": 4.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -52,7 +52,7 @@
       "year_2023": 6,
       "year_2024": 7,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -65,9 +65,9 @@
       "year_2023": 6,
       "year_2024": 7,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 32
+    "total_students": 39
   },
   "years": {
     "year_2016": null,
@@ -751,7 +751,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gnu-compiler-collection-gcc"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnu-compiler-collection-gcc",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "GCC's static analyzer (-fanalyzer) lacks C++ class hierarchy awareness, causing it to miss bugs in exception catch blocks that use base types and limiting virtual function resolution. This project implements exception subclass matching (PR119697) and improves virtual function dispatch (PR97114) by adding type hierarchy infrastructure to the analyzer.",
+          "difficulty": null,
+          "id": "proj_gnu-compiler-collection-gcc_2026_iiWwmSYh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iiWwmSYh",
+          "proposal_id": "jXripEiV",
+          "short_description": "GCC's static analyzer (-fanalyzer) lacks C++ class hierarchy awareness, causing it to miss bugs in exception catch blocks that use base types and...",
+          "slug": "extending-c-support-in-gcc-static-analyzer",
+          "status": null,
+          "student_name": "Egas Ribeiro",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending C++ Support in GCC Static Analyzer"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements the compiler infrastructure—including missing intrinsics and lang items—required to compile Rust’s alloc crate in GCC Rust (gccrs). The work focuses on bridging architectural gaps and ensuring alloc is ready for integration once core support is finalized. Deliverables include core heap-related functionality, regression tests, and documentation of the resolved compiler limitations.",
+          "difficulty": null,
+          "id": "proj_gnu-compiler-collection-gcc_2026_iDcbvPxG",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iDcbvPxG",
+          "proposal_id": "J4eA7wKW",
+          "short_description": "This project implements the compiler infrastructure—including missing intrinsics and lang items—required to compile Rust’s alloc crate in GCC Rust...",
+          "slug": "gccrs-adding-infrastructure-to-compile-the-rust-alloc-crate",
+          "status": null,
+          "student_name": "Enes Çevik",
+          "student_profile": null,
+          "tags": [],
+          "title": "[gccrs] Adding Infrastructure to Compile the Rust 'alloc' Crate"
+        },
+        {
+          "code_url": null,
+          "description": "gccrs still lacks support for Rust’s Drop trait, which is a core part of Rust’s resource management model. Without it, values that require cleanup cannot be handled correctly at scope exit, which makes gccrs incomplete with respect to important Rust semantics.\n\nThis project proposes an incremental implementation of Drop support in gccrs, starting from a narrow and testable subset rather than attempting full drop elaboration at once. The first stage focuses on scope-exit destructor insertion for simple non-generic local variables using existing backend cleanup machinery. \n\nFrom there, the implementation will be extended to support multiple locals, correct reverse drop order (LIFO), and, if feasible, initial nested-scope cleanup. More advanced cases such as moved values, temporaries, partially initialized values, and generic Drop will be treated as later-stage or stretch work.\n\nThe main deliverables are: an initial implementation of scope-exit Drop support for a restricted subset of local variables, support for correct LIFO drop ordering, regression tests covering the supported behavior, and documentation describing the implementation approach, supported subset, and current limitations.",
+          "difficulty": null,
+          "id": "proj_gnu-compiler-collection-gcc_2026_rpCOU67B",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/rpCOU67B",
+          "proposal_id": "mhv12OWQ",
+          "short_description": "gccrs still lacks support for Rust’s Drop trait, which is a core part of Rust’s resource management model. Without it, values that require cleanup...",
+          "slug": "add-infrastructure-to-handle-the-drop-trait",
+          "status": null,
+          "student_name": "Janet Chien",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add infrastructure to handle the \"Drop\" trait"
+        },
+        {
+          "code_url": null,
+          "description": "Modern cloud environments frequently rely on oversubscription to maximize resource utilization, which introduces significant performance challenges for OpenMP applications running inside virtual machines. In such environments, a semantic gap exists between the guest scheduler (which assumes full CPU availability) and the host scheduler (which may preempt virtual CPUs).\n\nThis project proposes a set of optimizations to the GNU OpenMP runtime (libgomp) that leverage host-side scheduling information to guide execution decisions inside the guest. The core idea is to bridge the host–guest semantic gap using a low-latency shared-memory communication mechanism based \\section*{Project Summary}on eBPF and ivshmem, enabling real-time propagation of scheduling metrics without incurring VM-exit overhead.\n\nA key component of the project is the implementation of a Phantom Tracker using eBPF, which monitors virtual CPU states on the host and computes a phantom average metric representing scheduling contention. This information is communicated to the guest and used to dynamically adapt two critical aspects of OpenMP execution: the Degree of Parallelism (DoP) and barrier synchronization behavior.\n\nTo integrate these optimizations, the project extends libgomp with two new environment variables: \nGOMP_DYNAMIC_POLICY for scheduler-guided parallelism adaptation, and GOMP_WAIT_POLICY for adaptive spin–block synchronization. These enhancements allow OpenMP applications to respond to real-time host conditions, improving performance and resource efficiency under oversubscribed workloads.",
+          "difficulty": null,
+          "id": "proj_gnu-compiler-collection-gcc_2026_iXbp42du",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iXbp42du",
+          "proposal_id": "MWF7S4yj",
+          "short_description": "Modern cloud environments frequently rely on oversubscription to maximize resource utilization, which introduces significant performance challenges...",
+          "slug": "libgomp-optimizations-for-scheduler-guided-openmp-execution-in-cloud-vms",
+          "status": null,
+          "student_name": "Nchang Roy",
+          "student_profile": null,
+          "tags": [],
+          "title": "libgomp Optimizations for Scheduler Guided OpenMP Execution in Cloud VMs"
+        },
+        {
+          "code_url": null,
+          "description": "GCC currently supports most OpenACC directives for GPU offloading, but several features remain unimplemented or incomplete. This project targets four concrete gaps in the OpenACC implementation within GCC:\n\n- init, shutdown, and set directives (OpenACC 2.5+): Implementing the directive-form equivalents of the already-available runtime API routines, following the pattern of the existing #pragma acc wait infrastructure.\n\n- bind clause: Extending full support to C, C++, and Fortran by mapping the clause to OpenMP declare target and declare variant directives at the middle-end level or implementing OpenACC specific code.\n\n- device_type clause: Filtering clauses in the GIMPLE IR linked list based on the target device type at compile time using the ACCEL_COMPILER variable.\n\n- cache directive: Moving beyond the current no-op behavior by emitting prefetch instructions and/or placing data in low-latency memory using existing GCC prefetch infrastructure and OpenMP memory traits for certain use cases.\n\nAdditionally, once core tasks are complete, the project will survey newer OpenACC specification features, producing a structured list of unimplemented functionality with prioritized implementations and documentation to ease future contributions.\n\nDeliverables include upstream patches for each directive/clause with test suite additions for C, C++, and Fortran, and documentation updates to the relevant documentation files.",
+          "difficulty": null,
+          "id": "proj_gnu-compiler-collection-gcc_2026_A0rrJ5os",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/A0rrJ5os",
+          "proposal_id": "GCW4vUC3",
+          "short_description": "GCC currently supports most OpenACC directives for GPU offloading, but several features remain unimplemented or incomplete. This project targets four...",
+          "slug": "enhance-openacc-support-in-gcc",
+          "status": null,
+          "student_name": "Sebastian Galindo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance OpenACC Support in GCC"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -53,9 +53,9 @@
     "vr",
     "art"
   ],
-  "total_projects": 167,
+  "total_projects": 179,
   "stats": {
-    "avg_projects_per_appeared_year": 16.7,
+    "avg_projects_per_appeared_year": 16.27,
     "projects_by_year": {
       "year_2016": 32,
       "year_2017": 24,
@@ -67,7 +67,7 @@
       "year_2023": 7,
       "year_2024": 10,
       "year_2025": 15,
-      "year_2026": null
+      "year_2026": 12
     },
     "students_by_year": {
       "year_2016": 32,
@@ -80,9 +80,9 @@
       "year_2023": 7,
       "year_2024": 10,
       "year_2025": 15,
-      "year_2026": null
+      "year_2026": 12
     },
-    "total_students": 159
+    "total_students": 179
   },
   "years": {
     "year_2016": {
@@ -3267,7 +3267,216 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/kde-community"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 12,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/kde-community",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Drawy's current text tool is limited to plain text with no per-character formatting, no undo/redo, no support for non-Latin input methods, and performance issues on large text. The goal of this project is to refactor and extend the text tool into a rich text editor.\n\nThe implementation will begin by splitting the existing  code into three classes (TextItem, TextCursor, TextTool) and replacing the manual rendering logic with QTextLayout, which natively handles BiDi, line breaking, and cursor positioning. On top of this foundation, the project will deliver per-range character formatting, text alignment, word wrapping, spell checking via KDE Sonnet, and a formatting toolbar for the user to control fonts, styles, and alignment. Undo/redo will be integrated. Save/load will be extended to support rich text while remaining backward compatible with existing documents. Finally, the backing data structure will be replaced with a Gap Buffer for O(1) insertions and deletions.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_mLmdCgIK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mLmdCgIK",
+          "proposal_id": "gm7XtFT5",
+          "short_description": "Drawy's current text tool is limited to plain text with no per-character formatting, no undo/redo, no support for non-Latin input methods, and...",
+          "slug": "implement-rich-text",
+          "status": null,
+          "student_name": "Abdelhadi Wael",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement Rich Text"
+        },
+        {
+          "code_url": null,
+          "description": "KDE is one of the largest open-source communities, offering opportunities in the field of development, design, documentation, translation and mentorship. However, the current onboarding experience is very fragmented, the entry points are spread across various platforms which often leaves new contributors asking \"Where do I even start?\". This project aims to build join.kde.org as KDE's primary contributor entry point and central hub, routing users to the right resource. The site will allow users to find their own place in open source software based on their interest and it will allow experienced contributors to contribute directly into projects based on their skillset. The site will be organized into clear sections: Add, Learn, Divulge, Work on a Project, Read, Explore, Meet, and Suggest. Built using Hugo for static site generation, Deliverables include a fully responsive website with interest-based navigation, structured contributor pathway cards for all contribution types, mentorship program overviews, a KDE Networks map with setup instructions, and complete site maintenance documentation. This project directly aligns with KDE’s goal: \"KDE Needs You\" , which aims to bring more contributors into the community and increase the retention for the said contributors.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_toXhs09z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/toXhs09z",
+          "proposal_id": "GJNfpfCk",
+          "short_description": "KDE is one of the largest open-source communities, offering opportunities in the field of development, design, documentation, translation and...",
+          "slug": "building-join-kde-org-as-the-primary-contributor-entry-point",
+          "status": null,
+          "student_name": "Ansh_Singhal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building join.kde.org as the primary contributor entry point"
+        },
+        {
+          "code_url": null,
+          "description": "Lokalize has Translation Memory tab that opens up after selecting from Tools menu or pressing F7. It has TM(Translation Memory) entries, each for a distinct project listed in a drop down to select from. Translators would like to select not a single TM but a bunch of TMs, for each project, pertaining to their needs. Manage TMs option which opens up in a new window. Logically and for the ease of work, it should be situated in the TM tab itself.\n\nThe key idea is to use QListWidget with checkboxes instead of KComboBox to enable multi-TM selection. Then, the setFilter() will be modified to iterate over each selected TM. A new method mergeAndDisplay() will be created for merging, deduplication, and sorting of entries according to score. TM selection will persist with the help of KConfig. The core base classes, DBs and architecture are to be retained. A QSplitter will be used to create a left panel to integrate TM Manager into TM Tab to list TMs and a right-click context menu for operations like Add, Remove etc. which will be wired to existing methods.\n\nDeliverables:\n·List of TM entries with a checkbox for each\n·Display results from all selected TMs after Search in TM Tab \n·Save TMs for each project \n·TM Manager in the left panel of TM tab",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_Bn8iKvhz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Bn8iKvhz",
+          "proposal_id": "gzaFAxTq",
+          "short_description": "Lokalize has Translation Memory tab that opens up after selecting from Tools menu or pressing F7. It has TM(Translation Memory) entries, each for a...",
+          "slug": "redesigning-the-translation-memory-tab",
+          "status": null,
+          "student_name": "Navya Sai Sadu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Redesigning the translation memory tab"
+        },
+        {
+          "code_url": null,
+          "description": "Poppler (The C++ PDF rendering library used by Okular) does not support font subsetting as of now.\nIn simple terms, if someone creates an annotation containing content \"hello\" with font Cantarell then the embedded font object inside the PDF will contain mappings for a lot of characters other than 'h', 'e', 'l' and 'o'.\nThis leads to unnecessary increase in size.\nThis project aims to solve this problem.\n\nMy approach is to implement font subsetting by:-\n- Parsing appearance streams and default appearance of all modified annotations/forms on save, and build a structure containing key-value pairs of (fontname, ref) and the characters to be rendered with that font.\n- Another class consumes this structure, uses Harfbuzz to generate subsetted fonts, and replace the old font objects with the new ones.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_kuNn3t90",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kuNn3t90",
+          "proposal_id": "XuRCgqZw",
+          "short_description": "Poppler (The C++ PDF rendering library used by Okular) does not support font subsetting as of now. In simple terms, if someone creates an annotation...",
+          "slug": "implement-font-subsetting-when-saving-pdf-files-in-poppler",
+          "status": null,
+          "student_name": "Ojas Maheshwari",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement font subsetting when saving PDF files in Poppler"
+        },
+        {
+          "code_url": null,
+          "description": "The AI-Powered Guiding Assistant replaces the steep learning curve of manual astrophotography guiding with a predictive, mount specific machine learning model. This project augments KStars' reactive PID controllers by utilizing an offline trained Gated Recurrent Unit (GRU) to automatically learn and counteract complex mechanical errors like gear backlash, harmonic drive signatures, and wind disturbances in real time. To ensure maximum performance on low power embedded devices like the Astroberry, the project features a native C++ inference engine built entirely from scratch using lightweight Eigen3 matrix math. This guarantees highly accurate, intelligent pulse augmentation with an absolute minimal memory footprint and without any big ML dependencies linked into the KStars ecosystem.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_m20BaADR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/m20BaADR",
+          "proposal_id": "Zvqp3zwQ",
+          "short_description": "The AI-Powered Guiding Assistant replaces the steep learning curve of manual astrophotography guiding with a predictive, mount specific machine...",
+          "slug": "kstars-ai-powered-guiding-assistant-for-ekos",
+          "status": null,
+          "student_name": "Pavan Kumar S G",
+          "student_profile": null,
+          "tags": [],
+          "title": "KStars AI Powered Guiding Assistant for Ekos"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to introduce a robust and high performance block editor and a proper markdown parser to Marknote. Right now, the editor is hard to maintain, full of many condition checks, and has bugs and limitations, especially when handling formatting and advanced features. My plan is to use md4qt to parse Markdown into a structured format and build a block editor that supports things like lists, tables, code blocks, and drag-and-drop. I will design the system so parsing, rendering, editing, and saving are cleanly separated, which will make the app faster, more stable, and easier to extend in the future. I will implement this step by step, making sure all features like undo/redo and export continue to work, and I will test everything properly to ensure a smooth user experience.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_9nPHZsTJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9nPHZsTJ",
+          "proposal_id": "50mDaQM1",
+          "short_description": "This project aims to introduce a robust and high performance block editor and a proper markdown parser to Marknote. Right now, the editor is hard to...",
+          "slug": "marknote-block-editor",
+          "status": null,
+          "student_name": "PrayagJain",
+          "student_profile": null,
+          "tags": [],
+          "title": "Marknote - Block Editor"
+        },
+        {
+          "code_url": null,
+          "description": "KeepSecret is a modern password manager built using Qt/QML and Kirigami, but there are still a few areas that need improvements. For example, the sidebar currently appears even for users with a single wallet, which isn’t necessary. Features like import/export are missing, there’s no built-in password generator, and copied passwords stay in the clipboard without being cleared. Keyboard navigation is also incomplete, and there are some build warnings that is unresolved.\nThis proposal addresses all these areas: completing the sidebar-hiding feature with correct page navigation, resolving outstanding build warnings, implementing import and export functionality, adding a password generator, improving keyboard-only navigation, implementing clipboard auto-clear after copying a password, and adding a close button for the entry detail panel.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_cBR8dzs0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cBR8dzs0",
+          "proposal_id": "TZ73QhT4",
+          "short_description": "KeepSecret is a modern password manager built using Qt/QML and Kirigami, but there are still a few areas that need improvements. For example, the...",
+          "slug": "keepsecret-ux-improvements-and-feature-additions",
+          "status": null,
+          "student_name": "Roshani Kumari",
+          "student_profile": null,
+          "tags": [],
+          "title": "KeepSecret: UX Improvements and Feature Additions"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to develop a tournament interface for Mankala Engine, utilizing QXMPP to pair users and computerized opponents and create a leaderboard page to display rankings. The implementation would involve Qt, QML, QXMPP, and C++, as well as an algorithm to pair users randomly for tournaments and follow the ranking hierarchy until the last match to display the leaderboard. The project also enhances certain features, including QXMPP and the game experience, by addressing false positives and bugs that occur within the game.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_9obK9tXk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9obK9tXk",
+          "proposal_id": "7RBVz04k",
+          "short_description": "The project aims to develop a tournament interface for Mankala Engine, utilizing QXMPP to pair users and computerized opponents and create a...",
+          "slug": "create-tournaments-and-a-player-ranking-system-for-mankala",
+          "status": null,
+          "student_name": "Sayandeep Dutta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Create tournaments and a player ranking system for Mankala"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the developer experience around the Kirigami framework by making the development workflow more connected and efficient. Kirigami already provides well-structured documentation and examples, but these resources are spread across different places, making it harder to explore them interactively and move smoothly from learning to practical hands-on.\n\nTo address this, I will enhance Kirigami Workbench and integrate it with KAppTemplate. The project introduces an interactive gallery of examples with live previews and editable code, along with a plugin-based system so new examples can be easily added and explored within a single environment. Developers will also be able to generate ready-to-use application projects using KAppTemplate, with selected examples as the starting point, along with added Python support for developing  Kirigami applications using PySide6/PyQt6 within Workbench.\n\nThe main deliverables include the example gallery with search and filtering, plugin support, project generation using KAppTemplate, Python support, and multi-tab functionality for working with multiple files.\n\nOverall, this project makes working with Kirigami smoother and more connected, bringing everything into one place.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_Kc2DXuV2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Kc2DXuV2",
+          "proposal_id": "hzkJNloW",
+          "short_description": "This project focuses on improving the developer experience around the Kirigami framework by making the development workflow more connected and...",
+          "slug": "enhancing-the-kirigami-developer-experience",
+          "status": null,
+          "student_name": "Shubham  Shinde",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing the Kirigami Developer Experience"
+        },
+        {
+          "code_url": null,
+          "description": "DigiKam’s Advanced Search is powerful, but translating a natural-language request into the right combination of structured filters can be difficult for many users. This project will add a natural-language input to digiKam’s Advanced Search so users can describe queries such as “landscape photos with red labels taken in Paris last summer,” which will then be converted into editable search criteria such as tags, labels, dates, and locations. The implementation will use a lightweight local language model, structured intent parsing, capability-based resolution into supported digiKam search fields, ambiguity handling for unclear terms, and caching for repeated queries, while reusing digiKam’s existing model-management infrastructure. The deliverables include the Advanced Search UI integration, the local inference and parsing pipeline, criteria resolution and validation, safe clarification behavior, and end-to-end integration with digiKam’s existing Advanced Search workflow.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_qyiUD0bH",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qyiUD0bH",
+          "proposal_id": "PS0YS6PQ",
+          "short_description": "DigiKam’s Advanced Search is powerful, but translating a natural-language request into the right combination of structured filters can be difficult...",
+          "slug": "interface-the-database-search-engine-to-an-ai-based-llm",
+          "status": null,
+          "student_name": "Srirupa Datta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Interface the database search engine to an AI-based LLM"
+        },
+        {
+          "code_url": null,
+          "description": "Plasma Mobile currently has separate networking settings modules from Plasma Desktop, that lacks some features for mobile users (ex. enterprise Wi-Fi networks, VPN configuration, etc). The Plasma Desktop settings module cannot be used in a mobile form factor, and is written in Qt Widgets, whose controls are not mobile friendly.\nCurrently, the networking KCMs (KConfig Modules) for Plasma Desktop and Plasma Mobile are implemented as separate modules. While this modular separation provides architectural clarity and independence between platforms, it has resulted in significant feature reduction and duplicated efforts.\nTo achieve convergence and long-term maintainability, some networking KCMs must be refactored and rewritten in QML using Kirigami to make it more mobile friendly. This will allow us to retain the same desktop features in Plasma Mobile as well.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_oyJMgU3S",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/oyJMgU3S",
+          "proposal_id": "XMWBNIBY",
+          "short_description": "Plasma Mobile currently has separate networking settings modules from Plasma Desktop, that lacks some features for mobile users (ex. enterprise Wi-Fi...",
+          "slug": "plasma-mobile-make-network-related-kcms-feature-complete-with-desktop-equivalent",
+          "status": null,
+          "student_name": "tushar2005",
+          "student_profile": null,
+          "tags": [],
+          "title": "Plasma Mobile:  Make network related KCMs feature complete with desktop equivalent"
+        },
+        {
+          "code_url": null,
+          "description": "Kdenlive's effect system has three key UI gaps: the Curves effect lacks per-channel memory forcing users to apply it multiple times, the Gradient effect only supports two fixed color stops, and the Time Remapping panel has linear-only keyframe transitions with no easing. This project will build a tabbed per-channel Curves widget with backward-compatible serialization, a standalone GradientEditorWidget with arbitrary draggable color stops, and bezier handle support on RemapView connector lines with easing presets. All widgets integrate with AssetParameterModel and MLT's filter pipeline.",
+          "difficulty": null,
+          "id": "proj_kde-community_2026_tGyN2GMO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tGyN2GMO",
+          "proposal_id": "MxSxA4rT",
+          "short_description": "Kdenlive's effect system has three key UI gaps: the Curves effect lacks per-channel memory forcing users to apply it multiple times, the Gradient...",
+          "slug": "improving-effect-widgets-for-kdenlive",
+          "status": null,
+          "student_name": "Yash Bavadiya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving Effect Widgets for Kdenlive"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

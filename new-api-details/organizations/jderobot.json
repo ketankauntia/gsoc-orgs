@@ -41,9 +41,9 @@
     "developer tools",
     "artificial intelligence"
   ],
-  "total_projects": 48,
+  "total_projects": 53,
   "stats": {
-    "avg_projects_per_appeared_year": 5.33,
+    "avg_projects_per_appeared_year": 5.3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 4,
@@ -55,7 +55,7 @@
       "year_2023": 4,
       "year_2024": 5,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -68,9 +68,9 @@
       "year_2023": 4,
       "year_2024": 5,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 48
+    "total_students": 53
   },
   "years": {
     "year_2016": null,
@@ -1060,7 +1060,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/jderobot"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/jderobot",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project is about bringing back the drone-cat-mouse chase exercise in the new RoboticsAcademy architecture. Right now this exercise does not work with Gazebo Harmonic and Aerostack2 which is what all the current drone exercises use. My plan is to set up a Gazebo Harmonic world with two drones — a cat drone that the user programs and a mouse drone that flies autonomously following a 3D pattern. Each drone will have its own full Aerostack2 stack. The mouse drone will run its flight pattern directly through Aerostack2 without HAL.py since its behavior is predefined. The user programs only the cat drone through HAL.py to chase the mouse. Deliverables include the complete Gazebo Harmonic world, dual-drone Aerostack2 setup, the exercise integrated into RoboticsAcademy with the RADI container, documentation, and a reference solution.",
+          "difficulty": null,
+          "id": "proj_jderobot_2026_BeNGJ19h",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/BeNGJ19h",
+          "proposal_id": "gTPEaswm",
+          "short_description": "This project is about bringing back the drone-cat-mouse chase exercise in the new RoboticsAcademy architecture. Right now this exercise does not work...",
+          "slug": "roboticsacademy-drone-cat-mouse-chase-with-two-concurrent-drones",
+          "status": null,
+          "student_name": "Anish_85",
+          "student_profile": null,
+          "tags": [],
+          "title": "RoboticsAcademy: Drone Cat-Mouse Chase with Two Concurrent Drones"
+        },
+        {
+          "code_url": null,
+          "description": "RoboticsAcademy provides browser-based robotics exercises where students write Python control logic without dealing with ROS2, simulation, or motion planning infrastructure. The existing industrial robot exercises (Pick & Place, Machine Vision) cover basic manipulation tasks but lack a palletizing exercise — one of the most common real-world industrial automation tasks.\n\nThis project delivers a complete palletizing and de-palletizing exercise built on ROS2 Humble and Gazebo Harmonic, using a UR5 arm and the IFRA-Cranfield API as baseline. The exercise introduces a dynamic conveyor-fed object supply chain, programmatic pallet grid computation, multi-layer collision-aware motion planning, and a full de-palletizing sequence — all accessible through a clean Python HAL without writing a single line of ROS2 or MoveIt2 code.\n\nDeliverables include a Gazebo Harmonic simulation world with conveyor feeding assembly, an extended HAL with four new methods, a dynamic MoveIt2 collision scene, browser integration via the RoboticsAcademy interface, student and maintainer documentation — targeting a 350-hour GSoC commitment across 12 weeks.",
+          "difficulty": null,
+          "id": "proj_jderobot_2026_iinIsP1L",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iinIsP1L",
+          "proposal_id": "xMGuwvFq",
+          "short_description": "RoboticsAcademy provides browser-based robotics exercises where students write Python control logic without dealing with ROS2, simulation, or motion...",
+          "slug": "robotics-academy-palletizing-with-an-industrial-robot-exercise",
+          "status": null,
+          "student_name": "Ashwani Kumar Moudgil",
+          "student_profile": null,
+          "tags": [],
+          "title": "Robotics Academy: Palletizing with an Industrial Robot Exercise"
+        },
+        {
+          "code_url": null,
+          "description": "The JdeRobot Robotics Academy utilizes massive monolithic Docker images, which result in critical download issues for students, and demands insecure root daemon privileges to execute containers. To address this, I plan to design a highly optimized multi-stage build framework for RoboticsBackend, which will minimize total megabytes for download by students and reduce image size using strict apt layer squashing and source-level pruning of heavy ROS2 meta-packages like Aerostack2 and OMPL. Moreover, I will transform the execution framework to a secure, daemonless Podman-based container execution system, which will enable precise namespace mapping using –userns=keep-id and native display socket passthrough for safe execution of GUI-based Gazebo simulations without compromising host security.\n\nDeliverables : \n1. Optimized Container: A new, optimized image with a mathematically provable reduction in total megabytes for download and build layers.\n2. Rootless Execution: A fully functional Podman-based environment for secure execution of the entire database and frontend stack without a Docker daemon.\n3. Developer Documentation: New official documentation on new multi-stage build paradigms and executing containers rootlessly.",
+          "difficulty": null,
+          "id": "proj_jderobot_2026_KfNodmMd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/KfNodmMd",
+          "proposal_id": "EQdDZpuz",
+          "short_description": "The JdeRobot Robotics Academy utilizes massive monolithic Docker images, which result in critical download issues for students, and demands insecure...",
+          "slug": "exploring-optimization-strategies-for-roboticsbackend-container",
+          "status": null,
+          "student_name": "Kartik Jangid",
+          "student_profile": null,
+          "tags": [],
+          "title": "Exploring optimization strategies for RoboticsBackend container"
+        },
+        {
+          "code_url": null,
+          "description": "VisualCircuit currently relies on hard-coded monolithic JSON blocks, making it difficult for the community to share and extend custom logic. This project solves that bottleneck by building a curated, reusable block marketplace hosted on GitHub Pages with automated CI validation workflows. Deliverables include the standalone marketplace site, a slim frontend integration layer for VisualCircuit, automated documentation publishing via GitHub Actions, and two end-to-end robotics applications demonstrating the complete workflow.",
+          "difficulty": null,
+          "id": "proj_jderobot_2026_D7QIrlxe",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/D7QIrlxe",
+          "proposal_id": "9IueDONf",
+          "short_description": "VisualCircuit currently relies on hard-coded monolithic JSON blocks, making it difficult for the community to share and extend custom logic. This...",
+          "slug": "visualcircuit-improving-functionality-and-block-library",
+          "status": null,
+          "student_name": "Sarvesh Mishra",
+          "student_profile": null,
+          "tags": [],
+          "title": "VisualCircuit Improving Functionality and Block Library"
+        },
+        {
+          "code_url": null,
+          "description": "Perception metrics is a unified toolkit for evaluating perception models across datasets and frameworks. Its foundation was built through prior GSoC efforts designed to unify and formalized in a stable release published in Sensors. This platform was recently modernized to support LiDAR, images segmentation, and object detection. \n This proposal focuses on scaling PerceptionMetrics from off-road focused workflows to industry-standard benchmarking. The core objectives are: \n•\tIntegrate and prioritize standard image and Lidar datasets.  \n•\tExtend GUI support to segmentation visualization (image and Lidar).  \n•\tDeliver comprehensive tutorials/documentations for practical usage.\n•\tStrengthen reliability through expanded tests and CI-friendly validation.",
+          "difficulty": null,
+          "id": "proj_jderobot_2026_1lzN79bZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1lzN79bZ",
+          "proposal_id": "HMEydLPx",
+          "short_description": "Perception metrics is a unified toolkit for evaluating perception models across datasets and frameworks. Its foundation was built through prior GSoC...",
+          "slug": "perceptionmetrics-gui-extension-and-support-for-standard-datasets-and-models",
+          "status": null,
+          "student_name": "Tejas Stanley",
+          "student_profile": null,
+          "tags": [],
+          "title": "PerceptionMetrics: GUI extension and support for standard datasets and models"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

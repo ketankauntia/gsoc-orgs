@@ -65,9 +65,9 @@
     "nodered",
     "Artificial Inteligence"
   ],
-  "total_projects": 70,
+  "total_projects": 77,
   "stats": {
-    "avg_projects_per_appeared_year": 8.75,
+    "avg_projects_per_appeared_year": 8.56,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 4,
@@ -79,7 +79,7 @@
       "year_2023": 7,
       "year_2024": 9,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": null,
@@ -92,9 +92,9 @@
       "year_2023": 7,
       "year_2024": 9,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 69
+    "total_students": 77
   },
   "years": {
     "year_2016": null,
@@ -1516,7 +1516,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/open-technologies-alliance-gfoss"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-technologies-alliance-gfoss",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project bridges the gap between complex frameworks and basic, non-standard code. I will develop a modular, message-based flight software for the Open-Source CubeSat FlatSat Testbed using FreeRTOS.\n\nThe goal is to create a 'sweet spot' firmware: accessible for students to learn, yet compliant with professional aerospace standards. By implementing a publish-subscribe 'Software Bus,' the system ensures that hardware drivers and mission logic are decoupled and interchangeable. This results in a scalable, flexible architecture that can evolve alongside the CubeSat hardware.\n\nDeliverables:\n\nMessage Dispatcher: A thread-safe Software Bus for modular communication.\n\nHardware HAL: Thread-safe STM32 drivers for the FlatSat sensor suite.\n\nStandards Core: PUS-compliant Telemetry, Telecommand, and Error Handling (FDIR).\n\nTesting: Unit testing and documentation of  end result",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_tsU0KTpk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tsU0KTpk",
+          "proposal_id": "lreOsVGq",
+          "short_description": "This project bridges the gap between complex frameworks and basic, non-standard code. I will develop a modular, message-based flight software for the...",
+          "slug": "message-based-flight-software-architecture-for-cubesats",
+          "status": null,
+          "student_name": "Ada Roufogali",
+          "student_profile": null,
+          "tags": [],
+          "title": "Message-Based Flight Software  Architecture for CubeSats"
+        },
+        {
+          "code_url": null,
+          "description": "This project fine-tunes a Whisper ASR model using LoRA to enhance the first stage of OpenCouncil's transcription pipeline. Greek municipal speech breaks standard Whisper in predictable ways: council-specific idioms, proper names it has never encountered, and morphological errors that accumulate fast in a heavily inflected language. The goal is a 15–20% drop in domain-specific Word Error Rate (DS-WER). The expected result is that human reviewers spend less time correcting transcripts and more time on work that actually requires judgment.",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_7XBJb5i7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7XBJb5i7",
+          "proposal_id": "r4g9bCFq",
+          "short_description": "This project fine-tunes a Whisper ASR model using LoRA to enhance the first stage of OpenCouncil's transcription pipeline. Greek municipal speech...",
+          "slug": "gsoc-2026-fine-tuning-ai-transcription-for-greek-municipal-councils",
+          "status": null,
+          "student_name": "Angelos Papamichail",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSoC 2026 Fine-tuning AI Transcription for Greek Municipal Councils"
+        },
+        {
+          "code_url": null,
+          "description": "OpenTRIM is a C++/Qt Monte Carlo ion transport simulator for radiation damage research. Every parameter study today requires four manual steps: edit config.json, invoke the CLI, load HDF5 output, and plot by hand. No Python interface exists. No live view inside the target. This project delivers both.\n\nFeature A - Python Bindings: A pybind11 module wrapping libopentrim so researchers drive simulations directly from Python: result = opentrim.run(config_dict). Tally data is exposed as zero-copy NumPy arrays via ArrayNDd buffer protocol. result.to_xarray() returns a labeled Dataset with element names and nm coordinates for publication-ready depth profiles in one line. result.core exposes mccore internals - ion counts, per-tally SEM, and run merging. GSoC 2025 user_tally binning is bridged to Python. Seven benchmark configurations verify physics parity with the CLI.\n\nFeature B - Real-Time 3D Visualization: A QOpenGLWidget tab rendering live ion tracks as GL_LINES during simulation. A two-buffer pipeline handles 30M events/second without stalling. Cascade genealogy is color-coded from ion.recoil_id(): beam ions blue, PKAs orange, sub-cascade recoils red. A SEM convergence overlay tells researchers when to stop. Camera state serializes to JSON; --render produces headless PNG with no display server.\n\nBoth features are isolated - bindings/ and source/gui/trackview.* - delivered across 14 pull requests in 350 hours.",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_lVrYry5l",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lVrYry5l",
+          "proposal_id": "4b0YoMmg",
+          "short_description": "OpenTRIM is a C++/Qt Monte Carlo ion transport simulator for radiation damage research. Every parameter study today requires four manual steps: edit...",
+          "slug": "python-bindings-and-real-time-3d-visualization-for-opentrim",
+          "status": null,
+          "student_name": "DHANAVANTHESH S",
+          "student_profile": null,
+          "tags": [],
+          "title": "Python Bindings and Real Time 3D Visualization for OpenTRIM"
+        },
+        {
+          "code_url": null,
+          "description": "Publicly available Greek datasets like those on OpenGov are a goldmine of information but they often contain personal details that need to be hidden to comply with privacy laws like the GDPR. Doing this automatically for Greek text is tough because the language is highly inflected and the documents are usually full of OCR scanning errors.\n\nTo tackle this I am proposing a standalone ML assisted anonymization tool that plugs right into the glossAPI pipeline. Instead of a heavy slow model I am using a lightweight hybrid approach. It uses fast regular expressions and custom dictionaries to catch standard info and fix OCR typos while leaning on Microsoft Presidio and the spaCy multilingual pipeline to smartly detect complex entities like names and organizations.\n\nBy wrapping this engine in a simple FastAPI REST interface we keep the main glossAPI codebase clean and independent. By the end of the project I will deliver this fully functional privacy API the necessary code to link it to glossAPI and clear practical documentation so future maintainers can easily protect sensitive public data.",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_YODH0258",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YODH0258",
+          "proposal_id": "wW7Fuc47",
+          "short_description": "Publicly available Greek datasets like those on OpenGov are a goldmine of information but they often contain personal details that need to be hidden...",
+          "slug": "glossapi-ml-assisted-anonymization-layer-and-targeted-pipeline-improvements-for-greek-datasets",
+          "status": null,
+          "student_name": "George Sotiropoulos",
+          "student_profile": null,
+          "tags": [],
+          "title": "GlossAPI: ML-assisted Anonymization Layer and Targeted Pipeline Improvements for Greek Datasets"
+        },
+        {
+          "code_url": null,
+          "description": "The FOSSBot Platform aims to enhance robotic simulation environments by integrating AI-driven capabilities and improving simulation realism. The project focuses on extending existing open-source robotic simulation tools with advanced features that support experimentation, education, and research in autonomous systems. Emphasis is placed on modularity, extensibility, and reproducibility within open-source ecosystems.",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_B9jiFJx5",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/B9jiFJx5",
+          "proposal_id": "VXtDa6Hk",
+          "short_description": "The FOSSBot Platform aims to enhance robotic simulation environments by integrating AI-driven capabilities and improving simulation realism. The...",
+          "slug": "fossbot-platform-simulation-enhancements-and-ai-integration",
+          "status": null,
+          "student_name": "jgenc",
+          "student_profile": null,
+          "tags": [],
+          "title": "FOSSBot Platform: Simulation Enhancements and AI Integration"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the growing challenge of managing Software Bill of Materials (SBOM) data at scale. While SBOMs in the SPDX format are essential for software supply chain security, current file-based approaches (e.g., JSON or RDF/XML) are not well-suited for complex querying, or large-scale analysis.\n\nTo overcome these limitations, this project proposes a set of tools that leverage RDF triplestores for storing and managing SBOM data. SPDX documents will be parsed into structured Python objects, transformed into RDF triples, and stored using a unified triplestore abstraction layer. This approach enables powerful querying through SPARQL while remaining database-agnostic, supporting multiple backends such as Apache Jena, GraphDB, Blazegraph, AllegroGraph, and Oxigraph.\n\nThe project will deliver a complete pipeline for SBOM ingestion, storage, and reconstruction. Key deliverables include: (1) a CLI-based ingestion tool for importing SPDX documents into RDF databases, (2) an export tool for reconstructing valid SPDX documents from queried data, (3) management utilities for CRUD operations on SBOM data, (4) a comprehensive test suite to ensure correctness across multiple backends, and (5) detailed documentation for both users and developers.\n\nThis approach transforms SBOM data from static documents into a structured, queryable knowledge graph, enabling more efficient retrieval and analysis across different systems and backends.",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_8YExFyHi",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8YExFyHi",
+          "proposal_id": "7WgrQ4PJ",
+          "short_description": "This project addresses the growing challenge of managing Software Bill of Materials (SBOM) data at scale. While SBOMs in the SPDX format are...",
+          "slug": "unified-sbom-management-via-rdf-database-abstraction-maira-papadopoulou",
+          "status": null,
+          "student_name": "Maira Papadopoulou",
+          "student_profile": null,
+          "tags": [],
+          "title": "Unified SBOM Management via RDF Database Abstraction - Maira Papadopoulou"
+        },
+        {
+          "code_url": null,
+          "description": "I'm building a VS Code extension that brings the power of CScout’s whole-program C analysis directly into the editor. My goal is simple, let developers understand large C codebases more effectively without ever leaving VS Code. \r\nUsing this extension, one will be able to browse identifiers, find all references, explore call graphs, check metrics, and even preview refactorings in the IDE itself. We will have to extend CScout by adding a clean REST/JSON API on top of the SWILL web server. This API will be the bridge to let external tools (like my VS Code extension) query the data from CScout in a structured way.",
+          "difficulty": null,
+          "id": "proj_open-technologies-alliance-gfoss_2026_cTncP3Km",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cTncP3Km",
+          "proposal_id": "p42H3NCE",
+          "short_description": "I'm building a VS Code extension that brings the power of CScout’s whole-program C analysis directly into the editor. My goal is simple, let...",
+          "slug": "visual-studio-code-plugin-for-cscout",
+          "status": null,
+          "student_name": "Ujjwal Aggarwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Visual Studio Code plugin for CScout"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

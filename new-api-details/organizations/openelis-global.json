@@ -27,9 +27,9 @@
     "Health Care",
     "Laboratory Information System"
   ],
-  "total_projects": 9,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 4.5,
+    "avg_projects_per_appeared_year": 4.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -41,7 +41,7 @@
       "year_2023": null,
       "year_2024": 5,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -54,9 +54,9 @@
       "year_2023": null,
       "year_2024": 5,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 8
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -258,7 +258,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openelis-global"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openelis-global",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The current Integration Test coverage is still low. \nThis project aims at extending and  creating more Integration Tests to achieve a Test Coverage of at least 60% for the Back end Service and Controller Layer",
+          "difficulty": null,
+          "id": "proj_openelis-global_2026_PhS18qoP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PhS18qoP",
+          "proposal_id": "sVhxvSRx",
+          "short_description": "The current Integration Test coverage is still low. This project aims at extending and creating more Integration Tests to achieve a Test Coverage of...",
+          "slug": "improve-integration-tests-coverage-for-openelis",
+          "status": null,
+          "student_name": "Agaba Derrick",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Integration Tests Coverage for OpenELIS"
+        },
+        {
+          "code_url": null,
+          "description": "OpenELIS is a critical open-source laboratory information system used globally by healthcare facilities, particularly in low-resource settings, to manage patient data, test results, and laboratory operations. As healthcare systems increasingly face cyber threats, ensuring the security and integrity of OpenELIS is paramount to protecting sensitive patient data and maintaining trust in healthcare delivery.\nThis project aims to conduct a comprehensive security audit of OpenELIS to identify vulnerabilities, risks, and potential attack surfaces across its architecture and dependencies. The work will include threat modeling, vulnerability scanning, and risk prioritization, followed by recommendations and targeted fixes where feasible. The project will establish a strong security baseline for OpenELIS, improving trust, supporting compliance with healthcare data protection standards, and ensuring long-term maintainability for the open-source community.",
+          "difficulty": null,
+          "id": "proj_openelis-global_2026_lqL1oBK8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lqL1oBK8",
+          "proposal_id": "jx87aShk",
+          "short_description": "OpenELIS is a critical open-source laboratory information system used globally by healthcare facilities, particularly in low-resource settings, to...",
+          "slug": "security-audit-and-hardening",
+          "status": null,
+          "student_name": "Bahati308",
+          "student_profile": null,
+          "tags": [],
+          "title": "Security Audit and Hardening"
+        },
+        {
+          "code_url": null,
+          "description": "Executive Summary: Create a Comprehensive FHIR facade Layer For OpenELIS Global.\nThe Challenge: The Synchronization Gap\nThe current architecture utilizes a HAPI FHIR JPA \"Sidecar\" which functions as a secondary, disconnected data store. This results in:\n\nData Latency: Clinical data is trapped in a \"sync queue,\" delaying real-time care coordination.\n\nState Drift: Risks of \"Split-Brain\" where the LIS database and FHIR store disagree on patient records.\n\nResource Waste: Redundant storage of the same data in two different PostgreSQL schemas, increasing infrastructure costs by ~40%.\n\nThe Solution: Real-Time Native Facade\nI propose a Native FHIR Facade embedded directly within the OpenELIS Spring context. This transforms OpenELIS into a FHIR-native server without the need for a secondary database.\n\nCore Innovations:\nHAPI Plain Server Integration: Swapping the heavy JPA engine for a lightweight RESTful controller.\n\nLive Resource Mapping: A FhirTransformService that maps OpenELIS Domain Objects (Java 21 Records) to FHIR Resources on-the-fly.\n\nAtomic Transactions: FHIR writes (POST/PUT) share the same @Transactional context as the LIS, ensuring 100% data integrity.\n\nTechnical Implementation Stack\nLanguage: Java 21 (leveraging Pattern Matching for cleaner transformation logic).\n\nEngine: HAPI FHIR (Plain Server Library).\n\nMapping: Manual POJO transformation or MapStruct for high-performance throughput.\n\nValidation: Native HAPI FhirValidator to ensure compliance with regional Implementation Guides (IGs).",
+          "difficulty": null,
+          "id": "proj_openelis-global_2026_xQuKQkBo",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xQuKQkBo",
+          "proposal_id": "4ddKlEog",
+          "short_description": "Executive Summary: Create a Comprehensive FHIR facade Layer For OpenELIS Global. The Challenge: The Synchronization Gap The current architecture...",
+          "slug": "create-a-comprehensive-fhir-facade-layer-for-openelis-global",
+          "status": null,
+          "student_name": "Isabirye",
+          "student_profile": null,
+          "tags": [],
+          "title": "Create a Comprehensive FHIR facade Layer For OpenELIS Global"
+        },
+        {
+          "code_url": null,
+          "description": "The current OpenELIS React frontend is primarily written in JavaScript and faces challenges in maintainability, scalability, and performance as data complexity increases. This results in inconsistent type usage, increased bugs, and inefficient rendering in data-heavy workflows such as patient management, sample tracking, and result entry.\n\nThis project aims to modernize the frontend by incrementally migrating the codebase to TypeScript and applying proven React performance optimization techniques. The migration will introduce a centralized type system for API models, forms, and reusable components, ensuring consistency and reducing duplication across the codebase.\n\nThe project will follow a phased approach: first establishing a strong TypeScript foundation with shared type definitions, then incrementally migrating utilities, components, and high-impact screens. In parallel, performance optimizations will be implemented using profiling-driven techniques such as memoization, virtualization for large datasets, improved server-state handling, and code splitting.\n\nDeliverables include:\n- Incremental migration of frontend codebase to TypeScript  \n- Centralized and reusable type definition system  \n- Performance improvements in key workflows  \n- Reduced bundle size and improved rendering efficiency  \n- Documentation and migration guide for future contributors  \n\nThis project will significantly improve the maintainability, developer experience, and performance of the OpenELIS frontend, making it more scalable for future growth.",
+          "difficulty": null,
+          "id": "proj_openelis-global_2026_uP87dqd9",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uP87dqd9",
+          "proposal_id": "rSGj3Mc3",
+          "short_description": "The current OpenELIS React frontend is primarily written in JavaScript and faces challenges in maintainability, scalability, and performance as data...",
+          "slug": "modernizing-openelis-frontend-with-typescript-and-performance-optimization",
+          "status": null,
+          "student_name": "Manroop Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing OpenELIS Frontend with TypeScript and Performance Optimization"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

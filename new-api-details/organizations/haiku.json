@@ -50,9 +50,9 @@
     "web",
     "gui"
   ],
-  "total_projects": 26,
+  "total_projects": 29,
   "stats": {
-    "avg_projects_per_appeared_year": 3.25,
+    "avg_projects_per_appeared_year": 3.22,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 5,
@@ -64,7 +64,7 @@
       "year_2023": 3,
       "year_2024": 5,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -77,9 +77,9 @@
       "year_2023": 3,
       "year_2024": 5,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 24
+    "total_students": 29
   },
   "years": {
     "year_2016": null,
@@ -614,7 +614,72 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/haiku/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/haiku",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Haiku OS Devices application currently serves as a simple visualization utility for the hardware tree. This project will transform it into an interactive hardware control center, introducing features like blocking specific drivers, generating system compatibility reports and displaying information about the hardware itself.",
+          "difficulty": null,
+          "id": "proj_haiku_2026_RREhJOxy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RREhJOxy",
+          "proposal_id": "bFHcOOhG",
+          "short_description": "The Haiku OS Devices application currently serves as a simple visualization utility for the hardware tree. This project will transform it into an...",
+          "slug": "haiku-os-expanding-the-functionality-of-the-haiku-devices-application",
+          "status": null,
+          "student_name": "Aquamatic",
+          "student_profile": null,
+          "tags": [],
+          "title": "Haiku OS - Expanding the functionality of the Haiku Devices Application"
+        },
+        {
+          "code_url": null,
+          "description": "Haiku's Bluetooth stack currently implements only a basic subset of general Bluetooth functionality. At first during testing with an Android phone, the local device was visible, but the pairing process fails entirely because Haiku does not understand modern Bluetooth events. The pairing process silently failed because the stack drops unsolicited Secure Simple Pairing (SSP) requests. The system was dropping modern discovery packets because the Inquiry subsystem lacked Extended Inquiry Result (EIR) support.\n\nAlthough recently the SSP and EIR issues have had recent patches from GSoC candidates, still there’re several issues in bluetooth pairing and connection that needs handling including: the pairing button doesn't make any action, not showing the pairing number when getting pairing requests from the phone, and lacking persistent remote device information. Hence, many other modern HCI events and commands still need handling.\n\nThe primary motivation of this project is to modernize Haiku’s Core Bluetooth stack to match 2.X and later to improve the existing code's compatibility with newer devices. By resolving these foundational HCI drops, the stack can finally be used for more than just basic pairing attempts, paving the way for functional Bluetooth HID, audio, or file transfer profiles.\n\n\nThis project modernizes the stack by Completing the remaining HCI commands and events, Adding persistent Link Key storage to preserve pairing devices after reboot, Implementing the Service Discovery Protocol (SDP), and Delivering a full Human Interface Device (HID) profile with a working input_server add-on.",
+          "difficulty": null,
+          "id": "proj_haiku_2026_r1c2esYR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/r1c2esYR",
+          "proposal_id": "8cscqgT0",
+          "short_description": "Haiku's Bluetooth stack currently implements only a basic subset of general Bluetooth functionality. At first during testing with an Android phone,...",
+          "slug": "modernizing-haiku-s-bluetooth-stack-hci-completion-and-hid-profile-implementation",
+          "status": null,
+          "student_name": "Mohammed R. Attia",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing Haiku's Bluetooth Stack: HCI Completion and HID Profile Implementation"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Haiku's Bluetooth stack only supports basic device pairing, with no Bluetooth profiles implemented yet. I plan to implement the Hands-Free Profile (HFP), which will enable users to connect their earphones or headphones to listen to audio and make hands-free calls. The deliverables for this proposal include working implementations of the HFP and SPP profiles, as well as RFCOMM and SCO. Additionally, the RFCOMM implementation will lay the groundwork for other profiles, such as the File Transfer Profile (FTP).",
+          "difficulty": null,
+          "id": "proj_haiku_2026_SVaJO4T2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SVaJO4T2",
+          "proposal_id": "nqzEdwjV",
+          "short_description": "Currently, Haiku's Bluetooth stack only supports basic device pairing, with no Bluetooth profiles implemented yet. I plan to implement the Hands-Free...",
+          "slug": "modernizing-haiku-s-bluetooth-stack-implementing-support-for-hfp-profile",
+          "status": null,
+          "student_name": "Vighnesh Sawant",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing Haiku’s Bluetooth stack: Implementing support for HFP profile"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

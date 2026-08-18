@@ -30,9 +30,9 @@
     "malware-analysis",
     "reverse-engineering"
   ],
-  "total_projects": 7,
+  "total_projects": 11,
   "stats": {
-    "avg_projects_per_appeared_year": 2.33,
+    "avg_projects_per_appeared_year": 2.75,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": 4,
       "year_2024": 1,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": 4,
       "year_2024": 1,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 7
+    "total_students": 11
   },
   "years": {
     "year_2016": null,
@@ -222,7 +222,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/flare"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/flare",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project adds two missing features: struct field tag extraction and interface method name recovery. Tags like json:\"user_id\" tell a reverse engineer how data is serialized over the network; Go stores them in the binary even after stripping, but GoReSym was not reading them. This project extends the parser to recover tags across all supported Go versions (1.5–1.26) and completes interface method name extraction, with test coverage added for both.",
+          "difficulty": null,
+          "id": "proj_flare_2026_MNBryJ8N",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MNBryJ8N",
+          "proposal_id": "eDt2N9IH",
+          "short_description": "This project adds two missing features: struct field tag extraction and interface method name recovery. Tags like json:\"user_id\" tell a reverse...",
+          "slug": "recover-struct-field-tags-and-interface-method-names-in-goresym",
+          "status": null,
+          "student_name": "kami911",
+          "student_profile": null,
+          "tags": [],
+          "title": "Recover Struct Field Tags and Interface Method Names in GoReSym"
+        },
+        {
+          "code_url": null,
+          "description": "XRefer is a binary analysis tool built by Mandiant FLARE that uses cross-reference correlation, capa integration, and LLM-powered cluster analysis to help malware analysts navigate complex binaries faster. Today it requires IDA Pro, Binary Ninja, or a configured Ghidra environment to run, locking out students and researchers who lack commercial licenses or heavyweight setups.\nThis project implements a fully functional Radare2 backend for XRefer via the r2pipe Python bindings, paired with a standalone CLI that auto-detects the best available disassembler and falls back to Radare2 when none are found. Radare2 is free, open-source, cross-platform, and pip-installable, making it the right foundation for democratizing XRefer access. The backend maps every method of the BackEnd abstract base class to verified r2pipe commands, handles known r2 edge cases including the aflj NaN-value bug and pdfj integer overflow, and includes targeted refinements to the base abstraction layer.\nDeliverables are: a complete Radare2 backend module passing integration tests against the Ghidra backend on a three-binary reference corpus; a standalone CLI installable with pip; a test suite with pre-recorded JSON fixtures enabling CI without a live r2 installation; and full documentation covering setup, architecture, and guidance for adding future backends.",
+          "difficulty": null,
+          "id": "proj_flare_2026_xr53bwcd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xr53bwcd",
+          "proposal_id": "YpnPNXaF",
+          "short_description": "XRefer is a binary analysis tool built by Mandiant FLARE that uses cross-reference correlation, capa integration, and LLM-powered cluster analysis to...",
+          "slug": "xrefer-backend-expansion-updated-proposal-raj-mehta-gsoc2026",
+          "status": null,
+          "student_name": "Raj Mehta",
+          "student_profile": null,
+          "tags": [],
+          "title": "XRefer Backend Expansion Updated Proposal Raj Mehta GSOC2026"
+        },
+        {
+          "code_url": null,
+          "description": "This project involves working with Capa, a tool which detects capabilities in\nexecutable files. The rationale behind the project is that, current static analysis\ntools often struggle with scripting languages because of its reliance on fragile\nregular expressions that can be easily evaded . So, this project aims to extend the capa engine to natively support the static analysis of scripting languages using Tree-sitter. \n\nI plan to solve it by working towards the merging the tree-sitter implementation pull request. Once it is merged, I plan to extend the tree-sitter to support more languages of which Bash and Powershell are in my priority list. Then, I will extend the feature extraction of the tree-sitter to have more detailed analysis. Next, I plan to write the capa rules which would verify the integration. Also, I will add relevant documentation for ease of developers and contributors.\n\nI plan to deliver all the goals mentioned above within the 12 weeks timeline. Beyond GSoC, I plan to stay involved by contributing code, reviewing pull requests and participating in community discussions.",
+          "difficulty": null,
+          "id": "proj_flare_2026_G7sUi1JS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/G7sUi1JS",
+          "proposal_id": "8HJtZChW",
+          "short_description": "This project involves working with Capa, a tool which detects capabilities in executable files. The rationale behind the project is that, current...",
+          "slug": "capa-native-script-analysis-support",
+          "status": null,
+          "student_name": "saniyafatima07",
+          "student_profile": null,
+          "tags": [],
+          "title": "Capa - Native Script Analysis Support"
+        },
+        {
+          "code_url": null,
+          "description": "This project enhances FLOSS by integrating QUANTUMSTRAND’s context-aware rendering to make malware string analysis faster and more actionable. Instead of overwhelming analysts with raw strings, the improved tool will use structural context, tagging (e.g., libraries, APIs, expert rules), and prevalence to highlight important information while muting noise.",
+          "difficulty": null,
+          "id": "proj_flare_2026_vORTUrPS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vORTUrPS",
+          "proposal_id": "3XD6Fwt6",
+          "short_description": "This project enhances FLOSS by integrating QUANTUMSTRAND’s context-aware rendering to make malware string analysis faster and more actionable....",
+          "slug": "extend-floss-to-use-the-rendering-techniques-pioneered-by-quantumstrand",
+          "status": null,
+          "student_name": "vee1e",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extend FLOSS to use the rendering techniques pioneered by QUANTUMSTRAND"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

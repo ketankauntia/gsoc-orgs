@@ -38,9 +38,9 @@
     "build systems",
     "Fortran"
   ],
-  "total_projects": 21,
+  "total_projects": 25,
   "stats": {
-    "avg_projects_per_appeared_year": 4.2,
+    "avg_projects_per_appeared_year": 4.17,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -52,7 +52,7 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -65,9 +65,9 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 21
+    "total_students": 25
   },
   "years": {
     "year_2016": null,
@@ -509,7 +509,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/fortran-lang"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/fortran-lang",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This proposal aims to improve LFortran by compiling and validating real-world Fortran packages such as M_intrinsics, fman, and gtk-fortran. Instead of focusing on isolated features, it follows a compilation-driven approach to identify and resolve limitations across different stages of the compiler, including parsing, semantic analysis, code generation, and runtime support. Key issues such as incomplete I/O specifier handling, quadruple precision support, and array constructor transformations will be addressed. The project emphasizes iterative development, testing, and validation against reference compilers, with the goal of improving LFortran’s robustness, correctness, and support for complex, real-world applications.",
+          "difficulty": null,
+          "id": "proj_fortran-lang_2026_ze6dneXy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ze6dneXy",
+          "proposal_id": "pYZlhYMY",
+          "short_description": "This proposal aims to improve LFortran by compiling and validating real-world Fortran packages such as M_intrinsics, fman, and gtk-fortran. Instead...",
+          "slug": "compile-m-intrinsics-fman-and-gtk-fortran-packages-with-lfortran",
+          "status": null,
+          "student_name": "HarshilShah",
+          "student_profile": null,
+          "tags": [],
+          "title": "Compile M_intrinsics, fman, and gtk-fortran packages with LFortran"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement full coarray support in the LFortran compiler, enabling native parallel programming capabilities based on the Partitioned Global Address Space (PGAS) model defined in the Fortran 2008/2018 standards. Currently, while LFortran’s parser supports coarray syntax, the feature is not implemented beyond basic stubs, preventing execution of even minimal coarray programs.\n\nThe project will bridge this gap by extending LFortran’s Abstract Semantic Representation (ASR) to model coarrays, implementing semantic analysis for coarray constructs, and introducing a dedicated coarray runtime library. A key component is an ASR-to-ASR lowering pass that translates high-level coarray operations (such as coindexed access, synchronization, and collective intrinsics) into runtime calls. This design follows LFortran’s existing OpenMP architecture, ensuring backend-agnostic support across LLVM, C, and other targets.\n\nThe implementation will proceed in two phases: first, establishing a fully functional single-image mode with correct semantics and runtime integration; second, enabling multi-image execution using an MPI-based runtime backend. By the end of the project, LFortran will be capable of compiling and executing coarray programs in both single-node and distributed environments.\n\nThis work lays the foundation for supporting real-world coarray-based HPC applications and positions LFortran as a leading LLVM-based Fortran compiler with modern parallel programming support.",
+          "difficulty": null,
+          "id": "proj_fortran-lang_2026_jHGETs6j",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jHGETs6j",
+          "proposal_id": "hfbsdmi4",
+          "short_description": "This project aims to implement full coarray support in the LFortran compiler, enabling native parallel programming capabilities based on the...",
+          "slug": "implementing-coarray-support-in-lfortran",
+          "status": null,
+          "student_name": "Jainam_29",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing Coarray Support in LFortran"
+        },
+        {
+          "code_url": null,
+          "description": "LFortran is a modern, interactive Fortran compiler built on LLVM that aims \nto support real-world Fortran codebases. This project focuses on enabling \nfull compilation and correct execution of two real-world Fortran packages \nbenchmark.f (a benchmarking library) and feq-parse (an equation parser) \nusing LFortran.\n\nSignificant pre-GSoC progress has already been made: benchmark.f currently \ncompiles to 76% and feq-parse to 40%. The remaining blockers include missing quadruple precision \n(REAL(KIND=16)) support, deserialization ICEs for forward-referenced symbol \ntables, ExternalSymbol resolution failures for struct-scoped types, ASR \nverifier false positives for GenericProcedure constructor calls, and an \nLLVM IR type mismatch in character length handling.\n\nThe project will follow an iterative, compilation-driven workflow: attempt \ncompilation, identify failures, reduce to MREs, fix the compiler, and \nvalidate against gfortran. Every fix will be accompanied by integration \ntests to prevent regressions.\n\nDeliverables:\n- Full compilation of both benchmark.f and feq-parse with LFortran\n- All example programs and test suites passing with gfortran-consistent output\n- End-to-end quadruple precision support across parsing, ASR, and LLVM backend\n- All fixes merged as pull requests with integration tests",
+          "difficulty": null,
+          "id": "proj_fortran-lang_2026_pJIfGlBB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pJIfGlBB",
+          "proposal_id": "PITxsqKU",
+          "short_description": "LFortran is a modern, interactive Fortran compiler built on LLVM that aims to support real-world Fortran codebases. This project focuses on enabling...",
+          "slug": "compiling-benchmark-f-and-feq-parse-packages-with-lfortran",
+          "status": null,
+          "student_name": "Jatinagarwal24",
+          "student_profile": null,
+          "tags": [],
+          "title": "Compiling benchmark.f and feq-parse packages with LFortran"
+        },
+        {
+          "code_url": null,
+          "description": "LFortran's MLIR(Multi-Level Intermediate Representation) backend executes fortran code via LLVM dialect of MLIR, but requires major refactoring with every new MLIR version. This is because it calls unstable MLIR C++ APIs directly, which gets changed with MLIR version changes. This project focuses on finding the right design to solve this problem. Multiple approaches will be studied and compared including studying projects which support MLIR to identify the most stable and maintainable architecture. The best design will then be implemented and validated. The deliverable is a redesigned MLIR backend that is stable across MLIR versions, requiring minimal refactoring for adding support for newer versions in future.",
+          "difficulty": null,
+          "id": "proj_fortran-lang_2026_Z2Eq4Htp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Z2Eq4Htp",
+          "proposal_id": "jZGkGhCP",
+          "short_description": "LFortran's MLIR(Multi-Level Intermediate Representation) backend executes fortran code via LLVM dialect of MLIR, but requires major refactoring with...",
+          "slug": "enhancing-mlir-backend-for-lfortran",
+          "status": null,
+          "student_name": "Yash Nagda",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing MLIR Backend for LFortran"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

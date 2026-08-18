@@ -45,9 +45,9 @@
     "checkpoint-restore",
     "Checkpoint/Restore"
   ],
-  "total_projects": 18,
+  "total_projects": 22,
   "stats": {
-    "avg_projects_per_appeared_year": 2.57,
+    "avg_projects_per_appeared_year": 2.75,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -59,7 +59,7 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -72,9 +72,9 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 15
+    "total_students": 22
   },
   "years": {
     "year_2016": null,
@@ -454,7 +454,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/criu"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/criu",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Currently, CRIU cannot checkpoint or restore systemd-managed containers \nif there are SCM_CREDENTIALS messages waiting in a Unix socket queue. \nBecause systemd uses these credentials for almost all service \ncommunications, any in-flight message causes CRIU to fail. We aim to \nsolve this problem by adding support for SCM_CREDENTIALS and the newer \nSCM_PIDFD to CRIU’s socket queue logic. I will implement PID remapping \nto ensure credentials remain valid after restore and add support for \nmodern socket options like SO_PASSPIDFD. The final deliverables will \ninclude core code updates to the socket subsystem and extend image \nformats.",
+          "difficulty": null,
+          "id": "proj_criu_2026_cTURFyRR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cTURFyRR",
+          "proposal_id": "LhSZ4cRW",
+          "short_description": "Currently, CRIU cannot checkpoint or restore systemd-managed containers if there are SCM_CREDENTIALS messages waiting in a Unix socket queue. Because...",
+          "slug": "add-support-for-scm-credentials-scm-pidfd-and-friends",
+          "status": null,
+          "student_name": "Ahmed Khalid Elaidy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support for SCM_CREDENTIALS / SCM_PIDFD and Friends"
+        },
+        {
+          "code_url": null,
+          "description": "CRIU currently supports unprivileged checkpoint/restore in limited cases, but rootless containers remain unsupported because they introduce additional challenges around user namespaces, ptrace permissions, seccomp suspension, cgroup handling, and UID/GID mapping. This project aims to add a dedicated rootless-container checkpoint/restore path to CRIU rather than extending the existing --unprivileged mode. The implementation will introduce a user-namespace-aware helper architecture for dump, preserve cgroup state when delegation permits it, correctly capture and restore UID/GID mappings using newuidmap and newgidmap, and establish proper restore ordering for user and mount namespaces. Deliverables include the new rootless-container support path in CRIU, cgroup handling improvements, UID/GID mapping support, expanded rootless zdtm coverage, and documentation for the workflow and limitations.",
+          "difficulty": null,
+          "id": "proj_criu_2026_xk3R6xhq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xk3R6xhq",
+          "proposal_id": "ChUBHLWB",
+          "short_description": "CRIU currently supports unprivileged checkpoint/restore in limited cases, but rootless containers remain unsupported because they introduce...",
+          "slug": "enabling-checkpoint-restore-of-rootless-containers",
+          "status": null,
+          "student_name": "Deepak Anand",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enabling Checkpoint/Restore of Rootless Containers"
+        },
+        {
+          "code_url": null,
+          "description": "The Checkpoint-Restore Operator manages checkpoint retention well but has no way to create checkpoints automatically. This project adds a new CheckpointSchedule CRD and controller that triggers checkpoint creation through four mechanisms: cron-based time schedules, CPU/memory resource thresholds, Kubernetes cluster events (node drain, pod eviction, preemption), and pod annotations for application-level signaling. All triggers call the existing Kubelet Checkpoint API via the Kubernetes API server proxy.\r\nDeliverables include the CheckpointSchedule CRD, a CheckpointCreator that calls the Kubelet API, four independent trigger subsystems, a TriggerManager to coordinate them, a full controller-runtime reconciler, RBAC updates, unit and BATS integration tests, and sample configuration. Together with the existing retention policies, this turns the operator into a complete checkpoint lifecycle manager — admins declare both when checkpoints are created and how long they are kept, with no custom scripting required.",
+          "difficulty": null,
+          "id": "proj_criu_2026_iGyBNWXX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iGyBNWXX",
+          "proposal_id": "jzUcPKdH",
+          "short_description": "The Checkpoint-Restore Operator manages checkpoint retention well but has no way to create checkpoints automatically. This project adds a new...",
+          "slug": "kubernetes-operator-for-automated-policy-based-checkpointing",
+          "status": null,
+          "student_name": "Rupam-It",
+          "student_profile": null,
+          "tags": [],
+          "title": "Kubernetes Operator for Automated Policy-Based Checkpointing"
+        },
+        {
+          "code_url": null,
+          "description": "In Kubernetes, container termination during security incidents results in the loss of critical forensic data. This project automates the capture of container states by building an event-driven pipeline. Using Falco for detection, a custom Kubernetes Controller for CRIU checkpointing, and checkpointctl for automated analysis, this project extends the capabilities of the existing Medusa framework and ensures that volatile evidence (such as memory, process trees, and open files) is preserved and reported. This enables forensic investigators to perform deep forensic analysis on frozen container states, which otherwise might have been ephemeral.",
+          "difficulty": null,
+          "id": "proj_criu_2026_67c1nTmK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/67c1nTmK",
+          "proposal_id": "Mk6PXdB8",
+          "short_description": "In Kubernetes, container termination during security incidents results in the loss of critical forensic data. This project automates the capture of...",
+          "slug": "forensic-checkpointing-framework-for-kubernetes",
+          "status": null,
+          "student_name": "Shailja Shaktawat",
+          "student_profile": null,
+          "tags": [],
+          "title": "Forensic Checkpointing Framework for Kubernetes"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

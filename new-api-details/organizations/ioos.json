@@ -38,9 +38,9 @@
     "Oceanography",
     "Marine Biodiversity"
   ],
-  "total_projects": 22,
+  "total_projects": 29,
   "stats": {
-    "avg_projects_per_appeared_year": 5.5,
+    "avg_projects_per_appeared_year": 5.8,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -52,7 +52,7 @@
       "year_2023": null,
       "year_2024": 6,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": null,
@@ -65,9 +65,9 @@
       "year_2023": null,
       "year_2024": 6,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 21
+    "total_students": 29
   },
   "years": {
     "year_2016": null,
@@ -529,7 +529,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ioos"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/ioos",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "I propose a development period of 5 stages to gauge community needs, assess the toolbox, and potentially augment it with additional tests or functions. The first stage is to become more familiar with the glider community and identify what already exists, learning as much as possible prior to making any improvements. The 2nd stage is to address the “Group 1” tests as outlined in GSoC proposal #102 on Github, which are essential to many glider operations and basic data functionality for any following uses. Next, stage 3 will address” Group 2” or “strongly recommended” tests which are significant for data hygiene and identifying problems that likely arise from the sensors themselves, rather than real phenomena. Stage 4 addresses “Group 3” or “suggested” tests, which help anchor the data in reality by testing known oceanographic trends. Finally, stage 5 of this project will seek to expand the toolbox from any discovered shortcomings and synthesize the project into an easily digestible conclusion.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_bJGGUbsA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/bJGGUbsA",
+          "proposal_id": "D2K3496i",
+          "short_description": "I propose a development period of 5 stages to gauge community needs, assess the toolbox, and potentially augment it with additional tests or...",
+          "slug": "filling-the-gaps-within-the-ioos-quality-control-schema-for-ocean-glider-data",
+          "status": null,
+          "student_name": "Aaron Mau",
+          "student_profile": null,
+          "tags": [],
+          "title": "Filling the gaps within the IOOS quality control schema for ocean glider data."
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes the integration of Empirical Dynamic Modeling (EDM) into the Fisheries Integrated Modeling System (FIMS), an open-source framework used for fisheries stock assessment. While FIMS currently supports parametric models such as catch-at-age and surplus production models, ecological systems often exhibit nonlinear dynamics that are difficult to capture with predefined equations. EDM offers a data-driven alternative that reconstructs system dynamics directly from time-series observations using delay embedding techniques.\n\nThe project will implement core EDM components within FIMS, including delay-embedding generation and prediction algorithms such as Simplex projection, S-map, and Gaussian Process EDM. These methods will be integrated with the existing FIMS statistical inference framework to enable empirical forecasting and hybrid modeling approaches. The final outcome will be a modular EDM module, tested using GoogleTest and testthat, along with documentation and example workflows to demonstrate its application in fisheries modeling.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_lzj4M67Y",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lzj4M67Y",
+          "proposal_id": "hfypgO6B",
+          "short_description": "This project proposes the integration of Empirical Dynamic Modeling (EDM) into the Fisheries Integrated Modeling System (FIMS), an open-source...",
+          "slug": "integrating-empirical-dynamic-modeling-edm-into-the-fisheries-integrated-modeling-system-fims",
+          "status": null,
+          "student_name": "aman-raj-srivastva",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrating Empirical Dynamic Modeling (EDM) into the Fisheries Integrated Modeling System (FIMS)"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to transform OCSMesh into a truly HPC-native tool by migrating its parallel architecture to mpi4py for distributed computing. Furthermore, I will implement a robust spatial partitioning engine that utilizes \"windowed\" data reading. This will decouple the meshing performance from the physical file structure, allowing OCSMesh to process global-scale datasets across supercomputing clusters without memory bottlenecks.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_gIaaxcS9",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gIaaxcS9",
+          "proposal_id": "ptA3b9M2",
+          "short_description": "This project aims to transform OCSMesh into a truly HPC-native tool by migrating its parallel architecture to mpi4py for distributed computing....",
+          "slug": "scalable-ocsmesh-parallelization-and-spatial-partitioning",
+          "status": null,
+          "student_name": "Anas Ibrahem",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scalable OCSMesh: Parallelization and Spatial Partitioning"
+        },
+        {
+          "code_url": null,
+          "description": "CrocoLakeTools currently downloads ocean datasets from static sources, either a fixed URL or a fixed file list. This works for stable snapshots like GLODAP, but not for live ERDDAP servers like the IOOS Glider DAC, which hosts hundreds of delayed-mode glider deployment datasets that grow and change over time.\nThis project builds an incremental sync layer targeting the IOOS Glider DAC. The implementation follows a three-layer architecture discussed with the mentor: a CLI script for user interaction, a dataset-specific downloader (DownloaderIOOSGliders) that handles ERDDAP query logic and URL construction using erddapy, and the base Downloader class that provides shared tools used by all downloaders in the package. The sync tool queries the server, compares server-side timestamps against local files, and downloads only what is new or updated. Files are stored exactly as served by ERDDAP with no schema conversion.\nDeliverables: (1) download_parallel() added to the base Downloader class, (2) DownloaderIOOS base class wrapping erddapy, (3) DownloaderIOOSGliders with incremental sync logic, (4) download_ioos_gliders.py CLI script, (5) unit and integration tests, (6) animal telemetry subclass as a stretch goal.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_CeS8f9lv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/CeS8f9lv",
+          "proposal_id": "fwr3nY8u",
+          "short_description": "CrocoLakeTools currently downloads ocean datasets from static sources, either a fixed URL or a fixed file list. This works for stable snapshots like...",
+          "slug": "enhancing-crocolaketools-with-ioos-data-sync-from-erddap",
+          "status": null,
+          "student_name": "mahi-anol",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing CrocoLakeTools with IOOS Data Sync from ERDDAP"
+        },
+        {
+          "code_url": null,
+          "description": "The noaa_coops package provides oceanographic data access but has critical gaps: \nlarge date ranges fail without pagination, no retry logic for rate limiting, and \nNOAA's Derived Products are inaccessible.\n\nI will implement: \n(1) automated pagination respecting product-specific API limits, \n(2) throttling-aware retry logic with exponential backoff, \n(3) complete derived product support via a new method,\n(4) metadata retrieval fixes for historic current stations, and \n(5) numpy 2+ compatibility fix.\n\nDeliverables include a strengthened noaa_coops package with merged PRs addressing each issue, comprehensive pytest coverage (>90% for new code) and updated documentation with clear examples. This will transform noaa_coops into a production-ready package that oceanographers can rely on for large-scale research workflows.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_OuJRe5Av",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/OuJRe5Av",
+          "proposal_id": "d7wIuvqk",
+          "short_description": "The noaa_coops package provides oceanographic data access but has critical gaps: large date ranges fail without pagination, no retry logic for rate...",
+          "slug": "enhancing-noaa-coops-bringing-software-engineering-best-practices-to-ocean-data-access",
+          "status": null,
+          "student_name": "Sreeya_C",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing noaa_coops: Bringing Software Engineering Best Practices to Ocean Data Access"
+        },
+        {
+          "code_url": null,
+          "description": "This project extends the Fisheries Integrated Modeling System (FIMS) to support user-defined sex structure in population models. Currently, FIMS assumes a fixed 50/50 sex ratio, limiting its ability to represent sex-specific population dynamics used in stock assessment. To address this, the project introduces a partition-based framework that can enable sex-specific derived quantities (e.g. spawning biomass, landings) and population dynamics (e.g. mortality, selectivity) while minimizing computational overhead. Rather than implementing sex structure as a standalone feature, this approach supports a more general and extensible design for introducing partitions into the model. Three levels of model complexity will be developed and evaluated to balance flexibility and performance. The ultimate goal of this project is to implement an explicit two-sex model, which enables the capacity to model life-history dynamics differently between different sex groups. Benchmarking experiments will assess runtime and identify efficient configurations. Upon completion, this feature will expand the applicability of FIMS to a broader range of fisheries and stocks across the United States.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_I8uSWyXY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/I8uSWyXY",
+          "proposal_id": "3NvgdHym",
+          "short_description": "This project extends the Fisheries Integrated Modeling System (FIMS) to support user-defined sex structure in population models. Currently, FIMS...",
+          "slug": "add-sex-structure-to-fims-statistical-catch-at-age-model",
+          "status": null,
+          "student_name": "Szu-Yun",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add sex structure to FIMS statistical-catch-at-age model"
+        },
+        {
+          "code_url": null,
+          "description": "The NOS OFS Skill Assessment package is a Python-based framework used to evaluate operational forecast systems (OFS) through observation retrieval, model processing, skill computation, and visualization. As the system continues to evolve, gaps in automated testing, continuous integration, and user-facing validation create challenges in maintaining reliability and usability.\r\nThis project focuses on improving developer and user experience without modifying the scientific computation pipeline. The primary objectives are to introduce a GitHub Actions-based CI workflow, expand deterministic unit test coverage across core modules, and enhance the existing tkinter-based GUI with structured parameter grouping, validation logic, and contextual tooltips derived from existing argument definitions.\r\nIn addition, the project will improve contributor onboarding by restructuring documentation using MkDocs. A lightweight, read-only dashboard will also be explored to organize and present outputs from completed skill assessment runs, providing a concise operational overview.",
+          "difficulty": null,
+          "id": "proj_ioos_2026_oMVlDkiW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/oMVlDkiW",
+          "proposal_id": "xbxAP7LE",
+          "short_description": "The NOS OFS Skill Assessment package is a Python-based framework used to evaluate operational forecast systems (OFS) through observation retrieval,...",
+          "slug": "enhance-nos-skill-assessment-package-s-user-and-developer-experience",
+          "status": null,
+          "student_name": "Tanmay Rajurkar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance NOS skill assessment package’s user and developer experience"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

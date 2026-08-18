@@ -47,9 +47,9 @@
     "3d tools",
     "3d animation"
   ],
-  "total_projects": 64,
+  "total_projects": 72,
   "stats": {
-    "avg_projects_per_appeared_year": 6.4,
+    "avg_projects_per_appeared_year": 6.55,
     "projects_by_year": {
       "year_2016": 8,
       "year_2017": 5,
@@ -61,7 +61,7 @@
       "year_2023": 5,
       "year_2024": 6,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 8,
@@ -74,9 +74,9 @@
       "year_2023": 5,
       "year_2024": 6,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 59
+    "total_students": 72
   },
   "years": {
     "year_2016": {
@@ -1297,7 +1297,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/blender-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/blender-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Goal of this project is to add the functionality to import and export OpenTimelineIO (.otio) files in Blender.\n\nOpenTimelineIO is an open-source interchange format and C++ API that represents an editorial cut as a structured, JSON-serialized object graph carrying precise cut information, media references, markers, transitions, and effects across non-linear editors (NLEs).\n\nWith the ability to import and export .otio files in Blender, the artists would be able to work using different softwares on the same timeline keeping Blender in their production pipeline.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_IVkxBrR2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IVkxBrR2",
+          "proposal_id": "BmBGISBr",
+          "short_description": "The Goal of this project is to add the functionality to import and export OpenTimelineIO (.otio) files in Blender. OpenTimelineIO is an open-source...",
+          "slug": "opentimelineio-support-in-vse",
+          "status": null,
+          "student_name": "Bipin_",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenTimelineIO Support in VSE"
+        },
+        {
+          "code_url": null,
+          "description": "As highlighted during the 2025 Blender Conference, one of the primary challenges facing the Compositor is managing complexity. To address this, the goal of this proposal is to make it as accessible as possible by porting over familiar nodes from Geometry Nodes.\nThis project aims to:\n- Develop a future-proof classification between the two modules. \n- Port matrix & math utility nodes into the Compositor: Matrix SVD, Bit Math, Boolean Math, Integer Math, Compare, Float To Int, Hash Value, and Random Value. \n- Extend GPUType to include boolean, integer and integer vector types. \n- Ensure UI and behavior consistency between ported nodes and existing ones, including full support for the GPU Compositor. \n- Implement regression testing for all newly ported nodes. \n- Document the rationale behind node selection, implementation and functionality in the new context.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_CN7EtQiK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/CN7EtQiK",
+          "proposal_id": "Dpx3MoE9",
+          "short_description": "As highlighted during the 2025 Blender Conference, one of the primary challenges facing the Compositor is managing complexity. To address this, the...",
+          "slug": "compositor-new-nodes-from-geometry-nodes",
+          "status": null,
+          "student_name": "Criss-Ivana",
+          "student_profile": null,
+          "tags": [],
+          "title": "Compositor: New Nodes from Geometry Nodes"
+        },
+        {
+          "code_url": null,
+          "description": "Blender’s edit-mode smooth operator is a simple iterative uniform Laplacian average. While functional for light cleanup, it has four fundamental limitations that become severe in production workflows:\n\n- Volume shrinkage — The operator is a diffusion process that inherently contracts the mesh. A UV Sphere loses 91.3% of its volume after 100 iterations.\n- No frequency selectivity — The operator cannot distinguish noise from shape. For mild noise (σ≤0.01), smoothing any number of iterations makes the mesh less faithful to the clean original. For moderate noise (σ=0.02), there is a narrow useful window (~5 iterations) before shape degradation dominates.\n- Selection boundary artifacts — Smoothing a partial selection produces a sharp displacement discontinuity at the boundary (measured gradient: 0.067, 4× the interior average), creating a visible crease ring.\n\nThis project will implement three capabilities for edit-mode: volume-preserving smooth, frequency-aware smooth, and geometry pinning with boundary falloff blending.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_PAbcUvME",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PAbcUvME",
+          "proposal_id": "Qo2TbjdT",
+          "short_description": "Blender’s edit-mode smooth operator is a simple iterative uniform Laplacian average. While functional for light cleanup, it has four fundamental...",
+          "slug": "improved-mesh-smoothing-for-blender",
+          "status": null,
+          "student_name": "Evan Luo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved Mesh Smoothing for Blender"
+        },
+        {
+          "code_url": null,
+          "description": "This task involves various enhancements, such as:\n\"Clone\" Support for Edge Slide: An option for the Edge Slide tool which, when enabled, duplicates the corresponding edges first and then slides them. See RCS#2rcbbc, RCS#QDbbbc.\nEdge Flow: Adjusts the edge loop via spline interpolation such that it respects the flow of the surrounding geometry. See RCS#vddbbc.\nLoop Cut Curvature Preservation: Option added to loop cutting that when enabled places loop vertices on the curvature of the surrounding geometry with spline interpolation rather than with flat linear interpolation. See RCS#fSdbbc\n\nExpected outcomes: Additional loop-editing operators available in edit-mode.\nSkills required: Proficient in C++, Linear Algebra.\nPossible mentors: Campbell Barton, Tariq Sulley\nExpected project size: 350 hours\nDifficulty: hard",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_c7OJAvyL",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/c7OJAvyL",
+          "proposal_id": "DclnX167",
+          "short_description": "This task involves various enhancements, such as: \"Clone\" Support for Edge Slide: An option for the Edge Slide tool which, when enabled, duplicates...",
+          "slug": "modeling-improved-edge-loop-editing",
+          "status": null,
+          "student_name": "Henry Jiang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modeling: Improved Edge Loop Editing"
+        },
+        {
+          "code_url": null,
+          "description": "Currently transitions in VSE (Blender's video editor) have usability issues, as transitions can't be on the same channel as the input strips, and there aren't dedicated transitions for audio strips. This project aims to address these main usability issues.\n\nThe project adds handles to transitions (eg. crossfades) in the VSE, allowing users to move the transitions and change their length. When adding transitions, they get a default length. A right-click context menu - when clicking between strips - for adding transitions is added.\n\nAdjustable crossfades for sound strips are added.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_12otrFZQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/12otrFZQ",
+          "proposal_id": "qwtb2eH2",
+          "short_description": "Currently transitions in VSE (Blender's video editor) have usability issues, as transitions can't be on the same channel as the input strips, and...",
+          "slug": "vse-strip-transition-handles",
+          "status": null,
+          "student_name": "il4n",
+          "student_profile": null,
+          "tags": [],
+          "title": "VSE: Strip Transition Handles"
+        },
+        {
+          "code_url": null,
+          "description": "Features \n1. Per-brush opt-in for scene-level brush settings (“use unified xxx”). \n2. Brush tip roundness (currently available in limited brushes). \n3. Customizable pressure curves for all pressure-sensitive parameters. \n4. Customizable brush toggling and improved toggle display. \n5. Improved first-stroke responsiveness across relevant brushes. \n6. Pressure handling improvements in anchored mode. \n\nDeliverables \n1. Tip roundness and tilt support across all relevant brushes. \n2. Per-brush “use unified xxx” support. \n3. Custom curve controls for all pressure-sensitive parameters, including auto-smooth and hardness. \n4. Improved brush toggle UI and behavior. \n5. Improved first-stroke responsiveness for relevant brushes. \n6. Improved anchored-mode pressure handling. 7. End-user documentation for new features.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_48scIGRq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/48scIGRq",
+          "proposal_id": "8f4N7nGl",
+          "short_description": "Features 1. Per-brush opt-in for scene-level brush settings (“use unified xxx”). 2. Brush tip roundness (currently available in limited brushes). 3....",
+          "slug": "general-brush-engine-improvements",
+          "status": null,
+          "student_name": "Jerry Wei",
+          "student_profile": null,
+          "tags": [],
+          "title": "General Brush Engine Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "Blender currently supports exporting MaterialX within USD, but lacks meaningful support for authoring or executing MaterialX-standard shader graphs natively. This project aims to introduce the MaterialX standard node library into Blender's shader editor as first-class native nodes. A working execution prototype through Cycles' OSL backend will serve as the secondary deliverable, enabling round-trip evaluation of authored graphs during the project timeframe.\n\nAdding this feature to Blender will make it easier for 3D assets to interoperate with other DCCs, and will make Cycles a great candidate as the reference renderer for MaterialX.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_WK7NwHmb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WK7NwHmb",
+          "proposal_id": "QSha7DZO",
+          "short_description": "Blender currently supports exporting MaterialX within USD, but lacks meaningful support for authoring or executing MaterialX-standard shader graphs...",
+          "slug": "materialx-shader-authoring-in-blender",
+          "status": null,
+          "student_name": "Owen O'Malley",
+          "student_profile": null,
+          "tags": [],
+          "title": "MaterialX Shader Authoring in Blender"
+        },
+        {
+          "code_url": null,
+          "description": "Blender's UI regression test suite leaves most of the editor surface untested in CI, meaning regressions are caught only by manual review. This project extends the existing UI simulate testing framework with new targeted tests covering Window Manager state transitions, all practical editor/region types, menu and operator search per editor, tool/modifier/preference draw stability, and interaction-heavy flows like drag/drop, pie menus, and selection behavior. All tests integrate into the existing  CI, with documentation covering how to run and extend UI regression tests within the framework.",
+          "difficulty": null,
+          "id": "proj_blender-foundation_2026_z1TyuOzu",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/z1TyuOzu",
+          "proposal_id": "WN8rsME5",
+          "short_description": "Blender's UI regression test suite leaves most of the editor surface untested in CI, meaning regressions are caught only by manual review. This...",
+          "slug": "improving-regression-test-coverage",
+          "status": null,
+          "student_name": "Yogeshgouda_Patil",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving Regression Test Coverage"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -49,9 +49,9 @@
     "Modelling",
     "Live music"
   ],
-  "total_projects": 32,
+  "total_projects": 37,
   "stats": {
-    "avg_projects_per_appeared_year": 6.4,
+    "avg_projects_per_appeared_year": 6.17,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 5,
@@ -63,7 +63,7 @@
       "year_2023": 6,
       "year_2024": null,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -76,9 +76,9 @@
       "year_2023": 6,
       "year_2024": null,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 31
+    "total_students": 37
   },
   "years": {
     "year_2016": null,
@@ -699,7 +699,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/pharo-consortium"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/pharo-consortium",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Pharo provides an immersive and interactive development environment with powerful refactoring tools. However, its current refactoring workflows can be fragmented, rely on frequent pop-ups, and offer limited feedback, making them less user-friendly.\n\nThis project aims to improve the usability and interactivity of Pharo’s refactoring tools, with a focus on rename operations. To achieve this, the project will develop a flexible driver and preview infrastructure that supports safe experimentation, introduce live name editing with immediate validation, and enhance the visualization of changes through a hierarchical tree structure.\n\nThe expected outcomes include a streamlined refactoring workflow, a clear hierarchical preview of all changes, real-time validation of user input, and a more intuitive and interactive user experience that helps developers better understand and manage code transformations.",
+          "difficulty": null,
+          "id": "proj_pharo-consortium_2026_VKt8YCDg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VKt8YCDg",
+          "proposal_id": "LU821Ax5",
+          "short_description": "Pharo provides an immersive and interactive development environment with powerful refactoring tools. However, its current refactoring workflows can...",
+          "slug": "streamlining-pharo-s-refactoring-engine-ui-ux",
+          "status": null,
+          "student_name": "Biljana",
+          "student_profile": null,
+          "tags": [],
+          "title": "Streamlining Pharo’s Refactoring Engine UI/UX"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces a library of 7 data structures to the Pharo ecosystem, replacing O(N) bottlenecks with resilient, mathematically proven structures (including B Trees, K-D Trees, and Persistent Arrays). Following a full design approach, the implementations will be stress-tested using Competitive Programming datasets to guarantee architectural integrity under heavy load. Finally, the project utilizes VM-level tools (TimeProfiler and MemoryProfiler) to empirically benchmark performance, delivering production-ready infrastructure alongside interactive visual inspectors.",
+          "difficulty": null,
+          "id": "proj_pharo-consortium_2026_TvMycRxO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TvMycRxO",
+          "proposal_id": "mPRZ8L3S",
+          "short_description": "This project introduces a library of 7 data structures to the Pharo ecosystem, replacing O(N) bottlenecks with resilient, mathematically proven...",
+          "slug": "data-structures-and-benchmarking-for-pharo-large-350h",
+          "status": null,
+          "student_name": "Hossam Saber Sayed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Data Structures and Benchmarking for Pharo [Large - 350h]"
+        },
+        {
+          "code_url": null,
+          "description": "To build a DJ application with two decks in Pharo, I will make use of three libraries:\nPhausto for audio file playback (at variable speed), equalization, and filtering.\nSpec for building a browser to visualize audio files in a folder together with their metadata, and to organize these files into playlists.\nBloc for the visualization of audio waveforms and the rendering of UI widgets to control playback speed, pitch, levels, the equalizer, and filter cutoff and resonance.\nAs a first step, Phausto will be used to load and simultaneously play two audio files, mixing them via the Phausto API. Once the audio engine is in place, a Spec application will be built to browse audio files and load them into either of the two decks.\nWith the file browser complete, a conventional user interface will be added to control the mix between the two tracks and their equalization. The Phausto standard library will then be used to add a delay effect per deck.\nWith the DJ application running, final polish can be applied in the form of BPM detection and track quantization, which requires implementing peak detection for audio files within Pharo.\nDeliverables:\nThe Spec application with audio file browsing and audio playback will be delivered before the first evaluation.\nThe audio visualization and UI built with Bloc will be delivered halfway between the first and final evaluations.\nExtra features (BPM detection and quantization) will be added and tested before the final evaluation.",
+          "difficulty": null,
+          "id": "proj_pharo-consortium_2026_m2qt251f",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/m2qt251f",
+          "proposal_id": "osq0lZke",
+          "short_description": "To build a DJ application with two decks in Pharo, I will make use of three libraries: Phausto for audio file playback (at variable speed),...",
+          "slug": "pharo-dj-app-with-phausto-spec-and-bloc",
+          "status": null,
+          "student_name": "Lucia Cardin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pharo Dj App With Phausto, Spec and Bloc"
+        },
+        {
+          "code_url": null,
+          "description": "In agent-based modeling, the goal is to understand how individual agent behavior agent behavior is influenced by social norms (rules like obligations, prohibitions, and permissions). Using platforms like CORMAS built in Pharo, modelers have to hardcode norms directly into agent behavior, making the system rigid and hard to manage. \nUsing method proxies - a reflective programming technique in Pharo that intercepts method calls at runtime - we propose to implement norms as a separate, modular layer on top of CORMAS with different handlers for obligations, prohibitions, and permissions. \nThis work aims to deliver 1) a CORMAS plugin (cormas-norms) with its tests and documentation, 2) a better UI to manage norms live during simulation, and 3) a real-world use case demo of the plugin.",
+          "difficulty": null,
+          "id": "proj_pharo-consortium_2026_aTW8KjSB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/aTW8KjSB",
+          "proposal_id": "sYVnDnfv",
+          "short_description": "In agent-based modeling, the goal is to understand how individual agent behavior agent behavior is influenced by social norms (rules like...",
+          "slug": "decoupled-implementation-of-social-norms-in-cormas",
+          "status": null,
+          "student_name": "Tokimahery",
+          "student_profile": null,
+          "tags": [],
+          "title": "Decoupled implementation of  social norms in CORMAS"
+        },
+        {
+          "code_url": null,
+          "description": "The Pharo VM is written in Slang, a Smalltalk subset that is transpiled to C by the CCodeGenerator. Currently, the entire VM is generated into a handful of large monolithic C files where code from completely different subsystems the garbage collector, the interpreter, and the JIT compiler  are all merged together into a single output stream. This makes the generated code difficult to read, navigate, and maintain, and means that changing a single method triggers recompilation of the entire VM rather than just the relevant module.\nThis project introduces separate compilation to Slang by refactoring CCodeGenerator to route generated C code into multiple files, one per class hierarchy, while correctly tracking and emitting #include dependencies between them. The approach involves extending CCodeGenerator to maintain per-hierarchy output streams, implementing a dependency graph builder to determine which hierarchies reference which others, generating corresponding header files with the necessary forward declarations and prototypes, and updating the CMake build system to automatically discover the new files.\nThe deliverables are: a working dependency graph builder for TMethod objects, a refactored CCodeGenerator supporting multiple output streams, successful extraction of the SpurMemoryManager garbage collector hierarchy into its own standalone C file with correct includes as a proof of concept, header file generation for all separated modules, extension of separate compilation to the Cogit JIT compiler and remaining hierarchies, and an updated CMake build configuration. All existing VM tests will pass throughout, ensuring no regressions in the generated code.",
+          "difficulty": null,
+          "id": "proj_pharo-consortium_2026_KQQy0Sp4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/KQQy0Sp4",
+          "proposal_id": "FMAkoVYX",
+          "short_description": "The Pharo VM is written in Slang, a Smalltalk subset that is transpiled to C by the CCodeGenerator. Currently, the entire VM is generated into a...",
+          "slug": "enhance-slang-with-separate-compilation",
+          "status": null,
+          "student_name": "Zinnia Nagpal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance Slang with Separate Compilation"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

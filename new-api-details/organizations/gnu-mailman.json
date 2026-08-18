@@ -26,9 +26,9 @@
     "archives",
     "list management"
   ],
-  "total_projects": 0,
+  "total_projects": 4,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 4,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -40,7 +40,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -53,9 +53,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 0
+    "total_students": 4
   },
   "years": {
     "year_2016": null,
@@ -68,7 +68,88 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnu-mailman",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project implements the domain owner role in Postorius. Right now, Mailman 3 has site admins, list owners, and list moderators, but domain administration is not fully complete. This project will allow domain owners to create mailing lists only in domains they own, use list-owner features for lists in those domains, and edit settings for their domains. \n\nThe work involves updating Postorius auth helpers, reusing existing decorators and mixins, updating list creation and domain edit views, making UI changes, and adding tests. \n\nExpected result: working support for domain owners to manage lists and domains they own, along with proper test coverage.",
+          "difficulty": null,
+          "id": "proj_gnu-mailman_2026_k9uqDXsN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/k9uqDXsN",
+          "proposal_id": "QMhQiwrq",
+          "short_description": "This project implements the domain owner role in Postorius. Right now, Mailman 3 has site admins, list owners, and list moderators, but domain...",
+          "slug": "mailman-3-domain-administration-in-postorius",
+          "status": null,
+          "student_name": "a-khushal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Mailman 3 Domain Administration in Postorius"
+        },
+        {
+          "code_url": null,
+          "description": "The current Postorius subscriber management page has limited member visibility, no filtering options, and requires full page navigation to edit preferences. This proposal adds a Display Name column with sortable headers, filter dropdowns for delivery status/mode/moderation action with bookmarkable URL params, an expandable inline row for quick preference editing without page navigation, and private list visibility for subscribers with lock icon indicators.",
+          "difficulty": null,
+          "id": "proj_gnu-mailman_2026_6ftc6bz0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/6ftc6bz0",
+          "proposal_id": "wMuG3yjw",
+          "short_description": "The current Postorius subscriber management page has limited member visibility, no filtering options, and requires full page navigation to edit...",
+          "slug": "improved-ui-for-subscription-management",
+          "status": null,
+          "student_name": "Amitxtech",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved UI for Subscription Management"
+        },
+        {
+          "code_url": null,
+          "description": "For broadcasting messages, mailing lists are essential but high traffic lists frequently fill the inboxes with replies to threads of a particular topic that subscribers have no interest in. This project introduces Dynamic Sublists into the GNU Mailman 3 suite. This is an ideal feature for user-support community groups or for issue tracking where topics of interests/specific tasks diverge from the main discussion thread. The earlier rigid broadcast model is transformed into an opt-in thread model, ensuring only the root email of a new topic is broadcast to the main mailing list, after which the next round of replies will be routed strictly to a child list, delivering the mail to users who have explicitly opted in. Sublists are treated as dynamically made child MailingList objects linked via a parent_id. This project requires implementation across Mailman 3 Core, extending the SQLAlchemy IMailingList schema, implementing inheritance, building the email command workflow (-new to fork threads and standard -join/-leave aliases), and adding an admin specific toggle for Postorius.",
+          "difficulty": null,
+          "id": "proj_gnu-mailman_2026_68eNmQr1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/68eNmQr1",
+          "proposal_id": "cB11JMnn",
+          "short_description": "For broadcasting messages, mailing lists are essential but high traffic lists frequently fill the inboxes with replies to threads of a particular...",
+          "slug": "dynamic-sublists-conversations-for-gnu-mailman-3",
+          "status": null,
+          "student_name": "Archie Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Dynamic Sublists (Conversations) for GNU Mailman 3"
+        },
+        {
+          "code_url": null,
+          "description": "Mailman 3 has no way to back up or restore a single mailing list. If a list is accidentally deleted or a database migration goes wrong, there is no recovery path. This project builds one: two CLI commands: mailman backup and mailman restore, backed by a schema-validated JSON export format. The backup captures all list state: 85 config fields, member roster across all three roles, header-match rules, aliases, bans, and archiver states. Restore validates the file against a JSON Schema before touching the database, guards against missing domains, preserves verified_on exactly, and uses an is_subscribed() pre-check to avoid SQLAlchemy session poisoning. The operation is silent so no welcome or verification emails are triggered.",
+          "difficulty": null,
+          "id": "proj_gnu-mailman_2026_RtybMqww",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RtybMqww",
+          "proposal_id": "Z2Rw6X0R",
+          "short_description": "Mailman 3 has no way to back up or restore a single mailing list. If a list is accidentally deleted or a database migration goes wrong, there is no...",
+          "slug": "per-list-backup-and-restore",
+          "status": null,
+          "student_name": "Navya Khanna",
+          "student_profile": null,
+          "tags": [],
+          "title": "Per List Backup and Restore"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": null,

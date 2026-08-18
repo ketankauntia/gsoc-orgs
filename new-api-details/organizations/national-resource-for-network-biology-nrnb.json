@@ -59,9 +59,9 @@
     "scientific computing",
     "machine learning"
   ],
-  "total_projects": 119,
+  "total_projects": 126,
   "stats": {
-    "avg_projects_per_appeared_year": 11.9,
+    "avg_projects_per_appeared_year": 11.45,
     "projects_by_year": {
       "year_2016": 15,
       "year_2017": 20,
@@ -73,7 +73,7 @@
       "year_2023": 8,
       "year_2024": 11,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": 15,
@@ -86,9 +86,9 @@
       "year_2023": 8,
       "year_2024": 11,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 112
+    "total_students": 126
   },
   "years": {
     "year_2016": {
@@ -2473,7 +2473,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/national-resource-for-network-biology-nrnb"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/national-resource-for-network-biology-nrnb",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to implement a Visual Attribute Mapping System that enables users to automatically map node and edge attributes to visual properties within the GraphSpace interface. This system will allow users to generate meaningful graph visualizations where the appearance of graph elements directly reflects underlying attribute data — turning raw data into visual insight. There are two main components in this project:\nUser Interface for Visual Attribute Mapping — A new Visual Attribute Mapping panel integrated into the GraphSpace Layout Editor. This interface will allow users to select graph attributes and map them to visual properties through an interactive configuration panel. Users will choose between Discrete Mapping (categorical attributes) and Continuous Mapping (numerical attributes). The interface will dynamically display configuration options based on the selected mapping type and visual property.\n\nBackend Support for Attribute Mapping — Backend services that read graph attributes, validate mapping configurations sent by the frontend, compute Cytoscape-compatible style rules, and store them via the existing layout update API. This component integrates with the existing update_layout controller and the style_json storage mechanism — requiring no new database tables.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_pLlsx1hC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pLlsx1hC",
+          "proposal_id": "0ex2hocJ",
+          "short_description": "This project aims to implement a Visual Attribute Mapping System that enables users to automatically map node and edge attributes to visual...",
+          "slug": "implement-a-data-driven-visual-attribute-mapping-system-in-graphspace",
+          "status": null,
+          "student_name": "Akriti agrawal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement a Data-Driven Visual Attribute Mapping System in GraphSpace"
+        },
+        {
+          "code_url": null,
+          "description": "openPIP is an open-source platform for hosting and visualizing protein-protein interaction (PPI) data. The current version is built on a PHP 5.6 / Symfony 2.8 stack that has reached end-of-life, making it difficult to maintain and extend. This project performs a complete rewrite of openPIP using modern web frameworks: a React single-page application frontend with Cytoscape.js for network visualization, a REST API backend (Python/Django REST Framework or Node.js/Express, to be finalized with the mentor), and a PostgreSQL database, all containerized with Docker. Key deliverables include: (1) a clean REST API replacing the 27 monolithic PHP controllers, (2) an enhanced data upload pipeline supporting PSI-MI TAB and CSV formats with drag-and-drop, real-time validation, and async processing, (3) a responsive React frontend with interactive search, network visualization, and an admin panel, (4) production-ready Docker Compose deployment, and (5) a data migration script for existing openPIP deployments (HuRI, YeRI). I have direct experience with the openPIP codebase, having created its deployment guide and migrated the platform from openpip.baderlab.org to openpip.usask.ca.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_o7J0WIL6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/o7J0WIL6",
+          "proposal_id": "dpfyPjQL",
+          "short_description": "openPIP is an open-source platform for hosting and visualizing protein-protein interaction (PPI) data. The current version is built on a PHP 5.6 /...",
+          "slug": "openpip-2-modernizing-the-open-source-protein-interaction-platform",
+          "status": null,
+          "student_name": "hamid-ananda",
+          "student_profile": null,
+          "tags": [],
+          "title": "openPIP 2 Modernizing the Open Source Protein Interaction Platform"
+        },
+        {
+          "code_url": null,
+          "description": "VCell-AI is an AI-powered platform for discovering, analyzing, and exploring biological models from the VCell database. While the platform already provides a functional chatbot interface, it requires additional capabilities to support real-world usage — including authentication, usage control, and broader integration with scientific data sources.\n\nThis project aims to extend the system across these dimensions. Auth0 authentication will be integrated using the existing VCell Auth0 tenant, allowing existing VCell users to log in seamlessly. On top of this, a per-user token tracking and enforcement system will be introduced, along with an admin dashboard for managing limits.\n\nThe prompt handling layer will be refactored into a centralized registry to improve consistency and reduce fragmentation. Local LLM support will be exposed as a user-facing feature. The system will also be expanded with PubMed search, complementing the already implemented BioModels DB integration.\n\nTo improve usability, BNGL-based molecular visualization will be integrated. Support for SBML data will be completed, and BioPAX pathway data will be introduced as an additional source for biological knowledge.\n\nPrior to the coding period, 8 pull requests have already been raised covering API standardization, local LLM bug fixes, and BNGL visualization integration as a proof of concept, demonstrating familiarity with the codebase and commitment to the project.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_OWrsryC7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/OWrsryC7",
+          "proposal_id": "23BKTk9K",
+          "short_description": "VCell-AI is an AI-powered platform for discovering, analyzing, and exploring biological models from the VCell database. While the platform already...",
+          "slug": "enhancing-vcell-ai-platform",
+          "status": null,
+          "student_name": "Kartik Deshpande",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing VCell AI Platform"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, the Cytoscape App Store only supports plugins for the Cytoscape Desktop App. Since a web version of Cytoscape is available, web plugins and service apps can add functionality, similar to the desktop plugins. With multiple platforms, a unified app registry would be ideal in organizing plugins and extensions, with layered filtering capabilities (e.g. platform type, app type). To solve this problem, the proposal includes an implementation plan on frontend UI changes and filtering, database migrations, an updated submission and approval flow for both web apps and service apps, and health monitoring for all apps. The first 3-4 weeks will be spent discussing final changes with mentors, with database migrations to accomodate the new platform types. The frontend will also receive changes including filtering, new tags and categories. Weeks 5 and 6 will follow a similar process for web service apps. Weeks 7-10 will consist of adjusting the submission workflow, including frontend UI changes for developers and database migrations. Health checks will also be implemented, with certain criteria to determine the health status of an app. Weeks 11-12 will consist of unit testing, including health check testing, testing new uploads, latency checks and documentation.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_v2Yd4fXy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/v2Yd4fXy",
+          "proposal_id": "HqVG1M0S",
+          "short_description": "Currently, the Cytoscape App Store only supports plugins for the Cytoscape Desktop App. Since a web version of Cytoscape is available, web plugins...",
+          "slug": "proposal-for-the-unified-app-registry-for-cytoscape-app-store",
+          "status": null,
+          "student_name": "Kevin Zhu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Proposal for the Unified App Registry for Cytoscape App Store"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to improve and evaluate symbolic regression methods for discovering interpretable mathematical models of biological network dynamics. A key challenge in this area is that, when working with real biological data, the true underlying equations are unknown, making it difficult to assess whether equation-discovery algorithms are accurate or biologically meaningful. To address this, I will generate synthetic time-series datasets from curated mechanistic models available in the BioModels database (e.g., SBML models), where the ground-truth equations are known. These datasets will be used to systematically evaluate and benchmark symbolic regression approaches, including PySR and neural-symbolic methods such as the Learning Law of Changes (LLC) framework. The project will also explore strategies to improve model identifiability and interpretability, including constrained search spaces and incorporation of biologically informed functional priors. The expected deliverables include: (1) a reproducible pipeline to generate simulation data from SBML models, (2) an evaluation framework to benchmark symbolic regression methods on equation recovery tasks, (3) implementation and comparison of PySR and LLC-based approaches, (4) strategies to address identifiability challenges in biological data, and (5) well-documented, open-source code integrated with existing SBML compatible tools.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_ek4xmFSR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ek4xmFSR",
+          "proposal_id": "7oLZw1E3",
+          "short_description": "This project aims to improve and evaluate symbolic regression methods for discovering interpretable mathematical models of biological network...",
+          "slug": "evaluating-and-improving-symbolic-regression-methods-for-biological-network-dynamics",
+          "status": null,
+          "student_name": "Norma Citlalcue Perez Rosas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Evaluating and Improving Symbolic Regression Methods for Biological Network Dynamics"
+        },
+        {
+          "code_url": null,
+          "description": "Developing a scalable and reproducible research pipeline within SeqTrainer for bacterial DNA sequence modelling and annotation using SBOL-based datasets. The project addresses a key challenge in synthetic biology: the lack of accessible, machine learning–ready datasets and standardized workflows for genomic modelling. The primary focus is on E. coli and Gram-negative bacteria, with applications in promoter classification and sequence annotation.\n\nThe work involves reproducing and benchmarking existing CNN-based baselines, followed by integrating and evaluating foundation models such as DNABERT2 and Evo 2 within structured experiment pipelines. Experiments explore challenges including overfitting and class imbalance through methods such as weighted loss functions, undersampling, learning-rate tuning, and early stopping.\n\nA major component of the project is the development of a modular and reproducible experiment framework within SeqTrainer, including configuration-driven workflows, reproducible dataset splitting, evaluation utilities, metric logging, and improved SBOL-to-dataset conversion pipelines with validation and provenance tracking.\n\nThe final outcome aims to transform SeqTrainer into a more experiment-friendly framework for genomic ML research, enabling accessible, extensible, and reproducible machine learning workflows for synthetic biology researchers.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_ti3yxKbB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ti3yxKbB",
+          "proposal_id": "isNgcsrH",
+          "short_description": "Developing a scalable and reproducible research pipeline within SeqTrainer for bacterial DNA sequence modelling and annotation using SBOL-based...",
+          "slug": "ml-models-that-use-sbol-for-dna-annotation-by-shreeya",
+          "status": null,
+          "student_name": "Shreeya456",
+          "student_profile": null,
+          "tags": [],
+          "title": "ML Models that use SBOL for DNA annotation by Shreeya"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a Direct GitHub Integration Plugin for PathVisio to transform the pathway curation workflow from outdated systems to the WikiPathways GitHub repository. This proposal delivers a Java-based plugin which uses GitHub REST APIs to carry forward Git Operations. The PathVisio-GitHub Integration plugin will provide a clean and user friendly UI for biologists unfamiliar with Git Operations. The main goal of this proposal is to build an automation of Git Operations directly from PathVisio to WikiPathways GitHub repository for WikiPathways contributors.\n\nThe plugin features authorization of users via GitHub using OAuth Device Authorization Grant and provides automatic forking of repositories and branching in the background using GitHub REST APIs. An encoding of GPML pathway files into Base64 format takes place before the plugin stages commits and opens Pull Requests directly from the PathVisio dashboard without freezing the main application thread. This is ensured by Java SwingWorker running in the background. Furthermore, the project integrates GitHub Actions to automatically validate file formats and metadata completeness upon final submission.  \n\nUltimately, this plugin helps to simplify complex Git operations of contributing to biological pathways, enabling the global biological research community to effortlessly work on PathVisio.",
+          "difficulty": null,
+          "id": "proj_national-resource-for-network-biology-nrnb_2026_KRgVknHK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/KRgVknHK",
+          "proposal_id": "ZXgH5fzo",
+          "short_description": "This project aims to develop a Direct GitHub Integration Plugin for PathVisio to transform the pathway curation workflow from outdated systems to the...",
+          "slug": "direct-integration-of-pathvisio-with-wikipathways-github",
+          "status": null,
+          "student_name": "Snehashree Prusty",
+          "student_profile": null,
+          "tags": [],
+          "title": "Direct Integration of PathVisio with WikiPathways GitHub"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

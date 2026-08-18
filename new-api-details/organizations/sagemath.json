@@ -43,9 +43,9 @@
     "education",
     "research"
   ],
-  "total_projects": 55,
+  "total_projects": 59,
   "stats": {
-    "avg_projects_per_appeared_year": 5.5,
+    "avg_projects_per_appeared_year": 5.36,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 5,
@@ -57,7 +57,7 @@
       "year_2023": 6,
       "year_2024": 6,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 5,
@@ -70,9 +70,9 @@
       "year_2023": 6,
       "year_2024": 6,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 51
+    "total_students": 59
   },
   "years": {
     "year_2016": {
@@ -1136,7 +1136,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sagemath"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/sagemath",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Edge-disjoint spanning arborescences are a fundamental structure in directed graph theory, with applications in connectivity and network design. SageMath currently relies on Mixed Integer Linear Programming (MILP) to compute them, which can be slow on complex instances and depends on external solvers. This project will add a native combinatorial backend based on Gabow’s algorithm, implemented in Cython and integrated into SageMath’s public API. Deliverables include validation tools, randomized regression tests, documentation, and performance benchmarks against the existing MILP-based implementation.",
+          "difficulty": null,
+          "id": "proj_sagemath_2026_pDzlmkKR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pDzlmkKR",
+          "proposal_id": "Ck6DbKbA",
+          "short_description": "Edge-disjoint spanning arborescences are a fundamental structure in directed graph theory, with applications in connectivity and network design....",
+          "slug": "gabow-arborescence-packing-in-sagemath",
+          "status": null,
+          "student_name": "Dogukan Bingol",
+          "student_profile": null,
+          "tags": [],
+          "title": "Gabow Arborescence Packing In SageMath"
+        },
+        {
+          "code_url": null,
+          "description": "Problem: SageMath's algebraic number fields (AA/QQbar) have performance bottlenecks in equality testing, arithmetic on high-degree numbers, and symbolic conversion—limitations that affect users in number theory and algebraic geometry.\n\nSolution: Integrate FLINT's qqbar_t (Calcium module) as an optional high-performance backend. FLINT is already a Sage dependency, and Calcium provides optimized algebraic number algorithms with rigorous numerical enclosures.\n\nApproach:\n>Create Cython bindings for qqbar_t in sage/libs/flint/\n>Implement AlgebraicNumber_flint element and AlgebraicField_flint parent classes in sage/rings/qqbar_flint.py\n>Ensure coercion compatibility with existing AA/QQbar\n>Deliver tests, benchmarks, and documentation\n\nDeliverables:\n>Complete Cython bindings for core qqbar_t operations\n>Drop-in replacement classes for AA and QQbar with full arithmetic and coercion\n>Test suite and performance benchmarks\n>User and developer documentation\n\nThe new backend will be optional initially, enabling side-by-side comparison, with the potential to become the default after validation. This will make algebraic number computations in Sage faster and more robust.",
+          "difficulty": null,
+          "id": "proj_sagemath_2026_PEiDeeVa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PEiDeeVa",
+          "proposal_id": "a1AeYDpi",
+          "short_description": "Problem: SageMath's algebraic number fields (AA/QQbar) have performance bottlenecks in equality testing, arithmetic on high-degree numbers, and...",
+          "slug": "integrating-flint-calcium-algebraic-number-fields-as-a-backend-for-sagemath-s-aa-and-qqbar",
+          "status": null,
+          "student_name": "Madhu Sripada",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrating FLINT/Calcium Algebraic Number Fields as a Backend for SageMath's AA and QQbar."
+        },
+        {
+          "code_url": null,
+          "description": "SageMath's LazyCombinatorialSpecies framework (sage/rings/lazy_species.py) represents combinatorial species as lazy sequences of symmetric-group actions and supports molecular decompositions, generating series, and structure enumeration. Recent work in PR #41655 adds the Hadamard product, functorial composition, and arithmetic product at the level of molecular data, but these operations lack structure generation. The derivative operation is also missing entirely.\n\nThis project will: \n\n(a) implement the derivative and multisort partial derivatives, with cycle index, generating series, and pointing methods \n\n(b) extend the Hadamard product and functorial composition to multisort species \n\n(c) systematically verify that weights propagate correctly across all operations  \n\n(d) implement structures() and isotypes() methods for the derivative, Hadamard product, functorial composition, and (time permitting) the arithmetic product. \n\nEvery new method will be verified against the existing _test_structures consistency checks. The project concludes with full documentation and a pull request.",
+          "difficulty": null,
+          "id": "proj_sagemath_2026_y7PP4TYV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/y7PP4TYV",
+          "proposal_id": "N6qFzhJN",
+          "short_description": "SageMath's LazyCombinatorialSpecies framework (sage/rings/lazy_species.py) represents combinatorial species as lazy sequences of symmetric-group...",
+          "slug": "improve-and-polish-the-generation-of-structures-of-combinatorial-species",
+          "status": null,
+          "student_name": "Parth Chavan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve and Polish the Generation of Structures of Combinatorial Species"
+        },
+        {
+          "code_url": null,
+          "description": "SageMath currently has various examples of Hopf Algebras implemented, such as symmetric functions, quasisymmetric functions, word-quasisymmetric functions, etc. along with some of their bases. This Google Summer of Code project aims to implement an example of Hopf Algebras- the supersymmetric functions along with bases such as (double) powersum, elementary, homogeneous and Schur supersymmetric functions. The addition of supersymmetric functions and these bases  would aid in research computation of their characterization and combinatorial interpretation.",
+          "difficulty": null,
+          "id": "proj_sagemath_2026_YM5bJd9x",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YM5bJd9x",
+          "proposal_id": "GXzhiIHP",
+          "short_description": "SageMath currently has various examples of Hopf Algebras implemented, such as symmetric functions, quasisymmetric functions, word-quasisymmetric...",
+          "slug": "add-supersymmetric-functions-and-bases",
+          "status": null,
+          "student_name": "Shriya Meenakshisundaram",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Supersymmetric Functions and Bases"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

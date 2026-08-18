@@ -59,9 +59,9 @@
     "raspberrypi_builds",
     "mobian"
   ],
-  "total_projects": 78,
+  "total_projects": 85,
   "stats": {
-    "avg_projects_per_appeared_year": 9.75,
+    "avg_projects_per_appeared_year": 9.44,
     "projects_by_year": {
       "year_2016": 20,
       "year_2017": null,
@@ -73,7 +73,7 @@
       "year_2023": null,
       "year_2024": 7,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": 20,
@@ -86,9 +86,9 @@
       "year_2023": null,
       "year_2024": 7,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 76
+    "total_students": 85
   },
   "years": {
     "year_2016": {
@@ -1621,7 +1621,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/debian"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/debian",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Debianize is a tools that aims to automatically create debian packages from scratch from upstream source trees. As for the current version, it works for some of the packages but it is not reliable. This projects aims at making it production ready such that it can work with most of the projects. Along with that improving its reliability, coverage, integration with the broader ecosystem and other enhancements.",
+          "difficulty": null,
+          "id": "proj_debian_2026_s6nRscaa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/s6nRscaa",
+          "proposal_id": "q49t3E2w",
+          "short_description": "Debianize is a tools that aims to automatically create debian packages from scratch from upstream source trees. As for the current version, it works...",
+          "slug": "automated-debian-packaging-with-debianize",
+          "status": null,
+          "student_name": "Anurag Nayak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Debian Packaging with debianize"
+        },
+        {
+          "code_url": null,
+          "description": "Linux Kernel Livepatching is the process of replacing functions in the kernel code affected by CVEs with the patch-applied functions during system runtime. It's basically a method to apply security kernel patches to a running system such as a server without rebooting it. Such a feature is crucial for servers running crucial computational tasks 24/7 which cannot afford a reboot. Livepatch module is already provided by the Linux kernel but it's upto the distributions as to how they will be handled.\n\nAs of 2026, only a few handful amount of distributions like SUSE, Ubuntu and RedHat offer Linux livepatches, which means no community maintained distribution at the moment offers Linux livepatches.\n\nThere has been a way to utilise Linux livepatching in Debian in the past using kpatch but after the release of Debian 13 Trixie, the support for the kernel in kpatch has been dropped which halted the progress of supporting livepatching in Debian. klp-build is a promising approach to this problem but it only supports SUSE kernels which are only accessible by internal SUSE employees. Debian also lacks a release plan or mechanism to distribute livepatches for kernels.\n\nThe goal of this proposal is to introduce Linux livepatching in Debian by studying how livepatches can be integrated into Debian and if existing technologies like clang-extract can be integrated into the workflow, forking klp-build to develop dlp-build which will serve as a tool to create livepatches for Debian kernels,  as well as proposing a binary format for livepatches and designing a release cycle for the same.",
+          "difficulty": null,
+          "id": "proj_debian_2026_hwdmjPwn",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hwdmjPwn",
+          "proposal_id": "MRW8mr6L",
+          "short_description": "Linux Kernel Livepatching is the process of replacing functions in the kernel code affected by CVEs with the patch-applied functions during system...",
+          "slug": "linux-livepatching",
+          "status": null,
+          "student_name": "Aryan Karamtoth",
+          "student_profile": null,
+          "tags": [],
+          "title": "Linux Livepatching"
+        },
+        {
+          "code_url": null,
+          "description": "DebNet models the Debian archive as a graph to identify critical packages maintained by too few people. Using data from the Ultimate Debian Database (UDD), it builds a package dependency graph and a maintainer-package graph to compute practical metrics like the Bus Factor, Fragility Score, and Dependency Impact for every source package. The goal is to answer questions like \"which packages would cause the most damage if their maintainer became unavailable?\" and \"where should new contributors focus to help the most?\" The deliverable is a FastAPI backend that serves all computed metrics through a REST API with filtering by release, maintainer, and package. This includes bus factor per package, maintainer load distribution, staleness detection, and orphan risk scoring.",
+          "difficulty": null,
+          "id": "proj_debian_2026_6wwUIE3u",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/6wwUIE3u",
+          "proposal_id": "1Aq9piHf",
+          "short_description": "DebNet models the Debian archive as a graph to identify critical packages maintained by too few people. Using data from the Ultimate Debian Database...",
+          "slug": "debnet-visualising-the-bus-factor-in-the-debian-archive",
+          "status": null,
+          "student_name": "Fabio Ruhland",
+          "student_profile": null,
+          "tags": [],
+          "title": "DebNet Visualising the Bus Factor in the Debian Archive"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to detect vulnerable code clones in the Debian archive by automatically extracting signatures from security patches. Using a two-signal approach that separates vulnerable patterns from fix patterns, the system generates high-specificity queries to search the entire archive via Debian CodeSearch. A verification pipeline with language-aware filtering ensures that detected clones are truly unpatched instances of the vulnerability. The project delivers a complete, scalable pipeline that integrates with Debian Security Tracker workflows and produces actionable reports, significantly reducing manual effort and improving vulnerability propagation detection across the ecosystem.",
+          "difficulty": null,
+          "id": "proj_debian_2026_ZSK7sTPj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZSK7sTPj",
+          "proposal_id": "SM5RfS3p",
+          "short_description": "This project aims to detect vulnerable code clones in the Debian archive by automatically extracting signatures from security patches. Using a...",
+          "slug": "attack-of-the-clones-fight-back-using-code-duplication-detection-from-security-patches",
+          "status": null,
+          "student_name": "Gajendra Nath Soren",
+          "student_profile": null,
+          "tags": [],
+          "title": "Attack of the Clones: Fight Back Using Code Duplication Detection From Security Patches"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements a debuginfod-compatible server within Debusine to provide automated debug symbol resolution for Debian developers. Currently, debugging binaries built by Debusine requires manual installation of -dbgsym packages. This project aims to eliminate this manual labor by allowing tools like gdb to fetch symbols automatically via HTTP.\n\nBased on an analysis of the elf_classify logic in elfutils, I have designed and prototyped a pipeline that identifies and extracts .debug ELF files from -dbgsym.deb packages and parses their Build-IDs. The implementation integrates this extraction into the isolated sbuild worker task. These symbols are then indexed as debian:debug-symbol artifacts and served via a custom Django view that supports the buildid/<id>/debuginfo and executable endpoints, including HTTP Range requests for partial content.\n\n\nKey Deliverables:\n1) An isolated extraction pipeline using pyelftools within the sbuild task.\n2) A Django-based artifact storage and indexing model (debian:debug-symbol).\n3) debuginfod-compliant HTTP endpoints (/debuginfo and /executable) with support for mandatory headers and 206 Partial Content.\n4) Documentation and integration tests for gdb symbol resolution.",
+          "difficulty": null,
+          "id": "proj_debian_2026_Qx3OtgKl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Qx3OtgKl",
+          "proposal_id": "PSDJ8jN1",
+          "short_description": "This project implements a debuginfod-compatible server within Debusine to provide automated debug symbol resolution for Debian developers. Currently,...",
+          "slug": "debusine-debuginfod-server",
+          "status": null,
+          "student_name": "Jugal59",
+          "student_profile": null,
+          "tags": [],
+          "title": "Debusine: debuginfod server"
+        },
+        {
+          "code_url": null,
+          "description": "The Debian LSP Language Server currently provides only basic features — field completion, parse-error diagnostics, and simple quick fixes — leaving Debian maintainers without the rich IDE experience available in other ecosystems. This project significantly expands its capabilities across five areas identified from direct codebase exploration: clickable links and URL navigation in packaging files, richer hover documentation sourced from Debian Policy, improved completion quality with context-aware and deduplicated suggestions, consistent editor integration (with a focus on Helix), and formatting and structural editing support including folding ranges and auto-formatting. Each area will be delivered as an independent, tested pull request. The work integrates with debian-analyzer and the deb822-lossless crate to support multiple Debian control-file formats (debian/control, debian/copyright, debian/changelog, debian/watch ...) and lays the groundwork for real-time validation and go-to-definition across multi-file packaging trees.",
+          "difficulty": null,
+          "id": "proj_debian_2026_iXHT14Tv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iXHT14Tv",
+          "proposal_id": "mfavTmsj",
+          "short_description": "The Debian LSP Language Server currently provides only basic features — field completion, parse-error diagnostics, and simple quick fixes — leaving...",
+          "slug": "debian-lsp-improve-file-format-support",
+          "status": null,
+          "student_name": "Lucas Ly Ba",
+          "student_profile": null,
+          "tags": [],
+          "title": "Debian-LSP: Improve File Format Support"
+        },
+        {
+          "code_url": null,
+          "description": "Debusine currently only shows task logs after a task has fully completed. This means developers working with long-running jobs (such as package builds or test pipelines) have no way to monitor progress in real time or catch failures early. This project adds live log streaming to Debusine.\n\nThe implementation follows a four-stage pipeline. On the worker side, the sub-process runner will be extended to capture stdout and stderr incrementally as a task runs, sending each line to the server over the existing WebSocket connection rather than waiting for the task to finish. On the server side, a handler will receive these lines and write them to a per-task Redis Stream, providing a persistent, ordered, low-latency buffer that supports multiple simultaneous readers. A server-side view will then expose these log lines to browser clients via Server-Sent Events or a WebSocket endpoint. As a stretch goal, the Debusine web UI will subscribe to that endpoint and display lines appearing on the task page in real time, with no page refresh required.\n\nDeliverables:\n- Worker-side incremental log capture and WebSocket emission, with full test coverage\n- Server-side Redis Stream ingestion, per-task key namespacing, and post-task flush to PostgreSQL\n- A server view that streams log lines to browser clients for running tasks\n- A browser-side UI update that shows live output on the task detail page using plain JavaScript, without any frontend framework",
+          "difficulty": null,
+          "id": "proj_debian_2026_MEfbLvfZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MEfbLvfZ",
+          "proposal_id": "kFsN6AoH",
+          "short_description": "Debusine currently only shows task logs after a task has fully completed. This means developers working with long-running jobs (such as package...",
+          "slug": "debusine-live-log-streaming",
+          "status": null,
+          "student_name": "mo-ashraf",
+          "student_profile": null,
+          "tags": [],
+          "title": "Debusine: live log streaming"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

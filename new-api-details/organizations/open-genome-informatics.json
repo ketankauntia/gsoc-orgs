@@ -47,9 +47,9 @@
     "cloud",
     "data discovery"
   ],
-  "total_projects": 28,
+  "total_projects": 31,
   "stats": {
-    "avg_projects_per_appeared_year": 4.67,
+    "avg_projects_per_appeared_year": 4.43,
     "projects_by_year": {
       "year_2016": 6,
       "year_2017": 8,
@@ -61,7 +61,7 @@
       "year_2023": 1,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 6,
@@ -74,9 +74,9 @@
       "year_2023": 1,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 27
+    "total_students": 31
   },
   "years": {
     "year_2016": {
@@ -682,7 +682,72 @@
     },
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-genome-informatics",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "MP-BioPath uses rigorous mathematical programming to predict exactly how genetic mutations or drug perturbations cascade through Reactome's biological pathways. The current model needs better integration of tissue-specific realities and address the issue of artificially diluting predictive signals when multiple proteins share similar roles (entity-set dilution). AND While the Reactome team generated an expansion of these logic networks across their entire database, this massive architecture remains unvalidated at scale.\n\nThis project aims to transform MP-BioPath into a scalable, context-aware predictive engine. I will architect an automated validation pipeline to stress-test the newly generated Reactome-wide logic networks, and then use this infrastructure to systematically benchmark MP-BioPath against traditional, topology-agnostic methods like Gene Set Enrichment Analysis (GSEA). I will build a transcriptomic-weighting module as the context later: by feeding real-world RNA-seq data into the optimization model, this extension will act as \"live traffic updates\" for the biological pathways, dynamically adjusting node weights based on actual tissue expression to resolve entity-set dilution and enable highly specific predictions.",
+          "difficulty": null,
+          "id": "proj_open-genome-informatics_2026_xFs30ir6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xFs30ir6",
+          "proposal_id": "WlmZEiwl",
+          "short_description": "MP-BioPath uses rigorous mathematical programming to predict exactly how genetic mutations or drug perturbations cascade through Reactome's...",
+          "slug": "improvement-of-mpbiopath-for-reactome-scale-perturbation-analysis",
+          "status": null,
+          "student_name": "Chryseis Xinyi Liu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improvement of MPBioPath for Reactome Scale Perturbation Analysis"
+        },
+        {
+          "code_url": null,
+          "description": "Parents and caregivers increasingly turn to social media for pediatric ENT advice, where misinformation about conditions like ear infections and hearing loss spreads rapidly and without clinical oversight. This project builds a production-ready, open-source AI surveillance system that monitors Reddit, YouTube, TikTok, and Instagram in real time, classifies emerging trends as HARMFUL, CONCERNING, or SAFE using a 6-node LangGraph agentic pipeline grounded in live PubMed evidence retrieval, and surfaces results to clinicians through a Next.js dashboard with SSE alerts and email notifications for high-risk trends. A working 4-node prototype validated on live Reddit and YouTube data is already implemented. The GSoC deliverables extend this foundation with TikTok and Instagram collectors, ASSESS and REPORT nodes, a production Next.js dashboard replacing the existing Streamlit prototype, APScheduler end-to-end integration, Docker Compose deployment, and formal evaluation against a 300-post clinician-labeled reference set targeting precision > 0.85 on HARMFUL and F1 > 0.80 overall.",
+          "difficulty": null,
+          "id": "proj_open-genome-informatics_2026_i4pgqs94",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/i4pgqs94",
+          "proposal_id": "Iq0rYw6g",
+          "short_description": "Parents and caregivers increasingly turn to social media for pediatric ENT advice, where misinformation about conditions like ear infections and...",
+          "slug": "ai-system-for-real-time-detection-of-pediatric-ent-health-trends-on-social-media",
+          "status": null,
+          "student_name": "M4x",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI System for Real-Time Detection of Pediatric ENT Health Trends on Social Media"
+        },
+        {
+          "code_url": null,
+          "description": "Cancer patients navigating clinical trial databases face complex search interfaces with dozens of technical filters, making it difficult to find relevant trials without medical expertise. This project builds a patient-facing clinical trial chatbot with an interactive map that removes this barrier through natural language.\nThe system features a three-panel interface: a chat panel powered by an LLM agent that elicits patient information and matches it against the Cancer Trials Canada database, an interactive map that displays geocoded trial site locations and a summary panel that shows trial details when a pin is clicked\nBuilt using Chainlit server mounted inside FastAPI, React application with Mapbox GL for the interactive map. Trials are stored in PostgreSQL with pgvector for semantic and full-text search. An open-source LLM served via Ollama and Pydantic-AI. Multi-layered guardrails prevent off-topic or harmful responses, RAGAS for evaluation and Langfuse for observability and tracing throughout development.",
+          "difficulty": null,
+          "id": "proj_open-genome-informatics_2026_wW6p678Z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wW6p678Z",
+          "proposal_id": "7IBBPST1",
+          "short_description": "Cancer patients navigating clinical trial databases face complex search interfaces with dozens of technical filters, making it difficult to find...",
+          "slug": "patient-facing-clinical-trial-chatbot-with-interactive-map",
+          "status": null,
+          "student_name": "Mohamed Amine Haouas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Patient-Facing Clinical Trial Chatbot with Interactive Map"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

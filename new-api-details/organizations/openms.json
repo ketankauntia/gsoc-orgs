@@ -31,9 +31,9 @@
     "open science",
     "mass spectrometry"
   ],
-  "total_projects": 2,
+  "total_projects": 5,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -45,7 +45,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -58,9 +58,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 2
+    "total_students": 5
   },
   "years": {
     "year_2016": null,
@@ -115,7 +115,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openms"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openms-inc",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Mass spectrometry imaging (MSI) is a powerful analytical technique that enables spatial mapping of molecules within biological tissues. The imzML format is the open standard for storing MSI data, consisting of an XML metadata file and an associated binary data file.  OpenMS currently lacks native support for reading and writing this format.\n\nThe goal of this project is to implement a robust imzML parser in OpenMS, enabling seamless integration of mass spectrometry imaging data into existing OpenMS workflows and applications.\n\nThe proposed solution already demonstrates the ability to load and parse both continuous and processed imzML formats, including support for large datasets. The implementation has been benchmarked against pyimzML for validation and consistency. This project will further extend the work by integrating with OpenMS Python bindings (currently under development), while identifying potential challenges and outlining strategies and solutions to address them.\n\nTasks:\nImplement a C++ imzML reader capable of parsing both continuous and processed imzML formats\nDevelop an imzML writer to support exporting imaging data\nAdd support for essential imzML metadata, including spatial coordinates, pixel size, and spectrum-level parameters\nIntegrate the parser with existing OpenMS data structures (e.g., MSExperiment, MSSpectrum)\nWrite comprehensive unit tests and validate functionality against reference imzML datasets\nDocument the implementation and provide clear usage examples.",
+          "difficulty": null,
+          "id": "proj_openms_2026_hCRfJoNQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hCRfJoNQ",
+          "proposal_id": "Vr9x1vMp",
+          "short_description": "Mass spectrometry imaging (MSI) is a powerful analytical technique that enables spatial mapping of molecules within biological tissues. The imzML...",
+          "slug": "imzml-parser-in-openms",
+          "status": null,
+          "student_name": "Aditya Sarna",
+          "student_profile": null,
+          "tags": [],
+          "title": "imzML Parser in OpenMS"
+        },
+        {
+          "code_url": null,
+          "description": "Casanovo is a transformer-based de novo peptide sequencer that is too slow for real-time instrument use. I will profile the new non-autoregressive pipeline, apply CUDA graphs, mixed precision, and FlashAttention-2 to reduce per-spectrum latency, then train lightweight student models via knowledge distillation to reach the 20-100 Hz real-time target required by modern mass spectrometers.",
+          "difficulty": null,
+          "id": "proj_openms_2026_ogwhB7zA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ogwhB7zA",
+          "proposal_id": "qKeYyVCM",
+          "short_description": "Casanovo is a transformer-based de novo peptide sequencer that is too slow for real-time instrument use. I will profile the new non-autoregressive...",
+          "slug": "optimizing-casanovo-for-real-time-de-novo-peptide-sequencing",
+          "status": null,
+          "student_name": "Gaurav SRC",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimizing Casanovo for Real Time De Novo Peptide Sequencing"
+        },
+        {
+          "code_url": null,
+          "description": "Like many large scale software projects, OpenMS has numerous development dependencies. Unfortunately, there is no straightforward way to quickly and easily install all of these dependencies. Some can be installed using various package managers such as apt-get, brew, or choco, while others need to be installed with a Python package manager such as conda. And finally, some dependencies need to be compiled from source code manually.\n\nThe proposed solution introduces a vcpkg manifest-based dependency system integrated through CMake toolchain support. To address performance challenges, especially for large dependencies such as Qt, a binary caching mechanism will be implemented using GitHub Releases, significantly reducing build times in both CI and local development environments. Existing contrib patches will be analyzed and minimized by leveraging upstream fixes and vcpkg ports, with overlay ports introduced only where necessary.\n\nThe project will deliver a fully functional vcpkg-based build system for OpenMS, including cross-platform support (Linux, macOS, Windows), CI integration with caching, and validated compatibility with core components and pyOpenMS. This will improve build reproducibility, reduce maintenance overhead, and simplify the developer onboarding process.",
+          "difficulty": null,
+          "id": "proj_openms_2026_kLHenMf3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kLHenMf3",
+          "proposal_id": "qhDjNvpi",
+          "short_description": "Like many large scale software projects, OpenMS has numerous development dependencies. Unfortunately, there is no straightforward way to quickly and...",
+          "slug": "unify-development-dependencies-using-vcpkg",
+          "status": null,
+          "student_name": "NPC",
+          "student_profile": null,
+          "tags": [],
+          "title": "Unify Development Dependencies using Vcpkg"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

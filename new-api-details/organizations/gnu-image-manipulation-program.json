@@ -28,9 +28,9 @@
     "photography",
     "illustration"
   ],
-  "total_projects": 10,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 2.5,
+    "avg_projects_per_appeared_year": 2.8,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 8
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -277,7 +277,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gnu-image-manipulation-program"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnu-image-manipulation-program",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The current GIMP Shortcut Dialog is outdated and not so user-friendly. During this GSoC term (2026), I can contribute improving the Shortcut Dialog.\nI have planned to implement these five major changes in the shortcut editor.\n1. Support for importing and exporting shortcut profiles \n2. Replacement of the deprecated GtkTreeView with side-by-side categorized lists to improve navigation.\n3. Active keybinding search to quickly locate actions by assigned shortcuts. \n4. Ability to assign and manage multiple shortcuts per action. \n5. Add the missing icons",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulation-program_2026_FOTN5k6d",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/FOTN5k6d",
+          "proposal_id": "xN3zJu9L",
+          "short_description": "The current GIMP Shortcut Dialog is outdated and not so user-friendly. During this GSoC term (2026), I can contribute improving the Shortcut Dialog....",
+          "slug": "new-shortcuts-editing-dialog",
+          "status": null,
+          "student_name": "Akascape",
+          "student_profile": null,
+          "tags": [],
+          "title": "New Shortcuts Editing Dialog"
+        },
+        {
+          "code_url": null,
+          "description": "The current extension ecosystem for GIMP lacks a structured and automated infrastructure for validating, publishing, and distributing extensions. This project aims to build a scalable and security-focused extension management system by improving the gimp-extensions-web infrastructure and automating the extension lifecycle.\n\nThe proposed solution introduces a GitLab-based workflow where extension submissions are validated through automated CI pipelines. Python-based validation tools will ensure compliance with metadata standards, extension structure, and security constraints. After approval, extensions will be maintained in dedicated repositories under the GNOME GitLab organization, allowing maintainers to manage releases through version control and automated packaging of .gex extension packages.\n\nAdditionally, the project will implement a central metadata aggregation system that collects validated AppStream metadata from all extension repositories and generates a repository snapshot (extensions.xml.xz). This aggregated metadata will allow GIMP to efficiently browse, search, and install extensions using a single metadata source.\n\nThe final deliverables include a validation framework, automated submission workflow, CI-integrated packaging system, and a metadata aggregation pipeline for the GIMP extension repository.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulation-program_2026_vOQmm3B4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vOQmm3B4",
+          "proposal_id": "ops5iGBJ",
+          "short_description": "The current extension ecosystem for GIMP lacks a structured and automated infrastructure for validating, publishing, and distributing extensions....",
+          "slug": "gimp-extension-infrastructure-and-validation-system",
+          "status": null,
+          "student_name": "blezecon",
+          "student_profile": null,
+          "tags": [],
+          "title": "GIMP Extension Infrastructure and Validation System"
+        },
+        {
+          "code_url": null,
+          "description": "GIMPs typographic engine is currently limited by legacy GTK3 and Pango constraints. This project overhauls the text backend by directly integrating HarfBuzz to extract font data and advancing GIMPs experimental text layout library. Deliverables include migrating the font chooser to modern GTK list models, grouping fonts by WWS families, and introducing modular on canvas UI controls for variable font axes and OpenType features.",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulation-program_2026_iZpusJ8W",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iZpusJ8W",
+          "proposal_id": "XrqmG0I0",
+          "short_description": "GIMPs typographic engine is currently limited by legacy GTK3 and Pango constraints. This project overhauls the text backend by directly integrating...",
+          "slug": "revamping-the-gimp-text-engine-harfbuzz-and-opentype",
+          "status": null,
+          "student_name": "v4vansh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Revamping the GIMP Text Engine HarfBuzz and OpenType"
+        },
+        {
+          "code_url": null,
+          "description": "GIMP is actively migrating its legacy filter system to proper GEGL operations to enable non-destructive editing, and better PSD compatibility. This project contributes to that effort.\nFirst, an Inner Glow layer style will be implemented as a native GEGL operation. The implementation will use a distance transform on the layer's alpha channel to generate a per-pixel glow mask, with parameters including spread, size, opacity, intensity, noise, and blend modes empirically validated against Photopea for PSD compatibility. Once complete, it will be mapped to GIMP's PSD importer so that PSD files with inner glow layer styles import correctly.\nSecond, a Bevel layer style will be implemented as a GEGL operation. Bevel is the remaining unimplemented PSD layer style in GIMP, involving multiple bevel styles, separate highlight and shadow blend modes, and depth and blur interactions. The same empirical approach will be used, systematically studying parameter outputs and implementing each feature step by step.\nThird, the legacy sharpen filter will be ported to a GEGL meta-operation. The existing implementation relies on the legacy GimpDrawable API with manual pixel loops and is limited to 8-bit images. Since the algorithm is a 3×3 convolution, it can be cleanly expressed as a GEGL meta-op, bringing it into the modern pipeline.\nDeliverables:\n\nA PSD-compatible gegl:inner-glow operation mapped to the PSD importer\nA PSD-compatible gegl:bevel operation mapped to the PSD importer\nA ported sharpen filter as a GEGL meta-operation",
+          "difficulty": null,
+          "id": "proj_gnu-image-manipulation-program_2026_93YKgzUh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/93YKgzUh",
+          "proposal_id": "MpzjN6uu",
+          "short_description": "GIMP is actively migrating its legacy filter system to proper GEGL operations to enable non-destructive editing, and better PSD compatibility. This...",
+          "slug": "working-on-new-gegl-ops-and-porting-existing-filters-as-gegl-ops",
+          "status": null,
+          "student_name": "Waris Maqbool",
+          "student_profile": null,
+          "tags": [],
+          "title": "Working on new GEGL ops and porting existing filters as GEGL ops"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

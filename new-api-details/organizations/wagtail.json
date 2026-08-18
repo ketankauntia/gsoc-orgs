@@ -28,9 +28,9 @@
     "accessibility",
     "cms"
   ],
-  "total_projects": 11,
+  "total_projects": 15,
   "stats": {
-    "avg_projects_per_appeared_year": 2.75,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": 2,
       "year_2024": 2,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": 2,
       "year_2024": 2,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 10
+    "total_students": 15
   },
   "years": {
     "year_2016": null,
@@ -302,7 +302,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/wagtail"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/wagtail",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The current Wagtail news starter template presents significant onboarding challenges for new developers, including dependency conflicts, Python version incompatibilities, lack of cross-platform setup support, and incomplete features such as a non-functional newsletter and missing RSS feed.\n\nThis project aims to transform the starter template into a reliable, modern, and beginner-friendly entry point into the Wagtail ecosystem. The approach is structured across three pillars:\n\n1. Stabilization: Introduce CI targeting the latest stable versions, resolve dependency conflicts, enforce reproducible installations, and implement a cross-platform setup system using a single Python entry point validated via CI on both Linux and Windows.\n\n2. Modernization: Replace broken or missing features with Wagtail-native implementations, including a working newsletter (FormPage), RSS feed, improved admin interfaces (PageListingViewSet, SnippetViewSet), SEO fixes, modular StreamField block architecture, and GDPR-compliant asset handling.\n\n3. Developer Experience: Improve onboarding through interactive admin guidance, simplified frontend tooling, better inline documentation, and demo content that works out-of-the-box.\n\nDeliverables include a fully functional, CI-validated starter template, modular and reusable architecture, improved documentation, and a setup experience that reduces time from clone to running project to under five minutes.\n\nInitial validation experiments show a 100% setup success rate in controlled environments with zero dependency conflicts, demonstrating feasibility.",
+          "difficulty": null,
+          "id": "proj_wagtail_2026_hkP5QbW8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hkP5QbW8",
+          "proposal_id": "Zj6kmVAS",
+          "short_description": "The current Wagtail news starter template presents significant onboarding challenges for new developers, including dependency conflicts, Python...",
+          "slug": "wagtail-starter-kit-upgrade-stabilization-modernization-developer-experience",
+          "status": null,
+          "student_name": "Aryan Khandhadiya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Wagtail Starter Kit Upgrade Stabilization Modernization Developer Experience"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to revamp the Wagtail Editor Guide by addressing key limitations in versioning, localization, developer experience, and frontend performance. It introduces an automated versioning system with selective updates and redirect handling, integrates robust multilingual support using wagtail-localize with RTL compatibility, and reduces contributor friction through improved setup and realistic data fixtures. Additionally, the project modernizes the frontend by removing unnecessary dependencies, optimizing fonts, and enhancing UI/UX interactions, resulting in a faster, more maintainable, and globally accessible documentation platform.",
+          "difficulty": null,
+          "id": "proj_wagtail_2026_S3X7EYPm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/S3X7EYPm",
+          "proposal_id": "HMPMGNAw",
+          "short_description": "This project aims to revamp the Wagtail Editor Guide by addressing key limitations in versioning, localization, developer experience, and frontend...",
+          "slug": "guide-website-revamp",
+          "status": null,
+          "student_name": "Raghad  Dahi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Guide website revamp"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the performance of core processes in wagtail-localize, particularly in the construction of the page index and in translation workflows that operate on large page trees.\n\nCurrent analysis of the codebase reveals patterns that lead to repeated database queries and sequential processing, which can negatively impact performance as the number of pages and locales grow. These issues become especially noticeable in large, content-heavy sites, where administrative actions such as translating or updating page subtrees can become slow and less reliable.\n\nThe project will begin by measuring query counts and execution time for key operations, establishing a baseline for comparison. Based on these measurements, the page index construction will be refactored to reduce database queries by fetching data more efficiently and processing it in memory. Translation workflows will be analyzed to identify opportunities to reduce sequential processing and improve performance when processing large page trees. Additionally, the current mechanism for detecting content changes will be reviewed to reduce unnecessary work when no updates are required.\n\nThe main deliverables include characterization tests and benchmarks, a refactored page index implementation with reduced query counts, improvements to translation workflows, and an evaluation and potential optimization of content change detection. All improvements will be validated against the established baseline to ensure measurable performance gains.",
+          "difficulty": null,
+          "id": "proj_wagtail_2026_wmfuUxir",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wmfuUxir",
+          "proposal_id": "VLPhNBbq",
+          "short_description": "This project focuses on improving the performance of core processes in wagtail-localize, particularly in the construction of the page index and in...",
+          "slug": "scaling-translation-operations-in-wagtail-localize",
+          "status": null,
+          "student_name": "Rodrigo Yanez Pilgrim",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scaling translation operations in wagtail-localize"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on redesigning Wagtail’s Bakerydemo so it better represents modern, real-world websites and larger content needs.The content strategy will broaden beyond breadmaking (e.g., city/community storytelling) while keeping templates and blocks generic and reusable. The work will be delivered incrementally through small pull requests, adding a theme-ready design system, reusable StreamField components, and broader content sections beyond breadmaking while keeping the architecture simple and maintainable. It will also strengthen multilingual and RTL support, improve mobile and zoom behavior, and expand demo data coverage for scale testing. The goal is to provide a more practical, accessible, and reusable demo experience for Wagtail users and contributors.",
+          "difficulty": null,
+          "id": "proj_wagtail_2026_Ip6UNV9R",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Ip6UNV9R",
+          "proposal_id": "KtMTc2ke",
+          "short_description": "This project focuses on redesigning Wagtail’s Bakerydemo so it better represents modern, real-world websites and larger content needs.The content...",
+          "slug": "wagtail-bakerydemo-incremental-redesign",
+          "status": null,
+          "student_name": "Srishti Jaiswal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Wagtail Bakerydemo Incremental Redesign"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -44,6 +44,7 @@ const OUTPUT_FILE = path.join(
   "yearly",
   `google-summer-of-code-${YEAR}.json`,
 );
+const PROJECTS_FILE = path.join(ROOT, "new-api-details", "projects", `${YEAR}.json`);
 
 // ---------------------------------------------------------------------------
 // Main
@@ -89,6 +90,45 @@ async function main() {
     return o;
   });
 
+  type ProjectRecord = {
+    project_id: string;
+    proposal_id?: string;
+    project_title: string;
+    project_abstract_short?: string;
+    project_description?: string;
+    project_url?: string;
+    project_code_url?: string | null;
+    contributor?: string;
+    mentors?: string[];
+    org_slug: string;
+    tech_stack?: string[];
+    topic_tags?: string[];
+    status?: string | null;
+  };
+  type ProjectsPayload = {
+    projects?: ProjectRecord[];
+    finalized?: boolean;
+    data_completeness?: {
+      projects: boolean;
+      contributors: boolean;
+      descriptions: boolean;
+      mentors: boolean;
+      code_urls: boolean;
+      project_tags: boolean;
+      difficulty: boolean;
+      status: boolean;
+      timestamps: boolean;
+    };
+  };
+  const projectPayload: ProjectsPayload | null = fs.existsSync(PROJECTS_FILE)
+    ? JSON.parse(fs.readFileSync(PROJECTS_FILE, "utf-8"))
+    : null;
+  const projects = projectPayload?.projects ?? [];
+  const projectCountsByOrg = new Map<string, number>();
+  projects.forEach((project) => {
+    projectCountsByOrg.set(project.org_slug, (projectCountsByOrg.get(project.org_slug) ?? 0) + 1);
+  });
+
   // 4. Build organizations snapshot (sorted by project count desc)
   const yearKey = `year_${YEAR}`;
   const processedOrgs = fullOrgs
@@ -100,6 +140,7 @@ async function main() {
       } else if (org.stats?.projects_by_year?.[yearKey]) {
         projectCount = org.stats.projects_by_year[yearKey] as number;
       }
+      if (projectCountsByOrg.has(org.slug)) projectCount = projectCountsByOrg.get(org.slug)!;
 
       return {
         slug: org.slug,
@@ -152,7 +193,12 @@ async function main() {
   const announcedOrgs = processedOrgs.length;
   const withdrawnOrgs = announcedOrgs - participatingOrgs.length;
   const totalOrgs = participatingOrgs.length;
-  const totalProjects = participatingOrgs.reduce((sum, o) => sum + o.project_count, 0);
+  const totalProjects = projects.length || participatingOrgs.reduce((sum, o) => sum + o.project_count, 0);
+  const contributors = new Set(projects.map((project) => project.contributor?.trim()).filter(Boolean));
+  const uniqueMentors = new Set(projects.flatMap((project) => project.mentors ?? []).map((mentor) => mentor.trim()).filter(Boolean));
+  const contributorCount = contributors.size || totalProjects;
+  const mentorDataAvailable = projectPayload?.data_completeness?.mentors !== false;
+  const mentorCount = mentorDataAvailable ? uniqueMentors.size : null;
   const firstTimeOrgsCount = participatingOrgs.filter((o) => o.is_first_time).length;
   const returningOrgsCount = totalOrgs - firstTimeOrgsCount;
   const avgProjects = totalOrgs > 0 ? Number((totalProjects / totalOrgs).toFixed(1)) : 0;
@@ -196,7 +242,8 @@ async function main() {
     subtitle: "Organizations, projects, technologies, and participation insights",
     description: `A complete overview of Google Summer of Code ${YEAR} including participating organizations, projects, technology trends, and key statistics.`,
     published_at: now,
-    finalized: false,
+    finalized: projectPayload?.finalized ?? false,
+    data_completeness: projectPayload?.data_completeness,
 
     counts: {
       announced: announcedOrgs,
@@ -207,34 +254,43 @@ async function main() {
     metrics: {
       total_organizations: totalOrgs,
       total_projects: totalProjects,
-      total_participants: totalProjects,
-      total_mentors: 0,
+      total_participants: contributorCount,
+      total_mentors: mentorCount,
       first_time_organizations: firstTimeOrgsCount,
       returning_organizations: returningOrgsCount,
       countries_participated: null,
       avg_projects_per_org: avgProjects,
-      avg_mentors_per_org: 0,
-      avg_participants_per_org: avgProjects,
+      avg_mentors_per_org: mentorCount === null ? null : totalOrgs > 0 ? Number((mentorCount / totalOrgs).toFixed(1)) : 0,
+      avg_participants_per_org: totalOrgs > 0 ? Number((contributorCount / totalOrgs).toFixed(1)) : 0,
     },
 
     organizations: processedOrgs,
 
-    projects: [] as Array<{
-      id: string;
-      title: string;
-      org_slug: string;
-      tech_stack: string[];
-    }>,
+    projects: projects.map((project) => ({
+      id: project.project_id,
+      title: project.project_title,
+      org_slug: project.org_slug,
+      tech_stack: project.tech_stack ?? [],
+      mentors: project.mentors ?? [],
+      contributor: project.contributor,
+      abstract_short: project.project_abstract_short,
+      description: project.project_description,
+      project_url: project.project_url,
+      code_url: project.project_code_url,
+      proposal_id: project.proposal_id,
+      topic_tags: project.topic_tags ?? [],
+      status: project.status,
+    })),
 
     tech_stack: techStackList,
 
     participants: {
-      total: totalProjects,
+      total: contributorCount,
       by_country: {},
     },
 
     mentors: {
-      total: 0,
+      total: mentorCount,
     },
 
     first_time_orgs: firstTimeOrgsList,
@@ -243,10 +299,10 @@ async function main() {
       top_languages: topLanguages,
       most_student_slots: mostStudentSlots,
       project_difficulty_distribution: {
-        total: totalProjects,
+        total: projectPayload?.data_completeness?.difficulty === false ? 0 : totalProjects,
         data: [
           { label: "Beginner", value: 0 },
-          { label: "Intermediate", value: totalProjects },
+          { label: "Intermediate", value: projectPayload?.data_completeness?.difficulty === false ? 0 : totalProjects },
           { label: "Advanced", value: 0 },
         ],
       },
@@ -261,7 +317,9 @@ async function main() {
       version: 1,
       generated_at: now,
       data_source: "json",
-      notes: `Generated from org JSON files. Projects not yet available for ${YEAR}.`,
+      notes: projects.length
+        ? `Generated from organization and normalized project JSON files. ${projects.length} project records loaded.`
+        : `Generated from organization JSON files. Project records are not available for ${YEAR}.`,
     },
   };
 
@@ -273,9 +331,11 @@ async function main() {
   console.log(`  Organizations: ${totalOrgs}`);
   console.log(`  First-time: ${firstTimeOrgsCount}`);
   console.log(`  Returning: ${returningOrgsCount}`);
-  console.log(`  Projects: ${totalProjects} (will populate later)`);
+  console.log(`  Projects: ${totalProjects}${projects.length ? " loaded" : " (records unavailable)"}`);
+  console.log(`  Contributors: ${contributorCount}`);
+  console.log(`  Mentors: ${mentorCount ?? "unavailable"}`);
   console.log(`  Top language: ${topLanguages[0]?.label || "N/A"} (${topLanguages[0]?.value || 0} orgs)`);
-  console.log(`  finalized: false (set to true after projects are added)`);
+  console.log(`  finalized: ${finalJson.finalized}`);
   console.log("\n[DONE]");
 }
 

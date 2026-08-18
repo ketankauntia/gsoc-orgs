@@ -35,6 +35,9 @@ export interface ProjectEntry {
   project_title: string;
   project_abstract_short?: string;
   project_code_url?: string;
+  project_description?: string;
+  project_url?: string;
+  proposal_id?: string;
   contributor: string;
   mentors: string[];
   org_name: string;
@@ -43,6 +46,8 @@ export interface ProjectEntry {
   date_created?: string;
   date_updated?: string;
   tech_stack?: string[];
+  topic_tags?: string[];
+  status?: string | null;
   difficulty?: "beginner" | "intermediate" | "advanced";
 }
 
@@ -79,6 +84,17 @@ export interface ProjectYearPageData {
   description: string;
   published_at: string;
   finalized: boolean;
+  data_completeness?: {
+    projects: boolean;
+    contributors: boolean;
+    descriptions: boolean;
+    mentors: boolean;
+    code_urls: boolean;
+    project_tags: boolean;
+    difficulty: boolean;
+    status: boolean;
+    timestamps: boolean;
+  };
 
   metrics: ProjectYearMetrics;
   projects: ProjectEntry[];

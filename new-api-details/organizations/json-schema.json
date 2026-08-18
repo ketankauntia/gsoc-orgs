@@ -30,9 +30,9 @@
     "data validation",
     "developer tooling"
   ],
-  "total_projects": 14,
+  "total_projects": 19,
   "stats": {
-    "avg_projects_per_appeared_year": 7,
+    "avg_projects_per_appeared_year": 6.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 8,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 8,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 14
+    "total_students": 19
   },
   "years": {
     "year_2016": null,
@@ -355,7 +355,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/json-schema"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/json-schema",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The JSON Schema validation test suite currently maintains a separate \nfolder for each released version of the specification. This means \nmost tests exist as identical copies across multiple folders, and \nevery new test or bug fix must be applied in several places. This \ndoes not scale.\n\nThe annotation test suite already solves this problem using a \n`compatibility` field that indicates which versions each test \napplies to, allowing test runners to filter accordingly. This \nproject brings that same approach to the validation test suite, \ncollapsing all per-version folders into a single unified suite \nwith no duplicate tests.",
+          "difficulty": null,
+          "id": "proj_json-schema_2026_lHGWOMW8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lHGWOMW8",
+          "proposal_id": "kGAU6NYe",
+          "short_description": "The JSON Schema validation test suite currently maintains a separate folder for each released version of the specification. This means most tests...",
+          "slug": "unify-the-json-schema-test-suite",
+          "status": null,
+          "student_name": "Rodiat Hammed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Unify the JSON Schema Test Suite"
+        },
+        {
+          "code_url": null,
+          "description": "vscode-json-languageservice, the library powering JSON editing in VSCode currently supports only JSON Schema draft-07. The architectural coupling between its validator and editor features means draft support cannot be extended by simply swapping the validator. This project aims at building a drop-in replacement that matches the exact API surface of vscode-json-languageservice while replacing the validator with @hyperjump/json-schema, bringing full support for draft-04 through draft-2020-12. By the end of GSoC, all 13 features of the existing library will be implemented and tested, backed by a MatchingSchemaCollector EvaluationPlugin as the core data layer, a working VSCode extension, and a test suite verifying drop-in compatibility with the existing implementation.",
+          "difficulty": null,
+          "id": "proj_json-schema_2026_nFcPOwLX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nFcPOwLX",
+          "proposal_id": "j8WyebxC",
+          "short_description": "vscode-json-languageservice, the library powering JSON editing in VSCode currently supports only JSON Schema draft-07. The architectural coupling...",
+          "slug": "drop-in-replacement-for-vscode-json-languageservice",
+          "status": null,
+          "student_name": "srivastava-diya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Drop-in replacement for vscode-json-languageservice"
+        },
+        {
+          "code_url": null,
+          "description": "JSON Schema Studio visualizes JSON Schemas as interactive graphs, helping developers understand complex structures. While the current version works well, there are areas where rendering correctness and user experience can be improved.\n\nThis project focuses on ensuring correct dependency-based rendering (especially for $defs), improving graph navigation, and enhancing synchronization between the editor and visualization. It will also address issues like edge collisions and unstable rendering during live edits.\n\nAdditionally, features like validation error navigation, file upload, and visualization export will be introduced to improve usability.\n\nThe final deliverables include:\n- Dependency-aware rendering using topological sorting  \n- Improved graph interaction and navigation  \n- Validation error navigation in the editor  \n- Reduced edge collisions  \n- Stable rendering during live edits  \n- File upload and export support  \n\nThese improvements will make the tool more accurate, interactive, and useful for developers.",
+          "difficulty": null,
+          "id": "proj_json-schema_2026_BW2u9qaF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/BW2u9qaF",
+          "proposal_id": "CvEauWEf",
+          "short_description": "JSON Schema Studio visualizes JSON Schemas as interactive graphs, helping developers understand complex structures. While the current version works...",
+          "slug": "enhanced-interaction-and-navigation-in-json-schema-studio",
+          "status": null,
+          "student_name": "Sumit goyal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhanced Interaction and Navigation in JSON Schema Studio"
+        },
+        {
+          "code_url": null,
+          "description": "JSON Schema defines 18 format types (uri, email, date-time, ipv4, etc.) but the official test suite has minimal coverage for most of them. Without shared test cases derived from the actual RFC grammars, implementations diverge silently - ajv-formats accepts space-separated date-times, python-jsonschema reduces email validation to checking for \"@\", and no one can tell which behavior is correct. This project builds a comprehensive, RFC-grounded test suite for all 18 formats. Every test case is derived directly from the ABNF production rules in the governing RFC, verified against at least two implementations, and documented with a direct RFC citation. Pre-proposal research across 10 formats has already produced 11 filed issues across ajv-formats, sourcemeta/core, libidn2, and golang/go. Deliverables: 200-280 test cases structured as PRs to the JSON Schema Test Suite repository, covering all 18 formats in JSON Schema 2020-12, with Bowtie integration as a stretch goal.",
+          "difficulty": null,
+          "id": "proj_json-schema_2026_PSUr4vgB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PSUr4vgB",
+          "proposal_id": "7yNg1ScP",
+          "short_description": "JSON Schema defines 18 format types (uri, email, date-time, ipv4, etc.) but the official test suite has minimal coverage for most of them. Without...",
+          "slug": "comprehensive-test-suite-for-format-validation",
+          "status": null,
+          "student_name": "Tushar_Verma",
+          "student_profile": null,
+          "tags": [],
+          "title": "Comprehensive Test Suite for Format Validation"
+        },
+        {
+          "code_url": null,
+          "description": "Bowtie is a meta-validator for the JSON Schema specification, giving users a way to execute and compare how different implementations behave against the official test suite. Currently, Bowtie only supports validating instances on a simple pass/fail basis, comparing implementations solely on their correctness regarding strict schema validation. However, the JSON Schema specification also defines \"Annotations\"—rich metadata attached to schemas like descriptions, deprecation notices, and default values.\n\nThis project primarily focuses on integrating the official Annotation Test Suite into Bowtie's architecture. This involves upgrading Bowtie's core protocol and updating numerous language-specific test harnesses to successfully extract and transmit this annotation data natively. By building a dedicated interactive dashboard within the Bowtie website, this project will allow users to easily visualize annotation compliance across languages. Ultimately, this gives users another crucial dimension to evaluate different implementations, ensuring the ecosystem correctly surfaces important specification metadata alongside standard validation results.",
+          "difficulty": null,
+          "id": "proj_json-schema_2026_pDbaiNrF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pDbaiNrF",
+          "proposal_id": "pJfr8ki1",
+          "short_description": "Bowtie is a meta-validator for the JSON Schema specification, giving users a way to execute and compare how different implementations behave against...",
+          "slug": "add-support-for-reporting-on-the-annotation-test-suite",
+          "status": null,
+          "student_name": "Vidit_Agarwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support for Reporting on the Annotation Test Suite"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

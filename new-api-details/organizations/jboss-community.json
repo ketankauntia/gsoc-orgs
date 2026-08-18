@@ -61,9 +61,9 @@
     "cfc",
     "artificial intelligence"
   ],
-  "total_projects": 52,
+  "total_projects": 60,
   "stats": {
-    "avg_projects_per_appeared_year": 7.43,
+    "avg_projects_per_appeared_year": 7.5,
     "projects_by_year": {
       "year_2016": 9,
       "year_2017": 3,
@@ -75,7 +75,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 9,
@@ -88,9 +88,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 49
+    "total_students": 60
   },
   "years": {
     "year_2016": {
@@ -1152,7 +1152,152 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/jboss-community",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Debezium lacks a developer-friendly CLI for managing CDC pipelines. I will build a dbz, a native CLI using Quarkus and Picocli, with two subsystems: a build subsystem that resolves connector dependencies and assembles trimmed OCI images using Jib, and a platform subsystem that wraps the Debezium Platform REST API for full pipeline lifecycle management including sources, destinations, and live log streaming.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_MADrpiZa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MADrpiZa",
+          "proposal_id": "wA8Faa8q",
+          "short_description": "Debezium lacks a developer-friendly CLI for managing CDC pipelines. I will build a dbz, a native CLI using Quarkus and Picocli, with two subsystems:...",
+          "slug": "debezium-cli-a-unified-command-line-tool-for-cdc-pipeline-lifecycle-management",
+          "status": null,
+          "student_name": "Binayak Das",
+          "student_profile": null,
+          "tags": [],
+          "title": "Debezium CLI A Unified Command Line Tool for CDC Pipeline Lifecycle Management"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds native PEM keystore support to WildFly Elytron, enabling WildFly to load Kubernetes TLS secrets directly without any manual conversion.\n\nKubernetes exposes TLS certificates and private keys as PEM files, typically as tls.crt and tls.key. Elytron currently requires JKS or PKCS12 keystores, which creates unnecessary friction when deploying applications in containerized environments.\n\nThis project introduces a new KeyStoreSpi implementation that reads PEM-encoded certificates and private keys from separate files and exposes them as a standard keystore type (PEM). The implementation integrates seamlessly with Elytron’s existing KeyManager and TrustManager infrastructure, allowing it to be used transparently in current configurations.\n\nThe main deliverables include a robust PEM parser, the PemKeyStoreSpi implementation, support for separate certificate and key files, Elytron configuration integration, comprehensive test coverage, validation using Kubernetes-style TLS secrets, and clear user documentation.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_IxEENt98",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IxEENt98",
+          "proposal_id": "VRCMpDU1",
+          "short_description": "This project adds native PEM keystore support to WildFly Elytron, enabling WildFly to load Kubernetes TLS secrets directly without any manual...",
+          "slug": "wildfly-elytron-native-pem-keystore-for-kubernetes-tls-secrets",
+          "status": null,
+          "student_name": "CharlieZhang",
+          "student_profile": null,
+          "tags": [],
+          "title": "WildFly Elytron Native PEM KeyStore for Kubernetes TLS Secrets"
+        },
+        {
+          "code_url": null,
+          "description": "The Debezium Management Platform currently deploys pipelines only to Kubernetes. This project adds host-based deployment support, enabling users to deploy Debezium Server pipelines to bare-metal servers and cloud VMs via SSH and Docker. The implementation integrates into the platform's existing event-driven architecture by adding a new EnvironmentController for host targets, an SSH-based provisioning service that validates and prepares remote hosts, a lightweight agent deployed on each host for managing the Debezium Server lifecycle via REST APIs, and a status polling mechanism for monitoring deployments. Key deliverables include the host registration API, automated provisioning with remediation, the Debezium Host Agent, Docker-based deployment engine, config drift detection, and comprehensive integration tests using Testcontainers.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_1xyxocte",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1xyxocte",
+          "proposal_id": "2Y3uwkQz",
+          "short_description": "The Debezium Management Platform currently deploys pipelines only to Kubernetes. This project adds host-based deployment support, enabling users to...",
+          "slug": "host-based-pipeline-deployment-for-the-debezium-platform",
+          "status": null,
+          "student_name": "d1vyanshu-kumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Host-Based Pipeline Deployment for the Debezium Platform"
+        },
+        {
+          "code_url": null,
+          "description": "Milvus currently lacks a Debezium source connector, meaning data can flow into Milvus (via sink connectors) but not out of it into the broader data ecosystem. This critical gap forces users into manual workarounds for data replication, auditing, and prevents the creation of hybrid pipelines that join vector search results with relational data.\n\nThe plan is to implement a Hybrid strategy focused exclusively on the future-proof Milvus 2.6+ StreamingNode architecture. This approach will leverage two separate sources to guarantee a complete and ordered change stream:\nWoodpecker Streaming Service (WAL): Used as the only source for all Data Manipulation Language (DML) events (inserts and deletes).\nEtcd Watch: Used as the cleanest source for all Data Definition Language (DDL) events (schema changes), which simplifies parsing and aligns with Debezium's schema history mechanism.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_T0IlKj8N",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/T0IlKj8N",
+          "proposal_id": "8XRnk2Vq",
+          "short_description": "Milvus currently lacks a Debezium source connector, meaning data can flow into Milvus (via sink connectors) but not out of it into the broader data...",
+          "slug": "debezium-source-connector-for-milvus",
+          "status": null,
+          "student_name": "Kartik Angiras",
+          "student_profile": null,
+          "tags": [],
+          "title": "Debezium Source Connector for Milvus"
+        },
+        {
+          "code_url": null,
+          "description": "Modern AI systems relying on Retrieval-Augmented Generation (RAG) often suffer from stale data due to batch-based updates. This project, PyDebeziumAI, aims to solve this by enabling real-time synchronization between databases and LLM pipelines using Debezium Change Data Capture (CDC).\n\nThe project will extend pydbzengine to stream CDC events directly into LangChain and LangGraph by transforming database changes into semantic Document objects and updating vector stores in real time.\n\nKey deliverables include:\n- A Python library integrating Debezium with LangChain/LangGraph\n- Real-time vector store synchronization (Chroma, PGVector, Milvus)\n- Pluggable document transformation and ID strategies\n- End-to-end examples (RAG chatbot, reactive agent, dashboard)\n- Full documentation, testing, and PyPI release\n\nThis will provide a production-ready bridge between CDC systems and AI frameworks, ensuring always up-to-date LLM context.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_QJnrXP4a",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QJnrXP4a",
+          "proposal_id": "YQgyawOM",
+          "short_description": "Modern AI systems relying on Retrieval-Augmented Generation (RAG) often suffer from stale data due to batch-based updates. This project,...",
+          "slug": "pydebeziumai-real-time-cdc-integration-for-langchain-langgraph-using-debezium",
+          "status": null,
+          "student_name": "KMohnishM",
+          "student_profile": null,
+          "tags": [],
+          "title": "PyDebeziumAI: Real-time CDC Integration for LangChain & LangGraph using Debezium"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes building jws diag, a read only diagnostic CLI for JBoss Web Server that helps operators and SREs to inspect runtime and configuration state more easily. The tool will provide concise installation and deployment summaries, effective connector TLS and proxy configuration reporting, validation checks for common misconfigurations, structured JSON output, and realistic test coverage for troubleshooting and automation use cases.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_7mN5BuP3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7mN5BuP3",
+          "proposal_id": "uGcRIuwL",
+          "short_description": "This project proposes building jws diag, a read only diagnostic CLI for JBoss Web Server that helps operators and SREs to inspect runtime and...",
+          "slug": "jboss-web-server-diagnostic-configuration-validation-toolkit",
+          "status": null,
+          "student_name": "Milan P Samuel",
+          "student_profile": null,
+          "tags": [],
+          "title": "JBoss Web Server Diagnostic Configuration Validation Toolkit"
+        },
+        {
+          "code_url": null,
+          "description": "JBoss Web Server (JWS) is Red Hat’s enterprise distribution of Apache Tomcat used in production environments where configuration correctness and operational visibility are critical. Many production incidents are caused by configuration errors such as TLS misconfiguration, incorrect connector exposure, proxy misconfiguration, permission issues, and environment drift rather than software defects.\n\nThis project proposes jws-diag, a read-only Java CLI diagnostic tool designed to help operators and support engineers quickly understand installation state, effective runtime configuration, and potential configuration risks.\n\nThe tool will provide:\n• Installation and runtime summary (JWS/Tomcat versions, JVM, OS, container signals)\n• Effective configuration parsing from server.xml with defaults resolution\n• Validation rules engine producing INFO/WARN/ERROR findings\n• Comprehensive test suite with configuration fixtures\n• Documentation and operational usage guidance\n• Optional redacted support bundle generation (stretch goal)\n\nKey deliverables include:\n• jws-diag summary command\n• jws-diag config command\n• jws-diag validate command with validation rules\n• Test suite and documentation\n• Integration into JWS ecosystem tooling\n\nThe project will initially target:\nJWS 6 and JWS 7\nTomcat 10.1 and Tomcat 11\n\nThe expected outcome is a production-safe diagnostic tool that improves troubleshooting efficiency and configuration reliability for JBoss Web Server deployments.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_NrlNs8B1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/NrlNs8B1",
+          "proposal_id": "8F8iJPXR",
+          "short_description": "JBoss Web Server (JWS) is Red Hat’s enterprise distribution of Apache Tomcat used in production environments where configuration correctness and...",
+          "slug": "jboss-web-server-add-a-diagnostic-configuration-validation-toolkit-jws-diag",
+          "status": null,
+          "student_name": "Onkar Shelke",
+          "student_profile": null,
+          "tags": [],
+          "title": "JBoss Web Server – Add a Diagnostic + Configuration Validation Toolkit (jws-diag)"
+        },
+        {
+          "code_url": null,
+          "description": "SQLite is widely used in mobile, desktop, and edge applications but has no production-ready Change Data Capture connector. This project builds a Debezium source connector for SQLite that captures row-level changes by directly parsing the SQLite Write-Ahead Log (WAL) binary file by decoding B-tree leaf pages, diffing old and new page states, and producing standard Debezium change events with correct before and after values, without any application modifications.\nDeliverables include a deployable Kafka Connect plugin with full WAL binary parsing, initial snapshot, streaming with safe checkpoint lifecycle management, transaction metadata support, and a complete test suite with documentation.",
+          "difficulty": null,
+          "id": "proj_jboss-community_2026_ZVqmVcvB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZVqmVcvB",
+          "proposal_id": "PAqL0Px6",
+          "short_description": "SQLite is widely used in mobile, desktop, and edge applications but has no production-ready Change Data Capture connector. This project builds a...",
+          "slug": "debezium-source-connector-for-sqlite",
+          "status": null,
+          "student_name": "Siddhant Chaturvedi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Debezium: Source Connector for SQLite"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

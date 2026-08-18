@@ -56,9 +56,9 @@
     "data",
     "assyriology"
   ],
-  "total_projects": 30,
+  "total_projects": 34,
   "stats": {
-    "avg_projects_per_appeared_year": 6,
+    "avg_projects_per_appeared_year": 5.67,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -70,7 +70,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -83,9 +83,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 29
+    "total_students": 34
   },
   "years": {
     "year_2016": null,
@@ -694,7 +694,88 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/cuneiform-digital-library-initiative-cdli",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project improves access to the CDLI database by enabling natural language queries instead of complex search forms and syntax. It allows researchers and students to explore the database more easily without needing detailed knowledge of its structure. The system consists of an MCP server that translates plain English queries into structured CDLI API calls, along with an AI-powered research workspace embedded on the CDLI website. Users can search, retrieve, and explore data through a simple chat interface, and generate structured research outputs. Key deliverables include a production-ready MCP server, an interactive research interface, a guided research paper generation workflow, and comprehensive documentation with testing support.",
+          "difficulty": null,
+          "id": "proj_cuneiform-digital-library-initiative-cdli_2026_mlVyalno",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mlVyalno",
+          "proposal_id": "4sGxiSvW",
+          "short_description": "This project improves access to the CDLI database by enabling natural language queries instead of complex search forms and syntax. It allows...",
+          "slug": "mcp-server-and-agent-for-cdli",
+          "status": null,
+          "student_name": "armaanngupta",
+          "student_profile": null,
+          "tags": [],
+          "title": "MCP Server and Agent for CDLI"
+        },
+        {
+          "code_url": null,
+          "description": "CDLI hosts over 340k cuneiform artifacts used by researchers worldwide. The current search stack runs a nightly Logstash pipeline that rebuilds the entire index from scratch, meaning approved edits can take up to 24 hours to appear in search results. Publications, collections, proveniences, and periods have no search infrastructure at all they query the database directly.\n\nThis project replaces the nightly rebuild with event-driven incremental indexing using a Transactional Outbox pattern, so approved edits appear in search within minutes. It migrates the stack from Elasticsearch to OpenSearch, builds a PHP document builder to replace the existing Ruby transform, brings publications, collections, proveniences, and periods into OpenSearch, and implements cascade hooks so changes to shared entities automatically trigger reindexing of all affected artifacts. A full reindex command and admin UI, handle the initial migration and ongoing recovery scenarios.",
+          "difficulty": null,
+          "id": "proj_cuneiform-digital-library-initiative-cdli_2026_nrwAEiGp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nrwAEiGp",
+          "proposal_id": "cLssDkQb",
+          "short_description": "CDLI hosts over 340k cuneiform artifacts used by researchers worldwide. The current search stack runs a nightly Logstash pipeline that rebuilds the...",
+          "slug": "search-discovery-improvements",
+          "status": null,
+          "student_name": "harsh_dev",
+          "student_profile": null,
+          "tags": [],
+          "title": "Search & Discovery Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "CDLI’s tablet applications provide access to curated cuneiform artifacts, making ancient records accessible to researchers, educators, and the public on mobile devices.\n\nThis project proposes rebuilding the CDLI tablet apps as a single React Native application for both Android and iOS, integrated with the existing CDLI backend and admin panel. The app will preserve existing functionality such as browsing tablet collections, viewing high-resolution images with zoom, searching content, and accessing featured highlights, while also introducing offline support, bookmarking, and sharing.\n\nOn the backend, the project will enhance the tablet feed, add structured JSON support for highlights, and enable role-based access for tablet management. With a unified codebase, the application will be easier to maintain, extend, and support for future contributors.",
+          "difficulty": null,
+          "id": "proj_cuneiform-digital-library-initiative-cdli_2026_vsvgRjPJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vsvgRjPJ",
+          "proposal_id": "gOEekIOU",
+          "short_description": "CDLI’s tablet applications provide access to curated cuneiform artifacts, making ancient records accessible to researchers, educators, and the public...",
+          "slug": "revamping-cdli-mobile-app-react-native",
+          "status": null,
+          "student_name": "ShivaGupta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Revamping CDLI Mobile App (React Native)"
+        },
+        {
+          "code_url": null,
+          "description": "The CDLI framework currently sends transactional emails synchronously during web requests, coupling application performance directly to SMTP availability. This project redesigns the email system into a reliable, background-driven pipeline by moving email delivery into asynchronous jobs processed by a dedicated worker. The work builds on the existing Redis and Postfix infrastructure already present in the repository, adding persistent job storage, retry logic, failure tracking, an admin monitoring dashboard, rate limiting, and a shared email template system — making email a first-class, observable part of the application rather than a side effect of user actions.",
+          "difficulty": null,
+          "id": "proj_cuneiform-digital-library-initiative-cdli_2026_kdlysn5f",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kdlysn5f",
+          "proposal_id": "fPAFsxIP",
+          "short_description": "The CDLI framework currently sends transactional emails synchronously during web requests, coupling application performance directly to SMTP...",
+          "slug": "scalable-email-infrastructure-for-cdli-framework",
+          "status": null,
+          "student_name": "Sonika Chowdary Gutha",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scalable Email Infrastructure for CDLI Framework"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

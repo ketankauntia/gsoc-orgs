@@ -54,9 +54,9 @@
     "data security",
     "security"
   ],
-  "total_projects": 45,
+  "total_projects": 49,
   "stats": {
-    "avg_projects_per_appeared_year": 5,
+    "avg_projects_per_appeared_year": 4.9,
     "projects_by_year": {
       "year_2016": 3,
       "year_2017": 2,
@@ -68,7 +68,7 @@
       "year_2023": 7,
       "year_2024": 5,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 3,
@@ -81,9 +81,9 @@
       "year_2023": 7,
       "year_2024": 5,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 40
+    "total_students": 49
   },
   "years": {
     "year_2016": {
@@ -1017,7 +1017,88 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/global-alliance-for-genomics-and-health/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/global-alliance-for-genomics-and-health",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The GA4GH Service Info API is a required component across standards such as TES, WES, and TRS, providing essential metadata about a service. Currently, each implementation must manually develop and maintain its own /service-info endpoint, leading to duplication, inconsistent metadata, and difficulty in supporting new capabilities such as security and extensibility features. This project proposes a reusable GA4GH ServiceInfo Sidecar a lightweight proxy service that runs alongside existing GA4GH services and handles /service-info requests centrally, while forwarding all other requests transparently to the backend.\r\n\r\nThe sidecar will generate standard-compliant responses using a combination of static configuration (config.yaml) and dynamic metadata collected through a plugin system, enabling seamless support for service-specific and custom extensions without modifying backend code. The project will deliver a production-ready implementation with schema validation, extensibility aligned with GA4GH specifications, and deployment support via Docker and Kubernetes. Additionally, the sidecar will support Trusted Execution Environments (TEE) by advertising attestation capabilities via the ServiceInfo API and delivering attestation reports through a dedicated endpoint, enabling verifiable trust without implementing low-level attestation logic.",
+          "difficulty": null,
+          "id": "proj_global-alliance-for-genomics-and-health_2026_yWbLMrnl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yWbLMrnl",
+          "proposal_id": "LA0vWTn8",
+          "short_description": "The GA4GH Service Info API is a required component across standards such as TES, WES, and TRS, providing essential metadata about a service....",
+          "slug": "ga4gh-serviceinfo-sidecar",
+          "status": null,
+          "student_name": "Gopi Kishan",
+          "student_profile": null,
+          "tags": [],
+          "title": "GA4GH ServiceInfo Sidecar"
+        },
+        {
+          "code_url": null,
+          "description": "Thousands of bioinformatics workflows registered on public platforms like Dockstore and WorkflowHub cannot run on modern cloud platforms. Not because the science is wrong, but because the engineering hasn't caught up. Missing containers, hardcoded paths, HPC-specific executors, and unstructured inputs and outputs make these workflows incompatible with GA4GH's WES standard and cloud-based research platforms.\n\nWorkflow Clinic fixes this automatically. It is a Python-based CLI tool with two core components. The Workflow Critic scans a workflow repository, runs a deterministic rule engine followed by an optional AI agent team, and produces a structured diagnosis.json report identifying every cloudification gap with severity levels and remediation suggestions. The Workflow Doctor reads this report, applies fixes directly to the workflow files using a 3-layer strategy (AST-based, regex-based, and AI-assisted as a last resort), and opens Pull Requests to propose the changes. GitHub interaction is purely optional examine and fix work fully offline without any credentials. When a GitHub PAT is provided, the tool can additionally publish findings as GitHub issues and open Pull Requests. Without a PAT, the same outputs are generated locally as issue.md and fix.md files.",
+          "difficulty": null,
+          "id": "proj_global-alliance-for-genomics-and-health_2026_AWHWIvlO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/AWHWIvlO",
+          "proposal_id": "sptD4aIg",
+          "short_description": "Thousands of bioinformatics workflows registered on public platforms like Dockstore and WorkflowHub cannot run on modern cloud platforms. Not because...",
+          "slug": "workflow-clinic",
+          "status": null,
+          "student_name": "Revaa Rathore",
+          "student_profile": null,
+          "tags": [],
+          "title": "Workflow Clinic"
+        },
+        {
+          "code_url": null,
+          "description": "Genomic data sharing is slowed by manually cross-checking consent and data-use language against dense GA4GH and related policy text, while generic LLMs risk hallucinated citations. This project extends GA4GH-RegBot, an open-source RAG assistant that ingests policy PDFs into a Chroma vector store with a BM25 manifest, retrieves with dense embeddings plus BM25 fused via reciprocal rank fusion, and generates structured compliance JSON with hard grounding: chunk-ID allow-list verification with automatic retries and token-overlap filtering on the LLM path. Deliverables across the GSoC period include hierarchy-aware parsing and richer metadata for GA4GH PDFs, cross-encoder re-ranking on top of the existing hybrid stack, an open-source LLM path alongside the current OpenAI integration, Streamlit and CLI updates, Ragas or TruLens-based evaluation with documented thresholds, expanded tests and CI, and polished documentation for contributors and REWS stakeholders.",
+          "difficulty": null,
+          "id": "proj_global-alliance-for-genomics-and-health_2026_997teXbd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/997teXbd",
+          "proposal_id": "pTDTFdoZ",
+          "short_description": "Genomic data sharing is slowed by manually cross-checking consent and data-use language against dense GA4GH and related policy text, while generic...",
+          "slug": "regbot-llm-compliance-assistant-genomics",
+          "status": null,
+          "student_name": "Ruiyang Chen",
+          "student_profile": null,
+          "tags": [],
+          "title": "RegBot LLM Compliance Assistant Genomics"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal addresses the deployment gap in federated learning for genomics, where frameworks like FLAN enable distributed model training but lack standardization, security, and interoperability required for real-world biomedical environments. As a result, federated learning systems remain difficult to deploy across institutions and cannot scale in regulated settings.\n\nTo solve this, the project transforms FLAN into a GA4GH-aligned, production-ready federated AI system by integrating key standards across the stack. It incorporates DRS for secure and standardized data access, TES/WES for portable and reproducible task and workflow execution, and TRS for containerized tool discovery. Security is strengthened using GA4GH Passports and Attested TLS for zero-trust, identity-aware communication, while Model Context Protocol (MCP) is introduced to enforce privacy constraints and execution policies across federated nodes.\n\nThe deliverables include a refactored FLAN pipeline with DRS-based data access, modular training workflows executed via TES, end-to-end orchestration using WES (CWL/WDL/Nextflow), containerized environments registered with TRS, integrated Passport-based authentication and Attested TLS communication, a prototype MCP-based policy enforcement layer, and comprehensive documentation with a GA4GH-compliant reference implementation.",
+          "difficulty": null,
+          "id": "proj_global-alliance-for-genomics-and-health_2026_EvXaLmnC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/EvXaLmnC",
+          "proposal_id": "En6unbq0",
+          "short_description": "This proposal addresses the deployment gap in federated learning for genomics, where frameworks like FLAN enable distributed model training but lack...",
+          "slug": "ga4gh-aligned-trustworthy-federated-ai",
+          "status": null,
+          "student_name": "Vidit Khandelwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "GA4GH-aligned Trustworthy Federated AI"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

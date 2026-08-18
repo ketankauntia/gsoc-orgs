@@ -23,9 +23,9 @@
     "Technology",
     "innovation"
   ],
-  "total_projects": 0,
+  "total_projects": 4,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 4,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -37,7 +37,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -50,9 +50,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 0
+    "total_students": 4
   },
   "years": {
     "year_2016": null,
@@ -65,7 +65,88 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/united-nations-office-of-information-communication-technology",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "FireForm aims to solve a critical problem faced by first responders: the need to repeatedly document the same incident across multiple agency-specific forms, leading to significant time loss and increased chances of errors. This project focuses on transforming FireForm from a prototype into a production-ready system that enables a “report once, file everywhere” workflow.\n\nMy approach is to strengthen the core AI-driven pipeline by integrating Whisper-based voice transcription, improving structured data extraction using local LLMs (via Ollama), and introducing robust validation and retry mechanisms using Pydantic. Additionally, I will design a flexible YAML-based template system that supports multiple agency-specific PDF forms without requiring code changes.\n\nThe project will also implement structured error handling, comprehensive testing, and CI/CD workflows to ensure reliability in real-world deployments. By the end of the program, FireForm will be a scalable, modular, and dependable system capable of converting natural language incident reports into accurate, multi-agency documentation, significantly reducing administrative overhead for first responders and improving operational efficiency.",
+          "difficulty": null,
+          "id": "proj_united-nations-office-of-information-communication-technology_2026_3T8m5ZQd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3T8m5ZQd",
+          "proposal_id": "ACy8lFDU",
+          "short_description": "FireForm aims to solve a critical problem faced by first responders: the need to repeatedly document the same incident across multiple...",
+          "slug": "fireform-an-open-source-report-once-file-everywhere-system-for-first-responders",
+          "status": null,
+          "student_name": "Abhishek Kumar .",
+          "student_profile": null,
+          "tags": [],
+          "title": "FireForm: An Open Source “Report Once, File Everywhere” System for First Responders"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, national climate and fiscal policy analyses operate in isolated domains. The CLEWS framework models physical constraints across energy, land, and water systems, whereas OG-Core projects macroeconomic and demographic trajectories. Because their output schemas, unit normalizations, and temporal resolutions are fundamentally incompatible, analysts must manually translate data between the two models to understand how physical policies impact long-term fiscal stability.\r\n\r\nThis project establishes the first automated, bidirectional integration between OSeMOSYS and OG-Core within the MUIOGO platform. Building upon the asynchronous execution architecture and API contracts recently established in the repository, the project will construct a multi-step convergence pipeline. This system will orchestrate the execution of CLEWS, perform the necessary schema translations, run the OG-Core macroeconomic model, and iteratively feed the fiscal outputs back into the physical model until a mathematical fixed point is reached.\r\n\r\nThe development is structured across four strictly ordered deliverables:\r\n1. A stabilized, cross-platform MUIOGO runtime environment supported by comprehensive automated testing.\r\n2. A native OG-Core execution module featuring a dedicated scenario manager and a visual results dashboard.\r\n3. A coupled data pipeline designed to strictly normalize and translate critical bridge variables between the two distinct architectures.\r\n4. A final convergence orchestrator capable of managing the iterative loop, complete with configurable stopping criteria and automated divergence detection.",
+          "difficulty": null,
+          "id": "proj_united-nations-office-of-information-communication-technology_2026_l8UO1g4u",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/l8UO1g4u",
+          "proposal_id": "6mHMuIov",
+          "short_description": "Currently, national climate and fiscal policy analyses operate in isolated domains. The CLEWS framework models physical constraints across energy,...",
+          "slug": "og-clews-scientific-programming-model-integration",
+          "status": null,
+          "student_name": "Aditya Kushwaha",
+          "student_profile": null,
+          "tags": [],
+          "title": "OG-CLEWS: Scientific Programming & Model Integration"
+        },
+        {
+          "code_url": null,
+          "description": "MUIOGO is an existing Flask and JavaScript application that provides a browser-based interface for running CLEWS energy-environment models. This project extends it in four directions. 1) Cross-platform hardening: fixing path assumptions, making configuration runtime-configurable, and setting up CI on macOS, Ubuntu, and Windows. 2) Building a full OG-Core UI module with parameter input forms, scenario management, run execution, and interactive Plotly results visualization, so that OG-Core has the same level of browser-based support that CLEWS currently has. 3) A coupled mode interface providing a guided workflow where one model's outputs feed into the other, with validation, multi-stage progress tracking, and combined results display. 4) A converging mode interface enabling iterative execution of both models until results stabilize, with live convergence charts, configurable tolerance, and early stopping. The project concludes with PyInstaller packaging for all three platforms, an automated GitHub Actions release pipeline, and user and developer documentation. Deliverables include a CI pipeline on three operating systems, working OG-Core standalone workflows, coupled and converging execution UIs, downloadable platform-specific installers, and complete documentation.",
+          "difficulty": null,
+          "id": "proj_united-nations-office-of-information-communication-technology_2026_lpXqwIXj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lpXqwIXj",
+          "proposal_id": "AY7tFDqX",
+          "short_description": "MUIOGO is an existing Flask and JavaScript application that provides a browser-based interface for running CLEWS energy-environment models. This...",
+          "slug": "og-clews-cross-platform-ui-and-software-engineering",
+          "status": null,
+          "student_name": "Aviral Kaintura",
+          "student_profile": null,
+          "tags": [],
+          "title": "OG-CLEWS: Cross-Platform UI and Software Engineering"
+        },
+        {
+          "code_url": null,
+          "description": "First responders file the same incident data across multiple agencies - fire, EMS, law enforcement, county/state each with different forms and formats. This redundant data entry costs hours per shift and increases error risk.  \nI propose building FireForm's complete processing pipeline: a responder speaks or types once, a locally-hosted LLM extracts structured data through a schema-aware multi-step pipeline with validation and completeness tracking, and the system generates all required agency PDFs automatically. A visual template registry allows any agency to register new forms without code changes. Missing data is tracked per form and can be supplemented incrementally.\n\nDeliverables: REST API with agency-scoped access control and async job processing, schema-aware extraction pipeline with validation layer, visual template editor and registration API, coordinate-based PDF generation, completeness tracking with form generatability status, supplement and manual patch endpoints, test suite with CI integration, and developer documentation.",
+          "difficulty": null,
+          "id": "proj_united-nations-office-of-information-communication-technology_2026_X2D41obR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/X2D41obR",
+          "proposal_id": "vbDm5kfX",
+          "short_description": "First responders file the same incident data across multiple agencies - fire, EMS, law enforcement, county/state each with different forms and...",
+          "slug": "fireform-an-open-source-report-once-file-everywhere-system-for-first-responders",
+          "status": null,
+          "student_name": "Chetan R",
+          "student_profile": null,
+          "tags": [],
+          "title": "FireForm: An Open Source “Report Once, File Everywhere” System for First Responders"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "mithusa.kajendran@un.org",

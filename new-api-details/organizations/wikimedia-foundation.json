@@ -47,9 +47,9 @@
     "wikimedia",
     "semantic web"
   ],
-  "total_projects": 85,
+  "total_projects": 93,
   "stats": {
-    "avg_projects_per_appeared_year": 9.44,
+    "avg_projects_per_appeared_year": 9.3,
     "projects_by_year": {
       "year_2016": 6,
       "year_2017": 7,
@@ -61,7 +61,7 @@
       "year_2023": 9,
       "year_2024": 9,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 6,
@@ -74,9 +74,9 @@
       "year_2023": 9,
       "year_2024": 9,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 83
+    "total_students": 93
   },
   "years": {
     "year_2016": {
@@ -1755,7 +1755,152 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/wikimedia-foundation-nd/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/wikimedia-foundation-nd",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The proposal is on the project Montage which is the most used photo evaluation tool under WLM ( Wiki Loves Monuments ). The plan is mainly about adding required features and infrastructural upgrades like multi worker system or redis on the project as the amount of entries ( images ) it handles is very high and the current structure barely supports it.",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_GwRgoDRV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/GwRgoDRV",
+          "proposal_id": "gQC2igYP",
+          "short_description": "The proposal is on the project Montage which is the most used photo evaluation tool under WLM ( Wiki Loves Monuments ). The plan is mainly about...",
+          "slug": "montage-improvements",
+          "status": null,
+          "student_name": "Abhinavmohandas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Montage Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "The current Wikifile Transfer tool is constrained as a single-transfer utility. This creates highly repetitive manual work for contributors migrating non free media across sister projects, lacks durable upload history for failure diagnosis, and misses automated category localization. This project evolves the tool into a robust, job based batch transfer pipeline using Python, Flask, Celery, and React. The solution implements a durable MySQL state machine to track transfer lifecycles and ensure fault tolerance. Key deliverables include: 1) A batch upload API and React UI orchestrator, 2) A persistent History Dashboard with safe, targeted retry logic for failed jobs, 3) Automated, non destructive category localization using MediaWiki APIs, and 4) Comprehensive E2E and backend testing using Cypress and Pytest. This enhancement will eliminate manual bottlenecks and save thousands of volunteer hours across Indic language communities.",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_04nad0vw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/04nad0vw",
+          "proposal_id": "r84Wx5j0",
+          "short_description": "The current Wikifile Transfer tool is constrained as a single-transfer utility. This creates highly repetitive manual work for contributors migrating...",
+          "slug": "wikifile-transfer-enhancement",
+          "status": null,
+          "student_name": "Anirudh Bharatiya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Wikifile Transfer Enhancement"
+        },
+        {
+          "code_url": null,
+          "description": "Wikidata currently lacks a strict, universally applied method to differentiate between instances, first-order classes, and metaclasses. This structural ambiguity actively degrades the reliability of the knowledge graph's ontology.\n\nThis project proposes a web-based, gamified crowdsourcing tool designed to systematically categorize Wikidata entities and clean up its class order. The platform will present users with ambiguous entities and ask them to classify the item as an \"individual item,\" \"first-order class,\" or \"metaclass\" based on available statements (e.g., P279 and P31 links).\n\nTo guarantee strict data correctness, the tool will implement a multi-tiered user hierarchy (Newbies, Players, and Experts) and rely on a consensus mechanism. Edge cases and disputed classifications are automatically escalated to an expert backlog. To drive user retention and data quality, the tool will feature gamified mechanics, rewarding players with points for matching the correct consensus and offering high-value rewards for successfully overturning incorrect consensus through expert review.",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_0DxJvBDv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/0DxJvBDv",
+          "proposal_id": "yehfoG2A",
+          "short_description": "Wikidata currently lacks a strict, universally applied method to differentiate between instances, first-order classes, and metaclasses. This...",
+          "slug": "gamifying-data-curation-on-wikidata",
+          "status": null,
+          "student_name": "Egezort",
+          "student_profile": null,
+          "tags": [],
+          "title": "Gamifying Data Curation on Wikidata"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces Conjugate, an Android and iOS open-source mobile application that provides a privacy-respecting verb conjugation tool powered by Wikidata. It aims to offer a free and accessible alternative to existing solutions that are often paid or ad-driven.\nThe application will integrate prebuilt SQLite databases to enable fast verb search, real-time autocomplete, and structured conjugation views. Development will reuse existing Scribe-Android components and adopt SwiftUI for iOS, with a focus on modular architecture and performance.\nKey deliverables include fully functional apps on both platforms, efficient multilingual search, a dynamic conjugation interface, and a well-tested, maintainable codebase that expands the Scribe ecosystem.",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_qWgyLtC1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qWgyLtC1",
+          "proposal_id": "S9x4GbqJ",
+          "short_description": "This project introduces Conjugate, an Android and iOS open-source mobile application that provides a privacy-respecting verb conjugation tool powered...",
+          "slug": "scribe-conjugation-application-development",
+          "status": null,
+          "student_name": "Gautham Mohanraj",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scribe Conjugation Application Development"
+        },
+        {
+          "code_url": null,
+          "description": "Wikisource is an online wiki-based digital library operated by the Wikimedia Foundation where volunteers transcribe old books and documents. The Bulk OCR feature allows volunteers to OCR multiple pages of a book at once instead of doing it page by page manually. However the current implementation has several critical issues that reduce productivity and cause poor quality text being saved to wiki pages. This will directly benefit thousands of Wikisource volunteers worldwide who transcribe historical documents daily making their work faster more accurate and more enjoyable",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_wtykY2Nk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wtykY2Nk",
+          "proposal_id": "RW88waY1",
+          "short_description": "Wikisource is an online wiki-based digital library operated by the Wikimedia Foundation where volunteers transcribe old books and documents. The Bulk...",
+          "slug": "enhancing-wikisource-bulk-ocr-user-controls-and-feedback-modal",
+          "status": null,
+          "student_name": "Hussein mmbaga",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Wikisource Bulk OCR User Controls and Feedback Modal"
+        },
+        {
+          "code_url": null,
+          "description": "The Programs & Events Dashboard tracks editing activity across thousands of Wikimedia programs, but generating a system-wide picture of that impact remains manual and resource-intensive. WMF staff must stitch together per-campaign exports to answer basic questions like \"How many total edits have all programs produced this year?\" — there is no single place to see the Dashboard's global impact.\n\nThis project builds that infrastructure in three layers. First, a SystemStat model and SystemStatUpdateWorker (Sidekiq) that computes and caches daily snapshots of global metrics - total edits, pageviews, articles improved, new and retained editors, and per-wiki breakdowns, so that all aggregations are pre-computed and never run on-demand against the full dataset. Second, an asynchronous system-wide CSV export pipeline that allows admins to request a download of all non-private program data, generated in the background and delivered via notification when ready - handling the full data scale without memory exhaustion. Third, a React-based \"System Stats\" admin dashboard that visualizes global trends, wiki distributions, and editor retention over time, backed by a JSON API endpoint for direct consumption by the WMF Community Data and Evaluation team.\n\nDeliverables: SystemStat model + daily background worker; admin-only async CSV export pipeline; \"System Stats\" React dashboard with trend charts and retention metrics; public JSON API with date-range filtering; full RSpec/Jest test coverage; and end-user documentation for WMF staff.",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_gWIKXQoY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gWIKXQoY",
+          "proposal_id": "rwQfrhG2",
+          "short_description": "The Programs & Events Dashboard tracks editing activity across thousands of Wikimedia programs, but generating a system-wide picture of that impact...",
+          "slug": "gsoc-2026-programs-events-dashboard-system-wide-metrics-and-data-downloads-lakshita-jain",
+          "status": null,
+          "student_name": "Lakshita_Jain",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSoC 2026: Programs & Events Dashboard — System-Wide Metrics and Data Downloads - Lakshita Jain"
+        },
+        {
+          "code_url": null,
+          "description": "CampWiz NXT is the jury management platform used during Wiki Loves contests to evaluate media submissions, images, audio, and video, uploaded to Wikimedia Commons. It provides a structured environment for jurors and organisers to assess, score, and process contest entries at scale.\n\nThe current implementation uses a dual-server architecture: a Next.js frontend and a Golang backend. While functional, this setup introduces real costs. There is server component complexity, a persistent Node.js process required for deployment, and an interface that places more cognitive burden on jurors than the work itself demands. These are solvable problems, and solving them is what this project is about.\nThe goal is to migrate the frontend from Next.js to a pure React application built as a static output with Vite. This is not a surface-level reskin. The migration removes the Node.js server dependency entirely, allowing the frontend to be served over standard HTTP, making deployment simpler, cheaper, and more maintainable. The Golang backend remains unchanged; only the frontend layer is being replaced.\n\nAlongside the technical migration, the interface will be redesigned with a deliberate focus on clarity and minimalism. Jurors should be able to open the tool and immediately focus on reviewing submissions, not on navigating a cluttered interface. Non-essential actions will be removed from the juror viewport, decision controls will be streamlined, and keyboard accessibility will be enforced throughout. The organiser dashboard will receive the same treatment: clean workflows for contest setup, juror assignment, and results management, without requiring backend access for routine configuration.\nThe result will be a frontend that is easier to deploy, easier to maintain, and noticeably better to use.",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_Tddy0k8i",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Tddy0k8i",
+          "proposal_id": "DrZnXQOY",
+          "short_description": "CampWiz NXT is the jury management platform used during Wiki Loves contests to evaluate media submissions, images, audio, and video, uploaded to...",
+          "slug": "campwiz-nxt-redesign",
+          "status": null,
+          "student_name": "Pius Osuji",
+          "student_profile": null,
+          "tags": [],
+          "title": "CampWiz Nxt Redesign"
+        },
+        {
+          "code_url": null,
+          "description": "This project is proposed to\n\n1. Prevent the loss in details happening when the user edits, uses the crop/rotate feature when uploading images through the Wikimedia Commons app by replacing LLJTran with JPEGTran which handles details gracefully.\n\n2. Implement Lossless Block-Level Blur\nThe Blur feature at present makes quality loss of image in the process.\nThis is solved by recompression to only relevant blur required pixel blocks then untouched areas wont have loss in details.\n\n3. Auto-detect and blur faces & car number plates.\nWhen the user uploads images there is less privacy for random people and car number plates captured by user in the photo \nuse  OpenCV to detect faces/plates and apply blur to only region which OpenCV specifies",
+          "difficulty": null,
+          "id": "proj_wikimedia-foundation_2026_YcplnI0q",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YcplnI0q",
+          "proposal_id": "CPvuismm",
+          "short_description": "This project is proposed to 1. Prevent the loss in details happening when the user edits, uses the crop/rotate feature when uploading images through...",
+          "slug": "implement-lossless-jpg-transformations-in-the-commons-android-app",
+          "status": null,
+          "student_name": "Rishan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement lossless JPG transformations in the Commons Android App"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

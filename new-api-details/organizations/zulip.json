@@ -53,9 +53,9 @@
     "teaching quality codebase",
     "integrations"
   ],
-  "total_projects": 135,
+  "total_projects": 146,
   "stats": {
-    "avg_projects_per_appeared_year": 13.5,
+    "avg_projects_per_appeared_year": 13.27,
     "projects_by_year": {
       "year_2016": 3,
       "year_2017": 10,
@@ -67,7 +67,7 @@
       "year_2023": 13,
       "year_2024": 17,
       "year_2025": 14,
-      "year_2026": null
+      "year_2026": 11
     },
     "students_by_year": {
       "year_2016": 3,
@@ -80,9 +80,9 @@
       "year_2023": 13,
       "year_2024": 17,
       "year_2025": 14,
-      "year_2026": null
+      "year_2026": 11
     },
-    "total_students": 117
+    "total_students": 146
   },
   "years": {
     "year_2016": {
@@ -2748,7 +2748,200 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/zulip"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 11,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/zulip",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Zulip community has been actively requesting improvements to video call functionality and Atlassian integrations, and addressing this cluster of features would meaningfully expand Zulip's appeal for organizations that depend on these tools. On the video call side, I will implement a Google Meet provider, help take a native LiveKit integration prototype to a mergeable state, build a cold-call ringing experience  and add support for multiple simultaneous video call providers per organisation. On the Atlassian side, I will implement a bidirectional Jira integration extending the existing webhook with richer filterable notifications and outbound actions (comment, assign, change priority) directly from Zulip, and a new Confluence incoming webhook integration covering the full page and blog lifecycle.\n\nAll deliverables include full test coverage, API documentation, changelog entries, and help center articles. The work builds directly on my existing merged and open PRs in Zulip's video call and Atlassian integration areas.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_NQQuVSCK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/NQQuVSCK",
+          "proposal_id": "LUS87rlV",
+          "short_description": "The Zulip community has been actively requesting improvements to video call functionality and Atlassian integrations, and addressing this cluster of...",
+          "slug": "improving-video-calls-and-atlassian-integrations-in-zulip",
+          "status": null,
+          "student_name": "0xthedance",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving Video Calls and Atlassian Integrations in Zulip"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on implementing a cluster of high-priority features in Zulip across the message feed, compose box, and channel settings.\n\nIn the compose box, it introduces reply-without-quoting, collapsed recipient pills for DM conversations, and auto-pillify on blur. In the message feed, it adds always-visible read receipts for DM conversations, multi-message deletion, a \"New Messages\" divider, move-by-recency for topics, and completes the zulip-icon-at-sign rollout to mention pills. In channel settings, it adds group-level unsubscribe for channels and shows inherited permissions as uneditable pills.\n\nThe work builds on existing patterns in the Zulip codebase and focuses on shipping well-integrated, user-facing improvements across these areas.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_43OugB9J",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/43OugB9J",
+          "proposal_id": "TW7zlXGA",
+          "short_description": "This project focuses on implementing a cluster of high-priority features in Zulip across the message feed, compose box, and channel settings. In the...",
+          "slug": "cluster-of-priority-features-focused-on-message-feed-compose-and-channel-settings",
+          "status": null,
+          "student_name": "Aadyot Nandan S",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cluster of priority features focused on message feed, compose, and channel settings"
+        },
+        {
+          "code_url": null,
+          "description": "Zulip's REST API documentation framework is well-built but incomplete, approximately 28 actionable endpoints remain undocumented, and the OpenAPI spec has accumulated structural debt through years of organic growth.\n\nThis project has two phases. Phase 1 achieves complete endpoint coverage by documenting all remaining high and moderate priority endpoints following the full pipeline: OpenAPI schema, Python and cURL examples, sidebar registration, and changelog entries. Phase 2 refactors the spec's structure, promoting inline parameters to shared components, rationalising the Can*Group schema family, and cleaning up repeated inline response blocks.\n\nDeliverables: (1) Zero undocumented actionable endpoints in pending_endpoints. (2) A cleaner, more consistent OpenAPI spec with reduced duplication across parameters, schemas, and response blocks.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_9wY1QssZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9wY1QssZ",
+          "proposal_id": "fAuDMtix",
+          "short_description": "Zulip's REST API documentation framework is well-built but incomplete, approximately 28 actionable endpoints remain undocumented, and the OpenAPI...",
+          "slug": "zulip-s-rest-api-documentation-complete-endpoint-coverage-and-openapi-spec-refactoring",
+          "status": null,
+          "student_name": "Agnish Bauri",
+          "student_profile": null,
+          "tags": [],
+          "title": "Zulip's REST API Documentation: Complete Endpoint Coverage and OpenAPI Spec Refactoring"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on enhancing the Zulip platform by implementing key user-centric features across the message feed, editing system, APIs, and test coverage. The proposed work includes adding a user blocking feature, always-visible read receipts in direct messages, improved message edit history controls, and bulk conversation management in the inbox. It also introduces backend improvements such as APIs for deleting user messages during deactivation, configurable mention permissions, and detailed audit logging. With prior experience contributing to Zulip, I aim to deliver scalable, well-tested solutions that improve usability while actively collaborating with the community throughout the project lifecycle.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_CiUYn786",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/CiUYn786",
+          "proposal_id": "9xd94xc9",
+          "short_description": "This project focuses on enhancing the Zulip platform by implementing key user-centric features across the message feed, editing system, APIs, and...",
+          "slug": "cluster-of-priority-features-focused-around-message-feed-editing-and-apis",
+          "status": null,
+          "student_name": "Aman (whilstsomebody)",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cluster of priority features focused around message feed, editing and APIs"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to optimize the performance and scalability of many code paths in Zulip, with a focus on performance sensitive code paths like Zulip major endpoints which have request volume and cost that makes them important.\n\nThe project also aims to design and implement a new feature of “LLM conversation summary”, and includes fixing issues in other areas.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_54NLCdXD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/54NLCdXD",
+          "proposal_id": "yGdOF9nf",
+          "short_description": "This project aims to optimize the performance and scalability of many code paths in Zulip, with a focus on performance sensitive code paths like...",
+          "slug": "optimize-performance-and-scalability-and-llm-conversation-summaries",
+          "status": null,
+          "student_name": "Bedo Khaled",
+          "student_profile": null,
+          "tags": [],
+          "title": "Optimize performance and scalability, and LLM conversation summaries"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to improve Zulip integrations by making them more accessible and user-friendly. It introduces a backend permissions system to enforce bot access levels at runtime, the project replaces API key-based authentication with an OAuth 2.0 flow using django-oauth-toolkit. Additionally, it redesigns the integrations UI to use a “Add to Zulip” button which eliminates the manual bot setup. Together, these changes simplify integration workflows for non-technical users while making the integrations more secure.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_QccrNMjY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QccrNMjY",
+          "proposal_id": "9uepo5mU",
+          "short_description": "This proposal aims to improve Zulip integrations by making them more accessible and user-friendly. It introduces a backend permissions system to...",
+          "slug": "make-zulip-integrations-accessible-bot-permissions-management-and-oauth-system",
+          "status": null,
+          "student_name": "Dhruv Shetty",
+          "student_profile": null,
+          "tags": [],
+          "title": "Make Zulip Integrations Accessible, Bot Permissions Management and OAuth  System"
+        },
+        {
+          "code_url": null,
+          "description": "For my project with Zulip, I aim to improve its integration ecosystem and core user experience. My project focuses on two primary areas: (1) Secure & Automated Integrations and (2) UX & Accessibility .In alignment with this year’s GSoC focus on security, under integrations, I will strengthen webhook systems by implementing secure payload verification, enabling automated topic resolution for GitHub, improving event handling,  and expanding support for external platforms .For UX & accessibility, I will improve keyboard navigation(specifically macOS dropdown support) and refine settings features, including more accurate unread message handling in narrowed views.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_Gw2ZG2Aj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Gw2ZG2Aj",
+          "proposal_id": "whea713w",
+          "short_description": "For my project with Zulip, I aim to improve its integration ecosystem and core user experience. My project focuses on two primary areas: (1) Secure &...",
+          "slug": "improve-zulip-s-native-integrations-and-features-around-keyboard-and-settings",
+          "status": null,
+          "student_name": "Pritesh Shetty",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Zulip’s Native Integrations and Features around Keyboard and Settings."
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to mainly address issues and implement features and functionalities requested by users to make using Zulip's mobile app a more enriching experience. I will address 17 issues in the zulip-flutter repository over 350 hours, encompassing improvements to various aspects of the app, including but not limited to content parsing, message composition, API handling, tooling, and home view.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_mm2mJFCd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mm2mJFCd",
+          "proposal_id": "OV9KzHK1",
+          "short_description": "This project aims to mainly address issues and implement features and functionalities requested by users to make using Zulip's mobile app a more...",
+          "slug": "work-on-the-flutter-based-zulip-client-with-a-focus-on-user-requested-features",
+          "status": null,
+          "student_name": "Ruhaan Sande",
+          "student_profile": null,
+          "tags": [],
+          "title": "Work on the Flutter-based Zulip Client with a focus on User-Requested Features"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to finalize stalled pull requests and implement high-priority features in the Zulip web application, focusing on messaging, search, settings, and backend performance. In messaging and compose UI, the project aims to enable collaborative message editing, allow seamless messaging to unsubscribed channels with proper warning banners, and fix UI jitter during channel subscriptions. In search and settings, the project introduces wildcard, topic, and group-user mentions, revamps alert word notifications to integrate with topic-following, and adds Markdown support to custom profile fields. Finally, it optimizes backend performance by significantly reducing database queries for direct messages, stabilizing password reset email flows, and cleaning up legacy bot configuration logic.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_dRCKcetM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/dRCKcetM",
+          "proposal_id": "492igOTp",
+          "short_description": "This project aims to finalize stalled pull requests and implement high-priority features in the Zulip web application, focusing on messaging, search,...",
+          "slug": "cluster-of-priority-features-and-completing-some-unfinished-projects",
+          "status": null,
+          "student_name": "Sairam Bisoyi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cluster of priority features and completing some unfinished projects"
+        },
+        {
+          "code_url": null,
+          "description": "Throughout the project, I want to focus on Zulip's native integrations and incoming webhooks framework by working on incomplete and pending features, fixing and enhancing integrations, and improving the user experience. I am willing to commit 40 hours per week over a span of 12 weeks, delivering high-quality, impactful contributions in this area.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_SsVasZCj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SsVasZCj",
+          "proposal_id": "3cUKrMBo",
+          "short_description": "Throughout the project, I want to focus on Zulip's native integrations and incoming webhooks framework by working on incomplete and pending features,...",
+          "slug": "extending-and-improving-zulip-s-native-integrations-and-incoming-webhook-framework",
+          "status": null,
+          "student_name": "Sathwik Shetty",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending and improving Zulip’s native integrations and incoming webhook framework."
+        },
+        {
+          "code_url": null,
+          "description": "The Zulip web application is being redesigned but there are several UI inconsistencies in various parts of the web app. After seeing the redesign-label issues, I understood that the modals, sidebars, icons, and interactive visual features are not all developed with an integrated look. This makes an inconsistent user experience with elements such as modal inputs being unstandardized, Icons and symbols lacking visual consistency across the web app components, and elements within the sidebar having improper alignment, scroll animation, and elements such as link styles, color logic, and interactions.\n\nThe goal of this project is to standardize and improve these UI elements in a structured way. I will work on redesign-labeled issues along with UI tasks, improving design pattern consistency, improving CSS structure, and managing elements with modern UI standards. With careful testing and taking mentor feedback to ensure accuracy, have discussions on future design provided in Figma.",
+          "difficulty": null,
+          "id": "proj_zulip_2026_HpVFK8LZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/HpVFK8LZ",
+          "proposal_id": "2BnCBdTh",
+          "short_description": "The Zulip web application is being redesigned but there are several UI inconsistencies in various parts of the web app. After seeing the...",
+          "slug": "improve-the-ui-and-visual-design-of-the-zulip-web-app",
+          "status": null,
+          "student_name": "Yogesh-Shivaji365",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve the UI and visual design of the Zulip web app"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

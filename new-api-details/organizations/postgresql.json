@@ -49,9 +49,9 @@
     "ui",
     "Benchmark"
   ],
-  "total_projects": 51,
+  "total_projects": 58,
   "stats": {
-    "avg_projects_per_appeared_year": 5.67,
+    "avg_projects_per_appeared_year": 5.8,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 4,
@@ -63,7 +63,7 @@
       "year_2023": 12,
       "year_2024": 5,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": null,
@@ -76,9 +76,9 @@
       "year_2023": 12,
       "year_2024": 5,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 47
+    "total_students": 58
   },
   "years": {
     "year_2016": null,
@@ -1114,7 +1114,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/postgresql"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/postgresql",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The motivation behind this project is to extend and introduce a fully functional MCP server for pgmoneta.\nTo achieve this ultimate goal, we have identified a set of subgoals that will transform the current implementation into a production ready system:\nIntroduce Non-Blocking I/O for Intensive I/O Operations (e.g Backup).\nArchitectural Abstraction refactoring via the Rig Framework.\nProduction-Level Security & Authentication.\nKnowledge Retrieval via MCP Resources.\nTesting and Documentation",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_C2VHxjcm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/C2VHxjcm",
+          "proposal_id": "YxNBDc57",
+          "short_description": "The motivation behind this project is to extend and introduce a fully functional MCP server for pgmoneta. To achieve this ultimate goal, we have...",
+          "slug": "pgmoneta-model-context-server-implementation",
+          "status": null,
+          "student_name": "Ahmed Kamal AbdElrasol",
+          "student_profile": null,
+          "tags": [],
+          "title": "pgmoneta: Model Context Server implementation"
+        },
+        {
+          "code_url": null,
+          "description": "pg_stat_statements tracks query statistics across a PostgreSQL cluster, but its single-LWLock architecture creates a scalability bottleneck under high unique-query-rate workloads. When pg_stat_statements.max is undersized, deallocation and reset operations hold an exclusive lock while performing expensive operations (O(n log n) sort, full hash table iteration), blocking every backend on the server. My benchmarks on PG 19devel show 90-100% of active backends blocked on the pgss LWLock during deallocation churn. This project proposes a multi-part fix: (1) a pending-entry queue to avoid blocking on new entry insertion, (2) a restructured deallocation critical section that moves the sort outside the exclusive lock, (3) exploration of lock separation between structural changes and counter updates, and (4) an optimized reset path. Deliverables include a repeatable benchmark suite, patches for each optimization formatted for pgsql-hackers review, before/after performance measurements, and documentation.",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_3bhCx5P6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3bhCx5P6",
+          "proposal_id": "axTyA0iW",
+          "short_description": "pg_stat_statements tracks query statistics across a PostgreSQL cluster, but its single-LWLock architecture creates a scalability bottleneck under...",
+          "slug": "reducing-pg-stat-statements-lwlock-contention",
+          "status": null,
+          "student_name": "hoangquan456",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reducing pg stat statements LWLock Contention"
+        },
+        {
+          "code_url": null,
+          "description": "PostgreSQL B-tree indexes often suffer from severe bloat after heavy UPDATE and DELETE workloads because the core engine currently cannot consolidate sparse pages. This project introduces safe, concurrent in-core leaf page merging. By utilizing a two-phase protocol, it consolidates two sparsely populated sibling pages into one without blocking concurrent forward or backward scanners. Key deliverables include the core atomic merge logic, a two-stage flag system to safely route concurrent traversals, atomic WAL logging for crash resilience, VACUUM cleanup integration, and analytical visualization tooling built via pageinspect.",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_9oNNEll5",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9oNNEll5",
+          "proposal_id": "yZESCSDY",
+          "short_description": "PostgreSQL B-tree indexes often suffer from severe bloat after heavy UPDATE and DELETE workloads because the core engine currently cannot consolidate...",
+          "slug": "b-tree-index-bloat-reduction-page-merge",
+          "status": null,
+          "student_name": "Salma El-Sayed",
+          "student_profile": null,
+          "tags": [],
+          "title": "B-tree Index Bloat Reduction (Page Merge)"
+        },
+        {
+          "code_url": null,
+          "description": "pgmoneta is an open-source tool that offers a solution for PostgreSQL backup and recovery. This project is a continuation of the 2025 GSoC project on pgmoneta-walfilter, which has been enhanced to include more advanced rules such as LSN, timestamp, relation, RMGR, and user rules; an interactive mode that has been improved to include a unified search feature and rule generation; a version dispatch feature that allows PostgreSQL 14-19 support; and WAL-aware commands integrated into a Rust-based MCP server to allow AI-driven analysis and recovery, which improves visibility and control of WAL, allowing for more accurate recovery scenarios and reducing the workload of a database administrator, making it a more powerful and intelligent tool for PostgreSQL backup and recovery.",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_Or6qQHna",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Or6qQHna",
+          "proposal_id": "gIhHNFYp",
+          "short_description": "pgmoneta is an open-source tool that offers a solution for PostgreSQL backup and recovery. This project is a continuation of the 2025 GSoC project on...",
+          "slug": "pgmoneta-wal-mcp",
+          "status": null,
+          "student_name": "Sara Nabih",
+          "student_profile": null,
+          "tags": [],
+          "title": "pgmoneta: WAL & MCP"
+        },
+        {
+          "code_url": null,
+          "description": "pgmoneta’s current storage layer is fragmented, back-ends do not share full feature parity and a single backup cannot target multiple destinations at once. This project introduces a unified storage interface that every backend implements, enabling easier maintenance and concurrent multi-backend writes. SSH and Azure backends are raised to the same capabilities as S3, while new native drivers for Google Cloud Storage (GCS) and SMB are added. Robustness is ensured by extending the MCTF framework with empirical infrastructure tests for each backend.",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_5iElMjO7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/5iElMjO7",
+          "proposal_id": "Yh4msXFH",
+          "short_description": "pgmoneta’s current storage layer is fragmented, back-ends do not share full feature parity and a single backup cannot target multiple destinations at...",
+          "slug": "pgmoneta-storage-engines",
+          "status": null,
+          "student_name": "Shashidhar M",
+          "student_profile": null,
+          "tags": [],
+          "title": "pgmoneta: Storage engines"
+        },
+        {
+          "code_url": null,
+          "description": "This project will add native historical metrics storage to pgexporter, enabling users to analyze trends and long-term performance without relying on external time-series stacks. The solution introduces an optional history module, configurable via the main settings, that can store metrics in SQLite, PostgreSQL, or TimescaleDB. Deliverables include the history storage module, a REST API for querying historical data, console integration for visualizing trends, migration/export tooling, and clear documentation for setup and backend selection.",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_yuVaYMvT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yuVaYMvT",
+          "proposal_id": "NNP1zRnD",
+          "short_description": "This project will add native historical metrics storage to pgexporter, enabling users to analyze trends and long-term performance without relying on...",
+          "slug": "historic-data-for-pgexporter",
+          "status": null,
+          "student_name": "Somye",
+          "student_profile": null,
+          "tags": [],
+          "title": "Historic Data for pgexporter"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements true end-to-end TLS pooling for pgagroal by decoupling the cryptographic state from the physical TCP socket. By implementing a clean-room TLSv1.2+ state machine using OpenSSL Memory BIOs, I will establish a Persistent Security Context that can be parked and resumed across pooled connections. Additional deliverables include a proxy-aware SCRAM-SHA-256-PLUS authentication pipeline, robust X.509 Client Certificate validation, and the decommissioning of legacy MD5 pathways to establish a modern, enterprise-grade security boundary.",
+          "difficulty": null,
+          "id": "proj_postgresql_2026_22YldITP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/22YldITP",
+          "proposal_id": "aVuKM0bR",
+          "short_description": "This project implements true end-to-end TLS pooling for pgagroal by decoupling the cryptographic state from the physical TCP socket. By implementing...",
+          "slug": "pgagroal-advanced-security",
+          "status": null,
+          "student_name": "trxvor",
+          "student_profile": null,
+          "tags": [],
+          "title": "pgagroal: Advanced security"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

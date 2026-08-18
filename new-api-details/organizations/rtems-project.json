@@ -48,9 +48,9 @@
     "embedded",
     "rtos"
   ],
-  "total_projects": 46,
+  "total_projects": 54,
   "stats": {
-    "avg_projects_per_appeared_year": 4.6,
+    "avg_projects_per_appeared_year": 4.91,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 4,
@@ -62,7 +62,7 @@
       "year_2023": 3,
       "year_2024": 5,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 5,
@@ -75,9 +75,9 @@
       "year_2023": 3,
       "year_2024": 5,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 44
+    "total_students": 54
   },
   "years": {
     "year_2016": {
@@ -981,7 +981,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/rtems-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/rtems-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project will integrate the Scrutiny Embedded instrumentation library to RTEMS.  The result of this project will be an instrumentation interface that provides in-field debugging and an alternative to JTAG-based stop mode debugging, which is particularly useful for hobbyists and beginners, or for those debugging systems which are live. Deliverables will include a working two-way UART transport, integration of Scrutiny functions to RTEMS, the ability to expose specific metrics from RTEMS to Scrutiny, a user facing API for developers, a package under the RTEMS Source Builder titled rtems-scrutiny, and the necessary test suites for all use cases. This effort will provide RTEMS users with an effective Scrutiny port which can then successfully be hooked up to their respective clients for streamlined debugging.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_5n964jB6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/5n964jB6",
+          "proposal_id": "rreZI0ys",
+          "short_description": "This project will integrate the Scrutiny Embedded instrumentation library to RTEMS. The result of this project will be an instrumentation interface...",
+          "slug": "adding-support-for-the-scrutiny-debugger-instrumentation-library",
+          "status": null,
+          "student_name": "aftwasiq",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding Support for the Scrutiny Debugger Instrumentation Library"
+        },
+        {
+          "code_url": null,
+          "description": "This project brings up lwIP on the TI TMS570LC43x under RTEMS. The TMS570 is a high-reliability MCU most recently used as the flight controller on the Ingenuity helicopter. A secondary contribution reintegrates the lwIP stack at the netconn API layer, which eliminates BSD socket indirection, reduces memory footprint, and enables zero-copy tx/rx in RTEMS applications.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_mixRtTp4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mixRtTp4",
+          "proposal_id": "twoq9wwX",
+          "short_description": "This project brings up lwIP on the TI TMS570LC43x under RTEMS. The TMS570 is a high-reliability MCU most recently used as the flight controller on...",
+          "slug": "lwip-tcp-ip-network-stack-improvements",
+          "status": null,
+          "student_name": "Armaan_Chowfin",
+          "student_profile": null,
+          "tags": [],
+          "title": "lwIP TCP/IP Network Stack Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "RTEMS Deployment currently supports TAR and RPM package types for toolchain and RTEMS BSP configuration distributions. However, users of Debian-based Linux distributions and FreeBSD must currently use TAR packages, which cannot track dependencies, upgrades, or clean removals like a real package manager.\n\nThis project will provide native packaging support for Debian (.deb) and FreeBSD (pkg) package types within RTEMS Deployment. A packaging abstraction will be implemented in Python and will be shared between both packaging backends by refactoring the existing RPM backend. This will provide a clean integration with our current deployment model.\n\nThis will provide RTEMS toolchain installation and management support for developers using Debian, Ubuntu, and FreeBSD distributions with their native package managers. It will also provide integration tests, documentation, and a tutorial for future contributors to easily integrate other package types into RTEMS Deployment.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_b7KoR81l",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/b7KoR81l",
+          "proposal_id": "XajZSJ6a",
+          "short_description": "RTEMS Deployment currently supports TAR and RPM package types for toolchain and RTEMS BSP configuration distributions. However, users of Debian-based...",
+          "slug": "add-packaging-options-to-rtems-deployment",
+          "status": null,
+          "student_name": "Ayush Yadav (acidicneko)",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add packaging options to RTEMS Deployment."
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to update the current memory allocator used by RTEMS to be modular, allowing users to provide their own heap implementation or use one supplied by RTEMS. It will also include implementing the TLSF allocator as the default allocator instead of the current first-fit approach. This change will address the existing fragmentation and unpredictable runtime issues associated with the current allocator. Additionally, the project will explore the implementation of  RT-Mimalloc, a modified version of Microsoft’s  mimalloc optimized for real-time systems, representing the first open-source realization of this allocator. Finally, the project will add an allocator benchmark to evaluate the new memory allocators as well as any user-provided implementations.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_fjfU0LnW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fjfU0LnW",
+          "proposal_id": "KHLrXszP",
+          "short_description": "This project aims to update the current memory allocator used by RTEMS to be modular, allowing users to provide their own heap implementation or use...",
+          "slug": "adding-modular-heap-support-to-rtems",
+          "status": null,
+          "student_name": "mez3n",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding modular heap support to RTEMS"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to introduce more locking protocols, in particular Multiprocessor Priority Ceiling Protocol (MPCP) and Distributed Priority Ceiling Protocol (DPCP), to RTEMS to be used by semaphores, as well as testsuites for the two protocols. This allows users to choose different locking protocols to use can be more practical depending on their application.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_MXHAMXDA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MXHAMXDA",
+          "proposal_id": "DrsslRwF",
+          "short_description": "The goal of this project is to introduce more locking protocols, in particular Multiprocessor Priority Ceiling Protocol (MPCP) and Distributed...",
+          "slug": "add-mpcp-dpcp-support-to-rtems",
+          "status": null,
+          "student_name": "purple-affogato",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add MPCP & DPCP Support to RTEMS"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements a D-CAN driver for the AM335x controller on the BeagleBone Black and integrates it into the RTEMS CAN stack, addressing the current lack of CAN support for this widely used embedded platform. This enables RTEMS applications to access CAN communication through standard interfaces such as /dev/canX.\n\nThe main challenge lies in bridging the mismatch between the mailbox-based D-CAN hardware architecture and the queue-based abstraction used in RTEMS. To address this, the driver will introduce a mapping layer that emulates FIFO-based reception using hardware message objects and implements a software-managed, priority-aware transmission mechanism. Synchronization will be carefully handled through IFx register access and interrupt management to ensure correctness and real-time behavior.\n\nThe implementation will follow an incremental approach, starting with a minimal working driver (initialization, polling-based TX, FIFO RX), and then extending to interrupt-driven operation, improved mailbox utilization, and priority-aware scheduling. Validation will be performed on real hardware using loopback and cross-platform communication tests (RTEMS ↔ Linux).\n\nDeliverables include a fully functional and maintainable D-CAN driver integrated into RTEMS, along with documentation, test demonstrations, and validation results. This work will also serve as a reference for future CAN driver development within the RTEMS ecosystem.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_4nKcLIiO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4nKcLIiO",
+          "proposal_id": "qCSNuYE2",
+          "short_description": "This project implements a D-CAN driver for the AM335x controller on the BeagleBone Black and integrates it into the RTEMS CAN stack, addressing the...",
+          "slug": "controller-area-network-can-stack-improvement-beaglebone-black-d-can-driver-implementation",
+          "status": null,
+          "student_name": "riverquiet",
+          "student_profile": null,
+          "tags": [],
+          "title": "Controller Area Network (CAN) Stack Improvement: BeagleBone Black D-CAN Driver Implementation"
+        },
+        {
+          "code_url": null,
+          "description": "This project extends the Raspberry Pi 4b BSP in RTMES by adding Framebuffer, SDHCI and PCIe support. Building on mailbox and DMA support added during GSoC 2025, this project completes the SDHCI work pending since GSoC 2024 and adds framebuffer otuput via the VideoCore mailbox property tags interface.  PCIe support will be ported to rtems-libbsd. In this proposal I have detailed how I will go about adding support and testing each driver.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_iDOmLHyB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/iDOmLHyB",
+          "proposal_id": "jpIKOeA0",
+          "short_description": "This project extends the Raspberry Pi 4b BSP in RTMES by adding Framebuffer, SDHCI and PCIe support. Building on mailbox and DMA support added during...",
+          "slug": "adding-framebuffer-sd-card-and-pcie-support-to-the-raspberry-pi-4b-bsp",
+          "status": null,
+          "student_name": "Shaunak Datar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding Framebuffer, SD card and PCIe support to the Raspberry Pi 4b BSP"
+        },
+        {
+          "code_url": null,
+          "description": "RTEMS currently lacks C11 Annex K bounds-checking functions\n(strcpy_s, memcpy_s, sprintf_s and ~45 others) which provide\nruntime buffer-size validation critical for safety-critical\nembedded systems. Without these, RTEMS developers writing\nsoftware for spacecraft, medical devices, and automotive\ncontrollers are forced to use unsafe standard functions or\nwrite their own wrappers — neither is acceptable for\nsafety-critical code. This project packages safeclib\n(rurban/safeclib) through the RTEMS Source Builder (RSB) so\nany RTEMS BSP can access these functions via -lsafec,\ndirectly strengthening memory safety across all RTEMS\napplications. The approach uses pkg-config for BSP-specific\nflag detection and librtemsdefaultconfig.a for configure-time\nlink tests. Deliverables include a working RSB recipe, full\ntest suite validation (~126 tests) under QEMU SPARC\nemulation, all ~45 Annex K functions documented in the RTEMS\nPOSIX Compliance Guide, and a release notes entry.",
+          "difficulty": null,
+          "id": "proj_rtems-project_2026_kffP1OQ6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kffP1OQ6",
+          "proposal_id": "MjNp509z",
+          "short_description": "RTEMS currently lacks C11 Annex K bounds-checking functions (strcpy_s, memcpy_s, sprintf_s and ~45 others) which provide runtime buffer-size...",
+          "slug": "add-support-for-c11-annex-k-bounds-checking-functions-in-rtems",
+          "status": null,
+          "student_name": "Yash Bhiwania",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support for C11 Annex K Bounds-Checking Functions in RTEMS"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

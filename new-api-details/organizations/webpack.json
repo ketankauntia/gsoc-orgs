@@ -43,9 +43,9 @@
     "Node.js",
     "webpack"
   ],
-  "total_projects": 10,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.17,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -57,7 +57,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 1,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -70,9 +70,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 1,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 10
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -311,7 +311,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/webpack"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/webpack",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Webpack currently lacks a modern, automated documentation site. Existing documentation is manually maintained, lacks API reference generation, and has no automated pipeline to stay in sync with webpack's source code.\nThis project aims to build a fully automated documentation system for webpack using TypeDoc and @node-core/doc-kit. The pipeline extracts API documentation directly from webpack's types.d.ts, generates structured markdown, and renders a complete website - including API reference, guides, loaders, plugins, and core pages like Home and Download.\n\nKey deliverables:\n\n• A complete TypeDoc theme producing doc-kit-compatible markdown.\n• Webpack-branded site using doc-kit's theming system (#theme/* components) that aligns webpack's documentation with the OpenJS Foundation's design standards.\n• Multi-version documentation support (v5, v6 and beyond).\n• Fully automated CI/CD pipeline that syncs with webpack releases.\n\nThe overarching goal is zero manual documentation maintenance - every webpack release automatically triggers doc regeneration and deployment, keeping the documentation accurate and fresh without human intervention.",
+          "difficulty": null,
+          "id": "proj_webpack_2026_ikzNNgeA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ikzNNgeA",
+          "proposal_id": "RRycBhf1",
+          "short_description": "Webpack currently lacks a modern, automated documentation site. Existing documentation is manually maintained, lacks API reference generation, and...",
+          "slug": "webpack-new-documentation-website",
+          "status": null,
+          "student_name": "__tushar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Webpack: New Documentation Website"
+        },
+        {
+          "code_url": null,
+          "description": "Webpack's extensive API definitions are currently locked inside raw types.d.ts files, creating a significant manual maintenance burden to keep the public documentation synced. My proposal solves this by building an automated, version-aware CI/CD pipeline. I will extract TypeScript ASTs using TypeDoc, format them via typedoc-plugin-markdown with a custom webpack-doc-kit theme, and integrate them into @node-core/doc-kit. The final deliverable is a polished, searchable React-based UI that matches Webpack's visual identity, completely removing the manual documentation overhead from the core team.",
+          "difficulty": null,
+          "id": "proj_webpack_2026_qIwsEvsU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qIwsEvsU",
+          "proposal_id": "0xut9noB",
+          "short_description": "Webpack's extensive API definitions are currently locked inside raw types.d.ts files, creating a significant manual maintenance burden to keep the...",
+          "slug": "automated-webpack-documentation-pipeline",
+          "status": null,
+          "student_name": "Mo_Shams",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Webpack Documentation Pipeline"
+        },
+        {
+          "code_url": null,
+          "description": "The Problem\nWhen developers write custom webpack plugins, they need reliable API documentation. Currently, the generated docs drop critical function signatures, returning unhelpful {object} types instead of actual parameters. The new documentation infrastructure is also missing webpack's visual identity, essential navigation pages, and a safe review process for automated updates.\n\nThe Solution\nI will complete the TypeDoc to doc-kit pipeline to finalize webpack's API documentation redesign. First, I will fix the AST renderers to properly map TypeScript function overloads so no signature data is lost. Then, I will configure the doc-kit UI with webpack brand tokens and build custom React components to cleanly display complex hooks. Finally, I will secure the CI/CD workflow and port the core website pages.\n\nDeliverables:\n\nAccurate API Output: A fixed TypeDoc theme that correctly renders function parameters and TypeScript overloads.\n\nVisual Identity: A custom doc-kit configuration with webpack branding and new React components (HookSignature, PluginInterface, DeprecationBanner).\n\nAutomated CI/CD: A GitHub Actions workflow that safely opens pull requests for new docs instead of pushing directly.\n\nCore Navigation: Fully ported Home, Download, Guides, and About pages.",
+          "difficulty": null,
+          "id": "proj_webpack_2026_bUYNVdfx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/bUYNVdfx",
+          "proposal_id": "pSZNLCw3",
+          "short_description": "The Problem When developers write custom webpack plugins, they need reliable API documentation. Currently, the generated docs drop critical function...",
+          "slug": "webpack-new-documentation-website-completing-the-typedoc-pipeline-for-webpack-s-api",
+          "status": null,
+          "student_name": "ryzrr",
+          "student_profile": null,
+          "tags": [],
+          "title": "webpack: New Documentation Website - Completing the TypeDoc Pipeline for webpack's API"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

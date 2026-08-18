@@ -60,9 +60,9 @@
     "optimization",
     "application"
   ],
-  "total_projects": 38,
+  "total_projects": 42,
   "stats": {
-    "avg_projects_per_appeared_year": 4.22,
+    "avg_projects_per_appeared_year": 4.2,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": 4,
@@ -74,7 +74,7 @@
       "year_2023": 5,
       "year_2024": 4,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 4,
@@ -87,9 +87,9 @@
       "year_2023": 5,
       "year_2024": 4,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 38
+    "total_students": 42
   },
   "years": {
     "year_2016": {
@@ -840,7 +840,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/stear-group"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/stear-group",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "HPX's existing hierarchical communicator (PR #6834) implements four one-to-all collectives (broadcast, reduce, scatter, gather) with a configurable k-ary tree structure. This project will implement the remaining all-to-all collectives: all_reduce, all_gather, and all_to_all ,using the existing hierarchical communicator, produce rigorous three-way benchmarks (hierarchical HPX vs. flat HPX vs. tuned MPI), and prepare the implementation for integration into an upcoming HPX release.",
+          "difficulty": null,
+          "id": "proj_stear-group_2026_UaNAWX5t",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UaNAWX5t",
+          "proposal_id": "4vbfa6Et",
+          "short_description": "HPX's existing hierarchical communicator (PR #6834) implements four one-to-all collectives (broadcast, reduce, scatter, gather) with a configurable...",
+          "slug": "hierarchical-collectives-for-hpx",
+          "status": null,
+          "student_name": "Anshuman Agrawal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hierarchical Collectives for HPX"
+        },
+        {
+          "code_url": null,
+          "description": "This project completes the architectural transition of the HPX parallel runtime to the C++26 Sender/Receiver (S/R) model. Building upon the recent cleanup of legacy execution code, I will advance HPX from an \"adapter-based\" architecture to its \"Native Architectural Phase.\" This involves refactoring the core execution boundaries of make_future and keep_future to remove internal implementation dependencies (such as the __loop_ pointer) and porting distributed subsystems like MPI and CUDA to be native, first-class stdexec citizens. My primary objective is to eliminate technical debt and achieve zero-overhead integration with the C++26 execution standard while ensuring full backwards compatibility for all existing HPX applications.",
+          "difficulty": null,
+          "id": "proj_stear-group_2026_nqqJA0B7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nqqJA0B7",
+          "proposal_id": "3iK0kGnO",
+          "short_description": "This project completes the architectural transition of the HPX parallel runtime to the C++26 Sender/Receiver (S/R) model. Building upon the recent...",
+          "slug": "modernizing-hpx-architectural-stdexec-migration-and-subsystem-integration",
+          "status": null,
+          "student_name": "guptapratykshh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing HPX: Architectural stdexec Migration and Subsystem Integration"
+        },
+        {
+          "code_url": null,
+          "description": "HPX currently requires verbose macros like HPX_PLAIN_ACTION and HPX_REGISTER_ACTION to define remote operations across localities. This boilerplate is error-prone and creates a steep learning curve for new users. With C++26 static reflection (P2996), function signatures can be introspected automatically at compile time, eliminating this boilerplate entirely. This project implements reflection-based action definition for HPX, replacing HPX_DEFINE_PLAIN_ACTION with a clean template API that uses scope_builder and fixed_string for compile-time name extraction — building directly on the serialization reflection foundation from PRs #7010 and #7016 already merged into master. A working prototype has been built and tested in the GCC trunk Docker environment prior to the coding period.",
+          "difficulty": null,
+          "id": "proj_stear-group_2026_dVmsd5sX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/dVmsd5sX",
+          "proposal_id": "WxZSheEu",
+          "short_description": "HPX currently requires verbose macros like HPX_PLAIN_ACTION and HPX_REGISTER_ACTION to define remote operations across localities. This boilerplate...",
+          "slug": "use-c-26-reflection-for-hpx-remote-operations",
+          "status": null,
+          "student_name": "Priyanshi507",
+          "student_profile": null,
+          "tags": [],
+          "title": "Use C++26 Reflection for HPX Remote Operations"
+        },
+        {
+          "code_url": null,
+          "description": "HPX already has partial Tracy support and stronger integrations with tools like VTune and APEX, but tracing is still fragmented and largely thread-centric. This makes it difficult to understand how tasks actually behave, especially across suspension, resumption, and asynchronous dependencies.\n\nThis project focuses on strengthening and extending Tracy integration in HPX by building on the existing hpx::tracing abstraction and expanding task-level instrumentation across key runtime paths. The goal is to make task execution easier to follow by improving lifecycle visibility, especially around suspend/resume behavior, and by adding initial causal signals (for example, future fulfillment and other synchronization events) to help explain why tasks resume.\n\nThe work will also extend tracing to execution paths that currently lack visibility, such as fork_join_executor and continuation execution, and introduce scalable controls like filtering and sampling to keep tracing usable in fine-grained workloads.\n\nAs a stretch goal, I will explore optional trace-context propagation across parcel paths to enable cross-locality correlation in distributed runs.\n\nThe expected deliverables include integrated tracing hooks across core runtime components, improved suspend/resume tracing, better coverage of executor and continuation paths, benchmark-validated low-overhead operation, and clear documentation for both maintainers and users.",
+          "difficulty": null,
+          "id": "proj_stear-group_2026_g5NclTGx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/g5NclTGx",
+          "proposal_id": "3SLSjUtb",
+          "short_description": "HPX already has partial Tracy support and stronger integrations with tools like VTune and APEX, but tracing is still fragmented and largely...",
+          "slug": "scalable-tracy-integration-for-hpx-unified-task-lifecycle-and-causal-tracing",
+          "status": null,
+          "student_name": "Vansh Dobhal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scalable Tracy Integration for HPX: Unified Task Lifecycle and Causal Tracing"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

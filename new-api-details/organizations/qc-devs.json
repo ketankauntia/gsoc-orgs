@@ -30,9 +30,9 @@
     "Computational Science",
     "numerical algorithms"
   ],
-  "total_projects": 7,
+  "total_projects": 10,
   "stats": {
-    "avg_projects_per_appeared_year": 3.5,
+    "avg_projects_per_appeared_year": 3.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 2,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 2,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 6
+    "total_students": 10
   },
   "years": {
     "year_2016": null,
@@ -220,7 +220,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/qc-devs"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/qc-devs",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "GBasis currently requires manual libcint compilation, breaking on macOS and Windows. This project automates the build using scikit-build-core and CMake FetchContent, adds cross-platform wheel building via cibuildwheel on GitHub Actions, implements platform-aware library loading, and wraps additional integrals from issue #149.",
+          "difficulty": null,
+          "id": "proj_qc-devs_2026_Y2YHfpWh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Y2YHfpWh",
+          "proposal_id": "QDFUwqJO",
+          "short_description": "GBasis currently requires manual libcint compilation, breaking on macOS and Windows. This project automates the build using scikit-build-core and...",
+          "slug": "better-linking-between-libcint-and-gbasis",
+          "status": null,
+          "student_name": "Aayush1807",
+          "student_profile": null,
+          "tags": [],
+          "title": "Better Linking Between Libcint and Gbasis"
+        },
+        {
+          "code_url": null,
+          "description": "The grid library evaluates the Coulomb potential of molecules by numerically solving Poisson's equation. However, true electron densities possess sharp, infinite slope cusps at atomic nuclei. These physical singularities cause the existing numerical Initial Value Problem (IVP) and Boundary Value Problem (BVP) solvers to suffer from catastrophic instability and convergence failures.\nThis project solves this by implementing a \"Double-Split-Plus-Solve\" architecture. Instead of forcing numerical solvers to handle the singularities, this strategy uses the BFit library and AtomDB to analytically fit and extract the sharp promolecular atomic cores and bulk bonding densities using Gaussians. Because Gaussians have exact analytical potentials, we calculate the potential of the cusps with zero numerical error. This leaves only a tiny, perfectly smooth residual density for grid's numerical BVP solver to integrate, allowing it to converge rapidly and accurately without crashing.",
+          "difficulty": null,
+          "id": "proj_qc-devs_2026_1TivKsHA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1TivKsHA",
+          "proposal_id": "sDMayyfG",
+          "short_description": "The grid library evaluates the Coulomb potential of molecules by numerically solving Poisson's equation. However, true electron densities possess...",
+          "slug": "improve-robustness-of-poisson-solver",
+          "status": null,
+          "student_name": "Aochuba S Aier",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Robustness of Poisson Solver"
+        },
+        {
+          "code_url": null,
+          "description": "I am applying to build the multipole electrostatics evaluation engine for FFprime, addressing Issue #1 (Electrostatics beyond the atomic charges).\nFFprime already derives atom-centered multipole moments from quantum-chemical calculations. What it needs is the other half — functions that take those moments and compute the electrostatic potential and field at arbitrary points in space. That is what I will build.\nMy three planned deliverables are: (1) a fully vectorized, convention-unified implementation of monopole, dipole, and quadrupole potential and field functions; (2) a Cartesian-to-spherical conversion layer connecting the Cartesian implementations to the spherical harmonic representation used in the RSC paper; and (3) analysis utilities including field projection and field comparison metrics, as listed in the stretch goal of the issue.\nBefore submitting this proposal I have already made four contributions to the repo: PR #5 implementing dipole and quadrupole functions with 26 unit tests, PR #11 implementing the Cartesian-to-spherical conversion layer, and technical reviews on PRs #2 and #4 identifying vectorization gaps and convention inconsistencies.\nI am a CS undergraduate at VIT Vellore with strong foundations in linear algebra, NumPy vectorization, and scientific software design. The mathematical framework — tensor decomposition, multipole expansions — is something I have studied independently and already applied in my contributions.",
+          "difficulty": null,
+          "id": "proj_qc-devs_2026_oEZWlRnx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/oEZWlRnx",
+          "proposal_id": "rJ7fdF5f",
+          "short_description": "I am applying to build the multipole electrostatics evaluation engine for FFprime, addressing Issue #1 (Electrostatics beyond the atomic charges)....",
+          "slug": "electrostatics-beyond-atomic-charges-a-high-performance-multipole-engine-for-ffprime",
+          "status": null,
+          "student_name": "Harsh_Jha",
+          "student_profile": null,
+          "tags": [],
+          "title": "Electrostatics Beyond Atomic Charges: A High-Performance Multipole Engine for FFprime"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

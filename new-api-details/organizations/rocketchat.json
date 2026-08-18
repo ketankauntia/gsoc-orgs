@@ -67,9 +67,9 @@
     "Team Collaboration",
     "Chat platform"
   ],
-  "total_projects": 103,
+  "total_projects": 113,
   "stats": {
-    "avg_projects_per_appeared_year": 11.44,
+    "avg_projects_per_appeared_year": 11.3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 4,
@@ -81,7 +81,7 @@
       "year_2023": 10,
       "year_2024": 17,
       "year_2025": 19,
-      "year_2026": null
+      "year_2026": 10
     },
     "students_by_year": {
       "year_2016": null,
@@ -94,9 +94,9 @@
       "year_2023": 10,
       "year_2024": 17,
       "year_2025": 19,
-      "year_2026": null
+      "year_2026": 10
     },
-    "total_students": 101
+    "total_students": 113
   },
   "years": {
     "year_2016": null,
@@ -2122,7 +2122,184 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/rocketchat"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 10,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/rocketchat",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Rocket.Chat's current message parser uses PeggyJS, which adds bundle size overhead and performance bottlenecks. This project replaces it with a fully hand-written TypeScript recursive-descent parser that produces an identical AST, passes all existing tests, and ships with zero external dependencies. Deliverables include a complete lexer and parser implementation, 100% test suite parity, property-based fuzz testing with fast-check, and a benchmark suite demonstrating measurable performance improvements and reduced bundle size.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_2LvZl7YI",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2LvZl7YI",
+          "proposal_id": "16VDmEdk",
+          "short_description": "Rocket.Chat's current message parser uses PeggyJS, which adds bundle size overhead and performance bottlenecks. This project replaces it with a fully...",
+          "slug": "high-performance-message-parser-rewrite",
+          "status": null,
+          "student_name": "Amit Ashutosh",
+          "student_profile": null,
+          "tags": [],
+          "title": "High-Performance Message Parser Rewrite"
+        },
+        {
+          "code_url": null,
+          "description": "EmbeddedChat is Rocket.Chat's embeddable chat widget, but RC 8.x broke several core endpoints, Matrix federation support is absent, there is no AI extensibility point, mobile responsiveness is inconsistent, and WCAG compliance is incomplete. \n\nThis project restores RC 8.x compatibility and completes the DDP client migration, adds production-ready Matrix federation via a mode prop backed by an upstream RC core fix, introduces a standalone provider-agnostic AI adapter package, systematically fixes mobile viewport issues, and brings the widget to WCAG 2.1 AA compliance. Working POCs exist for all five goals",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_xcOZ4ccj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xcOZ4ccj",
+          "proposal_id": "ebMCm8qb",
+          "short_description": "EmbeddedChat is Rocket.Chat's embeddable chat widget, but RC 8.x broke several core endpoints, Matrix federation support is absent, there is no AI...",
+          "slug": "embeddedchat-2026-modernize-apis-enable-matrix-federation-add-pluggable-ai-and-improve-mobile-ux",
+          "status": null,
+          "student_name": "Aryan69",
+          "student_profile": null,
+          "tags": [],
+          "title": "EmbeddedChat 2026: Modernize APIs, Enable Matrix Federation, Add Pluggable AI, and Improve Mobile UX"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on rebuilding the Jira integration to make it more reliable, faster, and easier to use. The goal is to let users create, view, update, comment, and receive real-time updates on Jira issues directly within Rocket.Chat, without needing to switch between tools. By bringing everything into one place, it helps reduce context switching and makes team collaboration smoother and more productive.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_PMjabHxf",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PMjabHxf",
+          "proposal_id": "Tf5HbwwH",
+          "short_description": "This project focuses on rebuilding the Jira integration to make it more reliable, faster, and easier to use. The goal is to let users create, view,...",
+          "slug": "rebuilding-jira-integration-app-for-rocket-chat",
+          "status": null,
+          "student_name": "Devansh Kansagra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rebuilding Jira Integration App for Rocket.Chat"
+        },
+        {
+          "code_url": null,
+          "description": "Analyzing massive codebases like Rocket.Chat via iterative LLM\nagents causes context bloat, rapidly exceeding free-tier limits. This project builds\na graph-native code navigator exposed as a Gemini MCP server. An oﬄine\nindexer parses the full Rocket.Chat source via ts-morph, extracts a typed\ndependency graph (11 edge kinds, including Rocket.Chat-specific patterns like\ncallbacks.run/add and Meteor method dispatch that break standard import\nanalysis), and compresses function bodies into signature-only skeletons for ~4×\ntoken reduction. At query time, three composable MCP tools—search, graph,\nimplement—let an LLM navigate by following real edges rather than ranking\ndocuments. An evaluation framework with ground-truth test cases (collected by\nRocket.Chat experts and Claude) and 5 measured metrics closes the loop.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_YqgtdmcO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YqgtdmcO",
+          "proposal_id": "7v9YEVWS",
+          "short_description": "Analyzing massive codebases like Rocket.Chat via iterative LLM agents causes context bloat, rapidly exceeding free-tier limits. This project builds a...",
+          "slug": "rocket-chat-code-analyzer-agentic-inference-context-reduction-mechanics",
+          "status": null,
+          "student_name": "Echo Xiao",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rocket.Chat: Code Analyzer Agentic Inference Context Reduction Mechanics"
+        },
+        {
+          "code_url": null,
+          "description": "OpenClaw is an open-source autonomous AI agent framework that allows users to run powerful local AI agents capable of executing complex tasks, using tools, and maintaining long-term memory. However, it currently lacks native integration with Rocket.Chat, a widely used open-source team collaboration platform.\nThis project aims to bridge this gap by building a complete bidirectional integration between OpenClaw and Rocket.Chat. Users will be able to interact with OpenClaw agents directly within Rocket.Chat channels and direct messages, enabling seamless automation, task execution, and proactive responses inside their familiar workspace.\nI plan to develop a robust Rocket.Chat adapter/plugin that includes bot user creation, REST API integration, incoming and outgoing webhook support, secure authentication, and reliable message handling.\n\nKey Deliverables:\n\nProduction ready OpenClaw plugin for Rocket.Chat\nFull support for direct messages and public/private channels\nSmooth sending and receiving of messages with OpenClaw agents\nProper configuration support in openclaw.json\nComprehensive documentation and setup guide\n\nUpon completion, Rocket.Chat users will be able to harness the power of autonomous AI agents for tasks like security audits, reminders, code assistance, and custom workflows directly from within Rocket.Chat.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_UsBN25oY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UsBN25oY",
+          "proposal_id": "KuUOMtDH",
+          "short_description": "OpenClaw is an open-source autonomous AI agent framework that allows users to run powerful local AI agents capable of executing complex tasks, using...",
+          "slug": "openclaw-integration-for-rocket-chat",
+          "status": null,
+          "student_name": "Kartik Doda",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenClaw Integration for Rocket.Chat"
+        },
+        {
+          "code_url": null,
+          "description": "Rocket.Chat relies on Agenda to schedule and run critical background jobs, but administrators have no way to monitor or manage them without directly querying MongoDB. This project will build a dedicated Agenda Jobs Admin Page inside the Rocket.Chat admin panel, giving administrators full visibility and control over background jobs. The implementation will deliver a service layer deriving job status from existing Agenda metadata, six REST API endpoints, and a React admin UI built with Fuselage showing job status, execution history, failure details, and one-click actions to trigger, disable, or enable jobs.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_fPHB4nLt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fPHB4nLt",
+          "proposal_id": "eVViqNqa",
+          "short_description": "Rocket.Chat relies on Agenda to schedule and run critical background jobs, but administrators have no way to monitor or manage them without directly...",
+          "slug": "agenda-jobs-admin-page",
+          "status": null,
+          "student_name": "Khizar Shah",
+          "student_profile": null,
+          "tags": [],
+          "title": "Agenda Jobs Admin Page"
+        },
+        {
+          "code_url": null,
+          "description": "Open Rocket.Chat communities face a growing problem where new accounts join, flood multiple public channels with spam, and disappear before any moderator can respond. Current moderation is entirely reactive and manual, which is simply too slow for coordinated spam campaigns. This project builds a proactive, human-validated anti-spam system that monitors new users during their first 6 to 10 weeks and responds through a graduated restriction system called Moderation Levels, where every action is proportional, reversible, and requires admin approval before anything permanent happens.\n\nThe system is built as a Rocket.Chat App on the Apps Engine with a seven gate detection pipeline running entirely in memory for speed. Gates catch exact duplicates via hash matching, polymorphic spam via cosine similarity, cross channel floods, rate flooding, rapid room spread, and phishing link campaigns. A four tier Moderation Level system escalates naturally with repeat behavior, from a friendly DM warning through posting cool downs to a permanent block that only lifts when an admin vouches for the user. The admin control layer includes a live dashboard, a full slash command suite, and AI powered on demand summaries so admins have everything they need to make confident moderation decisions without opening a single log file.\n\nDeliverables include a fully functional installable Rocket.Chat App covering the complete detection pipeline, a configurable Moderation Level system, a behavioral scoring engine, enriched admin notifications with message history, AI powered user analysis commands, a paginated admin dashboard built for scale, daily scheduled reporting, and complete documentation covering architecture, configuration, and known limitations.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_H1D0QolA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/H1D0QolA",
+          "proposal_id": "8yj0gNcw",
+          "short_description": "Open Rocket.Chat communities face a growing problem where new accounts join, flood multiple public channels with spam, and disappear before any...",
+          "slug": "new-users-anti-spammer-system",
+          "status": null,
+          "student_name": "Meet.jain",
+          "student_profile": null,
+          "tags": [],
+          "title": "New Users Anti Spammer System"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Rocket.Chat Room Header actions follow rigid layout rules, often hiding critical tools in overflow menus and reducing workspace flexibility . This project proposes a configurable layout engine that allows administrators to define action ordering and pinning (featured) via a workspace-level JSON setting. Key deliverables include a dynamic administration UI built with Fuselage, a per-user Feature Preview for progressive rollout, and a comprehensive test suite using Jest, Playwright, and axe to ensure 100% scenario validation and zero accessibility violations .",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_DIRqu6lu",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DIRqu6lu",
+          "proposal_id": "OxcLEZHR",
+          "short_description": "Currently, Rocket.Chat Room Header actions follow rigid layout rules, often hiding critical tools in overflow menus and reducing workspace...",
+          "slug": "room-header-buttons-ordering",
+          "status": null,
+          "student_name": "Rahian",
+          "student_profile": null,
+          "tags": [],
+          "title": "Room Header Buttons Ordering"
+        },
+        {
+          "code_url": null,
+          "description": "This project builds a Gemini CLI extension that solves MCP's context bloat problem for Rocket.Chat developers. Current MCP servers expose an entire platform's API surface, meaning every agent session wastes tokens on hundreds of tool definitions the project will never use. The Minimal MCP Server Generator lets developers describe their use case in plain English and produces a production-ready MCP server covering only the endpoints they actually need. The generator goes beyond raw API wrappers by composing multi-step workflow tools: declarative step graphs that chain API calls, AI reasoning, conditional branching, and data transforms into single high-level operations. It supports two compilation targets: a standalone webhook + REST server that runs anywhere, and an Apps-Engine bridged mode for realtime event interception. The key deliverables include: a Gemini CLI extension with endpoint discovery, schema lookup, and project generation tools; a six-pass workflow validation pipeline that catches and self-corrects LLM mistakes before codegen; additive tool generation that adds new tools to existing servers without overwriting; protocol-level test generation via MCP Inspector; runtime hardening with endpoint allow-lists; and a PlatformProvider abstraction with a Mattermost dry-run proving the generator's portability beyond Rocket.Chat. This approach reduces token costs, fits within free-tier limits, and makes MCP-based Rocket.Chat development accessible to any workspace regardless of plan.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_0Pk45Q1K",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/0Pk45Q1K",
+          "proposal_id": "wTyojpNh",
+          "short_description": "This project builds a Gemini CLI extension that solves MCP's context bloat problem for Rocket.Chat developers. Current MCP servers expose an entire...",
+          "slug": "minimal-mcp-server-generator-for-rocket-chat",
+          "status": null,
+          "student_name": "Sezal Lagwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Minimal MCP Server Generator for Rocket.Chat"
+        },
+        {
+          "code_url": null,
+          "description": "Rocket.Chat currently uses multiple virtualization patterns across list-heavy UI surfaces, especially in core room and contextual views. This makes scrolling behavior, pagination, testing, and future maintenance less consistent, and increases the effort required to review or extend list implementations. My project will establish a shared virtualization baseline for Rocket.Chat using a reusable wrapper integrated with the existing OverlayScrollbars-based scrollbar system, then apply that baseline to a focused set of core user-facing surfaces such as Threads, Discussions, and Message Search.\n\nThe implementation will build on existing Rocket.Chat frontend patterns, including TanStack Query-based pagination hooks and shared query/cache infrastructure, so the migration can be incremental rather than disruptive. The main deliverables are: a reviewed shared virtualization abstraction suitable for merge, a reusable migration pattern for flat list surfaces, migrations of selected core components, focused test coverage for the wrapper and migrated screens, and contributor documentation covering wrapper usage, pagination integration, scrollbar wiring, and testing. If time allows, I will also migrate an additional core surface such as Room Files or prepare the path for future grouped-list migrations.",
+          "difficulty": null,
+          "id": "proj_rocketchat_2026_x0D0UVyS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/x0D0UVyS",
+          "proposal_id": "sGiC2VIo",
+          "short_description": "Rocket.Chat currently uses multiple virtualization patterns across list-heavy UI surfaces, especially in core room and contextual views. This makes...",
+          "slug": "refactor-virtualized-lists-to-use-tanstack-virtual",
+          "status": null,
+          "student_name": "Srijna Bhargav",
+          "student_profile": null,
+          "tags": [],
+          "title": "Refactor Virtualized Lists to Use TanStack Virtual"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

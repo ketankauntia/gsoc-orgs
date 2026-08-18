@@ -36,9 +36,9 @@
     "big data",
     "hpc"
   ],
-  "total_projects": 14,
+  "total_projects": 21,
   "stats": {
-    "avg_projects_per_appeared_year": 4.67,
+    "avg_projects_per_appeared_year": 5.25,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -50,7 +50,7 @@
       "year_2023": 5,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": null,
@@ -63,9 +63,9 @@
       "year_2023": 5,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 14
+    "total_students": 21
   },
   "years": {
     "year_2016": null,
@@ -359,7 +359,136 @@
     },
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/genome-assembly-and-annotation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to provide a Model Context Protocol (MCP) server that is suitable for production and exposes expected REST endpoints from the European Nucleotide Archive (ENA) as organised, schema-driven tools for AI systems.\n\nAlthough ENA offers robust REST APIs for biological data access, direct integration with AI agents frequently results in inconsistent queries, low reproducibility, and lack of validation. In order to overcome this, the project implements an MCP-based interface layer that ensures predictable execution, provides a strict input/output schemas, and enables secure, secure communication with ENA services.\n\nA dynamic tool registry for flexibility, Pydantic for schema validation, httpx for asynchronous API communication, and a response normalisation layer for consistent outputs are all features of the FastMCP-built system. To ensure scalability and production readiness, it will also include a comprehensive error handling, testing, and containerised deployment using Docker and Kubernetes.\n\nA fully functional MCP server with several ENA capabilities (such as study, sample, and run queries), thorough test coverage, developer-friendly documentation, and a deployable system that is simple to interface with AI clients are some of the key deliverables. This project will enable more dependable AI-driven scientific workflows by improving the reproducibility, traceability, and accessibility of biological data.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_sj2t88xE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sj2t88xE",
+          "proposal_id": "660ST9ZY",
+          "short_description": "The goal of this project is to provide a Model Context Protocol (MCP) server that is suitable for production and exposes expected REST endpoints from...",
+          "slug": "expose-a-subset-of-ena-rest-services-as-mcp",
+          "status": null,
+          "student_name": "Dineshkumar Anbalagan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expose a Subset of ENA REST Services as MCP"
+        },
+        {
+          "code_url": null,
+          "description": "Perturbation biology datasets across CRISPR screens, MAVE, and scPerturb-seq remain siloed in incompatible formats, making cross-modal reasoning about genetic perturbations nearly impossible at scale. This project builds a perturbation-aware LLM by fine-tuning BioMedLM on a curated multimodal training corpus derived from the EMBL-EBI Perturbation Catalogue, enabling natural language queries such as \"what happens if gene X is knocked out in cell type Y?\" Deliverables include a multimodal training corpus, a fine-tuned LLM prototype, a reproducible evaluation pipeline with gene-level splits distinguishing genuine generalisation from memorisation, and full open-source documentation for reuse by the Perturbation Catalogue team.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_pdFOyIjl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pdFOyIjl",
+          "proposal_id": "JEIZmyes",
+          "short_description": "Perturbation biology datasets across CRISPR screens, MAVE, and scPerturb-seq remain siloed in incompatible formats, making cross-modal reasoning...",
+          "slug": "building-a-perturbation-aware-llm-for-multimodal-in-silico-perturbation-modelling",
+          "status": null,
+          "student_name": "Esra Ersan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building a Perturbation-Aware LLM for Multimodal In Silico Perturbation Modelling"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements a browser-native genomic feature search system for efficiently querying large GFF3 annotation datasets without requiring backend infrastructure. Traditional approaches either rely on slow client-side parsing or require server-side APIs, both of which introduce scalability and maintenance challenges.\n\nThe proposed solution converts GFF3 files into an indexed SQLite database offline and performs full-text search queries directly in the browser using SQLite WASM within a Web Worker. The system integrates with JBrowse to enable seamless navigation from search results to genomic locations, providing a responsive and interactive user experience.\n\nTo support large metagenomic datasets, the system will incorporate range-based loading and progressive data access strategies. The final outcome will include a production-ready indexing pipeline, a browser-based query engine, performance benchmarks, and a reusable React component that can be integrated across multiple EMBL-EBI web applications without requiring backend services.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_brBab9aI",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/brBab9aI",
+          "proposal_id": "ZoJS47qX",
+          "short_description": "This project implements a browser-native genomic feature search system for efficiently querying large GFF3 annotation datasets without requiring...",
+          "slug": "browser-native-genomic-feature-search-using-sqlite-wasm-and-jbrowse",
+          "status": null,
+          "student_name": "Muhammad Ali Arif",
+          "student_profile": null,
+          "tags": [],
+          "title": "Browser-Native Genomic Feature Search using SQLite WASM and JBrowse"
+        },
+        {
+          "code_url": null,
+          "description": "The Ensembl Assembly/Annotation tracking application stores rich quality metrics for thousands of genome annotations but currently lacks tooling to surface or compare them in a way annotators can act on. This project builds two Python modules on top of the existing backend services. The first generates structured per-genome annotation reports including BUSCO scores, coding gene counts, annotation method, and visualisations. The second enables taxonomy-grouped comparative analysis using PCA and outlier detection across clades, so annotators can immediately see whether a genome looks unusual relative to phylogenetically similar species. Both modules extend the existing services layer (annotations_service.py, report_annotation_service.py, report_assembly_service.py, taxonomy_service.py) without replacing anything, follow the ensembl-genes coding standards (pylint, mypy, black, pytest), and are built to be extended as the data model grows.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_UCKv7A2e",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UCKv7A2e",
+          "proposal_id": "zDZCveHW",
+          "short_description": "The Ensembl Assembly/Annotation tracking application stores rich quality metrics for thousands of genome annotations but currently lacks tooling to...",
+          "slug": "annotation-metrics-reporting-and-analysis-modules-for-the-ensembl-assembly-annotation-tracking-app",
+          "status": null,
+          "student_name": "Shrinidhi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Annotation Metrics Reporting and Analysis Modules for the Ensembl Assembly/Annotation Tracking App"
+        },
+        {
+          "code_url": null,
+          "description": "﻿The Ensembl Plants and Metazoa platforms face a significant metadata gap where critical biological context, such as ploidy, strain, and sex, is often documented in peer-reviewed literature but missing from formal INSDC sequence archives. This lack of structured metadata, particularly ploidy, creates technical bottlenecks in downstream comparative genomics and requires labor-intensive manual curation. To address this, I propose developing a standalone, Python-based \"Retrieve-Extract-Verify\" module that leverages Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to automate metadata extraction from scientific papers. This tool will utilize literature APIs like Europe PMC, employing section-aware parsing and confidence scoring to ensure high data integrity with minimal human intervention. My previous experience in building Transformer-based bioprocess optimization models and genome-level embeddings directly informs my approach to handling complex biological datasets. The final outcome will be a ready-to-deploy Nextflow module designed for seamless integration into Ensembl’s production pipeline and provide the global research community with richer, more reliable genomic metadata.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_TG4YNQYK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TG4YNQYK",
+          "proposal_id": "HDd0Rjnv",
+          "short_description": "﻿The Ensembl Plants and Metazoa platforms face a significant metadata gap where critical biological context, such as ploidy, strain, and sex, is...",
+          "slug": "expand-genome-metadata-in-ensembl-with-ai-tools",
+          "status": null,
+          "student_name": "Soomin Lee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expand genome metadata in Ensembl with AI tools"
+        },
+        {
+          "code_url": null,
+          "description": "My proposal is to develop a scalable computational pipeline to construct, annotate, and visualise Sequence Similarity Networks (SSNs) for a representative subset of approximately 10 million MGnify proteins. The pipeline will take FASTA files as input and utilise MMseqs2 to efficiently compute all-against-all pairwise sequence similarities. It will then use the Python library NetworkX to construct the mathematical graphs, integrating biological metadata, such as the biome-of-origin, directly into the node attributes to enable contextual environmental exploration. To ensure scalability and avoid memory bottlenecks, the pipeline will leverage NetworkX's backend dispatching architecture to route computationally heavy operations to high-performance GPU libraries like cuGraph. Finally, the graph data will be exported into simple tabular formats compatible with large-scale visualisation platforms like Cytoscape and Cosmograph. The deliverables of this project will include the core Python/Bash SSN generation pipeline, a MGnify metadata annotator, a graph exporter utility, a fully rendered 10-million node reference dataset, and comprehensive documentation alongside an integration test suite.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_SzccYhba",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SzccYhba",
+          "proposal_id": "4XkKZgJ2",
+          "short_description": "My proposal is to develop a scalable computational pipeline to construct, annotate, and visualise Sequence Similarity Networks (SSNs) for a...",
+          "slug": "sequence-similarity-networks-for-the-visualisation-and-exploration-of-mgnify-proteins",
+          "status": null,
+          "student_name": "Szabolcs Vidám",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sequence similarity networks for the visualisation and exploration of MGnify Proteins"
+        },
+        {
+          "code_url": null,
+          "description": "Ensembl VEP's web interface offers dozens of configuration options for variant annotation, overwhelming new users and generating recurring helpdesk queries. Ask VEPai is a locally-hosted, open-source AI assistant that translates natural-language descriptions into recommended VEP configurations with justifications. The system uses Retrieval-Augmented Generation (RAG) grounded in a curated knowledge base, with a deterministic constraint checker that catches species violations and option conflicts the model misses. Beyond the project brief's scope of option labelling, training data, and a prototype model, this proposal adds four components: (1) the constraint checker, empirically validated across three model sizes, (2) a quantitative evaluation framework with leave-one-out methodology and multi-run statistical replication, (3) a structured JSON schema mapping recommendations directly to VEP web form sections for \"click to apply\" integration, and (4) an interpretability layer where every recommendation includes a source citation traceable to the knowledge base. A working demo validated across Qwen 2.5 3B/7B/14B shows +19–30% Enable F1 from the knowledge base, with all code and results published. Core deliverables: expanded KB (~55 options), 15–20 gold-standard examples, RAG pipeline, constraint checker, JSON schema, evaluation report, and documentation. My availability (~400 hours) supports extending to a 350-hour Large project, adding QLoRA fine-tuning, attribution testing, FastAPI wrapper, and VEP output explainer.",
+          "difficulty": null,
+          "id": "proj_genome-assembly-and-annotation_2026_lMJjEjbW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lMJjEjbW",
+          "proposal_id": "geIRzjCI",
+          "short_description": "Ensembl VEP's web interface offers dozens of configuration options for variant annotation, overwhelming new users and generating recurring helpdesk...",
+          "slug": "ask-vepai-trained-chatbot-interface-for-ensembl-vep-web",
+          "status": null,
+          "student_name": "UninterpretableEvolvingBlackBox",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ask VEPai. Trained chatbot interface for Ensembl VEP web"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

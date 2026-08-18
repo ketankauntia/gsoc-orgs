@@ -39,9 +39,9 @@
     "WebRTC",
     "video"
   ],
-  "total_projects": 21,
+  "total_projects": 26,
   "stats": {
-    "avg_projects_per_appeared_year": 4.2,
+    "avg_projects_per_appeared_year": 4.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 3,
@@ -53,7 +53,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -66,9 +66,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 21
+    "total_students": 26
   },
   "years": {
     "year_2016": null,
@@ -505,7 +505,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/jitsi"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/jitsi",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Jitsi Meet confines all conference content to a single browser window, leaving second monitors completely unused. Presenters cannot see the audience while screen sharing, moderators cannot watch the gallery while focusing on the active speaker, and educators cannot monitor student reactions while presenting. This project uses the Window Management API and React createPortal to open a coordinated secondary browser window on a different physical display while sharing the same Redux store and WebRTC connection. Each window can display an independent layout such as active speaker view or gallery view with no duplicate participants and zero extra bandwidth. The implementation includes smart screen detection via getScreenDetails, per tile video track management with stale frame prevention, a four tier active speaker priority chain using real time audio levels, responsive gallery grid with ResizeObserver, two tier style inheritance, and full window lifecycle management including conference leave cleanup. A working proof of concept with active speaker video, gallery view, layout switching toolbar, and speaking indicator borders is already integrated into the Jitsi codebase.",
+          "difficulty": null,
+          "id": "proj_jitsi_2026_VSdnQjTF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VSdnQjTF",
+          "proposal_id": "TyOU0l2l",
+          "short_description": "Jitsi Meet confines all conference content to a single browser window, leaving second monitors completely unused. Presenters cannot see the audience...",
+          "slug": "multi-screen-support-for-jitsi-meet",
+          "status": null,
+          "student_name": "Abhay Madan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Multi Screen Support for Jitsi Meet"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to design and implement a complete chat moderation and editing system for Jitsi Meet. Currently, Jitsi’s chat supports basic messaging but lacks important features such as message editing, deletion, moderation controls, and search, which are essential in modern communication platforms.\nThe goal of this project is to introduce these missing capabilities using XMPP standards like XEP-0308 (message editing), XEP-0424 (message retraction), and XEP-0425 (moderation). The implementation will follow a structured approach, starting from the XMPP layer in lib-jitsi-meet and extending to the Redux and UI layers in jitsi-meet.\nKey features include message editing, message deletion, moderator-controlled actions, chat muting, user reporting, message search, and reply threading. Additionally, server-side enforcement using Prosody plugins will be explored to ensure reliable moderation.\nThis project will improve user experience, provide better control in meetings, and bring Jitsi’s chat system closer to modern messaging standards while maintaining consistency with its existing architecture.",
+          "difficulty": null,
+          "id": "proj_jitsi_2026_Aet96xCc",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Aet96xCc",
+          "proposal_id": "XOW3dvIl",
+          "short_description": "This project aims to design and implement a complete chat moderation and editing system for Jitsi Meet. Currently, Jitsi’s chat supports basic...",
+          "slug": "jitsi-chat-moderation-and-editing-system-xmpp-based-implementation",
+          "status": null,
+          "student_name": "Alokraj@24",
+          "student_profile": null,
+          "tags": [],
+          "title": "Jitsi Chat Moderation and Editing System (XMPP-based Implementation)"
+        },
+        {
+          "code_url": null,
+          "description": "Currently Jitsi uses traditional Picture in Picture in Electron application. Browser meetings support is not yet implemented. This idea proposes to implement Document Picture in Picture for browser meetings for supported browsers and traditional Picture in Picture otherwise.\n\nDocument Picture in Picture mode allows to embed arbitrary HTML contents. The idea will be to use React's portal to create interactions buttons inside the Document PiP window that will share the redux state change. Interactions such as audio/video toggle, chat window will be added. Apart from that, different layouts such as compact, gallery, speaker will also be available inside the window.",
+          "difficulty": null,
+          "id": "proj_jitsi_2026_DrgSMJPQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DrgSMJPQ",
+          "proposal_id": "k0Ns7dDH",
+          "short_description": "Currently Jitsi uses traditional Picture in Picture in Electron application. Browser meetings support is not yet implemented. This idea proposes to...",
+          "slug": "document-picture-in-picture-for-browser-meetings",
+          "status": null,
+          "student_name": "Bandhan Majumder",
+          "student_profile": null,
+          "tags": [],
+          "title": "Document Picture-in-Picture for browser meetings"
+        },
+        {
+          "code_url": null,
+          "description": "The objective of this project is to develop jvb-js, a WebRTC client library for building\nreal-time audio and video applications with Jitsi Videobridge, a Selective Forwarding\nUnit (SFU).",
+          "difficulty": null,
+          "id": "proj_jitsi_2026_IgidUyra",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IgidUyra",
+          "proposal_id": "Gi0bkS8e",
+          "short_description": "The objective of this project is to develop jvb-js, a WebRTC client library for building real-time audio and video applications with Jitsi...",
+          "slug": "jitsi-videobridge-javascript-client",
+          "status": null,
+          "student_name": "Hugo Lavernhe",
+          "student_profile": null,
+          "tags": [],
+          "title": "Jitsi Videobridge JavaScript client"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of the project is to implement distributed tracing in order to trace individual calls between multiple backend components.\n\nThe implementation can be broken down into the following stages: Infrastructure: Deploy an OpenTelemetry colector, and a Tempo tracing backend; Instrumentation: Instrument backend components in order to send events to the collector; Tracing: Stitch events together into traces by propagating trace context; Polishing: Iterate the generated events in order to improve the observability of the system; Documentation: Document how to deploy the required components, how to add/modify generated events, and how to visualize the data.",
+          "difficulty": null,
+          "id": "proj_jitsi_2026_GseggmSv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/GseggmSv",
+          "proposal_id": "9VaSIBmB",
+          "short_description": "The goal of the project is to implement distributed tracing in order to trace individual calls between multiple backend components. The...",
+          "slug": "tracing-calls-through-backend-components",
+          "status": null,
+          "student_name": "Julián González Calderón",
+          "student_profile": null,
+          "tags": [],
+          "title": "Tracing Calls Through Backend Components"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

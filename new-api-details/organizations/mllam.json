@@ -28,9 +28,9 @@
     "earth science",
     "Weather Forecasting"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -70,7 +70,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/mllam",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Neural weather prediction models like neural-lam rely on graph neural networks, but the current graph construction pipeline is locked to rectangular grids — blocking support for irregular data sources like weather stations, satellite swaths, and icosahedral model grids (ICON, MPAS). This project replaces the hardcoded pipeline with a flexible, topology-agnostic architecture spanning two repositories (weather-model-graphs and neural-lam).\n\nThe core work delivers three things: (1) a two-step mesh architecture that decouples node placement from connectivity, enabling any layout (triangular, prebuilt, density-adaptive) to combine with any connectivity mode; (2) a bridge layer that eliminates 600+ lines of duplicated code by making neural-lam call weather-model-graphs directly, validated through a shared schema contract; and (3) migration to PyTorch Geometric's HeteroData for type-safe, self-documenting graph representation.\n\nAs stretch goals, the project introduces a graph quality metrics framework for comparing mesh topologies without training, density-adaptive meshing driven by data or prediction error, and spherical coordinate support to fix systematic distortion at high latitudes. I have already contributed the foundational PRs (#81, #91, #92, #123, #258) and authored the two strategic issues (#384, #385) that define this project's architecture.",
+          "difficulty": null,
+          "id": "proj_mllam_2026_1GFUKY85",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1GFUKY85",
+          "proposal_id": "O3ci5d2M",
+          "short_description": "Neural weather prediction models like neural-lam rely on graph neural networks, but the current graph construction pipeline is locked to rectangular...",
+          "slug": "flexible-graph-construction-for-neural-weather-prediction",
+          "status": null,
+          "student_name": "Prajwal_07",
+          "student_profile": null,
+          "tags": [],
+          "title": "Flexible Graph Construction for Neural Weather Prediction"
+        },
+        {
+          "code_url": null,
+          "description": "The existing Neural-lam probabilistic forecasting model, GraphEFM, currently exists in an isolated branch (prob_model_lam) with a monolithic ARModel class encapsulating both the training, rollout, and single-step prediction functionality in a single file. Meanwhile, PR #208 refactors the deterministic models into a clean three-layer hierarchy: ForecasterModule (Lightning training harness), Forecaster (rollout strategy), and StepPredictor (single-step prediction). The GraphEFM model cannot be merged into main until it is ported to this new hierarchy.\n\nThis project ports the GraphEFM model into the new hierarchy by refactoring it into three new classes that mirror the existing separation of concerns: GraphEFMPredictor (extends StepPredictor : owns the encoder, prior, decoder, latent variable logic), EnsembleForecaster (extends Forecaster : owns the AR rollout with separate prior and encoder paths), and EnsembleForecasterModule (extends ForecasterModule : owns the ELBO training, ensemble metrics, and visualization). Key design decisions include using explicit forward() and forward_encoder_path() instead of gating on self.training (handled automatically by PyTorch Lightning), making the predictor self-contained with its own per_var_std buffer, and replacing all hardcoded constants with the datastore API introduced in PR #208.\nDeliverables:\n- All components of the encoder/decoder moved, GraphEFM predictor that fulfills the contract of StepPredictor, EnsembleForecaster with both paths tested, and end-to-end graph efM training of --model graph_efm on MEPS, along with ensemble metrics.\n- KL/CRPS warmup schedules, ensemble parameters defined via configuration, Zarr-based ensemble prediction saving, additional ensemble visualizations, spread maps, and spaghetti plot, checkpoint backward compatibility, and architecture documentation.",
+          "difficulty": null,
+          "id": "proj_mllam_2026_ancIRkdm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ancIRkdm",
+          "proposal_id": "yjL3OGSx",
+          "short_description": "The existing Neural-lam probabilistic forecasting model, GraphEFM, currently exists in an isolated branch (prob_model_lam) with a monolithic ARModel...",
+          "slug": "generalizing-to-probabilistic-forecasting-models",
+          "status": null,
+          "student_name": "sir-sloth-the-lazy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generalizing to Probabilistic Forecasting Models"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": null,

@@ -52,9 +52,9 @@
     "web",
     "geodata"
   ],
-  "total_projects": 45,
+  "total_projects": 50,
   "stats": {
-    "avg_projects_per_appeared_year": 4.5,
+    "avg_projects_per_appeared_year": 4.55,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": 5,
@@ -66,7 +66,7 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 4,
@@ -79,9 +79,9 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 44
+    "total_students": 50
   },
   "years": {
     "year_2016": {
@@ -982,7 +982,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openstreetmap"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openstreetmap",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Nominatim currently classifies places using a single OSM class/type pair, which causes duplicate database entries for multi-tagged objects, fragile handling of administrative boundaries, and insufficient granularity for modern search queries.\n\nThis project adds native category support to Nominatim's PostgreSQL backend by introducing a categories column across the place, placex, and search_name tables using PostgreSQL's ltree[] type for hierarchical querying. Categories are assigned in the Lua import scripts following Photon's osm.<class>.<type> approach, replacing the place_classtype_* tables currently used for POI filtering.\n\nDeliverables include: schema changes with migration support for existing installations, Lua-based category assignment, replacement of classtype table lookups with category-based queries in search_name, and as stretch goals, API include/exclude filtering parameters and a flexible YAML-driven CategoryGenerator for enriched categories like cuisine.italian or access.wheelchair.yes.",
+          "difficulty": null,
+          "id": "proj_openstreetmap_2026_2zrzo548",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2zrzo548",
+          "proposal_id": "D8gzscfc",
+          "short_description": "Nominatim currently classifies places using a single OSM class/type pair, which causes duplicate database entries for multi-tagged objects, fragile...",
+          "slug": "category-support-in-nominatim",
+          "status": null,
+          "student_name": "Agasta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Category Support in Nominatim"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to provide first-class DuckDB support for Martin TileServer. DuckDB, with its spatial extension and native ST_AsMVT and and ST_AsMVTGeo functions, enables efficient vector tile serving directly from analytical file-based datasets such as GeoParquet. With PostGIS, this is not possible since it’s a transactional database and not suitable for reading analytical columnar datasets. Martin currently has support for PostGIS tables and views as well as file formats such as MBTiles and PMTiles to build and\nserver vector tiles. This project will extend Martin’s architecture to DuckDB and provide support for persistent DuckDB databases with spatial tables as well as local and remote GeoParquet files.",
+          "difficulty": null,
+          "id": "proj_openstreetmap_2026_n1dwnwQY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/n1dwnwQY",
+          "proposal_id": "evniYk8Q",
+          "short_description": "This project aims to provide first-class DuckDB support for Martin TileServer. DuckDB, with its spatial extension and native ST_AsMVT and and...",
+          "slug": "duckdb-backend-for-martin-tileserver",
+          "status": null,
+          "student_name": "ManbhavSugla",
+          "student_profile": null,
+          "tags": [],
+          "title": "DuckDB Backend for Martin TileServer"
+        },
+        {
+          "code_url": null,
+          "description": "The majority of mapped sidewalks in OSM lack explicit names, which makes Valhalla generate vague pedestrian routing instructions. This project aims to resolve this problem with three different steps: First, parsing existing OSM tags such as (is_sidepath:of:name, street:name) that are currently ignored, as name aliases. This is a low-risk change that immediately benefits around 30,000 ways worldwide. Then, implementing spatial join in the graph enhancer that assigns street names to unnamed sidewalks by comparing them to nearby vehicular edges with matching heading parallelism and geometric proximity, using angle and distance thresholds. Third will be adjusting Odin's narrative generation so derived names produce natural phrasing instead of the current vague ones. Deliverables include Lua tag parsing with gurka integration tests, the spatial join algorithm with edge case handling, modified maneuver instructions, and performance benchmarks measuring tile build impact. Nice-to-have goals include using (is_sidepath:of) to adjust road class in the Sif pedestrian costing, detecting park entrances and the new ideas we discover during the project.",
+          "difficulty": null,
+          "id": "proj_openstreetmap_2026_X70HS5zI",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/X70HS5zI",
+          "proposal_id": "0SQK8ye9",
+          "short_description": "The majority of mapped sidewalks in OSM lack explicit names, which makes Valhalla generate vague pedestrian routing instructions. This project aims...",
+          "slug": "enhance-pedestrian-routing",
+          "status": null,
+          "student_name": "pacoalbacetec",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance Pedestrian Routing"
+        },
+        {
+          "code_url": null,
+          "description": "Valhalla currently lacks a scalable way to detect routing and guidance regressions introduced by pull requests. This project builds a three-component QA system: a coverage-driven Python route generator that produces 10,000+ test routes over a static Switzerland OSM extract, exercising all costing models and routing-relevant OSM tag categories; a GitHub Actions pipeline that builds Valhalla graphs from both master and PR code, runs all routes against both, and computes geometry and instruction diffs; and a React review application - built inside valhalla/web-app, where maintainers can inspect diffs route by route, compare map geometry and turn-by-turn instructions side by side, and accept or flag changes before the baseline updates. The deliverable is a maintainer-usable, publicly deployed QA tool that makes routing drift visible and catchable at PR review time.",
+          "difficulty": null,
+          "id": "proj_openstreetmap_2026_EaMOhhdy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/EaMOhhdy",
+          "proposal_id": "Y6K0pdmu",
+          "short_description": "Valhalla currently lacks a scalable way to detect routing and guidance regressions introduced by pull requests. This project builds a three-component...",
+          "slug": "automated-routing-qa-a-regression-testing-framework-for-routing-guidance-quality-in-valhalla",
+          "status": null,
+          "student_name": "Sherley Sonali",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Routing QA: A Regression Testing Framework for Routing & Guidance Quality in Valhalla"
+        },
+        {
+          "code_url": null,
+          "description": "closures.osm.ch is a community-driven platform for reporting temporary road \nclosures in real-time, built during GSoC 2025. It is not yet production-ready: \nthe Valhalla routing integration is architecturally backwards (the frontend \npushes coordinates to Valhalla rather than Valhalla pulling closure data), \ngovernment data feeds are unsupported, and several features needed for \nreal-world adoption remain incomplete.\n\nThis project closes that gap across three pillars: (1) replacing the prototype \nrouting integration with a correct architecture — a closure_sync sidecar service \nthat feeds Valhalla's native live traffic tiles infrastructure, with a \nbackend-served exclude_polygons endpoint as an immediate stepping-stone; \n(2) implementing CIFS and DATEX II importers to ingest authoritative government \nroad closure data with attribution and deduplication; and (3) completing the \nremaining loose ends — a Mapbox Vector Tile overlay of active closures with \nRedis caching, and UI internationalisation via Transifex.\n\nDeliverables: self-hosted Valhalla instance, POST /api/v1/routing/closure-aware \nendpoint, frontend cleanup, CIFS and DATEX II importers with shared base class, \nGET /api/v1/tiles/{z}/{x}/{y}.mvt endpoint, and i18n wiring with English and \nGerman initial translations.",
+          "difficulty": null,
+          "id": "proj_openstreetmap_2026_6WS8O5PX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/6WS8O5PX",
+          "proposal_id": "IYriNJmF",
+          "short_description": "closures.osm.ch is a community-driven platform for reporting temporary road closures in real-time, built during GSoC 2025. It is not yet...",
+          "slug": "make-closures-osm-ch-production-ready",
+          "status": null,
+          "student_name": "Venetis Charalampidis",
+          "student_profile": null,
+          "tags": [],
+          "title": "Make closures.osm.ch Production Ready"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

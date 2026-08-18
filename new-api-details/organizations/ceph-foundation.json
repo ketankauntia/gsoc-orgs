@@ -42,9 +42,9 @@
     "software defined storage",
     "Software-Defined-Storage"
   ],
-  "total_projects": 31,
+  "total_projects": 34,
   "stats": {
-    "avg_projects_per_appeared_year": 3.88,
+    "avg_projects_per_appeared_year": 3.78,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": 4,
@@ -56,7 +56,7 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 4,
@@ -69,9 +69,9 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 29
+    "total_students": 34
   },
   "years": {
     "year_2016": {
@@ -702,7 +702,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ceph"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/ceph",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Replacing hand-written radosgw-admin documentation with a programmatic pipeline using CLI11 as the single source of truth. Auto-generates --help, man page, and admin guide from C++ definitions.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2026_pkdmML8d",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pkdmML8d",
+          "proposal_id": "WESnjYyn",
+          "short_description": "Replacing hand-written radosgw-admin documentation with a programmatic pipeline using CLI11 as the single source of truth. Auto-generates --help, man...",
+          "slug": "radosgw-admin-ux-and-documentation-improvements",
+          "status": null,
+          "student_name": "Rotem Shapira",
+          "student_profile": null,
+          "tags": [],
+          "title": "radosgw admin UX and Documentation Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "Addressing a major security gap in Ceph RGW Kafka bucket notifications. Current support is incomplete for modern secure Kafka deployments, especially for GSSAPI (Kerberos), OAUTHBEARER (JWT), mTLS client authentication, and fileless CA/certificate handling. The plan is to extend RGW’s Kafka connection path to resolve security inputs with clear precedence, correctly map them to librdkafka, and ensure safe producer identity reuse, while adding deterministic local tests and automating them in teuthology.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2026_vYB7JYWk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vYB7JYWk",
+          "proposal_id": "mtpuDZSX",
+          "short_description": "Addressing a major security gap in Ceph RGW Kafka bucket notifications. Current support is incomplete for modern secure Kafka deployments, especially...",
+          "slug": "kafka-security-project",
+          "status": null,
+          "student_name": "Sujay Dongre",
+          "student_profile": null,
+          "tags": [],
+          "title": "Kafka Security Project"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the Ceph Dashboard by completing the migration from Bootstrap to the Carbon Design System and ensuring a consistent user experience across all components. Currently, the dashboard exists in a hybrid state with mixed UI frameworks, leading to inconsistencies, increased maintenance overhead, and a fragmented user experience.\n\nThe proposed solution involves fully refactoring legacy UI components to Carbon, standardizing the frontend architecture using the lazy-loaded RoutedModule pattern, and replacing modal-based workflows with dedicated routed pages for better scalability and performance. Additionally, the project will address broken unit and end-to-end tests, expand test coverage for critical modules, and ensure long term stability through reliable CI validation.\n\nKey deliverables include a fully carbonized and consistent UI, improved application performance through modular routing and lazy loading, and a robust testing suite including unit and e2e tests covering previously untested areas. These improvements will enhance usability for end users, reduce technical debt, and make the codebase more maintainable and contributor-friendly.",
+          "difficulty": null,
+          "id": "proj_ceph-foundation_2026_KvszXOEh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/KvszXOEh",
+          "proposal_id": "UJ3IXVUW",
+          "short_description": "This project focuses on improving the Ceph Dashboard by completing the migration from Bootstrap to the Carbon Design System and ensuring a consistent...",
+          "slug": "ceph-dashboard-carbonization-and-ux-consistency-improvements",
+          "status": null,
+          "student_name": "Syed Ali Ul Hasan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ceph Dashboard Carbonization and UX Consistency Improvements"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

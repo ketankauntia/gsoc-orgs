@@ -30,9 +30,9 @@
     "heathcare",
     "Polar Science"
   ],
-  "total_projects": 12,
+  "total_projects": 20,
   "stats": {
-    "avg_projects_per_appeared_year": 6,
+    "avg_projects_per_appeared_year": 6.67,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 12
+    "total_students": 20
   },
   "years": {
     "year_2016": null,
@@ -309,7 +309,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/alaska"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/alaska",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "LLMs rely on floating-point arithmetic for inference, but the Logarithmic Number System (LNS) offers a compelling alternative: multiplication becomes integer addition in the log domain, and 16-bit LNS (xlns16) uses only 2 bytes per element, half the memory bandwidth of float32. This project integrates the open-source xlnscpp C++ LNS library into ggml (the compute backend of llama.cpp) as a proper ggml_backend, enabling LLM inference to run entirely in xlns16 arithmetic as a proof of concept.\n\nThe implementation introduces GGML_TYPE_LNS16 as a native ggml datatype and implements the 13 operations required for a complete transformer inference pass (matrix multiply, softmax, RMS norm, RoPE, SiLU, residual add, along with some others), all using xlns16 kernels. Activations stay in xlns16 format throughout inference; weights are converted dynamically from their stored quantised formats (Q4_K_M, etc.) per kernel invocation using O(1) lookup tables. The backend is validated at two levels: a unit test confirms sub-0.6% relative error on matrix multiply, and an end-to-end run on SmolLM2-135M-Instruct confirms the full transformer executes without crashing.\n\nDeliverables: \n(1) GGML_TYPE_LNS16 datatype registered in ggml; \n(2) a complete ggml_backend for xlns16 arithmetic covering all ops needed for LLM inference; \n(3) integration with llama.cpp;\n(4) a validation test suite; \n(5) an accuracy analysis comparing LNS and FP output across model layers",
+          "difficulty": null,
+          "id": "proj_alaska_2026_3JyEMHnd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3JyEMHnd",
+          "proposal_id": "h97MSxTK",
+          "short_description": "LLMs rely on floating-point arithmetic for inference, but the Logarithmic Number System (LNS) offers a compelling alternative: multiplication becomes...",
+          "slug": "support-for-logarithmic-number-systems-in-large-language-models",
+          "status": null,
+          "student_name": "Abraham Paul",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support for Logarithmic Number Systems in Large Language Models"
+        },
+        {
+          "code_url": null,
+          "description": "The CONCORE framework requires a high-performance Julia bridge to handle complex control loop simulations without inheriting bloated dependencies. This project delivers concore-jl, architecting a strict separation between a zero-dependency core I/O protocol (Concore.jl) and optional parsing utilities (ConcoreUtils.jl). The final deliverable guarantees sub-sample state synchronization, comprehensive cross-language interoperability (Julia/Python/C++), and a fully automated CI/CD pipeline for analytical validation.",
+          "difficulty": null,
+          "id": "proj_alaska_2026_dBYE2ubZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/dBYE2ubZ",
+          "proposal_id": "AGVvXYFt",
+          "short_description": "The CONCORE framework requires a high-performance Julia bridge to handle complex control loop simulations without inheriting bloated dependencies....",
+          "slug": "a-reference-implementation-for-concore-library-in-julia",
+          "status": null,
+          "student_name": "Avinash Kumar Deepak",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Reference Implementation for concore Library in Julia"
+        },
+        {
+          "code_url": null,
+          "description": "Alaska's unique geography and infrastructure challenges severely impact equitable healthcare access. Currently, there is a lack of centralised, intersecting data to help identify \"healthcare deserts\" based on broadband connectivity, transportation routes, existing medical facilities as well as affordability. This makes it incredibly difficult for policymakers and healthcare networks to make data-driven decisions on where to expand telehealth services or prioritize physical infrastructure. Here, this project introduces TENeT (Telehealth Effectiveness and Necessity Tracker). TENeT is an open-source geospatial dashboard that layers real-world broadband performance data over socioeconomic and healthcare infrastructure maps. By calculating both the technical capacity and economic affordability of internet access, TENeT provides policymakers with a dynamic, multi-layered visualization to precisely target telehealth funding and infrastructure deployment in rural Alaska.\"",
+          "difficulty": null,
+          "id": "proj_alaska_2026_0aMa7QKU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/0aMa7QKU",
+          "proposal_id": "m4BVKjiU",
+          "short_description": "Alaska's unique geography and infrastructure challenges severely impact equitable healthcare access. Currently, there is a lack of centralised,...",
+          "slug": "telehealth-effectiveness-and-necessity-tracker-for-alaska-tenet",
+          "status": null,
+          "student_name": "Daksh Pathak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Telehealth Effectiveness and Necessity Tracker for Alaska (TENeT)"
+        },
+        {
+          "code_url": null,
+          "description": "This study focuses on the spatio-temporal dynamics of forest wildfires in Fairbanks under a changing climate. The research aims to analyze the patterns, causes, and impacts of wildfire occurrences using geospatial techniques. Satellite data such as Landsat and MODIS will be used to derive key indices including NDVI and NDMI to assess vegetation health and moisture conditions. Land Use/Land Cover (LULC), slope, aspect, wind speed, temperature, and rainfall data will be integrated within a GIS environment. Temporal analysis will be conducted to identify trends in temperature and precipitation, while change detection techniques will be applied to evaluate landscape transformations. A fire susceptibility map will be generated using a multi-criteria decision analysis approach to identify high-risk zones. The study will also examine the relationship between climate variability and wildfire frequency. The results will support early warning, risk assessment, and effective wildfire management strategies in the Fairbanks region.",
+          "difficulty": null,
+          "id": "proj_alaska_2026_ghKIKf41",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ghKIKf41",
+          "proposal_id": "TKKeZx8r",
+          "short_description": "This study focuses on the spatio-temporal dynamics of forest wildfires in Fairbanks under a changing climate. The research aims to analyze the...",
+          "slug": "spatio-temporal-dynamics-of-wildfires-fairbanks-in-100-miles",
+          "status": null,
+          "student_name": "Deep Mukherjee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Spatio-Temporal Dynamics of Wildfires Fairbanks in 100 miles"
+        },
+        {
+          "code_url": null,
+          "description": "Alaska's Arctic coastline is eroding rapidly, and tracking these changes at scale requires automated coastline extraction from satellite imagery. Manual digitization is too slow, and the existing pipeline has several gaps: training data includes cloud-affected and artifact-contaminated pixels, the dataset covers only 2017-2019, the model underperforms near coastal bluffs and in shadowed regions, and the pipeline outputs binary raster masks rather than the GIS-ready vectorized coastlines needed for erosion modeling.\nTo address this, I have already studied the codebase end-to-end, fixed the bugs that were preventing the pipeline from running, and replaced the baseline U-Net with an Attention ResUNet - a pretrained ResNet-34 encoder with attention-gated skip connections and a combined BCE + Dice loss - achieving a Dice score of 0.941 and IoU of 0.921 on the current dataset.\nDuring GSoC, I will close the remaining gaps: integrate PlanetLabs Usable Data Masks to exclude bad pixels from training; expand the dataset to cover 2020 onward; improve segmentation in cliff and shadow regions; investigate SWIR and elevation data as additional inputs; and produce vectorized coastline outputs with per-transect erosion rates. The result will be a pipeline that runs from raw PlanetLabs imagery to quantified shoreline change, ready to apply across Alaska.",
+          "difficulty": null,
+          "id": "proj_alaska_2026_ZTn2MoDk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZTn2MoDk",
+          "proposal_id": "27OJtmzZ",
+          "short_description": "Alaska's Arctic coastline is eroding rapidly, and tracking these changes at scale requires automated coastline extraction from satellite imagery....",
+          "slug": "automated-coastline-extraction-for-erosion-modeling-in-alaska",
+          "status": null,
+          "student_name": "Het_Shah04",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Coastline Extraction for Erosion Modeling in Alaska"
+        },
+        {
+          "code_url": null,
+          "description": "Teleradiology in underserved regions such as rural Alaska depends on reliable, low-latency transfer of large  DICOM medical imaging files between remote clinics and reading centers. Today, these transfers are governed by static configurations - a fixed IP address, port, and Application Entity (AE) Title standardized decades ago. This breaks silently when SCP nodes restart, IPs change, or storage queues fill.\n\nThis proposal introduces Dynamic DICOM Endpoints, an intelligent orchestration layer integrated with the open-source Orthanc PACS server and Docker containers on the Cloud. A FastAPI Orchestrator backed by a real-time Redis registry continuously monitors the health, latency, queue depth, and storage capacity of every Orthanc node in a multi-region deployment, selecting the optimal routing destination in milliseconds and replacing fragile static pipes with a self-healing, load-aware mesh. Deliverables include a four-region Docker Compose simulation environment; a Python telemetry daemon; a pluggable scoring algorithm; a thin Edge Agent bridging legacy scanners (GE, Siemens); a comprehensive test and benchmarking suite validating routing correctness, failover behavior, and transfer performance; and a documentation suite. All code will be contributed as open-source to the Diomede repository, directly improving imaging infrastructure for remote and resource-constrained healthcare settings.\n\nAs part of my pre-proposal engagement with the host organization, I submitted Issues #59, #79, and #85, along with the corresponding PRs #60, #80, and #86, to the Diomede repository. This contribution demonstrates my familiarity with the project's codebase and development workflow, and establishes a collaborative relationship with the maintainers ahead of the GSoC coding period.",
+          "difficulty": null,
+          "id": "proj_alaska_2026_XFenGo3E",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XFenGo3E",
+          "proposal_id": "6K9BtQa8",
+          "short_description": "Teleradiology in underserved regions such as rural Alaska depends on reliable, low-latency transfer of large DICOM medical imaging files between...",
+          "slug": "dynamic-dicom-endpoints-for-diomede",
+          "status": null,
+          "student_name": "Jessi Huang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Dynamic DICOM Endpoints for Diomede"
+        },
+        {
+          "code_url": null,
+          "description": "Bio-Block is an open-source healthcare data marketplace on Ethereum and IPFS that handles the full upload → anonymize → encrypt → sell → download lifecycle. However, the pipeline stops at download — once a buyer purchases and decrypts a dataset, there is no way to analyze it inside Bio-Block. This project adds a data analytics layer by introducing a dedicated FastAPI Analytics API (port 3003), a lightweight AnalyticsRegistry smart contract for on-chain result tracking, and a React dashboard for visualizations. The system supports three levels of analysis: graphical (distribution plots, heatmaps, scatter plots via matplotlib/plotly), descriptive (summary statistics, correlation matrices via pandas), and inferential (t-tests, chi-square, ANOVA via scipy/statsmodels). Results are stored on IPFS and linked to their source datasets on-chain via the AnalyticsRegistry contract, maintaining an unbroken chain of custody from data purchase through analysis. Deliverables include: \n\n(1) Analytics API microservice with EIP-712 authentication, \n(2) AnalyticsRegistry.sol smart contract deployed on Sepolia, \n(3) IPFS result storage and on-chain attestation pipeline, \n(4) Interactive React analytics dashboard integrated into the existing frontend, \n(5) Comprehensive test suite (80%+ coverage) and documentation. \n\nAn optional differential privacy layer using OpenDP is planned as a stretch goal.",
+          "difficulty": null,
+          "id": "proj_alaska_2026_sUt1XTUX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sUt1XTUX",
+          "proposal_id": "x1eWPFY6",
+          "short_description": "Bio-Block is an open-source healthcare data marketplace on Ethereum and IPFS that handles the full upload → anonymize → encrypt → sell → download...",
+          "slug": "building-a-decentralized-application-dapp-for-data-analysis-in-bio-block",
+          "status": null,
+          "student_name": "Santhil",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building a Decentralized Application (dApp) for Data Analysis in Bio-Block"
+        },
+        {
+          "code_url": null,
+          "description": "My proposal tackles the critical challenge of making raw medical data safe to share on Bio-Block without destroying its usefulness for machine learning. To achieve this, I'm building a \"zero touch\" FastAPI ingestion pipeline that acts as an automated watchdog, seamlessly using Microsoft Presidio to scrub sensitive personal health information from text, DICOM files, and medical images before they ever reach storage. Because we still need this data to be valuable for AI research, I'm implementing flexible \"Privacy Profiles\" that allow the system to intelligently preserve general demographics rather than just blindly deleting every identifier. Finally, since highly anonymized data is very difficult to search through, I'm building a hybrid search engine that combines exact keyword matching (BM25) with context aware semantic search (ChromaDB), ensuring researchers can easily discover the exact datasets they need without running into redundant search results.",
+          "difficulty": null,
+          "id": "proj_alaska_2026_pRIMRk1i",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pRIMRk1i",
+          "proposal_id": "E4WvHMpP",
+          "short_description": "My proposal tackles the critical challenge of making raw medical data safe to share on Bio-Block without destroying its usefulness for machine...",
+          "slug": "alaska-bio-block-gsoc-26-suryansh-maurya-project-no-6",
+          "status": null,
+          "student_name": "Suryansh Maurya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Alaska_BIO-BLOCK_GSoC'26 (Suryansh Maurya) Project no.6"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

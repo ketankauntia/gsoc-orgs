@@ -40,9 +40,9 @@
     "communication",
     "visualization"
   ],
-  "total_projects": 19,
+  "total_projects": 22,
   "stats": {
-    "avg_projects_per_appeared_year": 3.17,
+    "avg_projects_per_appeared_year": 3.14,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -54,7 +54,7 @@
       "year_2023": 3,
       "year_2024": 4,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -67,9 +67,9 @@
       "year_2023": 3,
       "year_2024": 4,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 19
+    "total_students": 22
   },
   "years": {
     "year_2016": null,
@@ -466,7 +466,72 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/submitty/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/submitty",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Submitty currently has bash scripts that require direct database calls. To improve maintainability, I will be working on some of Submitty’s bash scripts, converting the scripts to use the API. This will involve refactoring some existing scripts to be able to call the API. I will also expand the API to allow more remote management without requiring UI interaction. These changes will allow for better maintainability and easier utilization of the scripts.",
+          "difficulty": null,
+          "id": "proj_submitty_2026_FJfEncaE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/FJfEncaE",
+          "proposal_id": "e2NsvsGz",
+          "short_description": "Submitty currently has bash scripts that require direct database calls. To improve maintainability, I will be working on some of Submitty’s bash...",
+          "slug": "refining-and-updating-submitty-s-scripts-and-api",
+          "status": null,
+          "student_name": "elsume",
+          "student_profile": null,
+          "tags": [],
+          "title": "Refining and Updating Submitty’s Scripts and API"
+        },
+        {
+          "code_url": null,
+          "description": "This project develops an intelligent clustering system that groups student submissions by similar patterns, algorithmic approaches, and correctness levels. The system enables TAs to efficiently manage large-scale grading while maintaining fairness and consistency.\n\nProblem: TAs face repetitive, time-consuming grading of similar submissions with risk of inconsistency and human error, especially in large courses (100+ students).\n\nSolution: Automated clustering of submissions using hierarchical agglomerative clustering with interactive dendrogram visualization. TAs can merge/split/reject clusters, bulk apply feedback templates, and flexibly grade (bulk or individual).\n\nKey Deliverables:\n- Feature extraction engine (68-dim for code, 389-dim for text)\n- Hierarchical clustering with Ward linkage\n- Interactive dendrogram UI for TA manipulation\n- Bulk feedback application system with per-student customization\n- Flexible grading modes (bulk, individual, hybrid)\n- Comprehensive testing and documentation\n\nExpected Impact: 80-90% reduction in grading time while improving consistency and feedback quality. Time savings: 45 submissions graded in 15 minutes vs 225 minutes without clustering.",
+          "difficulty": null,
+          "id": "proj_submitty_2026_e3YU9deG",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/e3YU9deG",
+          "proposal_id": "hdvb01mT",
+          "short_description": "This project develops an intelligent clustering system that groups student submissions by similar patterns, algorithmic approaches, and correctness...",
+          "slug": "ai-ml-to-enhance-and-streamline-manual-ta-grading",
+          "status": null,
+          "student_name": "GarvitKhandelwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI/ML to Enhance and Streamline Manual/TA Grading"
+        },
+        {
+          "code_url": null,
+          "description": "Submitty's frontend relies on server-rendered Twig templates and jQuery for interactivity, leading to fragmented, hard-to-maintain interfaces. This project migrates Submitty's most critical pages - the TA grading interface, discussion forum, office hours queue, and rainbow grades customization to modular, reusable Vue.js components backed by clean PHP JSON APIs and centralized Pinia state management. The migration follows a progressive enhancement strategy using the Mount Container Pattern, allowing Vue components to coexist with legacy code at every stage, ensuring zero disruption to active users mid-semester. Deliverables include a reusable Vue component library, full reactive migration of the discussion forum and TA grading interface, a Pinia and Axios powered state and API layer, comprehensive unit and E2E tests, and a developer migration guide for future contributors. A proof of concept PR migrating the TA grading score box to Vue.js has already been submitted, validating the end-to-end approach before the program begins.",
+          "difficulty": null,
+          "id": "proj_submitty_2026_stDoMv66",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/stDoMv66",
+          "proposal_id": "6RzKwJ93",
+          "short_description": "Submitty's frontend relies on server-rendered Twig templates and jQuery for interactivity, leading to fragmented, hard-to-maintain interfaces. This...",
+          "slug": "interactive-user-interfaces-with-vue-js-submitty",
+          "status": null,
+          "student_name": "JndlAnsh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Interactive User Interfaces With Vue.js — Submitty"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

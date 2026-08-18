@@ -32,9 +32,9 @@
     "libraries",
     "Programming & Build Tools"
   ],
-  "total_projects": 16,
+  "total_projects": 18,
   "stats": {
-    "avg_projects_per_appeared_year": 5.33,
+    "avg_projects_per_appeared_year": 4.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -46,7 +46,7 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -59,9 +59,9 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 16
+    "total_students": 18
   },
   "years": {
     "year_2016": null,
@@ -404,7 +404,56 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/kotlin-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/kotlin-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "WebAssembly's call stack limit is unspecified by the spec and varies across host environments. As a result, any Kotlin/Wasm program that uses mutual recursion or deep tail calls is vulnerable to stack overflow at runtime, with no way to guarantee safe execution across browsers and runtimes. Kotlin's existing tailrec modifier mitigates this for simple self-recursion by rewriting functions as loops, but it cannot handle mutual recursion or indirect calls, and requires an explicit annotation that many developers will not add.\nThe WebAssembly Tail Call proposal (standardized and part of the Baseline target since 2024) addresses this at the instruction level with return_call and return_call_ref, which discard the current stack frame before transferring control and reduce stack consumption from O(n) to O(1) regardless of recursion structure.\nThis project integrates that proposal into the Kotlin/Wasm compiler backend. The work covers adding the missing RETURN_CALL opcode to the Wasm IR layer, detecting tail call positions in the code generation pipeline and emitting return_call and return_call_ref in place of the current call + return two-instruction sequence, writing a test suite covering mutual recursion and virtual dispatch across multiple host environments, and benchmarking return_call against the existing loop transformation to evaluate the tradeoffs.",
+          "difficulty": null,
+          "id": "proj_kotlin-foundation_2026_sJkheg4K",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sJkheg4K",
+          "proposal_id": "Bntzspl7",
+          "short_description": "WebAssembly's call stack limit is unspecified by the spec and varies across host environments. As a result, any Kotlin/Wasm program that uses mutual...",
+          "slug": "tail-call-support-in-the-kotlin-wasm-backend",
+          "status": null,
+          "student_name": "Ayako Hayasaka",
+          "student_profile": null,
+          "tags": [],
+          "title": "Tail call support in the Kotlin/Wasm backend"
+        },
+        {
+          "code_url": null,
+          "description": "Kotlin is one of the most widely used languages in modern software development, but there is no structured, global picture of how it is actually being taught. Students graduate without knowing coroutines. Courses skip Jetpack Compose. Academic syllabi lag years behind what the industry expects. This project exists to measure that gap and help close it.\nI will collect and analyze data from 80+ university curricula across 6 regions, online course platforms including Udemy, Coursera, and JetBrains Academy, surveys of 150+ students, educators, and developers, and 500+ public GitHub repositories comparing educational and real-world Kotlin code. Using Python, SQL, and Tableau, I will identify where the gaps are largest, what is driving them, and what can be done about it.\nThe deliverables are: a curated open dataset of Kotlin educational resources, an interactive dashboard for the community to explore trends by region and topic, and a comprehensive \"Kotlin in Education\" report with concrete recommendations for the Kotlin Foundation and educators worldwide.",
+          "difficulty": null,
+          "id": "proj_kotlin-foundation_2026_ZiHM31P7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZiHM31P7",
+          "proposal_id": "J0CDpFsm",
+          "short_description": "Kotlin is one of the most widely used languages in modern software development, but there is no structured, global picture of how it is actually...",
+          "slug": "mapping-the-global-kotlin-education-landscape",
+          "status": null,
+          "student_name": "Mark Seif Khalil",
+          "student_profile": null,
+          "tags": [],
+          "title": "Mapping the Global Kotlin Education Landscape"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

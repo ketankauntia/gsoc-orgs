@@ -35,9 +35,9 @@
     "ground penetrating radar",
     "optimisation"
   ],
-  "total_projects": 18,
+  "total_projects": 21,
   "stats": {
-    "avg_projects_per_appeared_year": 3.6,
+    "avg_projects_per_appeared_year": 3.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -49,7 +49,7 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -62,9 +62,9 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 18
+    "total_students": 21
   },
   "years": {
     "year_2016": null,
@@ -444,7 +444,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gprmax"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gprmax",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Problem:\ngprMax's devel branch GPU solver (cuda_opencl/ directory) supports CUDA, OpenCL, and Metal via shared kernel templates. But the Plane Wave (TF/SF) source from GSoC 2023 remains CPU-only Cython, forcing CPU-GPU transfers every timestep that negate GPU speedup.\nsolution:\nI will create new kernel templates in cuda_opencl/ following the existing multi-backend pattern:\n1) Create knl_planewave_updates.py: batched kernel updating all six 1D DPW auxiliary arrays in one launch.\n2) Create knl_tfsf_injection.py: TF/SF correction injection at six boundary faces, coalescing optimized per-face with shared memory buffers.\n3) Optimize boundary storage: SoA layout, 128-byte padding, precomputed index maps.\n4) Testing suite: GPU vs Cython comparison across free-space, slab, oblique, and polarization cases.\nWhy me :\nI built a PyCUDA heat diffusion solver with shared memory tiling, vectorized loads, and occupancy tuning, the same techniques this project needs. I have raised 8+ issues and multiple PRs to gprMax and studied all 13 files in cuda_opencl/ in depth.\nDeliverables: \nmulti-backend GPU kernels for DPW update and TF/SF injection, optimized memory layout, and automated testing suite. Outcome: TF/SF runs entirely on GPU, zero CPU fallback.",
+          "difficulty": null,
+          "id": "proj_gprmax_2026_DI0v1kpA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DI0v1kpA",
+          "proposal_id": "ld7BLue4",
+          "short_description": "Problem: gprMax's devel branch GPU solver (cuda_opencl/ directory) supports CUDA, OpenCL, and Metal via shared kernel templates. But the Plane Wave...",
+          "slug": "gpu-acceleration-of-plane-wave-tf-sf-source-formulations-in-gprmax",
+          "status": null,
+          "student_name": "ABH123",
+          "student_profile": null,
+          "tags": [],
+          "title": "GPU Acceleration of Plane Wave (TF/SF) Source Formulations in gprMax"
+        },
+        {
+          "code_url": null,
+          "description": "gprMax users currently visualize simulation output using static terminal scripts with no interactivity. This project builds a reactive web-based dashboard using marimo, replacing that workflow with four components: parameter controls with live geometry preview, a simulation progress tracker, post-processing visualization for A-scans and B-scans, and a set of Reactive Recipes for common modelling scenarios. A working prototype covering all three visualization components is already built and running against real gprMax HDF5 output on the devel branch.",
+          "difficulty": null,
+          "id": "proj_gprmax_2026_lXqoi4wN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lXqoi4wN",
+          "proposal_id": "b3p0lvlw",
+          "short_description": "gprMax users currently visualize simulation output using static terminal scripts with no interactivity. This project builds a reactive web-based...",
+          "slug": "reactive-simulation-and-analytics-integrating-marimo-with-gprmax",
+          "status": null,
+          "student_name": "Gaurav.Sharma",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reactive Simulation and Analytics Integrating marimo with gprMax"
+        },
+        {
+          "code_url": null,
+          "description": "gprMax, an open-source FDTD electromagnetic simulator used in published research across GPR infrastructure assessment, landmine detection, archaeology, glaciology, and NASA Mars exploration (RIMFAX/Perseverance), currently lacks comprehensive automated testing. This proposal delivers a three-tier test framework: (1) unit tests covering every core Python and Cython module in isolation; (2) integration tests verifying CPU, GPU, and MPI backend consistency and HDF5 I/O correctness; and (3) physics validation tests that compare simulation outputs against known analytical solutions including plane-wave propagation, PML reflection coefficient, energy conservation, and the reciprocity theorem. All tests run automatically on Ubuntu, Windows, and macOS via GitHub Actions on every push to devel. The end-of-summer deliverable is a production-grade, CI-integrated test suite ready for merger into the main gprMax repository.",
+          "difficulty": null,
+          "id": "proj_gprmax_2026_uGyoXWw9",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uGyoXWw9",
+          "proposal_id": "kADb7222",
+          "short_description": "gprMax, an open-source FDTD electromagnetic simulator used in published research across GPR infrastructure assessment, landmine detection,...",
+          "slug": "building-a-comprehensive-test-suite-for-gprmax",
+          "status": null,
+          "student_name": "Sahibjot",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building a Comprehensive Test Suite for gprMax"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

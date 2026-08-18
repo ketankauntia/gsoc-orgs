@@ -30,9 +30,9 @@
     "mobile apps",
     "programming languages"
   ],
-  "total_projects": 22,
+  "total_projects": 27,
   "stats": {
-    "avg_projects_per_appeared_year": 3.67,
+    "avg_projects_per_appeared_year": 3.86,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": 2,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": 2,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 21
+    "total_students": 27
   },
   "years": {
     "year_2016": null,
@@ -537,7 +537,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/dart"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/dart",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Extend ffigen to support C++, enabling Dart developers to use C++ libraries without manual wrappers. The project simplifies integration, reduces errors, and improves productivity by automating the process and providing a seamless developer experience.",
+          "difficulty": null,
+          "id": "proj_dart_2026_OASvDLAH",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/OASvDLAH",
+          "proposal_id": "YG1PKGEb",
+          "short_description": "Extend ffigen to support C++, enabling Dart developers to use C++ libraries without manual wrappers. The project simplifies integration, reduces...",
+          "slug": "c-c-compatibility-tool-for-ffigen",
+          "status": null,
+          "student_name": "Hassnaa Mohamed Ahmed",
+          "student_profile": null,
+          "tags": [],
+          "title": "C++/C Compatibility Tool for FFIgen"
+        },
+        {
+          "code_url": null,
+          "description": "The Dart and Flutter IntelliJ plugins rely on persistent WebSocket connections to communicate with the Dart VM Service and the Dart Tooling Daemon. The current implementation uses the Weberknecht WebSocket library, which does not properly handle WebSocket ping/pong control frames. In environments with antivirus software idle connections may be terminated, causing debugging sessions and tooling communication to disconnect unexpectedly.\n\nThis project proposes migrating the WebSocket transport used by the Java VM service client to the modern WebSocket implementation available in the Java standard library. The migration will update the connection and message transport logic while preserving the existing VM service protocol.\n\nThe deliverables include the new transport implementation, integration into both the Dart and Flutter IntelliJ plugins, removal of Weberknecht dependencies, and validation across common development workflows.",
+          "difficulty": null,
+          "id": "proj_dart_2026_985GmbLR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/985GmbLR",
+          "proposal_id": "7QPke22h",
+          "short_description": "The Dart and Flutter IntelliJ plugins rely on persistent WebSocket connections to communicate with the Dart VM Service and the Dart Tooling Daemon....",
+          "slug": "migrate-intellij-plugins-off-weberknecht-web-socket-library",
+          "status": null,
+          "student_name": "Javad Asadi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Migrate Intellij Plugins off Weberknecht Web Socket Library"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes an experimental Android-specific backend for package:webcrypto that replaces the bundled BoringSSL native library with calls to Android's built-in Java Cryptography Architecture (JCA), accessed through package:jnigen. The current BoringSSL/FFI backend ships an approximately 300-500 KB native library per ABI. A JCA backend eliminates this binary overhead entirely by using cryptographic providers already present in the Android runtime. The project will implement Dart wrappers for all Web Crypto primitives (digest, HMAC, AES-GCM/CBC/CTR, RSA, ECDSA, ECDH, HKDF, PBKDF2) behind the existing webcrypto platform interface, with full conformance testing against the BoringSSL backend. A working sample project already demonstrates the approach for P0 primitives (SHA-1/256/384/512, HMAC, AES-GCM) with statistical benchmarks across 7 Android devices showing JCA is 7-29x faster for hashing at large payloads while BoringSSL retains advantages for AES-GCM. Deliverables include the complete JCA backend on an experimental branch, a performance analysis report with binary size comparison, documentation, and a migration guide.",
+          "difficulty": null,
+          "id": "proj_dart_2026_hXF55vKW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hXF55vKW",
+          "proposal_id": "fKbxr5Av",
+          "short_description": "This project proposes an experimental Android-specific backend for package:webcrypto that replaces the bundled BoringSSL native library with calls to...",
+          "slug": "android-jca-backend-for-package-webcrypto",
+          "status": null,
+          "student_name": "M. Fazri Nizar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Android JCA Backend for package:webcrypto"
+        },
+        {
+          "code_url": null,
+          "description": "When debugging Dart applications that use dart:ffi (Foreign Function Interface), developers encounter a frustrating limitation: Pointer objects appear as opaque memory addresses. For a Pointer<MyStruct> containing fields a = 42 and b = 3.14, the debugger shows only 0x7f8a4b3c2d10, not the actual data. This forces developers to rely on print statements or risky manual memory inspection, creating a significant blind spot when working with native code.\n\nThis project aims to make native memory inspection a first-class debugging feature in Dart DevTools. By extending the VM Service Protocol, implementing safe pointer dereferencing, and enhancing DevTools' UI, developers will be able to inspect struct fields directly in the debugger without crashing on invalid pointers. The goal is to display Pointer<MyStruct> contents as intuitively as regular Dart objects. The outcome: seamless, crash-free inspection of native memory during development",
+          "difficulty": null,
+          "id": "proj_dart_2026_lH8t9v3H",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lH8t9v3H",
+          "proposal_id": "RGkuFUyB",
+          "short_description": "When debugging Dart applications that use dart:ffi (Foreign Function Interface), developers encounter a frustrating limitation: Pointer objects...",
+          "slug": "inspect-native-memory-in-dart-devtools",
+          "status": null,
+          "student_name": "Nourhan H.",
+          "student_profile": null,
+          "tags": [],
+          "title": "Inspect native memory in Dart DevTools"
+        },
+        {
+          "code_url": null,
+          "description": "While working with real-time systems, I observed that Flutter DevTools provides detailed visibility for HTTP requests but lacks support for persistent protocols like WebSockets. Once a connection is established, developers have little to no insight into message flow, latency, or connection lifecycle, making debugging significantly harder.\n\nThis project aims to address that gap by extending the Dart SDK (dart:io, dart:developer, and the VM Service) to capture WebSocket frame-level and connection-level data. This data will then be integrated into the DevTools Network panel, following the existing HTTP profiling model to ensure consistency and minimal overhead.\n\nThe implementation will include WebSocket instrumentation in dart:io, exposure of profiling data via the VM Service, and UI integration in DevTools to display messages, sizes, latency, and lifecycle events. If time permits, the same architecture will be extended to support gRPC traffic.\n\nBy the end of the project, developers will be able to inspect WebSocket communication in DevTools with the same clarity and usability as HTTP, significantly improving debugging for real-time applications.",
+          "difficulty": null,
+          "id": "proj_dart_2026_C0x2USWU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/C0x2USWU",
+          "proposal_id": "HrViGswy",
+          "short_description": "While working with real-time systems, I observed that Flutter DevTools provides detailed visibility for HTTP requests but lacks support for...",
+          "slug": "add-websocket-grpc-support-to-flutter-devtools-network-panel",
+          "status": null,
+          "student_name": "Yash Hosalli",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add WebSocket/GRPC Support to Flutter DevTools Network panel"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

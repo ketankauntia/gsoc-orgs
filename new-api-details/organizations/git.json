@@ -36,9 +36,9 @@
     "dvcs",
     "version-control"
   ],
-  "total_projects": 22,
+  "total_projects": 26,
   "stats": {
-    "avg_projects_per_appeared_year": 2.2,
+    "avg_projects_per_appeared_year": 2.36,
     "projects_by_year": {
       "year_2016": 1,
       "year_2017": 1,
@@ -50,7 +50,7 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 1,
@@ -63,9 +63,9 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 22
+    "total_students": 26
   },
   "years": {
     "year_2016": {
@@ -526,7 +526,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/git"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/git",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The new git repo command doesn't handle file paths yet, and it forces users to dump all repository data at once instead of just requesting what they need. This makes scripting difficult and forces developers to keep using the older git rev-parse command. This project improves the git repo info command in two main ways: First, by adding path.* keys (like path.git-dir) that can return both absolute and relative paths. Second, by building a fast, lightweight search system (O(log N)) so users can easily query specific categories of information. As a stretch goal, the project will evolve git repo structure into a diagnostic tool by introducing metric distributions, such as object size and entry histograms.",
+          "difficulty": null,
+          "id": "proj_git_2026_O1nF3zMT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/O1nF3zMT",
+          "proposal_id": "fliptPuj",
+          "short_description": "The new git repo command doesn't handle file paths yet, and it forces users to dump all repository data at once instead of just requesting what they...",
+          "slug": "improve-the-new-git-repo-command",
+          "status": null,
+          "student_name": "K Jayatheerth",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve the new git repo command"
+        },
+        {
+          "code_url": null,
+          "description": "Git's partial clone allows cloning repositories without downloading all objects (blobs, trees, ...). These objects are fetched on demand from the remote when needed. However, when a user needs metadata about these remote objects (size, type, hash, ...), Git has no efficient way of doing this without downloading all the object content. The server side support for `object-info` protocol was implemented by Calvin Wan in 2021. Eric Ju built the client-side `remote-object-info` for `cat-file --batch-command`. This project finishes Eric Ju's work on `remote-object-info` for `git cat-file --batch-command`, resolves the pending feedback from Junio Hamano and Jeff King, and extends support for `%(objecttype)`. The main technical fix is to replace the insufficient `strstr()` format validation with an `allow_list` to prevent crashes on unsupported placeholders, and extending the v2 protocol server and client to handle `%(objecttype)`.\r\n \r\nAfter the project, Git will have a working `remote-object-info` for `cat-file --batch-command` supporting `%(objectsize)`, and a v2 protocol extension adding `%(objecttype)` support on both server and client, with tests and documentation.",
+          "difficulty": null,
+          "id": "proj_git_2026_752yzmwm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/752yzmwm",
+          "proposal_id": "S3U9vU1q",
+          "short_description": "Git's partial clone allows cloning repositories without downloading all objects (blobs, trees, ...). These objects are fetched on demand from the...",
+          "slug": "complete-and-extend-the-remote-object-info-command-for-git-cat-file",
+          "status": null,
+          "student_name": "Pablo Sabater",
+          "student_profile": null,
+          "tags": [],
+          "title": "Complete and extend the remote-object-info command for git cat-file"
+        },
+        {
+          "code_url": null,
+          "description": "Problem: Git's \"partial clone\" is a lifesaver for huge repos because it lets you download only the files you actually need. But once you download a file (a \"blob\"), it stays on your disk forever. Currently, Git has no way to \"un-fetch\" these files. Over time, your \"partial\" clone starts looking like a massive full clone, and the only fix is to delete everything and start over.\n\nSolution: I want to build a \"reverse gear\" for partial clones. My project will add a safe way for Git to drop large, local files you no longer need, while keeping a \"promise\" that it can get them back from the server later.\n\nI’ll be focusing on three main things:\nSafety: Ensuring Git double-checks that the server still has the file before we delete it locally.\n\n\"Promise\" Contract: Updating Git’s internal records so it knows a deleted file isn't missing, just stored remotely.\n\nUser Control: Adding this to git maintenance so users can easily reclaim space without being C experts.\n\nBy the end of the summer, Git will have a new capability to prune local blobs safely. This includes the core C logic for identifying and removing objects, integration with the git maintenance command, and a full suite of tests to ensure no data is ever lost.",
+          "difficulty": null,
+          "id": "proj_git_2026_hs14IFAn",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hs14IFAn",
+          "proposal_id": "7yTz3QK2",
+          "short_description": "Problem: Git's \"partial clone\" is a lifesaver for huge repos because it lets you download only the files you actually need. But once you download a...",
+          "slug": "improve-disk-space-recovery-for-partial-clones",
+          "status": null,
+          "student_name": "Siddharth Shrimali",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Disk Space Recovery for Partial Clones"
+        },
+        {
+          "code_url": null,
+          "description": "Git’s core C codebase still relies heavily on global state, such as\nthe_repository and various environment-derived variables defined in\nenvironment.c. While this design was sufficient for a standalone CLI\ntool, it becomes problematic in more demanding scenarios.\n\nIn particular, the reliance on implicit global state makes it difficult\nto safely embed Git as a library. Functions may read configuration or\nenvironment variables through global state, and in some cases call die(),\nwhich terminates the entire process. This behavior is incompatible with\nlong-running or multi-threaded applications that need finer-grained\ncontrol over error handling and repository isolation.\n\nBuilding upon the ongoing work from previous GSoC and Outreachy efforts,\nthis project focuses on reducing such global dependencies by making state\nexplicit. Where appropriate, repository-specific data will be passed\nthrough struct repository and related structures such as repo_settings or\nrepo_config_values. Subsystem-specific variables will be localized to\ntheir respective domains instead of remaining globally accessible.\n\nBy replacing implicit global assumptions with explicit data structure, this\nwork aims to make Git’s internal APIs easier to reason about, safer to use\nin multi-repository contexts, and more suitable for long-term libification.",
+          "difficulty": null,
+          "id": "proj_git_2026_Lx1PmL4k",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Lx1PmL4k",
+          "proposal_id": "WOwcKoOA",
+          "short_description": "Git’s core C codebase still relies heavily on global state, such as the_repository and various environment-derived variables defined in...",
+          "slug": "refactoring-in-order-to-reduce-git-s-global-state",
+          "status": null,
+          "student_name": "Tian Yuchen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Refactoring in order to reduce Git’s global state"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

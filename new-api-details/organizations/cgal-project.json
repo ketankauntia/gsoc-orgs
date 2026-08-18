@@ -44,9 +44,9 @@
     "triangulation",
     "computation geometry"
   ],
-  "total_projects": 58,
+  "total_projects": 65,
   "stats": {
-    "avg_projects_per_appeared_year": 6.44,
+    "avg_projects_per_appeared_year": 6.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 4,
@@ -58,7 +58,7 @@
       "year_2023": 10,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 7
     },
     "students_by_year": {
       "year_2016": null,
@@ -71,9 +71,9 @@
       "year_2023": 10,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 7
     },
-    "total_students": 53
+    "total_students": 65
   },
   "years": {
     "year_2016": null,
@@ -1184,7 +1184,136 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/cgal-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 7,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/cgal-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Iteratively reshaping the cells of a 3D mesh to improve quality for simulations like finite element analysis — is computationally expensive: large meshes can take hours on a single CPU core. CGAL provides a widely used implementation, and GSoC 2025 built the infrastructure to run it in parallel, achieving a ~28% speedup on large meshes. Two problems remained: threads spent most of their time waiting to access the mesh rather than doing useful work, and the parallel version produced lower mesh quality than the sequential one. The 2025 code also never made it into the official CGAL\n  repository.\n\n  This project fixes both problems and introduces a new scheduling strategy: instead of rigidly applying all splits, then all collapses, then all flips, then all smooths, a unified priority queue ranks every candidate operation by its estimated quality improvement and always applies the most beneficial one first. This has the potential to reach the same final quality in fewer operations and has not previously been applied to tetrahedral remeshing.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_LDQLCNLF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/LDQLCNLF",
+          "proposal_id": "nNVzLVIB",
+          "short_description": "Iteratively reshaping the cells of a 3D mesh to improve quality for simulations like finite element analysis — is computationally expensive: large...",
+          "slug": "parallel-tetrahedral-remeshing-using-tbb",
+          "status": null,
+          "student_name": "Iason Manolas",
+          "student_profile": null,
+          "tags": [],
+          "title": "Parallel tetrahedral remeshing using TBB"
+        },
+        {
+          "code_url": null,
+          "description": "We want to implement an algorithm to compute from a surface mesh representation a basis for 1-homotopy and 1-homology groups represented by polylines and with minimal combined length. \n\nTo do this, we will first extract a minimal set of loops that are independent in the homotopy group and pass through a common vertex; this set is a basis for the homotopy group. We will furthermore minimize the cumulated length of those loops.\n\nThen, by iterating this process on all vertices, we will compute a basis for the homology group.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_ttOfqQB7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ttOfqQB7",
+          "proposal_id": "Lcwxtgxx",
+          "short_description": "We want to implement an algorithm to compute from a surface mesh representation a basis for 1-homotopy and 1-homology groups represented by polylines...",
+          "slug": "homotopy-and-homology-loops-on-surfaces",
+          "status": null,
+          "student_name": "Raco",
+          "student_profile": null,
+          "tags": [],
+          "title": "Homotopy and homology loops on surfaces"
+        },
+        {
+          "code_url": null,
+          "description": "CGAL's Basic Viewer provides one-call visualization of any CGAL data structure via draw(), but its OpenGL shader system has concrete user-facing bugs: edges disappear at certain zoom levels due to a numerically unstable inverse(u_Mvp) call in the geometry shader (#9292); edge width and vertex size are computed from the bounding box diagonal, producing hair-thin or geometry-obscuring results depending on object scale (#9327); 2D/3D camera transitions miscompute orthoCoef, breaking orthographic display (#5334); and the OpenGL < 4.3 compatibility path renders solid black (#6754, already fixed in my PR #9399). I will redesign the edge rendering pipeline to operate entirely in clip/NDC space, replace the bounding-box-based sizing with a viewport-relative pixel metric, fix camera transitions, add optional fragment-shader anti-aliasing, and produce a comparison report analyzing how MeshLab (VCGlib) and ParaView (VTK) solve wide-line rendering. I have already shipped three PRs into the Basic Viewer shader system and have 16 PRs on CGAL overall. Deliverables: robust clip-space edge shader, correct initial sizing, depth-correct edges, anti-aliased edges, updated OpenGL < 4.0 fallback path, MeshLab/ParaView comparison report, and regression tests. All changes backward-compatible with the existing draw() API.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_sSDJMWLc",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sSDJMWLc",
+          "proposal_id": "n5SE55Kc",
+          "short_description": "CGAL's Basic Viewer provides one-call visualization of any CGAL data structure via draw(), but its OpenGL shader system has concrete user-facing...",
+          "slug": "shaders-for-basic-viewer",
+          "status": null,
+          "student_name": "Rajdeep Singh Kushwaha",
+          "student_profile": null,
+          "tags": [],
+          "title": "Shaders for Basic Viewer"
+        },
+        {
+          "code_url": null,
+          "description": "Some packages in CGAL need to compute the intersections of segments, rays, or lines with an implicit function. This is generally done through naive bisection algorithms. For some configurations however, we know that the implicit function is a signed distance field (offset meshing, alpha wrapping, ...), or an harmonic function (Poisson reconstruction). In these configurations, we can do better than bisection algorithms. The goal of this project is to implement these marching algorithms for the 3D Mesh Generation, Poisson Surface Reconstruction, and Alpha Wrapping packages, and identify other relevant packages, and possible improvements on these algorithms.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_dRG95XCt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/dRG95XCt",
+          "proposal_id": "sncqaF0s",
+          "short_description": "Some packages in CGAL need to compute the intersections of segments, rays, or lines with an implicit function. This is generally done through naive...",
+          "slug": "ray-marching-for-mesh-generation",
+          "status": null,
+          "student_name": "Théo Tyburn",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ray Marching for Mesh Generation"
+        },
+        {
+          "code_url": null,
+          "description": "The current CGAL Python bindings expose powerful computational geometry algorithms, but they've accumulated real usability problems: method parameters show up as arg0, arg1, arg2 rather than meaningful names, docstrings are either absent or embedded so deeply inside binding code that they obscure the logic itself, CGAL's Named Parameters system isn't available from Python at all, and the CI pipeline isn't running. More critically, I found and documented 7 crash scenarios where Python objects outlive freed C++ DCEL memory → situations that kill the interpreter with a segfault instead of raising a Python exception.\n\nOver the past three months I've been working directly in the codebase building the foundation for this project. I've added nb::arg() parameter names to AOS2 binding methods, written inline docstrings following CGAL's own documentation style, built a 7-flag CMake check system aligned 1:1 with CGAL's macro structure, and validated a working 8-kernel CI pipeline before this proposal was even submitted. I've also worked through the Named Parameters challenge far enough to identify the property map type-bridge problem → the part that makes Weeks 7–8 genuinely hard.\n\nThe deliverables for the 12-week program are: complete named parameter coverage across AOS2 binding files, full docstring coverage for AOS2 methods, 7 CGAL-aligned CMake precondition flags with fixes contributed upstream to CGAL C++, Python-accessible Named Parameters for key PMP functions (compute_vertex_normals, smooth_mesh, triangulate_faces), bindings for at least one currently unbounded package, and a production-ready 8-kernel CI pipeline with integrated test coverage.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_CUZ1O4hV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/CUZ1O4hV",
+          "proposal_id": "Z34jBgMG",
+          "short_description": "The current CGAL Python bindings expose powerful computational geometry algorithms, but they've accumulated real usability problems: method...",
+          "slug": "enhancing-cgal-python-bindings",
+          "status": null,
+          "student_name": "Utkarsh Khajuria",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing CGAL Python Bindings"
+        },
+        {
+          "code_url": null,
+          "description": "Point cloud data is widely used in domains such as reverse engineering, medical imaging, and cultural heritage preservation. However, many applications (e.g., simulation via FEM) require high-quality triangle meshes derived from point clouds.\n\nThis project aims to implement the algorithm proposed in \"Lipschütz, H., Reitebuch, U., Polthier, K., & Skrodzki, M. (2023). Feature-aware manifold meshing and remeshing of point clouds and polyhedral surfaces with guaranteed smallest edge length\" and integrate it into the CGAL library. The method generates high-quality, isotropic meshes with near-uniform edge lengths and manifold guarantees, addressing limitations in existing reconstruction approaches.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_GqDcvdfV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/GqDcvdfV",
+          "proposal_id": "7HLszWSz",
+          "short_description": "Point cloud data is widely used in domains such as reverse engineering, medical imaging, and cultural heritage preservation. However, many...",
+          "slug": "feature-aware-manifold-meshing-and-remeshing-of-point-clouds-and-polyhedral-surfaces",
+          "status": null,
+          "student_name": "Vanrap",
+          "student_profile": null,
+          "tags": [],
+          "title": "Feature-aware Manifold Meshing and Remeshing of Point Clouds and Polyhedral Surfaces"
+        },
+        {
+          "code_url": null,
+          "description": "This project investigates GPU-accelerated approaches for spatial searching and mesh intersection in CGAL, a widely used computational geometry library. These operations are fundamental to applications such as collision detection, mesh processing, and geometric querying, but are currently limited by CPU-based performance, especially for large or dense datasets.\n\nThe core idea is to leverage the massive parallelism of GPUs to accelerate the broad-phase of spatial queries, where potential interacting primitive pairs are identified. These candidate pairs are then refined using CGAL’s exact geometric predicates to preserve robustness and correctness. The project will explore multiple architectural designs, including hybrid GPU–CPU pipelines, fully GPU-based approaches, and alternative spatial data structures such as bounding volume hierarchies and spatial grids. An initial exploration phase will compare these approaches across diverse input configurations (e.g., overlapping vs non-overlapping meshes) to identify the most effective design.\n\nThe final outcome will be a modular and reusable GPU-accelerated spatial searching framework integrated with CGAL. Deliverables include a prototype implementation of selected GPU-based spatial data structures, a candidate pair generation system, integration with CGAL’s exact predicates, and a comprehensive benchmarking suite evaluating performance, scalability, and robustness across different workloads.",
+          "difficulty": null,
+          "id": "proj_cgal-project_2026_8PoqEVF0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8PoqEVF0",
+          "proposal_id": "tbvjd81c",
+          "short_description": "This project investigates GPU-accelerated approaches for spatial searching and mesh intersection in CGAL, a widely used computational geometry...",
+          "slug": "spatial-searching-on-gpu-for-cgal",
+          "status": null,
+          "student_name": "Yury Elkin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Spatial Searching on GPU for CGAL"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

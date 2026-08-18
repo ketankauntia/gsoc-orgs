@@ -28,9 +28,9 @@
     "SLSA",
     "supplychain"
   ],
-  "total_projects": 0,
+  "total_projects": 3,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 0
+    "total_students": 3
   },
   "years": {
     "year_2016": null,
@@ -70,7 +70,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/konflux",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project adds zstd:chunked compression to Konflux builds while keeping compatibility with older Docker versions. It does this by pushing both gzip and zstd images in the same index, so older clients use gzip and newer ones get faster pulls.\n\nI’ll update build tasks, fix release pipeline issues caused by dual manifests, and ensure everything works with proper tests and docs. The result is faster image pulls with no breakage for existing users.",
+          "difficulty": null,
+          "id": "proj_konflux_2026_EnejDA6z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/EnejDA6z",
+          "proposal_id": "VXN17MAf",
+          "short_description": "This project adds zstd:chunked compression to Konflux builds while keeping compatibility with older Docker versions. It does this by pushing both...",
+          "slug": "zstd-chunked-compression",
+          "status": null,
+          "student_name": "Amanyd",
+          "student_profile": null,
+          "tags": [],
+          "title": "zstd:chunked compression"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to add native support for the UV Python package manager to Hermeto, enabling hermetic builds for projects using pyproject.toml and uv.lock. Currently, Hermeto only supports pip-based workflows, limiting adoption for teams using modern Python tooling.\n\nThe main challenge is that UV tightly couples dependency resolution, fetching, and installation, which conflicts with Hermeto’s requirement to separate prefetching from build execution. Additionally, URL and Git dependencies must be handled in a way that works fully offline.\n\nTo address this, Hermeto will directly parse uv.lock as the single source of truth and deterministically fetch all dependencies without invoking UV. An inject-files mechanism will rewrite remote sources in pyproject.toml to local paths, enabling offline installation.\n\nThe project will also implement marker-based artifact and wheel selection, ensuring compatibility with the target environment, and include SBOM generation using lockfile data to improve supply chain transparency.\n\n\nDeliverables :-\n1)A complete uv.lock parser integrated into Hermeto\n2)Support for fetching:\n     -PyPI (registry) dependencies\n     -Git dependencies\n     -Direct URL dependencies\n     -Local/editable/file dependencies\n3)Artifact and wheel selection logic based on marker/environment filtering\n4)Implementation of the inject-files system for offline installation\n5)Integration with Hermeto’s existing prefetch and build pipeline\n6)SBOM generation from uv.lock data\n7)Comprehensive documentation\n     -Architecture and design decisions\n     -User workflow and setup guide\n     -Examples and edge case handling\n8)Testing(Unit & Integration)",
+          "difficulty": null,
+          "id": "proj_konflux_2026_VY4ib9Aj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VY4ib9Aj",
+          "proposal_id": "FxYyDj32",
+          "short_description": "This project aims to add native support for the UV Python package manager to Hermeto, enabling hermetic builds for projects using pyproject.toml and...",
+          "slug": "prefetch-adding-support-for-the-uv-python-package-manager-to-the-hermeto-project",
+          "status": null,
+          "student_name": "Harshit_Bansal",
+          "student_profile": null,
+          "tags": [],
+          "title": "prefetch: Adding support for the uv Python package manager to the Hermeto project"
+        },
+        {
+          "code_url": null,
+          "description": "Konflux container builds produce different image digests from identical source commits. The buildah task already supports reproducibility flags, but the pipelines don't wire them and there's no way to verify reproducibility automatically. This project audits all non-determinism sources in the build pipeline, wires SOURCE_DATE_EPOCH and related parameters through every pipeline variant, builds a benchmark suite of Containerfiles that exercise different reproducibility scenarios, and creates a standalone verify-reproducibility Tekton task. \n\nDeliverables: a non-determinism audit document, pipeline wiring patches, a 5+ Containerfile benchmark suite, a verification task with diffoci integration, and user/developer documentation.",
+          "difficulty": null,
+          "id": "proj_konflux_2026_gQ5QIazr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gQ5QIazr",
+          "proposal_id": "hdUPcMMd",
+          "short_description": "Konflux container builds produce different image digests from identical source commits. The buildah task already supports reproducibility flags, but...",
+          "slug": "reproducible-builds-pipeline-wiring-verification-tooling-and-benchmark-suite",
+          "status": null,
+          "student_name": "Jamesss",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reproducible Builds: Pipeline Wiring, Verification Tooling, and Benchmark Suite"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": null,

@@ -135,6 +135,21 @@ const CHANGELOG_ENTRIES_UNSORTED: ChangelogEntry[] = [
       { type: 'fix', text: 'Enforced administrator authorization on every content mutation endpoint independently of hidden navigation and UI controls.' },
       { type: 'test', text: 'Added migration, validation, authorization-boundary, and public-projection regression coverage.' },
     ]
+  },
+  {
+    date: "Aug 18, 2026",
+    timeStamp: 20260818,
+    version: "v1.5.3",
+    title: "Complete GSoC 2026 Project Catalog",
+    summary: "Recovered the missing 2026 project and contributor catalog, retained every available project detail, and made source limitations explicit instead of displaying false zeroes.",
+    prLinks: [],
+    changes: [
+      { type: 'fix', text: 'Added all 1,140 GSoC 2026 projects and contributors to yearly, project, organization, API, and hosted database records.' },
+      { type: 'feat', text: 'Stored project titles, short and full descriptions, proposal IDs, official project URLs, and canonical organization relationships.' },
+      { type: 'fix', text: 'Replaced the misleading zero mentor count with an unavailable state until Google exposes the authoritative 2026 archive data.' },
+      { type: 'refactor', text: 'Removed the 2025 ingestion cutoff and retained rich project fields from historical organization records during catalog imports.' },
+      { type: 'test', text: 'Added checked-in and hosted parity checks for projects, contributors, mentors, descriptions, URLs, proposal IDs, and organization totals.' },
+    ]
   }
 ];
 

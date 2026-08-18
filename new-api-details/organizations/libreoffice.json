@@ -41,9 +41,9 @@
     "end user application",
     "end-user application"
   ],
-  "total_projects": 65,
+  "total_projects": 68,
   "stats": {
-    "avg_projects_per_appeared_year": 6.5,
+    "avg_projects_per_appeared_year": 6.18,
     "projects_by_year": {
       "year_2016": 9,
       "year_2017": 9,
@@ -55,7 +55,7 @@
       "year_2023": 5,
       "year_2024": 7,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 9,
@@ -68,9 +68,9 @@
       "year_2023": 5,
       "year_2024": 7,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 59
+    "total_students": 68
   },
   "years": {
     "year_2016": {
@@ -1333,7 +1333,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/libreoffice"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/libreoffice",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to support using OpenType math fonts with a MATH table in\nLibreOffice Math. It will use data from the MATH table to layout math formulas, based on\nOpenType MATH, TeX, or MathML Core algorithms. For backward compatibility, this new code should only be used for fonts with a MATH table and only for new documents.\nThis project will fix a number of outstanding issues with LibreOffice Math, and allow using more math fonts, which will attract more users, particularly in the scientific and academic community.​",
+          "difficulty": null,
+          "id": "proj_libreoffice_2026_QcZIdqyr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QcZIdqyr",
+          "proposal_id": "U4qOmXRO",
+          "short_description": "The goal of this project is to support using OpenType math fonts with a MATH table in LibreOffice Math. It will use data from the MATH table to...",
+          "slug": "libreoffice-opentype-math",
+          "status": null,
+          "student_name": "Aya Jamal AlSayed",
+          "student_profile": null,
+          "tags": [],
+          "title": "LibreOffice OpenType MATH"
+        },
+        {
+          "code_url": null,
+          "description": "LibreOffice Writer's internal layout engine is extremely intricate and historically dense. This means that attempting to modernize and refactor it is extremely difficult without comprehensive automated tests that account for every possible case. This is precisely why this project is shifting away from conventional bug hunting and instead focusing on an analytical and metric-driven Quality Assurance approach. By utilizing gcov and lcov, it is possible to automatically determine which C++ execution branches in the core layout module (sw/source/core/layout/) are not yet tested. By reverse-engineering test documents that specifically invoke these branches, it is then possible to create comprehensive CppUnit tests that utilize parseLayoutDump() and XPath queries to mathematically validate and \"lock in\" the correct internal XML layout tree representation. The final deliverables will be continuous lcov coverage reports that demonstrate quantifiable metrics, custom-engineered test documents (.odt/.docx), and dozens of high-quality C++ layout tests that will be merged into sw/qa/extras/layout/. This project will create a comprehensive safety net that is significantly cheaper, easier, and safer for all core developers.",
+          "difficulty": null,
+          "id": "proj_libreoffice_2026_9V8b3QvL",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9V8b3QvL",
+          "proposal_id": "8hf1SXHN",
+          "short_description": "LibreOffice Writer's internal layout engine is extremely intricate and historically dense. This means that attempting to modernize and refactor it is...",
+          "slug": "improve-word-processor-test-coverage",
+          "status": null,
+          "student_name": "Manish Bera",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve word processor test coverage"
+        },
+        {
+          "code_url": null,
+          "description": "JPEG XL is an image format that allows for lossy and lossless compression, and is generally better than JPEG at this. LibreOffice currently supports many image file formats, but JPEG XL is not one of them. This project would add such support. The potential for storage savings that support for this image format would bring will mean a better experience for experienced and newer LibreOffice users alike. In addition, web browsers are increasingly supporting JPEG XL (it is available in nightly Firefox builds), so this project will also help LibreOffice users by improving compatibility.",
+          "difficulty": null,
+          "id": "proj_libreoffice_2026_WdCsAb7P",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WdCsAb7P",
+          "proposal_id": "z5xG5jQP",
+          "short_description": "JPEG XL is an image format that allows for lossy and lossless compression, and is generally better than JPEG at this. LibreOffice currently supports...",
+          "slug": "add-jpeg-xl-import-support",
+          "status": null,
+          "student_name": "solisj",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add JPEG XL import support"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -38,9 +38,9 @@
     "computer algebra",
     "symbolic mathematics"
   ],
-  "total_projects": 63,
+  "total_projects": 68,
   "stats": {
-    "avg_projects_per_appeared_year": 6.3,
+    "avg_projects_per_appeared_year": 6.18,
     "projects_by_year": {
       "year_2016": 7,
       "year_2017": 8,
@@ -52,7 +52,7 @@
       "year_2023": 5,
       "year_2024": 5,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 7,
@@ -65,9 +65,9 @@
       "year_2023": 5,
       "year_2024": 5,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 63
+    "total_students": 68
   },
   "years": {
     "year_2016": {
@@ -1278,7 +1278,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sympy"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/sympy",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to improve the capabilities of the current integration module of SymPy. To do so, as a first step, rationalizing substitutions will be added, in order to find the antiderivative for functions that SymPy cannot handle. Subsequently, new rules for the handling of special functions will be introduced and the pre-existing code will be improved, which sometimes can report incorrect results for some edge cases. Finally, a module for contour integration will be implemented, in order to be able to calculate specific definite integrals without having to find the antiderivative, handling new cases not yet covered.",
+          "difficulty": null,
+          "id": "proj_sympy_2026_P2DbjEp2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/P2DbjEp2",
+          "proposal_id": "sn9CP4Fg",
+          "short_description": "The goal of this project is to improve the capabilities of the current integration module of SymPy. To do so, as a first step, rationalizing...",
+          "slug": "enhancing-sympy-s-integral-module-rationalizing-substitutions-and-contour-integration",
+          "status": null,
+          "student_name": "Edoardo Matachione",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing SymPy’s Integral Module: Rationalizing Substitutions and Contour Integration"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to implement algorithms character tables computation algorithms for SymPy. Fourteen years ago in 2012, Aleksandar Makelov's GSoC project regarding group theory envisioned the feature of computing character tables in SymPy, and this GSoC project in 2026 is planning to fulfill this long-standing goal.",
+          "difficulty": null,
+          "id": "proj_sympy_2026_4hr0SZPK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4hr0SZPK",
+          "proposal_id": "QjtlcVq9",
+          "short_description": "This proposal aims to implement algorithms character tables computation algorithms for SymPy. Fourteen years ago in 2012, Aleksandar Makelov's GSoC...",
+          "slug": "group-representation-theory-and-character-tables",
+          "status": null,
+          "student_name": "ForeverHaibara",
+          "student_profile": null,
+          "tags": [],
+          "title": "Group Representation Theory and Character Tables"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance SymPy's GCD computation speed for polynomials in the sparse representation. I will implement Zippel's algorithm from scratch and finalize the integration of the sparse subresultant PRS algorithm. Subsequently, I will develop a  benchmarking suite to evaluate all SymPy's GCD algorithms. The resulting data will serve  a new heuristic-based dispatcher, ensuring SymPy selects the optimal strategy for any given input.",
+          "difficulty": null,
+          "id": "proj_sympy_2026_8qaoacDm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8qaoacDm",
+          "proposal_id": "J5AlaF6y",
+          "short_description": "This project aims to enhance SymPy's GCD computation speed for polynomials in the sparse representation. I will implement Zippel's algorithm from...",
+          "slug": "enhancement-of-gcd-for-polynomials-in-the-sparse-representation",
+          "status": null,
+          "student_name": "luca-berton1",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancement of gcd for polynomials in the sparse representation"
+        },
+        {
+          "code_url": null,
+          "description": "Symbolic integration is one of the central capabilities of any advanced calculator system e.g. Mathematica. SymPy currently provides several integration strategies including heuristic methods, algorithmic approaches such as the Risch algorithm, and a rule-based integrator implemented in sympy.integrals.manualintegrate.\n\nThe manualintegrate module performs integration by recursively applying pattern-based rules similar to how integrals are solved manually. While this approach produces readable step-by-step results and supports a wide range of expressions, its current rule coverage is limited and many integrals involving special functions or structured products are not recognized.\n\nThe goal of this project is to extend the rule-based integration system in manualintegrate, focusing on improving support for special functions, structured products, and rule prioritization. The project will expand the set of integration rules, improve heuristics for rule selection, and ensure better compatibility with SymPy's symbolic simplification system.\n\nThe approach is to first analyze the gaps between manualintegrate and more comprehensive rule-based systems such as RUBI in order to identify missing classes of integrals and structural weaknesses. Based on this analysis, the project will design SymPy-compatible rule representations using its existing pattern-matching framework, ensuring consistency with the current architecture. New rules will then be implemented incrementally, with each addition accompanied by rigorous testing and validation to guarantee correctness and stability. Throughout this process, particular attention will be given to preserving and extending SymPy’s step-by-step explanation capability, ensuring that all newly supported integrals remain interpretable and aligned with human-style symbolic reasoning.\n\nThe end goal is to make SymPy’s integrator more complete, explainable, and closer to human-style symbolic reasoning, while maintaining correctness.",
+          "difficulty": null,
+          "id": "proj_sympy_2026_PTyd6ZXi",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PTyd6ZXi",
+          "proposal_id": "dCiaPfbb",
+          "short_description": "Symbolic integration is one of the central capabilities of any advanced calculator system e.g. Mathematica. SymPy currently provides several...",
+          "slug": "extending-rule-based-symbolic-integration",
+          "status": null,
+          "student_name": "SalahDin Rezk",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending Rule-Based Symbolic Integration"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on making SymPy's assumptions system more robust, efficient, and reliable through a three component architectural upgrade. The first component introduces a backend solver for Equality Logic and Uninterpreted Functions (EUF) directly into the SAT engine. The second component upgrades the Linear Real Arithmetic (LRA) solver to safely handle complex domains, irrational boundary limits, and symbolic infinities (like oo) without failing while also refactoring the core ask dispatcher to resolve many recursion loops during query evaluation. Last component, the project will replace thousands of hardcoded static unit tests with dynamic, property-based tests using the Hypothesis library. By automatically generating complex mathematical trees to find hidden bugs, these enhancements will smooth out the rough edges of the assumptions module, making it a significantly faster and mathematically stronger.",
+          "difficulty": null,
+          "id": "proj_sympy_2026_i3j6Xcjo",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/i3j6Xcjo",
+          "proposal_id": "wAXZwQtW",
+          "short_description": "This project focuses on making SymPy's assumptions system more robust, efficient, and reliable through a three component architectural upgrade. The...",
+          "slug": "enhancing-assumptions-via-euf-integration-lra-robustness-and-property-based-testing",
+          "status": null,
+          "student_name": "Sujal Jayant Kumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Assumptions via EUF Integration, LRA Robustness, and Property-Based Testing"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {
