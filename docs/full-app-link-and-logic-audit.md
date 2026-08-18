@@ -60,7 +60,7 @@ The fix enforces canonical identity at data generation, URL construction, route 
 - Added canonical redirects from the legacy Unicode URLs.
 - Added `scripts/normalize-organization-slugs.ts` for repeatable data normalization.
 - Replaced the unsafe variable JSON import with a generated lazy-import registry containing all 522 organization documents.
-- Added `scripts/generate-organization-imports.ts` and wired it into `prebuild` and `gsoc:sync`, preventing future archive refreshes from omitting organization modules from the production bundle.
+- Added `scripts/generate-organization-imports.mjs` and wired it into `prebuild` and `gsoc:sync`, preventing future archive refreshes from omitting organization modules from the production bundle.
 
 ### Project details
 
@@ -184,7 +184,7 @@ Only confirmed 404/410 responses should be treated as broken automatically. A bl
 - `scripts/audit-internal-links.ts`
 - `scripts/audit-external-links.ts`
 - `scripts/audit-sitemaps.ts`
-- `scripts/generate-organization-imports.ts`
+- `scripts/generate-organization-imports.mjs`
 - `scripts/normalize-organization-slugs.ts`
 - `scripts/normalize-project-organization-identities.ts`
 - `lib/generated/organization-imports.ts`

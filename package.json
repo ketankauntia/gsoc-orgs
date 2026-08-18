@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node --experimental-strip-types scripts/generate-organization-imports.ts",
+    "prebuild": "node scripts/generate-organization-imports.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -25,7 +25,7 @@
     "postinstall": "node -e \"console.log('Supabase client requires no code generation')\"",
     "prepare": "husky",
     "generate:organizations": "tsx scripts/import-supabase-catalog.ts",
-    "generate:organization-imports": "node --experimental-strip-types scripts/generate-organization-imports.ts",
+    "generate:organization-imports": "node scripts/generate-organization-imports.mjs",
     "generate:tech-stack": "tsx scripts/regenerate-tech-topics-from-json.ts",
     "generate:topics": "tsx scripts/regenerate-tech-topics-from-json.ts",
     "gsoc:fetch": "npx tsx scripts/fetch-year-data.ts",
