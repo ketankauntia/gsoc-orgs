@@ -57,9 +57,9 @@
     "graphs",
     "artificial intelligence"
   ],
-  "total_projects": 140,
+  "total_projects": 152,
   "stats": {
-    "avg_projects_per_appeared_year": 15.56,
+    "avg_projects_per_appeared_year": 15.2,
     "projects_by_year": {
       "year_2016": 10,
       "year_2017": 16,
@@ -71,7 +71,7 @@
       "year_2023": 14,
       "year_2024": 19,
       "year_2025": 14,
-      "year_2026": null
+      "year_2026": 12
     },
     "students_by_year": {
       "year_2016": 10,
@@ -84,9 +84,9 @@
       "year_2023": 14,
       "year_2024": 19,
       "year_2025": 14,
-      "year_2026": null
+      "year_2026": 12
     },
-    "total_students": 136
+    "total_students": 152
   },
   "years": {
     "year_2016": {
@@ -2754,7 +2754,216 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-julia-language"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 12,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-julia-language",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to extend the Julia linear algebra ecosystem by developing vendor-agnostic GPU kernels in NextLA.jl for large-scale structured matrices. It focuses on tile low-rank (TLR) representations, which exploit low-rank structure to reduce computational cost and memory usage. The project will implement truncated SVD routines and core TLR arithmetic kernels, including low-rank GEMM, TRSM, and SYRK with adaptive truncation. These kernels will serve as building blocks for large distributed TLR algorithms, demonstrated through the implementation of a distributed TLR Cholesky factorization. By the end of the project, NextLA.jl will provide a portable, composable foundation for GPU-accelerated distributed linear algebra.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_lzS59FMG",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lzS59FMG",
+          "proposal_id": "TgT6NZA9",
+          "short_description": "This project aims to extend the Julia linear algebra ecosystem by developing vendor-agnostic GPU kernels in NextLA.jl for large-scale structured...",
+          "slug": "extending-nextla-jl-with-portable-tile-low-rank-kernels",
+          "status": null,
+          "student_name": "alecarraro",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending NextLA.jl with Portable Tile Low-Rank Kernels"
+        },
+        {
+          "code_url": null,
+          "description": "KomaMRI.jl is a high-performance Julia package for MRI simulation and differentiable workflows, but its use is currently limited to the Julia ecosystem, creating a barrier for the broader Python-based scientific computing and machine learning community. This project introduces komamripy, a lightweight Python wrapper that exposes KomaMRI’s core simulation and differentiable capabilities through a minimal, intuitive API. The approach leverages Julia–Python interoperability to map data structures between environments, incorporates Julia-side precompilation to reduce first-use latency, and enables flexible GPU backend support across CUDA, AMDGPU, Metal, and oneAPI. The project will deliver a pip-installable Python package with CI-tested builds and automated releases, precompiled simulation and autodiff workflows, cross-platform GPU backend selection, and a validated end-to-end example demonstrating differentiable RF pulse optimization using JAX, along with supporting documentation and example scripts.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_WCXj4K8n",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WCXj4K8n",
+          "proposal_id": "NwEuMbEF",
+          "short_description": "KomaMRI.jl is a high-performance Julia package for MRI simulation and differentiable workflows, but its use is currently limited to the Julia...",
+          "slug": "komamripy-python-wrapper-for-komamri",
+          "status": null,
+          "student_name": "Anvika Singhal",
+          "student_profile": null,
+          "tags": [],
+          "title": "komamripy - Python Wrapper for KomaMRI"
+        },
+        {
+          "code_url": null,
+          "description": "Julia's medical imaging stack currently relies on 3D U-Net variants for segmentation, which lose spatial           \n  relationships through max-pooling. This project implements 3D capsule network architectures in Lux.jl that preserve  \n  part-whole spatial hierarchies through dynamic routing-by-agreement.                                                 \n                                                                                                                     \n  I will build reusable capsule layer primitives (PrimaryCapsule3D, ConvCapsule3D, routing modules), two full          \n  architectures (3D SegCaps and a SegCaps-UNet hybrid), and custom GPU-accelerated routing kernels using               \n  KernelAbstractions.jl. The full pipeline integrates with MedPipe3D.jl for data loading, training, and evaluation.  \n                                                                                                                       \n  Deliverables: (1) Capsule layer primitives as Lux.jl modules, (2) 3D SegCaps architecture, (3) SegCaps-UNet hybrid,\n  (4) GPU routing kernels, (5) training pipeline with MedPipe3D.jl, (6) benchmarks across all 10 Medical Segmentation  \n  Decathlon tasks (Dice, HD95, cross-task transfer vs 3D U-Net), (7) documentation and pretrained weights, (8) PRs to\n  JuliaHealth.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_6UgT3DI2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/6UgT3DI2",
+          "proposal_id": "Y5dggP8Q",
+          "short_description": "Julia's medical imaging stack currently relies on 3D U-Net variants for segmentation, which lose spatial relationships through max-pooling. This...",
+          "slug": "capsule-networks-for-3d-medical-imaging-segmentation-in-julia",
+          "status": null,
+          "student_name": "Bhavya-QuantDeveloper",
+          "student_profile": null,
+          "tags": [],
+          "title": "Capsule Networks for 3D Medical Imaging Segmentation in Julia"
+        },
+        {
+          "code_url": null,
+          "description": "Advanced magnetic resonance imaging techniques, such as RF pulse optimization, increasingly rely on complex, high-performance physical simulations like those defined in KomaMRI.jl. Currently, integrating these simulations into optimization loops is bottlenecked by the lack of native gradient propagation. This project aims to unlock gradient-based optimization within the Koma ecosystem by enabling reverse-mode automatic differentiation (AD) as a first-class feature.\n\nBy systematically integrating state-of-the-art AD tools, specifically Enzyme.jl and Reactant.jl, this project will make both the standard BlochSimple method and the highly optimized, custom Bloch GPU kernels fully differentiable. Core deliverables include establishing AD correctness baselines against FiniteDifferences.jl, designing a memory-efficient Simulation data structure to minimize device-host transfers, and resolving low-level upstream compatibility issues with CUDA.jl and Enzyme. Ultimately, this project will provide the Julia MRI community with a robust, fully differentiable simulation stack, culminating in an interactive tutorial for 1D RF pulse optimization.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_fT22brOX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fT22brOX",
+          "proposal_id": "QTIZK23z",
+          "short_description": "Advanced magnetic resonance imaging techniques, such as RF pulse optimization, increasingly rely on complex, high-performance physical simulations...",
+          "slug": "differentiable-gpu-accelerated-mri-simulations",
+          "status": null,
+          "student_name": "Kareem Fareed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Differentiable GPU-accelerated MRI Simulations"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the challenge of unreliable LLM outputs in complex health informatics workflows by building a domain-grounded Retrieval-Augmented Generation (RAG) system within JuliaHealth. It enables users to convert natural language queries into accurate, executable FunSQL.jl workflows by grounding responses in curated resources like OMOP and OHDSI. The project will deliver a modular baseline RAG pipeline, a reproducible evaluation framework to benchmark query quality, and clear documentation with an end-to-end demonstration for usability and future extension.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_WQuvjY26",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WQuvjY26",
+          "proposal_id": "cuYh1tZx",
+          "short_description": "This project addresses the challenge of unreliable LLM outputs in complex health informatics workflows by building a domain-grounded...",
+          "slug": "a-generalized-rag-llm-workflow-support-tool-for-juliahealth",
+          "status": null,
+          "student_name": "Param Thakkar",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Generalized RAG-LLM Workflow Support Tool for JuliaHealth"
+        },
+        {
+          "code_url": null,
+          "description": "Graph Neural Networks (GNNs) rely on message passing, traditionally implemented via a gather/scatter mechanism. In GraphNeuralNetworks.jl, this approach materializes dense feature matrices on graph edges, leading to severe memory bottlenecks and reduced performance as graph sizes scale. This project addresses this limitation by redefining message passing as non-materializing Sparse Matrix-Matrix Multiplications (SpMM). By treating the graph as a sparse mathematical operator, this project will unlock significant computational efficiency and memory savings on CUDA GPUs. The core objectives include integrating COO storage, upstreaming patches to CUDA.jl, and refactoring the GNNlib API. To ensure continuous momentum during upstream review cycles, the project features a secondary track focused on upgrading the Automatic Differentiation (AD) pipeline by fully integrating Mooncake.jl and Enzyme.jl, alongside expanding the ecosystem with new datasets and new tutorials / improved documentation.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_ZEaHtnWu",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZEaHtnWu",
+          "proposal_id": "yD8vfvGO",
+          "short_description": "Graph Neural Networks (GNNs) rely on message passing, traditionally implemented via a gather/scatter mechanism. In GraphNeuralNetworks.jl, this...",
+          "slug": "improving-performance-using-sparse-linear-algebra",
+          "status": null,
+          "student_name": "Parv Mittal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving performance using sparse linear algebra"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a Julia module for simulating and optimizing Bell distillation circuits, addressing the challenge of selecting efficient entanglement purification strategies under varying noise and resource constraints. I will first construct a structured database of Bell distillation circuits with associated performance metrics. I will then design an optimization algorithm that selects the most suitable circuit based on inputs such as target fidelity, error rates, and resource availability. The project will include a simulation framework for evaluating circuit performance under configurable noise models. Deliverables include the circuit database, simulation tools, optimization algorithm, and a well-documented, user-friendly Julia product that integrates with existing quantum simulation workflows. This tool will enable researchers to systematically explore and deploy optimal distillation strategies, improving efficiency and accelerating experimentation in quantum computing.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_MuCOYt2C",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MuCOYt2C",
+          "proposal_id": "EzAAGsIa",
+          "short_description": "This project aims to develop a Julia module for simulating and optimizing Bell distillation circuits, addressing the challenge of selecting efficient...",
+          "slug": "bell-distillation-optimization-algorithm",
+          "status": null,
+          "student_name": "Rohan101",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bell Distillation Optimization Algorithm"
+        },
+        {
+          "code_url": null,
+          "description": "My main goal this summer is to make Adaptive Mesh Refinement (AMR) fast and efficient for P4estMesh on GPUs within Trixi.jl. Right now, whenever the mesh adapts dynamically, it triggers repeated memory allocations on the device. This creates a severe host-device synchronization bottleneck that kills performance, despite the excellent hardware support we have via KernelAbstractions.jl.\n\nTo solve this, I will build an allocation-free memory manager. By implementing a multi-pool arena specifically designed to match Trixi's Struct-of-Arrays (SoA) layout, I aim to eliminate these driver-level stalls. My final deliverables include a fully functional, type-stable GPU AMR pipeline and comprehensive performance benchmarks across both NVIDIA and AMD hardware",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_VvgBXe8Y",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VvgBXe8Y",
+          "proposal_id": "eqSZqPAT",
+          "short_description": "My main goal this summer is to make Adaptive Mesh Refinement (AMR) fast and efficient for P4estMesh on GPUs within Trixi.jl. Right now, whenever the...",
+          "slug": "allocation-free-gpu-adaptive-mesh-refinement-for-p4estmesh-in-trixi-jl",
+          "status": null,
+          "student_name": "Shahu Karale",
+          "student_profile": null,
+          "tags": [],
+          "title": "Allocation-Free GPU Adaptive Mesh Refinement for P4estMesh in Trixi.jl."
+        },
+        {
+          "code_url": null,
+          "description": "This project develops agent-accessible CLI tooling for the Julia Bayesian ecosystem, delivering three main components: DoodlePPL CLI for model validation, code generation, sampling, and diagnostics with structured JSON output, MCMCChains.js, a TypeScript npm library enabling MCMC diagnostics and visualizations in the browser and TuringCLI, a command-line interface for Turing.jl that provides machine-readable JSON outputs, with all three deliverables building upon and extending the GSoC 2025 work on DoodleBUGS.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_vlJyyQi2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vlJyyQi2",
+          "proposal_id": "MjKtB9z9",
+          "short_description": "This project develops agent-accessible CLI tooling for the Julia Bayesian ecosystem, delivering three main components: DoodlePPL CLI for model...",
+          "slug": "cli-tools-for-efficient-mcmc-inference-in-turinglang",
+          "status": null,
+          "student_name": "Shravanpuri Goswami",
+          "student_profile": null,
+          "tags": [],
+          "title": "CLI Tools for Efficient MCMC Inference in TuringLang"
+        },
+        {
+          "code_url": null,
+          "description": "The Julia GPU ecosystem allows users to write array programs that run seamlessly across NVIDIA, AMD, and Intel GPUs. This functional portability relies on GPUArrays.jl, which defines the common interface implemented by all vendor packages. However, several foundational operations currently lack shared implementations. Operations such as reverse, findall, accumulate!, and mapreduce either crash on backends lacking a vendor override or silently degrade to CPU execution by copying data back and forth. A direct source audit of GPUArrays.jl (v11.4.1), CUDA.jl, AMDGPU.jl, oneAPI.jl, and Metal.jl confirmed these gaps: reverse and findall are entirely absent from the shared fallback layer, accumulate! exists only as a scalar CPU fallback, and mapreducedim! is declared as an error(\"Not implemented\") stub, forcing every backend to maintain isolated, vendor-specific implementations.\n\nThis project resolves these portability gaps by establishing a cleaner, more robust architecture: moving critical GPU kernels upstream to AcceleratedKernels.jl (AK.jl) while refining GPUArrays.jl into a lightweight, pure delegation layer. Building upon the newly introduced KernelIntrinsics API, this approach implements highly optimized, vendor-neutral kernels directly within AK.jl. Because Julia’s multiple dispatch inherently prefers the most specific method, routing AnyGPUArray fallbacks to AK.jl means backends with existing optimized vendor methods remain untouched, while backends missing the functionality automatically receive high-performance GPU execution instead of a crash or silent slowdown.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_urgppqMn",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/urgppqMn",
+          "proposal_id": "SOO0smxj",
+          "short_description": "The Julia GPU ecosystem allows users to write array programs that run seamlessly across NVIDIA, AMD, and Intel GPUs. This functional portability...",
+          "slug": "juliagpu-improving-gpu-stack-portability-in-juliagpu",
+          "status": null,
+          "student_name": "Shreyas Hegde",
+          "student_profile": null,
+          "tags": [],
+          "title": "JuliaGPU: Improving GPU stack portability in JuliaGPU"
+        },
+        {
+          "code_url": null,
+          "description": "Classical force fields in molecular dynamics are fast but cannot capture bond breaking, charge transfer, or complex many-body chemistry. Machine learning potentials (MLPs) close this gap — offering near-quantum accuracy at a fraction of ab initio cost. Molly.jl currently supports MLPs only through a Python bridge (ASECalculator), which requires a Python runtime and bypasses Julia's differentiable programming stack entirely.\n\nThis project delivers native Julia support for four widely-used MLP families: ANI (neural network potential for organic molecules), ACE (linear body-ordered basis expansion), NequIP, and Allegro (E(3)-equivariant graph neural networks). ANI is implemented from scratch in pure Julia using Lux.jl, with pre-trained ANI-1x/ANI-2x weights loaded from HDF5. ACE is integrated via the mature ACEpotentials.jl package. NequIP and Allegro are wrapped from TorchScript-exported models via PythonCall, following the existing ASECalculator pattern.\n\nAll four potentials plug into Molly.jl's general_inters dispatch loop with zero changes to core simulation code. Pure-Julia models (ANI, ACE) are fully differentiable via Enzyme reverse-mode AD and GPU-accelerated via KernelAbstractions. The result: researchers can run differentiable, ML-accelerated molecular dynamics entirely within Julia — no Python, no overhead, composable with the full SciML ecosystem.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_gZvz8vOK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gZvz8vOK",
+          "proposal_id": "THWl8EUd",
+          "short_description": "Classical force fields in molecular dynamics are fast but cannot capture bond breaking, charge transfer, or complex many-body chemistry. Machine...",
+          "slug": "molly-jl-machine-learning-potentials-for-molecular-dynamics",
+          "status": null,
+          "student_name": "Siva Sathyaseelan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Molly.jl: Machine Learning Potentials for Molecular Dynamics"
+        },
+        {
+          "code_url": null,
+          "description": "Dagger.jl currently serializes all GPU tasks onto a single stream per device, leaving independent DAG branches unable to run concurrently and GPU hardware severely underutilized. This project implements multi-stream execution for the CUDA and ROCm backends by replacing the single fixed stream with a per-device stream pool, integrating stream-aware scheduling into the task dispatch layer, and replacing the global device barrier with event-based synchronization. The expected outcome is a significant reduction in end-to-end latency, improved Streaming Multiprocessor occupancy, and meaningful overlap between memory transfers and kernel execution.",
+          "difficulty": null,
+          "id": "proj_the-julia-language_2026_SV281F4e",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SV281F4e",
+          "proposal_id": "5e9ZQla0",
+          "short_description": "Dagger.jl currently serializes all GPU tasks onto a single stream per device, leaving independent DAG branches unable to run concurrently and GPU...",
+          "slug": "implementing-gpu-multi-stream-capabilities-to-dagger-jl",
+          "status": null,
+          "student_name": "Victor Camara",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing GPU Multi-Stream Capabilities to Dagger.jl"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

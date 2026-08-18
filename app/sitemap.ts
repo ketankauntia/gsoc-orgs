@@ -87,6 +87,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/yearly',
     '/blog',
     '/proposals',
+    '/contributor-blogs',
   ]
 
   const routes: MetadataRoute.Sitemap = [

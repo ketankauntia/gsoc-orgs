@@ -46,9 +46,9 @@
     "soft-matter-physics",
     "machine-learning"
   ],
-  "total_projects": 16,
+  "total_projects": 19,
   "stats": {
-    "avg_projects_per_appeared_year": 2.67,
+    "avg_projects_per_appeared_year": 2.71,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -60,7 +60,7 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -73,9 +73,9 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 16
+    "total_students": 19
   },
   "years": {
     "year_2016": null,
@@ -415,7 +415,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/mdanalysis"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/mdanalysis",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "A major goal for MDAnalysis 3.0 is the “support for streaming and cloud stor-\nage.”1. A natural extension of this object simply adding the ability to “fetch”\nmore things for the internet. A typical molecular dynamics workflow involves\nusing a shell script to programmatically retrieve online molecular dynamics ob-\njects to save on disk, and then running an analysis script. This is\nrather inconvenient especially considering python strength as a “glue language.”\n\nWhile the user can always download an external library to perform the same\nfunctionality, the benefits of integrating downloaders or fetchers should be read-\nily apparent. Integrating fetchers would provide a “batteries included” solution\nto this problem and such code would be inherently more readable and pythonic. Having code where every statement is readable and precise is one of the greatest strengths of Python compared to other languages. Rather than focusing on unfamiliar external libraries or nasty shell scripts, this approach would allow the user to focus on the impor-\ntant thing. The science! Thus, this proposal seeks to enhance the fetch module\nin three ways: live downloading of structures, live downloading of trajectories,\nand providing utilities to ensure file integrity.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2026_Jz9S7jxP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Jz9S7jxP",
+          "proposal_id": "8qmNecZx",
+          "short_description": "A major goal for MDAnalysis 3.0 is the “support for streaming and cloud stor- age.”1. A natural extension of this object simply adding the ability to...",
+          "slug": "adding-additional-functionality-and-enhancements-to-the-fetcher-module",
+          "status": null,
+          "student_name": "jauy123",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding Additional Functionality and Enhancements to the Fetcher Module"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement a WESTPAParser and a WESTPAReader in WESTPA which will expose WESTPA’s HDF5 Framework simulation data as a standard MDAnalysis Universe.\n\nCurrently, users are required to write extensive boilerplate code to manually navigate the HDF5 simulation data via WESTPA’s w_crawl before any structural observables can be computed. This project replaces that manual process by allowing users to obtain an MDAnalysis Universe directly from a west.h5 simulation file. This native integration will be accessible through both a Python API and a new w_mdacrawl CLI tool, serving as a high performance drop-in replacement for existing workflows. The project will also allow users to use MDAnalysis’s AnalysisBase backend to perform analysis using parallelization.\n\nFurthermore, the project will also implement a method to save the resulting analysis results back into the HDF5 framework as auxdata. This will ensure that any computed properties remain compatible with the broader WESTPA ecosystem for use in future simulations or downstream analysis tools like w_ipa.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2026_VJMrp2UW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VJMrp2UW",
+          "proposal_id": "jpl9YMWU",
+          "short_description": "This project aims to implement a WESTPAParser and a WESTPAReader in WESTPA which will expose WESTPA’s HDF5 Framework simulation data as a standard...",
+          "slug": "interface-for-post-simulation-analysis-crawling-of-westpa-simulations",
+          "status": null,
+          "student_name": "Kunj Sinha",
+          "student_profile": null,
+          "tags": [],
+          "title": "Interface for post-simulation analysis (“crawling”) of WESTPA simulations"
+        },
+        {
+          "code_url": null,
+          "description": "This project will develop a browser-based, real-time dashboard for molecular dynamics simulations using the new IMDv3 streaming protocol, enabling live monitoring, analysis, and visualization of running simulations. The dashboard will leverage imdclient and MDAnalysis to receive a data stream from a running simulation.",
+          "difficulty": null,
+          "id": "proj_mdanalysis_2026_DzTMshtu",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DzTMshtu",
+          "proposal_id": "Nv9UlBiz",
+          "short_description": "This project will develop a browser-based, real-time dashboard for molecular dynamics simulations using the new IMDv3 streaming protocol, enabling...",
+          "slug": "dashboard-for-tracking-md-simulation-progress-with-the-new-streaming-interface",
+          "status": null,
+          "student_name": "Pardhav Maradani",
+          "student_profile": null,
+          "tags": [],
+          "title": "Dashboard for tracking MD simulation progress with the new streaming interface"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

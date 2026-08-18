@@ -51,9 +51,9 @@
     "android",
     "ios"
   ],
-  "total_projects": 45,
+  "total_projects": 48,
   "stats": {
-    "avg_projects_per_appeared_year": 5,
+    "avg_projects_per_appeared_year": 4.8,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 4,
@@ -65,7 +65,7 @@
       "year_2023": 6,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 5,
@@ -78,9 +78,9 @@
       "year_2023": 6,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 42
+    "total_students": 48
   },
   "years": {
     "year_2016": {
@@ -989,7 +989,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/mit-app-inventor"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/mit-app-inventor",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to introduce a scalable and maintainable internationalization (i18n) system for applications built using MIT App Inventor. Currently, App Inventor does not provide a structured approach for handling multi-language support, making it difficult for developers to create globally accessible apps.\n\nThe proposed solution introduces a key-based translation system that decouples user-visible text from UI components. The system integrates across multiple layers of App Inventor, including the Designer, Blockly, runtime, and build system, enabling automatic translation handling in generated applications.\n\nKey features include:\n- Automatic detection of user-visible text from component properties and Blockly blocks\n- A centralized translation editor for managing multi-language content\n- Context-based key generation to ensure stability and avoid ambiguity\n- Runtime translation using JSON for flexibility during development (Companion)\n- Build-time generation of native Android/iOS resources for efficient production builds\n\nThe system is designed to be fully backward compatible and supports progressive adoption, allowing existing projects to continue working while enabling developers to gradually migrate to the new translation model.\n\nDeliverables include:\n- A working runtime translation system for App Inventor apps\n- Integration with Blockly for key-based text handling\n- Designer-level synchronization and key management\n- Build-time resource generation for native localization\n- End-to-end tested implementation with documentation",
+          "difficulty": null,
+          "id": "proj_mit-app-inventor_2026_HDaxXVBH",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/HDaxXVBH",
+          "proposal_id": "sHVIO51Z",
+          "short_description": "This project aims to introduce a scalable and maintainable internationalization (i18n) system for applications built using MIT App Inventor....",
+          "slug": "internationalization-support-for-applications-built-with-mit-app-inventor",
+          "status": null,
+          "student_name": "Akash Gite",
+          "student_profile": null,
+          "tags": [],
+          "title": "Internationalization Support for Applications Built with MIT App Inventor"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on redesigning the ListView component in MIT App Inventor to address key architectural, performance, and cross-platform consistency issues.\nCurrently, the component suffers from inefficient full adapter rebuilds, lack of a structured data model, and inconsistencies between Android and iOS implementations. These issues lead to performance overhead, unreliable behavior, and poor developer experience, especially for beginners.\nTo solve this, the project introduces a structured, phased approach:\nCore Refactor (Reliability):\nIntroduce a dedicated ListDataModel to manage items, selection state, and filtering. This eliminates full adapter reconstruction and enables efficient incremental updates.\nCross-Platform Consistency (Continuity):\nEstablish a behavioral contract and parity tracking system to systematically align Android and iOS implementations, fixing missing features, type mismatches, and runtime inconsistencies.\nAPI Expansion (Extensibility):\nAdd block-level operations such as AddElement, RemoveElement, UpdateElement, ScrollToElement, and SelectionElements, along with full multi-select support.\nUser Experience Improvements:\nEnhance the Designer with a UIBinder-based list editor, keyboard navigation, and introduce a swipeable (carousel-style) layout for modern UI interaction.\nDeliverables\nModular ListDataModel architecture with incremental update support\nEliminated full adapter rebuilds and improved performance\nAndroid–iOS feature parity with validated behavior\nNew block-level APIs and multi-select functionality\nRedesigned Designer editor with improved usability\nSwipeable ListView layout implementation\nComprehensive testing, documentation, and backward compatibility assurance\nThis project aims to make ListView more scalable, consistent, and beginner-friendly, while establishing a maintainable foundation for future enhancements.",
+          "difficulty": null,
+          "id": "proj_mit-app-inventor_2026_sxZpFLJk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sxZpFLJk",
+          "proposal_id": "JAKUsnlr",
+          "short_description": "This project focuses on redesigning the ListView component in MIT App Inventor to address key architectural, performance, and cross-platform...",
+          "slug": "listview-component-update-performance-redesign-cross-platform-parity-a-beginner-friendly-ux-system",
+          "status": null,
+          "student_name": "Mekala Jaya Nanda Prabhas",
+          "student_profile": null,
+          "tags": [],
+          "title": "ListView Component Update Performance Redesign, Cross-Platform Parity, a Beginner-Friendly UX system"
+        },
+        {
+          "code_url": null,
+          "description": "Teachers cannot assign, collect, or grade App Inventor projects through their LMS. They share project links manually, collect screenshots, and enter grades by hand. This project builds a Google Classroom integration so teachers can create assignments linked to template projects, students can submit completed projects to Classroom, and teachers can return grades without leaving their normal workflow. The backend introduces an LmsService interface so that adding Canvas or Moodle support later requires only a new provider class. Deliverables are tiered: minimum (OAuth2 plus course listing plus assignment creation), target (full create-distribute-submit lifecycle with error handling), and stretch (GWT UI plus grade passback plus integration tests).",
+          "difficulty": null,
+          "id": "proj_mit-app-inventor_2026_4mPSD4K9",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4mPSD4K9",
+          "proposal_id": "W0zpYTW3",
+          "short_description": "Teachers cannot assign, collect, or grade App Inventor projects through their LMS. They share project links manually, collect screenshots, and enter...",
+          "slug": "google-classroom-assignment-lifecycle-for-app-inventor",
+          "status": null,
+          "student_name": "Zikun (Zayden) Zhu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Google Classroom Assignment Lifecycle for App Inventor"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

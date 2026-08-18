@@ -58,9 +58,9 @@
     "silicon",
     "eda"
   ],
-  "total_projects": 60,
+  "total_projects": 65,
   "stats": {
-    "avg_projects_per_appeared_year": 6,
+    "avg_projects_per_appeared_year": 5.91,
     "projects_by_year": {
       "year_2016": 3,
       "year_2017": 4,
@@ -72,7 +72,7 @@
       "year_2023": 5,
       "year_2024": 6,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 3,
@@ -85,9 +85,9 @@
       "year_2023": 5,
       "year_2024": 6,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 58
+    "total_students": 65
   },
   "years": {
     "year_2016": {
@@ -1262,7 +1262,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/free-and-open-source-silicon-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/free-and-open-source-silicon-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This proposal focuses on enhancing the Surfer waveform viewer by adding support for memory and wide array visualization. Current waveform views are effective for scalar signals but become inefficient when dealing with large arrays or memory structures. This project introduces a structured table based visualization for memory contents along with intelligent change highlighting across timestamps. The implementation will improve debugging efficiency by allowing users to inspect memory elements individually rather than scanning entire waveforms. The solution integrates seamlessly with Surfer existing architecture and maintains performance for large datasets.",
+          "difficulty": null,
+          "id": "proj_free-and-open-source-silicon-foundation_2026_8olpOqGa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8olpOqGa",
+          "proposal_id": "xRhJk0At",
+          "short_description": "This proposal focuses on enhancing the Surfer waveform viewer by adding support for memory and wide array visualization. Current waveform views are...",
+          "slug": "surfer-memory-and-wide-array-support",
+          "status": null,
+          "student_name": "Kutikuppala Deekshita",
+          "student_profile": null,
+          "tags": [],
+          "title": "Surfer Memory and Wide Array Support"
+        },
+        {
+          "code_url": null,
+          "description": "Millions of lines of open-source Verilog exist but remain verbose and hard to maintain. TL-Verilog offers a cleaner abstraction, but almost none of this codebase has been converted. This project strengthens the LLM-driven conversion pipeline in the conversion-to-TLV repository by improving error recovery, refining prompt recipes for complex Verilog patterns (FSMs, parameterized modules, arithmetic pipelines), and applying the flow to real open-source modules including RISC-V components. All conversions are formally verified using SymbiYosys and EQY, generating high-quality training data for future LLM improvement. Deliverables include a fast working failure-classification system, improved prompts.json recipes, 10+ converted and verified modules, and structured training data registered in the project repository.",
+          "difficulty": null,
+          "id": "proj_free-and-open-source-silicon-foundation_2026_4zUh8qAy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4zUh8qAy",
+          "proposal_id": "AeJVFL67",
+          "short_description": "Millions of lines of open-source Verilog exist but remain verbose and hard to maintain. TL-Verilog offers a cleaner abstraction, but almost none of...",
+          "slug": "using-ai-to-improve-open-source-ip",
+          "status": null,
+          "student_name": "Muhammad Rayyan Khan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Using AI to Improve Open-Source IP"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to bring Ariane+OpenPiton closer to RISC-V RVA23 compliance by adding support for the Svadu extension. By enabling hardware-managed Accessed and Dirty bit updates, Svadu eliminates unnecessary software-managed page faults and improves virtual-memory efficiency. I will implement the required changes across the PTW, TLBs, LSU-side update path, and a new hardware unit, Page Table Entry Updating Engine (PUE), while building a robust verification framework based on Spike, Verilator, and handwritten assembly tests. In addition to a complete Svadu implementation, the project will deliver evaluation results, reusable verification infrastructure, and upstream-ready contributions for future RISC-V MMU-related RVA23/RVB23 extensions.",
+          "difficulty": null,
+          "id": "proj_free-and-open-source-silicon-foundation_2026_i2U7idgl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/i2U7idgl",
+          "proposal_id": "hMOmUfHL",
+          "short_description": "This project aims to bring Ariane+OpenPiton closer to RISC-V RVA23 compliance by adding support for the Svadu extension. By enabling hardware-managed...",
+          "slug": "robust-implementation-and-verification-of-the-risc-v-svadu-extension-for-ariane-openpiton",
+          "status": null,
+          "student_name": "Seongwon Jo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Robust Implementation and Verification of the RISC-V Svadu Extension for Ariane+OpenPiton"
+        },
+        {
+          "code_url": null,
+          "description": "circt-bmc can already prove when an assertion is falsifiable, but it does not yet produce the counterexample trace format hardware developers rely on for debugging. Today, users get a SAT/UNSAT result without a practical cycle-by-cycle waveform showing how the design reached failure.\n\nThis project adds that missing debugging path. I will preserve meaningful signal identities before lowering, track the corresponding solver expressions across BMC timesteps, and evaluate those expressions against the first satisfying Z3 model. The implementation is intentionally staged: first a readable text counterexample for the failing prefix, then VCD waveform generation from the same trace data. The focus is the first-failure prefix (cycle 0 to the violating step), which delivers high user value with low integration risk and clean upstreamability.\n\nDeliverables:\n1. Signal tracking and naming pipeline for user-relevant values (ports, externalized registers, selected internals where remapping is reliable).\n2. A BMC trace runtime component that records per-step solver ASTs and supports model-driven trace emission.\n3. Midterm milestone: first-failure text counterexample dump.\n4. Final milestone: VCD waveform output for the same counterexample path, exposed through circt-bmc CLI flags.\n5. Upstream-quality tests and documentation (IR-level + end-to-end regressions, including failing and no-violation cases).",
+          "difficulty": null,
+          "id": "proj_free-and-open-source-silicon-foundation_2026_DTOnVOpw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DTOnVOpw",
+          "proposal_id": "TeHe140I",
+          "short_description": "circt-bmc can already prove when an assertion is falsifiable, but it does not yet produce the counterexample trace format hardware developers rely on...",
+          "slug": "generate-counter-examples-for-bounded-model-checks-in-circt",
+          "status": null,
+          "student_name": "Shri Vishakh Devanand",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generate Counter Examples for Bounded Model Checks in CIRCT"
+        },
+        {
+          "code_url": null,
+          "description": "Booting Linux in OpenPiton's Verilator RTL simulation takes days. This project builds a checkpoint/restore pipeline: boot Linux in QEMU (minutes), extract machine state, convert it to OpenPiton's `mem.image` format, and resume execution in RTL simulation with Linux already running.",
+          "difficulty": null,
+          "id": "proj_free-and-open-source-silicon-foundation_2026_TBGVWAn6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TBGVWAn6",
+          "proposal_id": "yDh8gD9O",
+          "short_description": "Booting Linux in OpenPiton's Verilator RTL simulation takes days. This project builds a checkpoint/restore pipeline: boot Linux in QEMU (minutes),...",
+          "slug": "generic-minimumlinuxboot-for-rtl-simulations",
+          "status": null,
+          "student_name": "Xuhai Chang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generic MinimumLinuxBoot for RTL Simulations"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

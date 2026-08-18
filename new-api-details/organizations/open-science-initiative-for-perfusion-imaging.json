@@ -27,9 +27,9 @@
     "medical imaging",
     "reproducible science"
   ],
-  "total_projects": 9,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 4.5,
+    "avg_projects_per_appeared_year": 4.67,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -41,7 +41,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -54,9 +54,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 9
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -258,7 +258,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/open-science-initiative-for-perfusion-imaging"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-science-initiative-for-perfusion-imaging",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Problem: There is currently no standalone, open source Python library within the OSIPI ecosystem for post-processing quality control (QC) of Arterial Spin Labeling (ASL) MRI perfusion data. Existing solutions are either MATLAB dependent, closed-source or tightly coupled to specific preprocessing pipelines, making scalable and reproducible QC difficult for clinical and research datasets.\n\nSolution: I will build Quality Check ToolBox V1.0 for osipy  a pipeline-agnostic, modular Python library that evaluates ASL-derived Cerebral Blood Flow (CBF) maps and generates interpretable PASS/WARN/FAIL triage metrics. Using a configurable registry architecture, it evaluates the Quality Evaluation Index (QEI) alongside orthogonal checks for BIDS compliance, M0 calibration and motion. It features graceful degradation and population-specific YAML configurations (e.g., pediatric, stroke) to successfully distinguish real pathological signals from acquisition artifacts.\n\nDeliverables:\n\nCore osipy-integrated QC pipeline with a @register_qc_check module registry.\nFull implementation of the Dolui et al. 2024 QEI metric.\nFallback-capable modules for control-label validation, M0 saturation, and motion tracking (FWD/DVARS).\nConfigurable PASS/WARN/FAIL verdict logic that prevents pipeline crashes on missing data.\nA comprehensive Pytest suite and MkDocs documentation.\nA standalone HTML visual dashboard for reviewing QC metrics across cohorts.",
+          "difficulty": null,
+          "id": "proj_open-science-initiative-for-perfusion-imaging_2026_UAEqFIyg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UAEqFIyg",
+          "proposal_id": "vPCLopDe",
+          "short_description": "Problem: There is currently no standalone, open source Python library within the OSIPI ecosystem for post-processing quality control (QC) of Arterial...",
+          "slug": "quality-check-toolbox-v1-0",
+          "status": null,
+          "student_name": "Agnik Misra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Quality Check ToolBox V1.0"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to transform AURA (A User Repository of Artifacts) from a survey-based collection of perfusion imaging artifacts into an interactive, searchable web platform. It will help organize and manage artifact data more effectively while allowing users to explore artifacts based on what they observe in medical images. The platform will include structured data, image galleries, and a moderated submission system to ensure quality and privacy. It will be built using a modern web stack and designed to support future expansion to additional imaging methods and integration with quality control tools.",
+          "difficulty": null,
+          "id": "proj_open-science-initiative-for-perfusion-imaging_2026_A5krVFf6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/A5krVFf6",
+          "proposal_id": "UdpUvADc",
+          "short_description": "This project aims to transform AURA (A User Repository of Artifacts) from a survey-based collection of perfusion imaging artifacts into an...",
+          "slug": "a-user-repository-of-artifacts-for-perfusion-imaging-aura-platform",
+          "status": null,
+          "student_name": "Md. Sahil",
+          "student_profile": null,
+          "tags": [],
+          "title": "A User Repository of Artifacts for Perfusion Imaging (AURA) Platform"
+        },
+        {
+          "code_url": null,
+          "description": "This project will develop a standardized Python pipeline to evaluate submissions to OSIPI perfusion imaging challenges for ASL and DSC DCE MRI methods. Researchers use different computational approaches to generate perfusion parameter maps, but there is a need for a consistent system that can validate submitted datasets run submitted code and calculate evaluation metrics in a reliable and reproducible way.\n\nThe proposed pipeline will accept challenge submissions that include parameter maps and the code used to generate them. It will first validate that submitted files follow expected structures and medical imaging formats such as NIfTI and BIDS. The system will then run the submitted workflows in a controlled environment and calculate evaluation metrics such as RMSE bias and coefficient of variation. Results will be organized into reports and visualizations that allow researchers to compare the performance of different methods against reference datasets.\n\nThe pipeline will be implemented in Python and designed to support both ASL and DSC DCE challenge frameworks. The architecture will focus on modular design so new datasets metrics and evaluation procedures can be added in the future. Automated testing validation checks and documentation will be included to ensure the system is reliable and easy for researchers to use and extend.\n\nThis project will help improve reproducibility and transparency in perfusion imaging research by providing a clear standardized framework for benchmarking computational methods used in quantitative MRI.",
+          "difficulty": null,
+          "id": "proj_open-science-initiative-for-perfusion-imaging_2026_KNFknxgD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/KNFknxgD",
+          "proposal_id": "AfZo6Nsk",
+          "short_description": "This project will develop a standardized Python pipeline to evaluate submissions to OSIPI perfusion imaging challenges for ASL and DSC DCE MRI...",
+          "slug": "standardized-python-pipeline-for-evaluating-perfusion-imaging-challenge",
+          "status": null,
+          "student_name": "Ranya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Standardized Python Pipeline for Evaluating Perfusion Imaging Challenge"
+        },
+        {
+          "code_url": null,
+          "description": "In previous roadmaps, we collected code to create PyASL, a Python library to preprocess ASL data (both preclinical and human brain data). PyASL not only enables users to compare different preprocessing pipelines, but its modular structure also allows users to mix and match functionalities from different established pipelines to best suit their needs. To facilitate its usage among non-experts, we aim to develop a GUI for this library and expand its functionalities.",
+          "difficulty": null,
+          "id": "proj_open-science-initiative-for-perfusion-imaging_2026_lXqhBGG0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lXqhBGG0",
+          "proposal_id": "1hrgwZYF",
+          "short_description": "In previous roadmaps, we collected code to create PyASL, a Python library to preprocess ASL data (both preclinical and human brain data). PyASL not...",
+          "slug": "pyasl-gui-preclinical-functionalities-and-batch-mode",
+          "status": null,
+          "student_name": "tech0priyanshu",
+          "student_profile": null,
+          "tags": [],
+          "title": "PyASL: GUI, preclinical functionalities and batch mode"
+        },
+        {
+          "code_url": null,
+          "description": "The pyaslreport package currently has no automated tests for its core processing logic and no CI pipeline that runs on code changes, meaning regressions in validation behavior, parameter extraction, or report generation can go undetected until a user encounters them in a real research context.\nThis project will build a meaningful automated test suite around the real architecture of the package and integrate it into a GitHub Actions CI workflow. The suite has two layers: an example-based integration runner that accepts a directory of input and expected output pairs and verifies the tool produces correct results for each one, and focused unit tests covering the internal normalization pipeline, schema-driven validators, M0 and TSV validation branches, file grouping logic, and sequence factory dispatch. Adding a new test case to the integration layer requires no code changes, only a new subfolder with the right files. The same runner works locally against any directory of examples and in CI against a smaller committed set, which is exactly the design Jan described in his feedback.\nDeliverables: an expanded test suite for pyaslreport, a committed example set covering clean, warning, error, and major error cases, a GitHub Actions workflow with coverage reporting, and a contributor guide explaining how to run and extend the tests.",
+          "difficulty": null,
+          "id": "proj_open-science-initiative-for-perfusion-imaging_2026_ogeyaWWx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ogeyaWWx",
+          "proposal_id": "0QNwN7nd",
+          "short_description": "The pyaslreport package currently has no automated tests for its core processing logic and no CI pipeline that runs on code changes, meaning...",
+          "slug": "strengthening-pyaslreport-reliability-through-automated-testing-and-ci",
+          "status": null,
+          "student_name": "Vitor Lima Santos",
+          "student_profile": null,
+          "tags": [],
+          "title": "Strengthening pyaslreport reliability through automated testing and CI"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

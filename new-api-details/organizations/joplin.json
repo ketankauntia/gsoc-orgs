@@ -41,9 +41,9 @@
     "security",
     "AI/ML"
   ],
-  "total_projects": 17,
+  "total_projects": 22,
   "stats": {
-    "avg_projects_per_appeared_year": 4.25,
+    "avg_projects_per_appeared_year": 4.4,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -55,7 +55,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -68,9 +68,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 17
+    "total_students": 22
   },
   "years": {
     "year_2016": null,
@@ -422,7 +422,104 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/joplin/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/joplin",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Problem: Joplin’s End-to-End Encryption (E2EE) secures data during sync, but notes remain in plaintext within the local SQLite database. This leaves sensitive data vulnerable to local filesystem access on shared, corporate, or unlocked devices.\n\nSolution: This project implements a Local Encrypted Vault using a \"Body-Prefix Polymorphism\" strategy. Instead of fragile database schema migrations, notes are locked via AES-256-GCM, and the ciphertext is stored directly in the native body field (e.g., JOPLIN_CIPHER:AF82D...). This architecture natively supports Joplin’s Stacked E2EE sync, prevents double-encryption bugs, and utilizes Just-In-Time (JIT) RAM decryption to ensure maximum security.",
+          "difficulty": null,
+          "id": "proj_joplin_2026_ADNtryzy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ADNtryzy",
+          "proposal_id": "kpdh0Fd0",
+          "short_description": "Problem: Joplin’s End-to-End Encryption (E2EE) secures data during sync, but notes remain in plaintext within the local SQLite database. This leaves...",
+          "slug": "idea-7-local-encrypted-vault-for-notes-notebooks",
+          "status": null,
+          "student_name": "Akshaj Rawat",
+          "student_profile": null,
+          "tags": [],
+          "title": "Idea 7: Local Encrypted Vault for Notes & Notebooks"
+        },
+        {
+          "code_url": null,
+          "description": "The more notes you accumulate, the harder it gets to keep them organised. At some point, manually tagging things or deciding which notebook something belongs to just stops happening and things pile up. What I'm building is a plugin that handles that quietly in the background. It analyses your notes, figures out which ones are about similar things, and suggests tags and notebook structures that reflect what's actually in your collection. You review the suggestions, pick what makes sense, and apply them. Nothing changes without you saying so. The deliverables are the plugin, the embedding and clustering pipeline, the recommendation system, and the review UI.",
+          "difficulty": null,
+          "id": "proj_joplin_2026_cEuiUo24",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cEuiUo24",
+          "proposal_id": "shHcynLD",
+          "short_description": "The more notes you accumulate, the harder it gets to keep them organised. At some point, manually tagging things or deciding which notebook something...",
+          "slug": "ai-based-note-categorisation-and-tagging-for-joplin",
+          "status": null,
+          "student_name": "Harsh16gupta",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-based Note Categorisation and Tagging for Joplin"
+        },
+        {
+          "code_url": null,
+          "description": "Joplin’s end-to-end encryption protects notes during sync, but not on the local device. This project adds local note encryption so users can lock sensitive notes behind a vault password while preserving compatibility with sync and existing E2EE. The implementation will use an option-gated save/load flow, on-demand decryption, protection against plaintext leaks through search and revision history, and a lock screen UI for desktop. Guaranteed deliverables are a working desktop implementation, vault password management, sync/backward-compatibility support, and tests for data-safety and conflict handling. Stretch goals include mobile support, resource encryption, and CLI/Data API integration.",
+          "difficulty": null,
+          "id": "proj_joplin_2026_Bb4wNvvb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Bb4wNvvb",
+          "proposal_id": "PGdSmu2O",
+          "short_description": "Joplin’s end-to-end encryption protects notes during sync, but not on the local device. This project adds local note encryption so users can lock...",
+          "slug": "idea-7-local-note-encryption",
+          "status": null,
+          "student_name": "Keshav0479",
+          "student_profile": null,
+          "tags": [],
+          "title": "Idea #7: Local Note Encryption"
+        },
+        {
+          "code_url": null,
+          "description": "Joplin's offline-first design is one of its best features, but it comes with a real cost  when the same note is edited on two devices before either syncs, Joplin has no way to merge the changes. It saves one version as a conflict note and leaves the user to manually figure out what to keep. For long notes on mobile, most people just give up and pick whichever version looks more complete, which means changes get silently lost.\n\nThis project adds an interactive conflict resolution UI to Joplin desktop and mobile. When a conflict note is opened, instead of seeing a raw copy with no context, the user gets a clear section-by-section view of exactly what each side changed. Non-conflicting changes like additions and deletions can be resolved in one click. Genuine conflicts where both sides changed the same part give the user full context to pick one side or edit manually. A Keep both option preserves both versions for users who want that. The same shared diff module powers both platforms so the behaviour is always identical.\n\nThe core deliverables are a platform-independent diff module using node-diff3, a minimal addition to the sync pipeline to store a base snapshot for three-way merging, and a conflict resolution React component for desktop and React Native component for mobile. The implementation also handles edge cases including notes synced before the feature was deployed falling back to two-way diff, stale remote data being detected and reset on open, and second conflicts on the same note being handled gracefully. No existing conflict behaviour changes and sync is never blocked at any point.",
+          "difficulty": null,
+          "id": "proj_joplin_2026_PopnfR3x",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PopnfR3x",
+          "proposal_id": "7ZzucaB8",
+          "short_description": "Joplin's offline-first design is one of its best features, but it comes with a real cost when the same note is edited on two devices before either...",
+          "slug": "interactive-sync-conflict-resolution-for-joplin-desktop-and-mobile",
+          "status": null,
+          "student_name": "Sriram Varun Kumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Interactive Sync Conflict Resolution for Joplin Desktop and Mobile"
+        },
+        {
+          "code_url": null,
+          "description": "Joplin users accumulate hundreds of notes over time, but existing graph plugins only visualize explicit links (:/noteId) and shared tags, leaving semantically related yet unlinked notes disconnected. This project introduces an AI-powered Joplin plugin that uncovers these hidden relationships using text embeddings as the primary mechanism, with optional LLM-based enrichment for labeling and categorization. The default embedding provider is Transformers.js, enabling fully local, zero-setup inference with no external dependencies, while advanced users can opt into Ollama, Google Gemini, OpenAI, or compatible APIs. The system combines explicit links, tag relationships, and embedding-based semantic similarity into a unified graph, ensuring comprehensive note connectivity.\n\nThe plugin renders this enriched structure as an interactive graph using Cytoscape.js with the fCoSE layout, where node size reflects centrality, node color represents Louvain-detected communities, and edge styles distinguish relationship types (solid for links, dotted for tags, dashed for semantic connections). It includes features such as click-to-navigate, focus mode, filtering, and export to PNG/SVG/JSON. A SQLite-based cache stores embeddings for incremental updates, ensuring scalability and performance, while optional Pass B LLM enrichment adds human-readable relationship labels and categories. The final deliverable is a production-ready .jpl plugin with secure API key handling, provider abstraction, and a comprehensive test suite including deterministic validation of AI outputs.",
+          "difficulty": null,
+          "id": "proj_joplin_2026_qvspDcVq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qvspDcVq",
+          "proposal_id": "hyTYbCLK",
+          "short_description": "Joplin users accumulate hundreds of notes over time, but existing graph plugins only visualize explicit links (:/noteId) and shared tags, leaving...",
+          "slug": "ai-generated-note-graphs",
+          "status": null,
+          "student_name": "yugalkaushik",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Generated Note Graphs"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

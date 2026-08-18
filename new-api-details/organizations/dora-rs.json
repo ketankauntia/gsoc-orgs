@@ -29,9 +29,9 @@
     "Autonomous Drive",
     "Robot Dataflow"
   ],
-  "total_projects": 2,
+  "total_projects": 6,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 2
+    "total_students": 6
   },
   "years": {
     "year_2016": null,
@@ -115,7 +115,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/dora-rs-tb"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/dora-rs-tb",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This plan aims to improve dora-rs's getting-started documentation by creating a comprehensive learning system—including written tutorials, video guides, and runnable code examples—that enables new users to complete their first project within 2-3 hours. Leveraging prior contributions to the dora-rs ecosystem and experience producing AI-assisted programming tutorials, the applicant plans to deliver 8 milestones across 12 weeks: basic setup and rerun simulation before midterm (July 10), followed by multimodal model integration, LLM-based action planning, and adora+octos advanced features before the final deadline (August 24). All outputs will be published as open-source documentation and bilingual video tutorials on GitHub, Bilibili, and YouTube.",
+          "difficulty": null,
+          "id": "proj_dora-rs_2026_9T7OWcEg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9T7OWcEg",
+          "proposal_id": "ipJTZLf9",
+          "short_description": "This plan aims to improve dora-rs's getting-started documentation by creating a comprehensive learning system—including written tutorials, video...",
+          "slug": "improve-getting-started-documentation",
+          "status": null,
+          "student_name": "Ace20260322",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve Getting Started Documentation"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes dora-studio, a lightweight web-based GUI for viewing, editing, running, and monitoring Dora dataflows. Dora currently relies on CLI workflows, which can be less intuitive for onboarding, debugging, and demonstrations.\n\nThe project will introduce a Rust-based control API to manage dataflows (list, start, stop, inspect) and a Vue-based frontend that provides a dashboard, a simple visual editor, and a live monitoring interface. The goal is to complete the full workflow loop: inspect, edit, run, and observe dataflows in a unified interface.\n\nExpected deliverables include the control API, a functional web UI for managing dataflows, a basic graph-based editor, live status monitoring, and documentation.",
+          "difficulty": null,
+          "id": "proj_dora-rs_2026_qQnX0Sl1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qQnX0Sl1",
+          "proposal_id": "WygKVnXZ",
+          "short_description": "This project proposes dora-studio, a lightweight web-based GUI for viewing, editing, running, and monitoring Dora dataflows. Dora currently relies on...",
+          "slug": "dora-studio-web-gui-for-dataflow-management-in-dora",
+          "status": null,
+          "student_name": "Dora—DGH",
+          "student_profile": null,
+          "tags": [],
+          "title": "dora-studio: Web GUI for Dataflow Management in Dora"
+        },
+        {
+          "code_url": null,
+          "description": "Dora is a powerful robotics dataflow framework, but robot behaviors require fixed YAML graphs—no natural language interface, runtime error recovery, or high-level goal decomposition. This project builds an Octos agent bridge node for Dora, enabling natural language control of a simulated UR5e robot (e.g., \"pick up the red ball and place it on the green plate\"). The agent decomposes commands into DOT-graph pipelines, executing via dora transport tools, interfacing with dora-moveit nodes in MuJoCo. A prototype demonstrates pick-and-place with full step completion (vs partial completion with LLM-only reasoning). Deliverables: MuJoCo simulation, Octos bridge node, agent-callable tools, DOT-graph pipeline, mock provider, test suite, documentation. Stretch: Rust-native bridge, vision-based grasping, messaging channel integration",
+          "difficulty": null,
+          "id": "proj_dora-rs_2026_77s0dUI7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/77s0dUI7",
+          "proposal_id": "Wunkuvbw",
+          "short_description": "Dora is a powerful robotics dataflow framework, but robot behaviors require fixed YAML graphs—no natural language interface, runtime error recovery,...",
+          "slug": "agentic-dora-agent-driven-robot-control",
+          "status": null,
+          "student_name": "Gary Ding",
+          "student_profile": null,
+          "tags": [],
+          "title": "Agentic Dora Agent Driven Robot Control"
+        },
+        {
+          "code_url": null,
+          "description": "DORA lacks testing infrastructure. Debugging multi‑node dataflows means manual node isolation—slow and fragile. This project delivers `dora-test-utils`: a Rust crate that adds unit testing (NodeHarness), integration testing (TestSourceNode/TestSinkNode), and optional record/replay for regression. Deliverables include mock APIs, example pipelines, documentation, and CI templates. The work is scoped as a 175h MVP with a +175h extended version.",
+          "difficulty": null,
+          "id": "proj_dora-rs_2026_DgJ4nyFL",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DgJ4nyFL",
+          "proposal_id": "e3AkArJi",
+          "short_description": "DORA lacks testing infrastructure. Debugging multi‑node dataflows means manual node isolation—slow and fragile. This project delivers...",
+          "slug": "dora-test-utils-bringing-unit-and-integration-testing-to-dora",
+          "status": null,
+          "student_name": "YujieSun",
+          "student_profile": null,
+          "tags": [],
+          "title": "dora-test-utils: Bringing Unit and Integration Testing to DORA"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

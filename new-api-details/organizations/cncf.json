@@ -52,9 +52,9 @@
     "cloud computing",
     "observability"
   ],
-  "total_projects": 113,
+  "total_projects": 118,
   "stats": {
-    "avg_projects_per_appeared_year": 12.56,
+    "avg_projects_per_appeared_year": 11.8,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 6,
@@ -66,7 +66,7 @@
       "year_2023": 14,
       "year_2024": 11,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -79,9 +79,9 @@
       "year_2023": 14,
       "year_2024": 11,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 113
+    "total_students": 118
   },
   "years": {
     "year_2016": null,
@@ -2302,7 +2302,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/cncf"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/cncf",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "kgateway routes AI inference traffic to self-hosted model servers. It picks the best server using EPP scoring — based on KV cache usage, queue depth, and LoRA affinity. That scoring costs more than simple round-robin routing, but there's no data on how much latency it actually adds or what a normal regression looks like for this setup.\n\nThis project adds the benchmarking layer kgateway is missing. I'll build a reproducible test environment using the upstream GIE methodology, run scenarios comparing agentgateway with inference extension against a plain Kubernetes Service, set up a two-tier CI pipeline (mock server for regular runs, real Azure GPU for releases), store results in Azure Blob, and add regression detection that blocks CI when p99 latency crosses a stored threshold. The regression detection piece was what was missing from the issue discussion.",
+          "difficulty": null,
+          "id": "proj_cncf_2026_2VBsJMhX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2VBsJMhX",
+          "proposal_id": "aSKh3dpG",
+          "short_description": "kgateway routes AI inference traffic to self-hosted model servers. It picks the best server using EPP scoring — based on KV cache usage, queue depth,...",
+          "slug": "benchmarking-and-performance-evaluation-of-inference-routing-extensions-in-kgateway",
+          "status": null,
+          "student_name": "Abhay1906",
+          "student_profile": null,
+          "tags": [],
+          "title": "Benchmarking and Performance Evaluation of Inference Routing Extensions in kgateway"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, while kpt is a highly capable tool for declarative Kubernetes management, its official examples rely heavily on complex, specialized domains like telecommunications. This creates a high barrier to entry for standard developers trying to learn the \"configuration-as-data\" approach.\nThis project solves that problem by providing a universally understood example. I will package the popular \"Online Boutique\" (or a similar application) microservices application into a complete, modular kpt package. Using this baseline, I will build and thoroughly document four practical customization workflows:\nChanging the store theme (e.g., adapting the boutique into a florist or car accessory site).\nLocalizing language and currency settings.\nConfiguring regional Sales Tax and VAT.\nAdjusting deployment configurations for Small, Medium, and Large scales. etc..\nUltimately, this project is an opportunity for me to deeply learn and demonstrate how kpt handles complex mutations without relying on traditional templating tools like Helm. The final deliverable will be a production-grade package contributed directly to the CNCF kpt toolchain, making the platform significantly more accessible to new users in the open-source community.",
+          "difficulty": null,
+          "id": "proj_cncf_2026_WOgXdhMZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WOgXdhMZ",
+          "proposal_id": "tv7BLMnd",
+          "short_description": "Currently, while kpt is a highly capable tool for declarative Kubernetes management, its official examples rely heavily on complex, specialized...",
+          "slug": "kpt-build-e-commerce-example-kpt-package",
+          "status": null,
+          "student_name": "Jaisheesh",
+          "student_profile": null,
+          "tags": [],
+          "title": "kpt: Build e-commerce example kpt package"
+        },
+        {
+          "code_url": null,
+          "description": "Agentic AI is commonly used to predict and resolve problems before they occur, requiring access to data in near real-time. However, traditional patterns for reacting to data changes come with major disadvantages, exacerbating the challenge of building resilient, near real-time distributed systems. These patterns include polling, which is simple to implement but has a fundamental tradeoff between minimizing load on data\nsources and minimizing data staleness. Change data capture (CDC) avoids the aforementioned issues, but requires teams to build and maintain custom infrastructure. Using Drasi’s ability to track derived entities (via Continuous Queries) and Dapr Agents’ out-of-the-box durability for agents and agentic workflows, this proposed integration would help developers build scalable, event-driven AI systems in products and\ninternal platforms. To accomplish this, Drasi would need a new ”proxy” service that routes events to multiple publish-subscribe (pub/sub) topics. Dapr workflows and agents would consume from these topics via workflow decorator functions and agent middleware, supporting Drasi and providing the groundwork to integrate other backends.",
+          "difficulty": null,
+          "id": "proj_cncf_2026_qbtyohoJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qbtyohoJ",
+          "proposal_id": "hybyALWT",
+          "short_description": "Agentic AI is commonly used to predict and resolve problems before they occur, requiring access to data in near real-time. However, traditional...",
+          "slug": "reactive-agents-with-drasi-dapr",
+          "status": null,
+          "student_name": "Jeffrey Zhang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reactive Agents with Drasi & Dapr"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds signing and verification for OSCAL JSON artifacts in compliance-trestle so generated documents can be verified in CI/CD and downstream workflows. The implementation will introduce deterministic RFC 8785 / JCS-style canonicalization for signing input, a detached JSON attestation workflow, and new trestle sign / trestle verify commands with clear failure handling. The MVP will be key-based, JSON-first, and detached so OSCAL artifacts remain unchanged, while signed metadata will capture provenance such as trestle version, signing time, OSCAL type, and optional git/build information. Deliverables include the signing and verification code, automated tests, documentation, and a tutorial.",
+          "difficulty": null,
+          "id": "proj_cncf_2026_8Jn2MtsT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8Jn2MtsT",
+          "proposal_id": "yII6NwXZ",
+          "short_description": "This project adds signing and verification for OSCAL JSON artifacts in compliance-trestle so generated documents can be verified in CI/CD and...",
+          "slug": "oscal-document-signing-and-verification-in-compliance-trestle",
+          "status": null,
+          "student_name": "matteofari",
+          "student_profile": null,
+          "tags": [],
+          "title": "OSCAL Document Signing and Verification in compliance-trestle"
+        },
+        {
+          "code_url": null,
+          "description": "The current OpenKruise Rollout implementation for Deployment progressive delivery mutates the updateStrategy to Recreate, creating a dangerous risk window: if the Deployment is not properly paused during rollout disable, removal, or controller crash, all pods could be simultaneously recreated, causing a service outage (ref openkruise/rollouts#305).\n\nThis project implements a safer alternative by keeping the Deployment strategy as RollingUpdate and leveraging minReadySeconds and progressDeadlineSeconds to control the delivery pace. Updated pods remain in a \"Ready but not Available\" state, giving the Rollout controller precise batch-level control without the catastrophic failure mode of the current approach.\n\nDeliverables:\n1. A new minReadySeconds-based progressive delivery implementation for Deployment in OpenKruise Rollout\n2. End-to-end test suite covering normal rollout, rollback, controller crash recovery, and edge cases\n3. Documentation for the new deployment strategy mode",
+          "difficulty": null,
+          "id": "proj_cncf_2026_ALTS73J5",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ALTS73J5",
+          "proposal_id": "Gmrqv77c",
+          "short_description": "The current OpenKruise Rollout implementation for Deployment progressive delivery mutates the updateStrategy to Recreate, creating a dangerous risk...",
+          "slug": "alternative-progressive-delivery-for-deployment-in-openkruise-rollout",
+          "status": null,
+          "student_name": "Yanxi Teng",
+          "student_profile": null,
+          "tags": [],
+          "title": "Alternative Progressive Delivery for Deployment in OpenKruise Rollout"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -41,9 +41,9 @@
     "languages",
     "ffi"
   ],
-  "total_projects": 19,
+  "total_projects": 25,
   "stats": {
-    "avg_projects_per_appeared_year": 4.75,
+    "avg_projects_per_appeared_year": 5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -55,7 +55,7 @@
       "year_2023": 4,
       "year_2024": 7,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": null,
@@ -68,9 +68,9 @@
       "year_2023": 4,
       "year_2024": 7,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 18
+    "total_students": 25
   },
   "years": {
     "year_2016": null,
@@ -474,7 +474,120 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/metacall/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/metacall",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "FunctionMesh is a Kubernetes-native platform that automatically breaks a polyglot monolith apart into a distributed auto-scaled function mesh. Currently, making a polyglot codebase distributed requires service boundaries to be manually defined, RPC layers to be hand-coded, and routing configurations that have nothing to do with the actual problem being solved. FunctionMesh takes a program analysis approach to solve this problem by consuming the AST, call graphs, and data flow output of the MetaCall parser to automatically determine the deployment topology, group communicating functions into co-located namespaces, detect type mismatches at build time, and create the entire RPC layer for the user without any intervention. The functions are then packaged using the Builder CLI into a self-contained unit called a FunctionImage containing MetaCall core and the correct language loader, deployed as a FunctionUnit CRD onto a Kubernetes cluster, and connected using Istio Ambient Mesh for transparent routing, mutual TLS, and autoscaling independence. The output is the FunctionMesh Operator, Builder CLI, MetaCall RPC Gateway, Client Stub Generator, Istio Integration, Function Registry, Autoscaler Policy, and complete documentation with end-to-end demo.",
+          "difficulty": null,
+          "id": "proj_metacall_2026_X0vuyYHC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/X0vuyYHC",
+          "proposal_id": "PKgzqSWC",
+          "short_description": "FunctionMesh is a Kubernetes-native platform that automatically breaks a polyglot monolith apart into a distributed auto-scaled function mesh....",
+          "slug": "function-mesh-implementation",
+          "status": null,
+          "student_name": "Anas Magdy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Function Mesh Implementation"
+        },
+        {
+          "code_url": null,
+          "description": "MetaSSR already delivers fast SSR and does well on the benchmarks, which is promising. But the dev mode, tests, and error handling still need hardening to be production‑ready. This project aims to make MetaSSR more mature and production-ready, focusing on improving the API handler (the core idea of MetaSSR, Polyglot programming via MetaCall), stabilizing and adding feature to the dev mode, expanding tests, and improving CI/reporting and documentation. If needed, the work will include changes to the MetaCall Rust port to support MetaSSR reliability & maintainability.",
+          "difficulty": null,
+          "id": "proj_metacall_2026_nlw0P03Q",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nlw0P03Q",
+          "proposal_id": "tLKKi1yg",
+          "short_description": "MetaSSR already delivers fast SSR and does well on the benchmarks, which is promising. But the dev mode, tests, and error handling still need...",
+          "slug": "improve-metassr",
+          "status": null,
+          "student_name": "Fahd Ashour",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve MetaSSR"
+        },
+        {
+          "code_url": null,
+          "description": "MetaCall's runtime introspection (metacall_inspect) requires loaded loaders and a live environment, leaving IDE tooling, CI pipelines, and Function Mesh with no pre-runtime project intelligence. This proposal builds metacall-ast - a standalone Rust static analyzer that uses Tree-sitter incremental parsing to extract symbols and cross-language dependencies from Python, JavaScript, TypeScript, C/C++, and Rust source files, emitting JSON structurally compatible with metacall_inspect (keys: funcs, classes, objects). The tool uses petgraph for in-memory graph construction, applies Tarjan's SCC algorithm to identify independently deployable Function Mesh units, and exposes a stable C ABI (mc_ast.h) for embedding in MetaCall core. An optional Dgraph sink enables persistent Code Knowledge Graph snapshots. Deliverables: core Rust library + CLI, language packs for 5 languages, inspect-parity JSON output, C ABI bridge, Dgraph sink, and a stretch intra-procedural dataflow (def-use chains), with full CI on Linux/macOS/Windows.",
+          "difficulty": null,
+          "id": "proj_metacall_2026_jAHVcgUB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jAHVcgUB",
+          "proposal_id": "Sw7F3Ybx",
+          "short_description": "MetaCall's runtime introspection (metacall_inspect) requires loaded loaders and a live environment, leaving IDE tooling, CI pipelines, and Function...",
+          "slug": "rust-multi-language-ast-cross-language-dependency-graph",
+          "status": null,
+          "student_name": "Khaled Alam",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rust Multi-Language AST & Cross-Language Dependency Graph"
+        },
+        {
+          "code_url": null,
+          "description": "MetaCall Core is a polyglot runtime written in C/C++ that enables seamless cross-language function calls. Like any large native codebase, it is susceptible to memory leaks and unsafe memory access patterns that are difficult to detect manually and invisible in standard CI.\nThis project improves memory tracking and code coverage reporting across platforms through six deliverables:\n (1) a Valgrind memcheck CI pipeline integrated into GitHub Actions — already implemented and merged pre-GSoC; \n(2) systematic fixes to the ~5,579 memory leaks currently detected by CI, reduced from ~99,578 through pre-GSoC contributions (PRs #706, #723, #726); \n(3) an improved reflect_memory_tracker.h that records file, line, and call-site information for every allocation instead of just counting them;\n (4) a custom lightweight instrumentation layer using LD_PRELOAD or weak symbol overriding for environments where Valgrind is unavailable;\n (5) enhanced CI error visibility that surfaces sanitizer-style output for failing tests instead of silent segfaults; and \n(6) documentation covering the new tracker API, Valgrind output interpretation, and per-loader suppression file strategy.\nThe end result is a MetaCall codebase where memory issues are caught automatically in CI, located precisely when they occur, and actionable for any contributor — not just those with Valgrind expertise.",
+          "difficulty": null,
+          "id": "proj_metacall_2026_75QwoVXe",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/75QwoVXe",
+          "proposal_id": "v1QPsdWO",
+          "short_description": "MetaCall Core is a polyglot runtime written in C/C++ that enables seamless cross-language function calls. Like any large native codebase, it is...",
+          "slug": "code-coverage-and-memory-tracking-improvements-for-metacall-core",
+          "status": null,
+          "student_name": "Nihal_Rodge_",
+          "student_profile": null,
+          "tags": [],
+          "title": "Code Coverage and Memory Tracking Improvements for MetaCall Core"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to modernize MetaCall's rs_loader by migrating it to the latest rustc compiler internals. The current implementation relies on outdated APIs, making it incompatible with newer Rust versions.\n\nThe project will focus on updating compiler integration, replacing AST-based traversal with HIR-based extraction, and adapting to changes in rustc_driver and related components. The approach includes analyzing breaking changes, incrementally migrating core modules (lib.rs, middle.rs, ast.rs), and ensuring compatibility with modern Rust toolchains.\n\nDeliverables include a fully working rs_loader compatible with the latest rustc version, improved type and function extraction using HIR, and updated documentation for maintainability.",
+          "difficulty": null,
+          "id": "proj_metacall_2026_uvTPXGVc",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uvTPXGVc",
+          "proposal_id": "hV183Tgm",
+          "short_description": "This project aims to modernize MetaCall's rs_loader by migrating it to the latest rustc compiler internals. The current implementation relies on...",
+          "slug": "modernizing-rs-loader-migrating-to-latest-rustc-internals-with-hir-based-extraction",
+          "status": null,
+          "student_name": "Satvik Upadhyaya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernizing rs_loader: Migrating to Latest rustc Internals with HIR-based Extraction"
+        },
+        {
+          "code_url": null,
+          "description": "MetaCall currently supports Linux (GCC), Windows (MSVC), and macOS but many platforms where developers want polyglot runtime support are missing.The core layers have partial support for some platforms but no CI, no environment script integration, and no testing to verify they actually work.Follow TDD approach: set up CI first , then fix environment script + build system, then fix test failures.I will go platform by platform for implementation.All platform logic lives in metacall-environment.sh there will be no hardcoded logic in CI YAML.\n8 platform targets with CI pipelines with working environment script section, verified CMake detection and build, automated testing.Fixes to metacall/plthook fork for platforms that need it.",
+          "difficulty": null,
+          "id": "proj_metacall_2026_jhRVSHve",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jhRVSHve",
+          "proposal_id": "4ou2RXN1",
+          "short_description": "MetaCall currently supports Linux (GCC), Windows (MSVC), and macOS but many platforms where developers want polyglot runtime support are missing.The...",
+          "slug": "extended-platform-and-architecture-support-for-metacall",
+          "status": null,
+          "student_name": "Yug105",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extended platform and architecture support for Metacall"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

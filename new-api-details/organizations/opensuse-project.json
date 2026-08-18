@@ -74,9 +74,9 @@
     "licensing & software quality QA",
     "systems management"
   ],
-  "total_projects": 52,
+  "total_projects": 60,
   "stats": {
-    "avg_projects_per_appeared_year": 5.78,
+    "avg_projects_per_appeared_year": 6,
     "projects_by_year": {
       "year_2016": 6,
       "year_2017": 5,
@@ -88,7 +88,7 @@
       "year_2023": 8,
       "year_2024": 11,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 6,
@@ -101,9 +101,9 @@
       "year_2023": 8,
       "year_2024": 11,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 48
+    "total_students": 60
   },
   "years": {
     "year_2016": {
@@ -1159,7 +1159,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/opensuse-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/opensuse-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "I propose to build a reproducible benchmark framework for evaluating cloud-native storage options for Uyuni on RKE2. The problem is that different Kubernetes storage backends can behave very differently for the kinds of operations Uyuni depends on, especially PostgreSQL transactions, repository metadata handling, and package distribution. The project will address this by starting from a storage-only control baseline and then extending the evaluation into PostgreSQL benchmarking and Uyuni-specific workload benchmarking, while collecting synchronized observability data for each run. The same benchmark method will be reused across selected storage backends so that results remain comparable and can support a practical recommendation for which StorageClass Uyuni should support on RKE2.\n\nThe main deliverables will be a reusable benchmark harness, benchmark results for the tested storage backends, PostgreSQL and Uyuni workload comparison data, observability-backed summaries, and a final report that explains the benchmark method, compares the backends, and recommends the most suitable StorageClass. The project will also produce the configuration artifacts and scripts needed to rerun the benchmark process and reproduce the tested setup.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_P55BEl5h",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/P55BEl5h",
+          "proposal_id": "VifjMuq7",
+          "short_description": "I propose to build a reproducible benchmark framework for evaluating cloud-native storage options for Uyuni on RKE2. The problem is that different...",
+          "slug": "evaluating-cloud-native-storage-performance-benchmarking-for-uyuni-on-rke2",
+          "status": null,
+          "student_name": "AkashKumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Evaluating Cloud-Native Storage: Performance Benchmarking for Uyuni on RKE2"
+        },
+        {
+          "code_url": null,
+          "description": "New openSUSE users face a steep learning curve navigating distribution-specific tools like zypper, YaST, Btrfs/Snapper, and systemd. This project builds a locally-running AI onboarding assistant that pairs a Small Language Model (SLM) with a Retrieval-Augmented Generation (RAG) pipeline over official openSUSE documentation. The assistant detects the user's actual system context (desktop environment, pending updates, failed services, filesystem layout) and grounds every answer in real documentation and real system signals. It runs fully offline after setup, respecting user privacy.\nA working proof of concept already exists with local SLM inference (TinyLlama 1.1B via llama-cpp-python), a ChromaDB-backed RAG pipeline, system context detection, CLI and Web UI interfaces, and a benchmarking framework.\nDeliverables: (1) production-ready SLM with tiered model support, (2) enhanced RAG pipeline with 4+ documentation sources and tuned retrieval, (3) expanded system context detection covering Btrfs/Snapper, networking, GPU, and locale, (4) jeos-firstboot module for first-boot integration, (5) systemd service with socket activation, (6) RPM packaging via OBS with subpackages for core, docs, and model, (7) security hardening and prompt injection defenses, (8) comprehensive testing across hardware tiers, and (9) blog posts and user documentation.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_f4QXjW1b",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/f4QXjW1b",
+          "proposal_id": "lzrSenwB",
+          "short_description": "New openSUSE users face a steep learning curve navigating distribution-specific tools like zypper, YaST, Btrfs/Snapper, and systemd. This project...",
+          "slug": "ai-powered-onboarding-experience-for-opensuse-linux-distributions",
+          "status": null,
+          "student_name": "AnujAgrawal",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI Powered Onboarding Experience for openSUSE Linux Distributions"
+        },
+        {
+          "code_url": null,
+          "description": "Managing large-scale infrastructures with Uyuni involves monitoring a diverse range of Linux distributions (Debian, Ubuntu, Rocky, Alma, OpenSUSE, others) using Prometheus. While the current stack provides robust data collection via exporters (Node, Blackbox, Postgres, Apache) and visualization through Grafana, system administrators often struggle to interpret raw metrics during critical failures.\r\n\r\nThis project aims to integrate an AI Monitoring Agent into the Uyuni ecosystem. The agent will process real-time metrics from Prometheus and, when an anomaly is detected, perform a deep-dive analysis. By combining metric data with live system inspection via SaltStack (leveraging mgrctl exec calls or the Salt REST API), the AI will generate enriched alerts through AlertManager. These alerts won't just say \"High RAM usage\"; they will explain the root cause (e.g., a specific memory leak in a process) and provide actionable mitigation steps.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_IkZoUdVT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IkZoUdVT",
+          "proposal_id": "u1KcS0Td",
+          "short_description": "Managing large-scale infrastructures with Uyuni involves monitoring a diverse range of Linux distributions (Debian, Ubuntu, Rocky, Alma, OpenSUSE,...",
+          "slug": "ai-powered-intelligent-monitoring-and-root-cause-analysis-for-uyuni",
+          "status": null,
+          "student_name": "Digvijay Rawat",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Powered Intelligent Monitoring and Root Cause Analysis for Uyuni"
+        },
+        {
+          "code_url": null,
+          "description": "Uyuni is a powerful systems management platform, but today it lacks a native way to automate actions based on events in real time. As a result, administrators often have to write custom scripts to react to things like patch updates or system changes, which adds unnecessary complexity and effort.\n\nThis project aims to change that by introducing a simple, scalable event-driven architecture that turns Uyuni into an automation-friendly platform. The idea is to make it easy for administrators to connect Uyuni with other tools and build workflows without writing a lot of custom code.\n\nThe solution has two main parts. First, an MQTT-based event publisher that hooks into Uyuni’s existing event pipeline and emits real-time events such as patch updates, system registrations, and Salt state results. Second, a custom Node-RED integration that allows administrators to visually design automation workflows using a drag-and-drop interface.\n\nThe publisher is designed to be lightweight and non-intrusive, running as a passive listener so it does not interfere with Uyuni’s current behavior. It sends structured JSON messages, supports topic-based filtering, and includes reliability features like retries, batching, and rate limiting to handle larger deployments. On top of this, the Node-RED layer provides reusable nodes for consuming events, triggering actions, and interacting with Uyuni APIs.\n\nOverall, this project makes automation in Uyuni much more accessible, reduces the need for manual scripting, and enables easy integration with external tools like Slack or Jira. It also lays a solid foundation for building more advanced automation features in the future.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_yJH1saNZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yJH1saNZ",
+          "proposal_id": "hkW443z1",
+          "short_description": "Uyuni is a powerful systems management platform, but today it lacks a native way to automate actions based on events in real time. As a result,...",
+          "slug": "uyuni-event-driven-automation-via-mqtt-and-node-red",
+          "status": null,
+          "student_name": "Geetansh Goyal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Uyuni Event-Driven Automation via MQTT and Node-RED"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to modernize Uyuni API documentation system by replacing the existing Javadoc-based macro DSL with a standardized OpenAPI/Swagger approach. The current system lacks interactivity, standard tooling support, and automated validation, leading to outdated and hard-to-maintain documentation.\r\nTo solve this, I will generate an OpenAPI specification from annotated Java interfaces using a custom Swagger reader, making it the single source of truth. This specification will power interactive Swagger UI within Uyuni, ensure contract validation through automated testing, and enable generation of existing documentation formats such as AsciiDoc, DocBook, and HTML.The key deliverables include migrating 60+ API handlers to the new structure, implementing validation and contract testing, integrating Swagger UI into the web interface, and developing parsers to maintain compatibility with existing documentation pipelines.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_SjlTx0se",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SjlTx0se",
+          "proposal_id": "e1upAPx2",
+          "short_description": "This project aims to modernize Uyuni API documentation system by replacing the existing Javadoc-based macro DSL with a standardized OpenAPI/Swagger...",
+          "slug": "uyuni-migrate-api-documentation-to-openapi-swagger",
+          "status": null,
+          "student_name": "master-hj",
+          "student_profile": null,
+          "tags": [],
+          "title": "Uyuni: Migrate API Documentation to OpenAPI/Swagger"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to improve the obs-status-service tool to provide a better visualization and explore other integrations.\nThis tool is a go application that provides some visualization from build results as SVG images. During this project we will work on improving and extending the generated SVG, improving the UX with new styles and making it dynamic with javascript.\nThe second part of the project is to implement a new bot for Gitea that provides useful build information directly in pull requests. Additionally, if time permits, we will explore the implementation of an AI-powered integration to assist with pull requests that fail to build, utilizing Log Detective (https://www.logdetective.com/).",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_M03dLqSN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/M03dLqSN",
+          "proposal_id": "qJWgP7ty",
+          "short_description": "The goal of this project is to improve the obs-status-service tool to provide a better visualization and explore other integrations. This tool is a...",
+          "slug": "enhancing-opensuse-git-workflow",
+          "status": null,
+          "student_name": "mmarhin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing openSUSE Git Workflow"
+        },
+        {
+          "code_url": null,
+          "description": "My goal is to fix this by implementing mgrctl get a simple, kubectl-style interface for querying Uyuni resources. Think mgrctl get systems, mgrctl get errata --cve CVE-2026-1234, or mgrctl get jobs --state failed. Everything goes through the existing Uyuni REST API, so there's no new authentication logic to worry about, and the output can be a clean table, JSON, or YAML depending on what you need.\nBy the end of the program I plan to have full coverage across five namespaces like systems, system groups, channels, scheduled jobs, and errata , with filters, structured output, and a mock-based test suite that doesn't need a live Uyuni instance to run. If time allows, I'd also like to add mgrctl describe for richer single-resource views and shell completion for bash and zsh.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_Mg9x3OsV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Mg9x3OsV",
+          "proposal_id": "U3iCKSvQ",
+          "short_description": "My goal is to fix this by implementing mgrctl get a simple, kubectl-style interface for querying Uyuni resources. Think mgrctl get systems, mgrctl...",
+          "slug": "kubectl-like-get-command-for-mgrctl",
+          "status": null,
+          "student_name": "sharma_jp",
+          "student_profile": null,
+          "tags": [],
+          "title": "kubectl-like get command for mgrctl"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement a native Java based LDAP authentication provider in Uyuni to eliminate dependency on OS level authentication mechanisms such as SSSD and PAM. The solution will enable administrators to configure LDAP integration directly through the web UI while supporting automatic mapping of LDAP groups to Uyuni roles.\n\nThe implementation will extend the existing authentication flow by integrating LDAP authentication within UserImpl.authenticate without requiring major refactoring. It will include secure bind and search operations, efficient connection pooling, and seamless coexistence with existing local and PAM based authentication methods.\n\nAdditionally, the project will introduce dynamic RBAC mapping where LDAP groups are mapped to Uyuni roles at login time, ensuring correct permissions without manual intervention. A configuration interface in the Admin Setup section will allow administrators to manage LDAP settings and role mappings easily.\n\nThe final deliverable will be a scalable, maintainable, and secure authentication system that improves usability and enterprise readiness of Uyuni.",
+          "difficulty": null,
+          "id": "proj_opensuse-project_2026_C8BuxfDi",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/C8BuxfDi",
+          "proposal_id": "qJTLS1ai",
+          "short_description": "This project aims to implement a native Java based LDAP authentication provider in Uyuni to eliminate dependency on OS level authentication...",
+          "slug": "native-ldap-authentication-with-rbac-mapping-in-uyuni",
+          "status": null,
+          "student_name": "Surya Srinivasan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Native LDAP Authentication with RBAC Mapping in Uyuni"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

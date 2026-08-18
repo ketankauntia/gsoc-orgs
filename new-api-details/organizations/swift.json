@@ -46,9 +46,9 @@
     "Server development",
     "Standard Libraries"
   ],
-  "total_projects": 26,
+  "total_projects": 29,
   "stats": {
-    "avg_projects_per_appeared_year": 3.25,
+    "avg_projects_per_appeared_year": 3.22,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -60,7 +60,7 @@
       "year_2023": 3,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -73,9 +73,9 @@
       "year_2023": 3,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 24
+    "total_students": 29
   },
   "years": {
     "year_2016": null,
@@ -611,7 +611,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/swift"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/swift",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Swift's concurrency runtime has no mechanism to enumerate live Tasks and TaskGroups. When a program using async/await stalls, existing tools such as thread backtraces, Instruments, LLDB are silent about the suspended tasks that are the likely cause. Instruments records task lifetimes after completion; there is no API, debugger command, or crash report field that answers \"what tasks exist right now and what are they waiting on?\"\r\n\r\nThis project implements a global registry of live AsyncTask and TaskGroup instances inside the Swift Concurrency runtime. The core challenge is doing this without introducing unacceptable synchronisation overhead on every task creation and destruction, a hot path in any concurrent Swift program. I will implement and benchmark at minimum two candidate data structures: a sharded-mutex intrusive list (using PrivateStorage, which is opaque externally and safe to extend without breaking ABI) and a lock-free Treiber stack alternative.\r\n\r\nDeliverables:\r\n\r\nA working registry implementation with hooks in swift_task_create_commonImpl and AsyncTask::~AsyncTask()\r\n\r\nA design document comparing candidate data structures with measured overhead against the existing TaskGroups.swift and AsyncTree.swift benchmark suite\r\n\r\nSignal-safe crash backtrace integration listing live tasks on crash\r\n\r\nLLDB Python macros for interactive task inspection.",
+          "difficulty": null,
+          "id": "proj_swift_2026_jSfvgdVP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jSfvgdVP",
+          "proposal_id": "0kVifPQg",
+          "short_description": "Swift's concurrency runtime has no mechanism to enumerate live Tasks and TaskGroups. When a program using async/await stalls, existing tools such as...",
+          "slug": "task-and-taskgroup-tracking-for-swift-concurrency",
+          "status": null,
+          "student_name": "Ege Kaya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Task and TaskGroup Tracking for Swift Concurrency"
+        },
+        {
+          "code_url": null,
+          "description": "I propose reimplementing the compiler’s qualified name lookup in the Swift-only \"swift-syntax\" package. I will add a new API to the SwiftLexicalLookup module that accepts a declaration group, such as a type, and returns its members —commonly properties and functions. Lifting this API into the higher-level SwiftSyntax package exposes essential semantic information, enabling build tools that perform more intricate code transformations and offer more precise diagnostics. The library will find a declaration group's members through the package's SyntaxVisitor API and optionally cache results in a new SymbolTable type. I will deliver the updated SwiftLexicalLookup library with helpful docstrings and comments, extensive unit testing, and unqualified-lookup integration, along with two dedicated documentation articles.",
+          "difficulty": null,
+          "id": "proj_swift_2026_eRaEOB44",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/eRaEOB44",
+          "proposal_id": "D1qf3ZW9",
+          "short_description": "I propose reimplementing the compiler’s qualified name lookup in the Swift-only \"swift-syntax\" package. I will add a new API to the...",
+          "slug": "qualified-name-lookup-for-swift-syntax",
+          "status": null,
+          "student_name": "Filip Sakellariou",
+          "student_profile": null,
+          "tags": [],
+          "title": "Qualified Name Lookup for swift-syntax"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend SourceKit LSP to add DocC Language features like go-to-definition and diagnostic support for missing or broken symbol links. It also enhances the documentation preview by making it interactive with clickable symbol links and web URLs, along with syntax highlighting for .tutorial and .md files.",
+          "difficulty": null,
+          "id": "proj_swift_2026_9nlNGN2W",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9nlNGN2W",
+          "proposal_id": "Zo2XzZ79",
+          "short_description": "This project aims to extend SourceKit LSP to add DocC Language features like go-to-definition and diagnostic support for missing or broken symbol...",
+          "slug": "docc-language-features-in-sourcekit-lsp",
+          "status": null,
+          "student_name": "Padmashree S S",
+          "student_profile": null,
+          "tags": [],
+          "title": "DocC Language Features in SourceKit-LSP"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

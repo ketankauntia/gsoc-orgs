@@ -42,9 +42,9 @@
     "digital logic design",
     "simulation"
   ],
-  "total_projects": 32,
+  "total_projects": 38,
   "stats": {
-    "avg_projects_per_appeared_year": 4.57,
+    "avg_projects_per_appeared_year": 4.75,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -56,7 +56,7 @@
       "year_2023": 4,
       "year_2024": 5,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": null,
@@ -69,9 +69,9 @@
       "year_2023": 4,
       "year_2024": 5,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 32
+    "total_students": 38
   },
   "years": {
     "year_2016": null,
@@ -776,7 +776,120 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/circuitverseorg"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/circuitverseorg",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "CircuitVerse provides a powerful digital logic simulator, but its classroom workflow lacks critical features required for effective teaching at scale. Currently, instructors cannot organize students into structured teams, assign collaborative work, reuse pre-built circuit templates, or rely on modern LMS integrations due to outdated LTI 1.1 support. These limitations lead to inefficient grading, repeated manual setup, and poor integration with platforms like Canvas.\n\nThis project aims to enhance CircuitVerse’s classroom ecosystem by introducing four key improvements. First, a subgroup system will enable instructors to divide students into teams with defined roles, supporting structured collaboration. Second, group-based assignment workflows will allow submissions on behalf of a team, ensuring consistent grading and reducing redundancy. Third, a circuit template library with integrated test cases will enable reusable, pre-configured assignments and automated grading using a simulation-based evaluation pipeline. Finally, the project will upgrade LMS integration by implementing LTI 1.3 using OpenID Connect and OAuth 2.0, enabling secure authentication, deep linking, and modern grade passback via Assignment and Grade Services (AGS).\n\nThe deliverables include:\n\nA fully functional subgroup and team management system with API support\nGroup assignment workflows with submit-on-behalf functionality\nA template library with auto-grading using simulation-based test cases\nComplete LTI 1.3 integration including OIDC login, deep linking, AGS score submission, and NRPS roster access\nComprehensive RSpec test coverage and documentation\n\nBy addressing these gaps, this project will transform CircuitVerse into a scalable, LMS-integrated teaching platform capable of supporting modern classroom workflows and institutional requirements",
+          "difficulty": null,
+          "id": "proj_circuitverseorg_2026_JI2PN30m",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JI2PN30m",
+          "proposal_id": "QVh6LXCe",
+          "short_description": "CircuitVerse provides a powerful digital logic simulator, but its classroom workflow lacks critical features required for effective teaching at...",
+          "slug": "assignment-suite-classroom-workflow-enhancement",
+          "status": null,
+          "student_name": "@magic-peach",
+          "student_profile": null,
+          "tags": [],
+          "title": "Assignment Suite & Classroom Workflow Enhancement"
+        },
+        {
+          "code_url": null,
+          "description": "CircuitVerse currently saves circuits based on visual layout rather than logical connections, resulting in unpredictable save files that prevent meaningful version control, complicate Verilog synthesis, and hinder data analysis. To solve this, this project introduces a deterministic, canonical JSON format. By utilising Kahn's algorithm to map dependencies, the new format ensures components are always saved and loaded in the correct sequence, regardless of where they are drawn on the screen. The key deliverables include a smarter export/import engine, an automated, zero-loss migration tool to smoothly upgrade all legacy .cv files to this new standard, a highly optimised single-pass Verilog generator, and an interactive developer UI featuring real-time JSON previews, copying, and downloading.",
+          "difficulty": null,
+          "id": "proj_circuitverseorg_2026_gfjbsksC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gfjbsksC",
+          "proposal_id": "gSlkmIEO",
+          "short_description": "CircuitVerse currently saves circuits based on visual layout rather than logical connections, resulting in unpredictable save files that prevent...",
+          "slug": "structured-format-for-saved-circuit-data",
+          "status": null,
+          "student_name": "Harkeerat Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Structured Format for Saved Circuit Data"
+        },
+        {
+          "code_url": null,
+          "description": "CircuitVerse currently handles every user and classroom in isolation with \nno concept of institutional ownership. This makes it impossible for \nuniversities to manage hundreds of classrooms, instructors, and students \nunder one umbrella.\n\nThis project introduces an Organisation layer to CircuitVerse. It adds a \nhierarchical structure where an Organisation contains Department Groups, \nwhich contain existing CircuitVerse classrooms. Role-Based Access Control \nenforced via Pundit gives each role: Org Admin, Group Lead, Instructor, \nand Student, exactly the permissions they need and nothing more. Single \nSign-On via OpenID Connect lets students log in using their existing \ninstitutional email through Google Workspace or Microsoft Azure AD, with \nautomatic org assignment based on email domain. Optional custom branding \nadds subdomain support and logo placement for institutional identity.\n\nDeliverables:\n1. Hierarchical org structure: organisations, org_groups, memberships tables \n   with full admin dashboard\n2. RBAC via Pundit: four roles enforced at the server level\n3. SSO via OIDC: omniauth-openid-connect with domain-to-org auto-assignment\n4. Custom branding: subdomain routing and logo rendering (optional)",
+          "difficulty": null,
+          "id": "proj_circuitverseorg_2026_BEUG5iMM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/BEUG5iMM",
+          "proposal_id": "hZGnkUlO",
+          "short_description": "CircuitVerse currently handles every user and classroom in isolation with no concept of institutional ownership. This makes it impossible for...",
+          "slug": "enterprise-institutional-organization-features-circuitverse",
+          "status": null,
+          "student_name": "Naman-Chhabra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enterprise & Institutional Organization Features — CircuitVerse"
+        },
+        {
+          "code_url": null,
+          "description": "This project migrates CircuitVerse's hardware synthesis pipeline from a legacy server backend to a fully offline, zero-latency WebAssembly execution environment. By integrating the YoWASP engine within a dedicated Web Worker inside the Tauri desktop app, the project delivers client-side Verilog synthesis with a reactive Pinia state architecture, custom topological circuit layout, a full Vitest parity test suite, and contributor documentation, all without affecting existing web users.",
+          "difficulty": null,
+          "id": "proj_circuitverseorg_2026_JN1PXIIA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JN1PXIIA",
+          "proposal_id": "mS8jdOjz",
+          "short_description": "This project migrates CircuitVerse's hardware synthesis pipeline from a legacy server backend to a fully offline, zero-latency WebAssembly execution...",
+          "slug": "client-side-verilog-synthesis",
+          "status": null,
+          "student_name": "Priyank Verma",
+          "student_profile": null,
+          "tags": [],
+          "title": "Client Side Verilog Synthesis"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to transform the CircuitVerse mobile application into a fully functional, stable, and production-ready platform that matches the capabilities of its web counterpart. \nCurrently, gaps in core features, inconsistent user experience, and technical instability limit the app’s effectiveness as a learning tool. By addressing these challenges, the project focuses on implementing missing web features, stabilizing authentication, and restoring key modules such as the interactive book to ensure a seamless and engaging learning experience on mobile devices.\nIn addition to feature parity, the project emphasizes improving performance, fixing critical bugs, and enhancing UI consistency and accessibility. A scalable and maintainable architecture will be established to support long-term growth and easier development. \nSpecial attention will also be given to localization and multilingual support, making the platform more inclusive and accessible to a global audience.\nOverall, this initiative is important for CircuitVerse as it enables broader reach, improves usability for mobile users, and ensures that students worldwide can reliably access interactive digital circuit learning resources anytime, anywhere.",
+          "difficulty": null,
+          "id": "proj_circuitverseorg_2026_GOfWxJHE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/GOfWxJHE",
+          "proposal_id": "8GNgcANQ",
+          "short_description": "This project aims to transform the CircuitVerse mobile application into a fully functional, stable, and production-ready platform that matches the...",
+          "slug": "circuitverse-mobile-app-enhancement",
+          "status": null,
+          "student_name": "Santam Roy Choudhury",
+          "student_profile": null,
+          "tags": [],
+          "title": "CircuitVerse Mobile App Enhancement"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the CircuitVerse simulator experience by targeting four major tasks: \n- Having a separate simulator-<version>.js and simulator-embed-<version>.js as separate output files.\n- Integrating simulator session with rails session\n- Implementing authentication mechanism for desktop version which is built using Tauri\n- Addition of the new circuit debugging suite",
+          "difficulty": null,
+          "id": "proj_circuitverseorg_2026_tDbbSIan",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tDbbSIan",
+          "proposal_id": "GvU8acc8",
+          "short_description": "This project focuses on improving the CircuitVerse simulator experience by targeting four major tasks: - Having a separate simulator-<version>.js and...",
+          "slug": "circuitverse-simulator-integration",
+          "status": null,
+          "student_name": "Supreeth C",
+          "student_profile": null,
+          "tags": [],
+          "title": "CircuitVerse Simulator Integration"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

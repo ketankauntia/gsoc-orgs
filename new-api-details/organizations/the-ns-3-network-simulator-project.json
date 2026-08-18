@@ -40,9 +40,9 @@
     "emulation",
     "network analysis"
   ],
-  "total_projects": 34,
+  "total_projects": 39,
   "stats": {
-    "avg_projects_per_appeared_year": 3.78,
+    "avg_projects_per_appeared_year": 3.9,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 5,
@@ -54,7 +54,7 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -67,9 +67,9 @@
       "year_2023": 3,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 34
+    "total_students": 39
   },
   "years": {
     "year_2016": null,
@@ -763,7 +763,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-ns-3-network-simulator-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-ns-3-network-simulator-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Integrating 5G NR module with ns-3-ai project aims to create a high-performance, zero-serialization bridge between the 5G-LENA NR MAC scheduler and Python ML frameworks using the ns-3-ai Message Interface, enabling richer observations, lower latency, and framework-independent ML integration beyond what the current OpenGym-based approach supports. While the NR scheduler is the target use case, the integration patterns, bindings, and agent framework built here serve as a reusable reference for any ns-3 module looking to adopt ML.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-simulator-project_2026_G2dYeVu6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/G2dYeVu6",
+          "proposal_id": "tXlvAiuO",
+          "short_description": "The Integrating 5G NR module with ns-3-ai project aims to create a high-performance, zero-serialization bridge between the 5G-LENA NR MAC scheduler...",
+          "slug": "integrating-5g-nr-module-with-ns-3-ai",
+          "status": null,
+          "student_name": "Anuka Hettiarachchi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrating 5G NR module with ns-3-ai"
+        },
+        {
+          "code_url": null,
+          "description": "The Flexible Network Tester (Flent) is an industry-standard tool for evaluating Bufferbloat and network performance. However, benchmarking simulated networks in ns-3 currently requires researchers to rely on external, error-prone parsing scripts to translate simulator events into Flent-compatible data.\n\nThis project solves this disconnect by natively integrating the Flent Application API into the ns-3 mainline. The proposed solution involves modernizing a legacy C++ wrapper, eliminating artificial queue constraints used in prior proof-of-concepts, and refining the linear interpolation logic to accurately translate discrete ns-3 trace callbacks into strict periodic data points. A critical phase of the project involves scientific validation. comparing the simulated ns-3 outputs against real-world Linux hardware benchmarks (using tc and ss) to guarantee mathematical and statistical accuracy.\n\nDeliverables:\n1) A robust, memory-safe FlentHelper C++ API that allows users to seamlessly configure tests and directly output visualization-ready .flent JSON files.\n2) A scientific validation report proving the parity between the simulated network metrics and physical Linux network namespaces.\n3) Expanded support for complex multi-flow Bufferbloat tests (including RRUL, Best Effort, and VoIP).\n4) Comprehensive user documentation and automated example scripts merged into the ns-3-dev mainline.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-simulator-project_2026_PCXPdFoD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PCXPdFoD",
+          "proposal_id": "szxGtOMK",
+          "short_description": "The Flexible Network Tester (Flent) is an industry-standard tool for evaluating Bufferbloat and network performance. However, benchmarking simulated...",
+          "slug": "flent-application-api-integration-and-validation-in-ns-3",
+          "status": null,
+          "student_name": "Kedar Kisan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Flent Application API Integration and Validation in ns-3"
+        },
+        {
+          "code_url": null,
+          "description": "Design a modular switched Ethernet model capable of simulating 1, 10, and 40 GbE links, with MAC-based auto-learning of I/O ports, support for pluggable scheduling algorithms (FCFS, WRR), while remaining extensible for future support of VLAN and Spanning Tree protocols, introduce enhanced EthernetNetDevice model with point-to-point–like NetDevice abstraction for switched Ethernet, an EthernetChannel capable of simulating both half-duplex and full-duplex modes of operation responsible for modeling transmission delay and errors.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-simulator-project_2026_Wl61Gzov",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Wl61Gzov",
+          "proposal_id": "DcV33iyO",
+          "short_description": "Design a modular switched Ethernet model capable of simulating 1, 10, and 40 GbE links, with MAC-based auto-learning of I/O ports, support for...",
+          "slug": "switched-ethernet",
+          "status": null,
+          "student_name": "Manmita Das",
+          "student_profile": null,
+          "tags": [],
+          "title": "Switched Ethernet"
+        },
+        {
+          "code_url": null,
+          "description": "The CTTC 5G-LENA NR module provides a highly detailed and validated simulation of the 5G NR protocol stack within ns-3. However, a critical dimension currently missing is energy consumption modeling. Neither the UE nor the gNB reports power draw or connects to the existing ns-3 Energy Framework. This gap prevents researchers from studying vital metrics like UE battery lifetime, gNB operational expenditure, and overall green networking sustainability.\nThis project will introduce a mature, callback driven energy tracking architecture to the 5G NR module by integrating it with the ns-3 Energy Framework.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-simulator-project_2026_nQxxo1N3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nQxxo1N3",
+          "proposal_id": "mgb3Ypfp",
+          "short_description": "The CTTC 5G-LENA NR module provides a highly detailed and validated simulation of the 5G NR protocol stack within ns-3. However, a critical dimension...",
+          "slug": "energy-consumption-modeling-and-power-aware-extensions-for-5g-lena",
+          "status": null,
+          "student_name": "Nipuna Dulara",
+          "student_profile": null,
+          "tags": [],
+          "title": "Energy Consumption Modeling and Power Aware Extensions for 5G LENA"
+        },
+        {
+          "code_url": null,
+          "description": "This project enhances 6LoWPAN mesh under routing in ns3 by replacing unconditional flooding with a smarter Trickle based suppression strategy following RFC 6206. Each node listens before forwarding and stays silent if neighbors are already spreading the packet. Adaptive forwarding jitter adjusts timing based on local density. A pre GSoC patch already implements the strategy framework with abstract base class and default flooding. The proposed work adds per packet Trickle timers with counter based suppression and interval doubling. Medium 175 hours.",
+          "difficulty": null,
+          "id": "proj_the-ns-3-network-simulator-project_2026_wHBM2psz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wHBM2psz",
+          "proposal_id": "eeHxdoe3",
+          "short_description": "This project enhances 6LoWPAN mesh under routing in ns3 by replacing unconditional flooding with a smarter Trickle based suppression strategy...",
+          "slug": "6lowpan-mesh-under-routing-enhancements-with-trickle-suppression-in-ns3",
+          "status": null,
+          "student_name": "Usham Roy",
+          "student_profile": null,
+          "tags": [],
+          "title": "6LoWPAN Mesh Under Routing Enhancements with Trickle Suppression in ns3"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

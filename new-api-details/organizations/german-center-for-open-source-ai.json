@@ -24,9 +24,9 @@
     "time-series",
     "Causal Inference"
   ],
-  "total_projects": 0,
+  "total_projects": 5,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -38,7 +38,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -51,9 +51,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 0
+    "total_students": 5
   },
   "years": {
     "year_2016": null,
@@ -66,7 +66,104 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/german-center-for-open-source-ai",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project adds pairwise causal discovery methods to pgmpy, focusing on inferring causal direction between two variables from observational data. It includes implementations of ANM, IGCI, and Bivariate LiNGAM under a simple, unified interface, along with an HSIC-based independence test and basic benchmarking using the Tübingen CauseEffectPairs.",
+          "difficulty": null,
+          "id": "proj_german-center-for-open-source-ai_2026_9f1Gy1QX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9f1Gy1QX",
+          "proposal_id": "hQVjQNXm",
+          "short_description": "This project adds pairwise causal discovery methods to pgmpy, focusing on inferring causal direction between two variables from observational data....",
+          "slug": "pairwise-causal-discovery-algorithms-in-pgmpy",
+          "status": null,
+          "student_name": "aryaman.iiit",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pairwise Causal Discovery Algorithms in pgmpy"
+        },
+        {
+          "code_url": null,
+          "description": "skpro's probabilistic regressors have limited online/streaming support: only 3 of 20+ regressors implement update(), few meta-strategies exist, and there is no model persistence.\n\nThis project adds: \n1) native _update() for regressors with incremental APIs (NGBoostRegressor, BayesianLinearRegressor, BaggingRegressor) \n2) composable meta-strategies (OnlineSlidingWindow, OnlineBatchMixture, OnlineExponentialForgetting) usable with any regressor\n3) update() propagation through Pipeline and TransformedTargetRegressor\n4) save()/load() ported from sktime's serialization pattern",
+          "difficulty": null,
+          "id": "proj_german-center-for-open-source-ai_2026_gnjq9ALp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gnjq9ALp",
+          "proposal_id": "uRsmLFKg",
+          "short_description": "skpro's probabilistic regressors have limited online/streaming support: only 3 of 20+ regressors implement update(), few meta-strategies exist, and...",
+          "slug": "on-line-stream-update-functionality-for-regression",
+          "status": null,
+          "student_name": "Chaitany Patel",
+          "student_profile": null,
+          "tags": [],
+          "title": "On-line, Stream/Update Functionality for Regression"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to implement three deep learning-based causal discovery algorithms in pgmpy: DiffAN,\nGraN-DAG, and CAREFL. Each algorithm leverages neural networks to go beyond classical score-based or\nconstraint-based methods, enabling discovery on non-linear, non-Gaussian data. All three will be implemented\ninside pgmpy/causal discovery to isolate the soft dependencies (PyTorch, diffusers, nflows) from the rest of the\nlibrary.",
+          "difficulty": null,
+          "id": "proj_german-center-for-open-source-ai_2026_yt22vmU6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yt22vmU6",
+          "proposal_id": "DFqTRT9n",
+          "short_description": "This proposal aims to implement three deep learning-based causal discovery algorithms in pgmpy: DiffAN, GraN-DAG, and CAREFL. Each algorithm...",
+          "slug": "deep-learning-based-causal-discovery-algorithms-for-pgmpy",
+          "status": null,
+          "student_name": "manas206",
+          "student_profile": null,
+          "tags": [],
+          "title": "Deep Learning-Based Causal Discovery Algorithms for pgmpy"
+        },
+        {
+          "code_url": null,
+          "description": "sktime provides a unified Python API for time series forecasting, but its support for modern foundation models, large pretrained models capable of zero-shot forecasting, is still maturing. Several high-value models, such as Google TimesFM and IBM TinyTimeMixer, are not yet interfaced in sktime; existing foundation model adapters lack probabilistic output (predict_interval, predict_quantiles), and there is no shared wrapper to reduce the boilerplate cost of adding new models from the Hugging Face Hub.\n\nThis project directly addresses those gaps. The primary deliverable is one production-ready foundation model adapter fully integrated into sktime's BaseForecaster API, with fit, predict, predict_interval, and predict_quantiles support, CI-passing tests, soft-dependency handling, and a usage tutorial.",
+          "difficulty": null,
+          "id": "proj_german-center-for-open-source-ai_2026_V3dUkvN0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/V3dUkvN0",
+          "proposal_id": "4POwqDVu",
+          "short_description": "sktime provides a unified Python API for time series forecasting, but its support for modern foundation models, large pretrained models capable of...",
+          "slug": "sktime-interfacing-foundation-models",
+          "status": null,
+          "student_name": "Vedant Agrawal",
+          "student_profile": null,
+          "tags": [],
+          "title": "sktime - Interfacing Foundation models"
+        },
+        {
+          "code_url": null,
+          "description": "pyGAM currently produces anti-conservative p-values for smooth terms due to several deviations from the statistical theory outlined in Wood (2013b). In particular, it assumes a simple chi-squared reference distribution, ignores effective degrees of freedom corrections, and does not properly handle penalization-induced rank deficiency.\n\nThis project will correct the statistical inference pipeline in pyGAM by implementing five key fixes: (1) proper computation of effective degrees of freedom, (2) stable pseudoinverse truncation, (3) replacement of the chi-squared approximation with a weighted mixture using the Liu-Tang-Zhang method, (4) QR-based covariance handling, and (5) correct treatment of unknown-scale families.\n\nThe result will be a refactored inference module that produces well-calibrated p-values, along with a comprehensive validation suite comparing type-I error and power against mgcv. Stretch goals include incorporating smoothing parameter uncertainty corrections and exploring REML-based smoothing.\n\nDeliverables include a refactored statistics() pipeline, extensive tests, and improved documentation.",
+          "difficulty": null,
+          "id": "proj_german-center-for-open-source-ai_2026_LZMBhg6A",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/LZMBhg6A",
+          "proposal_id": "74Hz7fEt",
+          "short_description": "pyGAM currently produces anti-conservative p-values for smooth terms due to several deviations from the statistical theory outlined in Wood (2013b)....",
+          "slug": "correcting-statistical-inference-for-smooth-terms-in-pygam-accurate-p-values",
+          "status": null,
+          "student_name": "vsl366",
+          "student_profile": null,
+          "tags": [],
+          "title": "Correcting Statistical Inference for Smooth Terms in pyGAM - Accurate p values"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": null,

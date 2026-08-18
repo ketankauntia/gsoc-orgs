@@ -40,9 +40,9 @@
     "contract management",
     "document assembly"
   ],
-  "total_projects": 13,
+  "total_projects": 18,
   "stats": {
-    "avg_projects_per_appeared_year": 3.25,
+    "avg_projects_per_appeared_year": 3.6,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -54,7 +54,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -67,9 +67,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 13
+    "total_students": 18
   },
   "years": {
     "year_2016": null,
@@ -353,7 +353,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/accord-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/accord-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project extends the Accord Project Template Playground by implementing an end-to-end, sandboxed logic execution pipeline to solve its inability to test interactive smart contract behaviors natively. By utilizing a secure Web Worker architecture, the platform will safely evaluate user-authored TypeScript logic and validate all states and requests against strict Concerto models directly in the browser. The core deliverables include an integrated Monaco-powered logic editor, an interactive contract runner UI for initialization and request handling, dynamic execution results visualization, and comprehensive multi-state contract templates. Together, these features transform the platform from a static authoring tool into a complete, interactive development workspace for smart legal contracts.",
+          "difficulty": null,
+          "id": "proj_accord-project_2026_R4u8FyUV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/R4u8FyUV",
+          "proposal_id": "GFeAC9jg",
+          "short_description": "This project extends the Accord Project Template Playground by implementing an end-to-end, sandboxed logic execution pipeline to solve its inability...",
+          "slug": "template-logic-support-for-playground",
+          "status": null,
+          "student_name": "23harshitkumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Template Logic Support for Playground"
+        },
+        {
+          "code_url": null,
+          "description": "Concerto is the modeling language of the Accord Project. It supports code generation for 16 target languages and schema formats such as Java, TypeScript, Go, Rust, C#, GraphQL, and Protobuf. At present, CI only checks that the generator runs without crashing. It does not verify that the generated code compiles or validates in its target environment. This allows broken code to reach users without detection.\n\nThis project adds full compilation and validation checks across all 16 targets through three deliverables. The first deliverable is a set of Docker images, one for each target. Each image includes the Concerto CLI and the required language toolchain. These images are published to the GitHub Container Registry with layer caching enabled. The second deliverable is a GitHub Actions matrix workflow. It generates code from a test corpus, runs it inside the correct image, and executes the compiler or validator for every pull request. The workflow fails immediately if the output is invalid. The third deliverable is a versioned test corpus of .cto model files. These files cover all Concerto language constructs such as primitives, optionals, arrays, inheritance, enumerations, and relationships. This ensures full coverage of code generation features.",
+          "difficulty": null,
+          "id": "proj_accord-project_2026_GWPOccoM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/GWPOccoM",
+          "proposal_id": "WtS8knp6",
+          "short_description": "Concerto is the modeling language of the Accord Project. It supports code generation for 16 target languages and schema formats such as Java,...",
+          "slug": "automated-compilation-verification-across-all-concerto-code-generation-languages",
+          "status": null,
+          "student_name": "Apoorv Gadiya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Compilation Verification Across All Concerto Code Generation Languages"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to make contract execution easier by removing the need to write TypeScript logic for every template. Instead, it uses an LLM to understand the contract and execute it automatically. The system adds three modes—disabled, fallback, and force—so users can choose between normal typescript logic and LLM execution. It also includes proper validation and formatting to ensure correct outputs. The project will be tested on different real world templates and compared with existing logic to check accuracy and performance.",
+          "difficulty": null,
+          "id": "proj_accord-project_2026_IPvb0S5e",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IPvb0S5e",
+          "proposal_id": "Ehee23ls",
+          "short_description": "This project aims to make contract execution easier by removing the need to write TypeScript logic for every template. Instead, it uses an LLM to...",
+          "slug": "llm-based-template-logic-executor",
+          "status": null,
+          "student_name": "dev_codes",
+          "student_profile": null,
+          "tags": [],
+          "title": "LLM Based Template Logic Executor"
+        },
+        {
+          "code_url": null,
+          "description": "The APAP MCP server currently routes every tool call through an internal HTTP loop back to its own Express server, adding unnecessary latency, making MCP handlers impossible to unit test, and discarding all HTTP error context behind generic error strings. The MCP layer has zero automated tests and no client-specific documentation beyond a basic setup guide.\n\nThis project introduces a shared service layer that both MCP tools and REST routes call directly via Drizzle ORM, eliminating the HTTP round-trip. Structured error types replace generic strings with machine-readable codes and HTTP status preservation.\n\nDeliverables:\n1. Shared service layer refactor with structured error types across all 8 MCP tool handlers\n2. Four-tier test suite (unit, integration, contract, E2E) with 90%+ coverage enforced in GitHub Actions CI\n3. Client-specific tutorials for Claude, ChatGPT, and MCP Inspector\n4. Developer experience improvements: Docker Compose quickstart, Pino structured logging, /healthz endpoint, and updated CONTRIBUTING.md\n\nA working proof-of-concept implementing the core refactor with 53 tests and 98.55% statement coverage is already live at github.com/JayDS22/apap-mcp-poc.",
+          "difficulty": null,
+          "id": "proj_accord-project_2026_gEQTuaO3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gEQTuaO3",
+          "proposal_id": "AyPIyAZx",
+          "short_description": "The APAP MCP server currently routes every tool call through an internal HTTP loop back to its own Express server, adding unnecessary latency, making...",
+          "slug": "apap-and-mcp-server",
+          "status": null,
+          "student_name": "Jay Guwalani",
+          "student_profile": null,
+          "tags": [],
+          "title": "APAP and MCP Server"
+        },
+        {
+          "code_url": null,
+          "description": "This initiative focuses first on creating a Rust runtime platform for Concerto. Presently, Concerto's runtime logic resides in JavaScript and we use Node/Browser execution to conduct that logic, however; the logic is becoming more difficult to be reused as expected in other execution environments. The long term plan is to create a reusable Validation Core written in the Rust programming language which loads Concerto entity metamodels in JSON format, validates against the requested Concerto entity types based on the appropriate input metamodel and allows both access to the same validation core as a WASM module which is used from JavaScript executed environments, and also through a native interface for callers that are not executing using vanilla JavaScript.",
+          "difficulty": null,
+          "id": "proj_accord-project_2026_f44dBnag",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/f44dBnag",
+          "proposal_id": "jj6a6QMQ",
+          "short_description": "This initiative focuses first on creating a Rust runtime platform for Concerto. Presently, Concerto's runtime logic resides in JavaScript and we use...",
+          "slug": "create-a-new-concerto-runtime-for-multi-platform-deployment",
+          "status": null,
+          "student_name": "Yash_Kumar17",
+          "student_profile": null,
+          "tags": [],
+          "title": "Create a new Concerto runtime for multi platform deployment"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

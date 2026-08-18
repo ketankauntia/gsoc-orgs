@@ -28,9 +28,9 @@
     "component repository",
     "vulnerabilities management"
   ],
-  "total_projects": 2,
+  "total_projects": 5,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 2
+    "total_students": 5
   },
   "years": {
     "year_2016": null,
@@ -116,7 +116,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sw360"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/sw360",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "SW360 currently imports license and obligation data through five disconnected paths with no coordination between them, meaning multiple instances can hold different obligation text for the same license with no way to detect the gap.\n\nThis project makes LicenseDB the single authoritative source by implementing scheduled REST based synchronization. It covers paginated license and obligation sync, incremental daily updates via the audit log, field-level mapping that preserves SW360-specific compliance fields, read-only gating of legacy import paths, and CouchDB-first lookup for CLI attachment processing.\n\nDeliverables include JWT authentication, automated daily scheduling via ScheduleHandler, admin REST endpoints for sync control and health monitoring, encrypted credentials, circuit breaker and rate limiting, a migration guide, and  test coverage.",
+          "difficulty": null,
+          "id": "proj_sw360_2026_TPr2uAQv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TPr2uAQv",
+          "proposal_id": "FKWies2M",
+          "short_description": "SW360 currently imports license and obligation data through five disconnected paths with no coordination between them, meaning multiple instances can...",
+          "slug": "integration-of-sw360-and-licensedb",
+          "status": null,
+          "student_name": "Sandyp",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integration of SW360 and LicenseDB"
+        },
+        {
+          "code_url": null,
+          "description": "SW360 today uses Apache Thrift for backend-to-backend calls. That choice forces a Thrift toolchain and many .thrift IDLs, ships large WARs via shared Thrift servlet code, makes traffic hard to debug with normal HTTP tools, and limits standard metrics and load testing.\n\nProject goal is to migrate the backend incrementally to Spring Boot REST with a shared libraries/service-api contract (plain POJOs instead of generated Thrift types), WebClient from the resource-server, and a Converter pattern where backend-common still uses Thrift-shaped DB types, so each service can move without a big-bang rewrite. Health and Vendor are already implemented as proof of concept with benchmarks and parity checks.\n\nDeliverables: migrate all 23 Thrift-backed service clients, shrink/remove Thrift from the build, delete or retire IDLs and ThriftClients factory methods as each service lands, document the migration recipe and architecture tradeoffs (including optional gRPC for hot paths if mentors agree), keep the public REST/HATEOAS API stable for consumers, and finish with full-system tests, updated contributor docs, and final benchmarks. Work is phased by dependency tiers (standalone services first, Schedule and final cleanup last) on GSoC 2026’s extended coding period, with buffers for review and integration risk.",
+          "difficulty": null,
+          "id": "proj_sw360_2026_pcEhsFhD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pcEhsFhD",
+          "proposal_id": "Hs0CkPHp",
+          "short_description": "SW360 today uses Apache Thrift for backend-to-backend calls. That choice forces a Thrift toolchain and many .thrift IDLs, ships large WARs via shared...",
+          "slug": "gsoc-2026-proposal-remove-apache-thrift-and-migrate-to-direct-spring-service-calls",
+          "status": null,
+          "student_name": "Shivamrut",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSoC 2026 Proposal: Remove Apache Thrift and Migrate to Direct Spring Service Calls"
+        },
+        {
+          "code_url": null,
+          "description": "SW360 instances running for years accumulate thousands of stale projects, components, and releases that slow down searches, waste disk space, and clutter the UI. Currently, the only cleanup option is permanent deletion with no undo.\n\nThis project adds a reversible archival workflow. Admins select entities, export them as self-contained TAR.GZ bundles with all metadata and attachments, then remove them from the live database. A CouchDB registry tracks what was archived and by whom. To restore, admins upload the archive, preview contents with conflict detection, and selectively re-insert entities.\n\nDeliverables: archival.thrift service definition, backend Maven module with archive and restore logic, REST API endpoints, a frontend admin page with entity selection, registry table, and multi-step restore flow, plus unit and E2E tests.\"",
+          "difficulty": null,
+          "id": "proj_sw360_2026_ratsK5FK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ratsK5FK",
+          "proposal_id": "GztuSqTT",
+          "short_description": "SW360 instances running for years accumulate thousands of stale projects, components, and releases that slow down searches, waste disk space, and...",
+          "slug": "archival-and-restore-feature-for-sw360",
+          "status": null,
+          "student_name": "Taanvi Khevaria",
+          "student_profile": null,
+          "tags": [],
+          "title": "Archival and Restore Feature for SW360"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

@@ -31,9 +31,9 @@
     "3d printing",
     "Neuronavigation"
   ],
-  "total_projects": 13,
+  "total_projects": 18,
   "stats": {
-    "avg_projects_per_appeared_year": 4.33,
+    "avg_projects_per_appeared_year": 4.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -45,7 +45,7 @@
       "year_2023": 2,
       "year_2024": 5,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -58,9 +58,9 @@
       "year_2023": 2,
       "year_2024": 5,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 13
+    "total_students": 18
   },
   "years": {
     "year_2016": null,
@@ -335,7 +335,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/invesalius"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/invesalius",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project tackles the challenge of limited anatomical segmentation in InVesalius by integrating TotalSegmentator through a lightweight inference pipeline using pre-exported JIT and ONNX models. The approach uses nnU-Net-based models to automatically segment 117 CT structures and 80 MRI structures: organs, bones, muscles, and vessels; without requiring nnunetv2 or any heavy dependencies. Users select specific anatomical structures from a categorized checklist and receive color-coded masks directly within InVesalius's existing visualization, editing, and 3D export pipeline. This enables clinicians in resource-constrained hospitals to perform comprehensive anatomical segmentation on the same workstations they already use.",
+          "difficulty": null,
+          "id": "proj_invesalius_2026_xgEC4Ulk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xgEC4Ulk",
+          "proposal_id": "GtPcMT77",
+          "short_description": "This project tackles the challenge of limited anatomical segmentation in InVesalius by integrating TotalSegmentator through a lightweight inference...",
+          "slug": "lightweight-totalsegmentator-integration-for-ct-mri-anatomical-segmentation-in-invesalius",
+          "status": null,
+          "student_name": "Madhan Kumar R",
+          "student_profile": null,
+          "tags": [],
+          "title": "Lightweight TotalSegmentator Integration for CT & MRI Anatomical Segmentation in InVesalius"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to integrate DICOM Query/Retrieve functionality into InVesalius, enabling direct communication with PACS servers. The implementation will include C-ECHO for connection verification, C-FIND for querying studies, and C-GET/C-MOVE for retrieving imaging data. The system will be built using pynetdicom and integrated into the existing InVesalius architecture with asynchronous processing to maintain GUI responsiveness.\n\nA working Proof of Concept has already been developed, and initial implementation has begun through an active pull request. The final deliverables include a PACS communication module, integrated query interface, retrieval pipeline, configuration panel, and supporting documentation.",
+          "difficulty": null,
+          "id": "proj_invesalius_2026_ipVIM23p",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ipVIM23p",
+          "proposal_id": "a16QLeBa",
+          "short_description": "This project aims to integrate DICOM Query/Retrieve functionality into InVesalius, enabling direct communication with PACS servers. The...",
+          "slug": "adapt-pacs-implementation-in-invesalius-using-dicom-query-retrieve-c-find-c-get-c-move",
+          "status": null,
+          "student_name": "Muneeb.Ahmad",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adapt PACS Implementation in InVesalius using DICOM Query/Retrieve (C-FIND, C-GET, C-MOVE)"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on adding full 3MF export and import support to InVesalius, enabling efficient handling of multi-surface medical models with accurate color (RGBA) representation and proper coordinate transformations.\n\nAt present, InVesalius does not support modern 3D formats like 3MF, which offer better structure, metadata handling, and color capabilities compared to formats such as STL and OBJ. Through this project, I aim to integrate 3MF support into the existing export and import pipeline using lib3mf, ensuring compatibility with tools like OrcaSlicer while preserving geometry, scaling, and visual attributes.\n\nThe implementation will handle coordinate transformations (LPS ↔ Z-up), support multi-surface models, include alpha channel handling, and integrate cleanly with the current architecture.\n\nThis work builds on my prior contributions to InVesalius, where I have worked on surface pipelines, coordinate transformations, and UI workflows, allowing me to integrate this feature effectively within the existing system.\n\nThe goal is to improve interoperability with modern 3D tools, ensure accurate representation of models, and provide a solid foundation for future extensions in 3D medical imaging workflows.",
+          "difficulty": null,
+          "id": "proj_invesalius_2026_F7tPYnGw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/F7tPYnGw",
+          "proposal_id": "XwpfZFac",
+          "short_description": "This project focuses on adding full 3MF export and import support to InVesalius, enabling efficient handling of multi-surface medical models with...",
+          "slug": "export-and-import-using-the-3mf-format-with-multi-surface-and-rgba-support-in-invesalius",
+          "status": null,
+          "student_name": "Prateek_Rai",
+          "student_profile": null,
+          "tags": [],
+          "title": "Export and import using the .3MF format with Multi-Surface and RGBA Support in InVesalius"
+        },
+        {
+          "code_url": null,
+          "description": "InVesalius's 3D mask editor suffers from two critical bottlenecks: slow single-threaded Python geometry math that freezes the UI on high-resolution medical images, and a memory-intensive undo system that copies entire 500×500×500 voxel matrices on every edit, causing out-of-memory crashes on resource-constrained machines.\nThis project addresses both problems through three tightly integrated deliverables. First, the heavy polygon-to-mask projection math will be ported from Python's skimage into multi-threaded Rust via PyO3, using zero-copy rust-numpy bindings to eliminate expensive matrix duplication across the Python/Rust boundary. Second, a new delta-encoded Undo/Redo engine will be built that records only the coordinates of changed voxels rather than full volume snapshots, paired with a disk-backed crash-recovery system and a visual history panel in wxPython for intuitive workflow management. Third, a native interactive 3D Brush Tool will be introduced, allowing users to paint or erase mask selections directly onto the 3D model with a configurable voxel depth, powered by native Rust ray-casting algorithms.\nDeliverables include a working invesalius_rs Rust module replacing the skimage dependency, the DeltaHistoryStack integrated across all 3D tools (polygon, brush, select parts, thresholding), the Mask3DEditorState decoupling class to eliminate ghost polygon UI bugs, cross-platform unit tests and CI validation, and a contributor benchmark report comparing performance against the current v3.0 baseline.",
+          "difficulty": null,
+          "id": "proj_invesalius_2026_WqyjtNKE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WqyjtNKE",
+          "proposal_id": "Hzv9yjZT",
+          "short_description": "InVesalius's 3D mask editor suffers from two critical bottlenecks: slow single-threaded Python geometry math that freezes the UI on high-resolution...",
+          "slug": "robust-3d-mask-engine-performance-and-interactive-stability",
+          "status": null,
+          "student_name": "ShivamCHAUDHARY",
+          "student_profile": null,
+          "tags": [],
+          "title": "Robust 3D Mask Engine Performance and Interactive Stability"
+        },
+        {
+          "code_url": null,
+          "description": "Implementation of a direct integration between SimNIBS and InVesalius to enable subject-specific head model generation and TMS electric field (E-field) simulations within InVesalius.\n\nCurrently, head modeling and E-field simulations require external workflows and manual data handling. This project will integrate the full pipeline into InVesalius, allowing users to generate MRI-based head models, position and orient TMS coils using existing neuronavigation tools, configure simulation parameters, execute simulations internally, and visualize E-field magnitude (|E|) directly on 3D anatomical models.\n\nThe activity will focus on implementing a Python-based interface to SimNIBS, aligning coordinate systems, handling simulation inputs/outputs robustly, and integrating results into the InVesalius visualization environment.\n\nDeliverables:\n\n    Integrated MRI-based head modeling pipeline.\n    Python interface module connecting InVesalius to SimNIBS.\n    UI panel for head modeling and simulation configuration.\n    Execution of TMS E-field simulations within InVesalius.\n    3D visualization of E-field magnitude (|E|).\n    Technical documentation.",
+          "difficulty": null,
+          "id": "proj_invesalius_2026_eVXJ7eUt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/eVXJ7eUt",
+          "proposal_id": "yIhgnhTO",
+          "short_description": "Implementation of a direct integration between SimNIBS and InVesalius to enable subject-specific head model generation and TMS electric field...",
+          "slug": "simnibs-tms-electric-field-simulation-and-head-modeling-integration-in-invesalius",
+          "status": null,
+          "student_name": "Yiqi",
+          "student_profile": null,
+          "tags": [],
+          "title": "SimNIBS TMS Electric Field Simulation and Head Modeling Integration in InVesalius"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -53,9 +53,9 @@
     "binary tools",
     "compilers"
   ],
-  "total_projects": 59,
+  "total_projects": 64,
   "stats": {
-    "avg_projects_per_appeared_year": 8.43,
+    "avg_projects_per_appeared_year": 8,
     "projects_by_year": {
       "year_2016": 15,
       "year_2017": 13,
@@ -67,7 +67,7 @@
       "year_2023": 7,
       "year_2024": 3,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 15,
@@ -80,9 +80,9 @@
       "year_2023": 7,
       "year_2024": 3,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 59
+    "total_students": 64
   },
   "years": {
     "year_2016": {
@@ -1225,7 +1225,104 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/gnu-project/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnu-project-av",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "GNU XaoS is a real-time interactive fractal zoomer that currently lacks a mobile-optimized UI. This project will: (1) implement a touch-friendly QML mobile UI with pinch-to-zoom, swipe-to-pan, and gesture-based fractal navigation, (2) deploy stable Android and iOS builds via Qt for Android/iOS toolchains, and (3) build a community sharing protocol for users to save, browse, and download fractal creations. I have already built a working prototype with a complete QML interface, adaptive rendering, and a signed Android APK running on a physical device. The engine integration, cross-compilation, and touch gesture handling are fully de-risked.",
+          "difficulty": null,
+          "id": "proj_gnu-project_2026_7uHaLbex",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7uHaLbex",
+          "proposal_id": "ybYPGXTz",
+          "short_description": "GNU XaoS is a real-time interactive fractal zoomer that currently lacks a mobile-optimized UI. This project will: (1) implement a touch-friendly QML...",
+          "slug": "develop-a-mobile-phone-user-interface-for-gnu-xaos",
+          "status": null,
+          "student_name": "Avinash-Codes",
+          "student_profile": null,
+          "tags": [],
+          "title": "Develop a Mobile Phone User Interface for GNU XaoS"
+        },
+        {
+          "code_url": null,
+          "description": "Computers with ARM architecture are prevalent but GNU Boot currently doesn't support them. My focus has also shifted from the classic x86_64 laptops compatible with fully free BIOS to newer armv7 and beyond to armv8 computers.\n\nThe defunct fully free Libreboot has supported a few Chromebooks that didn't require blobs to boot, thanks to efforts of contributors such as PaulK. I checked with him for basic guidance and I'm in need of a mentor from the GNU Boot project under the GNU umbrella (as GSoC 2026 approved organization).\n\nHaving GNU Boot support ARM computers would play well into the efforts of fully free GNU/Linux-libre distributions such as Trisquel to complete freedom-respecting ARM laptops.\n\nMy work will involve updating the previous code in Libreboot and (PaulK's fork libettereboot) for the Chromebook C201 and C100 laptops and porting GNU Boot to newer ARM targets found in coreboot.\n\nSince I'm a Embedded Systems Master's student, Google Summer of Code seems to be the perfect opportunity to extend the GNU Boot contributor team while providing basic funding for taking GNU Boot to the next architecture.",
+          "difficulty": null,
+          "id": "proj_gnu-project_2026_bZ8djhfN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/bZ8djhfN",
+          "proposal_id": "NJgLNVrS",
+          "short_description": "Computers with ARM architecture are prevalent but GNU Boot currently doesn't support them. My focus has also shifted from the classic x86_64 laptops...",
+          "slug": "extend-support-for-arm-in-gnu-boot",
+          "status": null,
+          "student_name": "f13r",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extend support for ARM in GNU Boot"
+        },
+        {
+          "code_url": null,
+          "description": "This project's goal is to enhance the usability and accessibility of GNU Aris. It addresses the issues that students currently struggle with when using Aris and implements their requested features:\n\n- Detailed and helpful error messages\n- Full internationalization (i18n) support.\n- An exclusive disjunction operator and an option to use the the rule of inference for a proof by contrapositive.\n- UI/UX enhancements: Zoom functionality, an in-application help/documentation, syntax highlighting, etc.",
+          "difficulty": null,
+          "id": "proj_gnu-project_2026_R0R051nx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/R0R051nx",
+          "proposal_id": "Qi1vsXJY",
+          "short_description": "This project's goal is to enhance the usability and accessibility of GNU Aris. It addresses the issues that students currently struggle with when...",
+          "slug": "gnu-aris-ui-and-feature-enhancements",
+          "status": null,
+          "student_name": "Fares A. Bakhit",
+          "student_profile": null,
+          "tags": [],
+          "title": "GNU Aris, UI and  Feature Enhancements"
+        },
+        {
+          "code_url": null,
+          "description": "GnuCOBOL currently has no support for the Object-Oriented Programming (OOP) features defined by the ISO standards ISO/IEC 1989:2002 through ISO/IEC 1989:2023. Object-Oriented (OO) code currently leads to syntax errors due to lack of parsing support.\n\nThe project aims to build support for parsing all OO syntax, and for a subset, also implement AST and codegen support to get a minimal working prototype of calling class methods through objects. Support for complex OOP features like method overriding and single inheritance will also be implemented. Multiple inheritance, method prototypes and parameterised classes are excluded for now.\n\nAs a result, future releases of GnuCOBOL 3 will be able to parse OO code and report a simple error message about the pending feature. GnuCOBOL 4 will introduce the new paradigm to users. It will be able to generate working binaries for OO code and handle complex features like method overriding and single inheritance.\n\nThe project will help bring GnuCOBOL closer to being compliant with ISO standards for OO COBOL and establish it as a significant choice among institutions looking for a free COBOL compiler with OOP support.",
+          "difficulty": null,
+          "id": "proj_gnu-project_2026_fJwXhksl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fJwXhksl",
+          "proposal_id": "lWT275Io",
+          "short_description": "GnuCOBOL currently has no support for the Object-Oriented Programming (OOP) features defined by the ISO standards ISO/IEC 1989:2002 through ISO/IEC...",
+          "slug": "gnucobol-implement-initial-object-oriented-programming-support",
+          "status": null,
+          "student_name": "Saurabh Kumar (@kmr-srbh)",
+          "student_profile": null,
+          "tags": [],
+          "title": "GnuCOBOL: Implement Initial Object-Oriented Programming Support"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces Rust into GNU libcdio, with the goal of modernizing its codebase along with the benefits of Rust's memory safety.\nThis project targets the SCSI MMC library along with a few of the bundled CLI programs to be implemented in Rust.\nFor a start, the MMC library shall be ported to Rust, while keeping the interfaces and symbols same as C. Dependencies on libcdio shall be served through bindings.\nThe CLI programs shall be moved into a separate repository, and implemented in Rust using the clap crate. FFI shall be used to interface with libcdio.\nThe deliverables include a Rust port of the MMC library, along with the cd-read, iso-read, iso-info, mmc-tool commands.",
+          "difficulty": null,
+          "id": "proj_gnu-project_2026_Q2pKYmUp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Q2pKYmUp",
+          "proposal_id": "xYc033Bv",
+          "short_description": "This project introduces Rust into GNU libcdio, with the goal of modernizing its codebase along with the benefits of Rust's memory safety. This...",
+          "slug": "port-parts-of-gnu-libcdio-to-rust",
+          "status": null,
+          "student_name": "skr4n",
+          "student_profile": null,
+          "tags": [],
+          "title": "Port parts of GNU libcdio to Rust"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

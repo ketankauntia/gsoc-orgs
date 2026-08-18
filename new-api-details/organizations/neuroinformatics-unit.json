@@ -29,9 +29,9 @@
     "Computer-Vision",
     "neuroanatomy"
   ],
-  "total_projects": 2,
+  "total_projects": 5,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 2
+    "total_students": 5
   },
   "years": {
     "year_2016": null,
@@ -117,7 +117,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/neuroinformatics-unit"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/neuroinformatics-unit",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to develop a napari-based GUI for interactive correction of pose-estimation tracks within the movement framework. It will enable users to resolve identity swaps in multi-animal datasets and correct keypoint errors efficiently.\n\nIn multi-animal tracking, automated pipelines often fail due to occlusions, noise, and identity ambiguity. The proposed tool integrates visualization and editing into a unified workflow, allowing users to inspect and refine trajectories directly while maintaining standardized data structures.\n\nThis will improve the quality and reliability of pose-estimation datasets, providing the open-source community with a robust and extensible solution for behavioral data curation.\n\nThis project builds on an initial napari-based prototype that I have already developed for manual trajectory correction.",
+          "difficulty": null,
+          "id": "proj_neuroinformatics-unit_2026_Z184DMXP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Z184DMXP",
+          "proposal_id": "6v1dcRSa",
+          "short_description": "This project aims to develop a napari-based GUI for interactive correction of pose-estimation tracks within the movement framework. It will enable...",
+          "slug": "napari-gui-for-manual-tracklets-refinement",
+          "status": null,
+          "student_name": "Anna Teruel-Sanchis",
+          "student_profile": null,
+          "tags": [],
+          "title": "Napari-GUI for manual tracklets refinement"
+        },
+        {
+          "code_url": null,
+          "description": "Cellfinder currently expects full 3D whole-brain volumes with both signal and background channels, so brain slices (2.5D) and single-channel acquisitions are not first-class citizens. The codebase also mixes axis conventions, which makes dimensionality changes error-prone. A recent data-loading refactor introduces explicit axis tracking and a new class hierarchy for cube generation and augmentation; the 2D/2.5D and single-channel work proposed here will build on that foundation. The core deliverables are to standardise axis semantics as the foundation, add a 2D detection path for brain slices and refactor classification to support both 2D and 3D inputs, and make the background channel optional across the main API and classification pipeline.",
+          "difficulty": null,
+          "id": "proj_neuroinformatics-unit_2026_sE6lahiQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sE6lahiQ",
+          "proposal_id": "PBXot5vy",
+          "short_description": "Cellfinder currently expects full 3D whole-brain volumes with both signal and background channels, so brain slices (2.5D) and single-channel...",
+          "slug": "brainglobe-cellfinder-expand-input-support-to-2-5d-and-single-channel-data-soumya-snigdha-kundu",
+          "status": null,
+          "student_name": "Soumya Snigdha Kundu",
+          "student_profile": null,
+          "tags": [],
+          "title": "brainglobe-cellfinder: expand input support to 2.5D and single-channel data (Soumya Snigdha Kundu)"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to improve the infrastructure of the BrainGlobe ecosystem and make it easier to maintain and contribute to as it continues to grow. This will be done by simplifying the BrainGlobe meta-package API, aligning function and argument naming across tools, improving CI workflows by migrating from tox to uv, automating API documentation, and refining the conda-forge release process.\nDeliverables: Expose a simplified API from individual BrainGlobe tools via the meta-package. Standardise naming, arguments, and structure across tools. Migrate CI workflows from tox to uv. Improve conda-forge packaging and release setup. Automate API documentation and publishing, clean up badges and project metadata across repos.",
+          "difficulty": null,
+          "id": "proj_neuroinformatics-unit_2026_w0cBSgA2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/w0cBSgA2",
+          "proposal_id": "lTF1KyGf",
+          "short_description": "This proposal aims to improve the infrastructure of the BrainGlobe ecosystem and make it easier to maintain and contribute to as it continues to...",
+          "slug": "brainglobe-miscellaneous-maintenance-work-on-brainglobe-overall-infrastructure-varun",
+          "status": null,
+          "student_name": "Varun  Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "BrainGlobe: Miscellaneous maintenance work on BrainGlobe overall infrastructure (Varun)"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

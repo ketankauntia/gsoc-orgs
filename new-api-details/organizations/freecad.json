@@ -33,9 +33,9 @@
     "3d",
     "BIM"
   ],
-  "total_projects": 8,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 2.67,
+    "avg_projects_per_appeared_year": 3.25,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -47,7 +47,7 @@
       "year_2023": 4,
       "year_2024": 1,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -60,9 +60,9 @@
       "year_2023": 4,
       "year_2024": 1,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 8
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -241,7 +241,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/freecad"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/freecad",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "FreeCAD is a powerful CAD software with vast capabilities supporting complete technical design pipelines beginning from modelling to FEM analysis to 3D printing. By enabling FreeCAD users to perform multibody dynamic (MbD) calculations, convert the results to FEM loads and visualise the stress and strain of an assembly in motion in a single coherent workflow, FreeCAD will be better positioned to rival commercial CAD software used by the industry today. The goal of this project is to help build that workflow by improving the combined Motion workbench so that motion-derived loads can be transferred into FEM analyses in a structured and user-friendly way.\n\nThis project will focus on three main objectives. The first objective is to organise the current code into a clearer object-oriented framework. The second objective is to convert idealised MbD joint forces and torques into realistic distributed FEM loads on selected contact surfaces of real parts. The third objective is to design a user interface (UI) that allows the selection of the contact regions in FreeCAD.",
+          "difficulty": null,
+          "id": "proj_freecad_2026_RwPp9Yy0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RwPp9Yy0",
+          "proposal_id": "biCTcDlz",
+          "short_description": "FreeCAD is a powerful CAD software with vast capabilities supporting complete technical design pipelines beginning from modelling to FEM analysis to...",
+          "slug": "combining-freecad-assembly-multibody-dynamics-and-finite-element-analysis",
+          "status": null,
+          "student_name": "Aymi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Combining FreeCAD Assembly, Multibody Dynamics, and Finite Element Analysis"
+        },
+        {
+          "code_url": null,
+          "description": "This project will primarily change the command system for TechDraw from a pre-selection to a post-selection. So that the user can click on a command and then the feature they want to annotate. Additionally visual guidance will be added for these commands so it is natural the new post-selection. The tools that cannot be changed to post-selection will instead be grayed-out if the user has not picked a correct feature. Also the toolbars will be changed.",
+          "difficulty": null,
+          "id": "proj_freecad_2026_lne1ugHq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lne1ugHq",
+          "proposal_id": "yJl9hAvy",
+          "short_description": "This project will primarily change the command system for TechDraw from a pre-selection to a post-selection. So that the user can click on a command...",
+          "slug": "techdraw-ux-overhaul",
+          "status": null,
+          "student_name": "Morten Vajhøj",
+          "student_profile": null,
+          "tags": [],
+          "title": "TechDraw UX Overhaul"
+        },
+        {
+          "code_url": null,
+          "description": "FreeCAD comes with a Robot Workbench, which is capable of 6-DOF robot simulations, trajectory planning and a vendor specific code export (KUKA). After the removal of some copyrighted model assets and years without an active maintainer, the workbench is functional but difficult to use and customise. The robots can only be defined via hand-written VRML and CSV/DH files, the bundled kinematics library has lagged behind the latest upstream release, the axis count for robots is hard coded to six and the documentation for beginners is sparse.\n\nThus this project proposes an incremental modernization of the existing “Mod/Robot” module:\n\n1. Standardised robot imports : Unified Robot Description Format (URDF) is one of the most common standards for describing a robot. Having an easy way to import robots directly from URDF will replace the painful CSV/DH file imports.\n\n2. Generic joint-trajectory export : Having the possibility to export the joint & trajectory data will separate the export process from copyrighted vendor-specific pipelines. The users can post-process the exported data to their specific platform\n\n3. Kinematics library refresh : FreeCAD currently has a local fork of KDL library that lags behind the upstream. Cleaning up this dependency will eventually prepare the path for arbitrary-DOF robots & better robot animations.\n\n4. Documentation : This will help the existing users as well as attract a new user base towards the Robotics Workbench.",
+          "difficulty": null,
+          "id": "proj_freecad_2026_VdVDpBZw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VdVDpBZw",
+          "proposal_id": "Mmm4rarC",
+          "short_description": "FreeCAD comes with a Robot Workbench, which is capable of 6-DOF robot simulations, trajectory planning and a vendor specific code export (KUKA)....",
+          "slug": "reviving-and-modernising-robotic-workbench",
+          "status": null,
+          "student_name": "nishendra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reviving and modernising Robotic Workbench"
+        },
+        {
+          "code_url": null,
+          "description": "This project will build and integrate a Python-based client for the buildingSMART Data Dictionary (bSDD) directly into FreeCAD's BIM Workbench. This integration will allow users to dynamically search and apply international classification standards from the cloud, providing context-aware suggestions based on the underlying IFC entity. To ensure a stable and non-disruptive integration, the project will implement a \"dual-layer\" data model. This approach will securely store the rich, web-fetched bSDD metadata while automatically populating the existing legacy string properties, guaranteeing 100% backward compatibility with FreeCAD's current stable workflows.",
+          "difficulty": null,
+          "id": "proj_freecad_2026_VAc9SHdM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VAc9SHdM",
+          "proposal_id": "KFfALlpF",
+          "short_description": "This project will build and integrate a Python-based client for the buildingSMART Data Dictionary (bSDD) directly into FreeCAD's BIM Workbench. This...",
+          "slug": "integrate-a-client-for-buildingsmart-data-dictionary-web-service",
+          "status": null,
+          "student_name": "Parag Debnath",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate a client for buildingSMART Data  Dictionary web service."
+        },
+        {
+          "code_url": null,
+          "description": "FreeCAD currently lacks a dedicated parametric 3D sketching , forcing engineers to use multiple 2D sketches. like some examples are bicycles,roll cage etc. This project solves this by building a new Sketcher3D Workbench. The solution natively extends the existing planegcs constraint solver to 3D , adding new 3D primitives (Point, Line, Arc, Circle) and 3D spatial constraints (Distance3D, Parallel3D, Angle3D, PointOnPlane etc). Designed specifically to avoid tool duplication, the architecture builds upon the existing 2D data model for a future merger into a unified FreeCAD Sketcher. Deliverables include the extended 3D solver, a functional ViewProvider with a switchable drawing workplane, interactive 3D constraint UI, and native wireframe output consumable by downstream FreeCAD operations.",
+          "difficulty": null,
+          "id": "proj_freecad_2026_Ls1lJhGB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Ls1lJhGB",
+          "proposal_id": "5f7VUuSO",
+          "short_description": "FreeCAD currently lacks a dedicated parametric 3D sketching , forcing engineers to use multiple 2D sketches. like some examples are bicycles,roll...",
+          "slug": "3d-constraint-driven-sketcher-wireframe-workbench",
+          "status": null,
+          "student_name": "YashSuthar983",
+          "student_profile": null,
+          "tags": [],
+          "title": "3D Constraint driven sketcher/wireframe workbench"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

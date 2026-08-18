@@ -23,9 +23,9 @@
     "AI Agent",
     "Compostion AI"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -37,7 +37,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -50,9 +50,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -65,7 +65,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/mofa-org",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The current MoFA architecture tightly couples agents to a single inference backend (e.g., OpenAI, Ollama), making switching providers, handling failures, or optimizing cost and latency difficult without modifying agent code.\n\nThis project introduces the Cognitive Compute Mesh (CCM): a distributed inference layer implemented as a new mofa-gateway crate that transparently sits behind the LLMCapability interface. Instead of acting as a central gateway, CCM enables a mesh architecture, where every node (local, cloud, or edge) participates in both computation and routing.\n\nThe system is built around three core components:\n- A typed Inference Request Protocol (IRP) that standardizes communication across all providers\n- An intelligent routing layer that dynamically selects backends based on latency, cost, capability, and health\n- A production-grade RAG pipeline with hybrid retrieval (dense + BM25), reranking, and caching\n\nCCM ensures that agents become backend-agnostic, enabling seamless failover, cost optimization, and hybrid local-cloud execution without code changes.\n\nDeliverables:\n- mofa-gateway crate implementing LLMPlugin\n- Backend SDK for integrating new inference providers\n- Support for OpenAI, Anthropic, Ollama, and OminiX-MLX\n- Distributed routing with circuit breakers and health tracking\n- Full RAG pipeline with vector storage support\n- Documentation, benchmarks, and demo showing backend-agnostic agents\n\nThis project aims to establish a protocol-level abstraction for AI inference, similar to how HTTP abstracted networking enabling “write once, run anywhere” for AI agents.",
+          "difficulty": null,
+          "id": "proj_mofa-org_2026_TARkTQn9",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TARkTQn9",
+          "proposal_id": "N6XhpASw",
+          "short_description": "The current MoFA architecture tightly couples agents to a single inference backend (e.g., OpenAI, Ollama), making switching providers, handling...",
+          "slug": "cognitive-compute-mesh-a-unified-inference-federation-production-rag-pipeline-for-mofa",
+          "status": null,
+          "student_name": "Aayank13",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cognitive Compute Mesh: A Unified Inference Federation & Production RAG Pipeline for MoFA"
+        },
+        {
+          "code_url": null,
+          "description": "MoFA agents currently operate as \"black boxes\" in isolation—they lack shared memory, structured handoff protocols, and cross-agent coordination. When a multi-agent swarm fails, there is no single distributed trace to follow and no system-wide intelligence to explain why. This proposal transforms MoFA from a collection of individual agents into a \"Cognitive Ecosystem\" by implementing a symbiotic coordination-and-observability layer.\n\nBuilding on the OTLP+Prometheus pipeline with a 336x performance gain and the core coordination traits I designed (PR #997), this project delivers: \n(1) An AgentHub Coordination layer featuring InMemoryVectorStore for semantic memory and ChannelHandoffProtocol for reliable task delegation; \n(2) A zero-copy EventRecord Bridge using tokio::broadcast to fan out state mutations; \n(3) An Observatory Intelligence Engine featuring a petgraph-powered Knowledge Graph for live topology mapping and a Z-Score Statistical Anomaly Detector for identifying rogue agent behavior (token burn, latency spikes).\n\nThe result is a production-grade \"Nervous System\" for MoFA where every agent interaction is first-class, observable, and governed. Key metrics include: Zero-drop event propagation at 4000 EPS, <50ms graph query latency, 80%+ unit test coverage, and a full W3C TraceContext implementation for cross-agent waterfall visualization.",
+          "difficulty": null,
+          "id": "proj_mofa-org_2026_lg6BoU1Y",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lg6BoU1Y",
+          "proposal_id": "IPD4iGLK",
+          "short_description": "MoFA agents currently operate as \"black boxes\" in isolation—they lack shared memory, structured handoff protocols, and cross-agent coordination. When...",
+          "slug": "cognitive-ecosystem-unified-agent-coordination-observability-and-intelligence-for-mofa",
+          "status": null,
+          "student_name": "Ashum9",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cognitive Ecosystem: Unified Agent Coordination, Observability, and Intelligence for MoFA"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "dev@mofa.ai",

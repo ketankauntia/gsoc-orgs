@@ -35,9 +35,9 @@
     "AI/ML",
     "generative AI"
   ],
-  "total_projects": 21,
+  "total_projects": 30,
   "stats": {
-    "avg_projects_per_appeared_year": 7,
+    "avg_projects_per_appeared_year": 7.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -49,7 +49,7 @@
       "year_2023": null,
       "year_2024": 8,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 9
     },
     "students_by_year": {
       "year_2016": null,
@@ -62,9 +62,9 @@
       "year_2023": null,
       "year_2024": 8,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 9
     },
-    "total_students": 21
+    "total_students": 30
   },
   "years": {
     "year_2016": null,
@@ -517,7 +517,168 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/kubeflow"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 9,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/kubeflow",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project addresses limitations in Kubeflow Katib current Experiment CRD, which uses a generic and loosely typed interface for hyperparameter optimization. This leads to fragile parameter injection, inefficient resource usage, and unreliable state handling for stateful algorithms.\n\nTo solve this, I propose designing and implementing a new OptimizationJob CRD v1alpha1, a strongly typed API focused on hyperparameter optimization for TrainJobs. It introduces native parameter injection, persistent algorithm state handling, and a push-based metrics pipeline integrated with the TrainJob Progress API.\n\nThe project will deliver a production-ready controller with a structured reconciliation loop, support for stateless and stateful optimization algorithms, SDK integration, and comprehensive testing, resulting in a more reliable and efficient HPO workflow.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_ooUv0Oe8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ooUv0Oe8",
+          "proposal_id": "tEnwOFwT",
+          "short_description": "This project addresses limitations in Kubeflow Katib current Experiment CRD, which uses a generic and loosely typed interface for hyperparameter...",
+          "slug": "optimizationjob-crd-for-hyperparameter-optimization-in-kubeflow-katib",
+          "status": null,
+          "student_name": "Aniket Shaha",
+          "student_profile": null,
+          "tags": [],
+          "title": "OptimizationJob CRD for Hyperparameter Optimization in Kubeflow Katib"
+        },
+        {
+          "code_url": null,
+          "description": "KFP and Katib users deploying via Helm currently have no upstream-supported path — charts exist but drift from Kustomize baselines silently, with no parity validation or explicit support boundaries.\n\nI've spent the last few months contributing to kubeflow/manifests (12 merged PRs) and reading through the maintainer feedback on PR #3237 closely enough to understand exactly what the constraints are. Before writing this proposal I built a PoC branch that gets all 9 scenarios (2 KFP + 7 Katib) to 0% parity diff against the upstream Kustomize baselines, traced and fixed each failure class, and ran runtime smoke tests on Kind.\n\nThe goal is to upstream that work properly — charts, CI, documentation, and a support matrix that makes the supported/deferred boundary explicit. I also added two things that came out of building the PoC: a scheduled drift detection workflow and a schema validation gate using helm lint + kubeconform, both already implemented and validated.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_hMnzCn5S",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hMnzCn5S",
+          "proposal_id": "6N6yr0sO",
+          "short_description": "KFP and Katib users deploying via Helm currently have no upstream-supported path — charts exist but drift from Kustomize baselines silently, with no...",
+          "slug": "project-5-helm-charts-for-kubeflow-pipelines-and-katib-danish-siddiqui",
+          "status": null,
+          "student_name": "danish9039",
+          "student_profile": null,
+          "tags": [],
+          "title": "Project 5: Helm Charts for Kubeflow Pipelines and Katib — Danish Siddiqui"
+        },
+        {
+          "code_url": null,
+          "description": "The Kubeflow SDK gives AI practitioners a clean Python interface to submit, monitor, and manage distributed training jobs on Kubernetes via TrainerClient. However, LLM-based developer tools currently have no standardized way to access this runtime context — they cannot see a TrainJob's status, stream its logs, or reason about why a job failed.\nThis project extends the existing MCP server MVP (tracked in kubeflow/community#936) for the Kubeflow Trainer SDK. The goal is to deliver a production-ready MCP server that exposes the full TrainJob lifecycle through well-typed, LLM-accessible tools — enabling AI assistants to actively help developers debug, monitor, and operate their Kubeflow training workloads in real time.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_B2R4GHab",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/B2R4GHab",
+          "proposal_id": "F3Fvyxp3",
+          "short_description": "The Kubeflow SDK gives AI practitioners a clean Python interface to submit, monitor, and manage distributed training jobs on Kubernetes via...",
+          "slug": "project-6-mcp-server-for-kubeflow-sdk",
+          "status": null,
+          "student_name": "Krishna-kg732",
+          "student_profile": null,
+          "tags": [],
+          "title": "Project 6: MCP Server for Kubeflow SDK"
+        },
+        {
+          "code_url": null,
+          "description": "Kubeflow's documentation, GitHub issues, and platform code are spread across dozens of repositories with no unified search. This project evolves\n  kubeflow/docs-agent from a single-tool retrieval script into a multi-index Agentic RAG architecture with three MCP search tools (docs, issues, code),\n  domain-specific ingestion pipelines (KFP), and a \"Thin Context\" MCP flow for IDE integration. All orchestration uses Kagent CRDs (Kubernetes-native).\n  Deliverables: (1) Three MCP tools with dedicated Milvus collections and specialized chunking — issues at comment boundaries, code at YAML/AST boundaries; (2)\n  Project's first test suite (71+ tests) with CI; (3) Idempotent pipeline upserts replacing the current destructive drop-and-recreate; (4) Developer IDE configs\n  for Cursor/Claude Desktop; (5) Feedback logging for golden dataset accumulation; (6) RAGAS evaluation pipeline. Core work (PRs #140, #143) is already built and\n  live-tested on OCI with 2,108 real chunks indexed.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_nBywCSvb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nBywCSvb",
+          "proposal_id": "lUu6EkBY",
+          "short_description": "Kubeflow's documentation, GitHub issues, and platform code are spread across dozens of repositories with no unified search. This project evolves...",
+          "slug": "agentic-rag-on-kubeflow-multi-index-retrieval-with-kagent-mcp",
+          "status": null,
+          "student_name": "Rohit Kumar (Kmrrohit)",
+          "student_profile": null,
+          "tags": [],
+          "title": "Agentic RAG on Kubeflow — Multi-Index Retrieval with Kagent & MCP"
+        },
+        {
+          "code_url": null,
+          "description": "The current Kubeflow SparkClient (KEP-107) provides a solid foundation for running interactive Spark workloads on Kubernetes, but it is still missing key capabilities required for real-world usage, such as batch job submission, consistent job lifecycle management, and production-level observability.\n\nThis project focuses on extending the SparkClient to support complete, production-ready Spark workflows. The primary goal is to implement a robust submit_job() API for batch job execution using the SparkApplication CRD, supporting both script-based and function-based workloads. Alongside this, I will design a consistent set of lifecycle APIs such as job listing, status tracking, log retrieval, and cleanup, ensuring they align with existing Kubeflow SDK patterns.\n\nTo improve usability in production environments, the project will also introduce observability features, including metrics collection from the Spark REST API, structured event tracking, and basic health monitoring. These additions will help users better understand job execution, debug failures, and monitor resource usage.\n\nThe implementation will build on the current architecture without breaking compatibility, focusing on reliability, validation, and consistency. The final outcome will be a more complete and production-ready SparkClient that enables users to run, monitor, and manage Spark workloads on Kubernetes in a simple and consistent way.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_85k9LS8P",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/85k9LS8P",
+          "proposal_id": "4h4jRoM5",
+          "short_description": "The current Kubeflow SparkClient (KEP-107) provides a solid foundation for running interactive Spark workloads on Kubernetes, but it is still missing...",
+          "slug": "kubeflow-sdk-sparkclient-batch-jobs-observability-production-readiness",
+          "status": null,
+          "student_name": "Sameer_Yadav",
+          "student_profile": null,
+          "tags": [],
+          "title": "Kubeflow SDK/SparkClient - Batch Jobs, Observability & Production Readiness"
+        },
+        {
+          "code_url": null,
+          "description": "Kubeflow's adoption at enterprise scale exposes critical bottlenecks in controller efficiency, security posture, and operational overhead. This project delivers six required improvements: (1) ConfigMap-driven database garbage collection for KFP pipeline runs, mirroring the existing artifact_retention_time pattern; (2) ScheduledWorkflow controller migration from legacy client-go informers to controller-runtime; (3) zero-trust NetworkPolicy enforcement for training job namespaces; (4) cross-namespace artifact security hardening with integration tests; (5) KFP dead code removal of deprecated manifests; and (6) Pod Security Standards compliance with CI regression gates. Stretch goals include Gateway API migration, Spark webhook readiness probes, and a Metacontroller migration design doc. This work builds on 12 pre-GSoC contributions (5 merged, 7 open) across 5 Kubeflow repositories.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_WoqK9Jml",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WoqK9Jml",
+          "proposal_id": "BeUKgew3",
+          "short_description": "Kubeflow's adoption at enterprise scale exposes critical bottlenecks in controller efficiency, security posture, and operational overhead. This...",
+          "slug": "platform-scalability-and-security",
+          "status": null,
+          "student_name": "siddhant_jainn",
+          "student_profile": null,
+          "tags": [],
+          "title": "Platform Scalability and Security"
+        },
+        {
+          "code_url": null,
+          "description": "ARM64 is becoming increasingly common with the rise of Apple Silicon and cloud instances like AWS Graviton, but Kubeflow still doesn’t run consistently on ARM-based systems. Right now, different components behave differently — some work partially, some require manual fixes, and others don’t work at all. This makes it difficult to use Kubeflow reliably outside of traditional x86 environments .\n\nThe goal of this project is to make ARM64 a properly supported architecture across the Kubeflow ecosystem. Instead of partial or experimental support, the idea is to make sure Kubeflow works the same way on ARM as it does on AMD64.\n\nTo achieve this, I plan to start by auditing the container images used in Kubeflow and identifying gaps in ARM64 support. Based on that, I will enable multi-architecture builds using Docker Buildx and integrate them into existing CI/CD pipelines so that ARM64 images are built and published automatically. I will also update manifests to remove architecture-specific references and ensure they work across both architectures without requiring changes.\n\nA major part of the work will be validation. I will deploy Kubeflow on ARM-based environments (OCI Ampere) and run end-to-end tests to catch issues that only appear at runtime. Any failures related to dependencies, builds, or configuration will be debugged and fixed incrementally.\n\nBy the end of the project, Kubeflow should be able to run end-to-end on ARM systems without manual workarounds. The final output will include working multi-architecture builds, improved CI/CD pipelines, updated manifests, and a clear “golden setup” guide for running Kubeflow on ARM.\n\nOverall, this project is about making Kubeflow more consistent and usable across modern infrastructure, especially as ARM adoption continues to grow.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_JcZvho3z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JcZvho3z",
+          "proposal_id": "PVtXF1jW",
+          "short_description": "ARM64 is becoming increasingly common with the rise of Apple Silicon and cloud instances like AWS Graviton, but Kubeflow still doesn’t run...",
+          "slug": "end-to-end-arm64-support-validation-on-kubeflow",
+          "status": null,
+          "student_name": "Syed Mohd Maaz",
+          "student_profile": null,
+          "tags": [],
+          "title": "End-to-End ARM64 Support & Validation on Kubeflow"
+        },
+        {
+          "code_url": null,
+          "description": "Kale compiles a single Jupyter notebook into a Kubeflow Pipeline by parsing cell tags, detecting data dependencies with PyFlakes, and generating KFP DSL. But real ML work rarely fits in one notebook ,teams split preprocessing, training, and evaluation across separate notebooks, and today there's no way to compose them through Kale without dropping down to the KFP SDK manually.\n\nThis project extends Kale with multi-notebook composition and a visual pipeline editor. Each notebook declares typed inputs and outputs (KFP artifacts like Dataset, Model, Metrics or parameter types). A new workflow compiler processes multiple notebooks and compiles them into a single Kubeflow Pipeline, with each notebook becoming a KFP sub-pipeline that preserves its internal steps. A visual editor built as a JupyterLab DocumentWidget handles assembly ,drag notebooks onto a canvas, connect typed ports, compile and run.\n\nDeliverables:\n#1.Notebook interface declaration system (backend + frontend) — explicit typed inputs/outputs per notebook, integrated into existing NotebookConfig and the Kale sidebar UI\n\n#2. Workflow data model and .kale-workflow file format with DAG validation (cycle detection, type checking, reference resolution)\n\n#3. Workflow compiler that processes each notebook through the existing NotebookProcessor → Compiler pipeline, wraps output as sub-pipelines, and generates a top-level KFP pipeline wiring them together through artifacts\n\n#4. CLI support: kale --workflow path/to/workflow.json\n\n#5. Visual DAG editor in JupyterLab using React Flow — drag-and-drop from file browser, typed port connections, properties panel, compile/run actions via Kale's existing RPC layer\n\n#6. End-to-end tests on a real KFP cluster, user documentation, and example workflows",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_WFcSOA1z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WFcSOA1z",
+          "proposal_id": "DX6Ocz0R",
+          "short_description": "Kale compiles a single Jupyter notebook into a Kubeflow Pipeline by parsing cell tags, detecting data dependencies with PyFlakes, and generating KFP...",
+          "slug": "project-11-composable-kale-notebooks-with-visual-pipeline-editor",
+          "status": null,
+          "student_name": "Yash_vrd",
+          "student_profile": null,
+          "tags": [],
+          "title": "Project 11 - Composable Kale Notebooks with Visual Pipeline Editor"
+        },
+        {
+          "code_url": null,
+          "description": "Kubeflow Trainer V2 currently supports only TorchTune as its LLM fine-tuning backend. TorchTune stopped adding new features in July 2025, leaving Kubeflow with ~4 supported models and no support for DPO, GRPO, or other post-training methods.\r\n\r\nThis project builds a pluggable multi-backend framework for Kubeflow Trainer. The first new backend is TRL (HuggingFace's fine-tuning library), adding support for SFT, DPO, GRPO, Unsloth acceleration, and multi-node DeepSpeed. The architecture includes: an LLMBackend ABC + registry in the Python SDK for config-driven backend dispatch, a LLMFrameworkHandler interface in the Go control plane (Torch plugin) for zero-touch extensibility, and entry_points-based registration so the community can add backends like LlamaFactory without upstream changes.\r\n\r\nDeliverables: TRL backend (Python SDK + Go handler), pluggable registry, runtime configs, integration tests, and documentation. All existing TorchTune workflows remain unchanged.",
+          "difficulty": null,
+          "id": "proj_kubeflow_2026_ErYS3o18",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ErYS3o18",
+          "proposal_id": "F7M22VDr",
+          "short_description": "Kubeflow Trainer V2 currently supports only TorchTune as its LLM fine-tuning backend. TorchTune stopped adding new features in July 2025, leaving...",
+          "slug": "dynamic-llm-trainer-framework-for-kubeflow-trl-backend-with-pluggable-multi-framework-support",
+          "status": null,
+          "student_name": "Yassin Hashem",
+          "student_profile": null,
+          "tags": [],
+          "title": "Dynamic LLM Trainer Framework for Kubeflow — TRL Backend with Pluggable Multi-Framework Support"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

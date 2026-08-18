@@ -64,9 +64,9 @@
     "peer to peer",
     "vr"
   ],
-  "total_projects": 80,
+  "total_projects": 86,
   "stats": {
-    "avg_projects_per_appeared_year": 8,
+    "avg_projects_per_appeared_year": 7.82,
     "projects_by_year": {
       "year_2016": 6,
       "year_2017": 6,
@@ -78,7 +78,7 @@
       "year_2023": 7,
       "year_2024": 8,
       "year_2025": 10,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": 6,
@@ -91,9 +91,9 @@
       "year_2023": 7,
       "year_2024": 8,
       "year_2025": 10,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 70
+    "total_students": 86
   },
   "years": {
     "year_2016": {
@@ -1682,7 +1682,120 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/ccextractor-development"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/ccextractor-development",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "CCExtractor’s v1.00 release requires confidence across every part of the project. \n\nCurrently, test results in CCExtractor are not fully reliable — tests break or appear to be fixed by PRs that do not even touch the relevant code, making it difficult to confidently assess regressions and overall stability. This proposal focuses on strengthening the testing infrastructure as a whole and making it reliable again, fixing regressions that lead to incorrect outcomes, expanding test coverage to parts of the codebase that are not properly verified today, syncing the Flutter GUI with the CLI so all supported features are accessible, and stabilizing the release process so v1.00 ships cleanly across platforms.\n\nAs this project gets completed, CCExtractor will be ready for its v1.00 release, with CI passing, parts of the codebase that are currently untested covered, an up-to-date CCExtractor GUI, and a streamlined release and development workflow.",
+          "difficulty": null,
+          "id": "proj_ccextractor-development_2026_F8h6xhNe",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/F8h6xhNe",
+          "proposal_id": "6D9MEcsm",
+          "short_description": "CCExtractor’s v1.00 release requires confidence across every part of the project. Currently, test results in CCExtractor are not fully reliable —...",
+          "slug": "ccextractor-v1-00-release",
+          "status": null,
+          "student_name": "Chandragupt Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "CCExtractor v1.00 Release"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the TaskWarrior Flutter mobile application by reducing technical debt, improving the Rust–Flutter integration, and expanding core TaskWarrior functionality on mobile platforms. The current codebase contains legacy synchronization components, incomplete Rust FFI features, and an unstructured project layout that makes maintenance and feature development difficult.\n\nThe project will remove the deprecated CCSync synchronization layer and unify synchronization through the TaskChampion Rust backend. The tc_helper Rust library will be refactored to improve build configuration, modular structure, cross-compilation, and to expose missing task attributes to the Flutter application. The Flutter project will also be reorganized into clear modules separating legacy Taskwarrior 2.x code from the TaskChampion implementation.\n\nAdditionally, a mobile reporting engine will be implemented to support Taskwarrior-style filtered reports and user-defined configurations. A GitHub Pages website with automated nightly build tracking will also be created, along with targeted UI and UX improvements based on community feedback.\n\nDeliverables include synchronization refactoring, Rust library improvements, Flutter project restructuring, a reporting engine, project website, and UI/UX enhancements.",
+          "difficulty": null,
+          "id": "proj_ccextractor-development_2026_QS4A6pNj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QS4A6pNj",
+          "proposal_id": "T5RXAcLM",
+          "short_description": "This project focuses on improving the TaskWarrior Flutter mobile application by reducing technical debt, improving the Rust–Flutter integration, and...",
+          "slug": "ccextractor-taskwarrior-mobile-app",
+          "status": null,
+          "student_name": "Chinmay Chaudhari",
+          "student_profile": null,
+          "tags": [],
+          "title": "CCExtractor: TaskWarrior Mobile App"
+        },
+        {
+          "code_url": null,
+          "description": "Modernize the Sample Platform with 8 targeted improvements: (1) a unified AI-friendly endpoint that serves all test artifacts — binaries,\n   logs, inputs, outputs from a single URL with signed download links; (2) a has_ever_passed flag to distinguish regressions from tests that never    \nworked; (3) a React-based test management dashboard replacing raw SQL workflows; and (4) a smarter diff algorithm using difflib. SequenceMatcher with\n  subtitle-aware parsing to eliminate cascading mismatches; (5) automated git bisect to pinpoint the exact commit that introduced a failure; (6)         \ncross-platform comparison views for Linux, Windows, and macOS results; and (7) macOS testing support via GitHub Actions runners. (8) Test Suite Expansion",
+          "difficulty": null,
+          "id": "proj_ccextractor-development_2026_REFnt93o",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/REFnt93o",
+          "proposal_id": "fEOoXnqM",
+          "short_description": "Modernize the Sample Platform with 8 targeted improvements: (1) a unified AI-friendly endpoint that serves all test artifacts — binaries, logs,...",
+          "slug": "sample-platform-ng-modernisation-ai-ready-testing-infrastructure",
+          "status": null,
+          "student_name": "Gaurav Karmakar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sample Platform NG Modernisation & AI-Ready Testing Infrastructure"
+        },
+        {
+          "code_url": null,
+          "description": "Ultimate Alarm Clock III (UAC) aims to evolve into a production-ready, cross-platform mobile application that delivers intelligent, condition-based alarm functionality. The core problem addressed is the limitation of traditional alarms, which lack contextual awareness and flexibility in triggering based on real-world conditions such as location, calendar events, or user activity.\n\nTo solve this, the project will enhance UAC with advanced conditional logic and deep integrations, including Google Calendar synchronization, Google Assistant voice controls, and customizable task lists linked to alarms. Additionally, the system will improve reliability through enhanced alarm history logging and debugging tools, while enabling seamless synchronization with a companion app. Infrastructure improvements such as CI/CD pipelines, automated testing, and Play Store deployment workflows will ensure scalability and maintainability. A stretch goal includes developing an iOS version with native background execution capabilities to ensure consistent alarm behavior across platforms.\n\nThe key deliverables include:\n\nImplementation of core features such as calendar-based alarms, voice interaction, shared alarms, and task lists\nAdvanced developer diagnostics via alarm history and logging systems\nCompanion app synchronization with real-time data consistency\nA robust CI/CD pipeline for automated testing and deployment\n(Stretch) iOS support with native integrations for reliable background execution\n\nTogether, these deliverables will transform UAC into a scalable, production-grade application with intelligent, context-aware alarm capabilities and a strong foundation for future development.",
+          "difficulty": null,
+          "id": "proj_ccextractor-development_2026_93v6Q9d7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/93v6Q9d7",
+          "proposal_id": "DCywul71",
+          "short_description": "Ultimate Alarm Clock III (UAC) aims to evolve into a production-ready, cross-platform mobile application that delivers intelligent, condition-based...",
+          "slug": "ultimate-alarm-clock-iii",
+          "status": null,
+          "student_name": "Nihal D R",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ultimate Alarm Clock III"
+        },
+        {
+          "code_url": null,
+          "description": "Modern sandboxed applications (like Flatpaks) rely on XDG Desktop Portals for\nessential OS integration, such as screen sharing, opening files, or sending\nnotifications. Tiling window managers often lack a complete and well-maintained xdg-desktop-portal backend, leaving users with a broken experience for many applications. This project will create a working xdg-desktop-portal backend for the Regolith desktop environment. Regolith is a productivity-focused Ubuntu-based desktop environment that combines tiling window managers (Sway, i3) with GNOME components for system management and GUI features.  By using xdg-desktop-portal-luminous as a foundation, this project will deliver native portal implementations for complex features like Background and Clipboard, closing a major functionality gap. A key focus of this project is also on upstream contributions. The work will involve implementing the missing Usb portal in the xdg-desktop-portal-gtk backend and helping define and implement a new ScreenCast API version with audio support. This upstream work will directly benefit the entire Linux desktop ecosystem by providing a standard, secure way to capture application audio, a critical feature for apps like Discord and OBS Studio.",
+          "difficulty": null,
+          "id": "proj_ccextractor-development_2026_6swzCzCq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/6swzCzCq",
+          "proposal_id": "eNM4rJD5",
+          "short_description": "Modern sandboxed applications (like Flatpaks) rely on XDG Desktop Portals for essential OS integration, such as screen sharing, opening files, or...",
+          "slug": "create-an-xdg-desktop-portal-backend-for-regolith",
+          "status": null,
+          "student_name": "Nuhiat Arefin",
+          "student_profile": null,
+          "tags": [],
+          "title": "Create an XDG DESKTOP PORTAL Backend for Regolith"
+        },
+        {
+          "code_url": null,
+          "description": "Regolith's Wayland session still depends on GNOME for session startup and settings plumbing. That makes the COSMIC path awkward to install and harder to maintain. I want to build regolith-session-cosmic, an experimental Regolith session that starts through cosmic-session, runs Sway, and removes GNOME from the bootstrap path wherever the packaging and runtime audit shows it can go.\n\nThe project also includes packaging the required COSMIC components through Regolith's Voulage pipeline so the session can be  installed without depending on Pop!_OS repositories, finishing the remaining COSMIC-to-Sway keyboard integration in cosmolith, and  validating the core session behavior: display, lock and idle, OSD, and settings persistence. The main deliverables are a bootable  experimental COSMIC session for Regolith, packaged COSMIC runtime components with reproducible offline builds for the supported  target distros, the remaining input integration work in cosmolith, and a documented validation matrix for the supported session path.",
+          "difficulty": null,
+          "id": "proj_ccextractor-development_2026_hLtBZkBr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hLtBZkBr",
+          "proposal_id": "ivn5UmpD",
+          "short_description": "Regolith's Wayland session still depends on GNOME for session startup and settings plumbing. That makes the COSMIC path awkward to install and harder...",
+          "slug": "build-a-cosmic-based-wayland-session-for-regolith",
+          "status": null,
+          "student_name": "Rahul tripathi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Build a COSMIC-based Wayland Session for Regolith"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -28,9 +28,9 @@
     "Open-source Design",
     "LLM chip design"
   ],
-  "total_projects": 0,
+  "total_projects": 3,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 0
+    "total_students": 3
   },
   "years": {
     "year_2016": null,
@@ -70,7 +70,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-openroad-initiative",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "We seek to demonstrate the power of an open compiler stack and an open EDA stack in making contributions to software and hardware toolkits. By combining XLS and OpenROAD, we are able to test the ability of physical design to contribute to compiler design for Machine Learning acceleration. Along the way, we deliver several extensions to the XLS compiler, including several implementations of matrix multiplication and/or other ML-relevant operations. We also deliver a high level XLS-OpenROAD pipeline for future work, and for reproducibility.",
+          "difficulty": null,
+          "id": "proj_the-openroad-initiative_2026_Hxt4mrXb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Hxt4mrXb",
+          "proposal_id": "M9D2GzU2",
+          "short_description": "We seek to demonstrate the power of an open compiler stack and an open EDA stack in making contributions to software and hardware toolkits. By...",
+          "slug": "2026-gsoc-proposal-xls-and-openroad-for-ppa-aware-hardware-generation",
+          "status": null,
+          "student_name": "Atharv Chowdhary",
+          "student_profile": null,
+          "tags": [],
+          "title": "2026 GSoC Proposal: XLS and OpenROAD for PPA-Aware Hardware Generation"
+        },
+        {
+          "code_url": null,
+          "description": "OpenROAD-MCP's adoption is limited by manual setup and the lack of production-grade deployment and validation workflows. This project delivers a complete Docker deployment story with GHCR publishing, cross-platform validation across Ubuntu, macOS, and WSL2, and a six-layer testing infrastructure covering integration tests against real ORFS flows, performance benchmarking, load testing, and memory profiling thus moving the project toward a reliable v1.0 release.",
+          "difficulty": null,
+          "id": "proj_the-openroad-initiative_2026_Tsyc84al",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Tsyc84al",
+          "proposal_id": "lgRWSefn",
+          "short_description": "OpenROAD-MCP's adoption is limited by manual setup and the lack of production-grade deployment and validation workflows. This project delivers a...",
+          "slug": "openroad-mcp-docker-deployment-and-cross-platform-support-with-production-ready-testing-and-qa",
+          "status": null,
+          "student_name": "KartikMittal",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenROAD-MCP Docker Deployment and Cross-Platform Support with Production-Ready Testing and QA"
+        },
+        {
+          "code_url": null,
+          "description": "OpenROAD's CUGR backend lacks incremental routing support, forcing a full re-route of the entire design after every Engineering Change Order (ECO) operation such as buffer insertion, buffer removal, gate upsizing or downsizing, and placement legalisation. On large industrial designs this can take tens of minutes per iteration. FastRoute, the other backend, already handles this correctly via the IncrementalGRoute class and GRouteDbCbk ODB callbacks that track only the subset of modified nets. This project brings full incremental routing parity to CUGR by implementing deleted net cleanup (removeNet), connecting all five ECO-triggered ODB callbacks to CUGR's dirty-net queue, ensuring only the correct subset of nets is re-routed per incremental pass, and scoping guide write-back to dirty and secondary overflow nets only, modelled on findRouting in FastRoute. Three pull requests implementing the core infrastructure have already been merged into upstream OpenROAD (#9671, #9759, #9866). Deliverables include the complete incremental CUGR flow, a regression test suite covering all ECO scenarios, incremental congestion view updates, and benchmarking data comparing incremental versus full re-route runtime and quality across reference designs.",
+          "difficulty": null,
+          "id": "proj_the-openroad-initiative_2026_vnr10ygM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vnr10ygM",
+          "proposal_id": "O3lmiGAU",
+          "short_description": "OpenROAD's CUGR backend lacks incremental routing support, forcing a full re-route of the entire design after every Engineering Change Order (ECO)...",
+          "slug": "incremental-global-routing-on-cugr",
+          "status": null,
+          "student_name": "Sparsh Karna",
+          "student_profile": null,
+          "tags": [],
+          "title": "Incremental Global Routing on CUGR"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": null,

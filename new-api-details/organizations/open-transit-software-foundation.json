@@ -30,9 +30,9 @@
     "travel",
     "bus"
   ],
-  "total_projects": 10,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 5,
+    "avg_projects_per_appeared_year": 4.67,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 10
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -286,7 +286,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/open-transit-software-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-transit-software-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The goal of this project is to bring the Maglev REST API server to a production-ready v1.0 state, establishing it as a high-performance, drop-in replacement for the legacy Java-based OneBusAway API. To achieve this, I will implement all missing endpoints to ensure full API parity, eliminate N+1 database queries, introduce robust caching strategies, and build comprehensive test coverage alongside detailed deployment documentation. Furthermore, I will engineer a native Golang GTFS data pipeline—featuring a concurrent transformer and merger—directly into Maglev. This integration will enable zero-downtime hot-swapping of transit data in memory and completely remove the system's dependency on legacy Java preprocessing tools, delivering a fully optimized, tested, and documented backend for transit agencies.",
+          "difficulty": null,
+          "id": "proj_open-transit-software-foundation_2026_StTVAp8t",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/StTVAp8t",
+          "proposal_id": "ONub2CBF",
+          "short_description": "The goal of this project is to bring the Maglev REST API server to a production-ready v1.0 state, establishing it as a high-performance, drop-in...",
+          "slug": "maglev-production-readiness-and-native-gtfs-pipeline",
+          "status": null,
+          "student_name": "adel orabi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Maglev: Production Readiness and Native GTFS Pipeline"
+        },
+        {
+          "code_url": null,
+          "description": "Maglev is OneBusAway's next-generation, high-performance Go REST API server designed to replace the legacy Java architecture. To achieve full production readiness for real-world transit agency deployments, this project focuses on four core deliverables. First, it ensures strict 1:1 API parity through automated, field-by-field output validation against the legacy server integrated directly into CI. Second, it executes a complete Go rewrite of the GTFS merge and transformer modules, creating native CLIs that enable runtime multi-feed loading directly into Maglev. Third, the project integrates the GTFS-Flex specification to support demand-responsive paratransit services, and finally, it expands the existing GTFS-RT pipeline to handle real-time structural trip modifications. Together, these enhancements will transform Maglev from a fixed-route Western transit tool into a globally deployable platform capable of serving diverse transit ecosystems across South Asia, Africa, and Latin America.",
+          "difficulty": null,
+          "id": "proj_open-transit-software-foundation_2026_plItTyeU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/plItTyeU",
+          "proposal_id": "tBC98dQg",
+          "short_description": "Maglev is OneBusAway's next-generation, high-performance Go REST API server designed to replace the legacy Java architecture. To achieve full...",
+          "slug": "maglev-next-generation-rest-api-server",
+          "status": null,
+          "student_name": "Aditya_Rana",
+          "student_profile": null,
+          "tags": [],
+          "title": "Maglev Next Generation REST API Server"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to modernize the OneBusAway iOS app by replacing the current tab bar navigation with a SwiftUI-based, Apple Maps–style sheet interface. It involves removing the legacy navigation system and introducing a new SwiftUI root view with a persistent bottom sheet that unifies key features, including search, nearby stops, arrivals, bookmarks, recent stops, and settings.\n\nThe project will also ensure full VoiceOver accessibility support and establish a scalable SwiftUI foundation, enabling future features and incremental migration without revisiting the navigation architecture.",
+          "difficulty": null,
+          "id": "proj_open-transit-software-foundation_2026_hqXqJ61G",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hqXqJ61G",
+          "proposal_id": "Hj0ssPiC",
+          "short_description": "This proposal aims to modernize the OneBusAway iOS app by replacing the current tab bar navigation with a SwiftUI-based, Apple Maps–style sheet...",
+          "slug": "modernize-the-ios-app-ui",
+          "status": null,
+          "student_name": "Mohamed Sliem",
+          "student_profile": null,
+          "tags": [],
+          "title": "Modernize the iOS App UI"
+        },
+        {
+          "code_url": null,
+          "description": "Wayfinder is OneBusAway's next-generation transit web app, already live for real riders in San Diego. This project closes the gap between where it is now and where it needs to be for agencies to ship it with confidence.\nThe work is organized into three areas. Feature development covers favorites/bookmarks for stops and routes, smarter service alerts with route and stop filtering, live arrival updates with Page Visibility API-aware polling, view departures beyond the default time range, and shareable stop and trip URLs. Accessibility covers a full WCAG 2.2 audit during community bonding followed by implementing the top findings, including aria-live regions for dynamic content, keyboard access for the route schedule grid, and focus management fixes in modals. Code quality covers migrating from Tailwind v3 to v4, migrating Flowbite and FontAwesome components to shadcn-svelte and Lucide icons, and expanding Vitest test coverage across all new and touched code paths.\nBy the end of GSoC, Wayfinder will have the features riders expect, meet accessibility requirements agencies need for legal compliance, and have a cleaner codebase that makes every future contribution faster.",
+          "difficulty": null,
+          "id": "proj_open-transit-software-foundation_2026_5ci9G7Pv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/5ci9G7Pv",
+          "proposal_id": "Z031dcVs",
+          "short_description": "Wayfinder is OneBusAway's next-generation transit web app, already live for real riders in San Diego. This project closes the gap between where it is...",
+          "slug": "wayfinder-feature-development-accessibility-quality",
+          "status": null,
+          "student_name": "Tarun Singh_",
+          "student_profile": null,
+          "tags": [],
+          "title": "Wayfinder: Feature Development, Accessibility & Quality"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

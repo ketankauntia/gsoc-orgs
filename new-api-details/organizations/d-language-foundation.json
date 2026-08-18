@@ -40,9 +40,9 @@
     "data structures",
     "optimizations"
   ],
-  "total_projects": 11,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 3.67,
+    "avg_projects_per_appeared_year": 3.5,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": null,
@@ -54,7 +54,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 4,
@@ -67,9 +67,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 11
+    "total_students": 14
   },
   "years": {
     "year_2016": {
@@ -291,7 +291,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/d-language-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/d-language-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to build an automated performance regression detection system for the D compiler (DMD). It introduces a PR-based benchmarking bot that compares changes against the master branch and reports meaningful differences in compile time, memory usage, and binary size. Alongside this, a modular benchmark suite will simulate real-world and synthetic workloads to ensure accurate measurements. A lightweight dashboard will track performance trends over time, helping identify regressions and evaluate optimizations. The system is designed to be practical, maintainable, and tightly integrated with the existing D ecosystem.",
+          "difficulty": null,
+          "id": "proj_d-language-foundation_2026_XKzD5Kin",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XKzD5Kin",
+          "proposal_id": "w7lv50Lj",
+          "short_description": "This project aims to build an automated performance regression detection system for the D compiler (DMD). It introduces a PR-based benchmarking bot...",
+          "slug": "performance-regression-publisher",
+          "status": null,
+          "student_name": "Abul Hossain Khan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Performance Regression Publisher"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds a Ninja build backend to DUB, the D package manager and build tool used by the D ecosystem. Currently, DUB primarily drives builds via direct compiler invocations. This limits incremental build performance, parallelism, and integration with modern build tooling.\n\nThe proposal introduces a backend that allows DUB to generate Ninja build files and delegate compilation to Ninja. This enables faster incremental builds, better dependency tracking, improved parallel execution, and easier IDE/toolchain integration.",
+          "difficulty": null,
+          "id": "proj_d-language-foundation_2026_lBSttJH4",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lBSttJH4",
+          "proposal_id": "BtSSKLfL",
+          "short_description": "This project adds a Ninja build backend to DUB, the D package manager and build tool used by the D ecosystem. Currently, DUB primarily drives builds...",
+          "slug": "ninja-build-backend-for-dub",
+          "status": null,
+          "student_name": "Hariprakash V",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ninja Build Backend for DUB"
+        },
+        {
+          "code_url": null,
+          "description": "My project wants to build a Vulkan compute system for DCompute. At the moment, DCompute does not have a Vulkan backend. This makes it hard to use the language on different platforms. I will fix this by changing the LDC compiler to make SPIR-V code. I will use a \"Wrapper Kernel\" method to manage memory. I will also build a runtime to manage memory and run shaders using the Vulkan API. My final work will include LDC updates, a new runtime, tests, and documents.",
+          "difficulty": null,
+          "id": "proj_d-language-foundation_2026_tAUNtJAl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/tAUNtJAl",
+          "proposal_id": "USI0Lrdb",
+          "short_description": "My project wants to build a Vulkan compute system for DCompute. At the moment, DCompute does not have a Vulkan backend. This makes it hard to use the...",
+          "slug": "gsoc-2026-proposal-dcompute-vulkan-backend",
+          "status": null,
+          "student_name": "Quang Ha",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSoC 2026 Proposal: DCompute Vulkan Backend"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

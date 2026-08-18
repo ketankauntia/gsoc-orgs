@@ -28,9 +28,9 @@
     "filesystems",
     "agent sandbox"
   ],
-  "total_projects": 0,
+  "total_projects": 3,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -42,7 +42,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -55,9 +55,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 0
+    "total_students": 3
   },
   "years": {
     "year_2016": null,
@@ -70,7 +70,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/erofs-filesystem",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "I plan to focus on three concrete deliverables during GSoC: an\nadvanced fuzzing tool, an image injection tool, and a new GitHub Actions workflow\nfor periodic fuzzing. My goal is not only to implement these components, but also to\nmake them understandable, reproducible, and genuinely useful for long-term EROFS\ndevelopment. The expected implementation order is to first establish a format-aware\nfuzzing workflow, then build an image injection tool that helps reproduce and analyze\nspecific issues, and finally connect the resulting workflow to periodic CI-based\nrobustness testing.",
+          "difficulty": null,
+          "id": "proj_erofs-filesystem_2026_XxkEzKgA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XxkEzKgA",
+          "proposal_id": "qQA2gfEH",
+          "short_description": "I plan to focus on three concrete deliverables during GSoC: an advanced fuzzing tool, an image injection tool, and a new GitHub Actions workflow for...",
+          "slug": "advanced-fuzzing-and-image-injection-for-the-kernel-and-erofs-utils",
+          "status": null,
+          "student_name": "Chen Miao",
+          "student_profile": null,
+          "tags": [],
+          "title": "Advanced Fuzzing and Image Injection for the Kernel and erofs-utils"
+        },
+        {
+          "code_url": null,
+          "description": "fsck.erofs currently relies on a strictly synchronous execution path for image unpacking and verification. This design causes the main thread to become heavily bottlenecked by synchronous I/O during file extraction, which subsequently blocks the CPU-intensive decompression phase. As EROFS images scale in size, this sequential pipeline creates a significant performance barrier across container environments, embedded systems, and developer workflows.\n\nThis project resolves the synchronous I/O bottleneck by introducing a multi-threaded decompression pipeline built on a producer-consumer architecture. A background workqueue will enable the main thread to handle directory walks and queue compressed blocks, while a dedicated worker thread pool processes the decompression payloads.\n\nTo eliminate heavy scheduling overhead and lock contention, the project introduces dynamic pcluster batching, which groups sequential blocks into a single work unit and scales the batch size based on the specific compression algorithm in use. Additionally, the extraction process will be further accelerated by a thread-safe, LRU-bounded metadata cache protected by read-write semaphores to prevent redundant I/O and strictly bound memory usage.\n\nThe deliverables for this project include a scalable, multi-threaded extraction pipeline for fsck.erofs integrated with erofs_workqueue , alongside dynamic pcluster batching heuristics optimized for LZ4, LZMA, DEFLATE, and Zstandard to minimize futex overhead. Additionally, the project will provide a thread-safe, LRU-bounded metadata cache designed to significantly reduce redundant I/O , and the implementation will be validated through comprehensive regression tests, edge-case validations for corrupted images, and Flamegraph-backed performance benchmarks.",
+          "difficulty": null,
+          "id": "proj_erofs-filesystem_2026_mSWHC0AO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mSWHC0AO",
+          "proposal_id": "99F7LGhC",
+          "short_description": "fsck.erofs currently relies on a strictly synchronous execution path for image unpacking and verification. This design causes the main thread to...",
+          "slug": "multi-threaded-decompression-support-in-fsck-erofs",
+          "status": null,
+          "student_name": "Nithurshen",
+          "student_profile": null,
+          "tags": [],
+          "title": "Multi-Threaded Decompression Support in fsck.erofs"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to port EROFS to FreeBSD kernels, providing a native implementation of EROFS that allows users to mount native EROFS images directly. This project will integrate EROFS with FreeBSD’s VFS, buffer cache, and VM systems, and lay groundwork for future BSD ports (OpenBSD, NetBSD).",
+          "difficulty": null,
+          "id": "proj_erofs-filesystem_2026_DgKC7AQZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DgKC7AQZ",
+          "proposal_id": "FGr60opH",
+          "short_description": "This project aims to port EROFS to FreeBSD kernels, providing a native implementation of EROFS that allows users to mount native EROFS images...",
+          "slug": "porting-erofs-to-freebsd-kernel",
+          "status": null,
+          "student_name": "Ruicheng Pan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Porting EROFS to FreeBSD Kernel"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "linux-erofs@lists.ozlabs.org",

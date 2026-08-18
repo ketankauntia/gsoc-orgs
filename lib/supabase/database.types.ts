@@ -111,6 +111,174 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_proposal_files: {
+        Row: {
+          byte_size: number
+          created_at: string
+          etag: string | null
+          id: string
+          import_id: string
+          mime_type: string
+          original_filename: string
+          r2_key: string
+          sha256: string
+          validation_status: Database["public"]["Enums"]["file_validation_status"]
+        }
+        Insert: {
+          byte_size: number
+          created_at?: string
+          etag?: string | null
+          id: string
+          import_id: string
+          mime_type: string
+          original_filename: string
+          r2_key: string
+          sha256: string
+          validation_status?: Database["public"]["Enums"]["file_validation_status"]
+        }
+        Update: {
+          byte_size?: number
+          created_at?: string
+          etag?: string | null
+          id?: string
+          import_id?: string
+          mime_type?: string
+          original_filename?: string
+          r2_key?: string
+          sha256?: string
+          validation_status?: Database["public"]["Enums"]["file_validation_status"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "admin_proposal_files_import_id_fkey"
+            columns: ["import_id"]
+            isOneToOne: true
+            referencedRelation: "admin_proposal_imports"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      admin_proposal_imports: {
+        Row: {
+          created_at: string
+          current_file_id: string | null
+          display_name: string
+          id: string
+          imported_by: string
+          license_code: string
+          permission_note: string
+          project_contributor_id: string
+          public_slug: string
+          published_at: string | null
+          rights_basis: string
+          source_url: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          current_file_id?: string | null
+          display_name: string
+          id?: string
+          imported_by: string
+          license_code?: string
+          permission_note: string
+          project_contributor_id: string
+          public_slug: string
+          published_at?: string | null
+          rights_basis: string
+          source_url?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          current_file_id?: string | null
+          display_name?: string
+          id?: string
+          imported_by?: string
+          license_code?: string
+          permission_note?: string
+          project_contributor_id?: string
+          public_slug?: string
+          published_at?: string | null
+          rights_basis?: string
+          source_url?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "admin_proposal_imports_current_file_fk"
+            columns: ["current_file_id"]
+            isOneToOne: false
+            referencedRelation: "admin_proposal_files"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "admin_proposal_imports_project_contributor_id_fkey"
+            columns: ["project_contributor_id"]
+            isOneToOne: true
+            referencedRelation: "project_contributors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "admin_proposal_imports_project_contributor_id_fkey"
+            columns: ["project_contributor_id"]
+            isOneToOne: true
+            referencedRelation: "published_contributor_blogs"
+            referencedColumns: ["project_contributor_id"]
+          },
+        ]
+      }
+      contributor_blogs: {
+        Row: {
+          created_at: string
+          created_by: string
+          id: string
+          is_published: boolean
+          project_contributor_id: string
+          title: string | null
+          updated_at: string
+          url: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          id?: string
+          is_published?: boolean
+          project_contributor_id: string
+          title?: string | null
+          updated_at?: string
+          url: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          id?: string
+          is_published?: boolean
+          project_contributor_id?: string
+          title?: string | null
+          updated_at?: string
+          url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "contributor_blogs_project_contributor_id_fkey"
+            columns: ["project_contributor_id"]
+            isOneToOne: false
+            referencedRelation: "project_contributors"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "contributor_blogs_project_contributor_id_fkey"
+            columns: ["project_contributor_id"]
+            isOneToOne: false
+            referencedRelation: "published_contributor_blogs"
+            referencedColumns: ["project_contributor_id"]
+          },
+        ]
+      }
       contributor_claims: {
         Row: {
           claimant_note: string | null
@@ -161,6 +329,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "project_contributors"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "contributor_claims_project_contributor_id_fkey"
+            columns: ["project_contributor_id"]
+            isOneToOne: false
+            referencedRelation: "published_contributor_blogs"
+            referencedColumns: ["project_contributor_id"]
           },
         ]
       }
@@ -651,13 +826,6 @@ export type Database = {
             foreignKeyName: "proposal_files_proposal_id_fkey"
             columns: ["proposal_id"]
             isOneToOne: false
-            referencedRelation: "approved_proposals"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "proposal_files_proposal_id_fkey"
-            columns: ["proposal_id"]
-            isOneToOne: false
             referencedRelation: "proposals"
             referencedColumns: ["id"]
           },
@@ -907,6 +1075,25 @@ export type Database = {
           project_external_id: string | null
           project_title: string | null
           public_slug: string | null
+          submission_source: string | null
+          year: number | null
+        }
+        Relationships: []
+      }
+      published_contributor_blogs: {
+        Row: {
+          code_url: string | null
+          contributor_name: string | null
+          created_at: string | null
+          id: string | null
+          organization_name: string | null
+          organization_slug: string | null
+          project_contributor_id: string | null
+          project_external_id: string | null
+          project_title: string | null
+          project_url: string | null
+          title: string | null
+          url: string | null
           year: number | null
         }
         Relationships: []
@@ -949,6 +1136,26 @@ export type Database = {
         Args: { requested_action: string }
         Returns: boolean
       }
+      create_admin_proposal_import: {
+        Args: {
+          contributor_display_name: string
+          contributor_slot_id: string
+          permission_basis: string
+          private_permission_note: string
+          private_source_url?: string
+          target_admin_id: string
+        }
+        Returns: string
+      }
+      create_contributor_blog: {
+        Args: {
+          blog_title: string
+          blog_url: string
+          contributor_slot_id: string
+          target_admin_id: string
+        }
+        Returns: string
+      }
       create_contributor_claim: {
         Args: {
           contributor_slot_id: string
@@ -971,12 +1178,29 @@ export type Database = {
         }
         Returns: undefined
       }
+      publish_admin_proposal_import: {
+        Args: {
+          new_byte_size: number
+          new_etag?: string
+          new_file_id: string
+          new_original_filename: string
+          new_r2_key: string
+          new_sha256: string
+          target_admin_id: string
+          target_import_id: string
+        }
+        Returns: undefined
+      }
       set_user_role: {
         Args: { enabled: boolean; target_role: string; target_user_id: string }
         Returns: undefined
       }
       submit_my_proposal: {
         Args: { target_proposal_id: string; target_user_id: string }
+        Returns: undefined
+      }
+      unpublish_contributor_blog: {
+        Args: { target_admin_id: string; target_blog_id: string }
         Returns: undefined
       }
       update_my_profile: {

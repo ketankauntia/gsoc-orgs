@@ -43,9 +43,9 @@
     "Hardware Control",
     "buildfarms"
   ],
-  "total_projects": 46,
+  "total_projects": 54,
   "stats": {
-    "avg_projects_per_appeared_year": 5.11,
+    "avg_projects_per_appeared_year": 5.4,
     "projects_by_year": {
       "year_2016": 7,
       "year_2017": null,
@@ -57,7 +57,7 @@
       "year_2023": 3,
       "year_2024": 5,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 7,
@@ -70,9 +70,9 @@
       "year_2023": 3,
       "year_2024": 5,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 44
+    "total_students": 54
   },
   "years": {
     "year_2016": {
@@ -974,7 +974,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/open-robotics"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-robotics",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The ROS 2 ecosystem has made significant leaps in performance over the last few years, supported by benchmarking tools like buildfarm_perf_tests and ros2-benchmark-container. These tools take care of profiling middleware and client library performance under various configurations. As of now, the recurring monitoring path in continuous integration (CI) is mostly rclcpp-centric, providing good regression visibility for C++ implementations. However, a current limitation of the ecosystem is that it lacks periodic performance monitoring for other heavily used client libraries like rclpy (Python) and rclrs (Rust). This leaves these libraries with weaker regression visibility, making it difficult to measure the performance impact of new topologies involving remote host subscriptions or track the performance of ROS actions and services reliably. This project focuses on vastly extending the suite of tests that run regularly in buildfarm_perf_tests by porting C++ benchmark instrumentation for use with the other client library implementations. This project thus aims to add high-signal, recurring CI coverage across rclcpp, rclpy, and rclrs with minimal CI cost overhead. Furthermore, to enhance the contribution, there will also be a focus on updating the performance test result graphs in CI to use modern observability tools. The final deliverable includes an updated web dashboard (built with Grafana) that tracks key compute metrics such as latency, CPU usage, and memory over time, providing the community with a complete, cross-language performance diagnostic ecosystem.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_XzCZfpPX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XzCZfpPX",
+          "proposal_id": "98QtvsdZ",
+          "short_description": "The ROS 2 ecosystem has made significant leaps in performance over the last few years, supported by benchmarking tools like buildfarm_perf_tests and...",
+          "slug": "client-library-system-performance-monitoring-enhancements",
+          "status": null,
+          "student_name": "Ammaar Ahmed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Client Library System Performance Monitoring Enhancements"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to improve the integration between ROS 2 and Gazebo by addressing two key challenges: manual bridge configuration and limited support for scalable multi-robot simulation.\r\n\r\nCurrently, users must manually define topic mappings when using ros_gz_bridge, which becomes error-prone and difficult to maintain in dynamic or large-scale environments. In addition, multi-robot simulation requires modifying SDF/URDF files to avoid topic conflicts, making it hard to reuse robot models.\r\n\r\nTo solve these issues, this project proposes a unified communication layer that introduces (1) dynamic bridge discovery to automatically detect and connect compatible ROS 2 and Gazebo topics. (2) a standardized namespacing mechanism for Gazebo plugins to enable seamless multi-robot deployment without modifying robot descriptions.\r\n\r\nThe expected outcome is a robust and scalable framework that reduces configuration overhead, improves interoperability between ROS 2 and Gazebo, and allows developers to launch multiple robots with minimal effort.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_sQflt89O",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sQflt89O",
+          "proposal_id": "YxICEmWz",
+          "short_description": "This project aims to improve the integration between ROS 2 and Gazebo by addressing two key challenges: manual bridge configuration and limited...",
+          "slug": "scalable-multi-robot-integration-and-automated-bridging-for-ros-2-and-gazebo",
+          "status": null,
+          "student_name": "C88-YQ",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scalable Multi-Robot Integration and Automated Bridging for ROS 2 and Gazebo"
+        },
+        {
+          "code_url": null,
+          "description": "I am C Innocent Pious, a final-year B.Tech Computer Science student from Chennai with hands-on experience in the colcon mixin codebase. Prior to this proposal, I identified and fixed a multi-year bug in multi-mixin argument merging (Issue #40, PR #59), adding six regression tests with all tests passing.\n\nThis project introduces mixin composition to colcon mixin, allowing a mixin to declare dependencies on other mixins via a \"mixin\" key. These dependencies will be resolved automatically using a dependency graph, topological ordering, and cycle detection, eliminating the need for users to manually specify transitive dependencies in every colcon invocation.\n\nThe deliverables include a dependency resolution system, cycle-safe ordering mechanism, well-defined argument merge semantics, comprehensive test coverage, and updated documentation integrated into the upstream repository.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_F9qx5flu",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/F9qx5flu",
+          "proposal_id": "MK7LtPQl",
+          "short_description": "I am C Innocent Pious, a final-year B.Tech Computer Science student from Chennai with hands-on experience in the colcon mixin codebase. Prior to this...",
+          "slug": "add-support-for-mixin-composition-in-colcon-mixin",
+          "status": null,
+          "student_name": "Innocent Pious",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Support for Mixin Composition in Colcon Mixin"
+        },
+        {
+          "code_url": null,
+          "description": "Self Introduction:\nMy name is Yimo Wang.I am a Master’s candidate in Software Engineering at Dalian University of Technology, expected to graduate in June 2027. I am an active contributor to the Gazebo simulator project, with extensive experience in C/C++, ROS 2, and related development tools such as CMake and GDB.\n\n\nBrief Plan of proposal: \nFirst, we should know how to design the basic process of a single plugin test. It should be as lists:\n1.  start simulation and collect state before calling reset\n2.  call reset and step forward\n3.  verify if old states of the plugin are reset\n4.  step forward again to verify if works well after calling reset\nSecond, we should extract functions from every step to build a standard test suite.\nFinally, we use the standard test suite to build integration tests for every single plugin \nin the core system. Then run tests and audit their behaviors.\n\nAfter auditing, we should fix plugins that lead to state leaks after calling reset. Adding the Reset function explicitly and mounting ISystemReset is a good option. After the fixes are completed, we can then incorporate tests into the CI pipeline to prevent regressions.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_b5jzp0go",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/b5jzp0go",
+          "proposal_id": "fzFhFEXC",
+          "short_description": "Self Introduction: My name is Yimo Wang.I am a Master’s candidate in Software Engineering at Dalian University of Technology, expected to graduate in...",
+          "slug": "qa-of-reset-of-core-systems",
+          "status": null,
+          "student_name": "Oscmoar07",
+          "student_profile": null,
+          "tags": [],
+          "title": "QA of Reset of Core Systems"
+        },
+        {
+          "code_url": null,
+          "description": "The project solves a common problem in robotics systems: ros2_control already gives teams strong building blocks for hardware and controller control, but it still leaves the coordination of full system transitions to the user. In practice, that means teams often write their own startup scripts, timing delays, and controller-switching logic by hand.\n\nMy plan is to build a reusable orchestration layer that watches existing ros2_control status, applies YAML-defined presets, and moves controllers and hardware into the right states in a safe, deterministic order. The work will be delivered through five parts: a benchmark multi-robot scenario, a periodic status publisher in controller_manager, status topics on standard controllers, a YAML preset format with validation, and a Mission Control node that executes and verifies each transition without touching the real-time control loop.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_wrwP5Ubc",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wrwP5Ubc",
+          "proposal_id": "T5Pi0JeF",
+          "short_description": "The project solves a common problem in robotics systems: ros2_control already gives teams strong building blocks for hardware and controller control,...",
+          "slug": "mission-control-for-ros2-control",
+          "status": null,
+          "student_name": "Sahil Lakhmani",
+          "student_profile": null,
+          "tags": [],
+          "title": "Mission Control for ros2_control"
+        },
+        {
+          "code_url": null,
+          "description": "This project develops a vendor-agnostic GPU-accelerated SONAR simulation plugin for Gazebo by migrating the current CUDA-centric approach to a wgpu-based compute pipeline. Current existing physics-based underwater sonar plugin rely on CUDA for speed, which limits users to NVIDIA GPUs and complicates deployment in mixed hardware environments (AMD/Intel/Apple Silicon GPUs, and future-proofed stacks). Recent advances in cross-platform GPU APIs and the Rust wgpu ecosystem make it feasible to run high-throughput compute workloads across Vulkan / DirectX / Metal backends via a unified abstraction to utilize GPGPU capabilities. This project uses that foundation to implement sonar image synthesis on the GPU without vendor lock-in, while keeping Gazebo/ROS 2 integration clean and upstream-friendly.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_bnS8REDz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/bnS8REDz",
+          "proposal_id": "sUjCyvUH",
+          "short_description": "This project develops a vendor-agnostic GPU-accelerated SONAR simulation plugin for Gazebo by migrating the current CUDA-centric approach to a...",
+          "slug": "vendor-agnostic-sonar-implementation",
+          "status": null,
+          "student_name": "Samuel Foo",
+          "student_profile": null,
+          "tags": [],
+          "title": "Vendor Agnostic SONAR Implementation"
+        },
+        {
+          "code_url": null,
+          "description": "AI policies (VLAs, Diffusion Policy) output joint targets at 20–50 Hz, while robot hardware requires continuous commands at 500–2000 Hz. Naively forwarding sparse waypoints causes velocity discontinuities and acceleration spikes that trigger hardware faults or physical damage. Existing solutions are batch-oriented and cannot handle streaming, jittery AI output.\n\nThis project builds a dedicated Inference-to-Control Bridge in ros2_controllers. It ingests streaming AI waypoints via topics and upscales them to hardware rate using C²-continuous quintic spline transitions, solving the transition problem. A lock-free look-ahead buffer absorbs inference jitter, a time-scaling mechanism handles buffer underrun gracefully, and a safety monitor enforces velocity, acceleration, and jerk limits via time dilation before every hardware dispatch.\n\nDeliverables: inference_bridge_controller plugin, quintic spline primitives in control_toolbox, full C++ test suite, and a Gazebo end-to-end demonstration on a simulated 6-DOF arm.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_sQNXZTRy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sQNXZTRy",
+          "proposal_id": "nxBn9Ci3",
+          "short_description": "AI policies (VLAs, Diffusion Policy) output joint targets at 20–50 Hz, while robot hardware requires continuous commands at 500–2000 Hz. Naively...",
+          "slug": "physical-ai-inference-trajectory-upscaling-for-ros2-control",
+          "status": null,
+          "student_name": "Vedhas Talnikar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Physical AI Inference & Trajectory Upscaling for ros2_control"
+        },
+        {
+          "code_url": null,
+          "description": "The Crossflow Diagram Editor is a workflow authoring tool, but today some core interactions around building and validating workflows can be improved to make editing faster and clearer. This project will improve the editor’s UI/UX by making connection authoring more intuitive, providing stronger real-time feedback for valid and invalid connections, and polishing key flows such as running, testing, and resetting workflows.\n\nThe project will focus on improving correctness, responsiveness, and discoverability while building on the existing frontend validation and editor architecture. Deliverables will include improved drag-and-drop interaction feedback, filtered add-operation suggestions, more responsive run/test dialogs, additional automated tests for key editor behaviors, and updated documentation/demo materials. These improvements will make Crossflow easier for both new and existing users to adopt and will provide a stronger foundation for future validation and execution-time tooling.",
+          "difficulty": null,
+          "id": "proj_open-robotics_2026_jM4uz0v2",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jM4uz0v2",
+          "proposal_id": "vkfxXWwq",
+          "short_description": "The Crossflow Diagram Editor is a workflow authoring tool, but today some core interactions around building and validating workflows can be improved...",
+          "slug": "ui-ux-improvements-to-the-crossflow-diagram-editor",
+          "status": null,
+          "student_name": "Zhen Wan",
+          "student_profile": null,
+          "tags": [],
+          "title": "UI/UX improvements to the Crossflow Diagram Editor"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

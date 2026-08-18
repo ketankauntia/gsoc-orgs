@@ -149,8 +149,8 @@ export default async function ProposalsPage({ searchParams }: { searchParams: Pr
             <>
               <h2 className="text-2xl font-semibold tracking-tight">Recently shared proposals</h2>
               <p className="mt-2 max-w-2xl text-muted-foreground">
-                Every document here was submitted by its contributor, matched to an archived GSoC selection, and
-                approved by a moderator.
+                Every document here is matched to an archived GSoC selection and published only after contributor
+                submission or recorded publication permission, plus moderator review.
               </p>
               {latest?.data.length ? (
                 <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

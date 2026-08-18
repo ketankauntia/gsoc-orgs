@@ -40,7 +40,7 @@
     "ai",
     "text-editor"
   ],
-  "total_projects": 8,
+  "total_projects": 10,
   "stats": {
     "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
@@ -54,7 +54,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -67,9 +67,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 8
+    "total_students": 10
   },
   "years": {
     "year_2016": null,
@@ -258,7 +258,56 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/neovim"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/neovim",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Neovim currently cannot run natively in web browsers because its build systems and dependencies, such as libuv rely on OS-level features unavailable in WebAssembly (WASM). This project aims to enable Neovim as a WASM build target by adapting its build systems, creating a WASM compatibility layer to stub or replace unsupported OS features, and integrating a browser frontend. It involves compiling Neovim’s core editing engine, Lua 5.1 interpreter, and runtime files into WASM, adapting asynchronous event loops, handling virtual filesystems via Emscripten, and providing replacements for system calls like signals, threads, and process management. The deliverables include a fully functional nvim.wasm binary with embedded runtime files, a browser frontend capable of rendering the UI and handling input via Neovim’s RPC protocol. This will allow Neovim to operate within the browser which increases accessibility, enables integration with online IDEs and educational platforms, and expands Neovim’s ecosystem to new users and contributors.",
+          "difficulty": null,
+          "id": "proj_neovim_2026_ulvAb2rQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ulvAb2rQ",
+          "proposal_id": "164oIMtp",
+          "short_description": "Neovim currently cannot run natively in web browsers because its build systems and dependencies, such as libuv rely on OS-level features unavailable...",
+          "slug": "support-wasm-as-a-neovim-build-target",
+          "status": null,
+          "student_name": "Rawan Khalid",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support WASM as a Neovim Build Target"
+        },
+        {
+          "code_url": null,
+          "description": "Neovim embeds a VT220/xterm terminal emulator based on libvterm, which lets us work with the terminal right inside Neovim. However, `:terminal` buffers currently lose all their content when Neovim restarts, the buffer is closed, or a session is reloaded. My proposal aims to close this gap by preserving terminal history and bringing it back when users need it.",
+          "difficulty": null,
+          "id": "proj_neovim_2026_N3OFmss1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/N3OFmss1",
+          "proposal_id": "iXkrvHyK",
+          "short_description": "Neovim embeds a VT220/xterm terminal emulator based on libvterm, which lets us work with the terminal right inside Neovim. However, `:terminal`...",
+          "slug": "restore-terminal-buffers-after-restart",
+          "status": null,
+          "student_name": "Willaaaaaaa",
+          "student_profile": null,
+          "tags": [],
+          "title": "Restore `:terminal` Buffers After Restart"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

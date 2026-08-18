@@ -38,7 +38,7 @@
     "OS",
     "low-level"
   ],
-  "total_projects": 6,
+  "total_projects": 9,
   "stats": {
     "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
@@ -52,7 +52,7 @@
       "year_2023": null,
       "year_2024": 2,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 4,
@@ -65,9 +65,9 @@
       "year_2023": null,
       "year_2024": 2,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 6
+    "total_students": 9
   },
   "years": {
     "year_2016": {
@@ -200,7 +200,72 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/kolibrios-project-team/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/kolibrios-project-team",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to bring modern, decentralized communication to KolibriOS through the development of a native Matrix messaging client. Since the Matrix API requires HTTPS for secure data exchange—a capability not currently supported in the OS—the first phase involves porting Mbed TLS 4.0.0 and integrating it directly into the networking stack. This foundational work enables secure authentication and real-time syncing for the Matrix client while providing a reusable TLS 1.2/1.3 framework for other KolibriOS applications. The final result will be a fully functional client and a robust encryption library that upgrades the security standards of the entire operating system.",
+          "difficulty": null,
+          "id": "proj_kolibrios-project-team_2026_pYuVzwap",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pYuVzwap",
+          "proposal_id": "6ad5N1pA",
+          "short_description": "This project aims to bring modern, decentralized communication to KolibriOS through the development of a native Matrix messaging client. Since the...",
+          "slug": "native-matrix-client-for-kolibrios",
+          "status": null,
+          "student_name": "Dilkhush",
+          "student_profile": null,
+          "tags": [],
+          "title": "Native Matrix Client for KolibriOS"
+        },
+        {
+          "code_url": null,
+          "description": "The Goal: A 100% x86 Assembly (FASM) news reader that replaces bloated web browsing with high-performance, native headlines. The Strategy: Use FEED struct array allocation (with a +5 buffer) for O(1) efficiency and a Unified Schema Engine to parse RSS. Core Deliverables: a state-driven, 2-pane GUI with \"Read/Unread\" tracking, a modular backend for http.obj networking and asmXml parsing, and a headless test harness.",
+          "difficulty": null,
+          "id": "proj_kolibrios-project-team_2026_L2QvSOxz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/L2QvSOxz",
+          "proposal_id": "3Q3HlPTx",
+          "short_description": "The Goal: A 100% x86 Assembly (FASM) news reader that replaces bloated web browsing with high-performance, native headlines. The Strategy: Use FEED...",
+          "slug": "rss-news-reader",
+          "status": null,
+          "student_name": "Francesco Pio Mastrorilli",
+          "student_profile": null,
+          "tags": [],
+          "title": "RSS news reader"
+        },
+        {
+          "code_url": null,
+          "description": "This project improves the file system driver of KolibriOS, specifically for extX file systems. Currently, the driver only supports 1 INCOMPAT feature fully implemented for R/W, and 2 for R. And can only guarantee reading and writing to ext2 filesystems. My primary goal is to achieve read/write support for modern ext4 file systems by implementing the remaining key INCOMPAT then RO_COMPAT features, and write support for the two currently implemented INCOMPAT features that are missing it. If time permits later, I might start in the simple action of recovery in case the file system was not safely unmounted, providing a simple foundation for future contributors (or me) to fully complete this huge and useful feature.",
+          "difficulty": null,
+          "id": "proj_kolibrios-project-team_2026_XFZ3f9xX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XFZ3f9xX",
+          "proposal_id": "BfXgv6lV",
+          "short_description": "This project improves the file system driver of KolibriOS, specifically for extX file systems. Currently, the driver only supports 1 INCOMPAT feature...",
+          "slug": "extx-file-system-improvement",
+          "status": null,
+          "student_name": "Mathieu Morcos",
+          "student_profile": null,
+          "tags": [],
+          "title": "ExtX File System Improvement"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

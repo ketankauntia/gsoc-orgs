@@ -29,9 +29,9 @@
     "AI/ML",
     "cats"
   ],
-  "total_projects": 2,
+  "total_projects": 6,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 2
+    "total_students": 6
   },
   "years": {
     "year_2016": null,
@@ -115,7 +115,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/typelevel"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/typelevel",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Specialization is a compiler transformation that optimizes generic program code such that code using primitive types can execute without significant overhead. The @specialized annotation in the Scala 2 programming language allowed programmers to direct the compiler to create optimized generic data structures for each primitive type. @specialized is used significantly in the implementation of high-performance Scala 2 libraries, allowing for performance without the productivity of generics. This optimization trades performance at the cost of extra space, as generic code must be specialized for each of the primitive types, scaling exponentially on the number of type parameters. Since the Scala 3 programming language has evolved significantly from Scala 2, the @specialized annotation is no longer available. This proposal will prototype a new scheme of specialization for the Scala 3 compiler based on inline traits that avoids the performance pitfalls of the Scala 2 implementation, enabling the evolution of many high-performance Scala 2 libraries into Scala 3.",
+          "difficulty": null,
+          "id": "proj_typelevel_2026_Z6NA8stz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Z6NA8stz",
+          "proposal_id": "oBeveytU",
+          "short_description": "Specialization is a compiler transformation that optimizes generic program code such that code using primitive types can execute without significant...",
+          "slug": "compile-time-specialization-for-scala-3-via-inline-traits",
+          "status": null,
+          "student_name": "James You",
+          "student_profile": null,
+          "tags": [],
+          "title": "Compile-time Specialization for Scala 3 via Inline Traits"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to create a more efficient immutable list in Scala. In order to do this, we intend to use block-based arrays, to improve cache locality and reduce pointer chasing. This approach will help to address performance issues with traditional linked lists.",
+          "difficulty": null,
+          "id": "proj_typelevel_2026_WLcIITzr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WLcIITzr",
+          "proposal_id": "6RqQb30f",
+          "short_description": "The goal of this project is to create a more efficient immutable list in Scala. In order to do this, we intend to use block-based arrays, to improve...",
+          "slug": "a-faster-immutable-list",
+          "status": null,
+          "student_name": "Jennifer Payne",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Faster Immutable List"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to explore implementing a list-like datatype with enhanced performance. Immutable linked lists are a core datatype in functional programming languages, proving particularly useful in concurrent programs due to the immutability. The most common operations programmers use on an immutable list include random access, sequential accesses, appending, and copy/writes. Unfortunately, sequential access requires a pointer dereference for each node meaning O(n) time which can significantly impact performance. Iteration is necessary for the most popular functions including fold and map and because the datatype is immutable, many changes one may want to make to a list, excluding operations like prepending or removing an element from the head, require allocating a new list which takes O(n) time.\n\nThis project will design and implement a new immutable linked list datatype with improved performance for the most common operations by leveraging memory/cache locality and mechanical sympathy to improve performance in concurrent programs within the Typelevel ecosystem. The new datatype implements a generalization of the traditional linked list, one where each node contains a constant number of elements rather than one. These nodes, which we call blocks, each contain an array and a pointer to the next block. \n\n\nDeliverables:\n\n-Outline direction and priorities for the new datatype based on existing alternatives and how to best integrate in to the greater Typelevel ecosystem (improve performance in concurrent programs by integrating it in to other datatypes ex. Typelevel fs2's Channel)\n\n-Research and design the new datatype\n\n-Implement the interface for the new datatype\n\n-Benchmark and compare theoretical asymptotic bounds against existing immutable linked list-like data structures\n\n-Proper documentation and tests",
+          "difficulty": null,
+          "id": "proj_typelevel_2026_XM7MG9IK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XM7MG9IK",
+          "proposal_id": "xPrr5y9c",
+          "short_description": "The goal of this project is to explore implementing a list-like datatype with enhanced performance. Immutable linked lists are a core datatype in...",
+          "slug": "a-faster-immutable-list-datatype",
+          "status": null,
+          "student_name": "L Denney",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Faster Immutable List Datatype"
+        },
+        {
+          "code_url": null,
+          "description": "The recent efforts of the `scala-wasm` project have made it possible for Scala\nto use the WebAssembly Component Model binary format as a compilation target.\nAlthough, the implementation has not yet been finished, it is already possible\nfor developers to run Scala code on Wasm runtimes.\n\nIn order for the Scala language to succeed in the Wasm ecosystem, core\nlibraries which rely on platform APIs must be ported to the Wasm/WASI platform.\n\nThe goal of this project is to prototype porting the core parts of the Cats\nEffect and FS2 libraries to the Wasm/WASI platform. The CE runtime prototype\nwill be single-threaded and based around `wasi:io/poll`. The end result is\nexpected to be similar to the (now-replaced) single-threaded LLVM runtime which\nused a `libuv`-style event-loop. The FS2 porting effort is going to focus on\n`fs2-core` and the `network` and `file` APIs from `fs2-io`.\n\nAs a part of this project, a standalone reimplementation of java.nio.file API\nwill be developed as a separate library.\n\nPlanned Deliverables:\n\n1. A working prototype of Cats Effect's single-threaded runtime compiling and\nrunning on Wasm/WASI free of glue JavaScript code. This prototype will serve as\na basis for an upstream implementation.\n\n2. Prototype port of the core FS2 module and the fs2.io.file and io.network APIs.\n\n3. A standalone library reimplementation of JDK file APIs for WASI. Initial\nscope of the implementation will be adjusted to the needs of the fs2.io.file\nport.\n\n4 An extensive documentation of the project. \n\n5. A report regarding implementation details and findings discovered over the\ncourse of the project which will help with further porting efforts of Scala\ncompilers and other platform-dependent libraries.\n\n6. Wasm test environment and CI created for this project can upstreamed to\nsbt-typelevel so that it can be used in other projects.",
+          "difficulty": null,
+          "id": "proj_typelevel_2026_vibpm0UF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vibpm0UF",
+          "proposal_id": "xedLRxex",
+          "short_description": "The recent efforts of the `scala-wasm` project have made it possible for Scala to use the WebAssembly Component Model binary format as a compilation...",
+          "slug": "cats-effect-fs2-for-wasm-wasi",
+          "status": null,
+          "student_name": "Mariusz Jakoniuk",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cats Effect & FS2 for Wasm/WASI"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

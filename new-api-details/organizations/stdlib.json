@@ -30,9 +30,9 @@
     "numerical computing",
     "statistics"
   ],
-  "total_projects": 9,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 4.5,
+    "avg_projects_per_appeared_year": 4.67,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 9
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -272,7 +272,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/stdlib"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/stdlib",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to resolve Issue add blas bindings and implementations for linear algebra by systematically adding the missing Level 1, 2, and 3 BLAS math routines to the @stdlib/blas/base/* namespace. To ensure speed and backward compatibility, every new routine will be split into two parts: a pure, low-level math engine and a simple, user-friendly classic API.This architectural split empowers the underlying math engine to safely handle complex, non-contiguous memory layouts and apply strict cache optimizations using explicit strides. Meanwhile, the classic API acts as a protective shield, automatically calculating the required memory offsets (e.g., negative strides) to deliver a seamless and intuitive developer experience.",
+          "difficulty": null,
+          "id": "proj_stdlib_2026_Mh2Oa6l1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Mh2Oa6l1",
+          "proposal_id": "XDXITcJg",
+          "short_description": "This project aims to resolve Issue add blas bindings and implementations for linear algebra by systematically adding the missing Level 1, 2, and 3...",
+          "slug": "extending-level-2-and-level-3-blas-routines-for-linear-algebra",
+          "status": null,
+          "student_name": "Kaustubh Patange",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending Level 2 and Level 3 BLAS routines for linear algebra"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement machine learning algorithms in JavaScript and C within stdlib, laying the foundation for a broader ecosystem of machine learning tools and supporting dependencies. The focus will be on ensuring consistency, accuracy, and efficiency across implementations. Deliverables include multiple machine learning algorithms, loss functions, distance metrics, and comprehensive documentation. Collectively, these contributions will help enable efficient execution of machine learning workflows on the web.",
+          "difficulty": null,
+          "id": "proj_stdlib_2026_UpnxnHuL",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UpnxnHuL",
+          "proposal_id": "Cqwo57MV",
+          "short_description": "This project aims to implement machine learning algorithms in JavaScript and C within stdlib, laying the foundation for a broader ecosystem of...",
+          "slug": "add-batch-machine-learning-algorithms-in-javascript-and-c",
+          "status": null,
+          "student_name": "Nakul Krishnakumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add batch machine learning algorithms in Javascript and C"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds LAPACK bindings and JavaScript implementations for singular value decomposition in stdlib, with the main focus on the dgesvd routine (singular value decomposition (SVD) for GE matrices) along with several dependency routines. My plan is to implement the missing LAPACK dependencies in stdlib, port the core routines to stdlib’s ndarray/base API style, for both row-major (C-style) and column-major (Fortran-style) arrays and verify correctness against the Fortran reference implementations. The main deliverable is a working dgesvd implementation, the stretch goal is a working dgesvdq branch. Each routine will also include tests, benchmarks, examples, and documentation so the final result is a working SVD module in stdlib via LAPACK.",
+          "difficulty": null,
+          "id": "proj_stdlib_2026_UUCgNDEW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UUCgNDEW",
+          "proposal_id": "ickR6MVh",
+          "short_description": "This project adds LAPACK bindings and JavaScript implementations for singular value decomposition in stdlib, with the main focus on the dgesvd...",
+          "slug": "add-support-for-low-level-singular-value-decomposition-via-lapack",
+          "status": null,
+          "student_name": "Prajjwal Bajpai",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add support for Low-Level Singular Value Decomposition via LAPACK"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to strengthen stdlib’s linear algebra capabilities by implementing LAPACK-based solve routines for structured matrix formats such as packed, banded, and tridiagonal systems, which are widely used in scientific and engineering applications. The project focuses on enabling a complete factorization-to-solution workflow, ensuring seamless integration with existing routines while carefully handling specialized storage formats that require precise indexing and memory management. Emphasis will be placed on numerical correctness, consistency with stdlib’s APIs, and robustness through comprehensive testing and validation. Clear documentation and practical examples will also be provided to improve usability, ultimately making stdlib a more reliable and effective toolkit for real-world scientific computing.",
+          "difficulty": null,
+          "id": "proj_stdlib_2026_sJ7nndHz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sJ7nndHz",
+          "proposal_id": "sx17yLOv",
+          "short_description": "This proposal aims to strengthen stdlib’s linear algebra capabilities by implementing LAPACK-based solve routines for structured matrix formats such...",
+          "slug": "add-support-for-solving-systems-of-linear-equations-with-lapack",
+          "status": null,
+          "student_name": "Pratik Bhagwat",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add support for solving systems of linear equations with LAPACK"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend the plot module by implementing the missing building blocks needed for end-to-end chart creation. The work will focus on improving how data is mapped to visual representations, adding support for a broader range of visual elements, and enabling better composition of charts. Additionally, the project will introduce features for interactivity, layout management, and common data processing operations, making the API more practical for real-world usage. Each component will be developed with proper testing, documentation, and performance considerations to ensure reliability and consistency with the stdlib ecosystem. By the end of the project, users will be able to programmatically generate complete and reusable visualization specifications using a modular JavaScript API, without relying on manually written JSON.",
+          "difficulty": null,
+          "id": "proj_stdlib_2026_AOnAAohn",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/AOnAAohn",
+          "proposal_id": "dMASyX0n",
+          "short_description": "This project aims to extend the plot module by implementing the missing building blocks needed for end-to-end chart creation. The work will focus on...",
+          "slug": "expanding-the-vega-engine-to-support-the-analysis-of-multidimensional-data",
+          "status": null,
+          "student_name": "Sachin Pangal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expanding the Vega engine to support the analysis of multidimensional data"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

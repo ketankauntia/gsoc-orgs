@@ -29,9 +29,9 @@
     "build system",
     "Infrastructure as Code"
   ],
-  "total_projects": 3,
+  "total_projects": 7,
   "stats": {
-    "avg_projects_per_appeared_year": 3,
+    "avg_projects_per_appeared_year": 3.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 3
+    "total_students": 7
   },
   "years": {
     "year_2016": null,
@@ -133,7 +133,88 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/nixos-foundation/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/nixos-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The Nix build hook mechanism has been marked for removal since 2017, but it still fills an important gap in Nix's distributed build architecture. In particular, it is currently the only interface that can pass a build request together with its full set of input paths atomically. Store-based remote building does not provide this: it splits the process into separate calls, which makes it difficult for builder stores that schedule builds across a cluster, such as \"nix-scheduler-hook\", to know where inputs need to be copied before the build is assigned.\n\nThis project proposes a cleaner, more extensible replacement by adding a new virtual \"buildDerivation\" method to the \"Store\" base class. This method would bundle the derivation path, derivation, and input paths into a single call, preserving the atomic behavior that cluster schedulers rely on. To ensure compatibility, the new interface would include a default implementation so that existing store backends continue to work unchanged.\n\nThe project will validate this design through an end-to-end proof of concept by adapting \"nix-scheduler-hook\" to use the new API. Once the new mechanism is confirmed to support distributed scheduling correctly, the legacy build hook mechanism can be removed from the Nix daemon.\n\nExpected deliverables include the new virtual \"Store\" method and its default implementation, full removal of the build hook mechanism from the Nix daemon, a proof-of-concept \"nix-scheduler-hook\" adaptation, a passing distributed build test suite, and accompanying API documentation and migration guidance.",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2026_fnPvwYYw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fnPvwYYw",
+          "proposal_id": "NqBdHThh",
+          "short_description": "The Nix build hook mechanism has been marked for removal since 2017, but it still fills an important gap in Nix's distributed build architecture. In...",
+          "slug": "remove-the-build-hook-mechanism-store-extensions",
+          "status": null,
+          "student_name": "Amrit Amber",
+          "student_profile": null,
+          "tags": [],
+          "title": "Remove the Build Hook Mechanism, Store Extensions"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the accuracy, reliability, and observability of the Nixpkgs Security Tracker by addressing key limitations in its current CVE–derivation matching pipeline. At present, the system relies on overly permissive substring-based matching, incorrect string-based version comparisons, and lacks proper monitoring, which leads to noisy results, missed vulnerabilities, and silent failures.\nThe proposed work introduces a structured, test-driven redesign of the matching pipeline. It replaces flawed string comparisons with semantic versioning to ensure correct handling of version boundaries. It also improves matching quality by incorporating multiple signals such as trigram similarity, CPE-based matching, and version constraint filtering, thereby reducing noise and increasing the precision of candidate derivations. In addition, the project strengthens data integrity and consistency by fixing cache update issues, eliminating race conditions in issue generation, and ensuring that the system always reflects the latest state after manual or automated changes. It also introduces observability through metrics and dashboards, making system behavior measurable and exposing previously hidden failure cases.\nFinally, the proposal removes hardcoded infrastructure by enabling dynamic, database-driven channel selection, improving maintainability and scalability. All improvements are guided by measurable metrics and validated through tests to ensure correctness and prevent regressions. Overall, the project aims to deliver a more accurate, robust, and transparent security tracking system for the NixOS ecosystem.",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2026_0azL14sd",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/0azL14sd",
+          "proposal_id": "Di1h9YVo",
+          "short_description": "This project focuses on improving the accuracy, reliability, and observability of the Nixpkgs Security Tracker by addressing key limitations in its...",
+          "slug": "improve-cve-derivation-matching-accuracy-data-integrity-and-observability-in-the-nixpkgs-tracker",
+          "status": null,
+          "student_name": "Darshan Thakare",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve CVE - Derivation Matching Accuracy, Data Integrity, and Observability in the Nixpkgs Tracker"
+        },
+        {
+          "code_url": null,
+          "description": "NixOS vars allow declaring secrets that live inside (or outside) the nix store in a declarative manner. Vars already have a WIP implementation over at https://github.com/NixOS/nixpkgs/pull/370444. The project would involve me working with Lassulus (the author of said PR) on finalizing the implementation. The long term end goal is having an upstream solution to the issues tools like sops-nix and agenix are currently solving (all while remaining agnostic to the underlying format).\n\nAfter speaking to Lassulus, the goals I'd be working on are:\n- writing a good example backend implementation\n- thinking about and solving some remaining architectural questions (when do the vars get generated, and how that affects the system itself)\n- defining a clean & clear interface for third party backend implementations\n\nAnswering the above questions would require studying existing solutions (clan-core, nixos-artifacts, agenix-rekey) and picking out the best ideas from each.",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2026_SgKKUkqC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/SgKKUkqC",
+          "proposal_id": "uXbeOnjd",
+          "short_description": "NixOS vars allow declaring secrets that live inside (or outside) the nix store in a declarative manner. Vars already have a WIP implementation over...",
+          "slug": "nixos-vars",
+          "status": null,
+          "student_name": "prescientmoon",
+          "student_profile": null,
+          "tags": [],
+          "title": "NixOS vars"
+        },
+        {
+          "code_url": null,
+          "description": "NixOS is uniquely positioned to generate accurate, reproducible Software Bills of Materials (SBOMs) from its declarative build graph, yet current SBOM generators must infer Package URLs (PURLs) from package names and heuristics leading to inaccuracies that matter under regulations like the EU Cyber Resilience Act. This project fixes the problem at the source:\n1.  by enriching nixpkgs package metadata so that correct PURLs are embedded directly into derivations, eliminating guesswork downstream(SBOM generators like bombon, sbomnix etc).\n\nThe core blocker is that passing meta attributes through .drv files currently risks triggering massive content-addressed reverse dependency rebuilds. This project will help land the key upstream PRs (notably Robert Hensing's PR #14686 / nixpkgs #466932) that allow selected metadata to flow into .drv without affecting store path computation. With that foundation in place, a systematic series of nixpkgs PRs will enrich packages that currently carry inaccurate or missing PURL metadata, while coordinating with SBOM tool authors (e.g. bombon, Syft, sbomnix) to reduce heuristics and consume the authoritative data.\n\nDeliverables: \n1. community coordination to get the PRs blocking enrichment merged\n2. a batch of nixpkgs enrichment PRs covering packages with known PURL inaccuracies 3. upstream patches or issues filed against SBOM generators to adopt the enriched metadata",
+          "difficulty": null,
+          "id": "proj_nixos-foundation_2026_FsdWFD05",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/FsdWFD05",
+          "proposal_id": "E0Cg8yHE",
+          "short_description": "NixOS is uniquely positioned to generate accurate, reproducible Software Bills of Materials (SBOMs) from its declarative build graph, yet current...",
+          "slug": "enrich-nixpkgs-with-correct-purls-for-accurate-sboms",
+          "status": null,
+          "student_name": "Tanishq Palandurkar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enrich Nixpkgs with correct PURLs for accurate SBOMs"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

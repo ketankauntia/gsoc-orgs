@@ -48,9 +48,9 @@
     "streaming",
     "music information retrieval"
   ],
-  "total_projects": 16,
+  "total_projects": 19,
   "stats": {
-    "avg_projects_per_appeared_year": 2.29,
+    "avg_projects_per_appeared_year": 2.38,
     "projects_by_year": {
       "year_2016": 2,
       "year_2017": 2,
@@ -62,7 +62,7 @@
       "year_2023": null,
       "year_2024": 2,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 2,
@@ -75,9 +75,9 @@
       "year_2023": null,
       "year_2024": 2,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 16
+    "total_students": 19
   },
   "years": {
     "year_2016": {
@@ -413,7 +413,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/mixxx"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/mixxx",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project will rebuild the LateNight skin as a 100% native QML interface, serving as an act of architectural liberation for the Mixxx codebase. By unwiring decades of complex, hardcoded C++ widget logic, the skin will be migrated to a dynamic, GPU-accelerated declarative ecosystem. This involves writing a dedicated C++ QmlThemeProvider bridge to manage dynamic JSON color palettes and assets, converting legacy WidgetStacks to fluid QML state machines, and assembling the deck structure using scalable DelegateChooser layouts. This deep structural re-engineering ensures the LateNight skin remains performant, responsive, and infinitely customizable for community derivatives on modern and portable hardware.",
+          "difficulty": null,
+          "id": "proj_mixxx_2026_kEDmkJTi",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kEDmkJTi",
+          "proposal_id": "2fkTHGPL",
+          "short_description": "This project will rebuild the LateNight skin as a 100% native QML interface, serving as an act of architectural liberation for the Mixxx codebase. By...",
+          "slug": "rebuild-the-latenight-theme-in-qml",
+          "status": null,
+          "student_name": "Ayush Sah",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rebuild the LateNight theme in QML"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Mixxx uses PortAudio as a high level abstraction over audio APIs across all supported platforms, which only exposes the common subset of all those APIs, missing Linux specific features and conventions. This implementation will add Pipewire audio API support to Mixxx for Linux, listen for PipeWire events to support soundcard hotplug and update routing UI according to changes made in an external patchbay. It will also allow Mixxx to route audio to and from any source/sink. This proposal also attempts to achieve ALSA comparable latency with the PipeWire backend.",
+          "difficulty": null,
+          "id": "proj_mixxx_2026_ZZPd1YLV",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZZPd1YLV",
+          "proposal_id": "5ERI8lbw",
+          "short_description": "Currently, Mixxx uses PortAudio as a high level abstraction over audio APIs across all supported platforms, which only exposes the common subset of...",
+          "slug": "pipewire-support-for-mixxx",
+          "status": null,
+          "student_name": "Priyanshuwu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pipewire support for Mixxx"
+        },
+        {
+          "code_url": null,
+          "description": "DJ software today has no reliable way to confirm that two audio files are the same specific mastering of a track. AcoustID uses only the first 120 seconds of audio for identification, returning a confidence percentage rather than a definitive match — meaning different masterings of the same recording end up grouped under the same MusicBrainz ID. This makes it impossible to safely share DJ metadata (beat grids, cue points, BPM shift points) between users.\nThis project builds the Mixxx-side foundation for the Canonical Master Release Track (CMRT) system: a new database table storing complete Chromaprint fingerprints, an AnalyzerChromaprint pipeline step that fingerprints entire tracks, mastering duplicate detection in the library, pregap offset calculation between files of the same mastering, and scaffolding for future MusicBrainz sharing. The CMRT — the highest-quality local copy of a mastering — becomes the anchor for all shared metadata, enabling the larger DJ-Intelligence vision of exchanging accurate BPM, key, and POI data between DJs worldwide.",
+          "difficulty": null,
+          "id": "proj_mixxx_2026_yj85UCzW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/yj85UCzW",
+          "proposal_id": "hPnCFeje",
+          "short_description": "DJ software today has no reliable way to confirm that two audio files are the same specific mastering of a track. AcoustID uses only the first 120...",
+          "slug": "canonical-master-release-track-cmrt-based-on-the-complete-chromaprint-fingerprint",
+          "status": null,
+          "student_name": "Swarnadip Kar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Canonical Master Release Track (CMRT) based on the Complete Chromaprint Fingerprint"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

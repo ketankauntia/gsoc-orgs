@@ -25,9 +25,9 @@
     "developer tools",
     "GenAI"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -39,7 +39,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -52,9 +52,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -67,7 +67,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gemini-cli",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project builds a long context and complex reasoning coding evaluation dataset for Gemini CLI. It focuses on multi file, multi language software engineering tasks, difficulty certification, agentic evaluation, and structured failure analysis to better measure real coding agent performance on large repositories.",
+          "difficulty": null,
+          "id": "proj_gemini-cli_2026_QJ9zsb8n",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QJ9zsb8n",
+          "proposal_id": "CjBSrozt",
+          "short_description": "This project builds a long context and complex reasoning coding evaluation dataset for Gemini CLI. It focuses on multi file, multi language software...",
+          "slug": "long-context-coding-evaluation-dataset-for-gemini-cli",
+          "status": null,
+          "student_name": "Letian Li",
+          "student_profile": null,
+          "tags": [],
+          "title": "Long Context Coding Evaluation Dataset for Gemini CLI"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal focuses on improving the behavioral evaluation (eval) infrastructure of Gemini CLI to ensure reliable and safe AI tool usage. The current system has significant gaps, including missing eval coverage for ~37.5% of tools, a large number of non-CI-blocking (flaky) tests, and lack of tooling for debugging and contributing to evals.\n\nTo address this, the proposal introduces a three-part approach:\n\nExpand and Stabilize Behavioral Evals\nWrite 15–20 new evals covering uncovered tools and missing behaviors (error recovery, multi-step reasoning, safety, ambiguity handling).\nStabilize flaky evals and promote reliable ones to CI-blocking status.\nFocus on testing tool-call decisions instead of text output for robustness.\nEnable Contributor Participation via Skills & Subagents\nIntroduce an eval-writer skill to help generate evals.\nBuild subagents like eval_investigator (debugging failures) and quality_analyst (coverage analysis).\nMake eval development accessible to open-source contributors.\nFix Ecosystem Gaps (Process, Tooling, Documentation)\nDefine clear eval review, promotion, and regression-handling processes.\nImprove logging with readable tool-call traces.\nCreate the Eval Development Kit (EDK) with tools for:\nEval inventory & coverage analysis\nValidation checks\nAuto-generating evals from real chat logs\nAdd documentation, tutorials, and GitHub automation for easier community contributions.\n\nOverall, the goal is to transform evals from a limited internal system into a scalable, contributor-friendly quality framework, enabling the OSS community to actively improve AI behavior, reliability, and performance.",
+          "difficulty": null,
+          "id": "proj_gemini-cli_2026_gbBxNmxJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gbBxNmxJ",
+          "proposal_id": "zQK0ynTJ",
+          "short_description": "This proposal focuses on improving the behavioral evaluation (eval) infrastructure of Gemini CLI to ensure reliable and safe AI tool usage. The...",
+          "slug": "behavioral-evals-quality-and-the-oss-community",
+          "status": null,
+          "student_name": "VedantxMahajan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Behavioral evals, Quality, and the OSS Community"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "gemini-cli-soc-2026@google.com",

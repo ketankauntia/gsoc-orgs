@@ -54,9 +54,9 @@
     "programming languages",
     "generative AI"
   ],
-  "total_projects": 89,
+  "total_projects": 99,
   "stats": {
-    "avg_projects_per_appeared_year": 8.9,
+    "avg_projects_per_appeared_year": 9,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 9,
@@ -68,7 +68,7 @@
       "year_2023": 8,
       "year_2024": 11,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 10
     },
     "students_by_year": {
       "year_2016": 5,
@@ -81,9 +81,9 @@
       "year_2023": 8,
       "year_2024": 11,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 10
     },
-    "total_students": 85
+    "total_students": 99
   },
   "years": {
     "year_2016": {
@@ -1835,7 +1835,184 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/sugar-labs"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 10,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/sugar-labs",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Sugar Activity on Demand addresses a key barrier in Sugar Labs: the difficulty learners face in creating their own activities due to the need for programming knowledge. This limits access to constructionist learning, where students learn best by building meaningful projects.\n\nThis project introduces an AI-assisted system that allows learners to describe an activity in natural language and receive a fully functional, installable Sugar activity. The system combines a model-agnostic LLM pipeline, a retrieval-augmented knowledge base built from real Sugar Activity source code, and an AST-based validator to ensure that generated Python code is both correct and safe. Activities are generated with proper GTK3 interfaces, toolbar integration, and Journal support, ensuring they are fully compatible with the Sugar ecosystem.\n\nBeyond generation, the project emphasizes learning through a Reflective Studio, where learners explore, understand, and modify the generated code. Using scaffolded challenges, inline annotations, and reflection prompts, the system follows the constructionist Use → Modify → Create progression, enabling learners to gradually take ownership of their creations rather than passively consuming generated output.\n\nDeliverables\nAI-powered activity generation pipeline (prompt → plan → code → installable bundle)\nRAG-based knowledge system using real Sugar Activity examples\nAST-based security validation and safe code generation framework\nInteractive Reflective Studio with guided editing, annotations, and challenges\nIntegration into Sugar’s Home View with a seamless “Create with AI” entry point\nSupport for iterative refinement, version history, and sharing via the Sugar Journal\n\nThis project aligns with Sugar Labs’ constructionist philosophy by transforming AI from a passive generator into an active learning partner, empowering learners not just to use software, but to understand and create it.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_dYPNPW3h",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/dYPNPW3h",
+          "proposal_id": "60HJojdF",
+          "short_description": "Sugar Activity on Demand addresses a key barrier in Sugar Labs: the difficulty learners face in creating their own activities due to the need for...",
+          "slug": "sugar-activity-on-demand",
+          "status": null,
+          "student_name": "Ashutoshx7",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sugar Activity on Demand"
+        },
+        {
+          "code_url": null,
+          "description": "The Sugar Shell is the core desktop environment of Sugar and is responsible for activity launching, the Journal, the Frame, and system integration through DBus. The current Sugar Shell is built on GTK3, and several core components still depend on deprecated GTK3 APIs, which must be migrated to GTK4.\n\nThis project focuses on the GTK4 migration of the Sugar Shell. The work includes replacing deprecated GTK3 APIs, migrating container and layout APIs to GTK4 equivalents, updating event handling using GTK4 event controllers, migrating styling to GTK CSS, and updating display and geometry handling using modern GTK4 display APIs.\n\nThe migration will be done incrementally, component by component, starting with core components such as the Frame, Home View, Activity Launcher, Journal, Clipboard, and Control Panel. Each component will be migrated, tested in a running Sugar session, and submitted as small patches to ensure that the Sugar Shell remains stable and usable throughout the migration process.\n\nBy the end of the project, the Sugar Shell will run on GTK4, core components will be migrated to GTK4 APIs, deprecated GTK3 APIs will be removed from migrated components, and migration documentation will be provided to support the remaining GTK4 transition work in the Sugar project.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_Yf2eiaqE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Yf2eiaqE",
+          "proposal_id": "1eXIp1eV",
+          "short_description": "The Sugar Shell is the core desktop environment of Sugar and is responsible for activity launching, the Journal, the Frame, and system integration...",
+          "slug": "gtk4-transition-part-2-sugar-shell",
+          "status": null,
+          "student_name": "Dev10-sys",
+          "student_profile": null,
+          "tags": [],
+          "title": "GTK4 Transition Part 2: Sugar Shell"
+        },
+        {
+          "code_url": null,
+          "description": "The Problem:\nSugar currently relies on GTK3, which is nearing end-of-life and doesn’t support Wayland properly. This makes it harder to run on modern Linux systems.\n\nThe Solution:\nThis project focuses on migrating the core \"Fructose\" activities (Calculate, Log, Chat, Browse, Read, Terminal, etc.) from GTK3 to GTK4. This isn’t just a direct API update — many parts of the UI depend on older X11-based patterns that need to be reworked.\n\nI’ll update layouts to Gtk.Box/Gtk.Grid, move input handling to GTK4 event controllers (like Gtk.GestureClick), and migrate system integrations to newer GTK4-compatible libraries such as WebKitGTK 6.0, VTE 3.91, and Evince 4.0. For more complex rendering (like TurtleArt), I plan to use a Cairo bridge with Gtk.Snapshot.append_cairo() instead of rewriting everything from scratch.\n\nDeliverables:\nA working GTK4 port of the supported Fructose activities that runs properly on Wayland. Since the Sugar shell is still evolving, I’ll validate everything locally using my standalone main.py wrapper before integration.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_AwHyY0sr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/AwHyY0sr",
+          "proposal_id": "NHwqMhIx",
+          "short_description": "The Problem: Sugar currently relies on GTK3, which is nearing end-of-life and doesn’t support Wayland properly. This makes it harder to run on modern...",
+          "slug": "gtk4-transition-part-1-fructose",
+          "status": null,
+          "student_name": "Divyam  Agarwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "GTK4 Transition Part 1 Fructose"
+        },
+        {
+          "code_url": null,
+          "description": "Music Blocks students have no ownership of the projects they create. When a project is saved it lands in a MySQL database they can never see, with no version history and no guarantee it will exist next year. This project completes the migration from that aging PHP and MySQL stack to a modern system backed by GitHub and SQLite, making the transition completely invisible to students while giving every project a permanent, version-controlled home.\nThe work happens in four phases. First, setting up the migration environment with a read-only database connection, GitHub App credentials, and a SQLite database that will power the new backend. Second, running a streaming migration pipeline that processes all 10,000+ existing Planet projects one at a time, pushing each one to GitHub as a repository with full metadata and thumbnail, while skipping duplicates using SHA-256 content hashing. Third, building the seven API endpoints the Planet frontend needs to browse, search, like, and load projects, all backed by SQLite for sub-millisecond response times. Fourth, connecting the frontend to the new backend through a single drop-in adapter file, overhauling the UI with proper modals, a clean commit history timeline, and an interactive Git onboarding walkthrough that teaches students how to save versions, go back in time, and fork projects using Music Blocks language with no Git jargon.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_JitsF3AX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JitsF3AX",
+          "proposal_id": "FTcvL5bZ",
+          "short_description": "Music Blocks students have no ownership of the projects they create. When a project is saved it lands in a MySQL database they can never see, with no...",
+          "slug": "git-backend-for-music-blocks-part-2",
+          "status": null,
+          "student_name": "Harihara Vardhan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Git backend for Music Blocks Part 2"
+        },
+        {
+          "code_url": null,
+          "description": "Music Blocks v4 has a modular architecture with a block editor, compiler, and execution engine built separately but not yet connected. This project integrates the Masonry visual block editor into the main application, implements block snapping and connection logic so users can build structured programs, and wires the full execution pipeline (blocks to AST to IR to output) so programs produce real music and graphics. Core deliverables: \n(1) Masonry module integration with palette and workspace\n(2) snap-based block connections with visual feedback enforcing programming semantics\n(3) end-to-end execution connecting blocks to the Painter and Singer modules via a real function registry. \nStretch goals include inline block editing and workspace zoom/pan/undo.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_m1OTEA7p",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/m1OTEA7p",
+          "proposal_id": "Z3PpEHpY",
+          "short_description": "Music Blocks v4 has a modular architecture with a block editor, compiler, and execution engine built separately but not yet connected. This project...",
+          "slug": "music-blocks-4-program-builder",
+          "status": null,
+          "student_name": "Parth Dagia",
+          "student_profile": null,
+          "tags": [],
+          "title": "Music Blocks 4 Program Builder"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a comprehensive ConnectTheDots activity for the Sugarizer platform that combines creative expression, structured learning, and strategic gameplay into a single unified experience.\n\nCurrently, Sugarizer lacks an activity that integrates these three aspects. Existing tools typically focus on only one area, leaving a gap for an engaging, multi-mode activity that supports diverse learning styles for children aged 5–11.\n\nTo address this, the project will implement three core modes using Vanilla JavaScript, HTML5, CSS3, and the Sugar-Web framework:\n\nDraw Mode: A free-form mode where children can draw on a dot grid with real-time feedback.\nNumber Mode: A guided learning mode where users connect numbered dots to reveal shapes, with support for custom templates and Journal integration.\nGame Mode: A strategy-based territory capture game with accurate capture logic and an AI opponent using a greedy heuristic approach.\n\nThe final deliverable will be a production-ready, optimized activity that runs smoothly on low-end devices and high-DPI touch screens, providing an engaging and scalable learning experience within Sugarizer.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_ZTOwQ4sL",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ZTOwQ4sL",
+          "proposal_id": "Yw5rNx6k",
+          "short_description": "This project aims to develop a comprehensive ConnectTheDots activity for the Sugarizer platform that combines creative expression, structured...",
+          "slug": "sugarizer-connectthedots",
+          "status": null,
+          "student_name": "Rejah Rabeeul",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sugarizer ConnectTheDots"
+        },
+        {
+          "code_url": null,
+          "description": "Working on a measurement-first performance framework for Music Blocks v3 (Sugar Labs) , a browser-based visual music programming tool used by students and educators worldwide. Focused on eliminating UI freezes during LilyPond export, MIDI import, and complex block graph execution by introducing progress feedback, cancellation support, a frame-budget execution scheduler, and Web Worker offloading. Building runtime instrumentation using the Performance Observer API and integrating automated CI benchmarks via GitHub Actions to prevent regressions.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_BzjL6hic",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/BzjL6hic",
+          "proposal_id": "mRXy3Ylv",
+          "short_description": "Working on a measurement-first performance framework for Music Blocks v3 (Sugar Labs) , a browser-based visual music programming tool used by...",
+          "slug": "music-blocks-performance",
+          "status": null,
+          "student_name": "Shreya_Saxena_0205",
+          "student_profile": null,
+          "tags": [],
+          "title": "Music Blocks Performance"
+        },
+        {
+          "code_url": null,
+          "description": "Music Blocks currently relies on a manual and irregular release process, which leads to deployment delays, higher risk of human error, and limited visibility into application health. This project aims to modernize the release workflow by introducing a fully automated, reliable, and auditable CI/CD pipeline.\n\nThe solution will involve designing and implementing automated deployment workflows integrated with existing CI, enabling seamless releases from the main branch. Key improvements include semantic versioning and automated changelog generation, Docker-based builds published to GitHub Container Registry, and a multi-environment setup with staging and production. The pipeline will incorporate preview deployments, approval gates, and pre/post-deployment validation to ensure safe and consistent releases. Additionally, rollback mechanisms, monitoring, and deployment notifications will be added to improve reliability and observability.\n\nThe final deliverables will include a complete CI/CD pipeline, containerized deployment setup, automated versioning and changelog system, staging and production environments with deployment workflows, rollback and validation mechanisms, monitoring and alerting integration, and comprehensive documentation with runbooks and troubleshooting guides.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_sfoCupmN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sfoCupmN",
+          "proposal_id": "DFMvTFhD",
+          "short_description": "Music Blocks currently relies on a manual and irregular release process, which leads to deployment delays, higher risk of human error, and limited...",
+          "slug": "automated-release-pipeline-for-music-blocks",
+          "status": null,
+          "student_name": "Sonal Gaud",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Release Pipeline for Music Blocks"
+        },
+        {
+          "code_url": null,
+          "description": "Music Blocks v4 is a visual programming environment that enables learners to explore programming concepts through music using block-based “bricks.” While the current system provides a strong architectural foundation, it lacks a complete pipeline connecting visual block interactions to program execution.\n\nThis project focuses on building that missing pipeline by completing the brick interaction system, program representation, and execution flow. I will implement a robust drag-and-drop connection system with real-time collision detection and snap previews, allowing users to intuitively construct programs. These connected brick structures will then be translated into Abstract Syntax Trees (AST) using a scalable registry-based mapping system, and executed through the existing interpreter by bridging to Music Blocks’ audio and graphics modules.\n\nAdditionally, I will design a plugin architecture that enables developers to extend the system with new blocks and behaviors without modifying the core codebase. The project will also include a comprehensive testing framework to ensure reliability across the entire pipeline.\n\nThe end result will be a complete, extensible, and production-ready visual programming system where users can seamlessly create, execute, and experiment with music-driven programs, while also providing a strong foundation for future features in Music Blocks v4",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_HFDtyMr8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/HFDtyMr8",
+          "proposal_id": "HYsnp1B8",
+          "short_description": "Music Blocks v4 is a visual programming environment that enables learners to explore programming concepts through music using block-based “bricks.”...",
+          "slug": "music-blocks-4-program-builder",
+          "status": null,
+          "student_name": "Syed Khubayb",
+          "student_profile": null,
+          "tags": [],
+          "title": "Music Blocks 4 Program Builder"
+        },
+        {
+          "code_url": null,
+          "description": "Sugar's Journal records everything a child creates, but reflection one of its three core design pillars amounts to an empty text box that most children never touch. \nThere is no prompt, no conversation, no mechanism to surface what a child learned from what they made. \nThis project adds that mechanism by embedding a conversational reflection panel directly in the Journal, powered by the existing Sugar-AI backend. \nWhen a child opens a Journal entry, A reflection buddy asks a single artifact grounded question rooted in constructionist pedagogy. \nThe conversation is adaptive, capped, and never forced. A gentle non-blocking nudge on activity exit reminds children that Reflection Buddy is ready without interrupting their workflow. \nWhat a child says they want to try next is saved and surfaced at the start of their next session, closing the loop from Reflect back to Imagine. \nOffline deployments are covered by Reflection Sparks, a curated bank of static prompts. \n\nDeliverables: \n1. 2 FastAPI endpoints integrated into Sugar-AI (/reflect/chat and /reflect/summary)\n2. A GTK3 reflection panel embedded in the Journal view\n3. Metadata persistence via D-Bus\n4. A feed-forward banner\n5. An offline fallback\n6. Full test coverage, working across all 40+ Sugar activities without activity-specific configuration.",
+          "difficulty": null,
+          "id": "proj_sugar-labs_2026_Zhuej8Pa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Zhuej8Pa",
+          "proposal_id": "nx3xFXlH",
+          "short_description": "Sugar's Journal records everything a child creates, but reflection one of its three core design pillars amounts to an empty text box that most...",
+          "slug": "ai-reflection-in-the-sugar-journal",
+          "status": null,
+          "student_name": "vyagh",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI Reflection in the Sugar Journal"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -45,9 +45,9 @@
     "data visualization",
     "cancer research"
   ],
-  "total_projects": 38,
+  "total_projects": 43,
   "stats": {
-    "avg_projects_per_appeared_year": 5.43,
+    "avg_projects_per_appeared_year": 5.38,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 6,
@@ -59,7 +59,7 @@
       "year_2023": 6,
       "year_2024": 9,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 5,
@@ -72,9 +72,9 @@
       "year_2023": 6,
       "year_2024": 9,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 38
+    "total_students": 43
   },
   "years": {
     "year_2016": {
@@ -858,7 +858,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/cbioportal-for-cancer-genomics"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/cbioportal-for-cancer-genomics",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "cBioPortal hosts 400+ cancer genomics studies whose clinical metadata is wildly heterogeneous — treatment fields alone have 24+ variants. The mentor's team built MetaHarmonizer, a 4-stage ML pipeline using sentence-transformer semantic matching and ontology resolution (NCIT, MONDO, UBERON), but it has no web interface, no audit trail, and no cBioPortal-ready export. This project wraps the pipeline in a production-ready curator dashboard: upload a raw metadata CSV, review and correct automated column mappings with confidence scores and top-5 alternatives, validate ontology term assignments, monitor quality KPIs, and export a cBioPortal-compatible TSV with a full JSON audit report. I have already built a working full-stack prototype (React + FastAPI) integrating the real SchemaMapEngine — processing 141 columns in 2.6 seconds — with 20+ REST endpoints, an on-demand LLM rematch endpoint, and an automated evaluation pipeline on the provided eval set. Deliverables: (1) production-grade backend with PostgreSQL persistence and role-based auth, (2) polished React dashboard with all needed curator pages, (3) formal ML benchmarking report, (4) CI/CD pipeline and (5) full documentation and cBioPortal deployment guide.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cancer-genomics_2026_G7jxmBDW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/G7jxmBDW",
+          "proposal_id": "OMDGHXKF",
+          "short_description": "cBioPortal hosts 400+ cancer genomics studies whose clinical metadata is wildly heterogeneous — treatment fields alone have 24+ variants. The...",
+          "slug": "automated-clinical-metadata-harmonization-dashboard",
+          "status": null,
+          "student_name": "Ahmed_Osama",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Clinical Metadata Harmonization Dashboard"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend the existing cBioAbstractor prototype into a schema-driven formatting pipeline that assists curators in transforming heterogeneous supplemental datasets into cBioPortal-compatible formats.\n\nCurrently, curation is a manual and time-consuming process due to inconsistent file structures, lack of automated schema mapping, and the need to interpret validation errors manually. This results in inefficiencies, variability, and high onboarding effort.\n\nMy preliminary extension implementation suggests the feasibility of this approach by connecting existing components, introducing fuzzy column normalization, and providing a simple interface for file upload, transformation, and result inspection.\n\nInitial qualitative experiments show that the system can reconstruct correct cBioPortal formats from intentionally perturbed datasets, suggesting strong potential for reducing manual work and improving consistency.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cancer-genomics_2026_o1VfDkHQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/o1VfDkHQ",
+          "proposal_id": "KxTAShka",
+          "short_description": "This project aims to extend the existing cBioAbstractor prototype into a schema-driven formatting pipeline that assists curators in transforming...",
+          "slug": "ai-assisted-curation-assistant-tool-for-cbioportal",
+          "status": null,
+          "student_name": "fppcng",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Assisted Curation Assistant Tool for cBioPortal"
+        },
+        {
+          "code_url": null,
+          "description": "cBioPortal introduced Similarity Maps, a feature that visualizes UMAP/PCA embeddings of cancer samples, allowing researchers to discover hidden patterns across thousands of samples simultaneously. However, the current implementation is a prototype that fetches data directly from a hardcoded S3 URL, bypassing cBioPortal's data pipeline entirely and following no established datahub standards.\n\nThis project makes Similarity Maps production-ready by building a proper data layer that follows cBioPortal's existing architecture. This includes designing a datahub file format for embeddings,  reusing/extending the existing importer to load embedding data into  ClickHouse, and exposing REST API endpoints that replace the hardcoded S3 fetch. The frontend will then be updated to consume the new API dynamically. Additionally, enhanced tooltips and improved colouring options will be implemented to strengthen the visualization.\n\nKey deliverables include: an approved database schema, a working EmbeddingImporter.java, a validated datahub file format, REST API endpoints, updated frontend integration, and full documentation",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cancer-genomics_2026_Ipasy7jD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Ipasy7jD",
+          "proposal_id": "7XmN7xXV",
+          "short_description": "cBioPortal introduced Similarity Maps, a feature that visualizes UMAP/PCA embeddings of cancer samples, allowing researchers to discover hidden...",
+          "slug": "enhance-similarity-maps-embeddings-visualization",
+          "status": null,
+          "student_name": "Leslie Ejeh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance Similarity Maps (Embeddings) Visualization"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal outlines a plan to extend the cBioPortal MCP server with interactive genomic visualisation applications via MCP Apps that allow AI assistants like Claude and ChatGPT to render rich, interactive UI components directly within conversations. Rather than returning raw text or static data, the MCP server will serve four self-contained visualization apps (OncoPrint, Survival Analysis, Mutation Mapper, and Study Summary) as embeddable iframes, using bidirectional JSON-RPC communication via postMessage. This transforms the way researchers interact with cancer genomics data through AI, making cBioPortal the first genomics platform to offer interactive visual exploration inside AI chat interfaces.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cancer-genomics_2026_jp7dSqHK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jp7dSqHK",
+          "proposal_id": "psFoT5uA",
+          "short_description": "This proposal outlines a plan to extend the cBioPortal MCP server with interactive genomic visualisation applications via MCP Apps that allow AI...",
+          "slug": "mcp-apps-interactive-genomic-visualisations-for-ai-clients",
+          "status": null,
+          "student_name": "Luke Devlin",
+          "student_profile": null,
+          "tags": [],
+          "title": "MCP Apps: Interactive Genomic Visualisations for AI Clients"
+        },
+        {
+          "code_url": null,
+          "description": "This project enhances the 3D protein structure viewer in cBioPortal by integrating AlphaFold predicted structures alongside experimentally determined structures from PDB, expanding structural coverage for proteins lacking experimental data.\n\nI will extend the G2S backend to support AlphaFold metadata and residue mapping based on sequence alignment. The frontend will be updated to visualize both structure types and support mutation mapping and structure selection.\n\nDeliverables include backend API extensions, metadata integration and mapping, and frontend support for AlphaFold visualization.",
+          "difficulty": null,
+          "id": "proj_cbioportal-for-cancer-genomics_2026_nxvXuctt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nxvXuctt",
+          "proposal_id": "BzPtYz19",
+          "short_description": "This project enhances the 3D protein structure viewer in cBioPortal by integrating AlphaFold predicted structures alongside experimentally determined...",
+          "slug": "enhance-3d-protein-structure-viewer-in-cbioportal-using-alphafold-data",
+          "status": null,
+          "student_name": "YichuanZ",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance 3D Protein Structure Viewer in cBioPortal using AlphaFold Data"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

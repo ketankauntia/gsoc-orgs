@@ -25,9 +25,9 @@
     "ML Ops",
     "Orchestrator"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -39,7 +39,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -52,9 +52,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -67,7 +67,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/metaflow",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Metaflow's metadata service returns unbounded JSON for every list endpoint. A single GET /runs on a production deployment returns megabytes of data the caller immediately discards. For AI agents, this is worse: a failure-diagnosis workflow generates 2,021 HTTP calls to check 1,000 tasks. This proposal adds cursor-based pagination and server-side tag filtering to the metadata service (prototyped in PRs #9 and #10, 65 tests passing), integrates pagination into the Python client SDK, and builds agent-friendly query utilities that, across five common agent workflows, collapse 11,828 API calls into 16. Server-side work is already prototyped. GSoC starts at hardening, not greenfield.",
+          "difficulty": null,
+          "id": "proj_metaflow_2026_gcqp54nN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gcqp54nN",
+          "proposal_id": "phkrhEVQ",
+          "short_description": "Metaflow's metadata service returns unbounded JSON for every list endpoint. A single GET /runs on a production deployment returns megabytes of data...",
+          "slug": "agent-friendly-client-metadata-service-foundation",
+          "status": null,
+          "student_name": "Aryan Dhawan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Agent-Friendly Client + Metadata Service Foundation"
+        },
+        {
+          "code_url": null,
+          "description": "metadata_service returns raw arrays with no pagination or filtering.\nui_backend_service in the same repository already supports both via\nan envelope format. Meanwhile, the DB layer (find_records, DBPagination,\nruns_v3_idx_epoch_ts_desc) already has everything needed — the gap is\nthat the API layer does not expose it.\n\nThis project brings metadata_service to parity: pagination via\nLIMIT+1, tag filtering with four operators (_tags:any/all/likeany/likeall),\nunified response schema matching ui_backend_service, and GIN index\nmigration — without breaking existing clients. The key design: without\n_limit, behavior is identical to current. With _limit, the envelope\nformat activates.\n\nBeyond pagination and filtering, the project also connects tag cache\nrefresh to notify.py's existing LISTEN/NOTIFY infrastructure (debounce\nor incremental update strategy confirmed with mentor before implementation),\nand adds Content-Type header to the format_response decorator.\n\nDeliverables: metaflow-service PR covering all 9 GET endpoints,\nGIN index migration, feature-gating, benchmark results with\nEXPLAIN ANALYZE verification, backward compatibility test suite,\nand a pagination implementation guide for future contributors.",
+          "difficulty": null,
+          "id": "proj_metaflow_2026_CHPHErXK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/CHPHErXK",
+          "proposal_id": "LyGYRNMq",
+          "short_description": "metadata_service returns raw arrays with no pagination or filtering. ui_backend_service in the same repository already supports both via an envelope...",
+          "slug": "non-breaking-pagination-tag-filtering-for-metaflow-metadata-service",
+          "status": null,
+          "student_name": "EunhyeJeong",
+          "student_profile": null,
+          "tags": [],
+          "title": "Non-Breaking Pagination & Tag Filtering for Metaflow Metadata Service"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "help@metaflow.org",

@@ -54,9 +54,9 @@
     "vpn",
     "sdn"
   ],
-  "total_projects": 26,
+  "total_projects": 31,
   "stats": {
-    "avg_projects_per_appeared_year": 2.89,
+    "avg_projects_per_appeared_year": 3.1,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 5,
@@ -68,7 +68,7 @@
       "year_2023": 1,
       "year_2024": 1,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -81,9 +81,9 @@
       "year_2023": 1,
       "year_2024": 1,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 23
+    "total_students": 31
   },
   "years": {
     "year_2016": null,
@@ -636,7 +636,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openwisp"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openwisp",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Mass command execution in OpenWISP is currently limited to running commands on one device at a time, making it slow and difficult to manage at scale. This project introduces a bulk execution system that allows a single command to be applied across multiple devices with centralized tracking of progress and results. It will add a parent MassCommand model to group device-level executions, use Celery for parallel asynchronous processing, and maintain aggregated status such as progress, success, and failure counts. REST API support will enable programmatic triggering and monitoring of mass commands, while a redesigned admin interface will present results in a clear, scalable format with near real-time updates and access to individual device outputs.",
+          "difficulty": null,
+          "id": "proj_openwisp_2026_k5om1bzR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/k5om1bzR",
+          "proposal_id": "czG9WS2D",
+          "short_description": "Mass command execution in OpenWISP is currently limited to running commands on one device at a time, making it slow and difficult to manage at scale....",
+          "slug": "mass-commands",
+          "status": null,
+          "student_name": "Deepanshu Sahu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Mass Commands"
+        },
+        {
+          "code_url": null,
+          "description": "OpenWISP's firmware upgrader fails permanently when devices are offline during mass upgrades, requiring manual re-triggering. There is no way to schedule upgrades for future maintenance windows.\n\nSolution: Two features for openwisp-firmware-upgrader.\n1. Persistent upgrades (#379): Offline devices go to \"pending\" status instead of \"failed\" and retry automatically via Celery Beat with exponential backoff until the device comes online or an admin cancels.\n2. Scheduled upgrades (#380): Optional datetime picker on the mass upgrade page. Celery Beat executes due upgrades with runtime re-validation and conflict detection.\nBoth features compose: a scheduled upgrade that hits offline devices enters the persistence loop.\n\nDeliverables:\n- Model fields (persistent, retry_count, next_retry_at, scheduled_at) with additive migrations\n- Modified failure handler with pending status branch\n- Celery Beat tasks for periodic retries and scheduled execution\n- Admin UI: persistent checkbox, datetime picker, pending/scheduled status display\n- REST API with full admin parity\n- Notifications via generic_notification\n- Selenium browser tests, documentation, usage videos",
+          "difficulty": null,
+          "id": "proj_openwisp_2026_V7O0DNPy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/V7O0DNPy",
+          "proposal_id": "O0EGe8Np",
+          "short_description": "OpenWISP's firmware upgrader fails permanently when devices are offline during mass upgrades, requiring manual re-triggering. There is no way to...",
+          "slug": "persistent-scheduled-firmware-upgrades",
+          "status": null,
+          "student_name": "Eeshu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Persistent & Scheduled Firmware Upgrades"
+        },
+        {
+          "code_url": null,
+          "description": "OpenWISP Firmware Upgrader currently requires users to manually enter metadata when uploading firmware images, which is error prone and doesn't scale. This project adds automatic metadata extraction that runs as a background Celery task on upload, using fwtool as the primary method and DTB parsing as a fallback, with graceful handling for images that support neither. A draft/confirmed state machine keeps unverified images invisible to the upgrade system until extraction succeeds or an operator manually confirms the metadata. The implementation follows the existing upgrader class pattern for extensibility, includes full test coverage using real OpenWrt images, and adds build-level status aggregation with notifications.",
+          "difficulty": null,
+          "id": "proj_openwisp_2026_N7h4TqNT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/N7h4TqNT",
+          "proposal_id": "WRTTGjr2",
+          "short_description": "OpenWISP Firmware Upgrader currently requires users to manually enter metadata when uploading firmware images, which is error prone and doesn't...",
+          "slug": "automatic-extraction-of-openwrt-firmware-image-metadata",
+          "status": null,
+          "student_name": "Mohammed Atif",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automatic Extraction of OpenWrt Firmware Image Metadata"
+        },
+        {
+          "code_url": null,
+          "description": "The project adds InfluxDB 2.0 and Elasticsearch as timeseries database backends to OpenWISP Monitoring by implementing the existing DatabaseClient. The core monitoring logic remains untouched since it already interacts through timeseries_db abstraction, making backend addition a clean isolated task.\nFor InfluxDB 2.0, all chart queries in `queries.py` will be translated from InfluxQL to Flux. For Elasticsearch, queries will use `date_histogram` aggregations.\nEach backend gets dedicated GitHub Actions CI, deployment support via ansible-openwisp2 and docker-openwisp, and users can switch between all three backends through the `TIMESERIES_DATABASE` setting with full documentation coverage.",
+          "difficulty": null,
+          "id": "proj_openwisp_2026_ebtNcwKc",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ebtNcwKc",
+          "proposal_id": "txLvdJaP",
+          "short_description": "The project adds InfluxDB 2.0 and Elasticsearch as timeseries database backends to OpenWISP Monitoring by implementing the existing DatabaseClient....",
+          "slug": "add-more-timeseries-database-clients-to-openwisp-monitoring",
+          "status": null,
+          "student_name": "pushpit kamboj",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add more timeseries database clients to OpenWISP Monitoring"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, OpenWISP restricts automated X.509 certificate generation exclusively to OpenVPN clients, which limits administrators who need general-purpose certificates for web services, internal APIs, or device authentication.\nThis project introduces a new standalone certificate template type that leverages the existing infrastructure to generate certificates using a selected Certificate Authority and a reusable blueprint.\nKey deliverables include full certificate lifecycle management, configuration template variable integration, admin UI and REST API updates, comprehensive automated testing, and detailed documentation",
+          "difficulty": null,
+          "id": "proj_openwisp_2026_QVqzP2G1",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QVqzP2G1",
+          "proposal_id": "S06ILrQB",
+          "short_description": "Currently, OpenWISP restricts automated X.509 certificate generation exclusively to OpenVPN clients, which limits administrators who need...",
+          "slug": "x-509-certificate-generator-templates",
+          "status": null,
+          "student_name": "Sarthak_Tyagi",
+          "student_profile": null,
+          "tags": [],
+          "title": "X.509 Certificate Generator Templates"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

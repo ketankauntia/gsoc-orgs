@@ -29,9 +29,9 @@
     "cloud native infrastructure",
     "infrastructure as design"
   ],
-  "total_projects": 2,
+  "total_projects": 7,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 3.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 2
+    "total_students": 7
   },
   "years": {
     "year_2016": null,
@@ -110,7 +110,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/meshery"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/meshery",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This proposal aims to enhance Meshery’s MeshSync component by integrating a graph database to efficiently model and query complex relationships between infrastructure resources. Currently, resource relationships are managed using relational or in-memory approaches, which can become inefficient when handling dynamic and interconnected systems such as Kubernetes environments.\r\nThe proposed solution involves integrating a graph database (such as Neo4j or a similar technology) to represent resources as nodes and their relationships as edges, enabling faster and more intuitive querying of dependencies like Services, Pods, and Persistent Volumes. The implementation will include designing the data model, integrating the graph database with MeshSync, and building APIs for querying and visualization.\r\nThe expected outcome is improved performance, scalability, and visibility of infrastructure relationships, enabling better analysis, debugging, and system understanding within Meshery.",
+          "difficulty": null,
+          "id": "proj_meshery_2026_2sVTWiuM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2sVTWiuM",
+          "proposal_id": "RuF2UWSi",
+          "short_description": "This proposal aims to enhance Meshery’s MeshSync component by integrating a graph database to efficiently model and query complex relationships...",
+          "slug": "graph-database-integration",
+          "status": null,
+          "student_name": "Bhumika Garg",
+          "student_profile": null,
+          "tags": [],
+          "title": "Graph Database Integration"
+        },
+        {
+          "code_url": null,
+          "description": "The Meshery ecosystem's web properties need ongoing frontend modernisation and backend reliability work as they scale. I will deliver performance-optimised UI components, mobile-first responsive fixes, new dynamic sections for the extension ecosystem, and systematic infrastructure improvements, all backed by clear documentation. This builds directly on contributions I have been making since December 2025.",
+          "difficulty": null,
+          "id": "proj_meshery_2026_cDDDPOD5",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cDDDPOD5",
+          "proposal_id": "hfVCvTtE",
+          "short_description": "The Meshery ecosystem's web properties need ongoing frontend modernisation and backend reliability work as they scale. I will deliver...",
+          "slug": "scaling-the-meshery-ecosystem",
+          "status": null,
+          "student_name": "Khusham Bansal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Scaling the Meshery Ecosystem"
+        },
+        {
+          "code_url": null,
+          "description": "The current approach to request data from the Meshery Server about the relationship between Kubernetes Resources doesn’t scale well due to the need to evaluate through all of the resources every time a request is performed. \n\nThe proposed solution to this, is to implement a Graph database to store the these resources' relationships to provide faster query responses. \n\nI'm going to implement the Graph Database by embedding Cayley (embeddable graph database written in go) into Meshery Server to both efficiently store and retrieve the relationships between the nodes (resources) and hub nodes (cluster, label, annotation, namespace) through the usage of edges (owner_reference, has_label, has_annotation, has_namespace, in_cluster).",
+          "difficulty": null,
+          "id": "proj_meshery_2026_fKuremWb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fKuremWb",
+          "proposal_id": "nbqyQWBL",
+          "short_description": "The current approach to request data from the Meshery Server about the relationship between Kubernetes Resources doesn’t scale well due to the need...",
+          "slug": "graph-database-integration",
+          "status": null,
+          "student_name": "Lenox Wiltshire",
+          "student_profile": null,
+          "tags": [],
+          "title": "Graph Database Integration"
+        },
+        {
+          "code_url": null,
+          "description": "While Meshery's AWS model catalog contains auto-generated connections for individual services, it currently lacks the critical \"cross-model\" architectural relationships (like linking an EKS Cluster to EC2 Subnets, or an API Gateway to a Lambda Function) that Site Reliability Engineers need to properly visualize and manage real-world, multi-service cloud deployments on Kanvas.\r\n\r\nSolution: This project systematically defines these missing inter-model dependencies by combining deep AWS architectural expertise with Meshery's v1alpha3 relationship schema. This involves mapping complex multi-hop infrastructures and accurately structuring evaluation queries, metadata, and mutatorRef/mutatedRef patch paths.\r\n\r\nDeliverables:\r\n\r\n1. A comprehensive audit of cross-model gaps in the current AWS catalog.\r\nImplementation of high-priority infrastructural relationships (Networking, IAM Permissions, Firewalls).\r\n2. Definition of complex multi-hop chains (e.g., end-to-end Serverless Event Pipelines, EKS Full Stack dependencies).\r\nVisual validation of all new relationships within Kanvas and detailed contributor documentation to guide future model integrations.\r\n3. Definition of complex multi-hop chains (e.g., end-to-end Serverless Event Pipelines, EKS Full Stack dependencies).\r\n4. Visual validation of all new relationships within Kanvas and detailed contributor documentation to guide future model integrations.",
+          "difficulty": null,
+          "id": "proj_meshery_2026_sSDfcEag",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sSDfcEag",
+          "proposal_id": "m6xpQKmB",
+          "short_description": "While Meshery's AWS model catalog contains auto-generated connections for individual services, it currently lacks the critical \"cross-model\"...",
+          "slug": "expanding-and-refining-aws-service-relationships-in-meshery",
+          "status": null,
+          "student_name": "Olaleye oyewunmi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expanding and Refining AWS Service Relationships in Meshery"
+        },
+        {
+          "code_url": null,
+          "description": "Meshery stands as the canonical cloud-native management plane, rigorously managing the lifecycle, performance, and topologies of multicloud infrastructure. Currently, Meshery manages multiple load generators (Nighthawk, Fortio, Wrk2) to execute Service Mesh Performance (SMP) benchmarks. However, the heavyweight C++ Nighthawk binaries are bundled directly inside the meshery/meshery Go backend container. This statically couples the data plane execution to the control plane, bloating the core image size and preventing independent scaling.\n\nThis project resolves this architectural flaw by cleanly severing Nighthawk from the core server and wrapping it into an autonomous, standalone gRPC adapter (meshery-nighthawk). To achieve this, I will evolve the existing meshkit/meshes/meshops.proto into a generalized adapters.proto capable of routing both traditional service mesh commands and raw load-generation requests. By the end of this project, Meshery Server will dynamically discover and orchestrate Nighthawk as a first-class out-of-tree component, supported by fully overhauled CLI commands (mesheryctl perf), Helm chart deployments, and a dedicated Meshery UI Adapter chip.",
+          "difficulty": null,
+          "id": "proj_meshery_2026_9wfkmRF3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9wfkmRF3",
+          "proposal_id": "lV0R9gGr",
+          "short_description": "Meshery stands as the canonical cloud-native management plane, rigorously managing the lifecycle, performance, and topologies of multicloud...",
+          "slug": "new-meshery-nighthawk-adapter",
+          "status": null,
+          "student_name": "Yash Vilas Mahakal",
+          "student_profile": null,
+          "tags": [],
+          "title": "New Meshery Nighthawk Adapter"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

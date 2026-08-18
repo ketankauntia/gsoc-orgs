@@ -58,9 +58,9 @@
     "conversion standards",
     "deep neural net rendering"
   ],
-  "total_projects": 73,
+  "total_projects": 81,
   "stats": {
-    "avg_projects_per_appeared_year": 7.3,
+    "avg_projects_per_appeared_year": 7.36,
     "projects_by_year": {
       "year_2016": 9,
       "year_2017": 8,
@@ -72,7 +72,7 @@
       "year_2023": 5,
       "year_2024": 9,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 9,
@@ -85,9 +85,9 @@
       "year_2023": 5,
       "year_2024": 9,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 68
+    "total_students": 81
   },
   "years": {
     "year_2016": {
@@ -1511,7 +1511,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/brl-cad"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/brl-cad",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project improves Manifold’s CI and benchmarking by adding missing determinism, sanitizer, and performance regression checks. I will implement a required cross-platform determinism check (Linux/macOS/Windows), add a dedicated ASan+UBSan CI lane for a curated `manifold_test` subset, and introduce PR benchmark regression checks (`base` vs `head`) with non-blocking warnings. I will also add a scheduled benchmark pipeline that publishes versioned history and define a noise-control policy so results stay reliable. The final deliverable includes an interactive benchmark dashboard that visualizes trends and regressions over time using the published benchmark data.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_NYc0KwJO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/NYc0KwJO",
+          "proposal_id": "7p1i8WW4",
+          "short_description": "This project improves Manifold’s CI and benchmarking by adding missing determinism, sanitizer, and performance regression checks. I will implement a...",
+          "slug": "improving-ci-and-benchmarking-for-manifold",
+          "status": null,
+          "student_name": "AnshulPatil2005",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving CI and Benchmarking for Manifold"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal introduces an optional, privacy-first AI assistant for OpenSCAD to flatten the learning curve of SCAD syntax and geometric transformations. Integrated as a togglable dock panel, the assistant remains completely inert when closed and requires no cloud subscriptions or external API keys, instead leveraging locally running models via Ollama or any OpenAI-compatible server. Beyond standard Q&A, the project implements agentic behavior where the AI can analyze the active script, propose modifications through an inline diff, and apply approved changes directly to the editor as undoable actions that trigger an automatic preview. The architecture is designed to be vision-model-ready from the start, ensuring future viewport context integration requires no structural refactoring. This creates a transparent, local-only loop that empowers users without compromising the project’s core philosophy of user-controlled development.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_Bb5fzRQS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Bb5fzRQS",
+          "proposal_id": "Ymu0kZAW",
+          "short_description": "This proposal introduces an optional, privacy-first AI assistant for OpenSCAD to flatten the learning curve of SCAD syntax and geometric...",
+          "slug": "empowering-openscad-with-local-agentic-ai-assistance",
+          "status": null,
+          "student_name": "Bidyendu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Empowering OpenSCAD with Local Agentic AI Assistance"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on improving the Geometry Verification and Validation (V&V) GUI in Qt for the Arbalest application in BRL-CAD. Currently, the prototype GUI provides basic validation output but has several usability limitations such as truncated full-path display, flat result presentation, and limited export options for validation results. These issues make it difficult for users to clearly interpret geometry validation outcomes.\n\nIn this project, I plan to improve the usability and clarity of the existing V&V GUI by restructuring how validation results are displayed, fixing the full-path column visibility issue, and adding grouped result visualization for easier navigation. I will also implement a downloadable validation report feature that allows users to export results in structured formats such as TXT or JSON, making validation outputs easier to review and share.\n\nThe expected deliverables include updating the existing V&V GUI implementation to work with the current Arbalest codebase, improving the results panel layout based on a proposed UI mockup, and adding a report generation module integrated into the GUI workflow. These improvements will make the validation interface more practical and user-friendly while keeping the scope aligned with the current prototype architecture.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_3DJH0uIr",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3DJH0uIr",
+          "proposal_id": "3T9bxnwu",
+          "short_description": "This project focuses on improving the Geometry Verification and Validation (V&V) GUI in Qt for the Arbalest application in BRL-CAD. Currently, the...",
+          "slug": "geometry-verification-and-validation-gui-in-qt",
+          "status": null,
+          "student_name": "Kanchan Borole",
+          "student_profile": null,
+          "tags": [],
+          "title": "Geometry Verification and Validation GUI in Qt"
+        },
+        {
+          "code_url": null,
+          "description": "Saikei Civil is an initiative to bring professional roadway design capability to Bonsai/IfcOpenShell. The goal is to add tools, features, and functionality to Bonsai that will enable BIM-type modeling of roadways (and eventually other horizontal infrastructure), making use of the IFC 4.3 schema. This proposal aims to deliver the core tools for roadway design in 3 milestones: Vertical alignments (horizontal already implemented), Cross-section profiles, and Corridor generation. Once complete, Bonsai will be the first program capable of roadway model authoring natively in IFC, eliminating massive time and effort toward export processes, and will prevent large amounts of data loss from said exports.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_3AS3CwxU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3AS3CwxU",
+          "proposal_id": "cZrwKbgA",
+          "short_description": "Saikei Civil is an initiative to bring professional roadway design capability to Bonsai/IfcOpenShell. The goal is to add tools, features, and...",
+          "slug": "saikei-civil-native-ifc-roadway-design-for-bonsai-bim",
+          "status": null,
+          "student_name": "MYoder",
+          "student_profile": null,
+          "tags": [],
+          "title": "Saikei Civil — Native IFC Roadway Design for Bonsai BIM"
+        },
+        {
+          "code_url": null,
+          "description": "BRL-CAD is a battle-tested Constructive Solid Geometry (CSG) engine, but it currently lacks a native, bidirectional interface for headless command execution, creating a massive barrier for modern web integrations and AI agents. This project proposes building BRL-CAD’s first native, extension-agnostic C++ Local IPC (Inter-Process Communication) API. By securely binding a stdio-based pipe listener to the main event loop and leveraging native libbu utilities for memory-safe string parsing, this infrastructure will allow users to safely pipe commands directly into the libged database engine. Designed with a \"generic passthrough\" architecture, it avoids hardcoding 400+ command schemas and ensures frictionless portability to BRL-CAD’s upcoming MOOSE/Qt interface.\n\nAlongside this foundational API, the project delivers a robust Model Context Protocol (MCP) server to establish BRL-CAD's first native Agentic AI integration. Operating externally as decoupled Python-based FastMCP middleware, this daemon bridges the legacy C-engine with modern Large Language Models. Rather than embedding a bulky AI chatbot inside MGED, the user interacts through their preferred external MCP client (like Cursor IDE or Claude Desktop), which routes commands directly into BRL-CAD's new background IPC pipeline. This empowers users to seamlessly query native documentation, automate batch database tasks, and debug spatial relationships using conversational commands, drastically lowering BRL-CAD's onboarding friction.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_xpLHyPVS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xpLHyPVS",
+          "proposal_id": "Ya8NIt9O",
+          "short_description": "BRL-CAD is a battle-tested Constructive Solid Geometry (CSG) engine, but it currently lacks a native, bidirectional interface for headless command...",
+          "slug": "brl-cad-agentic-mcp-interface",
+          "status": null,
+          "student_name": "RaghavSharma0125",
+          "student_profile": null,
+          "tags": [],
+          "title": "BRL-CAD Agentic MCP Interface"
+        },
+        {
+          "code_url": null,
+          "description": "The IfcOpenShell library lacks a stable C API, which currently limits interoperability with other programming languages and makes its higher-level APIs largely accessible only through Python. Its existing WebAssembly support also depends on Pyodide, resulting in unnecessarily bloated binaries, slow initialization, and reduced runtime performance in browsers. This proposal aims to address these architectural limitations by introducing a first-class C API for IfcOpenShell, enabling more maintainable cross-language bindings and a stronger foundation for native WASM builds.\n\nThe project will replace the current Pyodide-based approach with a direct C++ to WASM build, and will migrate the Python bindings away from SWIG to generated bindings built on top of the new C API. It will establish autogenerated TypeScript bindings and an ergonomic web-facing API, while incrementally moving important high-level Python APIs into the C++ core so that they become available consistently across Python, WASM, and future language bindings.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_D7BhEmva",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/D7BhEmva",
+          "proposal_id": "7JWwS1Bh",
+          "short_description": "The IfcOpenShell library lacks a stable C API, which currently limits interoperability with other programming languages and makes its higher-level...",
+          "slug": "ifcopenshell-c-api-improved-wasm-builds-and-migration-of-high-level-apis-from-python",
+          "status": null,
+          "student_name": "Sayan Jyoti Das",
+          "student_profile": null,
+          "tags": [],
+          "title": "IfcOpenShell C API, Improved WASM builds, and migration of high-level APIs from Python"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to build a reliable OpenSCAD to JavaScript compiler using ManifoldCAD, making it possible to run existing OpenSCAD code in a modern JavaScript environment.\n\nThe main challenge is that OpenSCAD works in its own ecosystem, while ManifoldCAD cannot directly execute OpenSCAD programs. Current tools are limited and often don’t handle modern features or correct semantics. To solve this, I will develop a proper compiler that accurately models OpenSCAD behavior instead of relying on JavaScript shortcuts.\n\nBuilding on my existing prototype, I will design a structured pipeline with parsing, semantic analysis, and an intermediate representation (IR) to ensure correctness. Key areas include handling modules vs functions, children(), special variables, and improving debugging through source mapping.\n\nThe final result will be a robust, production-ready compiler integrated into the Manifold ecosystem, enabling developers to reuse OpenSCAD libraries with confidence.",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_Gcne9San",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Gcne9San",
+          "proposal_id": "0tir7Ul4",
+          "short_description": "This project aims to build a reliable OpenSCAD to JavaScript compiler using ManifoldCAD, making it possible to run existing OpenSCAD code in a modern...",
+          "slug": "openscad-to-js-with-manifoldcad",
+          "status": null,
+          "student_name": "swaparup",
+          "student_profile": null,
+          "tags": [],
+          "title": "OpenSCAD to JS with ManifoldCAD"
+        },
+        {
+          "code_url": null,
+          "description": "I plan to make BRL-CAD python bindings. Basically my goal is to make a Python interface for BRL-CAD using MOOSE as the core modeling backend, with a thin C bridge between Python and C++ for stability and portability.\nThe architecture is:\nPython interface -> moose_rt3 adapter (ctypes) -> C bridge -> MOOSE C++ API -> BRL-CAD database engine -> .g file.\nI plan to work around 3 goals:\n1. Database lifecycle behavior should be consistent across read-only, writable and in memory modes with clear errors when operations are invalid\n2. Core primitives and CSG operations should be exported correctly and transforms must be stored as combination-member matrices so results are verifiable by MGED.\n3. Unified read access: provide one Python read entrypoint for supported object families with a stable return format and desterministic errors for missing or unsupported objects",
+          "difficulty": null,
+          "id": "proj_brl-cad_2026_QdVvPjPX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/QdVvPjPX",
+          "proposal_id": "MiJfqdU2",
+          "short_description": "I plan to make BRL-CAD python bindings. Basically my goal is to make a Python interface for BRL-CAD using MOOSE as the core modeling backend, with a...",
+          "slug": "brlcad-python-bindings",
+          "status": null,
+          "student_name": "Waleed05",
+          "student_profile": null,
+          "tags": [],
+          "title": "BRLCAD Python bindings"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

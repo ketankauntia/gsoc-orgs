@@ -27,9 +27,9 @@
     "Adjoint Design Optimization",
     "Fluid Dynamics"
   ],
-  "total_projects": 7,
+  "total_projects": 10,
   "stats": {
-    "avg_projects_per_appeared_year": 3.5,
+    "avg_projects_per_appeared_year": 3.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -41,7 +41,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -54,9 +54,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 7
+    "total_students": 10
   },
   "years": {
     "year_2016": null,
@@ -212,7 +212,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/stichting-su2"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/stichting-su2",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This proposal combines the MLPCpp submodule and Algorithmic Differentiation (CoDi) natively in SU2 for in-solver training, allowing researcher to train their PINNs withing the exact same run instead of training them outside and injecting the weights for inferencing.",
+          "difficulty": null,
+          "id": "proj_stichting-su2_2026_MLmP0oeO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/MLmP0oeO",
+          "proposal_id": "ViBxCDge",
+          "short_description": "This proposal combines the MLPCpp submodule and Algorithmic Differentiation (CoDi) natively in SU2 for in-solver training, allowing researcher to...",
+          "slug": "towards-physics-informed-machine-learning-with-su2",
+          "status": null,
+          "student_name": "abdulrahman_12",
+          "student_profile": null,
+          "tags": [],
+          "title": "Towards Physics-Informed Machine Learning with SU2"
+        },
+        {
+          "code_url": null,
+          "description": "The SU2 code relies heavily on sparse linear algebra, and there is significant\nspeed-up potential in this area through GPU-based processing. In the current implementation, the FGMRES Linear Solver GPU-offloading is being limited by frequent data copies between Host and Device. In this project, I propose to study and implement a truly GPU-native FGMRES linear solver. My idea is to refactor the code so that the largest number of operations is offloaded to the GPU for the duration of\nthe iterative process, all while being compatible with the current level of abstraction and software logic.",
+          "difficulty": null,
+          "id": "proj_stichting-su2_2026_uo39EGyW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uo39EGyW",
+          "proposal_id": "3WfvnVbb",
+          "short_description": "The SU2 code relies heavily on sparse linear algebra, and there is significant speed-up potential in this area through GPU-based processing. In the...",
+          "slug": "continuation-of-gpu-acceleration-in-su2-towards-a-gpu-native-fgmres-linear-solver",
+          "status": null,
+          "student_name": "ddg93",
+          "student_profile": null,
+          "tags": [],
+          "title": "Continuation of GPU acceleration in SU2: towards a GPU-native FGMRES Linear Solver"
+        },
+        {
+          "code_url": null,
+          "description": "The proposed project involves the addition of a pressure-based solver to the SU2 code base. The pressure-based solver is an important algorithm in the Computational Fluid Dynamics (CFD) landscape due to its great performance for low Mach and incompressible flow applications. \n\nAs of right now, SU2's primary solvers are density-based algorithms which excel in compressible flow simulations. Density-based algorithms can be adapted for low Mach and incompressible flows using for example artificial compressibility or preconditioning. However, these approaches effectively modify a formulation that is not inherently aligned with incompressible flow physics, and therefore remain less efficient than pressure-based algorithms for these applications.\n\nThe goal of the project is to investigate the current attempts on the addition of pressure-based algorithms to SU2, and to identify what is needed to subsequently work on integrating the pressure-based algorithm into the main SU2 branch. The final result is expected to be a successful merge of a pressure-based algorithm into the main SU2 branch.",
+          "difficulty": null,
+          "id": "proj_stichting-su2_2026_PDaaH2mt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PDaaH2mt",
+          "proposal_id": "byLC8VoC",
+          "short_description": "The proposed project involves the addition of a pressure-based solver to the SU2 code base. The pressure-based solver is an important algorithm in...",
+          "slug": "adding-a-pressure-based-solver",
+          "status": null,
+          "student_name": "Thijs Aalbers",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding a Pressure-Based Solver"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -30,9 +30,9 @@
     "AI in Health",
     "HMIS"
   ],
-  "total_projects": 9,
+  "total_projects": 10,
   "stats": {
-    "avg_projects_per_appeared_year": 4.5,
+    "avg_projects_per_appeared_year": 3.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 1
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 1
     },
-    "total_students": 9
+    "total_students": 10
   },
   "years": {
     "year_2016": null,
@@ -266,7 +266,40 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/open-healthcare-network"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 1,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/open-healthcare-network",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Accessing medical data through the care web app can be daunting for patients in rural or remote areas who often face challenges with digital literacy, internet connectivity or lack of access to computers. Currently, retrieving appointments, health records etc requires users to log in and navigate the care web app, which makes it difficult for those with limited digital exposure to access their essential medical information.\n\nThis project introduces an Instant Messaging wrapper for the care EMR, built as a django plugin. Which allows patients and staff to securely fetch medical records, check appointments etc and receive alerts and notifications through familiar, easy to use messaging apps like WhatsApp.\n\nTo ensure HIPAA security compliance, the system uses a 2 step authentication process which includes (1). matching phone number and (2). verifying requestor's date of birth. It will also include redis based caching, ratelimiting of requests to prevent abuse and async task management via celery to handle sending of notifications in the background. A frontend plugin will also be developed to give staff the ability to easily send alerts and notifications and allow patients to download PDFs, such as medications and lab reports.\n\nDeliverables:\n1. A functional, django based backend plugin, capable of securely serving patient and staff queries via various instant messaging providers.\n2. A frontend developed using care_hello_fe to manage notifications and handle PDF downloads.\n3. Proper tests utilizing pytest and Playwright for both the backend and frontend.\n4. Complete and comprehensive documentation using sphinx and swagger, along with setup guides and demo videos.\n5. Production ready deployments of both the backend and frontend plugins integrated within care.",
+          "difficulty": null,
+          "id": "proj_open-healthcare-network_2026_wl9TLWgo",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/wl9TLWgo",
+          "proposal_id": "BKUSugGq",
+          "short_description": "Accessing medical data through the care web app can be daunting for patients in rural or remote areas who often face challenges with digital...",
+          "slug": "im-wrapper-plugin-proposal-for-care-with-poc",
+          "status": null,
+          "student_name": "Samiullah Javed",
+          "student_profile": null,
+          "tags": [],
+          "title": "IM Wrapper Plugin Proposal For Care (with POC)"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

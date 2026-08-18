@@ -24,9 +24,9 @@
     "latex",
     "AI for math"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -38,7 +38,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -51,9 +51,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -66,7 +66,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/moganlab",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Dear Sir,\n\nI hope you are doing well.\n\nMy name is Tianyou Liu, and I am writing to submit my GSoC 2026 proposal for Mogan STEM: “Julia Plugin with Virtual Environment Support.”\n\nIn the proposal, I describe an implementation plan to enable Julia-powered, reproducible computing directly inside Mogan. The key technical components include:\n\nMogan-side Julia plugin to identify and extract Julia code sections and provide an in-editor execution workflow.\n\nA persistent local Julia kernel process to execute code on demand and maintain session state across runs.\n\nA lightweight IPC layer between Mogan and the kernel (socket-based, request/response), returning structured execution results for rendering.\n\nOutput and error capture (stdout/stderr, stack traces, and rich results where applicable) to present execution feedback clearly inside Mogan.\n\nProject-aware environment activation by automatically locating the nearest Project.toml (and using Manifest.toml when present) and executing code in the corresponding Julia environment.\n\nIntegration with Julia’s Pkg workflows to support reproducible dependency management (e.g., activate/instantiate and related environment operations).\nMy resume is enclosed in the attachment.\n\nMore details are discussed in the proposal enclosed in the attachement.\n\nThank you for your time and consideration. I look forward to the possibility of contributing to Mogan STEM this summer.\n\nBest regards,\n\nTianyou Liu\n\nEmail: liuty2025@mail.sustech.edu.cn\n\nGitHub: https://github.com/AXeonV",
+          "difficulty": null,
+          "id": "proj_moganlab_2026_XXFVIs2W",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/XXFVIs2W",
+          "proposal_id": "93Vr8k5j",
+          "short_description": "Dear Sir, I hope you are doing well. My name is Tianyou Liu, and I am writing to submit my GSoC 2026 proposal for Mogan STEM: “Julia Plugin with...",
+          "slug": "gsoc-2026-tianyou-liu-julia-plugin-with-virtual-environment-support",
+          "status": null,
+          "student_name": "AcceleratorX",
+          "student_profile": null,
+          "tags": [],
+          "title": "GSoC 2026 - Tianyou Liu - Julia Plugin with Virtual Environment Support"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on transforming Mogan STEM into a web-based, multi-user collaborative platform. Currently, the lack of a functional WebAssembly (WASM) version and real-time synchronization limits its use in modern collaborative research.\n\nTo solve this, I will compile Mogan STEM using Emscripten, implementing a custom virtual file system to ensure stability. Furthermore, I will develop a real-time collaboration core based on Operational Transformation (OT) and WebSockets. This architecture allows multiple users to edit complex scientific documents simultaneously with \"local-first\" responsiveness and guaranteed global consistency.\n\nDeliverables include: \n1. A stable browser-based version of Mogan STEM.\n2. An OT-based synchronization server.\n3. A complete end-to-end prototype supporting real-time multi-user collaborative editing.",
+          "difficulty": null,
+          "id": "proj_moganlab_2026_1beFXSx8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1beFXSx8",
+          "proposal_id": "DUkykDgU",
+          "short_description": "This project focuses on transforming Mogan STEM into a web-based, multi-user collaborative platform. Currently, the lack of a functional WebAssembly...",
+          "slug": "mogan-stem-web-based-collaborative-editing-core",
+          "status": null,
+          "student_name": "JimZhou",
+          "student_profile": null,
+          "tags": [],
+          "title": "[Mogan STEM] Web-Based Collaborative Editing Core"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "yansong@liii.pro",

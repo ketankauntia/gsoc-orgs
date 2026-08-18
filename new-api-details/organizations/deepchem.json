@@ -29,9 +29,9 @@
     "materials science",
     "Drug Discovery"
   ],
-  "total_projects": 14,
+  "total_projects": 19,
   "stats": {
-    "avg_projects_per_appeared_year": 7,
+    "avg_projects_per_appeared_year": 6.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": 8,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": 8,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 14
+    "total_students": 19
   },
   "years": {
     "year_2016": null,
@@ -345,7 +345,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/deepchem"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/deepchem",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "RFDiffusion (Watson et al., Nature 2023) is the state-of-the-art protein backbone diffusion model but DeepChem currently has no protein structure generative model. This project implements RFDiffusion and RFDiffusion All-Atom as native DeepChem TorchModel subclasses, covering a SE(3)-equivariant denoiser with Invariant Point Attention, a RoseTTAFold-style multi-track architecture, SO(3) diffusion for rotations, conditioning mechanisms (motif scaffolding, symmetry, binder design), the all-atom extension for side chains and small molecules, and a full evaluation pipeline. Deliverables include merged PRs for the featurizer, CATH dataset loader, core layers, and the complete model, along with benchmark results and a tutorial notebook.",
+          "difficulty": null,
+          "id": "proj_deepchem_2026_VuaVP0ST",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VuaVP0ST",
+          "proposal_id": "CkQORBEO",
+          "short_description": "RFDiffusion (Watson et al., Nature 2023) is the state-of-the-art protein backbone diffusion model but DeepChem currently has no protein structure...",
+          "slug": "implement-rfdiffusion-and-rfdiffusion-all-atom-in-deepchem",
+          "status": null,
+          "student_name": "chidwipak",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implement RFDiffusion and RFDiffusion All-Atom in DeepChem"
+        },
+        {
+          "code_url": null,
+          "description": "According to the Google Summer of Code (GSoC) project ideas listed for\nOne proposed DeepChem project involves adding support for the OLMo Large Language Model (LLM) family to the DeepChem repository using the Hugging Face Model wrapper. The goal of this project is to enable DeepChem users to perform tasks such as text generation, classification, and continued pretraining with large language models, including Open Language Model (OLMo). I have already contributed several improvements to DeepChem’s HuggingFaceModel integration, including improving typing and validation for the fill mask method and implementing a new generate() function that wraps HuggingFace’s text generation API. I have also already demonstrated partial compatibility with OLMo models through recent contributions to the generate() function and example scripts using allenai/OLMo-1B-hf. I have also added support for causal language modeling in the HuggingFaceModel wrapper, including integration with AutoModelForCausalLM\nand end-to-end validation through unit tests. My contributions demonstrate familiarity with the DeepChem codebase and provide the foundation for extending DeepChem to support large language models such as OLMo.",
+          "difficulty": null,
+          "id": "proj_deepchem_2026_4kljNBvk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4kljNBvk",
+          "proposal_id": "GrMHGyFq",
+          "short_description": "According to the Google Summer of Code (GSoC) project ideas listed for One proposed DeepChem project involves adding support for the OLMo Large...",
+          "slug": "olmo-support-for-7b-models-in-deepchem",
+          "status": null,
+          "student_name": "Prisha Priyadarshini",
+          "student_profile": null,
+          "tags": [],
+          "title": "OLMo Support For 7B models In DeepChem"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a native PyTorch-based Machine Learning Interatomic Potential (MLIP) framework within DeepChem, enabling efficient prediction of molecular energies and forces without relying on external frameworks. MLIPs approximate the potential energy surface of molecular systems, providing a scalable alternative to Density Functional Theory (DFT) for molecular simulations.\n\nThe project will implement a modular, production-ready framework supporting E(3)-equivariant architectures such as NequIP and MACE, fully integrated with DeepChem’s TorchModel API, graph-based data pipelines, and equivariance utilities.\n\nKey deliverables include a generalized MLIPModel abstraction, efficient graph construction and batching pipelines, a stable joint energy–force training system, and comprehensive benchmarking on MD17 and QM9 datasets, including molecular dynamics stability validation. The final outcome will be a fully integrated and extensible MLIP module within DeepChem, enabling end-to-end molecular simulation workflows.",
+          "difficulty": null,
+          "id": "proj_deepchem_2026_VzYAsPDu",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VzYAsPDu",
+          "proposal_id": "e8HLXXrY",
+          "short_description": "This project aims to develop a native PyTorch-based Machine Learning Interatomic Potential (MLIP) framework within DeepChem, enabling efficient...",
+          "slug": "machine-learning-interatomic-potentials-mlip-in-deepchem-using-e-3-equivariant-neural-networks",
+          "status": null,
+          "student_name": "Satvik Mittal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Machine Learning Interatomic Potentials (MLIP) in DeepChem using E(3)-Equivariant Neural Networks"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement state-of-the-art protein design models, RFDiffusion and RFDiffusion-2, within the DeepChem framework using a clean, end-to-end PyTorch pipeline. The goal is to make advanced generative protein modeling accessible through standardized DeepChem abstractions such as TorchModel, Dataset, and Featurizer, facilitating integration with existing deepchem workflows. The model leverages diffusion-based generative techniques to transform random noise into realistic protein structures, built on a RoseTTAFold inspired architecture that jointly captures sequence, pairwise interactions, and 3D geometry. By incorporating SE(3)-equivariant operations, the system ensures physically consistent predictions while maintaining modularity through the use of existing equivariant libraries.",
+          "difficulty": null,
+          "id": "proj_deepchem_2026_v6SCnrOa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/v6SCnrOa",
+          "proposal_id": "16Ai1qIg",
+          "short_description": "This project aims to implement state-of-the-art protein design models, RFDiffusion and RFDiffusion-2, within the DeepChem framework using a clean,...",
+          "slug": "deepchem-compatible-rfdiffusion-implementation",
+          "status": null,
+          "student_name": "Shubham Bari",
+          "student_profile": null,
+          "tags": [],
+          "title": "DeepChem-Compatible RFDiffusion Implementation"
+        },
+        {
+          "code_url": null,
+          "description": "DeepChem supports transformer-based foundation models for chemistry (ChemBERTa, MolFormer) but has no equivalent for genomic data. This project fills that gap by integrating DNABERT-2 into DeepChem, following the same design pattern used by ChemBERTa and MolFormer.\n\nThe implementation consists of two components: (1) a DNABert model class that wraps HuggingFace's DNABERT-2 inside DeepChem's HuggingFaceModel/TorchModel hierarchy, supporting masked language modeling pretraining and fine-tuning for classification, regression, and multitask regression; and (2) a DNABertTokenizer that serves as both a HuggingFace tokenizer and a DeepChem featurizer, making it compatible with DeepChem's data loading pipeline.\n\nDeliverables include the fully integrated model and tokenizer classes, tests across all task modes, and benchmarks on a suitable genomic dataset.",
+          "difficulty": null,
+          "id": "proj_deepchem_2026_mIniGNM6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/mIniGNM6",
+          "proposal_id": "vDSecyDD",
+          "short_description": "DeepChem supports transformer-based foundation models for chemistry (ChemBERTa, MolFormer) but has no equivalent for genomic data. This project fills...",
+          "slug": "single-cell-and-dna-foundation-models",
+          "status": null,
+          "student_name": "Shubhang Sinha",
+          "student_profile": null,
+          "tags": [],
+          "title": "Single Cell and DNA Foundation Models"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

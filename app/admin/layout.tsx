@@ -8,5 +8,5 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const { roles } = await requireModerator();
-  return <><Header /><div className="min-h-screen pt-28"><nav className="mx-auto mb-8 flex max-w-6xl gap-2 px-6 lg:px-12"><Button asChild variant="outline" size="sm"><Link href="/admin/proposals">Proposal queue</Link></Button>{roles.includes("admin") ? <Button asChild variant="outline" size="sm"><Link href="/admin/roles">Roles</Link></Button> : null}<Button asChild variant="ghost" size="sm"><Link href="/account">Contributor account</Link></Button></nav>{children}</div><Footer /></>;
+  return <><Header /><div className="min-h-screen pt-28"><nav className="mx-auto mb-8 flex max-w-6xl flex-wrap gap-2 px-6 lg:px-12"><Button asChild variant="outline" size="sm"><Link href="/admin/proposals">Proposal queue</Link></Button>{roles.includes("admin") ? <><Button asChild variant="outline" size="sm"><Link href="/admin/content">Imports & blogs</Link></Button><Button asChild variant="outline" size="sm"><Link href="/admin/roles">Roles</Link></Button></> : null}<Button asChild variant="ghost" size="sm"><Link href="/account">Contributor account</Link></Button></nav>{children}</div><Footer /></>;
 }

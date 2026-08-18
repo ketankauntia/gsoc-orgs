@@ -34,9 +34,9 @@
     "penetration testing",
     "offensive security"
   ],
-  "total_projects": 12,
+  "total_projects": 15,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.14,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 2,
@@ -48,7 +48,7 @@
       "year_2023": 1,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -61,9 +61,9 @@
       "year_2023": 1,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 12
+    "total_students": 15
   },
   "years": {
     "year_2016": null,
@@ -326,7 +326,72 @@
     },
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/metasploit",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This proposal aims to improve observability for Kerberos- and certificate-based authentication workflows in Metasploit. At present, operators often need to interrupt module execution, export authentication artifacts such as .ccache, .kirbi, .pem, or .pfx, and analyze them with external tools  in order to understand failures, inspect identities, or validate exploitation steps. This project introduces two opt-in tracing facilities, KerberosTicketTrace and CertificateTrace, together with a reusable X.509 inspection backend to surface protocol and artifact metadata during module execution without changing default Metasploit behavior.",
+          "difficulty": null,
+          "id": "proj_metasploit_2026_7MfS5bHy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7MfS5bHy",
+          "proposal_id": "sKdGDgbc",
+          "short_description": "This proposal aims to improve observability for Kerberos- and certificate-based authentication workflows in Metasploit. At present, operators often...",
+          "slug": "certificatetrace-and-kerberostickettrace-support",
+          "status": null,
+          "student_name": "Mingqing Mu",
+          "student_profile": null,
+          "tags": [],
+          "title": "CertificateTrace and KerberosTicketTrace Support"
+        },
+        {
+          "code_url": null,
+          "description": "Many Metasploit modules include documentation describing how to manually build vulnerable test environments. However, these setup steps are performed outside the framework and often vary between users, making exploit verification slower and less consistent.\n\nThis project proposes a new Metasploit command, build_vuln, that automates the provisioning of vulnerable environments directly from within msfconsole. The command will resolve a module’s associated environment definition and launch the environment using OCI compliant container configurations.\n\nThe system will support both Docker and Podman runtimes, including rootless execution, through a runtime abstraction layer that avoids tight coupling to a specific container engine. A health management component will ensure environments are ready before exploitation, while an in memory registry will track environments created during the active session and allow users to list, manage, and tear them down.\n\nThe project will also introduce standardized reusable environment definitions that can be referenced by multiple modules. Selected modules that currently rely on manual Docker instructions will be refactored to use the new mechanism, and a CI integration prototype will demonstrate how these definitions can be reused for automated module verification.\n\nThe final deliverables include the build_vuln command implementation, container runtime integration, standardized environment definitions, reference module refactoring, CI integration prototype, and comprehensive developer and user documentation.",
+          "difficulty": null,
+          "id": "proj_metasploit_2026_2ejvuiQh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2ejvuiQh",
+          "proposal_id": "sM024h4E",
+          "short_description": "Many Metasploit modules include documentation describing how to manually build vulnerable test environments. However, these setup steps are performed...",
+          "slug": "automated-vulnerable-environment-provisioning-for-metasploit",
+          "status": null,
+          "student_name": "Nayera Ahmed Shafik Mostafa",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Vulnerable Environment Provisioning for Metasploit"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal introduces two new inline tracing capabilities for the Metasploit Framework-KerberosTicketTracePresenter and CertificateTracePresenter  designed to provide real-time visibility into authentication artifacts during module execution.\n\nCurrently Metasploit lacks inline inspection for Kerberos tickets and X.509 certificates, forcing operators to export artifacts or switch tools which disrupts workflow and increases operational risk. This project addresses that limitation by integrating structured presenter-based trace output directly into the msfconsole allowing operators to inspect ticket metadata encryption types timestamps certificate fields and cryptographic fingerprints without leaving the session.\n\nThe design follows the established Metasploit presenter pattern inspired by HttpTrace and krb5_ccache_presenter ensuring consistency modularity and backward compatibility. Trace output is controlled through granular options off, metadata, full, full_censored, csr allowing flexibility based on operational needs.\n\nThe implementation includes presenter classes dispatcher integration in the Kerberos client mixin, hooks for AS-REQ, TGS-REQ, AP-REQ, and PKINIT flows, along with RSpec test suites and validation in a local Active Directory lab environment.\n\nThis work has been refined based on mentor feedback and the design reflects improvements discussed during review. The feature significantly improves operator efficiency debugging capability and OPSEC by eliminating disk-based artifact handling and enabling inline visibility into authentication flows across all Kerberos-enabled modules.",
+          "difficulty": null,
+          "id": "proj_metasploit_2026_l9bwLvDN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/l9bwLvDN",
+          "proposal_id": "cylz5luJ",
+          "short_description": "This proposal introduces two new inline tracing capabilities for the Metasploit Framework-KerberosTicketTracePresenter and CertificateTracePresenter...",
+          "slug": "inline-kerberos-and-certificate-trace-presenters-for-the-metasploit-framework",
+          "status": null,
+          "student_name": "Pushpender Singh Rathore",
+          "student_profile": null,
+          "tags": [],
+          "title": "Inline Kerberos and Certificate Trace Presenters for the Metasploit Framework"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -44,9 +44,9 @@
     "devops",
     "developer tools"
   ],
-  "total_projects": 33,
+  "total_projects": 38,
   "stats": {
-    "avg_projects_per_appeared_year": 4.12,
+    "avg_projects_per_appeared_year": 4.22,
     "projects_by_year": {
       "year_2016": 1,
       "year_2017": null,
@@ -58,7 +58,7 @@
       "year_2023": 4,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 1,
@@ -71,9 +71,9 @@
       "year_2023": 4,
       "year_2024": 5,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 33
+    "total_students": 38
   },
   "years": {
     "year_2016": {
@@ -768,7 +768,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/jenkins-wp"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/jenkins-wp",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The project aims to build a trusted Jenkins CI pipeline that fetches and consolidates raw metadata from metadata-plugin-modernizer repo into a single structured JSON format, which is published to reports.jenkins.io. It also involves building a static visualization UI site on top of it that consumes this data during its build process to present dashboards and per-plugin reports.",
+          "difficulty": null,
+          "id": "proj_jenkins_2026_PatSimkI",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PatSimkI",
+          "proposal_id": "DGqeFhGp",
+          "short_description": "The project aims to build a trusted Jenkins CI pipeline that fetches and consolidates raw metadata from metadata-plugin-modernizer repo into a single...",
+          "slug": "plugin-modernizer-stats-visualization",
+          "status": null,
+          "student_name": "_Pratik Mane",
+          "student_profile": null,
+          "tags": [],
+          "title": "Plugin Modernizer Stats Visualization"
+        },
+        {
+          "code_url": null,
+          "description": "While Jenkins is the backbone of modern CI/CD, troubleshooting failed builds and complex configurations remains a time-consuming bottleneck. This project develops a Diagnostic AI Chatbot plugin to drastically reduce this friction, minimizing debugging time and maximizing developer productivity.\nPowered by an advanced Retrieval-Augmented Generation (RAG) architecture, the agent leverages LangGraph and hybrid search to intelligently filter noisy build logs, cross-referencing them with official documentation and community discussions in order to deliver precise root-cause analysis and actionable fixes.\nArchitecturally, it utilizes a decoupled FastAPI backend, ensuring zero computational overhead on the Jenkins Controller. The system is highly flexible: it is designed with a privacy-first approach optimized for local open-source LLMs, while seamlessly supporting integration with third-party commercial APIs. This allows administrators to effortlessly toggle between absolute data privacy and frontier model performance based on their infrastructure needs.",
+          "difficulty": null,
+          "id": "proj_jenkins_2026_8HjidPHI",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8HjidPHI",
+          "proposal_id": "3lprzA5s",
+          "short_description": "While Jenkins is the backbone of modern CI/CD, troubleshooting failed builds and complex configurations remains a time-consuming bottleneck. This...",
+          "slug": "ai-chatbot-to-guide-user-workflow",
+          "status": null,
+          "student_name": "Daniele Caldarigi",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI Chatbot to Guide User Workflow"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds OAuth 2.0 support to the Jenkins email-ext plugin, addressing the deprecation of basic SMTP authentication by providers like Microsoft and Google. It integrates with the oauth-credentials framework to securely obtain access tokens and enables XOAUTH2-based SMTP authentication using Jakarta Mail. The solution is provider-agnostic, allowing compatibility with multiple email services. Deliverables include OAuth integration, UI updates for configuration and credential selection, a test email feature, comprehensive test coverage, and full documentation, while maintaining backward compatibility with existing authentication methods.",
+          "difficulty": null,
+          "id": "proj_jenkins_2026_EKPXcFjp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/EKPXcFjp",
+          "proposal_id": "ykFwJV7R",
+          "short_description": "This project adds OAuth 2.0 support to the Jenkins email-ext plugin, addressing the deprecation of basic SMTP authentication by providers like...",
+          "slug": "jenkins-email-notifications-using-outlook-smtp-with-oauth",
+          "status": null,
+          "student_name": "faheem_128",
+          "student_profile": null,
+          "tags": [],
+          "title": "Jenkins email notifications using Outlook SMTP with OAuth"
+        },
+        {
+          "code_url": null,
+          "description": "The Jenkins Resources AI Chatbot can answer \"how do I install this plugin?\" but it can't tell you why your build broke, whether two plugins conflict, or whether last week's prompt change made answers worse. This project fixes that: an LLM-as-a-Judge evaluation pipeline, GraphRAG for relational plugin queries, a Build Failure Diagnosis Agent, and simplifed plugin setup all built directly on top of the existing chatbot-core architecture.",
+          "difficulty": null,
+          "id": "proj_jenkins_2026_JQbe7wML",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JQbe7wML",
+          "proposal_id": "CUzhLyln",
+          "short_description": "The Jenkins Resources AI Chatbot can answer \"how do I install this plugin?\" but it can't tell you why your build broke, whether two plugins conflict,...",
+          "slug": "continue-ai-powered-chatbot-for-quick-access-to-jenkins-resources",
+          "status": null,
+          "student_name": "Mallikarjun G D",
+          "student_profile": null,
+          "tags": [],
+          "title": "Continue AI-Powered Chatbot for Quick Access to Jenkins Resources"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to migrate the Jenkins.io Success Stories website from Gatsby to Vite, enabling faster builds, improved developer experience, and better performance. It focuses on modernizing the UI/UX with a responsive, accessible, and user-centric design. A key objective is redesigning the story submission workflow by moving from Decap/Netlify CMS to a GitHub Actions–based workflow, allowing structured, automated, and scalable content contributions. This transition will also involve refining and standardizing YAML-based content files for better consistency, validation, and maintainability. Overall, the project enhances performance, scalability, and contributor experience while aligning the platform with modern web development practices.",
+          "difficulty": null,
+          "id": "proj_jenkins_2026_o95u13lY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/o95u13lY",
+          "proposal_id": "LwTqgDqb",
+          "short_description": "This project aims to migrate the Jenkins.io Success Stories website from Gatsby to Vite, enabling faster builds, improved developer experience, and...",
+          "slug": "retool-jenkins-io-website-success-stories",
+          "status": null,
+          "student_name": "Vatsal Verma",
+          "student_profile": null,
+          "tags": [],
+          "title": "Retool jenkins.io website Success Stories"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

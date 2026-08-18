@@ -46,9 +46,9 @@
     "archiving",
     "media"
   ],
-  "total_projects": 26,
+  "total_projects": 29,
   "stats": {
-    "avg_projects_per_appeared_year": 3.25,
+    "avg_projects_per_appeared_year": 3.22,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 2,
@@ -60,7 +60,7 @@
       "year_2023": 5,
       "year_2024": 2,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -73,9 +73,9 @@
       "year_2023": 5,
       "year_2024": 2,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 26
+    "total_students": 29
   },
   "years": {
     "year_2016": null,
@@ -617,7 +617,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/internet-archive"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/internet-archive",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Open Library has millions of book records tagged with inconsistent, unstructured subject strings, for example, \"science fiction\", \"Science Fiction\", and \"sci-fi\" are treated as completely different tags, causing patrons to miss thousands of relevant books depending on how they search. \n\nThis project solves that by building system-wide support for first-class genre tags on Works, directly addressing issue #11610.\n\nThe solution works in four connected layers: first, developing a controlled genre vocabulary and a mapping dictionary from messy subject strings to canonical genre labels; second, updating the work schema in infogami to add a genres field storing canonical strings that serve as keys to fetch corresponding Tag objects; third, building a batch backfill pipeline that processes tens of thousands of high-demand works and populates their genres field; and fourth, updating Solr to index and facet by genre, displaying genre chips on book pages, and adding a librarian editing UI with autocomplete.\n\nBy the end of GSoC, a patron searching for science fiction will get consistent, accurate results regardless of how they type it because works will have clean genre tags, indexed by Solr, backed by canonical Tag objects, and maintainable by librarians.",
+          "difficulty": null,
+          "id": "proj_internet-archive_2026_kyV10UAf",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kyV10UAf",
+          "proposal_id": "qQZMeWoz",
+          "short_description": "Open Library has millions of book records tagged with inconsistent, unstructured subject strings, for example, \"science fiction\", \"Science Fiction\",...",
+          "slug": "from-messy-subjects-to-first-class-genre-tags",
+          "status": null,
+          "student_name": "Chisom Nnamani",
+          "student_profile": null,
+          "tags": [],
+          "title": "From Messy Subjects to First-Class Genre Tags"
+        },
+        {
+          "code_url": null,
+          "description": "Navigating archived pages on the Wayback Machine requires significant manual effort. This project builds an experimental Chrome extension that uses Chrome's built-in Prompt API with Gemini Nano to automatically summarize archived pages and detect broken or soft-404 captures, all processed locally on the user's device for privacy. Deliverables include a working MV3 extension with page summarization, two-layer soft-404 detection using DOM signals and the CDX API, a lightweight overlay UI, and a public evaluation report.",
+          "difficulty": null,
+          "id": "proj_internet-archive_2026_jUneSe5v",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jUneSe5v",
+          "proposal_id": "RZhekfYv",
+          "short_description": "Navigating archived pages on the Wayback Machine requires significant manual effort. This project builds an experimental Chrome extension that uses...",
+          "slug": "ai-assisted-wayback-machine-extension-using-client-side-prompt-api",
+          "status": null,
+          "student_name": "Sudipta Das",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Assisted Wayback Machine Extension Using Client-Side Prompt API"
+        },
+        {
+          "code_url": null,
+          "description": "While Open Library excels at patron aquisition, it struggles with retaining the patrons- this happens due to a break in flow as post sign up patrons are met with an empty dashboard and lack of personalization. Without clear guidance, patrons struggle to find 'What to do next?' and drop off without engaging with the library or features such as reading lists and social connections.\n\nThis project aims to bridge that very gap between 15 million patrons and 40 million works by introducing a progressive onboarding flow and a highly personalized dashboard for its patrons. By capturing user preference on sign up, we can personalize their dashboard ridding of the empty experience and providing clear Next steps, along with redesign of the dashboard to emphasize the high value features.\n\nDeliverables: Progressive Onboarding Flow (A 3-part form that captures and stores broad patron taste, specific book taste and yearly reading goal), Personalized Dashboard (Overhaul of the present 'My Books' page to priortize high-value features and addition of the 'Next reads' system), and the Recommendation Engine that powers the 'Next Reads' components using existing solr infrastructure.",
+          "difficulty": null,
+          "id": "proj_internet-archive_2026_Zkjq13SC",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Zkjq13SC",
+          "proposal_id": "8tImZY4y",
+          "short_description": "While Open Library excels at patron aquisition, it struggles with retaining the patrons- this happens due to a break in flow as post sign up patrons...",
+          "slug": "personalizing-the-patron-expereince-to-improve-retention-and-engagement",
+          "status": null,
+          "student_name": "Tanishq Sangwan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Personalizing the Patron Expereince to Improve Retention and Engagement"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

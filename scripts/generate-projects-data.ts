@@ -12,6 +12,7 @@ import * as path from 'path';
 
 interface YearlyData {
   year: number;
+  finalized: boolean;
   metrics: {
     total_organizations: number;
     total_projects: number;
@@ -31,7 +32,15 @@ interface YearlyData {
     tech_stack?: string[];
     mentors?: string[];
     contributor?: string;
+    abstract_short?: string;
+    description?: string;
+    project_url?: string;
+    code_url?: string | null;
+    proposal_id?: string;
+    topic_tags?: string[];
+    status?: string | null;
   }>;
+  data_completeness?: ProjectYearPageData["data_completeness"];
   charts: {
     top_languages: Array<{ label: string; value: number }>;
     orgs_with_most_projects: Array<{ label: string; slug?: string; value: number }>;
@@ -54,6 +63,17 @@ interface ProjectYearPageData {
   description: string;
   published_at: string;
   finalized: boolean;
+  data_completeness?: {
+    projects: boolean;
+    contributors: boolean;
+    descriptions: boolean;
+    mentors: boolean;
+    code_urls: boolean;
+    project_tags: boolean;
+    difficulty: boolean;
+    status: boolean;
+    timestamps: boolean;
+  };
   metrics: {
     total_projects: number;
     total_organizations: number;
@@ -64,7 +84,10 @@ interface ProjectYearPageData {
     project_id: string;
     project_title: string;
     project_abstract_short?: string;
+    project_description?: string;
+    project_url?: string;
     project_code_url?: string;
+    proposal_id?: string;
     contributor: string;
     mentors: string[];
     org_name: string;
@@ -73,6 +96,8 @@ interface ProjectYearPageData {
     date_created?: string;
     date_updated?: string;
     tech_stack?: string[];
+    topic_tags?: string[];
+    status?: string | null;
     difficulty?: string;
   }>;
   first_time_orgs: Array<{
@@ -99,9 +124,13 @@ interface ProjectYearPageData {
   };
 }
 
-const YEARS = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
 const YEARLY_DIR = path.join(__dirname, '..', 'new-api-details', 'yearly');
 const OUTPUT_DIR = path.join(__dirname, '..', 'new-api-details', 'projects');
+const YEARS = fs.readdirSync(YEARLY_DIR)
+  .map((file) => file.match(/^google-summer-of-code-(20\d{2})\.json$/)?.[1])
+  .filter((year): year is string => Boolean(year))
+  .map(Number)
+  .sort((a, b) => a - b);
 
 const missingData: string[] = [];
 
@@ -193,12 +222,19 @@ function generateProjectsData() {
       return {
         project_id: p.id,
         project_title: p.title,
+        project_abstract_short: p.abstract_short,
+        project_description: p.description,
+        project_url: p.project_url,
+        project_code_url: p.code_url ?? undefined,
+        proposal_id: p.proposal_id,
         contributor: p.contributor || 'Unknown',
         mentors: p.mentors || [],
         org_name: org?.name || p.org_slug,
         org_slug: p.org_slug,
         year: year,
         tech_stack: p.tech_stack?.filter(t => t !== 'unknown'),
+        topic_tags: p.topic_tags,
+        status: p.status,
       };
     });
     
@@ -217,7 +253,8 @@ function generateProjectsData() {
       title: `GSoC ${year} Projects`,
       description: `Complete list of Google Summer of Code ${year} projects with organizations and technology stacks. ${yearlyData.metrics.total_projects} projects across ${yearlyData.metrics.total_organizations} organizations.`,
       published_at: new Date().toISOString(),
-      finalized: true,
+      finalized: yearlyData.finalized,
+      data_completeness: yearlyData.data_completeness,
       
       metrics: {
         total_projects: yearlyData.metrics.total_projects,

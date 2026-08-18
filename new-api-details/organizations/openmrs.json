@@ -60,9 +60,9 @@
     "frontend",
     "QA automation"
   ],
-  "total_projects": 94,
+  "total_projects": 102,
   "stats": {
-    "avg_projects_per_appeared_year": 9.4,
+    "avg_projects_per_appeared_year": 9.27,
     "projects_by_year": {
       "year_2016": 9,
       "year_2017": 15,
@@ -74,7 +74,7 @@
       "year_2023": 9,
       "year_2024": 6,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 9,
@@ -87,9 +87,9 @@
       "year_2023": 9,
       "year_2024": 6,
       "year_2025": 8,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 88
+    "total_students": 102
   },
   "years": {
     "year_2016": {
@@ -1922,7 +1922,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openmrs"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openmrs",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "OpenMRS lacks a printable visit summary, forcing patients to verbally relay medical history during referrals and care transitions. This project adds a Visit Summary PDF generator to the existing openmrs-module-patientdocuments module, reusing the proven Patient ID Sticker pipeline (DataSetEvaluator, XML Renderer, Apache FOP). The backend gathers visit-scoped clinical data (vitals, diagnoses, lab results with reference ranges, allergies, medications, visit notes) via batch queries, renders it as XML, and transforms it to PDF through XSLT. An extensible VisitSummarySectionProvider SPI allows any module (billing, appointments, pharmacy) to contribute sections without modifying the core module. Configuration uses deploy-time Initializer keys for section toggles, concept UUIDs, and page sizes (A4/A5/A6). The frontend adds a print button in the O3 visit-detail-overview-actions slot with iframe-based PDF preview and download fallback. Deliverables include the complete backend pipeline with all clinical sections, extensible SPI architecture, configurable XSLT stylesheet, REST endpoint with privilege enforcement, frontend print extension, comprehensive tests, and documentation.",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_jhVBlEyJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jhVBlEyJ",
+          "proposal_id": "TUIX5XW4",
+          "short_description": "OpenMRS lacks a printable visit summary, forcing patients to verbally relay medical history during referrals and care transitions. This project adds...",
+          "slug": "patient-visit-summary-printing-for-openmrs-o3",
+          "status": null,
+          "student_name": "Amrita P.",
+          "student_profile": null,
+          "tags": [],
+          "title": "Patient Visit Summary Printing for OpenMRS O3"
+        },
+        {
+          "code_url": null,
+          "description": "The OpenMRS Authentication module supports powerful features like Multi-Factor Authentication and TOTP, but there is no working integration with the modern O3 frontend. When the backend issues a secondary authentication challenge, O3 has no way to handle it gracefully and will breaking the user's workflow and losing their unsaved work.\nMy plan is to fix this on both sides. On the backend, I will update the backend to return structured JSON responses instead of legacy redirects, and expose new REST endpoints for TOTP setup and verification. On the frontend, I will update to pause and replay requests around authentication challenges, and build the React components that handle the TOTP flow that all without interrupting what the user was doing.",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_v08A4Eyj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/v08A4Eyj",
+          "proposal_id": "H9ZHDs0Z",
+          "short_description": "The OpenMRS Authentication module supports powerful features like Multi-Factor Authentication and TOTP, but there is no working integration with the...",
+          "slug": "integrate-o3-with-the-authentication-module",
+          "status": null,
+          "student_name": "Dilan Kavishka",
+          "student_profile": null,
+          "tags": [],
+          "title": "Integrate O3 with the Authentication module"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the existing appointments calendar in OpenMRS by transforming it into a more interactive, flexible, and user-friendly scheduling system. The current implementation provides only a basic monthly view with limited details, which is insufficient for real-world clinical workflows.\n\nThe proposed solution introduces multi-view support (monthly, weekly, daily), enabling users to visualize schedules at different levels of detail. It will display detailed appointment information such as patient names, time slots, and statuses directly within the calendar. Additionally, navigation-based interactions will be replaced with modal-based views to preserve user context and improve usability.\n\nThe project also includes support for multiple calendar systems (Gregorian, Islamic, Ethiopic, Persian) to ensure global adaptability. The implementation will follow a modular architecture using React microfrontends, OpenMRS REST APIs, and optimized data-fetching strategies.\n\nDeliverables include:\n\nMulti-view calendar (monthly, weekly, daily)\nDetailed appointment rendering\nModal-based interaction system\nMulti-calendar system support\nPerformance optimizations and testing",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_aztLK92Z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/aztLK92Z",
+          "proposal_id": "EjkLZAK0",
+          "short_description": "This project aims to enhance the existing appointments calendar in OpenMRS by transforming it into a more interactive, flexible, and user-friendly...",
+          "slug": "improved-appointments-calendar-view",
+          "status": null,
+          "student_name": "Pratik Debnath",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved Appointments Calendar View"
+        },
+        {
+          "code_url": null,
+          "description": "OpenMRS captures every clinical data change via Hibernate Envers, but O3 users must switch to the Legacy UI to view audit logs, creating unnecessary friction. This project builds two native O3 microfrontend packages that surface this data directly in the modern interface. Deliverables include an Audit Log Dashboard on the System Administration page with filterable, paginated audit events and field-level diffs, a Change History tab inside the Patient Chart scoped to the current patient, and a small backend enhancement to openmrs-module-auditlogweb adding entityUuid filtering for efficient patient-specific queries.",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_7hshi4A5",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7hshi4A5",
+          "proposal_id": "JBDDyiY7",
+          "short_description": "OpenMRS captures every clinical data change via Hibernate Envers, but O3 users must switch to the Legacy UI to view audit logs, creating unnecessary...",
+          "slug": "a-native-o3-frontend-for-the-audit-trail",
+          "status": null,
+          "student_name": "Raj Prakash",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Native O3 Frontend for the Audit Trail"
+        },
+        {
+          "code_url": null,
+          "description": "In OpenMRS, \"voiding\" soft-deletes records, causing tables especially immutable ones like Observations (obs) to accumulate massive amounts of inactive data over time. This unbounded growth degrades system performance and complicates database maintenance.\n\nThis project implements a \"Real-Time Archival Trigger\" to maintain lean primary tables. When a record is voided, a Hibernate interceptor will execute an atomic transaction to immediately copy the data to a dedicated obs_archive table and hard-delete it from the active table. To manage the infinite growth of the archive, a scheduled background JobRunr task will permanently purge expired records by dropping old partitions from the archive table based on configurable retention policies (e.g., after 7 years).",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_RmdXpsNp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RmdXpsNp",
+          "proposal_id": "HBP8YWN6",
+          "short_description": "In OpenMRS, \"voiding\" soft-deletes records, causing tables especially immutable ones like Observations (obs) to accumulate massive amounts of...",
+          "slug": "archiving-voided-data",
+          "status": null,
+          "student_name": "Shivvani Ramadugu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Archiving Voided Data"
+        },
+        {
+          "code_url": null,
+          "description": "This project will evolve the Audit module into a comprehensive security and compliance tool by implementing three new, non-blocking auditing categories:\n\na . Read Auditing: Logs who viewed patient records using a non-blocking, asynchronous mechanism with Spring AOP interception, a Caffeine cache for 5-minute event deduplication, and a background thread for batched database inserts.\n\nb. Security Events: Tracks critical user actions like successful/failed logins, account lockouts, logouts, session timeouts, and password resets by hooking into core OpenMRS authentication and service methods.\n\nc. Administrative Events: Logs changes to system configuration, such as global property modifications, module installations/uninstalls, and user/role management.\n\nDeliverables: The final product will include the three new log types stored in dedicated database tables (audit_read_log, audit_security_event, audit_admin_event), a complete REST API for querying and filtering these logs, a log export feature (CSV, Excel, PDF), and a Legacy UI viewer page.",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_jEe1AMSS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jEe1AMSS",
+          "proposal_id": "GsQgW1W3",
+          "short_description": "This project will evolve the Audit module into a comprehensive security and compliance tool by implementing three new, non-blocking auditing...",
+          "slug": "extend-audit-log-module",
+          "status": null,
+          "student_name": "Sudhanshu++",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extend Audit Log Module"
+        },
+        {
+          "code_url": null,
+          "description": "OpenMRS has historically operated as a single-instance application, creating a \"hard ceiling\" for scaling and a single point of failure. As global healthcare networks grow, there is an urgent need for High Availability (HA). While foundational work on distributed caching and storage was introduced in version 2.8.x, several critical gaps remain: lack of distributed session management, race conditions during cluster startup, duplicate execution of scheduled tasks, and inconsistent search indexes across nodes.\n\nThis project aims to complete the \"Cluster-Ready\" roadmap for OpenMRS 3.x. Drawing inspiration from proven architectures like Confluence Data Center, I will implement a Zero-Footprint, Multi-Replica framework. I hope to do this  by Implementing a formal \"Local Home vs. Shared Home\" split to manage node-specific vs. cluster-wide data. I want to make use of distributed State Introducing Redis and MySQL-backed session management so users remain logged in even if routed to different replicas.\nLeveraging Infinispan to implement distributed task locking (preventing duplicate background jobs) and a \"Cluster Safety\" mechanism to detect and mitigate split-brain scenarios.\nTransitioning Hibernate Search to a shared OpenSearch/Elasticsearch backend to ensure search consistency across the entire cluster.\n\nProject Deliverables:\nA safe startup sequence for containerized environments (Kubernetes/Helm).\nConfiguration-driven support for Redis (Redisson) and JDBC session persistence.\nA wrapper for the OpenMRS SchedulerService to ensure tasks run on exactly one node.\nAudit and migration of O3 modules (FHIR2, Webservices.rest) to the distributed cache manager.\nApplication-level wiring for shared full-text search indexes.\nA robust integration testing framework using Testcontainers to validate cluster behavior in CI/CD.",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_kw6z2hvb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/kw6z2hvb",
+          "proposal_id": "JX7ol0oG",
+          "short_description": "OpenMRS has historically operated as a single-instance application, creating a \"hard ceiling\" for scaling and a single point of failure. As global...",
+          "slug": "support-for-horizontal-scaling-of-openmrs-instances",
+          "status": null,
+          "student_name": "Suubi Joshua",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support for horizontal scaling of OpenMRS instances."
+        },
+        {
+          "code_url": null,
+          "description": "The OpenMRS O3 Service Queues app manages outpatient clinic flow but suffers from performance issues due to over-fetching deeply nested objects via custom REST representations, UI components that diverge from O3 design conventions and broken interactions including non-functional buttons and silent failures. This project builds a dedicated REST endpoint in openmrs-module-queue following the emrapi PR #250 pattern, returning only the data the queue table needs with server-side pagination and batch loading. Visit details are lazy-loaded on row expansion. On the frontend, the custom vitals component is replaced with the shared patient-vitals-info extension, encounter parsing is standardized to use configurable concept UUIDs and SWR data-fetching is optimized with activity-aware revalidation. All broken buttons are either fixed or removed. Deliverables include the dedicated backend endpoint with database indexes, frontend migration with lazy-loaded visit details, UI alignment with O3 conventions, fixed interactions with proper error handling, activity-aware SWR optimizations and comprehensive Playwright E2E tests with before/after performance benchmarks.",
+          "difficulty": null,
+          "id": "proj_openmrs_2026_RyboZdrJ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RyboZdrJ",
+          "proposal_id": "nc0RGtaU",
+          "short_description": "The OpenMRS O3 Service Queues app manages outpatient clinic flow but suffers from performance issues due to over-fetching deeply nested objects via...",
+          "slug": "service-queues",
+          "status": null,
+          "student_name": "UjjawalPrabhat",
+          "student_profile": null,
+          "tags": [],
+          "title": "Service Queues"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

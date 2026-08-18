@@ -27,7 +27,7 @@ export async function getUserRoles(userId: string): Promise<AppRole[]> {
   return (data ?? []) as AppRole[];
 }
 
-export async function consumeRateLimit(action: "upload_url" | "upload_complete" | "submit_proposal" | "refresh_avatar") {
+export async function consumeRateLimit(action: "upload_url" | "upload_complete" | "submit_proposal" | "refresh_avatar" | "moderate_proposal") {
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("consume_rate_limit", { requested_action: action });
   if (error) throw error;

@@ -53,9 +53,9 @@
     "open source",
     "apps"
   ],
-  "total_projects": 115,
+  "total_projects": 121,
   "stats": {
-    "avg_projects_per_appeared_year": 11.5,
+    "avg_projects_per_appeared_year": 11,
     "projects_by_year": {
       "year_2016": 18,
       "year_2017": 19,
@@ -67,7 +67,7 @@
       "year_2023": 9,
       "year_2024": 8,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 6
     },
     "students_by_year": {
       "year_2016": 18,
@@ -80,9 +80,9 @@
       "year_2023": 9,
       "year_2024": 8,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 6
     },
-    "total_students": 109
+    "total_students": 121
   },
   "years": {
     "year_2016": {
@@ -2244,7 +2244,120 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gnome-foundation"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 6,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnome-foundation",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "GJS is a JavaScript runtime built on Firefox's SpiderMonkey JavaScript engine and the GNOME platform libraries. It allows the use of the GNOME platform libraries in JavaScript programs. GJS powers GNOME Shell, Maps, Characters, Sound Recorder and many other apps.\n\nThe Debug Adapter Protocol (DAP) defines the abstract protocol used between a development tool (e.g. IDE or editor) and a debugger. DAP makes it possible to implement a generic debugger for a development tool that can communicate with different debuggers via Debug Adapters. DAP is already supported by the most prominent code editors and tools like VS Code, Zed, Emacs, etc… (https://microsoft.github.io/debug-adapter-protocol/implementors/tools/) \nToday, you can already debug applications and libraries written for/with Android, Node.js, Deno, C, C++, Rust, Python and more \t(https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/).\n\nThis proposal aims to make GJS applications and libraries like GNOME Shell, Maps, Decibels etc… debuggable by implementing a DAP adapter for GJS.",
+          "difficulty": null,
+          "id": "proj_gnome-foundation_2026_J5hAVQXj",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/J5hAVQXj",
+          "proposal_id": "gGLSyaeJ",
+          "short_description": "GJS is a JavaScript runtime built on Firefox's SpiderMonkey JavaScript engine and the GNOME platform libraries. It allows the use of the GNOME...",
+          "slug": "add-debug-adapter-protocol-support-to-gjs",
+          "status": null,
+          "student_name": "Angelo Verlain Shema",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Debug Adapter Protocol Support to GJS"
+        },
+        {
+          "code_url": null,
+          "description": "Created in the early 2020’s, GNOME Crosswords became a well-liked application powered by the libipuz C library. While robust, it does not have customizable vocabulary-style puzzles. However, the implementation of a grid-generating algorithm would provide GNOME Crosswords with the ability to diversify their consumer base to even more educators.\n\tThe primary focus will be to introduce a vocab-style puzzle generator to the GNOME system. The algorithms must be able to interlock words on a 2D grid tightly without breaking rules, sort inputs by length, seed the board dynamically, recursively match words to find orthogonal points to sew words together, check the constraints per surrounding cells, and score upon a placement with the failsafe to take a step back and rearrange the former word suitably. Doing so requires creating classes using GObject and GLib.\n\tA full-stack approach must accommodate for validating vocab puzzles using libipuz and Glib in the backend, and also provide an input editor for users which render a grid focused on quality using GTK4, GObject, and libadwaita in the frontend.",
+          "difficulty": null,
+          "id": "proj_gnome-foundation_2026_3RpfhszS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3RpfhszS",
+          "proposal_id": "ubGTX4F1",
+          "short_description": "Created in the early 2020’s, GNOME Crosswords became a well-liked application powered by the libipuz C library. While robust, it does not have...",
+          "slug": "laureen-caliman-vocab-style-puzzles-to-gnome-crosswords",
+          "status": null,
+          "student_name": "Laureen Caliman",
+          "student_profile": null,
+          "tags": [],
+          "title": "Laureen Caliman Vocab Style Puzzles to GNOME Crosswords"
+        },
+        {
+          "code_url": null,
+          "description": "The Pitivi timeline ruler currently relies on a legacy Python implementation using GTK3 and the Cairo drawing model. As Pitivi updates to a modern GTK4 native structure, the CPU-heavy Cairo draw calls are becoming a bottleneck for rendering time markers and frames at varying levels of zoom.\nThis project will rewrite the ruler as a standalone, native GTK4 widget using Rust and ‘gtk-rs’. By moving away from Cairo and utilizing GTK4’s hardware acceleration via ‘GtkSnapshot’ and Render Nodes, the new ruler will be significantly more performant and memory-safe. Following a modular design philosophy, the widget will be built independently with a robust GObject API before being integrated into Pitivi’s existing Python and GStreamer Editing Services (GES) infrastructure using GObject introspection.",
+          "difficulty": null,
+          "id": "proj_gnome-foundation_2026_IS6rBPhP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IS6rBPhP",
+          "proposal_id": "U1Pbhj9t",
+          "short_description": "The Pitivi timeline ruler currently relies on a legacy Python implementation using GTK3 and the Cairo drawing model. As Pitivi updates to a modern...",
+          "slug": "pitivi-timeline-ruler-native-gtk4-rust-rewrite",
+          "status": null,
+          "student_name": "Michael Calabrese",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pitivi Timeline Ruler: Native GTK4/Rust Rewrite"
+        },
+        {
+          "code_url": null,
+          "description": "GNOME Gitg is a graphical user interface for Git that aims to be a small, fast, and easy-to-use tool for visualizing repository history and managing projects. It is currently built on the GTK 3 toolkit, which is expected to be deprecated in the future. This proposal focuses on migrating Gitg to GTK 4, ensuring long-term maintainability, better performance, and a more modern user experience.",
+          "difficulty": null,
+          "id": "proj_gnome-foundation_2026_NXbUqrGT",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/NXbUqrGT",
+          "proposal_id": "pb9lAzU9",
+          "short_description": "GNOME Gitg is a graphical user interface for Git that aims to be a small, fast, and easy-to-use tool for visualizing repository history and managing...",
+          "slug": "gitg-moving-to-gtk4",
+          "status": null,
+          "student_name": "Shivam_.",
+          "student_profile": null,
+          "tags": [],
+          "title": "Gitg moving to GTK4"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims to add a simple built in way to uninstall applications directly from the GNOME shell App Grid\n\nRight now users have to open the GNOME software app or use the terminal just to delete a application. This project solves that by adding an \"Uninstall\" option straight into the app's right click menu. When a user clicks it, the system will quietly tell GNOME software to remove the app in the background. To show the user that it is working, the app's icon will fade slightly and then disappear completely once the uninstallation finished.\n\nBy cutting out extra steps and keeping users in their normal workflow, this feature will make managing apps much faster. This will promise to smooth out a very common task and noticeably improve the daily experience for anyone using GNOME desktop",
+          "difficulty": null,
+          "id": "proj_gnome-foundation_2026_DqHU1wPE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DqHU1wPE",
+          "proposal_id": "QbQJJxyY",
+          "short_description": "This proposal aims to add a simple built in way to uninstall applications directly from the GNOME shell App Grid Right now users have to open the...",
+          "slug": "implementing-app-uninstallation-in-the-gnome-shell-app-grid",
+          "status": null,
+          "student_name": "Shyam Jagath",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing App Uninstallation in the GNOME Shell App Grid"
+        },
+        {
+          "code_url": null,
+          "description": "Mutter is the Wayland display server and compositor library powering GNOME Shell. Currently, an unexpected GPU reset causes the compositor to freeze as the EGL context becomes defunct and all allocated GPU memory is lost. This project aims to implement a robust recovery mechanism by leveraging the `GL_EXT_robustness` extension to detect resets, re-create the EGL context, and re-upload all GPU resources, including client textures, glyph caches, background image, etc. This work will ensure system resilience and prevent session-ending freezes, allowing the compositor to resume rendering seamlessly after hardware-level failures.",
+          "difficulty": null,
+          "id": "proj_gnome-foundation_2026_sWcQc2iG",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sWcQc2iG",
+          "proposal_id": "N2LUJAKP",
+          "short_description": "Mutter is the Wayland display server and compositor library powering GNOME Shell. Currently, an unexpected GPU reset causes the compositor to freeze...",
+          "slug": "recover-from-gpu-resets",
+          "status": null,
+          "student_name": "Toluwaleke Ogundipe",
+          "student_profile": null,
+          "tags": [],
+          "title": "Recover from GPU Resets"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

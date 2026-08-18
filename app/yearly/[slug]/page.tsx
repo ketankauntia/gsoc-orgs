@@ -167,8 +167,8 @@ export default async function YearlyPage({
               />
               <StatCard
                 label="Mentors"
-                value={metrics.total_mentors}
-                subtitle={`~${metrics.avg_mentors_per_org} per org`}
+                value={metrics.total_mentors ?? "Unavailable"}
+                subtitle={metrics.avg_mentors_per_org === null ? "Not exposed by current source" : `~${metrics.avg_mentors_per_org} per org`}
               />
               <StatCard
                 label="Countries"
@@ -425,7 +425,7 @@ export default async function YearlyPage({
                   </Text>
                 </div>
                 <Badge variant="secondary">
-                   {metrics.total_mentors} Mentors • {metrics.total_participants} Contributors
+                   {metrics.total_mentors === null ? "Mentor data unavailable" : `${metrics.total_mentors} Mentors`} • {metrics.total_participants} Contributors
                 </Badge>
               </div>
               

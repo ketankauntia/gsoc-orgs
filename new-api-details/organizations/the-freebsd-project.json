@@ -48,9 +48,9 @@
     "operating system",
     "Embedded System"
   ],
-  "total_projects": 76,
+  "total_projects": 87,
   "stats": {
-    "avg_projects_per_appeared_year": 7.6,
+    "avg_projects_per_appeared_year": 7.91,
     "projects_by_year": {
       "year_2016": 12,
       "year_2017": 5,
@@ -62,7 +62,7 @@
       "year_2023": 6,
       "year_2024": 9,
       "year_2025": 12,
-      "year_2026": null
+      "year_2026": 11
     },
     "students_by_year": {
       "year_2016": 12,
@@ -75,9 +75,9 @@
       "year_2023": 6,
       "year_2024": 9,
       "year_2025": 12,
-      "year_2026": null
+      "year_2026": 11
     },
-    "total_students": 71
+    "total_students": 87
   },
   "years": {
     "year_2016": {
@@ -1545,7 +1545,200 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-freebsd-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 11,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-freebsd-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "NanoBSD has long provided a reliable framework for building embedded FreeBSD images, but its legacy pipeline remains monolithic and resource intensive, source based workflow. This project modernizes the NanoBSD image creation process by allowing decoupling of the build and assemble phases using pkgbase which is a package-driven assembly model. Furthermore by using tools like makefs, mtree, and mkimg, the new pipeline will enable fast, reproducible, and cross-architecture image generation without requiring root access. The key deliverables will include - PkgBase Integration into the current NanoBSD image creation pipeline, modernize the Boot support by implementing GPT layouts and UEFI booting for both x86 and aarch64 (ARM). The project will also focus on providing tier 1 support for Aarch64 devices. Also if time allows the support for ZFS filesystem will be added in the NanoBSD image with various eMMC storage optimizations to increase the life of those class of storages. Along with the support for automated first boot configuration will also be implemented using nuageinit.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_ifJw35cl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ifJw35cl",
+          "proposal_id": "KhyxJtre",
+          "short_description": "NanoBSD has long provided a reliable framework for building embedded FreeBSD images, but its legacy pipeline remains monolithic and resource...",
+          "slug": "nanobsd-reimagined",
+          "status": null,
+          "student_name": "Angshuman Sengupta",
+          "student_profile": null,
+          "tags": [],
+          "title": "NanoBSD Reimagined"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces a network abstraction layer to libkboot, enabling boot artifacts to be fetched from remote sources without disrupting the existing loading flow. On top of this abstraction, it implements a minimal, bootloader-focused HTTP/1.1 client and HTTPS support via a TLS-backed transport. This allows kboot to support network-based boot workflows through a clean, maintainable, and extensible interface for future network features.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_RNVGFK81",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RNVGFK81",
+          "proposal_id": "80yVDMC7",
+          "short_description": "This project introduces a network abstraction layer to libkboot, enabling boot artifacts to be fetched from remote sources without disrupting the...",
+          "slug": "add-networking-support-to-kboot",
+          "status": null,
+          "student_name": "Aryan Arora",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add Networking Support to kboot"
+        },
+        {
+          "code_url": null,
+          "description": "Problems to solve:\n- Porting and stabilizing Arduino CLI for FreeBSD\n- Fixing USB and serial communication workflows for reliable device interaction\n- Developing a unified CLI-based workflow for building, flashing, and monitoring devices\n\nStandardize device detection and access using FreeBSD’s /dev interfaces and devd. Address permission and driver issues, implement reliable serial port identification, and ensure stable communication for flashing and monitoring through tested configurations.\n\nBuild a wrapper CLI that integrates Arduino CLI, ESP32 tooling, and serial monitoring into a single interface. Automate common tasks (build, flash, monitor), reduce manual setup, and provide a consistent developer experience with clear commands and documentation.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_M1TI2c3z",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/M1TI2c3z",
+          "proposal_id": "SCkW6Dyq",
+          "short_description": "Problems to solve: - Porting and stabilizing Arduino CLI for FreeBSD - Fixing USB and serial communication workflows for reliable device interaction...",
+          "slug": "enhancing-arduino-and-esp32-development-ecosystem-on-freebsd",
+          "status": null,
+          "student_name": "Deepan Sai",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Arduino and ESP32 Development Ecosystem on FreeBSD"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to add a livepatch subsystem to dynamically update kernel code.\nHaving a way to patch bugs or security vulnerabilities without restarting the whole machine would be very useful, especially on servers, which make up the majority of FreeBSD usage.\n\nPatches will be delivered via kernel modules, utilizing ELF headers and CTF/DWARF metadata to accurately resolve internal symbols. The patching mechanism will redirect control flow by inserting trampolines at the prologue of target functions.\n\nTo ensure system stability, patches will be safely applied using a stop-the-world consistency model via smp_rendezvous, with safeguards to prevent the modification of critical routines like the SYSINIT routines. Stack trace analysis will also be explored to more accurately detect function quiescence.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_aj0Va3rX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/aj0Va3rX",
+          "proposal_id": "2hP9Egzm",
+          "short_description": "This project aims to add a livepatch subsystem to dynamically update kernel code. Having a way to patch bugs or security vulnerabilities without...",
+          "slug": "live-patching-for-the-freebsd-kernel",
+          "status": null,
+          "student_name": "fedang",
+          "student_profile": null,
+          "tags": [],
+          "title": "Live-patching for the FreeBSD kernel"
+        },
+        {
+          "code_url": null,
+          "description": "This project improves Netlink support in FreeBSD tracing tools by enabling structured decoding of Netlink message payloads. Currently, truss(1) shows raw hexadecimal output for Netlink calls, making it difficult to interpret structured Netlink messages used by subsystems such as pf . The project will implement decoding within libsysdecode by parsing Generic Netlink headers (genlmsghdr), safely iterating over Type-Length-Value (nlattr) attributes, and dispatching to family-specific decoders. Deliverables include Generic Netlink support, a bounds-safe TLV parsing engine, a modular dispatch framework, and at least one functional decoder (pf), enabling human-readable output and providing a scalable foundation for future Netlink decoding.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_v1aOh9Kb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/v1aOh9Kb",
+          "proposal_id": "GjqYjDjq",
+          "short_description": "This project improves Netlink support in FreeBSD tracing tools by enabling structured decoding of Netlink message payloads. Currently, truss(1) shows...",
+          "slug": "netlink-payload-decoding-infrastructure-for-freebsd-tracing-tools",
+          "status": null,
+          "student_name": "IshanAgrawal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Netlink Payload Decoding Infrastructure for FreeBSD Tracing Tools"
+        },
+        {
+          "code_url": null,
+          "description": "fts(3) is the file hierarchy traversal library used by nearly every recursive utility in FreeBSD like find, rm, ls, chflags, du, and others. It currently cannot operate inside Capsicum capability mode because it relies on path-based filesystem operations throughout traversal: opening the current directory by name, opening subdirectories by path, and resolving symlinks through constructed string paths. None of the utilities that depend on fts(3) can be Capsicumized until this is fixed.\nThis project adds fts_openat(), a new entry point that accepts a pre-opened directory file descriptor as the traversal root, following the openat(2) convention. The existing fts_open() becomes a one-line wrapper over fts_openat(AT_FDCWD, ...), preserving full backward compatibility. The internal traversal engine is refactored to replace all path-based operations with fd-relative equivalents — openat() and fdopendir() for directory opens, dup() for CWD saves, and fstatfs() for filesystem type detection — while leaving the traversal state machine, path buffer, and cycle detection completely unchanged.\nThe project is structured in two phases. The first and larger phase is a comprehensive ATF/Kyua regression test suite covering the complete documented behaviour of fts(3), built against the unmodified library as a safety baseline. The second phase is the internal refactoring, the new fts_openat() API, capability-mode tests using cap_enter() directly in ATF test cases, and a complete Capsicumization of chflags(1) as the end-to-end demonstration.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_WqwqJvjx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WqwqJvjx",
+          "proposal_id": "j91h4fFH",
+          "short_description": "fts(3) is the file hierarchy traversal library used by nearly every recursive utility in FreeBSD like find, rm, ls, chflags, du, and others. It...",
+          "slug": "capsicumize-fts-3",
+          "status": null,
+          "student_name": "Jitendra Bhati",
+          "student_profile": null,
+          "tags": [],
+          "title": "Capsicumize fts(3)"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Bluetooth HID support in FreeBSD is limited to the bthidd daemon. The daemon, while functional, uses its own custom userspace drivers rather than the existing HID drivers in the kernel. Of these userspace drivers, only keyboards and mice are supported.\n\nThis project proposes a more integrated design via a new Netgraph node type: ng_bthid. This node will hook to ng_l2cap and function as a virtual transport layer that interfaces directly with hidbus. The aim is to make HID support more transport-agnostic, moving away from the previous approach of maintaining separate, redundant drivers for devices over Bluetooth.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_FtgU97mx",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/FtgU97mx",
+          "proposal_id": "PPQcyLWp",
+          "short_description": "Currently, Bluetooth HID support in FreeBSD is limited to the bthidd daemon. The daemon, while functional, uses its own custom userspace drivers...",
+          "slug": "bluetooth-support-for-hid-devices",
+          "status": null,
+          "student_name": "Majed Alkhaleefah",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bluetooth Support for HID Devices"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal lays out plans to bring native MPLS support into the FreeBSD kernel. MPLS—Multi-Protocol Label Switching—is a fast packet-forwarding method you’ll find everywhere in big service provider and data center networks. Instead of making routers do complex IP lookups at every hop, MPLS uses simple label swapping. The magic happens with a tiny 32-bit shim header that holds a 20-bit label, a few bits for traffic class, a stack indicator, and an 8-bit TTL. This header sits snugly between Layer 2 and Layer 3 headers, letting routers in the core do blazing-fast forwarding while pushing tough routing decisions to the network edge.\n\nFreeBSD is famous for its solid IPv4 and IPv6 networking stack, but it’s been missing native Layer 2.5 switching. That gap has made it hard for FreeBSD to get traction in provider core networks. Meanwhile, OpenBSD and NetBSD have shipped MPLS support for ages, and Linux has had MPLS built in since kernel 4.3. FreeBSD’s overdue update doesn’t just catch up—it leapfrogs the other BSDs. This project stands out in two big ways: it adds ECMP multipath support using the modern nhgrp (Nexthop Group) subsystem, and it swaps out the old, hard-to-extend rtsock interface for a much more flexible Netlink-based control plane.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_rXxNSKfZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/rXxNSKfZ",
+          "proposal_id": "GpU9Cgkr",
+          "short_description": "This proposal lays out plans to bring native MPLS support into the FreeBSD kernel. MPLS—Multi-Protocol Label Switching—is a fast packet-forwarding...",
+          "slug": "native-mpls-support-for-freebsd",
+          "status": null,
+          "student_name": "Subhash Murmu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Native MPLS Support for FreeBSD"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces a firmware-backed persistent boot counter into the FreeBSD base system to address the early-boot entropy problem. During system startup, before the kernel’s random number generator is sufficiently seeded, certain subsystems may produce predictable values, which can weaken authentication mechanisms such as HMAC-based protocols.\n\nThe proposed solution leverages the UEFI monotonic counter, accessed during the loader stage (before ExitBootServices), and transports it to the kernel using the existing metadata mechanism. The kernel exposes this value via a read-only sysctl (kern.bootcount), allowing early-boot consumers such as networking subsystems to incorporate it into their computations and ensure per-boot uniqueness.\n\nThe implementation involves modifying loader.efi to capture the counter, extending the metadata pipeline, and adding a kernel module for ingestion and exposure. The project also includes a fallback mechanism for non-UEFI systems, a testing framework using QEMU/OVMF, and documentation.\n\nDeliverables include a working kernel interface, regression tests, documentation, and optional integration with subsystems such as SNMP and CARP via the opencrypto framework.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_3hqG6SZS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3hqG6SZS",
+          "proposal_id": "Lf7R4Ogc",
+          "short_description": "This project introduces a firmware-backed persistent boot counter into the FreeBSD base system to address the early-boot entropy problem. During...",
+          "slug": "efi-backed-persistent-boot-counter-for-early-boot-hmac-in-freebsd",
+          "status": null,
+          "student_name": "Vidith Hundekar",
+          "student_profile": null,
+          "tags": [],
+          "title": "EFI-Backed Persistent Boot Counter for Early-Boot HMAC in FreeBSD"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal aims at implementing the following quality-of-life improvements to FreeBSD's Zoned Storage support: NVMe ZNS support; Zone-aware gconcat(8), gpart(8) and gmirror(8); Two new GEOM drivers: one for emulating zoned storage, another to emulate regular disks backed by a zoned drive.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_USThq7rZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/USThq7rZ",
+          "proposal_id": "JOW6bzZJ",
+          "short_description": "This proposal aims at implementing the following quality-of-life improvements to FreeBSD's Zoned Storage support: NVMe ZNS support; Zone-aware...",
+          "slug": "enhancing-zoned-storage-support-on-freebsd",
+          "status": null,
+          "student_name": "voidanix",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhancing Zoned Storage support on FreeBSD"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to implement the udmabuf (User DMA Buffer) driver on FreeBSD, a crucial mechanism for zero-copy memory sharing between userspace applications and kernel subsystems. The absence of udmabuf currently limits FreeBSD's capability to efficiently support modern graphics and virtualization stacks, particularly preventing tools like QEMU from utilizing virtio-gpu with blob resources. The proposed solution involves developing a loadable kernel module that acts as a dma_buf exporter, deeply integrating with FreeBSD's virtual memory subsystem and extending the linuxkpi compatibility layer. Key deliverables include a fully functional udmabuf module implementing the complete set of dma_buf_ops, necessary linuxkpi API extensions for DRM compatibility, end-to-end integration patches for QEMU, and comprehensive ATF test cases accompanied by thorough documentation.",
+          "difficulty": null,
+          "id": "proj_the-freebsd-project_2026_KiQz59hz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/KiQz59hz",
+          "proposal_id": "W4VCDsER",
+          "short_description": "This project aims to implement the udmabuf (User DMA Buffer) driver on FreeBSD, a crucial mechanism for zero-copy memory sharing between userspace...",
+          "slug": "reimplement-udmabuf-to-freebsd",
+          "status": null,
+          "student_name": "Zishun Yi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Reimplement udmabuf to FreeBSD"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

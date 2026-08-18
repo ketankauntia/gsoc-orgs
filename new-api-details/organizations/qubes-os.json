@@ -33,9 +33,9 @@
     "operating systems",
     "OS"
   ],
-  "total_projects": 4,
+  "total_projects": 7,
   "stats": {
-    "avg_projects_per_appeared_year": 1.33,
+    "avg_projects_per_appeared_year": 1.75,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 2,
@@ -47,7 +47,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -60,9 +60,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 4
+    "total_students": 7
   },
   "years": {
     "year_2016": null,
@@ -163,7 +163,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/qubes-os-f3",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "I believe Qubes is an easy and intuitive tool to achieve “reasonable” security, as it\nrelies on explicit compartmentalization and force users to actively think about\ntheir actions. As massive cyberattacks are growing, Qubes is increasingly\nbecoming an essential tool for the general public, reinforcing the need for UX-\nfocused software.\nThis project will make Qubes more accessible for people from diverse\nbackgrounds by providing UX-focused GUI tools for software installation in\ntemplates.",
+          "difficulty": null,
+          "id": "proj_qubes-os_2026_3das9C5i",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3das9C5i",
+          "proposal_id": "ugYrGxAK",
+          "short_description": "I believe Qubes is an easy and intuitive tool to achieve “reasonable” security, as it relies on explicit compartmentalization and force users to...",
+          "slug": "graphical-package-manager-support-in-templates",
+          "status": null,
+          "student_name": "I'mSofia",
+          "student_profile": null,
+          "tags": [],
+          "title": "Graphical package manager support in templates"
+        },
+        {
+          "code_url": null,
+          "description": "The Qubes PDF converter safely sanitises untrusted PDFs by rendering them inside a disposable VM. However, other risky file types (documents, spreadsheets, images) lack equivalent protection.\n\nThis project generalises the converter into a plugin-based architecture with per-format qrexec services and minimal DispVM templates.\n\nKey features:\n• New qvm-convert-file entry point with MIME-based routing  \n• Document & spreadsheet conversion via LibreOffice → existing bitmap pipeline  \n• Image sanitisation via decode + re-encode (metadata stripped)  \n• Audio/video conversion via ffmpeg (stretch goal)  \n• Full backward compatibility with qvm-convert-pdf  \n\nDeliverables:\nD1: Plugin architecture + MIME dispatch  \nD2–D3: Document & spreadsheet converters  \nD4: Image sanitiser  \nD5: Media converter (stretch)",
+          "difficulty": null,
+          "id": "proj_qubes-os_2026_g8Tj9VCB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/g8Tj9VCB",
+          "proposal_id": "lgbhsNix",
+          "short_description": "The Qubes PDF converter safely sanitises untrusted PDFs by rendering them inside a disposable VM. However, other risky file types (documents,...",
+          "slug": "generalise-the-qubes-pdf-converter-to-other-types-of-files",
+          "status": null,
+          "student_name": "Jayant Saxena",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generalise the Qubes PDF Converter to Other Types of Files"
+        },
+        {
+          "code_url": null,
+          "description": "Qubes OS uses TemplateVMs as the base for most application qubes. These templates track upstream operating system releases such as Fedora and Debian, which eventually reach end-of-life and must be upgraded. Today, users generally have two options:\n\n1. Install a fresh template and manually recreate customizations and packages.\n\n2. Perform an in-place upgrade manually by following a multi-step process across dom0 and the template terminal.\nThe first option is safer but discards customization. The second preserves customization but is cumbersome, error-prone, and inaccessible to many users.\n\nThis project proposes an automated template version upgrade workflow built on top of Qubes OS's existing update architecture. The primary deliverable is a dom0 command-line tool that performs distro version upgrades for Fedora- and Debian-based templates while preserving safeguards, reporting progress, and leaving a clear recovery path on failure. GUI integration is a stretch goal after the CLI workflow is stable and tested.",
+          "difficulty": null,
+          "id": "proj_qubes-os_2026_vjESxjOp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/vjESxjOp",
+          "proposal_id": "gEz0SUjt",
+          "short_description": "Qubes OS uses TemplateVMs as the base for most application qubes. These templates track upstream operating system releases such as Fedora and Debian,...",
+          "slug": "automate-template-version-upgrade",
+          "status": null,
+          "student_name": "nihalxkumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automate template version upgrade"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

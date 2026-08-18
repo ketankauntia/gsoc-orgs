@@ -35,9 +35,9 @@
     "edtech",
     "UX/UI"
   ],
-  "total_projects": 10,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.17,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -49,7 +49,7 @@
       "year_2023": 3,
       "year_2024": 2,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -62,9 +62,9 @@
       "year_2023": 3,
       "year_2024": 2,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 10
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -295,7 +295,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/omegaup"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/omegaup",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The aim is to shift omegaUp from reactive to proactive operations by building a complete monitoring and alerting system across the PHP frontend, Go services, MySQL, and Kubernetes. The project will add missing instrumentation (latency histograms, business context attributes, backend tracing), pipe Prometheus metrics into New Relic for unified alerting, and build Grafana dashboards with recording rules and longer retention. It will then define alerting policies, SLI/SLO targets, and runbooks, delivering actionable notifications and a clear operational view during contests without changing user‑facing behaviour.",
+          "difficulty": null,
+          "id": "proj_omegaup_2026_3UbBdLxp",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3UbBdLxp",
+          "proposal_id": "9NvPqBD6",
+          "short_description": "The aim is to shift omegaUp from reactive to proactive operations by building a complete monitoring and alerting system across the PHP frontend, Go...",
+          "slug": "performance-monitoring-and-alerting-dashboard",
+          "status": null,
+          "student_name": "antedotee",
+          "student_profile": null,
+          "tags": [],
+          "title": "Performance monitoring and Alerting Dashboard"
+        },
+        {
+          "code_url": null,
+          "description": "OmegaUp has around 40 MySQL queries that do full table scans making pages slow for students and teachers. The CI pipeline detects them but never fails the build so they go unnoticed. I will optimize these queries by adding indexes and rewriting them in the DAO layer, make CI block new inefficient queries using an allowlist system, and add a performance benchmark to catch slow queries before they reach production. The goal is to make omegaUp faster today and prevent regressions in the future.",
+          "difficulty": null,
+          "id": "proj_omegaup_2026_j9yLSfFl",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/j9yLSfFl",
+          "proposal_id": "SpLucC9r",
+          "short_description": "OmegaUp has around 40 MySQL queries that do full table scans making pages slow for students and teachers. The CI pipeline detects them but never...",
+          "slug": "query-optimization-and-performance-benchmarking",
+          "status": null,
+          "student_name": "mazapan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Query Optimization and Performance Benchmarking"
+        },
+        {
+          "code_url": null,
+          "description": "omegaUp has several Python cronjobs for rankings, badges, and recommendations that have gotten slow and hard to maintain over time. This project rewrites the inefficient SQL queries, adds proper error handling instead of bare-except blocks, brings in test coverage with pytest and moves hardcoded values into database config. The goal is to make these scripts faster, easier to debug and actually testable.",
+          "difficulty": null,
+          "id": "proj_omegaup_2026_jEkK4rDg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jEkK4rDg",
+          "proposal_id": "9S6nX0zj",
+          "short_description": "omegaUp has several Python cronjobs for rankings, badges, and recommendations that have gotten slow and hard to maintain over time. This project...",
+          "slug": "cronjob-optimization",
+          "status": null,
+          "student_name": "PrasannaMishra001",
+          "student_profile": null,
+          "tags": [],
+          "title": "Cronjob Optimization"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

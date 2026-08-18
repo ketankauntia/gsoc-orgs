@@ -32,9 +32,9 @@
     "filesystems",
     "kernel"
   ],
-  "total_projects": 4,
+  "total_projects": 7,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -46,7 +46,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -59,9 +59,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 4
+    "total_students": 7
   },
   "years": {
     "year_2016": null,
@@ -162,7 +162,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/openafs"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/openafs",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Currently, OpenAFS provides the afsio command that supports read, writes, and locks to both files and directories in the AFS environment without going through the cache manager. However, it does not support mount point control, ACL manipulation, or directory operations, which would allow a fully functional cell to be created without the cache manager; This would be convenient for administrators, as it avoids the kernel module having to be installed on the machine setup is being performed from, as well as allowing setup in environments not compatible with the kernel module. To address this problem, I will implement all three types of subcommands of afsio; Key deliverables include the code for all of these types of commands, as well as documentation such that administrators know how to use them.",
+          "difficulty": null,
+          "id": "proj_openafs_2026_22zPYekQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/22zPYekQ",
+          "proposal_id": "igYgvVfF",
+          "short_description": "Currently, OpenAFS provides the afsio command that supports read, writes, and locks to both files and directories in the AFS environment without...",
+          "slug": "adding-cell-creation-support-to-afsio",
+          "status": null,
+          "student_name": "Junsouh Hong",
+          "student_profile": null,
+          "tags": [],
+          "title": "Adding cell creation support to afsio"
+        },
+        {
+          "code_url": null,
+          "description": "Users who want to understand how the AFS cache manager resolves each element of a path (plain directory, mount point, or symlink) must manually run fs examine and fs lsmount on each component separately, or write wrapper scripts. This project implements a new fs pathinfo subcommand in C that walks a given path, iteratively resolves each prefix using the existing pioctl interface (VIOC_AFS_STAT_MT_PT, VIOC_FILE_CELL_INFO, lstat), and reports the type of each component in a human-readable format consistent with existing fs output. Deliverables include: the subcommand implementation integrated into src/venus/fs.c, support for both relative and absolute paths, a -verbose flag, a fs_pathinfo(1) man page in POD format, and a regression test suite covering all major path resolution scenarios.",
+          "difficulty": null,
+          "id": "proj_openafs_2026_rJEigtur",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/rJEigtur",
+          "proposal_id": "Ail0KTbf",
+          "short_description": "Users who want to understand how the AFS cache manager resolves each element of a path (plain directory, mount point, or symlink) must manually run...",
+          "slug": "proposal-bastien-desert-enhance-fs-to-examine-path-components",
+          "status": null,
+          "student_name": "LaLoutre",
+          "student_profile": null,
+          "tags": [],
+          "title": "Proposal - Bastien Desert \"Enhance fs to examine path components\""
+        },
+        {
+          "code_url": null,
+          "description": "This project extends the OpenAFS fs examine command to provide visibility into each component of a given path, instead of only the final object. In a distributed file system, paths may traverse multiple volumes, cells and mount points, making it difficult to understand how a path is resolved.\r\n\r\nThe proposed solution introduces a new optional flag that iteratively resolves each component of a path and retrieves volume and file information using existing pioctl calls. The implementation will handle intermediate path construction, mount point detection, symbolic links and error cases while preserving backward compatibility.\r\n\r\nThe final deliverables include a working implementation of the new flag, support for edge cases such as mount points and symlinks, updated documentation and tests to validate correctness.",
+          "difficulty": null,
+          "id": "proj_openafs_2026_6JUSRbFZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/6JUSRbFZ",
+          "proposal_id": "k9OhBi0e",
+          "short_description": "This project extends the OpenAFS fs examine command to provide visibility into each component of a given path, instead of only the final object. In a...",
+          "slug": "enhance-fs-to-examine-path-components",
+          "status": null,
+          "student_name": "Minca Maria-Alexandra",
+          "student_profile": null,
+          "tags": [],
+          "title": "Enhance fs to examine path components"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

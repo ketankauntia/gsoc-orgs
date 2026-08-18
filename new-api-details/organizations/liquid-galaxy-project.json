@@ -62,9 +62,9 @@
     "ux",
     "artificial intelligence"
   ],
-  "total_projects": 75,
+  "total_projects": 86,
   "stats": {
-    "avg_projects_per_appeared_year": 8.33,
+    "avg_projects_per_appeared_year": 8.6,
     "projects_by_year": {
       "year_2016": 4,
       "year_2017": 3,
@@ -76,7 +76,7 @@
       "year_2023": 11,
       "year_2024": 11,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 11
     },
     "students_by_year": {
       "year_2016": 4,
@@ -89,9 +89,9 @@
       "year_2023": 11,
       "year_2024": 11,
       "year_2025": 11,
-      "year_2026": null
+      "year_2026": 11
     },
-    "total_students": 70
+    "total_students": 86
   },
   "years": {
     "year_2016": {
@@ -1638,7 +1638,200 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/liquid-galaxy-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 11,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/liquid-galaxy-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "EcoGrid Intelligence: AI-Driven Climate Resilience Analysis for Global Energy Infrastructure on Liquid Galaxy is an AI-driven geospatial analysis system designed to proactively identify global energy infrastructure at risk of operational failure due to severe climate events such as heatwaves, droughts, and wind anomalies. It addresses the problem of critical infrastructure and meteorological data being siloed, which prevents stakeholders from achieving a unified, spatial understanding of risk.\n\nThe solution dynamically fuses live climate anomalies with global energy infrastructure maps to create an interactive analytical canvas on the Liquid Galaxy platform.\n\nThe EcoGrid Intelligence system follows a layered architecture:\n\nData Sources and Risk Assessment:\nClimate Data: Streams live and forecasted climate anomalies, including temperature deviations, precipitation extremes, and wind intensity, from the Open-Meteo API.\nInfrastructure Data: Geospatial coordinates, generation type (hydro, nuclear, solar), and operational capacity are sourced from the Global Power Plant Database.\nRisk Model: A deterministic model computes a Climate Vulnerability Score (CVS) by evaluating localized anomaly intensity against the plant type's operational sensitivities.\n\nAI Orchestration: Google’s Gemini models act as the system’s brain to autonomously determine region-relevant climate anomalies, trigger API calls, interpret the resulting CVS metrics, and structure the output for spatial rendering.\n\nVisualization: The results are converted into Keyhole Markup Language (KML), generating elements like Placemark, LookAt, and FlyTo for native, synchronized rendering and camera guidance on the Liquid Galaxy multi-screen rig.\n\nOutputs: Primary displays render immersive climate anomaly heatmaps and color-coded nodes indicating vulnerability levels, while secondary screens display dynamically generated HTML content and AI-driven insights.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_X2xqDQFw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/X2xqDQFw",
+          "proposal_id": "dq0fQriJ",
+          "short_description": "EcoGrid Intelligence: AI-Driven Climate Resilience Analysis for Global Energy Infrastructure on Liquid Galaxy is an AI-driven geospatial analysis...",
+          "slug": "ecogrid-intelligence-ai-driven-climate-resilience-analysis",
+          "status": null,
+          "student_name": "Bhoomi Shivhare",
+          "student_profile": null,
+          "tags": [],
+          "title": "EcoGrid Intelligence: AI-Driven Climate Resilience Analysis"
+        },
+        {
+          "code_url": null,
+          "description": "The Liquid Galaxy ecosystem currently faces an unstructured and fragmented onboarding process. Crucial development information is scattered across various wikis and forums, leading to a steep learning curve and persistent architectural rule violations by new developers. Furthermore, the absence of an interactive sandbox makes it difficult for contributors to safely experiment with code and receive instant feedback, while advanced capabilities like 3D KML modeling remain heavily underutilized due to a lack of guided, hands-on tutorials. LG Interactive Onboarding radically overhauls contributor training by transforming the Liquid Galaxy rig itself into an immersive, interactive classroom. Operating on a \"phone-as-driver, rig-as-canvas\" philosophy, the system uses a smartphone application as a remote control to project educational content, live code exercises, and data visualizations directly onto the rig's 5-screen panoramic display. The platform integrates multi-modal learning—combining animated visual diagrams, auditory voice narration, and kinesthetic hands-on coding—with a privacy-conscious, on-device Gemini AI Mentor. This enforces core development best practices from day one and significantly reduces the manual onboarding workload for organization mentors.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_7RfI7CtQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7RfI7CtQ",
+          "proposal_id": "oqFaJ7bG",
+          "short_description": "The Liquid Galaxy ecosystem currently faces an unstructured and fragmented onboarding process. Crucial development information is scattered across...",
+          "slug": "lg-interactive-onboarding-guided-tutorial-learning-system-for-liquid-galaxy",
+          "status": null,
+          "student_name": "Darpan Baviskar",
+          "student_profile": null,
+          "tags": [],
+          "title": "LG Interactive Onboarding: Guided Tutorial & Learning System for Liquid Galaxy"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to make Liquid Galaxy easier to use by building a system that can automate content creation and control the screens using simple natural language commands.\nCurrently, users need technical knowledge to create KML files, manage content, and operate the system, which makes it difficult for beginners.\n\nTo solve this, I will build an AI server that runs on a Single Board Computer and acts as an assistant for Liquid Galaxy. Users will be able to give commands using chat or voice, and the system will handle tasks like generating KML visualizations, sending content to the screens, and controlling the setup. The system will be modular, so different features (like visualization, control, and communication) can be added or improved easily. It will also support both local processing and external services depending on what works best with the available hardware. This server will live on the same LAN as the liquid galaxy rig.\n\nThe main deliverables include:\n\nA working AI agent server running on a Single Board Computer\n\nChat and voice interfaces for user interaction, external services like telegram, discord, etc will also be supported.\n\nA media pipeline to generate and send KML, images, and other content to Liquid Galaxy\n\nA content builder for creating simple apps, and interactive outputs\n\nReal-time data visualization from open data sources (aircraft, satellites, disasters, etc.)\n\nAutomated storytelling and guided tours based on user input (eg- historical events)\n\nNews and event-based visualization on the globe\n\nA knowledge assistant using Liquid Galaxy documentation\n\nAn interactive troubleshooting system for diagnosing and fixing issues\n\nUser friendly instructions via .md files, to help new developers get started\n\nAgent personality customization\n\nComplete documentation, deployment scripts, and setup guides\n\nThe final result will be a simple, flexible, and easy to use system that helps users and contributors interact with Liquid Galaxy.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_3I0xAxYa",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3I0xAxYa",
+          "proposal_id": "9oN8j87p",
+          "short_description": "This project aims to make Liquid Galaxy easier to use by building a system that can automate content creation and control the screens using simple...",
+          "slug": "local-ai-with-gemma-by-google",
+          "status": null,
+          "student_name": "Harsh_Mehta",
+          "student_profile": null,
+          "tags": [],
+          "title": "Local AI with Gemma by Google"
+        },
+        {
+          "code_url": null,
+          "description": "Liquid Galaxy Time Machine is an interactive educational application that allows users to explore 100 global points of interest through time. By combining geospatial visualization, historical data, and AI-generated content, users can see how locations looked in the past, present, and possible future using an interactive timeline. The experience includes panoramic visualization on Liquid Galaxy, KML overlays with images and information, AI-generated narration, and detailed sub-events, creating an immersive way to understand how places evolve over time.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_dzOif5DN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/dzOif5DN",
+          "proposal_id": "MHoVYkeA",
+          "short_description": "Liquid Galaxy Time Machine is an interactive educational application that allows users to explore 100 global points of interest through time. By...",
+          "slug": "liquid-galaxy-time-machine",
+          "status": null,
+          "student_name": "Jan Sánchez",
+          "student_profile": null,
+          "tags": [],
+          "title": "Liquid Galaxy Time Machine"
+        },
+        {
+          "code_url": null,
+          "description": "GeoSaurio is an interactive visualization project designed for the Liquid Galaxy platform that allows users to explore dinosaurs through their geographical distribution on Earth using Google Earth. The system uses the central screens to display the planet and show dinosaur locations through KML elements, while the side screens present detailed information about each selected species. Users interact with the experience through a Flutter-based companion application, where they can select geological periods and regions, explore dinosaur lists, and trigger visualizations on the Liquid Galaxy system. Each dinosaur includes structured information such as physical characteristics, diet, and visual comparisons with humans, along with additional features like fossil-to-reconstruction timelines, 3D models, and optional AI-based narration. By combining geospatial visualization, multi-screen interaction, and educational content, GeoSaurio provides an engaging and immersive way to discover prehistoric life and understand how dinosaurs were distributed across the planet.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_R6FiDMOB",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/R6FiDMOB",
+          "proposal_id": "QKsOpRKj",
+          "short_description": "GeoSaurio is an interactive visualization project designed for the Liquid Galaxy platform that allows users to explore dinosaurs through their...",
+          "slug": "geosaurio-for-liquid-galaxy",
+          "status": null,
+          "student_name": "Josep Sert",
+          "student_profile": null,
+          "tags": [],
+          "title": "GeoSaurio for Liquid Galaxy"
+        },
+        {
+          "code_url": null,
+          "description": "AI Tour Director reimagines geographic visualization as a cinematic experience by treating every tour like a film. There is a set of specialized agents that collaborate to transform a simple user prompt into an immersive tour. Creative Director, Production Designer, Writer, Auditor, and DOP make this magic happen. Each agent contributes to building a cohesive narrative, that is, from selecting locations and designing camera movements to generating narration and validating the flow.\n\nThe system leverages modern AI and real-time geographic data to direct immersive tours on Liquid Galaxy, complete with synchronized visuals, subtitles, and multilingual narration. It further enables recording these experiences as high-quality videos and turns the exploration into shareable film-like content. The final deliverable is a modular agent-driven platform that blends storytelling, visualization, and open-source extensibility.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_3Foj7wuK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/3Foj7wuK",
+          "proposal_id": "jemnAxEd",
+          "short_description": "AI Tour Director reimagines geographic visualization as a cinematic experience by treating every tour like a film. There is a set of specialized...",
+          "slug": "ai-tour-director-an-omni-agent-system-for-liquid-galaxy",
+          "status": null,
+          "student_name": "Kabir Khanuja",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI Tour Director: An Omni-Agent System for Liquid Galaxy"
+        },
+        {
+          "code_url": null,
+          "description": "Liquid Galaxy is an open-source panoramic multi-display system used in museums, universities, and science centers worldwide. Its entire installation infrastructure install.sh and all supporting configuration files was written for Ubuntu 16.04 LTS, which reached End of Life in April 2021. As a result, Liquid Galaxy cannot be installed on any currently supported Ubuntu version, leaving existing deployments without security patches and blocking new ones entirely.\n\nThis project is a systematic, layer-by-layer migration of Liquid Galaxy to Ubuntu 24.04 LTS (Noble Numbat). Rather than patching each broken line individually, I will introduce an OS abstraction layer a lib/ directory of functions that encapsulate every OS-dependent operation, from network detection and display manager configuration to package management and service control. This ensures the system can survive future Ubuntu LTS releases without requiring a full rewrite each time.\n\nDeliverables: \n1) Updated install.sh working end-to-end on Ubuntu 24.04\n2) lib/ OS abstraction layer with testable, version-aware functions\n3) GitHub Actions CI pipeline\n4) Post-install smoke test suite\n5) MIGRATION.md, TROUBLESHOOTING.md, and updated README.md with complete architecture documentation.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_bEqrTjq3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/bEqrTjq3",
+          "proposal_id": "t4QM6bL3",
+          "short_description": "Liquid Galaxy is an open-source panoramic multi-display system used in museums, universities, and science centers worldwide. Its entire installation...",
+          "slug": "liquid-galaxy-ubuntu-lts-system-migration-ubuntu-16-04-to-ubuntu-24-04",
+          "status": null,
+          "student_name": "Mahmoud Mohammed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Liquid Galaxy: Ubuntu LTS System Migration - Ubuntu 16.04 to Ubuntu 24.04"
+        },
+        {
+          "code_url": null,
+          "description": "While UNESCO World Heritage Sites connect us to our shared global past, standard maps fail to capture their true scale and cultural significance. To solve this, I am developing an open-source Flutter application that acts as a smart remote control for the Liquid Galaxy multi-screen system, featuring a home screen widget for quick and accessible rig control. The app transforms official datasets into an immersive experience by generating synchronized 3D KML maps and informative visual overlays. It also integrates Gemini AI to power a voice-enabled assistant that answers user queries about heritage sites, narrates engaging historical stories, and automatically \"fly to\" the Google Earth view to the exact locations being discussed. The final deliverables include the functional mobile app, dynamic 3D visualization along with AI storytelling modules, and comprehensive setup documentation hosted on GitHub.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_uA9c3Nnn",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uA9c3Nnn",
+          "proposal_id": "pchXzoEl",
+          "short_description": "While UNESCO World Heritage Sites connect us to our shared global past, standard maps fail to capture their true scale and cultural significance. To...",
+          "slug": "unesco-world-heritage",
+          "status": null,
+          "student_name": "Saumya_Bhattacharya",
+          "student_profile": null,
+          "tags": [],
+          "title": "UNESCO World Heritage"
+        },
+        {
+          "code_url": null,
+          "description": "Liquid Galaxy RPG is a multiplayer 2D fantasy action game built for the Liquid Galaxy multi-screen display system, where a continuous tile-based world spans all LG screens simultaneously. Four players join via a Flutter mobile controller app, competing in King of the Hill (2v2 PvP castle capture) or cooperating in Dragon Raid (4-player boss fight with wave-based enemies). The game is built on Phaser 3 served via Node.js WebSocket — each LG screen opens one URL in Chromium on  Ubuntu 16.04 rig. A unique AI Cheerleader powered by the Gemini API runs on each player's phone, delivering private personalized motivational messages via Flutter TTS based on live game events.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_1cGLRXvk",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/1cGLRXvk",
+          "proposal_id": "qMvRM4cN",
+          "short_description": "Liquid Galaxy RPG is a multiplayer 2D fantasy action game built for the Liquid Galaxy multi-screen display system, where a continuous tile-based...",
+          "slug": "liquid-galaxy-rpg-a-multiplayer-2d-fantasy-game",
+          "status": null,
+          "student_name": "Shailesh Kumar Shukla",
+          "student_profile": null,
+          "tags": [],
+          "title": "Liquid Galaxy RPG — A Multiplayer 2D Fantasy Game"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes an interactive geospatial storytelling platform that visualizes rice agriculture across india using the liquid galaxy multi-screen visualization system.\nRice is one of the most important crops in India, and understanding its geographical distribution, seasonal cycles, irrigation patterns, and production trends can help students, researchers, and the public better understand agricultural systems.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_43QA3eRK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/43QA3eRK",
+          "proposal_id": "EgcYfPI0",
+          "short_description": "This project proposes an interactive geospatial storytelling platform that visualizes rice agriculture across india using the liquid galaxy...",
+          "slug": "rice-farm-agriculture-india-visualization",
+          "status": null,
+          "student_name": "Vinayak_Dhaka",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rice Farm Agriculture India Visualization"
+        },
+        {
+          "code_url": null,
+          "description": "The objective of this project is to develop an application that connects to a Liquid Galaxy installation. The application will be developed using Dart/Flutter and will be structured into two main components: a backend and a frontend.\nThe CHE project offers a visual and interactive experience that allows users to explore different historical sites in a city or a country. In my case, the project is focused on the city of Lleida.\nThe CHE project is developed on the Liquid Galaxy platform, where Google Earth is displayed continuously and synchronously creating a unified panoramic view. On top of this visualization, KML files are integrated to display information about the different historical places in the city, allowing users to easily locate and explore them in a simple and intuitive way.",
+          "difficulty": null,
+          "id": "proj_liquid-galaxy-project_2026_i8rcafwF",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/i8rcafwF",
+          "proposal_id": "UIBEGolC",
+          "short_description": "The objective of this project is to develop an application that connects to a Liquid Galaxy installation. The application will be developed using...",
+          "slug": "city-historic-engine",
+          "status": null,
+          "student_name": "Yasmina Ramadan Sevdanova",
+          "student_profile": null,
+          "tags": [],
+          "title": "City Historic Engine"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -54,9 +54,9 @@
     "mobile programming",
     "game engines"
   ],
-  "total_projects": 84,
+  "total_projects": 96,
   "stats": {
-    "avg_projects_per_appeared_year": 8.4,
+    "avg_projects_per_appeared_year": 8.73,
     "projects_by_year": {
       "year_2016": 7,
       "year_2017": 5,
@@ -68,7 +68,7 @@
       "year_2023": 7,
       "year_2024": 8,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 12
     },
     "students_by_year": {
       "year_2016": 7,
@@ -81,9 +81,9 @@
       "year_2023": 7,
       "year_2024": 8,
       "year_2025": 7,
-      "year_2026": null
+      "year_2026": 12
     },
-    "total_students": 78
+    "total_students": 96
   },
   "years": {
     "year_2016": {
@@ -1712,7 +1712,216 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/international-catrobat-association"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 12,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/international-catrobat-association",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to complete the transition of Pocket Paint (Paintroid) to Flutter by ensuring compatibility with legacy Kotlin/Java-based .catrobat project files and implementing missing native features in the Flutter version. Currently, older projects cannot be reliably opened, which risks loss of user data and limits adoption of the new app.\n\nTo solve this, I will design and implement a compatibility layer that parses legacy Kryo-serialized binary data from the native Android application and converts it into the Flutter-compatible JSON-based project structure. The system will follow a structured pipeline (binary decoding → Dart model mapping → JSON serialization → rendering) to accurately reconstruct layers, strokes, and metadata.\n\nIn addition, I will implement fallback rendering strategies for unsupported tools to preserve visual fidelity and ensure all legacy files remain accessible. Once the compatibility layer is stable, I will focus on implementing selected missing native drawing tools in Flutter to further close the feature gap between the old and new applications. The project will follow a test-driven approach with extensive unit and integration testing using real legacy files to ensure correctness and stability.\n\nDeliverables include:\n- Kryo-to-Dart parsing system for .catrobat files\n- Fully integrated backward compatibility layer in the Flutter app\n- Fallback rendering for unsupported legacy features\n- Comprehensive unit and integration test suite\n- Documentation for architecture and long-term maintenance\n- (Stretch goal, if time permits) Implementation of selected high-priority missing native tools (e.g., Fill Tool)",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_lzlZ0twG",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lzlZ0twG",
+          "proposal_id": "AAn02vAf",
+          "short_description": "This project aims to complete the transition of Pocket Paint (Paintroid) to Flutter by ensuring compatibility with legacy Kotlin/Java-based .catrobat...",
+          "slug": "pocket-paint-flutter-backward-compatibility-with-the-old-android-app",
+          "status": null,
+          "student_name": "Amit Matth",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pocket Paint Flutter - Backward Compatibility with the Old Android App"
+        },
+        {
+          "code_url": null,
+          "description": "This project develops an open-source system to visualize and explore complex data from underwater ROVs, integrating panoramas, sonar, and point clouds into a Google Street View–like interface. \nIt enables advanced tasks like mission planning, site re-identification, and live data registration, while supporting evolving scientific goals, new data modalities, and multiple vehicle types for long-term underwater research.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_7jYMDRSX",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/7jYMDRSX",
+          "proposal_id": "HZ50MFBE",
+          "short_description": "This project develops an open-source system to visualize and explore complex data from underwater ROVs, integrating panoramas, sonar, and point...",
+          "slug": "seasee-r-immersive-rov-mapping",
+          "status": null,
+          "student_name": "Cott3r",
+          "student_profile": null,
+          "tags": [],
+          "title": "SeaSee’r: Immersive ROV Mapping"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend the existing Marine AR Module Builder into a more accessible, scalable, and educator-friendly toolkit for creating augmented reality learning experiences in Unity. The primary objective is to reduce the technical barrier for educators and developers by introducing intuitive editor tools, structured workflows, and reusable systems for building marine AR modules.\n\nThe proposed system will include drag-and-drop environment upgradation, streamlined actor placement and configuration, and reusable behavior templates for movement, interaction, and ecological logic. To improve flexibility and maintainability, modules will support extensive JSON/script-based definitions, enabling structured and streamlined content creation. Validation tools will be implemented to detect missing assets, invalid configurations, and performance issues, ensuring reliability and usability.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_U6nhMlnR",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/U6nhMlnR",
+          "proposal_id": "v2AT2B1Q",
+          "short_description": "This project aims to extend the existing Marine AR Module Builder into a more accessible, scalable, and educator-friendly toolkit for creating...",
+          "slug": "extension-of-sandbox-toolkit-for-simplifying-the-development-of-marine-based-ar-modules",
+          "status": null,
+          "student_name": "Gunjan Vishwakarma",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extension of Sandbox Toolkit for simplifying the Development of Marine based AR Modules"
+        },
+        {
+          "code_url": null,
+          "description": "mARine currently lacks a dynamic, reproducible environment system. This project builds a seed-based procedural generation pipeline that creates consistent marine terrain and living coral ecosystems across devices. A deterministic noise system shapes the ocean floor using fractional Brownian motion, cluster-based placement populates it with seven coral species using slope filtering and raycast confirmation, and a rule-driven simulation governs growth, bleaching, reproduction, and die-off — all emerging from agent interactions rather than scripted behavior. The same seed always reconstructs the identical environment without storing any state, making it practical for mobile AR. Deliverables include: chunk-based terrain streaming, a per-agent coral lifecycle system, URP underwater rendering (caustics, volumetric fog), and Unity Job System optimization for real-time mobile AR performance.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_cg3YhJav",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/cg3YhJav",
+          "proposal_id": "4ZjxhSb9",
+          "short_description": "mARine currently lacks a dynamic, reproducible environment system. This project builds a seed-based procedural generation pipeline that creates...",
+          "slug": "ai-driven-dynamic-procedural-map-generation-system",
+          "status": null,
+          "student_name": "Harin Karru",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI-Driven Dynamic Procedural Map Generation System"
+        },
+        {
+          "code_url": null,
+          "description": "Currently, Catrobat users have to return to the Catroid IDE every time they want to play their projects, which breaks the experience and makes their creations feel less like real, standalone apps. To address this, I propose introducing a “Pin to Home Screen” feature that allows users to launch their projects directly from the Android home screen, just like any other app. This will be achieved using a lightweight ShortcutTrampolineActivity that retrieves the project ID and opens it directly in Play mode, along with proper task configuration so each project runs independently and exits back to the home screen instead of the IDE. The project will include a smooth UI integration with adaptive icons, a decoupled StageActivity for independent execution, robust lifecycle handling to manage renamed or deleted projects safely, and comprehensive automated testing (JUnit and Espresso) to ensure reliability across different Android versions.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_qvKxDk2q",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/qvKxDk2q",
+          "proposal_id": "ecvdTOGy",
+          "short_description": "Currently, Catrobat users have to return to the Catroid IDE every time they want to play their projects, which breaks the experience and makes their...",
+          "slug": "pin-projects-to-the-android-launcher-play-as-app-shortcuts",
+          "status": null,
+          "student_name": "Harsh somankar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pin projects to the Android launcher (“Play as app” shortcuts)"
+        },
+        {
+          "code_url": null,
+          "description": "This project takes the AI Tutor SDK further by fully integrating it into PocketCode, converting its block-based programs into AI-readable context, redesigning the UI to match PocketCode's visual style, and conducting user testing with internal and external users to gather actionable insights. As stretch goals, it explores a direct AI API mode and a RAG-based pipeline using PocketCode documentation stored in a local SQLite vector database to provide accurate, context-aware answers for students.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_Zzw7rfIO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Zzw7rfIO",
+          "proposal_id": "xDJ1x0xs",
+          "short_description": "This project takes the AI Tutor SDK further by fully integrating it into PocketCode, converting its block-based programs into AI-readable context,...",
+          "slug": "ai-mentor-for-pocketcode-students",
+          "status": null,
+          "student_name": "Muhammad Haris Sabil Al Karim",
+          "student_profile": null,
+          "tags": [],
+          "title": "AI Mentor for PocketCode Students"
+        },
+        {
+          "code_url": null,
+          "description": "Pocket Code currently lacks a scalable way for projects to communicate beyond a single device, which limits its ability to support real-time multiplayer features and IoT use cases. While Bluetooth-based communication exists, it is limited in range and flexibility, and does not support internet-based interaction or integration with modern systems like smart home platforms.\n\nThis project solves this by adding MQTT-based communication to Pocket Code through simple visual bricks for sending and receiving messages. A shared connection manager handles communication efficiently, with support for secure connections, message routing, and reliability through offline queuing and retries. It also introduces a standard topic structure for IoT integration (e.g., Home Assistant) and enables multiplayer synchronization over Wi-Fi, making Pocket Code a more connected and powerful platform.\n\nKey Deliverables:\n1. MQTT connection manager with lazy initialization and connection reuse\n2. Publish and Receive MQTT bricks integrated into Pocket Code\n3. Wildcard topic support and event-driven message handling\n4. Offline message queue with automatic retry on reconnect\n5. Secure communication using TLS and authentication\n6. Standardized MQTT topic conventions for IoT and Home Assistant integration\n7. MQTT-based multiplayer synchronization layer\n8. Comprehensive automated tests (TDD-based development)\n\nThis project transforms Pocket Code into a connected programming platform, enabling users to build real-time multiplayer applications and interact with IoT devices using an intuitive visual interface.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_Hy1Nuf2c",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Hy1Nuf2c",
+          "proposal_id": "YbwcwBGi",
+          "short_description": "Pocket Code currently lacks a scalable way for projects to communicate beyond a single device, which limits its ability to support real-time...",
+          "slug": "multiplayer-iot-and-home-assistant-support-via-two-mqtt-bricks",
+          "status": null,
+          "student_name": "Paras_77",
+          "student_profile": null,
+          "tags": [],
+          "title": "Multiplayer, IoT, and Home Assistant support via two MQTT bricks"
+        },
+        {
+          "code_url": null,
+          "description": "This project upgrades the AR-based Marine Ecosystem Simulation by improving its realism, scalability, and performance on mobile devices.\n\nThe current platform offers an interactive AR experience but lacks advanced ecosystem dynamics and scalable infrastructure. This project addresses these gaps by introducing procedurally generated marine environments (reef, open ocean, deep ocean) and more realistic behaviors such as predator-prey interactions, habitat-driven movement, and climate-based ecosystem changes.\n\nTo ensure smooth performance on mid-range devices, the system will incorporate optimizations such as LOD pipelines, shader efficiency improvements, spatial partitioning, and streaming-based spawning. These enhancements will enable real-time simulation of complex multi-species interactions while maintaining stable frame rates.\n\nFirebase integration will provide user authentication, persistent progress storage, and classroom module sharing, making the platform more scalable and suitable for educational use.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_g9NmhGww",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/g9NmhGww",
+          "proposal_id": "kbElpOsK",
+          "short_description": "This project upgrades the AR-based Marine Ecosystem Simulation by improving its realism, scalability, and performance on mobile devices. The current...",
+          "slug": "upgradation-of-ar-based-interactive-and-procedural-marine-ecosystem-simulation",
+          "status": null,
+          "student_name": "Prabhakar Joshi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Upgradation of AR-Based Interactive and Procedural Marine Ecosystem Simulation"
+        },
+        {
+          "code_url": null,
+          "description": "It is an AI layer that sits on top of a Unity marine ecosystem simulation and translates live simulation data into plain English narration, causal explanations, and natural-language spawn commands all without touching the underlying simulation logic.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_lAGUkzor",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lAGUkzor",
+          "proposal_id": "OKdCflI6",
+          "short_description": "It is an AI layer that sits on top of a Unity marine ecosystem simulation and translates live simulation data into plain English narration, causal...",
+          "slug": "gemini-powered-ecosystem-narration-and-analysis-interface",
+          "status": null,
+          "student_name": "Rohan_Sharma_",
+          "student_profile": null,
+          "tags": [],
+          "title": "Gemini-Powered Ecosystem Narration and Analysis Interface"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the challenge of bringing 3D-generated marine organisms to life through scalable and automated animation. While recent advances enable the generation of detailed 3D models, these assets often lack realistic motion and require manual rigging and keyframing, limiting their usability in interactive and educational applications.\n\nTo solve this, the project proposes a skeleton-based procedural animation system built using Python, Blender, and Unity. The system will automatically generate rigs and apply biologically inspired motion using procedural techniques such as kinematic chains and wave-based movement, enabling consistent animation across a wide range of marine organisms.\n\nThe final deliverables will include a modular animation pipeline, support for multiple movement behaviors (e.g., swimming and idle states), integration with existing 3D generation workflows, and documented demos showcasing real-time visualization in Unity.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_ploEKSl6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ploEKSl6",
+          "proposal_id": "oyRFMqel",
+          "short_description": "This project addresses the challenge of bringing 3D-generated marine organisms to life through scalable and automated animation. While recent...",
+          "slug": "skeleton-based-procedural-animation-system-for-marine-organisms",
+          "status": null,
+          "student_name": "Shivansh Pachnanda",
+          "student_profile": null,
+          "tags": [],
+          "title": "Skeleton Based Procedural Animation System for Marine Organisms"
+        },
+        {
+          "code_url": null,
+          "description": "Cephalopods display complex behavioral states such as stress, curiosity, aggression, and comfort, but interpreting these states currently depends on expert manual observation and lacks scalable, reproducible tools. This project will build an open source multimodal pipeline that automatically infers and classifies cephalopod behavioral sentiment from video and optional bioacoustic data using computer vision and deep learning.\r\nThe pipeline will include a dataset ingestion and preprocessing module supporting common video and audio formats, a behavioral feature extractor capturing locomotion, skin pattern dynamics driven by chromatophores, and body posture changes, and a sentiment classification system mapping extracted features to labeled behavioral states. A lightweight deployment API and interactive demo dashboard will make the system accessible to researchers and educators.\r\nKey deliverables include dataset ingestion and preprocessing scripts, a multimodal model baseline combining video and optional audio streams, a behavioral feature extraction module for movement and color and posture signals, a sentiment label classifier with training and evaluation scripts, full documentation with reproducible experiments, and a REST API with a demo dashboard for inference. The system will be designed for extensibility across species, datasets, and deployment environments including edge devices.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_DKC6wxoY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DKC6wxoY",
+          "proposal_id": "P7lZbkjc",
+          "short_description": "Cephalopods display complex behavioral states such as stress, curiosity, aggression, and comfort, but interpreting these states currently depends on...",
+          "slug": "sentiment-analysis-of-cephalopods",
+          "status": null,
+          "student_name": "siddharth_raj",
+          "student_profile": null,
+          "tags": [],
+          "title": "Sentiment Analysis of Cephalopods"
+        },
+        {
+          "code_url": null,
+          "description": "Pocket Paint is a drawing app currently being rewritten in Flutter. The original Android app includes advanced options like antialiasing and stroke smoothing, which help users create clean, high-quality artwork. However, these features are currently missing in the new Flutter version. This project will bridge that gap by bringing these advanced drawing capabilities to the new app. The final deliverables will include a native-matching \"Advanced Options\" UI menu, the integration of smoothing and antialiasing across all drawing tools (such as the Brush, Eraser, and Shapes), and ensuring that all artwork saves correctly and remains compatible with older Catrobat project files.",
+          "difficulty": null,
+          "id": "proj_international-catrobat-association_2026_YOzRaDeg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YOzRaDeg",
+          "proposal_id": "1c9hDngW",
+          "short_description": "Pocket Paint is a drawing app currently being rewritten in Flutter. The original Android app includes advanced options like antialiasing and stroke...",
+          "slug": "pocket-paint-flutter-antialiasing-and-smoothing-advanced-options",
+          "status": null,
+          "student_name": "Varun Kushwah",
+          "student_profile": null,
+          "tags": [],
+          "title": "Pocket Paint Flutter: antialiasing and smoothing (advanced options)"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

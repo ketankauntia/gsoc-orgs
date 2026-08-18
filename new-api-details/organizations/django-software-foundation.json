@@ -34,9 +34,9 @@
     "web applications",
     "python"
   ],
-  "total_projects": 19,
+  "total_projects": 23,
   "stats": {
-    "avg_projects_per_appeared_year": 1.9,
+    "avg_projects_per_appeared_year": 2.09,
     "projects_by_year": {
       "year_2016": 1,
       "year_2017": 0,
@@ -48,7 +48,7 @@
       "year_2023": 1,
       "year_2024": 4,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": 1,
@@ -61,9 +61,9 @@
       "year_2023": 1,
       "year_2024": 4,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 19
+    "total_students": 23
   },
   "years": {
     "year_2016": {
@@ -472,7 +472,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/django-software-foundation-8o"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/django-software-foundation-8o",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to bring dark mode support to Django’s issue tracker and improve its visual consistency with the main Django website. Currently, the main site supports dark mode while the Trac-based issue tracker does not, creating an inconsistent user experience. The project will implement a maintainable dark mode styling system, add a theme toggle supporting light, dark, and system preferences, and improve readability and accessibility across key pages such as tickets, reports, and wiki pages. The final deliverables include the dark mode implementation, UI refinements for important components, and documentation to support future maintenance and improvements.",
+          "difficulty": null,
+          "id": "proj_django-software-foundation_2026_zCsh2gn8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/zCsh2gn8",
+          "proposal_id": "YfxCBbZq",
+          "short_description": "This project aims to bring dark mode support to Django’s issue tracker and improve its visual consistency with the main Django website. Currently,...",
+          "slug": "unified-dark-mode-and-ui-consistency-for-django-s-issue-tracker",
+          "status": null,
+          "student_name": "Keha chandrakar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Unified Dark Mode and UI Consistency for Django’s Issue Tracker"
+        },
+        {
+          "code_url": null,
+          "description": "PostgreSQL’s `generate_series()` is powerful for reports and time‑series work, but Django currently lacks a first‑class `ORM API` for it. I will add native support in `django.contrib.postgres` by extending the `ORM` to treat set‑returning functions as table sources using `set_returning`, a new `Relation` abstraction, and `RelationCol` references, implemented via `CROSS JOIN LATERAL`. The result will let developers use `.annotate()`, `.filter()`, `.order_by()`, `.count()`, and `.aggregate()` with generated series without raw SQL. Deliverables include the API surface, type inference for `date/time` series, and a robust test suite covering edge cases, joins, and large sequences.",
+          "difficulty": null,
+          "id": "proj_django-software-foundation_2026_DS19UPgh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DS19UPgh",
+          "proposal_id": "jo3yYL36",
+          "short_description": "PostgreSQL’s `generate_series()` is powerful for reports and time‑series work, but Django currently lacks a first‑class `ORM API` for it. I will add...",
+          "slug": "add-generate-series-support-to-contrib-postgres",
+          "status": null,
+          "student_name": "p-r-a-v-i-n",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add generate_series() support to contrib.postgres"
+        },
+        {
+          "code_url": null,
+          "description": "This project introduces a formal Experimental API Framework for Django by modernizing DEP 2. It implements a three-tier opt-in architecture utilizing virtual namespaces (django.experimental), centralized feature flags, and decorator engines. By establishing strict governance lifecycles and build-time safety mechanisms like an \"LTS Kill-Switch\", this project allows the core team to safely test, iterate, and graduate new features based on real-world feedback without compromising Django's strict backward compatibility guarantees.",
+          "difficulty": null,
+          "id": "proj_django-software-foundation_2026_HEm4uE06",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/HEm4uE06",
+          "proposal_id": "UGf2K0PQ",
+          "short_description": "This project introduces a formal Experimental API Framework for Django by modernizing DEP 2. It implements a three-tier opt-in architecture utilizing...",
+          "slug": "implementing-a-formal-experimental-api-framework-for-django-core",
+          "status": null,
+          "student_name": "Praful Gulani",
+          "student_profile": null,
+          "tags": [],
+          "title": "Implementing a Formal Experimental API Framework for Django Core"
+        },
+        {
+          "code_url": null,
+          "description": "This proposal explains my plan to update Django's browser integration testing by moving from Selenium to Playwright. The main idea is to smoothly plug Playwright testing (using playwright.sync_api) into Django's current LiveServerTestCase setup. The project involves writing new Playwright test classes, converting the old Selenium tests, setting up CI/CD workflows, and finally deleting all the old Selenium code.",
+          "difficulty": null,
+          "id": "proj_django-software-foundation_2026_hVM2skuP",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hVM2skuP",
+          "proposal_id": "dxpKFCHR",
+          "short_description": "This proposal explains my plan to update Django's browser integration testing by moving from Selenium to Playwright. The main idea is to smoothly...",
+          "slug": "switch-to-playwright-tests-for-integration-testing",
+          "status": null,
+          "student_name": "Varun Kasyap Pentamaraju",
+          "student_profile": null,
+          "tags": [],
+          "title": "Switch to Playwright tests for integration testing"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

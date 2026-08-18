@@ -43,9 +43,9 @@
     "server",
     "application"
   ],
-  "total_projects": 38,
+  "total_projects": 43,
   "stats": {
-    "avg_projects_per_appeared_year": 5.43,
+    "avg_projects_per_appeared_year": 5.38,
     "projects_by_year": {
       "year_2016": 12,
       "year_2017": null,
@@ -57,7 +57,7 @@
       "year_2023": 4,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": 12,
@@ -70,9 +70,9 @@
       "year_2023": 4,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 37
+    "total_students": 43
   },
   "years": {
     "year_2016": {
@@ -813,7 +813,104 @@
     },
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/ruby",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "LowType currently relies on shim methods to bypass type checking when disabled, adding persistent runtime overhead on every method call through define_method closures and repeated Lowkey proxy lookups. This project eliminates that overhead entirely by rewriting typed methods directly onto the class using class_eval, producing plain untyped Ruby methods indistinguishable from hand-written code. Deliverables include removal of the shim execution path, class_eval based method rewriting integrated with Lowkey export methods, edge case handling for kwargs and defaults, benchmark results using benchmark-ips, and full test and documentation coverage. A working prototype already exists with real benchmark results showing 1.8 to 2x improvement over the current shim.",
+          "difficulty": null,
+          "id": "proj_ruby_2026_2myfjj2I",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/2myfjj2I",
+          "proposal_id": "b11uGNOH",
+          "short_description": "LowType currently relies on shim methods to bypass type checking when disabled, adding persistent runtime overhead on every method call through...",
+          "slug": "eliminating-shim-methods-via-method-rewriting-in-lowtype",
+          "status": null,
+          "student_name": "Aditya_Chauhan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Eliminating Shim Methods via Method Rewriting in LowType"
+        },
+        {
+          "code_url": null,
+          "description": "RubyGems.org currently lacks transparency into critical package registry events such as gem publications, ownership changes, and deletions, making it difficult to detect supply chain compromises or unauthorized modifications. This project proposes implementing a Merkle tree–based transparency log that records these events in an immutable, append-only structure. The log will provide cryptographically verifiable records that allow maintainers to detect unexpected changes and enable security researchers to audit the Ruby ecosystem.",
+          "difficulty": null,
+          "id": "proj_ruby_2026_hb6aCL4h",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/hb6aCL4h",
+          "proposal_id": "gsHyzOj0",
+          "short_description": "RubyGems.org currently lacks transparency into critical package registry events such as gem publications, ownership changes, and deletions, making it...",
+          "slug": "event-transparency-logs",
+          "status": null,
+          "student_name": "Amisha Chhajed",
+          "student_profile": null,
+          "tags": [],
+          "title": "Event Transparency Logs"
+        },
+        {
+          "code_url": null,
+          "description": "Developers using Ruby gems have no official way to know when a gem they depend on has a known security vulnerability. This project integrates vulnerability warnings into RubyGems.org by syncing the rubysec advisory database, implementing version-range matching via Gem::Requirement, and surfacing warnings on gem detail pages, search results, and a new public API endpoint — all with independent implementation to respect GPL licensing boundaries.",
+          "difficulty": null,
+          "id": "proj_ruby_2026_UujmjFyZ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UujmjFyZ",
+          "proposal_id": "574q6OHv",
+          "short_description": "Developers using Ruby gems have no official way to know when a gem they depend on has a known security vulnerability. This project integrates...",
+          "slug": "ruby-vulnerability-warnings-on-rubygems",
+          "status": null,
+          "student_name": "Harinish Sabapathi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Ruby Vulnerability Warnings on RubyGems"
+        },
+        {
+          "code_url": null,
+          "description": "This project addresses the absence of HTTP streaming support in the Rage framework, where responses are currently fully buffered before being sent to the client. This limitation prevents real-time use cases such as incremental LLM outputs, live data feeds, and large streaming responses. Even when applications generate data in chunks, the Iodine server collects all output into a buffer and sends it only after completion, making true streaming impossible.\n\nTo solve this, the project introduces native HTTP streaming using chunked transfer encoding across both Iodine (C layer) and Rage (Ruby layer). A new streaming path will be added to Iodine to support incremental writes with a robust backpressure mechanism, ensuring the event loop remains non-blocking. On the Rage side, a developer-friendly API (render stream:) will be implemented using enumerators and fibers, allowing applications to stream data declaratively while seamlessly handling pause/resume behaviour under backpressure.\n\nThe deliverables include implementing the http_stream transport, a Rack-compatible streaming writer with lifecycle and backpressure management, and the Rage streaming API. The project will also provide integration tests, edge-case handling (e.g., disconnects, high load), and updated documentation. This enables real-time streaming in Rage while preserving compatibility and supporting future extensions like HTTP/2.",
+          "difficulty": null,
+          "id": "proj_ruby_2026_BkEGZZ1M",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/BkEGZZ1M",
+          "proposal_id": "s9KpdhNz",
+          "short_description": "This project addresses the absence of HTTP streaming support in the Rage framework, where responses are currently fully buffered before being sent to...",
+          "slug": "http-streaming",
+          "status": null,
+          "student_name": "Piyush-Goenka",
+          "student_profile": null,
+          "tags": [],
+          "title": "HTTP Streaming"
+        },
+        {
+          "code_url": null,
+          "description": "Building modern Text User Interfaces (TUIs) often forces developers to choose between writing complex, low-level terminal sequence code or adopting restrictive, framework-specific solutions. This project addresses this fragmentation by bringing the universally beloved, declarative Shoes GUI DSL (via the Scarpe project) to the terminal environment, allowing developers to build complex CLI applications intuitively.\n\nThe proposed solution leverages a robust, dual-language architecture. The frontend consists of a pure-Ruby DSL where developers define UI layouts and business logic. The backend is a custom-built, high-performance Rust rendering engine responsible for flexbox-like layout calculations, double-buffered differential rendering, and non-blocking event polling. These two layers communicate seamlessly in real-time through a memory-safe C-FFI (Foreign Function Interface) bridge, ensuring the Ruby VM is never blocked by terminal I/O.\n\nBy the end of the project, the clearly defined deliverables are:\n\n1) A Universal Low-Level TUI C-API: A standalone Rust rendering engine exposing a clean C-ABI, making it usable not just by Ruby, but by any FFI-capable programming language.\n\n2) The scarpe-tui Ruby Backend: A complete mapping of core Shoes elements (stack, flow, button, edit_line, styling, and clipping) to the terminal grid.\n\n3) An Advanced Showcase Demo: A complex, asynchronous CLI application (inspired by \"Claude Code\") featuring scrollable histories and bidirectional data flow, proving the framework's readiness for real-world production use.\n\n4) Comprehensive Documentation and Test Suites: Ensuring maintainability and easy community adoption.",
+          "difficulty": null,
+          "id": "proj_ruby_2026_Vp8HuHnf",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Vp8HuHnf",
+          "proposal_id": "NCnjMm3w",
+          "short_description": "Building modern Text User Interfaces (TUIs) often forces developers to choose between writing complex, low-level terminal sequence code or adopting...",
+          "slug": "bring-scarpe-shoes-to-the-tui",
+          "status": null,
+          "student_name": "TureCatedu",
+          "student_profile": null,
+          "tags": [],
+          "title": "Bring Scarpe (shoes) to the TUI"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

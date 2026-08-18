@@ -30,9 +30,9 @@
     "computational geometry",
     "fonts"
   ],
-  "total_projects": 8,
+  "total_projects": 13,
   "stats": {
-    "avg_projects_per_appeared_year": 4,
+    "avg_projects_per_appeared_year": 4.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -44,7 +44,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
     "students_by_year": {
       "year_2016": null,
@@ -57,9 +57,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 5
     },
-    "total_students": 8
+    "total_students": 13
   },
   "years": {
     "year_2016": null,
@@ -232,7 +232,104 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/graphite"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 5,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/graphite",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Graphite is a powerful graphics editor, but it currently struggles to handle complex SVG files perfectly. Important details like custom text styles or advanced shapes may sometimes get lost when opening or saving files. My goal is to fix this by building a reliable, complete SVG pipeline. \nFirstly, I plan to add missing core features like gradients, patterns, and a proper Text-on-Path node so that Graphite can edit more SVG artwork natively. Followed by this, for any highly complex SVG features that Graphite still would not be able to edit directly, I will build a fallback system. This system will automatically convert those unsupported parts into static images rather than silently dropping them, ensuring the artwork looks exactly right when opened. Finally, I will improve how Graphite exports files, making sure layer names are saved as clean SVG IDs. Altogether, these changes will make Graphite a tool that artists can fully trust for professional SVG work.",
+          "difficulty": null,
+          "id": "proj_graphite_2026_xmzkZBJD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xmzkZBJD",
+          "proposal_id": "8RjpiTJQ",
+          "short_description": "Graphite is a powerful graphics editor, but it currently struggles to handle complex SVG files perfectly. Important details like custom text styles...",
+          "slug": "feature-complete-svg-import-and-rendering-support",
+          "status": null,
+          "student_name": "∅space",
+          "student_profile": null,
+          "tags": [],
+          "title": "Feature-complete SVG import and rendering support"
+        },
+        {
+          "code_url": null,
+          "description": "Title: Generic Gizmo System for Graphite\n\nProblem: Graphite currently has 6 separate shape-specific gizmo handlers (Circle, Star, Polygon, Arc, Grid, Spiral), each with duplicated code for hover detection, drag handling, and overlay rendering.\n\nSolution: A unified, data-driven gizmo system with three components:\n\nRegistry — Declarative mapping of node parameters to gizmo types\nGeneric Gizmos — Reusable components (Slider, Dial, Angle) that work with any compatible parameter\nManager — Auto-instantiates gizmos based on registry lookup\nDeliverables:\n\n3 generic gizmo types (SliderGizmo, DialGizmo, AngleGizmo)\nAll 6 existing shapes migrated to the new system\nOld handlers removed, reducing code duplication\nDeveloper documentation for extending to new nodes",
+          "difficulty": null,
+          "id": "proj_graphite_2026_PPOJpLlU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/PPOJpLlU",
+          "proposal_id": "w1PjhH3K",
+          "short_description": "Title: Generic Gizmo System for Graphite Problem: Graphite currently has 6 separate shape-specific gizmo handlers (Circle, Star, Polygon, Arc, Grid,...",
+          "slug": "system-for-nodes-displaying-gizmos-to-update-their-parameters",
+          "status": null,
+          "student_name": "Ayush Amawate",
+          "student_profile": null,
+          "tags": [],
+          "title": "System for Nodes Displaying Gizmos to Update Their Parameters"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of the project is to improve the existing implementation of the text node and extend the text support by adding lorem ipsum placeholder, formatting spans and typographical parameters, text on path, text in option to enforce casing (lower, upper, title) area, hyphenation, font fallbacks, flows between text areas, upper case, lowercase, toggle for ligatures and vertical typing.",
+          "difficulty": null,
+          "id": "proj_graphite_2026_pZMifaTq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/pZMifaTq",
+          "proposal_id": "1cFAPNov",
+          "short_description": "The goal of the project is to improve the existing implementation of the text node and extend the text support by adding lorem ipsum placeholder,...",
+          "slug": "text-improvement",
+          "status": null,
+          "student_name": "Bunnyy",
+          "student_profile": null,
+          "tags": [],
+          "title": "Text Improvement"
+        },
+        {
+          "code_url": null,
+          "description": "This project brings drawing tablet and touch support to Graphite and builds a modern GPU-accelerated brush engine designed for professional digital art workflows. It introduces non-destructive, resolution-independent stroke rendering with support for stylus features like pressure and tilt, enabling high-quality painting that stays sharp across zoom and resolution changes.",
+          "difficulty": null,
+          "id": "proj_graphite_2026_TQhpRSAt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TQhpRSAt",
+          "proposal_id": "L1ZMZmiY",
+          "short_description": "This project brings drawing tablet and touch support to Graphite and builds a modern GPU-accelerated brush engine designed for professional digital...",
+          "slug": "gpu-accelerated-brush-engine-and-integration-with-drawing-tablet-input",
+          "status": null,
+          "student_name": "Timon Schelling",
+          "student_profile": null,
+          "tags": [],
+          "title": "GPU-Accelerated Brush Engine and integration with Drawing Tablet Input"
+        },
+        {
+          "code_url": null,
+          "description": "This project refactors Graphite to create a more generalized graphic representation of paints. It introduces dedicated Gradient and Pattern nodes, as well as updated Fill and Stroke nodes that can consume generalized graphic sources, not just the current fill and color types. The project also enables the standalone rendering of colors, gradients, patterns, and other compatible graphics as ordinary layers.\n\nThe implementation will update Graphite's graphics, nodes, and Vello/SVG renderers to support gradient strokes and pattern fills. Additionally, SVG import will be supported for the MVP subset of these features. Stretch goals include broader gradient support, such as focal points, conic gradients, and gradients along strokes.",
+          "difficulty": null,
+          "id": "proj_graphite_2026_DvRD1zoE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DvRD1zoE",
+          "proposal_id": "VNKmoMST",
+          "short_description": "This project refactors Graphite to create a more generalized graphic representation of paints. It introduces dedicated Gradient and Pattern nodes, as...",
+          "slug": "generalized-graphical-data-rendering-representation",
+          "status": null,
+          "student_name": "Yohei Yamasaki",
+          "student_profile": null,
+          "tags": [],
+          "title": "Generalized graphical data rendering representation"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

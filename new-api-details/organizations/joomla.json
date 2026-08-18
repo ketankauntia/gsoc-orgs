@@ -42,9 +42,9 @@
     "web applications",
     "programming languages"
   ],
-  "total_projects": 36,
+  "total_projects": 39,
   "stats": {
-    "avg_projects_per_appeared_year": 5.14,
+    "avg_projects_per_appeared_year": 4.88,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 8,
@@ -56,7 +56,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": 5,
@@ -69,9 +69,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 34
+    "total_students": 39
   },
   "years": {
     "year_2016": {
@@ -835,7 +835,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/joomla"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/joomla",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project introduces a native Translator Feedback Loop for Joomla (Inspired by Reinforcement Learning from Human Feedback \"RLHF\") to improve machine translations over time.\n\nThis project will work by capturing human corrections and injecting them into future LLM prompts via a decoupled RAG architecture, the system aims to ensure consistent, community-standard terminology for all the supported languags.\n\nThe Final deliverable is a extension package including a specialized translator dashboard, background task scheduler and AI framework integration.",
+          "difficulty": null,
+          "id": "proj_joomla_2026_VBXfqNqD",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/VBXfqNqD",
+          "proposal_id": "ky1oWSrD",
+          "short_description": "This project introduces a native Translator Feedback Loop for Joomla (Inspired by Reinforcement Learning from Human Feedback \"RLHF\") to improve...",
+          "slug": "translator-feedback-loop-for-joomla-inspired-by-rlhf",
+          "status": null,
+          "student_name": "Krishna Gandhi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Translator Feedback Loop for Joomla (Inspired by RLHF)"
+        },
+        {
+          "code_url": null,
+          "description": "Problem: Currently, Joomla items such as articles are limited to a single category, which makes it difficult to organize content that belongs to multiple contexts. While tags are sometimes used as a workaround, they do not integrate with core features such as routing, menus, and structured layouts in the same way as categories.\n\n\nSolution: This project introduces multi-category support by implementing a generic mapping table (#__category_item_map). It preserves backward compatibility and SEO integrity by using a \"Primary Category\" as the main reference for routing, workflows, and parameter inheritance.\n\n\nDeliverables: A new database schema, an updated backend interface for multi-category selection, frontend updates to reflect multi-category assignments in item views and category listings, model-level integration for custom fields, extended batch operations, unit tests, and documentation.",
+          "difficulty": null,
+          "id": "proj_joomla_2026_fcmjILkz",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/fcmjILkz",
+          "proposal_id": "Ri3ML8KR",
+          "short_description": "Problem: Currently, Joomla items such as articles are limited to a single category, which makes it difficult to organize content that belongs to...",
+          "slug": "multicategory-support-for-joomla-items",
+          "status": null,
+          "student_name": "Reda Shewil",
+          "student_profile": null,
+          "tags": [],
+          "title": "Multicategory Support for Joomla Items"
+        },
+        {
+          "code_url": null,
+          "description": "Joomla's workflow system and the scheduled task system currently work independently of each other, and this project aims to connect these tools by creating an Automated Workflow feature that combines both systems, which will enable administrators to configure timed rules directly within the workflow transition configuration, specifying how long after entering a stage an item should automatically be moved to the next stage, supporting both straight workflows and loops. A background scheduled task plugin will then execute these transitions at defined intervals. \nDeliverables:\n- A task plugin that executes timed transitions.\n- A workflow plugin that logs stage entry timestamps.\n- A UI in the transition edit form and graphical editor.\n- Per-item scheduled transitions for individual articles.\n- An execution history and upcoming transitions preview view.",
+          "difficulty": null,
+          "id": "proj_joomla_2026_ptJLd27k",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ptJLd27k",
+          "proposal_id": "YCmBaPMO",
+          "short_description": "Joomla's workflow system and the scheduled task system currently work independently of each other, and this project aims to connect these tools by...",
+          "slug": "automated-workflow",
+          "status": null,
+          "student_name": "Weno Hans",
+          "student_profile": null,
+          "tags": [],
+          "title": "Automated Workflow"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -25,9 +25,9 @@
     "cloud",
     "analytics"
   ],
-  "total_projects": 0,
+  "total_projects": 2,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -39,7 +39,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": null,
@@ -52,9 +52,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 0
+    "total_students": 2
   },
   "years": {
     "year_2016": null,
@@ -67,7 +67,56 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/malariagen",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Identification of close kin is a critical quality control step for genomic analysis, as well as an analytical goal in itself. Demographic processes such as inbreeding, and variation in recombination rate over small genomes, may make accurate relatedness inference challenging for Anopheles taxa. Kinship statistics derived from the condensed Jacquard coefficients offer the possibility of more accurate relatedness estimation, especially where inbreeding is an issue. However, standard tools for these calculations such as NGSRelate are difficult to integrate into Python and use a computationally expensive expectation-maximization algorithm. The recent development of Kindred suggests a constrained least-squares formulation that may be fast enough to be used in an interactive environment. This project will develop a Python library that combines both approaches in a hybrid algorithm that should make estimating the Jacquard coefficients both fast and accurate. This library will be integrated into the MalariaGEN API and make relatedness estimation of Anopheles taxa accessible to a broad audience on Google Colab.",
+          "difficulty": null,
+          "id": "proj_malariagen_2026_ar0jqOKO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ar0jqOKO",
+          "proposal_id": "ndOi0ewj",
+          "short_description": "Identification of close kin is a critical quality control step for genomic analysis, as well as an analytical goal in itself. Demographic processes...",
+          "slug": "development-of-accurate-relatedness-estimation-for-malaria-vectors",
+          "status": null,
+          "student_name": "Jacob Garber",
+          "student_profile": null,
+          "tags": [],
+          "title": "Development of Accurate Relatedness Estimation for Malaria Vectors"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to build a machine-learning taxon classifier for genomic classification in malaria mosquitoes, operating directly on raw sequencing reads (FASTQ files). Accurate taxonomic identification is essential for malaria vector genomics, since many Anopheles mosquitoes are morphologically indistinguishable and misclassification can lead to incorrect downstream analyses, flawed epidemiological interpretation, and suboptimal control strategies. Current approaches typically rely on genotype calls produced by variant-calling pipelines. While effective, these approaches introduce additional computational cost and complexity, and they are less convenient in settings where only raw reads are available.\n\nThe goal of this project is to develop a lightweight FASTQ-based classifier that can guide a sample to the correct major taxonomic group or downstream genomic resource without requiring full genotyping or fine-scale species splitting. Rather than attempting detailed resolution within closely related complexes at the outset, the classifier will focus on robust assignment to broader taxonomic groupings or reference frameworks, such as An. gambiae, An. funestus, or An. stephensi.",
+          "difficulty": null,
+          "id": "proj_malariagen_2026_jvqBoHfQ",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/jvqBoHfQ",
+          "proposal_id": "pF0znJWp",
+          "short_description": "This project aims to build a machine-learning taxon classifier for genomic classification in malaria mosquitoes, operating directly on raw sequencing...",
+          "slug": "building-a-machine-learning-taxon-classifier-for-genomic-classification-in-malaria-mosquitoes",
+          "status": null,
+          "student_name": "Sadat Bashir",
+          "student_profile": null,
+          "tags": [],
+          "title": "Building a machine-learning taxon classifier for genomic classification in malaria mosquitoes"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "support@malariagen.net",

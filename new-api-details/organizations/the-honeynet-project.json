@@ -62,9 +62,9 @@
     "malware analysis",
     "Threat Intelligence"
   ],
-  "total_projects": 101,
+  "total_projects": 109,
   "stats": {
-    "avg_projects_per_appeared_year": 10.1,
+    "avg_projects_per_appeared_year": 9.91,
     "projects_by_year": {
       "year_2016": 11,
       "year_2017": 12,
@@ -76,7 +76,7 @@
       "year_2023": 6,
       "year_2024": 9,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 8
     },
     "students_by_year": {
       "year_2016": 11,
@@ -89,9 +89,9 @@
       "year_2023": 6,
       "year_2024": 9,
       "year_2025": 9,
-      "year_2026": null
+      "year_2026": 8
     },
-    "total_students": 101
+    "total_students": 109
   },
   "years": {
     "year_2016": {
@@ -2051,7 +2051,152 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-honeynet-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 8,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-honeynet-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to refactor GreedyBear's dashboard into a fully configuration-driven widget system, giving administrators the power to tailor the interface without any code changes. Currently, every widget (type, data source, size, and position) is hardcoded, making customization impossible without touching the source code.\n\nThe work is organized into three layers: a Widget Registry that maps each widget to its React component, default size, and API endpoints; a Dashboard Configuration stored as a JSON blob in the backend and served via a DRF endpoint; and an Admin UI featuring drag-and-drop reordering and resizing, accessible only to superusers. All eight existing widgets will be refactored into self-contained, registry-conformant components, and a shared useWidgetData hook will eliminate duplicated data-fetching logic across the codebase. A Django DashboardConfig model will persist the global layout, with a graceful fallback to the default configuration when none exists.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_9CLNdcdS",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9CLNdcdS",
+          "proposal_id": "TEoMdt9t",
+          "short_description": "This project aims to refactor GreedyBear's dashboard into a fully configuration-driven widget system, giving administrators the power to tailor the...",
+          "slug": "greedybear-dashboard-modularization",
+          "status": null,
+          "student_name": "armoredvortex",
+          "student_profile": null,
+          "tags": [],
+          "title": "GreedyBear: Dashboard Modularization"
+        },
+        {
+          "code_url": null,
+          "description": "This project proposes a secure, scalable push-based API designed to transform GreedyBear into an open data sink for the global honeypot community. The architecture focuses on high-performance ingestion by capturing raw telemetry from external sensors and offloading tasks directly to Django-Q for asynchronous processing. By utilizing Django-Q’s native task queuing and buffering capabilities, the system ensures non-blocking event ingestion and high responsiveness. This design emphasizes architectural efficiency and full integration with the existing IOC extraction, merging, and scoring pipelines, allowing for robust normalization and data consistency without the need for redundant storage layers.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_4SAdqqai",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4SAdqqai",
+          "proposal_id": "p4tlt7jm",
+          "short_description": "This project proposes a secure, scalable push-based API designed to transform GreedyBear into an open data sink for the global honeypot community....",
+          "slug": "greedybear-injection-event-collector-api",
+          "status": null,
+          "student_name": "Dorna Raj Gyawali",
+          "student_profile": null,
+          "tags": [],
+          "title": "GreedyBear Injection Event Collector API"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to transform how analysts interact with threat intelligence data in IntelOwl by introducing a conversational AI interface. Currently, analysts must manually navigate dashboards, query APIs, and correlate results across different jobs and investigations. To solve this, I will integrate a privacy-preserving, self-hosted LLM chatbot using Ollama and a LangChain ReAct agent. The agent will be equipped with custom tools to query IntelOwl's internal REST API using natural language. Key deliverables include:\n1)  A new Django chatbot app handling WebSocket connections via Django Channels for real-time token streaming.\n2) Ollama Docker integration with CPU/GPU auto-detection.\n3) A native React chat component embedded in the existing frontend.\n4) Custom LLM tools for triggering analyses and searching data models.\n5) Comprehensive test coverage and detailed documentation for users and future maintainers.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_K3oBuGJE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/K3oBuGJE",
+          "proposal_id": "CA9dq9Zq",
+          "short_description": "This project aims to transform how analysts interact with threat intelligence data in IntelOwl by introducing a conversational AI interface....",
+          "slug": "intelowl-integrating-a-self-deployed-llm-chatbot-for-threat-intelligence",
+          "status": null,
+          "student_name": "Francesco Berardi",
+          "student_profile": null,
+          "tags": [],
+          "title": "IntelOwl: Integrating a Self-Deployed LLM Chatbot for Threat Intelligence"
+        },
+        {
+          "code_url": null,
+          "description": "EventHorizon is a multi protocol IoT tarpit framework designed to trap automated network scanners. However, its current static deception mechanisms make the system predictable and allow scanners to fingerprint and evade the tarpit.\n\nThis project solves this problem with a bio-inspired deception engine that adapts biological strategies such as camouflage, bluffing, and playing dead to low interaction IoT protocols. Furthermore, it modernizes the observability by migrating its telemetry to OpenTelemetry for cross-protocol trace correlation and structured data analysis.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_8IC82cX6",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8IC82cX6",
+          "proposal_id": "lFA1mdL8",
+          "short_description": "EventHorizon is a multi protocol IoT tarpit framework designed to trap automated network scanners. However, its current static deception mechanisms...",
+          "slug": "hardening-eventhorizon-with-opentelemetry-and-bio-inspired-deception-across-iot-protocol-tarpits",
+          "status": null,
+          "student_name": "Haydar Amru Revanda",
+          "student_profile": null,
+          "tags": [],
+          "title": "Hardening EventHorizon with OpenTelemetry and Bio Inspired Deception Across IoT Protocol Tarpits"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this project is to improve GreedyBear’s threat intelligence capabilities by incorporating honeypot payload files received from T-Pot. Currently, GreedyBear only receives and handles metadata such as IP addresses, ports, and credentials from Elasticsearch logs, while actual threat payloads received from honeypots remain unused and inaccessible to analysts .\nIn this regard, this project proposes a secure end-to-end payload ingestion pipeline between T-Pot and GreedyBear. To achieve this, a FastAPI-based microservice will be deployed along with T-Pot to dynamically expose payload files and their associated metadata such as hashes and MIME types via authenticated APIs without altering existing honeypot functionality or imposing additional system overhead.\nOn the GreedyBear end of the pipeline, a scheduled Django Q2 task will be implemented to fetch new payloads and securely store them in a quarantined environment while ensuring deduplication via cryptographic hashes and metadata indexing in PostgreSQL for easy retrieval via a REST API while imposing strict access controls to only allow authorized personnel to download payload files.\nMoreover, the system will also be designed to optionally share received payloads with MalwareBazaar to contribute to the threat intelligence community as well.\n\nIn summary, this project aims to greatly improve GreedyBear’s threat intelligence and security analysis capabilities by not only ingesting threat indicators but also threat payloads to become a comprehensive threat intelligence platform for the organization and the entire threat intelligence community at large.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_gm6UndtK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/gm6UndtK",
+          "proposal_id": "QGhuI7R5",
+          "short_description": "The goal of this project is to improve GreedyBear’s threat intelligence capabilities by incorporating honeypot payload files received from T-Pot....",
+          "slug": "greedybear-access-payload-files",
+          "status": null,
+          "student_name": "Krishna Awasthi",
+          "student_profile": null,
+          "tags": [],
+          "title": "Greedybear: Access payload files"
+        },
+        {
+          "code_url": null,
+          "description": "Artemis currently requires all targets to go through the full discovery pipeline even when the HTTP endpoint is already known, lacks deep crawling capabilities, leaves non-CMS technology detection results unused, has no frontend authentication, and is missing detectors for several common vulnerability classes. This project addresses these gaps by enabling direct URL scanning to bypass unnecessary enumeration, replacing the single-page BeautifulSoup crawler with a Katana + uro + gf pipeline for deep crawling, making Wappalyzer's technology detection actionable through intelligent task routing to downstream modules, adding token auto-generation and session-based frontend authentication, and implementing three new vulnerability detectors: SSTI (via TInjA), OS command injection, and NoSQL injection (error-based). All work follows Artemis's existing Karton module conventions with no architectural changes required.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_s6YWGI16",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/s6YWGI16",
+          "proposal_id": "ShRqbrpK",
+          "short_description": "Artemis currently requires all targets to go through the full discovery pipeline even when the HTTP endpoint is already known, lacks deep crawling...",
+          "slug": "expanding-artemis-coverage-with-improved-discovery-and-vulnerability-detection",
+          "status": null,
+          "student_name": "Rafli Permana",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expanding Artemis Coverage with Improved Discovery and Vulnerability Detection"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to harden IntelOwl's connector ecosystem - the critical egress layer for routing threat intelligence data by resolving Django ORM inefficiencies, task-safety mutability bugs in Celery workers, and false-positive health checks. The project will be executed by fixing core database and syntax bottlenecks, implementing native API diagnostics, and introducing a shared CTIConnector base class to de duplicate observable extraction logic. Finally, a lightweight dockerized CI testing pipeline will be established for the MISP connector to ensure long-term ecosystem stability.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_T4XiKrRO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/T4XiKrRO",
+          "proposal_id": "5rCmk6AP",
+          "short_description": "This project aims to harden IntelOwl's connector ecosystem - the critical egress layer for routing threat intelligence data by resolving Django ORM...",
+          "slug": "intelowl-integration-ecosystem-connector-optimization",
+          "status": null,
+          "student_name": "sanjib2006",
+          "student_profile": null,
+          "tags": [],
+          "title": "IntelOwl: Integration Ecosystem & Connector Optimization"
+        },
+        {
+          "code_url": null,
+          "description": "DICOMHawk is an open-source honeypot that emulates a vulnerable DICOM medical imaging server to attract and log unauthorized access attempts. The current v3.0 rewrite is functional at the core protocol level but presents a single fixed identity, lacks a web interface, has incomplete DIMSE handler coverage, and performs no analysis on attacker-submitted payloads.\n\nThis project transforms DICOMHawk into a profile-driven deception platform. A profile system allows the honeypot to impersonate different medical imaging systems through YAML-backed configuration, controlling the DICOM identity, web-facing surface, and honeytrap behavior per deployment. An attacker-facing web extension built with Flask exposes realistic viewer interfaces and honeytrap endpoints, while browser and environment fingerprinting collects telemetry about attacker infrastructure. On the protocol side, the project completes missing DIMSE handlers (associate, release, abort) and adds DICOMweb (QIDO-RS, WADO-RS, STOW-RS) endpoints. A structured logging pipeline with session correlation ties DICOM, web, and fingerprint events together. A static-analysis sandbox quarantines and analyzes uploaded payloads without execution, shipping with starter YARA rules. Finally, Docker deployment is hardened for safer operation.\n\nDeliverables: Profile-based architecture with two starter profiles, attacker-facing web extension with per-profile templates, operator Web API, browser fingerprinting with correlation database, completed DIMSE and DICOMweb handlers, unified JSON event logging with session correlation, static-analysis sandbox with YARA support, and hardened Docker deployment.",
+          "difficulty": null,
+          "id": "proj_the-honeynet-project_2026_nodrqwrt",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/nodrqwrt",
+          "proposal_id": "mwyIOZQA",
+          "short_description": "DICOMHawk is an open-source honeypot that emulates a vulnerable DICOM medical imaging server to attract and log unauthorized access attempts. The...",
+          "slug": "improving-the-dicomhawk-medical-honeypot-profile-driven-deception-with-fingerprinting-sandbox",
+          "status": null,
+          "student_name": "Vibe",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improving the DICOMHawk Medical Honeypot: Profile-Driven Deception with Fingerprinting & Sandbox"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

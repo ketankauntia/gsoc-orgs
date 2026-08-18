@@ -44,9 +44,9 @@
     "climate science",
     "Ecological Forecasting,"
   ],
-  "total_projects": 30,
+  "total_projects": 34,
   "stats": {
-    "avg_projects_per_appeared_year": 3.33,
+    "avg_projects_per_appeared_year": 3.4,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": 3,
@@ -58,7 +58,7 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -71,9 +71,9 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 25
+    "total_students": 34
   },
   "years": {
     "year_2016": null,
@@ -698,7 +698,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/pecan-project"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/pecan-project",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "An LLM-assisted, human-supervised pipeline to extract, interpret, and reconstruct agronomic and ecological experiment data from scientific papers into structured, BETYdb-compatible records. The system uses an intermediate representation (IR) with field-level provenance (extracted/inferred/unresolved), deterministic validation, and experimental reconstruction logic to ensure accuracy, consistency, and traceability, significantly reducing manual effort and improving data quality and scalability.",
+          "difficulty": null,
+          "id": "proj_pecan-project_2026_9N3lJpwq",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9N3lJpwq",
+          "proposal_id": "jhOuHnPU",
+          "short_description": "An LLM-assisted, human-supervised pipeline to extract, interpret, and reconstruct agronomic and ecological experiment data from scientific papers...",
+          "slug": "llm-assisted-extraction-of-agronomic-and-ecological-experiments-into-structured-data",
+          "status": null,
+          "student_name": "Abhishek Kumar Rai",
+          "student_profile": null,
+          "tags": [],
+          "title": "LLM-Assisted Extraction of Agronomic and Ecological Experiments into Structured Data"
+        },
+        {
+          "code_url": null,
+          "description": "To validate ecological models against new data sources, PEcAn researchers currently bypass the rigid, database-dependent benchmarking module, instead writing fragmented, \"one-off\" scripts. This project solves this by replacing the rigid benchmarking module with a highly flexible, general-purpose Validation Toolkit. Built entirely on R data frames, the toolkit extracts successful design patterns from existing scripts to let users ingest arbitrary data via YAML configurations (bypassing the database entirely), align time/space, and calculate statistical metrics. The toolkit will be rigorously tested on a Biogeochemistry Minimum Viable Product (MVP) using specific AmeriFlux sites and targeted global meta-datasets. Final deliverables include the fully documented Toolkit R Package, automated Quarto reporting templates, robust test suites, and an educational tutorial vignette.",
+          "difficulty": null,
+          "id": "proj_pecan-project_2026_4qOMZTZw",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/4qOMZTZw",
+          "proposal_id": "yXC8oOhI",
+          "short_description": "To validate ecological models against new data sources, PEcAn researchers currently bypass the rigid, database-dependent benchmarking module, instead...",
+          "slug": "benchmarking-and-validation-framework",
+          "status": null,
+          "student_name": "Ayushman1210",
+          "student_profile": null,
+          "tags": [],
+          "title": "Benchmarking and Validation Framework"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to refactor the core PEcAn workflow by decoupling heavy computational logic from disk I/O. Currently, data is passed via hidden .RData files, making the system difficult to test and maintain. I will modularize the Trait-Meta-analysis-Configuration chain to allow for in-memory data passing while maintaining data provenance as an opt-in persistence feature. Key deliverables include a \"pure\" version of get.trait.data.pft(), a standalone design matrix generator, and updated PDA/SDA workflows to support the new modular architecture, ensuring a more transparent and testable pipeline for ecological modeling.",
+          "difficulty": null,
+          "id": "proj_pecan-project_2026_ji7y6Llg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ji7y6Llg",
+          "proposal_id": "Uz9qoGyH",
+          "short_description": "This project aims to refactor the core PEcAn workflow by decoupling heavy computational logic from disk I/O. Currently, data is passed via hidden...",
+          "slug": "increasing-pecan-modularity-refactoring-the-trait-meta-analysis-configuration-pipeline",
+          "status": null,
+          "student_name": "Om Kapale",
+          "student_profile": null,
+          "tags": [],
+          "title": "Increasing PEcAn Modularity - Refactoring the Trait-Meta-analysis-Configuration Pipeline"
+        },
+        {
+          "code_url": null,
+          "description": "PEcAn's North American carbon reanalysis assimilates satellite and ground observations into SIPNET at 1km resolution, but has never been directly compared to TRENDY or CMIP model ensembles. This project builds a reproducible Python pipeline using ILAMB to score PEcAn alongside all available TRENDY and CMIP models on the same observational benchmarks across five to six variables (AGB, LAI, soil moisture, soil carbon, GPP, NEE). Deliverables include ILAMB scorecards, a reusable ensemble calibration module comparing within-model vs across-model uncertainty, regional diagnostic notebooks, and updated temporal benchmarks contributed back to ILAMB.",
+          "difficulty": null,
+          "id": "proj_pecan-project_2026_uwUA1R02",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uwUA1R02",
+          "proposal_id": "X9tS73mC",
+          "short_description": "PEcAn's North American carbon reanalysis assimilates satellite and ground observations into SIPNET at 1km resolution, but has never been directly...",
+          "slug": "benchmarking-pecan-carbon-reanalysis-against-trendy-and-cmip-using-ilamb",
+          "status": null,
+          "student_name": "Tejas Dahiya",
+          "student_profile": null,
+          "tags": [],
+          "title": "Benchmarking PEcAn Carbon Reanalysis Against TRENDY and CMIP Using ILAMB"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

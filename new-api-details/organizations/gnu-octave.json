@@ -37,9 +37,9 @@
     "scientific computing",
     "numerical methods"
   ],
-  "total_projects": 23,
+  "total_projects": 25,
   "stats": {
-    "avg_projects_per_appeared_year": 2.3,
+    "avg_projects_per_appeared_year": 2.27,
     "projects_by_year": {
       "year_2016": 5,
       "year_2017": 4,
@@ -51,7 +51,7 @@
       "year_2023": 2,
       "year_2024": 2,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": 5,
@@ -64,9 +64,9 @@
       "year_2023": 2,
       "year_2024": 2,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 22
+    "total_students": 25
   },
   "years": {
     "year_2016": {
@@ -553,7 +553,56 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/gnu-octave"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/gnu-octave",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The GNU Octave Statistics package currently lacks an object-oriented framework for linear regression, missing the deep statistical diagnostics and memory-efficient deployment options found in MATLAB. This project aims to implement the LinearModel and CompactLinearModel classes to cleanly separate heavy model development from lightweight predictions. It will also modernize the fitlm function to support table inputs and Wilkinson formulas, and introduce a highly efficient stepwiselm function for automated model selection. The classes will include essential methods, extensive BIST testing, and comprehensive documentation, greatly improving Octave's statistical capabilities and MATLAB compatibility.",
+          "difficulty": null,
+          "id": "proj_gnu-octave_2026_YKFoacXh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/YKFoacXh",
+          "proposal_id": "FBciPVwN",
+          "short_description": "The GNU Octave Statistics package currently lacks an object-oriented framework for linear regression, missing the deep statistical diagnostics and...",
+          "slug": "add-linearmodel-and-compactlinearmodel-objects-to-the-statistics-package",
+          "status": null,
+          "student_name": "Avanish Salunke",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add LinearModel and CompactLinearModel objects to the statistics package"
+        },
+        {
+          "code_url": null,
+          "description": "This project implements an anova classdef for the GNU Octave statistics package, providing a unified object-oriented interface for one-way, two-way, and N-way analysis of variance. The anova class delegates core computation to the existing anova1, anova2, and anovan functions, preserving their tested logic while exposing a clean, MATLAB-compatible OOP API with properties (Coefficients, anova table, fitted values, residuals, diagnostics) and methods (summary, multcompare, plotDiagnostics, predict, getEffectSizes). The class stores model state, enabling interactive post-hoc workflows without refitting. Beyond the classdef, the project delivers targeted performance improvements to the underlying functions: vectorizing loop-heavy group statistics in anova1 with accumarray, vectorizing anova2 SSE computation, reducing memory in anovan interaction column construction, and adding NaN handling to anova2. Deliverables: (1) anova classdef with constructor, properties, and core methods, (2) summary and display methods with formatted ANOVA table output, (3) multcompare method for post-hoc pairwise comparisons, (4) plotDiagnostics method for residual and leverage plots, (5) performance optimizations to anova1, anova2, anovan internals, (6) NaN handling for anova2, (7) comprehensive BISTs and Texinfo documentation, (8) benchmark suite. All computation reuses existing functions with no architectural rewrites.",
+          "difficulty": null,
+          "id": "proj_gnu-octave_2026_Zwt7NAfh",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Zwt7NAfh",
+          "proposal_id": "h46FTatk",
+          "short_description": "This project implements an anova classdef for the GNU Octave statistics package, providing a unified object-oriented interface for one-way, two-way,...",
+          "slug": "add-anova-classdef-object-to-the-gnu-octave-statistics-package",
+          "status": null,
+          "student_name": "beingamanforever",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add anova Classdef Object to the GNU Octave Statistics Package"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

@@ -47,9 +47,9 @@
     "verification of concurrent systems",
     "jvm"
   ],
-  "total_projects": 46,
+  "total_projects": 48,
   "stats": {
-    "avg_projects_per_appeared_year": 4.6,
+    "avg_projects_per_appeared_year": 4.36,
     "projects_by_year": {
       "year_2016": 10,
       "year_2017": 7,
@@ -61,7 +61,7 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 2
     },
     "students_by_year": {
       "year_2016": 10,
@@ -74,9 +74,9 @@
       "year_2023": 2,
       "year_2024": 3,
       "year_2025": 3,
-      "year_2026": null
+      "year_2026": 2
     },
-    "total_students": 43
+    "total_students": 48
   },
   "years": {
     "year_2016": {
@@ -1012,7 +1012,56 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/the-jpf-team-hg"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 2,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/the-jpf-team-hg",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "JPF currently cannot fully analyze Java 17 programs that use sealed classes and records — two features now standard in modern Java. This project completes Java 17 support in jpf-core by fixing sealed class enforcement, adding full record support (classfile parsing, metadata storage, and execution), and producing a Java 17 audit document that maps all remaining gaps for future contributors. The work targets the java-17 branch and builds on an existing contribution to the codebase.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2026_8rNFgFox",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8rNFgFox",
+          "proposal_id": "slcLO7bV",
+          "short_description": "JPF currently cannot fully analyze Java 17 programs that use sealed classes and records — two features now standard in modern Java. This project...",
+          "slug": "support-for-java-17-in-jpf-core",
+          "status": null,
+          "student_name": "Darshan Raghavendrachari",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support for Java 17 in jpf-core"
+        },
+        {
+          "code_url": null,
+          "description": "Java-Ranger is a path merging extension of Symbolic Pathfinder, that collapses\nmultiple execution paths into a single region with a disjunctive constraint.\nCurrently, it handles only integer constrains, which means, floating-point (FP)\noperations are either approximated unsoundly or cause solver errors. In this\nproject, the aim is to add sound IEEE-754 floating-point support to Java ranger,\nenabling the correct summarization of regions containing FP arithmetic,\ncomparisons, conversions, and library calls. The work heavily involves\nrefactoring the underlying FP support in SPF (Modelling special values, rounding,\ncomparisons, and conversions), then extending Java Ranger’s AST visitors,\nmerging heuristics, and solver integration to handle the new FP constraints. The\nresult will be an engine capable of analyzing FP-Java programs.\nDeliverables include:\n\n- New floating‑point expression nodes in the numeric package.\n- Updated bytecode handlers for all FP instructions.\n- Solver integration for Z3bitvector using the floating‑point theory.\n- Constant folding and simplification passes for FP expressions.\n- A test suite validating the correctness and coverage of FP handling.\n- Documentation of the new API and usage.",
+          "difficulty": null,
+          "id": "proj_the-jpf-team_2026_st912I1R",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/st912I1R",
+          "proposal_id": "vwHdpT6Y",
+          "short_description": "Java-Ranger is a path merging extension of Symbolic Pathfinder, that collapses multiple execution paths into a single region with a disjunctive...",
+          "slug": "support-floating-point-constraints-for-path-merged-regions",
+          "status": null,
+          "student_name": "Salmane Khalili",
+          "student_profile": null,
+          "tags": [],
+          "title": "Support Floating Point Constraints for Path-Merged Regions"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

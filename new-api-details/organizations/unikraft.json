@@ -32,7 +32,7 @@
     "software reuse",
     "software configurability"
   ],
-  "total_projects": 16,
+  "total_projects": 20,
   "stats": {
     "avg_projects_per_appeared_year": 4,
     "projects_by_year": {
@@ -46,7 +46,7 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -59,9 +59,9 @@
       "year_2023": 4,
       "year_2024": 4,
       "year_2025": 5,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 16
+    "total_students": 20
   },
   "years": {
     "year_2016": null,
@@ -393,7 +393,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/unikraft"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/unikraft",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The core external libraries that power Unikraft (musl, lwip, and gcc) are currently a few years out of date. This creates technical debt and prevents developers from using modern C/C++ compiler features. The project aims to solve this by updating these critical libraries to their latest versions: musl to 1.2.5, lwip to 2.2.1, and gcc to 14.2.0.\n\nTo ensure this update doesn't break existing projects, I will implement Unikraft's new Microlibrary Versioning RFC. Instead of completely overwriting the old libraries, I will add the modern versions as selectable options, allowing users to toggle between the legacy and updated toolchains safely. The core technical work will involve manually rebasing Unikraft's custom patches, fixing new compilation errors, and ensuring network stability.\n\nThe final deliverables for this project will be:\n\n1). Fully updated, patched, and integrated versions of lib-musl, lib-lwip, and lib-gcc running alongside their older counterparts.\n\n2). Verified stability for complex catalog-core applications (like SQLite, Nginx, and Redis) built using the new toolchain.\n\n3). Documentation explaining how users can seamlessly switch their projects between the legacy and modern library versions.",
+          "difficulty": null,
+          "id": "proj_unikraft_2026_9nXXVox5",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/9nXXVox5",
+          "proposal_id": "yVunPQtn",
+          "short_description": "The core external libraries that power Unikraft (musl, lwip, and gcc) are currently a few years out of date. This creates technical debt and prevents...",
+          "slug": "expanding-the-unikraft-software-support-ecosystem",
+          "status": null,
+          "student_name": "Cristian Andrei",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expanding the Unikraft Software Support Ecosystem"
+        },
+        {
+          "code_url": null,
+          "description": "This project adds Hyperlight as a new VMM backend in KraftKit, enabling Unikraft unikernels to run with `kraft run --plat hyperlight`. The work will introduce platform registration and a new Hyperlight driver in the machine layer, then implement the full machine lifecycle: create, start, stop, delete, inspect, list, logs, and watch. It will start with a minimal boot path for a basic kernel, then extend to networking and storage support where possible. \nBy the end of the project, KraftKit will have first-class Hyperlight support, and users will be able to manage Hyperlight machines through the standard CLI workflow.",
+          "difficulty": null,
+          "id": "proj_unikraft_2026_DIK6a0IM",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/DIK6a0IM",
+          "proposal_id": "VY0OaDtK",
+          "short_description": "This project adds Hyperlight as a new VMM backend in KraftKit, enabling Unikraft unikernels to run with `kraft run --plat hyperlight`. The work will...",
+          "slug": "add-kraftkit-support-for-hyperlight",
+          "status": null,
+          "student_name": "Jaidev Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Add KraftKit Support for Hyperlight"
+        },
+        {
+          "code_url": null,
+          "description": "The Unikraft ports for popular applications like Redis and Nginx are currently outdated and fail to compile with the latest kernel core. This project solves this problem by updating the application glue code and implementing missing system calls in the ukposix compatibility layer. The main deliverables are fully working, stable, and benchmarked unikernel versions of Redis and Nginx. This work will also improve the overall POSIX support in Unikraft, making it easier to port other applications in the future.",
+          "difficulty": null,
+          "id": "proj_unikraft_2026_xLEuKmmc",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/xLEuKmmc",
+          "proposal_id": "XHwHGCdP",
+          "short_description": "The Unikraft ports for popular applications like Redis and Nginx are currently outdated and fail to compile with the latest kernel core. This project...",
+          "slug": "updating-application-libraries-redis-and-nginx",
+          "status": null,
+          "student_name": "Radu Andrei",
+          "student_profile": null,
+          "tags": [],
+          "title": "Updating Application Libraries (Redis and Nginx)"
+        },
+        {
+          "code_url": null,
+          "description": "This project expands the Unikraft application catalog by porting five widely used server applications across key infrastructure categories: DNSmasq , Lighttpd , Chrony , RabbitMQ , and Gitea , includes native Makefile.uk ports for C applications, binary compatibility support for Erlang and Go applications, and deployment configurations for QEMU, Firecracker, and Xen.",
+          "difficulty": null,
+          "id": "proj_unikraft_2026_IM5uB3Gy",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/IM5uB3Gy",
+          "proposal_id": "cfpVTyMa",
+          "short_description": "This project expands the Unikraft application catalog by porting five widely used server applications across key infrastructure categories: DNSmasq ,...",
+          "slug": "expanding-the-unikraft-software-catalog",
+          "status": null,
+          "student_name": "vTusharr",
+          "student_profile": null,
+          "tags": [],
+          "title": "Expanding the Unikraft Software Catalog"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

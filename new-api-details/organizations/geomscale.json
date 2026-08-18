@@ -39,9 +39,9 @@
     "computation geometry",
     "computational geometry"
   ],
-  "total_projects": 30,
+  "total_projects": 34,
   "stats": {
-    "avg_projects_per_appeared_year": 5,
+    "avg_projects_per_appeared_year": 4.86,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -53,7 +53,7 @@
       "year_2023": 3,
       "year_2024": 7,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -66,9 +66,9 @@
       "year_2023": 3,
       "year_2024": 7,
       "year_2025": 6,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 26
+    "total_students": 34
   },
   "years": {
     "year_2016": null,
@@ -675,7 +675,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/geomscale"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/geomscale",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Sampling from high-dimensional convex polytopes is a fundamental problem with applications in statistics, machine learning, optimization, and systems biology. Modern libraries such as VolEsti provide a rich collection of geometric random walk algorithms; however, there is currently no unified, extensible, and reproducible framework for benchmarking these methods in practice. \nIn my recent MSc thesis, I conducted a large-scale empirical comparison of state-of-the art sampling algorithms across multiple software ecosystems. This work revealed a clear gap: while many algorithms exist, there is no standardized way to evaluate them under  consistent configurations, geometries, and diagnostics.\nThe goal of this project is to design and implement a complete benchmarking suite\nfor VolEsti, enabling systematic, reproducible, and extensible evaluation of geometric random walks. The framework will support configurable experiments, advanced diagnostics, and integration with Python tools for visualization and analysis.\nUltimately, we aim to implement a research-grade benchmarking platform where any algorithm can be evaluated quickly and thoroughly and every new suggested algorithm can be easily compared to existing methods.",
+          "difficulty": null,
+          "id": "proj_geomscale_2026_psrE3mJN",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/psrE3mJN",
+          "proposal_id": "TMxe9whC",
+          "short_description": "Sampling from high-dimensional convex polytopes is a fundamental problem with applications in statistics, machine learning, optimization, and systems...",
+          "slug": "a-benchmarking-framework-for-geometric-random-walks",
+          "status": null,
+          "student_name": "Chrthegreat",
+          "student_profile": null,
+          "tags": [],
+          "title": "A Benchmarking Framework for Geometric Random Walks"
+        },
+        {
+          "code_url": null,
+          "description": "This project explores the problem of estimating how the volume of a high-dimensional convex polytope changes under sequential constraint additions. In genome-scale metabolic models, this is prevalent. The feasible steady states form such a polytope, and biological interventions (gene deletions) correspond to additional linear constraints. Quantifying the resulting volume contraction provides a geometric measure of robustness and enables detection of synthetic lethality, but existing methods require recomputing volume from scratch after each update.\n\nA dynamic volume updating algorithm that estimates relative volume changes incrementally is proposed. The method introduces constraints via an annealing schedule of parallel hyperplanes and computes local volume ratios using sample reuse with selective resampling. To maintain efficiency as the polytope becomes thin or anisotropic, the approach incorporates Constrained Riemannian Hamiltonian Monte Carlo (CRHMC).\n\nDeliverables include an annealed update framework, an incremental relative volume estimator, integration into volesti with dingo interfaces, and validation on metabolic models for robustness analysis and synthetic lethality detection.",
+          "difficulty": null,
+          "id": "proj_geomscale_2026_ciDSr4zE",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ciDSr4zE",
+          "proposal_id": "fTjIr6kd",
+          "short_description": "This project explores the problem of estimating how the volume of a high-dimensional convex polytope changes under sequential constraint additions....",
+          "slug": "dynamic-volume-updating-of-convex-polytopes-via-random-walk-sampling",
+          "status": null,
+          "student_name": "Iva Janković",
+          "student_profile": null,
+          "tags": [],
+          "title": "Dynamic Volume Updating of Convex Polytopes via Random-Walk Sampling"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to develop a Benchmark Polytope Import Suite for the volesti library, enabling automated conversion of standard Linear Programming instances and metabolic network models into H-Polytopes compatible with volesti. A user-friendly CLI tool will allow researchers to perform conversions easily without directly interacting with the code.\n\nAdditionally, a curated benchmark collection with regeneration scripts will support reproducible testing and demonstration of the pipeline. The project will follow best software engineering practices, including, unit, integration and end to end tests, as well as comprehensive documentation and tutorials.\n\nBy providing a robust and easy to use import suite pipeline, this project will expand volesti's accessibility and usability for researchers in volume approximation and sampling of convex bodies.",
+          "difficulty": null,
+          "id": "proj_geomscale_2026_v3zfwT2O",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/v3zfwT2O",
+          "proposal_id": "QU9wfxrn",
+          "short_description": "This project aims to develop a Benchmark Polytope Import Suite for the volesti library, enabling automated conversion of standard Linear Programming...",
+          "slug": "benchmark-polytope-import-suite-for-volesti",
+          "status": null,
+          "student_name": "JimmysPavlou",
+          "student_profile": null,
+          "tags": [],
+          "title": "Benchmark Polytope Import Suite For Volesti"
+        },
+        {
+          "code_url": null,
+          "description": "This project will implement a new volume-based approach for approximately counting linear extensions of partially ordered sets in volesti. The core idea is to exploit the special geometry of order polytopes by designing optimized exact Hamiltonian Monte Carlo boundary oracles, rather than relying on generic polytope routines. The work will include implementing specialized HMC walks, extending them to general Gaussian settings, integrating them into volesti’s volume-estimation pipeline, and evaluating their performance against existing approximation methods. Expected deliverables include the new C++ implementation, tests, examples, documentation, and a benchmark study on representative poset families.",
+          "difficulty": null,
+          "id": "proj_geomscale_2026_W4crOMpg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/W4crOMpg",
+          "proposal_id": "LFGHjENJ",
+          "short_description": "This project will implement a new volume-based approach for approximately counting linear extensions of partially ordered sets in volesti. The core...",
+          "slug": "counting-linear-extensions-with-volume-computation-and-applications-in-ai",
+          "status": null,
+          "student_name": "Ke Shih",
+          "student_profile": null,
+          "tags": [],
+          "title": "Counting linear extensions with volume computation and applications in AI"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

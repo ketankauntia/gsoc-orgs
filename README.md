@@ -23,6 +23,8 @@ This is an independent community project. It is not affiliated with or endorsed 
 - Use public versioned catalog APIs under `/api/v1` and `/api/v2`.
 - Browse approved proposal examples through the public proposal library.
 - Let past contributors claim an archived project, upload an accepted proposal PDF, choose public profile fields, and submit it for moderation.
+- Browse curated project blogs from selected contributors by year and organization.
+- Let administrators publish contributor-authorized proposal PDFs without impersonating a contributor account.
 
 ## Architecture
 
@@ -117,6 +119,7 @@ Google Analytics is enabled only when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is present
 
 - Supabase Postgres is the runtime source of truth.
 - `supabase/migrations/202608120001_proposal_library.sql` creates proposal, profile, claim, role, moderation, storage, and public-projection boundaries.
+- `supabase/migrations/202608180001_admin_imports_and_contributor_blogs.sql` adds isolated administrator imports, audited contributor-blog curation, and narrow public projections.
 - The canonical importer reads `new-api-details/` and validates organization/project mappings before writing.
 - The Mongo importer is a one-time compatibility merge. Do not add MongoDB reads to application routes.
 - Regenerate live database types after a forward migration:
@@ -144,6 +147,8 @@ The proposal feature is a privacy boundary, not a general file store:
 - Drafts, evidence, private notes, rejected submissions, and moderation history are protected.
 - Only approved proposals appear through the narrow public projection.
 - Public proposal PDFs use CC BY 4.0 attribution terms.
+- Administrator imports require a real archived contributor slot, a recorded publication-rights basis, a private permission note, and the same PDF validation used by contributor uploads.
+- Administrator controls are hidden from other users, while route handlers and database functions independently enforce the administrator role.
 
 Read [docs/proposal-library.md](docs/proposal-library.md) before changing proposal routes, migrations, RLS policies, or storage behavior.
 

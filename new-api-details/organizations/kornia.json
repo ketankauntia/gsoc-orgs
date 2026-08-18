@@ -29,9 +29,9 @@
     "computer vision",
     "3D Geometry"
   ],
-  "total_projects": 2,
+  "total_projects": 5,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 2
+    "total_students": 5
   },
   "years": {
     "year_2016": null,
@@ -113,7 +113,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/kornia"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/kornia",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project intends to extend the existing kornia-slam repository to create a visual + inertial measurements based simultaneous localization and mapping pipeline using utilities provided by Kornia-rs. The goal would be to create a VSLAM pipeline compatible with common modalities like monocular, stereo and RGB-D images, with a potential for future GNSS and Lidar integration. This will hopefully provide researchers with a localization and mapping algorithm that can run robustly on low compute hardware.",
+          "difficulty": null,
+          "id": "proj_kornia_2026_o8GfpyuW",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/o8GfpyuW",
+          "proposal_id": "GSrZsi2Z",
+          "short_description": "This project intends to extend the existing kornia-slam repository to create a visual + inertial measurements based simultaneous localization and...",
+          "slug": "kornia-slam-robust-visual-inertial-slam",
+          "status": null,
+          "student_name": "Astik Srivastava",
+          "student_profile": null,
+          "tags": [],
+          "title": "Kornia-SLAM: Robust visual-inertial SLAM"
+        },
+        {
+          "code_url": null,
+          "description": "kornia-rs currently supports only CPU-based computation for image processing operations like resize, warp, and color transforms. This project implements a GPU backend for kornia-tensor and kornia-imgproc, motivated by a concrete Bubbaloop use case: a real-time camera pipeline that needs faster preprocessing to make VLM inference feasible on edge hardware. The work includes a feature-gated GpuAllocator with explicit host-device transfer semantics, allocator-based backend dispatch for tensor operations, and GPU kernels for resize, warp_affine, warp_perspective, and RGB <-> Grayscale conversion using CubeCL.",
+          "difficulty": null,
+          "id": "proj_kornia_2026_TmCX5lzg",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/TmCX5lzg",
+          "proposal_id": "yAD1ZHMQ",
+          "short_description": "kornia-rs currently supports only CPU-based computation for image processing operations like resize, warp, and color transforms. This project...",
+          "slug": "gpu-acceleration-for-kornia-tensor-and-kornia-imgproc",
+          "status": null,
+          "student_name": "Inchara Jayaram",
+          "student_profile": null,
+          "tags": [],
+          "title": "GPU Acceleration for kornia-tensor and kornia-imgproc"
+        },
+        {
+          "code_url": null,
+          "description": "This project builds GPU-accelerated image processing kernels for kornia-rs and integrates them into a real-time vision-language model (VLM) pipeline on the Bubbaloop framework, targeting the Jetson Orin Nano.\n\nThe work has two pillars. First, implementing GPU kernels (resize, normalize, color conversion, cast/layout reordering) using CubeCL, eliminating CPU-GPU synchronization bottlenecks in VLM preprocessing. Second, integrating Qwen2.5-VL-3B via ONNX/TensorRT into a live Bubbaloop camera pipeline, handling dynamic resolution tiling, vision token packing, and memory-constrained inference within the Jetson's 8GB limit. Time permitting, V-JEPA 2 will also be evaluated as a complementary world model for latent scene prediction.\n\nThe end result positions kornia-rs as a practical foundation for deploying vision-language models on edge devices in Rust.",
+          "difficulty": null,
+          "id": "proj_kornia_2026_UJrqOYo8",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/UJrqOYo8",
+          "proposal_id": "6Ggt5Xwx",
+          "short_description": "This project builds GPU-accelerated image processing kernels for kornia-rs and integrates them into a real-time vision-language model (VLM) pipeline...",
+          "slug": "gpu-accelerated-vlm-vla-infrastructure-on-bubbaloop",
+          "status": null,
+          "student_name": "Siddharth Rambhia",
+          "student_profile": null,
+          "tags": [],
+          "title": "GPU-Accelerated VLM/VLA infrastructure on Bubbaloop"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": true,
   "contact": {

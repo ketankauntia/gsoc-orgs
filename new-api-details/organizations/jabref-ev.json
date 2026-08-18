@@ -38,9 +38,9 @@
     "latex",
     "bibliography"
   ],
-  "total_projects": 11,
+  "total_projects": 14,
   "stats": {
-    "avg_projects_per_appeared_year": 2.2,
+    "avg_projects_per_appeared_year": 2.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -52,7 +52,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -65,9 +65,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 11
+    "total_students": 14
   },
   "years": {
     "year_2016": null,
@@ -306,7 +306,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/jabref-ev"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/jabref-ev",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Nowadays, more and more researchers and students choose OpenOffice as an alternative to MS Office. JabRef already provides OpenOffice integration to support reference management, but several important limitations remain: a) JabRef does not properly support footnote citation for CSL style. b) Citations inserted by other reference management tools are not compatible with JabRef. c) Several issues regarding LibreOffice have remained unsolved for years. \n\nTo address these problems, this project intend to introduce a unified citation representation and a shared global ordering component to ensure consistent behavior across in-text citations, footnotes, and bibliographies. In addition, it enables smoother switching between citation styles and improves compatibility with other reference management tools. Overall, this project will enhance the reliability and usability of JabRef's OpenOffice integration for academic writing.",
+          "difficulty": null,
+          "id": "proj_jabref-ev_2026_Aj2w4sr7",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Aj2w4sr7",
+          "proposal_id": "dEIbXdAj",
+          "short_description": "Nowadays, more and more researchers and students choose OpenOffice as an alternative to MS Office. JabRef already provides OpenOffice integration to...",
+          "slug": "improved-libreoffice-jabref-integration",
+          "status": null,
+          "student_name": "Hancong",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improved LibreOffice-JabRef integration"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to bring GraalVM native-image support to JabRef, starting with JabKit and its core dependency JabLib, and then extending to JabGui, JabLS, and JabSrv based on feasibility.\n\nCurrently, JabKit is distributed using JPackage and JBang, which leads to relatively slow startup time for a CLI tool. Native-image can compile Java applications into standalone executables with faster startup, but applying it to a large modular project like JabRef is challenging, especially due to runtime issues.\n\nBased on preliminary experiments, the main difficulty is not compilation but runtime compatibility. Dependencies such as Lucene, PDFBox, and JGit can compile successfully but fail at runtime due to dynamic class loading, reflection, or native library requirements.\n\nThis project follows an incremental approach. First, it establishes a minimal native-image build and testing setup. Then, it enables a subset of JabKit functionality and gradually expands support by resolving dependency issues. Finally, it investigates feasibility for JabGui, JabLS, and JabSrv.\n\nExpected deliverables include a working JabKit native executable, feasibility results for other components, and documentation on dependency compatibility and native-image configuration.",
+          "difficulty": null,
+          "id": "proj_jabref-ev_2026_WpfCv7KA",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WpfCv7KA",
+          "proposal_id": "PEhiB8Mr",
+          "short_description": "This project aims to bring GraalVM native-image support to JabRef, starting with JabKit and its core dependency JabLib, and then extending to JabGui,...",
+          "slug": "jabref-native-image-support",
+          "status": null,
+          "student_name": "Wanling",
+          "student_profile": null,
+          "tags": [],
+          "title": "JabRef Native Image Support"
+        },
+        {
+          "code_url": null,
+          "description": "JabRef, comprehensive literature management software, currently supports both handling metadata and text-based PDF documents. However, a significant limitation arises with scanned PDFs, particularly historical articles, which are not text-searchable due to their image-based format. This project aims to bridge this gap by integrating advanced OCR (Optical Character Recognition) technology, enabling full-text search in scanned PDFs.",
+          "difficulty": null,
+          "id": "proj_jabref-ev_2026_G9vyuNcs",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/G9vyuNcs",
+          "proposal_id": "in6Vc2AN",
+          "short_description": "JabRef, comprehensive literature management software, currently supports both handling metadata and text-based PDF documents. However, a significant...",
+          "slug": "improve-handling-of-older-documents-by-ocr-and-ai",
+          "status": null,
+          "student_name": "Zeyad Abdelfattah",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve handling of older documents by OCR and AI"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

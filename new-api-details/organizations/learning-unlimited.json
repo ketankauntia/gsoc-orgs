@@ -27,9 +27,9 @@
     "full stack",
     "Outreach"
   ],
-  "total_projects": 0,
+  "total_projects": 3,
   "stats": {
-    "avg_projects_per_appeared_year": 0,
+    "avg_projects_per_appeared_year": 3,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -41,7 +41,7 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -54,9 +54,9 @@
       "year_2023": null,
       "year_2024": null,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 0
+    "total_students": 3
   },
   "years": {
     "year_2016": null,
@@ -69,7 +69,72 @@
     "year_2023": null,
     "year_2024": null,
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/learning-unlimited",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Our website’s theming system, which allows individual chapters to customize the look of their websites, is due for a major overhaul. The site currently uses Bootstrap 2.3.2, which is over a decade old—the current version is 5.3. Bootstrap is used minimally (primarily for buttons and minor elements), and there are existing issues with color contrast. This project involves upgrading Bootstrap to the latest version, expanding its use throughout the website for standardized styling, and implementing Bootswatch themes as default customization options. Bootswatch would provides cohesive color sets, fonts, and other stylings that administrators could select and then tweak appropriately to work for their chapters.",
+          "difficulty": null,
+          "id": "proj_learning-unlimited_2026_ciiJGiS3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/ciiJGiS3",
+          "proposal_id": "8kxqvgUj",
+          "short_description": "Our website’s theming system, which allows individual chapters to customize the look of their websites, is due for a major overhaul. The site...",
+          "slug": "theming-improvements",
+          "status": null,
+          "student_name": "Oval",
+          "student_profile": null,
+          "tags": [],
+          "title": "Theming Improvements"
+        },
+        {
+          "code_url": null,
+          "description": "ESP-Website administrators currently manage program modules manually with no way to pre-schedule transitions, causing configuration errors that risk corrupting student registration data. This project builds a visual, Gantt-style Module Management UI that lets administrators schedule module open/close windows on a drag-and-drop timeline canvas, with separate student and teacher views, real-time conflict detection, and a time scrubber to preview the student experience at any point. On the backend, ProgramModuleObj will be subclassed from ExpirableModel to add native time-windowing, and five AJAX endpoints will power all frontend interactions. Deliverables include the model migration, time-aware module filtering, the timeline canvas UI, a module picker side panel, full WCAG 2.1 AA accessibility, and bidirectional integration with the existing module questions interface.",
+          "difficulty": null,
+          "id": "proj_learning-unlimited_2026_lpULfSR3",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lpULfSR3",
+          "proposal_id": "sJUdbyPe",
+          "short_description": "ESP-Website administrators currently manage program modules manually with no way to pre-schedule transitions, causing configuration errors that risk...",
+          "slug": "new-module-management-ui",
+          "status": null,
+          "student_name": "Supriyo Chowdhury",
+          "student_profile": null,
+          "tags": [],
+          "title": "New Module Management UI"
+        },
+        {
+          "code_url": null,
+          "description": "This project focuses on systematically expanding regression test coverage for the ESP codebase by targeting high-risk, untested logic paths rather than merely increasing overall coverage percentage. Through detailed codebase exploration, critical gaps have been identified in components such as lottery assignment logic, class registration flows, and mailman integrations. These areas involve complex logic, invariants, and edge cases that currently lack sufficient test coverage and pose a high risk of silent regressions. The project introduces invariant-based testing for the lottery system to ensure correctness properties such as no conflicts, no overcapacity, and valid grade constraints across arbitrary inputs. Additionally, integration tests will be implemented for mailman functionality using mocking to validate subprocess interactions without external dependencies. A reusable testing infrastructure will be developed to support scalable regression testing, along with targeted performance checks to detect potential degradations in critical views. The outcome will be a robust regression testing framework that transforms fragile, untested paths into enforceable guarantees, significantly improving system reliability and maintainability.",
+          "difficulty": null,
+          "id": "proj_learning-unlimited_2026_w2lfRbJ0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/w2lfRbJ0",
+          "proposal_id": "PbZ7AY7J",
+          "short_description": "This project focuses on systematically expanding regression test coverage for the ESP codebase by targeting high-risk, untested logic paths rather...",
+          "slug": "systematic-regression-test-expansion-for-esp",
+          "status": null,
+          "student_name": "Vipul Subhash Pandey",
+          "student_profile": null,
+          "tags": [],
+          "title": "Systematic Regression Test Expansion for ESP"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "contact": {
     "email": "gsoc-mentors-2026@learningu.org",

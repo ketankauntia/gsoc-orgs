@@ -44,9 +44,9 @@
     "#education",
     "programming tools"
   ],
-  "total_projects": 70,
+  "total_projects": 74,
   "stats": {
-    "avg_projects_per_appeared_year": 10,
+    "avg_projects_per_appeared_year": 9.25,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -58,7 +58,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
     "students_by_year": {
       "year_2016": null,
@@ -71,9 +71,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": 4,
-      "year_2026": null
+      "year_2026": 4
     },
-    "total_students": 68
+    "total_students": 74
   },
   "years": {
     "year_2016": null,
@@ -1414,7 +1414,88 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/haskellorg"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 4,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/haskellorg",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project aims to integrate the official GHC/WebAssembly backend into xeus-haskell, a Jupyter kernel for Haskell. Currently, the kernel relies on MicroHs, which, while lightweight, lacks support for the vast majority of the Hackage ecosystem. I will implement a dual-backend architecture by introducing a new C++ bridge and a reactor-model Wasm REPL module based on the GHC API. Key deliverables include:\nGhcRepl: A GHC-based WebAssembly REPL module maintaining persistent session state.\nC++ Bridge: A new interface (ghc_repl.cpp) to communicate with the GHC/Wasm runtime via the Wasm C API.\nBackend Abstraction: A unified virtual interface to allow seamless switching between MicroHs and GHC/Wasm.\nWASI Integration: A configured browser shim to handle I/O and package database access within JupyterLite",
+          "difficulty": null,
+          "id": "proj_haskellorg_2026_sbAYpos0",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/sbAYpos0",
+          "proposal_id": "ZhSGIx33",
+          "short_description": "This project aims to integrate the official GHC/WebAssembly backend into xeus-haskell, a Jupyter kernel for Haskell. Currently, the kernel relies on...",
+          "slug": "xeus-haskell-ghc-wasm-backend-integration-prototype",
+          "status": null,
+          "student_name": "Arman Sanjay Choudhary",
+          "student_profile": null,
+          "tags": [],
+          "title": "xeus-haskell -- GHC/Wasm Backend Integration Prototype"
+        },
+        {
+          "code_url": null,
+          "description": "The goal of this proposal is to extend HLS with a new plugin, the case split plugin, which provides a new code action (or possibly more of them) for completing the case ⟨expression⟩ of part of a case expression with the properly formatted list of alternatives, which is implied by the type of ⟨expression⟩.\n\nGHC API will be used to detect the cases missing from a (totally or partially) incomplete case expression, and to insert the missing cases in the AST, ghc-exactprint will be used for pretty-printing such missing cases in the text file.",
+          "difficulty": null,
+          "id": "proj_haskellorg_2026_WwGiEzzO",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WwGiEzzO",
+          "proposal_id": "x5Tbja7C",
+          "short_description": "The goal of this proposal is to extend HLS with a new plugin, the case split plugin, which provides a new code action (or possibly more of them) for...",
+          "slug": "case-split-plugin",
+          "status": null,
+          "student_name": "Aster89",
+          "student_profile": null,
+          "tags": [],
+          "title": "Case split plugin"
+        },
+        {
+          "code_url": null,
+          "description": "LiquidHaskell is a verification tool that allows Haskell developers to prove the correctness of their code through refinement types. This proposal aims to restore the support for type class elaboration: a feature that enables the verification of typeclasses laws and instances.\n\nThe work that had been done previously to support typeclass elaboration is currently broken: typeclass methods produce \"Unknown logic name\" errors, hence the test suite for the feature has been disabled.\n\nThe aim of this project is to restore this functionality, by fixing the elaboration mechanism responsible for making typeclass methods available during verification. I will trace the elaboration pipeline, implement the necessary fixes and extend test coverage. Additionally, the project will include an in-depth analysis of the features supported by the implementation and how they compare against the expected outcomes in the original paper.\n\nThe deliverables will include successfully merged contributions on the LiquidHaskell GitHub repository, with its corresponding documentation, and a post with the solution on the Tweag blog.",
+          "difficulty": null,
+          "id": "proj_haskellorg_2026_lnBMUfdU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/lnBMUfdU",
+          "proposal_id": "fuJzwiGs",
+          "short_description": "LiquidHaskell is a verification tool that allows Haskell developers to prove the correctness of their code through refinement types. This proposal...",
+          "slug": "restoring-typeclass-refinement-support-in-liquidhaskell",
+          "status": null,
+          "student_name": "Juan Pablo Yamamoto",
+          "student_profile": null,
+          "tags": [],
+          "title": "Restoring Typeclass Refinement Support in LiquidHaskell"
+        },
+        {
+          "code_url": null,
+          "description": "Haskell Language Server (HLS) currently supports Goto Definition only for symbols defined within a user’s project, making it difficult to inspect implementations of functions imported from external dependencies. This project extends that functionality to third-party libraries by enabling developers to navigate directly to dependency source code from within their IDE.\n\nThe solution leverages .hie files generated by GHC and indexed via HieDb. During HLS startup, dependency HIE files will be discovered and indexed, allowing symbol lookups to resolve to external modules. When a user triggers goto definition on a dependency symbol, the corresponding source code will be extracted from the HIE file, written to a deterministic location, and opened in the editor. To ensure correctness, a type-level rule system will be introduced to prevent invalid rule execution on dependency files, replacing the current fragile runtime whitelist approach.\n\nThe project deliverables include: rebasing and stabilizing the existing prototype (PR #3749), implementing a type-safe rule constraint system, ensuring complete rule coverage across file types, improving user experience through automated HIE file generation and indexing, enforcing read-only handling for dependency files, and exploring solutions for supporting boot libraries via prebuilt HIE artifacts. These improvements aim to deliver a robust, maintainable, and seamless dependency navigation experience in HLS.",
+          "difficulty": null,
+          "id": "proj_haskellorg_2026_WKEV8qIK",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/WKEV8qIK",
+          "proposal_id": "nS5UBAiD",
+          "short_description": "Haskell Language Server (HLS) currently supports Goto Definition only for symbols defined within a user’s project, making it difficult to inspect...",
+          "slug": "goto-dependency-definition",
+          "status": null,
+          "student_name": "vidit",
+          "student_profile": null,
+          "tags": [],
+          "title": "Goto dependency definition"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

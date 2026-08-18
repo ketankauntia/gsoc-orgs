@@ -38,9 +38,9 @@
     "ai",
     "Rover"
   ],
-  "total_projects": 7,
+  "total_projects": 10,
   "stats": {
-    "avg_projects_per_appeared_year": 2.33,
+    "avg_projects_per_appeared_year": 2.5,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -52,7 +52,7 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -65,9 +65,9 @@
       "year_2023": null,
       "year_2024": 4,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 7
+    "total_students": 10
   },
   "years": {
     "year_2016": null,
@@ -228,7 +228,72 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/librecube-initiative/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/librecube-initiative",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project addresses the critical need for a software-defined ground station receiver to support the LibreCube proto-LC2302, an open-source UHF CubeSat communications module. To solve this, we propose the development of a resilient receiver architecture utilizing Software-Defined Radio (SDR) and the GNU Radio framework. The system will ingest baseband IQ data, perform signal demodulation, and execute a complete Consultative Committee for Space Data Systems (CCSDS) decoding chain, including frame synchronization, deframing, and forward error correction (FEC). Key project deliverables include fully functional GNU Radio flowgraphs for both live SDR reception and recorded playback, curated test datasets, and comprehensive documentation. Furthermore, the project explores the optional development of custom C++ Out-of-Tree (OOT) blocks for supplementary processing, alongside integration with the Yamcs mission control suite. Ultimately, this work provides an end-to-end telemetry acquisition system, bridging the gap between open-source space hardware and standardized communication protocols.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2026_JRzQBYUb",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/JRzQBYUb",
+          "proposal_id": "Vh6ivi5I",
+          "short_description": "This project addresses the critical need for a software-defined ground station receiver to support the LibreCube proto-LC2302, an open-source UHF...",
+          "slug": "ccsds-gnu-radio-receiver-decoder",
+          "status": null,
+          "student_name": "Diego Toledo Luque",
+          "student_profile": null,
+          "tags": [],
+          "title": "CCSDS GNU Radio Receiver & Decoder"
+        },
+        {
+          "code_url": null,
+          "description": "Every board in a LibreCube CubeSat (power, navigation, communications, payload) speaks SpaceCAN. Today, none of them can run flight firmware without a Python interpreter. This project changes that.\r\n\r\nThe goal is a complete Rust port of the SpaceCAN protocol: a native crate for PC that works alongside the existing Python tooling, and an embedded crate that runs directly on STM32 hardware via the embassy async framework with no interpreter, no runtime overhead, and no dynamic allocation. By the end of GSoC, any LibreCube board can run production SpaceCAN firmware in Rust, and the broader embedded Rust and CubeSat communities gain their first open-source, interpreter-free SpaceCAN stack to build on.\r\n\r\nDeliverables: native and embedded Rust crates with full five-service protocol coverage, cross-language integration tests against python-spacecan, Embassy firmware with controller and responder examples for the STM32G0B1RE, and a getting-started guide.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2026_a1uvPzxU",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/a1uvPzxU",
+          "proposal_id": "TtX9MFpn",
+          "short_description": "Every board in a LibreCube CubeSat (power, navigation, communications, payload) speaks SpaceCAN. Today, none of them can run flight firmware without...",
+          "slug": "rust-spacecan-port-native-and-embedded",
+          "status": null,
+          "student_name": "Myyr",
+          "student_profile": null,
+          "tags": [],
+          "title": "Rust SpaceCAN Port (native and embedded)"
+        },
+        {
+          "code_url": null,
+          "description": "This paper proposes a software defined radio (SDR) based ground station to receive and decode Long Range (LoRa) satellite signal, with forwarding to TinyGS and optionally LoRaWAN network. In this project a complete python package for LoRa will be implemented and used for reception and decoding. Key tasks include optimizing existing python code base written by my mentor PhD, Shayan Majumder; implementing sampling time offset (STO) and carrier frequency offset (CFO) algorithms; implementing TinyGS(MQTT) and/or optionally LoRaWAN (UDP/JSON) forwarding; establishing test, hardware in loop tests and CICD procedures; finally detailing documentation of a complete ground station.",
+          "difficulty": null,
+          "id": "proj_librecube-initiative_2026_FH96uSWv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/FH96uSWv",
+          "proposal_id": "1y8fTaGM",
+          "short_description": "This paper proposes a software defined radio (SDR) based ground station to receive and decode Long Range (LoRa) satellite signal, with forwarding to...",
+          "slug": "python-based-lora-receiver-and-demodulator-with-tinygs-integration",
+          "status": null,
+          "student_name": "StudHamza",
+          "student_profile": null,
+          "tags": [],
+          "title": "Python based LoRa Receiver and Demodulator with TinyGS Integration"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

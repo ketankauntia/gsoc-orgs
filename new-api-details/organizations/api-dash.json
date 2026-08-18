@@ -36,9 +36,9 @@
     "Agents",
     "MCP"
   ],
-  "total_projects": 3,
+  "total_projects": 6,
   "stats": {
-    "avg_projects_per_appeared_year": 1.5,
+    "avg_projects_per_appeared_year": 2,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -50,7 +50,7 @@
       "year_2023": null,
       "year_2024": 1,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -63,9 +63,9 @@
       "year_2023": null,
       "year_2024": 1,
       "year_2025": 2,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 3
+    "total_students": 6
   },
   "years": {
     "year_2016": null,
@@ -154,7 +154,72 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/api-dash"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/api-dash",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "This project transforms API Dash into a next-generation, AI-native API client. I am merging \nthree core objectives:  \n1. Agentic API Testing, \n2. MCP Support \n3. Generative UI Visualizations \ninto a unified Dual-Transport Model Context Protocol (MCP) Architecture: \n1. Agentic Sandbox & Generative UI (GenUI): Eliminating brittle WebViews, the \ninternal UI will utilize Google's genui SDK and the Open Responses specification. \nThis powers two features: an autonomous, self-healing Agentic Testing Dashboard, \nand a \"Generative UI Previewer\" that visualizes rich AI responses for end-users \nbuilding Flutter/Web apps. \n2. Headless MCP Engine: This exposes API Dash as a standard stdio MCP Server for \nexternal Agent interfaces (like VS Code, Cursor, or Claude Desktop).",
+          "difficulty": null,
+          "id": "proj_api-dash_2026_RQmFSAnm",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/RQmFSAnm",
+          "proposal_id": "EByBbDJr",
+          "short_description": "This project transforms API Dash into a next-generation, AI-native API client. I am merging three core objectives: 1. Agentic API Testing, 2. MCP...",
+          "slug": "api-dash-as-an-mcp-server-agentic-testing-and-genui-visualizations",
+          "status": null,
+          "student_name": "Abdelrahman ElBorgy",
+          "student_profile": null,
+          "tags": [],
+          "title": "API Dash as an MCP Server: Agentic  Testing and GenUI Visualizations"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to extend API Dash by adding support for WebSocket, MQTT, and gRPC, enabling developers to work with multiple modern communication protocols within a single tool. It will introduce a modular, protocol-agnostic architecture along with intuitive UI components for real-time and streaming workflows. Additionally, a CLI will be developed to support headless usage . The focus will be on performance, usability, and seamless integration with the existing API Dash ecosystem.",
+          "difficulty": null,
+          "id": "proj_api-dash_2026_8mOJR8XY",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/8mOJR8XY",
+          "proposal_id": "sFxcFp8Q",
+          "short_description": "This project aims to extend API Dash by adding support for WebSocket, MQTT, and gRPC, enabling developers to work with multiple modern communication...",
+          "slug": "multi-protocol-support-ws-mqtt-grpc-cli",
+          "status": null,
+          "student_name": "Nikhil Ludder",
+          "student_profile": null,
+          "tags": [],
+          "title": "Multi-Protocol Support (WS, MQTT, gRPC) + CLI"
+        },
+        {
+          "code_url": null,
+          "description": "The project aims to extend API Dash with Git-backed collections, a visual workflow builder, and a collection dashboard. This will enable developers to version and share API collections, design and execute multi-step API flows, and monitor API health and performance within a single unified tool.\nProblem Being Solved:\nAPI Dash currently stores requests in a flat local structure without version control or collaboration support. The existing load-all/manual-save model limits reliable syncing, introduces risk of data loss, and prevents building higher-level features like analytics and workflows. Additionally, users lack visibility into API performance and have no structured way to define multi-step API interactions.\nProposed Solution:\n1. A refactored persistence layer using request-level autosave (Hive LazyBox) for reliable and granular data storage.\n2. A GitHub integration layer to enable version control, sharing, and collaboration on collections.\n3. A visual workflow builder with a node-based interface to define and execute multi-step API flows.\n4. An execution engine to handle request chaining, conditions, and shared data flow between steps.\n5. A dashboard system to aggregate and visualize API and workflow performance metrics.\nKey Deliverables:\n1. Request-level autosave system replacing the current bulk-save model.\n2. Git support for collections (connect, import/export, push/pull, commit history, rollback).\n3. Visual workflow builder with execution support, run history, and DashBot-assisted workflow generation from natural-language prompts.\n4. Collection and workflow dashboards showing success rates, failures, and latency signals.\n5. Production-ready documentation, testing, and UX polish for real-world usage.",
+          "difficulty": null,
+          "id": "proj_api-dash_2026_Qnk4Mkow",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Qnk4Mkow",
+          "proposal_id": "gQZ0ZweT",
+          "short_description": "The project aims to extend API Dash with Git-backed collections, a visual workflow builder, and a collection dashboard. This will enable developers...",
+          "slug": "git-support-ui-workflow-builder-collection-dashboard",
+          "status": null,
+          "student_name": "Shashwat Pratap Singh",
+          "student_profile": null,
+          "tags": [],
+          "title": "Git Support, UI Workflow Builder & Collection Dashboard"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

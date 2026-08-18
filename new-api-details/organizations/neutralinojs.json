@@ -32,9 +32,9 @@
     "Desktop App Development",
     "lightweight framework"
   ],
-  "total_projects": 4,
+  "total_projects": 7,
   "stats": {
-    "avg_projects_per_appeared_year": 2,
+    "avg_projects_per_appeared_year": 2.33,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -46,7 +46,7 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
     "students_by_year": {
       "year_2016": null,
@@ -59,9 +59,9 @@
       "year_2023": null,
       "year_2024": 3,
       "year_2025": null,
-      "year_2026": null
+      "year_2026": 3
     },
-    "total_students": 4
+    "total_students": 7
   },
   "years": {
     "year_2016": null,
@@ -166,7 +166,72 @@
       "projects_url": "https://summerofcode.withgoogle.com/archive/2024/organizations/neutralinojs/"
     },
     "year_2025": null,
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 3,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/neutralinojs",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "Neutralinojs makes it easy to build lightweight cross-platform desktop apps, but distributing them is still fragmented. Developers currently rely on external tools like AppImage, NSIS, or Debian packagers to create installers for each platform, leading to inconsistent workflows and added complexity. This project proposes Neutralinojs Builder, an official CLI plugin that simplifies and standardizes installer generation while keeping the core neu CLI minimal and platform-agnostic.\n\nThe solution will be a Node.js-based CLI plugin that introduces a neu builder command to generate platform-specific installers (e.g., NSIS for Windows, DEB/AppImage for Linux) through simple commands or configuration. It will follow a modular design where each packaging target is implemented as a dynamically loaded internal module, ensuring scalability and a lightweight codebase. The project will also explore Neutralinojs SEA (Single Executable Applications) to further improve portability and distribution. This project aims to provide a unified and efficient packaging workflow for Neutralinojs developers.",
+          "difficulty": null,
+          "id": "proj_neutralinojs_2026_htS4Jayv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/htS4Jayv",
+          "proposal_id": "usaqSk61",
+          "short_description": "Neutralinojs makes it easy to build lightweight cross-platform desktop apps, but distributing them is still fragmented. Developers currently rely on...",
+          "slug": "cli-plugin-to-generate-platform-specific-installers",
+          "status": null,
+          "student_name": "Anirudh Lakhanpal",
+          "student_profile": null,
+          "tags": [],
+          "title": "CLI Plugin to generate platform-specific installers"
+        },
+        {
+          "code_url": null,
+          "description": "This project aims to enhance the Neutralinojs framework by introducing a comprehensive set of cross-platform native APIs that expose essential system-level functionalities currently missing from the platform.\nDevelopers currently rely on platform-specific workarounds, shell commands, or external tools to access critical features such as hardware information, system configuration, filesystem utilities, and global OS integrations. It increases complexity, reduces portability, and negatively impacts developer experience.\nTo address this, the project proposes implementing new APIs across five major namespaces: computer, window, app, filesystem, and os.\nThe implementation will strictly be following Neutralinojs principles: minimal dependencies, high performance, strong security, and full cross-platform compatibility across Windows, Linux, and macOS.",
+          "difficulty": null,
+          "id": "proj_neutralinojs_2026_z3S52wHv",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/z3S52wHv",
+          "proposal_id": "1YutS9I1",
+          "short_description": "This project aims to enhance the Neutralinojs framework by introducing a comprehensive set of cross-platform native APIs that expose essential...",
+          "slug": "extending-neutralinojs-native-api-with-cross-platform-system-level-capabilities",
+          "status": null,
+          "student_name": "Prasun Baranwal",
+          "student_profile": null,
+          "tags": [],
+          "title": "Extending Neutralinojs Native API with Cross-Platform System-Level Capabilities"
+        },
+        {
+          "code_url": null,
+          "description": "Neutralinojs currently lacks an automated system for creating platform-specific installers, forcing developers to manually package applications for each release. This project aims to build the Neutralinojs Builder, an official plugin for the neu CLI, to automate the installer generation process. The plugin will be implemented using a modular Node.js architecture to support Windows .exe (NSIS), Linux .deb and .AppImage, and macOS .dmg formats. Key deliverables include a dynamic module loading system, automated dependency validation for local build tools, and integrated GitHub Actions for cross-platform verification. Once completed, this tool will provide a reliable distribution pipeline for production-level Neutralinojs applications.",
+          "difficulty": null,
+          "id": "proj_neutralinojs_2026_uGXZeO73",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/uGXZeO73",
+          "proposal_id": "d3gN4NhH",
+          "short_description": "Neutralinojs currently lacks an automated system for creating platform-specific installers, forcing developers to manually package applications for...",
+          "slug": "neutralinojs-builder",
+          "status": null,
+          "student_name": "Subhash_Kumar",
+          "student_profile": null,
+          "tags": [],
+          "title": "Neutralinojs Builder"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {

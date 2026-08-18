@@ -29,9 +29,9 @@
     "security",
     "cryptography"
   ],
-  "total_projects": 6,
+  "total_projects": 7,
   "stats": {
-    "avg_projects_per_appeared_year": 1.5,
+    "avg_projects_per_appeared_year": 1.4,
     "projects_by_year": {
       "year_2016": null,
       "year_2017": null,
@@ -43,7 +43,7 @@
       "year_2023": 2,
       "year_2024": 2,
       "year_2025": 1,
-      "year_2026": null
+      "year_2026": 1
     },
     "students_by_year": {
       "year_2016": null,
@@ -56,9 +56,9 @@
       "year_2023": 2,
       "year_2024": 2,
       "year_2025": 1,
-      "year_2026": null
+      "year_2026": 1
     },
-    "total_students": 6
+    "total_students": 7
   },
   "years": {
     "year_2016": null,
@@ -204,7 +204,40 @@
       ],
       "projects_url": "https://summerofcode.withgoogle.com/programs/2025/organizations/libssh"
     },
-    "year_2026": null
+    "year_2026": {
+      "num_projects": 1,
+      "projects_url": "https://summerofcode.withgoogle.com/programs/2026/organizations/libssh",
+      "projects": [
+        {
+          "code_url": null,
+          "description": "The SSH client obtains its configuration either from command line arguments or from configuration files such as ~/.ssh/config and /etc/ssh/ssh_config. These files are parsed by the SSH client implementation (for example OpenSSH or clients built on top of libssh) and the parsed options are applied to the session configuration.\n\nLibssh follows a parsing architecture that slightly differs from OpenSSH. As a result, configuration files may be interpreted differently by the two implementations. Additionally, OpenSSH usually tends to be one-step ahead in introducing new configuration options, and libssh is having a hard time catching up with them. In such cases, libssh should ideally ignore unsupported options gracefully rather than misinterpreting them or causing unexpected behavior.\n\nDue to these differences, the same configuration file can produce different parsing results between OpenSSH and libssh. Since OpenSSH is the most widely used SSH implementation, such divergences may cause inconvenience for users and reduce configuration compatibility.\n\nThis project focuses on building a differential fuzzer that compares how OpenSSH and libssh parse SSH configuration files. The fuzzer will mutate configuration inputs and identify cases where the two implementations behave differently. Based on the discovered divergences, libssh’s configuration parser will be refined to align its behavior more closely with OpenSSH.\n \nFinally, regression tests will be introduced for the discovered issues to ensure that future changes do not reintroduce the same bugs.",
+          "difficulty": null,
+          "id": "proj_libssh_2026_Ot39Kd2J",
+          "mentor_names": [],
+          "project_url": "https://summerofcode.withgoogle.com/programs/2026/projects/Ot39Kd2J",
+          "proposal_id": "hlFwc4cK",
+          "short_description": "The SSH client obtains its configuration either from command line arguments or from configuration files such as ~/.ssh/config and...",
+          "slug": "improve-configuration-compatibility-with-openssh",
+          "status": null,
+          "student_name": "Nikhil Venkatesan",
+          "student_profile": null,
+          "tags": [],
+          "title": "Improve configuration compatibility with OpenSSH"
+        }
+      ],
+      "status": "selected",
+      "data_completeness": {
+        "projects": true,
+        "contributors": true,
+        "descriptions": true,
+        "mentors": false,
+        "code_urls": false,
+        "project_tags": false,
+        "difficulty": false,
+        "status": false,
+        "timestamps": false
+      }
+    }
   },
   "first_time": false,
   "contact": {
