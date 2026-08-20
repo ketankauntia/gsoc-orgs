@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Code2, Calendar, ArrowRight, TrendingUp, Building2 } from "lucide-react";
 import {
@@ -17,10 +18,12 @@ import { getAvailableProjectYears, loadProjectsYearData } from "@/lib/projects-p
 // Static Generation - cache forever
 export const revalidate = false;
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "GSoC Projects by Year",
-  description: "Explore Google Summer of Code projects by year. Browse historical project data from 2016 to 2025.",
-};
+  description:
+    "Explore Google Summer of Code projects year by year. Browse accepted projects, participating organizations, and technology trends from 2016 onwards.",
+  path: "/projects",
+});
 
 export default async function ProjectsIndexPage() {
   // Load summary data for each year - at BUILD TIME only
@@ -53,6 +56,7 @@ export default async function ProjectsIndexPage() {
           <div className="space-y-6">
             <SectionHeader
               badge="GSoC Projects"
+              titleAs="h1"
               title="Google Summer of Code Projects"
               description="Explore all GSoC projects from 2016 to 2025. Browse by year to see accepted projects, participating organizations, and technology trends."
               align="center"

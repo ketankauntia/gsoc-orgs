@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
@@ -10,12 +11,12 @@ import { getArchiveFacets, searchArchive } from "@/lib/proposals/archive-search"
 import { getApprovedProposals } from "@/lib/proposals/queries";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Search GSoC Projects and Accepted Proposals",
   description:
-    "Search every archived Google Summer of Code project by year, organization, and technology. Read contributor-shared accepted proposals, or claim your own selection.",
-  alternates: { canonical: "/proposals" },
-};
+    "Search archived Google Summer of Code projects by year, organization, and technology, and read accepted proposals shared by past contributors.",
+  path: "/proposals",
+});
 
 type SearchParams = { q?: string; year?: string; organization?: string; technology?: string; page?: string };
 

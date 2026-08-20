@@ -3,7 +3,7 @@ import {
   Heading,
   Text,
 } from "@/components/ui";
-import { getFullUrl } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 import { loadTopicsIndexData } from "@/lib/topics-page-types";
 import { TopicsClient } from "./topics-client";
 
@@ -21,29 +21,12 @@ import { TopicsClient } from "./topics-client";
 export const revalidate = 3600; // 1 hour
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "GSoC Topics & Categories - Google Summer of Code Organizations Guide",
-    description: "Explore Google Summer of Code organizations and projects organized by topic. Find the perfect match for your skills and interests.",
-    alternates: {
-      canonical: getFullUrl("/topics"),
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    openGraph: {
-      title: "GSoC Topics & Categories",
-      description: "Explore Google Summer of Code organizations and projects organized by topic",
-      url: getFullUrl("/topics"),
-      type: "website",
-      siteName: "GSoC Organizations Guide",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "GSoC Topics & Categories",
-      description: "Explore Google Summer of Code organizations and projects organized by topic",
-    },
-  };
+  return buildPageMetadata({
+    title: "GSoC Topics & Categories",
+    description:
+      "Browse Google Summer of Code organizations and projects by topic, from machine learning to developer tooling, and find the area that fits your skills.",
+    path: "/topics",
+  });
 }
 
 export default async function TopicsPage() {

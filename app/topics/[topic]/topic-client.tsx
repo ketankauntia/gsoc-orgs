@@ -61,6 +61,7 @@ export function TopicPageClient({ topic }: TopicPageClientProps) {
           </Badge>
         </div>
         <SectionHeader
+          titleAs="h1"
           title={topic.name}
           description={`Explore ${topic.organizationCount} organizations working on ${topic.name} with ${topic.projectCount} total projects across ${topic.years.length} years.`}
           align="left"

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -23,6 +24,7 @@ import {
 import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import { loadProjectsYearData, getAvailableProjectYears } from "@/lib/projects-page-types";
+import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { ExpandableProjectList } from "./client-components";
 import {
   LanguagesBarChart,
@@ -44,22 +46,23 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ year: string }>;
-}) {
+}): Promise<Metadata> {
   const { year } = await params;
   const data = await loadProjectsYearData(parseInt(year));
-  
+
   if (!data) {
-    return { title: "Projects Not Found" };
+    return buildNotFoundMetadata("Projects");
   }
 
-  return {
-    title: data.title,
+  return buildPageMetadata({
+    title: [data.title, `GSoC ${year} Projects`],
     description: data.description,
-    openGraph: {
-      title: data.title,
-      description: data.description,
-    },
-  };
+    descriptionExtras: [
+      `Browse ${data.metrics.total_projects} accepted projects from ${data.metrics.total_organizations} organizations`,
+      "Filter by organization, contributor, mentor, or technology",
+    ],
+    path: `/projects/${year}`,
+  });
 }
 
 export default async function ProjectsYearPage({
@@ -90,6 +93,7 @@ export default async function ProjectsYearPage({
           <div className="space-y-6">
             <SectionHeader
               badge={`GSoC ${year}`}
+              titleAs="h1"
               title={data.title}
               description={data.description}
               align="center"

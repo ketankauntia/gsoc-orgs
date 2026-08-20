@@ -5,7 +5,7 @@ import {
 } from "@/lib/tech-stack-page-types";
 import { TechStackDetailClient } from "./tech-stack-detail-client";
 import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
-import { getFullUrl } from "@/lib/constants";
+import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { isTaxonomyIndexEligible } from "@/lib/search-index-policy";
 
 // Static Generation - cache forever, NO dynamic behavior
@@ -33,22 +33,21 @@ export async function generateMetadata({
   const data = await loadTechStackPageData(canonicalSlug);
 
   if (!data) {
-    return { title: "Technology Not Found", robots: { index: false, follow: false } };
+    return buildNotFoundMetadata("Technology");
   }
 
   const indexable = isTaxonomyIndexEligible(data.metrics.org_count, data.metrics.project_count);
 
-  return {
-    title: `${data.name} | GSoC Organizations`,
-    description: `Explore ${data.metrics.org_count} Google Summer of Code organizations using ${data.name}. View projects, trends, and find opportunities.`,
-    robots: { index: indexable, follow: true },
-    alternates: { canonical: getFullUrl(`/tech-stack/${canonicalSlug}`) },
-    openGraph: {
-      title: `${data.name} | GSoC Organizations`,
-      description: `Explore ${data.metrics.org_count} organizations using ${data.name} in Google Summer of Code`,
-      url: getFullUrl(`/tech-stack/${canonicalSlug}`),
-    },
-  };
+  return buildPageMetadata({
+    title: [`${data.name} - GSoC Organizations`, `${data.name} in GSoC`],
+    description: `Explore ${data.metrics.org_count} Google Summer of Code organizations using ${data.name}.`,
+    descriptionExtras: [
+      `Compare ${data.metrics.project_count} accepted projects built with ${data.name}`,
+      "Review participation trends and find an organization that matches your skills",
+    ],
+    path: `/tech-stack/${canonicalSlug}`,
+    index: indexable,
+  });
 }
 
 export default async function TechStackDetailPage({

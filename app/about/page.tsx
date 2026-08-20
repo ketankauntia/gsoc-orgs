@@ -1,8 +1,8 @@
+import { buildPageMetadata } from "@/lib/seo";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import { Container, SectionHeader, Heading, Text, CardWrapper, Grid } from "@/components/ui";
 import type { Metadata } from "next";
-import { getFullUrl } from "@/lib/constants";
 import { Users, Target, Heart, Code, Globe } from "lucide-react";
 
 // Force revalidation to ensure footer links stay updated
@@ -14,10 +14,11 @@ import { Users, Target, Heart, Code, Globe } from "lucide-react";
  */
 export const revalidate = 2592000; // 30 days
 
-export const metadata: Metadata = {
-  title: "About Us | GSoC Organizations Guide",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About Us",
   description:
-    "Learn about GSoC Organizations Guide - your comprehensive platform to discover, explore, and prepare for Google Summer of Code opportunities. Our mission is to help students find the perfect open-source organization.",
+    "Learn about the mission behind GSoC Organizations Guide: helping students discover, compare, and prepare for Google Summer of Code organizations.",
+  path: "/about",
   keywords: [
     "about GSoC",
     "Google Summer of Code guide",
@@ -25,33 +26,7 @@ export const metadata: Metadata = {
     "open source education",
     "student developer resources",
   ],
-  openGraph: {
-    title: "About Us | GSoC Organizations Guide",
-    description:
-      "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
-    url: getFullUrl("/about"),
-    type: "website",
-    siteName: "GSoC Organizations Guide",
-    images: [
-      {
-        url: getFullUrl("/og/gsoc-organizations-guide.jpg"),
-        width: 1200,
-        height: 630,
-        alt: "GSoC Organizations Guide",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Us | GSoC Organizations Guide",
-    description:
-      "Learn about our mission to help students discover and prepare for Google Summer of Code opportunities.",
-    images: [getFullUrl("/og/gsoc-organizations-guide.jpg")],
-  },
-  alternates: {
-    canonical: getFullUrl("/about"),
-  },
-};
+});
 
 const values = [
   {

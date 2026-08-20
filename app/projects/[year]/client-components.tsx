@@ -152,7 +152,12 @@ function ProjectCard({ project }: { project: ProjectEntry }) {
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <Text className="font-medium truncate">{project.project_title}</Text>
+            <Link
+              href={`/organizations/${project.org_slug}/projects/${project.project_id}`}
+              className="font-medium truncate hover:underline"
+            >
+              {project.project_title}
+            </Link>
           </div>
           <div className="flex items-center gap-2 mt-1 flex-wrap">
             <Link

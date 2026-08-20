@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Pagination } from "@/components/blog/pagination";
 import { NewsletterCta } from "@/components/blog/newsletter-cta";
@@ -10,12 +11,12 @@ import { getSettings } from "@/lib/settings";
 // ISR: regenerate hourly so scheduled posts + content changes surface without a rebuild.
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
-  title: "GSoC Guide 2027, Organizations and Proposal Resources",
+export const metadata: Metadata = buildPageMetadata({
+  title: "GSoC Guides, Organizations and Proposals",
   description:
-    "Research-backed GSoC guides for 2027 preparation, organization lists, choosing GSoC orgs, open-source contributions and project proposals.",
-  alternates: { canonical: "/blog" },
-};
+    "Research-backed GSoC guides for 2027 preparation: organization lists, how to choose an org, open-source contributions, and writing project proposals.",
+  path: "/blog",
+});
 
 export default function BlogIndexPage() {
   const categories = getCategories().map((c) => ({ label: c, slug: categoryToSlug(c) }));

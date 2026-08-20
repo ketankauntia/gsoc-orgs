@@ -54,10 +54,16 @@ async function organizationEntries(): Promise<SitemapUrlEntry[]> {
   const lastModified = validLastModified(data.published_at);
   return [
     { url: absoluteSitemapUrl("/organizations"), lastModified },
-    ...data.organizations.map((organization) => ({
-      url: absoluteSitemapUrl(`/organizations/${encodeURIComponent(organization.slug)}`),
-      lastModified,
-    })),
+    ...data.organizations.flatMap((organization) => [
+      {
+        url: absoluteSitemapUrl(`/organizations/${encodeURIComponent(organization.slug)}`),
+        lastModified,
+      },
+      {
+        url: absoluteSitemapUrl(`/organizations/${encodeURIComponent(organization.slug)}/projects`),
+        lastModified,
+      },
+    ]),
   ];
 }
 

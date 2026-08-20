@@ -1,8 +1,8 @@
+import { buildPageMetadata } from "@/lib/seo";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/components/ui";
 import type { Metadata } from "next";
-import { getFullUrl } from "@/lib/constants";
 
 // Force revalidation to ensure footer links stay updated
 /**
@@ -11,27 +11,13 @@ import { getFullUrl } from "@/lib/constants";
  */
 export const revalidate = 2592000; // 30 days
 
-export const metadata: Metadata = {
-  title: "Terms and Conditions | GSoC Organizations Guide",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Terms and Conditions",
   description:
-    "Read our terms and conditions to understand the rules and guidelines for using GSoC Organizations Guide website and services.",
-  keywords: [
-    "terms and conditions",
-    "terms of service",
-    "user agreement",
-    "GSoC terms",
-    "website terms",
-  ],
-  openGraph: {
-    title: "Terms and Conditions | GSoC Organizations Guide",
-    description: "Read our terms and conditions for using our platform.",
-    url: getFullUrl("/terms-and-conditions"),
-    images: ["/og.webp"],
-  },
-  alternates: {
-    canonical: getFullUrl("/terms-and-conditions"),
-  },
-};
+    "Read the terms and conditions for using GSoC Organizations Guide, covering acceptable use, contributed content, data accuracy, and limitations of liability.",
+  path: "/terms-and-conditions",
+  keywords: ["terms and conditions", "terms of service", "user agreement", "GSoC terms", "website terms"],
+});
 
 const sections = [
   {

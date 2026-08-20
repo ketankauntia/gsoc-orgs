@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PostBreadcrumbs } from "@/components/blog/post-breadcrumbs";
@@ -22,12 +23,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const tag = getTagBySlug(slug);
   if (!tag) return {};
-  return {
-    title: `#${tag} — GSoC Organizations Blog`,
-    description: `Articles tagged "${tag}" on the GSoC Organizations Blog.`,
-    alternates: { canonical: `/blog/tag/${slug}` },
-    robots: { index: false, follow: true },
-  };
+  return buildPageMetadata({
+    title: [`#${tag} - GSoC Guides`, `#${tag}`],
+    description: `Articles tagged "${tag}" on the GSoC Organizations Guide blog.`,
+    descriptionExtras: [
+      "Research, comparisons, and practical steps for Google Summer of Code applicants",
+    ],
+    path: `/blog/tag/${slug}`,
+    index: false,
+  });
 }
 
 export default async function TagPage({

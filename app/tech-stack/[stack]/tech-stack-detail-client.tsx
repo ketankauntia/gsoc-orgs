@@ -83,6 +83,7 @@ export function TechStackDetailClient({ data }: TechStackDetailClientProps) {
       {/* Header */}
       <SectionHeader
         badge="Technology"
+        titleAs="h1"
         title={data.name}
         description={`${data.metrics.org_count} organization${data.metrics.org_count !== 1 ? "s" : ""} using ${data.name} with ${data.metrics.project_count} total projects`}
         align="center"

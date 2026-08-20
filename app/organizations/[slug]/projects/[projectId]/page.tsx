@@ -3,25 +3,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Code, ExternalLink, Users } from "lucide-react";
 import { Badge, Button, CardWrapper, Heading, Text } from "@/components/ui";
-import { getFullUrl } from "@/lib/constants";
+import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import {
-  getAvailableProjectYears,
-  loadProjectsYearData,
-  type ProjectEntry,
+  loadOrganizationProjects,
+  type ProjectEntryWithYear,
 } from "@/lib/projects-page-types";
 import { technologyHref } from "@/lib/vocabulary/catalog";
 
-type ProjectWithYear = ProjectEntry & { year: number };
-
-async function getProject(organizationSlug: string, projectId: string): Promise<ProjectWithYear | null> {
-  for (const year of [...getAvailableProjectYears()].sort((a, b) => b - a)) {
-    const document = await loadProjectsYearData(year);
-    const project = document?.projects.find(
-      (entry) => entry.project_id === projectId && entry.org_slug === organizationSlug,
-    );
-    if (project) return { ...project, year };
-  }
-  return null;
+async function getProject(
+  organizationSlug: string,
+  projectId: string,
+): Promise<ProjectEntryWithYear | null> {
+  const projects = await loadOrganizationProjects(organizationSlug);
+  return projects.find((entry) => entry.project_id === projectId) ?? null;
 }
 
 export async function generateMetadata({
@@ -31,17 +25,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug, projectId } = await params;
   const project = await getProject(slug, projectId);
-  if (!project) return { title: "Project Not Found", robots: { index: false, follow: false } };
+  if (!project) return buildNotFoundMetadata("Project");
 
-  const description = project.project_abstract_short ?? project.project_description ??
-    `${project.project_title}, a Google Summer of Code ${project.year} project at ${project.org_name}.`;
-  const canonical = getFullUrl(`/organizations/${slug}/projects/${projectId}`);
-  return {
-    title: `${project.project_title} - ${project.org_name}`,
-    description,
-    alternates: { canonical },
-    openGraph: { title: project.project_title, description, url: canonical, type: "article" },
-  };
+  const technologies = project.tech_stack?.slice(0, 4).join(", ");
+  return buildPageMetadata({
+    title: [`${project.project_title} - ${project.org_name}`, project.project_title],
+    description: project.project_abstract_short ?? project.project_description,
+    descriptionExtras: [
+      `A Google Summer of Code ${project.year} project at ${project.org_name}`,
+      project.contributor ? `Completed by ${project.contributor}` : null,
+      technologies ? `Built with ${technologies}` : null,
+      "See the contributor, mentors, technologies, and source code for this GSoC project",
+    ],
+    path: `/organizations/${slug}/projects/${projectId}`,
+    type: "article",
+  });
 }
 
 export default async function ProjectDetailPage({
@@ -61,6 +59,8 @@ export default async function ProjectDetailPage({
         <span aria-hidden="true">/</span>
         <Link href={`/organizations/${project.org_slug}`} className="hover:text-foreground">{project.org_name}</Link>
         <span aria-hidden="true">/</span>
+        <Link href={`/organizations/${project.org_slug}/projects`} className="hover:text-foreground">Projects</Link>
+        <span aria-hidden="true">/</span>
         <span className="text-foreground">{project.project_title}</span>
       </nav>
 
@@ -72,7 +72,9 @@ export default async function ProjectDetailPage({
 
       <section className="space-y-5">
         <div className="flex flex-wrap gap-2">
+          <Link href={`/projects/${project.year}`}>
           <Badge variant="outline">GSoC {project.year}</Badge>
+        </Link>
           {project.status ? <Badge variant="secondary">{project.status}</Badge> : null}
           {project.difficulty ? <Badge variant="secondary">{project.difficulty}</Badge> : null}
         </div>

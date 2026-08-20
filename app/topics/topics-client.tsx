@@ -41,6 +41,7 @@ export function TopicsClient({ topics, trendingTopics, total }: TopicsClientProp
       {/* Page Header */}
       <SectionHeader
         badge="Browse by Interest"
+        titleAs="h1"
         title="GSoC Topics & Categories"
         description="Explore Google Summer of Code organizations and projects organized by topic. Find the perfect match for your skills and interests."
         align="center"
