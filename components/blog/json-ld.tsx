@@ -51,12 +51,15 @@ export function PostJsonLd({ post, author }: { post: Post; author: Author }) {
       })),
   ];
 
-  const sameAs = [author.websiteUrl, author.linkedinUrl, author.twitterUrl].filter(Boolean);
+  const sameAs = [author.websiteUrl, author.linkedinUrl, author.twitterUrl]
+    .filter((value): value is string => Boolean(value))
+    .map(absoluteUrl);
+  const authorUrl = author.websiteUrl ? absoluteUrl(author.websiteUrl) : undefined;
   const person = {
     "@type": "Person",
     name: author.name,
     jobTitle: author.role,
-    ...(author.websiteUrl && { url: author.websiteUrl }),
+    ...(authorUrl && { url: authorUrl }),
     ...(sameAs.length > 0 && { sameAs }),
   };
 
@@ -80,7 +83,7 @@ export function PostJsonLd({ post, author }: { post: Post; author: Author }) {
           "@type": "Organization",
           name: siteConfig.organization.name,
           url: siteConfig.organization.url,
-          logo: { "@type": "ImageObject", url: siteConfig.organization.logo },
+          logo: { "@type": "ImageObject", url: absoluteUrl(siteConfig.organization.logo) },
         },
         keywords: post.tags.join(", "),
         articleSection: post.category,
@@ -105,7 +108,7 @@ export function PostJsonLd({ post, author }: { post: Post; author: Author }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph).replace(/</g, "\\u003c") }}
     />
   );
 }
