@@ -2,8 +2,9 @@
 title: "GSoC Preparation Roadmap: From Zero to Proposal"
 description: "Follow a GSoC preparation roadmap built around readiness evidence, Git, one practical stack, real contributions, organization research and proposal milestones."
 category: GSoC Guides
-tags: [gsoc preparation roadmap, open source, git, first contribution, proposal]
+tags: [gsoc, gsoc preparation, first contribution, gsoc proposals, beginners]
 publishedAt: "2026-06-26T17:40:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: gsoc preparation roadmap
@@ -25,6 +26,12 @@ faqs:
     a: "Possibly, if you already have a practical technical baseline and choose a compatible project. Use a readiness diagnostic, narrow aggressively and stop if you cannot set up the repository or understand the problem in time. Preparation cannot guarantee selection."
   - q: "Should I prepare only for organizations that joined GSoC before?"
     a: "No. Historical participation is useful research evidence but not confirmation of a future list. Build transferable open-source skills, then reconcile your shortlist with the officially accepted organizations and current idea pages when Google publishes them."
+  - q: "How do I start GSoC preparation with no open-source experience?"
+    a: "Learn the basic Git, build and test workflow in one stack, then set up a real repository and complete a bounded issue under review. Delay proposal writing until you can explain the community problem and contribution path."
+  - q: "How can I measure whether my GSoC preparation is working?"
+    a: "Track evidence such as clean setup time, tests you can run, subsystems traced, useful questions answered, reviewed contributions and project assumptions resolved. Hours watched and repositories starred are activity counts, not readiness outcomes."
+  - q: "How many hours a day should I prepare for GSoC?"
+    a: "There is no universal daily target. Choose a sustainable weekly block, define one observable outcome for each session and leave room for review delays. Consistent repository work is more useful than a short burst of passive study."
 ---
 
 A GSoC preparation roadmap should produce evidence that you can work in an open-source community, not a pile of completed courses. Begin with a readiness diagnostic, build Git and command-line fluency, choose one practical stack, learn to build and debug real software, study several communities, make a useful contribution, deepen your project understanding and only then turn that evidence into a proposal. The paths below use runways of 12 months, 6 months and 3 months for different starting baselines.

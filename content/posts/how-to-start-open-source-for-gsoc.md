@@ -2,8 +2,9 @@
 title: "How to Start Open Source for GSoC: First Contribution"
 description: "Start open source for GSoC with a practical workflow for choosing a repository, finding a useful issue, testing a focused change and handling review."
 category: Open Source
-tags: [gsoc, open source, first contribution, pull requests, github]
+tags: [gsoc, open source, first contribution, pull requests, beginners]
 publishedAt: "2026-06-30T12:20:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: primary
 keyphrase: start open source for gsoc
@@ -23,6 +24,14 @@ faqs:
     a: "It can be genuinely useful and can teach you the workflow, but its relevance depends on the project and organization. Explain what problem it solved, how you verified it and what you learned; do not inflate a typo fix into proof that you can deliver an unrelated engineering project."
   - q: "What should I do if my first pull request is rejected?"
     a: "Identify whether the cause was scope, duplication, process, design, tests or communication. Thank the reviewer, close the loop professionally, record the lesson and choose a better-aligned task. Rejection is useful when it improves your next decision."
+  - q: "How do I find a good first issue in a GSoC repository?"
+    a: "Start from the contribution guide and recently maintained labels, then verify that the issue is current, reproducible, unclaimed and small enough to review. Ask before implementing when ownership or expected behavior is unclear."
+  - q: "What if I cannot set up the open-source project locally?"
+    a: "Capture the operating system, versions, exact command, full error and steps already tried. Search current documentation and issues, then ask a reproducible question. Setup work is valuable evidence, not time lost before the real contribution."
+  - q: "Should I submit an AI-generated pull request to get noticed for GSoC?"
+    a: "No. Follow the project's AI policy and never submit work you cannot explain and validate. Unreviewed generated patches shift debugging and licensing cost to maintainers and can damage trust before proposal review."
+  - q: "Can tests, documentation or issue triage count as a first contribution?"
+    a: "Yes when the work solves a real project need and follows its process. Relevance matters more than artifact type, so explain the verified outcome and what it taught you about the project you may propose."
 ---
 
 To start open source for GSoC, do not begin by collecting random pull requests. Begin with one maintained community, learn how it works, reproduce a problem that matters to it, agree on a bounded change, and take that change through testing and review. The goal is not a contribution counter; it is evidence that you can understand unfamiliar software and collaborate in public.
@@ -211,7 +220,7 @@ Thank reviewers for clear feedback. Do not argue that time spent creates an obli
 
 As of 2026-08-12, organizations set their own AI policies. Google's [AI guidance for GSoC contributors](https://developers.google.com/open-source/gsoc/resources/ai_guidance) says the human remains fully responsible for understanding and validating submitted work. Some communities prohibit generated code or proposal text entirely.
 
-Google's current [anti-spam guidance](https://developers.google.com/open-source/gsoc/resources/spam_proposals) describes organization-specific screening such as meaningful contribution links, tests or community interaction. Its example of one to three contributions is a possible local filter—not a universal applicant quota.
+Google's current [anti-spam guidance](https://developers.google.com/open-source/gsoc/resources/spam_proposals) describes organization-specific screening such as meaningful contribution links, tests or community interaction. Its example of one to three contributions is a possible local filter, not a universal applicant quota.
 
 Never submit code you cannot explain, test or license. Do not create generic issues, rewrite documentation without verification, or flood repositories with mechanical patches. If a tool helped where policy permits it, inspect every change, verify sources and disclose use when required. Authentic understanding is the asset you need for project discussion and proposal review.
 

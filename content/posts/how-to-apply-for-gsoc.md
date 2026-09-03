@@ -2,8 +2,9 @@
 title: "How to Apply for GSoC: Process, Timeline and Checklist"
 description: "Learn how to apply for GSoC step by step: verify eligibility, research organizations, contribute, write a proposal and submit safely before the UTC deadline."
 category: GSoC Applications
-tags: [gsoc application, how to apply for gsoc, proposal, timeline, checklist]
+tags: [gsoc, gsoc applications, gsoc proposals, project planning]
 publishedAt: "2026-06-02T09:15:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: how to apply for gsoc
@@ -25,6 +26,12 @@ faqs:
     a: "The Contributor Guide says a proposal can be edited before the application deadline. Submit an early draft for possible feedback, then make sure the final version is present in the official system before the deadline."
   - q: "Is there an extension if I miss the deadline?"
     a: "No. Official applicant advice says GSoC does not grant contributor proposal deadline extensions, including for time-zone mistakes, exams, connection failures or emergencies. Submit well in advance."
+  - q: "What information should I prepare before the GSoC application opens?"
+    a: "Prepare accurate eligibility and profile information, the organization's required proposal sections, relevant public work, availability and a current project plan. The official portal and target organization decide the final required fields."
+  - q: "Should I submit a draft GSoC proposal to the official portal?"
+    a: "Submitting early can protect against deadline and upload problems and may allow review before applications close. Mark the draft clearly, keep an offline copy and verify that the final revision is saved in the official system."
+  - q: "What happens after I submit a GSoC proposal?"
+    a: "Organizations review proposals, may ask questions or run their stated assessment process, rank mentor-supported projects and work within allocated slots. Continue responding through approved channels without pressuring mentors for private selection information."
 ---
 
 If you want to know how to apply for GSoC, complete five connected tasks: prove you meet the current formal rules, work from the official calendar, select an accepted organization and feasible project, follow that community's prerequisites, and submit a compliant proposal through the GSoC web application before the UTC deadline. Community contact and contributions strengthen the work, but neither replaces the official submission.

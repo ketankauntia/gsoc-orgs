@@ -2,8 +2,9 @@
 title: "Accepted GSoC Proposal Examples: What to Learn"
 description: "Study accepted GSoC proposal examples with a transparent rubric for problem research, deliverables, milestones, testing, risks and contribution evidence."
 category: GSoC Applications
-tags: [gsoc proposal, accepted proposals, gsoc applications, project planning]
+tags: [gsoc, gsoc proposals, gsoc applications, project planning]
 publishedAt: "2026-07-17T16:45:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: accepted gsoc proposal examples
@@ -23,6 +24,14 @@ faqs:
     a: "There is no universal single section. Reviewers need a coherent chain from a real community problem through the proposed approach, measurable deliverables, tests, timeline, risks, availability and evidence that the applicant understands the context."
   - q: "Does an accepted proposal prove the same format will work again?"
     a: "No. Acceptance also depends on organization-specific evaluation, applicant interaction, mentor availability, project fit, ranking and available slots. Historical examples cannot reveal or reproduce all of those conditions."
+  - q: "What makes a GSoC proposal timeline look realistic?"
+    a: "A realistic timeline connects each milestone to a reviewable outcome, includes testing and documentation, allows time for mentor review, records known absences and reserves buffer for technical uncertainty. Week labels alone are not evidence of feasibility."
+  - q: "How should I show previous contributions in a GSoC proposal?"
+    a: "Link only relevant public work and explain the problem, your contribution, how it was reviewed and what it taught you about the target codebase. A short evidence table is more useful than a long list of unrelated repositories."
+  - q: "Should an accepted-style GSoC proposal include risks and fallback plans?"
+    a: "Yes. Name the highest-impact technical, dependency and schedule risks, then give a mitigation, an observable trigger and a smaller fallback outcome. This shows planning discipline without pretending every unknown has already been solved."
+  - q: "Why can a polished GSoC proposal still be rejected?"
+    a: "Selection also depends on current community need, demonstrated understanding, mentor availability, project ranking and allocated slots. Strong formatting cannot compensate for weak project evidence, and a sound proposal can still lose to capacity constraints."
 ---
 
 Accepted GSoC proposal examples are useful for studying how a past applicant turned a community problem into an engineering plan. They are dangerous when treated as fill-in-the-blank templates. An example reflects a particular year, organization, project, mentor conversation and codebase state; acceptance does not certify every sentence as timeless best practice.

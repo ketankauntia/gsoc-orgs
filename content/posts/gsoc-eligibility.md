@@ -2,8 +2,9 @@
 title: "GSoC Eligibility: Student, Graduate and Beginner Rules"
 description: "Check GSoC eligibility for students, graduates, professionals and open-source beginners with current rules, examples and an annual verification checklist."
 category: GSoC Applications
-tags: [gsoc eligibility, gsoc application, students, open source beginners]
+tags: [gsoc, eligibility, gsoc applications, beginners]
 publishedAt: "2026-05-19T18:25:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: gsoc eligibility
@@ -25,6 +26,12 @@ faqs:
     a: "No. The FAQ lists fewer than roughly ten scattered issues or pull requests as one compatible example of minimal experience, not a mechanical safe harbor. Regular or sustained contribution can make someone non-beginner regardless of a simple count."
   - q: "What should I do if my case is unclear?"
     a: "Read the current Program Rules, FAQ and contributor terms, record the facts of your case accurately, and contact official GSoC support for program clarification. Seek qualified local advice for work-authorization or legal questions."
+  - q: "Can a school student apply for GSoC?"
+    a: "Student status alone is not enough. The applicant must be at least 18 at registration and satisfy the current student or open-source-beginner, residence, work-eligibility and participation rules. Verify the current official terms for the cycle."
+  - q: "Can someone who was accepted to GSoC before apply again?"
+    a: "Prior participation is limited by current program rules, and mentor or organization-administrator roles can create additional restrictions. Count prior acceptances accurately and check the current FAQ instead of relying on an old rule summary."
+  - q: "Does nationality decide GSoC eligibility?"
+    a: "Eligibility uses current residence and legal ability to work in that country, along with program restrictions, rather than a ranking by nationality. Do not infer country eligibility from another applicant's experience because sanctions and legal rules can change."
 ---
 
 GSoC eligibility is not limited to university students. Under the rules published as of August 12, 2026, an applicant must be at least 18 years old at registration, be a student or an open-source beginner, be eligible to work in the country where they will reside during the program, satisfy current geographic restrictions and have been accepted into GSoC no more than once before. Each condition matters: meeting one does not waive the others.

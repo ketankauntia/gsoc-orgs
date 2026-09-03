@@ -2,9 +2,9 @@
 title: "What Is GSoC? How Google Summer of Code Works"
 description: "What is GSoC? Learn how Google Summer of Code connects new open-source contributors with organizations, mentors, projects and evaluations."
 category: GSoC Guides
-tags: [gsoc, google summer of code, open source, beginners]
+tags: [gsoc, beginners, open source, gsoc applications]
 publishedAt: "2026-05-12T09:40:00+05:30"
-updatedAt: "2026-08-10T15:30:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 cornerstone: true
 coverTone: chart-2
@@ -25,6 +25,14 @@ faqs:
     a: "No. Current rules allow applicants who are students or open-source beginners, provided they also satisfy the age, residence, work-eligibility and prior-participation rules. Check the current eligibility page before each cycle."
   - q: "Does every GSoC project last three months?"
     a: "No. Current project scopes are approximately 90, 175 or 350 hours. Standard schedules are commonly 8 or 12 weeks, while approved schedules can vary within current program limits. Scope and milestones matter more than assuming a fixed number of hours every week."
+  - q: "Is every GSoC contributor paid a stipend?"
+    a: "Eligible accepted contributors may receive the location and project-size-based stipend through evaluation-linked payments. Acceptance is not unconditional payment, and current provider, tax and schedule details must be checked for the program year."
+  - q: "Who selects GSoC contributors?"
+    a: "Mentoring organizations evaluate and rank proposals they can support, with mentors and organization administrators handling project fit and capacity. Google administers the program and slot process rather than acting as the technical hiring manager for every project."
+  - q: "Do I need to know a specific programming language for GSoC?"
+    a: "No universal language is required. Each organization and project sets its own stack and prerequisites, so choose a current problem and prove readiness in its actual repository."
+  - q: "What should I do first if I want to apply for GSoC?"
+    a: "Verify current eligibility, assess your Git, build, test and communication baseline, then research several active open-source communities. Delay proposal drafting until you understand a real project and its contribution process."
 ---
 
 If you are asking "what is GSoC?", Google Summer of Code is a global and fully online program that introduces new contributors to open-source software development. Eligible applicants propose a project to a participating open-source organization; selected contributors then work with mentors from that community, complete agreed deliverables and take part in evaluations. Google administers the program and pays eligible stipends, but GSoC is not employment or an internship at Google.
