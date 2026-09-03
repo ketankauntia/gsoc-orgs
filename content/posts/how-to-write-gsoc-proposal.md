@@ -2,8 +2,9 @@
 title: "How to Write a GSoC Proposal: Research, Scope and Timeline"
 description: "Learn how to write a GSoC proposal with organization-specific research, measurable deliverables, milestones, risks, communication and AI-policy checks."
 category: GSoC Applications
-tags: [gsoc proposal, gsoc guide, gsoc organizations, open source]
+tags: [gsoc, gsoc proposals, project planning, gsoc applications]
 publishedAt: "2026-06-16T10:35:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: write a gsoc proposal
@@ -16,7 +17,7 @@ keyTakeaways:
   - Treat AI-generated proposal text as potentially disallowed and always follow the target organization's policy.
 faqs:
   - q: "What should a GSoC proposal include?"
-    a: "Include the problem, value to the organization, related work, technical approach, measurable deliverables, timeline, tests, documentation, risks, communication plan, relevant experience and outside commitments—plus every field required by the organization."
+    a: "Include the problem, value to the organization, related work, technical approach, measurable deliverables, timeline, tests, documentation, risks, communication plan, relevant experience and outside commitments, plus every field required by the organization."
   - q: "How long should a GSoC proposal be?"
     a: "There is no universal ideal length. Follow the organization's template or limit and write enough to make scope and evaluation clear. Specific evidence is more valuable than repeated background or generic praise."
   - q: "Can I submit three GSoC proposals?"
@@ -25,6 +26,12 @@ faqs:
     a: "Yes. Official guidance recommends an early draft because mentors may need days to respond and can request clarification before the deadline. A draft in the official system can usually be edited until applications close, subject to current rules."
   - q: "Can ChatGPT or another AI tool write my GSoC proposal?"
     a: "An organization may prohibit AI-written proposals and reject them automatically. Read its current policy. Your proposal must represent your own research, decisions and ability to execute; never submit generated claims or plans you cannot defend."
+  - q: "How detailed should a GSoC proposal timeline be?"
+    a: "Each milestone should name a reviewable outcome, tests or acceptance evidence, dependencies and buffer. Use weeks or phases according to the organization's template, and record planned absences instead of promising identical output every week."
+  - q: "What risks should I include in a GSoC proposal?"
+    a: "Include the few risks most likely to change scope or delivery, such as unfamiliar architecture, external APIs, data access, performance or review dependencies. Give each a mitigation, decision trigger and useful fallback."
+  - q: "Should I disclose exams, a job or other commitments in my proposal?"
+    a: "Yes. Record known constraints and explain how the schedule accommodates them. Hidden conflicts undermine planning, while an honest availability model helps mentors decide whether the scope and communication plan are feasible."
 ---
 
 To write a GSoC proposal that mentors can evaluate, produce a concrete engineering plan for their community. The proposal should make it easy to answer four questions: Do you understand the problem? Can you execute the work? Can the scope be evaluated? Will communication and availability support the project?

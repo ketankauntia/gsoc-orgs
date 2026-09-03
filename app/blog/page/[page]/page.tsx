@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { Pagination } from "@/components/blog/pagination";
@@ -24,11 +25,11 @@ export async function generateMetadata({
   params: Promise<{ page: string }>;
 }): Promise<Metadata> {
   const { page } = await params;
-  return {
-    title: `Blog — Page ${page} — GSoC Organizations`,
-    description: "More articles from the GSoC Organizations Blog.",
-    alternates: { canonical: `/blog/page/${page}` },
-  };
+  return buildPageMetadata({
+    title: `GSoC Guides - Page ${page}`,
+    description: `Page ${page} of research-backed guides on choosing Google Summer of Code organizations, contributing to open source, and writing proposals.`,
+    path: `/blog/page/${page}`,
+  });
 }
 
 export default async function BlogPaginatedPage({

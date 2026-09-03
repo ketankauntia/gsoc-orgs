@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import { TrendingUp, BarChart3, Users, Rocket } from "lucide-react";
 import {
   SectionHeader,
@@ -8,16 +9,20 @@ import {
 } from "@/components/ui";
 import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 import { TechStackClientWrapper } from "./tech-stack-client-wrapper";
+import { LinkDirectory } from "@/components/link-directory";
+import { isTaxonomyIndexEligible } from "@/lib/search-index-policy";
 import { StackPopularityChart, TopStacksChart, MostSelectionsChart, MostProjectsChart, PopularityGrowthChart } from "./charts";
 
 // Static Generation - cache forever, NO dynamic behavior
 export const revalidate = false;
 export const dynamic = 'force-static';
 
-export const metadata = {
-  title: "Technologies & Programming Languages | GSoC Organizations",
-  description: "Explore Google Summer of Code organizations and projects by programming language and technology. Find opportunities that match your technical expertise.",
-};
+export const metadata = buildPageMetadata({
+  title: "Technologies & Programming Languages",
+  description:
+    "Explore Google Summer of Code organizations and projects by programming language and technology, and find opportunities that match your expertise.",
+  path: "/tech-stack",
+});
 
 export default async function TechStackPage() {
   // Load static data - SINGLE JSON READ, NO RUNTIME AGGREGATION
@@ -37,6 +42,7 @@ export default async function TechStackPage() {
           {/* Page Header */}
           <SectionHeader
             badge="Browse by Technology"
+            titleAs="h1"
             title="Programming Languages & Technologies"
             description={`Explore ${data.metrics.total_organizations} Google Summer of Code organizations across ${data.metrics.total_technologies} technologies. Find opportunities that match your technical expertise.`}
             align="center"
@@ -149,6 +155,17 @@ export default async function TechStackPage() {
 
           {/* All Tech Stacks - Client-side search/sort */}
           <TechStackClientWrapper techs={data.all_techs} />
+
+          <LinkDirectory
+            title="All indexed technologies A–Z"
+            description="The browser above searches and sorts on the client. This index keeps every indexable technology page linked for crawlers."
+            entries={data.all_techs
+              .filter((technology) => isTaxonomyIndexEligible(technology.org_count, technology.project_count))
+              .map((technology) => ({
+                href: `/tech-stack/${technology.slug}`,
+                label: technology.name,
+              }))}
+          />
 
         </div>
   );

@@ -2,8 +2,9 @@
 title: "GSoC Evaluations and Final Work Product Guide"
 description: "Prepare for GSoC evaluations with a readiness dashboard, feedback and escalation process, scope controls, and a valid final work product template."
 category: GSoC Contributors
-tags: [gsoc, evaluations, work product, mentors, project delivery]
+tags: [gsoc, evaluations, project delivery, mentors]
 publishedAt: "2026-07-28T18:05:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: gsoc evaluations
@@ -25,6 +26,12 @@ faqs:
     a: "Current official guidance says the final contributor evaluation and work-product link are required. A missing or invalid submission should result in failure, so prepare and review the stable public URL with your mentor well before the deadline."
   - q: "Does passing an evaluation guarantee immediate payment?"
     a: "A successful evaluation is a payment trigger under current rules, but payment also depends on eligibility, completed provider setup and processing. Percentages, provider, dates and supported locations are annual facts that must be checked on the current stipend page."
+  - q: "Can GSoC deliverables change before an evaluation?"
+    a: "Yes, when contributor and mentors agree on a justified rescope. Record what changed, why, which core outcome remains and how it will be evaluated. Quietly dropping difficult work is not the same as an approved scope decision."
+  - q: "What should a GSoC final work product link contain?"
+    a: "Use a stable public page that identifies the project, contributor, organization, completed deliverables, repositories or commits, tests and documentation, plus unfinished or unmerged work. Review accessibility and links with the mentor before submitting it."
+  - q: "What happens after a failed GSoC evaluation?"
+    a: "A failed required evaluation affects continued participation and the related payment under current rules. Contact the mentor and organization administrator promptly, preserve an accurate work record and use official channels for any process question or exceptional circumstance."
 ---
 
 GSoC evaluations are formal midpoint and final decisions informed by the work your mentor has observed throughout the project. Do not prepare by writing a persuasive status message on the last day. Prepare by maintaining an evidence trail: agreed outcomes, small reviewed changes, tests, documentation, decisions, risks and honest communication.
@@ -142,7 +149,7 @@ The [Working With Your Mentor guide](https://google.github.io/gsocguides/student
 
 ## How evaluations connect to payment
 
-The official FAQ says stipends are paid to eligible participants who pass evaluations. For 2026, the current stipend documentation uses two installments—45% after the first successful evaluation and 55% after the final one—with dates based on the individual project schedule.
+The official FAQ says stipends are paid to eligible participants who pass evaluations. For 2026, the current stipend documentation uses two installments: 45% after the first successful evaluation and 55% after the final one, with dates based on the individual project schedule.
 
 Those percentages, provider, dates, supported locations and setup requirements are **annual facts**. Passing does not bypass proof-of-residency, tax forms, payment-provider registration or processing. Likewise, code being unmerged does not by itself decide payment; the mentor's evaluation is the program trigger.
 

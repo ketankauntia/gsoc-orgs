@@ -6,6 +6,8 @@ interface Brand {
   name: string;
   logo: string;
   href?: string;
+  width?: number;
+  height?: number;
 }
 
 interface BrandsGridProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -46,8 +48,8 @@ export const BrandsGrid = React.forwardRef<HTMLDivElement, BrandsGridProps>(
                     <Image
                       src={brand.logo}
                       alt={`${brand.name} logo`}
-                      width={280}
-                      height={80}
+                      width={brand.width ?? 280}
+                      height={brand.height ?? 80}
                       className="h-16 sm:h-20 w-auto grayscale hover:grayscale-0 transition-all opacity-80 hover:opacity-100"
                       loading="lazy"
                     />
@@ -56,8 +58,8 @@ export const BrandsGrid = React.forwardRef<HTMLDivElement, BrandsGridProps>(
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}
-                    width={280}
-                    height={80}
+                    width={brand.width ?? 280}
+                    height={brand.height ?? 80}
                     className="h-16 sm:h-20 w-auto grayscale opacity-80"
                     loading="lazy"
                   />

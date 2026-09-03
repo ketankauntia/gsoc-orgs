@@ -1,6 +1,6 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import { Metadata } from "next";
-import { getFullUrl } from "@/lib/constants";
+import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { loadTopicData } from "@/lib/topics-page-types";
 import { TopicPageClient } from "./topic-client";
 import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
@@ -29,37 +29,21 @@ export async function generateMetadata({
   const topicData = await loadTopicData(canonicalSlug);
 
   if (!topicData) {
-    return {
-      title: "Topic Not Found - GSoC Organizations Guide",
-      robots: { index: false, follow: false },
-    };
+    return buildNotFoundMetadata("Topic");
   }
 
   const indexable = isTaxonomyIndexEligible(topicData.organizationCount, topicData.projectCount);
 
-  return {
-    title: `${topicData.name} - GSoC Topics - Google Summer of Code Organizations Guide`,
-    description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}. Find projects, opportunities, and resources.`,
-    robots: {
-      index: indexable,
-      follow: true,
-    },
-    openGraph: {
-      title: `${topicData.name} - GSoC Topics`,
-      description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
-      url: getFullUrl(`/topics/${canonicalSlug}`),
-      type: "website",
-      siteName: "GSoC Organizations Guide",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${topicData.name} - GSoC Topics`,
-      description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
-    },
-    alternates: {
-      canonical: getFullUrl(`/topics/${canonicalSlug}`),
-    },
-  };
+  return buildPageMetadata({
+    title: [`${topicData.name} - GSoC Organizations`, `${topicData.name} in GSoC`],
+    description: `Explore ${topicData.organizationCount} Google Summer of Code organizations working on ${topicData.name}.`,
+    descriptionExtras: [
+      `Browse ${topicData.projectCount} accepted projects in this area`,
+      "Compare organizations, technologies, and contributor opportunities before you apply",
+    ],
+    path: `/topics/${canonicalSlug}`,
+    index: indexable,
+  });
 }
 
 export default async function TopicPage({

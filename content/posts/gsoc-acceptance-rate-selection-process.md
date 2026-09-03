@@ -2,8 +2,9 @@
 title: "GSoC Acceptance Rate and Selection Process Explained"
 description: "Understand the GSoC acceptance rate with reproducible 2026 calculations, applicant-versus-proposal denominators and the actual mentor, ranking and slot process."
 category: GSoC Applications
-tags: [gsoc acceptance rate, gsoc selection, gsoc applications, gsoc statistics]
+tags: [gsoc, gsoc applications, selection process, data analysis]
 publishedAt: "2026-07-21T11:25:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: gsoc acceptance rate
@@ -25,6 +26,12 @@ faqs:
     a: "No. Current rules allow up to three proposals but only one acceptance, and the applications are not independent lottery tickets. Dividing attention can weaken research, contributions and communication; official applicant advice favors one or two strong proposals."
   - q: "Can I calculate my chance from an organization's past project count?"
     a: "No. Historical project counts do not reveal current applicant quality, project-specific demand, mentor capacity, ranking or Google slot allocation. Use history to research continuity and domains, not to publish personal selection odds."
+  - q: "Why are the GSoC applicant rate and proposal rate different?"
+    a: "One person may submit more than one proposal. The applicant ratio uses people as the denominator, while the proposal ratio uses submissions. Mixing those denominators creates a number that cannot answer either question accurately."
+  - q: "Do previous contributions guarantee GSoC selection?"
+    a: "No. Relevant contributions can demonstrate workflow, technical understanding and communication, and an organization may require them. Selection still depends on the complete proposal, project need, mentor support, ranking and available slots."
+  - q: "Why do strong GSoC applicants sometimes get rejected?"
+    a: "An organization may have more mentor-supported proposals than allocated slots, or another proposal may fit a higher-priority need. Rejection does not prove the applicant was unqualified, which is why published headline rates should not be read as personal verdicts."
 ---
 
 The GSoC acceptance rate has more than one valid denominator. From Google's 2026 announcement, 1,141 accepted contributors divided by 15,245 applicants is about **7.49%**. The same 1,141 divided by 23,371 submitted proposals is about **4.88%**. The first describes accepted people per applicant; the second describes accepted projects per submitted proposal. Neither is an individual's chance of selection.

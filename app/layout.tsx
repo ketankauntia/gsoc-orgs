@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
+    default: "Crack GSoC 2026: Find the Best Organizations to Apply To",
     template: "%s | GSoC Organizations Guide",
   },
   description: "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "GSoC Organizations Guide",
     locale: "en_US",
     url: SITE_URL,
-    title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
+    title: "Crack GSoC 2026: Find the Best Organizations to Apply To",
     description: "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Crack GSoC 2026 – Find the Best Organizations to Get Selected",
+    title: "Crack GSoC 2026: Find the Best Organizations to Apply To",
     description: "AI-powered GSoC organization insights and visual analytics to identify high-impact orgs and improve your GSoC 2026 selection chances.",
     images: [`${SITE_URL}/og/gsoc-organizations-guide.jpg`],
   },

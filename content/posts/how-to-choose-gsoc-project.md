@@ -2,8 +2,9 @@
 title: "How to Choose a GSoC Project and Scope It Correctly"
 description: "Choose a GSoC project by testing community value, skill fit, feasibility, dependencies and scope with a practical scorecard and risk register."
 category: GSoC Projects
-tags: [gsoc projects, gsoc ideas, project scoping, gsoc proposal, open source]
+tags: [gsoc, gsoc projects, project selection, project planning, gsoc proposals]
 publishedAt: "2026-07-03T09:05:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-3
 keyphrase: choose a gsoc project
@@ -23,6 +24,14 @@ faqs:
     a: "Choose the smallest scope that produces a coherent useful outcome and matches the organization's current size options. The hours describe expected project scope, not prestige. Verify program-year rules and discuss size with the community before finalizing the proposal."
   - q: "Do I need a prototype before submitting a GSoC proposal?"
     a: "There is no universal prototype requirement. A time-boxed feasibility spike is useful when it tests an important unknown such as an API, migration path or benchmark. Do not build the whole project privately before confirming that the organization wants the approach."
+  - q: "How do I identify dependencies in a GSoC project idea?"
+    a: "Trace required APIs, data, hardware, upstream releases, other projects, reviewer expertise and deployment access. For each dependency, record the owner, earliest test, failure signal and a fallback that preserves a useful core result."
+  - q: "How do I avoid overpromising in a GSoC proposal?"
+    a: "Define one coherent core outcome with acceptance tests, separate optional work, expose unknowns and reserve review and debugging buffer. A longer feature list is weaker than a smaller result the community can evaluate and maintain."
+  - q: "What if a project idea has no confirmed mentor?"
+    a: "Treat mentor availability as a hard gate. Ask through the organization's approved channel and do not build a proposal around assumed support. A valuable idea without a qualified available mentor may not be viable for the cycle."
+  - q: "Can I combine two GSoC ideas into one proposal?"
+    a: "Only after the organization confirms that the combined problem is valuable, mentorable and correctly scoped. Combining ideas usually adds dependencies and review risk, so preserve one measurable core and justify every added connection."
 ---
 
 To choose a GSoC project, compare more than the title and programming-language tags. Verify that the idea solves a current community problem, that you meet its firm prerequisites, that the riskiest assumptions can be tested, and that a useful core outcome fits your time and the current project-size rules. Then discuss the remaining uncertainty with the community before writing a timeline.

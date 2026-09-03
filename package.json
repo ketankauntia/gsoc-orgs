@@ -35,7 +35,9 @@
     "gsoc:transform": "npx tsx scripts/transform-year-organizations.ts",
     "gsoc:yearly": "npx tsx scripts/generate-yearly-page-from-json.ts",
     "gsoc:regen": "npx tsx scripts/regenerate-tech-topics-from-json.ts",
-    "gsoc:sync": "npx tsx scripts/fetch-year-data.ts && npx tsx scripts/transform-year-organizations.ts && npx tsx scripts/generate-yearly-page-from-json.ts && npx tsx scripts/regenerate-tech-topics-from-json.ts && npm run generate:organization-imports"
+    "gsoc:sync": "npx tsx scripts/fetch-year-data.ts && npx tsx scripts/transform-year-organizations.ts && npx tsx scripts/generate-yearly-page-from-json.ts && npx tsx scripts/regenerate-tech-topics-from-json.ts && npm run generate:organization-imports",
+    "seo:indexnow": "tsx scripts/submit-indexnow.ts",
+    "seo:indexnow:dry-run": "tsx scripts/submit-indexnow.ts --dry-run"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.11.1",

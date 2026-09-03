@@ -1,8 +1,8 @@
+import { buildPageMetadata } from "@/lib/seo";
 import { Header } from "@/components/header";
 import { FooterSmall } from "@/components/footer-small";
 import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/components/ui";
 import type { Metadata } from "next";
-import { getFullUrl } from "@/lib/constants";
 
 // Force revalidation to ensure footer links stay updated
 /**
@@ -11,27 +11,13 @@ import { getFullUrl } from "@/lib/constants";
  */
 export const revalidate = 2592000; // 30 days
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | GSoC Organizations Guide",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Privacy Policy",
   description:
-    "Read our privacy policy to understand how GSoC Organizations Guide collects, uses, and protects your personal information.",
-  keywords: [
-    "privacy policy",
-    "data protection",
-    "GSoC privacy",
-    "user privacy",
-    "data security",
-  ],
-  openGraph: {
-    title: "Privacy Policy | GSoC Organizations Guide",
-    description: "Learn how we protect your privacy and handle your data.",
-    url: getFullUrl("/privacy-policy"),
-    images: ["/og.webp"],
-  },
-  alternates: {
-    canonical: getFullUrl("/privacy-policy"),
-  },
-};
+    "Read the GSoC Organizations Guide privacy policy to understand what information the site collects, how it is used, and how your personal data is protected.",
+  path: "/privacy-policy",
+  keywords: ["privacy policy", "data protection", "GSoC privacy", "user privacy", "data security"],
+});
 
 const sections = [
   {

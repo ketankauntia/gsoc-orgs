@@ -20,7 +20,7 @@ import {
 import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import { loadYearlyPageData } from "@/lib/yearly-page-types";
-import { getFullUrl } from "@/lib/constants";
+import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { getAvailableProjectYears } from "@/lib/projects-page-types";
 import { ExpandableOrgList, ExpandableProjectList, MentorsContributorsTable } from "./client-components";
 import {
@@ -48,54 +48,33 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const validSlugs = new Set(getAvailableProjectYears().map((year) => `google-summer-of-code-${year}`));
-  if (!validSlugs.has(slug)) return { title: "GSoC Year Not Found", robots: { index: false, follow: false } };
-  
+  if (!validSlugs.has(slug)) return buildNotFoundMetadata("GSoC Year");
+
   // Load data from static JSON (cached at build time)
   const data = await loadYearlyPageData(slug);
-  
+  const year = slug.replace("google-summer-of-code-", "");
+
   if (!data) {
-    return {
-      title: "GSoC Organizations | Google Summer of Code",
-      description: "Explore organizations participating in Google Summer of Code.",
-    };
-  }
-  
-  const { title, description } = data;
-  const canonicalUrl = getFullUrl(`/yearly/${slug}`);
-  
-  return {
-    title: `${title} | GSoC Organizations Guide`,
-    description,
-    robots: {
-      index: true,
-      follow: true,
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      type: "website",
-      siteName: "GSoC Organizations Guide",
-      images: [
-        {
-          url: getFullUrl("/og/gsoc-organizations-guide.jpg"),
-          width: 1200,
-          height: 630,
-          alt: "GSoC Organizations Guide",
-        },
+    return buildPageMetadata({
+      title: `GSoC ${year} Organizations`,
+      description: `Explore the organizations that took part in Google Summer of Code ${year}.`,
+      descriptionExtras: [
+        "Compare participation, accepted projects, and technology trends for the program year",
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [getFullUrl("/og/gsoc-organizations-guide.jpg")],
-    },
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  };
+      path: `/yearly/${slug}`,
+    });
+  }
+
+  return buildPageMetadata({
+    title: [data.title, `GSoC ${year} Organizations`],
+    description: data.description,
+    descriptionExtras: [
+      `Review organization participation, accepted projects, and technology trends for Google Summer of Code ${year}`,
+    ],
+    path: `/yearly/${slug}`,
+  });
 }
+
 
 export default async function YearlyPage({
   params,
@@ -143,6 +122,7 @@ export default async function YearlyPage({
                   ? `GSoC ${year} Archive`
                   : `GSoC ${year}`
               }
+              titleAs="h1"
               title={data.title}
               description={data.description}
               align="center"

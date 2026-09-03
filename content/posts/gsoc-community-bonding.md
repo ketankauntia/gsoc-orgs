@@ -2,8 +2,9 @@
 title: "GSoC Community Bonding: A Three-Week Action Plan"
 description: "Use this GSoC community bonding plan to align expectations, finish setup, refine milestones, map risks and enter coding ready to deliver."
 category: GSoC Contributors
-tags: [gsoc, community bonding, mentors, project planning, open source]
+tags: [gsoc, community bonding, mentors, project planning]
 publishedAt: "2026-07-24T08:45:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-2
 keyphrase: gsoc community bonding
@@ -23,6 +24,14 @@ faqs:
     a: "Raise the blocker early with exact commands, errors, environment details and steps already tried. Record the solution in setup notes or documentation. A hidden setup problem on the final day is much harder for the community to help resolve."
   - q: "What should I agree with my GSoC mentor during bonding?"
     a: "Agree on deliverables, acceptance evidence, meetings, asynchronous updates, review turnaround expectations, time zones, planned absences, escalation contacts, AI policy, scope-change process and the definition of being on track. Put the agreement in a shared written location."
+  - q: "What should I finish in the first week of community bonding?"
+    a: "Confirm communication channels and meetings, reproduce the development setup, map the relevant subsystem, review the accepted scope and list unresolved dependencies. Finish with written evidence and owners for blockers rather than a vague statement that onboarding has started."
+  - q: "Can the GSoC proposal timeline change during community bonding?"
+    a: "Yes, when the contributor and mentors discover better scope or new constraints. Record the reason, revised deliverables, acceptance evidence and effects on later milestones so the accepted proposal and working plan do not silently diverge."
+  - q: "What if my primary GSoC mentor is unavailable during bonding?"
+    a: "Use the agreed public channel and backup contact or organization administrator. Continue documented setup and code research that does not require an unsafe assumption, and make the blocker visible early enough for the organization to restore coverage."
+  - q: "Is community bonding just a waiting period before GSoC coding?"
+    a: "No. It is the risk-reduction period for relationships, setup, architecture, milestone refinement and communication. Treating it as a break moves predictable failures into the coding period, when they are more expensive."
 ---
 
 GSoC community bonding is the preparation period after accepted projects are announced and before coding officially begins. It should leave you able to make, test, explain and submit the first planned change without discovering basic access, environment, scope or communication problems. It is not a vacation, and it is not a requirement to finish the project early.
@@ -44,7 +53,7 @@ Completing only the setup command is not enough. Spending all three weeks readin
 
 ## Verify the official timing for your program year
 
-The [official How It Works page](https://summerofcode.withgoogle.com/how-it-works/) presents community bonding as the period when accepted contributors learn community norms and code, while mentors and contributors determine milestones. Google's general schedule currently describes about three weeks. In 2026, the [official timeline](https://developers.google.com/open-source/gsoc/timeline) placed it from May 1 through May 24—an inclusive span of **24 days**—with coding starting May 25.
+The [official How It Works page](https://summerofcode.withgoogle.com/how-it-works/) presents community bonding as the period when accepted contributors learn community norms and code, while mentors and contributors determine milestones. Google's general schedule currently describes about three weeks. In 2026, the [official timeline](https://developers.google.com/open-source/gsoc/timeline) placed it from May 1 through May 24, an inclusive span of **24 days**, with coding starting May 25.
 
 Those are **2026 dates**, verified August 12, 2026, not a permanent calendar. Extended coding schedules do not move the initial official coding start by personal choice. Use the dashboard and current timeline, then map this fifteen-day sequence onto the actual weekdays available to you.
 
@@ -127,7 +136,7 @@ Check that investigation, tests, documentation, review latency and buffer are re
 
 ## Establish a communication cadence
 
-Communication should make state visible without producing ceremonial reports. Google's [roles and responsibilities](https://developers.google.com/open-source/gsoc/help/responsibilities) call for contributors to report completed work, next work and blockers, while mentors are expected to communicate regularly—at least twice a week or better under the current guidance.
+Communication should make state visible without producing ceremonial reports. Google's [roles and responsibilities](https://developers.google.com/open-source/gsoc/help/responsibilities) call for contributors to report completed work, next work and blockers, while mentors are expected to communicate regularly, at least twice a week or better under the current guidance.
 
 A practical cadence might include:
 
@@ -214,4 +223,4 @@ This is a sample, not an official daily requirement. Combine days for a simple e
 - Using AI tools without confirming current organization policy.
 - Counting messages or commits instead of producing readiness evidence.
 
-The next stage is measured through agreed progress and visible work. Read the [GSoC evaluations and final work product guide](/blog/post/gsoc-evaluations-work-product) now—not in evaluation week—and keep the [application process guide](/blog/post/how-to-apply-for-gsoc) available for annual program links and terminology. Good community bonding makes the coding period less dramatic because the people, process, product and plan already connect.
+The next stage is measured through agreed progress and visible work. Read the [GSoC evaluations and final work product guide](/blog/post/gsoc-evaluations-work-product) now, not in evaluation week, and keep the [application process guide](/blog/post/how-to-apply-for-gsoc) available for annual program links and terminology. Good community bonding makes the coding period less dramatic because the people, process, product and plan already connect.

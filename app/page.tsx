@@ -98,6 +98,8 @@ export default function Home() {
           {
             name: "GDG Cloud Nagpur",
             logo: "/gdg-cloud-nagpur.webp",
+            width: 160,
+            height: 160,
             href: "https://gdg.community.dev/events/details/google-gdg-cloud-nagpur-presents-gsoc-2026-complete-guide-live-session-on-google-summer-of-code/",
           },
         ]}

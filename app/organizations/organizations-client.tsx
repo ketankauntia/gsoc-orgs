@@ -264,6 +264,7 @@ export function OrganizationsClient({ initialData, initialPage, initialTechs, in
           {/* Header Section */}
           <SectionHeader
             badge="GSoC 2026"
+            titleAs="h1"
             title="All Organizations"
             description="Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests."
             align="center"

@@ -1,3 +1,4 @@
+import { buildDescription, buildTitle, SITE_NAME } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -64,10 +65,16 @@ export async function generateMetadata({
       ? { url: post.coverImage, width: 1600, height: 900, type: imageMimeType(post.coverImage) }
       : { url: siteConfig.ogImage, width: 1200, height: 630, type: imageMimeType(siteConfig.ogImage) };
   const imageAlt = post.coverAlt?.trim() || post.title;
+  // og:url must track the canonical link, including posts that override it.
+  const canonical = post.canonical ?? url;
+  const resolvedTitle = buildTitle([`${post.title} - GSoC Guides`, post.title]);
+  const resolvedDescription = buildDescription(post.description, [
+    `Published on the GSoC Organizations Guide blog${post.category ? ` under ${post.category}` : ""}`,
+  ]);
   return {
-    title: `${post.title} — GSoC Organizations Blog`,
-    description: post.description,
-    alternates: { canonical: post.canonical ?? url },
+    title: { absolute: resolvedTitle },
+    description: resolvedDescription,
+    alternates: { canonical },
     robots: {
       index: !post.noindex,
       follow: true,
@@ -79,10 +86,10 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "article",
-      url,
-      title: post.title,
-      description: post.description,
-      siteName: siteConfig.name,
+      url: canonical,
+      title: resolvedTitle,
+      description: resolvedDescription,
+      siteName: SITE_NAME,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [getAuthor(post.authorSlug).name],
@@ -91,8 +98,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: resolvedTitle,
+      description: resolvedDescription,
       images: [{ url: socialImage.url, alt: imageAlt }],
     },
   };

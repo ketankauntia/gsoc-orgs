@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,14 +14,16 @@ export function PostBreadcrumbs({ trail }: { trail: { label: string; href?: stri
     <Breadcrumb>
       <BreadcrumbList>
         {trail.map((item, i) => (
-          <BreadcrumbItem key={item.label} className="contents">
+          <Fragment key={item.label}>
             {i > 0 && <BreadcrumbSeparator />}
-            {item.href ? (
-              <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
-            ) : (
-              <BreadcrumbPage className="line-clamp-1">{item.label}</BreadcrumbPage>
-            )}
-          </BreadcrumbItem>
+            <BreadcrumbItem>
+              {item.href ? (
+                <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+              ) : (
+                <BreadcrumbPage className="line-clamp-1">{item.label}</BreadcrumbPage>
+              )}
+            </BreadcrumbItem>
+          </Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>

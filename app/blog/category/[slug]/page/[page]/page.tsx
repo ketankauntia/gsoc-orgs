@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { PostGrid } from "@/components/blog/post-grid";
@@ -35,11 +36,14 @@ export async function generateMetadata({
   const { slug, page } = await params;
   const category = getCategoryBySlug(slug);
   if (!category) return {};
-  return {
-    title: `${category} — Page ${page} — GSoC Organizations Blog`,
-    description: `Articles on ${category.toLowerCase()}, page ${page}.`,
-    alternates: { canonical: `/blog/category/${slug}/page/${page}` },
-  };
+  return buildPageMetadata({
+    title: [`${category} - Page ${page}`, `${category} guides`],
+    description: `Page ${page} of articles on ${category.toLowerCase()} from the GSoC Organizations Guide blog.`,
+    descriptionExtras: [
+      "Research, comparisons, and practical steps for Google Summer of Code applicants",
+    ],
+    path: `/blog/category/${slug}/page/${page}`,
+  });
 }
 
 export default async function CategoryPaginatedPage({

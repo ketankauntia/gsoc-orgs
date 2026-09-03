@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Code2 } from "lucide-react";
@@ -8,11 +9,12 @@ import { getContributorBlogs } from "@/lib/contributor-blogs";
 import { getArchiveFacets } from "@/lib/proposals/archive-search";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "GSoC Contributor Project Blogs",
-  description: "Follow selected Google Summer of Code contributors as they document project progress, technical decisions, and outcomes.",
-  alternates: { canonical: "/contributor-blogs" },
-};
+  description:
+    "Follow selected Google Summer of Code contributors as they document weekly project progress, technical decisions, lessons learned, and final outcomes.",
+  path: "/contributor-blogs",
+});
 
 type SearchParams = { year?: string; organization?: string };
 

@@ -2,9 +2,9 @@
 title: "GSoC Organizations List: How to Search 10 Years of Orgs"
 description: "Explore the GSoC organizations list with original 2016–2025 data, participation patterns, research filters and a credible shortlisting method."
 category: GSoC Organizations
-tags: [gsoc organizations, gsoc organization list, gsoc orgs, data]
+tags: [gsoc, gsoc organizations, organization research, data analysis]
 publishedAt: "2026-05-26T11:05:00+05:30"
-updatedAt: "2026-08-13T12:05:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 cornerstone: true
 coverTone: chart-2
@@ -12,7 +12,7 @@ keyphrase: gsoc organizations list
 tldr: "A GSoC organizations list is useful only when it distinguishes historical participation from current acceptance. Our normalized 2016–2025 snapshot contains 504 organization slugs and 10,951 projects; 43 organizations appear in every year, while 158 appear once. Use history to discover and compare communities, then verify the official current-year list, recent repositories and contribution instructions."
 keyTakeaways:
   - Our 2016–2025 dataset contains 10,951 project records across 504 normalized organization slugs.
-  - Forty-three organizations appear in all ten years, but consistency indicates experience—not guaranteed future acceptance or personal fit.
+  - Forty-three organizations appear in all ten years, but consistency indicates experience, not guaranteed future acceptance or personal fit.
   - In 2025, 154 of 185 listed organizations also appeared in 2024, while 14 were marked first-time in the dataset.
   - Search by recent technology and project evidence before relying on all-time totals.
   - The official GSoC website remains the authority for each year's accepted organization list.
@@ -25,6 +25,14 @@ faqs:
     a: "No accepted 2027 organization list has been published as of August 12, 2026. Historical participation can guide research but cannot confirm which organizations Google will accept next year."
   - q: "Does an organization with more past projects offer a better chance?"
     a: "Not necessarily. Past project volume can indicate mentoring capacity, but current mentors, project fit, prerequisites, proposal quality and competition vary. Do not interpret project totals as an acceptance probability."
+  - q: "How do I filter the GSoC organization list by technology?"
+    a: "Use a language or technology filter to create candidates, then verify each current idea and repository. Organization tags can be broad or historical, so the filtered result is the beginning of research rather than a proposal shortlist."
+  - q: "Why use an independent GSoC organization list if Google has one?"
+    a: "Google's current directory is authoritative for participation. An independent normalized archive adds cross-year identity, history, search and derived comparisons, provided every metric names its sources, snapshot and limitations."
+  - q: "Can I search GSoC organizations from previous years?"
+    a: "Yes. Historical search helps find recurring communities, past project domains and naming changes. Recheck the official current cycle because a past appearance does not confirm a present organization or idea."
+  - q: "How can I tell when a GSoC organization list was last verified?"
+    a: "Look for an explicit snapshot date, program year, announced or live status and withdrawal handling. A count without those fields cannot be compared reliably after the official directory changes."
 ---
 
 The GSoC organizations list is not one permanent roster. Google selects mentoring organizations for each annual program, and communities can join, return after a gap, change names or stop participating. The right way to use a historical list is to discover patterns, then verify current acceptance and contribution instructions on official sources.
@@ -75,7 +83,15 @@ Ten years of data reveals a broad participation spectrum. Across 504 normalized 
 
 The 43 all-window organizations demonstrate continuity under our normalized names. That can imply experience producing ideas, onboarding contributors and scoping projects. It cannot tell you whether the current maintainers have time, whether a suitable mentor exists, or whether the organization will be accepted in 2027.
 
-Recent continuity is often more relevant than lifetime totals. Our snapshot shows 114 organizations appearing in each of 2023, 2024 and 2025. Of the 185 organizations listed in 2025, 154 also appeared in 2024—about 83.2%. The remaining set includes first-time participants and returning organizations with gaps.
+Only 43 of 504 normalized slugs, about 8.5%, appear in all ten finalized years. That concentration is useful because it shows how unusual uninterrupted participation is. It is not a recommendation to apply only to those 43 communities. The remaining 461 slugs include established organizations with gaps, newer communities and one-time participants that may still provide a stronger current project fit.
+
+:::stat 8.5% | Share of normalized 2016 to 2025 organization slugs present in all ten finalized snapshots
+
+Use three views instead of one all-time ranking. A current view answers whether the organization participates now. A recent view, such as the latest three finalized years, shows near-term continuity. An all-window view exposes longer history and naming changes. Requiring one list to answer all three questions is how stale participation turns into misleading advice.
+
+Keep these views in separate columns in your research sheet. That makes a gap visible instead of hiding it inside one score, and it lets you update the current-cycle status without recalculating the historical record. Add the source URL and verification date beside each current claim so another reader can repeat the check.
+
+Recent continuity is often more relevant than lifetime totals. Our snapshot shows 114 organizations appearing in each of 2023, 2024 and 2025. Of the 185 organizations listed in 2025, 154 also appeared in 2024, about 83.2%. The remaining set includes first-time participants and returning organizations with gaps.
 
 ## How to search the GSoC organizations list effectively
 

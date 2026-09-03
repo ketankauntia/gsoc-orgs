@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AuthorCard } from "@/components/blog/author-card";
@@ -23,11 +24,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const author = authors.find((a) => a.slug === slug);
   if (!author) return {};
-  return {
-    title: `${author.name} — GSoC Organizations Blog`,
+  return buildPageMetadata({
+    title: [`${author.name} - GSoC Guides`, author.name],
     description: author.bio,
-    alternates: { canonical: `/blog/author/${slug}` },
-  };
+    descriptionExtras: [
+      `Guides and research published by ${author.name} on the GSoC Organizations Guide blog`,
+    ],
+    path: `/blog/author/${slug}`,
+  });
 }
 
 export default async function AuthorPage({

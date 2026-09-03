@@ -163,7 +163,14 @@ export function runSeoChecks(draft: DraftInput): SeoCheck[] {
 
   checks.push({ id: "takeaways", group: "structure", label: "Key takeaways", status: draft.keyTakeaways.length >= 3 ? "pass" : draft.keyTakeaways.length >= 1 ? "warn" : "fail", detail: `${draft.keyTakeaways.length} — aim for 3–5 extractable bullets` });
 
-  checks.push({ id: "faqs", group: "structure", label: "FAQs", status: draft.faqs.length >= 2 ? "pass" : draft.faqs.length === 1 ? "warn" : "fail", detail: `${draft.faqs.length} — aim for 2–5 questions phrased the way people ask them` });
+  const faqCount = draft.faqs.filter((faq) => faq.q.trim() && faq.a.trim()).length;
+  checks.push({
+    id: "faqs",
+    group: "structure",
+    label: "FAQs",
+    status: faqCount >= 6 && faqCount <= 10 ? "pass" : faqCount >= 3 && faqCount <= 12 ? "warn" : "fail",
+    detail: `${faqCount} complete FAQs. Aim for 6 to 10 article-specific direct, prerequisite, comparison, failure-case and next-step questions`,
+  });
 
   const hasH1 = /^# /m.test(body);
   checks.push({ id: "no-h1", group: "structure", label: "No H1 in body", status: hasH1 ? "fail" : "pass", detail: hasH1 ? "Body contains a `# ` heading — the post title is the only H1; use `## `" : "Title is the only H1" });

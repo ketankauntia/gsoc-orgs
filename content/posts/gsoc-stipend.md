@@ -2,8 +2,9 @@
 title: "GSoC Stipend: 2026 Amounts, PPP and Payment Guide"
 description: "Understand the GSoC stipend for 2026: PPP-based amounts, India figures, 45/55 payment examples, evaluations, Payoneer, fees and tax cautions."
 category: GSoC Applications
-tags: [gsoc stipend, gsoc 2026, payments, ppp, payoneer]
+tags: [gsoc, stipend, payments, project planning]
 publishedAt: "2026-06-23T08:55:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: gsoc stipend
@@ -23,6 +24,14 @@ faqs:
     a: "No under the standard 2026 schedule. It is divided into two evaluation-linked installments: 45% after the first successful evaluation and 55% after the final successful evaluation. Nonstandard project schedules use different dates."
   - q: "Is a GSoC stipend tax-free?"
     a: "Do not assume that. Google explicitly says it cannot provide tax advice. Tax treatment can depend on residence, tax status and where the work is performed, so keep records and consult a qualified professional for your jurisdiction."
+  - q: "What happens to the GSoC stipend after a failed evaluation?"
+    a: "Evaluation-linked payments depend on passing the corresponding required evaluation under the current rules. Check the official payment schedule for the cycle and raise exceptional circumstances through the program's proper support path."
+  - q: "Which exchange rate is used for the GSoC stipend?"
+    a: "The official table states the award in USD. The local amount received can depend on the payment provider's conversion timing and method, bank handling and fees, so do not present a live currency conversion as the guaranteed payout."
+  - q: "Are bank or payment-provider fees included in the published stipend?"
+    a: "The published figure is the program award, not a promise of the final local-bank credit after conversion or intermediary charges. Review the current provider terms and keep payment records for reconciliation and tax reporting."
+  - q: "What if I move countries during the GSoC coding period?"
+    a: "Residence affects stipend and eligibility handling, so disclose an actual or planned move through official channels before relying on a country table. Do not choose a country entry based on nationality, bank location or a temporary address."
 ---
 
 The GSoC stipend for 2026 is a total project amount determined by two inputs: project size and the contributor's country of residence during the coding period. Google publishes the amount in USD and uses a purchasing-power-parity adjustment. On the standard schedule, an eligible contributor receives 45% after the first successful evaluation and 55% after the final successful evaluation, subject to completing the official payment setup.

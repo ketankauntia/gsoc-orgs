@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Calendar, ArrowRight, TrendingUp, Building2, Users } from "lucide-react";
 import {
@@ -16,10 +17,12 @@ import { Footer } from "@/components/Footer";
 // Static Generation - cache forever
 export const revalidate = false;
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "GSoC Yearly Stats & Trends",
-  description: "Explore Google Summer of Code statistics, trends, and insights by year. Historical data from 2016 to 2026.",
-};
+  description:
+    "Explore Google Summer of Code statistics, trends, and insights for every year from 2016 to 2026, including organization and project participation.",
+  path: "/yearly",
+});
 
 // Available years with their slugs
 const yearlyPages = [
@@ -48,6 +51,7 @@ export default function YearlyIndexPage() {
             <div className="space-y-6">
               <SectionHeader
                 badge="GSoC Yearly"
+                titleAs="h1"
                 title="Google Summer of Code by Year"
                 description="Explore comprehensive statistics, trends, and insights for each year of Google Summer of Code. Browse organization participation, project counts, and technology trends."
                 align="center"

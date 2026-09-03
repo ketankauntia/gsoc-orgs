@@ -2,8 +2,9 @@
 title: "AI in GSoC: Proposal, Code and Disclosure Rules"
 description: "Learn how AI in GSoC is governed across proposals, contributions and coding, with a policy checklist, scenario matrix and verification workflow."
 category: GSoC Applications
-tags: [gsoc, artificial intelligence, proposals, open source, policy]
+tags: [gsoc, ai policy, gsoc proposals, open source]
 publishedAt: "2026-07-31T13:10:00+05:30"
+updatedAt: "2026-09-03T23:40:00+05:30"
 author: gsoc-orgs-team
 coverTone: chart-5
 keyphrase: ai in gsoc
@@ -25,6 +26,12 @@ faqs:
     a: "Do not assume that a seemingly minor use is allowed. A policy may prohibit all generated proposal text or sharing proposal material with external tools. Confirm the scope first, and never let editing replace your own technical explanation."
   - q: "What should I do if I already used AI against the rules?"
     a: "Stop using the output, review the policy, preserve an honest record and contact the organization through the appropriate channel. Be specific about what was affected. Recreate the work yourself when permitted instead of trying to hide the use."
+  - q: "Can I use AI to research a GSoC organization or codebase?"
+    a: "Only within the organization's policy and information-handling rules. Treat generated summaries as untrusted leads, verify them against current repositories and official instructions, and never let a summary replace reading the code or discussion it claims to describe."
+  - q: "How should I verify AI-assisted code before a GSoC contribution?"
+    a: "Explain the change yourself, inspect every dependency and license implication, run the repository's tests and static checks, add tests for the failure path, and review the diff for invented APIs or unrelated edits. Policy permission does not transfer responsibility."
+  - q: "Can I paste mentor messages or proposal drafts into an AI tool?"
+    a: "Do not upload private messages, unpublished proposals, credentials, personal data or repository secrets. Check the community's confidentiality and tool policy first, minimize any permitted input and prefer public source material when asking for assistance."
 ---
 
 AI in GSoC is governed by two layers: Google's general guidance and the target organization's own rules. As of August 12, 2026, there is no universal permission to use generative AI in a proposal, pull request or accepted project. Some organizations permit limited assistance; others prohibit AI-written proposals, generated code or all AI tooling. The safe decision is therefore policy first, tool second.

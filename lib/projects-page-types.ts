@@ -123,3 +123,43 @@ export async function loadProjectsYearData(year: number): Promise<ProjectYearPag
 export function getAvailableProjectYears(): number[] {
   return [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 }
+
+/** A project entry annotated with the program year it was accepted in. */
+export type ProjectEntryWithYear = ProjectEntry & { year: number };
+
+/**
+ * Every archived project belonging to one organization, newest year first.
+ *
+ * The per-year project documents are the same source the routed project detail
+ * pages read, so the `project_id` values returned here always resolve to a real
+ * `/organizations/[slug]/projects/[projectId]` page. The per-organization JSON
+ * snapshots cannot be used for this: their project identifiers are only
+ * dataset-aligned for 2026 and are sequential placeholders for earlier years.
+ */
+export async function loadOrganizationProjects(
+  organizationSlug: string,
+): Promise<ProjectEntryWithYear[]> {
+  const years = [...getAvailableProjectYears()].sort((a, b) => b - a);
+  const documents = await Promise.all(years.map((year) => loadProjectsYearData(year)));
+
+  return documents.flatMap((document, index) =>
+    (document?.projects ?? [])
+      .filter((project) => project.org_slug === organizationSlug)
+      .map((project) => ({ ...project, year: years[index] })),
+  );
+}
+
+/** Groups projects by year, newest first, preserving source order within a year. */
+export function groupProjectsByYear(
+  projects: ProjectEntryWithYear[],
+): Array<{ year: number; projects: ProjectEntryWithYear[] }> {
+  const byYear = new Map<number, ProjectEntryWithYear[]>();
+  for (const project of projects) {
+    const bucket = byYear.get(project.year);
+    if (bucket) bucket.push(project);
+    else byYear.set(project.year, [project]);
+  }
+  return [...byYear.entries()]
+    .sort((a, b) => b[0] - a[0])
+    .map(([year, entries]) => ({ year, projects: entries }));
+}

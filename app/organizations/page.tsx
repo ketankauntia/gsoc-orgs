@@ -3,7 +3,8 @@ import { Metadata } from "next";
 import { PaginatedResponse, Organization } from "@/lib/api";
 import { apiFetchServer } from "@/lib/api.server";
 import { OrganizationsClient } from "./organizations-client";
-import { getFullUrl } from "@/lib/constants";
+import { LinkDirectory } from "@/components/link-directory";
+import { buildPageMetadata } from "@/lib/seo";
 import {
   loadOrganizationsIndexData,
   loadOrganizationsMetadata,
@@ -44,40 +45,12 @@ export async function generateMetadata({
   const params = await searchParams;
   const page = Number(params.page) || 1;
   
-  return {
-    title: page === 1 
-      ? "All GSoC Organizations - Google Summer of Code Organizations Guide"
-      : `GSoC Organizations - Page ${page} - Google Summer of Code Organizations Guide`,
-    description: "Explore all Google Summer of Code participating organizations. Filter by technology, difficulty level, and find the perfect match for your skills and interests.",
-    alternates: {
-      canonical: getFullUrl("/organizations"),
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    openGraph: {
-      title: "All GSoC Organizations",
-      description: "Explore all Google Summer of Code participating organizations",
-      url: getFullUrl("/organizations"),
-      type: "website",
-      siteName: "GSoC Organizations Guide",
-      images: [
-        {
-          url: `${getFullUrl("/og/gsoc-organizations-guide.jpg")}`,
-          width: 1200,
-          height: 630,
-          alt: "GSoC Organizations Guide",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "All GSoC Organizations",
-      description: "Explore all Google Summer of Code participating organizations",
-      images: [`${getFullUrl("/og/gsoc-organizations-guide.jpg")}`],
-    },
-  };
+  return buildPageMetadata({
+    title: page === 1 ? "All GSoC Organizations" : `GSoC Organizations - Page ${page}`,
+    description:
+      "Explore every Google Summer of Code participating organization. Filter by technology, topic, and year to find the right match for your skills.",
+    path: "/organizations",
+  });
 }
 
 /**
@@ -199,13 +172,25 @@ export default async function OrganizationsPage({ searchParams }: PageProps) {
         </div>
       </div>
     }>
-      <OrganizationsClient 
-        initialData={data} 
-        initialPage={page} 
-        initialTechs={initialTechs}
-        initialTopics={initialTopics}
-        firstTimeCount={firstTimeCount}
-      />
+      <>
+        <OrganizationsClient 
+          initialData={data} 
+          initialPage={page} 
+          initialTechs={initialTechs}
+          initialTopics={initialTopics}
+          firstTimeCount={firstTimeCount}
+        />
+        <div className="mx-auto max-w-6xl px-6 pb-16">
+          <LinkDirectory
+            title="All GSoC organizations A–Z"
+            description="Every organization in the archive. The list above paginates on the client, so this index keeps each organization page linked."
+            entries={(orgIndex?.organizations ?? []).map((organization) => ({
+              href: `/organizations/${organization.slug}`,
+              label: organization.name,
+            }))}
+          />
+        </div>
+      </>
     </Suspense>
   );
 }
