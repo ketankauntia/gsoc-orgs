@@ -1,19 +1,6 @@
-import { Header } from "@/components/header";
-import { HeroComponent } from "@/components/hero-component";
-import { BrandsGrid } from "@/components/ui";
-import {
-  OrganizationsBlock,
-  PreviousEditionsBlock,
-  TechStackBlock,
-  AnalyticsBlock,
-} from "@/components/value-blocks";
-import { TrendingOrgs } from "@/components/trending-orgs";
-import { Testimonials } from "@/components/testimonials";
-import { WaitlistCTA } from "@/components/waitlist-cta";
-import { LatestArticles } from "@/components/latest-articles";
-import { FaqComponent } from "@/components/faq";
-import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { CobaltLanding } from "@/components/cobalt/landing";
+import { pickPosts } from "@/components/cobalt/posts";
 import { SITE_URL, getFullUrl } from "@/lib/constants";
 
 /**
@@ -69,11 +56,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "GSoC Organizations Explorer",
+    name: "GSoC Organizations Guide",
     description:
       "Explore and discover Google Summer of Code participating organizations, projects, and opportunities for student developers.",
     url: SITE_URL,
@@ -83,41 +70,12 @@ export default function Home() {
       "query-input": "required name=search_term_string",
     },
   };
+  const posts = pickPosts({ limit: 4 });
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Header />
-      <HeroComponent />
-      <BrandsGrid
-        title="GSoC Organizations Guide featured on"
-        brands={[
-          {
-            name: "GDG Cloud Nagpur",
-            logo: "/gdg-cloud-nagpur.webp",
-            width: 160,
-            height: 160,
-            href: "https://gdg.community.dev/events/details/google-gdg-cloud-nagpur-presents-gsoc-2026-complete-guide-live-session-on-google-summer-of-code/",
-          },
-        ]}
-      />
-      {/* Primary Value Blocks */}
-      <OrganizationsBlock />
-      <PreviousEditionsBlock />
-      <TechStackBlock />
-      <AnalyticsBlock />
-      {/* Social Proof & Discovery */}
-      <TrendingOrgs />
-      <Testimonials />
-      {/* Content & Support */}
-      <LatestArticles />
-      <FaqComponent />
-      {/* Primary CTA */}
-      <WaitlistCTA />
-      <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <CobaltLanding posts={posts} />
     </>
   );
 }
