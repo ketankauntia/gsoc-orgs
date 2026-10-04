@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import { Header } from "@/components/header";
-import { FooterSmall } from "@/components/footer-small";
 import type { Metadata } from "next";
 import { getFullUrl } from "@/lib/constants";
 
@@ -78,11 +76,9 @@ export default function GSoCYearOrganizationsLayout({
 }: LayoutProps) {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      <main className="flex-1 pt-20 lg:pt-24">
+      <main className="flex-1 pt-6 lg:pt-8">
         {children}
       </main>
-      <FooterSmall />
     </div>
   );
 }

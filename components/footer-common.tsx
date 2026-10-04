@@ -20,36 +20,47 @@ export const SOCIAL_LINKS = {
 export const FOOTER_NAVIGATION_ITEMS = [
   {
     title: "Explore",
-    description: "Browse current GSoC data",
+    description: "Browse GSoC data",
     items: [
       { title: "GSoC 2026", href: "/yearly/google-summer-of-code-2026" },
       { title: "Organizations", href: "/organizations" },
       { title: "Projects", href: "/projects" },
       { title: "Technologies", href: "/tech-stack" },
       { title: "Topics", href: "/topics" },
-    ],
-  },
-  {
-    title: "Learn & share",
-    description: "Prepare and participate",
-    items: [
-      { title: "Proposals", href: "/proposals" },
-      { title: "Contributor blogs", href: "/contributor-blogs" },
-      { title: "Blog", href: "/blog" },
       { title: "Past editions", href: "/yearly" },
-      { title: "About", href: "/about" },
-      { title: "Contact", href: "/contact" },
     ],
   },
   {
-    title: "Project",
+    title: "Contributors",
+    description: "Learn from past contributors",
+    items: [
+      { title: "Accepted proposals", href: "/proposals" },
+      { title: "Share your proposal", href: "/account/proposals/new" },
+      { title: "Contributor blogs", href: "/contributor-blogs" },
+      { title: "Blog and guides", href: "/blog" },
+      { title: "Sign in", href: "/login" },
+    ],
+  },
+  {
+    title: "About",
     description: "About this open source guide",
     items: [
+      { title: "About", href: "/about" },
+      { title: "Contact", href: "/contact" },
       { title: "Changelog", href: "/changelog" },
       { title: "Privacy policy", href: "/privacy-policy" },
       { title: "Terms", href: "/terms-and-conditions" },
-      { title: "GitHub", href: "https://github.com/ketankauntia/gsoc-orgs/", external: true },
+    ],
+  },
+  {
+    title: "Resources",
+    description: "Official sources and feeds",
+    items: [
       { title: "Official GSoC archive", href: "https://summerofcode.withgoogle.com/archive", external: true },
+      { title: "GSoC contributor guide", href: "https://google.github.io/gsocguides/student/", external: true },
+      { title: "Source code on GitHub", href: "https://github.com/ketankauntia/gsoc-orgs/", external: true },
+      { title: "API", href: "/api/v1" },
+      { title: "RSS feed", href: "/rss.xml" },
     ],
   },
 ];

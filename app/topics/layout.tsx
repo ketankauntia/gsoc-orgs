@@ -1,34 +1,6 @@
-import { ReactNode } from "react";
-import { Container } from "@/components/ui";
-import { Header } from "@/components/header";
-import { FooterSmall } from "@/components/footer-small";
+import type { ReactNode } from "react";
 
-interface TopicsLayoutProps {
-  children: ReactNode;
+/** /topics/* render inside the site chrome from the root layout. */
+export default function TopicsLayout({ children }: { children: ReactNode }) {
+  return children;
 }
-
-/**
- * Layout wrapper for all /topics routes
- * This wraps:
- * - /topics (index)
- * - /topics/[topic] (detail pages)
- */
-export default function TopicsLayout({ children }: TopicsLayoutProps) {
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Header - same across all pages */}
-      <Header />
-      {/* Main content area with consistent max-width */}
-      {/* pt-20 accounts for fixed header height */}
-      <main className="flex-1 pt-20 lg:pt-24">
-        <Container size="default" className="py-8 lg:py-16">
-          {children}
-        </Container>
-      </main>
-      
-      {/* Smaller footer */}
-      <FooterSmall />
-    </div>
-  );
-}
-

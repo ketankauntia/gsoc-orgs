@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import "./globals.css";
+import "@/components/cobalt/cobalt.css";
+import { SiteChrome } from "@/components/cobalt/chrome";
 import { SITE_URL } from "@/lib/constants";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -15,6 +17,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Editorial accent lines in headings (one weight; never synthesised bold).
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -64,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
       > 
         <ThemeProvider 
           attribute="class" 
@@ -72,7 +81,7 @@ export default function RootLayout({
           storageKey="gsoc-theme"
           disableTransitionOnChange={false}
         >
-         {children}
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
