@@ -3,7 +3,7 @@ import {
   loadTechStackPageData,
   loadTechStackIndexData,
 } from "@/lib/tech-stack-page-types";
-import { TechStackDetailClient } from "./tech-stack-detail-client";
+import { TechDetailView } from "@/components/cobalt/views/tech";
 import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
 import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { isTaxonomyIndexEligible } from "@/lib/search-index-policy";
@@ -68,7 +68,5 @@ export default async function TechStackDetailPage({
     notFound();
   }
 
-  return (
-    <TechStackDetailClient data={data} />
-  );
+  return <TechDetailView data={data} />;
 }

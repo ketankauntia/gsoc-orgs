@@ -1,23 +1,18 @@
 import { notFound, permanentRedirect } from "next/navigation";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
-import { loadTopicData } from "@/lib/topics-page-types";
-import { TopicPageClient } from "./topic-client";
+import { loadTopicData, loadTopicsIndexData } from "@/lib/topics-page-types";
 import { canonicalSlugForPath } from "@/lib/vocabulary/catalog";
 import { isTaxonomyIndexEligible } from "@/lib/search-index-policy";
+import { TopicDetailView } from "@/components/cobalt/views/topics";
 
-/**
- * Topic Detail Page
- * Route: /topics/[topic]
- * 
- * Shows all organizations with a specific topic/tag:
- * - Topic overview with stats
- * - List of organizations
- * - Yearly statistics
- * 
- * Uses static JSON by default, falls back to API if JSON not available.
- */
 export const revalidate = 2592000; // 30 days
+
+// No paths at build time; each one is rendered on first visit and cached for the revalidate
+// window. Without this export Next.js renders the route on every request (ISR needs it).
+export async function generateStaticParams() {
+  return [];
+}
 
 export async function generateMetadata({
   params,
@@ -62,5 +57,8 @@ export default async function TopicPage({
     notFound();
   }
 
-  return <TopicPageClient topic={topicData} />;
+  const index = await loadTopicsIndexData();
+  const topicSlugs = new Set((index?.topics ?? []).map((topic) => topic.slug));
+
+  return <TopicDetailView data={topicData} topicSlugs={topicSlugs} />;
 }
