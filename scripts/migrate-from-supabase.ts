@@ -33,11 +33,11 @@ const sql = scriptDb();
 
 type Row = Record<string, unknown>;
 
-/** Every row of a Supabase table, paged through the REST API. */
-async function rest<T = Row>(table: string, select = "*"): Promise<T[]> {
+/** Every row of a Supabase table, paged through the REST API in a stable order. */
+async function rest<T = Row>(table: string, select = "*", order = "id"): Promise<T[]> {
   const rows: T[] = [];
   for (let offset = 0; ; offset += 1000) {
-    const response = await fetch(`${supabaseUrl}/rest/v1/${table}?select=${encodeURIComponent(select)}&limit=1000&offset=${offset}`, {
+    const response = await fetch(`${supabaseUrl}/rest/v1/${table}?select=${encodeURIComponent(select)}&order=${order}.asc&limit=1000&offset=${offset}`, {
       headers: { apikey: serviceKey, Authorization: `Bearer ${serviceKey}` },
     });
     if (!response.ok) throw new Error(`Supabase ${table}: ${response.status} ${await response.text()}`);
@@ -62,7 +62,7 @@ async function authUsers() {
 
 // ─────────────── R2 through the signing gateway (same scheme as lib/r2.ts) ───────────────
 
-function signedUrl(method: "GET" | "PUT", key: string, contentType = "") {
+function signedUrl(method: "GET" | "PUT" | "DELETE", key: string, contentType = "") {
   const gateway = env("R2_GATEWAY_URL").replace(/\/$/, "");
   const pathname = `/objects/${key.split("/").map(encodeURIComponent).join("/")}`;
   const url = new URL(`${gateway}${pathname}`);
@@ -82,6 +82,11 @@ async function readObject(key: string) {
 async function writeObject(key: string, bytes: Uint8Array) {
   const response = await fetch(signedUrl("PUT", key, "application/pdf"), { method: "PUT", body: Uint8Array.from(bytes).buffer, headers: { "Content-Type": "application/pdf" } });
   if (!response.ok) throw new Error(`R2 PUT ${key}: ${response.status}`);
+}
+
+async function deleteObject(key: string) {
+  const response = await fetch(signedUrl("DELETE", key), { method: "DELETE" });
+  if (!response.ok) throw new Error(`R2 DELETE ${key}: ${response.status}`);
 }
 
 async function inspectPdf(bytes: Uint8Array) {
@@ -109,6 +114,16 @@ async function main() {
   const count = (key: string, by = 1) => { report[key] = (report[key] ?? 0) + by; };
   const problems: string[] = [];
   const exported: Record<string, unknown[]> = { waitlist: [], unmigratedLinks: [] };
+  const message = (error: unknown) => (error instanceof Error ? error.message : String(error));
+  /** One row's writes; a failure is reported and the run carries on (re-runs skip what landed). */
+  async function attempt(label: string, write: () => Promise<unknown>) {
+    try {
+      await write();
+    } catch (error) {
+      count("failed");
+      problems.push(`${label}: ${message(error)}`);
+    }
+  }
 
   // New contributor slots by (external id, ordinal).
   const people = await sql`select pp.id, p.external_id, pp.ordinal from public.project_people pp join public.projects p on p.id = pp.project_id where pp.role = 'contributor'`;
@@ -117,7 +132,7 @@ async function main() {
 
   const [users, profiles, links, slots, claims, proposals, files, imports, importFiles, blogs, waitlist] = await Promise.all([
     authUsers(),
-    rest("profiles"),
+    rest("profiles", "*", "user_id"),
     rest("profile_links"),
     rest<{ id: string; ordinal: number; projects: { external_id: string } | null }>("project_contributors", "id,ordinal,projects(external_id)"),
     rest("contributor_claims"),
@@ -153,14 +168,16 @@ async function main() {
     count("profiles");
     if (!email) problems.push(`profile ${userId} has no email; it cannot be reclaimed at sign-in`);
     if (!COMMIT) continue;
-    if (email) await sql`insert into private.legacy_accounts(legacy_user_id, email) values (${userId}::uuid, ${email}) on conflict do nothing`;
-    await sql`
-      insert into public.profiles(user_id, display_name, bio, avatar_key, website_url, github_username, x_username, medium_url, status, created_at)
-      values (${userId}::uuid, ${String(profile.display_name).slice(0, 80)}, ${(profile.bio as string | null) ?? null},
-        ${AVATAR_KEY.test(String(profile.avatar_r2_key ?? "")) ? profile.avatar_r2_key : null},
-        ${fields.website}, ${fields.github}, ${fields.x}, ${fields.medium},
-        ${profile.status === "active" ? "active" : "suspended"}, ${String(profile.created_at)}::timestamptz)
-      on conflict (user_id) do nothing`;
+    await attempt(`profile ${userId}`, async () => {
+      if (email) await sql`insert into private.legacy_accounts(legacy_user_id, email) values (${userId}::uuid, ${email}) on conflict do nothing`;
+      await sql`
+        insert into public.profiles(user_id, display_name, bio, avatar_key, website_url, github_username, x_username, medium_url, status, created_at)
+        values (${userId}::uuid, ${String(profile.display_name).slice(0, 80)}, ${(profile.bio as string | null) ?? null},
+          ${AVATAR_KEY.test(String(profile.avatar_r2_key ?? "")) ? profile.avatar_r2_key : null},
+          ${fields.website}, ${fields.github}, ${fields.x}, ${fields.medium},
+          ${profile.status === "active" ? "active" : "suspended"}, ${String(profile.created_at)}::timestamptz)
+        on conflict (user_id) do nothing`;
+    });
   }
 
   // 2. Claims become participations; pending ones stay unverified.
@@ -172,14 +189,14 @@ async function main() {
     const verification = claim.status === "verified" ? "verified" : claim.status === "rejected" ? "rejected" : "unverified";
     count(`claims:${verification}`);
     if (!COMMIT) continue;
-    await sql`
+    await attempt(`claim ${claim.id}`, () => sql`
       insert into public.participations(person_id, user_id, verification, reviewed_at, reviewed_by, rejection_reason, note, evidence_urls, created_at)
       values (${personId}::uuid, ${String(claim.user_id)}::uuid, ${verification},
         ${verification === "unverified" ? null : (claim.verified_at as string | null) ?? String(claim.updated_at)}::timestamptz,
         ${(claim.verified_by as string | null) ?? null}::uuid,
         ${verification === "rejected" ? (claim.rejection_reason as string | null) ?? "Rejected before the move" : null},
         ${(claim.claimant_note as string | null) ?? null}, ${(claim.evidence_urls as string[] | null) ?? []}::text[], ${String(claim.created_at)}::timestamptz)
-      on conflict (user_id, person_id) do nothing`;
+      on conflict (user_id, person_id) do nothing`);
   }
 
   // 3. Proposals: one per slot, one file at proposals/<id>.pdf.
@@ -193,31 +210,36 @@ async function main() {
     count(`proposals:${options.status}`);
     if (!COMMIT) return;
     const id = randomUUID();
-    let bytes: Uint8Array;
-    try {
-      bytes = await readObject(options.fileKey);
-    } catch (error) {
-      problems.push(`${options.label}: file ${options.fileKey} unreadable (${error instanceof Error ? error.message : error})`);
-      return;
-    }
-    const pdf = await inspectPdf(bytes);
     const newKey = `proposals/${id}.pdf`;
-    await writeObject(newKey, bytes);
-    // Published before the move means a moderator already accepted the file.
-    const confirmed = options.status === "published" ? pdf.sha256 : null;
-    if (options.status === "published" && pdf.findings.length) problems.push(`${options.label}: published with ${pdf.findings.length} contact detail(s) found; review it`);
-    await sql`
-      insert into public.proposals(id, person_id, slug, status, locked_at, file_key, file_sha256, file_bytes, file_pages, file_version,
-        file_uploaded_by, file_uploaded_at, extraction_status, text_content, pii_findings, pii_confirmed_sha256,
-        licence_accepted_at, terms_version, permission_basis, permission_note, permission_source_url, permission_given_at, published_at)
-      values (${id}::uuid, ${options.personId}::uuid, ${options.slug}, ${options.status}, ${options.locked ? options.publishedAt : null}::timestamptz,
-        ${newKey}, ${pdf.sha256}, ${bytes.byteLength}, ${pdf.pages}, 1, ${options.uploadedBy}::uuid, ${options.uploadedAt}::timestamptz,
-        ${pdf.status}, ${pdf.text}, ${JSON.stringify(pdf.findings)}::jsonb, ${confirmed},
-        ${options.consent?.acceptedAt ?? null}::timestamptz, ${options.consent ? TERMS_VERSION : null},
-        ${options.permission?.basis ?? null}, ${options.permission?.note ?? null}, ${options.permission?.sourceUrl ?? null}, ${options.permission?.givenAt ?? null}::date,
-        ${options.publishedAt}::timestamptz)
-      on conflict (person_id) do nothing`;
-    existing.add(options.personId);
+    let written = false;
+    try {
+      const bytes = await readObject(options.fileKey);
+      const pdf = await inspectPdf(bytes);
+      await writeObject(newKey, bytes);
+      written = true;
+      // Published before the move means a moderator already accepted the file.
+      const confirmed = options.status === "published" ? pdf.sha256 : null;
+      const inserted = await sql`
+        insert into public.proposals(id, person_id, slug, status, locked_at, file_key, file_sha256, file_bytes, file_pages, file_version,
+          file_uploaded_by, file_uploaded_at, extraction_status, text_content, pii_findings, pii_confirmed_sha256,
+          licence_accepted_at, terms_version, permission_basis, permission_note, permission_source_url, permission_given_at, published_at)
+        values (${id}::uuid, ${options.personId}::uuid, ${options.slug}, ${options.status}, ${options.locked ? options.publishedAt : null}::timestamptz,
+          ${newKey}, ${pdf.sha256}, ${bytes.byteLength}, ${pdf.pages}, 1, ${options.uploadedBy}::uuid, ${options.uploadedAt}::timestamptz,
+          ${pdf.status}, ${pdf.text}, ${JSON.stringify(pdf.findings)}::jsonb, ${confirmed},
+          ${options.consent?.acceptedAt ?? null}::timestamptz, ${options.consent ? TERMS_VERSION : null},
+          ${options.permission?.basis ?? null}, ${options.permission?.note ?? null}, ${options.permission?.sourceUrl ?? null}, ${options.permission?.givenAt ?? null}::date,
+          ${options.publishedAt}::timestamptz)
+        on conflict (person_id) do nothing
+        returning id`;
+      if (!inserted.length) throw new Error("the slot already has a proposal");
+      existing.add(options.personId);
+      if (options.status === "published" && pdf.findings.length) problems.push(`${options.label}: published with ${pdf.findings.length} contact detail(s) found; review it`);
+    } catch (error) {
+      count("proposals:failed");
+      problems.push(`${options.label}: not migrated (${message(error)})`);
+      // The row never landed, so the copied file would be an orphan.
+      if (written) await deleteObject(newKey).catch((cleanup) => problems.push(`${options.label}: delete orphaned ${newKey} by hand (${message(cleanup)})`));
+    }
   }
 
   for (const proposal of proposals) {
@@ -256,12 +278,12 @@ async function main() {
     if (!personId) { problems.push(`blog ${blog.id}: archive slot not found`); continue; }
     count("posts");
     if (!COMMIT) continue;
-    await sql`
+    await attempt(`blog ${blog.id}`, () => sql`
       insert into public.posts(person_id, created_by, source, url, normalized_url, title, kind, hidden, hidden_at, hidden_reason, created_at)
       values (${personId}::uuid, ${String(blog.created_by)}::uuid, 'admin', ${String(blog.url)}, private.normalize_url(${String(blog.url)}),
         ${(blog.title as string | null) ?? null}, 'other', ${!blog.is_published}, ${blog.is_published ? null : new Date().toISOString()}::timestamptz,
         ${blog.is_published ? null : "Unpublished before the move"}, ${String(blog.created_at)}::timestamptz)
-      on conflict (person_id, normalized_url) do nothing`;
+      on conflict (person_id, normalized_url) do nothing`);
   }
 
   const exportDir = path.join(process.cwd(), ".local");

@@ -14,10 +14,14 @@ import { workProductKind } from "../lib/work-product";
 
 // Loads the checked-in archive JSON (new-api-details/) into Neon: organizations,
 // years, projects, the people on each project, and the technology/topic
-// vocabulary. Safe to re-run; rows are upserted by their natural keys.
+// vocabulary. Safe to re-run; rows are upserted by their natural keys. Legacy
+// identifiers and source dates already stored are never cleared, and a person
+// slot someone has claimed is never renamed or deleted.
 //
-//   npm run db:import-catalog              write to NEON_DATABASE_URL_UNPOOLED
-//   npm run db:import-catalog -- --dry-run  count only, no database needed
+//   npm run db:import-catalog                    write to NEON_DATABASE_URL_UNPOOLED
+//   npm run db:import-catalog -- --dry-run        count only, no database needed
+//   npm run db:import-catalog -- --plan-people    read the database and print the person
+//                                                 slot changes an import would make
 
 type OrganizationJson = Record<string, unknown> & {
   id?: string; id_?: string; canonical_id?: string; slug: string; name: string;
@@ -43,9 +47,16 @@ type ProjectJson = {
 };
 type Column = [name: string, type: string];
 type Row = Record<string, unknown>;
+type Assignment = string | [name: string, expression: string];
+type Person = {
+  id: string; external_id: string; role: "contributor" | "mentor"; archived_name: string;
+  archived_profile_url: string | null; ordinal: number; claimed: boolean;
+};
+type NewPerson = { external_id: string; role: Person["role"]; archived_name: string; archived_profile_url: string | null; ordinal: number };
 
 const root = process.cwd();
 const dryRun = process.argv.includes("--dry-run");
+const planPeopleOnly = process.argv.includes("--plan-people");
 const connectionString = process.env.NEON_DATABASE_URL_UNPOOLED ?? process.env.NEON_DATABASE_URL;
 if (!dryRun && !connectionString) throw new Error("Set NEON_DATABASE_URL_UNPOOLED in .env.local, or use --dry-run");
 
@@ -66,11 +77,11 @@ function archivedProjectId(projectUrl: string | undefined) {
 const quote = (identifier: string) => `"${identifier}"`;
 
 /** Batched insert ... on conflict update, sending each batch as one JSON parameter. */
-async function upsert(client: Client, table: string, columns: Column[], rows: Row[], conflict: string[], update: string[]) {
+async function upsert(client: Client, table: string, columns: Column[], rows: Row[], conflict: string[], update: Assignment[]) {
   const names = columns.map(([name]) => quote(name)).join(", ");
   const record = columns.map(([name, type]) => `${quote(name)} ${type}`).join(", ");
   const action = update.length
-    ? `do update set ${update.map((name) => `${quote(name)} = excluded.${quote(name)}`).join(", ")}`
+    ? `do update set ${update.map((item) => typeof item === "string" ? `${quote(item)} = excluded.${quote(item)}` : `${quote(item[0])} = ${item[1]}`).join(", ")}`
     : "do nothing";
   const sql = `insert into public.${table} (${names}) select ${names} from jsonb_to_recordset($1::jsonb) as r(${record}) on conflict (${conflict.map(quote).join(", ")}) ${action}`;
   for (const batch of chunks(rows)) await client.query(sql, [JSON.stringify(batch)]);
@@ -78,6 +89,135 @@ async function upsert(client: Client, table: string, columns: Column[], rows: Ro
 async function idMap(client: Client, sql: string) {
   const { rows } = await client.query<{ key: string; id: string }>(sql);
   return new Map(rows.map((row) => [String(row.key).toLowerCase(), row.id]));
+}
+/** Columns to overwrite on conflict, with an expression for those that merge instead. */
+function assignments(columns: Column[], key: string, merge: Record<string, string> = {}): Assignment[] {
+  return columns.map(([name]) => name).filter((name) => name !== key).map((name) => (merge[name] ? [name, merge[name]] : name));
+}
+
+const personKey = (name: string) => name.normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
+// A slot is claimed once a participation, proposal or post points at it.
+const claimed = (alias: string) => `(exists (select 1 from public.participations where person_id = ${alias}.id)
+  or exists (select 1 from public.proposals where person_id = ${alias}.id)
+  or exists (select 1 from public.posts where person_id = ${alias}.id))`;
+
+async function storedPeople(client: Client) {
+  const { rows } = await client.query<Person>(
+    `select pp.id, p.external_id, pp.role, pp.archived_name, pp.archived_profile_url, pp.ordinal, ${claimed("pp")} as claimed
+     from public.project_people pp join public.projects p on p.id = pp.project_id`,
+  );
+  const byProject = new Map<string, Person[]>();
+  for (const row of rows) {
+    const list = byProject.get(row.external_id);
+    if (list) list.push(row);
+    else byProject.set(row.external_id, [row]);
+  }
+  return byProject;
+}
+
+/**
+ * Matches the archive's people to stored slots by name within (project, role),
+ * not by position, so a reordered or renamed list never moves a claim onto
+ * someone else. New names get the next free ordinal; unclaimed slots the archive
+ * dropped are deleted. A project's single contributor slot is renamed in place
+ * unless it is claimed. Claimed slots are never renamed or deleted, only reported.
+ */
+function planPeople(stored: Map<string, Person[]>) {
+  const inserts: NewPerson[] = [];
+  const updates: Array<{ id: string; archived_name: string; archived_profile_url: string | null }> = [];
+  const deletes: string[] = [];
+  const claimedKept: Array<{ project: string; role: Person["role"]; slot: string; archive: string | null }> = [];
+  let contributorsRenamed = 0;
+  for (const project of projects) {
+    const slots = (stored.get(project.project_id) ?? []).sort((a, b) => a.ordinal - b.ordinal);
+    const name = project.contributor.trim();
+    const profileUrl = project.contributor_profile_url ?? null;
+    const contributor = slots.find((slot) => slot.role === "contributor" && slot.ordinal === 1);
+    if (!contributor) {
+      inserts.push({ external_id: project.project_id, role: "contributor", archived_name: name, archived_profile_url: profileUrl, ordinal: 1 });
+    } else if (personKey(contributor.archived_name) !== personKey(name) && contributor.claimed) {
+      claimedKept.push({ project: project.project_id, role: "contributor", slot: contributor.archived_name, archive: name });
+    } else {
+      const nextName = contributor.claimed ? contributor.archived_name : name;
+      if (personKey(contributor.archived_name) !== personKey(nextName)) contributorsRenamed += 1;
+      if (nextName !== contributor.archived_name || profileUrl !== contributor.archived_profile_url) {
+        updates.push({ id: contributor.id, archived_name: nextName, archived_profile_url: profileUrl });
+      }
+    }
+
+    const mentorSlots = slots.filter((slot) => slot.role === "mentor");
+    const byName = new Map<string, Person[]>();
+    for (const slot of mentorSlots) {
+      const key = personKey(slot.archived_name);
+      byName.set(key, [...(byName.get(key) ?? []), slot]);
+    }
+    const matched = new Set<Person>();
+    const added: string[] = [];
+    for (const mentor of (project.mentors ?? []).map((value) => value.trim()).filter(Boolean)) {
+      const slot = byName.get(personKey(mentor))?.shift();
+      if (!slot) { added.push(mentor); continue; }
+      matched.add(slot);
+      if (!slot.claimed && slot.archived_name !== mentor) updates.push({ id: slot.id, archived_name: mentor, archived_profile_url: slot.archived_profile_url });
+    }
+    let ordinal = 0;
+    for (const slot of mentorSlots) {
+      if (matched.has(slot) || slot.claimed) ordinal = Math.max(ordinal, slot.ordinal);
+      if (matched.has(slot)) continue;
+      if (slot.claimed) claimedKept.push({ project: project.project_id, role: "mentor", slot: slot.archived_name, archive: null });
+      else deletes.push(slot.id);
+    }
+    for (const mentor of added) inserts.push({ external_id: project.project_id, role: "mentor", archived_name: mentor, archived_profile_url: null, ordinal: ++ordinal });
+  }
+  return { inserts, updates, deletes, claimedKept, contributorsRenamed };
+}
+type PeoplePlan = ReturnType<typeof planPeople>;
+
+function peopleSummary(plan: PeoplePlan) {
+  return {
+    inserted: plan.inserts.length,
+    updated: plan.updates.length,
+    contributorsRenamed: plan.contributorsRenamed,
+    deleted: plan.deletes.length,
+    claimedKept: plan.claimedKept.length,
+    claimedKeptSamples: plan.claimedKept.slice(0, 50),
+  };
+}
+
+/** Plans against the stored slots and applies the plan in one transaction. */
+async function syncPeople(client: Client, projectIds: Map<string, string>) {
+  await client.query("begin");
+  try {
+    const plan = planPeople(await storedPeople(client));
+    let deleted = 0;
+    for (const batch of chunks(plan.deletes)) {
+      deleted += (await client.query(`delete from public.project_people pp where pp.id = any($1::uuid[]) and not ${claimed("pp")}`, [batch])).rowCount ?? 0;
+    }
+    let updated = 0;
+    for (const batch of chunks(plan.updates)) {
+      updated += (await client.query(
+        `update public.project_people pp set archived_name = r.archived_name, archived_profile_url = r.archived_profile_url
+         from jsonb_to_recordset($1::jsonb) as r(id uuid, archived_name text, archived_profile_url text)
+         where pp.id = r.id and (pp.archived_name = r.archived_name or not ${claimed("pp")})`,
+        [JSON.stringify(batch)],
+      )).rowCount ?? 0;
+    }
+    if (deleted !== plan.deletes.length || updated !== plan.updates.length) throw new Error("Person slots were claimed during the import; re-run it");
+    const rows = plan.inserts.map(({ external_id, ...person }) => ({ project_id: projectIds.get(external_id.toLowerCase()), ...person }));
+    if (rows.some((row) => !row.project_id)) throw new Error("Some people reference unknown projects");
+    for (const batch of chunks(rows)) {
+      await client.query(
+        `insert into public.project_people (project_id, role, archived_name, archived_profile_url, ordinal)
+         select project_id, role, archived_name, archived_profile_url, ordinal
+         from jsonb_to_recordset($1::jsonb) as r(project_id uuid, role text, archived_name text, archived_profile_url text, ordinal smallint)`,
+        [JSON.stringify(batch)],
+      );
+    }
+    await client.query("commit");
+    return plan;
+  } catch (error) {
+    await client.query("rollback");
+    throw error;
+  }
 }
 
 const orgDirectory = path.join(root, "new-api-details", "organizations");
@@ -134,6 +274,15 @@ async function main() {
 
   const client = new Client({ connectionString });
   await client.connect();
+  if (planPeopleOnly) {
+    try {
+      console.log(JSON.stringify({ mode: "plan-people", people: peopleSummary(planPeople(await storedPeople(client))) }, null, 2));
+      console.log("Nothing was written.");
+    } finally {
+      await client.end();
+    }
+    return;
+  }
   const { rows: [run] } = await client.query<{ id: string }>(
     "insert into public.import_runs(source, source_checksum, status, counts) values ('checked-in-json', $1, 'running', $2) returning id",
     [sourceChecksum, JSON.stringify(counts)],
@@ -168,7 +317,11 @@ async function main() {
       ["last_year", "integer"], ["first_time", "boolean"], ["is_currently_active", "boolean"], ["total_projects", "integer"],
       ["source_payload", "jsonb"],
     ];
-    await upsert(client, "organizations", organizationColumns, organizationRows, ["slug"], organizationColumns.map(([name]) => name).filter((name) => name !== "slug"));
+    // Legacy identifiers back the /api/v1 ids: set once, never replaced or cleared.
+    await upsert(client, "organizations", organizationColumns, organizationRows, ["slug"], assignments(organizationColumns, "slug", {
+      legacy_id: "coalesce(organizations.legacy_id, excluded.legacy_id)",
+      canonical_id: "coalesce(organizations.canonical_id, excluded.canonical_id)",
+    }));
     const orgIds = await idMap(client, "select slug::text as key, id from public.organizations");
 
     const importedProjectCounts = new Map<string, number>();
@@ -221,27 +374,16 @@ async function main() {
       ["info_html", "text"], ["project_url", "text"], ["code_url", "text"], ["work_product_url", "text"], ["work_product_kind", "text"],
       ["source_created_at", "timestamptz"], ["source_updated_at", "timestamptz"], ["source_payload", "jsonb"],
     ];
-    await upsert(client, "projects", projectColumns, projectRows, ["external_id"], projectColumns.map(([name]) => name).filter((name) => name !== "external_id"));
+    // Source dates may come from scripts/backfill-legacy-ids.ts (as does legacy_id,
+    // which this import never writes); the JSON replaces them only with a value of its own.
+    await upsert(client, "projects", projectColumns, projectRows, ["external_id"], assignments(projectColumns, "external_id", {
+      source_created_at: "coalesce(excluded.source_created_at, projects.source_created_at)",
+      source_updated_at: "coalesce(excluded.source_updated_at, projects.source_updated_at)",
+    }));
     const projectIds = await idMap(client, "select external_id as key, id from public.projects");
 
-    const peopleRows = projects.flatMap((project) => {
-      const projectId = projectIds.get(project.project_id.toLowerCase());
-      const contributor = { project_id: projectId, role: "contributor", archived_name: project.contributor.trim(), archived_profile_url: project.contributor_profile_url ?? null, ordinal: 1 };
-      const mentors = (project.mentors ?? []).map((name) => name.trim()).filter(Boolean)
-        .map((name, index) => ({ project_id: projectId, role: "mentor", archived_name: name, archived_profile_url: null, ordinal: index + 1 }));
-      return [contributor, ...mentors];
-    });
-    await upsert(client, "project_people", [
-      ["project_id", "uuid"], ["role", "text"], ["archived_name", "text"], ["archived_profile_url", "text"], ["ordinal", "smallint"],
-    ], peopleRows, ["project_id", "role", "ordinal"], ["archived_name", "archived_profile_url"]);
-    // Drop mentor rows the archive no longer lists, unless someone has claimed them.
-    await client.query(
-      `delete from public.project_people pp
-       using public.projects p, jsonb_to_recordset($1::jsonb) as c(external_id text, mentors integer)
-       where pp.project_id = p.id and p.external_id = c.external_id and pp.role = 'mentor' and pp.ordinal > c.mentors
-         and not exists (select 1 from public.participations pa where pa.person_id = pp.id)`,
-      [JSON.stringify(projects.map((project) => ({ external_id: project.project_id, mentors: (project.mentors ?? []).filter((name) => name.trim()).length })))],
-    );
+    const people = peopleSummary(await syncPeople(client, projectIds));
+    console.log(JSON.stringify({ people }, null, 2));
 
     const rawTechnologyValues = [...organizations.flatMap((org) => org.technologies ?? []), ...projects.flatMap((project) => project.tech_stack ?? [])].filter(Boolean);
     const rawTechNames = [...new Set(rawTechnologyValues)].sort();
@@ -283,7 +425,10 @@ async function main() {
 
     await client.query("update public.import_runs set status = 'completed', completed_at = now(), counts = $2 where id = $1", [
       run.id,
-      JSON.stringify({ ...counts, importedOrganizations: organizationRows.length, importedProjects: projectRows.length, people: peopleRows.length, technologies: technologyGroups.length, topics: topicGroups.length }),
+      JSON.stringify({
+        ...counts, importedOrganizations: organizationRows.length, importedProjects: projectRows.length, people: counts.contributorSlots + counts.mentorSlots,
+        peopleChanges: people, technologies: technologyGroups.length, topics: topicGroups.length,
+      }),
     ]);
     console.log("Catalog import completed.");
   } catch (error) {
