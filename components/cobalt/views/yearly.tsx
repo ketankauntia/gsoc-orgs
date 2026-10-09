@@ -10,7 +10,7 @@ import { PageHead, SectionHead } from "../page";
 import { BarList, ColumnChart, Dumbbell, fmt, Histogram, Logo, plural, StatTile } from "../ui";
 import { pickPosts, PostCards } from "../posts";
 
-interface YearProject { id: string; t: string; o: string; s: string; c: string | null; m: string[]; u: string | null }
+interface YearProject { id: string; t: string; o: string; s: string; c: string | null; m: string[] }
 import "../yearly.css";
 
 const yearHref = (year: number) => `/yearly/google-summer-of-code-${year}`;
@@ -201,7 +201,6 @@ export function YearDetailView({ data, work }: { data: YearlyPageData; work: Con
       s: project.org_slug,
       c: project.contributor?.trim() || null,
       m: (project.mentors ?? []).filter(Boolean),
-      u: project.project_url ?? null,
     }))
     .sort((a, b) => a.o.localeCompare(b.o) || a.t.localeCompare(b.t));
   // Ten projects for the page: one from each of the year's largest organizations, for range.
@@ -394,7 +393,7 @@ export function YearDetailView({ data, work }: { data: YearlyPageData; work: Con
                     </p>
                   </div>
                   <div className="cb-project-links">
-                    {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">Project</a> : null}
+                    <Link href={`/organizations/${project.s}/projects/${project.id}`} prefetch={false} className="cb-arrow">Project</Link>
                   </div>
                 </li>
               ))}

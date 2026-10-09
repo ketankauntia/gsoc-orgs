@@ -219,7 +219,7 @@ export function CobaltDirectory({ params }: { params: SearchParams }) {
               {f.page < data.pages ? <Link href={links.page(f.page + 1)} className="cb-button cb-button-outline cb-button-sm">Next<IconArrowRight size={14} stroke={2} aria-hidden /></Link> : <span className="cb-button cb-button-outline cb-button-sm" aria-disabled="true">Next<IconArrowRight size={14} stroke={2} aria-hidden /></span>}
             </nav>
           ) : null}
-          <p className="cb-results-note">Contributor counts are accepted projects per cycle. Participation history is not a prediction of selection.</p>
+          <p className="cb-results-note">Contributor counts are accepted projects per cycle.</p>
         </div>
       </div>
       <AToZ />
