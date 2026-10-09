@@ -221,12 +221,12 @@ async function main() {
       const confirmed = options.status === "published" ? pdf.sha256 : null;
       const inserted = await sql`
         insert into public.proposals(id, person_id, slug, status, locked_at, file_key, file_sha256, file_bytes, file_pages, file_version,
-          file_uploaded_by, file_uploaded_at, extraction_status, text_content, pii_findings, pii_confirmed_sha256,
-          licence_accepted_at, terms_version, permission_basis, permission_note, permission_source_url, permission_given_at, published_at)
+          file_uploaded_by, file_uploaded_by_admin, file_uploaded_at, extraction_status, text_content, pii_findings, pii_confirmed_sha256,
+          licence_accepted_at, licence_accepted_by, terms_version, permission_basis, permission_note, permission_source_url, permission_given_at, published_at)
         values (${id}::uuid, ${options.personId}::uuid, ${options.slug}, ${options.status}, ${options.locked ? options.publishedAt : null}::timestamptz,
-          ${newKey}, ${pdf.sha256}, ${bytes.byteLength}, ${pdf.pages}, 1, ${options.uploadedBy}::uuid, ${options.uploadedAt}::timestamptz,
+          ${newKey}, ${pdf.sha256}, ${bytes.byteLength}, ${pdf.pages}, 1, ${options.uploadedBy}::uuid, ${options.permission !== null}, ${options.uploadedAt}::timestamptz,
           ${pdf.status}, ${pdf.text}, ${JSON.stringify(pdf.findings)}::jsonb, ${confirmed},
-          ${options.consent?.acceptedAt ?? null}::timestamptz, ${options.consent ? TERMS_VERSION : null},
+          ${options.consent?.acceptedAt ?? null}::timestamptz, ${options.consent ? options.uploadedBy : null}::uuid, ${options.consent ? TERMS_VERSION : null},
           ${options.permission?.basis ?? null}, ${options.permission?.note ?? null}, ${options.permission?.sourceUrl ?? null}, ${options.permission?.givenAt ?? null}::date,
           ${options.publishedAt}::timestamptz)
         on conflict (person_id) do nothing

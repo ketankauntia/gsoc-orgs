@@ -18,8 +18,10 @@ if (!connectionString) throw new Error("Set NEON_DATABASE_URL_UNPOOLED (or NEON_
 const directory = path.join(process.cwd(), "db", "migrations");
 const files = fs.readdirSync(directory).filter((file) => /^\d{4}_[a-z0-9_]+\.sql$/.test(file)).sort();
 
+// Line endings are normalised so a Windows checkout (core.autocrlf) hashes the
+// same as the committed LF files.
 function checksum(text: string) {
-  return createHash("sha256").update(text).digest("hex");
+  return createHash("sha256").update(text.replace(/\r\n/g, "\n")).digest("hex");
 }
 
 async function main() {
