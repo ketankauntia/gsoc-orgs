@@ -8,7 +8,7 @@ import type { Profile } from "@/lib/hub/types";
 import { isAuthConfigured, neonAuth } from "@/lib/neon-auth/server";
 import { importGoogleAvatar } from "@/lib/r2";
 
-export type SessionUser = { id: string; email: string; name: string; image: string | null };
+export type SessionUser = { id: string; email: string; emailVerified: boolean; name: string; image: string | null };
 export type Viewer = { user: SessionUser; profile: Profile; isAdmin: boolean };
 
 /** Admins are listed by Neon Auth user id in ADMIN_USER_IDS (comma or space separated). */
@@ -23,7 +23,7 @@ export const getSessionUser = cache(async (): Promise<SessionUser | null> => {
     const { data } = await neonAuth().getSession();
     const user = data?.user;
     if (!user?.id) return null;
-    return { id: user.id, email: user.email, name: user.name ?? "", image: user.image ?? null };
+    return { id: user.id, email: user.email, emailVerified: Boolean(user.emailVerified), name: user.name ?? "", image: user.image ?? null };
   } catch (error) {
     console.error("[auth:session]", error);
     return null;
@@ -34,7 +34,8 @@ export const getSessionUser = cache(async (): Promise<SessionUser | null> => {
 export const getViewer = cache(async (): Promise<Viewer | null> => {
   const user = await getSessionUser();
   if (!user || !isDatabaseConfigured()) return null;
-  const rows = await db()`select to_jsonb(p) as profile from public.ensure_profile(${user.id}::uuid, ${user.name}) p`;
+  // A verified email lets an account from before the Neon move reclaim its migrated profile.
+  const rows = await db()`select to_jsonb(p) as profile from public.ensure_profile(${user.id}::uuid, ${user.name}, ${user.emailVerified ? user.email : null}) p`;
   const profile = rows[0]?.profile as Profile | undefined;
   if (!profile) return null;
   if (!profile.avatar_key && user.image) {
