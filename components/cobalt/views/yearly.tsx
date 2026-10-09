@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { IconArrowLeft, IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
+import type { ContributorWork } from "@/lib/hub/public";
 import type { YearlyPageData } from "@/lib/yearly-page-types";
+import { ContributorWorkSection } from "../contributor-work";
 import { canonicalTechnology } from "@/lib/vocabulary/catalog";
 import { cobaltOrganization, cobaltOrganizations, CURRENT_YEAR, programSeries, YEARS, type CobaltOrg } from "../data";
 import { countWord, techLabel } from "../labels";
@@ -156,7 +158,7 @@ const SIZE_BUCKETS = [
   { label: "21+", test: (n: number) => n > 20 },
 ];
 
-export function YearDetailView({ data }: { data: YearlyPageData }) {
+export function YearDetailView({ data, work }: { data: YearlyPageData; work: ContributorWork }) {
   const { year, metrics } = data;
   const index = YEARS.indexOf(year);
   const series = programSeries();
@@ -402,6 +404,16 @@ export function YearDetailView({ data }: { data: YearlyPageData }) {
             </div>
           </section>
         ) : null}
+
+        <ContributorWorkSection
+          id="cb-cw-year"
+          eyebrow={`SHARED BY THE ${year} COHORT`}
+          title="Proposals and progress posts"
+          work={work}
+          proposalsHref={`/proposals?year=${year}`}
+          postsHref={`/contributor-blogs?year=${year}`}
+          emptyText={`No ${year} contributor has shared a proposal or progress post yet. Were you one of them?`}
+        />
 
         <PostCards posts={posts} id="cb-yr-posts" eyebrow={`READING FOR GSOC ${year}`} title="Guides for this cycle" quiet="and every one after it." />
 

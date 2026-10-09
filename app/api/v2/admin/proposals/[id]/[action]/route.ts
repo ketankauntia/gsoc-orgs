@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiAdmin, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { adminPermissionSchema, confirmSchema, reasonSchema, zodFields } from "@/lib/hub/schemas";
 import { deleteR2Object } from "@/lib/r2";
 import { readJsonBody } from "@/lib/security";
@@ -36,11 +37,13 @@ export async function POST(request: Request, { params }: Context) {
     }
     if (action === "publish") {
       await db()`select public.admin_publish_proposal(${adminId}::uuid, ${id}::uuid)`;
+      await revalidateContributorWork({ proposalId: id });
       return privateApiData({ published: true });
     }
     if (action === "remove") {
       const parsed = reasonSchema.safeParse(body);
       if (!parsed.success) return apiError("VALIDATION_ERROR", "Give a reason", 422, zodFields(parsed.error));
+      await revalidateContributorWork({ proposalId: id });
       const rows = await db()`select public.admin_remove_proposal(${adminId}::uuid, ${id}::uuid, ${parsed.data.reason}) as key`;
       const key = rows[0]?.key as string | null;
       if (key) await deleteR2Object(key).catch((error) => console.error("[admin/proposals:remove-object]", error));

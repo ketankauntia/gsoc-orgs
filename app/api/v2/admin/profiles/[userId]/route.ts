@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiAdmin, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { adminProfileStatusSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
@@ -15,6 +16,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ use
   if (!parsed.success) return apiError("VALIDATION_ERROR", "Check the details", 422, zodFields(parsed.error));
   try {
     await db()`select public.admin_set_profile_status(${gate.viewer.user.id}::uuid, ${userId}::uuid, ${parsed.data.status}, ${parsed.data.reason ?? null})`;
+    await revalidateContributorWork({ userId });
     return privateApiData({ done: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/admin/profiles/[userId]");

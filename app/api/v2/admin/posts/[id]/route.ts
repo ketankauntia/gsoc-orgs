@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiAdmin, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { adminHideSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
@@ -14,6 +15,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   if (!parsed.success) return apiError("VALIDATION_ERROR", "Check the details", 422, zodFields(parsed.error));
   try {
     await db()`select public.admin_set_post_hidden(${gate.viewer.user.id}::uuid, ${id}::uuid, ${parsed.data.hidden}, ${parsed.data.reason ?? null})`;
+    await revalidateContributorWork({ postId: id });
     return privateApiData({ done: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/admin/posts/[id]");

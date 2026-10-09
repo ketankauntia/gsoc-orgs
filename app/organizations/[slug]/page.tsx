@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Organization } from "@/lib/api";
 import { CobaltProfile } from "@/components/cobalt/profile";
 import { cobaltOrganization } from "@/components/cobalt/data";
+import { getOrganizationWork } from "@/lib/hub/public";
 import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { canonicalOrganizationSlug, loadOrganizationData } from "@/lib/organizations-page-types";
 
@@ -112,5 +113,6 @@ export default async function OrganizationDetailPage({
   if (!cobaltOrganization(canonicalSlug)) notFound();
   // Every year's projects are in the HTML (tabs only toggle visibility, ?year= deep links
   // still work), so the page is cached for the revalidate window and fully crawlable.
-  return <CobaltProfile slug={canonicalSlug} />;
+  // Proposals and posts change the page; publishing them revalidates this path (lib/hub/revalidate.ts).
+  return <CobaltProfile slug={canonicalSlug} work={await getOrganizationWork(canonicalSlug)} />;
 }

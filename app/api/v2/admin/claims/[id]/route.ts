@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiAdmin, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { adminClaimDecisionSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
@@ -16,6 +17,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   try {
     if (parsed.data.action === "verify") await db()`select public.admin_verify_participation(${adminId}::uuid, ${id}::uuid)`;
     else await db()`select public.admin_reject_participation(${adminId}::uuid, ${id}::uuid, ${parsed.data.reason})`;
+    await revalidateContributorWork({ participationId: id });
     return privateApiData({ done: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/admin/claims/[id]");

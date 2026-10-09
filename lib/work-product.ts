@@ -40,6 +40,26 @@ export function workProductKind(url: string | null | undefined, organizationWebs
   return "other";
 }
 
+/** One-word labels for compact project rows. */
+export const WORK_PRODUCT_SHORT_LABELS: Record<WorkProductKind, string> = {
+  report_blog: "Report",
+  gist: "Summary",
+  repo_pr: "Code",
+  docs: "Report",
+  org_site: "Report",
+  other: "Work",
+};
+
+export function workProductShortLabel(url: string | null | undefined) {
+  const kind = workProductKind(url);
+  return kind ? WORK_PRODUCT_SHORT_LABELS[kind] : "Work";
+}
+
+export function workProductLabel(url: string | null | undefined) {
+  const kind = workProductKind(url);
+  return kind ? WORK_PRODUCT_LABELS[kind] : "Final work product";
+}
+
 export const WORK_PRODUCT_LABELS: Record<WorkProductKind, string> = {
   report_blog: "Final report",
   gist: "Work summary (gist)",

@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiViewer, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { confirmSchema, finalizeSchema, reasonSchema, zodFields } from "@/lib/hub/schemas";
 import { TERMS_VERSION } from "@/lib/hub/types";
 import { readJsonBody } from "@/lib/security";
@@ -30,6 +31,7 @@ export async function POST(request: Request, { params }: Context) {
       const parsed = finalizeSchema.safeParse(body);
       if (!parsed.success) return apiError("VALIDATION_ERROR", "Accept the terms to publish", 422, zodFields(parsed.error));
       await db()`select public.finalize_my_proposal(${userId}::uuid, ${id}::uuid, ${TERMS_VERSION})`;
+      await revalidateContributorWork({ proposalId: id });
       return privateApiData({ published: true });
     }
     if (action === "removal") {

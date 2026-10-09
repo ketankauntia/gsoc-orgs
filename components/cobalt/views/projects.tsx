@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { IconArrowLeft, IconArrowRight, IconArrowUpRight, IconCode } from "@tabler/icons-react";
+import type { ContributorWork } from "@/lib/hub/public";
 import type { ProjectEntryWithYear, ProjectYearPageData } from "@/lib/projects-page-types";
+import { workProductLabel, workProductShortLabel } from "@/lib/work-product";
 import { canonicalTechnology, technologyHref } from "@/lib/vocabulary/catalog";
 import { cobaltOrganization, cobaltOrganizations, CURRENT_YEAR, programSeries, YEARS, type CobaltOrg } from "../data";
 import { techLabel } from "../labels";
 import { PageHead, SectionHead } from "../page";
 import { BarList, ColumnChart, Dumbbell, fmt, Logo, plural, Sparkline, StatTile } from "../ui";
+import { ProjectContributorWork } from "../contributor-work";
 import { ProjectExplorer, type ExplorerOrg, type ExplorerProject } from "./projects-explorer";
 import "../projects.css";
 
@@ -98,7 +101,7 @@ function ExternalLinks({ url, code }: { url: string | null; code: string | null 
   return (
     <div className="cb-project-links">
       {url ? <a href={url} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
-      {code ? <a href={code} target="_blank" rel="noreferrer noopener">Code <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+      {code ? <a href={code} target="_blank" rel="noreferrer noopener">{workProductShortLabel(code)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
     </div>
   );
 }
@@ -473,13 +476,15 @@ function Paragraphs({ text }: { text: string }) {
 
 const shortTitle = (value: string, max = 48) => (value.length <= max ? value : `${value.slice(0, Math.max(value.lastIndexOf(" ", max), max - 12))}…`);
 
-export function ProjectView({ project, siblings, archive, techPages }: {
+export function ProjectView({ project, siblings, archive, techPages, work }: {
   project: ProjectEntryWithYear;
   /** Every project at the organization in the same year, in archive order (includes this one). */
   siblings: ProjectEntryWithYear[];
   archive: Map<string, ArchiveProject>;
   /** Technology slugs that have a page. */
   techPages: Set<string>;
+  /** Proposal, progress posts and verified people shared on this site. */
+  work: ContributorWork;
 }) {
   const details = archive.get(`${project.year}|${project.project_id}`);
   const org = cobaltOrganization(project.org_slug);
@@ -518,7 +523,7 @@ export function ProjectView({ project, siblings, archive, techPages }: {
         aside={url || code ? (
           <>
             {url ? <a href={url} target="_blank" rel="noreferrer noopener" className="cb-button cb-button-ink">Official project <IconArrowUpRight size={16} stroke={2} aria-hidden /></a> : null}
-            {code ? <a href={code} target="_blank" rel="noreferrer noopener" className="cb-button cb-button-outline"><IconCode size={16} stroke={1.75} aria-hidden /> Code and report</a> : null}
+            {code ? <a href={code} target="_blank" rel="noreferrer noopener" className="cb-button cb-button-outline"><IconCode size={16} stroke={1.75} aria-hidden /> {workProductLabel(code)}</a> : null}
           </>
         ) : undefined}
       >
@@ -543,6 +548,8 @@ export function ProjectView({ project, siblings, archive, techPages }: {
                 </div>
               ) : null}
             </article>
+
+            <ProjectContributorWork work={work} externalId={project.project_id} />
 
             {others.length ? (
               <section aria-labelledby="cb-pj-more">

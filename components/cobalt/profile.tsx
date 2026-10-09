@@ -25,7 +25,10 @@ import {
   IconUsers,
   IconWorld,
 } from "@tabler/icons-react";
+import type { ContributorWork } from "@/lib/hub/public";
 import { technologyHref, topicHref } from "@/lib/vocabulary/catalog";
+import { workProductShortLabel } from "@/lib/work-product";
+import { ContributorWorkSection } from "./contributor-work";
 import { techLabel, topicLabel } from "./labels";
 import { CopyLink, ProjectYears, SaveButton } from "./controls";
 import { CURRENT_YEAR, getCobaltProfile, YEARS } from "./data";
@@ -54,7 +57,7 @@ function host(value: string) {
 }
 const isUrl = (value: string | null | undefined): value is string => Boolean(value && /^https?:\/\//i.test(value));
 
-export async function CobaltProfile({ slug }: { slug: string }) {
+export async function CobaltProfile({ slug, work }: { slug: string; work: ContributorWork }) {
   const data = await getCobaltProfile(slug);
   if (!data) return null;
   const { org, contacts, series } = data;
@@ -259,6 +262,16 @@ export async function CobaltProfile({ slug }: { slug: string }) {
             </aside>
           </div>
 
+          <ContributorWorkSection
+            id="cb-cw-org"
+            eyebrow="FROM PAST CONTRIBUTORS"
+            title="Learn from past contributors"
+            work={work}
+            proposalsHref={`/proposals?organization=${encodeURIComponent(org.slug)}`}
+            postsHref={`/contributor-blogs?organization=${encodeURIComponent(org.slug)}`}
+            emptyText={`No accepted proposals or progress posts from ${org.name} contributors yet. Contributed here? Share yours.`}
+          />
+
           {data.related.length ? (
             <section className="cb-related" aria-labelledby="cb-related-title">
               <div className="cb-related-head">
@@ -308,7 +321,7 @@ function ProjectItem({ project }: { project: { t: string; c: string | null; m: s
       </div>
       <div className="cb-project-links">
         {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
-        {project.g ? <a href={project.g} target="_blank" rel="noreferrer noopener">Code <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+        {project.g ? <a href={project.g} target="_blank" rel="noreferrer noopener">{workProductShortLabel(project.g)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
       </div>
     </li>
   );

@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiAdmin, databaseErrorResponse } from "@/lib/api-auth";
 import { completeUploadSchema, zodFields } from "@/lib/hub/schemas";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { completeProposalUpload, UploadRejected } from "@/lib/hub/upload";
 import { readJsonBody } from "@/lib/security";
 
@@ -14,7 +15,10 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   const parsed = completeUploadSchema.safeParse(await readJsonBody(request).catch(() => null));
   if (!parsed.success) return apiError("VALIDATION_ERROR", "Upload again", 422, zodFields(parsed.error));
   try {
-    return privateApiData(await completeProposalUpload({ actorId: gate.viewer.user.id, isAdmin: true, proposalId: id, key: parsed.data.key }));
+    const result = await completeProposalUpload({ actorId: gate.viewer.user.id, isAdmin: true, proposalId: id, key: parsed.data.key });
+    // A new file takes a published proposal back to draft until it is published again.
+    await revalidateContributorWork({ proposalId: id });
+    return privateApiData(result);
   } catch (error) {
     if (error instanceof UploadRejected) return apiError("INVALID_UPLOAD", error.message, 422);
     return databaseErrorResponse(error, "api/v2/admin/proposals/[id]/complete");

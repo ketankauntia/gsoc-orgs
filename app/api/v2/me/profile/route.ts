@@ -1,6 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiViewer, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
+import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { profileSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
@@ -15,6 +16,7 @@ export async function PATCH(request: Request) {
       ${gate.viewer.user.id}::uuid, ${value.displayName}, ${value.handle}, ${value.bio ?? null},
       ${value.websiteUrl}, ${value.githubUsername}, ${value.xUsername}, ${value.mediumUrl}, ${value.isPublic}
     )`;
+    await revalidateContributorWork({ userId: gate.viewer.user.id });
     return privateApiData({ saved: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/me/profile");

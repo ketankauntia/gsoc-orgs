@@ -4,6 +4,7 @@ import { loadYearlyPageData } from "@/lib/yearly-page-types";
 import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { getAvailableProjectYears } from "@/lib/projects-page-types";
 import { YearDetailView } from "@/components/cobalt/views/yearly";
+import { getYearWork } from "@/lib/hub/public";
 
 // Static Generation - cache forever
 export const revalidate = false;
@@ -63,5 +64,6 @@ export default async function YearlyPage({
   const data = await loadYearlyPageData(slug);
   if (!data) notFound();
 
-  return <YearDetailView data={data} />;
+  // Built once; publishing a proposal or post revalidates this path (lib/hub/revalidate.ts).
+  return <YearDetailView data={data} work={await getYearWork(data.year)} />;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { archiveIndex, ProjectView } from "@/components/cobalt/views/projects";
+import { getProjectWork } from "@/lib/hub/public";
 import { buildNotFoundMetadata, buildPageMetadata } from "@/lib/seo";
 import { loadOrganizationData } from "@/lib/organizations-page-types";
 import {
@@ -51,9 +52,10 @@ export default async function ProjectDetailPage({
   const project = projects.find((entry) => entry.project_id === projectId);
   if (!project) notFound();
 
-  const [organization, techIndex] = await Promise.all([
+  const [organization, techIndex, work] = await Promise.all([
     loadOrganizationData(project.org_slug),
     loadTechStackIndexData(),
+    getProjectWork(project.project_id),
   ]);
   return (
     <ProjectView
@@ -61,6 +63,7 @@ export default async function ProjectDetailPage({
       siblings={projects.filter((entry) => entry.year === project.year)}
       archive={archiveIndex(organization)}
       techPages={new Set(techIndex?.all_techs.map((tech) => tech.slug) ?? [])}
+      work={work}
     />
   );
 }
