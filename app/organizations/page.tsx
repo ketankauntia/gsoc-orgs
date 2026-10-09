@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import type { SearchParams } from "@/components/cobalt/data";
 import { CobaltDirectory } from "@/components/cobalt/directory";
 import { buildPageMetadata } from "@/lib/seo";
+
+type OrganizationsPageProps = { searchParams: Promise<SearchParams> };
 
 /**
  * Organization directory. Filters live in the URL (q, scope, tech, topic, year, category, new,
  * cap, rec, sort, page, view); the earlier parameter names (techs, topics, categories, years,
  * firstTimeOnly) are still accepted. The WebSite SearchAction on the home page targets ?q=.
  */
-export async function generateMetadata({ searchParams }: PageProps<"/organizations">): Promise<Metadata> {
+export async function generateMetadata({ searchParams }: OrganizationsPageProps): Promise<Metadata> {
   const params = await searchParams;
   const page = Number(Array.isArray(params.page) ? params.page[0] : params.page) || 1;
   return buildPageMetadata({
@@ -18,6 +21,6 @@ export async function generateMetadata({ searchParams }: PageProps<"/organizatio
   });
 }
 
-export default async function OrganizationsPage({ searchParams }: PageProps<"/organizations">) {
+export default async function OrganizationsPage({ searchParams }: OrganizationsPageProps) {
   return <CobaltDirectory params={await searchParams} />;
 }
