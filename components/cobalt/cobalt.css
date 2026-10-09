@@ -1034,6 +1034,13 @@ a.cb-tag:hover { border-color: var(--cb-border-strong); color: var(--cb-fg); }
 .cb .cb-nav > a, .cb .cb-nav > .cb-popover-wrap > button, .cb .cb-auth-link { white-space: nowrap; }
 .cb .cb-header-inner { gap: 22px; }
 .cb .cb-search-button { width: 168px; }
+/* Brand and actions take equal widths so the primary nav sits in the true center. */
+@media (min-width: 1041px) {
+  .cb .cb-brand, .cb .cb-header-actions { flex: 1 1 0; }
+  .cb .cb-header-actions { justify-content: flex-end; }
+}
+/* The landing page's charts drop their "View as table" twins. */
+.cb .cb-landing .cb-table-view { display: none; }
 @media (max-width: 1440px) { .cb .cb-header-cta { display: none; } }
 @media (max-width: 1240px) { .cb .cb-search-button { width: auto; } .cb .cb-search-button span { display: none; } }
 

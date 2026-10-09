@@ -70,7 +70,6 @@ function Footer() {
       </div>
       <div className="cb-page cb-footer-legal">
         <p>© {new Date().getFullYear()} GSoC Organizations Guide. Independent guide, not affiliated with Google.</p>
-        <p>Participation history is not a prediction of selection.</p>
       </div>
     </footer>
   );

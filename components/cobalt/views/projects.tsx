@@ -96,11 +96,11 @@ function TechChip({ value, pages }: { value: string; pages: Set<string> }) {
   return pages.has(canonicalTechnology(value).slug) ? <Link href={technologyHref(value)} className="cb-tag">{label}</Link> : <span className="cb-tag">{label}</span>;
 }
 
-function ExternalLinks({ url, code }: { url: string | null; code: string | null }) {
-  if (!url && !code) return null;
+/** Project opens our project page (which links the official GSoC page); code goes straight out. */
+function ProjectLinks({ href, code }: { href: string; code: string | null }) {
   return (
     <div className="cb-project-links">
-      {url ? <a href={url} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+      <Link href={href}>Project <IconArrowRight size={13} stroke={2} aria-hidden /></Link>
       {code ? <a href={code} target="_blank" rel="noreferrer noopener">{workProductShortLabel(code)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
     </div>
   );
@@ -108,17 +108,18 @@ function ExternalLinks({ url, code }: { url: string | null; code: string | null 
 
 function ProjectRow({ project, archive, withSummary = true }: { project: ProjectEntryWithYear; archive?: ArchiveProject; withSummary?: boolean }) {
   const summary = withSummary ? excerpt(archive?.summary || project.project_abstract_short || archive?.description || project.project_description) : "";
+  const href = `/organizations/${project.org_slug}/projects/${project.project_id}`;
   return (
     <li className="cb-project">
       <div className="cb-project-main">
-        <h3><Link href={`/organizations/${project.org_slug}/projects/${project.project_id}`} className="cb-project-title">{clean(project.project_title)}</Link></h3>
+        <h3><Link href={href} className="cb-project-title">{clean(project.project_title)}</Link></h3>
         <p className="cb-project-people">
           <span>{clean(project.contributor) || "Contributor not listed"}</span>
           {project.mentors?.length ? <span>Mentored by {project.mentors.slice(0, 3).join(", ")}{project.mentors.length > 3 ? ` +${project.mentors.length - 3}` : ""}</span> : null}
         </p>
         {summary ? <p className="cb-project-desc">{summary}</p> : null}
       </div>
-      <ExternalLinks url={archive?.url ?? project.project_url ?? null} code={archive?.code ?? project.project_code_url ?? null} />
+      <ProjectLinks href={href} code={archive?.code ?? project.project_code_url ?? null} />
     </li>
   );
 }
