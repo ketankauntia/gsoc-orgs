@@ -1,0 +1,25 @@
+/* Contributor work: proposals and progress posts on project, organization and yearly pages. */
+
+.cb .cb-cw-list { display: grid; }
+.cb .cb-cw-list > li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-top: 1px solid var(--cb-border); }
+.cb .cb-cw-list > li:first-child { border-top: 0; padding-top: 0; }
+.cb .cb-cw-icon { display: grid; flex-shrink: 0; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--cb-muted); color: var(--cb-muted-fg); }
+.cb .cb-cw-main { display: grid; gap: 4px; min-width: 0; }
+.cb .cb-cw-main > a { color: var(--cb-fg); font-size: 14.5px; font-weight: 500; line-height: 1.4; overflow-wrap: anywhere; }
+.cb .cb-cw-main > a:hover { color: var(--cb-primary); }
+.cb .cb-cw-main > a svg { display: inline; vertical-align: -1px; color: var(--cb-faint); }
+.cb .cb-cw-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; color: var(--cb-muted-fg); font-size: 12.5px; }
+.cb .cb-cw-label { margin: 16px 0 8px; color: var(--cb-faint); font: 500 11.5px/1.4 var(--cb-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.cb .cb-cw-people { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; color: var(--cb-muted-fg); font-size: 13.5px; line-height: 1.5; }
+.cb .cb-cw-people svg { flex-shrink: 0; margin-top: 2px; color: var(--cb-up); }
+.cb .cb-cw-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--cb-border); }
+.cb .cb-cw-foot p { color: var(--cb-muted-fg); font-size: 13.5px; }
+.cb .cb-cw-section { margin-top: 8px; }
+.cb .cb-cw-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cb .cb-cw-empty { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.cb .cb-cw-empty p { color: var(--cb-muted-fg); font-size: 14px; }
+.cb .cb-pj-layout .cb-cw { margin-top: 16px; }
+
+@media (max-width: 860px) {
+  .cb .cb-cw-grid { grid-template-columns: minmax(0, 1fr); }
+}

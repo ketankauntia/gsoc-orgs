@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createAdminClient } from '@/lib/supabase/admin'
+import { db } from '@/lib/db'
 import { isAdminKeyAuthorized } from '@/lib/admin-key'
 
 /**
@@ -59,43 +59,16 @@ export async function POST(request: NextRequest) {
 
     console.log(`Computing first_time field for year ${targetYear}...`)
 
-    // Fetch all organizations
-    const admin = createAdminClient()
-    const { data: allOrgs, error: fetchError } = await admin
-      .from('organizations')
-      .select('id,slug,name,first_year,active_years')
-    if (fetchError) throw fetchError
-
-    console.log(`Found ${allOrgs.length} organizations to process`)
-
-    let updatedCount = 0
-    let firstTimeCount = 0
-
-    // Process each organization
-    // An org is "first-time" for a target year if:
-    // - Its first_year equals the target year
-    // - This means it never appeared in GSoC before this year
-    for (const org of allOrgs) {
-      const isFirstTime = org.first_year === targetYear
-
-      // Update the organization
-      const { error: updateError } = await admin
-        .from('organizations')
-        .update({ first_time: isFirstTime })
-        .eq('id', org.id)
-      if (updateError) throw updateError
-
-      updatedCount++
-
-      if (isFirstTime) {
-        firstTimeCount++
-      }
-
-      // Log progress every 50 organizations
-      if (updatedCount % 50 === 0) {
-        console.log(`Processed ${updatedCount}/${allOrgs.length} organizations...`)
-      }
-    }
+    // An org is "first-time" for a target year if its first_year equals the
+    // target year, meaning it never appeared in GSoC before.
+    const [result] = await db()`
+      with updated as (
+        update public.organizations set first_time = (first_year is not distinct from ${targetYear}::int) returning first_time
+      )
+      select count(*)::int as updated, count(*) filter (where first_time)::int as first_time from updated`
+    const updatedCount = Number(result.updated)
+    const firstTimeCount = Number(result.first_time)
+    const allOrgs = { length: updatedCount }
 
     console.log(
       `Completed! Updated ${updatedCount} organizations. Found ${firstTimeCount} first-time organizations for year ${targetYear}.`
@@ -158,18 +131,14 @@ export async function GET(request: NextRequest) {
     }
 
     // Get statistics
-    const admin = createAdminClient()
-    const [totalResult, firstTimeResult, yearResult] = await Promise.all([
-      admin.from('organizations').select('id', { count: 'exact', head: true }),
-      admin.from('organizations').select('id', { count: 'exact', head: true }).eq('first_time', true).eq('first_year', targetYear),
-      admin.from('organizations').select('id', { count: 'exact', head: true }).contains('active_years', [targetYear]),
-    ])
-    if (totalResult.error || firstTimeResult.error || yearResult.error) {
-      throw totalResult.error ?? firstTimeResult.error ?? yearResult.error
-    }
-    const totalOrgs = totalResult.count ?? 0
-    const firstTimeOrgs = firstTimeResult.count ?? 0
-    const orgsForYear = yearResult.count ?? 0
+    const [counts] = await db()`
+      select count(*)::int as total,
+        count(*) filter (where first_time and first_year = ${targetYear}::int)::int as first_time,
+        count(*) filter (where ${targetYear}::int = any(active_years))::int as for_year
+      from public.organizations`
+    const totalOrgs = Number(counts.total)
+    const firstTimeOrgs = Number(counts.first_time)
+    const orgsForYear = Number(counts.for_year)
 
     return NextResponse.json(
       {

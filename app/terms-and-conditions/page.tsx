@@ -1,14 +1,8 @@
 import { buildPageMetadata } from "@/lib/seo";
-import { Header } from "@/components/header";
-import { FooterSmall } from "@/components/footer-small";
-import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/components/ui";
 import type { Metadata } from "next";
+import { LegalView, type LegalSection } from "@/components/cobalt/views/community";
 
-// Force revalidation to ensure footer links stay updated
-/**
- * ISR Configuration for Legal Pages
- * Cache for 30 days - only changes when legal content updates.
- */
+/** Legal pages change rarely: cache for 30 days. */
 export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = buildPageMetadata({
@@ -19,7 +13,7 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: ["terms and conditions", "terms of service", "user agreement", "GSoC terms", "website terms"],
 });
 
-const sections = [
+const sections: LegalSection[] = [
   {
     title: "Acceptance of Terms",
     content: [
@@ -122,63 +116,12 @@ const sections = [
 
 export default function TermsAndConditionsPage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      <main className="flex-1 pt-20 lg:pt-24">
-        <Container size="default" className="py-8 lg:py-16">
-          <div className="space-y-8">
-            {/* Header Section */}
-            <SectionHeader
-              badge="Legal"
-              title="Terms and Conditions"
-              titleAs="h1"
-              description="Last updated: August 12, 2026. Please read these terms carefully before using GSoC Organizations Guide."
-              align="center"
-              className="max-w-3xl mx-auto"
-            />
-
-            {/* Introduction */}
-            <CardWrapper className="p-6 lg:p-8">
-              <Text className="text-muted-foreground">
-                Welcome to GSoC Organizations Guide. These Terms and Conditions govern your access
-                to and use of our website. By using our website, you agree to comply with and be
-                bound by these terms. If you disagree with any part of these terms, please do not
-                use our website.
-              </Text>
-            </CardWrapper>
-
-            {/* Terms Sections */}
-            <div className="space-y-6">
-              {sections.map((section, index) => (
-                <CardWrapper key={index} className="p-6 lg:p-8">
-                  <Heading variant="subsection" className="mb-4">
-                    {section.title}
-                  </Heading>
-                  <ul className="space-y-3">
-                    {section.content.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex gap-3">
-                        <span className="text-primary shrink-0">•</span>
-                        <Text className="text-muted-foreground">{item}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </CardWrapper>
-              ))}
-            </div>
-
-            {/* Effective Date */}
-            <CardWrapper className="p-6 bg-muted/50">
-              <Text variant="small" className="text-muted-foreground text-center">
-                These terms and conditions are effective as of August 12, 2026. By using our website,
-                you acknowledge that you have read, understood, and agree to be bound by these
-                terms.
-              </Text>
-            </CardWrapper>
-          </div>
-        </Container>
-      </main>
-      <FooterSmall />
-    </div>
+    <LegalView
+      title="Terms and Conditions"
+      updated="August 12, 2026"
+      intro="Welcome to GSoC Organizations Guide. These Terms and Conditions govern your access to and use of the website. By using the website, you agree to comply with and be bound by these terms. If you disagree with any part of these terms, please do not use the website."
+      sections={sections}
+      closing="These terms and conditions are effective as of August 12, 2026. By using the website, you acknowledge that you have read, understood, and agree to be bound by these terms."
+    />
   );
 }
-

@@ -20,7 +20,7 @@ Copy-Item .env.example .env.local  # PowerShell
 # cp .env.example .env.local       # macOS/Linux
 ```
 
-Use a local or disposable Supabase project for schema and RLS work. Do not use production credentials in a pull request, issue, test fixture, or log. MongoDB is a one-time migration source, not a runtime dependency.
+Use a disposable Neon branch for schema and account work. Do not use production credentials in a pull request, issue, test fixture, or log.
 
 Create a branch from `master`:
 
@@ -34,18 +34,18 @@ git checkout -b feat/short-description
 - `app/` — pages, layouts, and route handlers.
 - `components/` — reusable UI and client interactions.
 - `lib/` — server/client boundaries, validation, storage signing, and data helpers.
-- `supabase/migrations/` — forward-only schema, RLS, function, and policy changes.
-- `cloudflare/` — the proposal-storage Worker only.
-- `scripts/` — imports, reconciliation, bootstrap, and disposable verification.
+- `db/migrations/` — forward-only schema, function, view and grant changes.
+- `cloudflare/` — the proposal-storage Worker and its R2 configuration only.
+- `scripts/` — imports, reconciliation, and disposable verification.
 - `docs/` — reviewed public contributor documentation only.
 
 Do not add internal plans, credentials, private context, moderation notes, raw exports, signed URLs, or local `.agents`/`.claude` tooling to this repository.
 
 ## Implementation rules
 
-- Keep Supabase Postgres as the runtime source of truth.
-- Keep public catalog reads separate from authenticated contributor and moderator routes.
-- Enforce ownership and workflow transitions in database functions/RLS as well as route handlers.
+- Keep Neon Postgres as the runtime source of truth, reached only from the server.
+- Keep public catalog reads separate from signed-in contributor and admin routes.
+- Enforce ownership and workflow transitions in the database functions as well as route handlers; write through those functions, not directly to tables.
 - Validate uploaded files before promotion and use the signed Worker gateway; do not add browser-facing bucket credentials.
 - Treat public profile fields as explicit choices. Never expose email, evidence, private notes, or moderation history through public APIs.
 - Use TypeScript and existing component/data patterns.
@@ -72,22 +72,21 @@ The validation command runs:
 For relevant changes, also run:
 
 ```bash
-npm run supabase:reconcile
+npm run db:reconcile
 npm run r2:verify
 ```
 
-If a test needs Supabase, R2, Google Auth, or another external service, document the disposable environment, inputs, and result in the pull request without including secrets.
+If a test needs Neon, R2, Google sign-in, or another external service, document the disposable environment, inputs, and result in the pull request without including secrets.
 
 ## Database and migration changes
 
-1. Write a forward migration under `supabase/migrations/`.
-2. Review table exposure, grants, RLS policies, functions, indexes, and rollback implications.
-3. Apply it to a disposable project first.
-4. Regenerate `lib/supabase/database.types.ts` from the linked schema.
-5. Run import dry-run, reconciliation, tests, and security checks.
-6. Explain the data migration and release order in the pull request.
+1. Add a new numbered file under `db/migrations/`; never edit one that has been applied (the runner refuses changed files).
+2. Review function privileges, views, indexes, and rollback implications.
+3. Apply it to a disposable Neon branch first with `npm run db:migrate`.
+4. Run import dry-run, reconciliation, tests, and security checks.
+5. Explain the data migration and release order in the pull request.
 
-Never edit production tables manually to make a test pass, delete import audit history, or weaken RLS to silence a warning.
+Never edit production tables manually to make a test pass, delete import or audit history, or bypass the database functions to silence an error.
 
 ## Commit and pull request
 

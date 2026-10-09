@@ -1,14 +1,8 @@
 import { buildPageMetadata } from "@/lib/seo";
-import { Header } from "@/components/header";
-import { FooterSmall } from "@/components/footer-small";
-import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/components/ui";
 import type { Metadata } from "next";
+import { LegalView, type LegalSection } from "@/components/cobalt/views/community";
 
-// Force revalidation to ensure footer links stay updated
-/**
- * ISR Configuration for Legal Pages
- * Cache for 30 days - only changes when legal content updates.
- */
+/** Legal pages change rarely: cache for 30 days. */
 export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = buildPageMetadata({
@@ -19,23 +13,23 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: ["privacy policy", "data protection", "GSoC privacy", "user privacy", "data security"],
 });
 
-const sections = [
+const sections: LegalSection[] = [
   {
     title: "Information We Collect",
     content: [
       "We collect information that you provide directly to us, such as when you use our search functionality, filter organizations, or contact us through our contact form.",
       "We automatically collect limited information about your device and how you interact with our website, such as browser type, approximate technical location, pages visited, and referring page.",
       "When enabled, Google Analytics 4 and Vercel Analytics process pseudonymous website-usage events such as page views and basic performance signals. They are not used to inspect proposal contents, private evidence, or contributor moderation activity.",
-      "If you sign in to share a proposal, Google and Supabase provide an account identifier, email address, display name, and profile image. Email is retained for private authentication and administration and is never included in public proposal data.",
-      "Proposal PDFs, contributor claims, private verification notes, evidence links, moderation history, and profile visibility choices are stored only as needed to operate the proposal library.",
+      "If you sign in to claim a project, Google and Neon Auth provide an account identifier, email address, display name, and profile image. Email is retained for private authentication and administration and is never included in public data.",
+      "Proposal PDFs and the text extracted from them, project claims, private verification notes, evidence links, progress-post links, the record of administrative actions, and profile visibility choices are stored only as needed to operate these features.",
     ],
   },
   {
     title: "Proposal Library and Public Choices",
     content: [
-      "Proposal PDFs and claim evidence remain private while a submission is in draft or moderation. Only approved proposals are publicly accessible.",
-      "An approved proposal always includes the attribution name and archived GSoC selection. You separately control whether your Google avatar, bio, and each profile link are public.",
-      "Cloudflare R2 stores uploaded PDFs and imported Google profile images. Supabase stores authentication, profile, catalog, claim, and moderation records. Vercel hosts the application.",
+      "Claim evidence and notes are always private. A proposal becomes public only when its verified author publishes it, or when we publish it with the author's recorded permission. Progress-post links appear as soon as they are added, marked as not verified until the claim is verified. Text extracted from a proposal is never published; it is used to check for personal details and, later, for aggregate statistics only.",
+      "A published proposal always includes the attribution name and archived GSoC project. Your name, avatar, bio and links appear beside your verified projects only if you make your profile public.",
+      "Cloudflare R2 stores uploaded PDFs and imported Google profile images. Neon stores authentication, profile, catalog, claim, proposal, post and administrative records. Vercel hosts the application.",
       "We do not send proposal PDFs or private evidence to a third-party malware scanning service. Files receive format and structural validation and are delivered using restricted URLs.",
     ],
   },
@@ -83,7 +77,7 @@ const sections = [
   {
     title: "Third-Party Services",
     content: [
-      "We use Google Analytics 4, Vercel Analytics, Vercel Speed Insights, Supabase, Cloudflare R2, and Google Sign-In to operate the site and its optional proposal-library features.",
+      "We use Google Analytics 4, Vercel Analytics, Vercel Speed Insights, Neon, Cloudflare R2, and Google Sign-In to operate the site and its optional contributor features.",
       "These providers may process technical request, usage, authentication, or storage metadata according to their own privacy policies.",
       "We do not send proposal PDFs, private evidence, or moderation notes to Google Analytics.",
       "Review the providers' privacy policies if you need more detail about their processing.",
@@ -117,62 +111,12 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      <main className="flex-1 pt-20 lg:pt-24">
-        <Container size="default" className="py-8 lg:py-16">
-          <div className="space-y-8">
-            {/* Header Section */}
-            <SectionHeader
-              badge="Legal"
-              title="Privacy Policy"
-              titleAs="h1"
-                description="Last updated: August 15, 2026. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
-              align="center"
-              className="max-w-3xl mx-auto"
-            />
-
-            {/* Introduction */}
-            <CardWrapper className="p-6 lg:p-8">
-              <Text className="text-muted-foreground">
-                At GSoC Organizations Guide, we are committed to protecting your privacy. This
-                privacy policy explains how we collect, use, disclose, and safeguard your
-                information when you visit our website. Please read this policy carefully to
-                understand our practices regarding your personal data.
-              </Text>
-            </CardWrapper>
-
-            {/* Policy Sections */}
-            <div className="space-y-6">
-              {sections.map((section, index) => (
-                <CardWrapper key={index} className="p-6 lg:p-8">
-                  <Heading variant="subsection" className="mb-4">
-                    {section.title}
-                  </Heading>
-                  <ul className="space-y-3">
-                    {section.content.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex gap-3">
-                        <span className="text-primary shrink-0">•</span>
-                        <Text className="text-muted-foreground">{item}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </CardWrapper>
-              ))}
-            </div>
-
-            {/* Effective Date */}
-            <CardWrapper className="p-6 bg-muted/50">
-              <Text variant="small" className="text-muted-foreground text-center">
-                This privacy policy is effective as of August 15, 2026 and will remain in effect
-                except with respect to any changes in its provisions in the future.
-              </Text>
-            </CardWrapper>
-          </div>
-        </Container>
-      </main>
-      <FooterSmall />
-    </div>
+    <LegalView
+      title="Privacy Policy"
+      updated="October 9, 2026"
+      intro="GSoC Organizations Guide is committed to protecting your privacy. This policy explains how we collect, use, disclose and safeguard your information when you visit the website. Please read it carefully to understand how we handle your personal data."
+      sections={sections}
+      closing="This privacy policy is effective as of August 15, 2026 and will remain in effect except with respect to any changes in its provisions in the future."
+    />
   );
 }
-

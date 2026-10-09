@@ -42,7 +42,7 @@ describe("checked-in 2026 withdrawal contract", () => {
   });
 
   it("defines a checked database status and timestamp contract", () => {
-    const migration = fs.readFileSync(path.join(root, "supabase", "migrations", "202608170004_organization_year_selection_status.sql"), "utf-8");
+    const migration = fs.readFileSync(path.join(root, "db", "migrations", "0001_catalog.sql"), "utf-8");
     expect(migration).toContain("selection_status text not null default 'selected'");
     expect(migration).toContain("selection_status = 'withdrawn' and withdrawn_at is not null");
   });

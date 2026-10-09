@@ -22,50 +22,48 @@ This is an independent community project. It is not affiliated with or endorsed 
 - Read first-party GSoC preparation guides with categories, tags, authors, RSS, sitemap, and Markdown output.
 - Use public versioned catalog APIs under `/api/v1` and `/api/v2`.
 - Browse approved proposal examples through the public proposal library.
-- Let past contributors claim an archived project, upload an accepted proposal PDF, choose public profile fields, and submit it for moderation.
-- Browse curated project blogs from selected contributors by year and organization.
-- Let administrators publish contributor-authorized proposal PDFs without impersonating a contributor account.
+- Let past contributors and mentors claim the archived project they took part in. After verification, contributors publish the accepted proposal that got them selected.
+- Let contributors link the progress posts (weekly updates, reports, talks) they wrote during GSoC.
+- Let administrators verify claims, publish proposals with recorded permission, and hide posts.
 
 ## Architecture
 
-The catalog is served from Supabase. MongoDB is only a one-time migration source and is not a runtime dependency.
+The catalog and contributor content live in Neon Postgres; sign-in uses Neon Auth (managed Better Auth) with Google. Only the Next.js server talks to the database.
 
 ```mermaid
 flowchart LR
-  Browser[Browser] --> Vercel[Next.js on Vercel]
-  Vercel --> Auth[Supabase Auth]
-  Vercel --> DB[Supabase Postgres + RLS]
-  Vercel --> Gateway[Signed Cloudflare Worker]
-  Gateway --> R2[Private Cloudflare R2 proposal bucket]
-  DB --> Catalog[Catalog + claims + profiles + moderation]
-  DB --> Public[Public approved-proposal projection]
+  Browser[Browser] --> Next[Next.js server]
+  Next --> Auth[Neon Auth]
+  Next --> DB[Neon Postgres]
+  Next --> Gateway[Signed Cloudflare Worker]
+  Gateway --> R2[Private Cloudflare R2 bucket]
+  DB --> Catalog[Catalog: organizations, projects, people]
+  DB --> Hub[Claims, proposals, posts, audit log]
 ```
 
-Proposal publication is intentionally staged:
+A proposal reaches the public site in steps:
 
 ```mermaid
 flowchart LR
-  SignIn[Google sign-in] --> Profile[Complete public profile]
-  Profile --> Claim[Claim archived contributor slot]
-  Claim --> Upload[Upload accepted PDF to quarantine]
-  Upload --> Validate[Server validation + checksum]
-  Validate --> Review[Moderator review]
-  Review -->|approved| Public[Public CC BY 4.0 proposal]
-  Review -->|changes requested| Upload
-  Review -->|rejected| Closed[Private rejected submission]
+  SignIn[Google sign-in] --> Claim[Claim an archived person on a project]
+  Claim --> Verify[Admin verifies the claim]
+  Verify --> Upload[Upload the PDF]
+  Upload --> Check[Validation and personal-data scan]
+  Check --> Confirm[Author confirms redaction]
+  Confirm --> Publish[Author publishes under CC BY 4.0]
+  Publish --> Final[Final: only an admin can change it]
 ```
 
-The storage gateway signs short-lived operations for only three object families: quarantine PDFs, approved proposal PDFs, and imported Google avatars. The browser never receives an R2 credential.
+Each proposal has exactly one stored file, `proposals/<id>.pdf`; a replacement overwrites it. The storage gateway signs short-lived operations for quarantine uploads, proposal files and imported Google avatars. The browser never receives an R2 credential.
 
 ## Repository map
 
 - `app/` — Next.js pages, layouts, route handlers, and API endpoints.
-- `components/` — shared UI, navigation, auth, and analytics components.
-- `lib/` — Supabase clients, proposal rules, storage signing, validation, cache, and data helpers.
-- `supabase/migrations/` — forward database migrations and RLS/database functions.
-- `lib/supabase/database.types.ts` — generated types for the linked Supabase schema.
-- `cloudflare/` — checked-in proposal-storage Worker and Wrangler configuration.
-- `scripts/` — catalog import, Mongo compatibility import, reconciliation, bootstrap, and storage verification.
+- `components/` — shared UI; `components/hub/` holds the account and admin screens.
+- `lib/` — database and auth clients, contributor-hub queries, storage signing, validation, and data helpers.
+- `db/migrations/` — forward-only SQL migrations, applied with `npm run db:migrate`.
+- `cloudflare/` — the proposal-storage Worker, its Wrangler configuration, and R2 CORS and lifecycle rules.
+- `scripts/` — catalog import, reconciliation, verification, and storage checks.
 - `new-api-details/` — checked-in canonical catalog input used by the importer.
 - `docs/proposal-library.md` — public workflow, security, and contributor reference.
 
@@ -75,7 +73,7 @@ The storage gateway signs short-lived operations for only three object families:
 
 - Node.js 20 or newer.
 - npm.
-- A Supabase project for local application work.
+- A Neon project (a development branch is enough) with Neon Auth enabled, for account and database work.
 - A Cloudflare R2/Worker setup only if you are exercising proposal storage.
 - Git and a GitHub account for contributions.
 
@@ -89,7 +87,7 @@ Copy-Item .env.example .env.local  # PowerShell
 # cp .env.example .env.local       # macOS/Linux
 ```
 
-For browsing the catalog, configure `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SUPABASE_URL`, and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. For server-side proposal features, also configure the server-only values described below. Never commit `.env.local`, OAuth JSON, database URLs, signed URLs, or service credentials.
+Most pages build from the checked-in JSON and need no database. For the APIs, proposals and accounts, configure the database and auth values described below, then run `npm run db:migrate` and `npm run db:import-catalog`. Never commit `.env.local`, OAuth JSON, database URLs, signed URLs, or service credentials.
 
 Start development:
 
@@ -104,35 +102,38 @@ Open <http://localhost:3000>.
 | Variable | Use | Exposure |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical origin and same-origin checks | Browser-visible |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Browser-visible |
-| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase browser client | Browser-visible |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional GA4 page-view measurement | Browser-visible |
-| `SUPABASE_SERVICE_ROLE_KEY` | Server-side catalog/admin operations | Server-only |
+| `NEON_DATABASE_URL` | Neon pooled connection string for the app | Server-only |
+| `NEON_DATABASE_URL_UNPOOLED` | Neon direct connection string for migrations and scripts | Server-only |
+| `NEON_AUTH_BASE_URL` | Neon Auth endpoint for the branch | Server-only |
+| `NEON_AUTH_COOKIE_SECRET` | Signs session cookies; at least 32 characters | Server-only |
+| `ADMIN_USER_IDS` | Comma-separated Neon Auth user ids with admin access | Server-only |
 | `R2_GATEWAY_URL` | Signed storage gateway origin | Server-only |
 | `R2_SIGNING_SECRET` | HMAC signing secret for the gateway | Server-only |
 
-These are setup or migration inputs, not normal browser runtime values: `SUPABASE_DB_URL`, Google OAuth client credentials, `LEGACY_MONGO_DATABASE_URL`, `MONGO_DB`, `ADMIN_BOOTSTRAP_EMAILS`, `R2_ACCOUNT_ID`, `R2_BUCKET_NAME`, and the legacy `ADMIN_KEY`. Keep them out of deployed client code and public documentation.
+`R2_ACCOUNT_ID`, `R2_BUCKET_NAME` and the legacy `ADMIN_KEY` are operational inputs, not runtime browser values. Google OAuth client credentials are configured in Neon Auth, not in this app. Keep all of them out of client code and public documentation.
 
 Google Analytics is enabled only when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is present. It records general page-view usage; it is not used for proposal contents, private evidence, or moderation notes. See the site's [privacy policy](https://www.gsocorganizationsguide.com/privacy-policy).
 
 ## Data and migrations
 
-- Supabase Postgres is the runtime source of truth.
-- `supabase/migrations/202608120001_proposal_library.sql` creates proposal, profile, claim, role, moderation, storage, and public-projection boundaries.
-- `supabase/migrations/202608180001_admin_imports_and_contributor_blogs.sql` adds isolated administrator imports, audited contributor-blog curation, and narrow public projections.
+- Neon Postgres is the runtime source of truth for the APIs and contributor content.
+- `db/migrations/0001_catalog.sql` creates the catalog: organizations, projects, the people listed on each project (`project_people`), and the technology/topic vocabulary.
+- `db/migrations/0002_contributor_hub.sql` creates profiles, claims (`participations`), proposals, posts, the audit log, the functions every write goes through, and the public views.
 - The canonical importer reads `new-api-details/` and validates organization/project mappings before writing.
-- The Mongo importer is a one-time compatibility merge. Do not add MongoDB reads to application routes.
-- Regenerate live database types after a forward migration:
+- Apply migrations and load the catalog:
 
 ```bash
-npm run supabase:types:linked
+npm run db:migrate
+npm run db:import-catalog
 ```
 
 Useful data checks:
 
 ```bash
-npm run supabase:import:dry-run
-npm run supabase:reconcile
+npm run db:import-catalog:dry-run
+npm run db:reconcile
+npm run db:verify-taxonomy
 ```
 
 Do not run a production import casually. Review the migration and importer output first, and preserve import audit history.
@@ -141,14 +142,14 @@ Do not run a production import casually. Review the migration and importer outpu
 
 The proposal feature is a privacy boundary, not a general file store:
 
-- Google Auth creates the user identity; a contributor completes a public profile.
-- Claims attach a user to an archived contributor slot and are ownership-limited by database functions and RLS.
-- PDFs are structurally validated, checksummed, and promoted only after validation.
-- Drafts, evidence, private notes, rejected submissions, and moderation history are protected.
-- Only approved proposals appear through the narrow public projection.
+- Google sign-in through Neon Auth creates the identity. Profiles are private unless the owner makes them public.
+- A claim attaches an account to one person in Google's archive (a contributor or a mentor). GSoC's rules are enforced in the database: at most two contributor claims, never contributor and mentor in the same year, and no contributing after mentoring.
+- Proposal uploads open once the claim is verified. PDFs are validated, checksummed and scanned for emails and phone numbers; the author confirms redaction for the exact file before publishing.
+- Publishing is final for the author; after that only an administrator can replace or remove the file, and the author can request removal.
+- Progress posts are links only and appear immediately, marked "Not verified" until the claim is verified.
+- Notes, evidence, extracted proposal text and the audit log are never exposed through public views.
 - Public proposal PDFs use CC BY 4.0 attribution terms.
-- Administrator imports require a real archived contributor slot, a recorded publication-rights basis, a private permission note, and the same PDF validation used by contributor uploads.
-- Administrator controls are hidden from other users, while route handlers and database functions independently enforce the administrator role.
+- Administrators are listed by user id in `ADMIN_USER_IDS`; route handlers check it before calling the admin database functions, which record every action.
 
 Read [docs/proposal-library.md](docs/proposal-library.md) before changing proposal routes, migrations, RLS policies, or storage behavior.
 
@@ -162,10 +163,10 @@ Read [docs/proposal-library.md](docs/proposal-library.md) before changing propos
 | `npm run lint` | Run ESLint |
 | `npm run type-check` | Check app and Worker TypeScript |
 | `npm test` | Run the test suite |
-| `npm run supabase:import:dry-run` | Validate catalog inputs and checksum without writing |
-| `npm run supabase:import` | Import canonical catalog data |
-| `npm run supabase:import:mongo` | Merge the one-time legacy Mongo export |
-| `npm run supabase:reconcile` | Compare expected and stored catalog counts |
+| `npm run db:migrate` | Apply pending SQL migrations |
+| `npm run db:import-catalog:dry-run` | Validate catalog inputs and checksum without writing |
+| `npm run db:import-catalog` | Import canonical catalog data |
+| `npm run db:reconcile` | Compare expected and stored catalog counts |
 | `npm run r2:deploy` | Deploy the signed proposal-storage Worker |
 | `npm run r2:verify` | Exercise signed storage operations and cleanup |
 | `npm run validate` | Run lint, type-check, tests, dry-run, and build |

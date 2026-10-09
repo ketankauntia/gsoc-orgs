@@ -1,12 +1,13 @@
 import { apiData, apiError, pagination } from "@/lib/api-response";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { pageOf } from "@/lib/catalog/sql";
+import { db } from "@/lib/db";
 
 export async function GET(request: Request) {
   try {
-    const { page, limit, from, to } = pagination(new URL(request.url).searchParams);
-    const { data, error, count } = await createAdminClient().from("technologies").select("id,slug,name", { count: "exact" }).order("name").range(from, to);
-    if (error) throw error;
-    return apiData(data ?? [], { page, limit, total: count ?? 0 });
+    const { page, limit, from } = pagination(new URL(request.url).searchParams);
+    const rows = await db()`select id, slug::text as slug, name, count(*) over () as total_count from public.technologies order by name limit ${limit} offset ${from}`;
+    const { total, data } = pageOf(rows);
+    return apiData(data, { page, limit, total });
   } catch (error) {
     console.error("[api/v2/technologies]", error);
     return apiError("CATALOG_UNAVAILABLE", "Technology data is temporarily unavailable", 503);

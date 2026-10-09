@@ -1,6 +1,6 @@
 /**
  * End-to-end refresh of a GSoC year from Google's authoritative API into the
- * local JSON dataset and then into Supabase.
+ * local JSON dataset and then into the database.
  *
  * Google's live program API is the authority for organization data; see
  * docs/project/architecture/gsoc-data-ingestion.md in the private repo for the
@@ -11,14 +11,14 @@
  *   2. transform -- merge into new-api-details/organizations/*.json + index/metadata
  *   3. yearly    -- regenerate the year page payload
  *   4. taxonomy  -- regenerate tech/topic aggregates
- *   5. db        -- import the JSON catalog into Supabase
+ *   5. db        -- import the JSON catalog into the database
  *
  * The db stage runs as a dry run unless --commit is passed, so the default
- * invocation is safe: it shows what would be written without touching Supabase.
+ * invocation is safe: it shows what would be written without touching the database.
  *
  * Usage:
  *   npx tsx scripts/refresh-year.ts --year 2026              # dry run, no DB writes
- *   npx tsx scripts/refresh-year.ts --year 2026 --commit     # writes to Supabase
+ *   npx tsx scripts/refresh-year.ts --year 2026 --commit     # writes to the database
  *   npx tsx scripts/refresh-year.ts --year 2026 --skip-db    # local JSON only
  *   npx tsx scripts/refresh-year.ts --year 2026 --only fetch # single stage
  */
@@ -81,8 +81,8 @@ const stages: Stage[] = [
   },
   {
     key: "db",
-    label: COMMIT ? "Import catalog into Supabase (WRITING)" : "Import catalog into Supabase (dry run)",
-    script: "scripts/import-supabase-catalog.ts",
+    label: COMMIT ? "Import catalog into the database (WRITING)" : "Import catalog into the database (dry run)",
+    script: "scripts/import-catalog.ts",
     args: COMMIT ? [] : ["--dry-run"],
     skip: () => (SKIP_DB ? "--skip-db was passed" : null),
   },
@@ -119,7 +119,7 @@ const run = (stage: Stage, index: number): void => {
 };
 
 console.log(`\nGSoC ${YEAR} refresh — source: Google live program API`);
-console.log(`Mode: ${SKIP_DB ? "local JSON only" : COMMIT ? "LOCAL + SUPABASE WRITE" : "local JSON + Supabase dry run"}`);
+console.log(`Mode: ${SKIP_DB ? "local JSON only" : COMMIT ? "LOCAL + DATABASE WRITE" : "local JSON + database dry run"}`);
 
 selected.forEach(run);
 
@@ -142,5 +142,5 @@ if (fs.existsSync(driftFile)) {
 
 console.log("\nRefresh complete.");
 if (!COMMIT && !SKIP_DB) {
-  console.log("No database writes were made. Re-run with --commit to write to Supabase.");
+  console.log("No database writes were made. Re-run with --commit to write to the database.");
 }

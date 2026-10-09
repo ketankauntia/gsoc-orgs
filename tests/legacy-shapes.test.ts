@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { organizationV1, projectV1 } from "../lib/supabase/legacy-shapes";
+import { organizationV1, projectV1 } from "../lib/catalog/legacy-shapes";
 
 describe("v1 compatibility transformers", () => {
   it("preserves legacy organization fields while applying normalized values", () => {
