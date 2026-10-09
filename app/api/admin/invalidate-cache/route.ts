@@ -64,7 +64,10 @@ type InvalidateRequest =
   | InvalidatePathRequest;
 
 export async function POST(request: NextRequest) {
-  // Check authentication
+  // Without ADMIN_KEY set the route does not exist.
+  if (!process.env.ADMIN_KEY) {
+    return NextResponse.json({ success: false, error: { message: "Not found", code: "NOT_FOUND" } }, { status: 404 });
+  }
   if (!isAdminKeyAuthorized(request)) {
     return NextResponse.json(
       {
@@ -133,7 +136,7 @@ export async function POST(request: NextRequest) {
         invalidatedTags.push(CacheTags.YEARS);
 
         // Invalidate year page path
-        const yearPath = `/gsoc-${year}-organizations`;
+        const yearPath = `/yearly/google-summer-of-code-${year}`;
         revalidatePath(yearPath, "page");
         invalidatedPaths.push(yearPath);
 
@@ -261,69 +264,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-}
-
-/**
- * GET /api/admin/invalidate-cache
- *
- * Returns available invalidation options and cache status.
- * Public endpoint (no auth required) for documentation.
- */
-export async function GET() {
-  return NextResponse.json(
-    {
-      success: true,
-      data: {
-        description: "Cache invalidation endpoint",
-        authentication: "Requires x-admin-key header",
-        available_types: {
-          all: {
-            description: "Invalidate entire cache",
-            example: { type: "all" },
-          },
-          year: {
-            description: "Invalidate specific year data",
-            example: { type: "year", year: 2025 },
-          },
-          organization: {
-            description: "Invalidate specific organization",
-            example: { type: "organization", slug: "apache" },
-          },
-          tags: {
-            description: "Invalidate specific cache tags",
-            example: { type: "tags", tags: ["stats", "organizations"] },
-            available_tags: Object.keys(CacheTags).filter(
-              (k) => typeof CacheTags[k as keyof typeof CacheTags] === "string"
-            ),
-          },
-          path: {
-            description: "Invalidate specific URL path",
-            example: { type: "path", path: "/organizations" },
-          },
-        },
-        common_workflows: {
-          new_gsoc_year: {
-            description: "When new GSoC year data is added",
-            steps: [
-              '1. Upload new data to database',
-              '2. Call POST /api/admin/invalidate-cache with { "type": "year", "year": 2026 }',
-              '3. Call POST /api/admin/invalidate-cache with { "type": "all" } if needed',
-            ],
-          },
-          organization_update: {
-            description: "When an organization is updated",
-            steps: [
-              '1. Update organization in database',
-              '2. Call POST /api/admin/invalidate-cache with { "type": "organization", "slug": "org-slug" }',
-            ],
-          },
-        },
-      },
-    },
-    {
-      headers: {
-        "Cache-Control": "no-store",
-      },
-    }
-  );
 }

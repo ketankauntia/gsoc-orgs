@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   // This causes double-renders in development (intentional)
   // If you experience "double-click" issues in dev, test with: npm run build && npm run start
   reactStrictMode: true,
+  poweredByHeader: false,
   images: {
+    // Optimized images stay cached for 30 days before being re-fetched from the source
+    minimumCacheTTL: 2592000,
     // Disable image optimization to reduce Vercel usage
     // Organization logos are already optimized and cached on Cloudflare R2
     unoptimized: false, // Keep false to allow unoptimized prop per-image
@@ -45,6 +48,9 @@ const nextConfig: NextConfig = {
         { key: "X-Frame-Options", value: "SAMEORIGIN" },
         { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
         { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
+        { key: "Strict-Transport-Security", value: "max-age=63072000" },
+        // No script-src or style-src yet; this covers framing, plugins, <base> and where forms may post.
+        { key: "Content-Security-Policy", value: "frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" },
       ],
     }];
   },
