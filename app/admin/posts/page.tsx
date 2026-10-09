@@ -14,7 +14,7 @@ export default async function AdminPostsPage() {
         <div>
           <p className="cb-eyebrow">ADMIN</p>
           <h1>Progress posts</h1>
-          <p>Posts go live when contributors add them. Hide anything that should not be public.</p>
+          <p>Contributors&apos; posts go live once their claim is verified; posts you add go live at once. Hide anything that should not be public.</p>
         </div>
       </header>
       <AdminPosts posts={posts} />
