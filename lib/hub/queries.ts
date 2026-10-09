@@ -6,17 +6,27 @@ import type { MyParticipation, SlotOrganization, SlotProject } from "@/lib/hub/t
 // Reads for the signed-in owner and the claim picker. Writes go through the
 // SQL functions in db/migrations; see the route handlers under /api/v2/me.
 
+// Who stored the current file, as the claim's owner sees it. Files from
+// before file_uploaded_by_admin existed count as the admin's unless the owner
+// uploaded them.
+const UPLOADED_BY = `case
+  when pr.file_uploaded_by is null then null
+  when pr.file_uploaded_by = pa.user_id then 'you'
+  when coalesce(pr.file_uploaded_by_admin, true) then 'admin'
+  else 'another_account' end`;
+
 const PROPOSAL_JSON = `jsonb_build_object(
   'id', pr.id, 'slug', pr.slug::text, 'status', pr.status, 'locked_at', pr.locked_at,
   'file_version', pr.file_version, 'file_pages', pr.file_pages, 'file_bytes', pr.file_bytes,
   'file_sha256', pr.file_sha256, 'file_uploaded_at', pr.file_uploaded_at,
-  'uploaded_by_admin', pr.file_uploaded_by is not null and pr.file_uploaded_by <> pa.user_id,
+  'uploaded_by', ${UPLOADED_BY}, 'uploaded_by_admin', coalesce(${UPLOADED_BY} = 'admin', false),
   'extraction_status', pr.extraction_status, 'pii_findings', pr.pii_findings,
   'pii_confirmed', pr.pii_confirmed_sha256 is not null and pr.pii_confirmed_sha256 = pr.file_sha256,
   'needs_confirmation', pr.file_key is not null and (pr.extraction_status = 'failed' or coalesce(jsonb_array_length(pr.pii_findings), 0) > 0),
   'licence_accepted_at', pr.licence_accepted_at, 'published_at', pr.published_at,
   'removal_requested_at', pr.removal_requested_at, 'removed_at', pr.removed_at, 'removed_reason', pr.removed_reason,
-  'upload_in_progress', coalesce(pr.upload_started_at > now() - interval '10 minutes', false)
+  'upload_in_progress', coalesce(pr.upload_started_at > now() - interval '10 minutes', false),
+  'upload_pending', exists (select 1 from private.proposal_uploads u where u.proposal_id = pr.id)
 )`;
 
 /** Every claim of a user, newest year first, with the proposal and posts of contributor claims. */
@@ -106,11 +116,13 @@ export async function getClaimProjects(year: number, organizationSlug: string): 
   return rows as SlotProject[];
 }
 
-/** Year and organization of an archived project, to prefill the picker from a project page. */
+/** Year, organization and archive spelling of a project id in any case, to prefill the picker from a link. */
 export async function getClaimPrefill(externalId: string) {
   const rows = await db()`
-    select p.year, o.slug::text as organization_slug
+    select p.year, o.slug::text as organization_slug, p.external_id as project_external_id
     from public.projects p join public.organizations o on o.id = p.organization_id
-    where p.external_id = ${externalId}`;
-  return (rows[0] ?? null) as { year: number; organization_slug: string } | null;
+    where lower(p.external_id) = lower(${externalId})
+    order by p.external_id = ${externalId} desc
+    limit 1`;
+  return (rows[0] ?? null) as { year: number; organization_slug: string; project_external_id: string } | null;
 }

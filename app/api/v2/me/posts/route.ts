@@ -5,7 +5,7 @@ import { revalidateContributorWork } from "@/lib/hub/revalidate";
 import { postSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
-/** Adds a progress post to a contributor claim. It is public at once with the claim's badge. */
+/** Adds a progress post to a contributor claim. It is public once the claim is verified. */
 export async function POST(request: Request) {
   const gate = await apiViewer(request);
   if (gate.response) return gate.response;

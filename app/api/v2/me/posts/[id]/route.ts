@@ -1,7 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiViewer, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
-import { revalidateContributorWork } from "@/lib/hub/revalidate";
+import { contributorWorkPaths, revalidateContributorWork, revalidatePaths } from "@/lib/hub/revalidate";
 import { postUpdateSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
@@ -31,8 +31,9 @@ export async function DELETE(request: Request, { params }: Context) {
   const { id } = await params;
   if (!UUID.test(id)) return apiError("NOT_FOUND", "Post not found", 404);
   try {
-    await revalidateContributorWork({ postId: id });
+    const paths = await contributorWorkPaths({ postId: id });
     await db()`select public.delete_my_post(${gate.viewer.user.id}::uuid, ${id}::uuid)`;
+    revalidatePaths(paths);
     return privateApiData({ deleted: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/me/posts/[id]:delete");

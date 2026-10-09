@@ -1,7 +1,7 @@
 import { apiError, privateApiData } from "@/lib/api-response";
 import { apiViewer, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
-import { revalidateContributorWork } from "@/lib/hub/revalidate";
+import { contributorWorkPaths, revalidateContributorWork, revalidatePaths } from "@/lib/hub/revalidate";
 import { participationSchema, zodFields } from "@/lib/hub/schemas";
 import { readJsonBody } from "@/lib/security";
 
@@ -22,6 +22,8 @@ export async function PATCH(request: Request, { params }: Context) {
       ${gate.viewer.user.id}::uuid, ${id}::uuid, ${note ?? null}, ${evidenceUrls}::text[],
       ${story ? JSON.stringify(story) : null}::jsonb, ${storyPublic}
     )`;
+    // Public stories show on the contributor's profile page.
+    await revalidateContributorWork({ participationId: id });
     return privateApiData({ saved: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/me/claims/[id]");
@@ -35,8 +37,9 @@ export async function DELETE(request: Request, { params }: Context) {
   const { id } = await params;
   if (!UUID.test(id)) return apiError("NOT_FOUND", "Claim not found", 404);
   try {
-    await revalidateContributorWork({ participationId: id });
+    const paths = await contributorWorkPaths({ participationId: id });
     await db()`select public.cancel_my_claim(${gate.viewer.user.id}::uuid, ${id}::uuid)`;
+    revalidatePaths(paths);
     return privateApiData({ cancelled: true });
   } catch (error) {
     return databaseErrorResponse(error, "api/v2/me/claims/[id]:delete");

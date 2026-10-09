@@ -2,7 +2,7 @@ import { apiError, privateApiData } from "@/lib/api-response";
 import { apiViewer, databaseErrorResponse } from "@/lib/api-auth";
 import { completeUploadSchema, zodFields } from "@/lib/hub/schemas";
 import { revalidateContributorWork } from "@/lib/hub/revalidate";
-import { completeProposalUpload, UploadRejected } from "@/lib/hub/upload";
+import { completeProposalUpload, UploadFailed, UploadNotFound, UploadRejected } from "@/lib/hub/upload";
 import { readJsonBody } from "@/lib/security";
 
 export const maxDuration = 60;
@@ -21,7 +21,13 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     await revalidateContributorWork({ proposalId: id });
     return privateApiData(result);
   } catch (error) {
+    if (error instanceof UploadNotFound) return apiError("NOT_FOUND", error.message, 404);
     if (error instanceof UploadRejected) return apiError("INVALID_UPLOAD", error.message, 422);
+    if (error instanceof UploadFailed) {
+      // The proposal already left public view when the file was staged.
+      await revalidateContributorWork({ proposalId: id });
+      return apiError("UPLOAD_FAILED", error.message, error.status);
+    }
     return databaseErrorResponse(error, "api/v2/me/proposals/[id]/complete");
   }
 }

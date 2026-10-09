@@ -10,8 +10,10 @@ export type AdminClaim = {
   year: number; project_external_id: string; project_title: string; organization_slug: string; organization_name: string;
   work_product_url: string | null; note: string | null; evidence_urls: string[]; created_at: string;
   display_name: string; github_username: string | null; other_claims_on_person: number; user_claims: number;
+  profile_status: "active" | "suspended";
   google_name?: string | null; email?: string | null;
 };
+export type SuspendedProfile = { user_id: string; handle: string | null; display_name: string; suspended_at: string; reason: string | null };
 export type AdminProposalRow = {
   id: string; slug: string; status: "draft" | "published" | "removed"; person_id: string; archived_name: string;
   year: number; project_external_id: string; project_title: string; organization_name: string;
@@ -19,6 +21,8 @@ export type AdminProposalRow = {
   pii_findings: Array<{ kind: string; sample: string; page: number }> | null; pii_confirmed: boolean; needs_confirmation: boolean;
   owner_consented: boolean; permission_basis: string | null; permission_given_at: string | null; verified_owner: string | null;
   published_at: string | null; removal_requested_at: string | null; removed_at: string | null; updated_at: string;
+  /** Same meaning as on MyProposal. */
+  upload_in_progress: boolean; upload_pending: boolean;
 };
 export type AuditEntry = { id: number; at: string; actor_id: string; action: string; target: string; target_id: string; reason: string | null };
 export type PersonMatch = { person_id: string; role: "contributor" | "mentor"; archived_name: string; year: number; project_external_id: string; project_title: string; organization_name: string; proposal_id: string | null };
@@ -37,7 +41,7 @@ export async function getAdminQueue() {
           'year', p.year, 'project_external_id', p.external_id, 'project_title', p.title,
           'organization_slug', o.slug::text, 'organization_name', o.name, 'work_product_url', p.work_product_url,
           'note', x.note, 'evidence_urls', to_jsonb(x.evidence_urls), 'created_at', x.created_at,
-          'display_name', prof.display_name, 'github_username', prof.github_username,
+          'display_name', prof.display_name, 'github_username', prof.github_username, 'profile_status', prof.status,
           'other_claims_on_person', (select count(*) from public.participations y where y.person_id = x.person_id and y.id <> x.id and y.verification <> 'rejected'),
           'user_claims', (select count(*) from public.participations z where z.user_id = x.user_id)
         ) as c
@@ -53,6 +57,23 @@ export async function getAdminQueue() {
   const accounts = await getAccountNames(claims.map((claim) => claim.user_id));
   for (const claim of claims) Object.assign(claim, accounts.get(claim.user_id) ?? {});
   return { claims, recent: (rows[0]?.recent ?? []) as AuditEntry[] };
+}
+
+/** Suspended accounts, most recently suspended first, with the reason given. */
+export async function getSuspendedProfiles(): Promise<SuspendedProfile[]> {
+  const rows = await db()`
+    select prof.user_id::text as user_id, prof.handle::text as handle, prof.display_name,
+      coalesce(s.at, prof.updated_at) as suspended_at, s.reason
+    from public.profiles prof
+    left join lateral (
+      select a.at, a.reason from private.audit_log a
+      where a.target = 'profile' and a.target_id = prof.user_id and a.action = 'suspend'
+      order by a.at desc limit 1
+    ) s on true
+    where prof.status = 'suspended'
+    order by coalesce(s.at, prof.updated_at) desc
+    limit 100`;
+  return rows.map((row) => ({ ...row, suspended_at: new Date(row.suspended_at as string).toISOString() })) as SuspendedProfile[];
 }
 
 /** Google name and email from Neon Auth, for comparing with the archive. */
@@ -78,11 +99,17 @@ export async function getAdminProposals(): Promise<AdminProposalRow[]> {
         'extraction_status', x.extraction_status, 'pii_findings', x.pii_findings,
         'pii_confirmed', x.pii_confirmed_sha256 is not null and x.pii_confirmed_sha256 = x.file_sha256,
         'needs_confirmation', x.file_key is not null and (x.extraction_status = 'failed' or coalesce(jsonb_array_length(x.pii_findings), 0) > 0),
-        'owner_consented', x.licence_accepted_at is not null, 'permission_basis', x.permission_basis, 'permission_given_at', x.permission_given_at,
+        -- Consent counts only from the slot's current verified owner.
+        'owner_consented', x.licence_accepted_at is not null and exists (select 1 from public.participations pa
+          where pa.person_id = x.person_id and pa.user_id = x.licence_accepted_by and pa.verification = 'verified'),
+        'permission_basis', x.permission_basis, 'permission_given_at', x.permission_given_at,
         'verified_owner', (select prof.display_name from public.participations pa join public.profiles prof on prof.user_id = pa.user_id
                            where pa.person_id = x.person_id and pa.verification = 'verified' limit 1),
         'published_at', x.published_at, 'removal_requested_at', x.removal_requested_at, 'removed_at', x.removed_at, 'updated_at', x.updated_at,
-        'needs_attention', (x.removal_requested_at is not null and x.status = 'published') or (x.status = 'draft' and x.file_key is not null)
+        'upload_in_progress', coalesce(x.upload_started_at > now() - interval '10 minutes', false),
+        'upload_pending', exists (select 1 from private.proposal_uploads u where u.proposal_id = x.id),
+        'needs_attention', (x.removal_requested_at is not null and x.status <> 'removed') or (x.status = 'draft' and x.file_key is not null)
+          or exists (select 1 from private.proposal_uploads u where u.proposal_id = x.id)
       ) as row
       from public.proposals x ${SLOT_JOIN}
     ) items`,
@@ -136,8 +163,11 @@ export async function searchPeople(query: string, contributorsOnly = true): Prom
   return rows as PersonMatch[];
 }
 
-/** Neon Auth user id for an email, for recording a claim on someone's behalf. */
+/** Neon Auth user id for a verified email, for recording a claim on someone's behalf. Null unless exactly one account matches. */
 export async function findUserIdByEmail(email: string): Promise<string | null> {
-  const rows = await db().query(`select id::text as id from neon_auth."user" where lower(email) = lower($1) limit 1`, [email]);
-  return (rows[0]?.id as string | undefined) ?? null;
+  const rows = await db().query(
+    `select id::text as id from neon_auth."user" where lower(email) = lower($1) and "emailVerified" is true limit 2`,
+    [email.trim()],
+  );
+  return rows.length === 1 ? (rows[0].id as string) : null;
 }
