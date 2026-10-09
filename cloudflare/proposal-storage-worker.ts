@@ -9,8 +9,11 @@ const MAX_AVATAR_BYTES = 2 * 1024 * 1024;
 const MAX_SIGNATURE_LIFETIME_SECONDS = 15 * 60;
 const OBJECT_PREFIX = "/objects/";
 const UUID = "[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}";
+// proposals/<id>.pdf is each proposal's single file. The older
+// proposals/<id>/<file>.pdf form stays readable until migrated files are
+// copied; remove it after the data migration.
 const ALLOWED_KEY = new RegExp(
-  `^(?:quarantine/${UUID}/${UUID}\\.pdf|proposals/${UUID}/${UUID}\\.pdf|avatars/${UUID}/google-[0-9a-f]{16}\\.(?:jpg|png|webp))$`,
+  `^(?:quarantine/${UUID}/${UUID}\\.pdf|proposals/${UUID}\\.pdf|proposals/${UUID}/${UUID}\\.pdf|avatars/${UUID}/google-[0-9a-f]{16}\\.(?:jpg|png|webp))$`,
   "i",
 );
 

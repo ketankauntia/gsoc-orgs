@@ -26,11 +26,9 @@ async function expectStatus(response: Response, status: number, label: string) {
   if (response.status !== status) throw new Error(`${label}: expected ${status}, received ${response.status}`);
 }
 
-const userId = randomUUID();
 const proposalId = randomUUID();
-const fileId = randomUUID();
-const quarantineKey = `quarantine/${userId}/${randomUUID()}.pdf`;
-const proposalKey = `proposals/${proposalId}/${fileId}.pdf`;
+const quarantineKey = `quarantine/${proposalId}/${randomUUID()}.pdf`;
+const proposalKey = `proposals/${proposalId}.pdf`;
 const cleanup = async (key: string) => fetch(signedUrl("DELETE", key), { method: "DELETE" }).catch(() => undefined);
 
 async function main() {
