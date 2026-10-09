@@ -2,16 +2,18 @@ import { apiError, privateApiData } from "@/lib/api-response";
 import { apiViewer, databaseErrorResponse } from "@/lib/api-auth";
 import { db } from "@/lib/db";
 import { revalidateContributorWork } from "@/lib/hub/revalidate";
-import { confirmSchema, finalizeSchema, reasonSchema, zodFields } from "@/lib/hub/schemas";
+import { completeUploadSchema, confirmSchema, finalizeSchema, reasonSchema, zodFields } from "@/lib/hub/schemas";
 import { TERMS_VERSION } from "@/lib/hub/types";
+import { deleteR2Object, isQuarantineKeyFor } from "@/lib/r2";
 import { readJsonBody } from "@/lib/security";
 
 type Context = { params: Promise<{ id: string; action: string }> };
 
 /**
+ * abandon  – the browser could not upload the file; end the reservation
  * confirm  – the author checked this exact file for personal details
  * finalize – publish under CC BY 4.0; afterwards only the admin can change it
- * removal  – after finalizing, ask the admin to take it down
+ * removal  – ask the admin to take the file down, final or not
  */
 export async function POST(request: Request, { params }: Context) {
   const gate = await apiViewer(request);
@@ -21,6 +23,13 @@ export async function POST(request: Request, { params }: Context) {
   const body = await readJsonBody(request).catch(() => null);
   const userId = gate.viewer.user.id;
   try {
+    if (action === "abandon") {
+      const parsed = completeUploadSchema.safeParse(body);
+      if (!parsed.success || !isQuarantineKeyFor(parsed.data.key, id)) return apiError("INVALID_UPLOAD", "This upload does not belong to the proposal", 422);
+      await db()`select public.abandon_my_proposal_upload(${userId}::uuid, ${id}::uuid)`;
+      await deleteR2Object(parsed.data.key).catch((error) => console.warn("[me/proposals:abandon-delete]", error));
+      return privateApiData({ abandoned: true });
+    }
     if (action === "confirm") {
       const parsed = confirmSchema.safeParse(body);
       if (!parsed.success) return apiError("VALIDATION_ERROR", "Reload and check the file again", 422, zodFields(parsed.error));

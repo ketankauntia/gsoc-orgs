@@ -20,10 +20,18 @@ export function db() {
   return client;
 }
 
-/** Messages raised with `raise exception` in our SQL functions are written for users. */
+function databaseErrorCode(error: unknown) {
+  return error && typeof error === "object" && "code" in error ? (error as { code?: unknown }).code : undefined;
+}
+
+/** Messages raised with `raise exception` in our SQL functions are written for users. Nothing else is. */
 export function userFacingDatabaseError(error: unknown): string | null {
-  if (error && typeof error === "object" && "code" in error && (error as { code?: string }).code === "P0001") {
-    return (error as { message?: string }).message ?? null;
-  }
-  return null;
+  if (databaseErrorCode(error) !== "P0001") return null;
+  const message = (error as { message?: unknown }).message;
+  return typeof message === "string" && message.trim() ? message : null;
+}
+
+/** A unique violation: another request wrote the same row first. */
+export function isDatabaseConflict(error: unknown) {
+  return databaseErrorCode(error) === "23505";
 }

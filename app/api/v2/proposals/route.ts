@@ -4,7 +4,7 @@ import { getApprovedProposals } from "@/lib/proposals/queries";
 export async function GET(request: Request) {
   try {
     const url = new URL(request.url);
-    const { page } = pagination(url.searchParams);
+    const { page, limit } = pagination(url.searchParams);
     const year = Number.parseInt(url.searchParams.get("year") ?? "", 10);
     const result = await getApprovedProposals({
       q: url.searchParams.get("q")?.trim().slice(0, 80) || undefined,
@@ -12,6 +12,7 @@ export async function GET(request: Request) {
       project: url.searchParams.get("project")?.trim() || undefined,
       year: Number.isFinite(year) ? year : undefined,
       page,
+      limit,
     });
     return apiData(result.data, { page: result.page, limit: result.limit, total: result.total }, {
       headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600" },

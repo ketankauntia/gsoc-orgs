@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { likeTerm } from "@/lib/catalog/sql";
+import { legacyPaging, likeTerm } from "@/lib/catalog/sql";
 import { db } from "@/lib/db";
 
 export async function GET(request: NextRequest) {
   try {
     const params = request.nextUrl.searchParams;
-    const limit = Math.min(500, Number(params.get("limit")) || 100);
+    const { limit } = legacyPaging(params, { limit: 100, max: 500 });
     const minimum = Number(params.get("min_usage")) || 1;
     const rows = await db().query(
       `select t.name, t.slug::text as slug, count(ot.organization_id)::int as usage_count

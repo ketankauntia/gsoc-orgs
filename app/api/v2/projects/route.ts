@@ -7,7 +7,7 @@ export async function GET(request: Request) {
     const url = new URL(request.url);
     const { page, limit, from } = pagination(url.searchParams);
     const year = Number.parseInt(url.searchParams.get("year") ?? "", 10);
-    const rows = await db().query(
+    const { total, data } = await pageOf((take, skip) => db().query(
       `select p.id, p.external_id, p.year, p.title, p.abstract_short, p.project_url, p.code_url, p.work_product_url, p.work_product_kind,
          ${PROJECT_WITH_PEOPLE}, count(*) over () as total_count
        from public.projects p join public.organizations o on o.id = p.organization_id
@@ -16,9 +16,8 @@ export async function GET(request: Request) {
          and ($3::text is null or o.slug = $3::citext)
        order by p.title
        limit $4 offset $5`,
-      [likeTerm(url.searchParams.get("q")), Number.isFinite(year) ? year : null, url.searchParams.get("organization")?.trim() || null, limit, from],
-    );
-    const { total, data } = pageOf(rows);
+      [likeTerm(url.searchParams.get("q")), Number.isFinite(year) ? year : null, url.searchParams.get("organization")?.trim() || null, take, skip],
+    ), limit, from);
     return apiData(data, { page, limit, total });
   } catch (error) {
     console.error("[api/v2/projects]", error);

@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
-import { LoginView } from "@/components/cobalt/views/community";
+import { redirect, unstable_rethrow } from "next/navigation";
+import { LoginView } from "@/components/cobalt/views/login";
 import { getViewer } from "@/lib/auth";
 import { isAuthConfigured } from "@/lib/neon-auth/server";
-import { safeRelativePath } from "@/lib/security";
+import { firstParam, safeRelativePath } from "@/lib/security";
 
 export const metadata: Metadata = { title: "Sign in", robots: { index: false, follow: false } };
 
-export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string; error?: string }> }) {
+type SearchParams = Promise<Record<string, string | string[] | undefined>>;
+
+export default async function LoginPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
   const next = safeRelativePath(params.next);
-  const viewer = await getViewer();
+  // If the account can't be loaded, still offer sign-in instead of an error page.
+  const viewer = await getViewer().catch((error: unknown) => {
+    unstable_rethrow(error);
+    return null;
+  });
   if (viewer?.profile.status === "active") redirect(next);
-  const error = viewer?.profile.status === "suspended" || params.error === "suspended" ? "suspended" : params.error ? "oauth" : null;
+  // "suspended" is shown only to the suspended account itself, which can sign out from here.
+  const errorParam = firstParam(params.error);
+  const error = viewer?.profile.status === "suspended" ? "suspended" : errorParam && errorParam !== "suspended" ? "oauth" : null;
   return <LoginView configured={isAuthConfigured()} next={next} error={error} />;
 }

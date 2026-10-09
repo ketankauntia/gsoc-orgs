@@ -55,6 +55,7 @@ export type MyProposal = {
   file_sha256: string | null;
   file_uploaded_at: string | null;
   uploaded_by_admin: boolean;
+  uploaded_by: "you" | "admin" | "another_account" | null;
   extraction_status: "pending" | "ok" | "failed";
   pii_findings: PiiFinding[] | null;
   pii_confirmed: boolean;
@@ -65,6 +66,12 @@ export type MyProposal = {
   removed_at: string | null;
   removed_reason: string | null;
   upload_in_progress: boolean;
+  /**
+   * A new file passed the checks but is not stored yet. The file fields still
+   * describe the current file, and confirming or publishing waits until it is.
+   * Still true once upload_in_progress is false: saving it failed, upload again.
+   */
+  upload_pending: boolean;
 };
 
 export type MyPost = {

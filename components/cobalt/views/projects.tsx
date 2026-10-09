@@ -100,8 +100,8 @@ function TechChip({ value, pages }: { value: string; pages: Set<string> }) {
 function ProjectLinks({ href, code }: { href: string; code: string | null }) {
   return (
     <div className="cb-project-links">
-      <Link href={href}>Project <IconArrowRight size={13} stroke={2} aria-hidden /></Link>
-      {code ? <a href={code} target="_blank" rel="noreferrer noopener">{workProductShortLabel(code)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+      <Link href={href} prefetch={false} className="cb-arrow">Project</Link>
+      {code ? <a href={code} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">{workProductShortLabel(code)}</a> : null}
     </div>
   );
 }
@@ -112,7 +112,7 @@ function ProjectRow({ project, archive, withSummary = true }: { project: Project
   return (
     <li className="cb-project">
       <div className="cb-project-main">
-        <h3><Link href={href} className="cb-project-title">{clean(project.project_title)}</Link></h3>
+        <h3><Link href={href} prefetch={false} className="cb-project-title">{clean(project.project_title)}</Link></h3>
         <p className="cb-project-people">
           <span>{clean(project.contributor) || "Contributor not listed"}</span>
           {project.mentors?.length ? <span>Mentored by {project.mentors.slice(0, 3).join(", ")}{project.mentors.length > 3 ? ` +${project.mentors.length - 3}` : ""}</span> : null}

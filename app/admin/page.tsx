@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { AdminClaims } from "@/components/hub/admin";
 import { requireAdmin } from "@/lib/auth";
-import { getAdminQueue } from "@/lib/hub/admin";
+import { getAdminQueue, getSuspendedProfiles } from "@/lib/hub/admin";
 
 export const metadata: Metadata = { title: "Claims to review", robots: { index: false, follow: false } };
 
 export default async function AdminClaimsPage() {
   await requireAdmin();
-  const { claims, recent } = await getAdminQueue();
+  const [{ claims, recent }, suspended] = await Promise.all([getAdminQueue(), getSuspendedProfiles()]);
   return (
     <main>
       <header className="cb-hub-head">
@@ -17,7 +17,7 @@ export default async function AdminClaimsPage() {
           <p>Compare each claimant with Google&apos;s archive. Verifying unlocks proposal uploads for contributors and marks their posts verified.</p>
         </div>
       </header>
-      <AdminClaims claims={claims} recent={recent.map((entry) => ({ ...entry, at: new Date(entry.at).toISOString() }))} />
+      <AdminClaims claims={claims} recent={recent.map((entry) => ({ ...entry, at: new Date(entry.at).toISOString() }))} suspended={suspended} />
     </main>
   );
 }

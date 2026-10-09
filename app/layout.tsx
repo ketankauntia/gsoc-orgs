@@ -14,9 +14,11 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+// Figures and labels only, so it is not preloaded ahead of the text faces.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 // Editorial accent lines in headings (one weight; never synthesised bold).

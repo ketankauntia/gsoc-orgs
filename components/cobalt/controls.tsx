@@ -7,7 +7,7 @@ import { useEffect, useId, useRef, useState, useTransition } from "react";
 import { IconAdjustmentsHorizontal, IconCheck, IconChevronDown, IconLink, IconSearch, IconStar, IconStarFilled, IconX } from "@tabler/icons-react";
 import { initials } from "./labels";
 import { useShortlist } from "./shortlist";
-import { useShell } from "./shell";
+import { useSearchIndex } from "./shell";
 
 /* ------------------------------------------------------------------ */
 /* Tabs for the landing stage. Panels are server-rendered children.   */
@@ -103,8 +103,8 @@ export function SaveButton({ slug, name, variant = "icon" }: { slug: string; nam
 export function ShortlistMenu() {
   const { items, remove, clear } = useShortlist();
   const { open, setOpen, ref } = usePopover();
-  const { index } = useShell();
-  const logos = new Map(index.orgs.map((org) => [org.s, org]));
+  const { index } = useSearchIndex(open && items.length > 0);
+  const logos = new Map(index?.orgs.map((org) => [org.s, org]));
   return (
     <div className="cb-popover-wrap" ref={ref}>
       <button type="button" className="cb-icon-button cb-shortlist-trigger" aria-haspopup="true" aria-expanded={open} onClick={() => setOpen(!open)} aria-label={`Shortlist, ${items.length} saved`} title="Shortlist">
@@ -123,7 +123,7 @@ export function ShortlistMenu() {
                 {items.map((item) => (
                   <li key={item.slug}>
                     <Link href={`/organizations/${item.slug}`} onClick={() => setOpen(false)}>
-                      <span className="cb-logo cb-logo-sm" data-dark={logos.get(item.slug)?.d || undefined} aria-hidden="true">{logos.get(item.slug)?.l ? <Image src={`/logos/${item.slug}.webp`} alt="" width={28} height={28} /> : <span className="cb-monogram">{initials(item.name)}</span>}</span>
+                      <span className="cb-logo cb-logo-sm" data-dark={logos.get(item.slug)?.d || undefined} aria-hidden="true">{logos.get(item.slug)?.l ? <Image src={logos.get(item.slug)!.l!} alt="" width={28} height={28} /> : <span className="cb-monogram">{initials(item.name)}</span>}</span>
                       <span className="cb-truncate">{item.name}</span>
                     </Link>
                     <button type="button" className="cb-icon-button cb-icon-button-sm" aria-label={`Remove ${item.name}`} onClick={() => remove(item.slug)}><IconX size={14} stroke={2} aria-hidden /></button>

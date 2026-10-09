@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { organizationV1 } from "@/lib/catalog/legacy-shapes";
-import { likeTerm } from "@/lib/catalog/sql";
+import { legacyPaging, likeTerm, pageOf } from "@/lib/catalog/sql";
 import { db } from "@/lib/db";
 import { canonicalTechnology } from "@/lib/vocabulary/catalog";
 
@@ -9,8 +9,7 @@ const ORDER: Record<string, string> = { projects: "o.total_projects desc, o.name
 export async function GET(request: NextRequest) {
   try {
     const params = request.nextUrl.searchParams;
-    const page = Math.max(1, Number(params.get("page")) || 1);
-    const limit = Math.min(100, Number(params.get("limit")) || 20);
+    const { page, limit } = legacyPaging(params, { limit: 20, max: 100 });
     const q = likeTerm(params.get("q"));
     const category = params.get("category") || null;
     const technology = params.get("technology");
@@ -19,7 +18,7 @@ export async function GET(request: NextRequest) {
     const includeWithdrawn = params.get("include_withdrawn") === "true";
     const order = ORDER[params.get("sort") ?? "name"] ?? ORDER.name;
 
-    const rows = await db().query(
+    const { total, data } = await pageOf((take, skip) => db().query(
       `select o.*, count(*) over () as total_count
        from public.organizations o
        where ($1::text is null or o.name ilike '%' || $1 || '%' or o.description ilike '%' || $1 || '%')
@@ -34,12 +33,11 @@ export async function GET(request: NextRequest) {
         q, category, Number.isFinite(year) && year > 0 ? year : null, includeWithdrawn,
         active === "true" ? true : active === "false" ? false : null,
         technology ? canonicalTechnology(technology).slug : null,
-        limit, (page - 1) * limit,
+        take, skip,
       ],
-    );
-    const total = Number(rows[0]?.total_count ?? 0);
+    ), limit, (page - 1) * limit);
     return NextResponse.json(
-      { success: true, data: { organizations: rows.map(organizationV1), pagination: { page, limit, total, pages: Math.ceil(total / limit) } }, meta: { timestamp: new Date().toISOString(), version: "v1" } },
+      { success: true, data: { organizations: data.map(organizationV1), pagination: { page, limit, total, pages: Math.ceil(total / limit) } }, meta: { timestamp: new Date().toISOString(), version: "v1" } },
       { headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" } },
     );
   } catch (error) {

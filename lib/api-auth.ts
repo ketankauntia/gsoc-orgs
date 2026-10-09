@@ -2,7 +2,7 @@ import "server-only";
 
 import { apiError } from "@/lib/api-response";
 import { getViewer, type Viewer } from "@/lib/auth";
-import { userFacingDatabaseError } from "@/lib/db";
+import { isDatabaseConflict, userFacingDatabaseError } from "@/lib/db";
 import { isTrustedMutationRequest } from "@/lib/security";
 
 type Gate = { viewer: Viewer; response?: undefined } | { viewer?: undefined; response: Response };
@@ -26,10 +26,11 @@ export async function apiAdmin(request?: Request): Promise<Gate> {
   return gate;
 }
 
-/** Messages our SQL functions raise for users pass through; anything else is logged. */
+/** Messages our SQL functions raise for users pass through; anything else is logged and replaced. */
 export function databaseErrorResponse(error: unknown, context: string) {
   const message = userFacingDatabaseError(error);
   if (message) return apiError("REJECTED", message, 400);
   console.error(`[${context}]`, error);
+  if (isDatabaseConflict(error)) return apiError("CONFLICT", "Another request changed this at the same time. Reload and try again.", 409);
   return apiError("SERVER_ERROR", "Something went wrong. Try again.", 500);
 }

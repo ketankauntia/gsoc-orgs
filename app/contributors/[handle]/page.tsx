@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { IconBrandGithub, IconBrandMedium, IconBrandX, IconWorld } from "@tabler/icons-react";
 import { PageHead } from "@/components/cobalt/page";
 import { getPublicProfile } from "@/lib/hub/public";
@@ -26,8 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ContributorProfilePage({ params }: Props) {
-  const profile = await getPublicProfile((await params).handle);
+  const { handle } = await params;
+  const profile = await getPublicProfile(handle);
   if (!profile) notFound();
+  if (handle !== profile.handle) permanentRedirect(`/contributors/${profile.handle}`);
   const links = [
     profile.website_url ? { href: profile.website_url, label: "Website", icon: <IconWorld size={14} stroke={1.9} aria-hidden /> } : null,
     profile.github_username ? { href: `https://github.com/${profile.github_username}`, label: profile.github_username, icon: <IconBrandGithub size={14} stroke={1.9} aria-hidden /> } : null,
@@ -43,7 +45,7 @@ export default async function ContributorProfilePage({ params }: Props) {
         title={profile.display_name}
         lede={profile.bio ?? undefined}
       >
-        {links.length ? <div className="cb-hub-links">{links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer me" className="cb-pill">{link.icon}{link.label}</a>)}</div> : null}
+        {links.length ? <div className="cb-hub-links">{links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="nofollow ugc noopener noreferrer me" className="cb-pill">{link.icon}{link.label}</a>)}</div> : null}
       </PageHead>
       <div className="cb-page cb-page-body">
         <section aria-labelledby="cb-profile-history" className="cb-hub-stack" style={{ maxWidth: 820 }}>

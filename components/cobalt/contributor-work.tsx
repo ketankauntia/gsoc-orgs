@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IconArrowUpRight, IconFileText, IconNotes, IconUserCheck } from "@tabler/icons-react";
+import { USER_LINK_REL } from "@/lib/hub/client";
 import type { ContributorWork, HubPost, HubProposal } from "@/lib/hub/public";
 import { SectionHead } from "./page";
 import { fmt, plural } from "./ui";
@@ -45,13 +46,12 @@ function PostItem({ post, withProject }: { post: HubPost; withProject: boolean }
     <li>
       <span className="cb-cw-icon" aria-hidden="true"><IconNotes size={16} stroke={1.75} /></span>
       <div className="cb-cw-main">
-        <a href={post.url} target="_blank" rel="noopener noreferrer">{post.title || host(post.url)} <IconArrowUpRight size={12} stroke={2} aria-hidden /></a>
+        <a href={post.url} target="_blank" rel={USER_LINK_REL}>{post.title || host(post.url)} <IconArrowUpRight size={12} stroke={2} aria-hidden /></a>
         <span className="cb-cw-meta">
           <span>{KIND[post.kind] ?? "Post"}</span>
           {shortDate(post.published_on) ? <span>{shortDate(post.published_on)}</span> : null}
           <span>By {post.author}</span>
           {withProject ? <span>{post.project_title}</span> : null}
-          {post.verified ? null : <span className="cb-badge">Not verified</span>}
         </span>
       </div>
     </li>
@@ -97,7 +97,11 @@ export function ProjectContributorWork({ work, externalId }: { work: Contributor
   );
 }
 
-/** A section on organization and yearly pages: latest proposals and posts. */
+/**
+ * A section on organization and yearly pages: latest proposals and posts.
+ * proposalsHref is the archive search for the same scope; it lists every
+ * archived project there and marks the ones with a shared proposal.
+ */
 export function ContributorWorkSection({ id, eyebrow, title, work, proposalsHref, postsHref, emptyText }: {
   id: string;
   eyebrow: string;
@@ -111,7 +115,7 @@ export function ContributorWorkSection({ id, eyebrow, title, work, proposalsHref
   const quiet = empty ? undefined : [work.proposalCount ? plural(work.proposalCount, "proposal") : null, work.postCount ? plural(work.postCount, "progress post") : null].filter(Boolean).join(" and ") + " shared.";
   return (
     <section aria-labelledby={id} className="cb-cw-section">
-      <SectionHead id={id} eyebrow={eyebrow} title={title} quiet={quiet} action={work.proposalCount ? { label: `All ${fmt(work.proposalCount)} proposals`, href: proposalsHref } : undefined} />
+      <SectionHead id={id} eyebrow={eyebrow} title={title} quiet={quiet} action={work.proposalCount ? { label: "Search the archive", href: proposalsHref } : undefined} />
       {empty ? (
         <div className="cb-card cb-cw-empty">
           <p>{emptyText}</p>
@@ -120,7 +124,10 @@ export function ContributorWorkSection({ id, eyebrow, title, work, proposalsHref
       ) : (
         <div className="cb-cw-grid">
           <div className="cb-card">
-            <header className="cb-card-head"><div><h3>Accepted proposals</h3><p>Published by their authors or with permission</p></div></header>
+            <header className="cb-card-head">
+              <div><h3>Accepted proposals</h3><p>Published by their authors or with permission</p></div>
+              {work.proposalCount > work.proposals.length ? <span className="cb-cw-count">Latest {fmt(work.proposals.length)} of {fmt(work.proposalCount)}</span> : null}
+            </header>
             {work.proposals.length ? <ul className="cb-cw-list">{work.proposals.map((proposal) => <ProposalItem key={proposal.slug} proposal={proposal} withProject />)}</ul> : <p className="cb-card-note">None shared yet.</p>}
           </div>
           <div className="cb-card">

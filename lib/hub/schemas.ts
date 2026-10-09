@@ -3,14 +3,24 @@ import { z } from "zod";
 // Request bodies for /api/v2/me and /api/v2/admin. The SQL functions check
 // everything again; these give early, field-level messages.
 
-const httpUrl = z.string().trim().max(2048).url().refine((value) => /^https?:\/\//i.test(value), "Use a link that starts with http:// or https://");
-const httpsUrl = z.string().trim().max(300).url().refine((value) => /^https:\/\//i.test(value), "Use a link that starts with https://");
-const optionalText = (max: number) => z.string().trim().max(max).optional().nullable();
+// Same rule as private.is_http_url: a host, no credentials, no whitespace,
+// control, invisible or bidi characters, no backslashes.
+const HTTP_URL = /^https?:\/\/[a-z0-9\u00a1-\uffff][a-z0-9._\u00a1-\uffff-]*(:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[0-9]{1,4}))?([/?#][^\\\s\u0000-\u001f\u007f]*)?$/i;
+const INVISIBLE = /[\u0080-\u00a0\u00ad\u061c\u1680\u180e\u2000-\u200f\u2028-\u202f\u205f-\u206f\u3000\ufe00-\ufe0f\ufeff\ufff9-\ufffb]|\udb40[\udc00-\udc7f]/;
+const isHttpUrl = (value: string) => HTTP_URL.test(value) && !INVISIBLE.test(value) && new TextEncoder().encode(value).length <= 2048;
+const httpUrl = z.string().trim().max(2048).url().refine((value) => /^https?:\/\//i.test(value), "Use a link that starts with http:// or https://")
+  .refine(isHttpUrl, "Use a plain link without spaces or a username");
+const httpsUrl = z.string().trim().max(300).url().refine((value) => /^https:\/\//i.test(value), "Use a link that starts with https://")
+  .refine(isHttpUrl, "Use a plain link without spaces or a username");
+// Postgres text cannot hold NUL characters.
+const stripNul = (value: string) => value.replace(/\u0000/g, "");
+const requiredText = (min: number, minMessage: string, max: number) => z.string().trim().min(min, minMessage).max(max).transform(stripNul);
+const optionalText = (max: number) => z.string().trim().max(max).transform(stripNul).optional().nullable();
 const emptyToNull = (value: unknown) => (typeof value === "string" && value.trim() === "" ? null : value);
 const stripAt = (value: unknown) => (typeof value === "string" ? (value.trim().replace(/^@/, "") || null) : value);
 
 export const profileSchema = z.object({
-  displayName: z.string().trim().min(1, "Enter your name").max(80),
+  displayName: requiredText(1, "Enter your name", 80),
   handle: z.preprocess(emptyToNull, z.string().trim().toLowerCase().regex(/^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/, "3 to 30 lowercase letters, digits or hyphens").nullable()),
   bio: optionalText(500),
   websiteUrl: z.preprocess(emptyToNull, httpsUrl.nullable()),
@@ -47,7 +57,7 @@ export const startUploadSchema = z.object({ personId: z.string().uuid() });
 export const completeUploadSchema = z.object({ key: z.string().min(1).max(200) });
 export const confirmSchema = z.object({ sha256: z.string().regex(/^[a-f0-9]{64}$/) });
 export const finalizeSchema = z.object({ acceptLicence: z.literal(true, "Accept CC BY 4.0 to publish"), confirmOwnWork: z.literal(true, "Confirm this is your accepted proposal") });
-export const reasonSchema = z.object({ reason: z.string().trim().min(3, "Tell us briefly why").max(1000) });
+export const reasonSchema = z.object({ reason: requiredText(3, "Tell us briefly why", 1000) });
 
 const postKind = z.enum(["weekly_update", "midterm", "final_report", "talk_video", "other"]);
 const postDate = z.preprocess(emptyToNull, z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Use YYYY-MM-DD").nullable());
@@ -62,9 +72,9 @@ export const postUpdateSchema = postSchema.omit({ personId: true });
 
 export const adminClaimDecisionSchema = z.discriminatedUnion("action", [
   z.object({ action: z.literal("verify") }),
-  z.object({ action: z.literal("reject"), reason: z.string().trim().min(3, "Give a reason").max(1000) }),
+  z.object({ action: z.literal("reject"), reason: requiredText(3, "Give a reason", 1000) }),
 ]);
-export const adminOverrideSchema = z.object({ email: z.string().trim().email("Enter the account's email"), personId: z.string().uuid(), reason: z.string().trim().min(3, "Give a reason").max(1000) });
+export const adminOverrideSchema = z.object({ email: z.string().trim().email("Enter the account's email"), personId: z.string().uuid(), reason: requiredText(3, "Give a reason", 1000) });
 export const adminPostSchema = z.object({
   personId: z.string().uuid(),
   url: httpUrl,
@@ -74,7 +84,7 @@ export const adminPostSchema = z.object({
 });
 export const adminPermissionSchema = z.object({
   basis: z.enum(["author_consent", "rights_holder_consent", "already_cc_by_4_0"]),
-  note: z.string().trim().min(3).max(2000),
+  note: requiredText(3, "Describe the permission", 2000),
   sourceUrl: z.preprocess(emptyToNull, httpUrl.nullable()),
   givenAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Use YYYY-MM-DD"),
 });

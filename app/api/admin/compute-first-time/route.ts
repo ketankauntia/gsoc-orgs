@@ -2,6 +2,26 @@ import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { isAdminKeyAuthorized } from '@/lib/admin-key'
 
+/** Both methods need the x-admin-key header; without ADMIN_KEY set the route does not exist. */
+function adminKeyGate(request: NextRequest) {
+  if (!process.env.ADMIN_KEY) {
+    return NextResponse.json({ success: false, error: { message: 'Not found', code: 'NOT_FOUND' } }, { status: 404 })
+  }
+  if (!isAdminKeyAuthorized(request)) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: {
+          message: 'Unauthorized. Admin key required.',
+          code: 'UNAUTHORIZED',
+        },
+      },
+      { status: 401 }
+    )
+  }
+  return null
+}
+
 /**
  * POST /api/admin/compute-first-time
  * 
@@ -22,19 +42,8 @@ import { isAdminKeyAuthorized } from '@/lib/admin-key'
  * - To refresh first_time status for all organizations
  */
 export async function POST(request: NextRequest) {
-  // Check authentication
-  if (!isAdminKeyAuthorized(request)) {
-    return NextResponse.json(
-      {
-        success: false,
-        error: {
-          message: 'Unauthorized. Admin key required.',
-          code: 'UNAUTHORIZED',
-        },
-      },
-      { status: 401 }
-    )
-  }
+  const denied = adminKeyGate(request)
+  if (denied) return denied
 
   try {
     const searchParams = request.nextUrl.searchParams
@@ -106,10 +115,14 @@ export async function POST(request: NextRequest) {
  * GET /api/admin/compute-first-time
  * 
  * Returns information about the first_time computation status
- * 
- * Note: This endpoint is public (no authentication required) for open source usage
+ *
+ * Headers:
+ * - x-admin-key: Admin authentication key (must match ADMIN_KEY env variable)
  */
 export async function GET(request: NextRequest) {
+  const denied = adminKeyGate(request)
+  if (denied) return denied
+
   try {
     const searchParams = request.nextUrl.searchParams
     const targetYearParam = searchParams.get('year')

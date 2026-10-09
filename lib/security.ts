@@ -1,12 +1,28 @@
 const DEFAULT_JSON_LIMIT = 32 * 1024;
+const UNSAFE_PATH_CHARACTERS = /[\\\u0000-\u001f\u007f]/;
 
-export function safeRelativePath(value: string | null | undefined, fallback = "/account") {
-  if (!value || !value.startsWith("/") || value.startsWith("//") || value.includes("\\")) return fallback;
-  if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(value)) return fallback;
+/** The first value of a search param that may be repeated (?next=a&next=b). */
+export function firstParam(value: string | string[] | null | undefined) {
+  return (Array.isArray(value) ? value[0] : value) ?? undefined;
+}
+
+function isSameSitePath(value: string) {
+  return value.startsWith("/") && !value.startsWith("//") && !UNSAFE_PATH_CHARACTERS.test(value);
+}
+
+/**
+ * A same-site path to send the visitor to, or `fallback`. The check runs again
+ * after URL normalization, which turns paths like `/.//evil.com` into the
+ * protocol-relative `//evil.com`.
+ */
+export function safeRelativePath(value: string | string[] | null | undefined, fallback = "/account") {
+  const input = firstParam(value);
+  if (typeof input !== "string" || !isSameSitePath(input)) return fallback;
   try {
-    const parsed = new URL(value, "https://local.invalid");
+    const parsed = new URL(input, "https://local.invalid");
     if (parsed.origin !== "https://local.invalid") return fallback;
-    return `${parsed.pathname}${parsed.search}${parsed.hash}`;
+    const path = `${parsed.pathname}${parsed.search}${parsed.hash}`;
+    return isSameSitePath(path) ? path : fallback;
   } catch {
     return fallback;
   }

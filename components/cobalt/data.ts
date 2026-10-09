@@ -278,14 +278,8 @@ export function technologyDemand(limit = 12) {
   };
 }
 
-let indexCache: ReturnType<typeof buildSearchIndex> | null = null;
-
+/** Organizations, technologies, topics and articles for the search palette (served by /organizations/search-index.json). */
 export function searchIndex() {
-  indexCache ??= buildSearchIndex();
-  return indexCache;
-}
-
-function buildSearchIndex() {
   const orgs = cobaltOrganizations();
   const count = (select: (org: CobaltOrg) => string[], label: (value: string) => string, href: (value: string) => string) => {
     const map = new Map<string, number>();
@@ -293,13 +287,13 @@ function buildSearchIndex() {
     return [...map.entries()].filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1]).slice(0, 80).map(([value, n]) => ({ v: value, l: label(value), n, h: href(value) }));
   };
   return {
-    orgs: orgs.map((org) => ({ s: org.slug, n: org.name, c: org.category, k: org.current, y: org.cycles, l: Boolean(org.logo), d: org.logoDark, a: org.inCurrent })),
+    orgs: orgs.map((org) => ({ s: org.slug, n: org.name, c: org.category, k: org.current, y: org.cycles, l: org.logo, d: org.logoDark, a: org.inCurrent })),
     tech: count((org) => org.technologies, techLabel, technologyHref),
     topic: count((org) => org.topics, topicLabel, topicHref),
     posts: getAllPosts().filter((post) => !post.noindex).map((post) => ({ s: post.slug, t: post.title, c: post.category })),
   };
 }
-export type SearchIndex = ReturnType<typeof buildSearchIndex>;
+export type SearchIndex = ReturnType<typeof searchIndex>;
 
 export async function getCobaltLanding() {
   const orgs = cobaltOrganizations();

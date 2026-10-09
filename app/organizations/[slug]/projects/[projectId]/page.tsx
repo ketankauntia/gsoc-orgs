@@ -10,6 +10,16 @@ import {
 } from "@/lib/projects-page-types";
 import { loadTechStackIndexData } from "@/lib/tech-stack-page-types";
 
+// 30 days, matching the organization page. Publishing a proposal or post for the project
+// revalidates this path (lib/hub/revalidate.ts).
+export const revalidate = 2592000;
+
+// No paths at build time; each project page is rendered on first visit and then cached.
+// Without this export Next.js renders the route on every request (ISR needs it).
+export async function generateStaticParams() {
+  return [];
+}
+
 async function getProject(
   organizationSlug: string,
   projectId: string,

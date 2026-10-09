@@ -32,6 +32,12 @@ function signedObjectUrl(method: "PUT" | "GET" | "HEAD" | "DELETE", key: string,
   return url.toString();
 }
 
+class GatewayError extends Error {
+  constructor(readonly method: string, readonly status: number) {
+    super(`R2 gateway ${method} failed with status ${status}`);
+  }
+}
+
 async function gatewayRequest(method: "PUT" | "GET" | "HEAD" | "DELETE", key: string, options: { body?: BodyInit; contentType?: string; disposition?: string; expiresIn?: number } = {}) {
   const response = await fetch(signedObjectUrl(method, key, options), {
     method,
@@ -39,8 +45,17 @@ async function gatewayRequest(method: "PUT" | "GET" | "HEAD" | "DELETE", key: st
     headers: options.contentType ? { "Content-Type": options.contentType } : undefined,
     signal: AbortSignal.timeout(30_000),
   });
-  if (!response.ok) throw new Error(`R2 gateway ${method} failed with status ${response.status}`);
+  if (!response.ok) throw new GatewayError(method, response.status);
   return response;
+}
+
+/**
+ * The gateway answered a write with a client error (4xx), which it sends
+ * before storing anything. Timeouts, dropped connections and 5xx answers do
+ * not prove the write did not land.
+ */
+export function isRefusedWrite(error: unknown) {
+  return error instanceof GatewayError && error.status >= 400 && error.status < 500;
 }
 
 export function newQuarantineKey(proposalId: string) {
@@ -94,12 +109,22 @@ export async function validateQuarantinedPdf(key: string): Promise<ValidatedPdf>
   };
 }
 
-/** Copies a validated upload over the proposal's single file and removes the upload. */
-export async function promoteProposalPdf(quarantineKey: string, proposalId: string, bytes: Uint8Array) {
-  const destinationKey = proposalFileKey(proposalId);
-  await gatewayRequest("PUT", destinationKey, { body: Uint8Array.from(bytes).buffer, contentType: PROPOSAL_PDF_MIME });
-  await gatewayRequest("DELETE", quarantineKey).catch(() => undefined);
-  return destinationKey;
+/** Writes a validated upload over the proposal's single file. */
+export async function storeProposalPdf(proposalId: string, bytes: Uint8Array) {
+  const key = proposalFileKey(proposalId);
+  await gatewayRequest("PUT", key, { body: Uint8Array.from(bytes).buffer, contentType: PROPOSAL_PDF_MIME });
+  return key;
+}
+
+/** SHA-256 of a stored object, or null when there is none. Throws when it cannot be read. */
+export async function storedObjectSha256(key: string): Promise<string | null> {
+  try {
+    const object = await gatewayRequest("GET", key);
+    return createHash("sha256").update(new Uint8Array(await object.arrayBuffer())).digest("hex");
+  } catch (error) {
+    if (error instanceof GatewayError && error.status === 404) return null;
+    throw error;
+  }
 }
 
 /**

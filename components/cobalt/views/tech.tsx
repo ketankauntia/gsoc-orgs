@@ -173,7 +173,7 @@ function MoreOrgs({ orgs }: { orgs: CobaltOrg[] }) {
   return (
     <div className="cb-more-orgs">
       <p>{plural(orgs.length, "more organization")}</p>
-      <ul>{orgs.map((org) => <li key={org.slug}><Link href={`/organizations/${org.slug}`}>{org.name}</Link></li>)}</ul>
+      <ul>{orgs.map((org) => <li key={org.slug}><Link href={`/organizations/${org.slug}`} prefetch={false}>{org.name}</Link></li>)}</ul>
     </div>
   );
 }

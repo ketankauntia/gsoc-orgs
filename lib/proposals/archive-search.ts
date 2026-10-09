@@ -182,24 +182,38 @@ async function searchArchiveFromDatabase(query: ArchiveQuery): Promise<ArchiveSe
   }
 
   const { from } = archivePageRange(page, PAGE_SIZE);
+  const filters = [normalized.year ?? null, normalized.q ?? null, normalized.organization ?? null, organizationSlugs];
+  const matching = `from public.projects p
+     join public.organizations o on o.id = p.organization_id
+     where ($1::int is null or p.year = $1)
+       and ($2::text is null or p.title ilike '%' || $2 || '%')
+       and ($3::text is null or o.slug = $3::citext)
+       and ($4::text[] is null or o.slug::text = any($4::text[]))`;
+  // The page is picked first, so people and proposal lookups run for its rows, not for every skipped one.
   const rows = await db().query(
-    `select p.id, p.external_id, p.year, p.title, p.abstract_short, o.slug::text as organization_slug, o.name as organization_name,
+    `with page as (
+       select p.id, count(*) over () as total
+       ${matching}
+       order by p.year desc, p.title, p.id
+       limit ${PAGE_SIZE} offset $5
+     )
+     select p.id, p.external_id, p.year, p.title, p.abstract_short, o.slug::text as organization_slug, o.name as organization_name,
        coalesce((select jsonb_agg(jsonb_build_object('id', pp.id, 'name', pp.archived_name, 'ordinal', pp.ordinal) order by pp.ordinal)
          from public.project_people pp where pp.project_id = p.id and pp.role = 'contributor'), '[]'::jsonb) as contributors,
        coalesce((select jsonb_agg(pp.archived_name order by pp.ordinal)
          from public.project_people pp where pp.project_id = p.id and pp.role = 'mentor'), '[]'::jsonb) as mentors,
        (select v.slug from public.public_proposals v where v.project_id = p.id order by v.published_at desc limit 1) as proposal_slug,
-       count(*) over () as total
-     from public.projects p
+       page.total
+     from page
+     join public.projects p on p.id = page.id
      join public.organizations o on o.id = p.organization_id
-     where ($1::int is null or p.year = $1)
-       and ($2::text is null or p.title ilike '%' || $2 || '%')
-       and ($3::text is null or o.slug = $3::citext)
-       and ($4::text[] is null or o.slug::text = any($4::text[]))
-     order by p.year desc, p.title
-     limit ${PAGE_SIZE} offset $5`,
-    [normalized.year ?? null, normalized.q ?? null, normalized.organization ?? null, organizationSlugs, from],
+     order by p.year desc, p.title, p.id`,
+    [...filters, from],
   );
+  // A page past the end has no row to carry the total.
+  const total = rows.length
+    ? Number(rows[0].total)
+    : from > 0 ? Number((await db().query(`select count(*)::int as total ${matching}`, filters))[0]?.total ?? 0) : 0;
 
   return {
     data: rows.map((row) => ({
@@ -214,7 +228,7 @@ async function searchArchiveFromDatabase(query: ArchiveQuery): Promise<ArchiveSe
       mentors: row.mentors as string[],
       proposalSlug: (row.proposal_slug as string | null) ?? null,
     })),
-    total: Number(rows[0]?.total ?? 0),
+    total,
     page,
     limit: PAGE_SIZE,
     technologyOrganizations: organizationSlugs?.length ?? null,
