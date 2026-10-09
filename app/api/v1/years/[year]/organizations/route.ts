@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
 import { jsonObject, organizationV1, type Json } from '@/lib/catalog/legacy-shapes'
+import { legacyPaging } from '@/lib/catalog/sql'
 import { db } from '@/lib/db'
 
 /**
@@ -38,8 +39,7 @@ export async function GET(
     }
 
     const searchParams = request.nextUrl.searchParams
-    const page = Math.max(1, Number(searchParams.get('page')) || 1)
-    const limit = Math.min(100, Number(searchParams.get('limit')) || 50)
+    const { page, limit } = legacyPaging(searchParams, { limit: 50, max: 100 })
     const skip = (page - 1) * limit
 
     const items = await db()`select * from public.organizations where ${yearNum}::int = any(active_years) order by name`

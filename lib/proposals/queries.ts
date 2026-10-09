@@ -15,11 +15,13 @@ export type PublicProposal = {
   organization_name: string;
   archived_contributor_name: string;
   pdf_byte_size: number | null;
+  pdf_sha256: string | null;
   file_version: number;
   pages: number | null;
   display_name: string;
   handle: string | null;
-  avatar_r2_key: string | null;
+  /** Public avatar endpoint of the author's profile, when they show one. */
+  avatar_url: string | null;
   bio: string | null;
   profile_links: PublicProfileLink[];
   approved_at: string;
@@ -30,17 +32,17 @@ export type PublicProposal = {
   verified: boolean;
 };
 
-type Row = Omit<PublicProposal, "profile_links" | "approved_at"> & {
-  approved_at: string | Date;
+type Row = Omit<PublicProposal, "profile_links" | "approved_at" | "avatar_url"> & {
+  approved_at: string | Date; has_avatar: boolean | null;
   website_url: string | null; github_username: string | null; x_username: string | null; medium_url: string | null;
 };
 
 const SELECT = `
   select v.id, v.slug as public_slug, v.year, v.project_external_id, v.project_title, v.abstract_short,
     v.organization_slug, v.organization_name, v.archived_name as archived_contributor_name,
-    v.file_bytes as pdf_byte_size, v.file_version, v.file_pages as pages,
+    v.file_bytes as pdf_byte_size, v.file_sha256 as pdf_sha256, v.file_version, v.file_pages as pages,
     coalesce(v.owner_display_name, v.archived_name) as display_name, v.owner_handle as handle,
-    v.owner_avatar_key as avatar_r2_key, prof.bio, prof.website_url, prof.github_username, prof.x_username, prof.medium_url,
+    v.has_avatar, prof.bio, prof.website_url, prof.github_username, prof.x_username, prof.medium_url,
     v.published_at as approved_at, v.licence as license_code,
     case when v.author_published then 'contributor' else 'admin_curated' end as submission_source,
     v.verified
@@ -56,39 +58,28 @@ function toProposal(row: Row): PublicProposal {
   return {
     id: row.id, public_slug: row.public_slug, year: row.year, project_external_id: row.project_external_id, project_title: row.project_title,
     abstract_short: row.abstract_short, organization_slug: row.organization_slug, organization_name: row.organization_name,
-    archived_contributor_name: row.archived_contributor_name, pdf_byte_size: row.pdf_byte_size, file_version: row.file_version, pages: row.pages,
-    display_name: row.display_name, handle: row.handle, avatar_r2_key: row.avatar_r2_key, bio: row.bio, profile_links: links,
+    archived_contributor_name: row.archived_contributor_name, pdf_byte_size: row.pdf_byte_size, pdf_sha256: row.pdf_sha256, file_version: row.file_version, pages: row.pages,
+    display_name: row.display_name, handle: row.handle, avatar_url: row.has_avatar && row.handle ? `/api/v2/avatars/${row.handle}` : null, bio: row.bio, profile_links: links,
     approved_at: new Date(row.approved_at).toISOString(), license_code: row.license_code, submission_source: row.submission_source, verified: row.verified,
   };
 }
 
-export const getApprovedProposals = cache(async (filters?: { q?: string; year?: number; organization?: string; project?: string; page?: number }) => {
+/** One page of published proposals, newest first. Throws when the database fails. */
+export const getApprovedProposals = cache(async (filters?: { q?: string; year?: number; organization?: string; project?: string; page?: number; limit?: number }) => {
   const page = Math.max(1, filters?.page ?? 1);
-  const limit = 24;
+  const limit = Math.min(100, Math.max(1, filters?.limit ?? 24));
   if (!isDatabaseConfigured()) return { data: [] as PublicProposal[], total: 0, page, limit };
-  try {
-    const q = filters?.q?.replace(/[%_\\]/g, "").trim().slice(0, 80) || null;
-    const rows = await db().query(
-      `${SELECT}
-       where ($1::text is null or v.project_title ilike '%' || $1 || '%')
-         and ($2::int is null or v.year = $2)
-         and ($3::text is null or v.organization_slug = $3)
-         and ($4::text is null or v.project_external_id = $4)
-       order by v.published_at desc
-       limit ${limit} offset $5`,
-      [q, filters?.year ?? null, filters?.organization ?? null, filters?.project ?? null, (page - 1) * limit],
-    );
-    const counted = await db().query(
-      `select count(*)::int as total from public.public_proposals v
-       where ($1::text is null or v.project_title ilike '%' || $1 || '%') and ($2::int is null or v.year = $2)
-         and ($3::text is null or v.organization_slug = $3) and ($4::text is null or v.project_external_id = $4)`,
-      [q, filters?.year ?? null, filters?.organization ?? null, filters?.project ?? null],
-    );
-    return { data: (rows as Row[]).map(toProposal), total: Number(counted[0]?.total ?? 0), page, limit };
-  } catch (error) {
-    console.error("[public proposals] database unavailable", error);
-    return { data: [] as PublicProposal[], total: 0, page, limit };
-  }
+  const q = filters?.q?.replace(/[%_\\]/g, "").trim().slice(0, 80) || null;
+  const where = `where ($1::text is null or v.project_title ilike '%' || $1 || '%')
+       and ($2::int is null or v.year = $2)
+       and ($3::text is null or v.organization_slug = $3)
+       and ($4::text is null or v.project_external_id = $4)`;
+  const values = [q, filters?.year ?? null, filters?.organization ?? null, filters?.project ?? null];
+  const [rows, counted] = await Promise.all([
+    db().query(`${SELECT} ${where} order by v.published_at desc, v.id limit $5 offset $6`, [...values, limit, (page - 1) * limit]),
+    db().query(`select count(*)::int as total from public.public_proposals v ${where}`, values),
+  ]);
+  return { data: (rows as Row[]).map(toProposal), total: Number(counted[0]?.total ?? 0), page, limit };
 });
 
 export const getApprovedProposal = cache(async (slug: string) => {

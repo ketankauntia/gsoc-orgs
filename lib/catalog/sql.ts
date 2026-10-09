@@ -17,13 +17,28 @@ export function likeTerm(value: string | null | undefined, max = 80) {
   return cleaned || null;
 }
 
-/** Splits `count(*) over () as total_count` off a page of rows. */
-export function pageOf<T extends Record<string, unknown>>(rows: T[]) {
-  const total = Number(rows[0]?.total_count ?? 0);
+/**
+ * Runs a page query that selects `count(*) over () as total_count` and splits the total off.
+ * A page past the end has no row to carry the total, so the first row is read for it.
+ */
+export async function pageOf<T extends Record<string, unknown>>(run: (limit: number, offset: number) => Promise<T[]>, limit: number, offset: number) {
+  const rows = await run(limit, offset);
+  const first = rows[0] ?? (offset > 0 ? (await run(1, 0))[0] : undefined);
+  const total = Number(first?.total_count ?? 0);
   const data = rows.map((row) => {
-    const copy: Record<string, unknown> = { ...row };
+    const copy = { ...row };
     delete copy.total_count;
     return copy;
   });
   return { total, data };
+}
+
+/** `page` and `limit` for the v1 API: whole numbers, `limit` capped at `max`; missing, zero or invalid values get the defaults. */
+export function legacyPaging(params: URLSearchParams, defaults: { limit: number; max: number }) {
+  const page = Math.trunc(Number(params.get("page")));
+  const limit = Math.trunc(Number(params.get("limit")));
+  return {
+    page: Number.isFinite(page) && page >= 1 ? Math.min(page, 100_000) : 1,
+    limit: Number.isFinite(limit) && limit !== 0 ? Math.min(defaults.max, Math.max(1, limit)) : defaults.limit,
+  };
 }
