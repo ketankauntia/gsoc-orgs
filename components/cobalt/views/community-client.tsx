@@ -196,7 +196,7 @@ export function AdminNav({ links }: { links: Array<{ label: string; href: string
   return (
     <nav className="cb-segmented cb-cm-admin-nav" aria-label="Moderation">
       {links.map((link) => (
-        <Link key={link.href} href={link.href} aria-current={pathname === link.href || pathname.startsWith(`${link.href}/`) ? "page" : undefined}>{link.label}</Link>
+        <Link key={link.href} href={link.href} aria-current={pathname === link.href || (link.href !== "/admin" && pathname.startsWith(`${link.href}/`)) ? "page" : undefined}>{link.label}</Link>
       ))}
     </nav>
   );

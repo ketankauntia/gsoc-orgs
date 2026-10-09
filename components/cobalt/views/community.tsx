@@ -623,18 +623,19 @@ export function LegalView({ title, updated, intro, sections, closing }: { title:
 /* ================================================================== */
 /* Sign in, 404, signed-in areas                                       */
 
-export function LoginView({ configured, next, error }: { configured: boolean; next: string; error: boolean }) {
+export function LoginView({ configured, next, error }: { configured: boolean; next: string; error: "oauth" | "suspended" | null }) {
   return (
     <main className="cb-cm-center">
       <div className="cb-hero-grid" aria-hidden="true" />
       <div className="cb-card cb-cm-login">
-        <Eyebrow>CONTRIBUTOR ACCESS</Eyebrow>
-        <h1>Share an accepted GSoC proposal</h1>
-        <p className="cb-cm-login-lede">Sign in with the Google account you want attached to your submission. Your email is used privately for sign-in and is never published.</p>
+        <Eyebrow>CONTRIBUTORS AND MENTORS</Eyebrow>
+        <h1>Claim your GSoC project</h1>
+        <p className="cb-cm-login-lede">Sign in with Google to claim the project you contributed to or mentored, publish your accepted proposal and link your progress posts. Your email stays private.</p>
         <div className="cb-cm-login-action">
-          {configured ? <GoogleSignIn next={next} /> : <p className="cb-cm-notice"><IconPlugConnectedX size={18} stroke={1.75} aria-hidden /><span>Sign-in is not available right now.</span></p>}
+          {error === "suspended" ? null : configured ? <GoogleSignIn next={next} /> : <p className="cb-cm-notice"><IconPlugConnectedX size={18} stroke={1.75} aria-hidden /><span>Sign-in is not available right now.</span></p>}
         </div>
-        {error ? <p role="alert" className="cb-cm-alert">Google sign-in could not be completed. Please try again.</p> : null}
+        {error === "oauth" ? <p role="alert" className="cb-cm-alert">Google sign-in could not be completed. Please try again.</p> : null}
+        {error === "suspended" ? <p role="alert" className="cb-cm-alert">This account is suspended. <Link className="cb-inline-link" href="/contact">Contact us</Link> if you think this is a mistake.</p> : null}
         <p className="cb-cm-login-fine">By continuing, you agree to the <Link className="cb-inline-link" href="/terms-and-conditions">terms</Link> and acknowledge the <Link className="cb-inline-link" href="/privacy-policy">privacy policy</Link>.</p>
       </div>
     </main>
@@ -667,16 +668,17 @@ export function AccountFrame({ children }: { children: React.ReactNode }) {
   return <div className="cb-page cb-cm-app">{children}</div>;
 }
 
-export function AdminFrame({ isAdmin, children }: { isAdmin: boolean; children: React.ReactNode }) {
+export function AdminFrame({ children }: { children: React.ReactNode }) {
   const links = [
-    { label: "Proposal queue", href: "/admin/proposals" },
-    ...(isAdmin ? [{ label: "Imports & blogs", href: "/admin/content" }, { label: "Roles", href: "/admin/roles" }] : []),
+    { label: "Claims", href: "/admin" },
+    { label: "Proposals", href: "/admin/proposals" },
+    { label: "Posts", href: "/admin/posts" },
   ];
   return (
     <div className="cb-page cb-cm-app">
       <div className="cb-cm-admin-bar">
         <AdminNav links={links} />
-        <Link href="/account" className="cb-button cb-button-outline cb-button-sm">Contributor account <IconArrowRight size={14} stroke={2} aria-hidden /></Link>
+        <Link href="/account" className="cb-button cb-button-outline cb-button-sm">Your account <IconArrowRight size={14} stroke={2} aria-hidden /></Link>
       </div>
       {children}
     </div>

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase/client";
+import { authClient } from "@/lib/neon-auth/client";
 import { safeRelativePath } from "@/lib/security";
 
+/** Starts Google sign-in. Google returns to /auth/complete, which forwards to `next`. */
 export function GoogleSignIn({ next = "/account" }: { next?: string }) {
   const [error, setError] = useState<string>();
   const [loading, setLoading] = useState(false);
@@ -12,25 +12,28 @@ export function GoogleSignIn({ next = "/account" }: { next?: string }) {
   async function signIn() {
     setLoading(true);
     setError(undefined);
-    const supabase = createClient();
-    const callback = new URL("/auth/callback", window.location.origin);
-    callback.searchParams.set("next", safeRelativePath(next));
-    const { error: authError } = await supabase.auth.signInWithOAuth({
+    const complete = new URL("/auth/complete", window.location.origin);
+    complete.searchParams.set("next", safeRelativePath(next));
+    const failed = new URL("/login", window.location.origin);
+    failed.searchParams.set("error", "oauth");
+    failed.searchParams.set("next", safeRelativePath(next));
+    const { error: authError } = await authClient.signIn.social({
       provider: "google",
-      options: { redirectTo: callback.toString(), scopes: "openid email profile" },
+      callbackURL: complete.toString(),
+      errorCallbackURL: failed.toString(),
     });
     if (authError) {
-      setError(authError.message);
+      setError(authError.message ?? "Google sign-in could not start. Try again.");
       setLoading(false);
     }
   }
 
   return (
-    <div className="space-y-3">
-      <Button className="w-full" onClick={signIn} disabled={loading}>
+    <div>
+      <button type="button" onClick={signIn} disabled={loading}>
         {loading ? "Opening Google…" : "Continue with Google"}
-      </Button>
-      {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
+      </button>
+      {error ? <p role="alert">{error}</p> : null}
     </div>
   );
 }

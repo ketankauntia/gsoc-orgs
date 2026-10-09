@@ -1,19 +1,16 @@
 import { NextResponse } from "next/server";
 import { apiError } from "@/lib/api-response";
-import { getUser, getUserRoles } from "@/lib/auth";
+import { apiAdmin } from "@/lib/api-auth";
+import { getProposalForAdmin } from "@/lib/hub/queries";
 import { createPdfDownloadUrl } from "@/lib/r2";
-import { createAdminClient } from "@/lib/supabase/admin";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
-  const user = await getUser();
-  if (!user) return apiError("UNAUTHENTICATED", "Sign in is required", 401);
-  const roles = await getUserRoles(user.id);
-  if (!roles.some((role) => role === "moderator" || role === "admin")) return apiError("FORBIDDEN", "Moderator access is required", 403);
+  const gate = await apiAdmin();
+  if (gate.response) return gate.response;
   const { id } = await params;
-  const admin = createAdminClient();
-  const { data: proposal } = await admin.from("proposals").select("current_file_id").eq("id", id).maybeSingle();
-  if (!proposal?.current_file_id) return apiError("NOT_FOUND", "Proposal PDF not found", 404);
-  const { data: file } = await admin.from("proposal_files").select("r2_key,original_filename").eq("id", proposal.current_file_id).maybeSingle();
-  if (!file) return apiError("NOT_FOUND", "Proposal PDF not found", 404);
-  return NextResponse.redirect(await createPdfDownloadUrl(file.r2_key, file.original_filename), { headers: { "Cache-Control": "private, no-store", "Referrer-Policy": "no-referrer", "X-Content-Type-Options": "nosniff" } });
+  if (!/^[0-9a-f-]{36}$/i.test(id)) return apiError("NOT_FOUND", "Proposal not found", 404);
+  const proposal = await getProposalForAdmin(id);
+  if (!proposal?.file_key) return apiError("NOT_FOUND", "No file", 404);
+  const url = await createPdfDownloadUrl(proposal.file_key, `${proposal.slug}.pdf`);
+  return NextResponse.redirect(url, { status: 302, headers: { "Cache-Control": "private, no-store" } });
 }

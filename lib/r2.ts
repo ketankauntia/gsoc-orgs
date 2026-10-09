@@ -43,8 +43,17 @@ async function gatewayRequest(method: "PUT" | "GET" | "HEAD" | "DELETE", key: st
   return response;
 }
 
-export function newQuarantineKey(userId: string) {
-  return `quarantine/${userId}/${randomUUID()}.pdf`;
+export function newQuarantineKey(proposalId: string) {
+  return `quarantine/${proposalId}/${randomUUID()}.pdf`;
+}
+
+/** The single stored file of a proposal; every replacement overwrites it. */
+export function proposalFileKey(proposalId: string) {
+  return `proposals/${proposalId}.pdf`;
+}
+
+export function isQuarantineKeyFor(key: string, proposalId: string) {
+  return new RegExp(`^quarantine/${proposalId}/[0-9a-f-]{36}\\.pdf$`).test(key);
 }
 
 export async function createPdfUploadUrl(key: string) {
@@ -85,11 +94,28 @@ export async function validateQuarantinedPdf(key: string): Promise<ValidatedPdf>
   };
 }
 
-export async function promotePdf(quarantineKey: string, proposalId: string, fileId: string, bytes: Uint8Array) {
-  const destinationKey = `proposals/${proposalId}/${fileId}.pdf`;
+/** Copies a validated upload over the proposal's single file and removes the upload. */
+export async function promoteProposalPdf(quarantineKey: string, proposalId: string, bytes: Uint8Array) {
+  const destinationKey = proposalFileKey(proposalId);
   await gatewayRequest("PUT", destinationKey, { body: Uint8Array.from(bytes).buffer, contentType: PROPOSAL_PDF_MIME });
-  await gatewayRequest("DELETE", quarantineKey);
+  await gatewayRequest("DELETE", quarantineKey).catch(() => undefined);
   return destinationKey;
+}
+
+/**
+ * Text per page for the personal-data scan and later aggregate analysis.
+ * "failed" means there is too little text to scan (usually a scanned PDF), so
+ * a person must confirm the redaction instead.
+ */
+export async function extractPdfText(bytes: Uint8Array): Promise<{ status: "ok" | "failed"; pages: string[] }> {
+  try {
+    const { extractText } = await import("unpdf");
+    const { text } = await extractText(Uint8Array.from(bytes), { mergePages: false });
+    const pages = text.map((page) => page.replace(/\s+/g, " ").trim());
+    return { status: pages.join(" ").length >= 200 ? "ok" : "failed", pages };
+  } catch {
+    return { status: "failed", pages: [] };
+  }
 }
 
 export async function deleteR2Object(key: string) {

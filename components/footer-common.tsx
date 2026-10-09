@@ -35,7 +35,7 @@ export const FOOTER_NAVIGATION_ITEMS = [
     description: "Learn from past contributors",
     items: [
       { title: "Accepted proposals", href: "/proposals" },
-      { title: "Share your proposal", href: "/account/proposals/new" },
+      { title: "Claim your project", href: "/account/claim" },
       { title: "Contributor blogs", href: "/contributor-blogs" },
       { title: "Blog and guides", href: "/blog" },
       { title: "Sign in", href: "/login" },

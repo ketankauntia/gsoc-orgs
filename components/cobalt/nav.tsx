@@ -18,8 +18,7 @@ import {
   IconUserCircle,
   IconX,
 } from "@tabler/icons-react";
-import { createClient } from "@/lib/supabase/client";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { authClient } from "@/lib/neon-auth/client";
 
 export const CURRENT_EDITION = "/yearly/google-summer-of-code-2026";
 
@@ -100,18 +99,11 @@ export function PrimaryNav() {
 }
 
 function useSignedIn() {
-  const [signedIn, setSignedIn] = useState(false);
-  useEffect(() => {
-    if (!isSupabaseConfigured()) return;
-    const supabase = createClient();
-    void supabase.auth.getUser().then(({ data }) => setSignedIn(Boolean(data.user)));
-    const { data } = supabase.auth.onAuthStateChange((_event, session) => setSignedIn(Boolean(session?.user)));
-    return () => data.subscription.unsubscribe();
-  }, []);
-  return signedIn;
+  const { data } = authClient.useSession();
+  return Boolean(data?.user);
 }
 
-/** Sign in / Account link (Supabase session in the browser). */
+/** Sign in / Account link (Neon Auth session in the browser). */
 export function AuthLink() {
   const signedIn = useSignedIn();
   return (
