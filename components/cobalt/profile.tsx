@@ -312,7 +312,7 @@ function ProjectItem({ project }: { project: { t: string; c: string | null; m: s
   return (
     <li className="cb-project">
       <div className="cb-project-main">
-        <h3>{project.href ? <Link href={project.href} className="cb-project-title">{project.t}</Link> : project.t}</h3>
+        <h3>{project.href ? <Link href={project.href} prefetch={false} className="cb-project-title">{project.t}</Link> : project.t}</h3>
         <p className="cb-project-people">
           <span>{project.c ?? "Contributor not listed"}</span>
           {project.m.length ? <span>Mentored by {project.m.slice(0, 3).join(", ")}{project.m.length > 3 ? ` +${project.m.length - 3}` : ""}</span> : null}
@@ -320,8 +320,8 @@ function ProjectItem({ project }: { project: { t: string; c: string | null; m: s
         {project.d ? <p className="cb-project-desc">{project.d}</p> : null}
       </div>
       <div className="cb-project-links">
-        {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
-        {project.g ? <a href={project.g} target="_blank" rel="noreferrer noopener">{workProductShortLabel(project.g)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+        {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">Project</a> : null}
+        {project.g ? <a href={project.g} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">{workProductShortLabel(project.g)}</a> : null}
       </div>
     </li>
   );

@@ -3,13 +3,12 @@ import Link from "next/link";
 import { IconArrowUpRight, IconBrandFacebook, IconBrandGithub, IconBrandLinkedin, IconBrandPinterest, IconBrandX } from "@tabler/icons-react";
 import { FOOTER_NAVIGATION_ITEMS, SOCIAL_LINKS } from "@/components/footer-common";
 import { ShortlistMenu } from "./controls";
-import { searchIndex } from "./data";
 import { AuthLink, MobileMenu, PrimaryNav } from "./nav";
 import { CobaltShell, SearchButton, ThemeToggle } from "./shell";
 
 function Brand() {
   return (
-    <Link href="/" className="cb-brand" aria-label="GSoC Organizations Guide home">
+    <Link href="/" prefetch={false} className="cb-brand" aria-label="GSoC Organizations Guide home">
       <Image className="cb-brand-mark" src="/gsoc-org-logo-mark.webp" alt="" width={30} height={30} priority />
       <span className="cb-brand-name">GSoC Organizations <small>/ Guide</small></span>
     </Link>
@@ -80,7 +79,7 @@ function Footer() {
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   return (
     <div className="cb">
-      <CobaltShell index={searchIndex()}>
+      <CobaltShell>
         <Header />
         <div id="cb-main" className="cb-main">{children}</div>
         <Footer />

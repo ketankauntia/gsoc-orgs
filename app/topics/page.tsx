@@ -3,7 +3,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { loadTopicsIndexData } from "@/lib/topics-page-types";
 import { TopicsIndexView } from "@/components/cobalt/views/topics";
 
-export const revalidate = 3600; // 1 hour
+export const revalidate = 2592000; // 30 days
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({

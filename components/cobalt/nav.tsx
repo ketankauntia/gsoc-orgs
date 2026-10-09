@@ -18,7 +18,6 @@ import {
   IconUserCircle,
   IconX,
 } from "@tabler/icons-react";
-import { authClient } from "@/lib/neon-auth/client";
 
 export const CURRENT_EDITION = "/yearly/google-summer-of-code-2026";
 
@@ -98,18 +97,12 @@ export function PrimaryNav() {
   );
 }
 
-function useSignedIn() {
-  const { data } = authClient.useSession();
-  return Boolean(data?.user);
-}
-
-/** Sign in / Account link (Neon Auth session in the browser). */
+/** Account link. Signed-out visitors are sent on to /login by the proxy, so pages never load the auth client. */
 export function AuthLink() {
-  const signedIn = useSignedIn();
   return (
-    <Link href={signedIn ? "/account" : "/login"} className="cb-button cb-button-ink cb-auth-link">
+    <Link href="/account" prefetch={false} className="cb-button cb-button-ink cb-auth-link">
       <IconUserCircle size={16} stroke={1.9} aria-hidden />
-      {signedIn ? "Account" : "Sign in"}
+      Account
     </Link>
   );
 }
@@ -118,7 +111,6 @@ export function AuthLink() {
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = useCloseOnNavigate(setOpen);
-  const signedIn = useSignedIn();
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;
@@ -140,8 +132,8 @@ export function MobileMenu() {
           <p className="cb-mobile-title">Learn</p>
           <MenuLinks items={learn} pathname={pathname} />
           <div className="cb-mobile-foot">
-            <Link href={signedIn ? "/account" : "/login"} className="cb-button cb-button-outline">
-              <IconUserCircle size={16} stroke={1.75} aria-hidden /> {signedIn ? "Account" : "Sign in"}
+            <Link href="/account" prefetch={false} className="cb-button cb-button-outline">
+              <IconUserCircle size={16} stroke={1.75} aria-hidden /> Account
             </Link>
             <a href="https://github.com/ketankauntia/gsoc-orgs/" target="_blank" rel="noreferrer noopener" className="cb-button cb-button-outline">
               GitHub <IconArrowUpRight size={14} stroke={2} aria-hidden />

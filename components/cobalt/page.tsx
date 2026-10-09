@@ -91,7 +91,7 @@ export function OrgTable({ orgs, maxCurrent, caption }: { orgs: CobaltOrg[]; max
                 <div className="cb-org-cell">
                   <Logo org={org} size="md" />
                   <div>
-                    <Link href={`/organizations/${org.slug}`} className="cb-row-link">{org.name}</Link>
+                    <Link href={`/organizations/${org.slug}`} prefetch={false} className="cb-row-link">{org.name}</Link>
                     <span className="cb-org-meta">
                       <span className="cb-truncate">{org.category}</span>
                       {org.isNew ? <span className="cb-badge" data-tone="accent">New</span> : !org.inCurrent ? <span className="cb-badge">Last in {org.lastYear}</span> : null}
@@ -139,7 +139,7 @@ export function AZList({ id, eyebrow, title, items }: { id: string; eyebrow: str
           {[...groups.entries()].map(([letter, list]) => (
             <div key={letter} id={`${id}-${letter}`} className="cb-az-group">
               <p>{letter}</p>
-              <ul>{list.map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}</ul>
+              <ul>{list.map((item) => <li key={item.href}><Link href={item.href} prefetch={false}>{item.label}</Link></li>)}</ul>
             </div>
           ))}
         </div>

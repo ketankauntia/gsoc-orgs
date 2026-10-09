@@ -190,7 +190,7 @@ export function CobaltDirectory({ params }: { params: SearchParams }) {
                       <Logo org={org} size="lg" />
                       <SaveButton slug={org.slug} name={org.name} />
                     </div>
-                    <h2><Link href={profile(org.slug)} className="cb-row-link">{org.name}</Link></h2>
+                    <h2><Link href={profile(org.slug)} prefetch={false} className="cb-row-link">{org.name}</Link></h2>
                     <p className="cb-org-card-meta">{org.category}{org.isNew ? <span className="cb-badge" data-tone="accent">New in {CURRENT_YEAR}</span> : null}</p>
                     <p className="cb-org-card-desc">{org.description.split(/\n\s*\n/)[0]}</p>
                     <dl className="cb-org-card-stats">

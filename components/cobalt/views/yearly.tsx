@@ -350,7 +350,7 @@ export function YearDetailView({ data, work }: { data: YearlyPageData; work: Con
                 <li key={entry.slug} className="cb-yr-org">
                   <Logo org={org ?? { name: entry.name, logo: null }} size="sm" />
                   <div>
-                    <Link href={`/organizations/${entry.slug}`} className="cb-row-link">{entry.name}</Link>
+                    <Link href={`/organizations/${entry.slug}`} prefetch={false} className="cb-row-link">{entry.name}</Link>
                     <small>{org ? firstTimerNote(org, year) : "New this year"}</small>
                   </div>
                   <span className="cb-yr-org-n" title={`Contributors in ${year}`}>{org ? fmt(org.slots[index]) : "–"}</span>
@@ -370,7 +370,7 @@ export function YearDetailView({ data, work }: { data: YearlyPageData; work: Con
                 <li key={entry.slug} className="cb-yr-org" data-withdrawn={withdrawn || undefined}>
                   <Logo org={org ?? { name: entry.name, logo: null }} size="xs" />
                   <div>
-                    <Link href={`/organizations/${entry.slug}`} className="cb-row-link">{entry.name}</Link>
+                    <Link href={`/organizations/${entry.slug}`} prefetch={false} className="cb-row-link">{entry.name}</Link>
                   </div>
                   {withdrawn ? <span className="cb-badge">Withdrawn</span> : <span className="cb-yr-org-n" title={`Projects in ${year}`}>{fmt(entry.project_count)}</span>}
                 </li>
@@ -394,7 +394,7 @@ export function YearDetailView({ data, work }: { data: YearlyPageData; work: Con
                     </p>
                   </div>
                   <div className="cb-project-links">
-                    {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+                    {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">Project</a> : null}
                   </div>
                 </li>
               ))}

@@ -8,9 +8,43 @@ import type { SearchIndex } from "./data";
 import { useTheme } from "next-themes";
 
 /* ------------------------------------------------------------------ */
-/* Shell: search index, ⌘K dialog, theme and the page's one tooltip     */
+/* Search index: fetched on first use, then kept for the session       */
 
-interface ShellValue { index: SearchIndex; openSearch: () => void }
+interface IndexState { status: "idle" | "loading" | "ready" | "error"; index: SearchIndex | null }
+const IDLE: IndexState = { status: "idle", index: null };
+let indexState = IDLE;
+const indexListeners = new Set<() => void>();
+
+function setIndexState(next: IndexState) {
+  indexState = next;
+  for (const listener of indexListeners) listener();
+}
+
+function subscribeIndex(listener: () => void) {
+  indexListeners.add(listener);
+  return () => { indexListeners.delete(listener); };
+}
+
+/** Starts loading the search index once (again after a failure). Cheap to call on hover and focus. */
+export function preloadSearchIndex() {
+  if (indexState.status === "loading" || indexState.status === "ready") return;
+  setIndexState({ status: "loading", index: null });
+  fetch("/organizations/search-index.json")
+    .then((response) => (response.ok ? response.json() : Promise.reject(new Error(`Search index: ${response.status}`))))
+    .then((index: SearchIndex) => setIndexState({ status: "ready", index }), () => setIndexState({ status: "error", index: null }));
+}
+
+/** The search index; `load` starts fetching it. */
+export function useSearchIndex(load: boolean) {
+  const state = useSyncExternalStore(subscribeIndex, () => indexState, () => IDLE);
+  useEffect(() => { if (load) preloadSearchIndex(); }, [load]);
+  return state;
+}
+
+/* ------------------------------------------------------------------ */
+/* Shell: ⌘K dialog, theme and the page's one tooltip                  */
+
+interface ShellValue { openSearch: () => void }
 const ShellContext = createContext<ShellValue | null>(null);
 
 export function useShell() {
@@ -20,11 +54,12 @@ export function useShell() {
 }
 
 /**
- * Wraps every Cobalt page. Sends the search index once, owns the ⌘K dialog, and shows
- * one tooltip for every element with `data-tip` (title) and `data-tip-rows`
- * ("key|label|value" per line; key a = accent, m = muted, - = none).
+ * Wraps every Cobalt page. Owns the ⌘K dialog and shows one tooltip for every element with
+ * `data-tip` (title) and `data-tip-rows` ("key|label|value" per line; key a = accent,
+ * m = muted, - = none). Instead of rows, an element can carry `data-tip-values`
+ * ("v0|v1|…") that fill the `{0}`, `{1}`… of the closest `data-tip-template`.
  */
-export function CobaltShell({ index, children }: { index: SearchIndex; children: React.ReactNode }) {
+export function CobaltShell({ children }: { children: React.ReactNode }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const tipRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -61,7 +96,9 @@ export function CobaltShell({ index, children }: { index: SearchIndex; children:
       title.className = "cb-tip-title";
       title.textContent = target.dataset.tip ?? "";
       tip.append(title);
-      for (const line of (target.dataset.tipRows ?? "").split("\n").filter(Boolean)) {
+      const values = target.dataset.tipValues?.split("|");
+      const rows = values ? (target.closest<HTMLElement>("[data-tip-template]")?.dataset.tipTemplate ?? "").replace(/\{(\d+)\}/g, (_, i: string) => values[Number(i)] ?? "") : target.dataset.tipRows;
+      for (const line of (rows ?? "").split("\n").filter(Boolean)) {
         const [key, label, value] = line.split("|");
         const row = document.createElement("p");
         row.className = "cb-tip-row";
@@ -122,7 +159,7 @@ export function CobaltShell({ index, children }: { index: SearchIndex; children:
     };
   }, []);
 
-  const value = useMemo(() => ({ index, openSearch }), [index, openSearch]);
+  const value = useMemo(() => ({ openSearch }), [openSearch]);
 
   return (
     <ShellContext.Provider value={value}>
@@ -159,7 +196,7 @@ export function ThemeToggle() {
 export function SearchButton({ label = "Search" }: { label?: string }) {
   const { openSearch } = useShell();
   return (
-    <button type="button" className="cb-search-button" onClick={openSearch} aria-label="Search organizations (Ctrl K)">
+    <button type="button" className="cb-search-button" onClick={openSearch} onPointerEnter={preloadSearchIndex} onFocus={preloadSearchIndex} aria-label="Search organizations (Ctrl K)">
       <IconSearch size={16} stroke={1.75} aria-hidden />
       <span>{label}</span>
       <kbd>⌘K</kbd>
@@ -167,13 +204,14 @@ export function SearchButton({ label = "Search" }: { label?: string }) {
   );
 }
 
-interface Option { id: string; href: string; kind: "org" | "tech" | "topic" | "post" | "query"; label: string; meta: string; slug?: string; logo?: boolean; dark?: boolean }
+interface Option { id: string; href: string; kind: "org" | "tech" | "topic" | "post" | "query"; label: string; meta: string; slug?: string; logo?: string | null; dark?: boolean }
 
-function useResults(query: string): { groups: Array<{ title: string; options: Option[] }>; flat: Option[] } {
-  const { index } = useShell();
+function useResults(index: SearchIndex | null, query: string): { groups: Array<{ title: string; options: Option[] }>; flat: Option[] } {
   return useMemo(() => {
     const q = query.trim().toLocaleLowerCase("en");
     const directory = `/organizations`;
+    const all: Option = { id: "query", href: `${directory}?q=${encodeURIComponent(query.trim())}`, kind: "query", label: `Search every organization for “${query.trim()}”`, meta: "All 522 since 2016" };
+    if (!index) return q ? { groups: [{ title: "", options: [all] }], flat: [all] } : { groups: [], flat: [] };
     const orgOption = (org: SearchIndex["orgs"][number]): Option => ({
       id: `org-${org.s}`,
       href: `/organizations/${org.s}`,
@@ -218,7 +256,6 @@ function useResults(query: string): { groups: Array<{ title: string; options: Op
       .filter((post) => post.t.toLocaleLowerCase("en").includes(q))
       .slice(0, 3)
       .map((post) => ({ id: `post-${post.s}`, href: `/blog/post/${post.s}`, kind: "post", label: post.t, meta: `Article · ${post.c}` }));
-    const all: Option = { id: "query", href: `${directory}?q=${encodeURIComponent(query.trim())}`, kind: "query", label: `Search every organization for “${query.trim()}”`, meta: "All 522 since 2016" };
     const groups = [
       { title: "Organizations", options: orgs },
       { title: "Technologies", options: tech },
@@ -239,10 +276,11 @@ export function SearchPanel({ variant, onDone, placeholder }: { variant: "hero" 
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(variant === "dialog");
   const [active, setActive] = useState(0);
-  const { groups, flat } = useResults(query);
+  const showList = variant === "dialog" || open;
+  const { status, index } = useSearchIndex(showList);
+  const { groups, flat } = useResults(index, query);
   const listId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
-  const showList = variant === "dialog" || open;
   const activeIndex = Math.min(active, flat.length - 1);
 
   useEffect(() => {
@@ -270,6 +308,7 @@ export function SearchPanel({ variant, onDone, placeholder }: { variant: "hero" 
         role="search"
         action={`/organizations`}
         onSubmit={(event) => { event.preventDefault(); go(); }}
+        onPointerEnter={preloadSearchIndex}
       >
         <IconSearch className="cb-search-icon" size={variant === "hero" ? 20 : 18} stroke={1.75} aria-hidden />
         <input
@@ -300,41 +339,44 @@ export function SearchPanel({ variant, onDone, placeholder }: { variant: "hero" 
         )}
       </form>
       {showList ? (
-        <div className="cb-search-results" id={listId} role="listbox" aria-label="Suggestions">
-          {groups.map((group) => (
-            <div key={group.title || "all"} role="group" aria-label={group.title || "Search everything"} className="cb-search-group">
-              {group.title ? <p className="cb-search-group-title" aria-hidden="true">{group.title}</p> : null}
-              {group.options.map((option) => {
-                const position = flat.indexOf(option);
-                return (
-                  <div
-                    key={option.id}
-                    id={`${listId}-${option.id}`}
-                    role="option"
-                    aria-selected={position === activeIndex}
-                    className="cb-search-option"
-                    data-kind={option.kind}
-                    onPointerMove={() => setActive(position)}
-                    onPointerDown={(event) => event.preventDefault()}
-                    onClick={() => go(option)}
-                  >
-                    {option.kind === "org" ? (
-                      <span className="cb-logo cb-logo-sm" data-dark={option.dark || undefined} aria-hidden="true">
-                        {option.logo ? <Image src={`/logos/${option.slug}.webp`} alt="" width={28} height={28} /> : option.label.slice(0, 2)}
+        <div className="cb-search-results">
+          {!index ? <p className="cb-search-status" role="status">{status === "error" ? "Suggestions are unavailable. Press Enter to search the directory." : "Loading suggestions…"}</p> : null}
+          <div id={listId} role="listbox" aria-label="Suggestions">
+            {groups.map((group) => (
+              <div key={group.title || "all"} role="group" aria-label={group.title || "Search everything"} className="cb-search-group">
+                {group.title ? <p className="cb-search-group-title" aria-hidden="true">{group.title}</p> : null}
+                {group.options.map((option) => {
+                  const position = flat.indexOf(option);
+                  return (
+                    <div
+                      key={option.id}
+                      id={`${listId}-${option.id}`}
+                      role="option"
+                      aria-selected={position === activeIndex}
+                      className="cb-search-option"
+                      data-kind={option.kind}
+                      onPointerMove={() => setActive(position)}
+                      onPointerDown={(event) => event.preventDefault()}
+                      onClick={() => go(option)}
+                    >
+                      {option.kind === "org" ? (
+                        <span className="cb-logo cb-logo-sm" data-dark={option.dark || undefined} aria-hidden="true">
+                          {option.logo ? <Image src={option.logo} alt="" width={28} height={28} /> : option.label.slice(0, 2)}
+                        </span>
+                      ) : (
+                        <span className="cb-search-glyph" aria-hidden="true">{option.kind === "tech" ? "</>" : option.kind === "topic" ? "#" : option.kind === "post" ? <IconFileText size={14} stroke={2} /> : <IconSearch size={14} stroke={2} />}</span>
+                      )}
+                      <span className="cb-search-copy">
+                        <strong>{option.label}</strong>
+                        <small>{option.meta}</small>
                       </span>
-                    ) : (
-                      <span className="cb-search-glyph" aria-hidden="true">{option.kind === "tech" ? "</>" : option.kind === "topic" ? "#" : option.kind === "post" ? <IconFileText size={14} stroke={2} /> : <IconSearch size={14} stroke={2} />}</span>
-                    )}
-                    <span className="cb-search-copy">
-                      <strong>{option.label}</strong>
-                      <small>{option.meta}</small>
-                    </span>
-                    <IconCornerDownLeft className="cb-search-enter" size={14} stroke={2} aria-hidden />
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+                      <IconCornerDownLeft className="cb-search-enter" size={14} stroke={2} aria-hidden />
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </div>
       ) : null}
     </div>

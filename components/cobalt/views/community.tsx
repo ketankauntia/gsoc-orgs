@@ -4,8 +4,8 @@ import {
   IconArrowLeft, IconArrowRight, IconArrowUpRight, IconBook, IconBrandGithub, IconCode, IconDownload, IconFileText,
   IconMail, IconPlugConnectedX, IconSearch, IconShieldCheck, IconX,
 } from "@tabler/icons-react";
-import { GoogleSignIn } from "@/components/auth/google-sign-in";
 import { SOCIAL_LINKS } from "@/components/footer-common";
+import { USER_LINK_REL } from "@/lib/hub/client";
 import type { ChangelogEntry } from "@/lib/changelog-data";
 import type { ContributorBlog } from "@/lib/contributor-blogs";
 import type { ArchiveFacets, ArchiveResult, ArchiveSearchResponse } from "@/lib/proposals/archive-search";
@@ -308,7 +308,7 @@ export function ProposalDetailView({ proposal, jsonLd }: { proposal: PublicPropo
             <article className="cb-card">
               <Eyebrow>SHARED BY</Eyebrow>
               <div className="cb-cm-side-person">
-                {proposal.avatar_r2_key ? <Image src={`/api/v2/proposals/${proposal.id}/avatar`} width={44} height={44} alt="" unoptimized /> : null}
+                {proposal.avatar_url ? <Image src={proposal.avatar_url} width={44} height={44} alt="" unoptimized /> : null}
                 <div>
                   <p className="cb-cm-side-name">{proposal.display_name}</p>
                   <span>Archived contributor: {proposal.archived_contributor_name}</span>
@@ -317,7 +317,7 @@ export function ProposalDetailView({ proposal, jsonLd }: { proposal: PublicPropo
               {proposal.bio ? <p className="cb-cm-side-text">{proposal.bio}</p> : null}
               {proposal.profile_links.length ? (
                 <div className="cb-tags cb-cm-side-tags">
-                  {proposal.profile_links.map((link) => <a key={`${link.platform}-${link.url}`} href={link.url} target="_blank" rel="noopener noreferrer" className="cb-tag">{link.label || link.platform}<IconArrowUpRight size={12} stroke={2} aria-hidden /></a>)}
+                  {proposal.profile_links.map((link) => <a key={`${link.platform}-${link.url}`} href={link.url} target="_blank" rel={USER_LINK_REL} className="cb-tag">{link.label || link.platform}<IconArrowUpRight size={12} stroke={2} aria-hidden /></a>)}
                 </div>
               ) : null}
             </article>
@@ -364,7 +364,7 @@ export function ContributorBlogsView({ params, blogs, facets }: { params: { year
         crumbs={[{ label: "Home", href: "/" }, { label: "Contributor blogs" }]}
         eyebrow="CONTRIBUTOR BLOGS"
         title={<>Project blogs <span className="cb-serif">written by GSoC contributors.</span></>}
-        lede="Weekly updates, technical decisions and final reports from accepted contributors, in their own words. Contributors link their own posts to their archived project; posts marked Not verified wait for us to confirm the author."
+        lede="Weekly updates, technical decisions and final reports from accepted contributors, in their own words. Contributors link their own posts to their archived project, and posts appear once we confirm the author."
         aside={<Link href="/proposals" className="cb-button cb-button-outline">Read proposals <IconArrowRight size={16} stroke={2} aria-hidden /></Link>}
       >
         {facets.years.length ? (
@@ -386,12 +386,12 @@ export function ContributorBlogsView({ params, blogs, facets }: { params: { year
               {blogs.map((blog) => (
                 <li key={blog.id}>
                   <article className="cb-post-card cb-cm-card">
-                    <p className="cb-post-meta"><span>GSoC {blog.year}</span><span>{POST_KIND_LABELS[blog.kind] ?? "Post"}</span>{blog.verified ? null : <span className="cb-badge">Not verified</span>}</p>
-                    <h3><a href={blog.url} target="_blank" rel="noopener noreferrer" className="cb-row-link">{blog.project_title}</a></h3>
+                    <p className="cb-post-meta"><span>GSoC {blog.year}</span><span>{POST_KIND_LABELS[blog.kind] ?? "Post"}</span></p>
+                    <h3><a href={blog.url} target="_blank" rel={USER_LINK_REL} className="cb-row-link">{blog.project_title}</a></h3>
                     <p className="cb-cm-card-org"><OrgLogo slug={blog.organization_slug} name={blog.organization_name} size="xs" /><span className="cb-truncate">{blog.organization_name}</span></p>
                     <p className="cb-cm-card-foot"><span>By</span> {blog.contributor_name}</p>
                     <div className="cb-cm-card-links">
-                      <a href={blog.url} target="_blank" rel="noopener noreferrer" className="cb-button cb-button-ink cb-button-sm"><IconBook size={15} stroke={1.75} aria-hidden /><span className="cb-truncate">{blog.title || "Read the blog"}</span><IconArrowUpRight size={14} stroke={2} aria-hidden /></a>
+                      <a href={blog.url} target="_blank" rel={USER_LINK_REL} className="cb-button cb-button-ink cb-button-sm"><IconBook size={15} stroke={1.75} aria-hidden /><span className="cb-truncate">{blog.title || "Read the blog"}</span><IconArrowUpRight size={14} stroke={2} aria-hidden /></a>
                       {blog.code_url ? <a href={blog.code_url} target="_blank" rel="noopener noreferrer" className="cb-button cb-button-outline cb-button-sm"><IconCode size={15} stroke={1.75} aria-hidden />Code</a> : null}
                     </div>
                   </article>
@@ -624,24 +624,6 @@ export function LegalView({ title, updated, intro, sections, closing }: { title:
 /* ================================================================== */
 /* Sign in, 404, signed-in areas                                       */
 
-export function LoginView({ configured, next, error }: { configured: boolean; next: string; error: "oauth" | "suspended" | null }) {
-  return (
-    <main className="cb-cm-center">
-      <div className="cb-hero-grid" aria-hidden="true" />
-      <div className="cb-card cb-cm-login">
-        <Eyebrow>CONTRIBUTORS AND MENTORS</Eyebrow>
-        <h1>Claim your GSoC project</h1>
-        <p className="cb-cm-login-lede">Sign in with Google to claim the project you contributed to or mentored, publish your accepted proposal and link your progress posts. Your email stays private.</p>
-        <div className="cb-cm-login-action">
-          {error === "suspended" ? null : configured ? <GoogleSignIn next={next} /> : <p className="cb-cm-notice"><IconPlugConnectedX size={18} stroke={1.75} aria-hidden /><span>Sign-in is not available right now.</span></p>}
-        </div>
-        {error === "oauth" ? <p role="alert" className="cb-cm-alert">Google sign-in could not be completed. Please try again.</p> : null}
-        {error === "suspended" ? <p role="alert" className="cb-cm-alert">This account is suspended. <Link className="cb-inline-link" href="/contact">Contact us</Link> if you think this is a mistake.</p> : null}
-        <p className="cb-cm-login-fine">By continuing, you agree to the <Link className="cb-inline-link" href="/terms-and-conditions">terms</Link> and acknowledge the <Link className="cb-inline-link" href="/privacy-policy">privacy policy</Link>.</p>
-      </div>
-    </main>
-  );
-}
 
 export function NotFoundView() {
   return (

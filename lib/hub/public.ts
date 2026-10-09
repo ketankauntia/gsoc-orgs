@@ -13,9 +13,11 @@ export type PublicProfile = {
   github_username: string | null; x_username: string | null; medium_url: string | null; created_at: string; history: PublicHistoryItem[];
 };
 
+/** Handles are stored in lowercase; any casing finds the profile (its `handle` is the canonical one). */
 export const getPublicProfile = cache(async (handle: string): Promise<PublicProfile | null> => {
-  if (!isDatabaseConfigured() || !/^[a-z0-9-]{3,30}$/.test(handle)) return null;
-  const rows = await db()`select to_jsonb(p) as profile from public.public_profiles p where p.handle = ${handle}`;
+  const key = handle.toLowerCase();
+  if (!isDatabaseConfigured() || !/^[a-z0-9-]{3,30}$/.test(key)) return null;
+  const rows = await db()`select to_jsonb(p) as profile from public.public_profiles p where p.handle = ${key}`;
   return (rows[0]?.profile as PublicProfile | undefined) ?? null;
 });
 
@@ -37,7 +39,11 @@ const EMPTY: ContributorWork = { proposals: [], posts: [], people: [], proposalC
 
 type Scope = { project?: string; organization?: string; year?: number };
 
-/** Published proposals, visible posts and verified people for one project, organization or year. Empty when the database is unavailable. */
+/**
+ * Published proposals, visible posts and verified people for one project, organization or year.
+ * Empty without a database, or when it fails during `next build`. At runtime a failure throws, so
+ * a cached page keeps its last good render instead of caching an empty section for 30 days.
+ */
 async function loadContributorWork(scope: Scope, limits: { proposals: number; posts: number }): Promise<ContributorWork> {
   if (!isDatabaseConfigured()) return EMPTY;
   const project = scope.project ?? null;
@@ -50,7 +56,7 @@ async function loadContributorWork(scope: Scope, limits: { proposals: number; po
         `select slug, project_external_id, project_title, year, organization_slug, organization_name,
            coalesce(owner_display_name, archived_name) as author, file_pages as pages, published_at, verified, author_published
          from public.public_proposals
-         where ($1::text is null or project_external_id = $1) and ($2::text is null or organization_slug = $2) and ($3::int is null or year = $3)
+         where ($1::text is null or project_external_id = $1) and ($2::text is null or lower(organization_slug) = lower($2)) and ($3::int is null or year = $3)
          order by published_at desc limit $4`,
         [project, organization, year, limits.proposals],
       ),
@@ -58,7 +64,7 @@ async function loadContributorWork(scope: Scope, limits: { proposals: number; po
         `select id, url, title, kind, published_on::text as published_on, verified, archived_name as author,
            project_external_id, project_title, year, organization_slug, organization_name
          from public.public_posts
-         where ($1::text is null or project_external_id = $1) and ($2::text is null or organization_slug = $2) and ($3::int is null or year = $3)
+         where ($1::text is null or project_external_id = $1) and ($2::text is null or lower(organization_slug) = lower($2)) and ($3::int is null or year = $3)
          order by published_on desc nulls last, created_at desc limit $4`,
         [project, organization, year, limits.posts],
       ),
@@ -67,8 +73,8 @@ async function loadContributorWork(scope: Scope, limits: { proposals: number; po
         : Promise.resolve([]),
       sql.query(
         `select
-           (select count(*) from public.public_proposals where ($1::text is null or project_external_id = $1) and ($2::text is null or organization_slug = $2) and ($3::int is null or year = $3))::int as proposals,
-           (select count(*) from public.public_posts where ($1::text is null or project_external_id = $1) and ($2::text is null or organization_slug = $2) and ($3::int is null or year = $3))::int as posts`,
+           (select count(*) from public.public_proposals where ($1::text is null or project_external_id = $1) and ($2::text is null or lower(organization_slug) = lower($2)) and ($3::int is null or year = $3))::int as proposals,
+           (select count(*) from public.public_posts where ($1::text is null or project_external_id = $1) and ($2::text is null or lower(organization_slug) = lower($2)) and ($3::int is null or year = $3))::int as posts`,
         [project, organization, year],
       ),
     ]);
@@ -80,7 +86,8 @@ async function loadContributorWork(scope: Scope, limits: { proposals: number; po
       postCount: Number(counts[0]?.posts ?? 0),
     };
   } catch (error) {
-    console.error("[contributor work] database unavailable", error instanceof Error ? error.message : error);
+    if (process.env.NEXT_PHASE !== "phase-production-build") throw error;
+    console.error("[contributor work] database unavailable during build", error instanceof Error ? error.message : error);
     return EMPTY;
   }
 }

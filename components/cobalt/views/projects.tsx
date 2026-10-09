@@ -100,8 +100,8 @@ function ExternalLinks({ url, code }: { url: string | null; code: string | null 
   if (!url && !code) return null;
   return (
     <div className="cb-project-links">
-      {url ? <a href={url} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
-      {code ? <a href={code} target="_blank" rel="noreferrer noopener">{workProductShortLabel(code)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+      {url ? <a href={url} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">Project</a> : null}
+      {code ? <a href={code} target="_blank" rel="noreferrer noopener" className="cb-arrow-out">{workProductShortLabel(code)}</a> : null}
     </div>
   );
 }
@@ -111,7 +111,7 @@ function ProjectRow({ project, archive, withSummary = true }: { project: Project
   return (
     <li className="cb-project">
       <div className="cb-project-main">
-        <h3><Link href={`/organizations/${project.org_slug}/projects/${project.project_id}`} className="cb-project-title">{clean(project.project_title)}</Link></h3>
+        <h3><Link href={`/organizations/${project.org_slug}/projects/${project.project_id}`} prefetch={false} className="cb-project-title">{clean(project.project_title)}</Link></h3>
         <p className="cb-project-people">
           <span>{clean(project.contributor) || "Contributor not listed"}</span>
           {project.mentors?.length ? <span>Mentored by {project.mentors.slice(0, 3).join(", ")}{project.mentors.length > 3 ? ` +${project.mentors.length - 3}` : ""}</span> : null}

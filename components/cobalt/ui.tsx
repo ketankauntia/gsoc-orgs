@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { initials } from "./labels";
 import type { TreemapGroup } from "./data";
+import type { Rect as TreemapRect } from "./treemap";
 
 export const fmt = (value: number) => value.toLocaleString("en-US");
 export const plural = (count: number, one: string, many = `${one}s`) => `${fmt(count)} ${count === 1 ? one : many}`;
@@ -233,40 +234,51 @@ export function Dumbbell({ rows, nowLabel, thenLabel, caption, unit, hrefFor }: 
   );
 }
 
-/** Two treemap layouts (wide and tall); CSS shows the one that fits. */
+const pct = (value: number) => `${Math.round(value * 10000) / 10000}%`;
+
+/** Wide geometry in --x/--y/--w/--h and tall in --tx/--ty/--tw/--th; the stylesheet picks one per breakpoint. */
+function boxes(wide: TreemapRect, tall: TreemapRect = wide) {
+  return { "--x": pct(wide.x), "--y": pct(wide.y), "--w": pct(wide.w), "--h": pct(wide.h), "--tx": pct(tall.x), "--ty": pct(tall.y), "--tw": pct(tall.w), "--th": pct(tall.h) } as React.CSSProperties;
+}
+
+/** One set of tiles carrying both layouts (wide and tall); CSS places them for the screen. */
 export function Treemap({ desktop, mobile, hrefFor, caption }: { desktop: TreemapGroup[]; mobile: TreemapGroup[]; hrefFor: (slug: string) => string; caption: string }) {
-  const layout = (groups: TreemapGroup[], variant: "wide" | "tall") => (
-    <div className={`cb-tm cb-tm-${variant}`}>
-      {groups.map((group) => (
-        <div key={group.category} className="cb-tm-group" style={{ left: `${group.x}%`, top: `${group.y}%`, width: `${group.w}%`, height: `${group.h}%` }}>
-          {group.labelled ? <p className="cb-tm-label"><span className="cb-truncate">{group.category}</span><span>{fmt(group.value)}</span></p> : null}
-        </div>
-      ))}
-      {groups.flatMap((group) => group.tiles).map((tile) => (
-        <Link
-          key={tile.slug}
-          href={hrefFor(tile.slug)}
-          className="cb-tm-tile"
-          data-new={tile.isNew || undefined}
-          style={{ left: `${tile.x}%`, top: `${tile.y}%`, width: `${tile.w}%`, height: `${tile.h}%` }}
-          data-tip={tile.name}
-          data-tip-rows={`${tile.isNew ? "a" : "m"}|Contributors in 2026|${fmt(tile.value)}\n-|Category|${tile.category}\n-|Cycles since 2016|${tile.isNew ? "First time" : fmt(tile.cycles)}`}
-          aria-label={`${tile.name}: ${plural(tile.value, "contributor")} in 2026${tile.isNew ? ", first time in the program" : ""}`}
-        >
-          <span className="cb-tm-inner">
-            {tile.logo ? <Image className="cb-tm-logo" data-dark={tile.logoDark || undefined} src={tile.logo} alt="" width={24} height={24} /> : null}
-            <span className="cb-tm-name">{tile.name}</span>
-            <span className="cb-tm-value">{tile.value}</span>
-          </span>
-        </Link>
-      ))}
-    </div>
-  );
-  const rows = desktop.flatMap((group) => group.tiles).sort((a, b) => b.value - a.value);
+  const tallGroups = new Map(mobile.map((group) => [group.category, group]));
+  const tallTiles = new Map(mobile.flatMap((group) => group.tiles).map((tile) => [tile.slug, tile]));
+  const tiles = desktop.flatMap((group) => group.tiles);
+  const rows = [...tiles].sort((a, b) => b.value - a.value);
   return (
     <figure className="cb-treemap">
-      {layout(desktop, "wide")}
-      {layout(mobile, "tall")}
+      <div className="cb-tm" data-tip-template={"{0}|Contributors in 2026|{1}\n-|Category|{2}\n-|Cycles since 2016|{3}"}>
+        {desktop.map((group) => {
+          const tall = tallGroups.get(group.category);
+          const tallLabel = tall?.labelled ?? group.labelled;
+          return (
+            <div key={group.category} className="cb-tm-group" style={boxes(group, tall)}>
+              {group.labelled || tallLabel ? <p className="cb-tm-label" data-only={group.labelled === tallLabel ? undefined : group.labelled ? "wide" : "tall"}><span className="cb-truncate">{group.category}</span><span>{fmt(group.value)}</span></p> : null}
+            </div>
+          );
+        })}
+        {tiles.map((tile) => (
+          <Link
+            key={tile.slug}
+            href={hrefFor(tile.slug)}
+            prefetch={false}
+            className="cb-tm-tile"
+            data-new={tile.isNew || undefined}
+            style={boxes(tile, tallTiles.get(tile.slug))}
+            data-tip={tile.name}
+            data-tip-values={`${tile.isNew ? "a" : "m"}|${fmt(tile.value)}|${tile.category}|${tile.isNew ? "First time" : fmt(tile.cycles)}`}
+            aria-label={`${tile.name}: ${plural(tile.value, "contributor")} in 2026${tile.isNew ? ", first time in the program" : ""}`}
+          >
+            <span className="cb-tm-inner">
+              {tile.logo ? <Image className="cb-tm-logo" data-dark={tile.logoDark || undefined} src={tile.logo} alt="" width={24} height={24} /> : null}
+              <span className="cb-tm-name">{tile.name}</span>
+              <span className="cb-tm-value">{tile.value}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
       <TableView caption={caption} head={["Organization", "Contributors in 2026", "Category"]} rows={rows.map((tile) => [tile.name, tile.value, tile.category])} />
     </figure>
   );
