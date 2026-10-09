@@ -402,7 +402,7 @@ export function parseFilters(params: SearchParams): CobaltFilters {
     isNew: scalar(params.new) === "1" || scalar(params.firstTimeOnly) === "true",
     cap: list(params.cap).filter((value): value is CapBucket => capBuckets.some((bucket) => bucket.value === value)),
     rec: recordFilters.some((filter) => filter.value === rec) ? rec : "",
-    sort: sortSet ? rawSort : q ? "relevance" : scope === "current" ? "slots" : "total",
+    sort: sortSet ? rawSort : q ? "relevance" : "name",
     sortSet,
     page: Number.isFinite(page) && page > 0 ? page : 1,
     view: scalar(params.view) === "cards" ? "cards" : "table",

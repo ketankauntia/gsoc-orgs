@@ -302,7 +302,7 @@ export async function CobaltProfile({ slug, work }: { slug: string; work: Contri
             </section>
           ) : null}
 
-          <p className="cb-results-note">Data: Google Summer of Code public archive. Contributor counts are accepted projects. Participation history is not a prediction of selection.</p>
+          <p className="cb-results-note">Data: Google Summer of Code public archive. Contributor counts are accepted projects.</p>
         </div>
     </main>
   );
@@ -320,7 +320,7 @@ function ProjectItem({ project }: { project: { t: string; c: string | null; m: s
         {project.d ? <p className="cb-project-desc">{project.d}</p> : null}
       </div>
       <div className="cb-project-links">
-        {project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
+        {project.href ? <Link href={project.href}>Project <IconArrowRight size={13} stroke={2} aria-hidden /></Link> : project.u ? <a href={project.u} target="_blank" rel="noreferrer noopener">Project <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
         {project.g ? <a href={project.g} target="_blank" rel="noreferrer noopener">{workProductShortLabel(project.g)} <IconArrowUpRight size={13} stroke={2} aria-hidden /></a> : null}
       </div>
     </li>
