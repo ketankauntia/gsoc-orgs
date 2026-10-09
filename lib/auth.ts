@@ -1,11 +1,12 @@
 import "server-only";
 
 import { cache } from "react";
+import { headers } from "next/headers";
 import { after } from "next/server";
 import { redirect } from "next/navigation";
 import { db, isDatabaseConfigured } from "@/lib/db";
 import type { Profile } from "@/lib/hub/types";
-import { isAuthConfigured, neonAuth } from "@/lib/neon-auth/server";
+import { hasAuthCookie, isAuthConfigured, neonAuth } from "@/lib/neon-auth/server";
 import { importGoogleAvatar } from "@/lib/r2";
 
 export type SessionUser = { id: string; email: string; emailVerified: boolean; name: string; image: string | null };
@@ -17,27 +18,46 @@ export function isAdminUserId(userId: string) {
   return ids.includes(userId.toLowerCase());
 }
 
+/**
+ * The signed-in user, or null. Sessions whose email is not verified count as
+ * signed out, and so does a session lookup that fails.
+ */
 export const getSessionUser = cache(async (): Promise<SessionUser | null> => {
   if (!isAuthConfigured()) return null;
+  if (!hasAuthCookie((await headers()).get("cookie"))) return null;
   try {
-    const { data } = await neonAuth().getSession();
+    const { data, error } = await neonAuth().getSession();
+    if (error) console.error("[auth:session]", JSON.stringify({ status: error.status ?? null, code: error.code ?? null }));
     const user = data?.user;
-    if (!user?.id) return null;
-    return { id: user.id, email: user.email, emailVerified: Boolean(user.emailVerified), name: user.name ?? "", image: user.image ?? null };
+    if (!user?.id || !user.emailVerified) return null;
+    return { id: user.id, email: user.email, emailVerified: true, name: user.name ?? "", image: user.image ?? null };
   } catch (error) {
     console.error("[auth:session]", error);
     return null;
   }
 });
 
-/** The signed-in user with their profile, created on first sign-in. */
+/**
+ * The signed-in user with their profile, created on first sign-in. A failed
+ * profile lookup throws a generic error (the error page) rather than passing
+ * for signed out or for another account.
+ */
 export const getViewer = cache(async (): Promise<Viewer | null> => {
   const user = await getSessionUser();
   if (!user || !isDatabaseConfigured()) return null;
-  // A verified email lets an account from before the Neon move reclaim its migrated profile.
-  const rows = await db()`select to_jsonb(p) as profile from public.ensure_profile(${user.id}::uuid, ${user.name}, ${user.emailVerified ? user.email : null}) p`;
-  const profile = rows[0]?.profile as Profile | undefined;
-  if (!profile) return null;
+  let profile: Profile | undefined;
+  try {
+    // The verified email lets an account from before the Neon move reclaim its migrated profile.
+    const rows = await db()`select to_jsonb(p) as profile from public.ensure_profile(${user.id}::uuid, ${user.name}, ${user.email}) p`;
+    profile = rows[0]?.profile as Profile | undefined;
+  } catch (error) {
+    console.error("[auth:viewer]", error);
+    throw new Error("Your account could not be loaded");
+  }
+  if (!profile?.user_id || profile.user_id.toLowerCase() !== user.id.toLowerCase()) {
+    console.error("[auth:viewer] profile does not match the session user");
+    throw new Error("Your account could not be loaded");
+  }
   if (!profile.avatar_key && user.image) {
     const image = user.image;
     after(() => importAvatar(user.id, image));
