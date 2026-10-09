@@ -27,7 +27,7 @@ const sections: LegalSection[] = [
   {
     title: "Proposal Library and Public Choices",
     content: [
-      "Claim evidence and notes are always private. A proposal becomes public only when its verified author publishes it, or when we publish it with the author's recorded permission. Progress-post links appear as soon as they are added, marked as not verified until the claim is verified. Text extracted from a proposal is never published; it is used to check for personal details and, later, for aggregate statistics only.",
+      "Claim evidence and notes are always private. A proposal becomes public only when its verified author publishes it, or when we publish it with the author's recorded permission. Progress-post links appear publicly once the claim is verified. Text extracted from a proposal is never published; it is used to check for personal details and, later, for aggregate statistics only.",
       "A published proposal always includes the attribution name and archived GSoC project. Your name, avatar, bio and links appear beside your verified projects only if you make your profile public.",
       "Cloudflare R2 stores uploaded PDFs and imported Google profile images. Neon stores authentication, profile, catalog, claim, proposal, post and administrative records. Vercel hosts the application.",
       "We do not send proposal PDFs or private evidence to a third-party malware scanning service. Files receive format and structural validation and are delivered using restricted URLs.",
@@ -69,9 +69,10 @@ const sections: LegalSection[] = [
   {
     title: "Cookies and Tracking",
     content: [
+      "When you sign in, Neon Auth sets session cookies (named __Secure-neon-auth.*) that keep you signed in. They are strictly necessary for the account features and are set only when you sign in; visitors who do not sign in do not get them.",
       "Google Analytics may use cookies or similar identifiers to measure website traffic. Vercel Analytics and Speed Insights use their own measurement mechanisms.",
       "You can control cookies through your browser settings or use browser privacy controls and opt-out extensions.",
-      "Some features may not function properly if cookies are disabled.",
+      "Signing in does not work if cookies are disabled, and some other features may not work properly either.",
     ],
   },
   {
@@ -116,7 +117,7 @@ export default function PrivacyPolicyPage() {
       updated="October 9, 2026"
       intro="GSoC Organizations Guide is committed to protecting your privacy. This policy explains how we collect, use, disclose and safeguard your information when you visit the website. Please read it carefully to understand how we handle your personal data."
       sections={sections}
-      closing="This privacy policy is effective as of August 15, 2026 and will remain in effect except with respect to any changes in its provisions in the future."
+      closing="This privacy policy is effective as of October 9, 2026 and will remain in effect except with respect to any changes in its provisions in the future."
     />
   );
 }
