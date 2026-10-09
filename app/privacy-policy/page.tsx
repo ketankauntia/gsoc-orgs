@@ -1,14 +1,8 @@
 import { buildPageMetadata } from "@/lib/seo";
-import { Header } from "@/components/header";
-import { FooterSmall } from "@/components/footer-small";
-import { Container, SectionHeader, Heading, Text, CardWrapper } from "@/components/ui";
 import type { Metadata } from "next";
+import { LegalView, type LegalSection } from "@/components/cobalt/views/community";
 
-// Force revalidation to ensure footer links stay updated
-/**
- * ISR Configuration for Legal Pages
- * Cache for 30 days - only changes when legal content updates.
- */
+/** Legal pages change rarely: cache for 30 days. */
 export const revalidate = 2592000; // 30 days
 
 export const metadata: Metadata = buildPageMetadata({
@@ -19,7 +13,7 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: ["privacy policy", "data protection", "GSoC privacy", "user privacy", "data security"],
 });
 
-const sections = [
+const sections: LegalSection[] = [
   {
     title: "Information We Collect",
     content: [
@@ -117,62 +111,12 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      <main className="flex-1 pt-20 lg:pt-24">
-        <Container size="default" className="py-8 lg:py-16">
-          <div className="space-y-8">
-            {/* Header Section */}
-            <SectionHeader
-              badge="Legal"
-              title="Privacy Policy"
-              titleAs="h1"
-                description="Last updated: August 15, 2026. This privacy policy explains how we collect, use, and protect your information when you use GSoC Organizations Guide."
-              align="center"
-              className="max-w-3xl mx-auto"
-            />
-
-            {/* Introduction */}
-            <CardWrapper className="p-6 lg:p-8">
-              <Text className="text-muted-foreground">
-                At GSoC Organizations Guide, we are committed to protecting your privacy. This
-                privacy policy explains how we collect, use, disclose, and safeguard your
-                information when you visit our website. Please read this policy carefully to
-                understand our practices regarding your personal data.
-              </Text>
-            </CardWrapper>
-
-            {/* Policy Sections */}
-            <div className="space-y-6">
-              {sections.map((section, index) => (
-                <CardWrapper key={index} className="p-6 lg:p-8">
-                  <Heading variant="subsection" className="mb-4">
-                    {section.title}
-                  </Heading>
-                  <ul className="space-y-3">
-                    {section.content.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex gap-3">
-                        <span className="text-primary shrink-0">•</span>
-                        <Text className="text-muted-foreground">{item}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </CardWrapper>
-              ))}
-            </div>
-
-            {/* Effective Date */}
-            <CardWrapper className="p-6 bg-muted/50">
-              <Text variant="small" className="text-muted-foreground text-center">
-                This privacy policy is effective as of August 15, 2026 and will remain in effect
-                except with respect to any changes in its provisions in the future.
-              </Text>
-            </CardWrapper>
-          </div>
-        </Container>
-      </main>
-      <FooterSmall />
-    </div>
+    <LegalView
+      title="Privacy Policy"
+      updated="August 15, 2026"
+      intro="GSoC Organizations Guide is committed to protecting your privacy. This policy explains how we collect, use, disclose and safeguard your information when you visit the website. Please read it carefully to understand how we handle your personal data."
+      sections={sections}
+      closing="This privacy policy is effective as of August 15, 2026 and will remain in effect except with respect to any changes in its provisions in the future."
+    />
   );
 }
-
