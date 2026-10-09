@@ -1,13 +1,17 @@
 import "server-only";
 
 import { cache } from "react";
-import { isSupabaseAdminConfigured } from "@/lib/supabase/config";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { db, isDatabaseConfigured } from "@/lib/db";
+import type { PostKind } from "@/lib/hub/types";
 
+/** A progress post (weekly update, report, talk) linked to its archived project. */
 export type ContributorBlog = {
   id: string;
   title: string | null;
   url: string;
+  kind: PostKind;
+  published_on: string | null;
+  verified: boolean;
   contributor_name: string;
   project_external_id: string;
   project_title: string;
@@ -18,32 +22,25 @@ export type ContributorBlog = {
   organization_name: string;
 };
 
-export const getContributorBlogs = cache(async (filters?: { year?: number; organization?: string }) => {
-  if (!isSupabaseAdminConfigured()) return [] as ContributorBlog[];
+export const getContributorBlogs = cache(async (filters?: { year?: number; organization?: string; project?: string }) => {
+  if (!isDatabaseConfigured()) return [] as ContributorBlog[];
   try {
-    let query = createAdminClient().from("published_contributor_blogs").select("*").order("year", { ascending: false }).order("organization_name").order("project_title");
-    if (filters?.year) query = query.eq("year", filters.year);
-    if (filters?.organization) query = query.eq("organization_slug", filters.organization);
-    const { data, error } = await query;
-    if (error) throw error;
-    return (data ?? []).flatMap((item) => {
-      if (!item.id || !item.url || !item.contributor_name || !item.project_external_id || !item.project_title || !item.year || !item.organization_slug || !item.organization_name) return [];
-      return [{
-        id: item.id,
-        title: item.title,
-        url: item.url,
-        contributor_name: item.contributor_name,
-        project_external_id: item.project_external_id,
-        project_title: item.project_title,
-        year: item.year,
-        project_url: item.project_url,
-        code_url: item.code_url,
-        organization_slug: item.organization_slug,
-        organization_name: item.organization_name,
-      } satisfies ContributorBlog];
-    });
+    const rows = await db().query(
+      `select po.id, po.title, po.url, po.kind, po.published_on::text as published_on, po.verified,
+         po.archived_name as contributor_name, po.project_external_id, po.project_title, po.year,
+         p.project_url, p.work_product_url as code_url, po.organization_slug, po.organization_name
+       from public.public_posts po
+       join public.projects p on p.external_id = po.project_external_id
+       where ($1::int is null or po.year = $1)
+         and ($2::text is null or po.organization_slug = $2)
+         and ($3::text is null or po.project_external_id = $3)
+       order by po.year desc, po.organization_name, po.project_title, po.published_on desc nulls last
+       limit 600`,
+      [filters?.year ?? null, filters?.organization ?? null, filters?.project ?? null],
+    );
+    return rows as ContributorBlog[];
   } catch (error) {
-    console.error("[contributor blogs] database unavailable", error);
+    console.error("[contributor posts] database unavailable", error);
     return [] as ContributorBlog[];
   }
 });

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAnalyticsOrganizations } from '@/lib/supabase/analytics-organizations'
+import { getAnalyticsOrganizations } from '@/lib/catalog/analytics-organizations'
 import { canonicalTechnology } from '@/lib/vocabulary/catalog'
 
 /**

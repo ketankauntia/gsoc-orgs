@@ -22,6 +22,7 @@ import { AdminNav, FilterMenu, type MenuOption } from "./community-client";
 import "../community.css";
 
 const CONTACT_EMAIL = "gsocorganizationsguide@gmail.com";
+const POST_KIND_LABELS: Record<string, string> = { weekly_update: "Weekly update", midterm: "Midterm report", final_report: "Final report", talk_video: "Talk", other: "Post" };
 
 /** Logo for an organization slug, falling back to initials when the slug is not in the snapshot. */
 function OrgLogo({ slug, name, size = "sm" }: { slug: string; name: string; size?: "xs" | "sm" | "md" | "lg" }) {
@@ -254,7 +255,7 @@ const fileSize = (bytes: number) => (bytes >= 1024 * 1024 ? `${(bytes / (1024 * 
 
 export function ProposalDetailView({ proposal, jsonLd }: { proposal: PublicProposal; jsonLd: Record<string, unknown> }) {
   const org = cobaltOrganization(proposal.organization_slug);
-  const pdf = `/api/v2/proposals/${proposal.id}/pdf`;
+  const pdf = `/api/v2/proposals/${proposal.id}/pdf?v=${proposal.file_version}`;
   const curated = proposal.submission_source === "admin_curated";
   const technologies = org?.technologies.slice(0, 10) ?? [];
   const approved = new Date(proposal.approved_at);
@@ -322,8 +323,8 @@ export function ProposalDetailView({ proposal, jsonLd }: { proposal: PublicPropo
             </article>
 
             <article className="cb-card">
-              <p className="cb-cm-verified"><IconShieldCheck size={18} stroke={1.75} aria-hidden />{curated ? "Curated with permission" : "Verified submission"}</p>
-              <p className="cb-cm-side-text">{curated ? "An administrator matched this document to the archived contributor record and recorded a publication-rights basis before publishing it." : "A moderator matched this submission to the archived contributor record."} It is not an official endorsement by Google or the organization.</p>
+              <p className="cb-cm-verified"><IconShieldCheck size={18} stroke={1.75} aria-hidden />{curated ? "Published with permission" : "Published by the verified author"}</p>
+              <p className="cb-cm-side-text">{curated ? "We recorded the author's permission before publishing this copy." : "We matched the author's account to Google's archive record for this project before they published it."} It is not an official endorsement by Google or the organization.</p>
               <p className="cb-cm-side-fine">The rights holder keeps copyright and publishes this document under <a className="cb-inline-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">CC BY 4.0</a>.</p>
             </article>
           </aside>
@@ -363,7 +364,7 @@ export function ContributorBlogsView({ params, blogs, facets }: { params: { year
         crumbs={[{ label: "Home", href: "/" }, { label: "Contributor blogs" }]}
         eyebrow="CONTRIBUTOR BLOGS"
         title={<>Project blogs <span className="cb-serif">written by GSoC contributors.</span></>}
-        lede="Weekly updates, technical decisions and final reports from accepted contributors, in their own words. Each blog is linked to its archived project and added by hand."
+        lede="Weekly updates, technical decisions and final reports from accepted contributors, in their own words. Contributors link their own posts to their archived project; posts marked Not verified wait for us to confirm the author."
         aside={<Link href="/proposals" className="cb-button cb-button-outline">Read proposals <IconArrowRight size={16} stroke={2} aria-hidden /></Link>}
       >
         {facets.years.length ? (
@@ -385,7 +386,7 @@ export function ContributorBlogsView({ params, blogs, facets }: { params: { year
               {blogs.map((blog) => (
                 <li key={blog.id}>
                   <article className="cb-post-card cb-cm-card">
-                    <p className="cb-post-meta"><span>GSoC {blog.year}</span><span>Blog</span></p>
+                    <p className="cb-post-meta"><span>GSoC {blog.year}</span><span>{POST_KIND_LABELS[blog.kind] ?? "Post"}</span>{blog.verified ? null : <span className="cb-badge">Not verified</span>}</p>
                     <h3><a href={blog.url} target="_blank" rel="noopener noreferrer" className="cb-row-link">{blog.project_title}</a></h3>
                     <p className="cb-cm-card-org"><OrgLogo slug={blog.organization_slug} name={blog.organization_name} size="xs" /><span className="cb-truncate">{blog.organization_name}</span></p>
                     <p className="cb-cm-card-foot"><span>By</span> {blog.contributor_name}</p>
@@ -401,7 +402,7 @@ export function ContributorBlogsView({ params, blogs, facets }: { params: { year
             <div className="cb-empty">
               <span className="cb-empty-icon" aria-hidden="true"><IconBook size={20} stroke={1.75} /></span>
               <h2>{filtered ? "No blogs match these filters" : "No contributor blogs listed yet"}</h2>
-              <p>Blogs are added by hand after review. {filtered ? "Try a wider filter." : "Accepted proposals from past contributors are already searchable."}</p>
+              <p>Contributors add their own posts after claiming their project. {filtered ? "Try a wider filter." : "Accepted proposals from past contributors are already searchable."}</p>
               <div>{filtered ? <Link href="/contributor-blogs" className="cb-button cb-button-ink cb-button-sm">Clear filters</Link> : <Link href="/proposals" className="cb-button cb-button-outline cb-button-sm">Search proposals</Link>}</div>
             </div>
           )}

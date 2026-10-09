@@ -1,13 +1,12 @@
 import { apiData, apiError } from "@/lib/api-response";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { getApprovedProposal } from "@/lib/proposals/queries";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   try {
     const { slug } = await params;
-    const { data, error } = await createAdminClient().from("approved_proposals").select("*").eq("public_slug", slug).maybeSingle();
-    if (error) throw error;
-    if (!data) return apiError("NOT_FOUND", "Approved proposal not found", 404);
-    return apiData(data);
+    const proposal = await getApprovedProposal(slug.slice(0, 200));
+    if (!proposal) return apiError("NOT_FOUND", "Proposal not found", 404);
+    return apiData(proposal);
   } catch (error) {
     console.error("[api/v2/proposals/:slug]", error);
     return apiError("PROPOSALS_UNAVAILABLE", "Proposal is temporarily unavailable", 503);

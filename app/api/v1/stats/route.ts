@@ -1,21 +1,23 @@
 import { NextResponse } from "next/server";
 import { CacheHeaders } from "@/lib/cache";
-import { createAdminClient } from "@/lib/supabase/admin";
-import { jsonObject, jsonStringArray } from "@/lib/supabase/legacy-shapes";
+import { jsonObject, jsonStringArray, type Json } from "@/lib/catalog/legacy-shapes";
+import { db } from "@/lib/db";
 import { canonicalTechnology } from "@/lib/vocabulary/catalog";
 
 export async function GET() {
   try {
-    const admin = createAdminClient();
-    const [{ count: total }, { count: active }, { count: projects }, { count: technologies }, { count: topics }, { data: orgs, error }] = await Promise.all([
-      admin.from("organizations").select("id", { count: "exact", head: true }),
-      admin.from("organizations").select("id", { count: "exact", head: true }).eq("is_currently_active", true),
-      admin.from("projects").select("id", { count: "exact", head: true }),
-      admin.from("technologies").select("id", { count: "exact", head: true }),
-      admin.from("topics").select("id", { count: "exact", head: true }),
-      admin.from("organizations").select("category,active_years,source_payload"),
+    const sql = db();
+    const [[counts], orgRows] = await Promise.all([
+      sql`select
+        (select count(*) from public.organizations)::int as total,
+        (select count(*) from public.organizations where is_currently_active)::int as active,
+        (select count(*) from public.projects)::int as projects,
+        (select count(*) from public.technologies)::int as technologies,
+        (select count(*) from public.topics)::int as topics`,
+      sql`select category, active_years, source_payload from public.organizations`,
     ]);
-    if (error) throw error;
+    const { total, active, projects, technologies, topics } = counts as Record<string, number>;
+    const orgs = orgRows as Array<{ category: string; active_years: number[] | null; source_payload: Json }>;
 
     const years = (orgs ?? []).flatMap((org) => org.active_years ?? []);
     const categories = new Map<string, number>();

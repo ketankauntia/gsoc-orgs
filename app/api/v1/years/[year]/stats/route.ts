@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
-import { createAdminClient } from '@/lib/supabase/admin'
-import { jsonObject, jsonStringArray } from '@/lib/supabase/legacy-shapes'
+import { jsonObject, jsonStringArray, type Json } from '@/lib/catalog/legacy-shapes'
+import { db } from '@/lib/db'
 import { canonicalTechnology, canonicalTopic } from '@/lib/vocabulary/catalog'
 
 /**
@@ -34,13 +34,9 @@ export async function GET(
       )
     }
 
-    const { data: organizations, error } = await createAdminClient()
-      .from('organizations')
-      .select('category,source_payload')
-      .contains('active_years', [yearNum])
-    if (error) throw error
+    const organizations = (await db()`select category, source_payload from public.organizations where ${yearNum}::int = any(active_years)`) as Array<{ category: string; source_payload: Json }>
 
-    const participatingOrganizations = (organizations ?? []).filter((org) => {
+    const participatingOrganizations = organizations.filter((org) => {
       const withdrawnYears = jsonObject(org.source_payload).withdrawn_years
       return !Array.isArray(withdrawnYears) || !withdrawnYears.includes(yearNum)
     })

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCacheHeaderForYear, isHistoricalYear } from '@/lib/cache'
-import { createAdminClient } from '@/lib/supabase/admin'
-import { jsonObject, organizationV1 } from '@/lib/supabase/legacy-shapes'
+import { jsonObject, organizationV1, type Json } from '@/lib/catalog/legacy-shapes'
+import { db } from '@/lib/db'
 
 /**
  * GET /api/v1/years/{year}/organizations
@@ -42,14 +42,9 @@ export async function GET(
     const limit = Math.min(100, Number(searchParams.get('limit')) || 50)
     const skip = (page - 1) * limit
 
-    const { data: items, error } = await createAdminClient()
-      .from('organizations')
-      .select('*')
-      .contains('active_years', [yearNum])
-      .order('name')
-    if (error) throw error
-    const participatingItems = (items ?? []).filter((row) => {
-      const withdrawnYears = jsonObject(row.source_payload).withdrawn_years
+    const items = await db()`select * from public.organizations where ${yearNum}::int = any(active_years) order by name`
+    const participatingItems = items.filter((row) => {
+      const withdrawnYears = jsonObject(row.source_payload as Json).withdrawn_years
       return !Array.isArray(withdrawnYears) || !withdrawnYears.includes(yearNum)
     })
     const total = participatingItems.length

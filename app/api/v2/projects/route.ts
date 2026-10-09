@@ -1,24 +1,25 @@
 import { apiData, apiError, pagination } from "@/lib/api-response";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { likeTerm, pageOf, PROJECT_WITH_PEOPLE } from "@/lib/catalog/sql";
+import { db } from "@/lib/db";
 
 export async function GET(request: Request) {
   try {
     const url = new URL(request.url);
-    const { page, limit, from, to } = pagination(url.searchParams);
-    const q = url.searchParams.get("q")?.trim().slice(0, 80);
-    const organization = url.searchParams.get("organization")?.trim();
+    const { page, limit, from } = pagination(url.searchParams);
     const year = Number.parseInt(url.searchParams.get("year") ?? "", 10);
-    let query = createAdminClient()
-      .from("projects")
-      .select("id,external_id,year,title,abstract_short,project_url,code_url,organizations!inner(slug,name),project_contributors(id,archived_name,archived_profile_url,ordinal),project_mentors(name,ordinal)", { count: "exact" })
-      .order("title")
-      .range(from, to);
-    if (q) query = query.ilike("title", `%${q.replaceAll("%", "")}%`);
-    if (Number.isFinite(year)) query = query.eq("year", year);
-    if (organization) query = query.eq("organizations.slug", organization);
-    const { data, error, count } = await query;
-    if (error) throw error;
-    return apiData(data ?? [], { page, limit, total: count ?? 0 });
+    const rows = await db().query(
+      `select p.id, p.external_id, p.year, p.title, p.abstract_short, p.project_url, p.code_url, p.work_product_url, p.work_product_kind,
+         ${PROJECT_WITH_PEOPLE}, count(*) over () as total_count
+       from public.projects p join public.organizations o on o.id = p.organization_id
+       where ($1::text is null or p.title ilike '%' || $1 || '%')
+         and ($2::int is null or p.year = $2)
+         and ($3::text is null or o.slug = $3::citext)
+       order by p.title
+       limit $4 offset $5`,
+      [likeTerm(url.searchParams.get("q")), Number.isFinite(year) ? year : null, url.searchParams.get("organization")?.trim() || null, limit, from],
+    );
+    const { total, data } = pageOf(rows);
+    return apiData(data, { page, limit, total });
   } catch (error) {
     console.error("[api/v2/projects]", error);
     return apiError("CATALOG_UNAVAILABLE", "Project data is temporarily unavailable", 503);
