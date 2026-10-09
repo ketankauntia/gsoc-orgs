@@ -1,16 +1,12 @@
 import "./load-env";
 import fs from "node:fs";
 import path from "node:path";
-import { createClient } from "@supabase/supabase-js";
+import { scriptDb } from "./lib/db";
 
 const args = process.argv.slice(2);
 const yearIndex = args.indexOf("--year");
 const year = Number(yearIndex === -1 ? new Date().getFullYear() : args[yearIndex + 1]);
 if (!Number.isInteger(year) || year < 2016 || year > 2100) throw new Error(`Invalid --year: ${year}`);
-
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!url || !serviceRoleKey) throw new Error("Supabase service-role environment variables are required");
 
 const projectFile = path.join(process.cwd(), "new-api-details", "projects", `${year}.json`);
 if (!fs.existsSync(projectFile)) throw new Error(`Project payload not found: ${projectFile}`);
@@ -19,52 +15,44 @@ const expected = JSON.parse(fs.readFileSync(projectFile, "utf8")) as {
   data_completeness?: { mentors?: boolean };
 };
 
-const client = createClient(url, serviceRoleKey, { auth: { persistSession: false } });
-type CountResult = { count: number | null; error: { message: string } | null };
-const resolveCount = async (label: string, query: PromiseLike<CountResult>) => {
-  const { count: result, error } = await query;
-  if (error) throw new Error(`${label}: ${error.message}`);
-  return result ?? 0;
-};
-
 const main = async () => {
+  const sql = scriptDb();
+  const [counts] = await sql`
+    select
+      count(*)::int as projects,
+      (select count(*) from public.project_people pp join public.projects x on x.id = pp.project_id where x.year = ${year} and pp.role = 'contributor')::int as contributors,
+      (select count(*) from public.project_people pp join public.projects x on x.id = pp.project_id where x.year = ${year} and pp.role = 'mentor')::int as mentors,
+      count(*) filter (where info_html is not null)::int as descriptions,
+      count(*) filter (where abstract_short is not null)::int as short_descriptions,
+      count(*) filter (where project_url is not null)::int as project_urls,
+      count(*) filter (where code_url is not null)::int as code_urls,
+      count(*) filter (where source_payload->>'proposal_id' is not null)::int as source_proposal_ids,
+      (select coalesce(sum(project_count), 0) from public.organization_years where year = ${year})::int as organization_project_total
+    from public.projects where year = ${year}`;
+
   const expectedProjects = expected.projects.length;
-  const expectedMentorSlots = expected.projects.reduce((sum, project) => sum + (project.mentors?.length ?? 0), 0);
-  const [projects, contributors, mentors, descriptions, shortDescriptions, projectUrls, codeUrls, sourceProposalIds] = await Promise.all([
-    resolveCount("projects", client.from("projects").select("*", { count: "exact", head: true }).eq("year", year)),
-    resolveCount("project_contributors", client.from("project_contributors").select("project_id,projects!inner(year)", { count: "exact", head: true }).eq("projects.year", year)),
-    resolveCount("project_mentors", client.from("project_mentors").select("project_id,projects!inner(year)", { count: "exact", head: true }).eq("projects.year", year)),
-    resolveCount("project descriptions", client.from("projects").select("*", { count: "exact", head: true }).eq("year", year).not("info_html", "is", null)),
-    resolveCount("project short descriptions", client.from("projects").select("*", { count: "exact", head: true }).eq("year", year).not("abstract_short", "is", null)),
-    resolveCount("project URLs", client.from("projects").select("*", { count: "exact", head: true }).eq("year", year).not("project_url", "is", null)),
-    resolveCount("code URLs", client.from("projects").select("*", { count: "exact", head: true }).eq("year", year).not("code_url", "is", null)),
-    resolveCount("source proposal IDs", client.from("projects").select("*", { count: "exact", head: true }).eq("year", year).not("source_payload->>proposal_id", "is", null)),
-  ]);
-
-  const { data: organizationYears, error: organizationYearsError } = await client
-    .from("organization_years")
-    .select("project_count")
-    .eq("year", year)
-    .range(0, 999);
-  if (organizationYearsError) throw new Error(`organization_years: ${organizationYearsError.message}`);
-  const organizationProjectTotal = (organizationYears ?? []).reduce((sum, row) => sum + row.project_count, 0);
-
-  const actual = { projects, contributors, mentors, descriptions, shortDescriptions, projectUrls, codeUrls, sourceProposalIds, organizationProjectTotal };
-  const required = {
+  const actual = {
+    projects: counts.projects, contributors: counts.contributors, mentors: counts.mentors, descriptions: counts.descriptions,
+    shortDescriptions: counts.short_descriptions, projectUrls: counts.project_urls, codeUrls: counts.code_urls,
+    sourceProposalIds: counts.source_proposal_ids, organizationProjectTotal: counts.organization_project_total,
+  } as Record<string, number>;
+  const required: Record<string, number> = {
     projects: expectedProjects,
     contributors: expectedProjects,
-    mentors: expectedMentorSlots,
+    mentors: expected.projects.reduce((sum, project) => sum + (project.mentors ?? []).filter((name) => name.trim()).length, 0),
     descriptions: expected.projects.filter((project) => project.project_description).length,
     shortDescriptions: expected.projects.filter((project) => project.project_abstract_short).length,
     projectUrls: expected.projects.filter((project) => project.project_url).length,
-    codeUrls: expected.projects.filter((project) => project.project_code_url).length,
     sourceProposalIds: expectedProjects,
     organizationProjectTotal: expectedProjects,
   };
-  const mismatches = Object.entries(required).filter(([key, value]) => actual[key as keyof typeof actual] !== value);
-  console.log(JSON.stringify({ year, dataCompleteness: expected.data_completeness ?? null, required, actual, status: mismatches.length ? "FAIL" : "PASS" }, null, 2));
+  // Work-product links also come from the organization files, so the project file gives a floor.
+  const minimumCodeUrls = expected.projects.filter((project) => project.project_code_url).length;
+  const mismatches = Object.entries(required).filter(([key, value]) => actual[key] !== value);
+  if (actual.codeUrls < minimumCodeUrls) mismatches.push(["codeUrls", minimumCodeUrls]);
+  console.log(JSON.stringify({ year, dataCompleteness: expected.data_completeness ?? null, required: { ...required, codeUrlsAtLeast: minimumCodeUrls }, actual, status: mismatches.length ? "FAIL" : "PASS" }, null, 2));
   if (mismatches.length) {
-    throw new Error(`Hosted project verification failed: ${mismatches.map(([key, value]) => `${key} expected ${value}, got ${actual[key as keyof typeof actual]}`).join("; ")}`);
+    throw new Error(`Project verification failed: ${mismatches.map(([key, value]) => `${key} expected ${value}, got ${actual[key]}`).join("; ")}`);
   }
 };
 

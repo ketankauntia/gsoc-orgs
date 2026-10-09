@@ -1,5 +1,5 @@
 /**
- * Verify a year's organization data landed in Supabase and agrees with the
+ * Verify a year's organization data landed in the database and agrees with the
  * raw Google snapshot on disk.
  *
  * Read-only: issues SELECTs and counts, writes nothing.
@@ -11,37 +11,14 @@
 import "./load-env";
 import fs from "node:fs";
 import path from "node:path";
-import { createClient } from "@supabase/supabase-js";
+import { scriptDb } from "./lib/db";
 import { SLUG_ALIASES, normalizeOrgName } from "./lib/org-slug-aliases";
 import { withdrawnSlugsForYear, type WithdrawalLedger } from "../lib/withdrawals";
 
 const argv = process.argv.slice(2);
 const yearIdx = argv.indexOf("--year");
-const YEAR = yearIdx !== -1 && argv[yearIdx + 1] ? parseInt(argv[yearIdx + 1], 10) : 2026;
-
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!url || !serviceRoleKey) {
-  throw new Error("Supabase service-role environment variables are required");
-}
-const supabase = createClient(url, serviceRoleKey, { auth: { persistSession: false } });
-
-/** Supabase caps rows per request, so page through rather than trusting one call. */
-async function selectAll<T>(table: string, columns: string): Promise<T[]> {
-  const rows: T[] = [];
-  const pageSize = 1000;
-  for (let offset = 0; ; offset += pageSize) {
-    const { data, error } = await supabase
-      .from(table)
-      .select(columns)
-      .order("id", { ascending: true })
-      .range(offset, offset + pageSize - 1);
-    if (error) throw new Error(`${table}: ${error.message}`);
-    const page = (data ?? []) as unknown as T[];
-    rows.push(...page);
-    if (page.length < pageSize) return rows;
-  }
-}
+const YEAR = yearIdx !== -1 && argv[yearIdx + 1] ? parseInt(argv[yearIdx + 1], 10) : new Date().getFullYear();
+const sql = scriptDb();
 
 async function main() {
   const rawFile = path.join(
@@ -53,7 +30,9 @@ async function main() {
   const raw: { slug: string; name: string; description?: string; logo_url?: string }[] =
     JSON.parse(fs.readFileSync(rawFile, "utf-8"));
 
-  const orgs = await selectAll<{
+  const orgs = (await sql`
+    select id, slug::text as slug, name, active_years, is_currently_active, description, image_url from public.organizations
+  `) as Array<{
     id: string;
     slug: string;
     name: string;
@@ -61,14 +40,12 @@ async function main() {
     is_currently_active: boolean | null;
     description: string | null;
     image_url: string | null;
-  }>("organizations", "id,slug,name,active_years,is_currently_active,description,image_url");
+  }>;
   const ledger: WithdrawalLedger = JSON.parse(fs.readFileSync(path.join(process.cwd(), "new-api-details", "withdrawals.json"), "utf-8"));
   const expectedWithdrawn = withdrawnSlugsForYear(ledger, YEAR);
-  const { data: organizationYears, error: organizationYearsError } = await supabase
-    .from("organization_years")
-    .select("organization_id,selection_status,withdrawn_at")
-    .eq("year", YEAR);
-  if (organizationYearsError) throw organizationYearsError;
+  const organizationYears = (await sql`
+    select organization_id, selection_status, withdrawn_at from public.organization_years where year = ${YEAR}
+  `) as Array<{ organization_id: string; selection_status: string; withdrawn_at: string | null }>;
   const orgById = new Map(orgs.map((org) => [org.id, org.slug]));
   const actualWithdrawn = new Set(
     (organizationYears ?? [])
@@ -129,20 +106,12 @@ async function main() {
     .map((o) => o.slug)
     .sort();
 
-  const { count: techCount } = await supabase
-    .from("organization_technologies")
-    .select("*", { count: "exact", head: true });
-  const { count: topicCount } = await supabase
-    .from("organization_topics")
-    .select("*", { count: "exact", head: true });
-  const { data: lastRun } = await supabase
-    .from("import_runs")
-    .select("status,completed_at,counts")
-    .order("completed_at", { ascending: false })
-    .limit(1)
-    .maybeSingle();
+  const [{ tech_count: techCount, topic_count: topicCount }] = await sql`
+    select (select count(*) from public.organization_technologies)::int as tech_count,
+           (select count(*) from public.organization_topics)::int as topic_count`;
+  const [lastRun] = await sql`select status, completed_at from public.import_runs order by completed_at desc nulls last limit 1`;
 
-  console.log(`\n=== Supabase verification for GSoC ${YEAR} ===\n`);
+  console.log(`\n=== Database verification for GSoC ${YEAR} ===\n`);
   console.log(`Google raw snapshot            : ${raw.length} orgs`);
   console.log(`DB orgs with ${YEAR} in active_years: ${inYear.length}`);
   console.log(`  of which is_currently_active : ${active.length}`);

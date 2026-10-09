@@ -1,8 +1,7 @@
 import "./load-env";
 import fs from "node:fs";
 import path from "node:path";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import type { Database } from "../lib/supabase/database.types";
+import { scriptDb } from "./lib/db";
 import {
   buildVocabularyGroups,
   canonicalTechnology,
@@ -21,15 +20,10 @@ type ProjectSource = { tech_stack?: string[] };
 type JoinedOrganization = {
   slug: string;
   source_payload: OrganizationSource;
-  organization_technologies: Array<{ technologies: { slug: string } | null }>;
-  organization_topics: Array<{ topics: { slug: string } | null }>;
+  technology_slugs: string[];
+  topic_slugs: string[];
 };
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-if (!url || !serviceRoleKey) throw new Error("Supabase service-role environment variables are required");
-
-const client = createClient<Database>(url, serviceRoleKey, { auth: { persistSession: false } });
 const root = process.cwd();
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -47,20 +41,6 @@ function assertSameSet(actual: Iterable<string>, expected: Iterable<string>, lab
     `${label} mismatch\nexpected=${JSON.stringify(expectedValues)}\nactual=${JSON.stringify(actualValues)}`);
 }
 
-async function selectAll<T>(
-  queryPage: (from: number, to: number) => PromiseLike<{ data: T[] | null; error: { message: string } | null }>,
-) {
-  const rows: T[] = [];
-  const pageSize = 500;
-  for (let from = 0; ; from += pageSize) {
-    const { data, error } = await queryPage(from, from + pageSize - 1);
-    if (error) throw new Error(error.message);
-    const page = data ?? [];
-    rows.push(...page);
-    if (page.length < pageSize) return rows;
-  }
-}
-
 function loadSources() {
   const organizationDirectory = path.join(root, "new-api-details", "organizations");
   const organizations = fs.readdirSync(organizationDirectory)
@@ -75,7 +55,8 @@ function loadSources() {
   return { organizations, projects };
 }
 
-async function verify(client: SupabaseClient<Database>) {
+async function verify() {
+  const sql = scriptDb();
   const { organizations: sources, projects } = loadSources();
   const rawTechnologies = [...sources.flatMap((org) => org.technologies ?? []), ...projects.flatMap((project) => project.tech_stack ?? [])];
   const rawTopics = sources.flatMap((org) => org.topics ?? []);
@@ -83,14 +64,15 @@ async function verify(client: SupabaseClient<Database>) {
   const topicGroups = buildVocabularyGroups("topic", rawTopics);
 
   const [technologies, topics, technologyAliases, topicAliases, databaseOrganizations, latestRuns] = await Promise.all([
-    selectAll((from, to) => client.from("technologies").select("id,slug,name").order("id").range(from, to)),
-    selectAll((from, to) => client.from("topics").select("id,slug,name").order("id").range(from, to)),
-    selectAll((from, to) => client.from("technology_aliases").select("alias,normalized_alias,technologies(slug)").order("id").range(from, to)),
-    selectAll((from, to) => client.from("topic_aliases").select("alias,normalized_alias,topics(slug)").order("id").range(from, to)),
-    selectAll((from, to) => client.from("organizations")
-      .select("slug,source_payload,organization_technologies(technologies(slug)),organization_topics(topics(slug))")
-      .order("id").range(from, to)),
-    client.from("import_runs").select("id,status,completed_at").eq("source", "checked-in-json").order("started_at", { ascending: false }).limit(5),
+    sql`select id, slug::text as slug, name from public.technologies`,
+    sql`select id, slug::text as slug, name from public.topics`,
+    sql`select a.alias, a.normalized_alias::text as normalized_alias, t.slug::text as slug from public.technology_aliases a join public.technologies t on t.id = a.technology_id`,
+    sql`select a.alias, a.normalized_alias::text as normalized_alias, t.slug::text as slug from public.topic_aliases a join public.topics t on t.id = a.topic_id`,
+    sql`select o.slug::text as slug, o.source_payload,
+          coalesce((select array_agg(t.slug::text) from public.organization_technologies ot join public.technologies t on t.id = ot.technology_id where ot.organization_id = o.id), '{}') as technology_slugs,
+          coalesce((select array_agg(t.slug::text) from public.organization_topics ot join public.topics t on t.id = ot.topic_id where ot.organization_id = o.id), '{}') as topic_slugs
+        from public.organizations o`,
+    sql`select id, status, completed_at from public.import_runs where source = 'checked-in-json' order by started_at desc limit 5`,
   ]);
 
   assertSameSet(technologies.map((row) => `${row.slug}:${row.name}`), technologyGroups.map((group) => `${group.slug}:${group.name}`), "technology catalog");
@@ -101,10 +83,10 @@ async function verify(client: SupabaseClient<Database>) {
   assertSameSet(technologyAliases.map((row) => row.normalized_alias), expectedTechAliases, "technology aliases");
   assertSameSet(topicAliases.map((row) => row.normalized_alias), expectedTopicAliases, "topic aliases");
   for (const row of technologyAliases) {
-    assert(row.technologies?.slug === canonicalTechnology(row.alias).slug, `technology alias ${row.alias} points to ${row.technologies?.slug}`);
+    assert(row.slug === canonicalTechnology(row.alias).slug, `technology alias ${row.alias} points to ${row.slug}`);
   }
   for (const row of topicAliases) {
-    assert(row.topics?.slug === canonicalTopic(row.alias).slug, `topic alias ${row.alias} points to ${row.topics?.slug}`);
+    assert(row.slug === canonicalTopic(row.alias).slug, `topic alias ${row.alias} points to ${row.slug}`);
   }
 
   assertSameSet(databaseOrganizations.map((row) => row.slug), sources.map((row) => row.slug), "organizations");
@@ -113,12 +95,12 @@ async function verify(client: SupabaseClient<Database>) {
     const source = sourceBySlug.get(databaseOrganization.slug);
     assert(source, `missing checked-in organization ${databaseOrganization.slug}`);
     assertSameSet(
-      databaseOrganization.organization_technologies.flatMap((join) => join.technologies?.slug ?? []),
+      databaseOrganization.technology_slugs,
       (source.technologies ?? []).map((value) => canonicalTechnology(value).slug),
       `${source.slug} technologies`,
     );
     assertSameSet(
-      databaseOrganization.organization_topics.flatMap((join) => join.topics?.slug ?? []),
+      databaseOrganization.topic_slugs,
       (source.topics ?? []).map((value) => canonicalTopic(value).slug),
       `${source.slug} topics`,
     );
@@ -127,8 +109,7 @@ async function verify(client: SupabaseClient<Database>) {
     assertSameSet(payload.topics ?? [], source.topics ?? [], `${source.slug} raw topic payload`);
   }
 
-  if (latestRuns.error) throw new Error(latestRuns.error.message);
-  assert(latestRuns.data?.[0]?.status === "completed", "latest checked-in JSON import did not complete");
+  assert(latestRuns[0]?.status === "completed", "latest checked-in JSON import did not complete");
   assert(canonicalTechnology("C").slug !== canonicalTechnology("C++").slug, "C and C++ were merged");
   assert(canonicalTechnology("C++").slug !== canonicalTechnology("C#").slug, "C++ and C# were merged");
   assert(canonicalTechnology("VueJS").slug === canonicalTechnology("vue.js").slug, "Vue aliases diverged");
@@ -141,11 +122,11 @@ async function verify(client: SupabaseClient<Database>) {
     technologyAliases: technologyAliases.length,
     topics: topics.length,
     topicAliases: topicAliases.length,
-    latestImport: latestRuns.data?.[0],
+    latestImport: latestRuns[0],
   }, null, 2));
 }
 
-verify(client).catch((error) => {
+verify().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
