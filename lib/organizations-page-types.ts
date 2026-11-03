@@ -10,7 +10,8 @@
 
 import { Organization, PaginatedResponse } from './api';
 import { canonicalTechnology, canonicalTopic } from './vocabulary/catalog';
-import { organizationLoaders } from './generated/organization-imports';
+import { organizationSlugs } from './generated/organization-slugs';
+import { readCatalogJson } from './catalog-data';
 
 const ORGANIZATION_SLUG_ALIASES: Record<string, string> = {
   'forschungszentrum-jülich': 'forschungszentrum-julich',
@@ -111,11 +112,11 @@ export interface OrganizationsMetadata {
  */
 export async function loadOrganizationsIndexData(): Promise<OrganizationsIndexData | null> {
   try {
-    const data = await import(`@/new-api-details/organizations/index.json`);
+    const data = await readCatalogJson<OrganizationsIndexData>('organizations/index.json');
     if (process.env.NODE_ENV === 'development') {
       console.log('[ORGS] Successfully loaded JSON from static file');
     }
-    return data.default as OrganizationsIndexData;
+    return data;
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error('[ORGS] Failed to load JSON, falling back to API:', error);
@@ -134,12 +135,10 @@ export async function loadOrganizationsIndexData(): Promise<OrganizationsIndexDa
  */
 export async function loadOrganizationData(slug: string): Promise<Organization | null> {
   const canonicalSlug = canonicalOrganizationSlug(slug);
-  const loader = organizationLoaders[canonicalSlug];
-  if (!loader) return null;
+  if (!organizationSlugs.has(canonicalSlug)) return null;
 
   try {
-    const data = await loader();
-    return data.default as Organization;
+    return await readCatalogJson<Organization>(`organizations/${canonicalSlug}.json`);
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error(`[ORGS] Failed to load organization JSON for ${slug}:`, error);
@@ -158,8 +157,7 @@ export async function loadOrganizationData(slug: string): Promise<Organization |
  */
 export async function loadOrganizationsMetadata(): Promise<OrganizationsMetadata | null> {
   try {
-    const data = await import(`@/new-api-details/organizations/metadata.json`);
-    return data.default as OrganizationsMetadata;
+    return await readCatalogJson<OrganizationsMetadata>('organizations/metadata.json');
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error('[ORGS] Failed to load metadata JSON:', error);

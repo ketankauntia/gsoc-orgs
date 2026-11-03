@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import "./globals.css";
 import "@/components/cobalt/cobalt.css";
@@ -85,8 +83,6 @@ export default function RootLayout({
         >
           <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
         <GoogleAnalytics />
       </body>
     </html>

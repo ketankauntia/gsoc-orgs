@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "gsoc-orgs-guide",
+  "main": "cloudflare/site-worker.mjs",
+  "compatibility_date": "2026-11-03",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "keep_vars": true,
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+    // Catalog JSON is for the ASSETS binding only; the Worker answers public requests with 404.
+    "run_worker_first": ["/_catalog/*"]
+  },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "gsoc-orgs-guide" }],
+  "r2_buckets": [{ "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "gsoc-orgs-cache" }],
+  "durable_objects": {
+    "bindings": [
+      { "name": "NEXT_CACHE_DO_QUEUE", "class_name": "DOQueueHandler" },
+      { "name": "NEXT_TAG_CACHE_DO_SHARDED", "class_name": "DOShardedTagCache" }
+    ]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DOQueueHandler", "DOShardedTagCache"] }],
+  "limits": { "cpu_ms": 1000 },
+  "ratelimits": [
+    { "name": "PAGE_RATE_LIMITER", "namespace_id": "260110301", "simple": { "limit": 1200, "period": 60 } },
+    { "name": "API_RATE_LIMITER", "namespace_id": "260110302", "simple": { "limit": 120, "period": 60 } }
+  ],
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 }
+}

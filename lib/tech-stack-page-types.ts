@@ -8,6 +8,8 @@
  * - Pre-computed metrics and charts
  */
 
+import { readCatalogJson } from './catalog-data';
+
 // Shared chart types
 export interface ChartBar {
   label: string;
@@ -126,8 +128,7 @@ export interface TechOrgSnapshot {
  */
 export async function loadTechStackIndexData(): Promise<TechStackIndexData | null> {
   try {
-    const data = await import(`@/new-api-details/tech-stack/index.json`);
-    return data.default as TechStackIndexData;
+    return await readCatalogJson<TechStackIndexData>(`tech-stack/index.json`);
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error('[TECH-STACK] Failed to load index JSON:', error);
@@ -146,8 +147,7 @@ export async function loadTechStackIndexData(): Promise<TechStackIndexData | nul
  */
 export async function loadTechStackPageData(slug: string): Promise<TechStackPageData | null> {
   try {
-    const data = await import(`@/new-api-details/tech-stack/${slug}.json`);
-    return data.default as TechStackPageData;
+    return await readCatalogJson<TechStackPageData>(`tech-stack/${slug}.json`);
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error(`[TECH-STACK] Failed to load tech stack JSON for ${slug}:`, error);

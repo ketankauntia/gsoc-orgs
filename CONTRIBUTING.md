@@ -35,7 +35,7 @@ git checkout -b feat/short-description
 - `components/` — reusable UI and client interactions.
 - `lib/` — server/client boundaries, validation, storage signing, and data helpers.
 - `db/migrations/` — forward-only schema, function, view and grant changes.
-- `cloudflare/` — the proposal-storage Worker and its R2 configuration only.
+- `cloudflare/` — the proposal-storage Worker and its R2 configuration, plus `site-worker.mjs`, the website Worker entry that wraps the OpenNext build.
 - `scripts/` — imports, reconciliation, and disposable verification.
 - `docs/` — reviewed public contributor documentation only.
 

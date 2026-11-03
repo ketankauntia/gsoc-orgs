@@ -2,6 +2,8 @@
  * Types for Homepage Snapshot Data
  */
 
+import { readCatalogJson } from './catalog-data';
+
 export interface HomepageData {
   slug: 'homepage';
   published_at: string;
@@ -32,8 +34,7 @@ export interface FeaturedOrg {
  */
 export async function loadHomepageData(): Promise<HomepageData | null> {
   try {
-    const data = await import(`@/new-api-details/homepage.json`);
-    return data.default as HomepageData;
+    return await readCatalogJson<HomepageData>(`homepage.json`);
   } catch {
     return null;
   }
