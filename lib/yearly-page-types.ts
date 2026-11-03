@@ -6,6 +6,8 @@
  * and loaded at build time for SSG.
  */
 
+import { readCatalogJson } from './catalog-data';
+
 export interface ChartBar {
   label: string;
   slug?: string;
@@ -161,9 +163,7 @@ export interface YearlyPageData {
  */
 export async function loadYearlyPageData(slug: string): Promise<YearlyPageData | null> {
   try {
-    // Dynamic import of JSON file
-    const data = await import(`@/new-api-details/yearly/${slug}.json`);
-    return data.default as YearlyPageData;
+    return await readCatalogJson<YearlyPageData>(`yearly/${slug}.json`);
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error(`[YEARLY] Failed to load yearly page JSON for ${slug}:`, error);

@@ -8,6 +8,8 @@
  * - Pre-computed metrics and charts
  */
 
+import { readCatalogJson } from './catalog-data';
+
 // Shared chart type
 export interface ChartBar {
   label: string;
@@ -110,8 +112,7 @@ export interface ProjectYearPageData {
  */
 export async function loadProjectsYearData(year: number): Promise<ProjectYearPageData | null> {
   try {
-    const data = await import(`@/new-api-details/projects/${year}.json`);
-    return data.default as ProjectYearPageData;
+    return await readCatalogJson<ProjectYearPageData>(`projects/${year}.json`);
   } catch {
     return null;
   }

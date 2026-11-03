@@ -1,5 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
+import { postSourceFiles, readPostSource } from "./source";
 import { cache } from "react";
 import matter from "gray-matter";
 import type { Faq, Post, PostBlock } from "./types";
@@ -10,8 +9,6 @@ import { isoDay } from "./format";
  * Content loader — posts live as markdown files in content/posts/*.md
  * The authoring contract is maintained in private project documentation. Server-only: uses fs.
  */
-
-const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
 type Frontmatter = {
   title: string;
@@ -37,7 +34,8 @@ type Frontmatter = {
 
 function loadPost(file: string): Post {
   const slug = file.replace(/\.md$/, "");
-  const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf8");
+  const raw = readPostSource(file);
+  if (raw === undefined) throw new Error(`Blog source missing: ${file}`);
   const { data, content } = matter(raw);
   const fm = data as Frontmatter;
   const faqs: Faq[] = (fm.faqs ?? []).map((f) => ({ question: f.q, answer: f.a }));
@@ -90,9 +88,7 @@ function today(): string {
 export const getAllPosts = cache((): Post[] => {
   const isProd = process.env.NODE_ENV === "production";
   const now = today();
-  return fs
-    .readdirSync(POSTS_DIR)
-    .filter((f) => f.endsWith(".md"))
+  return postSourceFiles()
     .map(loadPost)
     .filter((p) => !isProd || (!p.draft && isoDay(p.publishedAt) <= now))
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
@@ -109,9 +105,9 @@ export function getPost(slug: string): Post | undefined {
 
 /** Raw markdown (frontmatter stripped) for the .md routes and copy-as-markdown. */
 export function getRawMarkdown(slug: string): string | undefined {
-  const file = path.join(POSTS_DIR, `${slug}.md`);
-  if (!fs.existsSync(file)) return undefined;
-  const { data, content } = matter(fs.readFileSync(file, "utf8"));
+  const raw = readPostSource(`${slug}.md`);
+  if (raw === undefined) return undefined;
+  const { data, content } = matter(raw);
   const fm = data as Frontmatter;
   // Don't expose drafts or not-yet-published posts in production.
   if (process.env.NODE_ENV === "production" && (fm.draft || isoDay(toIsoDate(fm.publishedAt)) > today())) {

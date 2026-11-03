@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { cache } from "react";
+import bundledSettings from "@/content/settings.json";
 import {
   BLOG_TEMPLATES,
   POST_TEMPLATES,
@@ -22,7 +23,9 @@ const SETTINGS_FILE = path.join(process.cwd(), "content", "settings.json");
 
 export const getSettings = cache((): SiteSettings => {
   try {
-    const raw = JSON.parse(fs.readFileSync(SETTINGS_FILE, "utf8")) as Partial<SiteSettings>;
+    const raw = (process.env.NODE_ENV === "production"
+      ? bundledSettings
+      : JSON.parse(fs.readFileSync(SETTINGS_FILE, "utf8"))) as Partial<SiteSettings>;
     return {
       blogTemplate: BLOG_TEMPLATES.includes(raw.blogTemplate as BlogTemplate)
         ? (raw.blogTemplate as BlogTemplate)

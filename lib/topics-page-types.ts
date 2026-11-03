@@ -8,6 +8,8 @@
  * - No runtime aggregation
  */
 
+import { readCatalogJson } from './catalog-data';
+
 // ============================================
 // Index Page Schema (/topics)
 // ============================================
@@ -73,11 +75,11 @@ export interface TopicPageData {
  */
 export async function loadTopicsIndexData(): Promise<TopicsIndexData | null> {
   try {
-    const data = await import(`@/new-api-details/topics/index.json`);
+    const data = await readCatalogJson<TopicsIndexData>(`topics/index.json`);
     if (process.env.NODE_ENV === 'development') {
       console.log('[TOPICS] Successfully loaded index JSON from static file');
     }
-    return data.default as TopicsIndexData;
+    return data;
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error('[TOPICS] Failed to load index JSON:', error);
@@ -96,11 +98,11 @@ export async function loadTopicsIndexData(): Promise<TopicsIndexData | null> {
  */
 export async function loadTopicData(slug: string): Promise<TopicPageData | null> {
   try {
-    const data = await import(`@/new-api-details/topics/${slug}.json`);
+    const data = await readCatalogJson<TopicPageData>(`topics/${slug}.json`);
     if (process.env.NODE_ENV === 'development') {
       console.log(`[TOPICS] Successfully loaded topic JSON for: ${slug}`);
     }
-    return data.default as TopicPageData;
+    return data;
   } catch (error) {
     if (process.env.NODE_ENV === 'development') {
       console.error(`[TOPICS] Failed to load topic JSON for ${slug}:`, error);

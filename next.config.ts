@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+if (process.env.NODE_ENV === "development") void initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
   // React Strict Mode is enabled by default in Next.js 13+
@@ -9,9 +12,8 @@ const nextConfig: NextConfig = {
   images: {
     // Optimized images stay cached for 30 days before being re-fetched from the source
     minimumCacheTTL: 2592000,
-    // Disable image optimization to reduce Vercel usage
-    // Organization logos are already optimized and cached on Cloudflare R2
-    unoptimized: false, // Keep false to allow unoptimized prop per-image
+    // Serve source images directly without a metered image transformation service.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
