@@ -62,7 +62,7 @@ Each proposal has exactly one stored file, `proposals/<id>.pdf`; a replacement o
 - `components/` — shared UI; `components/hub/` holds the account and admin screens.
 - `lib/` — database and auth clients, contributor-hub queries, storage signing, validation, and data helpers.
 - `db/migrations/` — forward-only SQL migrations, applied with `npm run db:migrate`.
-- `cloudflare/` — the proposal-storage Worker, its Wrangler configuration, and R2 CORS and lifecycle rules.
+- `cloudflare/` — the proposal-storage Worker, its Wrangler configuration, R2 CORS and lifecycle rules, and `site-worker.mjs`, the website Worker entry (configured in the root `wrangler.jsonc`).
 - `scripts/` — catalog import, reconciliation, verification, and storage checks.
 - `new-api-details/` — checked-in canonical catalog input used by the importer.
 - `docs/proposal-library.md` — public workflow, security, and contributor reference.

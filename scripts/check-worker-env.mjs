@@ -6,8 +6,10 @@ import { pathToFileURL } from "node:url";
 // .env.local would upload those secrets inside the code, so deploys stop here.
 // Workers Builds checks out a clean tree and only embeds NEXT_PUBLIC_* values.
 const file = path.join(process.cwd(), ".open-next", "cloudflare", "next-env.mjs");
-const { production } = await import(pathToFileURL(file).href);
-const embedded = Object.keys(production ?? {}).filter((name) => !name.startsWith("NEXT_PUBLIC_"));
+const modes = await import(pathToFileURL(file).href);
+// Every mode's values ship in the script, whichever NEXTJS_ENV selects at runtime.
+const embedded = [...new Set(["production", "development", "test"].flatMap((mode) => Object.keys(modes[mode] ?? {})))]
+  .filter((name) => !name.startsWith("NEXT_PUBLIC_"));
 
 if (embedded.length > 0) {
   console.error(

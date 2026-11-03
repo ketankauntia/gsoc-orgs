@@ -18,7 +18,7 @@
     "db:verify-taxonomy": "tsx scripts/verify-taxonomy-normalization.ts",
     "db:migrate-from-supabase": "tsx scripts/migrate-from-supabase.ts",
     "validate": "npm run lint && npm run type-check && npm test && npm run db:import-catalog:dry-run && npm run build",
-    "security:audit": "npm audit --omit=dev --audit-level=high",
+    "security:audit": "node scripts/audit-production.mjs",
     "r2:deploy": "wrangler deploy --config cloudflare/wrangler.toml",
     "r2:verify": "tsx scripts/verify-r2-gateway.ts",
     "prepare": "husky",
@@ -83,7 +83,7 @@
     "recharts": "2.15.4",
     "tailwind-merge": "^3.4.0",
     "unpdf": "^1.8.1",
-    "zod": "^4.4.3"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260815.1",
@@ -113,6 +113,11 @@
     ]
   },
   "overrides": {
-    "source-map-js": "^1.2.2"
+    "source-map-js": "^1.2.2",
+    "fast-uri": "^3.1.9",
+    "vite": "^8.2.4",
+    "@neondatabase/auth": {
+      "zod": "$zod"
+    }
   }
 }

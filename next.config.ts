@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
-if (process.env.NODE_ENV === "development") void initOpenNextCloudflareForDev();
+// The adapter is a dev dependency; load it only for `next dev` bindings.
+if (process.env.NODE_ENV === "development") {
+  void import("@opennextjs/cloudflare").then((m) => m.initOpenNextCloudflareForDev());
+}
 
 const nextConfig: NextConfig = {
   // React Strict Mode is enabled by default in Next.js 13+
